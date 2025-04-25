@@ -15,7 +15,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.TextureViewer;
 using System.IO;
-using StudioCore.Platform;
+
 using StudioCore.Core;
 using System.ComponentModel.DataAnnotations;
 using StudioCore.Utilities;

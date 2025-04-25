@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Banks.ProjectEnumBank;
 
@@ -121,7 +122,7 @@ public class ProjectEnumBank
 
         if (!File.Exists(baseResourcePath))
         {
-            PlatformUtils.Instance.MessageBox($"Failed to find base Enums.json.", "Error", MessageBoxButtons.OK);
+            MessageBox.Show($"Failed to find base Enums.json.", "Error");
             return;
         }
 

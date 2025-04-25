@@ -1,12 +1,16 @@
 ﻿using Hexa.NET.ImGui;
-using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Graphics;
-using StudioCore.Platform;
+using StudioCore.Interface;
+
 using StudioCore.Resource;
+using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -15,19 +19,12 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using Veldrid;
 using Veldrid.Sdl2;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Interface;
-using StudioCore.Core;
-using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.Tasks;
-using StudioCore.Tools;
-using StudioCore.Core.Project;
-using StudioCore.Tools.Randomiser;
-using StudioCore.Editors.TextEditor;
 
 namespace StudioCore;
 
@@ -78,32 +75,23 @@ public class Smithbox
         _version = version;
         _programTitle = $"Version {_version}";
 
+        // Restore imgui.ini if it isn't present from the imgui.default
         UIHelper.RestoreImguiIfMissing();
 
+        // Rebuild DPI
         DPI.UIScaleChanged += (_, _) =>
         {
             FontRebuildRequest = true;
         };
 
-        // Hack to make sure dialogs work before the main window is created
-        PlatformUtils.InitializeWindows(null);
-
         CFG.AttemptLoadOrDefault();
-
         UI.AttemptLoadOrDefault();
         InterfaceTheme.SetupThemes();
         InterfaceTheme.SetTheme(true);
 
-        RandomiserCFG.AttemptLoadOrDefault();
-
-        Environment.SetEnvironmentVariable("PATH",
-            Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
-
         _context = context;
         _context.Initialize();
         _context.Window.Title = _programTitle;
-
-        PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
         UpdateSoulsFormatsToggles();
         HandleStartupCFGVars();
@@ -433,7 +421,7 @@ public class Smithbox
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
+                MessageBox.Show($"Unable to save config during crash recovery.\n" +
                                                   $"If you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n" +
                                                   $"{e.Message} {e.StackTrace}",
                     "Error",
@@ -449,7 +437,7 @@ public class Smithbox
             {
                 EditorHandler.SaveAllFocusedEditor();
 
-                PlatformUtils.Instance.MessageBox(
+                MessageBox.Show(
                     $"Attempted to save project files to {ProjectRoot} for manual recovery.\n" +
                     "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
                     "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +

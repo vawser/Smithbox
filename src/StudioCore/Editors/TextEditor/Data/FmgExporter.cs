@@ -6,7 +6,7 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -125,7 +126,7 @@ public static class FmgExporter
 
             if (ImGui.MenuItem("Clear Text Storage"))
             {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
+                DialogResult result = MessageBox.Show(
                     $"All export text files will be deleted. Do you proceed?",
                     "Warning",
                     MessageBoxButtons.YesNo);
@@ -468,7 +469,7 @@ public static class FmgExporter
 
         if (File.Exists(writePath))
         {
-            DialogResult result = PlatformUtils.Instance.MessageBox(
+            var result = MessageBox.Show(
                     $"Exported text already exists under this name. Overwrite?", 
                     "Warning", 
                     MessageBoxButtons.YesNo);

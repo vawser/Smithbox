@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
@@ -15,6 +15,7 @@ using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -89,13 +90,13 @@ public class ModelAssetCopyManager
                     if (Smithbox.BankHandler.CharacterAliases.Aliases.list.Any(x => x.id == matchChr))
                     {
                         createChr = false;
-                        PlatformUtils.Instance.MessageBox($"{matchChr} already exists.", "Warning", MessageBoxButtons.OK);
+                        MessageBox.Show($"{matchChr} already exists.", "Warning", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
                     createChr = false;
-                    PlatformUtils.Instance.MessageBox($"{newChrIdStr} is not valid.", "Warning", MessageBoxButtons.OK);
+                    MessageBox.Show($"{newChrIdStr} is not valid.", "Warning", MessageBoxButtons.OK);
                 }
 
                 if (createChr)
@@ -253,13 +254,13 @@ public class ModelAssetCopyManager
                         if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
                         {
                             createAsset = false;
-                            PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
+                            MessageBox.Show($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
                         }
                     }
                     else
                     {
                         createAsset = false;
-                        PlatformUtils.Instance.MessageBox($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
+                        MessageBox.Show($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
                     }
                 }
                 else
@@ -286,13 +287,13 @@ public class ModelAssetCopyManager
                         if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
                         {
                             createAsset = false;
-                            PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
+                            MessageBox.Show($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
                         }
                     }
                     else
                     {
                         createAsset = false;
-                        PlatformUtils.Instance.MessageBox($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
+                        MessageBox.Show($"{matchAsset} is not valid.", "Warning", MessageBoxButtons.OK);
                     }
                 }
 
@@ -415,13 +416,13 @@ public class ModelAssetCopyManager
                     if (Smithbox.BankHandler.PartAliases.Aliases.list.Any(x => x.id == matchPart))
                     {
                         createPart = false;
-                        PlatformUtils.Instance.MessageBox($"{matchPart} already exists.", "Warning", MessageBoxButtons.OK);
+                        MessageBox.Show($"{matchPart} already exists.", "Warning", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
                     createPart = false;
-                    PlatformUtils.Instance.MessageBox($"{matchPart} is not valid.", "Warning", MessageBoxButtons.OK);
+                    MessageBox.Show($"{matchPart} is not valid.", "Warning", MessageBoxButtons.OK);
                 }
 
                 if (createPart)
@@ -556,18 +557,18 @@ public class ModelAssetCopyManager
                     if (Smithbox.BankHandler.MapAliases.Aliases.list.Any(x => x.id == matchMapPiece))
                     {
                         createMapPiece = false;
-                        PlatformUtils.Instance.MessageBox($"{matchMapPiece} already exists.", "Warning", MessageBoxButtons.OK);
+                        MessageBox.Show($"{matchMapPiece} already exists.", "Warning", MessageBoxButtons.OK);
                     }
                 }
                 else if (NewMapId.Length != 12)
                 {
                     createMapPiece = false;
-                    PlatformUtils.Instance.MessageBox($"{NewMapId} is not in the correct format: mXX_XX_XX_XX", "Warning", MessageBoxButtons.OK);
+                    MessageBox.Show($"{NewMapId} is not in the correct format: mXX_XX_XX_XX", "Warning", MessageBoxButtons.OK);
                 }
                 else
                 {
                     createMapPiece = false;
-                    PlatformUtils.Instance.MessageBox($"{matchMapPiece} is not valid.", "Warning", MessageBoxButtons.OK);
+                    MessageBox.Show($"{matchMapPiece} is not valid.", "Warning", MessageBoxButtons.OK);
                 }
 
                 if (createMapPiece)

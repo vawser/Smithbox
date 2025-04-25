@@ -14,7 +14,7 @@ using StudioCore.Editors.MapEditor.PropertyEditor;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Tasks;
 using StudioCore.Utilities;
 using System;
@@ -23,6 +23,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Windows.Forms;
 using static HKLib.hk2018.hkaiUserEdgeUtils;
 
 namespace StudioCore.Editors.MapEditor.Core;
@@ -271,7 +272,7 @@ public class MapPropertyView
         {
             if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
             {
-                PlatformUtils.Instance.SetClipboardText(fieldName);
+                Clipboard.SetText(fieldName);
             }
 
             ImGui.EndPopup();
@@ -346,7 +347,7 @@ public class MapPropertyView
             }
             if (ImGui.Selectable(@"Copy Property Name##CopyPropName"))
             {
-                PlatformUtils.Instance.SetClipboardText(prop.Name);
+                Clipboard.SetText(prop.Name);
             }
             if (ImGui.Selectable(@"Copy Property Type##CopyPropType"))
             {
@@ -355,7 +356,7 @@ public class MapPropertyView
                 if (propType != null)
                 {
                     var primitiveType = propType.ToString().Replace("System.", "");
-                    PlatformUtils.Instance.SetClipboardText(primitiveType);
+                    Clipboard.SetText(primitiveType);
                 }
             }
 

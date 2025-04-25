@@ -6,7 +6,7 @@ using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
-using StudioCore.Platform;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +15,7 @@ using System.Numerics;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using StudioCore.Utilities;
 
 namespace StudioCore.Tools
 {
@@ -138,10 +139,8 @@ namespace StudioCore.Tools
             ImGui.SameLine();
             if (ImGui.Button("Select##destSelect"))
             {
-                if (PlatformUtils.Instance.OpenFolderDialog("Choose destination directory", out var path))
-                {
-                    destPath = path;
-                }
+                var path = WindowsUtils.GetFolderSelection();
+                destPath = path;
             }
 
             if (ImGui.Button("Collect"))

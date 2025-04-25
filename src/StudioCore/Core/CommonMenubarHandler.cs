@@ -2,23 +2,13 @@
 using StudioCore.Configuration;
 using StudioCore.Configuration.Help;
 using StudioCore.Configuration.Keybinds;
-using StudioCore.Configuration.Settings;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Graphics;
 using StudioCore.Interface;
-using StudioCore.Settings;
 using StudioCore.Tools.Development;
-using StudioCore.Tools.Randomiser;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Configuration.Help.HelpWindow;
 using static StudioCore.Configuration.Keybinds.KeybindWindow;
 using static StudioCore.Configuration.SettingsWindow;
@@ -35,14 +25,12 @@ public class CommonMenubarHandler
     public HelpWindow HelpWindow;
     public DebugWindow DebugWindow;
     public KeybindWindow KeybindWindow;
-    public RandomiserWindow RandomiserWindow;
     public CommonMenubarHandler(IGraphicsContext _context)
     {
         SettingsWindow = new SettingsWindow();
         HelpWindow = new HelpWindow();
         DebugWindow = new DebugWindow();
         KeybindWindow = new KeybindWindow();
-        RandomiserWindow = new RandomiserWindow();
     }
 
     public void OnGui()
@@ -51,7 +39,6 @@ public class CommonMenubarHandler
         HelpWindow.Display();
         DebugWindow.Display();
         KeybindWindow.Display();
-        RandomiserWindow.Display();
 
         ProjectConfigurationWindow.Display();
         ProjectEnumWindow.Display();

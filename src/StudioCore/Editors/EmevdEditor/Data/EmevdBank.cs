@@ -3,7 +3,7 @@ using Silk.NET.Core;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using System;
@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -321,7 +322,7 @@ public static class EmevdBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -332,7 +333,7 @@ public static class EmevdBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

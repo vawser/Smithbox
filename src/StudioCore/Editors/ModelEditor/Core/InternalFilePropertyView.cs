@@ -8,6 +8,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -42,7 +43,7 @@ public class InternalFilePropertyView
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button($"{ForkAwesome.Bars}", buttonSize))
             {
-                UIHelper.CopyToClipboard(entry.Name);
+                Clipboard.SetText(entry.Name);
             }
             UIHelper.ShowHoverTooltip("Copy name to clipboard.");
             ImGui.SameLine();

@@ -12,7 +12,7 @@ using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Memory;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.Utilities;
@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Veldrid;
 using Veldrid.Sdl2;
 using ActionManager = StudioCore.Editor.ActionManager;
@@ -395,33 +396,31 @@ public class ParamEditorScreen : EditorScreen
                 {
                     if (ImGui.MenuItem("Export all params to file"))
                     {
-                        if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
+                        var path = WindowsUtils.GetFolderSelection("Choose CSV directory");
+
+                        foreach (KeyValuePair<string, Param> param in ParamBank.PrimaryBank.Params)
                         {
-                            foreach (KeyValuePair<string, Param> param in ParamBank.PrimaryBank.Params)
-                            {
-                                IReadOnlyList<Param.Row> rows = param.Value.Rows;
-                                TryWriteFile(
-                                    $@"{path}\{param.Key}.csv",
-                                    ParamIO.GenerateCSV(rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
-                            }
+                            IReadOnlyList<Param.Row> rows = param.Value.Rows;
+                            TryWriteFile(
+                                $@"{path}\{param.Key}.csv",
+                                ParamIO.GenerateCSV(rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                         }
                     }
 
                     if (ImGui.MenuItem("Export all modified params to file"))
                     {
-                        if (PlatformUtils.Instance.OpenFolderDialog("Choose CSV directory", out var path))
-                        {
-                            foreach (KeyValuePair<string, Param> param in ParamBank.PrimaryBank.Params)
-                            {
-                                var result = ParamBank.PrimaryBank.GetVanillaDiffRows(param.Key);
+                        var path = WindowsUtils.GetFolderSelection("Choose CSV directory");
 
-                                if (result.Count > 0)
-                            {
-                                    IReadOnlyList<Param.Row> rows = param.Value.Rows;
-                                    TryWriteFile(
-                                        $@"{path}\{param.Key}.csv",
-                                        ParamIO.GenerateCSV(rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
-                                }
+                        foreach (KeyValuePair<string, Param> param in ParamBank.PrimaryBank.Params)
+                        {
+                            var result = ParamBank.PrimaryBank.GetVanillaDiffRows(param.Key);
+
+                            if (result.Count > 0)
+                        {
+                                IReadOnlyList<Param.Row> rows = param.Value.Rows;
+                                TryWriteFile(
+                                    $@"{path}\{param.Key}.csv",
+                                    ParamIO.GenerateCSV(rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                             }
                         }
                     }
@@ -480,7 +479,7 @@ public class ParamEditorScreen : EditorScreen
                             }
                             else
                             {
-                                PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                MessageBox.Show(result, "Error", MessageBoxButtons.OK);
                             }
                         }
                     }
@@ -498,7 +497,7 @@ public class ParamEditorScreen : EditorScreen
                             }
                             else
                             {
-                                PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                MessageBox.Show(result, "Error", MessageBoxButtons.OK);
                             }
 
                             ParamBank.RefreshParamDifferenceCacheTask();
@@ -524,7 +523,7 @@ public class ParamEditorScreen : EditorScreen
                                     }
                                     else
                                     {
-                                        PlatformUtils.Instance.MessageBox(result, "Error", MessageBoxButtons.OK);
+                                        MessageBox.Show(result, "Error", MessageBoxButtons.OK);
                                     }
 
                                     ParamBank.RefreshParamDifferenceCacheTask();
@@ -623,50 +622,45 @@ public class ParamEditorScreen : EditorScreen
                 {
                     if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
                     {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
-                        {
-                            ParamBank.LoadAuxBank(path, null, null);
-                        }
+                        var path = WindowsUtils.GetFileSelection("Select file containing params", allParamTypes.ToList());
+
+                        ParamBank.LoadAuxBank(path, null, null);
                     }
                     else
                     {
                         // NativeFileDialog doesn't show the title currently, so manual dialogs are required for now.
-                        PlatformUtils.Instance.MessageBox(
+                        MessageBox.Show(
                             "To compare DS2 params, select the file locations of alternative params, including\n" +
                             "the loose params folder, the non-loose parambnd or regulation, and the loose enemy param.\n\n" +
                             "First, select the loose params folder.",
                             "Select loose params",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-                        if (PlatformUtils.Instance.OpenFolderDialog("Select folder for looseparams", out var folder))
-                        {
-                            PlatformUtils.Instance.MessageBox(
-                                "Second, select the non-loose parambnd or regulation",
-                                "Select regulation",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            if (PlatformUtils.Instance.OpenFileDialog(
-                                    "Select file containing remaining, non-loose params", allParamTypes,
-                                    out var fpath))
-                            {
-                                PlatformUtils.Instance.MessageBox(
-                                    "Finally, select the file containing enemyparam",
-                                    "Select enemyparam",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                                if (PlatformUtils.Instance.OpenFileDialog(
-                                        "Select file containing enemyparam",
-                                        new[] { FilterStrings.ParamLooseFilter }, out var enemyPath))
-                                {
-                                    ParamBank.LoadAuxBank(fpath, folder, enemyPath);
-                                }
-                            }
-                        }
+
+                        var looseFolder = WindowsUtils.GetFolderSelection("Select folder for looseparams");
+
+                        MessageBox.Show(
+                            "Second, select the non-loose parambnd or regulation",
+                            "Select regulation",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        var packedFile = WindowsUtils.GetFileSelection("Select file containing remaining, non-loose params", allParamTypes.ToList());
+
+                        MessageBox.Show(
+                            "Finally, select the file containing enemyparam",
+                            "Select enemyparam",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        var enemyFile = WindowsUtils.GetFileSelection("Select file containing enemyparam");
+
+                        ParamBank.LoadAuxBank(packedFile, looseFolder, enemyFile);
                     }
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         @"Unable to load regulation.\n" + e.Message,
                         "Loading error",
                         MessageBoxButtons.OK,
@@ -1348,7 +1342,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (result == ParamBank.ParamUpgradeResult.OldRegulationNotFound)
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 @"Unable to load old vanilla regulation.",
                 "Loading error",
                 MessageBoxButtons.OK,
@@ -1357,7 +1351,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (result == ParamBank.ParamUpgradeResult.OldRegulationVersionMismatch)
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 @"The version of the vanilla regulation you selected does not match the version of your mod.",
                 "Version mismatch",
                 MessageBoxButtons.OK,
@@ -1367,7 +1361,7 @@ public class ParamEditorScreen : EditorScreen
 
         if (result == ParamBank.ParamUpgradeResult.OldRegulationMatchesCurrent)
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 "The version of the vanilla regulation you selected appears to match your mod.\nMake sure you provide the vanilla regulation the mod is based on.",
                 "Old vanilla regulation incorrect",
                 MessageBoxButtons.OK,
@@ -1407,7 +1401,7 @@ public class ParamEditorScreen : EditorScreen
 
             logWriter.Flush();
 
-            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
+            DialogResult msgRes = MessageBox.Show(
                 @"Conflicts were found while upgrading params. This is usually caused by a game update adding" +
                 "a new row that has the same ID as the one that you added in your mod.\nIt is highly recommended that you " +
                 "review these conflicts and handle them before saving.\nYou can revert to your original params by " +
@@ -1446,7 +1440,7 @@ public class ParamEditorScreen : EditorScreen
             UICache.ClearCaches();
             ParamBank.RefreshAllParamDiffCaches(false);
 
-            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
+            DialogResult msgRes = MessageBox.Show(
                 @"Do you wish to save the params?",
                 "Save Params",
                 MessageBoxButtons.YesNo,
@@ -2073,21 +2067,29 @@ public class ParamEditorScreen : EditorScreen
 
     private static bool SaveCsvDialog(out string path)
     {
-        var result = PlatformUtils.Instance.SaveFileDialog(
-            "Choose CSV file", new[] { FilterStrings.CsvFilter, FilterStrings.TxtFilter }, out path);
+        var selectedPath = WindowsUtils.GetFileSelection();
+        path = selectedPath;
 
-        if (result && !path.ToLower().EndsWith(".csv"))
+        if (selectedPath == "")
+            return false;
+
+        if (!path.ToLower().EndsWith(".csv"))
         {
             path += ".csv";
         }
 
-        return result;
+        return true;
     }
 
     private static bool OpenCsvDialog(out string path)
     {
-        return PlatformUtils.Instance.OpenFileDialog(
-            "Choose CSV file", new[] { FilterStrings.CsvFilter, FilterStrings.TxtFilter }, out path);
+        var selectedPath = WindowsUtils.GetFileSelection();
+        path = selectedPath;
+
+        if (selectedPath == "")
+            return false;
+
+        return true;
     }
 
     private static bool ReadCsvDialog(out string csv)
@@ -2109,7 +2111,7 @@ public class ParamEditorScreen : EditorScreen
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox("Unable to write to " + path, "Write Error", MessageBoxButtons.OK,
+            MessageBox.Show("Unable to write to " + path, "Write Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
     }
@@ -2122,7 +2124,7 @@ public class ParamEditorScreen : EditorScreen
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox("Unable to read from " + path, "Read Error", MessageBoxButtons.OK,
+            MessageBox.Show("Unable to read from " + path, "Read Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             return null;
         }

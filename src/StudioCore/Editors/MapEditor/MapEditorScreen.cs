@@ -22,7 +22,7 @@ using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
 using StudioCore.Editors.MapEditor.Tools.WorldMap;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.Platform;
+
 using StudioCore.Resource;
 using StudioCore.Scene;
 using StudioCore.Scene.Interfaces;
@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Windows.Forms;
 using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
@@ -1143,10 +1144,11 @@ public class MapEditorScreen : EditorScreen
             TaskLogs.AddLog(e.Message,
                 LogLevel.Error, LogPriority.Normal, e.Wrapped);
 
-            DialogResult result = PlatformUtils.Instance.MessageBox($"{eRef.Message}\nSelect referring map entity?",
+            var result = MessageBox.Show($"{eRef.Message}\nSelect referring map entity?",
                 "Failed to save map",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Error);
+
             if (result == DialogResult.Yes)
             {
                 foreach (KeyValuePair<string, ObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>

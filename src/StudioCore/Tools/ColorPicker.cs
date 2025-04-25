@@ -1,12 +1,13 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Tools;
 
@@ -40,12 +41,12 @@ public static class ColorPicker
             {
                 var rgbColor = $"<{Math.Round(currentColor.X * 255)}, {Math.Round(currentColor.Y * 255)}, {Math.Round(currentColor.Z * 255)}>";
 
-                PlatformUtils.Instance.SetClipboardText(rgbColor);
+                Clipboard.SetText(rgbColor);
             }
             ImGui.SameLine();
             if (ImGui.Button("Copy Decimal Color"))
             {
-                PlatformUtils.Instance.SetClipboardText(currentColor.ToString());
+                Clipboard.SetText(currentColor.ToString());
             }
         }
 

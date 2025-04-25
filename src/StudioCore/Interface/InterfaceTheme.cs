@@ -1,5 +1,5 @@
 ﻿using StudioCore.Banks.FormatBank;
-using StudioCore.Platform;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,7 @@ using System.IO;
 using StudioCore.Banks.AliasBank;
 using Google.Protobuf.WellKnownTypes;
 using StudioCore.Configuration.Interface;
+using System.Windows.Forms;
 
 namespace StudioCore.Interface
 {
@@ -173,7 +174,7 @@ namespace StudioCore.Interface
 
             if (fileName == "")
             {
-                PlatformUtils.Instance.MessageBox("Filename cannot be blank.", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("Filename cannot be blank.", "Warning", MessageBoxButtons.OK);
                 return;
             }
 
@@ -181,7 +182,7 @@ namespace StudioCore.Interface
 
             if (File.Exists(path))
             {
-                PlatformUtils.Instance.MessageBox("Filename already exists.", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("Filename already exists.", "Warning", MessageBoxButtons.OK);
                 return;
             }
 
@@ -317,7 +318,7 @@ namespace StudioCore.Interface
                 }
             }
 
-            PlatformUtils.Instance.MessageBox("Theme saved.", "Information", MessageBoxButtons.OK);
+            MessageBox.Show("Theme saved.", "Information", MessageBoxButtons.OK);
 
             // Update the theme
             SetupThemes();
@@ -346,7 +347,7 @@ namespace StudioCore.Interface
             {
                 // Reset to Dark if theme is null
                 UI.Current.SelectedThemeName = "Dark";
-                //PlatformUtils.Instance.MessageBox("Theme does not exist.", "Warning", MessageBoxButtons.OK);
+                //MessageBox.Show("Theme does not exist.", "Warning", MessageBoxButtons.OK);
                 return;
             }
 

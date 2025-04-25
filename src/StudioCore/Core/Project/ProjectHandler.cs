@@ -5,10 +5,11 @@ using SoulsFormats.Other.PlayStation3;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.UserProject;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,6 +21,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Windows.Forms;
 using static StudioCore.CFG;
 
 namespace StudioCore.Core.Project;
@@ -29,8 +31,6 @@ public class ProjectHandler
     public Project CurrentProject;
 
     public ProjectModal ProjectModal;
-
-    public Timer AutomaticSaveTimer;
 
     public RecentProject RecentProject;
 
@@ -87,7 +87,7 @@ public class ProjectHandler
     {
         if (CurrentProject.Config == null)
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 "Failed to load last project. Project will not be loaded after restart.",
                 "Project Load Error", MessageBoxButtons.OK);
             return false;
@@ -95,7 +95,7 @@ public class ProjectHandler
 
         if (path == "")
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 $"Path parameter was empty: {path}",
                 "Project Load Error", MessageBoxButtons.OK);
             return false;
@@ -132,8 +132,6 @@ public class ProjectHandler
         UI.Save();
 
         AddProjectToRecentList(CurrentProject);
-
-        UpdateTimer();
 
         // Re-create this so project setup settings don't persist between projects (e.g. Import Row Names)
         ProjectModal = new ProjectModal();
@@ -241,44 +239,36 @@ public class ProjectHandler
 
         if (!Directory.Exists(targetProject.Config.GameRoot))
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 $@"Could not find game data directory for {targetProject.Config.GameType}. Please select the game executable.",
                 "Error",
                 MessageBoxButtons.OK);
 
             while (true)
             {
-                if (PlatformUtils.Instance.OpenFileDialog(
-                        $"Select executable for {targetProject.Config.GameType}...",
-                        new[] { FilterStrings.GameExecutableFilter },
-                        out var path))
+                var path = WindowsUtils.GetFileSelection($"Select executable for {targetProject.Config.GameType}...");
+
+                targetProject.Config.GameRoot = path;
+                ProjectType gametype = GetProjectTypeFromExecutable(targetProject.Config.GameRoot);
+
+                if (gametype == targetProject.Config.GameType)
                 {
-                    targetProject.Config.GameRoot = path;
-                    ProjectType gametype = GetProjectTypeFromExecutable(targetProject.Config.GameRoot);
+                    targetProject.Config.GameRoot = Path.GetDirectoryName(targetProject.Config.GameRoot);
 
-                    if (gametype == targetProject.Config.GameType)
+                    if (targetProject.Config.GameType == ProjectType.BB)
                     {
-                        targetProject.Config.GameRoot = Path.GetDirectoryName(targetProject.Config.GameRoot);
-
-                        if (targetProject.Config.GameType == ProjectType.BB)
-                        {
-                            targetProject.Config.GameRoot += @"\dvdroot_ps4";
-                        }
-
-                        WriteProjectConfig(targetProject);
-
-                        break;
+                        targetProject.Config.GameRoot += @"\dvdroot_ps4";
                     }
 
-                    PlatformUtils.Instance.MessageBox(
-                        $@"Selected executable was not for {CurrentProject.Config.GameType}. Please select the correct game executable.",
-                        "Error",
-                        MessageBoxButtons.OK);
-                }
-                else
-                {
+                    WriteProjectConfig(targetProject);
+
                     break;
                 }
+
+                MessageBox.Show(
+                    $@"Selected executable was not for {CurrentProject.Config.GameType}. Please select the correct game executable.",
+                    "Error",
+                    MessageBoxButtons.OK);
             }
         }
     }
@@ -357,7 +347,7 @@ public class ProjectHandler
 
         if (!File.Exists(rootDllPath))
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 $"Could not find file \"{dllName}\" in \"{targetProject.Config.GameRoot}\", which should be included by default.\n\nTry verifying or reinstalling the game.",
                 "Error",
                 MessageBoxButtons.OK);
@@ -500,70 +490,9 @@ public class ProjectHandler
         return ProjectType.DES;
     }
 
-    public void UpdateTimer()
-    {
-        if (AutomaticSaveTimer != null)
-        {
-            AutomaticSaveTimer.Close();
-        }
-
-        if (Current.System_EnableAutoSave)
-        {
-            var interval = Current.System_AutoSaveIntervalSeconds * 1000;
-            if (interval < 10000)
-                interval = 10000;
-
-            AutomaticSaveTimer = new Timer(interval);
-            AutomaticSaveTimer.Elapsed += OnAutomaticSave;
-            AutomaticSaveTimer.AutoReset = true;
-            AutomaticSaveTimer.Enabled = true;
-        }
-    }
-
     public void SaveCurrentProject()
     {
         WriteProjectConfig(CurrentProject);
-    }
-
-    public void OnAutomaticSave(object source, ElapsedEventArgs e)
-    {
-        if (Current.System_EnableAutoSave)
-        {
-            if (Smithbox.ProjectType != ProjectType.Undefined)
-            {
-                if (Current.System_EnableAutoSave_Project)
-                {
-                    WriteProjectConfig(CurrentProject);
-                }
-
-                if (Current.System_EnableAutoSave_MapEditor)
-                {
-                    Smithbox.EditorHandler.MapEditor.SaveAll();
-                }
-
-                if (Current.System_EnableAutoSave_ModelEditor)
-                {
-                    Smithbox.EditorHandler.ModelEditor.SaveAll();
-                }
-
-                if (Current.System_EnableAutoSave_ParamEditor)
-                {
-                    Smithbox.EditorHandler.ParamEditor.SaveAll();
-                }
-
-                if (Current.System_EnableAutoSave_TextEditor)
-                {
-                    Smithbox.EditorHandler.TextEditor.SaveAll();
-                }
-
-                if (Current.System_EnableAutoSave_GparamEditor)
-                {
-                    Smithbox.EditorHandler.GparamEditor.SaveAll();
-                }
-
-                TaskLogs.AddLog($"Automatic Save occured at {e.SignalTime}");
-            }
-        }
     }
 
     public bool CreateRecoveryProject()
@@ -592,16 +521,13 @@ public class ProjectHandler
 
     public void OpenProjectDialog()
     {
-        var success = PlatformUtils.Instance.OpenFileDialog("Choose the project json file", new[] { FilterStrings.ProjectJsonFilter }, out var projectJsonPath);
+        var projectJsonPath = WindowsUtils.GetFileSelection("Choose the project json file");
 
-        if (projectJsonPath != null)
+        if (projectJsonPath.Contains("project.json"))
         {
-            if (projectJsonPath.Contains("project.json"))
+            if (LoadProjectFromJSON(projectJsonPath))
             {
-                if (LoadProjectFromJSON(projectJsonPath))
-                {
-                    Smithbox.ProjectHandler.IsInitialLoad = false;
-                }
+                Smithbox.ProjectHandler.IsInitialLoad = false;
             }
         }
     }
@@ -780,7 +706,7 @@ public class ProjectHandler
             }
             else
             {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
+                DialogResult result = MessageBox.Show(
                     $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
                     $"Remove project from list of recent projects?",
                     $"Project.json cannot be found", MessageBoxButtons.YesNo);

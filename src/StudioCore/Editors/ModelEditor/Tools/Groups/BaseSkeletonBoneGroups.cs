@@ -4,7 +4,7 @@ using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.BaseSkeleton;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ModelEditor.Tools
 {
@@ -278,7 +279,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             if (File.Exists(writePath))
             {
-                var result = PlatformUtils.Instance.MessageBox($"{filename} already exists as a Base Skeleton Bone Group. Are you sure you want to overwrite it?", "Warning", MessageBoxButtons.OKCancel);
+                var result = MessageBox.Show($"{filename} already exists as a Base Skeleton Bone Group. Are you sure you want to overwrite it?", "Warning", MessageBoxButtons.OKCancel);
 
                 if (result is DialogResult.Cancel)
                 {

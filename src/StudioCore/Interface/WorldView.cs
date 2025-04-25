@@ -5,7 +5,7 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 
-namespace StudioCore;
+namespace StudioCore.Interface;
 
 public class WorldView
 {
@@ -332,7 +332,7 @@ public class WorldView
                                                       Matrix4x4.CreateRotationY(Utils.Pi)) *
                                                   new Vector3(-1, 1, 1);
                 CameraTransform.Position =
-                    OrbitCamCenter + (distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance));
+                    OrbitCamCenter + distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance);
             }
             else
             {
@@ -588,7 +588,7 @@ public class WorldView
             Vector3 distanceVectorAfterMove = -Vector3.Transform(Vector3.UnitX,
                 CameraTransform.RotationMatrixXYZ * Matrix4x4.CreateRotationY(Utils.Pi)) * new Vector3(-1, 1, 1);
             CameraTransform.Position =
-                OrbitCamCenter + (distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance));
+                OrbitCamCenter + distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance);
         }
         else
         {

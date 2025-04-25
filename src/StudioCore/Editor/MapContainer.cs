@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
-using StudioCore.Platform;
+
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ using Veldrid.Utilities;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Banks.MapTransformBank;
 using StudioCore.Editors.MapEditor.Enums;
+using System.Windows.Forms;
 
 namespace StudioCore.Editor;
 
@@ -1005,7 +1006,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
                         "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -1050,7 +1051,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
                         "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -1076,7 +1077,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
                         "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -1104,7 +1105,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
                         "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -1139,7 +1140,7 @@ public class MapContainer : ObjectContainer
                 }
                 else
                 {
-                    PlatformUtils.Instance.MessageBox(
+                    MessageBox.Show(
                         $@"{mp.Name} has an ID that's already used. Please change it to something unique and save again.",
                         "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;

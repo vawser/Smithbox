@@ -7,7 +7,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Framework;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Tools.Generation;
 using StudioCore.Utilities;
 using System;

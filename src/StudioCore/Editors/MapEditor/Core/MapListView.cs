@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Platform;
+
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -19,6 +19,7 @@ using StudioCore.Editors.MapEditor.Tools.WorldMap;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -187,8 +188,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         if (ImGui.Button($"{ForkAwesome.MinusSquareO}"))
         {
-            DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
-                        MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Unload all maps?", "Confirm", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -361,12 +361,12 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             // Utils
             if (ImGui.Selectable("Copy Map ID"))
             {
-                PlatformUtils.Instance.SetClipboardText(entry);
+                Clipboard.SetText(entry);
             }
             if (ImGui.Selectable("Copy Map Name"))
             {
                 var mapName = AliasUtils.GetMapNameAlias(entry);
-                PlatformUtils.Instance.SetClipboardText(mapName);
+                Clipboard.SetText(mapName);
             }
             if (Screen.MapQueryView.IsOpen)
             {

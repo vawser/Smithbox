@@ -5,12 +5,13 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-using StudioCore.Platform;
+
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Tools.SelectionGroups;
 
@@ -389,7 +390,7 @@ public class SelectionGroupView
 
         if (CFG.Current.MapEditor_SelectionGroup_ConfirmDelete)
         {
-            result = PlatformUtils.Instance.MessageBox($"You are about to delete this selection group. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            result = MessageBox.Show($"You are about to delete this selection group. Are you sure?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
 
         if (result == DialogResult.Yes)

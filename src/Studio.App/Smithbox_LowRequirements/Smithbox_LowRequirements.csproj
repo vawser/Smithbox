@@ -3,7 +3,7 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0-windows7.0</TargetFramework>
         <Authors>Katalash, Vawser</Authors>
-        <Version>1.0.27</Version>
+        <Version>1.1.0</Version>
         <ApplicationIcon>icon.ico</ApplicationIcon>
         <PackageVersion>1.0.27</PackageVersion>
         <AssemblyVersion>1.0.27</AssemblyVersion>

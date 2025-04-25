@@ -7,7 +7,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Formats;
-using StudioCore.Platform;
+
 using StudioCore.Resource;
 using StudioCore.Tasks;
 using System;
@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace StudioCore.Tools.Validation
 {
@@ -120,7 +121,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -134,7 +135,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -150,7 +151,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -164,7 +165,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             // ER
@@ -177,7 +178,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             // AC6
@@ -190,7 +191,7 @@ namespace StudioCore.Tools.Validation
                 }
                 catch (Exception e)
                 {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

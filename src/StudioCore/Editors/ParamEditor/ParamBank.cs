@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Platform;
+
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using System.ComponentModel.DataAnnotations;
 using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -623,7 +624,7 @@ public class ParamBank
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -697,7 +698,7 @@ public class ParamBank
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -773,7 +774,7 @@ public class ParamBank
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -843,7 +844,7 @@ public class ParamBank
         }
         catch(Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -941,7 +942,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -952,7 +953,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1081,7 +1082,7 @@ public class ParamBank
         }
         catch (Exception e)
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 
@@ -1164,7 +1165,7 @@ public class ParamBank
             }
             catch(Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -1176,7 +1177,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -1274,7 +1275,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         else
@@ -1286,7 +1287,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -1871,7 +1872,7 @@ public class ParamBank
 
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
             {
-                if (PlatformUtils.Instance.MessageBox(
+                if (MessageBox.Show(
                         "It appears that you are trying to save params non-loosely with an \"enc_regulation.bnd\" that has previously been saved loosely." +
                         "\n\nWould you like to reinsert params into the bnd that were previously stripped out?",
                         "DS2 de-loose param",

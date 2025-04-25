@@ -8,7 +8,7 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Helpers;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Windows.Forms;
 using Veldrid;
 
 namespace StudioCore.Editors.MapEditor.Core;
@@ -81,7 +82,7 @@ public class MapContentView
         {
             if (LoadCount > 1)
             {
-                PlatformUtils.Instance.MessageBox("Warning: The map object list and the viewport will be desynchronized if you proceed.\nThis is an unresolved bug. Proceed with caution.\n\nIt is recommended that you restart Smithbox to avoid issues.\nAlternatively, you can disable the 'Allow map unload' setting in the Map Editor settings menu.\nThis will circumvent the issue, but you are likely to hit the map rendering limit if you load several maps.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Warning: The map object list and the viewport will be desynchronized if you proceed.\nThis is an unresolved bug. Proceed with caution.\n\nIt is recommended that you restart Smithbox to avoid issues.\nAlternatively, you can disable the 'Allow map unload' setting in the Map Editor settings menu.\nThis will circumvent the issue, but you are likely to hit the map rendering limit if you load several maps.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
@@ -320,12 +321,12 @@ public class MapContentView
         {
             if (ImGui.Selectable("Copy Map ID"))
             {
-                PlatformUtils.Instance.SetClipboardText(MapID);
+                Clipboard.SetText(MapID);
             }
             if (ImGui.Selectable("Copy Map Name"))
             {
                 var mapName = AliasUtils.GetMapNameAlias(MapID);
-                PlatformUtils.Instance.SetClipboardText(mapName);
+                Clipboard.SetText(mapName);
             }
             if (Screen.MapQueryView.IsOpen)
             {
@@ -470,12 +471,12 @@ public class MapContentView
                             fullStr = $"{curEnt.Name}";
                     }
 
-                    PlatformUtils.Instance.SetClipboardText(fullStr);
+                    Clipboard.SetText(fullStr);
                 }
                 else
                 {
 
-                    PlatformUtils.Instance.SetClipboardText(ent.Name);
+                    Clipboard.SetText(ent.Name);
                 }
             }
             UIHelper.ShowHoverTooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");

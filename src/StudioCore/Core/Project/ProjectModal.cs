@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.UserProject;
 using StudioCore.Utilities;
 using System;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Core.Project;
 
@@ -70,7 +71,7 @@ public class ProjectModal
             }
             else
             {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
+                DialogResult result = MessageBox.Show(
                     $"Project file at \"{p.ProjectFile}\" does not exist.\n\n" +
                     $"Remove project from list of recent projects?",
                     $"Project.json cannot be found", MessageBoxButtons.YesNo);
@@ -149,19 +150,19 @@ public class ProjectModal
         ImGui.SameLine();
         if (ImGui.Button($@"{ForkAwesome.FileO}"))
         {
-            if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
-            {
-                if (IsLogicalDrive(path))
-                {
-                    DialogResult message = PlatformUtils.Instance.MessageBox(
-                        "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
-                        MessageBoxButtons.OK);
-                }
-                else
-                {
-                    newProjectDirectory = path;
-                }
-            }
+            //if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
+            //{
+            //    if (IsLogicalDrive(path))
+            //    {
+            //        DialogResult message = MessageBox.Show(
+            //            "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
+            //            MessageBoxButtons.OK);
+            //    }
+            //    else
+            //    {
+            //        newProjectDirectory = path;
+            //    }
+            //}
         }
 
         // Game Executable
@@ -196,19 +197,19 @@ public class ProjectModal
 
         if (ImGui.Button($@"{ForkAwesome.FileO}##fd2"))
         {
-            if (PlatformUtils.Instance.OpenFileDialog(
-                    "Select executable for the game you want to mod...",
-                    new[] { FilterStrings.GameExecutableFilter },
-                    out var path))
-            {
-                newProject.Config.GameRoot = Path.GetDirectoryName(path);
-                newProject.Config.GameType = Smithbox.ProjectHandler.GetProjectTypeFromExecutable(path);
+            //if (PlatformUtils.Instance.OpenFileDialog(
+            //        "Select executable for the game you want to mod...",
+            //        new[] { FilterStrings.GameExecutableFilter },
+            //        out var path))
+            //{
+            //    newProject.Config.GameRoot = Path.GetDirectoryName(path);
+            //    newProject.Config.GameType = Smithbox.ProjectHandler.GetProjectTypeFromExecutable(path);
 
-                if (newProject.Config.GameType == ProjectType.BB)
-                {
-                    newProject.Config.GameRoot += @"\dvdroot_ps4";
-                }
-            }
+            //    if (newProject.Config.GameType == ProjectType.BB)
+            //    {
+            //        newProject.Config.GameRoot += @"\dvdroot_ps4";
+            //    }
+            //}
         }
 
         // Project Gametype
@@ -286,7 +287,7 @@ public class ProjectModal
             if (newProject.Config.GameRoot == null ||
                 !Directory.Exists(newProject.Config.GameRoot))
             {
-                PlatformUtils.Instance.MessageBox(
+                MessageBox.Show(
                     "Your game executable path does not exist. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
@@ -294,7 +295,7 @@ public class ProjectModal
 
             if (validated && newProject.Config.GameType == ProjectType.Undefined)
             {
-                PlatformUtils.Instance.MessageBox("Your game executable is not a valid supported game.",
+                MessageBox.Show("Your game executable is not a valid supported game.",
                     "Error",
                     MessageBoxButtons.OK);
                 validated = false;
@@ -302,14 +303,14 @@ public class ProjectModal
 
             if (validated && (newProjectDirectory == null || !Directory.Exists(newProjectDirectory)))
             {
-                PlatformUtils.Instance.MessageBox("Your selected project directory is not valid.", "Error",
+                MessageBox.Show("Your selected project directory is not valid.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
 
             if (validated && File.Exists($@"{newProjectDirectory}\project.json"))
             {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
+                DialogResult message = MessageBox.Show(
                     "Your selected project directory already contains a project.json. Would you like to replace it?",
                     "Error",
                     MessageBoxButtons.YesNo);
@@ -321,7 +322,7 @@ public class ProjectModal
 
             if (validated && newProject.Config.GameRoot == newProjectDirectory)
             {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
+                DialogResult message = MessageBox.Show(
                     "Project Directory is the same as Game Directory, which allows game files to be overwritten directly.\n\n" +
                     "It's highly recommended you use the Mod Engine mod folder as your project folder instead (if possible).\n\n" +
                     "Continue and create project anyway?", "Caution",
@@ -334,7 +335,7 @@ public class ProjectModal
 
             if (validated && IsLogicalDrive(newProjectDirectory))
             {
-                DialogResult message = PlatformUtils.Instance.MessageBox(
+                DialogResult message = MessageBox.Show(
                     "Project Directory has been placed in a drive root. This is not allowed. Please select a different location.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
@@ -342,14 +343,14 @@ public class ProjectModal
 
             if (validated && (newProject.Config.ProjectName == null || newProject.Config.ProjectName == ""))
             {
-                PlatformUtils.Instance.MessageBox("You must specify a project name.", "Error",
+                MessageBox.Show("You must specify a project name.", "Error",
                     MessageBoxButtons.OK);
                 validated = false;
             }
         }
         else
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                     "No valid game has been detected. Please select a valid executable.", "Error",
                     MessageBoxButtons.OK);
             validated = false;

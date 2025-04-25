@@ -5,7 +5,7 @@ using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -362,7 +363,7 @@ public class TextNewEntryCreationModal
         // Display error message if ID is already in use by parent FMG
         if (HasIdCollision)
         {
-            PlatformUtils.Instance.MessageBox(
+            MessageBox.Show(
                 "ID is already in use or is invalid.",
                 "Error",
                 MessageBoxButtons.OK,

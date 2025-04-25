@@ -1,7 +1,7 @@
 ﻿using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
-using StudioCore.Platform;
+
 using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -82,7 +83,7 @@ public class MassEditHandler
     {
         if (_newScriptName == "")
         {
-            PlatformUtils.Instance.MessageBox($"Name must not be empty.", "Smithbox", MessageBoxButtons.OK);
+            MessageBox.Show($"Name must not be empty.", "Smithbox", MessageBoxButtons.OK);
             return;
         }
 
@@ -111,7 +112,7 @@ public class MassEditHandler
         }
         else
         {
-            PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
+            MessageBox.Show($"{_newScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
         }
 
         MassEditScript.ReloadScripts();

@@ -8,7 +8,7 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.MsbEditor;
-using StudioCore.Platform;
+
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
@@ -18,6 +18,7 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Actions.Viewport;
 
@@ -2066,7 +2067,7 @@ public class OrderMapObjectsAction : ViewportAction
         // Will require more rigorous validation of the indices
         if (selection.Count > 1)
         {
-            PlatformUtils.Instance.MessageBox("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
+            MessageBox.Show("You can only order one map object at a time.", "Smithbox", MessageBoxButtons.OK);
         }
         else
         {

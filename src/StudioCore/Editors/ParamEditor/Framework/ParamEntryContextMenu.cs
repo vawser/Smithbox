@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Tools.Generation;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor.Framework;
 
@@ -25,7 +26,7 @@ public static class ParamEntryContextMenu
 
             if (ImGui.Selectable("Copy Name"))
             {
-                PlatformUtils.Instance.SetClipboardText(paramKey);
+                Clipboard.SetText(paramKey);
             }
             UIHelper.ShowHoverTooltip($"Copy the name of the current param selection to the clipboard.");
 

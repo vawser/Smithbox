@@ -3,12 +3,13 @@ using Hexa.NET.ImGui;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
-using StudioCore.Platform;
+
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace StudioCore.Configuration.Settings;
 
@@ -182,13 +183,13 @@ public class AliasTab
 
         if (ImGui.Button("Copy Selected Alias Name", buttonSize))
         {
-            PlatformUtils.Instance.SetClipboardText(_selectedEntry.name);
+            Clipboard.SetText(_selectedEntry.name);
         }
         UIHelper.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
 
         if (ImGui.Button("Copy Selected Alias ID", buttonSize))
         {
-            PlatformUtils.Instance.SetClipboardText(_selectedEntry.id);
+            Clipboard.SetText(_selectedEntry.id);
         }
         UIHelper.ShowHoverTooltip("Copy the currently selected alias id directly to your clipboard.");
 
@@ -219,7 +220,7 @@ public class AliasTab
                 aliasList = $"^ ID ^ Description ^\n{aliasList}";
             }
 
-            PlatformUtils.Instance.SetClipboardText(aliasList);
+            Clipboard.SetText(aliasList);
         }
         UIHelper.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
     }
@@ -265,7 +266,7 @@ public class AliasTab
 
             if (ImGui.Button("Copy ID to Clipboard", buttonSize))
             {
-                PlatformUtils.Instance.SetClipboardText($"{refID}");
+                Clipboard.SetText($"{refID}");
             }
         }
         else
@@ -333,7 +334,7 @@ public class AliasTab
             }
             else
             {
-                PlatformUtils.Instance.MessageBox($"{_newRefId} ID already exists.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{_newRefId} ID already exists.", $"Warning");
             }
         }
     }
