@@ -186,15 +186,17 @@ public class Smithbox
         var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
         var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
 
+        fonts.AddFontDefault();
+
         // English fonts
-        {
-            ImFontConfigPtr cfg = ImGui.ImFontConfig();
-            cfg.GlyphMinAdvanceX = 5.0f;
-            cfg.OversampleH = 3;
-            cfg.OversampleV = 2;
-            fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, scaleFine, cfg,
-                fonts.GetGlyphRangesDefault());
-        }
+        //{
+        //    ImFontConfigPtr cfg = ImGui.ImFontConfig();
+        //    cfg.GlyphMinAdvanceX = 5.0f;
+        //    cfg.OversampleH = 3;
+        //    cfg.OversampleV = 2;
+        //    fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, scaleFine, cfg,
+        //        fonts.GetGlyphRangesDefault());
+        //}
 
         // Other language fonts
         {
