@@ -418,24 +418,21 @@ public class EditorDecorations
 
         foreach (ParamRef rf in paramRefs)
         {
-            if (context == null)
-                continue;
-
             Param.Cell? c = context?[rf.ConditionField];
-
-            if (c == null)
-                continue;
 
             var inactiveRef = false;
 
-            var fieldValue = c.Value.Value;
-            int intValue = 0;
-            var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
-
-            // Only check if field value is valid uint
-            if (valueConvertSuccess)
+            if (c != null && context != null)
             {
-                inactiveRef = intValue != rf.ConditionValue;
+                var fieldValue = c.Value.Value;
+                int intValue = 0;
+                var valueConvertSuccess = int.TryParse($"{fieldValue}", out intValue);
+
+                // Only check if field value is valid uint
+                if (valueConvertSuccess)
+                {
+                    inactiveRef = intValue != rf.ConditionValue;
+                }
             }
 
             if (inactiveRef)
