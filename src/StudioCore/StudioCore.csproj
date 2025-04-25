@@ -2,13 +2,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -16,244 +17,29 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Fonts\forkawesome-webfont.ttf" />
-    <None Remove="Assets\Fonts\NotoSansCJKtc-Light.otf" />
-    <None Remove="Assets\Fonts\NotoSansCJKtc-Medium.otf" />
-    <None Remove="Assets\Fonts\NotoSansMonoCJKtc-Regular.otf" />
-    <None Remove="Assets\Fonts\OpenFontIcons.ttf" />
-    <None Remove="Assets\Fonts\RobotoMono-Light.ttf" />
-    <None Remove="Assets\Shaders\Collision.frag.spv" />
-    <None Remove="Assets\Shaders\Collision.vert.spv" />
-    <None Remove="Assets\Shaders\Collision_selected.frag.spv" />
-    <None Remove="Assets\Shaders\Collision_selected.vert.spv" />
-    <None Remove="Assets\Shaders\DebugWire.frag.spv" />
-    <None Remove="Assets\Shaders\DebugWire.vert.spv" />
-    <None Remove="Assets\Shaders\FlverBB.frag.spv" />
-    <None Remove="Assets\Shaders\FlverBB.vert.spv" />
-    <None Remove="Assets\Shaders\FlverDS3.frag.spv" />
-    <None Remove="Assets\Shaders\FlverDS3.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend_selected.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_blend_selected.vert.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_selected.frag.spv" />
-    <None Remove="Assets\Shaders\FlverShader\FlverShader_selected.vert.spv" />
-    <None Remove="Assets\Shaders\FullScreenQuad.frag.spv" />
-    <None Remove="Assets\Shaders\FullScreenQuad.vert.spv" />
-    <None Remove="Assets\Shaders\imgui-frag.frag.spv" />
-    <None Remove="Assets\Shaders\imgui-vertex.vert.spv" />
-    <None Remove="Assets\Shaders\imgui.frag.spv" />
-    <None Remove="Assets\Shaders\imgui.vert.spv" />
-    <None Remove="Assets\Shaders\NavSolid.frag.spv" />
-    <None Remove="Assets\Shaders\NavSolid.vert.spv" />
-    <None Remove="Assets\Shaders\NavSolid_selected.frag.spv" />
-    <None Remove="Assets\Shaders\NavSolid_selected.vert.spv" />
-    <None Remove="Assets\Shaders\NavWire.frag.spv" />
-    <None Remove="Assets\Shaders\NavWire.vert.spv" />
-    <None Remove="Assets\Shaders\SimpleFlver.frag.spv" />
-    <None Remove="Assets\Shaders\SimpleFlver.vert.spv" />
-    <None Remove="Assets\Shaders\SimpleFlver_selected.frag.spv" />
-    <None Remove="Assets\Shaders\SimpleFlver_selected.vert.spv" />
-    <None Remove="tracy.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Assets\Fonts\forkawesome-webfont.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Fonts\NotoSansCJKtc-Light.otf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Fonts\NotoSansCJKtc-Medium.otf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Fonts\NotoSansMonoCJKtc-Regular.otf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Fonts\OpenFontIcons.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Fonts\RobotoMono-Light.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="..\..\lib\SDL2.dll" Link="SDL2.dll">
+    <Content Include="SDL2.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Shaders\Collision.frag.spv">
+    <Content Include="Veldrid.ImGui.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Shaders\Collision.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\Collision_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\Collision_selected.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\DebugWire.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\DebugWire.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverBB.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverBB.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverDS3.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverDS3.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blendmask_selected.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_blend_selected.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FlverShader\FlverShader_selected.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FullScreenQuad.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\FullScreenQuad.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\imgui.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\imgui.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavSolid.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavSolid.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavSolid_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavSolid_selected.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavWire.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\NavWire.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\SimpleFlver.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\SimpleFlver.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\lib\libveldrid-spirv.dll" Link="libveldrid-spirv.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\SimpleFlver_selected.frag.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Shaders\SimpleFlver_selected.vert.spv">
+    <Content Include="libveldrid-spirv.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="tracy.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-    <Content Include="..\..\lib\cimgui.dll" Link="cimgui.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Release'">
-    <Content Include="..\..\lib\rel\cimgui.dll" Link="cimgui.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="NavGen.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Assets\**" CopyToOutputDirectory="Always" />
-    
-    <None Update="Assets\Regulations\**" CopyToOutputDirectory="Always" />
-    
-    <None Update="Assets\Aliases\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Assets\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Characters\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Parts\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\MapPieces\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Cutscenes\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Flags\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Gparams\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Maps\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Movies\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Particles\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\Sounds\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Aliases\TimeActs\**" CopyToOutputDirectory="Always" />
-    
-    <None Update="Assets\Help\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Textures\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Scripts\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Themes\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Shoebox\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\Workflow\**" CopyToOutputDirectory="Always" />
-    
-    <None Update="Assets\FLVER\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\EMEVD\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\ESD\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\GPARAM\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\MSB\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\TAE\**" CopyToOutputDirectory="Always" />
-    <None Update="Assets\PARAM" CopyToOutputDirectory="Always" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Licenses\**" CopyToOutputDirectory="Always" />
   </ItemGroup>
   
@@ -281,6 +67,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj" />
     <ProjectReference Include="..\HKLib.Reflection\HKLib.Reflection.csproj" />
     <ProjectReference Include="..\HKLib.Serialization\HKLib.Serialization.csproj" />
     <ProjectReference Include="..\HKLib\HKLib.csproj" />
@@ -294,36 +85,6 @@
     <ProjectReference Include="..\Veldrid\Veldrid.StartupUtilities\Veldrid.StartupUtilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ImGui.NET">
-      <HintPath>..\..\lib\ImGui.NET.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Assets\Shaders\NavSolid.vert.spv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="..\..\lib\NavGen.dll" Link="NavGen.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Utilities\DDSDeswizzler.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Smithbox.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
-    <Compile Update="Havok\NewAnimSkeleton.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
   </ItemGroup>
 
 </Project>

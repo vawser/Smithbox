@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Scene;

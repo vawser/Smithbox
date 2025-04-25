@@ -1,4 +1,5 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImNodes;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editor;

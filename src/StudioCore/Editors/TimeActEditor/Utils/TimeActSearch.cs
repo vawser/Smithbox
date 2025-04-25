@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StudioCore.Editors.TimeActEditor.Actions;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System.Numerics;
 using StudioCore.Editor;

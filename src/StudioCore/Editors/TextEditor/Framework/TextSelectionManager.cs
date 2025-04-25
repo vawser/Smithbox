@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SoulsFormats;
 using HKLib.hk2018.hkaiCollisionAvoidance;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using StudioCore.Editors.TimeActEditor.Enums;
 

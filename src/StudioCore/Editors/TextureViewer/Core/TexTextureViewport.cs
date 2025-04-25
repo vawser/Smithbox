@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Resource.Types;
 using StudioCore.Resource;
 using StudioCore.TextureViewer;
@@ -57,10 +57,10 @@ public class TexTextureViewport
 
             if (texRes != null)
             {
-                IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
                 Vector2 size = GetImageSize(texRes, true);
 
-                ImGui.Image(handle, size);
+                var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
+                ImGui.Image(textureId, size);
             }
         }
 

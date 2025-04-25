@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using Assimp;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
@@ -84,8 +84,6 @@ public class TexImagePreview : IResourceEventListener
         if (Selection.CurrentPreviewSubTexture == null)
             return false;
 
-        IntPtr handle = (nint)texRes.GPUTexture.TexHandle;
-
         // Get scaled image size vector
         var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
 
@@ -116,7 +114,8 @@ public class TexImagePreview : IResourceEventListener
         // Display image
         if (displayImage)
         {
-            ImGui.Image(handle, size, UV0, UV1);
+            var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
+            ImGui.Image(textureId, size, UV0, UV1);
         }
 
         return true;

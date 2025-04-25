@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
@@ -249,9 +249,8 @@ public class WorldMapView : IResourceEventListener
                 MapCurseRelativePosition = GetRelativePosition(TextureViewWindowPosition, TextureViewScrollPosition);
                 MapCurseRelativePositionInWindow = GetRelativePositionWindowOnly(TextureViewWindowPosition);
 
-                nint handle = (nint)texRes.GPUTexture.TexHandle;
-
-                ImGui.Image(handle, MapTextureSize);
+                var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
+                ImGui.Image(textureId, MapTextureSize);
             }
         }
 

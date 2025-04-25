@@ -91,7 +91,7 @@ public class Renderer
 
         GeometryBufferAllocator = new VertexIndexBufferAllocator(Device, 256 * 1024 * 1024, 128 * 1024 * 1024);
         UniformBufferAllocator = new GPUBufferAllocator(5 * 1024 * 1024, VkBufferUsageFlags.StorageBuffer,
-            (uint)sizeof(InstanceData));
+            (uint)sizeof(Structs.InstanceData));
 
         MaterialBufferAllocator = new GPUBufferAllocator("materials", 5 * 1024 * 1024,
             VkBufferUsageFlags.StorageBuffer, (uint)sizeof(Material), VkShaderStageFlags.Fragment);

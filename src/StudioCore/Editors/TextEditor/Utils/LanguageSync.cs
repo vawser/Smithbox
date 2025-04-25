@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HKLib.hk2018.hkAsyncThreadPool;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.DependencyModel;
 using Octokit;
 using SoulsFormats;

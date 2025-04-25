@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -253,7 +253,7 @@ public class DisplayGroupView
             }
 
             ImGui.Separator();
-            ImGui.BeginChild("##DispTicks", new Vector2(), false);
+            ImGui.BeginChild("##DispTicks", new Vector2());
             for (var g = 0; g < dg.RenderGroups.Length; g++)
             {
                 // Row (groups)

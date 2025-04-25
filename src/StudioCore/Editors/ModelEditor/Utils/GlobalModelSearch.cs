@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using System.Text.RegularExpressions;
 using StudioCore.Editor;
 using StudioCore.Core.Project;

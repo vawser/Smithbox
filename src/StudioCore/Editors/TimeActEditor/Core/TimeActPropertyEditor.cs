@@ -1,6 +1,6 @@
 ﻿using Assimp;
 using Google.Protobuf.WellKnownTypes;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Newtonsoft.Json.Linq;
 using SoapstoneLib.Proto.Internal;
 using SoulsFormats;

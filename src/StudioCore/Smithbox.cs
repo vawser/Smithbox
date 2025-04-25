@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
@@ -169,17 +169,17 @@ public class Smithbox
         var fileEn = Path.Combine(AppContext.BaseDirectory, engFont);
         var fontEn = File.ReadAllBytes(fileEn);
         var fontEnNative = ImGui.MemAlloc((uint)fontEn.Length);
-        Marshal.Copy(fontEn, 0, fontEnNative, fontEn.Length);
+        Marshal.Copy(fontEn, 0, (nint)fontEnNative, fontEn.Length);
 
         var fileOther = Path.Combine(AppContext.BaseDirectory, otherFont);
         var fontOther = File.ReadAllBytes(fileOther);
         var fontOtherNative = ImGui.MemAlloc((uint)fontOther.Length);
-        Marshal.Copy(fontOther, 0, fontOtherNative, fontOther.Length);
+        Marshal.Copy(fontOther, 0, (nint)fontOtherNative, fontOther.Length);
 
         var fileIcon = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\forkawesome-webfont.ttf");
         var fontIcon = File.ReadAllBytes(fileIcon);
         var fontIconNative = ImGui.MemAlloc((uint)fontIcon.Length);
-        Marshal.Copy(fontIcon, 0, fontIconNative, fontIcon.Length);
+        Marshal.Copy(fontIcon, 0, (nint)fontIconNative, fontIcon.Length);
 
         fonts.Clear();
 
@@ -188,8 +188,7 @@ public class Smithbox
 
         // English fonts
         {
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
-            ImFontConfigPtr cfg = new(ptr);
+            ImFontConfigPtr cfg = ImGui.ImFontConfig();
             cfg.GlyphMinAdvanceX = 5.0f;
             cfg.OversampleH = 3;
             cfg.OversampleV = 2;
@@ -199,15 +198,13 @@ public class Smithbox
 
         // Other language fonts
         {
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
-            ImFontConfigPtr cfg = new(ptr);
+            ImFontConfigPtr cfg = ImGui.ImFontConfig();
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 7.0f;
             cfg.OversampleH = 2;
             cfg.OversampleV = 2;
 
-            ImFontGlyphRangesBuilderPtr glyphRanges =
-                new(ImGuiNative.ImFontGlyphRangesBuilder_ImFontGlyphRangesBuilder());
+            ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
             glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
             Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
@@ -236,16 +233,17 @@ public class Smithbox
                 glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
             }
 
-            glyphRanges.BuildRanges(out ImVector glyphRange);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, glyphRange.Data);
+            ImVector<uint> outGlyphRanges;
+
+            glyphRanges.BuildRanges(&outGlyphRanges);
+            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, outGlyphRanges.Data);
             glyphRanges.Destroy();
         }
 
         // Icon fonts
         {
             ushort[] ranges = { ForkAwesome.IconMin, ForkAwesome.IconMax, 0 };
-            ImFontConfig* ptr = ImGuiNative.ImFontConfig_ImFontConfig();
-            ImFontConfigPtr cfg = new(ptr);
+            ImFontConfigPtr cfg = ImGui.ImFontConfig();
             cfg.MergeMode = true;
             cfg.GlyphMinAdvanceX = 12.0f;
             cfg.OversampleH = 3;
@@ -255,7 +253,7 @@ public class Smithbox
             fixed (ushort* r = ranges)
             {
                 ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, scaleLarge, cfg,
-                    (IntPtr)r);
+                    (uint*)r);
             }
         }
 
@@ -511,7 +509,7 @@ public class Smithbox
         }
 
         var dsid = ImGui.GetID("DockSpace");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.NoSplit);
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.NoDockingSplit);
         ImGui.PopStyleVar(1);
         ImGui.End();
         ImGui.PopStyleColor(1);
@@ -584,7 +582,7 @@ public class Smithbox
 
         if (WindowHandler.DebugWindow._showImGuiStackToolWindow)
         {
-            ImGui.ShowStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
+            ImGui.ShowIDStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
         }
 
         ImGui.PopStyleVar(3);

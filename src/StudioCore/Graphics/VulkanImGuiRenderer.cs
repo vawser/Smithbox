@@ -1,4 +1,6 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImNodes;
+using Hexa.NET.ImPlot;
 using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.Framework;
@@ -95,13 +97,18 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         var context = ImGui.CreateContext();
         ImGui.SetCurrentContext(context);
 
+        var imPlotContext = ImPlot.CreateContext();
+        ImPlot.SetCurrentContext(imPlotContext);
+
+        var imNodesContext = ImNodes.CreateContext();
+        ImNodes.SetCurrentContext(imNodesContext);
+
         ImGuiIOPtr io = ImGui.GetIO();
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;
 
         ImGui.GetIO().Fonts.AddFontDefault();
 
         CreateDeviceResources(gd, outputDescription);
-        SetOpenTKKeyMappings();
 
         SetPerFrameImGuiData(1f / 60f);
     }
@@ -364,11 +371,17 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
     public unsafe void RecreateFontDeviceTexture(GraphicsDevice gd)
     {
         ImGuiIOPtr io = ImGui.GetIO();
+
+        byte* pixels;
+        int width;
+        int height;
+        int bytesPerPixel;
+
         // Build
-        io.Fonts.GetTexDataAsRGBA32(out byte* pixels, out var width, out var height, out var bytesPerPixel);
+        io.Fonts.GetTexDataAsRGBA32(&pixels, &width, &height, &bytesPerPixel);
 
         // Store our identifier
-        io.Fonts.SetTexID((IntPtr)_fontTexture.TexHandle);
+        io.Fonts.SetTexID(_fontTexture.TexHandle);
 
         //_fontTexture?.Dispose();
         Texture tex = gd.ResourceFactory.CreateTexture(TextureDescription.Texture2D(
@@ -497,7 +510,6 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         for (var i = 0; i < keyEvents.Count; i++)
         {
             KeyEvent keyEvent = keyEvents[i];
-            io.KeysDown[(int)keyEvent.Key] = keyEvent.Down;
             if (keyEvent.Key == Key.ControlLeft || keyEvent.Key == Key.ControlRight)
             {
                 _controlDown = keyEvent.Down;
@@ -517,32 +529,6 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         io.KeyCtrl = _controlDown;
         io.KeyAlt = _altDown;
         io.KeyShift = _shiftDown;
-    }
-
-    private static void SetOpenTKKeyMappings()
-    {
-        ImGuiIOPtr io = ImGui.GetIO();
-        io.KeyMap[(int)ImGuiKey.Tab] = (int)Key.Tab;
-        io.KeyMap[(int)ImGuiKey.LeftArrow] = (int)Key.Left;
-        io.KeyMap[(int)ImGuiKey.RightArrow] = (int)Key.Right;
-        io.KeyMap[(int)ImGuiKey.UpArrow] = (int)Key.Up;
-        io.KeyMap[(int)ImGuiKey.DownArrow] = (int)Key.Down;
-        io.KeyMap[(int)ImGuiKey.PageUp] = (int)Key.PageUp;
-        io.KeyMap[(int)ImGuiKey.PageDown] = (int)Key.PageDown;
-        io.KeyMap[(int)ImGuiKey.Home] = (int)Key.Home;
-        io.KeyMap[(int)ImGuiKey.End] = (int)Key.End;
-        io.KeyMap[(int)ImGuiKey.Delete] = (int)Key.Delete;
-        io.KeyMap[(int)ImGuiKey.Backspace] = (int)Key.BackSpace;
-        io.KeyMap[(int)ImGuiKey.Enter] = (int)Key.Enter;
-        io.KeyMap[(int)ImGuiKey.KeypadEnter] = (int)Key.KeypadEnter;
-        io.KeyMap[(int)ImGuiKey.Escape] = (int)Key.Escape;
-        io.KeyMap[(int)ImGuiKey.A] = (int)Key.A;
-        io.KeyMap[(int)ImGuiKey.C] = (int)Key.C;
-        io.KeyMap[(int)ImGuiKey.V] = (int)Key.V;
-        io.KeyMap[(int)ImGuiKey.X] = (int)Key.X;
-        io.KeyMap[(int)ImGuiKey.Y] = (int)Key.Y;
-        io.KeyMap[(int)ImGuiKey.Z] = (int)Key.Z;
-        io.KeyMap[(int)ImGuiKey.Space] = (int)Key.Space;
     }
 
     private unsafe void RenderImDrawData(ImDrawDataPtr draw_data, GraphicsDevice gd, CommandList cl)
@@ -585,19 +571,25 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
 
         for (var i = 0; i < draw_data.CmdListsCount; i++)
         {
-            ImDrawListPtr cmd_list = draw_data.CmdListsRange[i];
+            ImDrawListPtr cmd_list = draw_data.CmdLists[i];
+
+            void* vtxPtr = (void*)cmd_list.VtxBuffer.Data;
+            void* idxPtr = (void*)cmd_list.IdxBuffer.Data;
+
+            uint vtxSize = (uint)(cmd_list.VtxBuffer.Size * sizeof(ImDrawVert));
+            uint idxSize = (uint)(cmd_list.IdxBuffer.Size * sizeof(ushort));
 
             cl.UpdateBuffer(
                 _vertexBuffer,
                 vertexOffsetInVertices * (uint)sizeof(ImDrawVert),
-                cmd_list.VtxBuffer.Data,
-                (uint)(cmd_list.VtxBuffer.Size * sizeof(ImDrawVert)));
+                (IntPtr)vtxPtr,
+                vtxSize);
 
             cl.UpdateBuffer(
                 _indexBuffer,
                 indexOffsetInElements * sizeof(ushort),
-                cmd_list.IdxBuffer.Data,
-                (uint)(cmd_list.IdxBuffer.Size * sizeof(ushort)));
+                (IntPtr)idxPtr,
+                idxSize);
 
             vertexOffsetInVertices += (uint)cmd_list.VtxBuffer.Size;
             indexOffsetInElements += (uint)cmd_list.IdxBuffer.Size;
@@ -638,11 +630,13 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         var idx_offset = 0;
         for (var n = 0; n < draw_data.CmdListsCount; n++)
         {
-            ImDrawListPtr cmd_list = draw_data.CmdListsRange[n];
+            ImDrawListPtr cmd_list = draw_data.CmdLists[n];
+
             for (var cmd_i = 0; cmd_i < cmd_list.CmdBuffer.Size; cmd_i++)
             {
-                ImDrawCmdPtr pcmd = cmd_list.CmdBuffer[cmd_i];
-                if (pcmd.UserCallback != IntPtr.Zero)
+                ImDrawCmd pcmd = cmd_list.CmdBuffer.Data[cmd_i];
+
+                if (pcmd.UserCallback != null)
                 {
                     throw new NotImplementedException();
                 }
@@ -669,7 +663,7 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
                     (uint)(pcmd.ClipRect.W - pcmd.ClipRect.Y));
 
                 cl.DrawIndexed(pcmd.ElemCount, 1, (uint)idx_offset + pcmd.IdxOffset, vtx_offset,
-                    (uint)pcmd.TextureId);
+                    (uint)pcmd.TextureId.Handle);
             }
 
             idx_offset += cmd_list.IdxBuffer.Size;

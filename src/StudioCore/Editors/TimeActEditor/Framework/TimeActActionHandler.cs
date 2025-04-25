@@ -1,5 +1,5 @@
 ﻿using DotNext.Collections.Generic;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;

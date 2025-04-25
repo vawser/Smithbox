@@ -1,6 +1,6 @@
 ﻿using HKX2;
 using HKX2.Builders;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Havok;
 using StudioCore.Resource;

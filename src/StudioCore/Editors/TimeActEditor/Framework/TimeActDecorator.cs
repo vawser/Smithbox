@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;

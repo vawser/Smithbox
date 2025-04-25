@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>1.0.27</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -53,6 +53,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
+    <ProjectReference Include="..\..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
+    <ProjectReference Include="..\..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />
+    <ProjectReference Include="..\..\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj" />
+    <ProjectReference Include="..\..\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj" />
     <ProjectReference Include="..\..\StudioCore\StudioCore.csproj" />
     <ProjectReference Include="..\..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>

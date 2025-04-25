@@ -1,6 +1,6 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using HKLib.hk2018.hkHashMapDetail;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;

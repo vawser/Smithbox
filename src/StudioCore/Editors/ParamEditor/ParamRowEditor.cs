@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -497,7 +497,7 @@ public class ParamRowEditor
             }
 
             // Field selection
-            ImGui.Selectable("", false, ImGuiSelectableFlags.AllowItemOverlap);
+            ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
 
             // Help hover text
             if (CFG.Current.Param_ShowFieldDescription_onName || CFG.Current.Param_ShowFieldLimits_onName)

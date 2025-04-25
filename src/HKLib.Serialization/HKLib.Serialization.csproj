@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <Platforms>AnyCPU;x64</Platforms>
         <LangVersion>11</LangVersion>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net9.0-windows</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>

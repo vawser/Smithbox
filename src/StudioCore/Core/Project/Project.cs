@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using StudioCore.Platform;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using StudioCore.Utilities;
 using System.Numerics;
 using System.Timers;

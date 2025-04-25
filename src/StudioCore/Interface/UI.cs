@@ -11,7 +11,7 @@ using static StudioCore.Configuration.Settings.TimeActEditorTab;
 using StudioCore.Core.Project;
 using Silk.NET.SDL;
 using StudioCore.Graphics;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 
 namespace StudioCore.Interface;
 

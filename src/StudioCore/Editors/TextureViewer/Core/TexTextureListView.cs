@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.TextureViewer;

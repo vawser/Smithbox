@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using ImGuiNET;
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;
@@ -249,7 +249,7 @@ public class MapPropertyView
     /// </summary>
     private static void PropContextRowOpener()
     {
-        ImGui.Selectable("", false, ImGuiSelectableFlags.AllowItemOverlap);
+        ImGui.Selectable("", false, ImGuiSelectableFlags.AllowOverlap);
         ImGui.SameLine();
         if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
         {
