@@ -17,8 +17,6 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -340,9 +338,6 @@ ASALocalRun/
 # Precompiled Headers
 *.gch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
 
 # Fortran module files
 *.mod
@@ -367,7 +362,7 @@ CMakeSettings.json
 .vs
 .vscode
 
+# Project
 Dump
 Media
-
 Documentation/BB

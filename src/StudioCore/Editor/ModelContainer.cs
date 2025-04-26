@@ -1,20 +1,8 @@
-﻿using HKLib.hk2018;
-using HKLib.hk2018.hkaiCollisionAvoidance;
-using HKLib.hk2018.TypeRegistryTest;
-using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Editors.MapEditor.Framework;
+﻿using SoulsFormats;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.TextureViewer;
-using StudioCore.MsbEditor;
-using StudioCore.Resource;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Numerics;
-using static SoulsFormats.BTPB;
 
 namespace StudioCore.Editor;
 
