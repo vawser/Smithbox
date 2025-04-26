@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Hexa.NET.ImNodes;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
@@ -85,34 +85,34 @@ public class ToolWindow
 
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Amount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
-                    UIHelper.ShowHoverTooltip("The number of times the current selection will be duplicated.");
+                    UIHelper.Tooltip("The number of times the current selection will be duplicated.");
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Duplicate Offset:");
 
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
-                    UIHelper.ShowHoverTooltip("The ID offset to apply when duplicating.");
+                    UIHelper.Tooltip("The ID offset to apply when duplicating.");
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Deep Copy:");
-                    UIHelper.ShowHoverTooltip("If any of these options are enabled, then the tagged fields within the duplicated row will be affected by the duplication offset.\n\nThis lets you easily duplicate sets of rows where the fields tend to refer to other rows (e.g. bullets).");
+                    UIHelper.Tooltip("If any of these options are enabled, then the tagged fields within the duplicated row will be affected by the duplication offset.\n\nThis lets you easily duplicate sets of rows where the fields tend to refer to other rows (e.g. bullets).");
 
                     // Specific toggles
                     ImGui.Checkbox("Affect Attack Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectAttackField);
-                    UIHelper.ShowHoverTooltip("Fields tagged as 'Attack' will have the offset applied to their value.\n\nExample: the Attack reference in a Bullet row.");
+                    UIHelper.Tooltip("Fields tagged as 'Attack' will have the offset applied to their value.\n\nExample: the Attack reference in a Bullet row.");
 
                     ImGui.Checkbox("Affect Bullet Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBulletField);
-                    UIHelper.ShowHoverTooltip("Fields tagged as 'Bullet' will have the offset applied to their value.\n\nExample: the Bullet references in a Bullet row.");
+                    UIHelper.Tooltip("Fields tagged as 'Bullet' will have the offset applied to their value.\n\nExample: the Bullet references in a Bullet row.");
 
                     ImGui.Checkbox("Affect Behavior Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectBehaviorField);
-                    UIHelper.ShowHoverTooltip("Fields tagged as 'Behavior' will have the offset applied to their value.\n\nExamples: the Reference ID field in a BehaviorParam row.");
+                    UIHelper.Tooltip("Fields tagged as 'Behavior' will have the offset applied to their value.\n\nExamples: the Reference ID field in a BehaviorParam row.");
 
                     ImGui.Checkbox("Affect SpEffect Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSpEffectField);
-                    UIHelper.ShowHoverTooltip("Fields tagged as 'SpEffect' will have the offset applied to their value.\n\nExample: the SpEffect references in a Bullet row.");
+                    UIHelper.Tooltip("Fields tagged as 'SpEffect' will have the offset applied to their value.\n\nExample: the SpEffect references in a Bullet row.");
 
                     ImGui.Checkbox("Affect Equipment Origin Field", ref CFG.Current.Param_Toolbar_Duplicate_AffectSourceField);
-                    UIHelper.ShowHoverTooltip("Fields tagged as 'Source' will have the offset applied to their value.\n\nExamples: the Source ID references in an EquipParamProtector row.");
+                    UIHelper.Tooltip("Fields tagged as 'Source' will have the offset applied to their value.\n\nExamples: the Source ID references in an EquipParamProtector row.");
 
 
                     if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
@@ -139,11 +139,11 @@ public class ToolWindow
 
                     ImGui.SetNextItemWidth(defaultButtonSize.X);
                     ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset);
-                    UIHelper.ShowHoverTooltip("The ID offset to apply when duplicating.");
+                    UIHelper.Tooltip("The ID offset to apply when duplicating.");
                     UIHelper.WrappedText("");
 
                     ImGui.Checkbox("Replace Rows in Target Param", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows);
-                    UIHelper.ShowHoverTooltip("If enabled, rows in the target will be overwritten when duplicating into a commutative param.");
+                    UIHelper.Tooltip("If enabled, rows in the target will be overwritten when duplicating into a commutative param.");
 
                     Handler.DisplayCommutativeDuplicateToolMenu();
 
@@ -171,10 +171,10 @@ public class ToolWindow
                     Handler.ParamSourceElement(ref Handler.CurrentSourceCategory, "The source of the names used in by the Row Name import.", defaultButtonSize);
 
                     ImGui.Checkbox("Only replace unmodified row names", ref Handler._rowNameImporter_VanillaOnly);
-                    UIHelper.ShowHoverTooltip("Row name import will only replace the name of unmodified rows.");
+                    UIHelper.Tooltip("Row name import will only replace the name of unmodified rows.");
 
                     ImGui.Checkbox("Only replace empty row names", ref Handler._rowNameImporter_EmptyOnly);
-                    UIHelper.ShowHoverTooltip("Row name import will only replace the name of un-named rows.");
+                    UIHelper.Tooltip("Row name import will only replace the name of un-named rows.");
                     UIHelper.WrappedText("");
 
                     if (ImGui.Button("Import##action_ImportRowNames", halfButtonSize))
@@ -190,7 +190,7 @@ public class ToolWindow
                             Process.Start("explorer.exe", dir);
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Opens the project-specific Names folder that contains the Names to be imported.");
+                    UIHelper.Tooltip("Opens the project-specific Names folder that contains the Names to be imported.");
                 }
             }
 
@@ -223,7 +223,7 @@ public class ToolWindow
                             Process.Start("explorer.exe", dir);
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Opens the project-specific Names folder that contains the exported Names.");
+                    UIHelper.Tooltip("Opens the project-specific Names folder that contains the exported Names.");
                 }
             }
 
@@ -295,7 +295,7 @@ public class ToolWindow
                 {
                     MassEditHandler.ExecuteMassEdit();
                 }
-                UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
+                UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
 
 
                 ImGui.SameLine();
@@ -370,7 +370,7 @@ public class ToolWindow
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
                 UIHelper.WrappedText("New Script:");
                 ImGui.InputText("##scriptName", ref MassEditHandler._newScriptName, 255);
-                UIHelper.ShowHoverTooltip("The file name used for this script.");
+                UIHelper.Tooltip("The file name used for this script.");
                 UIHelper.WrappedText("");
 
                 var Size = ImGui.GetWindowSize();
@@ -378,7 +378,7 @@ public class ToolWindow
                 float EditY = (Size.Y / 100) * 10;
 
                 UIHelper.WrappedText("Script:");
-                UIHelper.ShowHoverTooltip("The mass edit script.");
+                UIHelper.Tooltip("The mass edit script.");
                 ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
                 UIHelper.WrappedText("");
 
@@ -408,7 +408,7 @@ public class ToolWindow
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText("Target Regulation");
-                UIHelper.ShowHoverTooltip("This is the target regulation.bin you wish to merge.");
+                UIHelper.Tooltip("This is the target regulation.bin you wish to merge.");
 
                 ImGui.SetNextItemWidth(inputBoxSize.X);
                 ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
@@ -419,13 +419,13 @@ public class ToolWindow
                 }
 
                 ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
-                UIHelper.ShowHoverTooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
+                UIHelper.Tooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
                 UIHelper.WrappedText("");
 
                 if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     UIHelper.WrappedText("Target Loose Params");
-                    UIHelper.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
+                    UIHelper.Tooltip("This is the target loose param folder you wish to merge.");
 
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
@@ -437,7 +437,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Target Regulation");
-                    UIHelper.ShowHoverTooltip("This is the target enemy param you wish to merge.");
+                    UIHelper.Tooltip("This is the target enemy param you wish to merge.");
 
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
@@ -467,13 +467,13 @@ public class ToolWindow
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.Button("Reload All Params", defaultButtonSize))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
             }
 

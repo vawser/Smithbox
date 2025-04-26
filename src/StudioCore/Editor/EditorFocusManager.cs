@@ -1,10 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.MapEditor.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StudioCore.Editors.MapEditorNS;
 
 namespace StudioCore.Editor;
 
@@ -14,7 +9,7 @@ namespace StudioCore.Editor;
 /// </summary>
 public class EditorFocusManager
 {
-    public EditorScreen Screen;
+    public MapEditor Editor;
 
     public string TargetImGuiElement;
 
@@ -23,9 +18,9 @@ public class EditorFocusManager
     // Special-case for the Map Editor
     public MapEditorContext CurrentWindowContext = MapEditorContext.None;
 
-    public EditorFocusManager(EditorScreen screen)
+    public EditorFocusManager(MapEditor editor)
     {
-        Screen = screen;
+        Editor = editor;
     }
 
     /// <summary>

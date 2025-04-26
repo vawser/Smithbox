@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EmevdEditor.Framework;

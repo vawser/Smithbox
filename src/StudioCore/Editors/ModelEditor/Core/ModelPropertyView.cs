@@ -9,12 +9,12 @@ using System.Numerics;
 using static SoulsFormats.PARAM;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using System.Linq;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Silk.NET.Core;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 
 using StudioCore.Resource.Locators;

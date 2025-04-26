@@ -1,61 +1,49 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-
 using StudioCore.Tools;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
-namespace StudioCore.Editors.MapEditor.Tools;
+namespace StudioCore.Editors.MapEditorNS;
 
 public class ToolSubMenu
 {
-    private MapEditorScreen Screen;
-    private MapActionHandler Handler;
+    private MapEditor Editor;
 
     private bool PatrolsVisualised = false;
 
-    public ToolSubMenu(MapEditorScreen screen, MapActionHandler handler)
+    public ToolSubMenu(MapEditor editor)
     {
-        Screen = screen;
-        Handler = handler;
+        Editor = editor;
     }
 
     public void Shortcuts()
     {
         /// Toggle Patrol Route Visualisation
-        if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_TogglePatrolRouteRendering))
             {
                 if (!PatrolsVisualised)
                 {
                     PatrolsVisualised = true;
-                    PatrolDrawManager.Generate();
+                    Editor.PatrolDrawManager.Generate();
                 }
                 else
                 {
-                    PatrolDrawManager.Clear();
+                    Editor.PatrolDrawManager.Clear();
                     PatrolsVisualised = false;
                 }
             }
         }
 
-        RotationIncrement.Shortcuts();
-        KeyboardMovement.Shortcuts();
+        Editor.RotationIncrement.Shortcuts();
+        Editor.KeyboardMovement.Shortcuts();
 
         //Selection Groups
-        Screen.SelectionGroupView.SelectionGroupShortcuts();
+        Editor.SelectionGroupView.SelectionGroupShortcuts();
     }
 
     public void OnProjectChanged()
@@ -83,21 +71,21 @@ public class ToolSubMenu
             if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
             {
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-                UIHelper.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
+                UIHelper.Tooltip("Specific which tag the map objects will be filtered by.");
 
                 if (ImGui.MenuItem("Enable Visibility"))
                 {
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = true;
                     CFG.Current.Toolbar_Tag_Visibility_State_Disabled = false;
 
-                    Handler.ApplyEditorVisibilityChangeByTag();
+                    Editor.ActionHandler.ApplyEditorVisibilityChangeByTag();
                 }
                 if (ImGui.MenuItem("Disable Visibility"))
                 {
                     CFG.Current.Toolbar_Tag_Visibility_State_Enabled = false;
                     CFG.Current.Toolbar_Tag_Visibility_State_Disabled = true;
 
-                    Handler.ApplyEditorVisibilityChangeByTag();
+                    Editor.ActionHandler.ApplyEditorVisibilityChangeByTag();
                 }
 
                 ImGui.EndMenu();
@@ -106,17 +94,17 @@ public class ToolSubMenu
             ///--------------------
             /// Patrol Route Visualisation
             ///--------------------
-            if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+            if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.BeginMenu("Patrol Route Visualisation"))
                 {
                     if (ImGui.MenuItem("Display"))
                     {
-                        PatrolDrawManager.Generate();
+                        Editor.PatrolDrawManager.Generate();
                     }
                     if (ImGui.MenuItem("Clear"))
                     {
-                        PatrolDrawManager.Clear();
+                        Editor.PatrolDrawManager.Clear();
                     }
 
                     ImGui.EndMenu();
@@ -126,13 +114,13 @@ public class ToolSubMenu
             ///--------------------
             /// Generate Navigation Data
             ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DES || Smithbox.ProjectType is ProjectType.DS1 || Smithbox.ProjectType is ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DES || Editor.Project.ProjectType is ProjectType.DS1 || Editor.Project.ProjectType is ProjectType.DS1R)
             {
                 if (ImGui.BeginMenu("Navigation Data"))
                 {
                     if (ImGui.MenuItem("Generate"))
                     {
-                        Handler.GenerateNavigationData();
+                        Editor.ActionHandler.GenerateNavigationData();
                     }
 
                     ImGui.EndMenu();
@@ -142,21 +130,21 @@ public class ToolSubMenu
             ///--------------------
             /// Entity ID Checker
             ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
             {
                 if (ImGui.BeginMenu("Entity ID Checker"))
                 {
-                    if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
+                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
                     {
-                        if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
+                        if (ImGui.BeginCombo("##Targeted Map", Editor.ActionHandler._targetMap.Item1))
                         {
-                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
                             {
                                 if (obj.Value != null)
                                 {
                                     if (ImGui.Selectable(obj.Key))
                                     {
-                                        Handler._targetMap = (obj.Key, obj.Value);
+                                        Editor.ActionHandler._targetMap = (obj.Key, obj.Value);
                                         break;
                                     }
                                 }
@@ -166,7 +154,7 @@ public class ToolSubMenu
 
                         if (ImGui.MenuItem("Check"))
                         {
-                            Handler.ApplyEntityChecker();
+                            Editor.ActionHandler.ApplyEntityChecker();
                         }
                     }
 
@@ -178,21 +166,21 @@ public class ToolSubMenu
             /// Name Map Objects
             ///--------------------
             // Tool for AC6 since its maps come with unnamed Regions and Events
-            if (Smithbox.ProjectType is ProjectType.AC6)
+            if (Editor.Project.ProjectType is ProjectType.AC6)
             {
                 if (ImGui.BeginMenu("Rename Map Objects"))
                 {
-                    if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
+                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
                     {
-                        if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
+                        if (ImGui.BeginCombo("##Targeted Map", Editor.ActionHandler._targetMap.Item1))
                         {
-                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
                             {
                                 if (obj.Value != null)
                                 {
                                     if (ImGui.Selectable(obj.Key))
                                     {
-                                        Handler._targetMap = (obj.Key, obj.Value);
+                                        Editor.ActionHandler._targetMap = (obj.Key, obj.Value);
                                         break;
                                     }
                                 }
@@ -209,7 +197,7 @@ public class ToolSubMenu
 
                             if (result == DialogResult.Yes)
                             {
-                                Handler.ApplyMapObjectNames(true);
+                                Editor.ActionHandler.ApplyMapObjectNames(true);
                             }
                         }
 
@@ -222,14 +210,14 @@ public class ToolSubMenu
 
                             if (result == DialogResult.Yes)
                             {
-                                Handler.ApplyMapObjectNames(false);
+                                Editor.ActionHandler.ApplyMapObjectNames(false);
                             }
                         }
                     }
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip("Applies descriptive name for map objects from developer name list.");
+                UIHelper.Tooltip("Applies descriptive name for map objects from developer name list.");
             }
 
             ImGui.EndMenu();

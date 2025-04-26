@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 

@@ -2,7 +2,7 @@
 using HKLib.hk2018.hkHashMapDetail;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace StudioCore.Editors.MapEditor.Actions.Viewport;
+namespace StudioCore.Editors.MapEditorNS;
 
 /// <summary>
 ///     An action that can be performed by the user in the editor that represents
@@ -1600,7 +1600,7 @@ public class ReplicateMapObjectsAction : ViewportAction
     private readonly List<MsbEntity> Clonables = new();
     private readonly List<ObjectContainer> CloneMaps = new();
     private readonly List<MsbEntity> Clones = new();
-    private MapEditorScreen Screen;
+    private MapEditor Screen;
 
     private int idxCache;
 
@@ -1620,7 +1620,7 @@ public class ReplicateMapObjectsAction : ViewportAction
 
     private SquareSide currentSquareSide;
 
-    public ReplicateMapObjectsAction(MapEditorScreen screen, List<MsbEntity> objects)
+    public ReplicateMapObjectsAction(MapEditor screen, List<MsbEntity> objects)
     {
         Screen = screen;
         Clonables.AddRange(objects);

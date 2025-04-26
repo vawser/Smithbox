@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.EmevdEditor;

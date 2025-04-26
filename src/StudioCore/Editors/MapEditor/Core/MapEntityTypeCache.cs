@@ -1,5 +1,5 @@
 ﻿using SoulsFormats.KF4;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -10,8 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Core;
-
+namespace StudioCore.Editors.MapEditorNS;
 public class MapEntityTypeCache
 {
     public Dictionary<string, Dictionary<MsbEntityType, Dictionary<Type, List<MsbEntity>>>> _cachedTypeView;

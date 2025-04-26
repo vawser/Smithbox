@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Utilities;
@@ -15,7 +15,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Actions.Viewport;
+namespace StudioCore.Editors.MapEditorNS;
 
 /// <summary>
 /// For functions that multiple EntityActions make use of.

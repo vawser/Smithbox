@@ -1,11 +1,9 @@
 ﻿using Hexa.NET.ImGui;
+using Silk.NET.SDL;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Editors;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Tools;
+using StudioCore.Editors.MapEditorNS;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
@@ -85,52 +83,69 @@ namespace StudioCore.Interface
         public int X;
         public int Y;
 
-        public Viewport(ViewportType viewportType, string id, GraphicsDevice device, RenderScene scene, ViewportActionManager am, ViewportSelection sel, int width,
-            int height)
+        public IEditor CurrentEditor;
+
+        public Viewport(IEditor curEditor, string id, int width, int height)
         {
-            _vpid = id;
-            _viewportType = viewportType;
-            Width = width;
-            Height = height;
-            _device = device;
-            float depth = device.IsDepthRangeZeroToOne ? 1 : 0;
-            _renderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-            _renderScene = scene;
-            _selection = sel;
-            WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
-            _viewPipeline = new SceneRenderPipeline(scene, device, width, height);
-            _projectionMat = Utils.CreatePerspective(device, false,
-                CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
-            _frustum = new BoundingFrustum(_projectionMat);
-            _actionManager = am;
-            _viewPipeline.SetViewportSetupAction((d, cl) =>
+            CurrentEditor = curEditor;
+
+            if (CurrentEditor is MapEditor)
             {
-                cl.SetFramebuffer(device.SwapchainFramebuffer);
-                cl.SetViewport(0, _renderViewport);
-                if (_vpvisible)
+                var mapEditor = (MapEditor)curEditor;
+
+                _vpid = id;
+                Width = width;
+                Height = height;
+                _device = mapEditor.MapViewport.Device;
+
+                float depth = _device.IsDepthRangeZeroToOne ? 1 : 0;
+
+                _renderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
+                _renderScene = mapEditor.MapViewport.RenderScene;
+                _selection = mapEditor.Selection;
+
+                WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
+
+                _viewPipeline = new SceneRenderPipeline(_renderScene, _device, width, height);
+
+                _projectionMat = Utils.CreatePerspective(_device, false,
+                    CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
+
+                _frustum = new BoundingFrustum(_projectionMat);
+
+                _actionManager = mapEditor.EditorActionManager;
+
+                _viewPipeline.SetViewportSetupAction((d, cl) =>
                 {
-                    _clearQuad.Render(d, cl);
-                }
-                _vpvisible = false;
-            });
-            _viewPipeline.SetOverlayViewportSetupAction((d, cl) =>
-            {
-                cl.SetFramebuffer(device.SwapchainFramebuffer);
-                cl.SetViewport(0, _renderViewport);
-                cl.ClearDepthStencil(0);
-            });
+                    cl.SetFramebuffer(_device.SwapchainFramebuffer);
+                    cl.SetViewport(0, _renderViewport);
+                    if (_vpvisible)
+                    {
+                        _clearQuad.Render(d, cl);
+                    }
+                    _vpvisible = false;
+                });
 
-            // Create gizmos
-            _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
+                _viewPipeline.SetOverlayViewportSetupAction((d, cl) =>
+                {
+                    cl.SetFramebuffer(_device.SwapchainFramebuffer);
+                    cl.SetViewport(0, _renderViewport);
+                    cl.ClearDepthStencil(0);
+                });
 
-            // Create view grid
-            _mapEditor_Viewport_Grid = new MapViewportGrid(_renderScene.OpaqueRenderables);
-            _modelEditor_Viewport_Grid = new ModelViewGrid(_renderScene.OpaqueRenderables);
-            _clearQuad = new FullScreenQuad();
-            Renderer.AddBackgroundUploadTask((gd, cl) =>
-            {
-                _clearQuad.CreateDeviceObjects(gd, cl);
-            });
+                // Create gizmos
+                _gizmos = new Gizmos(_actionManager, _selection, _renderScene.OverlayRenderables);
+
+                // Create view grid
+                _mapEditor_Viewport_Grid = new MapViewportGrid(_renderScene.OpaqueRenderables);
+                _modelEditor_Viewport_Grid = new ModelViewGrid(_renderScene.OpaqueRenderables);
+                _clearQuad = new FullScreenQuad();
+
+                Scene.Renderer.AddBackgroundUploadTask((gd, cl) =>
+                {
+                    _clearQuad.CreateDeviceObjects(gd, cl);
+                });
+            }
         }
 
         public float SelectionTolerance
@@ -161,14 +176,6 @@ namespace StudioCore.Interface
             {
                 if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
                 {
-                    if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
-                    {
-                        Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
-                    }
-                    if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
-                    {
-                        Smithbox.EditorHandler.ModelEditor.Selection.SwitchWindowContext(ModelEditorContext.ModelViewport);
-                    }
                     Vector2 p = ImGui.GetWindowPos();
                     Vector2 s = ImGui.GetWindowSize();
                     Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
@@ -247,9 +254,9 @@ namespace StudioCore.Interface
                     ImGui.Text($@"Scene Render CPU time: {_viewPipeline.CPURenderTime} ms");
                     ImGui.Text($@"Visible objects: {_renderScene.RenderObjectCount}");
                     ImGui.Text(
-                        $@"Vertex Buffers Size: {Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
+                        $@"Vertex Buffers Size: {Scene.Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
                     ImGui.Text(
-                        $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
+                        $@"Index Buffers Size: {Scene.Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
                     //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
                 }
                 ImGui.End();
@@ -396,9 +403,10 @@ namespace StudioCore.Interface
 
         public void ViewportInformationPanel()
         {
-            // Only display in Map Editor
-            if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+            if (CurrentEditor is MapEditor)
             {
+                var mapEditor = (MapEditor)CurrentEditor;
+
                 if (CFG.Current.Viewport_Enable_ViewportInfoPanel)
                 {
                     if (CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement)

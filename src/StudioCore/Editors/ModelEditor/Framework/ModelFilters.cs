@@ -23,10 +23,10 @@ public class ModelFilters
     public void DisplayFlverFilter()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
         ImGui.SameLine();
         ImGui.Checkbox("##exactSearch", ref CFG.Current.ModelEditor_ExactSearch);
-        UIHelper.ShowHoverTooltip("Enable exact search.");
+        UIHelper.Tooltip("Enable exact search.");
     }
 
     /// <summary>

@@ -1,0 +1,10688 @@
+{
+  "Assets": [
+    {
+      "ID": "o0100",
+      "Name": "Cursed Body A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0101",
+      "Name": "Cursed Body B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0105",
+      "Name": "Barrel A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0106",
+      "Name": "Crate A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0110",
+      "Name": "Chest",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0150",
+      "Name": "Crow A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0200",
+      "Name": "Bonfire",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0201",
+      "Name": "Campfire A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0300",
+      "Name": "Bucket A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0500",
+      "Name": "Corpse A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0502",
+      "Name": "Corpse B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0503",
+      "Name": "Blacksmith (Stone)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o0504",
+      "Name": "Corpse C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1000",
+      "Name": "Table A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1001",
+      "Name": "Table B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1002",
+      "Name": "Table C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1010",
+      "Name": "Door AA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1011",
+      "Name": "Door AB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1020",
+      "Name": "Ladder AA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1030",
+      "Name": "Wood Planks (Large)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1031",
+      "Name": "Wood Planks (Small)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1040",
+      "Name": "Railing A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1041",
+      "Name": "Railing B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1042",
+      "Name": "Railing C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1048",
+      "Name": "Wheels",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1049",
+      "Name": "Crates",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1050",
+      "Name": "Corpse D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1051",
+      "Name": "Corpses A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1052",
+      "Name": "Corpses B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1055",
+      "Name": "Sewer Blob A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1056",
+      "Name": "Sewer Blob B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1057",
+      "Name": "Sewer Blob C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1058",
+      "Name": "Sewer Blob D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1110",
+      "Name": "Corpses C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1120",
+      "Name": "Wood Wagon A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1121",
+      "Name": "Wood Wagon B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1122",
+      "Name": "Wood Wagon C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1125",
+      "Name": "Wood Cart A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1126",
+      "Name": "Wood Cart B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1129",
+      "Name": "Wood Board",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1130",
+      "Name": "Crate B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1131",
+      "Name": "Crate C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1132",
+      "Name": "Crate D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1133",
+      "Name": "Crate E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1134",
+      "Name": "Crate F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1135",
+      "Name": "Bucket B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1136",
+      "Name": "Bucket C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1140",
+      "Name": "Basket",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1145",
+      "Name": "Sack A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1146",
+      "Name": "Sack B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1150",
+      "Name": "Barrel B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1151",
+      "Name": "Barrel C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1152",
+      "Name": "Barrel D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1153",
+      "Name": "Barrel E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1154",
+      "Name": "Barrel F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1155",
+      "Name": "Barrel G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1156",
+      "Name": "Barrel H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1160",
+      "Name": "Table D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1162",
+      "Name": "Table E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1163",
+      "Name": "Table F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1170",
+      "Name": "Bookshelf/Misc A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1172",
+      "Name": "Bookshelf/Misc B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1173",
+      "Name": "Bookshelf/Misc C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1175",
+      "Name": "Bench A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1176",
+      "Name": "Bench B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1190",
+      "Name": "Pillar A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1200",
+      "Name": "Lever A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1201",
+      "Name": "Portcullis A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1202",
+      "Name": "Lever B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1205",
+      "Name": "Ladder AB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1206",
+      "Name": "Ladder AC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1207",
+      "Name": "Ladder AD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1208",
+      "Name": "Ladder AE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1209",
+      "Name": "Ladder AF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1210",
+      "Name": "Ladder AG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1211",
+      "Name": "Ladder AH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1212",
+      "Name": "Ladder AI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1213",
+      "Name": "Ladder AJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1214",
+      "Name": "Ladder AK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1215",
+      "Name": "Ladder AL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1216",
+      "Name": "Ladder AM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1217",
+      "Name": "Ladder AN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1218",
+      "Name": "Ladder AO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1219",
+      "Name": "Ladder AP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1230",
+      "Name": "Pillar B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1231",
+      "Name": "Pillar C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1232",
+      "Name": "Pillar D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1233",
+      "Name": "Pillar E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1240",
+      "Name": "Bench C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1241",
+      "Name": "Wood Plank",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1242",
+      "Name": "Chair A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1243",
+      "Name": "Table G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1244",
+      "Name": "Table H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1250",
+      "Name": "Table I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1251",
+      "Name": "Bucket D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1252",
+      "Name": "Anvil A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1270",
+      "Name": "Table J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1271",
+      "Name": "Table K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1290",
+      "Name": "Castle Pieces",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1300",
+      "Name": "Statue A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1301",
+      "Name": "Statue B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1302",
+      "Name": "Statue C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1303",
+      "Name": "Bell A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1305",
+      "Name": "Door AC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1306",
+      "Name": "Door AD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1308",
+      "Name": "Door AE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1309",
+      "Name": "Door AF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1310",
+      "Name": "Door AG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1311",
+      "Name": "Door AH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1312",
+      "Name": "Door AI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1313",
+      "Name": "Door AJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1314",
+      "Name": "Door AK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1315",
+      "Name": "Door AL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1316",
+      "Name": "Door AM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1317",
+      "Name": "Door AN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1318",
+      "Name": "Door AO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1319",
+      "Name": "Door AP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1320",
+      "Name": "Table L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1321",
+      "Name": "Barricade",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1322",
+      "Name": "Crate G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1323",
+      "Name": "Door AQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1330",
+      "Name": "Rubble",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1340",
+      "Name": "Rat A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1350",
+      "Name": "Statue D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1351",
+      "Name": "Statue E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1450",
+      "Name": "Leaves",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1460",
+      "Name": "Elevator A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1465",
+      "Name": "Door AR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1470",
+      "Name": "Statue F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1480",
+      "Name": "Stone Platform A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1481",
+      "Name": "Stone Platform B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1490",
+      "Name": "Ladder AQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1495",
+      "Name": "Urn AA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1496",
+      "Name": "Urn AB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1497",
+      "Name": "Urn AC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1500",
+      "Name": "Door AS",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1510",
+      "Name": "Ladder AR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1511",
+      "Name": "Ladder AS",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1512",
+      "Name": "Ladder AT",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1513",
+      "Name": "Ladder AU",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1520",
+      "Name": "Door AT",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1521",
+      "Name": "Door AU",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1530",
+      "Name": "Door AV",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1540",
+      "Name": "Statue G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1550",
+      "Name": "Winch",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1560",
+      "Name": "Sconce A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1570",
+      "Name": "Rope A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1571",
+      "Name": "Rope B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1580",
+      "Name": "Door AW",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1610",
+      "Name": "Stone Wall A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1700",
+      "Name": "Stone Platform C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1701",
+      "Name": "Stone Platform D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1703",
+      "Name": "Stone Platform E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1710",
+      "Name": "Stone Platform F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1711",
+      "Name": "Stone Platform G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1713",
+      "Name": "Stone Platform H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1900",
+      "Name": "Crate H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1910",
+      "Name": "Bench D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1915",
+      "Name": "Bench E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1916",
+      "Name": "Bench F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1920",
+      "Name": "Table M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1930",
+      "Name": "Chair B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1940",
+      "Name": "Barrel I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1945",
+      "Name": "Barrel J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1946",
+      "Name": "Barrel K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1950",
+      "Name": "Chain A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1960",
+      "Name": "Corpses D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1965",
+      "Name": "Corpses E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1966",
+      "Name": "Corpses F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o1967",
+      "Name": "Corpse E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2100",
+      "Name": "Tree A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2110",
+      "Name": "Door AX",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2111",
+      "Name": "Door AY",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2120",
+      "Name": "Stone Wall B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2130",
+      "Name": "Stone Wall C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2131",
+      "Name": "Stone Wall D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2200",
+      "Name": "Tree B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2201",
+      "Name": "Foliage A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2202",
+      "Name": "Stump A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2203",
+      "Name": "Stump B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2250",
+      "Name": "Table N",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2251",
+      "Name": "Tools (Blacksmith) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2252",
+      "Name": "Anvil B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2253",
+      "Name": "Misc Props",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2300",
+      "Name": "Sword",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2400",
+      "Name": "Ladder AV",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2401",
+      "Name": "Ladder AW",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2402",
+      "Name": "Ladder AX",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2403",
+      "Name": "Foliage B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2600",
+      "Name": "Hole",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2601",
+      "Name": "Rock Formation A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2610",
+      "Name": "Rock Formation B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2611",
+      "Name": "Rock Formation C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2612",
+      "Name": "Rock Formation D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2613",
+      "Name": "Rock Formation E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2620",
+      "Name": "Illusory Wall A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2621",
+      "Name": "Illusory Wall B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2700",
+      "Name": "Elevator B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2701",
+      "Name": "Elevator Button",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2720",
+      "Name": "Door AZ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2730",
+      "Name": "Stone Wall E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2731",
+      "Name": "Stone Wall F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2732",
+      "Name": "Stone Wall G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2740",
+      "Name": "Table O",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2750",
+      "Name": "Chair C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2760",
+      "Name": "Grave (Artorias)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2765",
+      "Name": "Hawkeye Gough\u0027s Bow",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2770",
+      "Name": "Statue H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2780",
+      "Name": "Cage Floor",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2785",
+      "Name": "Cage",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2790",
+      "Name": "Ladder AY",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2791",
+      "Name": "Ladder AZ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2795",
+      "Name": "Rope C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2800",
+      "Name": "Bloathead",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o2801",
+      "Name": "Blood",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3000",
+      "Name": "Floor (Rotating) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3001",
+      "Name": "Floor (Rotating) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3010",
+      "Name": "Pillar F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3011",
+      "Name": "Lever Handle",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3020",
+      "Name": "Stone Wall H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3021",
+      "Name": "Stone Plaque",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3030",
+      "Name": "Illusory Wall C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3031",
+      "Name": "Illusory Wall D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3032",
+      "Name": "Illusory Wall E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3033",
+      "Name": "Illusory Wall F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3034",
+      "Name": "Stone Tiles A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3035",
+      "Name": "Stone Tiles B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3036",
+      "Name": "Stone Arch A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3060",
+      "Name": "Sarcophagus A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3100",
+      "Name": "Sarcophagus (Giant) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3101",
+      "Name": "Sarcophagus (Giant) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3102",
+      "Name": "Sarcophagus (Giant) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3141",
+      "Name": "Ladder BA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3142",
+      "Name": "Ladder BB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3143",
+      "Name": "Ladder BC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3144",
+      "Name": "Ladder BD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3240",
+      "Name": "Ladder BE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3241",
+      "Name": "Ladder BF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3242",
+      "Name": "Ladder BG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3243",
+      "Name": "Ladder BH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3300",
+      "Name": "Bones A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3301",
+      "Name": "Bones B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3302",
+      "Name": "Bones C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3310",
+      "Name": "Urn AD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3311",
+      "Name": "Urn AE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3312",
+      "Name": "Urn AF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3320",
+      "Name": "Statue I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3321",
+      "Name": "Statue J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3350",
+      "Name": "Stone Wall I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3400",
+      "Name": "Stone Bricks A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3450",
+      "Name": "Illusory Wall G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3451",
+      "Name": "Illusory Wall H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3452",
+      "Name": "Illusory Wall I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3500",
+      "Name": "Branch A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3501",
+      "Name": "Branch B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3600",
+      "Name": "Wood Construct A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3610",
+      "Name": "Bones D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3611",
+      "Name": "Bones E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3612",
+      "Name": "Bones F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3650",
+      "Name": "Bones (Giant) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3651",
+      "Name": "Bones (Giant) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3652",
+      "Name": "Bones (Giant) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3653",
+      "Name": "Bones (Giant) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3654",
+      "Name": "Bones (Giant) E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3660",
+      "Name": "Illusory Wall J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3661",
+      "Name": "Illusory Wall K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3870",
+      "Name": "Table P",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3871",
+      "Name": "Stone Bricks B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3872",
+      "Name": "Stone Bricks C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3873",
+      "Name": "Stone Bricks D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3880",
+      "Name": "Sarcophagus (Giant) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3881",
+      "Name": "Sarcophagus B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o3890",
+      "Name": "Table Q",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4000",
+      "Name": "Wood Pulley (Giant)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4001",
+      "Name": "Reeds A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4002",
+      "Name": "Reeds B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4003",
+      "Name": "Reeds C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4050",
+      "Name": "Wood Platform A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4100",
+      "Name": "Ladder BI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4101",
+      "Name": "Ladder BJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4102",
+      "Name": "Ladder BK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4103",
+      "Name": "Ladder BL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4104",
+      "Name": "Ladder BM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4105",
+      "Name": "Ladder BN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4106",
+      "Name": "Ladder BO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4107",
+      "Name": "Ladder BP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4108",
+      "Name": "Ladder BQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4109",
+      "Name": "Ladder BR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4110",
+      "Name": "Ladder BS",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4111",
+      "Name": "Ladder BT",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4112",
+      "Name": "Ladder BU",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4113",
+      "Name": "Ladder BV",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4114",
+      "Name": "Ladder BW",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4115",
+      "Name": "Ladder BX",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4116",
+      "Name": "Ladder BY",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4117",
+      "Name": "Ladder BZ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4118",
+      "Name": "Ladder CA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4119",
+      "Name": "Ladder CB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4120",
+      "Name": "Ladder CC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4121",
+      "Name": "Ladder CD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4122",
+      "Name": "Ladder CE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4123",
+      "Name": "Ladder CF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4124",
+      "Name": "Ladder CG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4125",
+      "Name": "Ladder CH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4200",
+      "Name": "Wood Parts A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4201",
+      "Name": "Wood Parts B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4202",
+      "Name": "Wood Parts C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4215",
+      "Name": "Urn AG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4300",
+      "Name": "Pillar G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4301",
+      "Name": "Pillar H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4302",
+      "Name": "Pillar I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4303",
+      "Name": "Pillar J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4304",
+      "Name": "Pillar K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4305",
+      "Name": "Pillar L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4350",
+      "Name": "Tree (Giant Root) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4351",
+      "Name": "Tree (Giant Root) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4352",
+      "Name": "Tree (Giant Root) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4353",
+      "Name": "Tree (Giant Root) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4360",
+      "Name": "Tree C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4361",
+      "Name": "Tree D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4362",
+      "Name": "Tree E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4370",
+      "Name": "Branch C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4400",
+      "Name": "Urn AH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4401",
+      "Name": "Urn AI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4402",
+      "Name": "Wheel",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4404",
+      "Name": "Sconce B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4405",
+      "Name": "Sconce C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4406",
+      "Name": "Wood Construct B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4407",
+      "Name": "Wood Construct C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4408",
+      "Name": "Wood Construct D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4409",
+      "Name": "Wood Platform B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4410",
+      "Name": "Wood Platform C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4411",
+      "Name": "Wood Construct E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4450",
+      "Name": "Centipede Demon (Stone) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4451",
+      "Name": "Centipede Demon (Stone) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4460",
+      "Name": "Bed of Chaos (Body)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4461",
+      "Name": "Bed of Chaos (Arms)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4500",
+      "Name": "Lava",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4510",
+      "Name": "Illusory Wall L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4550",
+      "Name": "Bell B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4560",
+      "Name": "Lever C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4570",
+      "Name": "Spiderwebs",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4600",
+      "Name": "Elevator C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4610",
+      "Name": "Tree F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4611",
+      "Name": "Tree G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4620",
+      "Name": "Stone Tiles C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4621",
+      "Name": "Stone Tiles D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4622",
+      "Name": "Stone Tiles E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4623",
+      "Name": "Stone Tiles F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4624",
+      "Name": "Stone Tiles G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4625",
+      "Name": "Stone Tiles H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4626",
+      "Name": "Stone Tiles I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4627",
+      "Name": "Stone Tiles J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4628",
+      "Name": "Stone Tiles K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4629",
+      "Name": "Stone Tiles L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4630",
+      "Name": "Stone Tiles M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4631",
+      "Name": "Stone Tiles N",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4632",
+      "Name": "Stone Tiles O",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4633",
+      "Name": "Stone Tiles P",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4634",
+      "Name": "Stone Tiles Q",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4635",
+      "Name": "Stone Tiles R",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4636",
+      "Name": "Stone Tiles S",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4637",
+      "Name": "Stone Tiles T",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4700",
+      "Name": "Stone Wall J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4701",
+      "Name": "Stone Wall K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4800",
+      "Name": "Illusory Wall M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4810",
+      "Name": "Stone Tiles U",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4820",
+      "Name": "Urn AJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4830",
+      "Name": "Demonic Statue",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4840",
+      "Name": "Tree H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4850",
+      "Name": "Bug",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4900",
+      "Name": "Everlasting Dragon A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o4901",
+      "Name": "Everlasting Dragon B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5000",
+      "Name": "Swinging Blade",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5010",
+      "Name": "Sphere A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5040",
+      "Name": "Ladder CI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5100",
+      "Name": "Portcullis B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5110",
+      "Name": "Stone Wall L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5120",
+      "Name": "Stone Wall M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5130",
+      "Name": "Stone Wall N",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5140",
+      "Name": "Door BA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5200",
+      "Name": "Lever D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5210",
+      "Name": "Ram",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5220",
+      "Name": "Clockworks",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5250",
+      "Name": "Stone Arch B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5300",
+      "Name": "Elevator D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5301",
+      "Name": "Elevator E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5310",
+      "Name": "Elevator F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5400",
+      "Name": "Ladder CJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5401",
+      "Name": "Ladder CK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5402",
+      "Name": "Ladder CL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5403",
+      "Name": "Ladder CM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5404",
+      "Name": "Ladder CN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5410",
+      "Name": "Ladder CO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5500",
+      "Name": "Stone Tiles V",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5501",
+      "Name": "Stone Tiles W",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5550",
+      "Name": "Urn AK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5551",
+      "Name": "Urn AL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5552",
+      "Name": "Urn AM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5560",
+      "Name": "Urn AN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5561",
+      "Name": "Urn AO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5570",
+      "Name": "Table R",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5580",
+      "Name": "Chair D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5590",
+      "Name": "Statue K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5600",
+      "Name": "Elevator G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5610",
+      "Name": "Stairs (Rotating) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5612",
+      "Name": "Stairs (Rotating) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5620",
+      "Name": "Elevator H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5630",
+      "Name": "Elevator I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5650",
+      "Name": "Pillar M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5651",
+      "Name": "Pillar N",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5652",
+      "Name": "Pillar O",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5653",
+      "Name": "Pillar P",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5654",
+      "Name": "Pillar Q",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5655",
+      "Name": "Pillar R",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5700",
+      "Name": "Door BB",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5710",
+      "Name": "Door BC",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5720",
+      "Name": "Door BD",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5730",
+      "Name": "Door BE",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5740",
+      "Name": "Stone Wall O",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5750",
+      "Name": "Lever E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5760",
+      "Name": "Lever F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5800",
+      "Name": "Chandelier",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5801",
+      "Name": "Chandelier (Candle)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5810",
+      "Name": "Chain B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5850",
+      "Name": "Painting",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5900",
+      "Name": "Statue L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5905",
+      "Name": "LoD (Architecture) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5906",
+      "Name": "LoD (Architecture) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5910",
+      "Name": "Chair E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5911",
+      "Name": "Chair F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5920",
+      "Name": "Table S",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5930",
+      "Name": "Dresser A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5940",
+      "Name": "Table T",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5950",
+      "Name": "Bench G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5951",
+      "Name": "Bench H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5952",
+      "Name": "Stool A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5960",
+      "Name": "Bench I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5965",
+      "Name": "Stool B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5966",
+      "Name": "Ornstein \u0026 Smough Room A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5967",
+      "Name": "Tools (Blacksmith) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5968",
+      "Name": "Tools (Blacksmith) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5969",
+      "Name": "Tools (Blacksmith) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5970",
+      "Name": "Table U",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5971",
+      "Name": "Table V",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5972",
+      "Name": "Table W",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5980",
+      "Name": "Trunk A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5981",
+      "Name": "Trunk B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5982",
+      "Name": "Trunk C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5983",
+      "Name": "Trunk D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5990",
+      "Name": "Urn AP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5998",
+      "Name": "Corpse (Smough)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o5999",
+      "Name": "Ornstein \u0026 Smough Room B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6000",
+      "Name": "Door BF",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6010",
+      "Name": "Door BG",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6100",
+      "Name": "Lever G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6110",
+      "Name": "Lever H",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6200",
+      "Name": "Elevator J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6400",
+      "Name": "Ladder CP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6401",
+      "Name": "Ladder CQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6410",
+      "Name": "Ladder CR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6450",
+      "Name": "Urn AQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6451",
+      "Name": "Urn AR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6452",
+      "Name": "Urn AS",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6455",
+      "Name": "Urn AT",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6456",
+      "Name": "Urn AU",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6457",
+      "Name": "Urn AV",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6500",
+      "Name": "Water",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o6700",
+      "Name": "Stone Wall P",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7100",
+      "Name": "Crystal A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7200",
+      "Name": "Trim",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7201",
+      "Name": "Lever I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7202",
+      "Name": "Lever J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7210",
+      "Name": "Elevator K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7220",
+      "Name": "Stairs (Rotating) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7230",
+      "Name": "Stairs (Rotating) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7240",
+      "Name": "Elevator L",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7241",
+      "Name": "Elevator M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7250",
+      "Name": "Bookshelf A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7251",
+      "Name": "Bookshelf B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7300",
+      "Name": "Ladder (No Rungs) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7301",
+      "Name": "Ladder (No Rungs) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7302",
+      "Name": "Ladder (No Rungs) C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7303",
+      "Name": "Ladder (No Rungs) D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7400",
+      "Name": "Door BH",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7401",
+      "Name": "Door BI",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7402",
+      "Name": "Lever K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7403",
+      "Name": "Gramophone A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7404",
+      "Name": "Gramophone B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7500",
+      "Name": "Crystal Branch",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7501",
+      "Name": "Maneater Clam",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7510",
+      "Name": "Crystal B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7600",
+      "Name": "Tools (Astrological) A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7601",
+      "Name": "Tools (Astrological) B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7610",
+      "Name": "Stairs (Portable)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7620",
+      "Name": "Table X",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7621",
+      "Name": "Table Y",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7630",
+      "Name": "Chair G",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7640",
+      "Name": "Dresser B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7641",
+      "Name": "Dresser C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7650",
+      "Name": "Urn AW",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7670",
+      "Name": "Bookstand A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7680",
+      "Name": "Bookstand B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7690",
+      "Name": "Bookstand C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o7700",
+      "Name": "Statue M",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8000",
+      "Name": "Boat",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8100",
+      "Name": "Table Z",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8150",
+      "Name": "Pillar S",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8200",
+      "Name": "Campfire B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8300",
+      "Name": "Door BJ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8310",
+      "Name": "Roots A",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8311",
+      "Name": "Lordvessel",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8312",
+      "Name": "Roots B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8320",
+      "Name": "Statue N",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8400",
+      "Name": "Bucket E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8401",
+      "Name": "Sack C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8402",
+      "Name": "Sack D",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8403",
+      "Name": "Urn AX",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8404",
+      "Name": "Urn AY",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8410",
+      "Name": "Urn AZ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8411",
+      "Name": "Urn BA",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8420",
+      "Name": "Statue O",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8421",
+      "Name": "Statue P",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8422",
+      "Name": "Statue Q",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8425",
+      "Name": "Statue R",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8430",
+      "Name": "Corpse (Rat)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8500",
+      "Name": "Ladder CS",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8501",
+      "Name": "Ladder CT",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8510",
+      "Name": "Stone Tiles X",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8511",
+      "Name": "Stone Tiles Y",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8520",
+      "Name": "Stone Bricks E",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8521",
+      "Name": "Stone Bricks F",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8530",
+      "Name": "Sphere B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8540",
+      "Name": "Door BK",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8541",
+      "Name": "Door BL",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8542",
+      "Name": "Door BM",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8543",
+      "Name": "Door BN",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8544",
+      "Name": "Door BO",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8549",
+      "Name": "Rat B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8550",
+      "Name": "Nest",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8600",
+      "Name": "Pillar T",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8601",
+      "Name": "Pillar U",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8610",
+      "Name": "Pillar V",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8700",
+      "Name": "Stone Platform I",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8701",
+      "Name": "Stone Platform J",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o8702",
+      "Name": "Stone Platform K",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9000",
+      "Name": "Stone Wall Q",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9001",
+      "Name": "Door BP",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9002",
+      "Name": "Door BQ",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9003",
+      "Name": "Door BR",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9100",
+      "Name": "[Unused]Giant",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9200",
+      "Name": "Everlasting Dragon C",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9800",
+      "Name": "Crow B",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9990",
+      "Name": "Ladder CU",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9991",
+      "Name": "Ladder CV",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9992",
+      "Name": "Ladder CW",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9993",
+      "Name": "[Unused] Golem (Crystal Gold)",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9995",
+      "Name": "Grass",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9998",
+      "Name": "Attack Dog",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "o9999",
+      "Name": "[Unused] Undead King Jar-Eel\u0027s Armor",
+      "Tags": [
+        ""
+      ]
+    }
+  ],
+  "Characters": [
+    {
+      "ID": "c0000",
+      "Name": "Human",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c1200",
+      "Name": "Rat",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c1201",
+      "Name": "Small Rat",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c1202",
+      "Name": "Large Rat",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c1203",
+      "Name": "Snow Rat",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2060",
+      "Name": "Infested Ghoul",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2210",
+      "Name": "Invisible Ghost (unused)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2230",
+      "Name": "Stray Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2231",
+      "Name": "Demon Firesage",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2232",
+      "Name": "Asylum Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2240",
+      "Name": "Capra Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2250",
+      "Name": "Taurus Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2260",
+      "Name": "Batwing Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2270",
+      "Name": "Mushroom Parent",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2280",
+      "Name": "Mushroom Child",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2290",
+      "Name": "Prototype Chained Prisoner",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2300",
+      "Name": "Titanite Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2310",
+      "Name": "Crow Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2320",
+      "Name": "Iron Golem",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2330",
+      "Name": "Demonic Foliage",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2360",
+      "Name": "Smough",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2370",
+      "Name": "Channeler",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2380",
+      "Name": "Giant Stone Knight",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2390",
+      "Name": "Darkwraith",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2400",
+      "Name": "Painting Guardian",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2410",
+      "Name": "Silver Knight",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2430",
+      "Name": "Demonic Statue",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2500",
+      "Name": "Hollow",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2510",
+      "Name": "Undead Merchant",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2520",
+      "Name": "Undead Assassin",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2530",
+      "Name": "Blowdart Sniper",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2540",
+      "Name": "Armored Hollow",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2550",
+      "Name": "Undead Soldier",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2560",
+      "Name": "Balder Knight",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2570",
+      "Name": "Heavy Knight",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2590",
+      "Name": "Prototype Marvelous Chester",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2591",
+      "Name": "Prototype Marvelous Chester",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2600",
+      "Name": "Prototype Young Beatrice",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2640",
+      "Name": "Andre of Astora",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2650",
+      "Name": "Necromancer",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2660",
+      "Name": "Butcher",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2670",
+      "Name": "Ghost (Male)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2680",
+      "Name": "Ghost (Female)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2690",
+      "Name": "Serpent Soldier",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2700",
+      "Name": "Serpent Mage",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2710",
+      "Name": "Crystal Golem",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2711",
+      "Name": "Golden Crystal Golem",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2730",
+      "Name": "Crossbreed Priscilla",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2731",
+      "Name": "Priscilla\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2750",
+      "Name": "Anastacia of Astora",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2780",
+      "Name": "Mimic",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2790",
+      "Name": "Black Knight (all, kiln variation)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2791",
+      "Name": "Black Knight (Kiln Ghost)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2792",
+      "Name": "Black Knight (Sword)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2793",
+      "Name": "Black Knight (Greatsword)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2794",
+      "Name": "Black Knight (Axe)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2795",
+      "Name": "Black Knight (Halberd)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2800",
+      "Name": "Undead Crystal Soldier",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2810",
+      "Name": "Infested Barbarian (Club)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2811",
+      "Name": "Infested Barbarian (Boulder)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2820",
+      "Name": "Prototype Claw Hollow",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2830",
+      "Name": "Phalanx",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2840",
+      "Name": "Engorged Zombie",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2860",
+      "Name": "Giant",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2870",
+      "Name": "Sentinel / Royal Sentinel",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2900",
+      "Name": "Skeleton",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2910",
+      "Name": "Giant Skeleton",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2920",
+      "Name": "Vamos",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2930",
+      "Name": "Bonewheel Skeleton",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2940",
+      "Name": "Skeleton Baby",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2950",
+      "Name": "Skeleton Beast",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c2960",
+      "Name": "Bone Tower",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3090",
+      "Name": "Giant Mosquito",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3110",
+      "Name": "Demon\u0027s Souls Crystal Lizard",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3200",
+      "Name": "Slime",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3210",
+      "Name": "Egg Carrier",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3220",
+      "Name": "Vile Maggot",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3230",
+      "Name": "Moonlight Butterfly",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3240",
+      "Name": "Chaos Eater",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3250",
+      "Name": "Man-Eater Shell",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3270",
+      "Name": "Basilisk",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3290",
+      "Name": "Ohmushi",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3300",
+      "Name": "Crystal Lizard",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3320",
+      "Name": "Pinwheel",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3330",
+      "Name": "Pisaca",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3340",
+      "Name": "Undead Attack Dog",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3341",
+      "Name": "Flaming Attack Dog",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3350",
+      "Name": "Possessed Tree",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3370",
+      "Name": "Tree Lizard",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3380",
+      "Name": "Giant Leech",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3390",
+      "Name": "Burrowing Rockworm",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3400",
+      "Name": "Crag-Spider",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3410",
+      "Name": "Frog-Ray",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3420",
+      "Name": "Undead Dragon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3421",
+      "Name": "Bounding Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3422",
+      "Name": "Undead Dragon\u0027s Wing",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3430",
+      "Name": "Hellkite Drake",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3431",
+      "Name": "Hellkite Drake\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3440",
+      "Name": "Prototype Kalameet",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3450",
+      "Name": "Stone Dragon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3451",
+      "Name": "Everlasting Dragon\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3460",
+      "Name": "Armored Tusk (Armored Boar)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3461",
+      "Name": "Armored Tusk (Reinforced)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3470",
+      "Name": "Prototype Sanctuary Guardian",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3471",
+      "Name": "Sanctuary Guardian",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3472",
+      "Name": "Sanctuary Guardian\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3480",
+      "Name": "Chaos Bug",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3490",
+      "Name": "Good Vagrant",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3491",
+      "Name": "Evil Vagrant",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3500",
+      "Name": "Mass of Souls",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3501",
+      "Name": "Wisp (exploding skull)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3510",
+      "Name": "Asylum Transport Crow",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3511",
+      "Name": "Crow (cutscene version)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3520",
+      "Name": "Drake",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3530",
+      "Name": "Hydra",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c3531",
+      "Name": "Hydra Head",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4090",
+      "Name": "Marvelous Chester",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4091",
+      "Name": "Alternate Chester?",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4095",
+      "Name": "Alternate Chester?",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4100",
+      "Name": "Artorias",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4110",
+      "Name": "Hawkeye Gough",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4120",
+      "Name": "Stone Guardian",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4130",
+      "Name": "Scarecrow",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4140",
+      "Name": "Elizabeth",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4150",
+      "Name": "Bloathead",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4160",
+      "Name": "Bloathead Sorcerer",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4170",
+      "Name": "Humanity Phantom (small)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4171",
+      "Name": "Humanity Phantom (medium)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4172",
+      "Name": "Humanity Phantom (large)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4180",
+      "Name": "Chained Prisoner",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4190",
+      "Name": "Attack Dog (DLC)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4500",
+      "Name": "Manus",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4510",
+      "Name": "Black Dragon Kalameet",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4511",
+      "Name": "Kalameet\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4520",
+      "Name": "Young Sif",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4530",
+      "Name": "Young Alvina",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c4531",
+      "Name": "Young Alvina",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5200",
+      "Name": "Centipede Demon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5201",
+      "Name": "Centipede Demon\u0027s Arm",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5202",
+      "Name": "Centipede Demon\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5210",
+      "Name": "Sif",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5220",
+      "Name": "Gravelord Nito",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5230",
+      "Name": "Bed of Chaos (Tree Body)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5231",
+      "Name": "Crawling Bed of Chaos (unused, Tree Body)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5240",
+      "Name": "Parasitic Wall Hugger",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5250",
+      "Name": "Ceaseless Discharge",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5260",
+      "Name": "Gaping Dragon",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5261",
+      "Name": "Gaping Dragon\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5270",
+      "Name": "Ornstein",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5271",
+      "Name": "Super Ornstein",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5280",
+      "Name": "Quelaag",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5290",
+      "Name": "Seath",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5291",
+      "Name": "Seath\u0027s Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5300",
+      "Name": "Undead King Jar Eel (unused)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5310",
+      "Name": "Gwynevere",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5320",
+      "Name": "Gwyndolin",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5330",
+      "Name": "Frampt / Kaathe",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5340",
+      "Name": "The Fair Lady",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5350",
+      "Name": "Bell Gargoyles",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5351",
+      "Name": "Lightning Gargoyles",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5352",
+      "Name": "Bell Gargoyle Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5353",
+      "Name": "Lightning Gargolye Tail",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5360",
+      "Name": "Great Feline",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5361",
+      "Name": "Alvina",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5362",
+      "Name": "Alvina",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5370",
+      "Name": "Gwyn",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5390",
+      "Name": "Four Kings",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5400",
+      "Name": "Bed of Chaos (Fire Body)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c5401",
+      "Name": "Bed of Chaos (Worm)",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
+      "ID": "c9990",
+      "Name": "Fluted Knight",
+      "Tags": [
+        "creature"
+      ]
+    }
+  ],
+  "Cutscenes": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "cutscene"
+      ]
+    }
+  ],
+  "EventFlags": [
+    {
+      "ID": "1000",
+      "Name": "Example",
+      "Tags": [
+        "flag"
+      ]
+    }
+  ],
+  "Gparams": [
+    {
+      "ID": "m10_00_00_00",
+      "Name": "Depths",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m10_01_00_00",
+      "Name": "Undead Burg / Undead Parish",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m10_02_00_00",
+      "Name": "Firelink Shrine",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m11_00_00_00",
+      "Name": "Painted World",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m12_00_00_00",
+      "Name": "Darkroot Garden (no DLC)",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m12_00_00_01",
+      "Name": "Darkroot Garden",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m12_01_00_00",
+      "Name": "Oolacile",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_00_00_00",
+      "Name": "Catacombs",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_01_00_00",
+      "Name": "Tomb of the Giants",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_02_00_00",
+      "Name": "Great Hollow / Ash Lake",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m14_00_00_00",
+      "Name": "Blighttown",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m14_01_00_00",
+      "Name": "Demon Ruins / Lost Izalith",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m15_00_00_00",
+      "Name": "Sen\u0027s Fortress",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m15_01_00_00",
+      "Name": "Anor Londo",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m16_00_00_00",
+      "Name": "New Londo Ruins / Valley of Drakes",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m17_00_00_00",
+      "Name": "Duke\u0027s Archives",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m18_00_00_00",
+      "Name": "Kiln of the First Flame",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m18_01_00_00",
+      "Name": "Northern Undead Asylum",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m99_80_00_00",
+      "Name": "Layout: Cathedral Ward 1",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_00_01",
+      "Name": "Layout: Oolacile Township",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_00_02",
+      "Name": "Layout: Chasm of the Abyss",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_00",
+      "Name": "Layout: Demon Ruins",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_01",
+      "Name": "Layout: New Londo Ruins",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_02",
+      "Name": "Layout: Firelink / Blighttown",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_20_00",
+      "Name": "Test Map: Kishi SFX",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_97_00",
+      "Name": "Test Map: DLC Planning",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_00",
+      "Name": "Layout: Cathedral Ward 2",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_03",
+      "Name": "Test Map: Indoors",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_07",
+      "Name": "Test Map: AI",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_08",
+      "Name": "Test Map: Gimmick",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_09",
+      "Name": "Test Map: Routes, Stairs",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_20",
+      "Name": "Test Map: Old Dragon Test",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_23",
+      "Name": "Test Map: Enemy Old",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_25",
+      "Name": "Test Map: Camera \u0026 Ladder",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_99_99",
+      "Name": "Test Map: PG Test",
+      "Tags": [
+        "unused"
+      ]
+    }
+  ],
+  "MapPieces": [
+    {
+      "ID": "default",
+      "Name": "Default",
+      "Tags": [
+        "default"
+      ]
+    }
+  ],
+  "MapNames": [
+    {
+      "ID": "m10_00_00_00",
+      "Name": "Depths",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m10_01_00_00",
+      "Name": "Undead Burg / Undead Parish",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m10_02_00_00",
+      "Name": "Firelink Shrine",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m11_00_00_00",
+      "Name": "Painted World",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m12_00_00_00",
+      "Name": "Darkroot Garden (no DLC)",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m12_00_00_01",
+      "Name": "Darkroot Garden",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m12_01_00_00",
+      "Name": "Oolacile",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_00_00_00",
+      "Name": "Catacombs",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_01_00_00",
+      "Name": "Tomb of the Giants",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m13_02_00_00",
+      "Name": "Great Hollow / Ash Lake",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m14_00_00_00",
+      "Name": "Blighttown",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m14_01_00_00",
+      "Name": "Demon Ruins / Lost Izalith",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m15_00_00_00",
+      "Name": "Sen\u0027s Fortress",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m15_01_00_00",
+      "Name": "Anor Londo",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m16_00_00_00",
+      "Name": "New Londo Ruins / Valley of Drakes",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m17_00_00_00",
+      "Name": "Duke\u0027s Archives",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m18_00_00_00",
+      "Name": "Kiln of the First Flame",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m18_01_00_00",
+      "Name": "Northern Undead Asylum",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m99_80_00_00",
+      "Name": "Layout: Cathedral Ward 1",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_00_01",
+      "Name": "Layout: Oolacile Township",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_00_02",
+      "Name": "Layout: Chasm of the Abyss",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_00",
+      "Name": "Layout: Demon Ruins",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_01",
+      "Name": "Layout: New Londo Ruins",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_10_02",
+      "Name": "Layout: Firelink / Blighttown",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_80_20_00",
+      "Name": "Test Map: Kishi SFX",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_97_00",
+      "Name": "Test Map: DLC Planning",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_00",
+      "Name": "Layout: Cathedral Ward 2",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_03",
+      "Name": "Test Map: Indoors",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_07",
+      "Name": "Test Map: AI",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_08",
+      "Name": "Test Map: Gimmick",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_09",
+      "Name": "Test Map: Routes, Stairs",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_20",
+      "Name": "Test Map: Old Dragon Test",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_23",
+      "Name": "Test Map: Enemy Old",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_98_25",
+      "Name": "Test Map: Camera \u0026 Ladder",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m99_99_99_99",
+      "Name": "Test Map: PG Test",
+      "Tags": [
+        "unused"
+      ]
+    }
+  ],
+  "Movies": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "movie"
+      ]
+    }
+  ],
+  "Particles": [
+    {
+      "ID": "f000000001",
+      "Name": "Example",
+      "Tags": [
+        "fxr"
+      ]
+    }
+  ],
+  "Parts": [
+    {
+      "ID": "WP_A_0100",
+      "Name": "Dagger",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0101",
+      "Name": "Bandit\u0027s Knife",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0102",
+      "Name": "Jagged Ghost Blade",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0103",
+      "Name": "Ghost Blade",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0104",
+      "Name": "Priscilla\u0027s Dagger",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0105",
+      "Name": "Black Dagger",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0106",
+      "Name": "Mail Breaker",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0107",
+      "Name": "Parrying Dagger",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0110",
+      "Name": "Gold Tracer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0111",
+      "Name": "Silver Tracer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0200",
+      "Name": "Broken Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0201",
+      "Name": "Longsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0202",
+      "Name": "Balder Side Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0203",
+      "Name": "Crystal Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0204",
+      "Name": "Broadsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0206",
+      "Name": "Bastard Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0207",
+      "Name": "Shortsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0208",
+      "Name": "Zweihander",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0210",
+      "Name": "Man-Serpent Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0211",
+      "Name": "Flamberge",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0212",
+      "Name": "Silver Knight Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0213",
+      "Name": "Quelaag\u0027s Furysword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0220",
+      "Name": "Stone Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0221",
+      "Name": "Black Knight Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0230",
+      "Name": "Velka\u0027s Rapier",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0231",
+      "Name": "Sunlight Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0240",
+      "Name": "Obsidian Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0251",
+      "Name": "Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0252",
+      "Name": "Butcher Knife",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0258",
+      "Name": "Moonlight Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0259",
+      "Name": "Black Knight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0260",
+      "Name": "Darksword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0263",
+      "Name": "Crystal Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0264",
+      "Name": "Barbed Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0265",
+      "Name": "Chester\u0027s Zweihander",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0266",
+      "Name": "Claymore",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0267",
+      "Name": "Greatsword of Artorias (True)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0268",
+      "Name": "Great Lord Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0269",
+      "Name": "Greatsword of Artorias (Cursed)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0270",
+      "Name": "Demon Great Machete",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0271",
+      "Name": "Astora\u0027s Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0272",
+      "Name": "Straight Sword Hilt",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0273",
+      "Name": "Four Kings Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0274",
+      "Name": "Abyss Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0280",
+      "Name": "Server",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0281",
+      "Name": "Dragon Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0282",
+      "Name": "Gravelord Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0284",
+      "Name": "Murakumo",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0290",
+      "Name": "???",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0291",
+      "Name": "Drake Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0300",
+      "Name": "Rapier",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0301",
+      "Name": "Estoc",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0302",
+      "Name": "Ricard\u0027s Rapier",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0400",
+      "Name": "Scimitar",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0401",
+      "Name": "Falchion",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0402",
+      "Name": "Uchigatana",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0403",
+      "Name": "Shotel",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0406",
+      "Name": "Painting Guardian Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0450",
+      "Name": "Washing Pole",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0451",
+      "Name": "Chaos Blade",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0452",
+      "Name": "Iaito",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0502",
+      "Name": "Hand Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0503",
+      "Name": "Crescent Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0504",
+      "Name": "Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0505",
+      "Name": "Battle Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0506",
+      "Name": "Dragon King Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0507",
+      "Name": "Black Knight Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0508",
+      "Name": "Golem Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0509",
+      "Name": "Gargoyle Tail Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0510",
+      "Name": "Stone Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0600",
+      "Name": "Club",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0601",
+      "Name": "Stick",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0602",
+      "Name": "Reinforced Club",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0603",
+      "Name": "Morning Star",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0604",
+      "Name": "Warpick",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0605",
+      "Name": "Pickaxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0606",
+      "Name": "Mace",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0607",
+      "Name": "Great Club",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0608",
+      "Name": "Grant",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0651",
+      "Name": "Demon\u0027s Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0652",
+      "Name": "Smough\u0027s Hammer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0653",
+      "Name": "Demon\u0027s Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0654",
+      "Name": "Demon\u0027s Great Hammer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0655",
+      "Name": "Dragon Tooth",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0656",
+      "Name": "Blacksmith Hammer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0657",
+      "Name": "Blacksmith Giant Hammer",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0658",
+      "Name": "Hammer of Vamos",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0659",
+      "Name": "Large Club",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0700",
+      "Name": "Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0702",
+      "Name": "Winged Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0703",
+      "Name": "Partizan",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0710",
+      "Name": "Demon\u0027s Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0720",
+      "Name": "Channeler\u0027s Trident",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0721",
+      "Name": "Tin Banishment Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0722",
+      "Name": "Spiky Catch Pole",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0730",
+      "Name": "Titanite Catch Pole",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0731",
+      "Name": "Black Knight Halberd",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0740",
+      "Name": "Four-Pronged Plow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0801",
+      "Name": "Great Scythe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0802",
+      "Name": "Lucerne",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0803",
+      "Name": "Scythe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0804",
+      "Name": "Halberd",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0805",
+      "Name": "Giant\u0027s Halberd",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0810",
+      "Name": "Lifehunt Scythe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0811",
+      "Name": "Gargoyle\u0027s Halberd",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0901",
+      "Name": "Logan\u0027s Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0902",
+      "Name": "Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0903",
+      "Name": "Canvas Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0904",
+      "Name": "Thorolund Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0905",
+      "Name": "Ivory Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0906",
+      "Name": "Unused Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0907",
+      "Name": "Sunlight Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0908",
+      "Name": "Darkmoon Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0909",
+      "Name": "Velka\u0027s Talisman",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0910",
+      "Name": "Sorcerer\u0027s Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0911",
+      "Name": "Pyromancy Flame",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0912",
+      "Name": "Beatrice\u0027s Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0913",
+      "Name": "Tin Darkmoon Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0914",
+      "Name": "Oolacile Ivory Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0915",
+      "Name": "Tin Crystallization Ctlyst.",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0916",
+      "Name": "Izalith Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0920",
+      "Name": "Oolacile Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_0921",
+      "Name": "Manus Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1000",
+      "Name": "Caestus",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1002",
+      "Name": "Claw",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1003",
+      "Name": "Dragon Bone Fist",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1004",
+      "Name": "Dark Hand",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1005",
+      "Name": "Fists",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1100",
+      "Name": "Pike",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1101",
+      "Name": "Silver Knight Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1102",
+      "Name": "Dragonslayer Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1103",
+      "Name": "Moonlight Butterfly Horn",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1200",
+      "Name": "Whip",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1201",
+      "Name": "Notched Whip",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1210",
+      "Name": "Guardian Tail",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1300",
+      "Name": "Short Bow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1301",
+      "Name": "Longbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1302",
+      "Name": "Composite Bow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1304",
+      "Name": "Black Bow of Pharis",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1305",
+      "Name": "Darkmoon Bow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1360",
+      "Name": "Dragonslayer Greatbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1361",
+      "Name": "Gough\u0027s Greatbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1399",
+      "Name": "Arrow Quiver",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1401",
+      "Name": "Light Crossbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1402",
+      "Name": "Heavy Crossbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1404",
+      "Name": "Sniper Crossbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1405",
+      "Name": "Avelyn",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1500",
+      "Name": "???",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1501",
+      "Name": "Target Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1502",
+      "Name": "Hollow Soldier Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1503",
+      "Name": "Cracked Round Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1504",
+      "Name": "Balder Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1505",
+      "Name": "Tower Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1507",
+      "Name": "Spiked Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1509",
+      "Name": "Crystal Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1510",
+      "Name": "Stone Greatshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1511",
+      "Name": "Sunlight Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1513",
+      "Name": "Tower Kite Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1514",
+      "Name": "Black Knight Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1515",
+      "Name": "Heater Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1516",
+      "Name": "Knight Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1517",
+      "Name": "Grass Crest Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1518",
+      "Name": "Red and White Round Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1519",
+      "Name": "Iron Round Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1520",
+      "Name": "Spider Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1521",
+      "Name": "East-West Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1522",
+      "Name": "Wooden Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1523",
+      "Name": "Plank Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1524",
+      "Name": "Large Leather Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1525",
+      "Name": "Small Leather Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1526",
+      "Name": "Leather Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1527",
+      "Name": "Giant Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1528",
+      "Name": "Buckler",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1529",
+      "Name": "Eagle Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1530",
+      "Name": "Pierce Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1531",
+      "Name": "Crystal Ring Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1532",
+      "Name": "Havel\u0027s Greatshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1533",
+      "Name": "Silver Knight Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1534",
+      "Name": "Greatshield of Artorias",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1535",
+      "Name": "Crest Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1536",
+      "Name": "Warrior\u0027s Round Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1537",
+      "Name": "Caduceus Kite Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1538",
+      "Name": "Caduceus Round Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1539",
+      "Name": "Gargoyle\u0027s Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1540",
+      "Name": "Bonewheel Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1541",
+      "Name": "Dragon Crest Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1542",
+      "Name": "Effigy Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1543",
+      "Name": "Sanctus",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1544",
+      "Name": "Bloodshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1545",
+      "Name": "Black Iron Greatshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1546",
+      "Name": "East-West Shield (Unused)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1547",
+      "Name": "Wooden Shield (Unused)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1548",
+      "Name": "Heater Shield (Unused)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1549",
+      "Name": "Eagle Shield (Unused)",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1550",
+      "Name": "Cleansing Greatshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1700",
+      "Name": "Bolt Quiver",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1800",
+      "Name": "Torch",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_1801",
+      "Name": "Skull Lantern",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2001",
+      "Name": "Roaming Phantom Dagger",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2002",
+      "Name": "Roaming Phantom Straight Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2003",
+      "Name": "Roaming Phantom Greatsword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2004",
+      "Name": "Roaming Phantom UGS",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2005",
+      "Name": "Roaming Phantom Thrusting Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2006",
+      "Name": "Roaming Phantom Curved Sword",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2007",
+      "Name": "Roaming Phantom Curved UGS",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2008",
+      "Name": "Roaming Phantom Katana",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2009",
+      "Name": "Roaming Phantom Axe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2010",
+      "Name": "Roaming Phantom Greataxe",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2011",
+      "Name": "Roaming Phantom Club",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2012",
+      "Name": "Roaming Phantom Greatclub",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2013",
+      "Name": "Roaming Phantom ???",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2014",
+      "Name": "Roaming Phantom Spear",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2015",
+      "Name": "Roaming Phantom Halberd",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2016",
+      "Name": "Roaming Phantom Bow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2017",
+      "Name": "Roaming Phantom Crossbow",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2018",
+      "Name": "Roaming Phantom Catalyst",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2019",
+      "Name": "Roaming Phantom ???",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2020",
+      "Name": "Roaming Phantom ???",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2021",
+      "Name": "Roaming Phantom Whip",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2022",
+      "Name": "Roaming Phantom Small Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2023",
+      "Name": "Roaming Phantom Shield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2024",
+      "Name": "Roaming Phantom Greatshield",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2025",
+      "Name": "Roaming Phantom Arrow Quiver",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "WP_A_2026",
+      "Name": "Roaming Phantom Bolt Quiver",
+      "Tags": [
+        "weapon"
+      ]
+    },
+    {
+      "ID": "FC_M_0000",
+      "Name": "Face",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_0000",
+      "Name": "Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_0000",
+      "Name": "Body",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_0000",
+      "Name": "Arms",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_0000",
+      "Name": "Legs",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "FC_F_0000",
+      "Name": "Face",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_0000",
+      "Name": "Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_0000",
+      "Name": "Body",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_0000",
+      "Name": "Arms",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_0000",
+      "Name": "Legs",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0000",
+      "Name": "Shaved",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0000",
+      "Name": "Shaved",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_0001",
+      "Name": "Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0002",
+      "Name": "Receding",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0002",
+      "Name": "Wave",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0003",
+      "Name": "Bobbed",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0003",
+      "Name": "Pigtails",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0004",
+      "Name": "Swept Back",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0004",
+      "Name": "Straight A",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0005",
+      "Name": "Semi-Long",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0005",
+      "Name": "Straight B",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0006",
+      "Name": "Wild",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0006",
+      "Name": "Very Short",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0007",
+      "Name": "Curly",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0007",
+      "Name": "Ponytail A",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0008",
+      "Name": "Ponytail B",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0009",
+      "Name": "Bun",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0010",
+      "Name": "Parted Center",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_0010",
+      "Name": "Braided",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0011",
+      "Name": "Short",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_0012",
+      "Name": "Ponytail",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_1000",
+      "Name": "Catarina Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_1000",
+      "Name": "Catarina Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_1000",
+      "Name": "Catarina Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_1000",
+      "Name": "Catarina Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_1000",
+      "Name": "Catarina Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_2520",
+      "Name": "Hollow Thief\u0027s Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_2520",
+      "Name": "Hollow Thief\u0027s Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_2520",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2520",
+      "Name": "Hollow Thief\u0027s Tights",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_2520",
+      "Name": "Hollow Thief\u0027s Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_2520",
+      "Name": "Hollow Thief\u0027s Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_2520",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2520",
+      "Name": "Hollow Thief\u0027s Tights",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_2540",
+      "Name": "Hollow Warrior Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_2540",
+      "Name": "Hollow Warrior Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_2540",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2540",
+      "Name": "Hollow Warrior Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_2540",
+      "Name": "Hollow Warrior Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_2540",
+      "Name": "Hollow Warrior Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_2540",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2540",
+      "Name": "Hollow Warrior Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_2550",
+      "Name": "Hollow Soldier Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_2550",
+      "Name": "Hollow Soldier Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_2550",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2550",
+      "Name": "Hollow Soldier Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_2550",
+      "Name": "Hollow Soldier Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_2550",
+      "Name": "Hollow Soldier Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_2550",
+      "Name": "Unused",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2550",
+      "Name": "Hollow Soldier Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2560",
+      "Name": "Balder Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_2560",
+      "Name": "Balder Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_2560",
+      "Name": "Balder Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2560",
+      "Name": "Balder Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_2560",
+      "Name": "Balder Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2560",
+      "Name": "Balder Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2570",
+      "Name": "Steel Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_2570",
+      "Name": "Steel Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_2570",
+      "Name": "Steel Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2570",
+      "Name": "Steel Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2570",
+      "Name": "Steel Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2660",
+      "Name": "Sack",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2780",
+      "Name": "Symbol of Avarice",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2870",
+      "Name": "Giant Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_2870",
+      "Name": "Giant Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_2870",
+      "Name": "Giant Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_2870",
+      "Name": "Giant Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_2870",
+      "Name": "Giant Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_2920",
+      "Name": "Royal Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_3320",
+      "Name": "Mask of the Father",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_3321",
+      "Name": "Mask of the Mother",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_3322",
+      "Name": "Mask of the Child",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_3460",
+      "Name": "Fang Boar Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_4150",
+      "Name": "Bloated Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_4160",
+      "Name": "Bloated Sorcerer Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_5320",
+      "Name": "Crown of the Dark Sun",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_5320",
+      "Name": "Moonlight Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_5320",
+      "Name": "Moonlight Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_5320",
+      "Name": "Moonlight Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_5320",
+      "Name": "Moonlight Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_5320",
+      "Name": "Moonlight Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_5320",
+      "Name": "Moonlight Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_5350",
+      "Name": "Gargoyle Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_5370",
+      "Name": "Crown of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_5370",
+      "Name": "Robe of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_5370",
+      "Name": "Bracelet of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_5370",
+      "Name": "Anklet of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_5370",
+      "Name": "Robe of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_5370",
+      "Name": "Bracelet of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_5370",
+      "Name": "Anklet of the Great Lord",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_6200",
+      "Name": "Bear Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_6200",
+      "Name": "Bear Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_6200",
+      "Name": "Bear Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_6200",
+      "Name": "Bear Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_8200",
+      "Name": "Paladin Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_8200",
+      "Name": "Paladin Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_8200",
+      "Name": "Paladin Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_8200",
+      "Name": "Paladin Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_8200",
+      "Name": "Paladin Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_8990",
+      "Name": "Roaming Phantom Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_8990",
+      "Name": "Roaming Phantom Body",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_8990",
+      "Name": "Roaming Phantom Arms",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_8990",
+      "Name": "Roaming Phantom Legs",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_8990",
+      "Name": "Roaming Phantom Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_8990",
+      "Name": "Roaming Phantom Body",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_8990",
+      "Name": "Roaming Phantom Arms",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_8990",
+      "Name": "Roaming Phantom Legs",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "FC_A_9000",
+      "Name": "Roaming Phantom Face",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "FC_M_9000",
+      "Name": "Roaming Phantom Face",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_M_9000",
+      "Name": "Roaming Phantom Hair",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "FC_F_9000",
+      "Name": "Roaming Phantom Face",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HR_F_9000",
+      "Name": "Roaming Phantom Hair",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9101",
+      "Name": "Dragon God Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9120",
+      "Name": "Egg (Incubating)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9121",
+      "Name": "Egg (Hatched)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9130",
+      "Name": "Sunlight Maggot",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9200",
+      "Name": "Smough\u0027s Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9200",
+      "Name": "Smough\u0027s Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9200",
+      "Name": "Smough\u0027s Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9200",
+      "Name": "Smough\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9200",
+      "Name": "Smough\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9210",
+      "Name": "Six-Eyed Helm of the Channelers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9210",
+      "Name": "Robe of the Channelers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9210",
+      "Name": "Gauntlets of the Channelers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9210",
+      "Name": "Waistcloth of the Channelers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9210",
+      "Name": "Waistcloth of the Channelers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9220",
+      "Name": "Helm of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9220",
+      "Name": "Embraced Armor of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9220",
+      "Name": "Gauntlets of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9220",
+      "Name": "Leggings of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9220",
+      "Name": "Embraced Armor of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9220",
+      "Name": "Leggings of Favor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9230",
+      "Name": "Witch Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9230",
+      "Name": "Witch Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9230",
+      "Name": "Witch Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9230",
+      "Name": "Witch Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9230",
+      "Name": "Witch Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9230",
+      "Name": "Witch Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9230",
+      "Name": "Witch Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9230",
+      "Name": "Witch Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9240",
+      "Name": "Stone Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9240",
+      "Name": "Stone Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9240",
+      "Name": "Stone Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9240",
+      "Name": "Stone Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9240",
+      "Name": "Stone Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9250",
+      "Name": "Crystalline Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9250",
+      "Name": "Crystalline Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9250",
+      "Name": "Crystalline Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9250",
+      "Name": "Crystalline Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9250",
+      "Name": "Crystalline Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9260",
+      "Name": "Mask of the Sealer",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9260",
+      "Name": "Crimson Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9260",
+      "Name": "Crimson Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9260",
+      "Name": "Crimson Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9260",
+      "Name": "Mask of the Sealer",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9260",
+      "Name": "Crimson Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9260",
+      "Name": "Crimson Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9260",
+      "Name": "Crimson Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9270",
+      "Name": "Mask of Velka",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9270",
+      "Name": "Black Cleric Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9270",
+      "Name": "Black Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9270",
+      "Name": "Black Tights",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9270",
+      "Name": "Mask of Velka",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9270",
+      "Name": "Black Cleric Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9270",
+      "Name": "Black Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9270",
+      "Name": "Black Tights",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9280",
+      "Name": "Iron Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9280",
+      "Name": "Armor of the Sun",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9280",
+      "Name": "Iron Bracelet",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9280",
+      "Name": "Iron Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9280",
+      "Name": "Iron Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9280",
+      "Name": "Armor of the Sun",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9280",
+      "Name": "Iron Bracelet",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9280",
+      "Name": "Iron Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9289",
+      "Name": "?Protector Name? (Iron)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9289",
+      "Name": "?Protector Name? (Iron)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9289",
+      "Name": "?Protector Name? (Iron)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9289",
+      "Name": "?Protector Name? (Iron)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9290",
+      "Name": "Black Iron Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9290",
+      "Name": "Black Iron Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9290",
+      "Name": "Black Iron Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9290",
+      "Name": "Black Iron Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9290",
+      "Name": "Black Iron Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9300",
+      "Name": "Chain Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9300",
+      "Name": "Chain Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9300",
+      "Name": "Leather Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9300",
+      "Name": "Chain Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9300",
+      "Name": "Chain Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9300",
+      "Name": "Chain Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9300",
+      "Name": "Leather Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9300",
+      "Name": "Chain Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9309",
+      "Name": "?Protector Name? (Chain)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9309",
+      "Name": "?Protector Name? (Chain)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9309",
+      "Name": "?Protector Name? (Chain)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9310",
+      "Name": "Dark Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9310",
+      "Name": "Dark Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9310",
+      "Name": "Dark Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9310",
+      "Name": "Dark Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9310",
+      "Name": "Dark Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9320",
+      "Name": "Brigand Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9320",
+      "Name": "Brigand Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9320",
+      "Name": "Brigand Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9320",
+      "Name": "Brigand Trousers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9320",
+      "Name": "Brigand Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9320",
+      "Name": "Brigand Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9320",
+      "Name": "Brigand Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9320",
+      "Name": "Brigand Trousers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9340",
+      "Name": "Cleric Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9340",
+      "Name": "Cleric Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9340",
+      "Name": "Cleric Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9340",
+      "Name": "Cleric Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9340",
+      "Name": "Cleric Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9340",
+      "Name": "Cleric Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9340",
+      "Name": "Cleric Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9340",
+      "Name": "Cleric Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9341",
+      "Name": "Elite Cleric Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9341",
+      "Name": "Elite Cleric Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9341",
+      "Name": "Elite Cleric Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9341",
+      "Name": "Elite Cleric Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9341",
+      "Name": "Elite Cleric Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9341",
+      "Name": "Elite Cleric Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9341",
+      "Name": "Elite Cleric Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9341",
+      "Name": "Elite Cleric Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9349",
+      "Name": "?Protector Name? (Cleric)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9349",
+      "Name": "?Protector Name? (Cleric)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9349",
+      "Name": "?Protector Name? (Cleric)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9349",
+      "Name": "?Protector Name? (Cleric)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9350",
+      "Name": "Shadow Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9350",
+      "Name": "Shadow Garb",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9350",
+      "Name": "Shadow Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9350",
+      "Name": "Shadow Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9350",
+      "Name": "Shadow Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9350",
+      "Name": "Shadow Garb",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9350",
+      "Name": "Shadow Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9350",
+      "Name": "Shadow Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9360",
+      "Name": "Standard Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9360",
+      "Name": "Hard Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9360",
+      "Name": "Hard Leather Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9360",
+      "Name": "Hard Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9360",
+      "Name": "Standard Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9360",
+      "Name": "Hard Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9360",
+      "Name": "Hard Leather Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9360",
+      "Name": "Hard Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9370",
+      "Name": "Sorcerer Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9370",
+      "Name": "Sorcerer Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9370",
+      "Name": "Sorcerer Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9370",
+      "Name": "Sorcerer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9370",
+      "Name": "Sorcerer Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9370",
+      "Name": "Sorcerer Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9370",
+      "Name": "Sorcerer Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9370",
+      "Name": "Sorcerer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9371",
+      "Name": "Mage Smith Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9371",
+      "Name": "Mage Smith Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9371",
+      "Name": "Mage Smith Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9371",
+      "Name": "Mage Smith Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9371",
+      "Name": "Mage Smith Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9371",
+      "Name": "Mage Smith Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9371",
+      "Name": "Mage Smith Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9371",
+      "Name": "Mage Smith Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9372",
+      "Name": "Black Sorcerer Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9372",
+      "Name": "Black Sorcerer Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9372",
+      "Name": "Black Sorcerer Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9372",
+      "Name": "Black Sorcerer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9372",
+      "Name": "Black Sorcerer Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9372",
+      "Name": "Black Sorcerer Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9372",
+      "Name": "Black Sorcerer Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9372",
+      "Name": "Black Sorcerer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9379",
+      "Name": "?Protector Name? (Sorcerer)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9379",
+      "Name": "?Protector Name? (Sorcerer)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9379",
+      "Name": "?Protector Name? (Sorcerer)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9379",
+      "Name": "?Protector Name? (Sorcerer)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9380",
+      "Name": "Tattered Cloth Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9380",
+      "Name": "Tattered Cloth Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9380",
+      "Name": "Tattered Cloth Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9380",
+      "Name": "Heavy Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9380",
+      "Name": "Tattered Cloth Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9380",
+      "Name": "Tattered Cloth Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9380",
+      "Name": "Tattered Cloth Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9380",
+      "Name": "Heavy Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9389",
+      "Name": "?Protector Name? (Tattered Cloth)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9389",
+      "Name": "?Protector Name? (Tattered Cloth)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9389",
+      "Name": "?Protector Name? (Tattered Cloth)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9389",
+      "Name": "?Protector Name? (Tattered Cloth)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9390",
+      "Name": "Helm of Thorns",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9390",
+      "Name": "Armor of Thorns",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9390",
+      "Name": "Gauntlets of Thorns",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9390",
+      "Name": "Leggings of Thorns",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9390",
+      "Name": "Leggings of Thorns",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9400",
+      "Name": "Xanthous Crown",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9400",
+      "Name": "Xanthous Overcoat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9400",
+      "Name": "Xanthous Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9400",
+      "Name": "Xanthous Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9400",
+      "Name": "Xanthous Crown",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9400",
+      "Name": "Xanthous Overcoat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9400",
+      "Name": "Xanthous Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9400",
+      "Name": "Xanthous Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9420",
+      "Name": "Pharis\u0027s Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9420",
+      "Name": "Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9420",
+      "Name": "Leather Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9420",
+      "Name": "Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9420",
+      "Name": "Pharis\u0027s Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9420",
+      "Name": "Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9420",
+      "Name": "Leather Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9420",
+      "Name": "Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9430",
+      "Name": "Painting Guardian Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9430",
+      "Name": "Painting Guardian Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9430",
+      "Name": "Painting Guardian Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9430",
+      "Name": "Painting Guardian Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9430",
+      "Name": "Painting Guardian Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9430",
+      "Name": "Painting Guardian Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9430",
+      "Name": "Painting Guardian Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9430",
+      "Name": "Painting Guardian Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9440",
+      "Name": "Eastern Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9440",
+      "Name": "Eastern Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9440",
+      "Name": "Eastern Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9440",
+      "Name": "Eastern Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9440",
+      "Name": "Eastern Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9440",
+      "Name": "Eastern Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9440",
+      "Name": "Eastern Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9440",
+      "Name": "Eastern Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9450",
+      "Name": "Thief Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9450",
+      "Name": "Black Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9450",
+      "Name": "Black Leather Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9450",
+      "Name": "Black Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9450",
+      "Name": "Thief Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9450",
+      "Name": "Black Leather Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9450",
+      "Name": "Black Leather Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9450",
+      "Name": "Black Leather Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9460",
+      "Name": "Priest\u0027s Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9460",
+      "Name": "Holy Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9460",
+      "Name": "Traveling Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9460",
+      "Name": "Holy Trousers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9460",
+      "Name": "Priest\u0027s Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9460",
+      "Name": "Holy Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9460",
+      "Name": "Traveling Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9460",
+      "Name": "Holy Trousers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9470",
+      "Name": "Ornstein\u0027s Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9470",
+      "Name": "Ornstein\u0027s Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9470",
+      "Name": "Ornstein\u0027s Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9470",
+      "Name": "Ornstein\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9470",
+      "Name": "Ornstein\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9480",
+      "Name": "Crown of Dusk",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9480",
+      "Name": "Antiquated Dress",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9480",
+      "Name": "Antiquated Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9480",
+      "Name": "Antiquated Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9480",
+      "Name": "Crown of Dusk",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9480",
+      "Name": "Antiquated Dress",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9480",
+      "Name": "Antiquated Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9480",
+      "Name": "Antiquated Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9490",
+      "Name": "Black Knight Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9490",
+      "Name": "Black Knight Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9490",
+      "Name": "Black Knight Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9490",
+      "Name": "Black Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9490",
+      "Name": "Black Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9500",
+      "Name": "Elite Knight Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9500",
+      "Name": "Elite Knight Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9500",
+      "Name": "Elite Knight Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9500",
+      "Name": "Elite Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9500",
+      "Name": "Elite Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9509",
+      "Name": "?Protector Name? (Elite Knight)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9509",
+      "Name": "?Protector Name? (Elite Knight)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9509",
+      "Name": "?Protector Name? (Elite Knight)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9509",
+      "Name": "?Protector Name? (Elite Knight)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9510",
+      "Name": "Helm of the Wise",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9510",
+      "Name": "Armor of the Glorious",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9510",
+      "Name": "Gauntlets of the Vanquisher",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9510",
+      "Name": "Boots of the Explorer",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9510",
+      "Name": "Helm of the Wise",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9510",
+      "Name": "Armor of the Glorious",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9510",
+      "Name": "Gauntlets of the Vanquisher",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9510",
+      "Name": "Boots of the Explorer",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9520",
+      "Name": "Dingy Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9520",
+      "Name": "Dingy Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9520",
+      "Name": "Dingy Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9520",
+      "Name": "Blood-Stained Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9520",
+      "Name": "Dingy Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9520",
+      "Name": "Dingy Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9520",
+      "Name": "Dingy Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9520",
+      "Name": "Blood-Stained Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9521",
+      "Name": "Maiden Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9521",
+      "Name": "Maiden Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9521",
+      "Name": "Maiden Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9521",
+      "Name": "Maiden Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9521",
+      "Name": "Maiden Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9521",
+      "Name": "Maiden Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9521",
+      "Name": "Maiden Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9521",
+      "Name": "Maiden Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9529",
+      "Name": "?Protector Name? (Maiden)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9529",
+      "Name": "?Protector Name? (Maiden)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9529",
+      "Name": "?Protector Name? (Maiden)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9529",
+      "Name": "?Protector Name? (Maiden)",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9530",
+      "Name": "Wanderer Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9530",
+      "Name": "Wanderer Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9530",
+      "Name": "Wanderer Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9530",
+      "Name": "Wanderer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9530",
+      "Name": "Wanderer Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9530",
+      "Name": "Wanderer Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9530",
+      "Name": "Wanderer Manchette",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9530",
+      "Name": "Wanderer Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9540",
+      "Name": "Big Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9540",
+      "Name": "Sage Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9540",
+      "Name": "Traveling Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9540",
+      "Name": "Traveling Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9540",
+      "Name": "Big Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9540",
+      "Name": "Sage Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9540",
+      "Name": "Traveling Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9540",
+      "Name": "Traveling Boots",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9550",
+      "Name": "Knight Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9550",
+      "Name": "Knight Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9550",
+      "Name": "Knight Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9550",
+      "Name": "Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9550",
+      "Name": "Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9560",
+      "Name": "Silver Knight Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9560",
+      "Name": "Silver Knight Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9560",
+      "Name": "Silver Knight Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9560",
+      "Name": "Silver Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9560",
+      "Name": "Silver Knight Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9570",
+      "Name": "Havel\u0027s Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9570",
+      "Name": "Havel\u0027s Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9570",
+      "Name": "Havel\u0027s Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9570",
+      "Name": "Havel\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9570",
+      "Name": "Havel\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9600",
+      "Name": "Dragon Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9600",
+      "Name": "Dragon Head",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9600",
+      "Name": "Dragon Body",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9600",
+      "Name": "Dragon Arms",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_A_9600",
+      "Name": "Dragon Legs",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9610",
+      "Name": "Brass Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9610",
+      "Name": "Brass Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9610",
+      "Name": "Brass Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9610",
+      "Name": "Brass Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9610",
+      "Name": "Brass Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9610",
+      "Name": "Brass Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9610",
+      "Name": "Brass Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9610",
+      "Name": "Brass Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9620",
+      "Name": "Gold-Hemmed Black Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9620",
+      "Name": "Gold-Hemmed Black Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9620",
+      "Name": "Gold-Hemmed Black Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9620",
+      "Name": "Gold-Hemmed Black Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9620",
+      "Name": "Gold-Hemmed Black Hood",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9620",
+      "Name": "Gold-Hemmed Black Cloak",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9620",
+      "Name": "Gold-Hemmed Black Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9620",
+      "Name": "Gold-Hemmed Black Skirt",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9630",
+      "Name": "Golem Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9630",
+      "Name": "Golem Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9630",
+      "Name": "Golem Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9630",
+      "Name": "Golem Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9630",
+      "Name": "Golem Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9700",
+      "Name": "Helm of Artorias",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9700",
+      "Name": "Armor of Artorias",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9700",
+      "Name": "Gauntlets Of Artorias",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9700",
+      "Name": "Leggings of Artorias",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9700",
+      "Name": "Leggings of Artorias",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9710",
+      "Name": "Porcelain Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9710",
+      "Name": "Lord\u0027s Blade Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9710",
+      "Name": "Lord\u0027s Blade Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9710",
+      "Name": "Lord\u0027s Blade Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9710",
+      "Name": "Porcelain Mask",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9710",
+      "Name": "Lord\u0027s Blade Robe",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9710",
+      "Name": "Lord\u0027s Blade Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9710",
+      "Name": "Lord\u0027s Blade Waistcloth",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9720",
+      "Name": "Gough\u0027s Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9720",
+      "Name": "Gough\u0027s Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9720",
+      "Name": "Gough\u0027s Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9720",
+      "Name": "Gough\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9720",
+      "Name": "Gough\u0027s Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9720",
+      "Name": "Gough\u0027s Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9720",
+      "Name": "Gough\u0027s Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9720",
+      "Name": "Gough\u0027s Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_A_9730",
+      "Name": "Guardian Helm",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_A_9730",
+      "Name": "Guardian Armor",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_A_9730",
+      "Name": "Guardian Gauntlets",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9730",
+      "Name": "Guardian Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9730",
+      "Name": "Guardian Leggings",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_M_9740",
+      "Name": "Snickering Top Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_M_9740",
+      "Name": "Chester\u0027s Long Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_M_9740",
+      "Name": "Chester\u0027s Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_M_9740",
+      "Name": "Chester\u0027s Trousers",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "HD_F_9740",
+      "Name": "Snickering Top Hat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "BD_F_9740",
+      "Name": "Chester\u0027s Long Coat",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "AM_F_9740",
+      "Name": "Chester\u0027s Gloves",
+      "Tags": [
+        "armor"
+      ]
+    },
+    {
+      "ID": "LG_F_9740",
+      "Name": "Chester\u0027s Trousers",
+      "Tags": [
+        "armor"
+      ]
+    }
+  ],
+  "Sounds": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "sound"
+      ]
+    }
+  ],
+  "TalkScripts": [],
+  "TimeActs": [
+    {
+      "ID": "0",
+      "Name": "Base",
+      "Tags": [
+        "sound"
+      ]
+    }
+  ]
+}

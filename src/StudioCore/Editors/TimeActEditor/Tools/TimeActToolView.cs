@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;

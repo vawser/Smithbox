@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using Microsoft.Extensions.Logging;
 using Silk.NET.OpenGL;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Utilities;
 using System;

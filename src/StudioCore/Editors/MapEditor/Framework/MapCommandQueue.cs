@@ -1,23 +1,16 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Core;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.MsbEditor;
 using StudioCore.Scene.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Framework;
-
+namespace StudioCore.Editors.MapEditorNS;
 public class MapCommandQueue
 {
-    public MapEditorScreen Screen;
+    public MapEditor Editor;
 
-    public MapCommandQueue(MapEditorScreen screen)
+    public MapCommandQueue(MapEditor editor)
     {
-        Screen = screen;
+        Editor = editor;
     }
 
     public void Parse(string[] initcmd)
@@ -27,10 +20,10 @@ public class MapCommandQueue
         {
             if (initcmd[0] == "propsearch")
             {
-                Screen.LocalSearchView.propSearchCmd = initcmd.Skip(1).ToArray();
-                Screen.LocalSearchView.Property = Screen.MapPropertyView.RequestedSearchProperty;
-                Screen.MapPropertyView.RequestedSearchProperty = null;
-                Screen.LocalSearchView.UpdatePropSearch = true;
+                Editor.LocalSearchView.propSearchCmd = initcmd.Skip(1).ToArray();
+                Editor.LocalSearchView.Property = Editor.MapPropertyView.RequestedSearchProperty;
+                Editor.MapPropertyView.RequestedSearchProperty = null;
+                Editor.LocalSearchView.UpdatePropSearch = true;
             }
 
             // Support loading maps through commands.
@@ -39,14 +32,14 @@ public class MapCommandQueue
             if (initcmd[0] == "load")
             {
                 var mapid = initcmd[1];
-                if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                 {
                     target = m.RootObject;
                 }
                 else
                 {
-                    Screen.Universe.LoadMap(mapid, true);
-                    Screen.MapListView.SignalLoad(mapid);
+                    Editor.Universe.LoadMap(mapid, true);
+                    Editor.MapListView.SignalLoad(mapid);
                 }
             }
 
@@ -55,7 +48,7 @@ public class MapCommandQueue
                 var mapid = initcmd[1];
                 if (initcmd.Length > 2)
                 {
-                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
                         if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
@@ -84,7 +77,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 3)
                 {
-                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         if (type == "enemy")
                         {
@@ -109,7 +102,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 2)
                 {
-                    if (Screen.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
                     {
                         if (target == null)
                             target = m.GetEnemyByID(entityID, true);
@@ -128,10 +121,10 @@ public class MapCommandQueue
 
             if (target != null)
             {
-                Screen.Universe.Selection.ClearSelection();
-                Screen.Universe.Selection.AddSelection(target);
-                Screen.Universe.Selection.GotoTreeTarget = target;
-                Screen.ActionHandler.ApplyFrameInViewport();
+                Editor.Selection.ClearSelection();
+                Editor.Selection.AddSelection(target);
+                Editor.Selection.GotoTreeTarget = target;
+                Editor.ActionHandler.ApplyFrameInViewport();
             }
         }
     }

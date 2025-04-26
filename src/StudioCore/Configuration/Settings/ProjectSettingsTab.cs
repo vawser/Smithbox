@@ -20,10 +20,10 @@ public class ProjectSettingsTab
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Enable Automatic Recent Project Loading", ref CFG.Current.Project_LoadRecentProjectImmediately);
-            UIHelper.ShowHoverTooltip("The last loaded project will be automatically loaded when Smithbox starts up if this is enabled.");
+            UIHelper.Tooltip("The last loaded project will be automatically loaded when Smithbox starts up if this is enabled.");
 
             ImGui.Checkbox("Enable Recovery Folder", ref CFG.Current.System_EnableRecoveryFolder);
-            UIHelper.ShowHoverTooltip("Enable a recovery project to be created upon an unexpected crash.");
+            UIHelper.Tooltip("Enable a recovery project to be created upon an unexpected crash.");
         }
 
         if (ImGui.CollapsingHeader("Actions", ImGuiTreeNodeFlags.DefaultOpen))
@@ -40,7 +40,7 @@ public class ProjectSettingsTab
                     CFG.Save();
                 }
             }
-            UIHelper.ShowHoverTooltip("Removes all entries in the stored Recent Project list.");
+            UIHelper.Tooltip("Removes all entries in the stored Recent Project list.");
         }
     }
 }

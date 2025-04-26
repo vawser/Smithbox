@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
@@ -38,16 +38,16 @@ public class TimeActEditorTab
             ImGui.Text("Each set of Time Acts will increase the setup time of the Time Act Editor, so only enable what you need.");
 
             ImGui.Checkbox("Load character time acts", ref CFG.Current.TimeActEditor_Load_CharacterTimeActs);
-            UIHelper.ShowHoverTooltip("Load the character time act files when setting up the Time Act Editor.");
+            UIHelper.Tooltip("Load the character time act files when setting up the Time Act Editor.");
 
             ImGui.Checkbox("Load character time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaCharacterTimeActs);
-            UIHelper.ShowHoverTooltip("Load the vanilla character time act files when setting up the Time Act Editor.");
+            UIHelper.Tooltip("Load the vanilla character time act files when setting up the Time Act Editor.");
 
             ImGui.Checkbox($"Load {objTitle} time acts", ref CFG.Current.TimeActEditor_Load_ObjectTimeActs);
-            UIHelper.ShowHoverTooltip($"Load the {objTitle} time act files when setting up the Time Act Editor.");
+            UIHelper.Tooltip($"Load the {objTitle} time act files when setting up the Time Act Editor.");
 
             ImGui.Checkbox($"Load {objTitle} time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaObjectTimeActs);
-            UIHelper.ShowHoverTooltip($"Load the vanilla {objTitle} time act files when setting up the Time Act Editor.");
+            UIHelper.Tooltip($"Load the vanilla {objTitle} time act files when setting up the Time Act Editor.");
 
             if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
@@ -64,7 +64,7 @@ public class TimeActEditorTab
                     }
                     ImGui.EndCombo();
                 }
-                UIHelper.ShowHoverTooltip("Change the compression type used when saving the Time Act container (if applicable).");
+                UIHelper.Tooltip("Change the compression type used when saving the Time Act container (if applicable).");
             }
         }
 
@@ -72,52 +72,52 @@ public class TimeActEditorTab
         if (ImGui.CollapsingHeader("Time Acts", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display time act aliases", ref CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo);
-            UIHelper.ShowHoverTooltip("Display aliases for each of the Time Act rows");
+            UIHelper.Tooltip("Display aliases for each of the Time Act rows");
         }
 
         // Animations
         if (ImGui.CollapsingHeader("Animations", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display animation file name", ref CFG.Current.TimeActEditor_DisplayAnimFileName);
-            UIHelper.ShowHoverTooltip("Display the stored filename for each animation.");
+            UIHelper.Tooltip("Display the stored filename for each animation.");
 
             ImGui.Checkbox("Display animation aliases", ref CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo);
-            UIHelper.ShowHoverTooltip("Display the generator info aliases for each of the Animation rows");
+            UIHelper.Tooltip("Display the generator info aliases for each of the Animation rows");
 
             ImGui.Checkbox("Display every valid generator in animation alias", ref CFG.Current.TimeActEditor_DisplayAllGenerators);
-            UIHelper.ShowHoverTooltip("By default only the first generator is the list is displayed, this will display them all.");
+            UIHelper.Tooltip("By default only the first generator is the list is displayed, this will display them all.");
         }
 
         // Events
         if (ImGui.CollapsingHeader("Events", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display event bank", ref CFG.Current.TimeActEditor_DisplayEventBank);
-            UIHelper.ShowHoverTooltip("Display the event bank ID.");
+            UIHelper.Tooltip("Display the event bank ID.");
 
             ImGui.Checkbox("Display event id", ref CFG.Current.TimeActEditor_DisplayEventID);
-            UIHelper.ShowHoverTooltip("Display the internal event ID for each event.");
+            UIHelper.Tooltip("Display the internal event ID for each event.");
 
             ImGui.Checkbox("Display additional in-line info: Enums", ref CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo);
-            UIHelper.ShowHoverTooltip("Display additional info about the Enum properties in the Event row name.");
+            UIHelper.Tooltip("Display additional info about the Enum properties in the Event row name.");
 
             ImGui.Checkbox("Display additional in-line info: Param References", ref CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo);
-            UIHelper.ShowHoverTooltip("Display additional info about the Param Reference properties in the Event row name.");
+            UIHelper.Tooltip("Display additional info about the Param Reference properties in the Event row name.");
 
             ImGui.Checkbox("Display additional in-line info: Data Aliases", ref CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo);
-            UIHelper.ShowHoverTooltip("Display additional info about the Data Alias properties in the Event row name.");
+            UIHelper.Tooltip("Display additional info about the Data Alias properties in the Event row name.");
 
             ImGui.Checkbox("Include Data Alias name within additional in-line info", ref CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName);
-            UIHelper.ShowHoverTooltip("Include the alias name in the Data Alias properties in the Event row name.");
+            UIHelper.Tooltip("Include the alias name in the Data Alias properties in the Event row name.");
 
             ImGui.Checkbox("Display additional in-line info: Project Enums", ref CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo);
-            UIHelper.ShowHoverTooltip("Display additional info about the Project Enum properties in the Event row name.");
+            UIHelper.Tooltip("Display additional info about the Project Enum properties in the Event row name.");
         }
 
         // Properties List
         if (ImGui.CollapsingHeader("Properties", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display property type column", ref CFG.Current.TimeActEditor_DisplayPropertyType);
-            UIHelper.ShowHoverTooltip("Display the property type as an additional column in the Properties view.");
+            UIHelper.Tooltip("Display the property type as an additional column in the Properties view.");
         }
 
         // Text Colors

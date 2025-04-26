@@ -1,50 +1,117 @@
 ﻿
+using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.TextEditor;
+using StudioCore.Resources.JSON;
+using StudioCore.Scene.Enums;
+using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Drawing;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
-using StudioCore.Core.Project;
-using StudioCore.Interface;
-using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Scene.Enums;
-using System.Windows.Forms;
 
 namespace StudioCore;
 
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(CFG))]
-internal partial class CfgSerializerContext : JsonSerializerContext
-{
-}
-
 public class CFG
 {
-    public const string FolderName = "Smithbox";
-    public const string Config_FileName = "Smithbox_Config.json";
-    public const string Keybinds_FileName = "Smithbox_Keybinds.json";
+    public static CFG Current { get; private set; }
+    public static CFG Default { get; } = new();
 
-    public const int MAX_RECENT_PROJECTS = 20;
-    public static bool IsEnabled = true;
+    public static void Setup()
+    {
+        Current = new CFG();
+    }
 
-    private static readonly object _lock_SaveLoadCFG = new();
+    public static void Load()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Configuration.json");
 
-    //private string _Param_Export_Array_Delimiter = "|";
-    private string _Param_Export_Delimiter = ",";
+        if (!File.Exists(file))
+        {
+            Current = new CFG();
+            Save();
+        }
+        else
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.CFG);
 
-    // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
-#pragma warning disable IDE0051
-    [JsonExtensionData] public IDictionary<string, JsonElement> AdditionalData;
-#pragma warning restore IDE0051
+                if (Current == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Configuration failed to load, default configuration has been restored.");
+
+                Current = new CFG();
+                Save();
+            }
+        }
+    }
+
+    public static void Save()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Configuration.json");
+
+        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.CFG);
+
+        File.WriteAllText(file, json);
+    }
+
+    //----------------------------------
+    // Project
+    //----------------------------------
+    /// <summary>
+    /// If true, the Projects window is displayed
+    /// </summary>
+    public bool DisplayProjectListWindow = true;
+
+    /// <summary>
+    /// If true, the Project window is displayed
+    /// </summary>
+    public bool DisplayProjectWindow = true;
+
+    /// <summary>
+    /// The path to the user's Mod Engine 2 exe
+    /// </summary>
+    public string ModEngineInstall = "";
+
+    /// <summary>
+    /// The dll arguments to use with the Mod Engine 2 launch
+    /// </summary>
+    public string ModEngineDlls = "";
+
+    //----------------------------------
+    // Interface
+    //----------------------------------
+    /// <summary>
+    /// If true, the windows can be moved.
+    /// </summary>
+    public bool AllowInterfaceMovement = false;
+
+    //----------------------------------
+    // Param Editor
+    //----------------------------------
+    /// <summary>
+    /// If true, then loose params are prioitized over packed params (for games where it is relevant)
+    /// </summary>
+    public bool UseLooseParams = false;
 
     //**************
     // Debug
     //**************
+    //private string _Param_Export_Array_Delimiter = "|";
+    private string _Param_Export_Delimiter = ",";
+
     public bool Debug_FireOnce = false;
 
     public bool ShowDeveloperTools = false;
@@ -774,19 +841,6 @@ public class CFG
     //****************************
     public int SelectedGameOffsetData = 0;
 
-    //****************************
-    // CFG
-    //****************************
-    public static CFG Current { get; private set; }
-    public static CFG Default { get; } = new();
-
-    public string LastProjectFile { get; set; } = "";
-    public List<RecentProject> RecentProjects { get; set; } = new();
-
-    public ProjectType Game_Type { get; set; } = ProjectType.Undefined;
-
-    
-
     public int GFX_Display_Width { get; set; } = 1920;
     public int GFX_Display_Height { get; set; } = 1057;
 
@@ -813,223 +867,21 @@ public class CFG
         set => _Param_Export_Delimiter = value;
     }
 
-    public static string GetConfigFilePath()
+}
+
+public class RenderFilterPreset
+{
+    public string Name { get; set; }
+    public RenderFilter Filters { get; set; }
+
+    [JsonConstructor]
+    public RenderFilterPreset()
     {
-        return $@"{GetConfigFolderPath()}\{Config_FileName}";
     }
 
-    public static string GetBindingsFilePath()
+    public RenderFilterPreset(string name, RenderFilter filters)
     {
-        return $@"{GetConfigFolderPath()}\{Keybinds_FileName}";
-    }
-
-    public static string GetConfigFolderPath()
-    {
-        return $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\{FolderName}";
-    }
-
-    private static void LoadConfig()
-    {
-        if (!File.Exists(GetConfigFilePath()))
-        {
-            Current = new CFG();
-        }
-        else
-        {
-            try
-            {
-                var options = new JsonSerializerOptions();
-                Current = JsonSerializer.Deserialize(File.ReadAllText(GetConfigFilePath()),
-                    CfgSerializerContext.Default.CFG);
-
-                if (Current == null)
-                {
-                    throw new Exception("JsonConvert returned null");
-                }
-            }
-            catch (Exception e)
-            {
-                var result = MessageBox.Show($"{e.Message}\n\nConfig could not be loaded. Reset settings?", "Error", MessageBoxButtons.YesNo);
-                
-                if (result == DialogResult.No)
-                {
-                    throw new Exception($"{Config_FileName} could not be loaded.\n\n{e.Message}");
-                }
-
-                Current = new CFG();
-                SaveConfig();
-            }
-        }
-        DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-    }
-
-    private static void LoadKeybinds()
-    {
-        if (!File.Exists(GetBindingsFilePath()))
-        {
-            KeyBindings.Current = new KeyBindings.Bindings();
-        }
-        else
-        {
-            try
-            {
-                KeyBindings.Current = JsonSerializer.Deserialize(File.ReadAllText(GetBindingsFilePath()),
-                    KeybindingsSerializerContext.Default.Bindings);
-                if (KeyBindings.Current == null)
-                {
-                    throw new Exception("JsonConvert returned null");
-                }
-            }
-            catch (Exception e)
-            {
-                var result = MessageBox.Show($"{e.Message}\n\nKeybinds could not be loaded. Reset keybinds?", "Error", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.No)
-                {
-                    throw new Exception($"{Keybinds_FileName} could not be loaded.\n\n{e.Message}");
-                }
-
-                KeyBindings.Current = new KeyBindings.Bindings();
-                SaveKeybinds();
-            }
-        }
-    }
-
-    private static void SaveConfig()
-    {
-        var json = JsonSerializer.Serialize(
-            Current, CfgSerializerContext.Default.CFG);
-
-        File.WriteAllText(GetConfigFilePath(), json);
-    }
-
-    private static void SaveKeybinds()
-    {
-        var json = JsonSerializer.Serialize(
-            KeyBindings.Current, KeybindingsSerializerContext.Default.Bindings);
-        File.WriteAllText(GetBindingsFilePath(), json);
-    }
-
-    public static void Save()
-    {
-        if (IsEnabled)
-        {
-            lock (_lock_SaveLoadCFG)
-            {
-                if (!Directory.Exists(GetConfigFolderPath()))
-                {
-                    Directory.CreateDirectory(GetConfigFolderPath());
-                }
-
-                SaveConfig();
-                SaveKeybinds();
-            }
-        }
-    }
-
-    public static void AttemptLoadOrDefault()
-    {
-        if (IsEnabled)
-        {
-            lock (_lock_SaveLoadCFG)
-            {
-                if (!Directory.Exists(GetConfigFolderPath()))
-                {
-                    Directory.CreateDirectory(GetConfigFolderPath());
-                }
-
-                LoadConfig();
-                LoadKeybinds();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Inserts a RecentProject to the top of the list of recent projects.
-    /// Updates LastProjectFile and removes any project dupes in the list.
-    /// </summary>
-    public static void AddMostRecentProject(RecentProject proj)
-    {
-        foreach (var otherProj in Current.RecentProjects.ToArray())
-        {
-            if (proj.IsSameProjectLocation(otherProj))
-            {
-                Current.RecentProjects.Remove(otherProj);
-            }
-        }
-
-        Current.RecentProjects.Insert(0, proj);
-
-        if (Current.RecentProjects.Count > MAX_RECENT_PROJECTS)
-        {
-            Current.RecentProjects.RemoveAt(Current.RecentProjects.Count - 1);
-        }
-
-        Current.LastProjectFile = proj.ProjectFile;
-
-        Save();
-    }
-
-    /// <summary>
-    /// Removes a RecentProject from the list of recent projects.
-    /// Also removes any dupes.
-    /// </summary>
-    public static void RemoveRecentProject(RecentProject proj)
-    {
-        foreach (var otherProj in Current.RecentProjects.ToArray())
-        {
-            if (proj.IsSameProjectLocation(otherProj))
-            {
-                Current.RecentProjects.Remove(otherProj);
-            }
-        }
-
-        CFG.Save();
-    }
-
-    public class RecentProject : IComparable<RecentProject>
-    {
-        // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
-#pragma warning disable IDE0051
-        [JsonExtensionData] public IDictionary<string, JsonElement> AdditionalData { get; set; }
-#pragma warning restore IDE0051
-
-        public string Name { get; set; }
-        public string ProjectFile { get; set; }
-        public ProjectType GameType { get; set; }
-
-        public bool IsSameProjectLocation(RecentProject otherProject)
-        {
-            if (ProjectFile == otherProject.ProjectFile)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public int CompareTo(RecentProject other)
-        {
-            var typeInt = (int)GameType;
-            var otherInt = (int)other.GameType;
-
-            return typeInt.CompareTo(otherInt);
-        }
-    }
-
-    public class RenderFilterPreset
-    {
-        [JsonConstructor]
-        public RenderFilterPreset()
-        {
-        }
-
-        public RenderFilterPreset(string name, RenderFilter filters)
-        {
-            Name = name;
-            Filters = filters;
-        }
-
-        public string Name { get; set; }
-        public RenderFilter Filters { get; set; }
+        Name = name;
+        Filters = filters;
     }
 }

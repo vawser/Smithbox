@@ -1,4 +1,6 @@
-﻿using StudioCore.Editor;
+﻿using StudioCore.Core;
+using StudioCore.Core.ProjectNS;
+using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
 using Veldrid;
@@ -20,5 +22,5 @@ public interface IGraphicsContext : IDisposable
 
     public void Initialize();
 
-    public void Draw(List<EditorScreen> editors, EditorScreen focusedEditor);
+    public void Draw(Project curProject);
 }

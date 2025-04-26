@@ -1,7 +1,8 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditorNS;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.DebugPrimitives;
@@ -14,6 +15,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
+using static StudioCore.Editors.MapEditorNS.MsbEntity;
 
 namespace StudioCore.Scene.Helpers;
 

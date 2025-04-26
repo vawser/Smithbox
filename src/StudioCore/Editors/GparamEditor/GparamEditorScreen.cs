@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GparamEditor.Core;

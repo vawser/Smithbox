@@ -199,27 +199,27 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Text("File Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetParamString", ref _targetFileString, 255);
-            UIHelper.ShowHoverTooltip("Enter target file arguments here.");
+            UIHelper.Tooltip("Enter target file arguments here.");
 
             ImGui.Text("Group Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
-            UIHelper.ShowHoverTooltip("Enter target group arguments here.");
+            UIHelper.Tooltip("Enter target group arguments here.");
 
             ImGui.Text("Field Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
-            UIHelper.ShowHoverTooltip("Enter target field arguments here.");
+            UIHelper.Tooltip("Enter target field arguments here.");
 
             ImGui.Text("Value Filter:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##filterString", ref _valueFilterString, 255);
-            UIHelper.ShowHoverTooltip("Enter value filter arguments here.");
+            UIHelper.Tooltip("Enter value filter arguments here.");
 
             ImGui.Text("Value Command:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText("##commandString", ref _valueCommandString, 255);
-            UIHelper.ShowHoverTooltip("Enter value command arguments here.");
+            UIHelper.Tooltip("Enter value command arguments here.");
 
             if (ImGui.Button("Execute", thirdButtonSize))
             {
@@ -231,7 +231,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             {
                 GenerateQuickEditCommands();
             }
-            UIHelper.ShowHoverTooltip("Automatically fill the filter input based on current selection.");
+            UIHelper.Tooltip("Automatically fill the filter input based on current selection.");
 
             ImGui.SameLine();
             if (ImGui.Button("Clear", thirdButtonSize))

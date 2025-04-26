@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 
@@ -14,6 +13,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -82,7 +82,7 @@ public class TextNewEntryCreationModal
                             CFG.Current.TextEditor_CreationModal_CreationCount = 1;
                         }
                     }
-                    UIHelper.ShowHoverTooltip("The number of entries to create.");
+                    UIHelper.Tooltip("The number of entries to create.");
 
                     // Row 2
                     ImGui.TableNextRow();
@@ -100,7 +100,7 @@ public class TextNewEntryCreationModal
                             CFG.Current.TextEditor_CreationModal_IncrementCount = 1;
                         }
                     }
-                    UIHelper.ShowHoverTooltip("The amount to increment the ID by for each created entry after the first.");
+                    UIHelper.Tooltip("The amount to increment the ID by for each created entry after the first.");
 
                     // Row 3
                     ImGui.TableNextRow();
@@ -118,7 +118,7 @@ public class TextNewEntryCreationModal
                             CFG.Current.TextEditor_CreationModal_UseIncrementalNaming = false;
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Whether to use incremental titling, which applies the current creation count number to the end of the text for a Title entry.");
+                    UIHelper.Tooltip("Whether to use incremental titling, which applies the current creation count number to the end of the text for a Title entry.");
 
                     if (CFG.Current.TextEditor_CreationModal_UseIncrementalTitling)
                     {
@@ -132,7 +132,7 @@ public class TextNewEntryCreationModal
                         ImGui.TableSetColumnIndex(1);
 
                         ImGui.InputText("##incrementalTitlingPrefix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Prefix, 255);
-                        UIHelper.ShowHoverTooltip("Characters to apply before the current creation number in the title when using Incremental Titling.");
+                        UIHelper.Tooltip("Characters to apply before the current creation number in the title when using Incremental Titling.");
 
                         // Row 5
                         ImGui.TableNextRow();
@@ -145,7 +145,7 @@ public class TextNewEntryCreationModal
 
 
                         ImGui.InputText("##incrementalTitlingPostfix", ref CFG.Current.TextEditor_CreationModal_IncrementalTitling_Postfix, 255);
-                        UIHelper.ShowHoverTooltip("Characters to apply after the current creation number in the title when using Incremental Titling.");
+                        UIHelper.Tooltip("Characters to apply after the current creation number in the title when using Incremental Titling.");
                     }
 
                     // Row 6
@@ -164,7 +164,7 @@ public class TextNewEntryCreationModal
                             CFG.Current.TextEditor_CreationModal_UseIncrementalTitling = false;
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Whether to use incremental naming, which applies a template to the Title entry text.");
+                    UIHelper.Tooltip("Whether to use incremental naming, which applies a template to the Title entry text.");
 
                     if (CFG.Current.TextEditor_CreationModal_UseIncrementalNaming)
                     {
@@ -192,13 +192,13 @@ public class TextNewEntryCreationModal
 
                             ImGui.EndCombo();
                         }
-                        UIHelper.ShowHoverTooltip("The naming template to use.");
+                        UIHelper.Tooltip("The naming template to use.");
                     }
 
                     ImGui.EndTable();
                 }
 
-                if (ImGui.Button("Inherit Text from Selection", UI.ModalButtonSize))
+                if (ImGui.Button("Inherit Text from Selection", new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
                 {
                     _newId = Selection._selectedFmgEntry.ID;
 
@@ -229,7 +229,7 @@ public class TextNewEntryCreationModal
                         _newBasicText = Selection._selectedFmgEntry.Text;
                     }
                 }
-                UIHelper.ShowHoverTooltip("Fill creation text input with contents of current selection.");
+                UIHelper.Tooltip("Fill creation text input with contents of current selection.");
             }
 
             // Grouped
@@ -276,7 +276,7 @@ public class TextNewEntryCreationModal
                 DisplayEditTable(0, ref _newId, ref _newBasicText);
             }
 
-            if (ImGui.Button("Create", UI.ModalButtonHalfSize))
+            if (ImGui.Button("Create", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
             {
                 var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
                 var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
@@ -316,7 +316,7 @@ public class TextNewEntryCreationModal
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", UI.ModalButtonHalfSize))
+            if (ImGui.Button("Close", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
             {
                 ShowModal = false;
             }

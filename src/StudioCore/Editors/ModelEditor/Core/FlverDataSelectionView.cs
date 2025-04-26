@@ -9,10 +9,10 @@ using Veldrid;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editor;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 

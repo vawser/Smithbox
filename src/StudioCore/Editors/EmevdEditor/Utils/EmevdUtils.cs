@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core.ProjectNS;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;

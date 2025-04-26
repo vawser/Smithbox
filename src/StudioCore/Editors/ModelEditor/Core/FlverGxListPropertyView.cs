@@ -82,11 +82,11 @@ public class FlverGxListPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("ID");
-        UIHelper.ShowHoverTooltip("In DS2, ID is just a number; in other games, it's 4 ASCII characters.");
+        UIHelper.Tooltip("In DS2, ID is just a number; in other games, it's 4 ASCII characters.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk04");
-        UIHelper.ShowHoverTooltip("Unknown; typically 100.");
+        UIHelper.Tooltip("Unknown; typically 100.");
 
         ImGui.NextColumn();
 
@@ -124,7 +124,7 @@ public class FlverGxListPropertyView
             {
                 item.Data = new byte[byteArraySize];
             }
-            UIHelper.ShowHoverTooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
+            UIHelper.Tooltip("Creates a byte array to the specified size. Note this is not checked for validity, that is up to the user to determine.");
         }
 
         GxDataEditor.Display(item);

@@ -1,5 +1,10 @@
 ﻿using SoapstoneLib.Proto.Internal;
+using StudioCore.Resources.JSON;
+using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Veldrid;
@@ -7,14 +12,6 @@ using static SoapstoneLib.SoulsKey;
 using static SoulsFormats.BHD5;
 
 namespace StudioCore;
-
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(KeyBindings.Bindings))]
-[JsonSerializable(typeof(KeyBind))]
-internal partial class KeybindingsSerializerContext : JsonSerializerContext
-{
-}
 
 public enum KeybindCategory
 {
@@ -107,6 +104,61 @@ public class KeyBindings
 {
     public static Bindings Current { get; set; }
     public static Bindings Default { get; set; } = new();
+
+    public static void Setup()
+    {
+        Current = new Bindings();
+    }
+
+    public static void Load()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Keybindings.json");
+
+        if (!File.Exists(file))
+        {
+            Current = new Bindings();
+            Save();
+        }
+        else
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.Bindings);
+
+                if (Current == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Keybind Configuration failed to load, default configuration has been restored.");
+
+                Current = new Bindings();
+                Save();
+            }
+        }
+    }
+
+    public static void Save()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Keybindings.json");
+
+        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.Bindings);
+
+        File.WriteAllText(file, json);
+    }
+    public static void ResetToDefault()
+    {
+        foreach (var field in typeof(Bindings).GetFields(BindingFlags.Instance | BindingFlags.Public))
+        {
+            field.SetValue(Current, field.GetValue(Default));
+        }
+    }
 
     public static void ResetKeyBinds()
     {
@@ -1046,12 +1098,5 @@ public class KeyBindings
             "Resets the zoom level to default.", 
             Key.R);
 
-        //-----------------------------
-        // Misc
-        //-----------------------------
-#pragma warning disable IDE0051
-        // JsonExtensionData stores info in config file not present in class in order to retain settings between versions.
-        [JsonExtensionData] internal IDictionary<string, JsonElement> AdditionalData { get; set; }
-#pragma warning restore IDE0051
     }
 }

@@ -3,7 +3,6 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.FileSystemGlobbing;
 using SoulsFormats.KF4;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
@@ -18,6 +17,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using static StudioCore.Configuration.SettingsWindow;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -73,7 +73,7 @@ public class FileSelectionView
             Selection.SwitchWindowContext(ModelEditorContext.File);
 
             ImGui.InputText($"Search", ref _searchInput, 255);
-            UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+            UIHelper.Tooltip("Separate terms are split via the + character.");
 
             ImGui.BeginChild("AssetBrowserLists");
             Selection.SwitchWindowContext(ModelEditorContext.File);

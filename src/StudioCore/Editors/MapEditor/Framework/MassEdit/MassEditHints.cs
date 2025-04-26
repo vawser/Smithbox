@@ -5,16 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
-
+namespace StudioCore.Editors.MapEditorNS;
 public class MassEditHints
 {
-    private MapEditorScreen Screen;
-    private MassEditHandler Handler;
-    public MassEditHints(MapEditorScreen screen, MassEditHandler handler)
+    private MapEditor Editor;
+    public MassEditHints(MapEditor editor)
     {
-        Screen = screen;
-        Handler = handler;
+        Editor = editor;
     }
 
     /// <summary>

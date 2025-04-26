@@ -148,7 +148,7 @@ public class EsdStateNodePropertyView
                     }
                 }
             }
-            UIHelper.ShowHoverTooltip("View this state group.");
+            UIHelper.Tooltip("View this state group.");
         }
 
         ImGui.TableSetColumnIndex(3);
@@ -259,7 +259,7 @@ public class EsdStateNodePropertyView
                     //EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
                 }
             }
-            UIHelper.ShowHoverTooltip("View this in its associated editor.");
+            UIHelper.Tooltip("View this in its associated editor.");
         }
     }
 
@@ -397,7 +397,7 @@ public class EsdStateNodePropertyView
                         }
                     }
                 }
-                UIHelper.ShowHoverTooltip("View this state group.");
+                UIHelper.Tooltip("View this state group.");
             }
 
             ImGui.TableSetColumnIndex(3);

@@ -1,4 +1,6 @@
-﻿using StudioCore.Editor;
+﻿using StudioCore.Core;
+using StudioCore.Core.ProjectNS;
+using StudioCore.Editor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -71,7 +73,7 @@ public class VulkanGraphicsContext : IGraphicsContext
             CFG.Current.GFX_Display_Height, ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(List<EditorScreen> editors, EditorScreen focusedEditor)
+    public void Draw(Project selectedProject)
     {
         Debug.Assert(_window.Exists);
         var width = _window.Width;
@@ -93,9 +95,20 @@ public class VulkanGraphicsContext : IGraphicsContext
             cl.Name = "WindowResize";
             RecreateWindowFramebuffers(cl);
             _imGuiRenderer.WindowResized(width, height);
-            foreach (EditorScreen editor in editors)
+
+            // Map Editor
+            if (selectedProject.EnableMapEditor && selectedProject.MapEditor != null)
             {
-                editor.EditorResized(_window, _gd);
+                if (selectedProject.MapEditor.IsSetup)
+                {
+                    selectedProject.MapEditor.Resized(_window, _gd);
+                }
+            }
+
+            // Model Editor
+            if (selectedProject.EnableModelEditor && selectedProject.ModelEditor != null)
+            {
+                selectedProject.ModelEditor.Resized(_window, _gd);
             }
 
             _gd.SubmitCommands(cl);
@@ -115,10 +128,23 @@ public class VulkanGraphicsContext : IGraphicsContext
         mainWindowCommandList.ClearDepthStencil(0.0f);
         mainWindowCommandList.SetFullViewport(0);
 
-        if (focusedEditor != null)
+        // Map Editor
+        if (selectedProject.EnableMapEditor && selectedProject.MapEditor != null)
         {
-            focusedEditor.Draw(_gd, mainWindowCommandList);
+            if (selectedProject.MapEditor.IsSetup)
+            {
+                // TODO: add window focus check in the Draw function so we don't display it when the editor isn't visible
+                selectedProject.MapEditor.Draw(_gd, mainWindowCommandList);
+            }
         }
+
+        // Model Editor
+        if (selectedProject.EnableModelEditor && selectedProject.ModelEditor != null)
+        {
+            selectedProject.ModelEditor.Draw(_gd, mainWindowCommandList);
+        }
+
+
         Fence fence = Renderer.Frame(mainWindowCommandList, false);
         mainWindowCommandList.SetFullViewport(0);
         mainWindowCommandList.SetFullScissorRects();

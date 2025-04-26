@@ -58,7 +58,7 @@ public class EmevdFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>
@@ -118,11 +118,11 @@ public class EmevdFilters
     public void DisplayEventFilterSearch()
     {
         ImGui.InputText($"Search##eventFilterSearch", ref EventFilterInput, 255);
-        UIHelper.ShowHoverTooltip(FilterCommands_Event);
+        UIHelper.Tooltip(FilterCommands_Event);
 
         ImGui.SameLine();
         ImGui.Checkbox($"##eventFilterExactMatch", ref EventFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>
@@ -208,11 +208,11 @@ public class EmevdFilters
     public void DisplayInstructionFilterSearch()
     {
         ImGui.InputText($"Search##instructionFilterSearch", ref InstructionFilterInput, 255);
-        UIHelper.ShowHoverTooltip(FilterCommands_Instruction);
+        UIHelper.Tooltip(FilterCommands_Instruction);
 
         ImGui.SameLine();
         ImGui.Checkbox($"##instructionFilterExactMatch", ref InstructionFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>

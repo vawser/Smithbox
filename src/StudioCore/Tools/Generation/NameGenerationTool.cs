@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.ParamEditor;

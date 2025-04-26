@@ -50,7 +50,7 @@ public class ParamRowEditor
             ImGui.AlignTextToFramePadding();
             ImGui.InputText("##fieldSearch", ref propSearchString,
                 255);
-            UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>");
+            UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchField.HintText}>");
 
             if (ImGui.IsItemEdited())
             {
@@ -525,7 +525,7 @@ public class ParamRowEditor
                         $"Increment: {col.Def.Increment}";
                     }
 
-                    UIHelper.ShowHoverTooltip(helpIconText);
+                    UIHelper.Tooltip(helpIconText);
                 }
             }
 

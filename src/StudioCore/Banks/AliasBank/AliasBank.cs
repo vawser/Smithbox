@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Text;
-using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 
 namespace StudioCore.Banks.AliasBank;
 

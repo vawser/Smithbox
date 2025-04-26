@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Framework;
 using StudioCore.Interface;
@@ -91,7 +91,7 @@ public class ParamEditorView
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##paramSearch",
             ref _selection.currentParamSearchString, 256);
-        UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>");
+        UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchParam.HintText}>");
 
         if (!_selection.currentParamSearchString.Equals(lastParamSearch))
         {
@@ -406,7 +406,7 @@ public class ParamEditorView
         ImGui.AlignTextToFramePadding();
         ImGui.InputText($"##rowSearch",
             ref _selection.GetCurrentRowSearchString(), 256);
-        UIHelper.ShowHoverTooltip($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>");
+        UIHelper.Tooltip($"Search <{KeyBindings.Current.PARAM_SearchRow.HintText}>");
 
         if (!lastRowSearch.ContainsKey(_selection.GetActiveParam()) || !lastRowSearch[_selection.GetActiveParam()]
                 .Equals(_selection.GetCurrentRowSearchString()))
@@ -434,7 +434,7 @@ public class ParamEditorView
         {
             _paramEditor.GotoSelectedRow = true;
         }
-        UIHelper.ShowHoverTooltip($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>");
+        UIHelper.Tooltip($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>");
 
         ImGui.SameLine();
 
@@ -445,7 +445,7 @@ public class ParamEditorView
         {
             ImGui.OpenPopup("gotoParamRow");
         }
-        UIHelper.ShowHoverTooltip($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>");
+        UIHelper.Tooltip($"Go to ID <{KeyBindings.Current.PARAM_GoToRowID.HintText}>");
 
         if (ImGui.BeginPopup("gotoParamRow"))
         {
@@ -471,7 +471,7 @@ public class ParamEditorView
         {
             ImGui.OpenPopup("massEditHint");
         }
-        UIHelper.ShowHoverTooltip(UIHints.SearchBarHint);
+        UIHelper.Tooltip(UIHints.SearchBarHint);
 
         if (ImGui.BeginPopup("massEditHint"))
         {

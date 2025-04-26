@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Memory;

@@ -1,6 +1,6 @@
 ﻿using Silk.NET.OpenGL;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;

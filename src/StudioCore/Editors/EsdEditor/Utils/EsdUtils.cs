@@ -1,4 +1,4 @@
-﻿using StudioCore.Core.Project;
+﻿using StudioCore.Core.ProjectNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;

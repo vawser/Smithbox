@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Framework.Decorators;
+namespace StudioCore.Editors.MapEditorNS;
 
 public static class PropInfo_MapObjectType
 {

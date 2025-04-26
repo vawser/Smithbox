@@ -1,12 +1,11 @@
 ﻿using Hexa.NET.ImGui;
-using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditorNS;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Framework;
-using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

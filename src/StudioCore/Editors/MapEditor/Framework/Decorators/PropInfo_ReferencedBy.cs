@@ -10,8 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 
-namespace StudioCore.Editors.MapEditor.Framework.Decorators;
-
+namespace StudioCore.Editors.MapEditorNS;
 public static class PropInfo_ReferencedBy
 {
     public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
@@ -24,7 +23,7 @@ public static class PropInfo_ReferencedBy
         ImGui.Separator();
         ImGui.Text("Referenced By:");
         ImGui.Separator();
-        UIHelper.ShowHoverTooltip("The current selection is referenced by these map objects.");
+        UIHelper.Tooltip("The current selection is referenced by these map objects.");
 
         var width = ImGui.GetWindowWidth() / 100;
 

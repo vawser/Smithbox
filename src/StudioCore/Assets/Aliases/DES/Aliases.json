@@ -1,0 +1,3093 @@
+{
+  "Assets": [
+    {
+      "ID": "default",
+      "Name": "Default",
+      "Tags": [
+        "default"
+      ]
+    }
+  ],
+  "Characters": [
+    {
+      "ID": "c0000",
+      "Name": "Player",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1000",
+      "Name": "Serpent Soldier (Sword)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1001",
+      "Name": "Serpent Soldier (Archer)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1020",
+      "Name": "Dragon God",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1030",
+      "Name": "Vanguard",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1040",
+      "Name": "Crocodile",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1070",
+      "Name": "Deer (Male)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c1080",
+      "Name": "Deer (Female)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2000",
+      "Name": "Dregling",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2005",
+      "Name": "Slave Trader",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2010",
+      "Name": "Boletaria Soldier",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2011",
+      "Name": "Boletaria Soldier",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2020",
+      "Name": "Knight",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2030",
+      "Name": "Imperial Spy",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2040",
+      "Name": "Wolf Warrior",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2050",
+      "Name": "Bear Warrior",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2060",
+      "Name": "Hyena Warrior",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2070",
+      "Name": "Prisoner",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2075",
+      "Name": "Prisoner Horde",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2080",
+      "Name": "Fat Official",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2090",
+      "Name": "Once Royal Mistress",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2100",
+      "Name": "Depraved One",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2101",
+      "Name": "Giant Depraved One",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2110",
+      "Name": "Scale Miner",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2120",
+      "Name": "Shadowlurker",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2130",
+      "Name": "Shadowlurker (Female)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c2140",
+      "Name": "Owl Warrior",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3010",
+      "Name": "Dog",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3020",
+      "Name": "Wolf",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3030",
+      "Name": "Hawk",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3040",
+      "Name": "Maneater",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3050",
+      "Name": "Gargoyle",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3060",
+      "Name": "Rat",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3070",
+      "Name": "Phosphorescent Slug",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3080",
+      "Name": "Poison Jelly",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3090",
+      "Name": "Mosquito",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3100",
+      "Name": "Rock Worm",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3110",
+      "Name": "Crystal Lizard",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3130",
+      "Name": "Bearbug",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3131",
+      "Name": "Bearbug",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3132",
+      "Name": "Flying Bearbug",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3133",
+      "Name": "Bearbug",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3140",
+      "Name": "Shadow Bird",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3160",
+      "Name": "Mind Flayer",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3170",
+      "Name": "Chomper",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c3180",
+      "Name": "Giant Tick",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4000",
+      "Name": "King Allant",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4010",
+      "Name": "Reaper",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4020",
+      "Name": "Skeleton (Gold)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4021",
+      "Name": "Skeleton (Silver)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4022",
+      "Name": "Skeleton (Black)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4030",
+      "Name": "Mind Flayer",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4040",
+      "Name": "Filthy One",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4050",
+      "Name": "Flamelurker",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c4060",
+      "Name": "Yeti Monster",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5000",
+      "Name": "Hoplite",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5001",
+      "Name": "Phalanx",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5009",
+      "Name": "Hoplite",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5010",
+      "Name": "Tower Knight",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5020",
+      "Name": "Penetrator",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5030",
+      "Name": "Storm King",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5031",
+      "Name": "Storm Beast (Sting Ray)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5040",
+      "Name": "Adjudicator",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5050",
+      "Name": "Mind Flayer",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5060",
+      "Name": "Fool\u0027s Idol",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5070",
+      "Name": "Man Centipede",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5080",
+      "Name": "Dirty Colossus",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5090",
+      "Name": "Leechmonger",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5100",
+      "Name": "Armor Spider",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5110",
+      "Name": "Primeval Demon",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5120",
+      "Name": "Blue Dragon / Wyvern",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c5130",
+      "Name": "Red Dragon / Wyvern",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6000",
+      "Name": "Old One",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6020",
+      "Name": "Old Hero",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6030",
+      "Name": "Old Monk",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6031",
+      "Name": "Old Monk",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6032",
+      "Name": "Old Monk\u0027s Flying Robe (cutscene)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6040",
+      "Name": "Maiden Astraea",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6041",
+      "Name": "Plague Baby",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c6050",
+      "Name": "Dragon God",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7050",
+      "Name": "NPC Male in Leather Armor Set",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7080",
+      "Name": "The Monumental",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7090",
+      "Name": "Unknown NPC with Monocle",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7100",
+      "Name": "Filthy Man Vendor",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7105",
+      "Name": "Filthy Man Vendor (Ghost)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7110",
+      "Name": "Filthy Woman",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7115",
+      "Name": "Filthy Woman (Ghost)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7120",
+      "Name": "Child",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7130",
+      "Name": "Blacksmith Boldwin",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7131",
+      "Name": "Blacksmith Ed",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7135",
+      "Name": "Blacksmith (Ghost)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7150",
+      "Name": "Maiden in Black",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "c7230",
+      "Name": "False King Allant",
+      "Tags": [
+        "default"
+      ]
+    }
+  ],
+  "Cutscenes": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "cutscene"
+      ]
+    }
+  ],
+  "EventFlags": [
+    {
+      "ID": "1000",
+      "Name": "Example",
+      "Tags": [
+        "flag"
+      ]
+    }
+  ],
+  "Gparams": [
+    {
+      "ID": "m01_00_00_00",
+      "Name": "The Nexus / Below the Nexus",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_00_00_00",
+      "Name": "Boletarian Palace 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_01_00_00",
+      "Name": "Boletarian Palace 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_02_00_00",
+      "Name": "Boletarian Palace 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_03_00_00",
+      "Name": "Boletarian Palace 4",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_00_00_00",
+      "Name": "Shrine of Storms 0",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m03_01_00_00",
+      "Name": "Shrine of Storms 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_02_00_00",
+      "Name": "Shrine of Storms 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_03_00_00",
+      "Name": "Shrine of Storms 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_00_00_00",
+      "Name": "Tower of Latria 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_01_00_00",
+      "Name": "Tower of Latria 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_02_00_00",
+      "Name": "Tower of Latria 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_00_00_00",
+      "Name": "Valley of Defilement 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_01_00_00",
+      "Name": "Valley of Defilement 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_02_00_00",
+      "Name": "Valley of Defilement 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_00_00_00",
+      "Name": "Stonefang Tunnel 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_01_00_00",
+      "Name": "Stonefang Tunnel 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_02_00_00",
+      "Name": "Stonefang Tunnel 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m07_00_00_00",
+      "Name": "Northern Limit 1",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m07_01_00_00",
+      "Name": "Northern Limit 2",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m07_02_00_00",
+      "Name": "Northern Limit 3",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m08_00_00_00",
+      "Name": "Tutorial 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m08_01_00_00",
+      "Name": "Tutorial 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m08_02_00_00",
+      "Name": "Tutorial 3",
+      "Tags": [
+        ""
+      ]
+    }
+  ],
+  "MapPieces": [
+    {
+      "ID": "default",
+      "Name": "Default",
+      "Tags": [
+        "default"
+      ]
+    }
+  ],
+  "MapNames": [
+    {
+      "ID": "m01_00_00_00",
+      "Name": "The Nexus / Below the Nexus",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_00_00_00",
+      "Name": "Boletarian Palace 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_01_00_00",
+      "Name": "Boletarian Palace 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_02_00_00",
+      "Name": "Boletarian Palace 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m02_03_00_00",
+      "Name": "Boletarian Palace 4",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_00_00_00",
+      "Name": "Shrine of Storms 0",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m03_01_00_00",
+      "Name": "Shrine of Storms 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_02_00_00",
+      "Name": "Shrine of Storms 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m03_03_00_00",
+      "Name": "Shrine of Storms 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_00_00_00",
+      "Name": "Tower of Latria 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_01_00_00",
+      "Name": "Tower of Latria 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m04_02_00_00",
+      "Name": "Tower of Latria 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_00_00_00",
+      "Name": "Valley of Defilement 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_01_00_00",
+      "Name": "Valley of Defilement 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m05_02_00_00",
+      "Name": "Valley of Defilement 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_00_00_00",
+      "Name": "Stonefang Tunnel 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_01_00_00",
+      "Name": "Stonefang Tunnel 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m06_02_00_00",
+      "Name": "Stonefang Tunnel 3",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m07_00_00_00",
+      "Name": "Northern Limit 1",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m07_01_00_00",
+      "Name": "Northern Limit 2",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m07_02_00_00",
+      "Name": "Northern Limit 3",
+      "Tags": [
+        "unused"
+      ]
+    },
+    {
+      "ID": "m08_00_00_00",
+      "Name": "Tutorial 1",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m08_01_00_00",
+      "Name": "Tutorial 2",
+      "Tags": [
+        ""
+      ]
+    },
+    {
+      "ID": "m08_02_00_00",
+      "Name": "Tutorial 3",
+      "Tags": [
+        ""
+      ]
+    }
+  ],
+  "Movies": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "movie"
+      ]
+    }
+  ],
+  "Particles": [
+    {
+      "ID": "f000000001",
+      "Name": "Example",
+      "Tags": [
+        "fxr"
+      ]
+    }
+  ],
+  "Parts": [
+    {
+      "ID": "AM_M_0000",
+      "Name": "No Equipment (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_0000",
+      "Name": "No Equipment (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_0000",
+      "Name": "No Equipment (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_0000",
+      "Name": "No Equipment (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_0000",
+      "Name": "No Equipment (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_0000",
+      "Name": "No Equipment (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_0000",
+      "Name": "No Equipment (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_0000",
+      "Name": "No Equipment (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0000",
+      "Name": "Shaved",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0000",
+      "Name": "Shaved",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0001",
+      "Name": "Buzzcut",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0001",
+      "Name": "Buzzcut",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0002",
+      "Name": "Spiked",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0002",
+      "Name": "Short Wavy",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0003",
+      "Name": "Bowl",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0003",
+      "Name": "Long Wavy",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0004",
+      "Name": "Swept Back",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0004",
+      "Name": "Short",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0005",
+      "Name": "Parted Center",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0005",
+      "Name": "Long",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0006",
+      "Name": "\u003Cnull\u003E",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0006",
+      "Name": "\u003Cnull\u003E",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0007",
+      "Name": "Wavy",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0007",
+      "Name": "Wild",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0008",
+      "Name": "Wild",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0008",
+      "Name": "Ponytail",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_M_0009",
+      "Name": "Ponytail",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "HR_F_0009",
+      "Name": "Chignon",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_5000",
+      "Name": "Shaman\u0027s Clothes",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_5000",
+      "Name": "Rogue\u0027s Clothes",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_5000",
+      "Name": "Shaman\u0027s Armbands",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_5000",
+      "Name": "Rogue\u0027s Gloves",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_5000",
+      "Name": "Shaman\u0027s Tabi",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_5000",
+      "Name": "Rogue\u0027s Boots",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_5010",
+      "Name": "Silver Coronet (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_5010",
+      "Name": "Silver Coronet (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_5010",
+      "Name": "Wizard\u0027s Clothes (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_5010",
+      "Name": "Wizard\u0027s Clothes (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_5010",
+      "Name": "Wizard\u0027s Gloves (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_5010",
+      "Name": "Wizard\u0027s Gloves (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_5010",
+      "Name": "Wizard\u0027s Shoes (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_5010",
+      "Name": "Wizard\u0027s Shoes (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_5900",
+      "Name": "Roaming Wizard (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_5900",
+      "Name": "Roaming Wizard (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_5900",
+      "Name": "Roaming Wizard (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_5900",
+      "Name": "Roaming Wizard (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_5900",
+      "Name": "Roaming Wizard (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_5900",
+      "Name": "Roaming Wizard (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_5900",
+      "Name": "Roaming Wizard (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_5900",
+      "Name": "Roaming Wizard (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6000",
+      "Name": "Assassin\u0027s Mask (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6000",
+      "Name": "Assassin\u0027s Mask (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_6000",
+      "Name": "Black Leather (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_6000",
+      "Name": "Black Leather (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6000",
+      "Name": "Black Gloves (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6000",
+      "Name": "Black Gloves (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_6000",
+      "Name": "Black Boots (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_6000",
+      "Name": "Black Boots (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6010",
+      "Name": "Leather Cap (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6010",
+      "Name": "Leather Cap (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_6010",
+      "Name": "Leather Armor (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_6010",
+      "Name": "Leather Armor (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6010",
+      "Name": "Leather Gloves (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6010",
+      "Name": "Leather Gloves (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_6010",
+      "Name": "Leather Boots (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_6010",
+      "Name": "Leather Boots (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6900",
+      "Name": "Roaming Hunter (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6900",
+      "Name": "Roaming Hunter (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_6900",
+      "Name": "Roaming Hunter (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_6900",
+      "Name": "Roaming Hunter (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_6900",
+      "Name": "Roaming Hunter (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_6900",
+      "Name": "Roaming Hunter (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_6900",
+      "Name": "Roaming Hunter (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_6900",
+      "Name": "Roaming Hunter (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7000",
+      "Name": "Chain Helmet (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7000",
+      "Name": "Chain Helmet (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_7000",
+      "Name": "Chain Mail (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_7000",
+      "Name": "Chain Mail (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7000",
+      "Name": "Chain Gloves (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7000",
+      "Name": "Chain Gloves (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_7000",
+      "Name": "Hard Leather Boots (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_7000",
+      "Name": "Hard Leather Boots (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7010",
+      "Name": "Mirdan Helmet (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7010",
+      "Name": "Mirdan Helmet (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_7010",
+      "Name": "Mirdan Scale Mail (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_7010",
+      "Name": "Mirdan Scale Mail (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7010",
+      "Name": "Mirdan Gauntlets (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7010",
+      "Name": "Mirdan Gauntlets (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_7010",
+      "Name": "Mirdan Leggings (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_7010",
+      "Name": "Mirdan Leggings (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7100",
+      "Name": "Venerable Sage\u0027s Hood",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7100",
+      "Name": "Three-Cornered Hat",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_7100",
+      "Name": "Venerable Sage\u0027s Robe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_7100",
+      "Name": "Old Ragged Robes",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7100",
+      "Name": "Venerable Sage\u0027s Gloves",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7100",
+      "Name": "Old Ragged Gloves",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_7100",
+      "Name": "Venerable Sage\u0027s Boots",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_7100",
+      "Name": "Old Ragged Boots",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7900",
+      "Name": "Roaming Cleric (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7900",
+      "Name": "Roaming Cleric (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_7900",
+      "Name": "Roaming Cleric (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_7900",
+      "Name": "Roaming Cleric (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_7900",
+      "Name": "Roaming Cleric (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_7900",
+      "Name": "Roaming Cleric (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_7900",
+      "Name": "Roaming Cleric (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_7900",
+      "Name": "Roaming Cleric (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8000",
+      "Name": "Plate Helmet (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8000",
+      "Name": "Plate Helmet (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8000",
+      "Name": "Coat of Plate (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8000",
+      "Name": "Coat of Plate (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8000",
+      "Name": "Plate Gauntlets (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8000",
+      "Name": "Plate Gauntlets (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8000",
+      "Name": "Plate Leggings (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8000",
+      "Name": "Plate Leggings (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8010",
+      "Name": "Fluted Helmet (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8010",
+      "Name": "Fluted Helmet (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8010",
+      "Name": "Fluted Armor (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8010",
+      "Name": "Fluted Armor (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8010",
+      "Name": "Fluted Gauntlets (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8010",
+      "Name": "Fluted Gauntlets (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8010",
+      "Name": "Fluted Leggings (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8010",
+      "Name": "Fluted Leggings (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_A_8020",
+      "Name": "Brushwood Helmet",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8020",
+      "Name": "Brushwood Armor (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8020",
+      "Name": "Brushwood Armor (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_A_8020",
+      "Name": "Brushwood Gauntlets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8020",
+      "Name": "Brushwood Leggings (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8020",
+      "Name": "Brushwood Leggings (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8100",
+      "Name": "Dark Silver Helmet",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8100",
+      "Name": "Dull Gold Helmet",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8100",
+      "Name": "Dark Silver Armor",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8100",
+      "Name": "Dull Gold Armor",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8100",
+      "Name": "Dark Silver Gauntlets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8100",
+      "Name": "Dull Gold Gauntlets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8100",
+      "Name": "Dark Silver Leggings",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8100",
+      "Name": "Dull Gold Leggings",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_A_8110",
+      "Name": "Gloom Helmet",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8110",
+      "Name": "Gloom Armor (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8110",
+      "Name": "Gloom Armor (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_A_8110",
+      "Name": "Gloom Gauntlets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8110",
+      "Name": "Gloom Leggings (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8110",
+      "Name": "Gloom Leggings (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8120",
+      "Name": "Ancient King\u0027s Mask",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8120",
+      "Name": "Binded Hood",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8120",
+      "Name": "Ancient King\u0027s Breastplate",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8120",
+      "Name": "Binded Cross",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8120",
+      "Name": "Ancient King\u0027s Gauntlets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8120",
+      "Name": "Binded Gloves",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8120",
+      "Name": "Ancient King\u0027s Leggings",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8120",
+      "Name": "Binded Boots",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8130",
+      "Name": "Saint\u0027s Robe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8130",
+      "Name": "Saint\u0027s Gloves",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8130",
+      "Name": "Saint\u0027s Boots",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8900",
+      "Name": "Roaming Warrior (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8900",
+      "Name": "Roaming Warrior (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_M_8900",
+      "Name": "Roaming Warrior (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "BD_F_8900",
+      "Name": "Roaming Warrior (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_8900",
+      "Name": "Roaming Warrior (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_8900",
+      "Name": "Roaming Warrior (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_M_8900",
+      "Name": "Roaming Warrior (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "LG_F_8900",
+      "Name": "Roaming Warrior (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_9000",
+      "Name": "\u5F98\u5F8A\u9AEA\u3010\u30B7\u30B9\u30C6\u30E0\u3011 (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_9000",
+      "Name": "\u5F98\u5F8A\u9AEA\u3010\u30B7\u30B9\u30C6\u30E0\u3011 (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_M_9020",
+      "Name": "Official\u0027s Cap (Male Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_9020",
+      "Name": "Official\u0027s Cap (Female Version)",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_F_9020",
+      "Name": "Silver Bracelets",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "AM_A_9500",
+      "Name": "Monk\u0027s Head Wrappings",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0100",
+      "Name": "Dagger",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0102",
+      "Name": "Mail Breaker",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0103",
+      "Name": "Parrying Dagger",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0105",
+      "Name": "Secret Dagger",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0150",
+      "Name": "Baby\u0027s Nail",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0151",
+      "Name": "Geri\u0027s Stiletto",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0152",
+      "Name": "Kris Blade",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0190",
+      "Name": "\u5F98\u5F8A\u77ED\u5263",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0200",
+      "Name": "Short Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0201",
+      "Name": "Long Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0202",
+      "Name": "Broadsword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0206",
+      "Name": "Bastard Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0207",
+      "Name": "Claymore",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0208",
+      "Name": "Great Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0210",
+      "Name": "Flamberge",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0212",
+      "Name": "Knight Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0250",
+      "Name": "Dragon Bone Smasher",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0251",
+      "Name": "Soulbrandt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0252",
+      "Name": "Rune Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0253",
+      "Name": "Northern Regalia",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0254",
+      "Name": "Demonbrandt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0255",
+      "Name": "Broken Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0256",
+      "Name": "Storm Ruler",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0257",
+      "Name": "Blueblood Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0258",
+      "Name": "Large Sword of Moonlight",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0259",
+      "Name": "Penetrating Sword",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0260",
+      "Name": "Morion Blade",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0290",
+      "Name": "\u5F98\u5F8A\u76F4\u5263",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0300",
+      "Name": "Rapier",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0301",
+      "Name": "Estoc",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0350",
+      "Name": "Epee Rapier",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0351",
+      "Name": "Spiral Rapier",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0352",
+      "Name": "Needle of Eternal Agony",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0390",
+      "Name": "\u5F98\u5F8A\u523A\u5263",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0400",
+      "Name": "Scimitar",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0401",
+      "Name": "Kilij",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0402",
+      "Name": "Uchigatana",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0403",
+      "Name": "Shotel",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0404",
+      "Name": "Falchion",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0450",
+      "Name": "Hiltless",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0451",
+      "Name": "Blind",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0452",
+      "Name": "Magic Sword Makoto",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0453",
+      "Name": "Large Sword of Searching",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0490",
+      "Name": "\u5F98\u5F8A\u66F2\u5263",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0501",
+      "Name": "Battle Axe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0503",
+      "Name": "Crescent Axe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0504",
+      "Name": "Great Axe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0550",
+      "Name": "Guillotine Axe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0551",
+      "Name": "Dozer Axe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0590",
+      "Name": "\u5F98\u5F8A\u65A7",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0600",
+      "Name": "Club",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0601",
+      "Name": "Great Club",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0602",
+      "Name": "Mace",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0603",
+      "Name": "Morning Star",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0604",
+      "Name": "War Pick",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0605",
+      "Name": "Pickaxe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0610",
+      "Name": "Meat Cleaver",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0650",
+      "Name": "Bramd",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0690",
+      "Name": "\u5F98\u5F8A\u69CC",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0700",
+      "Name": "Short Spear",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0702",
+      "Name": "Winged Spear",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0750",
+      "Name": "Istarelle",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0751",
+      "Name": "Scraping Spear",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0790",
+      "Name": "\u5F98\u5F8A\u69CD",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0801",
+      "Name": "War Scythe",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0802",
+      "Name": "Mirdan Hammer",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0804",
+      "Name": "Halberd",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0850",
+      "Name": "Phosphorescent Pole",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0890",
+      "Name": "\u5F98\u5F8A\u7AFF\u72B6",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0900",
+      "Name": "Wooden Catalyst",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0901",
+      "Name": "Silver Catalyst",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0950",
+      "Name": "Insanity Catalyst",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0951",
+      "Name": "Talisman of God",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0952",
+      "Name": "Talisman of Beasts",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_0990",
+      "Name": "\u5F98\u5F8A\u89E6\u5A92",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1000",
+      "Name": "Iron Knuckles",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1001",
+      "Name": "Claws",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1002",
+      "Name": "No Equipment",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1050",
+      "Name": "Hands of God",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1090",
+      "Name": "\u5F98\u5F8A\u62F3",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1300",
+      "Name": "Short Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1301",
+      "Name": "Long Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1302",
+      "Name": "Compound Short Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1303",
+      "Name": "Compound Long Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1350",
+      "Name": "White Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1351",
+      "Name": "Lava Bow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1390",
+      "Name": "\u5F98\u5F8A\u5F13",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1398",
+      "Name": "\u5F98\u5F8A\u77E2\u7B52",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1399",
+      "Name": "Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1401",
+      "Name": "Light Crossbow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1402",
+      "Name": "Heavy Crossbow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1403",
+      "Name": "Gargoyle Crossbow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1490",
+      "Name": "\u5F98\u5F8A\u5F29",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1500",
+      "Name": "Buckler",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1501",
+      "Name": "Wooden Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1502",
+      "Name": "Leather Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1503",
+      "Name": "Heater Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1504",
+      "Name": "Spiked Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1505",
+      "Name": "Adjudicator\u0027s Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1508",
+      "Name": "Kite Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1509",
+      "Name": "Soldier\u0027s Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1510",
+      "Name": "Knight\u0027s Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1511",
+      "Name": "Slave\u0027s Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1550",
+      "Name": "Tower Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1551",
+      "Name": "Dark Silver Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1552",
+      "Name": "Large Brushwood Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1553",
+      "Name": "Rune Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1554",
+      "Name": "Steel Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1555",
+      "Name": "Purple Flame Shield",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1590",
+      "Name": "\u5F98\u5F8A\u76FE",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1600",
+      "Name": "Heavy Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1601",
+      "Name": "Light Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1603",
+      "Name": "Fire Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1604",
+      "Name": "Rotten Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1605",
+      "Name": "Holy Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1606",
+      "Name": "White Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1607",
+      "Name": "Wooden Arrow",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1700",
+      "Name": "Bolt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1701",
+      "Name": "Heavy Bolt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1702",
+      "Name": "Black Bolt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1703",
+      "Name": "Wooden Bolt",
+      "Tags": [
+        "default"
+      ]
+    },
+    {
+      "ID": "WP_A_1704",
+      "Name": "\u003Cnull\u003E",
+      "Tags": [
+        "default"
+      ]
+    }
+  ],
+  "Sounds": [
+    {
+      "ID": "1",
+      "Name": "Example",
+      "Tags": [
+        "sound"
+      ]
+    }
+  ],
+  "TalkScripts": [],
+  "TimeActs": [
+    {
+      "ID": "0",
+      "Name": "Base",
+      "Tags": [
+        "sound"
+      ]
+    }
+  ]
+}

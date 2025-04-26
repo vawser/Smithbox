@@ -28,7 +28,7 @@ public static class ParamEntryContextMenu
             {
                 Clipboard.SetText(paramKey);
             }
-            UIHelper.ShowHoverTooltip($"Copy the name of the current param selection to the clipboard.");
+            UIHelper.Tooltip($"Copy the name of the current param selection to the clipboard.");
 
             // Pin
             if (!isPinnedEntry)
@@ -42,7 +42,7 @@ public static class ParamEntryContextMenu
                         pinned.Add(paramKey);
                     }
                 }
-                UIHelper.ShowHoverTooltip($"Pin the current param selection to the top of the param list.");
+                UIHelper.Tooltip($"Pin the current param selection to the top of the param list.");
             }
             // Unpin
             else if (isPinnedEntry)
@@ -56,7 +56,7 @@ public static class ParamEntryContextMenu
                         pinned.Remove(paramKey);
                     }
                 }
-                UIHelper.ShowHoverTooltip($"Unpin the current param selection from the top of the param list.");
+                UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
             }
 
             if (ParamEditorScreen.EditorMode && param != null)
@@ -80,13 +80,13 @@ public static class ParamEntryContextMenu
                 {
                     DokuWikiHelper.OutputParamTableInformation();
                 }
-                UIHelper.ShowHoverTooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
+                UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
                 if (ImGui.Selectable("Copy Param Field List"))
                 {
                     DokuWikiHelper.OutputParamInformation(paramKey);
                 }
-                UIHelper.ShowHoverTooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
+                UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }
 
             ImGui.EndPopup();

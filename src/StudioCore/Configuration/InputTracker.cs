@@ -263,7 +263,7 @@ public static class InputTracker
             if (ImGui.Button($"{keyText}##disabledbutton{index}", new Vector2(columnWidth, 20 * scale)))
             {
             }
-            UIHelper.ShowHoverTooltip("You cannot change this shortcut.");
+            UIHelper.Tooltip("You cannot change this shortcut.");
             ImGui.EndDisabled();
         }
 
@@ -285,7 +285,7 @@ public static class InputTracker
         UIHelper.WrappedText(currentKeyBind.PresentationName);
         if (currentKeyBind.Description != "")
         {
-            UIHelper.ShowHoverTooltip(currentKeyBind.Description);
+            UIHelper.Tooltip(currentKeyBind.Description);
         }
 
         ImGui.NextColumn();

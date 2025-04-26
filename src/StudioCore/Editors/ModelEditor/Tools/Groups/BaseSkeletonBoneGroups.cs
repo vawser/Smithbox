@@ -137,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteBaseSkeletonGroup(entry);
                         }
-                        UIHelper.ShowHoverTooltip("Delete this Base Skeleton Bone group.");
+                        UIHelper.Tooltip("Delete this Base Skeleton Bone group.");
 
                         ImGui.EndPopup();
                     }
@@ -180,14 +180,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Replace the existing Base Skeleton Bones with the Base Skeleton Bones within this Base Skeleton group.");
+                UIHelper.Tooltip("Replace the existing Base Skeleton Bones with the Base Skeleton Bones within this Base Skeleton group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Append Base Skeleton Bones within this Base Skeleton Bone group to the existing Base Skeleton Bones list");
+                UIHelper.Tooltip("Append Base Skeleton Bones within this Base Skeleton Bone group to the existing Base Skeleton Bones list");
             }
 
             ImGui.EndChild();
@@ -203,7 +203,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##BaseSkeletonGroupName", ref _createBaseSkeletonGroupName, 255);
-            UIHelper.ShowHoverTooltip("The name of the Base Skeleton group.");
+            UIHelper.Tooltip("The name of the Base Skeleton group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

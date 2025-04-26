@@ -36,7 +36,7 @@ public class TexFilters
     public void DisplayFileFilterSearch()
     {
         ImGui.InputText($"Search##textureFileFilterSearch", ref FileFilterSearchStr, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
     /// <summary>
@@ -113,7 +113,7 @@ public class TexFilters
     public void DisplayTextureFilterSearch()
     {
         ImGui.InputText($"Search##textureListFilterSearch", ref TextureFilterSearchStr, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
     }
 
     /// <summary>

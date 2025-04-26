@@ -1,16 +1,11 @@
 ﻿using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
-using StudioCore.Scene;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using StudioCore.Scene.Interfaces;
@@ -22,7 +17,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace StudioCore.Editors.MapEditor.Framework;
+namespace StudioCore.Editors.MapEditorNS;
 
 /// <summary>
 /// A logical map object that can be either a part, region, event, or light. Uses reflection to access and update properties
@@ -74,18 +69,22 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool UseTempTransform;
 
+    public IEditor Editor;
+
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public Entity()
+    public Entity(IEditor editor)
     {
+        Editor = editor;
     }
 
     /// <summary>
     /// Constructor: container, object
     /// </summary>
-    public Entity(ObjectContainer map, object msbo)
+    public Entity(IEditor editor, ObjectContainer map, object msbo)
     {
+        Editor = editor;
         Container = map;
         WrappedObject = msbo;
     }
@@ -245,7 +244,12 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = true;
         }
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntitySelected(this);
+
+        if (Editor is ModelEditor)
+        {
+            var modelEditor = (ModelEditor)Editor;
+            modelEditor.ViewportManager.OnRepresentativeEntitySelected(this);
+        }
     }
 
     /// <summary>
@@ -261,7 +265,13 @@ public class Entity : ISelectable, IDisposable
         {
             RenderSceneMesh.RenderSelectionOutline = false;
         }
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntityDeselected(this);
+
+
+        if (Editor is ModelEditor)
+        {
+            var modelEditor = (ModelEditor)Editor;
+            modelEditor.ViewportManager.OnRepresentativeEntityDeselected(this);
+        }
     }
 
     /// <summary>
@@ -360,7 +370,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     internal virtual Entity DuplicateEntity(object clone)
     {
-        return new Entity(Container, clone);
+        return new Entity(Editor, Container, clone);
     }
 
     /// <summary>
@@ -615,7 +625,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Return the PropertiesChangedAction of the passed property string and new value.
     /// </summary>
-    public Actions.Viewport.PropertiesChangedAction GetPropertyChangeAction(string prop, object newval)
+    public PropertiesChangedAction GetPropertyChangeAction(string prop, object newval)
     {
         if (WrappedObject == null)
         {
@@ -628,7 +638,7 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new Actions.Viewport.PropertiesChangedAction(pprop, pp, newval);
+                return new PropertiesChangedAction(pprop, pp, newval);
             }
         }
 
@@ -638,14 +648,14 @@ public class Entity : ISelectable, IDisposable
             if (pp != null)
             {
                 PropertyInfo pprop = pp.GetType().GetProperty("Value");
-                return new Actions.Viewport.PropertiesChangedAction(pprop, pp, newval);
+                return new PropertiesChangedAction(pprop, pp, newval);
             }
         }
 
         PropertyInfo p = WrappedObject.GetType().GetProperty(prop);
         if (p != null)
         {
-            return new Actions.Viewport.PropertiesChangedAction(p, WrappedObject, newval);
+            return new PropertiesChangedAction(p, WrappedObject, newval);
         }
 
         return null;
@@ -993,7 +1003,7 @@ public class Entity : ISelectable, IDisposable
             actions.Add(GetPropertyChangeAction("RotationX", newt.EulerRotation.X * Utils.Rad2Deg));
             actions.Add(GetPropertyChangeAction("RotationY", roty));
             actions.Add(GetPropertyChangeAction("RotationZ", newt.EulerRotation.Z * Utils.Rad2Deg));
-            Actions.Viewport.CompoundAction act = new(actions);
+            CompoundAction act = new(actions);
             act.SetPostExecutionAction(undo =>
             {
                 UpdateRenderModel();
@@ -1002,7 +1012,7 @@ public class Entity : ISelectable, IDisposable
         }
         else
         {
-            Actions.Viewport.PropertiesChangedAction act = new(WrappedObject);
+            PropertiesChangedAction act = new(WrappedObject);
             PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
 
             if(prop != null)
@@ -1053,7 +1063,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedPosition()
     {
-        Actions.Viewport.PropertiesChangedAction act = new(WrappedObject);
+        PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Position");
         act.AddPropertyChange(prop, CFG.Current.SavedPosition);
 
@@ -1065,7 +1075,7 @@ public class Entity : ISelectable, IDisposable
     }
     public ViewportAction ApplySavedRotation()
     {
-        Actions.Viewport.PropertiesChangedAction act = new(WrappedObject);
+        PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Rotation");
         act.AddPropertyChange(prop, CFG.Current.SavedRotation);
 
@@ -1078,7 +1088,7 @@ public class Entity : ISelectable, IDisposable
 
     public ViewportAction ApplySavedScale()
     {
-        Actions.Viewport.PropertiesChangedAction act = new(WrappedObject);
+        PropertiesChangedAction act = new(WrappedObject);
         PropertyInfo prop = WrappedObject.GetType().GetProperty("Scale");
         act.AddPropertyChange(prop, CFG.Current.SavedPosition);
 
@@ -1096,7 +1106,7 @@ public class Entity : ISelectable, IDisposable
     {
         var actions = new List<ViewportAction>();
         actions.Add(GetPropertyChangeAction(propTarget, propValue));
-        var act = new Actions.Viewport.CompoundAction(actions);
+        var act = new CompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {
             UpdateRenderModel();
@@ -1148,15 +1158,19 @@ public class Entity : ISelectable, IDisposable
                     return;
                 }
 
-                var universe = Smithbox.EditorHandler.MapEditor.Universe;
-                if (universe.HasProcessedMapLoad)
+                if (Editor is MapEditor)
                 {
-                    if (collisionNameValue != "")
+                    var mapEditor = (MapEditor)Editor;
+
+                    if (mapEditor.Universe.HasProcessedMapLoad)
                     {
-                        // CollisionName referenced doesn't exist
-                        TaskLogs.AddLog(
-                            $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
-                            LogLevel.Warning);
+                        if (collisionNameValue != "")
+                        {
+                            // CollisionName referenced doesn't exist
+                            TaskLogs.AddLog(
+                                $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
+                                LogLevel.Warning);
+                        }
                     }
                 }
             }
@@ -1215,8 +1229,10 @@ public class Entity : ISelectable, IDisposable
         }
 
         // Map Editor
-        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+        if (Editor is MapEditor)
         {
+            var mapEditor = (MapEditor)Editor;
+
             // Render Group management
             if (HasRenderGroups != false)
             {
@@ -1230,9 +1246,11 @@ public class Entity : ISelectable, IDisposable
         }
 
         // Model Editor
-        if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (Editor is ModelEditor)
         {
-            Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntityUpdate(this);
+            var modelEditor = (ModelEditor)Editor;
+
+            modelEditor.ViewportManager.OnRepresentativeEntityUpdate(this);
         }
     }
 
@@ -1498,7 +1516,7 @@ public class NamedEntity : Entity
 /// </summary>
 public class CollisionEntity : Entity
 {
-    public CollisionEntity(ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(map, msbo)
+    public CollisionEntity(IEditor editor, ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(editor, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1516,7 +1534,7 @@ public class CollisionEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(ObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
+    public TransformableNamedEntity(IEditor editor, ObjectContainer map, object msbo, string name, int idx) : base(editor, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1550,21 +1568,25 @@ public class MapSerializationEntity
 /// </summary>
 public class MsbEntity : Entity
 {
+    public MapEditor Editor;
+
     protected int CurrentNPCParamID = 0;
     protected int[] ModelMasks = null;
 
     /// <summary>
     /// Constructor
     /// </summary>
-    public MsbEntity()
+    public MsbEntity(IEditor editor)
     {
+        Editor = (MapEditor)editor;
     }
 
     /// <summary>
     /// Constructer: container, object
     /// </summary>
-    public MsbEntity(ObjectContainer map, object msbo)
+    public MsbEntity(IEditor editor, ObjectContainer map, object msbo)
     {
+        Editor = (MapEditor)editor;
         Container = map;
         WrappedObject = msbo;
     }
@@ -1572,8 +1594,9 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructer: container, object, entity type
     /// </summary>
-    public MsbEntity(ObjectContainer map, object msbo, MsbEntityType type)
+    public MsbEntity(IEditor editor, ObjectContainer map, object msbo, MsbEntityType type)
     {
+        Editor = (MapEditor)editor;
         Container = map;
         WrappedObject = msbo;
         Type = type;
@@ -1697,7 +1720,7 @@ public class MsbEntity : Entity
             return enabledMasks;
         }
 
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             case ProjectType.DS3:
                 if (WrappedObject is MSB3.Part.EnemyBase ds3e)
@@ -1801,94 +1824,83 @@ public class MsbEntity : Entity
         }
 
         // Map Editor
-        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+        if (Type == MsbEntityType.DS2Generator)
         {
-            var universe = Smithbox.EditorHandler.MapEditor.Universe;
-
-            if (Type == MsbEntityType.DS2Generator)
-            {
-            }
-            else if (Type == MsbEntityType.DS2EventLocation && _renderSceneMesh == null)
-            {
-                if (_renderSceneMesh != null)
-                {
-                    _renderSceneMesh.Dispose();
-                }
-
-                _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(universe.RenderScene, ContainingMap, this);
-            }
-            else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
-            {
-                if (_renderSceneMesh != null)
-                {
-                    _renderSceneMesh.Dispose();
-                }
-
-                _renderSceneMesh = DrawableHelper.GetRegionDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
-            }
-            else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
-            {
-                if (_renderSceneMesh != null)
-                {
-                    _renderSceneMesh.Dispose();
-                }
-
-                _renderSceneMesh = DrawableHelper.GetLightDrawable(universe.RenderScene, ContainingMap, this, EntityRenderType);
-            }
-            else
-            {
-                PropertyInfo modelProp = GetProperty("ModelName");
-                if (modelProp != null) // Check if ModelName property exists
-                {
-                    var model = (string)modelProp.GetValue(WrappedObject);
-
-                    var modelChanged = CurrentModelName != model;
-
-                    PropertyInfo paramProp = GetProperty("NPCParamID");
-                    if (paramProp != null)
-                    {
-                        var id = (int)paramProp.GetValue(WrappedObject);
-
-                        if (CurrentNPCParamID != id)
-                            modelChanged = true;
-                        ModelMasks = GetModelMasks();
-                        CurrentNPCParamID = id;
-                    }
-
-                    if (modelChanged)
-                    {
-                        //model name has been changed or this is the initial check
-                        if (_renderSceneMesh != null)
-                        {
-                            _renderSceneMesh.Dispose();
-                        }
-
-                        CurrentModelName = model;
-
-                        // Get model
-                        if (model != null)
-                        {
-                            _renderSceneMesh = DrawableHelper.GetModelDrawable(universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
-                        }
-
-                        if (universe.Selection.IsSelected(this))
-                        {
-                            OnSelected();
-                        }
-
-                        if (universe.HasProcessedMapLoad)
-                        {
-                            universe.ScheduleTextureRefresh();
-                        }
-                    }
-                }
-            }
         }
-
-        // Model Editor
-        if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        else if (Type == MsbEntityType.DS2EventLocation && _renderSceneMesh == null)
         {
-            var universe = Smithbox.EditorHandler.ModelEditor._universe;
+            if (_renderSceneMesh != null)
+            {
+                _renderSceneMesh.Dispose();
+            }
+
+            _renderSceneMesh = DrawableHelper.GetDS2EventLocationDrawable(Editor.RenderScene, ContainingMap, this);
+        }
+        else if (Type == MsbEntityType.Region && _renderSceneMesh == null)
+        {
+            if (_renderSceneMesh != null)
+            {
+                _renderSceneMesh.Dispose();
+            }
+
+            _renderSceneMesh = DrawableHelper.GetRegionDrawable(Editor.RenderScene, ContainingMap, this, EntityRenderType);
+        }
+        else if (Type == MsbEntityType.Light && _renderSceneMesh == null)
+        {
+            if (_renderSceneMesh != null)
+            {
+                _renderSceneMesh.Dispose();
+            }
+
+            _renderSceneMesh = DrawableHelper.GetLightDrawable(Editor.RenderScene, ContainingMap, this, EntityRenderType);
+        }
+        else
+        {
+            PropertyInfo modelProp = GetProperty("ModelName");
+            if (modelProp != null) // Check if ModelName property exists
+            {
+                var model = (string)modelProp.GetValue(WrappedObject);
+
+                var modelChanged = CurrentModelName != model;
+
+                PropertyInfo paramProp = GetProperty("NPCParamID");
+                if (paramProp != null)
+                {
+                    var id = (int)paramProp.GetValue(WrappedObject);
+
+                    if (CurrentNPCParamID != id)
+                        modelChanged = true;
+                    ModelMasks = GetModelMasks();
+                    CurrentNPCParamID = id;
+                }
+
+                if (modelChanged)
+                {
+                    //model name has been changed or this is the initial check
+                    if (_renderSceneMesh != null)
+                    {
+                        _renderSceneMesh.Dispose();
+                    }
+
+                    CurrentModelName = model;
+
+                    // Get model
+                    if (model != null)
+                    {
+                        _renderSceneMesh = DrawableHelper.GetModelDrawable(Editor.RenderScene, ContainingMap, this, model, true, ModelMasks);
+                    }
+
+                    if (Editor.Selection.IsSelected(this))
+                    {
+                        OnSelected();
+                    }
+
+                    if (Editor.Universe.HasProcessedMapLoad)
+                    {
+                        Editor.Universe.ScheduleTextureRefresh();
+                    }
+                }
+            }
         }
 
         base.UpdateRenderModel();
@@ -1899,9 +1911,7 @@ public class MsbEntity : Entity
     /// </summary>
     public override void BuildReferenceMap()
     {
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
-
-        if (Type == MsbEntityType.MapRoot && universe != null)
+        if (Type == MsbEntityType.MapRoot && Editor.Universe != null)
         {
             // Special handling for map itself, as it references objects outside of the map.
             // This depends on Type, which is only defined in MapEntity.
@@ -1928,7 +1938,7 @@ public class MsbEntity : Entity
             }
 
             // For now, the map relationship type is not given here (dictionary values), just all related maps.
-            foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, universe.LoadedObjectContainers.Keys, connects).Keys)
+            foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Editor.Project.ProjectType, Name, Editor.Universe.LoadedObjectContainers.Keys, connects).Keys)
             {
                 References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
             }
@@ -2033,7 +2043,7 @@ public class MsbEntity : Entity
     /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
-        return new MsbEntity(Container, clone);
+        return new MsbEntity(Editor, Container, clone);
     }
 
     /// <summary>

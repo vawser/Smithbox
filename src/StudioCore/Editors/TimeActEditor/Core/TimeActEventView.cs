@@ -39,7 +39,7 @@ public class TimeActEventView
         }
 
         ImGui.InputText($"Search##timeActEventFilter", ref TimeActFilters._timeActEventFilterString, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventList");
         Selection.SwitchWindowContext(TimeActEditorContext.Event);

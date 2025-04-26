@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor.Actions;
@@ -169,7 +169,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 Handler.DuplicateHandler();
             }
-            UIHelper.ShowHoverTooltip($"Duplicates current selection.");
+            UIHelper.Tooltip($"Duplicates current selection.");
 
             if (ImGui.BeginMenu("Duplicate Row to Commutative Param", Handler.IsCommutativeParam()))
             {
@@ -177,13 +177,13 @@ public class ParamEditorScreen : EditorScreen
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip($"Duplicates current selection to a commutative param.");
+            UIHelper.Tooltip($"Duplicates current selection to a commutative param.");
 
             if (ImGui.MenuItem("Remove Row", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 DeleteSelection();
             }
-            UIHelper.ShowHoverTooltip($"Deletes current selection.");
+            UIHelper.Tooltip($"Deletes current selection.");
 
             if (ImGui.MenuItem("Copy", KeyBindings.Current.PARAM_CopyToClipboard.HintText))
             {
@@ -192,7 +192,7 @@ public class ParamEditorScreen : EditorScreen
                     CopySelectionToClipboard();
                 }
             }
-            UIHelper.ShowHoverTooltip($"Copy current selection to clipboard.");
+            UIHelper.Tooltip($"Copy current selection to clipboard.");
 
             if (ImGui.MenuItem("Paste", KeyBindings.Current.PARAM_PasteClipboard.HintText))
             {
@@ -201,7 +201,7 @@ public class ParamEditorScreen : EditorScreen
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
             }
-            UIHelper.ShowHoverTooltip($"Paste current selection into current param.");
+            UIHelper.Tooltip($"Paste current selection into current param.");
 
             if (ImGui.MenuItem("Go to selected row", KeyBindings.Current.PARAM_GoToSelectedRow.HintText))
             {
@@ -210,7 +210,7 @@ public class ParamEditorScreen : EditorScreen
                     GotoSelectedRow = true;
                 }
             }
-            UIHelper.ShowHoverTooltip($"Go to currently selected row.");
+            UIHelper.Tooltip($"Go to currently selected row.");
 
             ImGui.EndMenu();
         }
@@ -358,13 +358,13 @@ public class ParamEditorScreen : EditorScreen
                     {
                         EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV_Names.HintText}");
+                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExportCSV_Names.HintText}");
 
                     if (ImGui.MenuItem("Export entire param to window"))
                     {
                         EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
                     }
-                    UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ExportCSV_Param.HintText}");
+                    UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExportCSV_Param.HintText}");
 
                     if (ImGui.MenuItem("Export entire param to file"))
                     {
@@ -579,7 +579,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 ParamComparisonReport.ViewReport();
             }
-            UIHelper.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
+            UIHelper.Tooltip("View a text report that details the differences between the current project params and the vanilla params.");
 
             if (ImGui.MenuItem("Toggle vanilla param column"))
             {

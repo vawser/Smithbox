@@ -1,6 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core.ProjectNS;
 using StudioCore.Editor;
 using StudioCore.Interface;
 

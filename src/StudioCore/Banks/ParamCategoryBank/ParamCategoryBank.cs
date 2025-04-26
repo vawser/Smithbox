@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.TextureAdditionBank;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,9 +8,9 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.DependencyModel;
 using Octokit;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 
@@ -82,7 +82,7 @@ public static class LanguageSync
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Sync all unique changes from another category into this category.");
+        UIHelper.Tooltip("Sync all unique changes from another category into this category.");
     }
 
     /// <summary>

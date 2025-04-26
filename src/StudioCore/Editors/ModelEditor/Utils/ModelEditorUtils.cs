@@ -1,4 +1,4 @@
-﻿using StudioCore.Core.Project;
+﻿using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Utils
 {

@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor.Multiselection;
 using StudioCore.TextEditor;
 using System;

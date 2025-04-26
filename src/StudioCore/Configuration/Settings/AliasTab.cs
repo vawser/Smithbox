@@ -1,7 +1,6 @@
 ﻿using HKLib.hk2018.hk;
 using Hexa.NET.ImGui;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 
 using StudioCore.Utilities;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using StudioCore.Core;
 
 namespace StudioCore.Configuration.Settings;
 
@@ -56,7 +56,7 @@ public class AliasTab
     public void DisplayNameGroupList()
     {
         ImGui.InputText($"Search", ref _searchInput, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
         ImGui.SameLine();
         ImGui.Checkbox("Show tags in alias list", ref TagBool);
 
@@ -185,13 +185,13 @@ public class AliasTab
         {
             Clipboard.SetText(_selectedEntry.name);
         }
-        UIHelper.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
+        UIHelper.Tooltip("Copy the currently selected alias name directly to your clipboard.");
 
         if (ImGui.Button("Copy Selected Alias ID", buttonSize))
         {
             Clipboard.SetText(_selectedEntry.id);
         }
-        UIHelper.ShowHoverTooltip("Copy the currently selected alias id directly to your clipboard.");
+        UIHelper.Tooltip("Copy the currently selected alias id directly to your clipboard.");
 
         if (ImGui.Button("Copy Alias List", buttonSize))
         {
@@ -222,7 +222,7 @@ public class AliasTab
 
             Clipboard.SetText(aliasList);
         }
-        UIHelper.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
+        UIHelper.Tooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
     }
 
     private void DisplayEditWindow()
@@ -286,17 +286,17 @@ public class AliasTab
         ImGui.Text("ID");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddID_{EntryName}", ref _newRefId, 255);
-        UIHelper.ShowHoverTooltip("The map ID of the map name to add.");
+        UIHelper.Tooltip("The map ID of the map name to add.");
 
         ImGui.Text("Name");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddName_{EntryName}", ref _newRefName, 255);
-        UIHelper.ShowHoverTooltip("The alias name to give to the added map name.");
+        UIHelper.Tooltip("The alias name to give to the added map name.");
 
         ImGui.Text("Tags");
         ImGui.SetNextItemWidth(width);
         ImGui.InputText($"##AddTags_{EntryName}", ref _newRefTags, 255);
-        UIHelper.ShowHoverTooltip("The tags to associate with this map name.");
+        UIHelper.Tooltip("The tags to associate with this map name.");
 
         if (ImGui.Button("Add New Alias", buttonSize))
         {

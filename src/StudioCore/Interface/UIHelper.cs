@@ -111,18 +111,15 @@ public static class UIHelper
         }
     }
 
-    public static void ShowHoverTooltip(string desc)
+    public static void Tooltip(string desc)
     {
-        if (UI.Current.System_Show_UI_Tooltips)
+        if (ImGui.IsItemHovered())
         {
-            if (ImGui.IsItemHovered())
-            {
-                ImGui.BeginTooltip();
-                ImGui.PushTextWrapPos(450.0f);
-                ImGui.TextUnformatted(desc);
-                ImGui.PopTextWrapPos();
-                ImGui.EndTooltip();
-            }
+            ImGui.BeginTooltip();
+            ImGui.PushTextWrapPos(450.0f);
+            ImGui.TextUnformatted(desc);
+            ImGui.PopTextWrapPos();
+            ImGui.EndTooltip();
         }
     }
 
@@ -202,6 +199,25 @@ public static class UIHelper
             {
                 ImGui.TextColored(color, @$"{aliasName}");
             }
+        }
+    }
+
+    public static void SimpleHeader(string id, string title, string tooltip, Vector4 textColor)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"{title}");
+            UIHelper.Tooltip(tooltip);
+
+            ImGui.EndTable();
         }
     }
 }

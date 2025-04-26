@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;

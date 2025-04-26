@@ -120,7 +120,7 @@ public class HavokPropertiesView
                 ImGui.TableSetColumnIndex(0);
                 ImGui.TextColored(UI.Current.ImGui_Havok_Header, $"{fieldName}");
                 if (fieldDescription != "")
-                    UIHelper.ShowHoverTooltip(fieldDescription);
+                    UIHelper.Tooltip(fieldDescription);
 
                 ImGui.TableSetColumnIndex(1);
 
@@ -209,7 +209,7 @@ public class HavokPropertiesView
 
         ImGui.TextColored(UI.Current.ImGui_Havok_Highlight, $"{fieldName}");
         if(fieldDescription != "")
-            UIHelper.ShowHoverTooltip(fieldDescription);
+            UIHelper.Tooltip(fieldDescription);
 
         ImGui.TableSetColumnIndex(1);
 
@@ -235,7 +235,7 @@ public class HavokPropertiesView
 
         ImGui.TextColored(UI.Current.ImGui_Havok_Reference, $"[{index}] {fieldName}");
         if (fieldDescription != "")
-            UIHelper.ShowHoverTooltip(fieldDescription);
+            UIHelper.Tooltip(fieldDescription);
 
         ImGui.TableSetColumnIndex(1);
 
@@ -266,7 +266,7 @@ public class HavokPropertiesView
 
         ImGui.Text(fieldName);
         if (fieldDescription != "")
-            UIHelper.ShowHoverTooltip(fieldDescription);
+            UIHelper.Tooltip(fieldDescription);
 
         ImGui.TableSetColumnIndex(1);
 

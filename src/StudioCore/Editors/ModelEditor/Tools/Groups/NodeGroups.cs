@@ -135,7 +135,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteNodeGroup(entry);
                         }
-                        UIHelper.ShowHoverTooltip("Delete this Node group.");
+                        UIHelper.Tooltip("Delete this Node group.");
 
                         ImGui.EndPopup();
                     }
@@ -169,14 +169,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Replace the existing Nodes with the Nodes within this Node group.");
+                UIHelper.Tooltip("Replace the existing Nodes with the Nodes within this Node group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Append to Nodes within this Node group to the existing Nodes.");
+                UIHelper.Tooltip("Append to Nodes within this Node group to the existing Nodes.");
             }
 
             ImGui.EndChild();
@@ -192,7 +192,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##NodeGroupName", ref _createNodeGroupName, 255);
-            UIHelper.ShowHoverTooltip("The name of the Node group.");
+            UIHelper.Tooltip("The name of the Node group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {
