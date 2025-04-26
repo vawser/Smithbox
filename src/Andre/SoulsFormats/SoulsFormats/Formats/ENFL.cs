@@ -139,6 +139,8 @@ namespace SoulsFormats
             {
                 return $"0x{Step:X4} 0x{Index:X4}";
             }
+
+            public Struct1() {}
         }
 
         /// <summary>
@@ -168,6 +170,7 @@ namespace SoulsFormats
             {
                 return $"0x{Unk1:X16}";
             }
+            public Struct2() {}
         }
     }
 }

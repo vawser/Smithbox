@@ -50,9 +50,6 @@ namespace SoulsFormats
                     param.Write(bw, classNames);
             }
 
-            // Disabled to get rid of trim warnings since this isn't used in DSMS
-            /*
-            #region IXmlSerializable
             XmlSchema IXmlSerializable.GetSchema() => null;
 
             void IXmlSerializable.ReadXml(XmlReader reader)
@@ -79,7 +76,6 @@ namespace SoulsFormats
                     ParamSerializer.Serialize(writer, Params[i]);
                 }
             }
-            #endregion*/
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.VisualBasic.Devices;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Core.ProjectNS;
 using StudioCore.Editor;
 using StudioCore.Editors.BehaviorEditor;
@@ -18,7 +19,8 @@ namespace StudioCore.Editors.BehaviorEditorNS;
 
 public class BehaviorEditor
 {
-    private Project Project;
+    public BaseEditor BaseEditor;
+    public Project Project;
 
     public ActionManager ActionManager;
     public BehaviorSelection Selection;
@@ -32,8 +34,9 @@ public class BehaviorEditor
 
     public bool DetectShortcuts = false;
 
-    public BehaviorEditor(int id, Project projectOwner)
+    public BehaviorEditor(int id, BaseEditor baseEditor, Project projectOwner)
     {
+        BaseEditor = baseEditor;
         Project = projectOwner;
         ID = id;
 
