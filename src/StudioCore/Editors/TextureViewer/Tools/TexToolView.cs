@@ -34,7 +34,7 @@ public class TexToolView
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.Scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer"))
         {

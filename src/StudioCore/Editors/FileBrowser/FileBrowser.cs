@@ -95,7 +95,7 @@ public class FileBrowser : IEditor
         return true;
     }
 
-    public void OnGUI(string[] cmd)
+    public void OnGUI(float dt, string[] cmd)
     {
         ImGui.Begin($"File Browser##FileBrowser", Project.BaseEditor.MainWindowFlags);
 

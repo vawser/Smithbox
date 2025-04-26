@@ -84,7 +84,7 @@ public class TextFmgEntryPropertyEditor
     {
         ImGui.Separator();
 
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.GetUIScale());
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.Scale);
 
         var selectedFmgWrapper = Selection.SelectedFmgWrapper;
         var selectedEntry = Selection._selectedFmgEntry;
@@ -218,7 +218,7 @@ public class TextFmgEntryPropertyEditor
                 if (curText == null)
                     curText = "";
 
-                height = 32 * DPI.GetUIScale();
+                height = 32 * DPI.Scale;
 
                 ImGui.TableNextRow();
 
@@ -251,7 +251,7 @@ public class TextFmgEntryPropertyEditor
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.Scale;
 
                 ImGui.TableNextRow();
 
@@ -283,7 +283,7 @@ public class TextFmgEntryPropertyEditor
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.Scale;
 
                 ImGui.TableNextRow();
 
@@ -315,7 +315,7 @@ public class TextFmgEntryPropertyEditor
                 if (curText == null)
                     curText = "";
 
-                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
+                height = (100 + ImGui.CalcTextSize(curText).Y) * DPI.Scale;
 
                 ImGui.TableNextRow();
 
@@ -390,7 +390,7 @@ public class TextFmgEntryPropertyEditor
             if (curText == null)
                 curText = "";
 
-            var height = (textboxHeight + ImGui.CalcTextSize(curText).Y) * DPI.GetUIScale();
+            var height = (textboxHeight + ImGui.CalcTextSize(curText).Y) * DPI.Scale;
 
             ImGui.TableNextRow();
 

@@ -1,7 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditorNS;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
@@ -22,6 +21,8 @@ public class PatrolDrawManager
 
     private const float _verticalOffset = 0.8f;
 
+    public bool VisualizePatrolRoutes = false;
+
     public PatrolDrawManager(MapEditor editor)
     {
         Editor = editor;
@@ -29,7 +30,7 @@ public class PatrolDrawManager
 
     private Entity GetDrawEntity(ObjectContainer map)
     {
-        Entity e = new(map, new DrawEntity());
+        Entity e = new(Editor, map, new DrawEntity());
         map.AddObject(e);
         _drawEntities.Add(new WeakReference<Entity>(e));
         return e;
@@ -78,7 +79,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBD_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -92,7 +93,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSB1_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -108,7 +109,7 @@ public class PatrolDrawManager
                         // BB move type is probably in an unk somewhere.
                         bool endAtStart = false;
                         bool moveRandomly = false;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, [patrolEntity.GetRootLocalTransform().Position], endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -135,7 +136,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSB3_Patrol.PatrolType == 0;
                         bool moveRandomly = MSB3_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -162,7 +163,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBS_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBS_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -189,7 +190,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBE_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBE_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;
@@ -216,7 +217,7 @@ public class PatrolDrawManager
 
                         bool endAtStart = MSBAC6_Patrol.PatrolType == 0;
                         bool moveRandomly = MSBAC6_Patrol.PatrolType == 2;
-                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor.RenderScene, patrolEntity, drawEntity,
+                        var chain = DrawableHelper.GetPatrolLineDrawable(Editor, patrolEntity, drawEntity,
                             points, enemies, endAtStart, moveRandomly);
 
                         drawEntity.RenderSceneMesh = chain;

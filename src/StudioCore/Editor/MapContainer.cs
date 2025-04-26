@@ -1,7 +1,9 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditorNS;
+using StudioCore.Formats;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -992,7 +994,7 @@ public class MapContainer : ObjectContainer
         foreach (Entity o in Objects)
         {
             if (o is MsbEntity m && m.Type == MsbEntityType.DS2Generator &&
-                m.WrappedObject is MergedParamRow mp)
+                m.WrappedObject is MapParamRow mp)
             {
                 if (!ids.Contains(mp.ID))
                 {

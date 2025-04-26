@@ -1108,7 +1108,7 @@ public class ParamRowEditor
         ParamMetaData? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var altName = cellMeta?.AltName;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);

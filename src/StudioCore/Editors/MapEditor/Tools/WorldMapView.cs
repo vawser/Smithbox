@@ -47,14 +47,12 @@ public class WorldMapView : IResourceEventListener
         IsMapOpen = false;
         IsMapTextureLoaded = false;
         MapZoomFactor = GetDefaultZoomLevel();
+
         DPI.UIScaleChanged += (_, _) =>
         {
             MapZoomFactor = GetDefaultZoomLevel();
         };
-    }
 
-    public void OnProjectChanged()
-    {
         if (Editor.Project.ProjectType is ProjectType.ER)
         {
             LoadWorldMapTexture();
@@ -72,7 +70,7 @@ public class WorldMapView : IResourceEventListener
             {
                 IsSoteMapOpen = false;
                 IsMapOpen = true;
-            };
+            }
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapSOTE))
         {
@@ -81,28 +79,31 @@ public class WorldMapView : IResourceEventListener
             {
                 IsSoteMapOpen = true;
                 IsMapOpen = true;
-            };
+            }
         }
 
-        if (InputTracker.GetKey(Key.LControl))
+        if (Editor.EditorFocus.FocusContext is MapEditorContext.WorldMap or MapEditorContext.WorldMapProperties)
         {
-            HandleZoom();
-        }
+            if (InputTracker.GetKey(Key.LControl))
+            {
+                HandleZoom();
+            }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
-        {
-            MapZoomFactor = GetDefaultZoomLevel();
-        }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
+            {
+                MapZoomFactor = GetDefaultZoomLevel();
+            }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
-        {
-            AdjustScrollNextFrame = true;
-        }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
+            {
+                AdjustScrollNextFrame = true;
+            }
 
-        if (InputTracker.GetKey(Key.Escape))
-        {
-            IsSoteMapOpen = false;
-            IsMapOpen = false;
+            if (InputTracker.GetKey(Key.Escape))
+            {
+                IsSoteMapOpen = false;
+                IsMapOpen = false;
+            }
         }
     }
 
@@ -138,7 +139,7 @@ public class WorldMapView : IResourceEventListener
         if (Editor.Project.ProjectType != ProjectType.ER)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -198,7 +199,7 @@ public class WorldMapView : IResourceEventListener
 
         ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
 
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMap);
+        Editor.EditorFocus.SetFocusContext(MapEditorContext.WorldMap);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -251,7 +252,7 @@ public class WorldMapView : IResourceEventListener
         // Properties
         ImGui.Begin("Properties##WorldMapProperties");
 
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMapProperties);
+        Editor.EditorFocus.SetFocusContext(MapEditorContext.WorldMapProperties);
 
         UIHelper.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
         UIHelper.WrappedText($"");
@@ -454,7 +455,7 @@ public class WorldMapView : IResourceEventListener
 
     private Vector2 GetRelativePositionWindowOnly(Vector2 windowPos)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         Vector2 relativePos = new Vector2(0, 0);
 
@@ -573,13 +574,13 @@ public class WorldMapView : IResourceEventListener
     }
     private Vector2 GetDefaultZoomLevel()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
     }
 
     private Vector2 GetRelativePosition(Vector2 windowPos, Vector2 scrollPos)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         Vector2 relativePos = new Vector2(0, 0);
 

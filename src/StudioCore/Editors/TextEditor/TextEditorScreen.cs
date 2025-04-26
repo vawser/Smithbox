@@ -210,7 +210,7 @@ public class TextEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_FMG)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

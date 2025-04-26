@@ -76,7 +76,7 @@ public class TimeActEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_TAE)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

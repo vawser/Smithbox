@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.MapEditorNS;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Scene;
 using StudioCore.Scene.Framework;
@@ -19,6 +19,8 @@ public class DisplayGroupView
     private string _lastHoveredCheckbox;
 
     public readonly HashSet<string> HighlightedGroups = new();
+
+    private string WindowName = "Render Groups##mapEditorRenderGroups";
 
     public DisplayGroupView(MapEditor editor)
     {
@@ -56,14 +58,13 @@ public class DisplayGroupView
         }
     }
 
-    public void OnGui()
+    public void Display()
     {
-        var scale = DPI.GetUIScale();
-
         if (!UI.Current.Interface_MapEditor_RenderGroups)
             return;
 
-        ImGui.SetNextWindowSize(new Vector2(100, 100) * scale);
+        if (Editor.RenderScene == null)
+            return;
 
         uint[] sdrawgroups = null;
         uint[] sdispgroups = null;
@@ -84,10 +85,13 @@ public class DisplayGroupView
         {
             ImGui.SetNextWindowFocus();
         }
-        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * scale);
-        if (ImGui.Begin("Render Groups") && Editor.RenderScene != null)
+
+        ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * DPI.Scale);
+
+        UIHelper.ApplyChildStyle();
+        if (ImGui.Begin(WindowName))
         {
-            Editor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
+            Editor.EditorFocus.SetFocusContext(MapEditorContext.RenderGroups);
 
             DrawGroup dg = Editor.RenderScene.DisplayGroup;
             if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)
@@ -110,7 +114,7 @@ public class DisplayGroupView
                 }
             }
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
+            ImGui.SameLine(0.0f, 6.0f * DPI.Scale);
             if (ImGui.Button($"Hide All <{KeyBindings.Current.MAP_HideAllDisplayGroups.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_HideAllDisplayGroups))
             {
@@ -120,7 +124,7 @@ public class DisplayGroupView
                 }
             }
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
+            ImGui.SameLine(0.0f, 12.0f * DPI.Scale);
             if (sdispgroups == null)
             {
                 ImGui.BeginDisabled();
@@ -136,7 +140,7 @@ public class DisplayGroupView
                 }
             }
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
+            ImGui.SameLine(0.0f, 6.0f * DPI.Scale);
             if (ImGui.Button($"Get Draw <{KeyBindings.Current.MAP_GetDrawGroup.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_GetDrawGroup)
                     && sdispgroups != null)
@@ -147,7 +151,7 @@ public class DisplayGroupView
                 }
             }
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
+            ImGui.SameLine(0.0f, 12.0f * DPI.Scale);
             if (ImGui.Button($"Assign Draw <{KeyBindings.Current.MAP_SetDrawGroup.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDrawGroup)
                     && sdispgroups != null)
@@ -157,7 +161,7 @@ public class DisplayGroupView
                 Editor.EditorActionManager.ExecuteAction(action);
             }
 
-            ImGui.SameLine(0.0f, 6.0f * scale);
+            ImGui.SameLine(0.0f, 6.0f * DPI.Scale);
             if (ImGui.Button($"Assign Disp <{KeyBindings.Current.MAP_SetDisplayGroup.HintText}>")
                 || InputTracker.GetKeyDown(KeyBindings.Current.MAP_SetDisplayGroup)
                     && sdispgroups != null)
@@ -172,7 +176,7 @@ public class DisplayGroupView
                 ImGui.EndDisabled();
             }
 
-            ImGui.SameLine(0.0f, 12.0f * scale);
+            ImGui.SameLine(0.0f, 12.0f * DPI.Scale);
             if (!HighlightedGroups.Any())
             {
                 ImGui.BeginDisabled();
@@ -185,7 +189,7 @@ public class DisplayGroupView
                 selectHighlightsOperation = true;
             }
 
-            ImGui.SameLine(0.0f, 8.0f * scale);
+            ImGui.SameLine(0.0f, 8.0f * DPI.Scale);
             if (ImGui.Button("Clear Highlights"))
             {
                 HighlightedGroups.Clear();
@@ -195,7 +199,7 @@ public class DisplayGroupView
                 ImGui.EndDisabled();
             }
 
-            ImGui.SameLine(0.0f, 8.0f * scale);
+            ImGui.SameLine(0.0f, 8.0f * DPI.Scale);
             if (ImGui.Button("Help"))
             {
                 ImGui.OpenPopup("##RenderHelp");
@@ -366,7 +370,8 @@ public class DisplayGroupView
 
             ImGui.EndChild();
         }
-        ImGui.PopStyleVar();
+
         ImGui.End();
+        UIHelper.UnapplyChildStyle();
     }
 }

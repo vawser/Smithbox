@@ -70,6 +70,7 @@ public class ModelEditorScreen : EditorScreen
         Rect = window.Bounds;
         Window = window;
 
+        // TODO: copy MapViewport stuff for this, then delete Viewport/NullViewport
         if (device != null)
         {
             RenderScene = new RenderScene();
@@ -394,7 +395,7 @@ public class ModelEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_FLVER)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         // Docking setup
         Vector2 wins = ImGui.GetWindowSize();

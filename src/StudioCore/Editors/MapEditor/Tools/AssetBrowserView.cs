@@ -3,7 +3,7 @@ using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditorNS;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
@@ -25,14 +25,16 @@ public class AssetBrowserView
     private string _selectedEntry = "";
     private FileSelectionType _selectedEntryType = FileSelectionType.None;
 
+    private string WindowName = "Asset Browser##mapEditorAssetBrowser";
+
     public AssetBrowserView(MapEditor editor)
     {
         Editor = editor;
     }
 
-    public void OnGui()
+    public void Display()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
@@ -40,12 +42,10 @@ public class AssetBrowserView
         if (!UI.Current.Interface_MapEditor_AssetBrowser)
             return;
 
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin($@"Asset Browser##MapAssetBrowser"))
+        UIHelper.ApplyChildStyle();
+        if (ImGui.Begin(WindowName))
         {
-            Editor.FocusManager.SwitchWindowContext(MapEditorContext.AssetBrowser);
+            Editor.EditorFocus.SetFocusContext(MapEditorContext.AssetBrowser);
 
             ImGui.InputText($"Search", ref _searchInput, 255);
             UIHelper.Tooltip("Separate terms are split via the + character.");
@@ -64,7 +64,7 @@ public class AssetBrowserView
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
+        UIHelper.UnapplyChildStyle();
     }
 
     private void DisplayAssetList(string title, List<AliasEntry> aliasList, FileSelectionType selectType)

@@ -57,7 +57,7 @@ public class ToolWindow
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.Scale, ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor"))
         {
@@ -289,7 +289,7 @@ public class ToolWindow
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Input:");
 
                 ImGui.InputTextMultiline("##MEditRegexInput", ref MassEditHandler._currentMEditRegexInput, 65536,
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                new Vector2(EditX * DPI.Scale, EditY * DPI.Scale));
 
                 if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
                 {
@@ -313,7 +313,7 @@ public class ToolWindow
                 UIHelper.WrappedText($"{MassEditHandler._mEditRegexResult}");
 
                 ImGui.InputTextMultiline("##MEditRegexOutput", ref MassEditHandler._lastMEditRegexInput, 65536,
-                    new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
+                    new Vector2(EditX * DPI.Scale, EditY * DPI.Scale), ImGuiInputTextFlags.ReadOnly);
                 UIHelper.WrappedText("");
             }
 
@@ -379,7 +379,7 @@ public class ToolWindow
 
                 UIHelper.WrappedText("Script:");
                 UIHelper.Tooltip("The mass edit script.");
-                ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                ImGui.InputTextMultiline("##newMassEditScript", ref MassEditHandler._newScriptBody, 65536, new Vector2(EditX * DPI.Scale, EditY * DPI.Scale));
                 UIHelper.WrappedText("");
 
                 if (ImGui.Button("Save", halfButtonSize))

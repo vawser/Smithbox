@@ -15,7 +15,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditorNS.MapPropertyView;
+using static StudioCore.Editors.MapEditor.MapPropertyView;
 
 namespace StudioCore.Editors.MapEditorNS;
 

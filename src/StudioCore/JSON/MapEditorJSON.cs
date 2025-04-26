@@ -28,3 +28,40 @@ public class EntitySelectionEntry
     public List<string> Tags { get; set; }
     public List<string> Selection { get; set; }
 }
+
+public class SpawnStateResource
+{
+    public List<SpawnStateEntry> list { get; set; }
+}
+
+public class SpawnStateEntry
+{
+    public string id { get; set; }
+    public string name { get; set; }
+    public List<SpawnStatePair> states { get; set; }
+}
+
+public class SpawnStatePair
+{
+    public string value { get; set; }
+    public string name { get; set; }
+}
+
+public class FormatMask
+{
+    public List<FormatMaskEntry> list { get; set; }
+}
+
+public class FormatMaskEntry
+{
+    public string model { get; set; }
+    public List<MaskSection> section_one { get; set; }
+    public List<MaskSection> section_two { get; set; }
+    public List<MaskSection> section_three { get; set; }
+}
+
+public class MaskSection
+{
+    public string mask { get; set; }
+    public string name { get; set; }
+}

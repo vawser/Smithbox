@@ -93,7 +93,7 @@ public class HelpWindow
 
     public void Display()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         if (!MenuOpenState)
             return;

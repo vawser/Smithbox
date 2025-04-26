@@ -44,7 +44,7 @@ public class EditorHandler
     public CutsceneEditorScreen CutsceneEditor;
     public GparamEditorScreen GparamEditor;
     public MaterialEditorScreen MaterialEditor;
-    public EmevdEditorScreen EmevdEditor;
+    public EventScriptEditor EmevdEditor;
     public EsdEditorScreen EsdEditor;
     public TextureViewerScreen TextureViewer;
     public HavokEditorScreen HavokEditor;
@@ -61,7 +61,7 @@ public class EditorHandler
         GparamEditor = new GparamEditorScreen(_context.Window, _context.Device);
         TimeActEditor = new TimeActEditorScreen(_context.Window, _context.Device);
         TextureViewer = new TextureViewerScreen(_context.Window, _context.Device);
-        EmevdEditor = new EmevdEditorScreen(_context.Window, _context.Device);
+        EmevdEditor = new EventScriptEditor(_context.Window, _context.Device);
         EsdEditor = new EsdEditorScreen(_context.Window, _context.Device);
 
         // WIP

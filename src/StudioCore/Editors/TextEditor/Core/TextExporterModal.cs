@@ -40,7 +40,7 @@ public class TextExporterModal
     {
         if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            var width = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+            var width = new Vector2(520 * DPI.Scale, 24 * DPI.Scale);
 
             ImGui.Text("Name");
             ImGui.SetNextItemWidth(width.X);
@@ -50,7 +50,7 @@ public class TextExporterModal
             {
                 ImGui.BeginDisabled();
             }
-            if (ImGui.Button("Export", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.Button("Export", new Vector2(260 * DPI.Scale, 24 * DPI.Scale)))
             {
                 ShowModal = false;
                 FmgExporter.ProcessExport(WrapperName);
@@ -61,7 +61,7 @@ public class TextExporterModal
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Close", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.Button("Close", new Vector2(260 * DPI.Scale, 24 * DPI.Scale)))
             {
                 ShowModal = false;
             }

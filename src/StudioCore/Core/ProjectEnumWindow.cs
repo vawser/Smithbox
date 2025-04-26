@@ -48,7 +48,7 @@ public static class ProjectEnumWindow
         if (!DisplayProjectEnumWindow)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         ImGui.SetNextWindowSize(new Vector2(1200.0f, 1000.0f) * scale, ImGuiCond.FirstUseEver);
         ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.Imgui_Moveable_MainBg);
@@ -176,7 +176,7 @@ public static class ProjectEnumWindow
 
     public static void DisplayProjectEnumAction()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);

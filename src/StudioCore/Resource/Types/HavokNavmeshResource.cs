@@ -11,6 +11,7 @@ using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
+using StudioCore.Resource;
 
 namespace StudioCore.Resource.Types;
 

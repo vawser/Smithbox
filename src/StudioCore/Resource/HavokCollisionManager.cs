@@ -6,7 +6,6 @@ using StudioCore.Core;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource.Locators;
-using StudioCore.Resource.Types;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

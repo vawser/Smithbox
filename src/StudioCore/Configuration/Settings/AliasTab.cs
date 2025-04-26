@@ -176,7 +176,7 @@ public class AliasTab
 
     private void DisplayActionsWindow()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);
@@ -227,7 +227,7 @@ public class AliasTab
 
     private void DisplayEditWindow()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);
@@ -278,7 +278,7 @@ public class AliasTab
     }
     public void DisplayNameAddSection()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var width = ImGui.GetWindowWidth();
         var inputSize = new Vector2(width, 20 * scale);
         var buttonSize = new Vector2(width, 24 * scale);

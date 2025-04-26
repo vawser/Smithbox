@@ -15,10 +15,10 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Interface;
-using StudioCore.Resource.Types;
 using StudioCore.Resource.Locators;
 using StudioCore.Settings;
 using StudioCore.Core;
+using StudioCore.Resource.Types;
 
 namespace StudioCore.Resource;
 

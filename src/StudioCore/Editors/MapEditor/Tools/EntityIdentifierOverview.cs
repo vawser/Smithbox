@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -25,29 +26,24 @@ public class EntityIdentifierOverview
 
     private string SelectedIdentifier = "";
 
+    private string WindowName = "Identifiers##mapEditorEntityIdentifierOverview";
+
     public EntityIdentifierOverview(MapEditor editor)
     {
         Editor = editor;
     }
 
-
-    public void OnGui()
+    public void Display()
     {
         if (!UI.Current.Interface_MapEditor_EntityIdentifierOverview)
             return;
 
         // DS2 is supported currently since it uses Entity IDs differently to the other games.
         if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
             return;
-        }
 
-        var scale = DPI.GetUIScale();
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-        if (ImGui.Begin($@"Identifiers##MapEditor_EIO"))
+        UIHelper.ApplyChildStyle();
+        if (ImGui.Begin(WindowName))
         {
             var width = ImGui.GetWindowWidth();
 
@@ -100,7 +96,7 @@ public class EntityIdentifierOverview
         }
 
         ImGui.End();
-        ImGui.PopStyleColor(1);
+        UIHelper.UnapplyChildStyle();
     }
 
     private Dictionary<string, Dictionary<string, Entity>> EntityCache = new();

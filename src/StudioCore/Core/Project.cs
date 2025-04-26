@@ -3,6 +3,9 @@ using Hexa.NET.ImGui;
 using Smithbox.Core.FileBrowserNS;
 using Smithbox.Core.MapEditorNS;
 using StudioCore.Editor;
+using StudioCore.Editors.BehaviorEditorNS;
+using StudioCore.Editors.CutsceneEditorNS;
+using StudioCore.Editors.EventScriptEditorNS;
 using StudioCore.Editors.MapEditorNS;
 using StudioCore.Formats;
 using StudioCore.Interface;
@@ -448,7 +451,7 @@ public class Project
         }
     }
 
-    public void Draw(string[] cmd)
+    public void Draw(float dt, string[] cmd)
     {
         ImGui.Begin($"Project##Project", ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoMove);
 
@@ -471,79 +474,79 @@ public class Project
             // File Browser
             if (EnableFileBrowser && FileBrowser != null)
             {
-                FileBrowser.OnGUI(cmd);
+                FileBrowser.OnGUI(dt, cmd);
             }
 
             // Map Editor
             if (EnableMapEditor && MapEditor != null)
             {
-                MapEditor.OnGUI(cmd);
+                MapEditor.Display(dt, cmd);
             }
 
             // Model Editor
             if (EnableModelEditor && ModelEditor != null)
             {
-                ModelEditor.OnGUI(cmd);
+                ModelEditor.OnGUI(dt, cmd);
             }
 
             // Param Editor
             if (EnableParamEditor && ParamEditor != null)
             {
-                ParamEditor.OnGUI(cmd);
+                ParamEditor.OnGUI(dt, cmd);
             }
 
             // Text Editor
             if (EnableTextEditor && TextEditor != null)
             {
-                TextEditor.OnGUI(cmd);
+                TextEditor.OnGUI(dt, cmd);
             }
 
             // Cutscene Editor
             if (EnableCutsceneEditor && CutsceneEditor != null)
             {
-                CutsceneEditor.OnGUI(cmd);
+                CutsceneEditor.Display(dt, cmd);
             }
 
             // Event Script Editor
             if (EnableEventScriptEditor && EventScriptEditor != null)
             {
-                EventScriptEditor.OnGUI(cmd);
+                EventScriptEditor.OnGUI(dt, cmd);
             }
 
             // Ez State Editor
             if (EnableEzStateEditor && EzStateEditor != null)
             {
-                EzStateEditor.OnGUI(cmd);
+                EzStateEditor.OnGUI(dt, cmd);
             }
 
             // Gparam Editor
             if (EnableGparamEditor && GparamEditor != null)
             {
-                GparamEditor.OnGUI(cmd);
+                GparamEditor.OnGUI(dt, cmd);
             }
 
             // Material Editor
             if (EnableMaterialEditor && MaterialEditor != null)
             {
-                MaterialEditor.OnGUI(cmd);
+                MaterialEditor.OnGUI(dt, cmd);
             }
 
             // Behavior Editor
             if (EnableBehaviorEditor && BehaviorEditor != null)
             {
-                BehaviorEditor.OnGUI(cmd);
+                BehaviorEditor.OnGUI(dt, cmd);
             }
 
             // Texture Editor
             if (EnableTextureEditor && TextureEditor != null)
             {
-                TextureEditor.OnGUI(cmd);
+                TextureEditor.OnGUI(dt, cmd);
             }
 
             // Time Act Editor
             if (EnableTimeActEditor && TimeActEditor != null)
             {
-                TimeActEditor.OnGUI(cmd);
+                TimeActEditor.OnGUI(dt, cmd);
             }
         }
 

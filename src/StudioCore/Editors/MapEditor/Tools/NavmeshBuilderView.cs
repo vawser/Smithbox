@@ -7,12 +7,15 @@ using StudioCore.Resource;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using StudioCore.Resource.Types;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.Framework;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditorNS;
 using StudioCore.Editors;
+using StudioCore.Settings;
+using StudioCore.Interface;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Resource.Types;
 
 namespace Smithbox.Core.MapEditorNS;
 
@@ -41,14 +44,20 @@ public class NavmeshBuilderView
     private int MinRegionArea = 3;
     private float SlopeAngle = 30.0f;
 
+    private string WindowName = "Navmesh Builder##mapEditorNavmeshBuilder";
+
     public NavmeshBuilderView(MapEditor editor)
     {
         Editor = editor;
     }
 
-    public void OnGui()
+    public void Display()
     {
-        if (ImGui.Begin("Navmesh Build"))
+        if (!FeatureFlags.EnableNavmeshBuilder)
+            return;
+
+        UIHelper.ApplyChildStyle();
+        if (ImGui.Begin(WindowName))
         {
             if (Editor.Project.ProjectType != ProjectType.DS3)
             {
@@ -182,5 +191,6 @@ public class NavmeshBuilderView
         }
 
         ImGui.End();
+        UIHelper.UnapplyChildStyle();
     }
 }

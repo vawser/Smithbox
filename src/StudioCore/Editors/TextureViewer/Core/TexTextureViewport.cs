@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Resource.Types;
 using StudioCore.Resource;
 using StudioCore.TextureViewer;
 using System;
@@ -12,6 +11,7 @@ using StudioCore.Resource.Locators;
 using SoulsFormats;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Formats;
+using StudioCore.Resource.Types;
 
 namespace StudioCore.Editors.TextureViewer;
 

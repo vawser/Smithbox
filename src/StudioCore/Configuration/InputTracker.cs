@@ -220,7 +220,7 @@ public static class InputTracker
 
     public static KeyBind KeybindEntry(int index, KeyBind bindVal)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
         var columnWidth = ImGui.GetColumnWidth();
 
         var newKeyBind = bindVal;
@@ -277,7 +277,7 @@ public static class InputTracker
 
     public static KeyBind KeybindLine(int index, KeyBind currentKeyBind, KeyBind defaultKeyBind)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         ImGui.Columns(3);
 

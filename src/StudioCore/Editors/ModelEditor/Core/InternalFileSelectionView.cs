@@ -31,7 +31,7 @@ public class InternalFileSelectionView
 
     public void Display()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.Scale;
 
         if (Smithbox.ProjectType == ProjectType.Undefined)
             return;

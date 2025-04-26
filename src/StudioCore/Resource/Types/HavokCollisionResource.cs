@@ -11,6 +11,7 @@ using System.IO;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Reflection.hk2018;
 using StudioCore.Core;
+using StudioCore.Resource;
 
 namespace StudioCore.Resource.Types;
 
