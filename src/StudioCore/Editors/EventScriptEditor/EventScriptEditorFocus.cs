@@ -1,10 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core.ProjectNS;
 
 namespace StudioCore.Editors.EventScriptEditorNS;
 
 public class EventScriptEditorFocus
 {
     public EventScriptEditor Editor;
+    public Project Project;
 
     public string FocusedWindowName;
 
@@ -12,9 +14,10 @@ public class EventScriptEditorFocus
 
     public EventScriptEditorContext FocusContext = EventScriptEditorContext.None;
 
-    public EventScriptEditorFocus(EventScriptEditor editor)
+    public EventScriptEditorFocus(Project curPoject, EventScriptEditor editor)
     {
         Editor = editor;
+        Project = curPoject;
     }
 
     /// <summary>

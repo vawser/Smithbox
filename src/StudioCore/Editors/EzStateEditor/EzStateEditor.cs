@@ -1,21 +1,15 @@
-﻿using StudioCore.Core.ProjectNS;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StudioCore.Core.ProjectNS;
 using StudioCore.Editor;
-using StudioCore.Editors.EzStateEditor;
-using Microsoft.AspNetCore.Components;
 using StudioCore.Utilities;
 using System.Numerics;
-using Hexa.NET.ImGui;
-using StudioCore.Configuration;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EzStateEditorNS;
 
-public class EzStateEditor
+public class EzStateEditor : IEditor
 {
     public BaseEditor BaseEditor;
     public Project Project;
@@ -32,6 +26,10 @@ public class EzStateEditor
 
     public EzStateFileList FileList;
     public EzStateScriptView ScriptView;
+    public EzStateGroupView GroupView;
+    public EzStateNodeView NodeView;
+    public EzStateFieldView FieldView;
+
     public EzStateToolView ToolView;
 
     private bool DetectShortcuts = false;
@@ -56,11 +54,11 @@ public class EzStateEditor
 
     public void Display(float dt, string[] cmd)
     {
-        ImGui.Begin($"Ez State Editor##EzStateEditor{ID}", Project.BaseEditor.MainWindowFlags);
+        ImGui.Begin($"EzState Editor##EzStateEditor{ID}", Project.BaseEditor.MainWindowFlags);
 
         DetectShortcuts = ShortcutUtils.UpdateShortcutDetection();
 
-        uint dockspaceID = ImGui.GetID($"Ez StateEditorDockspace{ID}");
+        uint dockspaceID = ImGui.GetID($"EzStateEditorDockspace{ID}");
         ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
 
         Menubar();
@@ -68,7 +66,7 @@ public class EzStateEditor
 
         ImGui.End();
 
-        ImGui.Begin($"Ez State List##EzStateFileList", Project.BaseEditor.SubWindowFlags);
+        ImGui.Begin($"EzState List##EzStateFileList", Project.BaseEditor.SubWindowFlags);
 
         FileList.Draw();
 
@@ -76,7 +74,25 @@ public class EzStateEditor
 
         ImGui.Begin($"Scripts##EzStateScriptView", Project.BaseEditor.SubWindowFlags);
 
-        EventView.Draw();
+        ScriptView.Draw();
+
+        ImGui.End();
+
+        ImGui.Begin($"Groups##EzStateGroupView", Project.BaseEditor.SubWindowFlags);
+
+        GroupView.Draw();
+
+        ImGui.End();
+
+        ImGui.Begin($"Node##EzStateNodeView", Project.BaseEditor.SubWindowFlags);
+
+        NodeView.Draw();
+
+        ImGui.End();
+
+        ImGui.Begin($"Fields##EzStateFieldView", Project.BaseEditor.SubWindowFlags);
+
+        FieldView.Draw();
 
         ImGui.End();
 
@@ -176,11 +192,11 @@ public class EzStateEditor
 
         if (saveTaskFinished)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved EzState script file: {Selection.SelectedFileKey}");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved EzState script file: {Selection.SelectedFilename}");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to save EzState script file: {Selection.SelectedFileKey}");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to save EzState script file: {Selection.SelectedFilename}");
         }
     }
 }

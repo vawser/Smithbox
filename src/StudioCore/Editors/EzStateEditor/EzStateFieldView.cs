@@ -1,81 +1,54 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.ImGui;
-using Org.BouncyCastle.Utilities;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Core.ProjectNS;
 using StudioCore.Editor;
-using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.EsdLang;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
-using StudioCore.Utilities;
+using StudioCore.JSON;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static SoulsFormats.ESD;
 using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.Editors.EzStateEditorNS;
 
-/// <summary>
-/// Handles the state node properties viewing and editing.
-/// </summary>
-public class EsdStateNodePropertyView
+public class EzStateFieldView
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
-
-    public EsdStateNodePropertyView(EsdEditorScreen screen)
+    public Project Project;
+    public EzStateEditor Editor;
+    public EzStateFieldView(Project curProject, EzStateEditor editor)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Project = curProject;
+        Editor = editor;
     }
 
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
+    public void Draw()
     {
+        if (Editor.Selection.SelectedStateGroupNode == null)
+            return;
 
-    }
+        Editor.EditorFocus.SetFocusContext(EzStateEditorContext.StateNodeContents);
 
-    /// <summary>
-    /// The main UI for the view
-    /// </summary>
-    public void Display()
-    {
-        ImGui.Begin("State Node##EsdStateNodePropertyView");
-        Selection.SwitchWindowContext(EsdEditorContext.StateNodeContents);
+        var stateNode = Editor.Selection.SelectedStateGroupNode;
 
-        var stateNode = Selection._selectedStateGroupNode;
+        DisplayCommands(stateNode, stateNode.EntryCommands, "entry", "Entry Commands");
 
-        if (stateNode != null)
-        {
-            DisplayCommands(stateNode, stateNode.EntryCommands, "entry", "Entry Commands");
+        ImGui.Separator();
 
-            ImGui.Separator();
+        DisplayCommands(stateNode, stateNode.ExitCommands, "exit", "Exit Commands");
 
-            DisplayCommands(stateNode, stateNode.ExitCommands, "exit", "Exit Commands");
+        ImGui.Separator();
 
-            ImGui.Separator();
+        DisplayCommands(stateNode, stateNode.WhileCommands, "while", "While Commands");
 
-            DisplayCommands(stateNode, stateNode.WhileCommands, "while", "While Commands");
+        ImGui.Separator();
 
-            ImGui.Separator();
+        DisplayConditions(stateNode, stateNode.Conditions, "conditions", "Conditions");
 
-            DisplayConditions(stateNode, stateNode.Conditions, "conditions", "Conditions");
-
-            ImGui.Separator();
-        }
-
-        ImGui.End();
+        ImGui.Separator();
     }
 
     public void DisplayCommands(ESD.State node, List<CommandCall> commands, string imguiId, string displayTitle)
@@ -91,7 +64,7 @@ public class EsdStateNodePropertyView
             ImGui.TableSetupColumn("Column3", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn("Column4", ImGuiTableColumnFlags.WidthStretch);
 
-            for(int i = 0; i < commands.Count; i++) 
+            for (int i = 0; i < commands.Count; i++)
             {
                 var cmd = commands[i];
 
@@ -118,9 +91,6 @@ public class EsdStateNodePropertyView
         }
     }
 
-    /// <summary>
-    /// Command ID
-    /// </summary>
     private void DisplayCommandIdSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
         var displayIdentifier = $"{cmd.CommandBank} [{cmd.CommandID}]";
@@ -137,14 +107,14 @@ public class EsdStateNodePropertyView
             if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
             {
                 var targetStateGroup = cmd.CommandID;
-                var groups = Selection._selectedEsdScript.StateGroups;
+                var groups = Editor.Selection.SelectedStateGroups;
 
                 foreach (var (key, entry) in groups)
                 {
                     if (key == targetStateGroup)
                     {
-                        Selection.ResetStateGroupNode();
-                        Selection.SetStateGroup(key, entry);
+                        Editor.Selection.ClearStateGroupNode();
+                        Editor.Selection.SelectStateGroupNode(key, entry);
                     }
                 }
             }
@@ -154,7 +124,7 @@ public class EsdStateNodePropertyView
         ImGui.TableSetColumnIndex(3);
 
         // Alias
-        var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdMeta = Project.EzStateData.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
         if (cmdMeta != null)
         {
             var displayAlias = cmdMeta.displayName;
@@ -163,14 +133,11 @@ public class EsdStateNodePropertyView
         }
     }
 
-    /// <summary>
-    /// Command Parameters
-    /// </summary>
     private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
-        var cmdArgMeta = EsdMeta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdArgMeta = Project.EzStateData.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
-        for(int i = 0; i < cmd.Arguments.Count; i++)
+        for (int i = 0; i < cmd.Arguments.Count; i++)
         {
             var arg = cmd.Arguments[i];
 
@@ -228,14 +195,14 @@ public class EsdStateNodePropertyView
                     if (target == "StateGroup")
                     {
                         var targetStateGroup = expr.AsInt();
-                        var groups = Selection._selectedEsdScript.StateGroups;
+                        var groups = Editor.Selection.SelectedStateGroups;
 
                         foreach (var (key, entry) in groups)
                         {
                             if (key == targetStateGroup)
                             {
-                                Selection.ResetStateGroupNode();
-                                Selection.SetStateGroup(key, entry);
+                                Editor.Selection.ClearStateGroupNode();
+                                Editor.Selection.SelectStateGroupNode(key, entry);
                             }
                         }
                     }
@@ -253,7 +220,7 @@ public class EsdStateNodePropertyView
                 // EMEVD
                 if (source == "emevd")
                 {
-                    var mapName = Selection._selectedFileInfo.Name;
+                    var mapName = Editor.Selection.SelectedFilename;
                     var eventId = target;
 
                     //EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
@@ -386,14 +353,14 @@ public class EsdStateNodePropertyView
                 if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
                 {
                     var targetStateGroup = passCmd.CommandID;
-                    var groups = Selection._selectedEsdScript.StateGroups;
+                    var groups = Editor.Selection.SelectedStateGroups;
 
                     foreach (var (key, entry) in groups)
                     {
                         if (key == targetStateGroup)
                         {
-                            Selection.ResetStateGroupNode();
-                            Selection.SetStateGroup(key, entry);
+                            Editor.Selection.ClearStateGroupNode();
+                            Editor.Selection.SelectStateGroupNode(key, entry);
                         }
                     }
                 }
@@ -403,7 +370,7 @@ public class EsdStateNodePropertyView
             ImGui.TableSetColumnIndex(3);
 
             // Alias
-            var cmdMeta = EsdMeta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdMeta = Project.EzStateData.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
             if (cmdMeta != null)
             {
                 var displayAlias = cmdMeta.displayName;
@@ -413,7 +380,7 @@ public class EsdStateNodePropertyView
 
             ImGui.TableNextRow();
 
-            var cmdArgMeta = EsdMeta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdArgMeta = Project.EzStateData.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
 
             for (int i = 0; i < passCmd.Arguments.Count; i++)
             {
@@ -470,7 +437,7 @@ public class EsdStateNodePropertyView
             var subCond = conditions[i];
 
             ImGui.Text($"Sub Condition {i}");
-                
+
             //DisplayCondition(node, conditions, subCond, $"{imguiId}{i}");
         }
     }

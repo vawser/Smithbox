@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace StudioCore.Editors.CutsceneEditorNS;
 
-public class CutsceneEditor
+public class CutsceneEditor : IEditor
 {
     public BaseEditor BaseEditor;
     private Project Project;

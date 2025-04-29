@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.BehaviorEditorNS;
 
-public class BehaviorEditor
+public class BehaviorEditor : IEditor
 {
     public BaseEditor BaseEditor;
     public Project Project;

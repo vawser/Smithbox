@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EsdEditor.Enums;
+namespace StudioCore.Editors.EzStateEditorNS;
 
-public enum EsdEditorContext
+public enum EzStateEditorContext
 {
     [Display(Name = "None")] None,
     [Display(Name = "File")] File,
