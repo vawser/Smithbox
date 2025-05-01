@@ -50,7 +50,7 @@ public class BehaviorEditor : IEditor
         FieldView = new(Project, this);
     }
 
-    public void Draw()
+    public void Display(float dt, string[] cmd)
     {
         ImGui.Begin($"Behavior Editor##Behavior Editor", Project.BaseEditor.MainWindowFlags);
 
