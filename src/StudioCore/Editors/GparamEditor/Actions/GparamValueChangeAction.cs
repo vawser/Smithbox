@@ -1,17 +1,16 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor.Enums;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor.Actions;
+namespace StudioCore.Editors.GparamEditorNS;
 
 public class GparamValueChangeAction : EditorAction
 {
     private readonly List<GparamValueChange> Changes = new();
 
-    public GparamValueChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
+    public GparamValueChangeAction(IField field, IFieldValue fieldValue, object newValue, int index, ValueChangeType valueChangeType)
     {
         var change = new GparamValueChange();
         change.Index = index;

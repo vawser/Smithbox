@@ -1,17 +1,13 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.GraphicsEditor;
+using StudioCore.Core.ProjectNS;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.Editors.GparamEditorNS;
 
 public class GparamFilters
 {
-    private GparamEditorScreen Screen;
+    public GparamEditor Editor;
+    public Project Project;
 
     public string FileFilterInput = "";
     public string GroupFilterInput = "";
@@ -23,9 +19,10 @@ public class GparamFilters
     private bool FieldFilterExactMatch = false;
     private bool FieldValueFilterExactMatch = false;
 
-    public GparamFilters(GparamEditorScreen screen)
+    public GparamFilters(Project curPoject, GparamEditor editor)
     {
-        Screen = screen;
+        Editor = editor;
+        Project = curPoject;
     }
 
     /// <summary>

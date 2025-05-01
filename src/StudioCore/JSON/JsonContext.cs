@@ -55,6 +55,14 @@ namespace StudioCore.Resources.JSON;
 [JsonSerializable(typeof(EsdMeta_Enum))]
 [JsonSerializable(typeof(EsdMeta_EnumMember))]
 
+// Gparam Editor
+[JsonSerializable(typeof(GparamFormatResource))]
+[JsonSerializable(typeof(GparamFormatReference))]
+[JsonSerializable(typeof(GparamFormatMember))]
+[JsonSerializable(typeof(GparamFormatEnum))]
+[JsonSerializable(typeof(GparamFormatEnumEntry))]
+[JsonSerializable(typeof(GparamFormatEnumMember))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

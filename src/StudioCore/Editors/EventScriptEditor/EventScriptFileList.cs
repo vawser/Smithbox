@@ -57,6 +57,8 @@ public class EventScriptFileList
                     {
                         Editor.Selection.SelectNextScript = false;
                         Editor.Selection.SelectFile(i, curEntry.Filename);
+
+                        Project.EventScriptData.PrimaryBank.LoadEventScript(curEntry.Filename, curEntry.Path);
                     }
 
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))

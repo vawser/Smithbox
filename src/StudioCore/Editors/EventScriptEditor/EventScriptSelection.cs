@@ -28,6 +28,7 @@ public class EventScriptSelection
         Project = project;
         Editor = editor;
     }
+
     public bool IsFileSelected(int index, string fileName)
     {
         if (SelectedFileIndex == index)
