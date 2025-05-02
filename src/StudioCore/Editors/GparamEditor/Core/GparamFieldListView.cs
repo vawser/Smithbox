@@ -1,93 +1,91 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Banks.FormatBank;
 using StudioCore.Configuration;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Editors.GparamEditor.Enums;
+using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
-using StudioCore.Resources.JSON;
+using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditorNS;
+namespace StudioCore.Editors.GparamEditor;
 
-public class GparamFieldView
+public class GparamFieldListView
 {
-    public GparamEditor Editor;
-    public Project Project;
-    public GparamFieldView(Project curPoject, GparamEditor editor)
+    private GparamEditorScreen Screen;
+    private GparamFilters Filters;
+    private GparamSelectionManager Selection;
+    private GparamContextMenu ContextMenu;
+
+    public GparamFieldListView(GparamEditorScreen screen)
     {
-        Editor = editor;
-        Project = curPoject;
+        Screen = screen;
+        Filters = screen.Filters;
+        Selection = screen.Selection;
+        ContextMenu = screen.ContextMenu;
     }
-    public void Draw()
+
+    /// <summary>
+    /// Reset view state on project change
+    /// </summary>
+    public void OnProjectChanged()
+    {
+
+    }
+
+    /// <summary>
+    /// The main UI for the event parameter view
+    /// </summary>
+    public void Display()
     {
         ImGui.Begin("Fields##GparamFields");
-        Editor.EditorFocus.SetFocusContext(GparamEditorContext.Field);
+        Selection.SwitchWindowContext(GparamEditorContext.Field);
 
-        Editor.Filters.DisplayFieldFilterSearch();
+        Filters.DisplayFieldFilterSearch();
 
         ImGui.BeginChild("GparamFieldsSection");
+        Selection.SwitchWindowContext(GparamEditorContext.Field);
 
-        if (Editor.Selection.HasGroupSelected())
+        if (Selection.IsGparamGroupSelected())
         {
-            GPARAM.Param data = Editor.Selection.GetSelectedGparamGroup();
+            GPARAM.Param data = Selection.GetSelectedGparamGroup();
 
             for (int i = 0; i < data.Fields.Count; i++)
             {
                 GPARAM.IField entry = data.Fields[i];
 
-                var isSelected = Editor.Selection.IsFieldSelected(i);
-
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamFieldAlias)
-                {
-                    name = Project.GparamData.Meta.GetReferenceName(entry.Key, entry.Name);
-                }
+                    name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
 
-                if (Editor.Filters.IsFieldFilterMatch(entry.Name, ""))
+                if (Filters.IsFieldFilterMatch(entry.Name, ""))
                 {
                     // Field row
-                    if (ImGui.Selectable($@" {name}##{entry.Key}{i}", isSelected))
+                    if (ImGui.Selectable($@" {name}##{entry.Key}{i}", i == Selection._selectedParamFieldKey))
                     {
-                        Editor.Selection.SelectField(i, entry);
+                        Selection.SetGparamField(i, entry);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Editor.Selection.AutoSelectField)
+                    if (ImGui.IsItemHovered() && Selection.SelectGparamField)
                     {
-                        Editor.Selection.AutoSelectField = false;
-                        Editor.Selection.SelectField(i, entry);
+                        Selection.SelectGparamField = false;
+                        Selection.SetGparamField(i, entry);
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
-                        Editor.Selection.AutoSelectField = false;
+                        Selection.SelectGparamField = true;
                     }
                 }
 
-                // Context Menu
-                if (isSelected)
-                {
-                    if (ImGui.BeginPopupContextItem($"Options##Gparam_Field_Context"))
-                    {
-                        if (ImGui.Selectable("Target in Quick Edit"))
-                        {
-                            Editor.QuickEdit.UpdateFieldFilter(Editor.Selection._selectedParamField.Key);
-
-                            ImGui.CloseCurrentPopup();
-                        }
-                        UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
-
-                        if (ImGui.Selectable("Remove"))
-                        {
-                            Editor.Selection._selectedParamGroup.Fields.Remove(Editor.Selection._selectedParamField);
-
-                            ImGui.CloseCurrentPopup();
-                        }
-                        UIHelper.Tooltip("Delete the selected row.");
-
-                        ImGui.EndPopup();
-                    }
-                }
+                ContextMenu.FieldContextMenu(i);
             }
 
             if (CFG.Current.Gparam_DisplayAddFields)
@@ -108,14 +106,14 @@ public class GparamFieldView
     /// </summary>
     public void DisplayMissingFieldSection()
     {
-        GPARAM.Param data = Editor.Selection.GetSelectedGparamGroup();
+        GPARAM.Param data = Selection.GetSelectedGparamGroup();
 
-        List<GparamFormatMember> missingFields = new List<GparamFormatMember>();
+        List<FormatMember> missingFields = new List<FormatMember>();
 
         // Get source Format Reference
-        foreach (var entry in Project.GparamData.Meta.Information.list)
+        foreach (var entry in Smithbox.BankHandler.GPARAM_Info.Information.list)
         {
-            if (entry.id == Editor.Selection._selectedParamGroup.Key)
+            if (entry.id == Selection._selectedParamGroup.Key)
             {
                 foreach (var member in entry.members)
                 {
@@ -144,7 +142,8 @@ public class GparamFieldView
             {
                 if (ImGui.Button($"Add##{missing.id}"))
                 {
-                    AddMissingField(Editor.Selection._selectedParamGroup, missing);
+                    AddMissingField(Selection._selectedParamGroup, missing);
+                    Selection.ToggleSelectedFileModifiedState(true);
                 }
                 ImGui.SameLine();
                 ImGui.Text($"{missing.name}");
@@ -157,9 +156,9 @@ public class GparamFieldView
     /// </summary>
     /// <param name="targetParam"></param>
     /// <param name="missingField"></param>
-    public void AddMissingField(Param targetParam, GparamFormatMember missingField)
+    public void AddMissingField(Param targetParam, FormatMember missingField)
     {
-        var typeName = Project.GparamData.Meta.GetTypeForProperty(missingField.id);
+        var typeName = Smithbox.BankHandler.GPARAM_Info.GetTypeForProperty(missingField.id);
 
         if (typeName == "Byte")
         {
@@ -293,3 +292,4 @@ public class GparamFieldView
         // Unknown
     }
 }
+

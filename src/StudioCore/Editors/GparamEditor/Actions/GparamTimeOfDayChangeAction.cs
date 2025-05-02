@@ -1,8 +1,11 @@
 ﻿using StudioCore.Editor;
+using StudioCore.Editors.GparamEditor.Enums;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Numerics;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditorNS;
+namespace StudioCore.Editors.GparamEditor.Actions;
 
 public class GparamTimeOfDayChangeAction : EditorAction
 {
@@ -10,7 +13,7 @@ public class GparamTimeOfDayChangeAction : EditorAction
 
     private string ProvenanceString;
 
-    public GparamTimeOfDayChangeAction(IField field, IFieldValue fieldValue, object newValue, int index)
+    public GparamTimeOfDayChangeAction(string fileName, string groupName, IField field, IFieldValue fieldValue, object newValue, int index)
     {
         var change = new GparamValueChange();
         change.Index = index;
@@ -18,6 +21,8 @@ public class GparamTimeOfDayChangeAction : EditorAction
         change.OldValue = fieldValue.Unk04;
         change.NewValue = newValue;
         Changes.Add(change);
+
+        ProvenanceString = $"Param: {fileName} - Group: {groupName} - Field: {field.Name}";
     }
 
     public override ActionEvent Execute()

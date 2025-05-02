@@ -1,35 +1,58 @@
-﻿using Hexa.NET.ImGui;
+﻿using HKLib.hk2018.hkaiCollisionAvoidance;
+using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GparamEditor.Utils;
+using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
+using StudioCore.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditorNS;
+namespace StudioCore.Editors.GparamEditor;
 
-public class GparamFieldEntryView
+public class GparamValueListView
 {
-    public GparamEditor Editor;
-    public Project Project;
+    private GparamEditorScreen Screen;
+    private GparamFilters Filters;
+    private GparamSelectionManager Selection;
+    private GparamContextMenu ContextMenu;
 
     private bool[] displayTruth;
 
-    public GparamFieldEntryView(Project curPoject, GparamEditor editor)
+    public GparamValueListView(GparamEditorScreen screen)
     {
-        Editor = editor;
-        Project = curPoject;
+        Screen = screen;
+        Filters = screen.Filters;
+        Selection = screen.Selection;
+        ContextMenu = screen.ContextMenu;
     }
 
-    public void Draw()
+    /// <summary>
+    /// Reset view state on project change
+    /// </summary>
+    public void OnProjectChanged()
+    {
+
+    }
+
+    /// <summary>
+    /// The main UI for the event parameter view
+    /// </summary>
+    public void Display()
     {
         ImGui.Begin("Values##GparamValues");
-        Editor.EditorFocus.SetFocusContext(GparamEditorContext.FieldValue);
+        Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
 
-        Editor.Filters.DisplayFieldValueFilterSearch();
+        Filters.DisplayFieldValueFilterSearch();
 
-        if (Editor.Selection.HasFieldSelected())
+        if (Selection.IsGparamFieldSelected())
         {
-            GPARAM.IField field = Editor.Selection.GetSelectedGparamField();
+            GPARAM.IField field = Selection.GetSelectedGparamField();
 
             ResetDisplayTruth(field);
 
@@ -37,6 +60,7 @@ public class GparamFieldEntryView
 
             // ID
             ImGui.BeginChild("IdList##GparamPropertyIds");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"ID");
             ImGui.Separator();
 
@@ -44,7 +68,7 @@ public class GparamFieldEntryView
             {
                 GPARAM.IFieldValue entry = field.Values[i];
 
-                displayTruth[i] = Editor.Filters.IsFieldValueFilterMatch(entry.Id.ToString(), "");
+                displayTruth[i] = Filters.IsFieldValueFilterMatch(entry.Id.ToString(), "");
 
                 if (displayTruth[i])
                 {
@@ -57,7 +81,7 @@ public class GparamFieldEntryView
             {
                 if (ImGui.Button("Add"))
                 {
-                    Editor.FieldInput.AddValueField(field);
+                    Screen.PropertyEditor.AddValueField(field);
                     ResetDisplayTruth(field);
                 }
             }
@@ -68,6 +92,7 @@ public class GparamFieldEntryView
 
             // Time of Day
             ImGui.BeginChild("IdList##GparamTimeOfDay");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Time of Day");
             ImGui.Separator();
 
@@ -86,6 +111,7 @@ public class GparamFieldEntryView
 
             // Value
             ImGui.BeginChild("ValueList##GparamPropertyValues");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Value");
             ImGui.Separator();
 
@@ -105,6 +131,7 @@ public class GparamFieldEntryView
 
             // Value
             ImGui.BeginChild("InfoList##GparamPropertyInfo");
+            Selection.SwitchWindowContext(GparamEditorContext.FieldValue);
             ImGui.Text($"Information");
             ImGui.Separator();
 
@@ -170,64 +197,12 @@ public class GparamFieldEntryView
 
         string name = value.Id.ToString();
 
-        if (ImGui.Selectable($"{name}##{index}", index == Editor.Selection._selectedFieldValueKey))
+        if (ImGui.Selectable($"{name}##{index}", index == Selection._selectedFieldValueKey))
         {
-            Editor.Selection.SelectFieldValue(index, value);
+            Selection.SetGparamFieldValue(index, value);
         }
 
-        // Context menu
-
-        if (index == Editor.Selection._selectedFieldValueKey)
-        {
-            if (ImGui.BeginPopupContextItem($"Options##Gparam_PropId_Context"))
-            {
-                if (ImGui.Selectable("Target in Quick Edit"))
-                {
-                    var fieldIndex = -1;
-                    for (int i = 0; i < Editor.Selection._selectedParamField.Values.Count; i++)
-                    {
-                        if (Editor.Selection._selectedParamField.Values[i] == Editor.Selection._selectedFieldValue)
-                        {
-                            fieldIndex = i;
-                            break;
-                        }
-                    }
-
-                    if (fieldIndex != -1)
-                    {
-                        Editor.QuickEdit.UpdateValueRowFilter(fieldIndex);
-                    }
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
-
-                if (ImGui.Selectable("Remove"))
-                {
-                    Editor.ActionHandler.DeleteValueRow();
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Delete the value row.");
-
-                if (ImGui.Selectable("Duplicate"))
-                {
-                    Editor.ActionHandler.DuplicateValueRow();
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
-
-                ImGui.InputInt("##valueIdInput", ref Editor.Selection._duplicateValueRowId);
-
-                if (Editor.Selection._duplicateValueRowId < 0)
-                {
-                    Editor.Selection._duplicateValueRowId = 0;
-                }
-
-                ImGui.EndPopup();
-            }
-        }
+        ContextMenu.FieldValueContextMenu(index);
     }
 
     /// <summary>
@@ -239,7 +214,7 @@ public class GparamFieldEntryView
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Editor.FieldInput.TimeOfDayField(index, field, value);
+        Screen.PropertyEditor.TimeOfDayField(index, field, value, Selection._selectedGparamInfo);
     }
 
     /// <summary>
@@ -251,7 +226,8 @@ public class GparamFieldEntryView
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Editor.FieldInput.ValueField(index, field, value);
+        Screen.PropertyEditor.ValueField(index, field, value,
+        Selection._selectedGparamInfo);
     }
 
     /// <summary>
@@ -262,7 +238,7 @@ public class GparamFieldEntryView
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = Project.GparamData.Meta.GetReferenceDescription(Editor.Selection._selectedParamGroup.Key, Editor.Selection._selectedParamField.Key);
+        string desc = Smithbox.BankHandler.GPARAM_Info.GetReferenceDescription(Selection._selectedParamGroup.Key, Selection._selectedParamField.Key);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
@@ -274,7 +250,7 @@ public class GparamFieldEntryView
         }
 
         // Show enum list if they exist
-        var propertyEnum = Project.GparamData.Meta.GetEnumForProperty(field.Key);
+        var propertyEnum = Smithbox.BankHandler.GPARAM_Info.GetEnumForProperty(field.Key);
         if (propertyEnum != null)
         {
             foreach (var entry in propertyEnum.members)
@@ -284,3 +260,5 @@ public class GparamFieldEntryView
         }
     }
 }
+
+

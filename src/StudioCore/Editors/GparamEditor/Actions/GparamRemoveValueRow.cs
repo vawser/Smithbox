@@ -1,47 +1,53 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.GraphicsEditor;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditorNS;
+namespace StudioCore.Editors.GparamEditor.Actions;
 
 public class GparamRemoveValueRow : EditorAction
 {
-    private GparamEditor Editor;
-
     private GPARAM SelectedGPARAM;
-
+    private GparamEditorScreen Screen;
     private IField SelectedField;
     private IFieldValue SelectedFieldValue;
     private int RemovedRowID;
     private int RemovedRowIndex;
 
-    public GparamRemoveValueRow(GparamEditor editor)
+    public GparamRemoveValueRow(GparamEditorScreen screen)
     {
-        Editor = editor;
-        SelectedGPARAM = editor.Selection._selectedGparam;
-        SelectedField = editor.Selection._selectedParamField;
-        SelectedFieldValue = editor.Selection._selectedFieldValue;
-        RemovedRowID = editor.Selection._selectedFieldValue.Id;
+        Screen = screen;
+        SelectedGPARAM = screen.Selection._selectedGparam;
+        SelectedField = screen.Selection._selectedParamField;
+        SelectedFieldValue = screen.Selection._selectedFieldValue;
+        RemovedRowID = screen.Selection._selectedFieldValue.Id;
     }
 
     public override ActionEvent Execute()
     {
-        Editor.FieldEntryView.ReduceDisplayTruth(SelectedField);
+        Screen.FieldValueList.ReduceDisplayTruth(SelectedField);
 
-        RemovedRowIndex = Editor.FieldInput.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
+        RemovedRowIndex = Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, SelectedFieldValue.Id);
 
-        Editor.FieldInput.UpdateGroupIndexes(SelectedGPARAM);
+        Screen.Selection.ToggleSelectedFileModifiedState(true);
+        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
     }
 
     public override ActionEvent Undo()
     {
-        Editor.FieldEntryView.ExtendDisplayTruth(SelectedField);
+        Screen.FieldValueList.ExtendDisplayTruth(SelectedField);
 
-        Editor.FieldInput.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
+        Screen.PropertyEditor.AddPropertyValueRowAtIndex(SelectedField, SelectedFieldValue, RemovedRowID, RemovedRowIndex);
 
-        Editor.FieldInput.UpdateGroupIndexes(SelectedGPARAM);
+        Screen.Selection.ToggleSelectedFileModifiedState(false);
+        Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
     }

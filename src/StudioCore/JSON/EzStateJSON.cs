@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Resources.JSON;
+namespace StudioCore.JSON;
 
 public class EsdMeta_Root
 {
