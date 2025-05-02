@@ -1,27 +1,16 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Resource;
+using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Editors.ModelEditor.Core;
+using StudioCore.Editors.ModelEditor.Framework;
+using StudioCore.Interface;
 using StudioCore.Scene;
-using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using Veldrid.Utilities;
 using Viewport = StudioCore.Interface.Viewport;
-using StudioCore.Configuration;
-using StudioCore.MsbEditor;
-using StudioCore.Utilities;
-using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Interface;
-using System.Xml;
-using StudioCore.Editors.ModelEditor.Tools;
-using StudioCore.Editors.ModelEditor.Framework;
-using StudioCore.Editors.ModelEditor.Core;
-using StudioCore.Editors.ModelEditor.Core.Properties;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.Extensions.Logging;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 

@@ -1,6 +1,4 @@
-﻿using Org.BouncyCastle.Asn1.X509;
-using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
+﻿using StudioCore.Editor;
 using StudioCore.Scene.Interfaces;
 using System;
 using System.Linq;

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Andre.IO.VFS;
+using SoulsFormats;
 using StudioCore.Core;
 using System;
 using System.Collections.Generic;
@@ -16,16 +17,19 @@ public class MapBank
 
     public Dictionary<string, IMsb> Maps = new();
 
-    public MapBank(MapData parent, string bankName)
+    private VirtualFileSystem FS;
+
+    public MapBank(MapData parent, string bankName, VirtualFileSystem targetFS)
     {
         DataParent = parent;
         BankName = bankName;
+        FS = targetFS;
     }
 
     public void LoadMap(string filename, string filepath)
     {
         var editor = DataParent.Project.MapEditor;
-        var mapData = DataParent.Project.FS.ReadFileOrThrow(filepath);
+        var mapData = FS.ReadFileOrThrow(filepath);
 
         switch (DataParent.Project.ProjectType)
         {
