@@ -202,7 +202,7 @@ public static class TaskLogs
                     ActionLogger_WindowOpen = false;
                 }
             }
-            UIHelper.Tooltip("Toggle the display of the action logger.");
+            UIHelper.ShowHoverTooltip("Toggle the display of the action logger.");
 
             // Only show the warning for X frames in the menu bar
             if (_lastActionLogEntry != null)
@@ -300,7 +300,7 @@ public static class TaskLogs
                     WarningLogger_WindowOpen = false;
                 }
             }
-            UIHelper.Tooltip("Toggle the display of the warning logger.");
+            UIHelper.ShowHoverTooltip("Toggle the display of the warning logger.");
 
             if (_lastWarningLogEntry != null)
             {

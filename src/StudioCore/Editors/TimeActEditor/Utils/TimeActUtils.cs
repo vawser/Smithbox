@@ -5,7 +5,7 @@ using Org.BouncyCastle.Crypto;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.HavokAliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor.Enums;
 using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.TimeActEditor.Bank;

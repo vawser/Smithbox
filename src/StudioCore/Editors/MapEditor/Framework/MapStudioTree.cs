@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using Veldrid.Utilities;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework;
 
 /// <summary>
 /// A tree hierarchy of axis-aligned bounding boxes used in various calculations such as drawing, culling, and collision detection.

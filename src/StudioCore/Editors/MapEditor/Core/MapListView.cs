@@ -1,21 +1,36 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
-using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
+using StudioCore.Configuration;
+
+using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
+using Veldrid;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.MsbEditor;
+using StudioCore.Editor;
+using StudioCore.Core.Project;
+using StudioCore.Interface;
+using StudioCore.Resource.Locators;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Tools.WorldMap;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Core;
 
-public class MapListView : IActionEventHandler
+public class MapListView : Actions.Viewport.IActionEventHandler
 {
-    private MapEditor Editor;
+    private MapEditorScreen Screen;
+    private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
+    private ViewportSelection Selection;
+    private EditorFocusManager FocusManager;
 
     private string ImguiID;
 
@@ -29,9 +44,21 @@ public class MapListView : IActionEventHandler
 
     private bool DisplayChaliceDungeons = true;
 
-    public MapListView(MapEditor editor)
+    public MapListView(MapEditorScreen screen)
     {
-        Editor = editor;
+        Screen = screen;
+
+        EditorActionManager = screen.EditorActionManager;
+        Selection = screen.Selection;
+        Viewport = screen.MapViewportView.Viewport;
+        FocusManager = screen.FocusManager;
+    }
+
+    public void OnProjectChanged()
+    {
+        MapIDs = new();
+        ContentViews = new();
+        SetupContentViews = false;
     }
 
     /// <summary>
@@ -41,11 +68,11 @@ public class MapListView : IActionEventHandler
     {
         var scale = DPI.GetUIScale();
 
-        if (Editor.Project.ProjectType == ProjectType.Undefined)
+        if (Smithbox.ProjectType == ProjectType.Undefined)
             return;
 
         // Wait for DS2 params to finish loading
-        if (Editor.Project.ProjectType is ProjectType.DS2S || Editor.Project.ProjectType is ProjectType.DS2)
+        if (Smithbox.ProjectType is ProjectType.DS2S || Smithbox.ProjectType is ProjectType.DS2)
         {
             if (ParamBank.PrimaryBank.IsLoadingParams)
             {
@@ -61,16 +88,16 @@ public class MapListView : IActionEventHandler
             // Map List
             if (ImGui.Begin($@"Map List##mapIdList"))
             {
-                Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
+                FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
                 // World Map
-                Editor.WorldMapView.DisplayWorldMapButton();
-                Editor.WorldMapView.DisplayWorldMap();
+                Screen.WorldMapView.DisplayWorldMapButton();
+                Screen.WorldMapView.DisplayWorldMap();
 
                 DisplaySearchbar();
                 ImGui.SameLine();
                 DisplayUnloadAllButton();
-                if (Editor.Project.ProjectType is ProjectType.BB)
+                if (Smithbox.ProjectType is ProjectType.BB)
                 {
                     ImGui.SameLine();
                     DisplayChaliceToggleButton();
@@ -79,13 +106,13 @@ public class MapListView : IActionEventHandler
                 ImGui.Separator();
 
                 // Setup the Content Views
-                if (Editor.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
+                if (Screen.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
                 {
                     SetupContentViews = true;
 
-                    foreach (var entry in Editor.Universe.GetMapContainerList())
+                    foreach (var entry in Screen.Universe.GetMapContainerList())
                     {
-                        var newView = new MapContentView(Editor, entry.Key, entry.Value);
+                        var newView = new MapContentView(Screen, entry.Key, entry.Value);
 
                         if (!ContentViews.ContainsKey(newView.MapID))
                         {
@@ -118,7 +145,7 @@ public class MapListView : IActionEventHandler
             // Map Contents
             if (ImGui.Begin($@"Map Contents##mapContentsPanel"))
             {
-                Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+                FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
 
                 if (ContentViews.Count > 0)
                 {
@@ -136,7 +163,7 @@ public class MapListView : IActionEventHandler
             ImGui.PopStyleColor(1);
         }
 
-        Editor.Selection.ClearGotoTarget();
+        Selection.ClearGotoTarget();
     }
 
     /// <summary>
@@ -150,7 +177,7 @@ public class MapListView : IActionEventHandler
         {
             ImGui.SetNextItemWidth(width * 0.75f);
             ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
-            UIHelper.Tooltip("Filter the map list entries.");
+            UIHelper.ShowHoverTooltip("Filter the map list entries.");
         }
     }
 
@@ -165,19 +192,19 @@ public class MapListView : IActionEventHandler
 
             if (result == DialogResult.Yes)
             {
-                foreach (var entry in Editor.MapListView.ContentViews)
+                foreach (var entry in Screen.MapListView.ContentViews)
                 {
                     if(entry.Value.ContentLoadState == MapContentLoadState.Loaded)
                         entry.Value.Unload();
                 }
 
-                Editor.Universe.UnloadAllMaps();
+                Screen.Universe.UnloadAllMaps();
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
             }
         }
-        UIHelper.Tooltip("Unload all currently loaded maps.");
+        UIHelper.ShowHoverTooltip("Unload all currently loaded maps.");
     }
 
     /// <summary>
@@ -189,7 +216,7 @@ public class MapListView : IActionEventHandler
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
         }
-        UIHelper.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
+        UIHelper.ShowHoverTooltip("Toggles the display of chalice dungeon maps within the map list.");
     }
 
     /// <summary>
@@ -300,11 +327,11 @@ public class MapListView : IActionEventHandler
                     {
                         try
                         {
-                            Editor.Universe.SaveMap(m);
+                            Screen.Universe.SaveMap(m);
                         }
                         catch (SavingFailedException e)
                         {
-                            Editor.HandleSaveException(e);
+                            Screen.HandleSaveException(e);
                         }
                     }
 
@@ -317,14 +344,14 @@ public class MapListView : IActionEventHandler
             }
 
             // ER: Load Related Maps
-            if (Editor.Project.ProjectType is ProjectType.ER)
+            if (Smithbox.ProjectType is ProjectType.ER)
             {
                 if (entry.StartsWith("m60") || entry.StartsWith("m61"))
                 {
                     if (ImGui.Selectable("Load Related Maps"))
                     {
                         curView.Load(true);
-                        Editor.Universe.LoadRelatedMapsER(entry);
+                        Screen.Universe.LoadRelatedMapsER(entry);
                     }
                 }
             }
@@ -341,17 +368,26 @@ public class MapListView : IActionEventHandler
                 var mapName = AliasUtils.GetMapNameAlias(entry);
                 Clipboard.SetText(mapName);
             }
-            if (Editor.MapQueryView.IsOpen)
+            if (Screen.MapQueryView.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Editor.MapQueryView.AddMapFilterInput(entry);
+                    Screen.MapQueryView.AddMapFilterInput(entry);
                 }
             }
 
             ImGui.EndPopup();
         }
     }
+
+    public void OnActionEvent(Actions.Viewport.ActionEvent evt)
+    {
+        if (evt.HasFlag(Actions.Viewport.ActionEvent.ObjectAddedRemoved))
+        {
+            Screen.EntityTypeCache.InvalidateCache();
+        }
+    }
+
     public void SignalLoad(string mapId)
     {
         if(ContentViews.ContainsKey(mapId))
@@ -369,14 +405,6 @@ public class MapListView : IActionEventHandler
             var curView = ContentViews[mapId];
 
             curView.Unload();
-        }
-    }
-
-    public void OnActionEvent(ActionEvent evt)
-    {
-        if (evt.HasFlag(ActionEvent.ObjectAddedRemoved))
-        {
-            Editor.EntityTypeCache.InvalidateCache();
         }
     }
 }

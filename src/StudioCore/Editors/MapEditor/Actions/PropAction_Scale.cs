@@ -9,24 +9,25 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
-
-public static class PropAction_Scale
+namespace StudioCore.Editors.MapEditor.Actions
 {
-    public static void CopyCurrentScale(PropertyInfo prop, object obj)
+    public static class PropAction_Scale
     {
-        CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
-    }
-
-    public static void PasteSavedScale(ViewportSelection _selection)
-    {
-        List<ViewportAction> actlist = new();
-        foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
+        public static void CopyCurrentScale(PropertyInfo prop, object obj)
         {
-            actlist.Add(sel.ApplySavedScale());
+            CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
         }
 
-        Actions.Viewport.CompoundAction action = new(actlist);
-        Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
+        public static void PasteSavedScale(ViewportSelection _selection)
+        {
+            List<ViewportAction> actlist = new();
+            foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
+            {
+                actlist.Add(sel.ApplySavedScale());
+            }
+
+            Actions.Viewport.CompoundAction action = new(actlist);
+            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
+        }
     }
 }

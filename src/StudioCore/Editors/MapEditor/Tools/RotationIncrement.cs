@@ -6,30 +6,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Tools;
 
-public class RotationIncrement
+public static class RotationIncrement
 {
-    public MapEditor Editor;
-
-    public RotationIncrement(MapEditor editor)
+    public static void Shortcuts()
     {
-        Editor = editor;
-    }
-
-    public void Shortcuts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchDegreeIncrementType))
+        // Only apply in Map Editor screen
+        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
         {
-            CycleIncrementType();
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward))
-        {
-            CycleIncrementType(true);
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchDegreeIncrementType))
+            {
+                CycleIncrementType();
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SwitchDegreeIncrementTypeBackward))
+            {
+                CycleIncrementType(true);
+            }
         }
     }
 
-    public void CycleIncrementType(bool decrement = false)
+    public static void CycleIncrementType(bool decrement = false)
     {
         if (decrement)
         {
@@ -49,7 +46,7 @@ public class RotationIncrement
         }
     }
 
-    public void DisplayCurrentRotateIncrement()
+    public static void DisplayCurrentRotateIncrement()
     {
         switch (CFG.Current.Toolbar_Rotate_IncrementType)
         {
@@ -69,10 +66,10 @@ public class RotationIncrement
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment [4]: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
-    public void DisplayViewportRotateIncrement()
+    public static void DisplayViewportRotateIncrement()
     {
         switch (CFG.Current.Toolbar_Rotate_IncrementType)
         {
@@ -92,10 +89,10 @@ public class RotationIncrement
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Degree Increment: {CFG.Current.Toolbar_Rotate_Increment_4}°");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
     }
 
-    public float GetRadianRotateAmount()
+    public static float GetRadianRotateAmount()
     {
         var amount = (float)Math.PI / 180 * CFG.Current.Toolbar_Rotate_Increment_0;
 

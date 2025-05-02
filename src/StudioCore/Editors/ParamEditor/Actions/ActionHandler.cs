@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 
@@ -469,7 +469,7 @@ public class ActionHandler
             }
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip(tooltip);
+        UIHelper.ShowHoverTooltip(tooltip);
         UIHelper.WrappedText("");
     }
 

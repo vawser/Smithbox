@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Scene;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_ParamJumps
 {
@@ -31,7 +31,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.Tooltip("The current selection references these rows in params");
+            UIHelper.ShowHoverTooltip("The current selection references these rows in params");
 
             if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Asset" + refID, new Vector2(width * 5, 20 * scale)))
             {
@@ -93,7 +93,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.Tooltip("The current selection references these rows in params");
+            UIHelper.ShowHoverTooltip("The current selection references these rows in params");
 
             if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Enemy" + refID, new Vector2(width * 5, 20 * scale)))
             {

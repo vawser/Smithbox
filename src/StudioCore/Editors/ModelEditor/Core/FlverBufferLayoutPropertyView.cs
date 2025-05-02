@@ -75,21 +75,21 @@ public class FlverBufferLayoutPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Unk00:");
-        UIHelper.Tooltip("Unknown; 0, 1, or 2.");
+        UIHelper.ShowHoverTooltip("Unknown; 0, 1, or 2.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Type:");
-        UIHelper.Tooltip("Format used to store this member.");
+        UIHelper.ShowHoverTooltip("Format used to store this member.");
         ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Layout Semantic:");
-        UIHelper.Tooltip("Vertex property being stored.");
+        UIHelper.ShowHoverTooltip("Vertex property being stored.");
         ImGui.Text($"");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text($"Index:");
-        UIHelper.Tooltip("For semantics that may appear more than once such as UVs, which one this member is.");
+        UIHelper.ShowHoverTooltip("For semantics that may appear more than once such as UVs, which one this member is.");
 
         ImGui.NextColumn();
 

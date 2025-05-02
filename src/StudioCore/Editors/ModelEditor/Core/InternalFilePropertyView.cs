@@ -45,7 +45,7 @@ public class InternalFilePropertyView
             {
                 Clipboard.SetText(entry.Name);
             }
-            UIHelper.Tooltip("Copy name to clipboard.");
+            UIHelper.ShowHoverTooltip("Copy name to clipboard.");
             ImGui.SameLine();
             ImGui.AlignTextToFramePadding();
             ImGui.Text($"{entry.Name}");

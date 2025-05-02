@@ -135,7 +135,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteMeshGroup(entry);
                         }
-                        UIHelper.Tooltip("Delete this Mesh group.");
+                        UIHelper.ShowHoverTooltip("Delete this Mesh group.");
 
                         ImGui.EndPopup();
                     }
@@ -169,14 +169,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.Tooltip("Replace the existing Meshes with the Meshes within this Mesh group.");
+                UIHelper.ShowHoverTooltip("Replace the existing Meshes with the Meshes within this Mesh group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.Tooltip("Append to Meshs within this Mesh group to the existing Meshes.");
+                UIHelper.ShowHoverTooltip("Append to Meshs within this Mesh group to the existing Meshes.");
             }
 
             ImGui.EndChild();
@@ -192,7 +192,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##MeshGroupName", ref _createMeshGroupName, 255);
-            UIHelper.Tooltip("The name of the Mesh group.");
+            UIHelper.ShowHoverTooltip("The name of the Mesh group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

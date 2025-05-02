@@ -67,59 +67,59 @@ public class FlverNodePropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        UIHelper.Tooltip("The name of this node");
+        UIHelper.ShowHoverTooltip("The name of this node");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Index");
-        UIHelper.Tooltip("Index of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("First Child Index");
-        UIHelper.Tooltip("Index of this node's first child, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Next Sibling Index");
-        UIHelper.Tooltip("Index of the next child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Previous Sibling Index");
-        UIHelper.Tooltip("Index of the previous child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Translation");
-        UIHelper.Tooltip("Translation of this bone.");
+        UIHelper.ShowHoverTooltip("Translation of this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Rotation");
-        UIHelper.Tooltip("Rotation of this bone; euler radians in XZY order.");
+        UIHelper.ShowHoverTooltip("Rotation of this bone; euler radians in XZY order.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Scale");
-        UIHelper.Tooltip("Scale of this bone.");
+        UIHelper.ShowHoverTooltip("Scale of this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Minimum");
-        UIHelper.Tooltip("Minimum extent of the vertices weighted to this bone.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the vertices weighted to this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Maximum");
-        UIHelper.Tooltip("Maximum extent of the vertices weighted to this bone.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the vertices weighted to this bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flags");
-        UIHelper.Tooltip("A set of flags denoting the properties of a node");
+        UIHelper.ShowHoverTooltip("A set of flags denoting the properties of a node");
 
         ImGui.NextColumn();
 

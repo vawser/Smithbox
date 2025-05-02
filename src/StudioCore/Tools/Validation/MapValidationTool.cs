@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;

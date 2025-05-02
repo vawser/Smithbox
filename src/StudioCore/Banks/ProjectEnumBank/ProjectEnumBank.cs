@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using StudioCore.Banks.AliasBank;
-using StudioCore.Core;
+using StudioCore.Core.Project;
+
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;

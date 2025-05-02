@@ -12,6 +12,7 @@ using StudioCore.Configuration;
 using StudioCore.MsbEditor;
 using StudioCore.Utilities;
 using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Core.Project;
 using StudioCore.Interface;
 using System.Xml;
 using StudioCore.Editors.ModelEditor.Tools;
@@ -21,7 +22,6 @@ using StudioCore.Editors.ModelEditor.Core.Properties;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -151,19 +151,19 @@ public class ModelEditorScreen : EditorScreen
             {
                 ActionHandler.CreateHandler();
             }
-            UIHelper.Tooltip($"Adds new entry based on current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Adds new entry based on current selection in Model Hierarchy.");
 
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 ActionHandler.DuplicateHandler();
             }
-            UIHelper.Tooltip($"Duplicates current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Duplicates current selection in Model Hierarchy.");
 
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 ActionHandler.DeleteHandler();
             }
-            UIHelper.Tooltip($"Deletes current selection in Model Hierarchy.");
+            UIHelper.ShowHoverTooltip($"Deletes current selection in Model Hierarchy.");
 
             ImGui.EndMenu();
         }
@@ -261,7 +261,7 @@ public class ModelEditorScreen : EditorScreen
                 }
             }
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewMeshes);
-            UIHelper.Tooltip("Only applies on model reload.");
+            UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
             if (ImGui.MenuItem("Dummy Polygons"))
             {
@@ -300,7 +300,7 @@ public class ModelEditorScreen : EditorScreen
                     CFG.Current.ModelEditor_ViewHighCollision = !CFG.Current.ModelEditor_ViewHighCollision;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewHighCollision);
-                UIHelper.Tooltip("Only applies on model reload.");
+                UIHelper.ShowHoverTooltip("Only applies on model reload.");
 
                 // Low
                 if (ImGui.MenuItem("Collision (Low)"))
@@ -308,7 +308,7 @@ public class ModelEditorScreen : EditorScreen
                     CFG.Current.ModelEditor_ViewLowCollision = !CFG.Current.ModelEditor_ViewLowCollision;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewLowCollision);
-                UIHelper.Tooltip("Only applies on model reload.");
+                UIHelper.ShowHoverTooltip("Only applies on model reload.");
             }
 
             ImGui.EndMenu();
@@ -337,13 +337,13 @@ public class ModelEditorScreen : EditorScreen
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.");
 
                 if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
+                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.");
 
                 ImGui.EndMenu();
             }
@@ -354,13 +354,13 @@ public class ModelEditorScreen : EditorScreen
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.");
 
                 if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
+                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.");
 
                 ImGui.EndMenu();
             }
@@ -371,13 +371,13 @@ public class ModelEditorScreen : EditorScreen
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.");
 
                 if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
+                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.");
 
                 ImGui.EndMenu();
             }

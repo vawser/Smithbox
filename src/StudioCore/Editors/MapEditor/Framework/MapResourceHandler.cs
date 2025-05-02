@@ -1,22 +1,27 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Google.Protobuf.WellKnownTypes;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core;
+using SoulsFormats.KF4;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
 using StudioCore.Tasks;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework;
+
 public class MapResourceHandler
 {
-    public MapEditor Editor;
-
     private Task task;
 
     private HashSet<ResourceDescriptor> LoadList_MapPiece_Model = new();
@@ -38,9 +43,8 @@ public class MapResourceHandler
     public string AdjustedMapID;
     public IMsb Msb;
 
-    public MapResourceHandler(MapEditor editor, string mapId)
+    public MapResourceHandler(string mapId)
     {
-        Editor = editor;
         MapID = mapId;
         AdjustedMapID = MapLocator.GetAssetMapID(MapID);
     }
@@ -57,43 +61,43 @@ public class MapResourceHandler
 
     public void ReadMap()
     {
-        if (Editor.Project.ProjectType == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             Msb = MSB3.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.SDT)
+        else if (Smithbox.ProjectType == ProjectType.SDT)
         {
             Msb = MSBS.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.ER)
+        else if (Smithbox.ProjectType == ProjectType.ER)
         {
             Msb = MSBE.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.AC6)
+        else if (Smithbox.ProjectType == ProjectType.AC6)
         {
             Msb = MSB_AC6.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
         {
             Msb = MSB2.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.BB)
+        else if (Smithbox.ProjectType == ProjectType.BB)
         {
             Msb = MSBB.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.DES)
+        else if (Smithbox.ProjectType == ProjectType.DES)
         {
             Msb = MSBD.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.ACFA)
+        else if (Smithbox.ProjectType == ProjectType.ACFA)
         {
             Msb = MSBFA.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.ACV)
+        else if (Smithbox.ProjectType == ProjectType.ACV)
         {
             Msb = MSBV.Read(MapResource.AssetPath);
         }
-        else if (Editor.Project.ProjectType == ProjectType.ACVD)
+        else if (Smithbox.ProjectType == ProjectType.ACVD)
         {
             Msb = MSBVD.Read(MapResource.AssetPath);
         }
@@ -168,7 +172,7 @@ public class MapResourceHandler
             }
 
             // Navmesh
-            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.DS1 or ProjectType.DS1R)
+            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.DS1 or ProjectType.DS1R)
             {
                 if (model.Name.StartsWith('n'))
                 {
@@ -265,7 +269,9 @@ public class MapResourceHandler
                     masks = msbEnt.GetModelMasks();
                 }
 
-                DrawableHelper.GetModelDrawable(Editor.RenderScene, map, obj, mp.ModelName, false, masks);
+                var renderScene = Smithbox.EditorHandler.MapEditor.Universe.RenderScene;
+
+                DrawableHelper.GetModelDrawable(renderScene, map, obj, mp.ModelName, false, masks);
             }
         }
     }
@@ -289,7 +295,7 @@ public class MapResourceHandler
         {
             BTL btl;
 
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
             {
                 using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -526,7 +532,7 @@ public class MapResourceHandler
         // Navmesh
         job = ResourceManager.CreateNewJob($@"Navmesh");
 
-        if (Editor.Project.ProjectType != ProjectType.DS3)
+        if (Smithbox.ProjectType != ProjectType.DS3)
         {
             foreach (ResourceDescriptor asset in LoadList_Navmesh)
             {
@@ -557,7 +563,7 @@ public class MapResourceHandler
     public void SetupNavmesh(MapContainer map)
     {
         // DS3 Navmeshes
-        if (Editor.Project.ProjectType == ProjectType.DS3)
+        if (Smithbox.ProjectType == ProjectType.DS3)
         {
             ResourceDescriptor nvaasset = MapLocator.GetMapNVA(AdjustedMapID);
             if (nvaasset.AssetPath != null)
@@ -573,7 +579,7 @@ public class MapResourceHandler
                     ResourceDescriptor nasset = ModelLocator.GetHavokNavmeshModel(AdjustedMapID, navname);
 
                     var mesh = MeshRenderableProxy.MeshRenderableFromHavokNavmeshResource(
-                        Editor.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
+                        Smithbox.EditorHandler.MapEditor.Universe.RenderScene, nasset.AssetVirtualPath, ModelMarkerType.Other);
                     mesh.World = n.GetWorldMatrix();
                     mesh.SetSelectable(n);
                     mesh.DrawFilter = RenderFilter.Navmesh;

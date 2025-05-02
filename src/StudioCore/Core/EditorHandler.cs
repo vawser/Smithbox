@@ -36,7 +36,7 @@ public class EditorHandler
     public List<EditorScreen> EditorList;
     public EditorScreen FocusedEditor;
 
-    public MapEditor MapEditor;
+    public MapEditorScreen MapEditor;
     public ModelEditorScreen ModelEditor;
     public TextEditorScreen TextEditor;
     public ParamEditorScreen ParamEditor;
@@ -54,7 +54,7 @@ public class EditorHandler
         EditorList = new();
 
         // Editors
-        MapEditor = new MapEditor(_context.Window, _context.Device);
+        MapEditor = new MapEditorScreen(_context.Window, _context.Device);
         ModelEditor = new ModelEditorScreen(_context.Window, _context.Device);
         ParamEditor = new ParamEditorScreen(_context.Window, _context.Device);
         TextEditor = new TextEditorScreen(_context.Window, _context.Device);
@@ -159,13 +159,13 @@ public class EditorHandler
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
         {
-            BaseEditor.ProjectHandler.WriteProjectConfig(BaseEditor.ProjectHandler.CurrentProject);
+            Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
             SaveFocusedEditor();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
         {
-            BaseEditor.ProjectHandler.WriteProjectConfig(BaseEditor.ProjectHandler.CurrentProject);
+            Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
             SaveAllFocusedEditor();
         }
     }
@@ -177,14 +177,14 @@ public class EditorHandler
             // Save
             if (ImGui.MenuItem($"Save Selected {FocusedEditor.SaveType}", KeyBindings.Current.CORE_Save.HintText))
             {
-                BaseEditor.ProjectHandler.WriteProjectConfig(BaseEditor.ProjectHandler.CurrentProject);
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveFocusedEditor();
             }
 
             // Save All
             if (ImGui.MenuItem($"Save All Modified {FocusedEditor.SaveType}", KeyBindings.Current.CORE_SaveAll.HintText))
             {
-                BaseEditor.ProjectHandler.WriteProjectConfig(BaseEditor.ProjectHandler.CurrentProject);
+                Smithbox.ProjectHandler.WriteProjectConfig(Smithbox.ProjectHandler.CurrentProject);
                 SaveAllFocusedEditor();
             }
 

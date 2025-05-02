@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

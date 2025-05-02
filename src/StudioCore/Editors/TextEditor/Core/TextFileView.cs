@@ -1,12 +1,12 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using Hexa.NET.ImGui;
 using StudioCore.Configuration;
+using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
-using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -242,22 +242,22 @@ public class TextFileView
                     {
                         if (wrapper.Filename.Contains("dlc2") || wrapper.Filename.Contains("dlc02"))
                         {
-                            UIHelper.Tooltip("This container is the only one used by the game.\nOnly use this one.");
+                            UIHelper.ShowHoverTooltip("This container is the only one used by the game.\nOnly use this one.");
                         }
                         else if (wrapper.Filename.Contains("dlc1") || wrapper.Filename.Contains("dlc01"))
                         {
-                            UIHelper.Tooltip("This container is no longer used by the game.\nDo not use this one.");
+                            UIHelper.ShowHoverTooltip("This container is no longer used by the game.\nDo not use this one.");
                         }
                         else
                         {
-                            UIHelper.Tooltip("This container is no longer used by the game.\nDo not use this one.");
+                            UIHelper.ShowHoverTooltip("This container is no longer used by the game.\nDo not use this one.");
                         }
                     }
                 }
             }
             if (CFG.Current.TextEditor_DisplaySourcePath)
             {
-                UIHelper.Tooltip($"Source File: {wrapper.ReadPath}");
+                UIHelper.ShowHoverTooltip($"Source File: {wrapper.ReadPath}");
             }
         }
     }

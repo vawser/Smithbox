@@ -1,21 +1,20 @@
-﻿using StudioCore.Configuration;
+﻿using Silk.NET.OpenGL;
+using StudioCore.Configuration;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Tools;
 
-public class KeyboardMovement
+public static class KeyboardMovement
 {
-    public MapEditor Editor;
-
-    public KeyboardMovement(MapEditor editor)
-    {
-        Editor = editor;
-    }
-
-    public void CycleIncrementType(bool decrement = false)
+    public static void CycleIncrementType(bool decrement = false)
     {
         if(decrement)
         {
@@ -35,17 +34,21 @@ public class KeyboardMovement
         }
     }
 
-    public void Shortcuts()
+    public static void Shortcuts()
     {
         if (InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement) || InputTracker.GetKey(KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward))
         {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement))
+            // Only apply in Map Editor screen
+            if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
             {
-                CycleIncrementType();
-            }
-            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward))
-            {
-                CycleIncrementType(true);
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrement))
+                {
+                    CycleIncrementType();
+                }
+                if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_KeyboardMove_CycleIncrementBackward))
+                {
+                    CycleIncrementType(true);
+                }
             }
         }
 
@@ -83,7 +86,7 @@ public class KeyboardMovement
         }
 
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = Smithbox.EditorHandler.MapEditor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         foreach (Entity sel in sels)
         {
@@ -174,11 +177,11 @@ public class KeyboardMovement
         if (actlist.Any())
         {
             CompoundAction action = new(actlist);
-            Editor.EditorActionManager.ExecuteAction(action);
+            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
         }
     }
 
-    public void DisplayViewportMovementIncrement()
+    public static void DisplayViewportMovementIncrement()
     {
         switch (CFG.Current.MapEditor_Selection_Movement_IncrementType)
         {
@@ -198,10 +201,10 @@ public class KeyboardMovement
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
     }
 
-    public void DisplayCurrentMovementIncrement()
+    public static void DisplayCurrentMovementIncrement()
     {
         switch (CFG.Current.MapEditor_Selection_Movement_IncrementType)
         {
@@ -221,6 +224,6 @@ public class KeyboardMovement
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Movement Increment [4]: {CFG.Current.MapEditor_Selection_Movement_Increment_4}");
                 break;
         }
-        UIHelper.Tooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
+        UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
     }
 }

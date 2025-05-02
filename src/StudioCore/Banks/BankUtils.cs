@@ -5,11 +5,19 @@ using StudioCore.Banks.GameOffsetBank;
 using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Banks.MapTransformBank;
 using StudioCore.Banks.ProjectEnumBank;
+using StudioCore.Banks.TextureAdditionBank;
+using StudioCore.Banks.TextureBlockBank;
+using StudioCore.Banks.TextureCorrectionBank;
+using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace StudioCore.Banks;
 
@@ -210,6 +218,78 @@ public static class BankUtils
         {
             var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
             TaskLogs.AddLog($"Failed to load format mask resource: {filename} at {baseResourcePath}", LogLevel.Error);
+        }
+
+        return baseResource;
+    }
+
+    public static TextureAdditionResource LoadTextureAdditionJSON(string directory, string name)
+    {
+        var baseResource = new TextureAdditionResource();
+
+        var baseResourcePath = "";
+
+        baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\{name}.json";
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, TextureAdditionSerializationContext.Default.TextureAdditionResource);
+            }
+        }
+        else
+        {
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture addition resource: {filename} at {baseResourcePath}", LogLevel.Error);
+        }
+
+        return baseResource;
+    }
+
+    public static TextureBlockResource LoadTextureBlockJSON(string directory, string name)
+    {
+        var baseResource = new TextureBlockResource();
+
+        var baseResourcePath = "";
+
+        baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\{name}.json";
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, TextureBlockSerializationContext.Default.TextureBlockResource);
+            }
+        }
+        else
+        {
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture block resource: {filename} at {baseResourcePath}", LogLevel.Error);
+        }
+
+        return baseResource;
+    }
+
+    public static TextureCorrectionResource LoadTextureCorrectionJSON(string directory, string name)
+    {
+        var baseResource = new TextureCorrectionResource();
+
+        var baseResourcePath = "";
+
+        baseResourcePath = AppContext.BaseDirectory + $"\\Assets\\{directory}\\{MiscLocator.GetGameIDForDir()}\\{name}.json";
+
+        if (File.Exists(baseResourcePath))
+        {
+            using (var stream = File.OpenRead(baseResourcePath))
+            {
+                baseResource = JsonSerializer.Deserialize(stream, TextureCorrectionSerializationContext.Default.TextureCorrectionResource);
+            }
+        }
+        else
+        {
+            var filename = Path.GetFileNameWithoutExtension(baseResourcePath);
+            TaskLogs.AddLog($"Failed to load texture correction resource: {filename} at {baseResourcePath}", LogLevel.Error);
         }
 
         return baseResource;

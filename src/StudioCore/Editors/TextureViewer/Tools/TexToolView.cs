@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 
@@ -58,7 +58,7 @@ public class TexToolView
                 {
                     CFG.Current.TextureViewerToolbar_ExportTextureType = index;
                 }
-                UIHelper.Tooltip("The file type the exported texture will be saved as.");
+                UIHelper.ShowHoverTooltip("The file type the exported texture will be saved as.");
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText("Export Destination:");
@@ -74,14 +74,14 @@ public class TexToolView
                 {
                     Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
                 }
-                UIHelper.Tooltip("The folder destination to export the texture to.");
+                UIHelper.ShowHoverTooltip("The folder destination to export the texture to.");
                 UIHelper.WrappedText("");
 
                 ImGui.Checkbox("Include Container Folder", ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
-                UIHelper.Tooltip("Place the exported texture in a folder with the title of the texture container.");
+                UIHelper.ShowHoverTooltip("Place the exported texture in a folder with the title of the texture container.");
 
                 ImGui.Checkbox("Display Export Confirmation", ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
-                UIHelper.Tooltip("Display the confirmation message box after each export.");
+                UIHelper.ShowHoverTooltip("Display the confirmation message box after each export.");
                 UIHelper.WrappedText("");
 
                 if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))

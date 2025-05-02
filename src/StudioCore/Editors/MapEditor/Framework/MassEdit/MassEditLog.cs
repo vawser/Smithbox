@@ -1,20 +1,28 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
+
 public class MassEditLog
 {
-    private MapEditor Editor;
+    private MapEditorScreen Screen;
+    private MassEditHandler Handler;
 
     private List<MapActionGroup> MassEditActions = new List<MapActionGroup>();
 
     public bool ShowMassEditLog = true;
 
-    public MassEditLog(MapEditor editor)
+    public MassEditLog(MapEditorScreen screen, MassEditHandler handler)
     {
-        Editor = editor;
+        Screen = screen;
+        Handler = handler;
     }
 
     public void DisplayButton()
@@ -23,10 +31,10 @@ public class MassEditLog
         {
             if (ImGui.Button($"{ForkAwesome.Eye}##previousEditLog"))
             {
-                Editor.MassEditHandler.Tools.ShowToolView = false;
+                Handler.Tools.ShowToolView = false;
                 ShowMassEditLog = true;
             }
-            UIHelper.Tooltip("Toggle visibility of the edit log.");
+            UIHelper.ShowHoverTooltip("Toggle visibility of the edit log.");
         }
     }
 

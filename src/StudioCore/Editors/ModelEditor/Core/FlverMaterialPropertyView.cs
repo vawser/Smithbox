@@ -68,22 +68,22 @@ public class FlverMaterialPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        UIHelper.Tooltip("Identifies the mesh that uses this material, may include keywords that determine hideable parts.");
+        UIHelper.ShowHoverTooltip("Identifies the mesh that uses this material, may include keywords that determine hideable parts.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("MTD");
-        UIHelper.Tooltip("Virtual path to an MTD file or a Matxml file in games since ER.");
+        UIHelper.ShowHoverTooltip("Virtual path to an MTD file or a Matxml file in games since ER.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("GXIndex");
-        UIHelper.Tooltip("Index to the flver's list of GX lists.");
+        UIHelper.ShowHoverTooltip("Index to the flver's list of GX lists.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Index");
-        UIHelper.Tooltip("Index of the material in the material list. Used since Sekiro during cutscenes.");
+        UIHelper.ShowHoverTooltip("Index of the material in the material list. Used since Sekiro during cutscenes.");
 
         ImGui.NextColumn();
 
@@ -175,15 +175,15 @@ public class FlverMaterialPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Type");
-        UIHelper.Tooltip("The type of texture this is, corresponding to the entries in the MTD.");
+        UIHelper.ShowHoverTooltip("The type of texture this is, corresponding to the entries in the MTD.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Path");
-        UIHelper.Tooltip("Network path to the texture file to use.\n\nThe only important aspect of the path is the filename, as all textures are grouped into a texture pool in-game.\n\nSetting a texture filepath here will override the path used within the MATBIN.\n\nIt is recommended you include your texture within the model's texbnd.dcx, as that will be loaded into the texture pool automatically when the character is loaded (like wise for other asset types).");
+        UIHelper.ShowHoverTooltip("Network path to the texture file to use.\n\nThe only important aspect of the path is the filename, as all textures are grouped into a texture pool in-game.\n\nSetting a texture filepath here will override the path used within the MATBIN.\n\nIt is recommended you include your texture within the model's texbnd.dcx, as that will be loaded into the texture pool automatically when the character is loaded (like wise for other asset types).");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Scale");
-        UIHelper.Tooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -209,7 +209,7 @@ public class FlverMaterialPropertyView
             var filename = Path.GetFileNameWithoutExtension(tPath);
             path = $"{filename}.tif"; // Purely for consistency with vanilla
         }
-        UIHelper.Tooltip("Select the texture you wish to assign to this entry.");
+        UIHelper.ShowHoverTooltip("Select the texture you wish to assign to this entry.");
 
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {

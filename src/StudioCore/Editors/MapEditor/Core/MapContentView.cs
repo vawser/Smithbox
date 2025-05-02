@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
@@ -19,10 +19,11 @@ using System.Numerics;
 using System.Windows.Forms;
 using Veldrid;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Core;
+
 public class MapContentView
 {
-    public MapEditor Screen;
+    public MapEditorScreen Screen;
     private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
@@ -44,12 +45,12 @@ public class MapContentView
 
     private int LoadCount = 0;
 
-    public MapContentView(MapEditor screen, string mapID, ObjectContainer container)
+    public MapContentView(MapEditorScreen screen, string mapID, ObjectContainer container)
     {
         Screen = screen;
         EditorActionManager = screen.EditorActionManager;
         Selection = screen.Selection;
-        Viewport = screen.MapViewport.Viewport;
+        Viewport = screen.MapViewportView.Viewport;
         FocusManager = screen.FocusManager;
 
         MapID = mapID;
@@ -151,7 +152,7 @@ public class MapContentView
                 entry.EditorVisible = true;
             }
         }
-        UIHelper.Tooltip("Force all map objects within this map to be shown.");
+        UIHelper.ShowHoverTooltip("Force all map objects within this map to be shown.");
 
         // Hide All
         ImGui.SameLine();
@@ -162,7 +163,7 @@ public class MapContentView
                 entry.EditorVisible = false;
             }
         }
-        UIHelper.Tooltip("Force all map objects within this map to be hidden.");
+        UIHelper.ShowHoverTooltip("Force all map objects within this map to be hidden.");
 
         // Switch View Type
         ImGui.SameLine();
@@ -177,7 +178,7 @@ public class MapContentView
                 ContentViewType = MapContentViewType.ObjectType;
             }
         }
-        UIHelper.Tooltip("Switch the map content list style.");
+        UIHelper.ShowHoverTooltip("Switch the map content list style.");
     }
 
     /// <summary>
@@ -355,28 +356,28 @@ public class MapContentView
                 {
                     Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
                 }
-                UIHelper.Tooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
 
                 // Move Down
                 if (ImGui.Selectable("Move Down"))
                 {
                     Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
                 }
-                UIHelper.Tooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
 
                 // Move Top
                 if (ImGui.Selectable("Move to Top"))
                 {
                     Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
                 }
-                UIHelper.Tooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
 
                 // Move Bottom
                 if (ImGui.Selectable("Move to Bottom"))
                 {
                     Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
                 }
-                UIHelper.Tooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
 
                 ImGui.Separator();
             }
@@ -385,19 +386,19 @@ public class MapContentView
             {
                 Screen.ActionHandler.ApplyDuplicate();
             }
-            UIHelper.Tooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
             if (ImGui.Selectable("Duplicate to Map"))
             {
                 Screen.ActionHandler.OpenDuplicateToMapPopup = true;
             }
-            UIHelper.Tooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
+            UIHelper.ShowHoverTooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
 
             if (ImGui.Selectable("Delete"))
             {
                 Screen.ActionHandler.ApplyDelete();
             }
-            UIHelper.Tooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
+            UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
             // Only supported for these types
             if (ent.WrappedObject is IMsbPart or IMsbRegion or BTL.Light)
@@ -406,7 +407,7 @@ public class MapContentView
                 {
                     Screen.ActionHandler.ApplyScramble();
                 }
-                UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
+                UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
             }
 
             // Only supported for these types
@@ -416,7 +417,7 @@ public class MapContentView
                 {
                     Screen.ActionHandler.ApplyReplicate();
                 }
-                UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
+                UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
             }
 
             ImGui.Separator();
@@ -428,19 +429,19 @@ public class MapContentView
                 {
                     Screen.ActionHandler.ApplyFrameInViewport();
                 }
-                UIHelper.Tooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
+                UIHelper.ShowHoverTooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
 
                 if (ImGui.Selectable("Move to Grid"))
                 {
                     Screen.ActionHandler.ApplyMovetoGrid();
                 }
-                UIHelper.Tooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
 
                 if (ImGui.Selectable("Move to Camera"))
                 {
                     Screen.ActionHandler.ApplyMoveToCamera();
                 }
-                UIHelper.Tooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
+                UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
                 if (ent.WrappedObject is IMsbRegion or BTL.Light)
                 {
@@ -448,7 +449,7 @@ public class MapContentView
                     {
                         VisualizationHelper.ToggleRenderType(Selection);
                     }
-                    UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
+                    UIHelper.ShowHoverTooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
                 }
 
                 ImGui.Separator();
@@ -478,7 +479,7 @@ public class MapContentView
                     Clipboard.SetText(ent.Name);
                 }
             }
-            UIHelper.Tooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
+            UIHelper.ShowHoverTooltip($"Copy the current selection's name to the clipboard. For multi-selections, each name is separated by a comma and space.");
 
             ImGui.EndPopup();
         }

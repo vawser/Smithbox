@@ -1,0 +1,500 @@
+{
+    "list": [
+        		{
+			"id": "am_m_9000",
+			"name": "Wolf's right arm guard only, full left arm prosthetic",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "am_m_9010",
+			"name": "Wolf's full right arm, full non-prosthetic left arm (with some under sleeve)",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "am_m_9020",
+			"name": "Wolf's full right arm, severed left arm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "am_m_9100",
+			"name": "Unknown sleeveless, fist clenching right arm",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "am_m_9200",
+			"name": "Wolf's right arm guard only, full left arm prosthetic",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9000",
+			"name": "Wolf's complete upper body (minus arms)",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9030",
+			"name": "Wolf's complete upper body (minus arms)",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9040",
+			"name": "Wolf's complete upper body (minus arms)",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9100",
+			"name": "Wolf's Scarf, full coat (right arm sleeve), undershirt with waist wrapping - kneeling position",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9500",
+			"name": "Wolf's Scarf, full coat (right arm sleeve), undershirt with waist wrapping",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "bd_m_9530",
+			"name": "Wolf's Scarf, full coat (right arm sleeve), undershirt with waist wrapping",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "fc_m_0100",
+			"name": "Face",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "fc_m_0110",
+			"name": "Face",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "fc_m_0200",
+			"name": "Face",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "fc_m_0210",
+			"name": "Face",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "hd_m_9510",
+			"name": "Head",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "hd_m_9520",
+			"name": "Head",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "lg_m_9000",
+			"name": "Wolf's Legs - Standing",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "lg_m_9050",
+			"name": "Wolf's Legs - Standing (With Pouch)",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "lg_m_9100",
+			"name": "Wolf's Legs - Sitting",
+			
+			"tags": [
+				"armor"
+			]
+		},
+		{
+			"id": "wp_a_0100_m",
+			"name": "Katana",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0201_m",
+			"name": "Katana",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0300",
+			"name": "Base Kusabimaru",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0300",
+			"name": "Base Kusabimaru",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0301",
+			"name": "Alternative Kusabimaru",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0310",
+			"name": "Base Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0320",
+			"name": "Empty",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0700",
+			"name": "Loaded / Spinning / Gouging / Lazulite Shuriken Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0701",
+			"name": "Phantom Kunai Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0702",
+			"name": "Sen Throw Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0710",
+			"name": "Shinobi Firecracker Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0711",
+			"name": "Shinobi Firecracker Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0720",
+			"name": "Flame Vent Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0730",
+			"name": "Loaded Axe Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0731",
+			"name": "Loaded Axe Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0732",
+			"name": "Loaded Axe Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0740",
+			"name": "Mist Raven Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0741",
+			"name": "Mist Raven Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0742",
+			"name": "Mist Raven Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0750",
+			"name": "Sabimaru Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0751",
+			"name": "Improved / Piercing / Lazulite Sabimaru Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0760",
+			"name": "Loaded Umbrella Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0761",
+			"name": "Loaded Umbrella Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0762",
+			"name": "Loaded Umbrella Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0763",
+			"name": "Loaded Umbrella Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0770",
+			"name": "Divine Abduction Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0771",
+			"name": "Divine Abduction Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0772",
+			"name": "Divine Abduction Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0780",
+			"name": "Loaded Spear Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0781",
+			"name": "Loaded Spear Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0782",
+			"name": "Loaded Spear Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0790",
+			"name": "Finger Whistle Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_0791",
+			"name": "Finger Whistle Prosthetic",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_2300",
+			"name": "Bucket Lantern",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_2300",
+			"name": "Empty",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_2400",
+			"name": "Empty",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9500",
+			"name": "Grappling hook (Wolf's prosthetic arm)",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9500",
+			"name": "Alternative Kusabimaru / Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9501",
+			"name": "Alternative Kusabimaru / Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9502",
+			"name": "Alternative Kusabimaru / Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9503",
+			"name": "Alternative Kusabimaru / Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		},
+		{
+			"id": "wp_a_9504",
+			"name": "Alternative Kusabimaru / Mortal Blade",
+			
+			"tags": [
+				"weapon"
+			]
+		}
+    ]
+}

@@ -13,12 +13,12 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Interface;
 using StudioCore.Resource.Types;
 using StudioCore.Resource.Locators;
 using StudioCore.Settings;
-using StudioCore.Core;
 
 namespace StudioCore.Resource;
 

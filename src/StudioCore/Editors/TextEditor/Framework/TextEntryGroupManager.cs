@@ -1,6 +1,6 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;

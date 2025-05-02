@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using System;

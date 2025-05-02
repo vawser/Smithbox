@@ -12,7 +12,7 @@ using System.Reflection.PortableExecutable;
 using Veldrid;
 using Veldrid.Utilities;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapViewportGrid
 {
@@ -57,7 +57,7 @@ public class MapViewportGrid
             Regenerate();
         }
 
-        if (UI.Current.Interface_MapEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is MapEditor)
+        if (UI.Current.Interface_MapEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

@@ -1,7 +1,9 @@
-﻿using SoulsFormats;
-using StudioCore.Editors.MapEditorNS;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+using StudioCore.MsbEditor;
+using StudioCore.Editors.MapEditor;
+using SoulsFormats;
+using StudioCore.Editors.MapEditor.Framework;
 
 namespace StudioCore.Editor;
 

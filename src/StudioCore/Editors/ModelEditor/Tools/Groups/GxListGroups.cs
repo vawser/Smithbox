@@ -135,7 +135,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteGXListGroup(entry);
                         }
-                        UIHelper.Tooltip("Delete this GX List group.");
+                        UIHelper.ShowHoverTooltip("Delete this GX List group.");
 
                         ImGui.EndPopup();
                     }
@@ -169,14 +169,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceGxList(screen, SelectedGXListList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.Tooltip("Replace the existing GX Lists with the GX Lists within this GX List group.");
+                UIHelper.ShowHoverTooltip("Replace the existing GX Lists with the GX Lists within this GX List group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendGxList(screen, SelectedGXListList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.Tooltip("Append to GX Lists within this GX List group to the existing GX Lists.");
+                UIHelper.ShowHoverTooltip("Append to GX Lists within this GX List group to the existing GX Lists.");
             }
 
             ImGui.EndChild();
@@ -192,7 +192,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##GXListGroupName", ref _createGXListGroupName, 255);
-            UIHelper.Tooltip("The name of the GX List group.");
+            UIHelper.ShowHoverTooltip("The name of the GX List group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;

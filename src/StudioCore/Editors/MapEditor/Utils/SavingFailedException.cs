@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor;
 
 public class SavingFailedException : Exception
 {

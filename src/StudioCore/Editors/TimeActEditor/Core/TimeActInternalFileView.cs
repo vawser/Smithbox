@@ -38,7 +38,7 @@ public class TimeActInternalFileView
         }
 
         ImGui.InputText($"Search##timeActFilter", ref TimeActFilters._timeActFilterString, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("TimeActList");
         Selection.SwitchWindowContext(TimeActEditorContext.TimeAct);

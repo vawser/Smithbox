@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Interface;
-using StudioCore.Resources.JSON;
+using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,16 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
+using static SoulsFormats.TAE;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
 public class MassEditTools
 {
-    private MapEditor Editor;
+    private MapEditorScreen Screen;
     private MassEditHandler Handler;
 
     private string BackupDir = "";
@@ -24,9 +28,9 @@ public class MassEditTools
 
     public bool ShowToolView = true;
 
-    public MassEditTools(MapEditor editor, MassEditHandler handler)
+    public MassEditTools(MapEditorScreen screen, MassEditHandler handler)
     {
-        Editor = editor;
+        Screen = screen;
         Handler = handler;
     }
 
@@ -37,7 +41,7 @@ public class MassEditTools
             Handler.EditLog.ShowMassEditLog = false;
             ShowToolView = true;
         }
-        UIHelper.Tooltip("Toggle visibility of the tools.");
+        UIHelper.ShowHoverTooltip("Toggle visibility of the tools.");
     }
 
     public void Display()
@@ -98,7 +102,7 @@ public class MassEditTools
             {
                 BackupMaps();
             }
-            UIHelper.Tooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
+            UIHelper.ShowHoverTooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
 
             ImGui.EndChild();
         }
@@ -109,7 +113,7 @@ public class MassEditTools
     private void SetupTemplates()
     {
         Templates = new Dictionary<string, MassEditTemplate>();
-        TemplateDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\MSB\\Mass Edit Templates";
+        TemplateDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\MSB\\Mass Edit Templates";
 
         if (!Directory.Exists(TemplateDir))
         {
@@ -135,7 +139,7 @@ public class MassEditTools
         {
             using (var stream = File.OpenRead(path))
             {
-                template = JsonSerializer.Deserialize(stream, SmithboxSerializerContext.Default.MassEditTemplate);
+                template = JsonSerializer.Deserialize(stream, MassEditTemplateSerializationContext.Default.MassEditTemplate);
             }
         }
 
@@ -144,13 +148,13 @@ public class MassEditTools
 
     private void BackupMaps()
     {
-        BackupDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\MSB\\Backups";
+        BackupDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\MSB\\Backups";
         if (!Directory.Exists(BackupDir))
         {
             Directory.CreateDirectory(BackupDir);
         }
 
-        string mapRoot = $"{Editor.Project.DataPath}\\map";
+        string mapRoot = $"{Smithbox.GameRoot}\\map";
         var mapFiles = GetMapFiles(mapRoot);
 
         if (BackupDir != "" && mapFiles.Count > 0)

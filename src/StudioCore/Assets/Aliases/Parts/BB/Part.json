@@ -1,0 +1,1380 @@
+{
+    "list": [
+        {
+            "id": "wp_a_1000",
+            "name": "Bare Fists",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1063",
+            "name": "Chikage",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1060",
+            "name": "Blade of Mercy",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1020",
+            "name": "Hunter Axe",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1021",
+            "name": "Burial Blade",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2600",
+            "name": "Hunter Blunderbuss",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2610",
+            "name": "Ludwig's Rifle",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_0800",
+            "name": "Saw Cleaver",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1011",
+            "name": "Saw Spear",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1031",
+            "name": "Kirkhammer",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1030",
+            "name": "Ludwig's Holy Blade",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1001",
+            "name": "Beast Claw",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1040",
+            "name": "Rifle Spear",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1041",
+            "name": "Reiterpallasch",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1061",
+            "name": "Stake Driver",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1052",
+            "name": "Logarius' Wheel",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1051",
+            "name": "Tonitrus",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2500",
+            "name": "Hunter Pistol",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2520",
+            "name": "Evelyn",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2510",
+            "name": "Repeating Pistol",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2700",
+            "name": "Cannon",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2711",
+            "name": "Rosmarinus",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_2710",
+            "name": "Flamesprayer",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1501",
+            "name": "Wooden Shield",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1755",
+            "name": "Loch Shield",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1800",
+            "name": "Hunter's Torch",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1800",
+            "name": "Torch",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1070",
+            "name": "Threaded Cane",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1700",
+            "name": "Beasthunter Saif",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1702",
+            "name": "Beast Cutter",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1701",
+            "name": "Amygdalan Arm",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1708",
+            "name": "Holy Moonlight Sword",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1703",
+            "name": "Rakuyo",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1705",
+            "name": "Boomhammer",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1706",
+            "name": "Bloodletter",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1704",
+            "name": "Church Pick",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1707",
+            "name": "Whirligig Saw",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1709",
+            "name": "Sumon's Bowblade",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1750",
+            "name": "Gatling Gun",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1751",
+            "name": "Fist of Gratia",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1752",
+            "name": "Church Cannon",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1753",
+            "name": "Piercing Rifle",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "wp_a_1712",
+            "name": "Kos Parasite",
+            
+            "tags": [
+                "weapon"
+            ]
+        },
+        {
+            "id": "hd_m_1100",
+            "name": "Grey Wolf Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_1100",
+            "name": "Charred Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_1100",
+            "name": "Charred Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_1100",
+            "name": "Charred Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_1400",
+            "name": "Black Hooded Iron Helm",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_1400",
+            "name": "Yahar'gul Black Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_1400",
+            "name": "Yahar'gul Black Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_1400",
+            "name": "Yahar'gul Black Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_1500",
+            "name": "Graveguard Mask",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_1500",
+            "name": "Graveguard Robe",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_1500",
+            "name": "Graveguard Manchettes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_1500",
+            "name": "Graveguard Kilt",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_1600",
+            "name": "Bone Ash Mask",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_1600",
+            "name": "Bone Ash Armor",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_1600",
+            "name": "Bone Ash Gauntlets",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_1600",
+            "name": "Bone Ash Leggings",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_2000",
+            "name": "Henryk's Hunter Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_2000",
+            "name": "Henryk's Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_2000",
+            "name": "Henryk's Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_2000",
+            "name": "Henryk's Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_2100",
+            "name": "Yharnam Hunter Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_2100",
+            "name": "Yharnam Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_2100",
+            "name": "Yharnam Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_2100",
+            "name": "Yharnam Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_2200",
+            "name": "Hunter Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_2200",
+            "name": "Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_2200",
+            "name": "Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_2200",
+            "name": "Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_3000",
+            "name": "Knight's Wig",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_3000",
+            "name": "Knight's Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_3000",
+            "name": "Knight's Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_3000",
+            "name": "Knight's Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_f_3000",
+            "name": "Knight's Dress",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_3200",
+            "name": "Cainhurst Helmet",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_3200",
+            "name": "Cainhurst Armor",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_3200",
+            "name": "Cainhurst Gauntlets",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_3200",
+            "name": "Cainhurst Leggings",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4000",
+            "name": "Black Church Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4000",
+            "name": "Black Church Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_4000",
+            "name": "Surgical Long Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4000",
+            "name": "Black Church Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_f_4000",
+            "name": "Black Church Dress",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4100",
+            "name": "Blindfold Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4100",
+            "name": "Choir Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_4100",
+            "name": "Choir Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4100",
+            "name": "Choir Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4200",
+            "name": "Gascoigne's Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4200",
+            "name": "Gascoigne's Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_4200",
+            "name": "Gascoigne's Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4200",
+            "name": "Gascoigne's Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4300",
+            "name": "Tomb Prospector Hood",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4300",
+            "name": "Tomb Prospector Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_4300",
+            "name": "Tomb Prospector Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4300",
+            "name": "Tomb Prospector Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4500",
+            "name": "Gold Ardeo",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4500",
+            "name": "Executioner Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_4500",
+            "name": "Executioner Gauntlets",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4500",
+            "name": "Executioner Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_6200",
+            "name": "Beak Mask",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_6200",
+            "name": "Crowfeather Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_6200",
+            "name": "Crowfeather Manchettes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_6200",
+            "name": "Crowfeather Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_6300",
+            "name": "Mensis Cage",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_6300",
+            "name": "Student Uniform",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_6300",
+            "name": "Student Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_6400",
+            "name": "Gehrman's Hunter Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_6400",
+            "name": "Gehrman's Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_6400",
+            "name": "Gehrman's Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_6500",
+            "name": "Madman Hood",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_6500",
+            "name": "Madman Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_6500",
+            "name": "Madman Manchettes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_6500",
+            "name": "Madman Leggings",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_7000",
+            "name": "Doll Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_7000",
+            "name": "Doll Clothes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_7000",
+            "name": "Doll Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_7000",
+            "name": "Doll Skirt",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_8000",
+            "name": "Black Hood",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_8000",
+            "name": "Foreign Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_8000",
+            "name": "Sullied Bandage",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_8000",
+            "name": "Foreign Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_1300",
+            "name": "Ashen Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_1300",
+            "name": "Ashen Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_1300",
+            "name": "Ashen Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_5100",
+            "name": "Crown of Illusions",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9400",
+            "name": "Master's Iron Helm",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_1410",
+            "name": "Iron Yahar'gul Helm",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_2300",
+            "name": "Top Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_2300",
+            "name": "Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_4600",
+            "name": "White Church Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_4600",
+            "name": "White Church Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_4600",
+            "name": "White Church Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_f_4600",
+            "name": "White Church Dress",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_6310",
+            "name": "Student Uniform",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_7100",
+            "name": "Noble Dress",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_7100",
+            "name": "Arianna's Shoes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_7200",
+            "name": "Rumpled Yharnam Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_7200",
+            "name": "Sweaty Clothes",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9000",
+            "name": "Butcher Mask",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9000",
+            "name": "Butcher Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9000",
+            "name": "Butcher Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9000",
+            "name": "Butcher Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9100",
+            "name": "Harrowed Hood",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9100",
+            "name": "Harrowed Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9100",
+            "name": "Harrowed Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9100",
+            "name": "Harrowed Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9200",
+            "name": "Old Hunter Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9200",
+            "name": "Old Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9200",
+            "name": "Old Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9200",
+            "name": "Old Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9210",
+            "name": "Old Hunter Top Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9210",
+            "name": "Decorative Old Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9210",
+            "name": "Decorative Old Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9300",
+            "name": "Maria Hunter Cap",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9300",
+            "name": "Maria Hunter Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9300",
+            "name": "Maria Hunter Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9300",
+            "name": "Maria Hunter Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9400",
+            "name": "One-eyed Iron Helm",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9400",
+            "name": "Constable's Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9400",
+            "name": "Constable's Gloves",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9400",
+            "name": "Constable's Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9500",
+            "name": "Brador's Testimony",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9500",
+            "name": "Beast Hide Garb",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9500",
+            "name": "Bloodied Arm Bands",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9500",
+            "name": "Blooded Trousers",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9600",
+            "name": "Yamamura Hunter Hat",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "bd_m_9600",
+            "name": "Khaki Haori",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "am_m_9600",
+            "name": "Old Hunter Arm Bands",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "lg_m_9600",
+            "name": "Wine Hakama",
+            
+            "tags": [
+                "armor"
+            ]
+        },
+        {
+            "id": "hd_m_9800",
+            "name": "Enlarged Head",
+            
+            "tags": [
+                "armor"
+            ]
+        }
+    ]
+}

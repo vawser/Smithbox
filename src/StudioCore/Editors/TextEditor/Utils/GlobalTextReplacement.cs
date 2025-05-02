@@ -44,7 +44,7 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(0);
 
             ImGui.Text("Conditional Input");
-            UIHelper.Tooltip("The regex you want to match with.");
+            UIHelper.ShowHoverTooltip("The regex you want to match with.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -56,7 +56,7 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(0);
 
             ImGui.Text("Replacement Input");
-            UIHelper.Tooltip("The regex you want to replace with.");
+            UIHelper.ShowHoverTooltip("The regex you want to replace with.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -86,7 +86,7 @@ public static class GlobalTextReplacement
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The search filter to use.");
+            UIHelper.ShowHoverTooltip("The search filter to use.");
 
             // Row 4
             ImGui.TableNextRow();
@@ -111,7 +111,7 @@ public static class GlobalTextReplacement
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The contents to match with.");
+            UIHelper.ShowHoverTooltip("The contents to match with.");
 
             // Row 5
             ImGui.TableNextRow();
@@ -122,7 +122,7 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
-            UIHelper.Tooltip("Specifies case-insensitive matching for regex.");
+            UIHelper.ShowHoverTooltip("Specifies case-insensitive matching for regex.");
 
             // Row 6
             ImGui.TableNextRow();
@@ -133,7 +133,7 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##multilineRegex", ref MultilineRegex);
-            UIHelper.Tooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
+            UIHelper.ShowHoverTooltip("Multiline mode for regex. Changes the meaning of ^ and $ so they match at the beginning and end, respectively, of any line, and not just the beginning and end of the entire string.");
 
             // Row 7
             ImGui.TableNextRow();
@@ -144,7 +144,7 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##singleLineRegex", ref SinglelineRegex);
-            UIHelper.Tooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
+            UIHelper.ShowHoverTooltip("Specifies single-line mode for regex. Changes the meaning of the dot (.) so it matches every character (instead of every character except \\n).");
 
             // Row 8
             ImGui.TableNextRow();
@@ -155,24 +155,24 @@ public static class GlobalTextReplacement
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##ignorePatternWhitespace", ref IgnorePatternWhitespace);
-            UIHelper.Tooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
+            UIHelper.ShowHoverTooltip("Eliminates unescaped white space from the pattern and enables comments marked with #. However, this value does not affect or eliminate white space in character classes, numeric quantifiers, or tokens that mark the beginning of individual regular expression language elements.");
 
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Preview Edit##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
+        if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
             ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
-        UIHelper.Tooltip("Populate the edit preview list.");
+        UIHelper.ShowHoverTooltip("Populate the edit preview list.");
         ImGui.SameLine();
-        if (ImGui.Button("Clear Preview##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
+        if (ImGui.Button("Clear Preview##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = false;
             ReplacementResults.Clear();
         }
-        UIHelper.Tooltip("Clear the edit preview list.");
+        UIHelper.ShowHoverTooltip("Clear the edit preview list.");
 
         ImGui.Separator();
 
@@ -213,7 +213,7 @@ public static class GlobalTextReplacement
                 var groupedAction = new FmgGroupedAction(actions);
                 Smithbox.EditorHandler.TextEditor.EditorActionManager.ExecuteAction(groupedAction);
             }
-            UIHelper.Tooltip("All the entries listed in the list below will have the Replacement Input regex applied to them.");
+            UIHelper.ShowHoverTooltip("All the entries listed in the list below will have the Replacement Input regex applied to them.");
 
             UIHelper.WrappedText("Entries that will be affected:");
 

@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.CutsceneEditor;
 using StudioCore.Interface;
 using System;

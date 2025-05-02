@@ -26,7 +26,7 @@ internal class TableExample
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Example");
-            UIHelper.Tooltip("Example");
+            UIHelper.ShowHoverTooltip("Example");
 
             ImGui.TableSetColumnIndex(1);
 

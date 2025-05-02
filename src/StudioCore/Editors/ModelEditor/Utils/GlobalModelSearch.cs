@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 using Hexa.NET.ImGui;
 using System.Text.RegularExpressions;
 using StudioCore.Editor;
+using StudioCore.Core.Project;
 using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
-using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 

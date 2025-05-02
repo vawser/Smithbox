@@ -1,5 +1,4 @@
 ﻿using StudioCore;
-using StudioCore.Core;
 using StudioCore.Graphics;
 
 using System;
@@ -9,91 +8,91 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Smithbox.OpenGL;
-
-public static class Program
+namespace Smithbox_LowRequirements
 {
-    private static string _version = "undefined";
-
-    /// <summary>
-    /// The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static void Main(string[] args)
+    public static class Program
     {
-        AppDomain currentDomain = AppDomain.CurrentDomain;
-        currentDomain.UnhandledException += CrashHandler;
-        Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
-        _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
+        private static string _version = "undefined";
 
-        var baseEditor = new BaseEditor(new OpenGLCompatGraphicsContext(), _version);
-        baseEditor.LowRequirementsMode = true;
-
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main(string[] args)
+        {
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += CrashHandler;
+            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
+            _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
+            Smithbox.LowRequirementsMode = true;
+            var mapStudio = new Smithbox(new OpenGLCompatGraphicsContext(), _version);
 #if !DEBUG
-        try
-        {
-            baseEditor.Run();
-        }
-        catch
-        {
-            baseEditor.CrashShutdown();
-            // Throw to trigger CrashHandler
-            throw;
-        }
-#else
-        baseEditor.Run();
-#endif
-    }
-
-    static List<string> LogExceptions(Exception ex)
-    {
-        List<string> log = new();
-        do
-        {
-            if (ex is AggregateException ae)
+            try
             {
-                if (ae.InnerExceptions.Count == 1)
-                    ex = ae.InnerException;
-                else
-                    ex = ae.Flatten();
+                mapStudio.Run();
             }
-            log.Add($"{ex.Message}\n");
-            log.Add(ex.StackTrace);
-            ex = ex.InnerException;
-            log.Add("----------------------\n");
+            catch
+            {
+                mapStudio.AttemptSaveOnCrash();
+                mapStudio.CrashShutdown();
+                // Throw to trigger CrashHandler
+                throw;
+            }
+#else
+            mapStudio.Run();
+#endif
         }
-        while (ex != null);
-        log.RemoveAt(log.Count - 1);
-        return log;
-    }
+
+        static List<string> LogExceptions(Exception ex)
+        {
+            List<string> log = new();
+            do
+            {
+                if (ex is AggregateException ae)
+                {
+                    if (ae.InnerExceptions.Count == 1)
+                        ex = ae.InnerException;
+                    else
+                        ex = ae.Flatten();
+                }
+                log.Add($"{ex.Message}\n");
+                log.Add(ex.StackTrace);
+                ex = ex.InnerException;
+                log.Add("----------------------\n");
+            }
+            while (ex != null);
+            log.RemoveAt(log.Count - 1);
+            return log;
+        }
 
 
-    static readonly string CrashLogPath = $"{Directory.GetCurrentDirectory()}\\Crash Logs";
-    static void ExportCrashLog(List<string> exceptionInfo)
-    {
-        var time = $"{DateTime.Now:yyyy-M-dd--HH-mm-ss}";
-        exceptionInfo.Insert(0, $"Smithbox Version {_version}\n");
-        Directory.CreateDirectory($"{CrashLogPath}");
-        var crashLogPath = $"{CrashLogPath}\\Log {time}.txt";
-        File.WriteAllLines(crashLogPath, exceptionInfo);
+        static readonly string CrashLogPath = $"{Directory.GetCurrentDirectory()}\\Crash Logs";
+        static void ExportCrashLog(List<string> exceptionInfo)
+        {
+            var time = $"{DateTime.Now:yyyy-M-dd--HH-mm-ss}";
+            exceptionInfo.Insert(0, $"Smithbox Version {_version}\n");
+            Directory.CreateDirectory($"{CrashLogPath}");
+            var crashLogPath = $"{CrashLogPath}\\Log {time}.txt";
+            File.WriteAllLines(crashLogPath, exceptionInfo);
 
-        if (exceptionInfo.Count > 10)
-            MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".",
-                $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        else
-            MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
-                $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
+            if (exceptionInfo.Count > 10)
+                MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".",
+                    $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
+                    $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
 
-    static void CrashHandler(object sender, UnhandledExceptionEventArgs args)
-    {
-        Exception e = (Exception)args.ExceptionObject;
-        Console.WriteLine("Crash caught : " + e.Message);
-        Console.WriteLine("Stack Trace : " + e.StackTrace);
-        Console.WriteLine("Runtime terminating: {0}", args.IsTerminating);
+        static void CrashHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            Console.WriteLine("Crash caught : " + e.Message);
+            Console.WriteLine("Stack Trace : " + e.StackTrace);
+            Console.WriteLine("Runtime terminating: {0}", args.IsTerminating);
 
-        List<string> log = LogExceptions(e);
-        ExportCrashLog(log);
+            List<string> log = LogExceptions(e);
+            ExportCrashLog(log);
+        }
     }
 }

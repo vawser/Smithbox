@@ -1,0 +1,172 @@
+{
+    "list": [
+        {
+            "id": "m00_10",
+            "name": "Garage",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m00_12",
+            "name": "",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m00_90",
+            "name": "AC Test",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m01_00",
+            "name": "Mission 9100 - AC Test",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m03_20",
+            "name": "Central Ice Field - Hjalmar Mine",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m03_30",
+            "name": "Central Ice Field - Jorgen Refueling Base",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m03_40",
+            "name": "Central Ice Field - Old Bertram Spaceport and Engebret Tunnel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m03_60",
+            "name": "Central Ice Field - Old Bertram Spaceport Environs and Unobservable Area",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_00",
+            "name": "Southern Belius - Grid 135",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_01",
+            "name": "",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_10",
+            "name": "Western Belius - Grid 086",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_20",
+            "name": "Contaminated Zone - Grid 012",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_00",
+            "name": "Alean Ocean - Xylem, the Floating City",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_20",
+            "name": "Atmosphere - Xylem Upper Districts",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_30",
+            "name": "Amtosphere - Xylem Drive Block and Xylem Control Block",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_00",
+            "name": "Atmosphere - LOC Station 31",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m41_00",
+            "name": "Watchpoint Alpha",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m41_10",
+            "name": "Institute City",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_00",
+            "name": "Southern Belius - Contaminated City",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_10",
+            "name": "Southern Belius - Gallia Dam Complex",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_30",
+            "name": "Central Belius - The Wall",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_40",
+            "name": "Northern Belius - Watchpoint Delta",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_50",
+            "name": "Northern Belius - BAWS Arsenal No. 2",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m50_60",
+            "name": "Western Belius - Bona Dea Dunes",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

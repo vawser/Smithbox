@@ -1,0 +1,333 @@
+{
+    "list": [
+        {
+            "id": "m00_00",
+            "name": "Open World",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_00",
+            "name": "Stormveil Castle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m10_01",
+            "name": "Chapel of Anticipation",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_00",
+            "name": "Leyndell, Royal Capital",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_05",
+            "name": "Leyndell, Ashen Capital",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_10",
+            "name": "Roundtable Hold",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m11_71",
+            "name": "Ending Cutscenes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_01",
+            "name": "Ainsel River",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_02",
+            "name": "Siofra River",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_03",
+            "name": "Deeproot Depths",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_04",
+            "name": "Ainsel River - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_05",
+            "name": "Mohgwyn Palace",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_07",
+            "name": "Siofra River Start",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_08",
+            "name": "Siofra River - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m12_09",
+            "name": "Nokron, Eternal City - Boss",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m13_00",
+            "name": "Crumbling Farum Azula",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m14_00",
+            "name": "Academy of Raya Lucaria",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m15_00",
+            "name": "Miquella's Haligtree",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m16_00",
+            "name": "Volcano Manor",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m18_00",
+            "name": "Stranded Graveyard",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m19_00",
+            "name": "Stone Platform",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_00",
+            "name": "Belurat, Tower Settlement (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m20_01",
+            "name": "Enir-Ilim (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_00",
+            "name": "Shadow Keep (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_01",
+            "name": "Specimen Storehouse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m21_02",
+            "name": "Specimen Storehouse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m22_00",
+            "name": "Stone Coffin Fissure (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m25_00",
+            "name": "Finger Birthing Grounds (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m28_00",
+            "name": "Midra's Manse (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m30_00",
+            "name": "Catacombs",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_10",
+            "name": "Divine Tower of Limgrave",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_11",
+            "name": "Divine Tower of Liurnia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_12",
+            "name": "Divine Tower of West Altus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_13",
+            "name": "Divine Tower of Caelid",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_14",
+            "name": "Divine Tower of East Altus",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m34_15",
+            "name": "Isolated Divine Tower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m35_00",
+            "name": "Subterranean Shunning-Grounds",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m39_20",
+            "name": "Ruin-Strewn Precipice",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m40_00",
+            "name": "Catacombs (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m41_00",
+            "name": "Gaols (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m42_00",
+            "name": "Ruined Forge (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m43_00",
+            "name": "Cave (DLC)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_00",
+            "name": "Royal Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_01",
+            "name": "Caelid Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m45_02",
+            "name": "Limgrave Colosseum",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m60_00",
+            "name": "Open World",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "m61_00",
+            "name": "Open World (DLC)",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

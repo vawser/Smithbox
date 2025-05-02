@@ -69,7 +69,7 @@ public static class GlobalTextSearch
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The search filter to use.");
+            UIHelper.ShowHoverTooltip("The search filter to use.");
 
             // Row 3
             ImGui.TableNextRow();
@@ -94,7 +94,7 @@ public static class GlobalTextSearch
 
                 ImGui.EndCombo();
             }
-            UIHelper.Tooltip("The contents to match with.");
+            UIHelper.ShowHoverTooltip("The contents to match with.");
 
             // Row 4
             ImGui.TableNextRow();
@@ -105,18 +105,18 @@ public static class GlobalTextSearch
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
-            UIHelper.Tooltip("Ignore case sensitivity if enabled.");
+            UIHelper.ShowHoverTooltip("Ignore case sensitivity if enabled.");
 
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
+        if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
+        if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = false;
             SearchResults.Clear();

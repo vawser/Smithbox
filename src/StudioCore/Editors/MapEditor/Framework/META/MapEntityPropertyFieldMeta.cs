@@ -1,10 +1,17 @@
-﻿using StudioCore.Editors.ParamEditor;
+﻿using Octokit;
+using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Resource.Locators;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml;
 
-namespace StudioCore.Editors.MapEditorNS;
-
+namespace StudioCore.Editors.MapEditor.Framework.META;
 public class MapEntityPropertyFieldMeta
 {
     public bool IsEmpty { get; set; } = false;

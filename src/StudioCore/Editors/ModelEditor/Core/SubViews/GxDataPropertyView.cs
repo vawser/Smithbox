@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
 
@@ -142,7 +142,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Byte");
-            UIHelper.Tooltip("");
+            UIHelper.ShowHoverTooltip("");
 
             ImGui.NextColumn();
 

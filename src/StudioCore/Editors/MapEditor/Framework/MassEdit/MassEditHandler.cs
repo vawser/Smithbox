@@ -1,20 +1,26 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
+using StudioCore.MsbEditor;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
+
 public class MassEditHandler
 {
-    private MapEditor Editor;
+    private MapEditorScreen Screen;
 
     private MapListType MapTarget;
 
@@ -32,12 +38,12 @@ public class MassEditHandler
     public MassEditHints Hints;
     public MassEditTools Tools;
 
-    public MassEditHandler(MapEditor Editor)
+    public MassEditHandler(MapEditorScreen screen)
     {
-        this.Editor = Editor;
-        EditLog = new MassEditLog(Editor, this);
-        Hints = new MassEditHints(Editor);
-        Tools = new MassEditTools(Editor, this);
+        Screen = screen;
+        EditLog = new MassEditLog(screen, this);
+        Hints = new MassEditHints(screen, this);
+        Tools = new MassEditTools(screen, this);
     }
 
     /// <summary>
@@ -49,21 +55,21 @@ public class MassEditHandler
         var buttonSize = new Vector2(width, 24);
 
         UIHelper.WrappedText("Map Target");
-        UIHelper.Tooltip("Determine which maps will be affected by the mass edit.");
+        UIHelper.ShowHoverTooltip("Determine which maps will be affected by the mass edit.");
         ImGui.Separator();
 
         ConfigureMapTarget();
 
         ImGui.Separator();
         UIHelper.WrappedText("Selection Criteria");
-        UIHelper.Tooltip("Determine which map objects will be affected by the mass edit.");
+        UIHelper.ShowHoverTooltip("Determine which map objects will be affected by the mass edit.");
         ImGui.Separator();
 
         ConfigureSelection();
 
         ImGui.Separator();
         UIHelper.WrappedText("Edit Commands");
-        UIHelper.Tooltip("Determine which property to affect and the value change to apply for this mass edit.");
+        UIHelper.ShowHoverTooltip("Determine which property to affect and the value change to apply for this mass edit.");
         ImGui.Separator();
 
         ConfigureEdit();
@@ -82,7 +88,7 @@ public class MassEditHandler
             {
             }
             ImGui.EndDisabled();
-            UIHelper.Tooltip("Mass Edit in the process of being applied.");
+            UIHelper.ShowHoverTooltip("Mass Edit in the process of being applied.");
         }
 
         ImGui.Separator();
@@ -112,7 +118,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("mapTargetHint");
         }
-        UIHelper.Tooltip("View the documentation on map target commands.");
+        UIHelper.ShowHoverTooltip("View the documentation on map target commands.");
 
         ImGui.SameLine();
 
@@ -121,7 +127,7 @@ public class MassEditHandler
         {
             MapInputs.Add("");
         }
-        UIHelper.Tooltip("Add new map selection input row.");
+        UIHelper.ShowHoverTooltip("Add new map selection input row.");
 
         ImGui.SameLine();
 
@@ -134,7 +140,7 @@ public class MassEditHandler
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added map selection input row.");
+            UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -143,7 +149,7 @@ public class MassEditHandler
             if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemove"))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added map selection input row.");
+                UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
             }
         }
 
@@ -154,7 +160,7 @@ public class MassEditHandler
         {
             MapInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset map selection input rows.");
+        UIHelper.ShowHoverTooltip("Reset map selection input rows.");
 
         ImGui.SameLine();
 
@@ -174,7 +180,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -196,7 +202,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("Determines how the map list is obtained." +
+        UIHelper.ShowHoverTooltip("Determines how the map list is obtained." +
             "\n\nLocal means only currently loaded maps will be edited (that match the map selection criteria)." +
             "\n\nGlobal means all maps will be edited (that match the map selection criteria).\nWARNING: editing a large amounts of maps will cause Smithbox to hang until it is finished, which may be several minutes.");
 
@@ -213,7 +219,7 @@ public class MassEditHandler
             {
                 MapInputs[i] = curText;
             }
-            UIHelper.Tooltip("The map selection command to process.");
+            UIHelper.ShowHoverTooltip("The map selection command to process.");
         }
     }
 
@@ -233,7 +239,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("selectionInputHint");
         }
-        UIHelper.Tooltip("View documentation on selection commands.");
+        UIHelper.ShowHoverTooltip("View documentation on selection commands.");
 
         ImGui.SameLine();
 
@@ -242,7 +248,7 @@ public class MassEditHandler
         {
             SelectionInputs.Add("");
         }
-        UIHelper.Tooltip("Add new selection input row.");
+        UIHelper.ShowHoverTooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
@@ -255,7 +261,7 @@ public class MassEditHandler
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added selection input row.");
+            UIHelper.ShowHoverTooltip("Remove last added selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -264,7 +270,7 @@ public class MassEditHandler
             if (ImGui.Button($"{ForkAwesome.Minus}##selectionRemove"))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
-                UIHelper.Tooltip("Remove last added selection input row.");
+                UIHelper.ShowHoverTooltip("Remove last added selection input row.");
             }
         }
 
@@ -275,7 +281,7 @@ public class MassEditHandler
         {
             SelectionInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset selection input rows.");
+        UIHelper.ShowHoverTooltip("Reset selection input rows.");
 
         ImGui.SameLine();
 
@@ -295,7 +301,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
+        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -312,7 +318,7 @@ public class MassEditHandler
             {
                 SelectionInputs[i] = curText;
             }
-            UIHelper.Tooltip("The selection command to process.");
+            UIHelper.ShowHoverTooltip("The selection command to process.");
         }
 
     }
@@ -333,7 +339,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("editInputHint");
         }
-        UIHelper.Tooltip("View documentation on edit commands.");
+        UIHelper.ShowHoverTooltip("View documentation on edit commands.");
 
         ImGui.SameLine();
 
@@ -342,7 +348,7 @@ public class MassEditHandler
         {
             EditInputs.Add("");
         }
-        UIHelper.Tooltip("Add edit input row.");
+        UIHelper.ShowHoverTooltip("Add edit input row.");
 
         ImGui.SameLine();
 
@@ -355,7 +361,7 @@ public class MassEditHandler
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added edit input row.");
+            UIHelper.ShowHoverTooltip("Remove last added edit input row.");
 
             ImGui.EndDisabled();
         }
@@ -365,7 +371,7 @@ public class MassEditHandler
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.Tooltip("Remove last added edit input row.");
+            UIHelper.ShowHoverTooltip("Remove last added edit input row.");
         }
 
         ImGui.SameLine();
@@ -375,7 +381,7 @@ public class MassEditHandler
         {
             EditInputs = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Reset edit input rows.");
+        UIHelper.ShowHoverTooltip("Reset edit input rows.");
 
         //--------------
         // Edit Inputs
@@ -390,7 +396,7 @@ public class MassEditHandler
             {
                 EditInputs[i] = curText;
             }
-            UIHelper.Tooltip("The edit command to process.");
+            UIHelper.ShowHoverTooltip("The edit command to process.");
         }
     }
 
@@ -422,9 +428,9 @@ public class MassEditHandler
     {
         await Task.Delay(1000);
 
-        var selection = Editor.Selection;
-        var listView = Editor.MapListView;
-        var universe = Editor.Universe;
+        var selection = Smithbox.EditorHandler.MapEditor.Selection;
+        var listView = Smithbox.EditorHandler.MapEditor.MapListView;
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
 
         List<MapActionGroup> actionGroups = new List<MapActionGroup>();
 
@@ -472,7 +478,7 @@ public class MassEditHandler
             {
                 EditLog.UpdateLogSource(actionGroups);
                 var compoundAction = new MapActionGroupCompoundAction(actionGroups);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -497,7 +503,7 @@ public class MassEditHandler
             foreach (var entry in availableList)
             {
                 universe.LoadMap(entry, false, true);
-                Editor.MapListView.SignalLoad(entry);
+                Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(entry);
             }
 
             // Process each map
@@ -525,7 +531,7 @@ public class MassEditHandler
             {
                 EditLog.UpdateLogSource(actionGroups);
                 var compoundAction = new MapActionGroupCompoundAction(actionGroups);
-                Editor.EditorActionManager.ExecuteAction(compoundAction);
+                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -537,7 +543,7 @@ public class MassEditHandler
             //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                Editor.MapListView.SignalUnload(entry);
+                Smithbox.EditorHandler.MapEditor.MapListView.SignalUnload(entry);
             }
 
             if(restoreRendering)

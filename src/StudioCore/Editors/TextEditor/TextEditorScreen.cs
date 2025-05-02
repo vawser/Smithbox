@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
@@ -112,21 +112,21 @@ public class TextEditorScreen : EditorScreen
             {
                 EntryCreationModal.ShowModal = true;
             }
-            UIHelper.Tooltip($"Create new text entries.");
+            UIHelper.ShowHoverTooltip($"Create new text entries.");
 
             // Duplicate
             if (ImGui.MenuItem("Duplicate", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
                 ActionHandler.DuplicateEntries();
             }
-            UIHelper.Tooltip($"Duplicate the currently selected text entries.");
+            UIHelper.ShowHoverTooltip($"Duplicate the currently selected text entries.");
 
             // Delete
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 ActionHandler.DeleteEntries();
             }
-            UIHelper.Tooltip($"Delete the currently selected text entries.");
+            UIHelper.ShowHoverTooltip($"Delete the currently selected text entries.");
 
             ImGui.EndMenu();
         }

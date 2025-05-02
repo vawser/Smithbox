@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource.Locators;
 using System;

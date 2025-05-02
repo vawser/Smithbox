@@ -2,7 +2,7 @@
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.ParamCommutativeBank;
 using StudioCore.Banks.TextureAdditionBank;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;

@@ -15,13 +15,13 @@ using Veldrid.Utilities;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.MsbEditor;
 using System.Text.RegularExpressions;
+using StudioCore.Core.Project;
 using StudioCore.Resource.Locators;
 using Org.BouncyCastle.Utilities;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using static SoulsFormats.FLVER;
 using StudioCore.Scene.Structs;
-using StudioCore.Core;
 
 namespace StudioCore.Resource.Types;
 

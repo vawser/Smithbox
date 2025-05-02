@@ -1,7 +1,5 @@
 ﻿using Silk.NET.OpenGL;
 using Silk.NET.SDL;
-using StudioCore.Core;
-using StudioCore.Core.ProjectNS;
 using StudioCore.Editor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -9,7 +7,6 @@ using System.Diagnostics;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.StartupUtilities;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudioCore.Graphics;
 
@@ -79,7 +76,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(Project selectedProject)
+    public void Draw(List<EditorScreen> editors, EditorScreen focusedEditor)
     {
         Debug.Assert(Window.Exists);
         var width = Window.Width;
@@ -97,18 +94,9 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             RecreateWindowFramebuffers();
 
             _imGuiRenderer.WindowResized(width, height);
-
-
-            // Map Editor
-            if (selectedProject.EnableMapEditor && selectedProject.MapEditor != null)
+            foreach (EditorScreen editor in editors)
             {
-                selectedProject.MapEditor.Resized(Window, null);
-            }
-
-            // Model Editor
-            if (selectedProject.EnableModelEditor && selectedProject.ModelEditor != null)
-            {
-                selectedProject.ModelEditor.Resized(Window, null);
+                editor.EditorResized(Window, null);
             }
         }
 

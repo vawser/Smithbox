@@ -1,6 +1,6 @@
 ﻿using HKLib.hk2018;
 using Hexa.NET.ImGui;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.Editors.HavokEditor.Data;
 using StudioCore.Editors.HavokEditor.Framework;
 using StudioCore.Editors.MapEditor;
@@ -67,7 +67,7 @@ public class HavokClassSelectionView
             }
             if (meta != null && meta.Description != "")
             {
-                UIHelper.Tooltip(meta.Description);
+                UIHelper.ShowHoverTooltip(meta.Description);
             }
 
             i++;

@@ -35,7 +35,7 @@ public class TexToolMenubar
             {
                 Tools.ExportTextureHandler();
             }
-            UIHelper.Tooltip($"Export currently selected texture.");
+            UIHelper.ShowHoverTooltip($"Export currently selected texture.");
 
             ImGui.EndMenu();
         }

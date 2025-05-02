@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.TimeActEditor.Actions;
@@ -201,13 +201,13 @@ public class TimeActEditorScreen : EditorScreen
             {
                 ActionHandler.DetermineDuplicateTarget();
             }
-            UIHelper.Tooltip($"Duplicates the current selection.");
+            UIHelper.ShowHoverTooltip($"Duplicates the current selection.");
 
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 ActionHandler.DetermineDeleteTarget();
             }
-            UIHelper.Tooltip($"Deletes the current selection.");
+            UIHelper.ShowHoverTooltip($"Deletes the current selection.");
 
             ImGui.EndMenu();
         }

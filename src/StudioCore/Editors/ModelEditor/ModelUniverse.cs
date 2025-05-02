@@ -1,4 +1,4 @@
-﻿using StudioCore.Core;
+﻿using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;

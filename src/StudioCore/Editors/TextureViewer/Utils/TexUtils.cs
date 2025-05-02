@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 
 namespace StudioCore.Editors.TextureViewer.Utils;
 

@@ -2,7 +2,7 @@
 using HKLib.hk2018.hkcdStaticMeshTree;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource.Locators;

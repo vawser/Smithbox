@@ -2,10 +2,9 @@
 using Assimp;
 using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.Formats;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;

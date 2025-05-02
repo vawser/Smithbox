@@ -1,4 +1,13 @@
-﻿using System;
+﻿using StudioCore.Banks.AliasBank;
+using StudioCore.Editor;
+using StudioCore.Memory;
+using StudioCore.UserProject;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace StudioCore.Banks.GameOffsetBank;
 

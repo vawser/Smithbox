@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;

@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Tools;
@@ -121,7 +121,7 @@ public class ToolSubMenu
                                 Handler.ImportRowNameHandler();
                             }
                         }
-                        UIHelper.Tooltip("Import names for the specific rows currently selected.");
+                        UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
                         if (ImGui.MenuItem("Selected Param"))
                         {
@@ -132,7 +132,7 @@ public class ToolSubMenu
                                 Handler.ImportRowNameHandler();
                             }
                         }
-                        UIHelper.Tooltip("Import names for the specific param currently selected.");
+                        UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
                         if (ImGui.MenuItem("All Params"))
                         {
@@ -140,11 +140,11 @@ public class ToolSubMenu
                             Handler.CurrentTargetCategory = TargetType.AllParams;
                             Handler.ImportRowNameHandler();
                         }
-                        UIHelper.Tooltip("Import names for all params.");
+                        UIHelper.ShowHoverTooltip("Import names for all params.");
 
                         ImGui.EndMenu();
                     }
-                    UIHelper.Tooltip("Draw row names from the in-built Developer name lists. These are the Japanese and machine-translated english row names supplied with leaked paramdefs.");
+                    UIHelper.ShowHoverTooltip("Draw row names from the in-built Developer name lists. These are the Japanese and machine-translated english row names supplied with leaked paramdefs.");
                 }
 
                 if (ImGui.BeginMenu("Smithbox"))
@@ -158,7 +158,7 @@ public class ToolSubMenu
                             Handler.ImportRowNameHandler();
                         }
                     }
-                    UIHelper.Tooltip("Import row names for the specific rows currently selected.");
+                    UIHelper.ShowHoverTooltip("Import row names for the specific rows currently selected.");
 
                     if (ImGui.MenuItem("Selected Param"))
                     {
@@ -169,7 +169,7 @@ public class ToolSubMenu
                             Handler.ImportRowNameHandler();
                         }
                     }
-                    UIHelper.Tooltip("Import names for the specific param currently selected.");
+                    UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
                     if (ImGui.MenuItem("All Params"))
                     {
@@ -177,11 +177,11 @@ public class ToolSubMenu
                         Handler.CurrentTargetCategory = TargetType.AllParams;
                         Handler.ImportRowNameHandler();
                     }
-                    UIHelper.Tooltip("Import names for all params.");
+                    UIHelper.ShowHoverTooltip("Import names for all params.");
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Draw names from the in-built Smithbox name lists. These are curated row names maintained by Smithbox.");
+                UIHelper.ShowHoverTooltip("Draw names from the in-built Smithbox name lists. These are curated row names maintained by Smithbox.");
 
                 if (ImGui.BeginMenu("Project"))
                 {
@@ -194,7 +194,7 @@ public class ToolSubMenu
                             Handler.ImportRowNameHandler();
                         }
                     }
-                    UIHelper.Tooltip("Import names for the specific rows currently selected.");
+                    UIHelper.ShowHoverTooltip("Import names for the specific rows currently selected.");
 
                     if (ImGui.MenuItem("Selected Param"))
                     {
@@ -205,7 +205,7 @@ public class ToolSubMenu
                             Handler.ImportRowNameHandler();
                         }
                     }
-                    UIHelper.Tooltip("Import names for the specific param currently selected.");
+                    UIHelper.ShowHoverTooltip("Import names for the specific param currently selected.");
 
                     if (ImGui.MenuItem("All Params"))
                     {
@@ -213,11 +213,11 @@ public class ToolSubMenu
                         Handler.CurrentTargetCategory = TargetType.AllParams;
                         Handler.ImportRowNameHandler();
                     }
-                    UIHelper.Tooltip("Import names for all params.");
+                    UIHelper.ShowHoverTooltip("Import names for all params.");
 
                     ImGui.EndMenu();
                 }
-                UIHelper.Tooltip("Draw names from your Project-specific name lists. These are curated row names you've exported for your project.");
+                UIHelper.ShowHoverTooltip("Draw names from your Project-specific name lists. These are curated row names you've exported for your project.");
 
                 ImGui.EndMenu();
             }
@@ -233,7 +233,7 @@ public class ToolSubMenu
                         Handler.ExportRowNameHandler();
                     }
                 }
-                UIHelper.Tooltip("Export the row names for the currently selected rows.");
+                UIHelper.ShowHoverTooltip("Export the row names for the currently selected rows.");
 
                 if (ImGui.MenuItem("Export Selected Param"))
                 {
@@ -243,7 +243,7 @@ public class ToolSubMenu
                         Handler.ExportRowNameHandler();
                     }
                 }
-                UIHelper.Tooltip("Export the row names for the currently selected param.");
+                UIHelper.ShowHoverTooltip("Export the row names for the currently selected param.");
 
                 if (ImGui.MenuItem("Export All"))
                 {
@@ -253,7 +253,7 @@ public class ToolSubMenu
                         Handler.ExportRowNameHandler();
                     }
                 }
-                UIHelper.Tooltip("Export all of the row names for all params.");
+                UIHelper.ShowHoverTooltip("Export all of the row names for all params.");
 
                 ImGui.EndMenu();
             }
@@ -267,13 +267,13 @@ public class ToolSubMenu
                     {
                         ParamMemoryTools.ReloadCurrentParam();
                     }
-                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+                    UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.MenuItem("All Params"))
                     {
                         ParamMemoryTools.ReloadAllParams();
                     }
-                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+                    UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
 
                     ImGui.EndMenu();
                 }
@@ -303,7 +303,7 @@ public class ToolSubMenu
                     {
                         ParamMemoryTools.GiveItem();
                     }
-                    UIHelper.Tooltip("Spawns selected item in-game.");
+                    UIHelper.ShowHoverTooltip("Spawns selected item in-game.");
 
                     ImGui.EndMenu();
                 }
@@ -316,7 +316,7 @@ public class ToolSubMenu
                 {
                     ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
                 }
-                UIHelper.Tooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
+                UIHelper.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
                 UIHelper.ShowActiveStatus(ParamEditorScreen.EditorMode);
 
                 if (ImGui.MenuItem("Save Changes"))
@@ -324,13 +324,13 @@ public class ToolSubMenu
                     ParamMetaData.SaveAll();
                     ParamEditorScreen.EditorMode = false;
                 }
-                UIHelper.Tooltip("Save current Param Meta changes.");
+                UIHelper.ShowHoverTooltip("Save current Param Meta changes.");
 
                 if (ImGui.MenuItem("Discard Changes"))
                 {
                     ParamEditorScreen.EditorMode = false;
                 }
-                UIHelper.Tooltip("Discard current Param Meta changes.");
+                UIHelper.ShowHoverTooltip("Discard current Param Meta changes.");
 
                 ImGui.EndMenu();
             }

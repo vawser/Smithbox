@@ -40,7 +40,7 @@ public class TimeActAnimationView
         }
 
         ImGui.InputText($"Search##timeActAnimationFilter", ref TimeActFilters._timeActAnimationFilterString, 255);
-        UIHelper.Tooltip("Separate terms are split via the + character.");
+        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("AnimationList");
         Selection.SwitchWindowContext(TimeActEditorContext.Animation);

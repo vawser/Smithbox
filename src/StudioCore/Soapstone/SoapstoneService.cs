@@ -3,8 +3,7 @@ using Grpc.Core;
 using SoapstoneLib;
 using SoapstoneLib.Proto;
 using SoulsFormats;
-using StudioCore.Core;
-using StudioCore.Core.ProjectNS;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Enums;
@@ -53,19 +52,14 @@ public class SoapstoneService : SoapstoneServiceV1
     private static readonly Dictionary<KeyNamespace, MsbEntityType> revMapNamespaces =
         mapNamespaces.ToDictionary(e => e.Value, e => e.Key);
 
-    private readonly MapEditor MapEditor;
+    private readonly MapEditorScreen MapEditor;
 
     private readonly string Version;
 
-    private Project Project;
-
-    public SoapstoneService(string version, Project curProject)
+    public SoapstoneService(string version)
     {
-        Version = version;
-        Project = curProject;
-
-        // TODO: convert this stuff to the project component
-        this.MapEditor = null;
+        this.Version = version;
+        this.MapEditor = Smithbox.EditorHandler.MapEditor;
     }
 
     public override async Task<ServerInfoResponse> GetServerInfo(ServerCallContext context)

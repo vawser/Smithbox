@@ -30,10 +30,10 @@ public class InterfaceTab
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Show tooltips", ref UI.Current.System_Show_UI_Tooltips);
-            UIHelper.Tooltip("This is a tooltip.");
+            UIHelper.ShowHoverTooltip("This is a tooltip.");
 
             ImGui.Checkbox("Wrap alias text", ref UI.Current.System_WrapAliasDisplay);
-            UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off.");
+            UIHelper.ShowHoverTooltip("Makes the alias text display wrap instead of being cut off.");
 
             ImGui.AlignTextToFramePadding();
             ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
@@ -44,7 +44,7 @@ public class InterfaceTab
                 _tempScale = UI.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
-            UIHelper.Tooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
+            UIHelper.ShowHoverTooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
             ImGui.SameLine();
 
@@ -62,7 +62,7 @@ public class InterfaceTab
             {
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
-            UIHelper.Tooltip("Multiplies the user interface scale by your monitor's DPI setting.");
+            UIHelper.ShowHoverTooltip("Multiplies the user interface scale by your monitor's DPI setting.");
         }
 
         // Fonts
@@ -74,7 +74,7 @@ public class InterfaceTab
                 UI.Current.Interface_FontSize = (float)Math.Round(UI.Current.Interface_FontSize);
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
-            UIHelper.Tooltip("Adjusts the size of the font in Smithbox.");
+            UIHelper.ShowHoverTooltip("Adjusts the size of the font in Smithbox.");
 
             ImGui.Text("Current English Font:");
             ImGui.SameLine();
@@ -90,7 +90,7 @@ public class InterfaceTab
                     Smithbox.FontRebuildRequest = true;
                 }
             }
-            UIHelper.Tooltip("Use the following font for English characters. .ttf and .otf expected.");
+            UIHelper.ShowHoverTooltip("Use the following font for English characters. .ttf and .otf expected.");
 
             ImGui.Text("Current Non-English Font:");
             ImGui.SameLine();
@@ -106,7 +106,7 @@ public class InterfaceTab
                     Smithbox.FontRebuildRequest = true;
                 }
             }
-            UIHelper.Tooltip("Use the following font for Non-English characters. .ttf and .otf expected.");
+            UIHelper.ShowHoverTooltip("Use the following font for Non-English characters. .ttf and .otf expected.");
 
             if (ImGui.Button("Restore Default Fonts", buttonSize))
             {
@@ -121,23 +121,23 @@ public class InterfaceTab
         {
             if (ImGui.Checkbox("Chinese", ref UI.Current.System_Font_Chinese))
                 Smithbox.FontRebuildRequest = true;
-            UIHelper.Tooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
+            UIHelper.ShowHoverTooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
 
             if (ImGui.Checkbox("Korean", ref UI.Current.System_Font_Korean))
                 Smithbox.FontRebuildRequest = true;
-            UIHelper.Tooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
+            UIHelper.ShowHoverTooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
 
             if (ImGui.Checkbox("Thai", ref UI.Current.System_Font_Thai))
                 Smithbox.FontRebuildRequest = true;
-            UIHelper.Tooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
+            UIHelper.ShowHoverTooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
 
             if (ImGui.Checkbox("Vietnamese", ref UI.Current.System_Font_Vietnamese))
                 Smithbox.FontRebuildRequest = true;
-            UIHelper.Tooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
+            UIHelper.ShowHoverTooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
 
             if (ImGui.Checkbox("Cyrillic", ref UI.Current.System_Font_Cyrillic))
                 Smithbox.FontRebuildRequest = true;
-            UIHelper.Tooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
+            UIHelper.ShowHoverTooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
         }
 
         // ImGui

@@ -49,7 +49,7 @@ public class FlverAllSkeletonPropertyView
         ImGui.Separator();
         ImGui.Text("Full Skeleton Hierarchy");
         ImGui.Separator();
-        UIHelper.Tooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
+        UIHelper.ShowHoverTooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
 
         var entry = Screen.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons[index];
 
@@ -64,35 +64,35 @@ public class FlverAllSkeletonPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Index");
-        UIHelper.Tooltip("Index of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("First Child Index");
-        UIHelper.Tooltip("Index of this node's first child, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of this node's first child, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Next Sibling Index");
-        UIHelper.Tooltip("Index of the next child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the next child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Previous Sibling Index");
-        UIHelper.Tooltip("Index of the previous child of this node's parent, or -1 for none.");
+        UIHelper.ShowHoverTooltip("Index of the previous child of this node's parent, or -1 for none.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Node Index");
-        UIHelper.Tooltip("Index of the node in the Node list.");
+        UIHelper.ShowHoverTooltip("Index of the node in the Node list.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");

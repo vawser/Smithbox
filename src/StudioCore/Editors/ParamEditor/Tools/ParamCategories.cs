@@ -53,7 +53,7 @@ public static class ParamCategories
             NewEntryParamsCount = 1;
             NewEntryParams = new List<string>() { "" };
         }
-        UIHelper.Tooltip("Create a new param category.");
+        UIHelper.ShowHoverTooltip("Create a new param category.");
 
         ImGui.SameLine();
         if (ImGui.Button("Save Changes", new Vector2(sectionWidth * 0.5f, 24)))
@@ -62,7 +62,7 @@ public static class ParamCategories
             isNewEntryMode = false;
             isEditEntryMode = false;
         }
-        UIHelper.Tooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
+        UIHelper.ShowHoverTooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
 
         if (ImGui.Button("Edit Selected Entry", new Vector2(sectionWidth * 0.5f, 24)))
         {
@@ -70,7 +70,7 @@ public static class ParamCategories
             isEditEntryMode = true;
             isInitialEditMode = true;
         }
-        UIHelper.Tooltip("Edit the currently selected param category.");
+        UIHelper.ShowHoverTooltip("Edit the currently selected param category.");
 
         ImGui.SameLine();
         if (ImGui.Button("Delete Selected Entry", new Vector2(sectionWidth * 0.5f, 24)))
@@ -80,7 +80,7 @@ public static class ParamCategories
             isNewEntryMode = false;
             isEditEntryMode = false;
         }
-        UIHelper.Tooltip("Delete the currently selected param category.");
+        UIHelper.ShowHoverTooltip("Delete the currently selected param category.");
 
         if (ImGui.Button("Restore Base Categories", new Vector2(sectionWidth * 1.0f, 24)))
         {
@@ -93,7 +93,7 @@ public static class ParamCategories
                 isEditEntryMode = false;
             }
         }
-        UIHelper.Tooltip("Restore the default param categories.");
+        UIHelper.ShowHoverTooltip("Restore the default param categories.");
 
         // List
         ImGui.Separator();
@@ -117,19 +117,19 @@ public static class ParamCategories
             ImGui.Separator();
 
             ImGui.InputText("Name##newEntryName", ref NewEntryName, 255);
-            UIHelper.Tooltip("The name of this param category.");
+            UIHelper.ShowHoverTooltip("The name of this param category.");
 
             if (ImGui.Checkbox("Force to Top##newEntryforceTop", ref ForceTop))
             {
                 ForceBottom = false;
             }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+            UIHelper.ShowHoverTooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
 
             if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
             {
                 ForceTop = false;
             }
-            UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+            UIHelper.ShowHoverTooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
             ImGui.Text("Params to add:");
             for (int i = 0; i < NewEntryParamsCount; i++)
@@ -157,7 +157,7 @@ public static class ParamCategories
                 NewEntryParams.Add("");
                 NewEntryParamsCount++;
             }
-            UIHelper.Tooltip("Add another param entry to fill.");
+            UIHelper.ShowHoverTooltip("Add another param entry to fill.");
 
             ImGui.SameLine();
 
@@ -198,20 +198,20 @@ public static class ParamCategories
                 {
                     ForceBottom = false;
                 }
-                UIHelper.Tooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
+                UIHelper.ShowHoverTooltip("If toggled on, this param category will always appear at the top (in alphabetically order with any other categories with the same toggle).");
 
                 if (ImGui.Checkbox("Force to Bottom##newEntryforceBottom", ref ForceBottom))
                 {
                     ForceTop = false;
                 }
-                UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
+                UIHelper.ShowHoverTooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
                 if (ImGui.Button("Expand List", new Vector2(sectionWidth * 0.5f, 24)))
                 {
                     NewEntryParams.Add("");
                     NewEntryParamsCount++;
                 }
-                UIHelper.Tooltip("Add another param entry to fill.");
+                UIHelper.ShowHoverTooltip("Add another param entry to fill.");
 
                 ImGui.SameLine();
 

@@ -1,0 +1,4855 @@
+{
+    "list": [
+        {
+            "id": "1000",
+            "name": "Unban flag at game start",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2000",
+            "name": "System reservation_participating in session",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2001",
+            "name": "system reserved_no session",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2010",
+            "name": "system reserved_host",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2011",
+            "name": "System reservation_guest",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2020",
+            "name": "system reservation_is the local player normal",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2021",
+            "name": "System reservation_Is the local player a white spirit?",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2022",
+            "name": "System reservation_Is the local player a dark spirit?",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2030",
+            "name": "Leave the loading screen off",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2040",
+            "name": "Event flag for PlayGo",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "2050",
+            "name": "Arena Event Flag_Are you playing Arena?",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3000",
+            "name": "Chapter Judgment Flag_In Chapter 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3001",
+            "name": "Chapter Judgment Flag_End of Chapter 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3002",
+            "name": "Chapter Judgment Flag_Chapter 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3003",
+            "name": "Chapter Judgment Flag_End of Chapter 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3004",
+            "name": "Chapter Judgment Flag_Chapter 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3005",
+            "name": "Chapter Judgment Flag_End of Chapter 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3006",
+            "name": "Chapter Judgment Flag_Chapter 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3007",
+            "name": "Chapter Judgment Flag_End of Chapter 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3008",
+            "name": "Chapter Judgment Flag_Chapter 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3009",
+            "name": "Chapter Judgment Flag_End of Chapter 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3010",
+            "name": "Chapter Judgment Flag_Chapter 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3011",
+            "name": "Chapter Judgment Flag_End of Chapter 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3020",
+            "name": "Garage general-purpose same notification window opened",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3100",
+            "name": "Message_Visible Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3101",
+            "name": "Archive_visible flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3102",
+            "name": "Mission_visible flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3103",
+            "name": "Assemble_visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3104",
+            "name": "Paint_Visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3105",
+            "name": "Design_ visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3106",
+            "name": "AC_Test_Visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3107",
+            "name": "Market_ visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3108",
+            "name": "Black_Market_ visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3109",
+            "name": "Talk_ visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3110",
+            "name": "AC_Arena_Visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3111",
+            "name": "OS_Update_Visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3112",
+            "name": "Simulator_ can be displayed",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3113",
+            "name": "ONLINE_Arena_Visible",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3114",
+            "name": "Spare 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3115",
+            "name": "spare 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3116",
+            "name": "spare 04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3117",
+            "name": "spare 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3118",
+            "name": "spare 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3119",
+            "name": "Preliminary 07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3120",
+            "name": "Message_cannot be selected",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3121",
+            "name": "Achiive_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3122",
+            "name": "Mission_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3123",
+            "name": "Assemble_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3124",
+            "name": "Paint_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3125",
+            "name": "Design_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3126",
+            "name": "AC_Test_Unban",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3127",
+            "name": "Market_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3128",
+            "name": "Black_Market_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3129",
+            "name": "Talk_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3130",
+            "name": "AC_Arena_Unban",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3131",
+            "name": "OS_Update_Unban",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3132",
+            "name": "Simulator_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3133",
+            "name": "ONLINE_Arena_Unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3134",
+            "name": "replaymission for unlocking",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3135",
+            "name": "mission grayed out",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3136",
+            "name": "reserve 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3137",
+            "name": "Reserve 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3138",
+            "name": "reserve 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3139",
+            "name": "reserve 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3150",
+            "name": "Arena unlock progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3151",
+            "name": "Arena unlock progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3152",
+            "name": "Arena unlock progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3153",
+            "name": "Arena unlock progress 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3154",
+            "name": "Arena unlock progress 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3155",
+            "name": "Arena unlock progress 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3156",
+            "name": "Arena unlock progress 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3157",
+            "name": "Arena unlock progress 8",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3158",
+            "name": "Arena unlock progress 9",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3159",
+            "name": "Arena unlock progress 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3160",
+            "name": "Arena unlock progress 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3200",
+            "name": "Menu non-display judgment",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3210",
+            "name": "Silent start determination",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3220",
+            "name": "BGM reset judgment at garage IN",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3300",
+            "name": "Conversation end judgment",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3400",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3401",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3402",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3403",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3404",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3405",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3406",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3407",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 8",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3408",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 9",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3409",
+            "name": "[Garage] Judgment by watching the story production_Chapter 1 Entered the garage for the first time",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3410",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 2 progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3411",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 2 progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3412",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 2 progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3413",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3414",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3415",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3416",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3417",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3418",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3419",
+            "name": "[Garage] Judgment by watching the story production Chapter 2 Preliminary 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3420",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3421",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3422",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3423",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 Progress 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3424",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3425",
+            "name": "[Garage] Judgment after seeing the story production Chapter 3 progress 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3426",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3427",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 8",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3428",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress level 9",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3429",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3430",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3431",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3432",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3433",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3434",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3435",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3436",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 4 progress level 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3437",
+            "name": "[Garage] Judgment by watching the story production Chapter 4 Preliminary 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3438",
+            "name": "[Garage] Judgment by watching the story production Chapter 4 Preliminary 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3439",
+            "name": "[Garage] Judgment by watching the story production Chapter 4 Preliminary 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3440",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3441",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3442",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3443",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3444",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3445",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3446",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 5 progress 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3447",
+            "name": "[Garage] Current Route C",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3448",
+            "name": "[Garage] I just saw the start of the arena",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3449",
+            "name": "[Garage] Arena now open",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3450",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3451",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3452",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3453",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3454",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3455",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3456",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3457",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3458",
+            "name": "[Garage] Judgment by seeing the story production_Chapter 1 progress 18",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3460",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3461",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3462",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress level 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3463",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress level 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3464",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress level 15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3465",
+            "name": "[Garage] Judgment after seeing the story production Chapter 3 progress 16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3466",
+            "name": "[Garage] Judgment by seeing the story production Chapter 3 progress level 17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3467",
+            "name": "[Garage] Judgment by watching the story production Chapter 3 progress level 18",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3468",
+            "name": "[Garage] Judgment after seeing the story production Chapter 3 progress level 19",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3500",
+            "name": "[Garage] Indigenous flag Dam betrayal 1st PT",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3501",
+            "name": "[Garage] Indigenous flag Dam betrayal 2nd PT",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3502",
+            "name": "[Garage] Indigenous Flag Sabumi: 1st clearing of open-air quarry",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3503",
+            "name": "[Garage] Indigenous Flag Sabumi: 2nd Pt.",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3504",
+            "name": "[Garage] Indigenous flag Do not accept begging for life in front of the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3505",
+            "name": "[Garage] Indigenous flag Unknown aircraft elimination cleared",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3506",
+            "name": "[Garage] Indigenous flag AC battle clear at the power plant",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3507",
+            "name": "[Garage] Indigenous Flag Spare 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3508",
+            "name": "[Garage] Indigenous Flag Spare 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3509",
+            "name": "[Garage] Indigenous Flag Spare 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3510",
+            "name": "[Garage] Indigenous Flag Spare 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3511",
+            "name": "[Garage] Indigenous Flag Spare 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3512",
+            "name": "[Garage] Indigenous Flag Spare 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3513",
+            "name": "[Garage] Indigenous Flag Spare 8",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3514",
+            "name": "[Garage] Indigenous Flag Spare 9",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3515",
+            "name": "[Garage] Indigenous Flag Spare 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3516",
+            "name": "[Garage] Indigenous Flag Spare 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3517",
+            "name": "[Garage] Indigenous Flag Spare 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3518",
+            "name": "[Garage] Indigenous Flag Spare 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3519",
+            "name": "[Garage] Indigenous Flag Spare 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3600",
+            "name": "[Garage] Flag to go to Route B",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3601",
+            "name": "[Garage] Flag to go to route B (Bioweapon ALT clear)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3700",
+            "name": "[Menu] Communist for AC test enemy Gene",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3701",
+            "name": "[Menu] Quadruped for AC test enemy Gene",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3702",
+            "name": "[Menu] NPAC for AC test enemy Gene",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3703",
+            "name": "[Menu] For AC Test Enemy Gene None",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3704",
+            "name": "[Menu] AC test for enemy AI ON",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3705",
+            "name": "[Menu] AC test for enemy AI OFF",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3706",
+            "name": "[Menu] AC Test Preliminary 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3707",
+            "name": "[Menu] AC Test Preliminary 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3708",
+            "name": "[Menu] AC Test Preliminary 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3709",
+            "name": "[Menu] AC Test Preliminary 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3800",
+            "name": "assembled",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3801",
+            "name": "did the coloring",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3802",
+            "name": "Enhanced OS",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3900",
+            "name": "Garage debug flag #1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3901",
+            "name": "Garage debug flag #2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3902",
+            "name": "Garage debug flag #3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3903",
+            "name": "Garage debug flag #4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3904",
+            "name": "Garage debug flag #5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3910",
+            "name": "Archive debug flag_front of the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3920",
+            "name": "whispered flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "3999",
+            "name": "A flag that blocks emblems that are not available",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4000",
+            "name": "Archive item retrieved flag 00",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4001",
+            "name": "Archive Item Acquired Flag 01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4002",
+            "name": "Archive Item Acquired Flag 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4003",
+            "name": "Archive Item Obtained Flag 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4004",
+            "name": "Archive Item Obtained Flag 04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4005",
+            "name": "Archive Item Acquired Flag 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4006",
+            "name": "Archive Item Acquired Flag 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4007",
+            "name": "Archive Item Obtained Flag 07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4008",
+            "name": "Archive Item Acquired Flag 08",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4009",
+            "name": "Archive Item Acquired Flag 09",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4010",
+            "name": "Archive Item Obtained Flag 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4011",
+            "name": "Archive item retrieved flag 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4012",
+            "name": "Archive item retrieved flag 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4013",
+            "name": "Archive Item Acquired Flag 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4014",
+            "name": "Archive Item Acquired Flag 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4015",
+            "name": "Archive Item Acquired Flag 15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4016",
+            "name": "Archive item retrieved flag 16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4017",
+            "name": "Archive item retrieved flag 17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4018",
+            "name": "Archive Item Acquired Flag 18",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4019",
+            "name": "Archive Item Acquired Flag 19",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4020",
+            "name": "Archive Item Obtained Flag 20",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4021",
+            "name": "Archive Item Acquired Flag 21",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4022",
+            "name": "Archive Item Acquired Flag 22",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4023",
+            "name": "Archive Item Acquired Flag 23",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4024",
+            "name": "Archive Item Acquired Flag 24",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4025",
+            "name": "Archive Item Acquired Flag 25",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4026",
+            "name": "Archive item retrieved flag 26",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4027",
+            "name": "Archive Item Acquired Flag 27",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4028",
+            "name": "Archive Item Acquired Flag 28",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4029",
+            "name": "Archive Item Acquired Flag 29",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4030",
+            "name": "Archive Item Obtained Flag 30",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4031",
+            "name": "Archive item retrieved flag 31",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4032",
+            "name": "Archive item retrieved flag 32",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4033",
+            "name": "Archive Item Acquired Flag 33",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4034",
+            "name": "Archive Item Acquired Flag 34",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4035",
+            "name": "Archive Item Acquired Flag 35",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4036",
+            "name": "Archive item retrieved flag 36",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4037",
+            "name": "Archive Item Acquired Flag 37",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4038",
+            "name": "Archive Item Obtained Flag 38",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4039",
+            "name": "Archive Item Acquired Flag 39",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4040",
+            "name": "Archive Item Acquired Flag 40",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4041",
+            "name": "Archive item retrieved flag 41",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4042",
+            "name": "Archive item retrieved flag 42",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4043",
+            "name": "Archive Item Acquired Flag 43",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4044",
+            "name": "Archive item retrieved flag 44",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4045",
+            "name": "Archive Item Acquired Flag 45",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4046",
+            "name": "Archive item retrieved flag 46",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4047",
+            "name": "Archive Item Acquired Flag 47",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4048",
+            "name": "Archive Item Acquired Flag 48",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4049",
+            "name": "Archive Item Acquired Flag 49",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4050",
+            "name": "Archive Item Obtained Flag 50",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4051",
+            "name": "Archive item retrieved flag 51",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4052",
+            "name": "Archive item retrieved flag 52",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4053",
+            "name": "Archive item retrieved flag 53",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4054",
+            "name": "Archive item retrieved flag 54",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4055",
+            "name": "Archive item retrieved flag 55",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4056",
+            "name": "Archive item retrieved flag 56",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4057",
+            "name": "Archive item retrieved flag 57",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4058",
+            "name": "Archive Item Acquired Flag 58",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4059",
+            "name": "Archive Item Acquired Flag 59",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4060",
+            "name": "Archive Item Acquired Flag 60",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4061",
+            "name": "Archive item retrieved flag 61",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4062",
+            "name": "Archive item retrieved flag 62",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4063",
+            "name": "Archive item retrieved flag 63",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4064",
+            "name": "Archive item retrieved flag 64",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4065",
+            "name": "Archive item retrieved flag 65",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4066",
+            "name": "Archive item retrieved flag 66",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4067",
+            "name": "Archive item retrieved flag 67",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4068",
+            "name": "Archive item retrieved flag 68",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4069",
+            "name": "Archive item retrieved flag 69",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4070",
+            "name": "Archive Item Obtained Flag 70",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4071",
+            "name": "Archive item retrieved flag 71",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4072",
+            "name": "Archive item retrieved flag 72",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4073",
+            "name": "Archive item retrieved flag 73",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4074",
+            "name": "Archive item retrieved flag 74",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4075",
+            "name": "Archive Item Acquired Flag 75",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4076",
+            "name": "Archive item retrieved flag 76",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4077",
+            "name": "Archive Item Acquired Flag 77",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4078",
+            "name": "Archive item retrieved flag 78",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4079",
+            "name": "Archive Item Acquired Flag 79",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4080",
+            "name": "Archive Item Acquired Flag 80",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4081",
+            "name": "Archive item retrieved flag 81",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4082",
+            "name": "Archive item retrieved flag 82",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4083",
+            "name": "Archive item retrieved flag 83",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4084",
+            "name": "Archive item retrieved flag 84",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4085",
+            "name": "Archive item retrieved flag 85",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4086",
+            "name": "Archive item retrieved flag 86",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4087",
+            "name": "Archive item retrieved flag 87",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4088",
+            "name": "Archive item retrieved flag 88",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4089",
+            "name": "Archive Item Acquired Flag 89",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4090",
+            "name": "Archive Item Acquired Flag 90",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4091",
+            "name": "Archive Item Acquired Flag 91",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4092",
+            "name": "Archive item retrieved flag 92",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4093",
+            "name": "Archive Item Acquired Flag 93",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4094",
+            "name": "Archive item retrieved flag 94",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4095",
+            "name": "Archive Item Acquired Flag 95",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4096",
+            "name": "Archive item retrieved flag 96",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4097",
+            "name": "Archive item retrieved flag 97",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4098",
+            "name": "Archive Item Acquired Flag 98",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4099",
+            "name": "Archive Item Acquired Flag 99",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4100",
+            "name": "Archive Item Acquired Flag 100",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4101",
+            "name": "Archive item retrieved flag 101",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4102",
+            "name": "Archive item retrieved flag 102",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4103",
+            "name": "Archive item retrieved flag 103",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4104",
+            "name": "Archive item retrieved flag 104",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4105",
+            "name": "Archive item retrieved flag 105",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4106",
+            "name": "Archive item retrieved flag 106",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4107",
+            "name": "Archive item retrieved flag 107",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4108",
+            "name": "Archive item retrieved flag 108",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4109",
+            "name": "Archive item retrieved flag 109",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4110",
+            "name": "Archive Item Acquired Flag 110",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4111",
+            "name": "Archive item retrieved flag 111",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4112",
+            "name": "Archive item retrieved flag 112",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4113",
+            "name": "Archive item retrieved flag 113",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4114",
+            "name": "Archive item retrieved flag 114",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4115",
+            "name": "Archive item retrieved flag 115",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4116",
+            "name": "Archive item retrieved flag 116",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4117",
+            "name": "Archive item retrieved flag 117",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4118",
+            "name": "Archive item retrieved flag 118",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4119",
+            "name": "Archive Item Acquired Flag 119",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4120",
+            "name": "Archive Item Acquired Flag 120",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4121",
+            "name": "Archive item retrieved flag 121",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4122",
+            "name": "Archive item retrieved flag 122",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4123",
+            "name": "Archive item retrieved flag 123",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4124",
+            "name": "Archive item retrieved flag 124",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4125",
+            "name": "Archive item retrieved flag 125",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4126",
+            "name": "Archive item retrieved flag 126",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4127",
+            "name": "Archive item retrieved flag 127",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4128",
+            "name": "Archive item retrieved flag 128",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4129",
+            "name": "Archive item retrieved flag 129",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4130",
+            "name": "Archive Item Acquired Flag 130",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4131",
+            "name": "Archive item retrieved flag 131",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4132",
+            "name": "Archive item retrieved flag 132",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4133",
+            "name": "Archive item retrieved flag 133",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4134",
+            "name": "Archive item retrieved flag 134",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4135",
+            "name": "Archive Item Acquired Flag 135",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4136",
+            "name": "Archive item retrieved flag 136",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4137",
+            "name": "Archive item retrieved flag 137",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4138",
+            "name": "Archive item retrieved flag 138",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4139",
+            "name": "Archive Item Acquired Flag 139",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4140",
+            "name": "Archive Item Acquired Flag 140",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4141",
+            "name": "Archive item retrieved flag 141",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4142",
+            "name": "Archive item retrieved flag 142",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4143",
+            "name": "Archive item retrieved flag 143",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4144",
+            "name": "Archive item retrieved flag 144",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4145",
+            "name": "Archive item retrieved flag 145",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4146",
+            "name": "Archive item retrieved flag 146",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4147",
+            "name": "Archive item retrieved flag 147",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4148",
+            "name": "Archive item retrieved flag 148",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4149",
+            "name": "Archive Item Acquired Flag 149",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4150",
+            "name": "Archive Item Obtained Flag 150",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4151",
+            "name": "Archive item retrieved flag 151",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4152",
+            "name": "Archive item retrieved flag 152",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4153",
+            "name": "Archive Item Acquired Flag 153",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4154",
+            "name": "Archive item retrieved flag 154",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4155",
+            "name": "Archive Item Acquired Flag 155",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4156",
+            "name": "Archive item retrieved flag 156",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4157",
+            "name": "Archive item retrieved flag 157",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4158",
+            "name": "Archive item retrieved flag 158",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4159",
+            "name": "Archive Item Acquired Flag 159",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4160",
+            "name": "Archive item retrieved flag 160",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4161",
+            "name": "Archive item retrieved flag 161",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4162",
+            "name": "Archive item retrieved flag 162",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4163",
+            "name": "Archive item retrieved flag 163",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4164",
+            "name": "Archive item retrieved flag 164",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4165",
+            "name": "Archive item retrieved flag 165",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4166",
+            "name": "Archive item retrieved flag 166",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4167",
+            "name": "Archive item retrieved flag 167",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4168",
+            "name": "Archive item retrieved flag 168",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4169",
+            "name": "Archive item retrieved flag 169",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4170",
+            "name": "Archive Item Obtained Flag 170",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4171",
+            "name": "Archive item retrieved flag 171",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4172",
+            "name": "Archive item retrieved flag 172",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4173",
+            "name": "Archive item retrieved flag 173",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4174",
+            "name": "Archive item retrieved flag 174",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4175",
+            "name": "Archive item retrieved flag 175",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4176",
+            "name": "Archive item retrieved flag 176",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4177",
+            "name": "Archive item retrieved flag 177",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4178",
+            "name": "Archive item retrieved flag 178",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4179",
+            "name": "Archive Item Acquired Flag 179",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4180",
+            "name": "Archive Item Acquired Flag 180",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4181",
+            "name": "Archive item retrieved flag 181",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4182",
+            "name": "Archive item retrieved flag 182",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4183",
+            "name": "Archive item retrieved flag 183",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4184",
+            "name": "Archive item retrieved flag 184",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4185",
+            "name": "Archive item retrieved flag 185",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4186",
+            "name": "Archive item retrieved flag 186",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4187",
+            "name": "Archive item retrieved flag 187",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4188",
+            "name": "Archive item retrieved flag 188",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4189",
+            "name": "Archive Item Acquired Flag 189",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4190",
+            "name": "Archive Item Acquired Flag 190",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4191",
+            "name": "Archive item retrieved flag 191",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4192",
+            "name": "Archive item retrieved flag 192",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4193",
+            "name": "Archive item retrieved flag 193",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4194",
+            "name": "Archive item retrieved flag 194",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4195",
+            "name": "Archive item retrieved flag 195",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4196",
+            "name": "Archive item retrieved flag 196",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4197",
+            "name": "Archive item retrieved flag 197",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4198",
+            "name": "Archive item retrieved flag 198",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4199",
+            "name": "Archive Item Acquired Flag 199",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4200",
+            "name": "Archive Item Acquired Flag 200",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4440",
+            "name": "Item monitoring flag_wrap reset_00",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4441",
+            "name": "Item monitoring flag_wrap reset_01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4442",
+            "name": "Item monitoring flag_wrap reset_02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4443",
+            "name": "Item monitoring flag_wrap reset_03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4444",
+            "name": "Item monitoring flag_wrap reset_04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4445",
+            "name": "Item monitoring flag_wrap reset_05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4446",
+            "name": "Item monitoring flag_wrap reset_06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4447",
+            "name": "Item monitoring flag_wrap reset_07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4448",
+            "name": "Item monitoring flag_wrap reset_08",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4449",
+            "name": "Item monitoring flag_wrap reset_09",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4450",
+            "name": "Item monitoring flag_return reset_10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4451",
+            "name": "Item monitoring flag_wrap reset_11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4452",
+            "name": "Item monitoring flag_wrap reset_12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4453",
+            "name": "Item monitoring flag_wrap reset_13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4454",
+            "name": "Item monitoring flag_wrap reset_14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4455",
+            "name": "Item monitoring flag_wrap reset_15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4456",
+            "name": "Item monitoring flag_wrap reset_16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4457",
+            "name": "Item monitoring flag_wrap reset_17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4458",
+            "name": "Item monitoring flag_wrap reset_18",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4459",
+            "name": "Item monitoring flag_wrap reset_19",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4460",
+            "name": "Item monitoring flag_wrap reset_20",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4461",
+            "name": "Item monitoring flag_wrap reset_21",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4462",
+            "name": "Item monitoring flag_wrap reset_22",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4463",
+            "name": "Item monitoring flag_wrap reset_23",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4464",
+            "name": "Item monitoring flag_wrap reset_24",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4465",
+            "name": "Item monitoring flag_wrap reset_25",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4466",
+            "name": "Item monitoring flag_wrap reset_26",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4467",
+            "name": "Item monitoring flag_wrap reset_27",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4468",
+            "name": "Item monitoring flag_wrap reset_28",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4469",
+            "name": "Item monitoring flag_wrap reset_29",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4470",
+            "name": "Item monitoring flag_return reset_30",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4471",
+            "name": "Item monitoring flag_wrap reset_31",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4472",
+            "name": "Item monitoring flag_wrap reset_32",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4473",
+            "name": "Item monitoring flag_wrap reset_33",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4474",
+            "name": "Item monitoring flag_wrap reset_34",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4475",
+            "name": "Item monitoring flag_wrap reset_35",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4476",
+            "name": "Item monitoring flag_wrap reset_36",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4477",
+            "name": "Item monitoring flag_wrap reset_37",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4478",
+            "name": "Item monitoring flag_wrap reset_38",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4479",
+            "name": "Item Monitoring Flag_Orbital Reset_39",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4480",
+            "name": "Item monitoring flag_return reset_40",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4481",
+            "name": "Item monitoring flag_wrap reset_41",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4482",
+            "name": "Item monitoring flag_wrap reset_42",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4483",
+            "name": "Item Monitoring Flag_Orbital Reset_43",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4484",
+            "name": "Item Monitoring Flag_Orbital Reset_44",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4485",
+            "name": "Item monitoring flag_return reset_45",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4486",
+            "name": "Item monitoring flag_wrap reset_46",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4487",
+            "name": "Item monitoring flag_wrap reset_47",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4488",
+            "name": "Item monitoring flag_wrap reset_48",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "4489",
+            "name": "Item Monitoring Flag_Orbital Reset_49",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5001",
+            "name": "Event flag for selection _Deploy",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5002",
+            "name": "Event flag for determination _Deploy",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5003",
+            "name": "Event flag for decision_sortie preparation screen",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5004",
+            "name": "Decision time event flag_Briefing",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5011",
+            "name": "Event flag for selection _AC",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5012",
+            "name": "Decision event flag _AC",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5021",
+            "name": "Event flag for selection _Deal",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5022",
+            "name": "Decision time event flag _Deal",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5031",
+            "name": "Event flag for selection _PC",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5032",
+            "name": "Event flag for determination _PC",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5040",
+            "name": "Event flag for selection_default",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5050",
+            "name": "Event flag that makes it possible to return",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5051",
+            "name": "eventflag to execute feedback",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5060",
+            "name": "For events in the garage, an event flag that makes it impossible to talk",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5061",
+            "name": "Event flag for events in the garage when the talk button is pressed",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5062",
+            "name": "Self-made animation fixed flag for events in the garage",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5070",
+            "name": "slow-mo mode event flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5071",
+            "name": "Garage connection event flag_with warp",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5072",
+            "name": "Past garage connection event flag_with warp",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5073",
+            "name": "Event flag for A layer garage connection_with warp",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5074",
+            "name": "mute background music",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5075",
+            "name": "D layer garage movement event flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5081",
+            "name": "[Cut scene] Notification event flag 01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5082",
+            "name": "[Cut scene] Notification event flag 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5083",
+            "name": "[Cutscene] Notification event flag 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "5084",
+            "name": "[Cut scene] Notification event flag 04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6000",
+            "name": "A route clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6001",
+            "name": "B route clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6002",
+            "name": "C route clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6003",
+            "name": "Lap_clear event flag_03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6004",
+            "name": "Lap_clear event flag_04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6005",
+            "name": "Lap_clear event flag_05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6006",
+            "name": "Lap_clear event flag_06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6007",
+            "name": "Lap_clear event flag_07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6008",
+            "name": "Lap_clear event flag_08",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6009",
+            "name": "Lap_clear event flag_09",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6010",
+            "name": "Arena unlocking progress 1 take over",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6011",
+            "name": "Arena Unlocking Progress Level 2 Transferred",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6012",
+            "name": "Arena Unlocking Progress Level 3 Takeover",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6013",
+            "name": "Arena unlocking progress 4 takeover",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6014",
+            "name": "Arena Unlocking Progress Level 5 Transferred",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6015",
+            "name": "Arena unlocking progress 6 take over",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6016",
+            "name": "Arena unlocking progress 7 take over",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6017",
+            "name": "Arena unlocking progress level 8 takeover",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6018",
+            "name": "let the air out even once",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6019",
+            "name": "Lap_clear event flag_19",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6050",
+            "name": "Complete Arena F",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6051",
+            "name": "Complete Arena E",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6052",
+            "name": "Complete Arena D",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6053",
+            "name": "Complete Arena C",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6054",
+            "name": "Complete Arena B",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6055",
+            "name": "Complete Arena A",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6056",
+            "name": "Complete Arena S",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6057",
+            "name": "Alpha simulator completed",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6058",
+            "name": "Beta simulator completed",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6059",
+            "name": "Completion of γ simulator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6060",
+            "name": "Defeat Rusty Simulator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6061",
+            "name": "Defeat Walter Simulator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6062",
+            "name": "Defeat Air",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6070",
+            "name": "let out air",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6100",
+            "name": "Event flag for branching within the mission_Ruins",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6105",
+            "name": "Flag for skipping cutscenes when retrying",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6200",
+            "name": "Chapter 1 beginning submi x 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6210",
+            "name": "Mining Ship & Dam Destruction",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6220",
+            "name": "over the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6230",
+            "name": "the coordinates indicated by the string",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6240",
+            "name": "continental crust",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6250",
+            "name": "Defeat Iceworm",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6260",
+            "name": "prison break",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6270",
+            "name": "Coordinates indicated by the character string: 2nd round",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6275",
+            "name": "Continental crust: 2nd lap",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6280",
+            "name": "Defeat Iceworm: Round 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6290",
+            "name": "Jailbreak: Round 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6401",
+            "name": "Reach Mercenary Rank 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6402",
+            "name": "Reach Mercenary Rank 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6403",
+            "name": "Reach Mercenary Rank 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6404",
+            "name": "Reach Mercenary Rank 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6405",
+            "name": "Reach Mercenary Rank 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6406",
+            "name": "Reach Mercenary Rank 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6407",
+            "name": "Reach Mercenary Rank 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6408",
+            "name": "Reach Mercenary Rank 8",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6409",
+            "name": "Reach Mercenary Rank 9",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6410",
+            "name": "Reach Mercenary Rank 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6411",
+            "name": "Reach Mercenary Rank 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6412",
+            "name": "Reach Mercenary Rank 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6413",
+            "name": "Reach Mercenary Rank 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6414",
+            "name": "Reach Mercenary Rank 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6415",
+            "name": "Reach Mercenary Rank 15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6416",
+            "name": "Reach Mercenary Rank 16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6417",
+            "name": "Reach Mercenary Rank 17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6431",
+            "name": "Tremo 1 clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6432",
+            "name": "Tremo 2 clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6433",
+            "name": "Tremo 3 clear",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6434",
+            "name": "Clear Tremo 4",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6435",
+            "name": "clear tremo 5",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6436",
+            "name": "clear tremo 6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6437",
+            "name": "clear tremo 7",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6438",
+            "name": "Tremo 7 released",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6447",
+            "name": "Arena clear: 01 (S)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6448",
+            "name": "Arena clear: TEST-09 [γ3]",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6449",
+            "name": "Arena clear: TEST-R [δ1]",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6450",
+            "name": "Arena clear: TEST-W [δ2]",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6451",
+            "name": "Arena clear: TEST-A [δ3]",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6460",
+            "name": "collapsed continental crust 1",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6461",
+            "name": "straight city invasion",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6462",
+            "name": "offshore city",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6463",
+            "name": "Mine sabotage",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6464",
+            "name": "collapsed continental crust 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6490",
+            "name": "Acquire OS enhancement points Clear the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6500",
+            "name": "Collected all information logs",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6501",
+            "name": "Cleared all missions",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6502",
+            "name": "Cleared all missions with S rank",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6503",
+            "name": "Cleared all missions in hard mode",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6510",
+            "name": "Obtain a medal for collecting all information logs",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6511",
+            "name": "Obtain a medal for clearing all missions",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6512",
+            "name": "Obtain a medal for clearing all missions with S rank.",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6513",
+            "name": "Obtain a medal for clearing all missions in hard mode",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6520",
+            "name": "Obtain parts by clearing the rail",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6521",
+            "name": "Obtain parts by clearing the final battle B",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6522",
+            "name": "Get parts by clearing jailbreak",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6523",
+            "name": "Get parts by clearing the atmosphere breakthrough",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6600",
+            "name": "Observers' Association Overseer",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6601",
+            "name": "Rubycon 3 research technology laboratory",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6602",
+            "name": "all mind",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6603",
+            "name": "Rubiconist",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6604",
+            "name": "RaD",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6605",
+            "name": "Archibus Corporation",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6606",
+            "name": "Archibus Group Enhanced Human Corps",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6607",
+            "name": "bay rum industry",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6608",
+            "name": "Bairam exclusive mercenary unit",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6609",
+            "name": "Archibus ADD",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6610",
+            "name": "Predecessor Raven",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6611",
+            "name": "Kate",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6612",
+            "name": "Rusty",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6613",
+            "name": "Walter",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "6614",
+            "name": "red gun 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8000",
+            "name": "[11 end version] A layer garage available",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8001",
+            "name": "[End of November] A layer garage in use",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8002",
+            "name": "[11 end version] past garage available",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8003",
+            "name": "[11 end version] Past garage in use",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8004",
+            "name": "[End of November] Tier A Garage Event Completion Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8005",
+            "name": "[11 End Edition] Past Garage Event Completion Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8006",
+            "name": "[11th Edition] Tier A Garage Conversation Event Available",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8007",
+            "name": "[11 end version] Past garage conversation event can be started",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8008",
+            "name": "[End of November] Flag for catapult event",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8009",
+            "name": "[End of November] The second half of the sortie cutscene ends",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8010",
+            "name": "[End of November] Playing prologue mission",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8011",
+            "name": "[End of November] Pharaon Destruction Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8012",
+            "name": "[11 end version] Yotuel appearance defeat flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8013",
+            "name": "[End of November] Yotuel Appearance Loss Event Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8014",
+            "name": "[End of November] Result notification flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8015",
+            "name": "[End of November] Checkpoint passage flag_01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8016",
+            "name": "[End of November] Checkpoint Pass Flag_02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8017",
+            "name": "[End of November] Checkpoint passage flag_03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8018",
+            "name": "[End of November] Checkpoint Pass Flag_04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8019",
+            "name": "[11th Edition] Yotuel Battle Event Notification Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8020",
+            "name": "Straight street reverse run _ No 2 defeated flag _ production",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8021",
+            "name": "Scavenging_Ziyi Defeated Flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8030",
+            "name": "sherpa_busy flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8031",
+            "name": "sherpa_used flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8101",
+            "name": "8101_In-mission branching event flag_dam destruction_betrayal route_",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8102",
+            "name": "8102_In-mission branching event flag_dam destruction_cooperation route_result",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8103",
+            "name": "8103 _ Event flag for branching in mission _ Search in front of wall _ Route A (don't miss it)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8104",
+            "name": "8104_Event flag for branching in mission_Search in front of wall_Route B (miss)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8106",
+            "name": "8106_In-mission branching event flag_No2 defeated route_result",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8200",
+            "name": "Control Flag 00 for Big Bridge Elevator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8201",
+            "name": "Control Flag 01 for Big Bridge Elevator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8202",
+            "name": "Control Flag 02 for Big Bridge Elevator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8203",
+            "name": "Control Flag 03 for Big Bridge Elevator",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8300",
+            "name": "2170 In front of the exploration wall_Estella appearance flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8301",
+            "name": "2170 Exploration wall front_Joffe appearance flag",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8400",
+            "name": "End of June support_item monitoring flag 00",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8401",
+            "name": "6 end support_item monitoring flag 01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8402",
+            "name": "Support for the end of June_Item monitoring flag 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8403",
+            "name": "Support for the end of June_Item monitoring flag 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8404",
+            "name": "Support for the end of June_Item monitoring flag 04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8405",
+            "name": "End of June support_item monitoring flag 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8406",
+            "name": "6 end support_item monitoring flag 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8407",
+            "name": "6 end response_item monitoring flag 07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8408",
+            "name": "End of June support_item monitoring flag 08",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8409",
+            "name": "End of June support_item monitoring flag 09",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8410",
+            "name": "6 end support_item monitoring flag 10",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8411",
+            "name": "6 end support_item monitoring flag 11",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8412",
+            "name": "End of June support_item monitoring flag 12",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8413",
+            "name": "6 end support_item monitoring flag 13",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8414",
+            "name": "End of June support_item monitoring flag 14",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8415",
+            "name": "End of June support_item monitoring flag 15",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8416",
+            "name": "6 end support_item monitoring flag 16",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8417",
+            "name": "End of June support_item monitoring flag 17",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8418",
+            "name": "6 end support_item monitoring flag 18",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8419",
+            "name": "6 end support_item monitoring flag 19",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8420",
+            "name": "End of June support_item monitoring flag 20",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8430",
+            "name": "11 correspondence_item monitoring flag_recovery item",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8441",
+            "name": "Eleven Correspondence_Item Monitoring Flag_Daisy's Note",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8442",
+            "name": "Eleven correspondence _ Item monitoring flag _ Crypto assets",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8443",
+            "name": "11 Correspondence_Item Monitoring Flag_Opposition Communication Log",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8444",
+            "name": "11 Correspondence_Item Surveillance Flag_Laser Naginata",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8445",
+            "name": "11 Correspondence_Item Surveillance Flag_Ulan Bazooka",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8446",
+            "name": "11 Correspondence_Item Surveillance Flag_Eqbal Booster",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8450",
+            "name": "Item monitoring flag_for checking treasure container behavior_01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8451",
+            "name": "Item monitoring flag_for checking treasure container behavior_02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8452",
+            "name": "Item monitoring flag_For checking treasure container behavior_03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8460",
+            "name": "Archive confirmation flag 00",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8461",
+            "name": "Archive confirmation flag 01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8462",
+            "name": "Archive confirmation flag 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8463",
+            "name": "Archive confirmation flag 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8470",
+            "name": "50070300 FB_M_8040 HEAD",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8471",
+            "name": "51070300 FB_M_8040 BODY",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8472",
+            "name": "52070300 FB_M_8040 ARMS",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8473",
+            "name": "53070300 FB_M_8040 LEGS",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8474",
+            "name": "50070600 FB_M_8150 HEAD",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8475",
+            "name": "10180000 WP_A_3020 ARM UNIT stun gun",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8476",
+            "name": "65010400 WP_A_8985 GENERATOR 2nd generation C",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8477",
+            "name": "20100000 WP_L_0510 ARM UNIT L bomb scatter",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8478",
+            "name": "30350100 WP_A_5620 BACK UINIT Additional booster 3",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8479",
+            "name": "51080100 FB_M_8020 BODY",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8480",
+            "name": "52080100 FB_M_8020 ARMS",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8481",
+            "name": "60070100 BS_A_8020 booster Miyatake booster (special)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8482",
+            "name": "70030100 WP_A_8969 FCS melange type 2 (K AI)",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8483",
+            "name": "65030100　WP_A_8989　Generator (Mera) Melange type 2",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8484",
+            "name": "53080100 FB_M_8020 LEGS",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8485",
+            "name": "50080100 FB_M_8020 HEAD",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8486",
+            "name": "30030000 WP_R_4240 BACK UINIT Coral Missile",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8487",
+            "name": "25010300 WP_L_4970 Shield Coral Shield",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8500",
+            "name": "[Speaker] General-purpose com",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8501",
+            "name": "[Speaker] Eph6",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8502",
+            "name": "[COM Voice] Preliminary 01",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8503",
+            "name": "[COM Voice] Preliminary 02",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8504",
+            "name": "[COM Voice] Preliminary 03",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8505",
+            "name": "[COM Voice] Preliminary 04",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8506",
+            "name": "[COM Voice] Preliminary 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8507",
+            "name": "[COM Voice] Preliminary 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8508",
+            "name": "[COM Voice] Preliminary 07",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "8509",
+            "name": "[COM Voice] Preliminary 08",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9000",
+            "name": "Mission loadable event flag 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9010",
+            "name": "Mission clear completion event flag 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9020",
+            "name": "Mission load prohibited event flag 05",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9100",
+            "name": "Mission Loadable Event Flag 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9110",
+            "name": "Mission clear completion event flag 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9120",
+            "name": "Mission load prohibited event flag 06",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9200",
+            "name": "Refactoring Mission: Loadable",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9210",
+            "name": "Refactoring Mission: Completed",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9220",
+            "name": "Refactoring Mission: No Loading",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9230",
+            "name": "Player_I'm in a mountain town",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9231",
+            "name": "stay in player_dam",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9232",
+            "name": "Player_At the connection point in front of the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9233",
+            "name": "Player_I'm on the roof of the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9234",
+            "name": "spare",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9235",
+            "name": "Garage Helicopter_In a mountain town",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9236",
+            "name": "Garage Helicopter_At the dam",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9237",
+            "name": "Garage Helicopter_At the connection point in front of the wall",
+            "tags": [
+                "flag"
+            ]
+        },
+        {
+            "id": "9238",
+            "name": "Garage Helicopter_I'm on the roof of the wall.",
+            "tags": [
+                "flag"
+            ]
+        }
+    ]
+}

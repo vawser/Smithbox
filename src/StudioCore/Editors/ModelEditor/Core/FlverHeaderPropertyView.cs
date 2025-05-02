@@ -45,19 +45,19 @@ public class FlverHeaderPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Big Endian");
-        UIHelper.Tooltip("If true FLVER will be written big-endian, if false little-endian.");
+        UIHelper.ShowHoverTooltip("If true FLVER will be written big-endian, if false little-endian.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Version");
-        UIHelper.Tooltip("Version of the format indicating presence of various features.");
+        UIHelper.ShowHoverTooltip("Version of the format indicating presence of various features.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Minimum");
-        UIHelper.Tooltip("Minimum extent of the entire model.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the entire model.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Bounding Box: Maximum");
-        UIHelper.Tooltip("Maximum extent of the entire model.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the entire model.");
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unicode");
-        UIHelper.Tooltip("If true strings are UTF-16, if false Shift-JIS.");
+        UIHelper.ShowHoverTooltip("If true strings are UTF-16, if false Shift-JIS.");
 
         ImGui.NextColumn();
 

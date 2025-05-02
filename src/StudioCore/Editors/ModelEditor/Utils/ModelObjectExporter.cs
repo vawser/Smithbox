@@ -2,7 +2,7 @@
 using Org.BouncyCastle.Utilities;
 using Pfim;
 using SoulsFormats;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Resource.Locators;

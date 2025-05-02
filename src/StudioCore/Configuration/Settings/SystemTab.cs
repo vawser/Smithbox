@@ -24,14 +24,14 @@ public class SystemTab
         {
             ImGui.Checkbox("Check for new versions of Smithbox during startup",
                 ref CFG.Current.System_Check_Program_Update);
-            UIHelper.Tooltip("When enabled Smithbox will automatically check for new versions upon program start.");
+            UIHelper.ShowHoverTooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
             ImGui.Checkbox("Enable Soapstone Server",
                 ref CFG.Current.Enable_Soapstone_Server);
-            UIHelper.Tooltip("Enables the Soapstone Server, allow for cross-data integration with DarkScript.");
+            UIHelper.ShowHoverTooltip("Enables the Soapstone Server, allow for cross-data integration with DarkScript.");
 
             ImGui.Checkbox("Enable debugging tools", ref CFG.Current.DisplayDebugTools);
-            UIHelper.Tooltip("If enabled, various debugging tools will be available.");
+            UIHelper.ShowHoverTooltip("If enabled, various debugging tools will be available.");
 
             ImGui.Separator();
 
@@ -40,7 +40,7 @@ public class SystemTab
             UIHelper.WrappedText("This option will remove that strictness, and will cause Smithbox to ignore the invalid data when reading a file.");
 
             ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
-            UIHelper.Tooltip("If enabled, when attempting to read files, asserts will be ignored.");
+            UIHelper.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
             Smithbox.UpdateSoulsFormatsToggles();
         }
@@ -48,18 +48,18 @@ public class SystemTab
         if (ImGui.CollapsingHeader("Loggers"))
         {
             ImGui.Checkbox("Show Action Logger", ref UI.Current.System_ShowActionLogger);
-            UIHelper.Tooltip("If enabled, the action logger will be visible in the menu bar.");
+            UIHelper.ShowHoverTooltip("If enabled, the action logger will be visible in the menu bar.");
 
             ImGui.InputInt("Action Log Visibility Duration", ref CFG.Current.System_ActionLogger_FadeTime);
-            UIHelper.Tooltip("The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.");
+            UIHelper.ShowHoverTooltip("The number of frames for which the action logger message stays visible in the menu bar.\n-1 means the message never disappears.");
 
             ImGui.Separator();
 
             ImGui.Checkbox("Show Warning Logger", ref UI.Current.System_ShowWarningLogger);
-            UIHelper.Tooltip("If enabled, the warning logger will be visible in the menu bar.");
+            UIHelper.ShowHoverTooltip("If enabled, the warning logger will be visible in the menu bar.");
 
             ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
-            UIHelper.Tooltip("The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.");
+            UIHelper.ShowHoverTooltip("The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.");
 
         }
 
@@ -68,39 +68,39 @@ public class SystemTab
             UIHelper.WrappedText("Determine which editors are enabled." +
                 "\nIf an editor was disabled at start, it will only appear once Smithbox is restarted if enabled.");
             ImGui.Checkbox("Enable Map Editor", ref CFG.Current.EnableEditor_MSB);
-            UIHelper.Tooltip("Enables the Map Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Map Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Model Editor", ref CFG.Current.EnableEditor_FLVER);
-            UIHelper.Tooltip("Enables the Model Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Model Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Param Editor", ref CFG.Current.EnableEditor_PARAM);
-            UIHelper.Tooltip("Enables the Param Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Param Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Text Editor", ref CFG.Current.EnableEditor_FMG);
-            UIHelper.Tooltip("Enables the Text Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Text Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Gparam Editor", ref CFG.Current.EnableEditor_GPARAM);
-            UIHelper.Tooltip("Enables the Gparam Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Gparam Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Texture Viewer", ref CFG.Current.EnableViewer_TEXTURE);
-            UIHelper.Tooltip("Enables the Texture Viewer in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Texture Viewer in Smithbox.");
 
             ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableEditor_TAE);
-            UIHelper.Tooltip("Enables the Time Act Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Time Act Editor in Smithbox.");
 
             ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableEditor_HAVOK);
-            UIHelper.Tooltip("Enables the Havok Editor in Smithbox.");
+            UIHelper.ShowHoverTooltip("Enables the Havok Editor in Smithbox.");
 
             ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEditor_EMEVD);
-            UIHelper.Tooltip("Enables the EMEVD Editor in Smithbox." +
+            UIHelper.ShowHoverTooltip("Enables the EMEVD Editor in Smithbox." +
                 "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
 
             ImGui.Checkbox("Enable ESD Editor", ref CFG.Current.EnableEditor_ESD);
-            UIHelper.Tooltip("Enables the ESD Editor in Smithbox." +
+            UIHelper.ShowHoverTooltip("Enables the ESD Editor in Smithbox." +
                 "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
 
             ImGui.Checkbox("Enable Cutscene Editor", ref CFG.Current.EnableEditor_MQB_wip);
-            UIHelper.Tooltip("Enables the Cutscene Editor in Smithbox." +
+            UIHelper.ShowHoverTooltip("Enables the Cutscene Editor in Smithbox." +
                 "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
 
             // WIP
@@ -113,11 +113,11 @@ public class SystemTab
         if (ImGui.CollapsingHeader("Meta Tools"))
         {
             ImGui.Checkbox("Change Base Aliases", ref CFG.Current.AliasBank_EditorMode);
-            UIHelper.Tooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
+            UIHelper.ShowHoverTooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
 
             ImGui.Checkbox("Enable DokuWiki Tools",
                 ref CFG.Current.EnableWikiTools);
-            UIHelper.Tooltip("Enables various functionality changes for DokuWiki outputs.");
+            UIHelper.ShowHoverTooltip("Enables various functionality changes for DokuWiki outputs.");
         }
 
         if (ImGui.CollapsingHeader("Configuration"))
@@ -149,7 +149,7 @@ public class SystemTab
                     UI.Save();
                 }
             }
-            UIHelper.Tooltip("This will delete your Smithbox folder and the configuration files within.");
+            UIHelper.ShowHoverTooltip("This will delete your Smithbox folder and the configuration files within.");
         }
     }
 }

@@ -1,9 +1,12 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.WellKnownTypes;
+using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Banks.AliasBank;
 using StudioCore.Banks.FormatBank;
 using StudioCore.Banks.SpawnStateBank;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -12,8 +15,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class MapEditorDecorations
 {
@@ -911,7 +916,7 @@ public static class MapEditorDecorations
                 EditorCommandQueue.AddCommand($"model/load/{value}/{loadType}");
             }
         }
-        UIHelper.Tooltip("View this model in the Model Editor, loading it automatically.");
+        UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
 
         ImGui.EndGroup();
     }

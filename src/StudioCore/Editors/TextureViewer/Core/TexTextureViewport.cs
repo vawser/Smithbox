@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using StudioCore.Resource.Locators;
 using SoulsFormats;
 using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.Formats;
 
 namespace StudioCore.Editors.TextureViewer;
 

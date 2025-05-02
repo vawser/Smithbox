@@ -64,18 +64,18 @@ public class FlverMeshPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Use Bone Weights");
-        UIHelper.Tooltip("Determines how the mesh is skinned.\nIf it is true the mesh is assumed to be in bind pose and is skinned using the Bone Indices and Bone Weights of the vertices.\n\nIf it is false each vertex specifies a single node to bind to using its NormalW\n\nThe mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex.");
+        UIHelper.ShowHoverTooltip("Determines how the mesh is skinned.\nIf it is true the mesh is assumed to be in bind pose and is skinned using the Bone Indices and Bone Weights of the vertices.\n\nIf it is false each vertex specifies a single node to bind to using its NormalW\n\nThe mesh is assumed to not be in bind pose and the transform of the bound node is applied to each vertex.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Material Index");
-        UIHelper.Tooltip("Index of the material used by all triangles in this mesh.");
+        UIHelper.ShowHoverTooltip("Index of the material used by all triangles in this mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Node Index");
-        UIHelper.Tooltip("Index of the node representing this mesh in the Node list.");
+        UIHelper.ShowHoverTooltip("Index of the node representing this mesh in the Node list.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
@@ -183,7 +183,7 @@ public class FlverMeshPropertyView
                 var action = new TranslateMesh(curFlver, entry, StoredTranslationInput);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
-            UIHelper.Tooltip("Translate the selected mesh by the specified vector.");
+            UIHelper.ShowHoverTooltip("Translate the selected mesh by the specified vector.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -199,7 +199,7 @@ public class FlverMeshPropertyView
                 var action = new ScaleMesh(curFlver, entry, StoredScaleInput);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
-            UIHelper.Tooltip("Scale the selected mesh by the specified vector.");
+            UIHelper.ShowHoverTooltip("Scale the selected mesh by the specified vector.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -215,7 +215,7 @@ public class FlverMeshPropertyView
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_X, RotationAxis.X);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
-            UIHelper.Tooltip("Rotate the selected mesh on the X-axis by the specified angle.");
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the X-axis by the specified angle.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -231,7 +231,7 @@ public class FlverMeshPropertyView
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
-            UIHelper.Tooltip("Rotate the selected mesh on the Y-axis by the specified angle.");
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Y-axis by the specified angle.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -247,7 +247,7 @@ public class FlverMeshPropertyView
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
                 Screen.EditorActionManager.ExecuteAction(action);
             }
-            UIHelper.Tooltip("Rotate the selected mesh on the Z-axis by the specified angle.");
+            UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Z-axis by the specified angle.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -283,19 +283,19 @@ public class FlverMeshPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flags");
-        UIHelper.Tooltip("Flags on a faceset, mostly just used to determine lod level.");
+        UIHelper.ShowHoverTooltip("Flags on a faceset, mostly just used to determine lod level.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Triangle Strip");
-        UIHelper.Tooltip("Whether vertices are defined as a triangle strip or individual triangles.");
+        UIHelper.ShowHoverTooltip("Whether vertices are defined as a triangle strip or individual triangles.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Cull Backfaces");
-        UIHelper.Tooltip("Whether triangles can be seen through from behind.");
+        UIHelper.ShowHoverTooltip("Whether triangles can be seen through from behind.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk06");
-        UIHelper.Tooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -370,7 +370,7 @@ public class FlverMeshPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Layout Index");
-        UIHelper.Tooltip("");
+        UIHelper.ShowHoverTooltip("");
 
         ImGui.NextColumn();
 
@@ -404,7 +404,7 @@ public class FlverMeshPropertyView
         ImGui.Columns(2);
         ImGui.AlignTextToFramePadding();
         ImGui.Text("UV Channel");
-        UIHelper.Tooltip("Select which UV channel to edit.");
+        UIHelper.ShowHoverTooltip("Select which UV channel to edit.");
         ImGui.NextColumn();
 
         if (ImGui.BeginCombo($"##UVChannelSelector", _selectedUvChannel >= 0 ? uvChannelNames[_selectedUvChannel] : "None"))
@@ -497,15 +497,15 @@ public class FlverMeshPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Minimum");
-        UIHelper.Tooltip("Minimum extent of the mesh.");
+        UIHelper.ShowHoverTooltip("Minimum extent of the mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Maximum");
-        UIHelper.Tooltip("Maximum extent of the mesh.");
+        UIHelper.ShowHoverTooltip("Maximum extent of the mesh.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Mesh Bounding Box: Unknown");
-        UIHelper.Tooltip("Unknown; only present in Sekiro.");
+        UIHelper.ShowHoverTooltip("Unknown; only present in Sekiro.");
 
         ImGui.NextColumn();
 

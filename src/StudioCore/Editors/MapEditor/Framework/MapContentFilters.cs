@@ -1,20 +1,33 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Core;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
+using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using static HKLib.hk2018.hkaiUserEdgeUtils;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework;
+
 public class MapContentFilters
 {
-    private MapEditor Editor;
+    private MapEditorScreen Screen;
 
-    public MapContentFilters(MapEditor editor)
+    public MapContentFilters(MapEditorScreen screen)
     {
-        Editor = editor;
+        Screen = screen;
     }
 
     public string SearchInput = "";
@@ -31,14 +44,14 @@ public class MapContentFilters
 
         ImGui.SetNextItemWidth(width * 0.6f);
         ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
-        UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
+        UIHelper.ShowHoverTooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
         if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))
         {
             ImGui.OpenPopup("searchInputHint");
         }
-        UIHelper.Tooltip("View documentation on search commands.");
+        UIHelper.ShowHoverTooltip("View documentation on search commands.");
 
         if (ImGui.BeginPopup("searchInputHint"))
         {

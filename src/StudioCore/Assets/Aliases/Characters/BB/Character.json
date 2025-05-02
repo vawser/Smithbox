@@ -1,0 +1,1516 @@
+{
+    "list": [
+        {
+            "id": "c0000",
+            "name": "Player",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1000",
+            "name": "Wolf Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1001",
+            "name": "Skeleton-meat Wolf Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1008",
+            "name": "Moon Wolf Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1010",
+            "name": "Loran Cleric",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1020",
+            "name": "Huntsman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1030",
+            "name": "Brick Troll",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1040",
+            "name": "Skeletal Puppet",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1050",
+            "name": "Chime Maiden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1051",
+            "name": "Chime Maiden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1055",
+            "name": "Chime Maiden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1060",
+            "name": "Brainsucker",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1070",
+            "name": "Celestial Child",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1080",
+            "name": "Skeletal Soldier",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1090",
+            "name": "Cloaked Beast Patient",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1091",
+            "name": "Beast Patient",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1095",
+            "name": "Beast Patient",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1100",
+            "name": "Rat",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1110",
+            "name": "Nightmare Apostle (Patches Face)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1111",
+            "name": "Nightmare Apostle (Patches Body)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1115",
+            "name": "Nightmare Apostles (Patches)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1120",
+            "name": "Rotted Corpse",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1130",
+            "name": "Labyrinth Ritekeeper",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1135",
+            "name": "Labyrinth Ritekeeper",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1140",
+            "name": "Hunting Dog",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1150",
+            "name": "Blood Gel",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1160",
+            "name": "Keeper's Hunting Dog",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1170",
+            "name": "Carrion Crow",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1171",
+            "name": "Carrion Crow (Dog Face)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1180",
+            "name": "Wandering Nightmare",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1190",
+            "name": "Wandering Nightmare",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1210",
+            "name": "Gravekeeper Scorpion",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1211",
+            "name": "Gravekeeper Scorpion",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1212",
+            "name": "Scorpion",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1220",
+            "name": "Cainhurst Gargoyle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1230",
+            "name": "Labyrinth Mole",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1240",
+            "name": "Hunting Dog (Shaggy)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1241",
+            "name": "Hunting Dog (Shaggy, Crow Face)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1250",
+            "name": "Greater Viper Pit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1260",
+            "name": "Viper Pit Hatchling",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1270",
+            "name": "Maneater Boar",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1271",
+            "name": "Maneater Boar (Afflicted)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1290",
+            "name": "Cloaked Beast Patient",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1300",
+            "name": "Nightmare Apostle",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c1400",
+            "name": "Nightmare Apostle (Rom Face)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2000",
+            "name": "Executioner",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2010",
+            "name": "Watcher's Gravedigger",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2020",
+            "name": "Snatcher",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2030",
+            "name": "Tomb Guardian",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2040",
+            "name": "Skeletal Puppet",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2050",
+            "name": "Mad One",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2060",
+            "name": "Cainhurst Hunter",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2070",
+            "name": "Enlarged Head Doll",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2080",
+            "name": "Pilgrim",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2090",
+            "name": "Blood Starved Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2100",
+            "name": "Witch of Hemwick",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2110",
+            "name": "Garden of Eyes",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2120",
+            "name": "Shadow of Yharnam",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2121",
+            "name": "Shadow of Yharnam (Snake)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2130",
+            "name": "Bloodlicker",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2150",
+            "name": "Silver Lady",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2160",
+            "name": "Bone Ash Hunter",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2170",
+            "name": "Vermin Host",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2180",
+            "name": "Abhorrent Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2190",
+            "name": "Hateful Maggot",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2250",
+            "name": "Mergo's Attendant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2260",
+            "name": "Mergo's Chief Attendant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2300",
+            "name": "Matyr Logarius (Alt)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2310",
+            "name": "Matyr Logarius (Alt)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2320",
+            "name": "Matyr Logarius",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2321",
+            "name": "Matyr Logarius (Sword)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2330",
+            "name": "Cainhurst Servant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2400",
+            "name": "Giant Lost Child",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2500",
+            "name": "Small Celestial Emissary",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2501",
+            "name": "Small Celestial Emissary (Spines)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2510",
+            "name": "Ebrietas, Daughter of the Cosmos",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2520",
+            "name": "Celestial Larvae",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2521",
+            "name": "Celestial Larvae",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2525",
+            "name": "Celestial Larvae",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2530",
+            "name": "Fluorescent Flower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2531",
+            "name": "Fluorescent Flower",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2540",
+            "name": "Large Crawler",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2550",
+            "name": "Crawler",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2560",
+            "name": "Winter Lantern",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2570",
+            "name": "Celestial Emissary",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2571",
+            "name": "Celestial Emissary (Spines)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2600",
+            "name": "Large Huntsman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2610",
+            "name": "Hemwick Grave Woman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2620",
+            "name": "Wheelchair Huntsman (Gatling Gun)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2630",
+            "name": "Huntsman (Transformed)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2631",
+            "name": "Huntsman (Transformed)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2632",
+            "name": "Huntsman (Transformed)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2640",
+            "name": "Brick Troll",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2700",
+            "name": "Church Servant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2710",
+            "name": "Father Gascoinge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2711",
+            "name": "Father Gascoinge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2712",
+            "name": "Father Gascoinge",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2720",
+            "name": "Father Gascoinge (Beast)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2730",
+            "name": "Chapel Giant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2740",
+            "name": "Slime Scholar",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2800",
+            "name": "Unknown",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2810",
+            "name": "Unknown",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c2910",
+            "name": "Skeleton (Scimitar)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3000",
+            "name": "Labyrinth Ritekeeper",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3010",
+            "name": "Pthumerian Undead",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3020",
+            "name": "Tomb Guardian",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3030",
+            "name": "Mad One",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3040",
+            "name": "Merciless Watcher",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3050",
+            "name": "Pthumerian Descendant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3060",
+            "name": "Yharnam, Pthumerian Queen",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3100",
+            "name": "Cramped Casket",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3110",
+            "name": "Evil Spirit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3111",
+            "name": "Evil Spirit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3120",
+            "name": "Evil Labyrinth Spirit",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c3130",
+            "name": "Undead Giant",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c4000",
+            "name": "Nightmare Huntsman",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4010",
+            "name": "Nightmare Executioner",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4020",
+            "name": "Enlarged Head Patient",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4021",
+            "name": "Enlarged Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4022",
+            "name": "Enlarged Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4023",
+            "name": "Enlarged Head Patient (Strapped to Chair)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4025",
+            "name": "Enlarged Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4026",
+            "name": "Enlarged Head Patient (Strapped to Chair)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4027",
+            "name": "Enlarged Head Patient",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4030",
+            "name": "Living Failure",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4040",
+            "name": "Fishwitch",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4050",
+            "name": "Lightning Summoner",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4051",
+            "name": "Lightning Summoner",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4055",
+            "name": "Lightning Summoner (No Pole)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4060",
+            "name": "Shark-Giant",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4070",
+            "name": "Orphan of Kos (Shell)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4071",
+            "name": "Orphan of Kos (Shell)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4080",
+            "name": "Deep Sea Hound",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4090",
+            "name": "Snail Woman",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4095",
+            "name": "Snail Woman",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4100",
+            "name": "Blood Dobermann",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4110",
+            "name": "Nightmare Huntsman",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4120",
+            "name": "Enlarged Head Patient",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4130",
+            "name": "Bloodlicker",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4140",
+            "name": "Cloaked Beast Patient",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4150",
+            "name": "Enlarged Head Patient",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4160",
+            "name": "Enlarged Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4500",
+            "name": "Laurence, the First Vicar",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4510",
+            "name": "Ludwig, the Holy Blade",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4511",
+            "name": "Ludwig's Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4515",
+            "name": "Ludwig's Head",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4520",
+            "name": "Lady Maria of the Astral Clocktower",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4530",
+            "name": "Kos Parasite Body",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4531",
+            "name": "Kos Parasite Body",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4540",
+            "name": "Standing Orphan of Kos",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4541",
+            "name": "Standing Orphan of Kos (Flaps)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4542",
+            "name": "Standing Orphan of Kos (Club)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4550",
+            "name": "Orphan of Kos (Sliver)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c4560",
+            "name": "Orphan of Kos (Child)",
+            "tags": [
+                "DLC"
+            ]
+        },
+        {
+            "id": "c5000",
+            "name": "Cleric Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5010",
+            "name": "Watchdog of the Old Lords",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5020",
+            "name": "Vicar Amelia",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5030",
+            "name": "Giant Snake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5031",
+            "name": "Snake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5032",
+            "name": "Snake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5033",
+            "name": "Snake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5034",
+            "name": "Snake",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5040",
+            "name": "Abhorrent Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5045",
+            "name": "Abhorrent Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5050",
+            "name": "Unknown",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5060",
+            "name": "Cainhurst Horse",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5070",
+            "name": "The One Reborn",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5080",
+            "name": "Darkbeast Paarl",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5090",
+            "name": "Bloodletting Beast (Worm)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5100",
+            "name": "Rom, the Vacuous Spider",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5110",
+            "name": "Great One Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5120",
+            "name": "Amygdala",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5130",
+            "name": "Master Willem",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5135",
+            "name": "Master Willem",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5140",
+            "name": "Amygdala",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5150",
+            "name": "Mensis Brain",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5160",
+            "name": "Mensis Brain (Dropped)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5400",
+            "name": "Moon Presence",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5410",
+            "name": "Moon Presence",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5420",
+            "name": "Moon Presence",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5500",
+            "name": "UNUSED - Demon Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5501",
+            "name": "UNUSED - Demon Beast Head",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5502",
+            "name": "UNUSED - Demon Beast Head",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5510",
+            "name": "Mergo's Wet Nurse",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5511",
+            "name": "Mergo's Wet Nurse - Right Blade",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5512",
+            "name": "Mergo's Wet Nurse - Left Blade",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5520",
+            "name": "UNUSED - Winged Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5521",
+            "name": "UNUSED - Winged Beast Head",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c5522",
+            "name": "UNUSED - Winged Beast Head",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c7000",
+            "name": "UNUSED - Test Beast",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c7010",
+            "name": "UNUSED - Cuddly Fat Nose",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c7100",
+            "name": "Djura Gatling Gun",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c7110",
+            "name": "Cainhurst Carriage",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c7500",
+            "name": "Beast Possessed Soul",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8000",
+            "name": "UNUSED - Preacher",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8010",
+            "name": "UNUSED - Witch",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8020",
+            "name": "UNUSED - Maiden",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8030",
+            "name": "Plain Doll",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8035",
+            "name": "Plain Doll",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8040",
+            "name": "Gehrman in Chair",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8045",
+            "name": "Gehrman in Chair",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8050",
+            "name": "Gehrman (Boss)",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8060",
+            "name": "Micolash",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c8070",
+            "name": "Yharnam Queen",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9000",
+            "name": "Messengers",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9020",
+            "name": "Messengers",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9040",
+            "name": "Weapons",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9050",
+            "name": "Pistols",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9900",
+            "name": "UNUSED - Knight",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9910",
+            "name": "Tapestry Cloth",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9911",
+            "name": "Tapestry Cloth",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9940",
+            "name": "UNUSED - Shaman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9941",
+            "name": "UNUSED - Shaman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9942",
+            "name": "UNUSED - Shaman",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9980",
+            "name": "Cutscene - Matyr Logarius",
+            "tags": [
+                ""
+            ]
+        },
+        {
+            "id": "c9990",
+            "name": "Hunter (Shield)",
+            "tags": [
+                ""
+            ]
+        }
+    ]
+}

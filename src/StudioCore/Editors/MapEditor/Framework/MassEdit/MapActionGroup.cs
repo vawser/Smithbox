@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using StudioCore.Editors.MapEditor.Actions.Viewport;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
+
 public class MapActionGroup
 {
     public string MapID { get; set; }

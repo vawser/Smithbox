@@ -20,9 +20,5 @@
       <PackageReference Include="System.Text.Json" Version="8.0.5" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\SoulsFormats\SoulsFormats\SoulsFormats.csproj" />
-    </ItemGroup>
-
 
 </Project>

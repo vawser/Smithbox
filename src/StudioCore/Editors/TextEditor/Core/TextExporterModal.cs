@@ -4,7 +4,6 @@ using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,7 +39,7 @@ public class TextExporterModal
     {
         if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            var width = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+            var width = UI.ModalButtonSize;
 
             ImGui.Text("Name");
             ImGui.SetNextItemWidth(width.X);
@@ -50,7 +49,7 @@ public class TextExporterModal
             {
                 ImGui.BeginDisabled();
             }
-            if (ImGui.Button("Export", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.Button("Export", UI.ModalButtonHalfSize))
             {
                 ShowModal = false;
                 FmgExporter.ProcessExport(WrapperName);
@@ -61,7 +60,7 @@ public class TextExporterModal
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Close", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
+            if (ImGui.Button("Close", UI.ModalButtonHalfSize))
             {
                 ShowModal = false;
             }

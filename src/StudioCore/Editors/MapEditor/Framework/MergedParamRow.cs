@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework;
 
 /// <summary>
 ///     Because fromsoft divided enemy placement into two params in DS2, this class exists

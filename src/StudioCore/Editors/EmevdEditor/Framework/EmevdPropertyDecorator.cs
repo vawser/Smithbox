@@ -3,7 +3,7 @@ using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using SoulsFormats.KF4;
-using StudioCore.Core;
+using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;

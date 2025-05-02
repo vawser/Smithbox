@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Framework.Decorators;
+
 public static class PropInfo_Region_Connection
 {
     public static void Display(Entity firstEnt)

@@ -35,7 +35,7 @@ public class ModelToolMenubar
             {
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
-            UIHelper.Tooltip($"Display the color picker.");
+            UIHelper.ShowHoverTooltip($"Display the color picker.");
 
             // Export Model
             if (ImGui.MenuItem("Export Model", KeyBindings.Current.MODEL_ExportModel.HintText))
@@ -49,7 +49,7 @@ public class ModelToolMenubar
                     ModelObjectExporter.ExportModel(Screen);
                 }
             }
-            UIHelper.Tooltip($"Export currently loaded model.");
+            UIHelper.ShowHoverTooltip($"Export currently loaded model.");
 
             // Solve Bounding Boxes
             if (ImGui.MenuItem("Solve Bounding Boxes"))

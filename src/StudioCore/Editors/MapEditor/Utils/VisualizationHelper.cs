@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
 
-namespace StudioCore.Editors.MapEditorNS;
+namespace StudioCore.Editors.MapEditor.Helpers;
 
 public static class VisualizationHelper
 {

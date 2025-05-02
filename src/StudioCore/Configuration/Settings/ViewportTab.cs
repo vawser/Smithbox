@@ -30,53 +30,53 @@ public class ViewportTab
             {
                 CFG.Current.System_Frame_Rate = (float)Math.Round(CFG.Current.System_Frame_Rate);
             }
-            UIHelper.Tooltip("Adjusts the frame rate of the viewport.");
+            UIHelper.ShowHoverTooltip("Adjusts the frame rate of the viewport.");
 
             ImGui.Separator();
 
             // Toggle Rendering
             ImGui.Checkbox("Enable rendering", ref CFG.Current.Viewport_Enable_Rendering);
-            UIHelper.Tooltip("Enabling this option will allow Smithbox to render entities in the viewport.");
+            UIHelper.ShowHoverTooltip("Enabling this option will allow Smithbox to render entities in the viewport.");
 
             // Toggle Texturing
             ImGui.Checkbox("Enable texturing", ref CFG.Current.Viewport_Enable_Texturing);
-            UIHelper.Tooltip("Enabling this option will allow Smithbox to render the textures of models within the viewport.");
+            UIHelper.ShowHoverTooltip("Enabling this option will allow Smithbox to render the textures of models within the viewport.");
 
             // Toggle culling
             ImGui.Checkbox("Enable frustum culling", ref CFG.Current.Viewport_Enable_Culling);
-            UIHelper.Tooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
+            UIHelper.ShowHoverTooltip("Enabling this option will cause entities outside of the camera frustum to be culled.");
 
             ImGui.Separator();
 
             if (ImGui.InputInt("Renderables", ref CFG.Current.Viewport_Limit_Renderables, 0, 0))
                 if (CFG.Current.Viewport_Limit_Renderables < CFG.Default.Viewport_Limit_Renderables)
                     CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
-            UIHelper.Tooltip("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
+            UIHelper.ShowHoverTooltip("This value constrains the number of renderable entities that are allowed. Exceeding this value will throw an exception.");
 
             Utils.ImGui_InputUint("Indirect Draw buffer", ref CFG.Current.Viewport_Limit_Buffer_Indirect_Draw);
-            UIHelper.Tooltip("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
+            UIHelper.ShowHoverTooltip("This value constrains the size of the indirect draw buffer. Exceeding this value will throw an exception.");
 
             Utils.ImGui_InputUint("FLVER Bone buffer", ref CFG.Current.Viewport_Limit_Buffer_Flver_Bone);
-            UIHelper.Tooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
+            UIHelper.ShowHoverTooltip("This value constrains the size of the FLVER bone buffer. Exceeding this value will throw an exception.");
 
             ImGui.Separator();
 
             ImGui.InputFloat("Default Model Render: Brightness", ref CFG.Current.Viewport_DefaultRender_Brightness);
-            UIHelper.Tooltip("Change the brightness modifier for the Default Model Rendering shader.");
+            UIHelper.ShowHoverTooltip("Change the brightness modifier for the Default Model Rendering shader.");
             ImGui.InputFloat("Default Model Render: Saturation", ref CFG.Current.Viewport_DefaultRender_Saturation);
-            UIHelper.Tooltip("Change the saturation modifier for the Default Model Rendering shader.");
+            UIHelper.ShowHoverTooltip("Change the saturation modifier for the Default Model Rendering shader.");
 
             ImGui.Checkbox("Enable enemy model masks", ref CFG.Current.Viewport_Enable_Model_Masks);
-            UIHelper.Tooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
+            UIHelper.ShowHoverTooltip("Attempt to display the correct model masks for enemies based on NpcParam.");
 
             ImGui.Checkbox("Draw LOD facesets", ref CFG.Current.Viewport_Enable_LOD_Facesets);
-            UIHelper.Tooltip("Render all facesets for all FLVER meshes, including LOD ones.");
+            UIHelper.ShowHoverTooltip("Render all facesets for all FLVER meshes, including LOD ones.");
 
             if (ImGui.Button("Reset##ResetRenderProperties", defaultButtonSize))
             {
                 ResetRenderingCFG();
             }
-            UIHelper.Tooltip("Resets all of the values within this section to their default values.");
+            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
         }
         //---------------------------------------
         // Visualization
@@ -86,10 +86,10 @@ public class ViewportTab
             ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);
-            UIHelper.Tooltip("Enabling this option will cause a selection outline to appear on selected objects.");
+            UIHelper.ShowHoverTooltip("Enabling this option will cause a selection outline to appear on selected objects.");
 
             ImGui.Checkbox("Enable box selection", ref CFG.Current.Viewport_Enable_BoxSelection);
-            UIHelper.Tooltip("Click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)");
+            UIHelper.ShowHoverTooltip("Click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)");
 
             ImGui.Separator();
 
@@ -160,7 +160,7 @@ public class ViewportTab
             {
                 ResetVisualisationCFG();
             }
-            UIHelper.Tooltip("Resets all of the values within this section to their default values.");
+            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
         }
 
@@ -173,42 +173,42 @@ public class ViewportTab
 
             if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
                 CFG.Current.Viewport_Camera_FOV = cam_fov;
-            UIHelper.Tooltip("Set the field of view used by the camera within DSMS.");
+            UIHelper.ShowHoverTooltip("Set the field of view used by the camera within DSMS.");
 
             var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
 
             if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
                 CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
-            UIHelper.Tooltip("Mouse sensitivty for turning the camera.");
+            UIHelper.ShowHoverTooltip("Mouse sensitivty for turning the camera.");
 
             var farClip = CFG.Current.Viewport_RenderDistance_Max;
 
             if (ImGui.SliderFloat("Map max render distance", ref farClip, 10.0f, 500000.0f))
                 CFG.Current.Viewport_RenderDistance_Max = farClip;
-            UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
+            UIHelper.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
             var worldView = Smithbox.EditorHandler.MapEditor.MapViewportView.Viewport.WorldView;
 
             if (ImGui.SliderFloat("Map camera speed (slow)",
                     ref worldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
                 CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
-            UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
+            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
 
             if (ImGui.SliderFloat("Map camera speed (normal)",
                     ref worldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
                 CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
-            UIHelper.Tooltip("Set the speed at which the camera will move whilst moving normally.");
+            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
 
             if (ImGui.SliderFloat("Map camera speed (fast)",
                     ref worldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
                 CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
-            UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
 
             if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
             {
                 ResetCameraCFG();
             }
-            UIHelper.Tooltip("Resets all of the values within this section to their default values.");
+            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
 
         }
 
@@ -218,13 +218,13 @@ public class ViewportTab
         if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Display information panel", ref CFG.Current.Viewport_Enable_ViewportInfoPanel);
-            UIHelper.Tooltip("Display the information panel.");
+            UIHelper.ShowHoverTooltip("Display the information panel.");
 
             ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
-            UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
+            UIHelper.ShowHoverTooltip("Display the current degree increment type you are using in the information panel.");
 
             ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
-            UIHelper.Tooltip("Display the current movement increment type you are using in the information panel.");
+            UIHelper.ShowHoverTooltip("Display the current movement increment type you are using in the information panel.");
         }
 
         //---------------------------------------
@@ -245,12 +245,12 @@ public class ViewportTab
             {
                 ResetSceneFilterPresetCFG();
             }
-            UIHelper.Tooltip("Reset the values within this section to their default values.");
+            UIHelper.ShowHoverTooltip("Reset the values within this section to their default values.");
 
         }
     }
 
-    private void SettingsRenderFilterPresetEditor(RenderFilterPreset preset)
+    private void SettingsRenderFilterPresetEditor(CFG.RenderFilterPreset preset)
     {
         ImGui.PushID($"{preset.Name}##PresetEdit");
         if (ImGui.CollapsingHeader($"{preset.Name}##Header"))

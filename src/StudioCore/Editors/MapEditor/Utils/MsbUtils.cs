@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace StudioCore.Editors.MapEditorNS;
+#nullable enable
 
 public class MsbUtils
 {
