@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +32,7 @@ public class PrefabAttributes
 public abstract class Prefab : PrefabAttributes
 {
     public abstract bool ImportJson(string path);
-    public abstract List<MsbEntity> GenerateMapEntities(MapEditor editor, MapContainer targetMap);
+    public abstract List<MsbEntity> GenerateMapEntities(MapContainer targetMap);
     public abstract void ExportSelection(string filepath, string name, string tags, ViewportSelection _selection);
 
     protected abstract IMsb Map();
@@ -52,7 +53,7 @@ public abstract class Prefab : PrefabAttributes
         };
     }
 
-    public void ImportToMap(MapEditor editor, MapContainer targetMap, string prefixName = null)
+    public void ImportToMap(MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
     {
         if (targetMap is null)
         {
@@ -62,16 +63,16 @@ public abstract class Prefab : PrefabAttributes
 
         prefixName ??= PrefabName;
         var parent = targetMap.RootObject;
-        List<MsbEntity> ents = GenerateMapEntities(editor, targetMap);
+        List<MsbEntity> ents = GenerateMapEntities(targetMap);
         var entries = ents.Select((entity) => entity.WrappedObject as IMsbEntry);
 
         foreach (var entry in entries)
         {
-            MapEditorUtils.RenameWithRefs(entries, entry, prefixName + entry.Name);
+            RenameWithRefs(entries, entry, prefixName + entry.Name);
         }
 
-        AddMapObjectsAction act = new(editor, targetMap, ents, true, parent);
-        editor.EditorActionManager.ExecuteAction(act);
+        AddMapObjectsAction act = new(targetMap, _scene, ents, true, parent);
+        _actionManager.ExecuteAction(act);
     }
 
     public List<string> GetSelectedPrefabObjects()
@@ -122,13 +123,13 @@ internal class Prefab<T> : Prefab
                 ent.GetType().GetProperty("EntityGroupIDs")?.SetValue(ent, new uint[] { });
             }
 
-            MapEditorUtils.StripMsbReference(entries, copy.WrappedObject as IMsbEntry);
+            StripMsbReference(entries, copy.WrappedObject as IMsbEntry);
             map.AddObject(copy);
         }
         map.SerializeToMSB(pseudoMap, Type);
     }
 
-    public override List<MsbEntity> GenerateMapEntities(MapEditor editor, MapContainer targetMap)
+    public override List<MsbEntity> GenerateMapEntities(MapContainer targetMap)
     {
         // Notes for grouped prefabs/scene tree support:
         // * Problem: to retain this information in MSB upon saving/loading, something will need to be saved somewhere. Maybe a meta file?
@@ -143,7 +144,7 @@ internal class Prefab<T> : Prefab
             foreach (var part in category.GetEntries())
             {
                 // Using the untyped constructor so that the model is not set
-                var entity = new MsbEntity(editor, targetMap, copy(part)) { Type = type };
+                var entity = new MsbEntity(targetMap, copy(part)) { Type = type };
                 yield return entity;
             }
         }

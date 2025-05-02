@@ -239,7 +239,7 @@ public class ModelViewportManager
             ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.Scale);
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -307,7 +307,7 @@ public class ModelViewportManager
             ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.Scale);
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -374,7 +374,7 @@ public class ModelViewportManager
             ImGui.SetNextItemAllowOverlap();
             var isVisible = curEntity.EditorVisible;
             ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.Scale);
+            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));

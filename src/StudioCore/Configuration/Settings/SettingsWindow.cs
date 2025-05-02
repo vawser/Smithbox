@@ -129,7 +129,7 @@ public class SettingsWindow
 
     public void Display()
     {
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         if (!MenuOpenState)
             return;

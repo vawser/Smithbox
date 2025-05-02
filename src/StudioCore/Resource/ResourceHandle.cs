@@ -1,5 +1,4 @@
-﻿using StudioCore.Resource.Types;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using static SoulsFormats.MQB;

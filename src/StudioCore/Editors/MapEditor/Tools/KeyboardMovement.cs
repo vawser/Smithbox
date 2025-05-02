@@ -1,5 +1,4 @@
 ﻿using StudioCore.Configuration;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;

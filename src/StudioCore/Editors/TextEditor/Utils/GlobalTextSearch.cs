@@ -110,13 +110,13 @@ public static class GlobalTextSearch
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.Scale)))
+        if (ImGui.Button("Search##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
         {
             HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.Scale)))
+        if (ImGui.Button("Clear##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
         {
             HasSearched = false;
             SearchResults.Clear();

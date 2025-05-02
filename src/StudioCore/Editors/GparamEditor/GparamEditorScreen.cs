@@ -177,7 +177,7 @@ public class GparamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

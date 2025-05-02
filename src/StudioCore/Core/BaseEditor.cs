@@ -154,8 +154,8 @@ public class BaseEditor
     /// <summary>
     /// Editor main loop
     /// </summary>
-    /// <param name="dt"></param>
-    private unsafe void Update(float dt)
+    /// <param name="deltaseconds"></param>
+    private unsafe void Update(float deltaseconds)
     {
         if (CFG.Current.AllowInterfaceMovement)
         {
@@ -170,16 +170,16 @@ public class BaseEditor
 
         DPI.UpdateDpi(GraphicsContext);
 
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         if (FontRebuildRequest)
         {
-            GraphicsContext.ImguiRenderer.Update(dt, InputTracker.FrameSnapshot, SetupFonts);
+            GraphicsContext.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, SetupFonts);
             FontRebuildRequest = false;
         }
         else
         {
-            GraphicsContext.ImguiRenderer.Update(dt, InputTracker.FrameSnapshot, null);
+            GraphicsContext.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, null);
         }
 
         TaskManager.ThrowTaskExceptions();
@@ -223,7 +223,7 @@ public class BaseEditor
             {
                 if (projectEntry == SelectedProject)
                 {
-                    projectEntry.Draw(dt, commandsplit);
+                    projectEntry.Draw(commandsplit);
                 }
             }
         }
@@ -632,8 +632,8 @@ public class BaseEditor
 
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.Scale);
-        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.Scale);
+        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
+        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
 
         fonts.AddFontDefault();
 

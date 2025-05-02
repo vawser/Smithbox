@@ -1,6 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditorNS;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
@@ -11,7 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Editors.MapEditor.Framework.MsbEntity;
 using static StudioCore.Editors.MapEditorNS.MsbEntity;
 
 namespace StudioCore.Scene.Helpers;
@@ -22,8 +25,10 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Part map object
     /// </summary>
-    public static RenderableProxy GetModelDrawable(MapEditor editor, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
+    public static RenderableProxy GetModelDrawable(RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
     {
+        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+
         ResourceDescriptor asset;
         var loadcol = false;
         var loadnav = false;
@@ -85,7 +90,7 @@ public static class DrawableHelper
         if (loadcol)
         {
             MeshRenderableProxy mesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(
-                editor.RenderScene, asset.AssetVirtualPath, modelMarkerType);
+                scene, asset.AssetVirtualPath, modelMarkerType);
             mesh.World = obj.GetWorldMatrix();
             mesh.SetSelectable(obj);
             mesh.DrawFilter = RenderFilter.Collision;
@@ -105,7 +110,7 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (editor.Universe.HasProcessedMapLoad)
+                if (universe.HasProcessedMapLoad)
                 {
                     task.Wait();
                 }
@@ -114,10 +119,10 @@ public static class DrawableHelper
             return mesh;
         }
 
-        if (loadnav && editor.Project.ProjectType != ProjectType.DS2S && editor.Project.ProjectType != ProjectType.DS2)
+        if (loadnav && Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
-                editor.RenderScene, asset.AssetVirtualPath, modelMarkerType);
+                scene, asset.AssetVirtualPath, modelMarkerType);
             mesh.World = obj.GetWorldMatrix();
             obj.RenderSceneMesh = mesh;
             mesh.SetSelectable(obj);
@@ -136,7 +141,7 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (editor.Universe.HasProcessedMapLoad)
+                if (universe.HasProcessedMapLoad)
                 {
                     task.Wait();
                 }
@@ -158,7 +163,7 @@ public static class DrawableHelper
             }
         }
 
-        var model = MeshRenderableProxy.MeshRenderableFromFlverResource(editor.RenderScene, asset.AssetVirtualPath, modelMarkerType, masks);
+        var model = MeshRenderableProxy.MeshRenderableFromFlverResource(scene, asset.AssetVirtualPath, modelMarkerType, masks);
         model.DrawFilter = filt;
         model.World = obj.GetWorldMatrix();
         obj.RenderSceneMesh = model;
@@ -177,7 +182,7 @@ public static class DrawableHelper
             }
 
             Task task = job.Complete();
-            if (editor.Universe.HasProcessedMapLoad)
+            if (universe.HasProcessedMapLoad)
             {
                 task.Wait();
             }
@@ -190,7 +195,7 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Region map object
     /// </summary>
-    public static RenderableProxy GetRegionDrawable(MapEditor editor, MapContainer map, Entity obj, RenderModelType renderType)
+    public static RenderableProxy GetRegionDrawable(RenderScene scene, MapContainer map, Entity obj, RenderModelType renderType)
     {
         DebugPrimitiveRenderableProxy mesh = null;
 
@@ -202,37 +207,37 @@ public static class DrawableHelper
                 // BOX
                 if (r.Shape is MSB.Shape.Box)
                 {
-                    mesh = RenderableHelper.GetSolidBoxRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
                 }
                 // SPHERE
                 else if (r.Shape is MSB.Shape.Sphere)
                 {
-                    mesh = RenderableHelper.GetSolidSphereRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidSphereRegionProxy(scene);
                 }
                 // CYLINDER
                 else if (r.Shape is MSB.Shape.Cylinder)
                 {
-                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
                 }
                 // POINT
                 else if (r.Shape is MSB.Shape.Point)
                 {
-                    mesh = RenderableHelper.GetSolidPointRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
                 }
                 // RECTANGLE
                 else if (r.Shape is MSB.Shape.Rectangle)
                 {
-                    mesh = RenderableHelper.GetSolidBoxRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidBoxRegionProxy(scene);
                 }
                 // CIRCLE
                 else if (r.Shape is MSB.Shape.Circle)
                 {
-                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidCylinderRegionProxy(scene);
                 }
                 // COMPOSITE
                 else if (r.Shape is MSB.Shape.Composite)
                 {
-                    mesh = RenderableHelper.GetSolidPointRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSolidPointRegionProxy(scene);
                 }
             }
             // WIREFRAME
@@ -241,37 +246,37 @@ public static class DrawableHelper
                 // BOX
                 if (r.Shape is MSB.Shape.Box)
                 {
-                    mesh = RenderableHelper.GetBoxRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
                 }
                 // SPHERE
                 else if (r.Shape is MSB.Shape.Sphere)
                 {
-                    mesh = RenderableHelper.GetSphereRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetSphereRegionProxy(scene);
                 }
                 // CYLINDER
                 else if (r.Shape is MSB.Shape.Cylinder)
                 {
-                    mesh = RenderableHelper.GetCylinderRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
                 }
                 // POINT
                 else if (r.Shape is MSB.Shape.Point)
                 {
-                    mesh = RenderableHelper.GetPointRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetPointRegionProxy(scene);
                 }
                 // RECTANGLE
                 else if (r.Shape is MSB.Shape.Rectangle)
                 {
-                    mesh = RenderableHelper.GetBoxRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetBoxRegionProxy(scene);
                 }
                 // CIRCLE
                 else if (r.Shape is MSB.Shape.Circle)
                 {
-                    mesh = RenderableHelper.GetCylinderRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetCylinderRegionProxy(scene);
                 }
                 // COMPOSITE
                 else if (r.Shape is MSB.Shape.Composite)
                 {
-                    mesh = RenderableHelper.GetPointRegionProxy(editor.RenderScene);
+                    mesh = RenderableHelper.GetPointRegionProxy(scene);
                 }
             }
         }
@@ -289,7 +294,7 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Light map object
     /// </summary>
-    public static RenderableProxy GetLightDrawable(MapEditor editor, MapContainer map, Entity obj, RenderModelType renderType)
+    public static RenderableProxy GetLightDrawable(RenderScene scene, MapContainer map, Entity obj, RenderModelType renderType)
     {
         var light = (BTL.Light)obj.WrappedObject;
 
@@ -300,17 +305,17 @@ public static class DrawableHelper
         {
             if (light.Type is BTL.LightType.Directional)
             {
-                mesh = RenderableHelper.GetSolidDirectionalLightProxy(obj, editor.RenderScene);
+                mesh = RenderableHelper.GetSolidDirectionalLightProxy(obj, scene);
             }
 
             if (light.Type is BTL.LightType.Point)
             {
-                mesh = RenderableHelper.GetSolidPointLightProxy(obj, editor.RenderScene);
+                mesh = RenderableHelper.GetSolidPointLightProxy(obj, scene);
             }
 
             if (light.Type is BTL.LightType.Spot)
             {
-                mesh = RenderableHelper.GetSolidSpotLightProxy(obj, editor.RenderScene);
+                mesh = RenderableHelper.GetSolidSpotLightProxy(obj, scene);
             }
         }
         // WIREFRAME
@@ -318,17 +323,17 @@ public static class DrawableHelper
         {
             if (light.Type is BTL.LightType.Directional)
             {
-                mesh = RenderableHelper.GetDirectionalLightProxy(editor.RenderScene);
+                mesh = RenderableHelper.GetDirectionalLightProxy(scene);
             }
 
             if (light.Type is BTL.LightType.Point)
             {
-                mesh = RenderableHelper.GetPointLightProxy(editor.RenderScene);
+                mesh = RenderableHelper.GetPointLightProxy(scene);
             }
 
             if (light.Type is BTL.LightType.Spot)
             {
-                mesh = RenderableHelper.GetSpotLightProxy(editor.RenderScene);
+                mesh = RenderableHelper.GetSpotLightProxy(scene);
             }
         }
 
@@ -345,9 +350,9 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a DS2 EventLocation map object
     /// </summary>
-    public static RenderableProxy GetDS2EventLocationDrawable(MapEditor editor, MapContainer map, Entity obj)
+    public static RenderableProxy GetDS2EventLocationDrawable(RenderScene scene, MapContainer map, Entity obj)
     {
-        DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(editor.RenderScene);
+        DebugPrimitiveRenderableProxy mesh = RenderableHelper.GetBoxRegionProxy(scene);
 
         mesh.World = obj.GetWorldMatrix();
         obj.RenderSceneMesh = mesh;
@@ -360,7 +365,7 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Patrol Line map object
     /// </summary>
-    public static RenderableProxy GetPatrolLineDrawable(MapEditor editor, Entity selectable, Entity obj, List<Vector3> points, List<Vector3> looseStartPoints, bool endAtStart, bool random)
+    public static RenderableProxy GetPatrolLineDrawable(RenderScene scene, Entity selectable, Entity obj, List<Vector3> points, List<Vector3> looseStartPoints, bool endAtStart, bool random)
     {
         if (points.Count + looseStartPoints.Count < 2)
         {
@@ -368,7 +373,7 @@ public static class DrawableHelper
         }
 
         DbgPrimWireChain line = new(points, looseStartPoints, System.Drawing.Color.Red, endAtStart, random);
-        DebugPrimitiveRenderableProxy mesh = new(editor.RenderScene.OpaqueRenderables, line)
+        DebugPrimitiveRenderableProxy mesh = new(scene.OpaqueRenderables, line)
         {
             BaseColor = System.Drawing.Color.Red,
             HighlightedColor = System.Drawing.Color.Red,

@@ -1,12 +1,16 @@
 ﻿using SoulsFormats;
-using StudioCore.Editors.MapEditorNS;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Meshes;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace StudioCore.Scene.Helpers;
 

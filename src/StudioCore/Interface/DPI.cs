@@ -42,14 +42,11 @@ public static class DPI
         }
     }
 
-    public static float Scale
+    public static float GetUIScale()
     {
-        get
-        {
-            var scale = UI.Current.System_UI_Scale;
-            if (UI.Current.System_ScaleByDPI)
-                scale = scale / DefaultDpi * Dpi;
-            return scale;
-        }
+        var scale = UI.Current.System_UI_Scale;
+        if (UI.Current.System_ScaleByDPI)
+            scale = scale / DefaultDpi * Dpi;
+        return scale;
     }
 }

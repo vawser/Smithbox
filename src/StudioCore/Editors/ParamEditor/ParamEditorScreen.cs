@@ -696,7 +696,7 @@ public class ParamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_PARAM)
             return;
 
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
         {
@@ -1718,7 +1718,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void MassEditPopups()
     {
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         // Popup size relies on magic numbers. Multiline maxlength is also arbitrary.
         if (ImGui.BeginPopup("massEditMenuRegex"))

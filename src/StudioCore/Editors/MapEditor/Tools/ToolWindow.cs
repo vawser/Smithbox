@@ -12,8 +12,6 @@ public class ToolWindow
 {
     private MapEditor Editor;
 
-    private string WindowName = "Tool Window##mapEditorTools";
-
     public ToolWindow(MapEditor editor)
     {
         Editor = editor;
@@ -21,18 +19,17 @@ public class ToolWindow
 
     public bool FocusLocalPropertySearch = false;
 
-    public void Display()
+    public void OnGui()
     {
-        if (!UI.Current.Interface_MapEditor_ToolWindow)
-            return;
-
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
-        UIHelper.ApplyChildStyle();
-        if (ImGui.Begin(WindowName))
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor"))
         {
-            Editor.EditorFocus.SetFocusContext(MapEditorContext.ToolWindow);
+            Editor.FocusManager.SwitchWindowContext(MapEditorContext.ToolWindow);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
@@ -1039,6 +1036,6 @@ public class ToolWindow
         }
 
         ImGui.End();
-        UIHelper.UnapplyChildStyle();
+        ImGui.PopStyleColor(1);
     }
 }

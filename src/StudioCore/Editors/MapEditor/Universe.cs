@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Resource;
@@ -441,7 +440,7 @@ public class Universe
     public void LoadDS2Generators(string mapid, MapContainer map)
     {
         Dictionary<long, Param.Row> registParams = new();
-        Dictionary<long, MapParamRow> generatorParams = new();
+        Dictionary<long, MergedParamRow> generatorParams = new();
         Dictionary<long, Entity> generatorObjs = new();
         Dictionary<long, Param.Row> eventParams = new();
         Dictionary<long, Param.Row> eventLocationParams = new();
@@ -470,7 +469,7 @@ public class Universe
             }
 
 
-            MapParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
+            MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
@@ -495,7 +494,7 @@ public class Universe
             }
             else
             {
-                MapParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
+                MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
                 MsbEntity obj = new(map, mergedRow, MsbEntityType.DS2Generator);

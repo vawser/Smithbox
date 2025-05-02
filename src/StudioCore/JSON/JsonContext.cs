@@ -1,5 +1,4 @@
-﻿using StudioCore.Banks.FormatBank;
-using StudioCore.Core;
+﻿using StudioCore.Core;
 using StudioCore.Core.ProjectNS;
 using StudioCore.Interface;
 using System;
@@ -34,17 +33,8 @@ namespace StudioCore.Resources.JSON;
 
 // Map Editor
 [JsonSerializable(typeof(MassEditTemplate))]
-
 [JsonSerializable(typeof(EntitySelectionGroupList))]
 [JsonSerializable(typeof(EntitySelectionEntry))]
-
-[JsonSerializable(typeof(SpawnStateResource))]
-[JsonSerializable(typeof(SpawnStateEntry))]
-[JsonSerializable(typeof(SpawnStatePair))]
-
-[JsonSerializable(typeof(FormatMask))]
-[JsonSerializable(typeof(FormatMaskEntry))]
-[JsonSerializable(typeof(MaskSection))]
 
 // 
 

@@ -7,18 +7,15 @@ namespace StudioCore.Editor;
 
 public class ObjectContainer
 {
-    public MapEditor Editor;
-
     [XmlIgnore] public List<Entity> Objects = new();
     public ObjectContainer()
     {
     }
 
-    public ObjectContainer(MapEditor editor, string name)
+    public ObjectContainer(string name)
     {
-        Editor = editor;
         Name = name;
-        RootObject = new Entity(editor, this, new MapTransformNode());
+        RootObject = new Entity(this, new MapTransformNode());
     }
 
     public string Name { get; set; }

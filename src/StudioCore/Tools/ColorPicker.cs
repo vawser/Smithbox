@@ -18,7 +18,7 @@ public static class ColorPicker
 
     public static void DisplayColorPicker()
     {
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         if (!ShowColorPicker)
             return;

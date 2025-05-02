@@ -15,7 +15,7 @@ public static class UIHelper
 {
     public static void ApplyBaseStyle()
     {
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
         ImGuiStylePtr style = ImGui.GetStyle();
 
         // Colors
@@ -71,27 +71,6 @@ public static class UIHelper
     {
         ImGui.PopStyleColor(29);
         ImGui.PopStyleVar(14);
-    }
-
-    public static void ApplyMainStyle()
-    {
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-    }
-
-    public static void UnpplyMainStyle()
-    {
-        ImGui.PopStyleColor(1);
-    }
-
-    public static void ApplyChildStyle()
-    {
-        ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-    }
-
-    public static void UnapplyChildStyle()
-    {
-        ImGui.PopStyleColor(2);
     }
 
     public static void RestoreImguiIfMissing()

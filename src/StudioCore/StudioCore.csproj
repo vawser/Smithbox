@@ -87,9 +87,4 @@
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Editors\CutsceneEditor\Actions\" />
-    <Folder Include="Editors\CutsceneEditor\Utils\" />
-  </ItemGroup>
-
 </Project>

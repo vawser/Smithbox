@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Resources.JSON;
 using StudioCore.Utilities;
@@ -91,7 +90,7 @@ public class SelectionGroupView
         }
     }
 
-    public void Update()
+    public void OnGui()
     {
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;

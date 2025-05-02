@@ -170,7 +170,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         if (!CFG.Current.EnableViewer_TEXTURE)
             return;
 
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

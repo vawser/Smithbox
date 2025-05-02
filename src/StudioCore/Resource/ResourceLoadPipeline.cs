@@ -1,5 +1,4 @@
 ﻿using SoulsFormats;
-using StudioCore.Editors.ModelEditor.Framework.Types;
 using StudioCore.Resource.Types;
 using StudioCore.Tasks;
 using StudioCore.UserProject;

@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditorNS;
 using StudioCore.Interface;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Meshes;
@@ -11,20 +11,22 @@ public class EntityInformationView
 {
     private MapEditor Editor;
 
-    private string WindowName = "Entity Information##mapEditorEntityInformation";
-
     public EntityInformationView(MapEditor editor)
     {
         Editor = editor;
     }
 
-    public void Display()
+    public void OnGui()
     {
         if (!UI.Current.Interface_MapEditor_EntityInformation)
             return;
 
-        UIHelper.ApplyChildStyle();
-        if (ImGui.Begin(WindowName))
+        var scale = DPI.GetUIScale();
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.Begin($@"Entity Information##MapEditor_EntityInformation"))
         {
             /*
             ImGui.Separator();
@@ -198,6 +200,6 @@ public class EntityInformationView
         }
 
         ImGui.End();
-        UIHelper.UnapplyChildStyle();
+        ImGui.PopStyleColor(1);
     }
 }

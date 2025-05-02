@@ -198,7 +198,7 @@ public class TextNewEntryCreationModal
                     ImGui.EndTable();
                 }
 
-                if (ImGui.Button("Inherit Text from Selection", new Vector2(520 * DPI.Scale, 24 * DPI.Scale)))
+                if (ImGui.Button("Inherit Text from Selection", new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
                 {
                     _newId = Selection._selectedFmgEntry.ID;
 
@@ -276,7 +276,7 @@ public class TextNewEntryCreationModal
                 DisplayEditTable(0, ref _newId, ref _newBasicText);
             }
 
-            if (ImGui.Button("Create", new Vector2(260 * DPI.Scale, 24 * DPI.Scale)))
+            if (ImGui.Button("Create", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
             {
                 var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
                 var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
@@ -316,7 +316,7 @@ public class TextNewEntryCreationModal
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", new Vector2(260 * DPI.Scale, 24 * DPI.Scale)))
+            if (ImGui.Button("Close", new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale())))
             {
                 ShowModal = false;
             }
@@ -520,7 +520,7 @@ public class TextNewEntryCreationModal
         int tableWidth = 520;
 
         var textboxHeight = 100;
-        var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.Scale;
+        var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.GetUIScale();
 
         if (ImGui.BeginTable($"fmgNewTable{index}", 2, ImGuiTableFlags.SizingFixedFit))
         {

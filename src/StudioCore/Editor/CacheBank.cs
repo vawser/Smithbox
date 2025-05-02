@@ -6,24 +6,24 @@ namespace StudioCore.Editor;
 
 public class UICache
 {
-    private static readonly Dictionary<(IEditor, object, string), object> caches = new();
+    private static readonly Dictionary<(EditorScreen, object, string), object> caches = new();
 
     /// <summary>
     ///     Gets/Sets a cache. The cached data is intended to have a lifetime until the contextual object is modified, or the
     ///     UIScreen object is refreshed.
     /// </summary>
-    public static T GetCached<T>(IEditor editor, object context, Func<T> getValue)
+    public static T GetCached<T>(EditorScreen UIScreen, object context, Func<T> getValue)
     {
-        return GetCached(editor, context, "", getValue);
+        return GetCached(UIScreen, context, "", getValue);
     }
 
     /// <summary>
     ///     Gets/Sets a cache with a specific key, avoiding any case where there would be conflict over the context-giving
     ///     object
     /// </summary>
-    public static T GetCached<T>(IEditor editor, object context, string key, Func<T> getValue)
+    public static T GetCached<T>(EditorScreen UIScreen, object context, string key, Func<T> getValue)
     {
-        (IEditor editor, object context, string key) trueKey = (editor, context, key);
+        (EditorScreen UIScreen, object context, string key) trueKey = (UIScreen, context, key);
         if (!caches.ContainsKey(trueKey))
         {
             caches[trueKey] = getValue();
@@ -35,12 +35,11 @@ public class UICache
     /// <summary>
     ///     Removes cached data related to the context object
     /// </summary>
-    public static void RemoveCache(IEditor editor, object context)
+    public static void RemoveCache(EditorScreen UIScreen, object context)
     {
-        IEnumerable<KeyValuePair<(IEditor, object, string), object>> toRemove =
-            caches.Where(keypair => keypair.Key.Item1 == editor && keypair.Key.Item2 == context);
-
-        foreach (KeyValuePair<(IEditor, object, string), object> kp in toRemove)
+        IEnumerable<KeyValuePair<(EditorScreen, object, string), object>> toRemove =
+            caches.Where(keypair => keypair.Key.Item1 == UIScreen && keypair.Key.Item2 == context);
+        foreach (KeyValuePair<(EditorScreen, object, string), object> kp in toRemove)
         {
             caches.Remove(kp.Key);
         }
@@ -49,12 +48,11 @@ public class UICache
     /// <summary>
     ///     Removes cached data within the UIScreen's domain
     /// </summary>
-    public static void RemoveCache(IEditor editor)
+    public static void RemoveCache(EditorScreen UIScreen)
     {
-        IEnumerable<KeyValuePair<(IEditor, object, string), object>> toRemove =
-            caches.Where(keypair => keypair.Key.Item1 == editor);
-
-        foreach (KeyValuePair<(IEditor, object, string), object> kp in toRemove)
+        IEnumerable<KeyValuePair<(EditorScreen, object, string), object>> toRemove =
+            caches.Where(keypair => keypair.Key.Item1 == UIScreen);
+        foreach (KeyValuePair<(EditorScreen, object, string), object> kp in toRemove)
         {
             caches.Remove(kp.Key);
         }

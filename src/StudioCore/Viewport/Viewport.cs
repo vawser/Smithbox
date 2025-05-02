@@ -1,8 +1,11 @@
 ﻿using Hexa.NET.ImGui;
+using Silk.NET.SDL;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditorNS;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
@@ -39,6 +42,9 @@ namespace StudioCore.Interface
 
         //private DebugPrimitives.DbgPrimGizmoTranslate TranslateGizmo = null;
         private readonly Gizmos _gizmos;
+
+        private readonly MapViewportGrid _mapEditor_Viewport_Grid;
+        private readonly ModelViewGrid _modelEditor_Viewport_Grid;
 
         private readonly DbgPrimWire _rayDebug = null;
 
@@ -90,12 +96,12 @@ namespace StudioCore.Interface
                 _vpid = id;
                 Width = width;
                 Height = height;
-                _device = mapEditor.BaseEditor.GraphicsContext.Device;
+                _device = mapEditor.MapViewport.Device;
 
                 float depth = _device.IsDepthRangeZeroToOne ? 1 : 0;
 
                 _renderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-                _renderScene = mapEditor.RenderScene;
+                _renderScene = mapEditor.MapViewport.RenderScene;
                 _selection = mapEditor.Selection;
 
                 WorldView = new WorldView(new Rectangle(0, 0, Width, Height));

@@ -1,8 +1,7 @@
-﻿using StudioCore.Resource;
-using StudioCore.UserProject;
+﻿using StudioCore.UserProject;
 using System;
 
-namespace StudioCore.Resource.Types;
+namespace StudioCore.Resource;
 
 public interface IResource
 {

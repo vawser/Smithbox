@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
@@ -133,7 +132,7 @@ public class PrefabView
             var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, prefixName);
+                loadedPrefab.ImportToMap(comboMap.map as MapContainer, Editor.RenderScene, Editor.EditorActionManager, prefixName);
         }
         UIHelper.Tooltip("Import the selected prefab into a loaded map.");
 

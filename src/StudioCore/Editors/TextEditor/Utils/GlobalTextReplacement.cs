@@ -160,14 +160,14 @@ public static class GlobalTextReplacement
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Preview Edit##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.Scale)))
+        if (ImGui.Button("Preview Edit##executeSearch", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
         {
             HasSearched = true;
             ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         UIHelper.Tooltip("Populate the edit preview list.");
         ImGui.SameLine();
-        if (ImGui.Button("Clear Preview##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.Scale)))
+        if (ImGui.Button("Clear Preview##clearSearchResults", new Vector2(ImGui.GetWindowWidth() * 0.95f / 2, 32 * DPI.GetUIScale())))
         {
             HasSearched = false;
             ReplacementResults.Clear();

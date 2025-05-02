@@ -1,9 +1,15 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.CutsceneEditor;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Interface;
+using StudioCore.Settings;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -90,7 +96,7 @@ public class MaterialEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_MTD_wip)
             return;
 
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

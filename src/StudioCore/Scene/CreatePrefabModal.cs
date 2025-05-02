@@ -30,7 +30,7 @@ internal class CreatePrefabModal : IModal
 
     public void OnGui()
     {
-        var scale = DPI.Scale;
+        var scale = DPI.GetUIScale();
 
         ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 7.0f * scale);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1.0f);

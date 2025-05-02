@@ -18,10 +18,10 @@ using System.Text.RegularExpressions;
 using StudioCore.Resource.Locators;
 using Org.BouncyCastle.Utilities;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.ModelEditor;
 using static SoulsFormats.FLVER;
 using StudioCore.Scene.Structs;
 using StudioCore.Core;
-using StudioCore.Resource;
 
 namespace StudioCore.Resource.Types;
 
@@ -78,7 +78,7 @@ public class FlverResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public List<Node> Bones { get; private set; }
+    public List<FLVER.Node> Bones { get; private set; }
     private List<FlverBone> FBones { get; set; }
     private List<Matrix4x4> BoneTransforms { get; set; }
 
@@ -414,23 +414,23 @@ public class FlverResource : IResource, IDisposable
 
             if (desMat.Layouts?.Count > 0)
             {
-                foreach (LayoutMember? layoutType in desMat.Layouts[0])
+                foreach (FLVER.LayoutMember? layoutType in desMat.Layouts[0])
                 {
                     switch (layoutType.Semantic)
                     {
-                        case LayoutSemantic.Normal:
-                            if (layoutType.Type == LayoutType.Byte4B ||
-                                layoutType.Type == LayoutType.Byte4E ||
-                                layoutType.Type == LayoutType.Short2toFloat2)
+                        case FLVER.LayoutSemantic.Normal:
+                            if (layoutType.Type == FLVER.LayoutType.Byte4B ||
+                                layoutType.Type == FLVER.LayoutType.Byte4E ||
+                                layoutType.Type == FLVER.LayoutType.Short2toFloat2)
                             {
                                 dest.SetNormalWBoneTransform();
                             }
 
                             break;
-                        case LayoutSemantic.BoneIndices:
+                        case FLVER.LayoutSemantic.BoneIndices:
                             foundBoneIndices = true;
                             break;
-                        case LayoutSemantic.BoneWeights:
+                        case FLVER.LayoutSemantic.BoneWeights:
                             foundBoneWeights = true;
                             break;
                     }
@@ -565,19 +565,19 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void FillVertex(ref Vector3 dest, ref Vertex v)
+    private void FillVertex(ref Vector3 dest, ref FLVER.Vertex v)
     {
         dest = v.Position;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillVertex(Vector3* dest, BinaryReaderEx br, LayoutType type)
+    private unsafe void FillVertex(Vector3* dest, BinaryReaderEx br, FLVER.LayoutType type)
     {
-        if (type == LayoutType.Float3)
+        if (type == FLVER.LayoutType.Float3)
         {
             *dest = br.ReadVector3();
         }
-        else if (type == LayoutType.Float4)
+        else if (type == FLVER.LayoutType.Float4)
         {
             *dest = br.ReadVector3();
             br.AssertSingle(0);
@@ -595,7 +595,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillNormalSNorm8(sbyte* dest, ref Vertex v)
+    private unsafe void FillNormalSNorm8(sbyte* dest, ref FLVER.Vertex v)
     {
         Vector3 n = Vector3.Normalize(new Vector3(v.Normal.X, v.Normal.Y, v.Normal.Z));
         dest[0] = (sbyte)(n.X * 127.0f);
@@ -605,14 +605,14 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillNormalSNorm8(sbyte* dest, BinaryReaderEx br, LayoutType type, Vector3* n, int[] meshBoneIndices, bool useNormalWTransform)
+    private unsafe void FillNormalSNorm8(sbyte* dest, BinaryReaderEx br, FLVER.LayoutType type, Vector3* n, int[] meshBoneIndices, bool useNormalWTransform)
     {
         var nw = 0;
-        if (type == LayoutType.Float3)
+        if (type == FLVER.LayoutType.Float3)
         {
             *n = br.ReadVector3();
         }
-        else if (type == LayoutType.Float4)
+        else if (type == FLVER.LayoutType.Float4)
         {
             *n = br.ReadVector3();
             var w = br.ReadSingle();
@@ -622,45 +622,45 @@ public class FlverResource : IResource, IDisposable
                 throw new InvalidDataException($"Float4 Normal W was not a whole number: {w}");
             }
         }
-        else if (type == LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Byte4A)
         {
-            *n = Vertex.ReadByteNormXYZ(br);
+            *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.Byte4B)
         {
-            *n = Vertex.ReadByteNormXYZ(br);
+            *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == LayoutType.Short2toFloat2)
+        else if (type == FLVER.LayoutType.Short2toFloat2)
         {
             nw = br.ReadByte();
-            *n = Vertex.ReadSByteNormZYX(br);
+            *n = FLVER.Vertex.ReadSByteNormZYX(br);
         }
-        else if (type == LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.Byte4C)
         {
-            *n = Vertex.ReadByteNormXYZ(br);
+            *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == LayoutType.Short4toFloat4A)
+        else if (type == FLVER.LayoutType.Short4toFloat4A)
         {
-            *n = Vertex.ReadShortNormXYZ(br);
+            *n = FLVER.Vertex.ReadShortNormXYZ(br);
             nw = br.ReadInt16();
         }
-        else if (type == LayoutType.Short4toFloat4B)
+        else if (type == FLVER.LayoutType.Short4toFloat4B)
         {
             //Normal = ReadUShortNormXYZ(br);
-            *n = Vertex.ReadFloat16NormXYZ(br);
+            *n = FLVER.Vertex.ReadFloat16NormXYZ(br);
             nw = br.ReadInt16();
         }
-        else if (type == LayoutType.Byte4E)
+        else if (type == FLVER.LayoutType.Byte4E)
         {
-            *n = Vertex.ReadByteNormXYZ(br);
+            *n = FLVER.Vertex.ReadByteNormXYZ(br);
             nw = br.ReadByte();
         }
-        else if (type == LayoutType.ShortBoneIndices)
+        else if (type == FLVER.LayoutType.ShortBoneIndices)
         {
-            *n = Vertex.ReadShortNormXYZ(br);
+            *n = FLVER.Vertex.ReadShortNormXYZ(br);
             nw = br.ReadInt16();
         }
         else
@@ -681,7 +681,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillUVShort(short* dest, ref Vertex v, byte index)
+    private unsafe void FillUVShort(short* dest, ref FLVER.Vertex v, byte index)
     {
         Vector3 uv = v.UVs[index];
         dest[0] = (short)(uv.X * 2048.0f);
@@ -689,56 +689,56 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillUVShort(short* dest, BinaryReaderEx br, LayoutType type, float uvFactor,
+    private unsafe void FillUVShort(short* dest, BinaryReaderEx br, FLVER.LayoutType type, float uvFactor,
         bool allowv2, out bool hasv2)
     {
         Vector3 v;
         Vector3 v2;
         hasv2 = false;
-        if (type == LayoutType.Float2)
+        if (type == FLVER.LayoutType.Float2)
         {
             v = new Vector3(br.ReadVector2(), 0);
         }
-        else if (type == LayoutType.Float3)
+        else if (type == FLVER.LayoutType.Float3)
         {
             v = br.ReadVector3();
         }
-        else if (type == LayoutType.Float4)
+        else if (type == FLVER.LayoutType.Float4)
         {
             v = new Vector3(br.ReadVector2(), 0);
             v2 = new Vector3(br.ReadVector2(), 0);
             hasv2 = allowv2;
         }
-        else if (type == LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Byte4A)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.Byte4B)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == LayoutType.Short2toFloat2)
+        else if (type == FLVER.LayoutType.Short2toFloat2)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.Byte4C)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == LayoutType.UV)
+        else if (type == FLVER.LayoutType.UV)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
         }
-        else if (type == LayoutType.UVPair)
+        else if (type == FLVER.LayoutType.UVPair)
         {
             v = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             v2 = new Vector3(br.ReadInt16(), br.ReadInt16(), 0) / uvFactor;
             hasv2 = allowv2;
         }
-        else if (type == LayoutType.Short4toFloat4B)
+        else if (type == FLVER.LayoutType.Short4toFloat4B)
         {
             //AddUV(new Vector3(br.ReadInt16(), br.ReadInt16(), br.ReadInt16()) / uvFactor);
-            v = Vertex.ReadFloat16NormXYZ(br);
+            v = FLVER.Vertex.ReadFloat16NormXYZ(br);
             br.AssertInt16(0);
         }
         else
@@ -763,7 +763,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void FillUVFloat(ref Vector2 dest, ref Vertex v, byte index)
+    private void FillUVFloat(ref Vector2 dest, ref FLVER.Vertex v, byte index)
     {
         Vector3 uv = v.UVs[index];
         dest.X = uv.X;
@@ -771,7 +771,7 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillBinormalBitangentSNorm8(sbyte* destBinorm, sbyte* destBitan, ref Vertex v,
+    private unsafe void FillBinormalBitangentSNorm8(sbyte* destBinorm, sbyte* destBitan, ref FLVER.Vertex v,
         byte index)
     {
         Vector4 tan = v.Tangents[index];
@@ -790,32 +790,32 @@ public class FlverResource : IResource, IDisposable
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private unsafe void FillBinormalBitangentSNorm8(sbyte* destBinorm, sbyte* destBitan, Vector3* n,
-        BinaryReaderEx br, LayoutType type)
+        BinaryReaderEx br, FLVER.LayoutType type)
     {
         Vector4 tan;
-        if (type == LayoutType.Float4)
+        if (type == FLVER.LayoutType.Float4)
         {
             tan = br.ReadVector4();
         }
-        else if (type == LayoutType.Byte4A)
+        else if (type == FLVER.LayoutType.Byte4A)
         {
-            tan = Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == LayoutType.Byte4B)
+        else if (type == FLVER.LayoutType.Byte4B)
         {
-            tan = Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == LayoutType.Byte4C)
+        else if (type == FLVER.LayoutType.Byte4C)
         {
-            tan = Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == LayoutType.Short4toFloat4A)
+        else if (type == FLVER.LayoutType.Short4toFloat4A)
         {
-            tan = Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
-        else if (type == LayoutType.Byte4E)
+        else if (type == FLVER.LayoutType.Byte4E)
         {
-            tan = Vertex.ReadByteNormXYZW(br);
+            tan = FLVER.Vertex.ReadByteNormXYZW(br);
         }
         else
         {
@@ -848,39 +848,39 @@ public class FlverResource : IResource, IDisposable
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private unsafe void FillColorUNorm(byte* dest, ref Vertex v)
+    private unsafe void FillColorUNorm(byte* dest, ref FLVER.Vertex v)
     {
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private void EatVertex(BinaryReaderEx br, LayoutType type)
+    private void EatVertex(BinaryReaderEx br, FLVER.LayoutType type)
     {
         switch (type)
         {
-            case LayoutType.Byte4A:
-            case LayoutType.Byte4B:
-            case LayoutType.Short2toFloat2:
-            case LayoutType.Byte4C:
-            case LayoutType.UV:
-            case LayoutType.Byte4E:
-            case LayoutType.Short2ToFloat2B:
+            case FLVER.LayoutType.Byte4A:
+            case FLVER.LayoutType.Byte4B:
+            case FLVER.LayoutType.Short2toFloat2:
+            case FLVER.LayoutType.Byte4C:
+            case FLVER.LayoutType.UV:
+            case FLVER.LayoutType.Byte4E:
+            case FLVER.LayoutType.Short2ToFloat2B:
                 br.ReadUInt32();
                 break;
 
-            case LayoutType.Float2:
-            case LayoutType.UVPair:
-            case LayoutType.ShortBoneIndices:
-            case LayoutType.Short4toFloat4A:
-            case LayoutType.Short4toFloat4B:
+            case FLVER.LayoutType.Float2:
+            case FLVER.LayoutType.UVPair:
+            case FLVER.LayoutType.ShortBoneIndices:
+            case FLVER.LayoutType.Short4toFloat4A:
+            case FLVER.LayoutType.Short4toFloat4B:
                 br.ReadUInt64();
                 break;
 
-            case LayoutType.Float3:
+            case FLVER.LayoutType.Float3:
                 br.ReadUInt32();
                 br.ReadUInt64();
                 break;
 
-            case LayoutType.Float4:
+            case FLVER.LayoutType.Float4:
                 br.ReadUInt64();
                 br.ReadUInt64();
                 break;
@@ -908,7 +908,7 @@ public class FlverResource : IResource, IDisposable
                         continue;
                     }
 
-                    if (l.semantic == LayoutSemantic.Position)
+                    if (l.semantic == FLVER.LayoutSemantic.Position)
                     {
                         // Edge compression is not supported here
                         if (l.type == LayoutType.EdgeCompressed)
@@ -919,7 +919,7 @@ public class FlverResource : IResource, IDisposable
                         FillVertex(&(*v).Position, br, l.type);
                         posfilled = true;
                     }
-                    else if (l.semantic == LayoutSemantic.Normal)
+                    else if (l.semantic == FLVER.LayoutSemantic.Normal)
                     {
                         FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                     }
@@ -946,7 +946,7 @@ public class FlverResource : IResource, IDisposable
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         for (var i = 0; i < mesh.Vertices.Count; i++)
         {
-            Vertex vert = mesh.Vertices[i];
+            FLVER.Vertex vert = mesh.Vertices[i];
 
             verts[i] = new FlverLayoutSky();
             pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -963,7 +963,7 @@ public class FlverResource : IResource, IDisposable
         Span<FlverLayoutSky> verts = new(vertBuffer.ToPointer(), mesh.Vertices.Count);
         for (var i = 0; i < mesh.Vertices.Count; i++)
         {
-            Vertex vert = mesh.Vertices[i];
+            FLVER.Vertex vert = mesh.Vertices[i];
 
             verts[i] = new FlverLayoutSky();
             pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -996,7 +996,7 @@ public class FlverResource : IResource, IDisposable
                     continue;
                 }
 
-                if (l.semantic == LayoutSemantic.Position)
+                if (l.semantic == FLVER.LayoutSemantic.Position)
                 {
                     // Edge compression is not supported here
                     if (l.type == LayoutType.EdgeCompressed)
@@ -1007,16 +1007,16 @@ public class FlverResource : IResource, IDisposable
                     FillVertex(&(*v).Position, br, l.type);
                     posfilled = true;
                 }
-                else if (l.semantic == LayoutSemantic.Normal)
+                else if (l.semantic == FLVER.LayoutSemantic.Normal)
                 {
                     FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                 }
-                else if (l.semantic == LayoutSemantic.UV && l.index == 0)
+                else if (l.semantic == FLVER.LayoutSemantic.UV && l.index == 0)
                 {
                     bool hasv2;
                     FillUVShort((*v).Uv1, br, l.type, uvFactor, false, out hasv2);
                 }
-                else if (l.semantic == LayoutSemantic.Tangent && l.index == 0)
+                else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
                 {
                     FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
                 }
@@ -1045,7 +1045,7 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < mesh.Vertices.Count; i++)
             {
                 FlverLayout* v = &pverts[i];
-                Vertex vert = mesh.Vertices[i];
+                FLVER.Vertex vert = mesh.Vertices[i];
 
                 verts[i] = new FlverLayout();
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -1080,7 +1080,7 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < mesh.Vertices.Count; i++)
             {
                 FlverLayout* v = &pverts[i];
-                Vertex vert = mesh.Vertices[i];
+                FLVER.Vertex vert = mesh.Vertices[i];
 
                 verts[i] = new FlverLayout();
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -1128,7 +1128,7 @@ public class FlverResource : IResource, IDisposable
                         continue;
                     }
 
-                    if (l.semantic == LayoutSemantic.Position)
+                    if (l.semantic == FLVER.LayoutSemantic.Position)
                     {
                         // Edge compression is not supported here
                         if (l.type == LayoutType.EdgeCompressed)
@@ -1138,17 +1138,17 @@ public class FlverResource : IResource, IDisposable
 
                         FillVertex(&(*v).Position, br, l.type);
                     }
-                    else if (l.semantic == LayoutSemantic.Normal)
+                    else if (l.semantic == FLVER.LayoutSemantic.Normal)
                     {
                         FillNormalSNorm8((*v).Normal, br, l.type, &n, meshBoneIndices, useNormalWTransform);
                     }
-                    else if (l.semantic == LayoutSemantic.UV && uvsfilled < 2)
+                    else if (l.semantic == FLVER.LayoutSemantic.UV && uvsfilled < 2)
                     {
                         bool hasv2;
                         FillUVShort(uvsfilled > 0 ? (*v).Uv2 : (*v).Uv1, br, l.type, uvFactor, false, out hasv2);
                         uvsfilled += hasv2 ? 2 : 1;
                     }
-                    else if (l.semantic == LayoutSemantic.Tangent && l.index == 0)
+                    else if (l.semantic == FLVER.LayoutSemantic.Tangent && l.index == 0)
                     {
                         FillBinormalBitangentSNorm8((*v).Binormal, (*v).Bitangent, &n, br, l.type);
                     }
@@ -1172,7 +1172,7 @@ public class FlverResource : IResource, IDisposable
         {
             for (var i = 0; i < mesh.Vertices.Count; i++)
             {
-                Vertex vert = mesh.Vertices[i];
+                FLVER.Vertex vert = mesh.Vertices[i];
 
                 verts[i] = new FlverLayoutUV2();
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -1200,7 +1200,7 @@ public class FlverResource : IResource, IDisposable
         {
             for (var i = 0; i < mesh.Vertices.Count; i++)
             {
-                Vertex vert = mesh.Vertices[i];
+                FLVER.Vertex vert = mesh.Vertices[i];
 
                 verts[i] = new FlverLayoutUV2();
                 pickingVerts[i] = new Vector3(vert.Position.X, vert.Position.Y, vert.Position.Z);
@@ -1232,7 +1232,7 @@ public class FlverResource : IResource, IDisposable
             //Transform based on root
             for (var v = 0; v < mesh.Vertices.Count; v++)
             {
-                Vertex vert = mesh.Vertices[v];
+                FLVER.Vertex vert = mesh.Vertices[v];
                 var boneTransformationIndex = mesh.BoneIndices[vert.BoneIndices[0]];
                 if (boneTransformationIndex > -1 && BoneTransforms.Count > boneTransformationIndex)
                 {
@@ -1530,11 +1530,11 @@ public class FlverResource : IResource, IDisposable
 
         if (mesh.Dynamic == 0)
         {
-            IEnumerable<LayoutMember> elements =
+            IEnumerable<FLVER.LayoutMember> elements =
                 mesh.VertexBuffers.SelectMany(b => Flver.BufferLayouts[b.LayoutIndex]);
             dest.UseNormalWBoneTransform = elements.Any(e =>
-                e.Semantic == LayoutSemantic.Normal &&
-                (e.Type == LayoutType.Byte4B || e.Type == LayoutType.Byte4E));
+                e.Semantic == FLVER.LayoutSemantic.Normal &&
+                (e.Type == FLVER.LayoutType.Byte4B || e.Type == FLVER.LayoutType.Byte4E));
             if (dest.UseNormalWBoneTransform)
             {
                 dest.Material.SetNormalWBoneTransform();
@@ -1631,10 +1631,10 @@ public class FlverResource : IResource, IDisposable
             for (var i = 0; i < layout.memberCount; i++)
             {
                 layoutmembers[i] = new FlverBufferLayoutMember(br);
-                if (layoutmembers[i].semantic == LayoutSemantic.Normal &&
-                    (layoutmembers[i].type == LayoutType.Byte4A ||
-                     layoutmembers[i].type == LayoutType.Byte4B ||
-                     layoutmembers[i].type == LayoutType.Byte4E))
+                if (layoutmembers[i].semantic == FLVER.LayoutSemantic.Normal &&
+                    (layoutmembers[i].type == FLVER.LayoutType.Byte4A ||
+                     layoutmembers[i].type == FLVER.LayoutType.Byte4B ||
+                     layoutmembers[i].type == FLVER.LayoutType.Byte4E))
                 {
                     dest.UseNormalWBoneTransform = true;
                 }
@@ -2526,16 +2526,16 @@ public class FlverResource : IResource, IDisposable
     private struct FlverBufferLayoutMember
     {
         public readonly int unk00;
-        public readonly LayoutType type;
-        public readonly LayoutSemantic semantic;
+        public readonly FLVER.LayoutType type;
+        public readonly FLVER.LayoutSemantic semantic;
         public readonly int index;
 
         public FlverBufferLayoutMember(BinaryReaderEx br)
         {
             unk00 = br.ReadInt32(); // unk
             br.ReadInt32(); // struct offset
-            type = br.ReadEnum32<LayoutType>();
-            semantic = br.ReadEnum32<LayoutSemantic>();
+            type = br.ReadEnum32<FLVER.LayoutType>();
+            semantic = br.ReadEnum32<FLVER.LayoutSemantic>();
             index = br.ReadInt32();
         }
     }

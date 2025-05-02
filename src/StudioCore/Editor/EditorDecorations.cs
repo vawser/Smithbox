@@ -535,12 +535,12 @@ public class EditorDecorations
         return newTextResults;
     }
 
-    public static void FmgRefSelectable(IEditor ownerEditor, List<FMGRef> fmgNames, Param.Row context,
+    public static void FmgRefSelectable(EditorScreen ownerScreen, List<FMGRef> fmgNames, Param.Row context,
         dynamic oldval)
     {
         List<string> textsToPrint = new List<string>();
 
-        textsToPrint = UICache.GetCached(ownerEditor, (int)oldval, "PARAM META FMGREF", () =>
+        textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
         {
             List<TextResult> refs = resolveFMGRefs(fmgNames, context, oldval);
             return refs.Where(x => x.Entry != null)
