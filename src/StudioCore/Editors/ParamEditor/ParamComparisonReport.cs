@@ -3,12 +3,11 @@ using Hexa.NET.ImGui;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -44,7 +43,7 @@ public static class ParamComparisonReport
         {
             if (ParamBank.AuxBanks.Count <= 0)
             {
-                MessageBox.Show("No comparison bank has been loaded. Report generation ended.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PlatformUtils.Instance.MessageBox("No comparison bank has been loaded. Report generation ended.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 IsGeneratingReport = false;
                 IsReportGenerated = false;
@@ -239,7 +238,7 @@ public static class ParamComparisonReport
             ImGui.SameLine();
             if (ImGui.Button("Copy", buttonSize))
             {
-                Clipboard.SetText(ReportText);
+                UIHelper.CopyToClipboard(ReportText);
             }
             ImGui.SameLine();
             if (ImGui.Button("Close", buttonSize))

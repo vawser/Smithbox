@@ -1,12 +1,11 @@
 ﻿using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor.Utils;
-
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Tools.Generation;
 
@@ -37,6 +36,6 @@ public static class FmgRefPrintTool
             }
         }
 
-        Clipboard.SetText(outputText);
+        PlatformUtils.Instance.SetClipboardText(outputText);
     }
 }

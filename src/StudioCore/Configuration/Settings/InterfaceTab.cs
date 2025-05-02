@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Utilities;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +10,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Configuration.Settings;
 
@@ -82,8 +81,7 @@ public class InterfaceTab
 
             if (ImGui.Button("Set English font", buttonSize))
             {
-                var path = WindowsUtils.GetFileSelection();
-
+                PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
                 {
                     UI.Current.System_English_Font = path;
@@ -98,8 +96,7 @@ public class InterfaceTab
 
             if (ImGui.Button("Set Non-English font", buttonSize))
             {
-                var path = WindowsUtils.GetFileSelection();
-
+                PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
                 {
                     UI.Current.System_Other_Font = path;
@@ -166,7 +163,7 @@ public class InterfaceTab
                     }
                 }
 
-                MessageBox.Show($"Stored at {storedPath}.", "Information");
+                PlatformUtils.Instance.MessageBox($"Stored at {storedPath}.", "Information", MessageBoxButtons.OK);
             }
             ImGui.SameLine();
             if (ImGui.Button("Open Folder##openImguiIniFolder", buttonSize))
@@ -192,7 +189,7 @@ public class InterfaceTab
                         File.Copy(storedPath, curImgui, true);
                     }
 
-                    MessageBox.Show("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information");
+                    PlatformUtils.Instance.MessageBox("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information", MessageBoxButtons.OK);
                 }
             }
 
@@ -212,7 +209,7 @@ public class InterfaceTab
                     File.Copy(defaultImgui, curImgui, true);
                 }
 
-                MessageBox.Show("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information");
+                PlatformUtils.Instance.MessageBox("Applied imgui.ini change. Restart Smithbox to apply changes.", "Information", MessageBoxButtons.OK);
             }
         }
 

@@ -5,7 +5,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-
+using StudioCore.Platform;
 using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
@@ -13,7 +13,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Tools;
@@ -202,7 +201,7 @@ public class ToolSubMenu
 
                         if (ImGui.MenuItem("Apply Japanese Names"))
                         {
-                            DialogResult result = MessageBox.Show(
+                            DialogResult result = PlatformUtils.Instance.MessageBox(
                             $"This will apply the developer map object names (in Japanese) for this map.\nNote, this will not work if you have edited the map as the name list is based on the index of the map object", 
                             "Warning",
                             MessageBoxButtons.YesNo);
@@ -215,7 +214,7 @@ public class ToolSubMenu
 
                         if (ImGui.MenuItem("Apply English Names"))
                         {
-                            DialogResult result = MessageBox.Show(
+                            DialogResult result = PlatformUtils.Instance.MessageBox(
                             $"This will apply the developer map object names (in machine translated English) for this map.\nNote, this will not work if you have edited the map as the name list is based on the index of the map object",
                             "Warning",
                             MessageBoxButtons.YesNo);

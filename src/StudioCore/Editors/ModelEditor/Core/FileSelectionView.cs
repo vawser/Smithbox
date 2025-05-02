@@ -9,7 +9,7 @@ using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
@@ -188,14 +188,17 @@ public class FileSelectionView
         {
             if (ImGui.Button("Load Loose FLVER", defaultButtonSize))
             {
-                var loosePath = WindowsUtils.GetFileSelection("Select loose FLVER...", new List<string> { "png", "flver", "flv" });
+                var result = PlatformUtils.Instance.OpenFileDialog("Select loose FLVER...", new string[] { "png", "flver", "flv" }, out var loosePath);
 
-                var name = Path.GetFileNameWithoutExtension(loosePath);
+                if (result)
+                {
+                    var name = Path.GetFileNameWithoutExtension(loosePath);
 
-                Selection._selectedFileName = name;
-                Selection._selectedFileModelType = FileSelectionType.Loose;
+                    Selection._selectedFileName = name;
+                    Selection._selectedFileModelType = FileSelectionType.Loose;
 
-                ResManager.LoadLooseFLVER(Selection._selectedFileName, loosePath);
+                    ResManager.LoadLooseFLVER(Selection._selectedFileName, loosePath);
+                }
             }
         }
     }

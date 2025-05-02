@@ -4,7 +4,7 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
@@ -53,7 +53,10 @@ public static class TextMerge
             ImGui.SameLine();
             if (ImGui.Button($@"{ForkAwesome.FileO}"))
             {
-                TargetProjectDir = WindowsUtils.GetFolderSelection();
+                if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
+                {
+                    TargetProjectDir = path;
+                }
             }
 
             // Row 2

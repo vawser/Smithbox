@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-
+using StudioCore.Platform;
 using StudioCore.Editor;
 using StudioCore.MsbEditor;
 using StudioCore.Scene;
@@ -15,7 +15,6 @@ using StudioCore.Core.Project;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Tools.Prefabs;
 
@@ -173,7 +172,7 @@ internal class Prefab<T> : Prefab
         }
         catch (Exception e)
         {
-            MessageBox.Show(
+            PlatformUtils.Instance.MessageBox(
                 $"Unable to export Prefab due to the following error:\n\n{e.Message}\n{e.StackTrace}",
                 "Prefab export error",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -197,7 +196,7 @@ internal class Prefab<T> : Prefab
         }
         catch (Exception e)
         {
-            MessageBox.Show(
+            PlatformUtils.Instance.MessageBox(
                 $"Unable to import Prefab due to the following error:" +
                 $"\n\n{e.Message}"
                 , "Asset prefab import error"
@@ -215,7 +214,7 @@ internal class Prefab<T> : Prefab
         Load(_selection.GetFilteredSelection<MsbEntity>());
         if (!PrefabUtils.GetMapMsbEntries(pseudoMap).Any())
         {
-            MessageBox.Show("Export failed, nothing in selection could be exported.", "Prefab Error", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("Export failed, nothing in selection could be exported.", "Prefab Error", MessageBoxButtons.OK);
             return;
         }
         PrefabName = name;

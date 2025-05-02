@@ -2,13 +2,12 @@
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Tools.Generation;
 
@@ -27,7 +26,7 @@ public static class DokuWikiHelper
             output = output + $"| [[XXX-refmat:param:{param.Key}]] | {sanitizedWiki} |\n";
         }
 
-        Clipboard.SetText(output);
+        PlatformUtils.Instance.SetClipboardText(output);
     }
 
     public static void OutputParamInformation(string paramKey)
@@ -235,6 +234,6 @@ public static class DokuWikiHelper
             }
         }
 
-        Clipboard.SetText(output);
+        PlatformUtils.Instance.SetClipboardText(output);
     }
 }

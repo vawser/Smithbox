@@ -4,7 +4,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Banks.EntitySelectionGroupBank;
 
@@ -97,22 +96,22 @@ public class EntitySelectionGroupBank
     {
         if (name == "")
         {
-            MessageBox.Show("Group name is empty.", "Warning");
+            PlatformUtils.Instance.MessageBox("Group name is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         else if (!isEdit && Groups.Resources.Any(x => x.Name == name))
         {
-            MessageBox.Show("Group name already exists.", "Warning");
+            PlatformUtils.Instance.MessageBox("Group name already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         else if (!isEdit && selection == null)
         {
-            MessageBox.Show("Selection is invalid.", "Warning");
+            PlatformUtils.Instance.MessageBox("Selection is invalid.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         else if (!isEdit && selection.Count == 0)
         {
-            MessageBox.Show("Selection is empty.", "Warning");
+            PlatformUtils.Instance.MessageBox("Selection is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         else if (keybindIndex != -1 && Groups.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
@@ -122,8 +121,7 @@ public class EntitySelectionGroupBank
             {
                 group = Groups.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex && x.Name != name).First();
             }
-
-            MessageBox.Show($"Keybind already assigned to another selection group: {group.Name}", "Warning");
+            PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
         else

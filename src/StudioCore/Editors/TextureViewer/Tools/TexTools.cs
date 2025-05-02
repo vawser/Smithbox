@@ -1,7 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer.Utils;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
 using System;
@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.TextureViewer.Tools;
 
@@ -44,7 +43,7 @@ public class TexTools
 
                 if (File.Exists(exportFilePath))
                 {
-                    var result = MessageBox.Show($"Overwrite existing file at {exportFilePath}?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    var result = PlatformUtils.Instance.MessageBox($"Overwrite existing file at {exportFilePath}?", $"Smithbox", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.No)
                     {
                         write = false;
@@ -54,7 +53,7 @@ public class TexTools
                 if (!Directory.Exists(exportPath))
                 {
                     write = false;
-                    MessageBox.Show($"Directory is not valid.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlatformUtils.Instance.MessageBox($"Directory is not valid.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 if (write)
@@ -76,18 +75,18 @@ public class TexTools
 
                     if (CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm)
                     {
-                        MessageBox.Show($"{filename} exported.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PlatformUtils.Instance.MessageBox($"{filename} exported.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             else
             {
-                MessageBox.Show($"Export Destination is not set.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlatformUtils.Instance.MessageBox($"Export Destination is not set.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         else
         {
-            MessageBox.Show($"No texture is currently being viewed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            PlatformUtils.Instance.MessageBox($"No texture is currently being viewed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 

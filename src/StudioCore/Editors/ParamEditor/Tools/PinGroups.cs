@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -408,7 +407,7 @@ public class PinGroups
     {
         if(_newGroupName == "")
         {
-            MessageBox.Show("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
@@ -423,7 +422,7 @@ public class PinGroups
     {
         if (_newGroupName == "")
         {
-            MessageBox.Show("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
@@ -438,7 +437,7 @@ public class PinGroups
     {
         if (_newGroupName == "")
         {
-            MessageBox.Show("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox("Group name cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
@@ -519,7 +518,7 @@ public class PinGroups
 
         if (File.Exists(writePath))
         {
-            var result = MessageBox.Show($"{filename} already exists as a {groupName}. Are you sure you want to overwrite it?", "Warning", MessageBoxButtons.OKCancel);
+            var result = PlatformUtils.Instance.MessageBox($"{filename} already exists as a {groupName}. Are you sure you want to overwrite it?", "Warning", MessageBoxButtons.OKCancel);
 
             if (result is DialogResult.Cancel)
             {

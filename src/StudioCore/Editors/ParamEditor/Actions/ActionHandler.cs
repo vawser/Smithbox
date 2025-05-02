@@ -6,7 +6,7 @@ using StudioCore.Banks.AliasBank;
 using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.TextEditor;
@@ -19,7 +19,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using static SoulsFormats.BHD5;
 
 namespace StudioCore.Editors.ParamEditor.Actions;
@@ -260,7 +259,7 @@ public class ActionHandler
             }
         }
 
-        Clipboard.SetText(output);
+        PlatformUtils.Instance.SetClipboardText(output);
     }
 
     private void ExportRowNames()
@@ -272,18 +271,18 @@ public class ActionHandler
         {
             case TargetType.SelectedRows:
                 ExportRowNamesForRows(selectedParam.GetSelectedRows());
-                MessageBox.Show($"Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlatformUtils.Instance.MessageBox($"Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             case TargetType.SelectedParam:
                 ExportRowNamesForParam(activeParam);
-                MessageBox.Show($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             case TargetType.AllParams:
                 foreach (var param in ParamBank.PrimaryBank.Params)
                 {
                     ExportRowNamesForParam(param.Key);
                 }
-                MessageBox.Show($"Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlatformUtils.Instance.MessageBox($"Row names for all params have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -419,18 +418,18 @@ public class ActionHandler
                     case TargetType.SelectedRows:
                         if (!rows.Any()) return;
                         TrimRowNames(rows);
-                        MessageBox.Show($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case TargetType.SelectedParam:
                         TrimRowNames(activeParam);
-                        MessageBox.Show($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case TargetType.AllParams:
                         foreach (var param in ParamBank.PrimaryBank.Params)
                         {
                             TrimRowNames(param.Key);
                         }
-                        MessageBox.Show($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -517,13 +516,13 @@ public class ActionHandler
     public void MergeParamHandler()
     {
         if(targetRegulationPath == "")
-        {
-            MessageBox.Show("Target Regulation path is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+            PlatformUtils.Instance.MessageBox("Target Regulation path is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         if (!targetRegulationPath.Contains("regulation.bin"))
         {
-            MessageBox.Show("Target Regulation path is does not point to a regulation.bin file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PlatformUtils.Instance.MessageBox("Target Regulation path is does not point to a regulation.bin file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 

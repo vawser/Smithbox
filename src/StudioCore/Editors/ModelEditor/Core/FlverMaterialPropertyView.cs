@@ -4,7 +4,7 @@ using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -204,10 +204,11 @@ public class FlverMaterialPropertyView
         ImGui.SameLine();
         if (ImGui.Button($@"{ForkAwesome.FileO}##filePicker{index}"))
         {
-            var tPath = WindowsUtils.GetFileSelection("Select target texture...", new List<string> {"png", "dds", "tif", "jpeg", "bmp" });
-
-            var filename = Path.GetFileNameWithoutExtension(tPath);
-            path = $"{filename}.tif"; // Purely for consistency with vanilla
+            if (PlatformUtils.Instance.OpenFileDialog("Select target texture...", new string[] { "png", "dds", "tif", "jpeg", "bmp" }, out var tPath))
+            {
+                var filename = Path.GetFileNameWithoutExtension(tPath);
+                path = $"{filename}.tif"; // Purely for consistency with vanilla
+            }
         }
         UIHelper.ShowHoverTooltip("Select the texture you wish to assign to this entry.");
 

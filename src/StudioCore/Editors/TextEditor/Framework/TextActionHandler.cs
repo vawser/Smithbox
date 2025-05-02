@@ -4,14 +4,13 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
-
+using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -401,8 +400,8 @@ public class TextActionHandler
                         }
                     }
 
-                    Clipboard.SetText(copyText);
-                    MessageBox.Show("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PlatformUtils.Instance.SetClipboardText(copyText);
+                    PlatformUtils.Instance.MessageBox("Text Entry Contents copied to clipboard", "Clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     IsCurrentlyCopyingContents = false;
                 }
             );

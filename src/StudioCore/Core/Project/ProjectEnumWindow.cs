@@ -2,7 +2,7 @@
 using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editor;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Core.Project;
 
@@ -215,7 +214,7 @@ public static class ProjectEnumWindow
                 {
                     if (ImGui.Button("Copy Selected Alias Name", buttonSize))
                     {
-                        Clipboard.SetText(_selectedEntry.Name);
+                        PlatformUtils.Instance.SetClipboardText(_selectedEntry.Name);
                     }
                     UIHelper.ShowHoverTooltip("Copy the currently selected alias name directly to your clipboard.");
 
@@ -244,7 +243,7 @@ public static class ProjectEnumWindow
                                 aliasList = $"^ ID ^ Description ^\n{aliasList}";
                             }
 
-                            Clipboard.SetText(aliasList);
+                            PlatformUtils.Instance.SetClipboardText(aliasList);
                         }
                     }
                     UIHelper.ShowHoverTooltip("Copy the aliases into a list: <ID> <Name>, saving to your clipboard.");
@@ -303,7 +302,7 @@ public static class ProjectEnumWindow
                         {
                             if (_selectedEntry.Options.Where(e => e.ID == _refNewOptionID).Any())
                             {
-                                MessageBox.Show($"Option with {_refNewOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
+                                PlatformUtils.Instance.MessageBox($"Option with {_refNewOptionID} already exists for {_selectedEntry.DisplayName}", "Error", MessageBoxButtons.OK);
                             }
                             else
                             {

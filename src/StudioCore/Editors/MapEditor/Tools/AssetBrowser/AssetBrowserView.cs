@@ -11,7 +11,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
@@ -20,7 +20,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
@@ -556,7 +555,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                         var mapName = s.Parent.Name;
                         if (mapName != assetMapId)
                         {
-                            MessageBox.Show($"Map Pieces are specific to each map.\nYou cannot change a Map Piece in {mapName} to a Map Piece from {assetMapId}.", "Object Browser", MessageBoxButtons.OK);
+                            PlatformUtils.Instance.MessageBox($"Map Pieces are specific to each map.\nYou cannot change a Map Piece in {mapName} to a Map Piece from {assetMapId}.", "Object Browser", MessageBoxButtons.OK);
 
                             isValidObjectType = false;
                         }

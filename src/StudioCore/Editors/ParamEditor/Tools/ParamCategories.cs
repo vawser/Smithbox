@@ -1,11 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Banks.ParamCategoryBank;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -84,7 +83,7 @@ public static class ParamCategories
 
         if (ImGui.Button("Restore Base Categories", new Vector2(sectionWidth * 1.0f, 24)))
         {
-            var result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+            var result = PlatformUtils.Instance.MessageBox("Are you sure?", "Warning", MessageBoxButtons.YesNo);
 
             if (result is DialogResult.Yes)
             {

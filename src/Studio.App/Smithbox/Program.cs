@@ -10,9 +10,8 @@ using StudioCore;
 using System.Security.Permissions;
 using Microsoft.DotNet.PlatformAbstractions;
 using StudioCore.Graphics;
-
+using StudioCore.Platform;
 using Veldrid.Sdl2;
-using System.Windows.Forms;
 
 namespace Smithbox
 {
@@ -81,10 +80,10 @@ namespace Smithbox
             File.WriteAllLines(crashLogPath, exceptionInfo);
 
             if (exceptionInfo.Count > 10)
-                MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".",
+                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".",
                     $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-                MessageBox.Show($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
+                PlatformUtils.Instance.MessageBox($"Smithbox has run into an issue.\nCrash log has been generated at \"{crashLogPath}\".\n\nCrash Log:\n{string.Join("\n", exceptionInfo)}",
                     $"Smithbox Unhandled Error - {_version}", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

@@ -7,7 +7,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-
+using StudioCore.Platform;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

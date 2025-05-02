@@ -5,7 +5,7 @@ using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
@@ -415,7 +415,10 @@ public class ToolWindow
                 ImGui.SameLine();
                 if (ImGui.Button($@"{ForkAwesome.FileO}"))
                 {
-                    Handler.targetRegulationPath = WindowsUtils.GetFolderSelection();
+                    if (PlatformUtils.Instance.OpenFileDialog("Select target regulation.bin...", Handler.allParamTypes, out var path))
+                    {
+                        Handler.targetRegulationPath = path;
+                    }
                 }
 
                 ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
@@ -432,7 +435,10 @@ public class ToolWindow
                     ImGui.SameLine();
                     if (ImGui.Button($@"{ForkAwesome.FileO}"))
                     {
-                        Handler.targetLooseParamPath = WindowsUtils.GetFolderSelection();
+                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
+                        {
+                            Handler.targetLooseParamPath = path;
+                        }
                     }
                     UIHelper.WrappedText("");
 
@@ -444,7 +450,10 @@ public class ToolWindow
                     ImGui.SameLine();
                     if (ImGui.Button($@"{ForkAwesome.FileO}"))
                     {
-                        Handler.targetEnemyParamPath = WindowsUtils.GetFolderSelection();
+                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
+                        {
+                            Handler.targetEnemyParamPath = path;
+                        }
                     }
                     UIHelper.WrappedText("");
                 }

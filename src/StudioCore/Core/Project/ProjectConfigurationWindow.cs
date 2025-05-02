@@ -2,7 +2,7 @@
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -200,14 +200,15 @@ public static class ProjectConfigurationWindow
                     ImGui.AlignTextToFramePadding();
                     if (ImGui.Button($@"Change##rootDirectoryPicker", new Vector2(itemWidth, 20)))
                     {
-                        var gameDir = WindowsUtils.GetFileSelection();
+                        if (PlatformUtils.Instance.OpenFileDialog("Select game .exe", new string[] { "exe" }, out var gameDir))
+                        {
+                            var newGameRoot = Path.GetDirectoryName(gameDir);
 
-                        var newGameRoot = Path.GetDirectoryName(gameDir);
+                            Smithbox.GameRoot = newGameRoot;
 
-                        Smithbox.GameRoot = newGameRoot;
-
-                        Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = newGameRoot;
-                        Smithbox.ProjectHandler.SaveCurrentProject();
+                            Smithbox.ProjectHandler.CurrentProject.Config.GameRoot = newGameRoot;
+                            Smithbox.ProjectHandler.SaveCurrentProject();
+                        }
                     }
                     UIHelper.ShowHoverTooltip("Set the game directory to use for this project.");
 
@@ -232,10 +233,12 @@ public static class ProjectConfigurationWindow
                         ImGui.AlignTextToFramePadding();
                         if (ImGui.Button($@"Change##collisionDirPicker", new Vector2(itemWidth, 20)))
                         {
-                            var ptdeRoot = WindowsUtils.GetFolderSelection();
-
-                            CFG.Current.PTDE_Collision_Root = ptdeRoot;
-                            CFG.Save();
+                            if (PlatformUtils.Instance.OpenFileDialog("Select Dark Souls: Prepare to Die Edition .exe", new string[] { "exe" }, out var ptdeRoot))
+                            {
+                                var filename = Path.GetFileName(ptdeRoot);
+                                CFG.Current.PTDE_Collision_Root = ptdeRoot.Replace(filename, "");
+                                CFG.Save();
+                            }
                         }
                         UIHelper.ShowHoverTooltip("When set this will allow collisions to be visible whilst editing Dark Souls: Remastered maps, assuming you have unpacked Dark Souls: Prepare the Die Edition.");
                     }

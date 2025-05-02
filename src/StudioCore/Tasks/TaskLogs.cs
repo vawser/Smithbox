@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Settings;
 using StudioCore.Tasks;
 using System;
@@ -10,7 +10,6 @@ using System.Linq;
 using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore;
 
@@ -100,7 +99,7 @@ public static class TaskLogs
                                 popupMessage += $"\n{ex.StackTrace}";
                             }
 
-                            MessageBox.Show(popupMessage, level.ToString(),
+                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
                                 MessageBoxButtons.OK);
                         }
 
@@ -161,7 +160,7 @@ public static class TaskLogs
                                 popupMessage += $"\n{ex.StackTrace}";
                             }
 
-                            MessageBox.Show(popupMessage, level.ToString(),
+                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
                                 MessageBoxButtons.OK);
                         }
 
@@ -250,7 +249,7 @@ public static class TaskLogs
                         contents = contents + $"{entry.FormattedMessage}\n";
                     }
 
-                    Clipboard.SetText($"{contents}");
+                    PlatformUtils.Instance.SetClipboardText($"{contents}");
                 }
 
                 ImGui.BeginChild("##actionLogItems");
@@ -348,7 +347,7 @@ public static class TaskLogs
                         contents = contents + $"{entry.FormattedMessage}\n";
                     }
 
-                    Clipboard.SetText($"{contents}");
+                    PlatformUtils.Instance.SetClipboardText($"{contents}");
                 }
 
                 ImGui.BeginChild("##warningLogItems");

@@ -1,5 +1,4 @@
-﻿
-using StudioCore.Utilities;
+﻿using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -125,8 +124,10 @@ namespace StudioCore.Tools.Generation
 
         public static void SelectExportDirectory()
         {
-            var selectedPath = WindowsUtils.GetFolderSelection();
-            exportPath = $"{selectedPath}//layout_export.txt";
+            if (PlatformUtils.Instance.OpenFolderDialog("Select layout export directory...", out var selectedPath))
+            {
+                exportPath = $"{selectedPath}//layout_export.txt";
+            }
         }
 
         public static void CalcSOTEWorldMapLayout()

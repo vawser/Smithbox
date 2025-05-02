@@ -11,7 +11,7 @@ using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using StudioCore.Scene.Helpers;
@@ -26,7 +26,6 @@ using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using Veldrid.Utilities;
 using static SoulsFormats.MSBE.Part;
 using static SoulsFormats.NVA;
@@ -188,7 +187,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -306,7 +305,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -362,7 +361,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -377,7 +376,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -442,7 +441,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -472,7 +471,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -570,7 +569,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -593,7 +592,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -707,7 +706,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -730,7 +729,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 
@@ -893,7 +892,7 @@ public class MapActionHandler
         }
         else
         {
-            MessageBox.Show("No object selected.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox("No object selected.", "Smithbox", MessageBoxButtons.OK);
         }
     }
 

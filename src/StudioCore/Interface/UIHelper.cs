@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,6 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Interface;
 public static class UIHelper
@@ -203,5 +202,10 @@ public static class UIHelper
                 ImGui.TextColored(color, @$"{aliasName}");
             }
         }
+    }
+
+    public static void CopyToClipboard(string text)
+    {
+        PlatformUtils.Instance.SetClipboardText(text);
     }
 }

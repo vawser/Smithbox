@@ -1,4 +1,4 @@
-﻿
+﻿using StudioCore.Platform;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,6 @@ using StudioCore.Core.Project;
 using Silk.NET.SDL;
 using StudioCore.Graphics;
 using Hexa.NET.ImGui;
-using System.Windows.Forms;
 
 namespace StudioCore.Interface;
 
@@ -328,7 +327,7 @@ public class UI
             }
             catch (Exception e)
             {
-                var result = MessageBox.Show(
+                DialogResult result = PlatformUtils.Instance.MessageBox(
                     $"{e.Message}\n\nConfig could not be loaded. Reset settings?",
                     $"{Config_FileName} Load Error", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)

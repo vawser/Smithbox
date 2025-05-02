@@ -2,9 +2,8 @@
 using StudioCore.Core.Project;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.TextureViewer;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -66,8 +65,12 @@ public class TexToolView
                 ImGui.InputText("##exportDestination", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation, 255);
                 if (ImGui.Button("Select", halfButtonSize))
                 {
-                    string path = WindowsUtils.GetFolderSelection(); 
-                    CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
+                    string path;
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
+                    if (result)
+                    {
+                        CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
+                    }
                 }
                 ImGui.SameLine();
                 if (ImGui.Button("View Folder", halfButtonSize))

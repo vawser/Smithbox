@@ -1,4 +1,4 @@
-﻿
+﻿using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +12,6 @@ using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Scene.Enums;
-using System.Windows.Forms;
 
 namespace StudioCore;
 
@@ -76,6 +75,15 @@ public class CFG
     public float System_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
     public bool System_IgnoreAsserts = false;
+
+    public bool System_EnableAutoSave = true;
+    public int System_AutoSaveIntervalSeconds = 300;
+    public bool System_EnableAutoSave_Project = true;
+    public bool System_EnableAutoSave_MapEditor = false;
+    public bool System_EnableAutoSave_ModelEditor = false;
+    public bool System_EnableAutoSave_ParamEditor = false;
+    public bool System_EnableAutoSave_TextEditor = false;
+    public bool System_EnableAutoSave_GparamEditor = false;
 
     public bool System_EnableRecoveryFolder = true;
 
@@ -849,8 +857,9 @@ public class CFG
             }
             catch (Exception e)
             {
-                var result = MessageBox.Show($"{e.Message}\n\nConfig could not be loaded. Reset settings?", "Error", MessageBoxButtons.YesNo);
-                
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"{e.Message}\n\nConfig could not be loaded. Reset settings?",
+                    $"{Config_FileName} Load Error", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                 {
                     throw new Exception($"{Config_FileName} could not be loaded.\n\n{e.Message}");
@@ -882,8 +891,9 @@ public class CFG
             }
             catch (Exception e)
             {
-                var result = MessageBox.Show($"{e.Message}\n\nKeybinds could not be loaded. Reset keybinds?", "Error", MessageBoxButtons.YesNo);
-
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                    $"{e.Message}\n\nKeybinds could not be loaded. Reset keybinds?",
+                    $"{Keybinds_FileName} Load Error", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                 {
                     throw new Exception($"{Keybinds_FileName} could not be loaded.\n\n{e.Message}");

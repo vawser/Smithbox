@@ -2,7 +2,7 @@
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Settings;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Configuration.Settings;
 
@@ -124,7 +123,9 @@ public class SystemTab
         {
             if (ImGui.Button("Reset Configuration"))
             {
-                var result = MessageBox.Show($"Do you want to delete your Smithbox configuration files?", $"Warning");
+                DialogResult result = PlatformUtils.Instance.MessageBox(
+                $"Do you want to delete your Smithbox configuration files?",
+                $"Warning", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {

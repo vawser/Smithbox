@@ -5,7 +5,7 @@ using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -97,15 +97,16 @@ public class ModelToolView
 
                 if (ImGui.Button("Set Export Directory##modelExportDirectoryButton", defaultButtonSize))
                 {
-                    var path = WindowsUtils.GetFolderSelection("Select export directory...");
-
-                    if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                    if (PlatformUtils.Instance.OpenFolderDialog("Select export directory...", out var path))
                     {
-                        ModelColladaExporter.ExportPath = path;
-                    }
-                    if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
-                    {
-                        ModelObjectExporter.ExportPath = path;
+                        if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
+                        {
+                            ModelColladaExporter.ExportPath = path;
+                        }
+                        if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
+                        {
+                            ModelObjectExporter.ExportPath = path;
+                        }
                     }
                 }
                 if(ImGui.Button("Export##modelExportApplyButton", defaultButtonSize))

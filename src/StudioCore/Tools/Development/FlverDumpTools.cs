@@ -1,8 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Types;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,19 +15,21 @@ public static class FlverDumpTools
 {
     public static void DumpFlverLayouts()
     {
-        var path = WindowsUtils.GetFileSelection();
-
-        using (StreamWriter file = new(path))
+        if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
+                 out var path))
         {
-            foreach (KeyValuePair<string, FLVER2.BufferLayout> mat in FlverResource.MaterialLayouts)
+            using (StreamWriter file = new(path))
             {
-                file.WriteLine(mat.Key + ":");
-                foreach (FLVER.LayoutMember member in mat.Value)
+                foreach (KeyValuePair<string, FLVER2.BufferLayout> mat in FlverResource.MaterialLayouts)
                 {
-                    file.WriteLine($@"{member.Index}: {member.Type.ToString()}: {member.Semantic.ToString()}");
-                }
+                    file.WriteLine(mat.Key + ":");
+                    foreach (FLVER.LayoutMember member in mat.Value)
+                    {
+                        file.WriteLine($@"{member.Index}: {member.Type.ToString()}: {member.Semantic.ToString()}");
+                    }
 
-                file.WriteLine();
+                    file.WriteLine();
+                }
             }
         }
     }

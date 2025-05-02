@@ -6,7 +6,7 @@ using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.GraphicsEditor;
-
+using StudioCore.Platform;
 using StudioCore.Resource;
 using StudioCore.TextureViewer;
 using System;

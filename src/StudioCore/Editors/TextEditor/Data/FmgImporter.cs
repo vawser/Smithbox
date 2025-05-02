@@ -7,9 +7,8 @@ using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,7 +18,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -300,19 +298,21 @@ public static class FmgImporter
 
     private static void PromptExternalTextImport(ImportBehavior type)
     {
-        var path = WindowsUtils.GetFileSelection();
-        if (!File.Exists(path))
+        if (PlatformUtils.Instance.OpenFileDialog("Select stored text JSON", ["json"], out var path))
         {
-            var message = MessageBox.Show(
-                "Selected file is invalid.", "Error",
-                MessageBoxButtons.OK);
-            return;
-        }
+            if (!File.Exists(path))
+            {
+                DialogResult message = PlatformUtils.Instance.MessageBox(
+                    "Selected file is invalid.", "Error",
+                    MessageBoxButtons.OK);
+                return;
+            }
 
-        var generatedStoredFmgContainer = GenerateStoredFmgContainer(path);
-        if (generatedStoredFmgContainer != null)
-        {
-            ImportText(generatedStoredFmgContainer, type);
+            var generatedStoredFmgContainer = GenerateStoredFmgContainer(path);
+            if (generatedStoredFmgContainer != null)
+            {
+                ImportText(generatedStoredFmgContainer, type);
+            }
         }
     }
 }

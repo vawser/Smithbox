@@ -5,12 +5,11 @@ using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Interface;
-
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
 
@@ -239,19 +238,19 @@ public class EntityIdentifierOverview
                         {
                             if (ImGui.Selectable($"Copy ID##copyId_{id}"))
                             {
-                                Clipboard.SetText($"{id}");
+                                PlatformUtils.Instance.SetClipboardText($"{id}");
                             }
 
                             if (entity != null)
                             {
                                 if (ImGui.Selectable($"Copy Name##copyName_{id}"))
                                 {
-                                    Clipboard.SetText(entity.Name);
+                                    PlatformUtils.Instance.SetClipboardText(entity.Name);
                                 }
 
                                 if (ImGui.Selectable($"Copy ID and Name##copyIdAndName_{id}"))
                                 {
-                                    Clipboard.SetText($"{id};{entity.Name}");
+                                    PlatformUtils.Instance.SetClipboardText($"{id};{entity.Name}");
                                 }
                             }
 
