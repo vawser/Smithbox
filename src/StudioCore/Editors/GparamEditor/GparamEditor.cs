@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditorNS;
 
-public class GparamEditor : IEditor
+public class GparamEditor
 {
     public BaseEditor BaseEditor;
     public Project Project;

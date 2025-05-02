@@ -1,8 +1,8 @@
-﻿using Andre.IO.VFS;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.BehaviorEditorNS;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,110 +10,203 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditorNS;
-
-public class MaterialBank
+namespace StudioCore.Editors.MaterialEditor;
+public static class MaterialBank
 {
-    private MaterialData DataParent;
+    public static bool IsLoaded { get; private set; }
+    public static bool IsLoading { get; private set; }
 
-    public string BankName = "Undefined";
+    public static Dictionary<MaterialFileInfo, IBinder> FileBank { get; private set; } = new();
 
-    public BankType BankType = BankType.MTD;
-
-    public Dictionary<string, BinderContents> Binders = new();
-
-    private VirtualFileSystem FS;
-
-    public MaterialBank(MaterialData parent, string bankName, VirtualFileSystem targetFs, BankType bankType)
+    public static void SaveMaterials()
     {
-        DataParent = parent;
-        BankName = bankName;
-        FS = targetFs;
-        BankType = bankType;
+        foreach (var (info, binder) in FileBank)
+        {
+            SaveMaterial(info, binder);
+        }
     }
 
-    /// <summary>
-    /// Load the external file
-    /// </summary>
-    public void LoadBinder(string filename, string filepath)
+    public static void SaveMaterial(MaterialFileInfo info, IBinder binder)
     {
-        // Read binder if it hasn't already been loaded
-        if (!Binders.ContainsKey(filename))
+        if (binder == null)
+            return;
+
+        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
+
+        var fileDir = @"\mtd";
+        var fileExt = @".mtdbnd.dcx";
+
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
-            try
+            fileDir = @"\material";
+            fileExt = @".matbinbnd.dcx";
+        }
+
+        foreach (BinderFile file in binder.Files)
+        {
+            foreach (MTD mFile in info.MaterialFiles)
             {
-                var binderData = FS.ReadFileOrThrow(filepath);
-                var curBinder = BND4.Read(binderData);
+                file.Bytes = mFile.Write();
+            }
+        }
 
-                var newBinderContents = new BinderContents();
-                newBinderContents.Name = filename;
+        BND4 writeBinder = binder as BND4;
+        byte[] fileBytes = null;
 
-                var fileList = new List<BinderFile>();
-                foreach (var file in curBinder.Files)
+        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
+
+        switch (Smithbox.ProjectType)
+        {
+            case ProjectType.DS3:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                break;
+            case ProjectType.SDT:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.ER:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.AC6:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                break;
+            default:
+                return;
+        }
+
+        // Add folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
+        {
+            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
+        }
+    }
+
+    public static void LoadMaterials()
+    {
+        if (Smithbox.ProjectType == ProjectType.Undefined)
+        {
+            return;
+        }
+
+        IsLoaded = false;
+        IsLoading = true;
+
+        FileBank = new();
+
+        var fileDir = @"\mtd";
+        var fileExt = @".mtdbnd.dcx";
+
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\material";
+            fileExt = @".matbinbnd.dcx";
+        }
+
+        List<string> fileNames = MiscLocator.GetMaterialBinders();
+
+        foreach (var name in fileNames)
+        {
+            var filePath = $"{fileDir}\\{name}{fileExt}";
+
+            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+            {
+                LoadMaterial($"{Smithbox.ProjectRoot}\\{filePath}");
+                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+            }
+            else
+            {
+                LoadMaterial($"{Smithbox.GameRoot}\\{filePath}");
+                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+            }
+        }
+
+        IsLoaded = true;
+        IsLoading = false;
+    }
+
+    public static void LoadMaterial(string path)
+    {
+        if (path == null)
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
+                    LogLevel.Warning);
+            return;
+        }
+        if (path == "")
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
+                    LogLevel.Warning);
+            return;
+        }
+
+        var fileExt = @".mtd";
+
+        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            fileExt = @".matbin";
+        }
+
+        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
+
+        IBinder binder = null;
+
+        try
+        {
+            binder = BND4.Read(DCX.Decompress(path));
+        }
+        catch (Exception ex)
+        {
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read Material file: {filename} at {path}.\n{ex}", LogLevel.Error);
+        }
+
+        if (binder != null)
+        {
+            foreach (var file in binder.Files)
+            {
+                if (file.Name.Contains($"{fileExt}"))
                 {
-                    fileList.Add(file);
+                    try
+                    {
+                        MTD cFile = MTD.Read(file.Bytes);
+                        fileStruct.MaterialFiles.Add(cFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskLogs.AddLog($"Failed to read Material file: {file.ID}.\n{ex}", LogLevel.Error);
+                    }
                 }
-
-                newBinderContents.Binder = curBinder;
-                newBinderContents.Files = fileList;
-
-                Binders.Add(filename, newBinderContents);
             }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"[{DataParent.Project.ProjectName}:Material Editor:{BankName}] Failed to load {filepath}", LogLevel.Warning);
-            }
+
+            FileBank.Add(fileStruct, binder);
         }
     }
 
-    /// <summary>
-    /// Save task for this bank
-    /// </summary>
-    public async Task<bool> Save()
+    public class MaterialFileInfo
     {
-        await Task.Delay(1000);
-
-        var successfulSave = false;
-
-        var selection = DataParent.Project.MaterialEditor.Selection;
-
-        if (!Binders.ContainsKey(selection._selectedFileName))
-            return false;
-
-        var binder = Binders[selection._selectedFileName];
-
-        var internalFile = binder.Files.Where(e => e.Name == selection._selectedInternalFileName).FirstOrDefault();
-
-        if (internalFile == null)
-            return false;
-
-        using (MemoryStream memoryStream = new MemoryStream(internalFile.Bytes.ToArray()))
+        public MaterialFileInfo(string name, string path)
         {
-            switch (BankType)
-            {
-                case BankType.MTD:
-                    internalFile.Bytes = selection._selectedMaterial.Write();
-                    break;
-                case BankType.MATBIN:
-                    internalFile.Bytes = selection._selectedMatbin.Write();
-                    break;
-                default: break;
-            }
+            Name = name;
+            Path = path;
+            MaterialFiles = new List<MTD>();
         }
 
-        return successfulSave;
+        public string Name { get; set; }
+        public string Path { get; set; }
+
+        public List<MTD> MaterialFiles { get; set; }
     }
-}
-
-public class BinderContents
-{
-    public string Name { get; set; }
-    public BND4 Binder { get; set; }
-    public List<BinderFile> Files { get; set; }
-}
-
-public enum BankType
-{
-    MTD,
-    MATBIN
 }

@@ -9,7 +9,6 @@ using StudioCore.Editors.EventScriptEditorNS;
 using StudioCore.Editors.EzStateEditorNS;
 using StudioCore.Editors.GparamEditorNS;
 using StudioCore.Editors.MapEditorNS;
-using StudioCore.Editors.MaterialEditorNS;
 using StudioCore.Formats;
 using StudioCore.Interface;
 using StudioCore.Resources.JSON;
