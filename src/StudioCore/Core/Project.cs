@@ -486,19 +486,19 @@ public class Project
             // Model Editor
             if (EnableModelEditor && ModelEditor != null)
             {
-                ModelEditor.Display(dt, cmd);
+                ModelEditor.OnGUI(dt, cmd);
             }
 
             // Param Editor
             if (EnableParamEditor && ParamEditor != null)
             {
-                ParamEditor.Display(dt, cmd);
+                ParamEditor.OnGUI(dt, cmd);
             }
 
             // Text Editor
             if (EnableTextEditor && TextEditor != null)
             {
-                TextEditor.Display(dt, cmd);
+                TextEditor.OnGUI(dt, cmd);
             }
 
             // Cutscene Editor
@@ -510,43 +510,43 @@ public class Project
             // Event Script Editor
             if (EnableEventScriptEditor && EventScriptEditor != null)
             {
-                EventScriptEditor.Display(dt, cmd);
+                EventScriptEditor.OnGUI(dt, cmd);
             }
 
             // Ez State Editor
             if (EnableEzStateEditor && EzStateEditor != null)
             {
-                EzStateEditor.Display(dt, cmd);
+                EzStateEditor.OnGUI(dt, cmd);
             }
 
             // Gparam Editor
             if (EnableGparamEditor && GparamEditor != null)
             {
-                GparamEditor.Display(dt, cmd);
+                GparamEditor.OnGUI(dt, cmd);
             }
 
             // Material Editor
             if (EnableMaterialEditor && MaterialEditor != null)
             {
-                MaterialEditor.Display(dt, cmd);
+                MaterialEditor.OnGUI(dt, cmd);
             }
 
             // Behavior Editor
             if (EnableBehaviorEditor && BehaviorEditor != null)
             {
-                BehaviorEditor.Display(dt, cmd);
+                BehaviorEditor.OnGUI(dt, cmd);
             }
 
             // Texture Editor
             if (EnableTextureEditor && TextureEditor != null)
             {
-                TextureEditor.Display(dt, cmd);
+                TextureEditor.OnGUI(dt, cmd);
             }
 
             // Time Act Editor
             if (EnableTimeActEditor && TimeActEditor != null)
             {
-                TimeActEditor.Display(dt, cmd);
+                TimeActEditor.OnGUI(dt, cmd);
             }
         }
 

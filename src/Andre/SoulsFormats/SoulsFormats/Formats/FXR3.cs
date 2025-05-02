@@ -1,71 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using System.Xml.Linq;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace SoulsFormats
 {
     /// <summary>
-    /// Rainbow Stone FXR format parser class.
-    ///
     /// An SFX definition file used in DS3 and Sekiro. Extension: .fxr
-    /// Initial work by TKGP, Meowmaritus and NamelessHoodie.
-    ///
-    /// Maintained by ivi for the Rainbow Stone FXR tool.
     /// </summary>
-    [XmlType(TypeName = "FXR3")]
     public class FXR3 : SoulsFile<FXR3>
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public FXRVersion Version { get; set; }
 
-        public int Id { get; set; }
+        public int ID { get; set; }
 
-        [XmlElement("StateMap")]
-        public StateMap RootStateMap { get; set; }
+        public Section1 Section1Tree { get; set; }
 
-        [XmlElement("Container")]
-        public Container RootContainer { get; set; }
+        public Section4 Section4Tree { get; set; }
 
-        public HashSet<int> ReferenceList { get; set; }
+        public List<int> Section12s { get; set; }
 
-        public HashSet<int> ExternalValueList { get; set; }
-
-        public List<int> UnkBloodEnabler { get; set; }
-
-        // public List<int> UnkEmpty { get; set; }
+        public List<int> Section13s { get; set; }
 
         public FXR3()
         {
             Version = FXRVersion.DarkSouls3;
-            RootStateMap = new StateMap();
-            RootContainer = new Container();
-            ReferenceList = new HashSet<int>();
-            ExternalValueList = new HashSet<int>();
-            UnkBloodEnabler = new List<int>();
-            // UnkEmpty = new List<int>();
-        }
-
-        public FXR3(FXR3 fxr)
-        {
-            Id = fxr.Id;
-            Version = fxr.Version;
-            RootStateMap = new StateMap(fxr.RootStateMap);
-            RootContainer = new Container(fxr.RootContainer);
-            ReferenceList = new HashSet<int>(fxr.ReferenceList);
-            ExternalValueList = new HashSet<int>(fxr.ExternalValueList);
-            UnkBloodEnabler = new List<int>(fxr.UnkBloodEnabler);
-            // UnkEmpty = new List<int>(fxr.UnkEmpty);
+            Section1Tree = new Section1();
+            Section4Tree = new Section4();
+            Section12s = new List<int>();
+            Section13s = new List<int>();
         }
 
         protected override bool Is(BinaryReaderEx br)
         {
-            if (br.Length < 8L)
+            if (br.Length < 8)
                 return false;
-            string ascii = br.GetASCII(0L, 4);
-            short int16 = br.GetInt16(6L);
-            return ascii == "FXR\0" && (int16 == 4 || int16 == 5);
+
+            string magic = br.GetASCII(0, 4);
+            short version = br.GetInt16(6);
+            return magic == "FXR\0" && (version == 4 || version == 5);
         }
 
         protected override void Read(BinaryReaderEx br)
@@ -73,17 +45,17 @@ namespace SoulsFormats
             br.BigEndian = false;
 
             br.AssertASCII("FXR\0");
-            int num1 = br.AssertInt16(0);
+            br.AssertInt16(0);
             Version = br.ReadEnum16<FXRVersion>();
             br.AssertInt32(1);
-            Id = br.ReadInt32();
-            int stateMapOffset = br.ReadInt32();
+            ID = br.ReadInt32();
+            int section1Offset = br.ReadInt32();
             br.AssertInt32(1); // Section 1 count
             br.ReadInt32(); // Section 2 offset
             br.ReadInt32(); // Section 2 count
             br.ReadInt32(); // Section 3 offset
             br.ReadInt32(); // Section 3 count
-            int containerOffset = br.ReadInt32();
+            int section4Offset = br.ReadInt32();
             br.ReadInt32(); // Section 4 count
             br.ReadInt32(); // Section 5 offset
             br.ReadInt32(); // Section 5 count
@@ -104,35 +76,29 @@ namespace SoulsFormats
 
             if (Version == FXRVersion.Sekiro)
             {
-                int referenceOffset = br.ReadInt32();
-                int referenceCount = br.ReadInt32();
-                int externalValueOffset = br.ReadInt32();
-                int externalValueCount = br.ReadInt32();
-                int unkBloodEnablerOffset = br.ReadInt32();
-                int unkBloodEnablerCount = br.ReadInt32();
-                // int section15Offset = br.ReadInt32();
-                // int section15Count = br.ReadInt32();
-                br.ReadInt32(); // Section 15 offset
-                br.AssertInt32(0); // Section 15 count
+                int section12Offset = br.ReadInt32();
+                int section12Count = br.ReadInt32();
+                int section13Offset = br.ReadInt32();
+                int section13Count = br.ReadInt32();
+                br.ReadInt32(); // Section 14 offset
+                br.AssertInt32(0); // Section 14 count
+                br.AssertInt32(0);
+                br.AssertInt32(0);
 
-                ReferenceList = new HashSet<int>(br.GetInt32s(referenceOffset, referenceCount));
-                ExternalValueList = new HashSet<int>(br.GetInt32s(externalValueOffset, externalValueCount));
-                UnkBloodEnabler = new List<int>(br.GetInt32s(unkBloodEnablerOffset, unkBloodEnablerCount));
-                // UnkEmpty = new List<int>(br.GetInt32s(section15Offset, section15Count));
+                Section12s = new List<int>(br.GetInt32s(section12Offset, section12Count));
+                Section13s = new List<int>(br.GetInt32s(section13Offset, section13Count));
             }
             else
             {
-                ReferenceList = new HashSet<int>();
-                ExternalValueList = new HashSet<int>();
-                UnkBloodEnabler = new List<int>();
-                // UnkEmpty = new List<int>();
+                Section12s = new List<int>();
+                Section13s = new List<int>();
             }
 
-            br.Position = stateMapOffset;
-            RootStateMap = new StateMap(br);
+            br.Position = section1Offset;
+            Section1Tree = new Section1(br);
 
-            br.Position = containerOffset;
-            RootContainer = new Container(br);
+            br.Position = section4Offset;
+            Section4Tree = new Section4(br);
         }
 
         protected override void Write(BinaryWriterEx bw)
@@ -141,145 +107,139 @@ namespace SoulsFormats
             bw.WriteInt16(0);
             bw.WriteUInt16((ushort)Version);
             bw.WriteInt32(1);
-            bw.WriteInt32(Id);
-            bw.ReserveInt32("StateMapOffset");
+            bw.WriteInt32(ID);
+            bw.ReserveInt32("Section1Offset");
             bw.WriteInt32(1);
-            bw.ReserveInt32("StateOffset");
-            bw.WriteInt32(RootStateMap.States.Count);
-            bw.ReserveInt32("TransitionOffset");
-            bw.ReserveInt32("TransitionCount");
-            bw.ReserveInt32("ContainerOffset");
-            bw.ReserveInt32("ContainerCount");
-            bw.ReserveInt32("EffectOffset");
-            bw.ReserveInt32("EffectCount");
-            bw.ReserveInt32("ActionOffset");
-            bw.ReserveInt32("ActionCount");
-            bw.ReserveInt32("PropertyOffset");
-            bw.ReserveInt32("PropertyCount");
-            bw.ReserveInt32("ModifierOffset");
-            bw.ReserveInt32("ModifierCount");
-            bw.ReserveInt32("ConditionalPropertyOffset");
-            bw.ReserveInt32("ConditionalPropertyCount");
-            bw.ReserveInt32("UnkFieldListOffset");
-            bw.ReserveInt32("UnkFieldListCount");
-            bw.ReserveInt32("FieldOffset");
-            bw.ReserveInt32("FieldCount");
+            bw.ReserveInt32("Section2Offset");
+            bw.WriteInt32(Section1Tree.Section2s.Count);
+            bw.ReserveInt32("Section3Offset");
+            bw.ReserveInt32("Section3Count");
+            bw.ReserveInt32("Section4Offset");
+            bw.ReserveInt32("Section4Count");
+            bw.ReserveInt32("Section5Offset");
+            bw.ReserveInt32("Section5Count");
+            bw.ReserveInt32("Section6Offset");
+            bw.ReserveInt32("Section6Count");
+            bw.ReserveInt32("Section7Offset");
+            bw.ReserveInt32("Section7Count");
+            bw.ReserveInt32("Section8Offset");
+            bw.ReserveInt32("Section8Count");
+            bw.ReserveInt32("Section9Offset");
+            bw.ReserveInt32("Section9Count");
+            bw.ReserveInt32("Section10Offset");
+            bw.ReserveInt32("Section10Count");
+            bw.ReserveInt32("Section11Offset");
+            bw.ReserveInt32("Section11Count");
             bw.WriteInt32(1);
             bw.WriteInt32(0);
 
             if (Version == FXRVersion.Sekiro)
             {
-                bw.ReserveInt32("ReferenceOffset");
-                bw.WriteInt32(ReferenceList.Count);
-                bw.ReserveInt32("ExternalValueOffset");
-                bw.WriteInt32(ExternalValueList.Count);
-                bw.ReserveInt32("UnkBloodEnablerOffset");
-                bw.WriteInt32(UnkBloodEnabler.Count);
-                bw.ReserveInt32("UnkEmptyOffset");
-                bw.WriteInt32(0); // UnkEmpty always 0
-                // bw.WriteInt32(UnkEmpty.Count);
-                // bw.WriteInt32(0);
-                // bw.WriteInt32(0);
+                bw.ReserveInt32("Section12Offset");
+                bw.WriteInt32(Section12s.Count);
+                bw.ReserveInt32("Section13Offset");
+                bw.WriteInt32(Section13s.Count);
+                bw.ReserveInt32("Section14Offset");
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
+                bw.WriteInt32(0);
             }
 
-            bw.FillInt32("StateMapOffset", (int)bw.Position);
-            RootStateMap.Write(bw);
-            bw.Pad(16);
-            bw.FillInt32("StateOffset", (int)bw.Position);
-            RootStateMap.WriteStates(bw);
-            bw.Pad(16);
-            bw.FillInt32("TransitionOffset", (int)bw.Position);
-            List<State> states = RootStateMap.States;
-            List<StateCondition> transitions = new List<StateCondition>();
-            for (int index = 0; index < states.Count; ++index)
-                states[index].WriteTransitions(bw, index, transitions);
-            bw.FillInt32("TransitionCount", transitions.Count);
-            bw.Pad(16);
-            bw.FillInt32("ContainerOffset", (int)bw.Position);
-            List<Container> Containers = new List<Container>();
-            RootContainer.Write(bw, Containers);
-            RootContainer.WriteContainers(bw, Containers);
-            bw.FillInt32("ContainerCount", Containers.Count);
-            bw.Pad(16);
-            bw.FillInt32("EffectOffset", (int)bw.Position);
-            int EffectCount = 0;
-            for (int index = 0; index < Containers.Count; ++index)
-                Containers[index].WriteEffects(bw, index, ref EffectCount);
-            bw.FillInt32("EffectCount", EffectCount);
-            bw.Pad(16);
-            bw.FillInt32("ActionOffset", (int)bw.Position);
-            EffectCount = 0;
-            List<Action> actions = new List<Action>();
-            for (int index = 0; index < Containers.Count; ++index)
-                Containers[index].WriteActions(bw, index, ref EffectCount, actions);
-            bw.FillInt32("ActionCount", actions.Count);
-            bw.Pad(16);
-            bw.FillInt32("PropertyOffset", (int)bw.Position);
-            List<Property> properties = new List<Property>();
-            for (int index = 0; index < actions.Count; ++index)
-                actions[index].WriteProperties(bw, index, properties);
-            bw.FillInt32("PropertyCount", properties.Count);
-            bw.Pad(16);
-            bw.FillInt32("ModifierOffset", (int)bw.Position);
-            List<PropertyModifier> modifiers = new List<PropertyModifier>();
-            for (int index = 0; index < properties.Count; ++index)
-                properties[index].WriteModifiers(bw, index, modifiers);
-            bw.FillInt32("ModifierCount", modifiers.Count);
-            bw.Pad(16);
-            bw.FillInt32("ConditionalPropertyOffset", (int)bw.Position);
-            List<Property> conditionalProperties = new List<Property>();
-            for (int index = 0; index < modifiers.Count; ++index)
-                modifiers[index].WriteProperties(bw, index, conditionalProperties);
-            bw.FillInt32("ConditionalPropertyCount", conditionalProperties.Count);
-            bw.Pad(16);
-            bw.FillInt32("UnkFieldListOffset", (int)bw.Position);
-            List<UnkFieldList> fieldLists = new List<UnkFieldList>();
-            for (int index = 0; index < actions.Count; ++index)
-                actions[index].WriteUnkFieldLists(bw, index, fieldLists);
-            bw.FillInt32("UnkFieldListCount", fieldLists.Count);
-            bw.Pad(16);
-            bw.FillInt32("FieldOffset", (int)bw.Position);
-            int fieldCount = 0;
-            for (int index = 0; index < transitions.Count; ++index)
-                transitions[index].WriteFields(bw, index, ref fieldCount);
-            for (int index = 0; index < actions.Count; ++index)
-                actions[index].WriteFields(bw, index, ref fieldCount);
-            for (int index = 0; index < properties.Count; ++index)
-                properties[index].WriteFields(bw, index, ref fieldCount, false);
-            for (int index = 0; index < modifiers.Count; ++index)
-                modifiers[index].WriteFields(bw, index, ref fieldCount);
-            for (int index = 0; index < conditionalProperties.Count; ++index)
-                conditionalProperties[index].WriteFields(bw, index, ref fieldCount, true);
-            for (int index = 0; index < fieldLists.Count; ++index)
-                fieldLists[index].WriteFields(bw, index, ref fieldCount);
-            bw.FillInt32("FieldCount", fieldCount);
-            bw.Pad(16);
+            bw.FillInt32("Section1Offset", (int)bw.Position);
+            Section1Tree.Write(bw);
+            bw.Pad(0x10);
 
-            if (Version != FXRVersion.Sekiro)
-                return;
+            bw.FillInt32("Section2Offset", (int)bw.Position);
+            Section1Tree.WriteSection2s(bw);
+            bw.Pad(0x10);
 
-            bw.FillInt32("ReferenceOffset", (int)bw.Position);
-            bw.WriteInt32s(ReferenceList.ToList());
-            bw.Pad(16);
+            bw.FillInt32("Section3Offset", (int)bw.Position);
+            List<Section2> section2s = Section1Tree.Section2s;
+            var section3s = new List<Section3>();
+            for (int i = 0; i < section2s.Count; i++)
+                section2s[i].WriteSection3s(bw, i, section3s);
+            bw.FillInt32("Section3Count", section3s.Count);
+            bw.Pad(0x10);
 
-            bw.FillInt32("ExternalValueOffset", (int)bw.Position);
-            bw.WriteInt32s(ExternalValueList.ToList());
-            bw.Pad(16);
+            bw.FillInt32("Section4Offset", (int)bw.Position);
+            var section4s = new List<Section4>();
+            Section4Tree.Write(bw, section4s);
+            Section4Tree.WriteSection4s(bw, section4s);
+            bw.FillInt32("Section4Count", section4s.Count);
+            bw.Pad(0x10);
 
-            bw.FillInt32("UnkBloodEnablerOffset", (int)bw.Position);
-            bw.WriteInt32s(UnkBloodEnabler);
-            bw.Pad(16);
+            bw.FillInt32("Section5Offset", (int)bw.Position);
+            int section5Count = 0;
+            for (int i = 0; i < section4s.Count; i++)
+                section4s[i].WriteSection5s(bw, i, ref section5Count);
+            bw.FillInt32("Section5Count", section5Count);
+            bw.Pad(0x10);
 
-            // if (UnkEmpty.Count > 0)
-            // {
-            //     bw.FillInt32("UnkEmptyOffset", (int)bw.Position);
-            //     bw.WriteInt32s(UnkEmpty);
-            //     bw.Pad(16);
-            // }
-            // else
-            // {
-            bw.FillInt32("UnkEmptyOffset", 0);
-            // }
+            bw.FillInt32("Section6Offset", (int)bw.Position);
+            section5Count = 0;
+            var section6s = new List<FFXDrawEntityHost>();
+            for (int i = 0; i < section4s.Count; i++)
+                section4s[i].WriteSection6s(bw, i, ref section5Count, section6s);
+            bw.FillInt32("Section6Count", section6s.Count);
+            bw.Pad(0x10);
+
+            bw.FillInt32("Section7Offset", (int)bw.Position);
+            var section7s = new List<FFXProperty>();
+            for (int i = 0; i < section6s.Count; i++)
+                section6s[i].WriteSection7s(bw, i, section7s);
+            bw.FillInt32("Section7Count", section7s.Count);
+            bw.Pad(0x10);
+
+            bw.FillInt32("Section8Offset", (int)bw.Position);
+            var section8s = new List<Section8>();
+            for (int i = 0; i < section7s.Count; i++)
+                section7s[i].WriteSection8s(bw, i, section8s);
+            bw.FillInt32("Section8Count", section8s.Count);
+            bw.Pad(0x10);
+
+            bw.FillInt32("Section9Offset", (int)bw.Position);
+            var section9s = new List<Section9>();
+            for (int i = 0; i < section8s.Count; i++)
+                section8s[i].WriteSection9s(bw, i, section9s);
+            bw.FillInt32("Section9Count", section9s.Count);
+            bw.Pad(0x10);
+
+            bw.FillInt32("Section10Offset", (int)bw.Position);
+            var section10s = new List<Section10>();
+            for (int i = 0; i < section6s.Count; i++)
+                section6s[i].WriteSection10s(bw, i, section10s);
+            bw.FillInt32("Section10Count", section10s.Count);
+            bw.Pad(0x10);
+
+            bw.FillInt32("Section11Offset", (int)bw.Position);
+            int section11Count = 0;
+            for (int i = 0; i < section3s.Count; i++)
+                section3s[i].WriteSection11s(bw, i, ref section11Count);
+            for (int i = 0; i < section6s.Count; i++)
+                section6s[i].WriteSection11s(bw, i, ref section11Count);
+            for (int i = 0; i < section7s.Count; i++)
+                section7s[i].WriteSection11s(bw, i, ref section11Count);
+            for (int i = 0; i < section8s.Count; i++)
+                section8s[i].WriteSection11s(bw, i, ref section11Count);
+            for (int i = 0; i < section9s.Count; i++)
+                section9s[i].WriteSection11s(bw, i, ref section11Count);
+            for (int i = 0; i < section10s.Count; i++)
+                section10s[i].WriteSection11s(bw, i, ref section11Count);
+            bw.FillInt32("Section11Count", section11Count);
+            bw.Pad(0x10);
+
+            if (Version == FXRVersion.Sekiro)
+            {
+                bw.FillInt32("Section12Offset", (int)bw.Position);
+                bw.WriteInt32s(Section12s);
+                bw.Pad(0x10);
+
+                bw.FillInt32("Section13Offset", (int)bw.Position);
+                bw.WriteInt32s(Section13s);
+                bw.Pad(0x10);
+
+                bw.FillInt32("Section14Offset", (int)bw.Position);
+            }
         }
 
         public enum FXRVersion : ushort
@@ -288,618 +248,362 @@ namespace SoulsFormats
             Sekiro = 5,
         }
 
-        public class StateMap
+        public class Section1
         {
-            [XmlElement(nameof(State))] public List<State> States { get; set; }
+            public List<Section2> Section2s { get; set; }
 
-            public StateMap() => States = new List<State>();
-
-            internal StateMap(BinaryReaderEx br)
+            public Section1()
             {
-                br.AssertInt32(0);
-                int capacity = br.ReadInt32();
-                int num = br.ReadInt32();
-                br.AssertInt32(0);
-                br.StepIn(num);
-                States = new List<State>(capacity);
-                for (int index = 0; index < capacity; ++index)
-                    States.Add(new State(br));
-                br.StepOut();
+                Section2s = new List<Section2>();
             }
 
-            internal StateMap(StateMap stateMap)
+            internal Section1(BinaryReaderEx br)
             {
-                States = stateMap.States.Select(state => new State(state)).ToList();
+                br.AssertInt32(0);
+                int section2Count = br.ReadInt32();
+                int section2Offset = br.ReadInt32();
+                br.AssertInt32(0);
+
+                br.StepIn(section2Offset);
+                {
+                    Section2s = new List<Section2>(section2Count);
+                    for (int i = 0; i < section2Count; i++)
+                        Section2s.Add(new Section2(br));
+                }
+                br.StepOut();
             }
 
             internal void Write(BinaryWriterEx bw)
             {
                 bw.WriteInt32(0);
-                bw.WriteInt32(States.Count);
-                bw.ReserveInt32("StateMapStatesOffset");
+                bw.WriteInt32(Section2s.Count);
+                bw.ReserveInt32("Section1Section2sOffset");
                 bw.WriteInt32(0);
             }
 
-            internal void WriteStates(BinaryWriterEx bw)
+            internal void WriteSection2s(BinaryWriterEx bw)
             {
-                bw.FillInt32("StateMapStatesOffset", (int)bw.Position);
-                for (int index = 0; index < States.Count; ++index)
-                    States[index].Write(bw, index);
+                bw.FillInt32("Section1Section2sOffset", (int)bw.Position);
+                for (int i = 0; i < Section2s.Count; i++)
+                    Section2s[i].Write(bw, i);
             }
         }
 
-        public class State
+        public class Section2
         {
-            [XmlElement("StayCondition")] public List<StateCondition> Conditions { get; set; }
+            public List<Section3> Section3s { get; set; }
 
-            public State() => Conditions = new List<StateCondition>();
-
-            internal State(BinaryReaderEx br)
+            public Section2()
             {
-                br.AssertInt32(0);
-                int capacity = br.ReadInt32();
-                int num = br.ReadInt32();
-                br.AssertInt32(0);
-                br.StepIn(num);
-                Conditions = new List<StateCondition>(capacity);
-                for (int index = 0; index < capacity; ++index)
-                    Conditions.Add(new StateCondition(br));
-                br.StepOut();
+                Section3s = new List<Section3>();
             }
 
-            internal State(State state)
+            internal Section2(BinaryReaderEx br)
             {
-                Conditions = state.Conditions.Select(transition => new StateCondition(transition)).ToList();
+                br.AssertInt32(0);
+                int section3Count = br.ReadInt32();
+                int section3Offset = br.ReadInt32();
+                br.AssertInt32(0);
+
+                br.StepIn(section3Offset);
+                {
+                    Section3s = new List<Section3>(section3Count);
+                    for (int i = 0; i < section3Count; i++)
+                        Section3s.Add(new Section3(br));
+                }
+                br.StepOut();
             }
 
             internal void Write(BinaryWriterEx bw, int index)
             {
                 bw.WriteInt32(0);
-                bw.WriteInt32(Conditions.Count);
-                bw.ReserveInt32(string.Format("StateTransitionsOffset[{0}]", index));
+                bw.WriteInt32(Section3s.Count);
+                bw.ReserveInt32($"Section2Section3sOffset[{index}]");
                 bw.WriteInt32(0);
             }
 
-            internal void WriteTransitions(
-                BinaryWriterEx bw,
-                int index,
-                List<StateCondition> transitions)
+            internal void WriteSection3s(BinaryWriterEx bw, int index, List<Section3> section3s)
             {
-                bw.FillInt32(string.Format("StateTransitionsOffset[{0}]", index), (int)bw.Position);
-                foreach (StateCondition transition in Conditions)
-                    transition.Write(bw, transitions);
+                bw.FillInt32($"Section2Section3sOffset[{index}]", (int)bw.Position);
+                foreach (Section3 section3 in Section3s)
+                    section3.Write(bw, section3s);
             }
         }
 
-        public class StateCondition
+        public class Section3
         {
-            public enum OperatorType
+            public int Unk08 { get; set; }
+
+            public int Unk10 { get; set; }
+
+            public int Unk38 { get; set; }
+
+            public int Section11Data1 { get; set; }
+
+            public int Section11Data2 { get; set; }
+
+            public Section3() { }
+
+            internal Section3(BinaryReaderEx br)
             {
-                NotEqual = 0,
-                Equal = 1,
-                GreaterThanOrEqual = 2,
-                GreaterThan = 3,
-                LessThanOrEqual = 4, // Not present in format
-                LessThan = 5 // Not present in format
-            }
-
-            public enum OperandType
-            {
-                Literal = -4,
-                External = -3,
-                TimeOfDay = -2,
-                StateTime = -1
-            }
-
-            [XmlInclude(typeof(ConditionOperandLiteral)),
-             XmlInclude(typeof(ConditionOperandExternal)),
-             XmlInclude(typeof(ConditionOperandStateTime)),
-             XmlInclude(typeof(ConditionOperandUnkMinus2))]
-            public abstract class ConditionOperand
-            {
-                [XmlIgnore] public abstract OperandType Type { get; }
-
-                [XmlIgnore]
-                public object Value
-                {
-                    get
-                    {
-                        switch (this)
-                        {
-                            case ConditionOperandExternal intOp:
-                                return intOp.Value;
-                            case ConditionOperandLiteral floatOp:
-                                return floatOp.Value;
-                            default:
-                                return null;
-                        }
-                    }
-                }
-
-                public Field ToField()
-                {
-                    switch (this)
-                    {
-                        case ConditionOperandExternal intOp:
-                            return new Field.FieldInt(intOp.Value);
-                        case ConditionOperandLiteral floatOp:
-                            return new Field.FieldFloat(floatOp.Value);
-                        default:
-                            return null;
-                    }
-                }
-
-                public static ConditionOperand Create(OperandType type, object value)
-                {
-                    switch (type)
-                    {
-                        case OperandType.Literal:
-                            return new ConditionOperandLiteral()
-                            {
-                                Value = Convert.ToSingle(value)
-                            };
-                        case OperandType.External:
-                            return new ConditionOperandExternal()
-                            {
-                                Value = Convert.ToInt32(value)
-                            };
-                        case OperandType.StateTime:
-                            return new ConditionOperandStateTime();
-                        case OperandType.TimeOfDay:
-                            return new ConditionOperandUnkMinus2();
-                    }
-
-                    throw new ArgumentException("Invalid operand type");
-                }
-
-                public static ConditionOperand Create(OperandType type, Field field)
-                {
-                    if (type == OperandType.External && field is Field.FieldInt fieldInt)
-                    {
-                        return new ConditionOperandExternal
-                        {
-                            Value = fieldInt.Value
-                        };
-                    }
-
-                    if (type == OperandType.Literal && field is Field.FieldFloat fieldFloat)
-                    {
-                        return new ConditionOperandLiteral
-                        {
-                            Value = fieldFloat.Value
-                        };
-                    }
-
-                    if (type is OperandType.StateTime && field is null)
-                        return new ConditionOperandStateTime();
-
-                    if (type is OperandType.TimeOfDay && field is null)
-                        return new ConditionOperandUnkMinus2();
-
-                    throw new ArgumentException("Field does not match operand type");
-                }
-
-                public static ConditionOperand Create(ConditionOperand operand)
-                {
-                    switch (operand.GetType().Name)
-                    {
-                        case "ConditionOperandLiteral":
-                            var litOp = (ConditionOperandLiteral)operand;
-                            return new ConditionOperandLiteral
-                            {
-                                Value = litOp.Value
-                            };
-                        case "ConditionOperandExternal":
-                            var extOp = (ConditionOperandExternal)operand;
-                            return new ConditionOperandExternal
-                            {
-                                Value = extOp.Value
-                            };
-                        case "ConditionOperandStateTime":
-                            return new ConditionOperandStateTime();
-                        case "ConditionOperandUnkMinus2":
-                            return new ConditionOperandUnkMinus2();
-                    }
-
-                    throw new ArgumentException("Unknown operand type");
-                }
-            }
-
-            [XmlType("External")]
-            public class ConditionOperandExternal : ConditionOperand
-            {
-                public override OperandType Type => OperandType.External;
-                [XmlAttribute] public new int Value;
-            }
-
-            [XmlType("Literal")]
-            public class ConditionOperandLiteral : ConditionOperand
-            {
-                public override OperandType Type => OperandType.Literal;
-                [XmlAttribute] public new float Value;
-            }
-
-            [XmlType("StateTime")]
-            public class ConditionOperandStateTime : ConditionOperand
-            {
-                public override OperandType Type => OperandType.StateTime;
-            }
-
-            [XmlType("UnkMinus2")]
-            public class ConditionOperandUnkMinus2 : ConditionOperand
-            {
-                public override OperandType Type => OperandType.TimeOfDay;
-            }
-
-            public class ConditionOperator
-            {
-                [XmlText] public OperatorType Type;
-                [XmlAttribute("Unk")] public byte UnkModifier;
-
-                public ConditionOperator(ConditionOperator op)
-                {
-                    Type = op.Type;
-                    UnkModifier = op.UnkModifier;
-                }
-                public ConditionOperator() {}
-            }
-
-            public ConditionOperand LeftOperand { get; set; }
-
-            [XmlElement("Op")] public ConditionOperator Operator { get; set; }
-
-            public ConditionOperand RightOperand { get; set; }
-
-            [XmlAttribute] public int ElseMoveToStateIndex { get; set; }
-
-            public StateCondition()
-            {
-            }
-
-            internal StateCondition(BinaryReaderEx br)
-            {
-                var op = br.ReadInt16();
-                var opType = (OperatorType)(op & 0b0011);
-                var unkOperatorModifier = (byte)(op >> 2 & 0b0011);
+                br.AssertInt16(11);
                 br.AssertByte(0);
                 br.AssertByte(1);
                 br.AssertInt32(0);
-                ElseMoveToStateIndex = br.ReadInt32();
+                Unk08 = br.ReadInt32();
                 br.AssertInt32(0);
-                var field1Source = br.AssertInt16(-4, -3, -2, -1);
-                var leftOperandType = (OperandType)field1Source;
-                br.AssertByte(0);
-                br.AssertByte(1);
+                Unk10 = br.AssertInt32([0x100FFFC, 0x100FFFD]);
                 br.AssertInt32(0);
-                bool hasField1 = br.AssertInt32(0, 1) == 1; // Has Field1 or not
+                br.AssertInt32(1);
                 br.AssertInt32(0);
-                int fieldOffset1 = br.ReadInt32();
+                int section11Offset1 = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
-                var field2Source = br.AssertInt16(-4, -3, -2, -1);
-                var rightOperandType = (OperandType)field2Source;
-                br.AssertByte(0);
-                br.AssertByte(1);
+                Unk38 = br.AssertInt32([0x100FFFC, 0x100FFFD]);
                 br.AssertInt32(0);
-                bool hasField2 = br.AssertInt32(0, 1) == 1; // Has Field2 or not
+                br.AssertInt32(1);
                 br.AssertInt32(0);
-                int fieldOffset2 = br.ReadInt32();
+                int section11Offset2 = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
-                Operator = new ConditionOperator()
-                {
-                    Type = opType,
-                    UnkModifier = unkOperatorModifier
-                };
-                LeftOperand = ConditionOperand.Create(leftOperandType,
-                    hasField1 ? Field.ReadAt(br, fieldOffset1, leftOperandType, 0) : null);
-                RightOperand = ConditionOperand.Create(rightOperandType,
-                    hasField2 ? Field.ReadAt(br, fieldOffset2, rightOperandType, 0) : null);
 
-                if (LeftOperand.Type == OperandType.Literal && RightOperand.Type != OperandType.Literal)
-                {
-                    // Switcheroo
-                    var formerlyRight = RightOperand;
-                    var formerlyLeft = LeftOperand;
-                    LeftOperand = formerlyRight;
-                    RightOperand = formerlyLeft;
-                    switch (Operator.Type)
-                    {
-                        case OperatorType.GreaterThan:
-                            Operator.Type = OperatorType.LessThan;
-                            break;
-                        case OperatorType.GreaterThanOrEqual:
-                            Operator.Type = OperatorType.LessThanOrEqual;
-                            break;
-                    }
-                }
+                Section11Data1 = br.GetInt32(section11Offset1);
+                Section11Data2 = br.GetInt32(section11Offset2);
             }
 
-            internal StateCondition(StateCondition stateCondition)
+            internal void Write(BinaryWriterEx bw, List<Section3> section3s)
             {
-                Operator = new ConditionOperator()
-                {
-                    Type = stateCondition.Operator.Type,
-                    UnkModifier = stateCondition.Operator.UnkModifier,
-                };
-                ElseMoveToStateIndex = stateCondition.ElseMoveToStateIndex;
-                LeftOperand = ConditionOperand.Create(stateCondition.LeftOperand);
-                RightOperand = ConditionOperand.Create(stateCondition.RightOperand);
-            }
-
-            internal void Write(BinaryWriterEx bw, List<StateCondition> transitions)
-            {
-                var leftOperand = LeftOperand;
-                var rightOperand = RightOperand;
-                var operatorType = Operator.Type;
-                // Handle invalid operator type
-                if (operatorType >= OperatorType.LessThanOrEqual)
-                {
-                    leftOperand = RightOperand;
-                    rightOperand = LeftOperand;
-                    switch (Operator.Type)
-                    {
-                        case OperatorType.LessThanOrEqual:
-                            operatorType = OperatorType.GreaterThanOrEqual;
-                            break;
-                        case OperatorType.LessThan:
-                            operatorType = OperatorType.GreaterThan;
-                            break;
-                    }
-                }
-                int count = transitions.Count;
-                short op = (short)((byte)operatorType | ((Operator.UnkModifier << 2) & 0b1100));
-                bw.WriteInt16(op);
+                int index = section3s.Count;
+                bw.WriteInt16(11);
                 bw.WriteByte(0);
                 bw.WriteByte(1);
                 bw.WriteInt32(0);
-                bw.WriteInt32(ElseMoveToStateIndex);
+                bw.WriteInt32(Unk08);
                 bw.WriteInt32(0);
-                bw.WriteInt16((short)leftOperand.Type);
-                bw.WriteByte(0);
-                bw.WriteByte(1);
+                bw.WriteInt32(Unk10);
                 bw.WriteInt32(0);
-                bw.WriteInt32(leftOperand.Value != null ? 1 : 0);
+                bw.WriteInt32(1);
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("TransitionFieldOffset1[{0}]", count));
+                bw.ReserveInt32($"Section3Section11Offset1[{index}]");
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                bw.WriteInt16((short)rightOperand.Type);
-                bw.WriteByte(0);
-                bw.WriteByte(1);
+                bw.WriteInt32(Unk38);
                 bw.WriteInt32(0);
-                bw.WriteInt32(rightOperand.Value != null ? 1 : 0);
+                bw.WriteInt32(1);
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("TransitionFieldOffset2[{0}]", count));
+                bw.ReserveInt32($"Section3Section11Offset2[{index}]");
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                transitions.Add(this);
+                section3s.Add(this);
             }
 
-            internal void WriteFields(BinaryWriterEx bw, int index, ref int fieldCount)
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
             {
-                var leftOperand = LeftOperand;
-                var rightOperand = RightOperand;
-                // Handle invalid operators
-                if (Operator.Type >= OperatorType.LessThanOrEqual)
-                {
-                    leftOperand = RightOperand;
-                    rightOperand = LeftOperand;
-                }
-                int fieldPos1 = leftOperand.Value != null ? (int)bw.Position : 0;
-                bw.FillInt32(string.Format("TransitionFieldOffset1[{0}]", index), fieldPos1);
-                if (leftOperand.Value != null)
-                {
-                    leftOperand.ToField().Write(bw);
-                    fieldCount++;
-                }
-
-                int fieldPos2 = rightOperand.Value != null ? (int)bw.Position : 0;
-                bw.FillInt32(string.Format("TransitionFieldOffset2[{0}]", index), fieldPos2);
-                if (rightOperand.Value != null)
-                {
-                    rightOperand.ToField().Write(bw);
-                    fieldCount++;
-                }
+                bw.FillInt32($"Section3Section11Offset1[{index}]", (int)bw.Position);
+                bw.WriteInt32(Section11Data1);
+                bw.FillInt32($"Section3Section11Offset2[{index}]", (int)bw.Position);
+                bw.WriteInt32(Section11Data2);
+                section11Count += 2;
             }
         }
 
-        public class Container
+        public class Section4
         {
-            [XmlAttribute] public short Id { get; set; }
+            [XmlAttribute]
+            public short Unk00 { get; set; }
 
-            public List<Action> Actions { get; set; }
-            public List<Effect> Effects { get; set; }
-            public List<Container> Containers { get; set; }
+            public List<Section4> Section4s { get; set; }
 
-            public Container()
+            public List<Section5> Section5s { get; set; }
+
+            public List<FFXDrawEntityHost> Section6s { get; set; }
+
+            public Section4()
             {
-                Containers = new List<Container>();
-                Effects = new List<Effect>();
-                Actions = new List<Action>();
+                Section4s = new List<Section4>();
+                Section5s = new List<Section5>();
+                Section6s = new List<FFXDrawEntityHost>();
             }
 
-            internal Container(BinaryReaderEx br)
+            internal Section4(BinaryReaderEx br)
             {
-                Id = br.ReadInt16();
-                int num1 = br.AssertByte(0);
-                int num2 = br.AssertByte(1);
+                Unk00 = br.ReadInt16();
+                br.AssertByte(0);
+                br.AssertByte(1);
                 br.AssertInt32(0);
-                int EffectCount = br.ReadInt32();
-                int ActionCount = br.ReadInt32();
-                int ContainerCount = br.ReadInt32();
+                int section5Count = br.ReadInt32();
+                int section6Count = br.ReadInt32();
+                int section4Count = br.ReadInt32();
                 br.AssertInt32(0);
-                int EffectOffset = br.ReadInt32();
+                int section5Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                int ActionOffset = br.ReadInt32();
+                int section6Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                int ContainerOffset = br.ReadInt32();
+                int section4Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                br.StepIn(ContainerOffset);
-                Containers = new List<Container>(ContainerCount);
-                for (int index = 0; index < ContainerCount; ++index)
-                    Containers.Add(new Container(br));
+
+                br.StepIn(section4Offset);
+                {
+                    Section4s = new List<Section4>(section4Count);
+                    for (int i = 0; i < section4Count; i++)
+                        Section4s.Add(new Section4(br));
+                }
                 br.StepOut();
-                br.StepIn(EffectOffset);
-                Effects = new List<Effect>(EffectCount);
-                for (int index = 0; index < EffectCount; ++index)
-                    Effects.Add(new Effect(br));
+
+                br.StepIn(section5Offset);
+                {
+                    Section5s = new List<Section5>(section5Count);
+                    for (int i = 0; i < section5Count; i++)
+                        Section5s.Add(new Section5(br));
+                }
                 br.StepOut();
-                br.StepIn(ActionOffset);
-                Actions = new List<Action>(ActionCount);
-                for (int index = 0; index < ActionCount; ++index)
-                    Actions.Add(new Action(br));
+
+                br.StepIn(section6Offset);
+                {
+                    Section6s = new List<FFXDrawEntityHost>(section6Count);
+                    for (int i = 0; i < section6Count; i++)
+                        Section6s.Add(new FFXDrawEntityHost(br));
+                }
                 br.StepOut();
             }
 
-            internal Container(Container cont)
+            internal void Write(BinaryWriterEx bw, List<Section4> section4s)
             {
-                Id = cont.Id;
-                Containers = cont.Containers.Select(c => new Container(c)).ToList();
-                Effects = cont.Effects.Select(effect => new Effect(effect)).ToList();
-                Actions = cont.Actions.Select(action => new Action(action)).ToList();
-            }
-
-            internal void Write(BinaryWriterEx bw, List<Container> containers)
-            {
-                int count = containers.Count;
-                bw.WriteInt16(Id);
+                int index = section4s.Count;
+                bw.WriteInt16(Unk00);
                 bw.WriteByte(0);
                 bw.WriteByte(1);
                 bw.WriteInt32(0);
-                bw.WriteInt32(Effects.Count);
-                bw.WriteInt32(Actions.Count);
-                bw.WriteInt32(Containers.Count);
+                bw.WriteInt32(Section5s.Count);
+                bw.WriteInt32(Section6s.Count);
+                bw.WriteInt32(Section4s.Count);
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ContainerEffectsOffset[{0}]", count));
+                bw.ReserveInt32($"Section4Section5sOffset[{index}]");
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ContainerActionsOffset[{0}]", count));
+                bw.ReserveInt32($"Section4Section6sOffset[{index}]");
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ContainerChildContainersOffset[{0}]", count));
+                bw.ReserveInt32($"Section4Section4sOffset[{index}]");
                 bw.WriteInt32(0);
-                containers.Add(this);
+                section4s.Add(this);
             }
 
-            internal void WriteContainers(BinaryWriterEx bw, List<Container> containers)
+            internal void WriteSection4s(BinaryWriterEx bw, List<Section4> section4s)
             {
-                int num = containers.IndexOf(this);
-                if (Containers.Count == 0)
+                int index = section4s.IndexOf(this);
+                if (Section4s.Count == 0)
                 {
-                    bw.FillInt32(string.Format("ContainerChildContainersOffset[{0}]", num), 0);
+                    bw.FillInt32($"Section4Section4sOffset[{index}]", 0);
                 }
                 else
                 {
-                    bw.FillInt32(string.Format("ContainerChildContainersOffset[{0}]", num), (int)bw.Position);
-                    foreach (Container container in Containers)
-                        container.Write(bw, containers);
-                    foreach (Container container in Containers)
-                        container.WriteContainers(bw, containers);
+                    bw.FillInt32($"Section4Section4sOffset[{index}]", (int)bw.Position);
+                    foreach (Section4 section4 in Section4s)
+                        section4.Write(bw, section4s);
+
+                    foreach (Section4 section4 in Section4s)
+                        section4.WriteSection4s(bw, section4s);
                 }
             }
 
-            internal void WriteEffects(BinaryWriterEx bw, int index, ref int effectCount)
+            internal void WriteSection5s(BinaryWriterEx bw, int index, ref int section5Count)
             {
-                if (Effects.Count == 0)
+                if (Section5s.Count == 0)
                 {
-                    bw.FillInt32(string.Format("ContainerEffectsOffset[{0}]", index), 0);
+                    bw.FillInt32($"Section4Section5sOffset[{index}]", 0);
                 }
                 else
                 {
-                    bw.FillInt32(string.Format("ContainerEffectsOffset[{0}]", index), (int)bw.Position);
-                    for (int index1 = 0; index1 < Effects.Count; ++index1)
-                        Effects[index1].Write(bw, effectCount + index1);
-                    effectCount += Effects.Count;
+                    bw.FillInt32($"Section4Section5sOffset[{index}]", (int)bw.Position);
+                    for (int i = 0; i < Section5s.Count; i++)
+                        Section5s[i].Write(bw, section5Count + i);
+                    section5Count += Section5s.Count;
                 }
             }
 
-            internal void WriteActions(
-                BinaryWriterEx bw,
-                int index,
-                ref int effectCount,
-                List<Action> actions)
+            internal void WriteSection6s(BinaryWriterEx bw, int index, ref int section5Count, List<FFXDrawEntityHost> section6s)
             {
-                bw.FillInt32(string.Format("ContainerActionsOffset[{0}]", index), (int)bw.Position);
-                foreach (Action action in Actions)
-                    action.Write(bw, actions);
-                for (int index1 = 0; index1 < Effects.Count; ++index1)
-                    Effects[index1].WriteActions(bw, effectCount + index1, actions);
-                effectCount += Effects.Count;
+                bw.FillInt32($"Section4Section6sOffset[{index}]", (int)bw.Position);
+                foreach (FFXDrawEntityHost section6 in Section6s)
+                    section6.Write(bw, section6s);
+
+                for (int i = 0; i < Section5s.Count; i++)
+                    Section5s[i].WriteSection6s(bw, section5Count + i, section6s);
+                section5Count += Section5s.Count;
             }
         }
 
-        public class Effect
+        public class Section5
         {
-            [XmlAttribute] public short Id { get; set; }
+            [XmlAttribute]
+            public short Unk00 { get; set; }
 
-            public List<Action> Actions { get; set; }
+            public List<FFXDrawEntityHost> Section6s { get; set; }
 
-            public Effect() => Actions = new List<Action>();
-
-            internal Effect(BinaryReaderEx br)
+            public Section5()
             {
-                Id = br.ReadInt16();
-                int num1 = br.AssertByte(0);
-                int num2 = br.AssertByte(1);
-                br.AssertInt32(0);
-                br.AssertInt32(0);
-                int capacity = br.ReadInt32();
-                br.AssertInt32(0);
-                br.AssertInt32(0);
-                int num3 = br.ReadInt32();
-                br.AssertInt32(0);
-                br.StepIn(num3);
-                Actions = new List<Action>(capacity);
-                for (int index = 0; index < capacity; ++index)
-                    Actions.Add(new Action(br));
-                br.StepOut();
+                Section6s = new List<FFXDrawEntityHost>();
             }
 
-            internal Effect(Effect effect)
+            internal Section5(BinaryReaderEx br)
             {
-                Id = effect.Id;
-                Actions = effect.Actions.Select(action => new Action(action)).ToList();
+                Unk00 = br.ReadInt16();
+                br.AssertByte(0);
+                br.AssertByte(1);
+                br.AssertInt32(0);
+                br.AssertInt32(0);
+                int section6Count = br.ReadInt32();
+                br.AssertInt32(0);
+                br.AssertInt32(0);
+                int section6Offset = br.ReadInt32();
+                br.AssertInt32(0);
+
+                br.StepIn(section6Offset);
+                {
+                    Section6s = new List<FFXDrawEntityHost>(section6Count);
+                    for (int i = 0; i < section6Count; i++)
+                        Section6s.Add(new FFXDrawEntityHost(br));
+                }
+                br.StepOut();
             }
 
             internal void Write(BinaryWriterEx bw, int index)
             {
-                bw.WriteInt16(Id);
+                bw.WriteInt16(Unk00);
                 bw.WriteByte(0);
                 bw.WriteByte(1);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                bw.WriteInt32(Actions.Count);
+                bw.WriteInt32(Section6s.Count);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("EffectActionsOffset[{0}]", index));
+                bw.ReserveInt32($"Section5Section6sOffset[{index}]");
                 bw.WriteInt32(0);
             }
 
-            internal void WriteActions(
-                BinaryWriterEx bw,
-                int index,
-                List<Action> actions)
+            internal void WriteSection6s(BinaryWriterEx bw, int index, List<FFXDrawEntityHost> section6s)
             {
-                bw.FillInt32(string.Format("EffectActionsOffset[{0}]", index), (int)bw.Position);
-                foreach (Action action in Actions)
-                    action.Write(bw, actions);
+                bw.FillInt32($"Section5Section6sOffset[{index}]", (int)bw.Position);
+                foreach (FFXDrawEntityHost section6 in Section6s)
+                    section6.Write(bw, section6s);
             }
         }
 
-        public class Action
+        public class FFXDrawEntityHost
         {
-            [XmlAttribute] public short Id { get; set; }
+            [XmlAttribute]
+            public short Unk00 { get; set; }
 
             public bool Unk02 { get; set; }
 
@@ -907,595 +611,368 @@ namespace SoulsFormats
 
             public int Unk04 { get; set; }
 
-            public List<UnkFieldList> UnkFieldLists { get; set; }
+            public List<FFXProperty> Properties1 { get; set; }
 
-            [XmlArrayItem(Type = typeof(Field.FieldInt), ElementName = "Int"),
-             XmlArrayItem(Type = typeof(Field.FieldFloat), ElementName = "Float")]
-            public List<Field> Fields1 { get; set; }
+            public List<FFXProperty> Properties2 { get; set; }
 
-            [XmlArrayItem(Type = typeof(Field.FieldInt), ElementName = "Int"),
-             XmlArrayItem(Type = typeof(Field.FieldFloat), ElementName = "Float")]
-            public List<Field> Fields2 { get; set; }
+            public List<Section10> Section10s { get; set; }
 
-            public List<Property> Properties1 { get; set; }
+            public List<int> Section11s1 { get; set; }
 
-            public List<Property> Properties2 { get; set; }
+            public List<int> Section11s2 { get; set; }
 
-            public Action()
+            public FFXDrawEntityHost()
             {
-                Properties1 = new List<Property>();
-                Properties2 = new List<Property>();
-                UnkFieldLists = new List<UnkFieldList>();
-                Fields1 = new List<Field>();
-                Fields2 = new List<Field>();
+                Properties1 = new List<FFXProperty>();
+                Properties2 = new List<FFXProperty>();
+                Section10s = new List<Section10>();
+                Section11s1 = new List<int>();
+                Section11s2 = new List<int>();
             }
 
-            internal Action(BinaryReaderEx br)
+            internal FFXDrawEntityHost(BinaryReaderEx br)
             {
-                Id = br.ReadInt16(); // 0
-                Unk02 = br.ReadBoolean(); // 2
-                Unk03 = br.ReadBoolean(); // 3
-                Unk04 = br.ReadInt32(); // 4
-                int fieldCount1 = br.ReadInt32(); // 8
-                int unkFieldListCount = br.ReadInt32(); // 12
-                int propertyCount1 = br.ReadInt32(); // 16
-                int fieldCount2 = br.ReadInt32(); // 20
+                Unk00 = br.ReadInt16();
+                Unk02 = br.ReadBoolean();
+                Unk03 = br.ReadBoolean();
+                Unk04 = br.ReadInt32();
+                int section11Count1 = br.ReadInt32();
+                int section10Count = br.ReadInt32();
+                int section7Count1 = br.ReadInt32();
+                int section11Count2 = br.ReadInt32();
                 br.AssertInt32(0);
-                int propertyCount2 = br.ReadInt32();
-                int fieldOffset = br.ReadInt32();
-                // Console.WriteLine($"fieldOffset: {fieldOffset}");
+                int section7Count2 = br.ReadInt32();
+                int section11Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                int unkFieldListOffset = br.ReadInt32();
+                int section10Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                int propertyOffset = br.ReadInt32();
+                int section7Offset = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
 
-                br.StepIn(propertyOffset);
+                br.StepIn(section7Offset);
                 {
-                    Properties1 = new List<Property>(propertyCount1);
-                    for (int index = 0; index < propertyCount1; ++index)
-                        Properties1.Add(new Property(br, false));
+                    Properties1 = new List<FFXProperty>(section7Count1);
+                    for (int i = 0; i < section7Count1; i++)
+                        Properties1.Add(new FFXProperty(br));
 
-                    Properties2 = new List<Property>(propertyCount2);
-                    for (int index = 0; index < propertyCount2; ++index)
-                        Properties2.Add(new Property(br, false));
+                    Properties2 = new List<FFXProperty>(section7Count2);
+                    for (int i = 0; i < section7Count2; i++)
+                        Properties2.Add(new FFXProperty(br));
                 }
                 br.StepOut();
 
-                br.StepIn(unkFieldListOffset);
+                br.StepIn(section10Offset);
                 {
-                    UnkFieldLists = new List<UnkFieldList>(unkFieldListCount);
-                    for (int index = 0; index < unkFieldListCount; ++index)
-                        UnkFieldLists.Add(new UnkFieldList(br));
+                    Section10s = new List<Section10>(section10Count);
+                    for (int i = 0; i < section10Count; i++)
+                        Section10s.Add(new Section10(br));
                 }
                 br.StepOut();
 
-                br.StepIn(fieldOffset);
+                br.StepIn(section11Offset);
                 {
-                    Fields1 = Field.ReadMany(br, fieldCount1, this);
-                    Fields2 = Field.ReadMany(br, fieldCount2, this);
+                    Section11s1 = new List<int>(br.ReadInt32s(section11Count1));
+                    Section11s2 = new List<int>(br.ReadInt32s(section11Count2));
                 }
                 br.StepOut();
             }
 
-            internal Action(Action action)
+            internal void Write(BinaryWriterEx bw, List<FFXDrawEntityHost> section6s)
             {
-                Id = action.Id;
-                Unk02 = action.Unk02;
-                Unk03 = action.Unk03;
-                Unk04 = action.Unk04;
-                Properties1 = action.Properties1.Select(prop => new Property(prop)).ToList();
-                Properties2 = action.Properties2.Select(prop => new Property(prop)).ToList();
-                UnkFieldLists = action.UnkFieldLists.Select(section => new UnkFieldList(section)).ToList();
-                Fields1 = action.Fields1.Select(Field.Create).ToList();
-                Fields2 = action.Fields2.Select(Field.Create).ToList();
-            }
-
-            internal void Write(BinaryWriterEx bw, List<Action> Actions)
-            {
-                int count = Actions.Count;
-                bw.WriteInt16(Id);
+                int index = section6s.Count;
+                bw.WriteInt16(Unk00);
                 bw.WriteBoolean(Unk02);
                 bw.WriteBoolean(Unk03);
                 bw.WriteInt32(Unk04);
-                bw.WriteInt32(Fields1.Count);
-                bw.WriteInt32(UnkFieldLists.Count);
+                bw.WriteInt32(Section11s1.Count);
+                bw.WriteInt32(Section10s.Count);
                 bw.WriteInt32(Properties1.Count);
-                bw.WriteInt32(Fields2.Count);
+                bw.WriteInt32(Section11s2.Count);
                 bw.WriteInt32(0);
                 bw.WriteInt32(Properties2.Count);
-                bw.ReserveInt32($"ActionFieldsOffset[{count}]");
+                bw.ReserveInt32($"Section6Section11sOffset[{index}]");
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ActionUnkFieldListsOffset[{0}]", count));
+                bw.ReserveInt32($"Section6Section10sOffset[{index}]");
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ActionPropertiesOffset[{0}]", count));
+                bw.ReserveInt32($"Section6Section7sOffset[{index}]");
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                Actions.Add(this);
+                section6s.Add(this);
             }
 
-            internal void WriteProperties(BinaryWriterEx bw, int index, List<Property> properties)
+            internal void WriteSection7s(BinaryWriterEx bw, int index, List<FFXProperty> section7s)
             {
-                bw.FillInt32(string.Format("ActionPropertiesOffset[{0}]", index), (int)bw.Position);
-                foreach (Property property in Properties1)
-                    property.Write(bw, properties, false);
-                foreach (Property property in Properties2)
-                    property.Write(bw, properties, false);
+                bw.FillInt32($"Section6Section7sOffset[{index}]", (int)bw.Position);
+                foreach (FFXProperty section7 in Properties1)
+                    section7.Write(bw, section7s);
+                foreach (FFXProperty section7 in Properties2)
+                    section7.Write(bw, section7s);
             }
 
-            internal void WriteUnkFieldLists(BinaryWriterEx bw, int index, List<UnkFieldList> unkFieldLists)
+            internal void WriteSection10s(BinaryWriterEx bw, int index, List<Section10> section10s)
             {
-                bw.FillInt32(string.Format("ActionUnkFieldListsOffset[{0}]", index), (int)bw.Position);
-                foreach (UnkFieldList unkFieldList in UnkFieldLists)
-                    unkFieldList.Write(bw, unkFieldLists);
+                bw.FillInt32($"Section6Section10sOffset[{index}]", (int)bw.Position);
+                foreach (Section10 section10 in Section10s)
+                    section10.Write(bw, section10s);
             }
 
-            internal void WriteFields(BinaryWriterEx bw, int index, ref int fieldCount)
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
             {
-                if (Fields1.Count == 0 && Fields2.Count == 0)
+                if (Section11s1.Count == 0 && Section11s2.Count == 0)
                 {
-                    bw.FillInt32(string.Format("ActionFieldsOffset[{0}]", index), 0);
+                    bw.FillInt32($"Section6Section11sOffset[{index}]", 0);
                 }
                 else
                 {
-                    bw.FillInt32(string.Format("ActionFieldsOffset[{0}]", index), (int)bw.Position);
-                    foreach (Field field in Fields1)
-                        field.Write(bw);
-                    foreach (Field field in Fields2)
-                        field.Write(bw);
-                    fieldCount += Fields1.Count + Fields2.Count;
+                    bw.FillInt32($"Section6Section11sOffset[{index}]", (int)bw.Position);
+                    bw.WriteInt32s(Section11s1);
+                    bw.WriteInt32s(Section11s2);
+                    section11Count += Section11s1.Count + Section11s2.Count;
                 }
             }
         }
 
-        public enum FieldType
+        public class FFXProperty
         {
-            Int,
-            Float
-        }
+            [XmlAttribute]
+            public short Unk00 { get; set; }
 
-        [XmlInclude(typeof(FieldFloat))]
-        [XmlInclude(typeof(FieldInt))]
-        public abstract class Field
-        {
-            [XmlIgnore] public virtual FieldType Type { get; }
+            public int Unk04 { get; set; }
 
-            public static Field Create(FieldType type)
+            public List<Section8> Section8s { get; set; }
+
+            public List<int> Section11s { get; set; }
+
+            public FFXProperty()
             {
-                switch (type)
-                {
-                    case FieldType.Int:
-                        return new FieldInt();
-                    case FieldType.Float:
-                        return new FieldFloat();
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(type), type, null);
-                }
+                Section8s = new List<Section8>();
+                Section11s = new List<int>();
             }
 
-            public static Field Create(float value)
+            internal FFXProperty(BinaryReaderEx br)
             {
-                return new FieldFloat(value);
-            }
-
-            public static Field Create(int value)
-            {
-                return new FieldInt(value);
-            }
-
-            public static Field Create(Field field)
-            {
-                if (field.GetType() == typeof(FieldFloat))
-                {
-                    return new FieldFloat(((FieldFloat)field).Value);
-                }
-
-                if (field.GetType() == typeof(FieldInt))
-                {
-                    return new FieldInt(((FieldInt)field).Value);
-                }
-
-                throw new InvalidOperationException("Field passed for creation was neither Float nor Int");
-            }
-
-            public static FieldFloat Create(FieldFloat field)
-            {
-                return new FieldFloat(field.Value);
-            }
-
-            public static FieldInt Create(FieldInt field)
-            {
-                return new FieldInt(field.Value);
-            }
-
-            public static Field Read(BinaryReaderEx br, object context = null, int? index = null)
-            {
-                Field field = null;
-                bool isInt = false;
-                // First value of interpolated properties is int (stop count), rest are floats.
-                if (context is Property property)
-                {
-                    // Unk AC6 InterpolationType
-                    if (property.InterpolationType == PropertyInterpolationType.UnkAc6)
-                    {
-                        if (index > 0 && index <= (int)property.PropertyType + 1)
-                            isInt = true;
-                    }
-                    else if (property.InterpolationType != PropertyInterpolationType.Constant)
-                    {
-                        if (index == 0)
-                            isInt = true;
-                    }
-                }
-                else if (context is StateCondition.OperandType)
-                {
-                    isInt = context is StateCondition.OperandType.External;
-                }
-                else
-                {
-                    // TODO: Replace heuristic with field def
-                    float single = br.GetSingle(br.Position);
-                    if (single >= 9.99999974737875E-05 && single < 1000000.0 ||
-                        single <= -9.99999974737875E-05 && single > -1000000.0)
-                        field = new FieldFloat(single);
-                    else
-                        isInt = true;
-                }
-
-                if (field == null)
-                {
-                    if (isInt)
-                        field = new FieldInt(br.GetInt32(br.Position));
-                    else
-                        field = new FieldFloat(br.GetSingle(br.Position));
-                }
-
-                br.Position += 4L;
-                return field;
-            }
-
-            public static Field ReadAt(
-                BinaryReaderEx br,
-                int offset,
-                object context = null,
-                int? index = null)
-            {
-                br.StepIn(offset);
-                Field field = Read(br, context, index);
-                br.StepOut();
-                return field;
-            }
-
-            public static List<Field> ReadMany(BinaryReaderEx br, int count, object context = null)
-            {
-                List<Field> fieldList = new List<Field>();
-                for (int index = 0; index < count; ++index)
-                    fieldList.Add(Read(br, context, index));
-                return fieldList;
-            }
-
-            public static List<Field> ReadManyAt(
-                BinaryReaderEx br,
-                int offset,
-                int count,
-                object context = null)
-            {
-                br.StepIn(offset);
-                List<Field> fieldList = ReadMany(br, count, context);
-                br.StepOut();
-                return fieldList;
-            }
-
-            public abstract void Write(BinaryWriterEx bw);
-
-            [XmlType("Float")]
-            public class FieldFloat : Field
-            {
-                public override FieldType Type => FieldType.Float;
-                [XmlAttribute] public float Value;
-
-                public override void Write(BinaryWriterEx bw) => bw.WriteSingle(Value);
-
-                public FieldFloat(float value)
-                {
-                    Value = value;
-                }
-
-                public FieldFloat()
-                {
-                }
-            }
-
-            [XmlType("Int")]
-            public class FieldInt : Field
-            {
-                public override FieldType Type => FieldType.Int;
-                [XmlAttribute] public int Value;
-
-                public override void Write(BinaryWriterEx bw) => bw.WriteInt32(Value);
-
-                public FieldInt(int value)
-                {
-                    Value = value;
-                }
-
-                public FieldInt()
-                {
-                }
-            }
-        }
-
-        public enum PropertyType
-        {
-            Scalar = 0,
-            Vector2 = 1,
-            Vector3 = 2,
-            Color = 3
-        }
-
-        public enum PropertyInterpolationType
-        {
-            Zero = 0,
-            One = 1,
-            Constant = 2,
-            Stepped = 3,
-            Linear = 4,
-            Curve1 = 5,
-            Curve2 = 6,
-            UnkAc6 = 7
-        }
-
-        public class Property
-        {
-            [XmlAttribute] public PropertyType PropertyType { get; set; }
-
-            [XmlAttribute] public PropertyInterpolationType InterpolationType { get; set; }
-
-            [XmlAttribute] public bool IsLoop { get; set; }
-
-            [XmlArrayItem(Type = typeof(Field.FieldInt), ElementName = "Int"),
-             XmlArrayItem(Type = typeof(Field.FieldFloat), ElementName = "Float")]
-            public List<Field> Fields { get; set; }
-
-            public List<PropertyModifier> Modifiers { get; set; }
-
-            public Property()
-            {
-                Modifiers = new List<PropertyModifier>();
-                Fields = new List<Field>();
-            }
-
-            internal Property(BinaryReaderEx br, bool conditional)
-            {
-                var typeEnumA = br.ReadInt16();
+                Unk00 = br.ReadInt16();
                 br.AssertByte(0);
                 br.AssertByte(1);
-                PropertyType = (PropertyType)(typeEnumA & 0b00000000_00000011);
-                InterpolationType = (PropertyInterpolationType)((typeEnumA & 0b00000000_11110000) >> 4);
-                IsLoop = Convert.ToBoolean((typeEnumA & 0b00010000_00000000) >> 12);
-                br.ReadInt32(); // TypeEnumB
-                int count = br.ReadInt32();
+                Unk04 = br.ReadInt32();
+                int section11Count = br.ReadInt32();
                 br.AssertInt32(0);
-                int offset = br.ReadInt32();
+                int section11Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                if (!conditional)
+                int section8Offset = br.ReadInt32();
+                br.AssertInt32(0);
+                int section8Count = br.ReadInt32();
+                br.AssertInt32(0);
+
+                br.StepIn(section8Offset);
                 {
-                    int num3 = br.ReadInt32();
-                    br.AssertInt32(0);
-                    int capacity = br.ReadInt32();
-                    br.AssertInt32(0);
-                    br.StepIn(num3);
-                    Modifiers = new List<PropertyModifier>(capacity);
-                    for (int index = 0; index < capacity; ++index)
-                        Modifiers.Add(new PropertyModifier(br));
-                    br.StepOut();
+                    Section8s = new List<Section8>(section8Count);
+                    for (int i = 0; i < section8Count; i++)
+                        Section8s.Add(new Section8(br));
                 }
+                br.StepOut();
 
-                Fields = Field.ReadManyAt(br, offset, count, this);
+                Section11s = new List<int>(br.GetInt32s(section11Offset, section11Count));
             }
 
-            internal Property(Property prop)
+            internal void Write(BinaryWriterEx bw, List<FFXProperty> section7s)
             {
-                PropertyType = prop.PropertyType;
-                InterpolationType = prop.InterpolationType;
-                IsLoop = prop.IsLoop;
-                Modifiers = prop.Modifiers.Select(section => new PropertyModifier(section)).ToList();
-                Fields = prop.Fields.Select(Field.Create).ToList();
-            }
-
-            internal void Write(BinaryWriterEx bw, List<Property> properties, bool conditional)
-            {
-                int count = properties.Count;
-                int typeEnumA = (int)PropertyType | (int)InterpolationType << 4 | Convert.ToInt32(IsLoop) << 12;
-                int typeEnumB = ((int)PropertyType | (int)InterpolationType << 2) + (Convert.ToInt32(IsLoop) << 4);
-                bw.WriteInt16(Convert.ToInt16(typeEnumA));
+                int index = section7s.Count;
+                bw.WriteInt16(Unk00);
                 bw.WriteByte(0);
                 bw.WriteByte(1);
-                bw.WriteInt32(typeEnumB);
-                bw.WriteInt32(Fields.Count);
+                bw.WriteInt32(Unk04);
+                bw.WriteInt32(Section11s.Count);
                 bw.WriteInt32(0);
-                var offsetName = (conditional ? "ConditionalProperty" : "Property") + "FieldsOffset[{0}]";
-                bw.ReserveInt32(string.Format(offsetName, count));
+                bw.ReserveInt32($"Section7Section11sOffset[{index}]");
                 bw.WriteInt32(0);
-                if (!conditional)
-                {
-                    bw.ReserveInt32(string.Format("PropertyModifiersOffset[{0}]", count));
-                    bw.WriteInt32(0);
-                    bw.WriteInt32(Modifiers.Count);
-                    bw.WriteInt32(0);
-                }
-
-                properties.Add(this);
+                bw.ReserveInt32($"Section7Section8sOffset[{index}]");
+                bw.WriteInt32(0);
+                bw.WriteInt32(Section8s.Count);
+                bw.WriteInt32(0);
+                section7s.Add(this);
             }
 
-            internal void WriteModifiers(BinaryWriterEx bw, int index, List<PropertyModifier> modifiers)
+            internal void WriteSection8s(BinaryWriterEx bw, int index, List<Section8> section8s)
             {
-                bw.FillInt32(string.Format("PropertyModifiersOffset[{0}]", index), (int)bw.Position);
-                foreach (PropertyModifier modifier in Modifiers)
-                    modifier.Write(bw, modifiers);
+                bw.FillInt32($"Section7Section8sOffset[{index}]", (int)bw.Position);
+                foreach (Section8 section8 in Section8s)
+                    section8.Write(bw, section8s);
             }
 
-            internal void WriteFields(BinaryWriterEx bw, int index, ref int fieldCount, bool conditional)
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
             {
-                var offsetName = (conditional ? "ConditionalProperty" : "Property") + "FieldsOffset[{0}]";
-                if (Fields.Count == 0)
+                if (Section11s.Count == 0)
                 {
-                    bw.FillInt32(string.Format(offsetName, index), 0);
+                    bw.FillInt32($"Section7Section11sOffset[{index}]", 0);
                 }
                 else
                 {
-                    bw.FillInt32(string.Format(offsetName, index), (int)bw.Position);
-                    foreach (Field field in Fields)
-                        field.Write(bw);
-                    fieldCount += Fields.Count;
+                    bw.FillInt32($"Section7Section11sOffset[{index}]", (int)bw.Position);
+                    bw.WriteInt32s(Section11s);
+                    section11Count += Section11s.Count;
                 }
             }
         }
 
-        public class PropertyModifier
+        public class Section8
         {
-            [XmlAttribute] public ushort TypeEnumA { get; set; }
+            [XmlAttribute]
+            public short Unk00 { get; set; }
 
-            [XmlAttribute] public uint TypeEnumB { get; set; }
+            public int Unk04 { get; set; }
 
-            [XmlArrayItem(Type = typeof(Field.FieldInt), ElementName = "Int"),
-             XmlArrayItem(Type = typeof(Field.FieldFloat), ElementName = "Float")]
-            public List<Field> Fields { get; set; }
+            public List<Section9> Section9s { get; set; }
 
-            public List<Property> Properties { get; set; }
+            public List<int> Section11s { get; set; }
 
-            public PropertyModifier()
+            public Section8()
             {
-                Properties = new List<Property>();
-                Fields = new List<Field>();
+                Section9s = new List<Section9>();
+                Section11s = new List<int>();
             }
 
-            internal PropertyModifier(BinaryReaderEx br)
+            internal Section8(BinaryReaderEx br)
             {
-                TypeEnumA = br.ReadUInt16();
+                Unk00 = br.ReadInt16();
                 br.AssertByte(0);
                 br.AssertByte(1);
-                TypeEnumB = br.ReadUInt32();
-                int fieldCount = br.ReadInt32();
-                int propertyCount = br.ReadInt32();
-                int fieldOffset = br.ReadInt32();
+                Unk04 = br.ReadInt32();
+                int section11Count = br.ReadInt32();
+                int section9Count = br.ReadInt32();
+                int section11Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                int propertyOffset = br.ReadInt32();
+                int section9Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                br.StepIn(propertyOffset);
-                Properties = new List<Property>(propertyCount);
-                for (int index = 0; index < propertyCount; ++index)
-                    Properties.Add(new Property(br, true));
+
+                br.StepIn(section9Offset);
+                {
+                    Section9s = new List<Section9>(section9Count);
+                    for (int i = 0; i < section9Count; i++)
+                        Section9s.Add(new Section9(br));
+                }
                 br.StepOut();
-                Fields = Field.ReadManyAt(br, fieldOffset, fieldCount, this);
+
+                Section11s = new List<int>(br.GetInt32s(section11Offset, section11Count));
             }
 
-            internal PropertyModifier(PropertyModifier property)
+            internal void Write(BinaryWriterEx bw, List<Section8> section8s)
             {
-                TypeEnumA = property.TypeEnumA;
-                TypeEnumB = property.TypeEnumB;
-                Properties = property.Properties.Select(prop => new Property(prop)).ToList();
-                Fields = property.Fields.Select(Field.Create).ToList();
-            }
-
-            internal void Write(BinaryWriterEx bw, List<PropertyModifier> modifiers)
-            {
-                int count = modifiers.Count;
-                bw.WriteUInt16(TypeEnumA);
+                int index = section8s.Count;
+                bw.WriteInt16(Unk00);
                 bw.WriteByte(0);
                 bw.WriteByte(1);
-                bw.WriteUInt32(TypeEnumB);
-                bw.WriteInt32(Fields.Count);
-                bw.WriteInt32(Properties.Count);
-                bw.ReserveInt32(string.Format("ModifierFieldsOffset[{0}]", count));
+                bw.WriteInt32(Unk04);
+                bw.WriteInt32(Section11s.Count);
+                bw.WriteInt32(Section9s.Count);
+                bw.ReserveInt32($"Section8Section11sOffset[{index}]");
                 bw.WriteInt32(0);
-                bw.ReserveInt32(string.Format("ModifierConditionalPropertysOffset[{0}]", count));
+                bw.ReserveInt32($"Section8Section9sOffset[{index}]");
                 bw.WriteInt32(0);
-                modifiers.Add(this);
+                section8s.Add(this);
             }
 
-            internal void WriteProperties(BinaryWriterEx bw, int index, List<Property> properties)
+            internal void WriteSection9s(BinaryWriterEx bw, int index, List<Section9> section9s)
             {
-                bw.FillInt32(string.Format("ModifierConditionalPropertysOffset[{0}]", index), (int)bw.Position);
-                foreach (Property property in Properties)
-                    property.Write(bw, properties, true);
+                bw.FillInt32($"Section8Section9sOffset[{index}]", (int)bw.Position);
+                foreach (Section9 section9 in Section9s)
+                    section9.Write(bw, section9s);
             }
 
-            internal void WriteFields(BinaryWriterEx bw, int index, ref int fieldCount)
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
             {
-                bw.FillInt32(string.Format("ModifierFieldsOffset[{0}]", index), (int)bw.Position);
-                foreach (Field field in Fields)
-                    field.Write(bw);
-                fieldCount += Fields.Count;
+                bw.FillInt32($"Section8Section11sOffset[{index}]", (int)bw.Position);
+                bw.WriteInt32s(Section11s);
+                section11Count += Section11s.Count;
             }
         }
 
-        public class UnkFieldList
+        public class Section9
         {
-            [XmlArrayItem(Type = typeof(Field.FieldInt), ElementName = "Int"),
-             XmlArrayItem(Type = typeof(Field.FieldFloat), ElementName = "Float")]
-            public List<Field> Fields { get; set; }
+            public int Unk04 { get; set; }
 
-            public UnkFieldList() => Fields = new List<Field>();
+            public List<int> Section11s { get; set; }
 
-            internal UnkFieldList(BinaryReaderEx br)
+            public Section9()
             {
-                int offset = br.ReadInt32();
+                Section11s = new List<int>();
+            }
+
+            internal Section9(BinaryReaderEx br)
+            {
+                br.AssertInt16(48);
+                br.AssertByte(0);
+                br.AssertByte(1);
+                Unk04 = br.ReadInt32();
+                int section11Count = br.ReadInt32();
                 br.AssertInt32(0);
-                int count = br.ReadInt32();
+                int section11Offset = br.ReadInt32();
                 br.AssertInt32(0);
-                Fields = Field.ReadManyAt(br, offset, count, this);
+
+                Section11s = new List<int>(br.GetInt32s(section11Offset, section11Count));
             }
 
-            internal UnkFieldList(UnkFieldList fieldList)
+            internal void Write(BinaryWriterEx bw, List<Section9> section9s)
             {
-                Fields = fieldList.Fields.Select(Field.Create).ToList();
-            }
-
-            internal void Write(BinaryWriterEx bw, List<UnkFieldList> fieldLists)
-            {
-                int count = fieldLists.Count;
-                bw.ReserveInt32(string.Format("UnkFieldListFieldsOffset[{0}]", count));
+                int index = section9s.Count;
+                bw.WriteInt16(48);
+                bw.WriteByte(0);
+                bw.WriteByte(1);
+                bw.WriteInt32(Unk04);
+                bw.WriteInt32(Section11s.Count);
                 bw.WriteInt32(0);
-                bw.WriteInt32(Fields.Count);
+                bw.ReserveInt32($"Section9Section11sOffset[{index}]");
                 bw.WriteInt32(0);
-                fieldLists.Add(this);
+                section9s.Add(this);
             }
 
-            internal void WriteFields(BinaryWriterEx bw, int index, ref int fieldCount)
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
             {
-                bw.FillInt32(string.Format("UnkFieldListFieldsOffset[{0}]", index), (int)bw.Position);
-                foreach (Field field in Fields)
-                    field.Write(bw);
-                fieldCount += Fields.Count;
+                bw.FillInt32($"Section9Section11sOffset[{index}]", (int)bw.Position);
+                bw.WriteInt32s(Section11s);
+                section11Count += Section11s.Count;
             }
         }
-    }
 
-    public class FXR3EnhancedSerialization
-    {
-        public static FXR3 XMLToFXR3(XDocument XML)
+        public class Section10
         {
-            XmlSerializer test = new XmlSerializer(typeof(FXR3));
-            XmlReader xmlReader = XML.CreateReader();
+            public List<int> Section11s { get; set; }
 
-            return (FXR3)test.Deserialize(xmlReader);
-        }
-
-        public static XDocument FXR3ToXML(FXR3 fxr)
-        {
-            XDocument XDoc = new XDocument();
-
-            using (var xmlWriter = XDoc.CreateWriter())
+            public Section10()
             {
-                var thing = new XmlSerializer(typeof(FXR3));
-                thing.Serialize(xmlWriter, fxr);
+                Section11s = new List<int>();
             }
 
-            return XDoc;
+            internal Section10(BinaryReaderEx br)
+            {
+                int section11Offset = br.ReadInt32();
+                br.AssertInt32(0);
+                int section11Count = br.ReadInt32();
+                br.AssertInt32(0);
+
+                Section11s = new List<int>(br.GetInt32s(section11Offset, section11Count));
+            }
+
+            internal void Write(BinaryWriterEx bw, List<Section10> section10s)
+            {
+                int index = section10s.Count;
+                bw.ReserveInt32($"Section10Section11sOffset[{index}]");
+                bw.WriteInt32(0);
+                bw.WriteInt32(Section11s.Count);
+                bw.WriteInt32(0);
+                section10s.Add(this);
+            }
+
+            internal void WriteSection11s(BinaryWriterEx bw, int index, ref int section11Count)
+            {
+                bw.FillInt32($"Section10Section11sOffset[{index}]", (int)bw.Position);
+                bw.WriteInt32s(Section11s);
+                section11Count += Section11s.Count;
+            }
         }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }

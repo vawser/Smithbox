@@ -45,6 +45,8 @@ namespace SoulsFormats
                     state.Write(bw, classNames);
             }
 
+            // Disabled to get rid of trim warnings since this isn't used in DSMS
+            /*
             #region IXmlSerializable
             XmlSchema IXmlSerializable.GetSchema() => null;
 
@@ -70,6 +72,7 @@ namespace SoulsFormats
                     StateSerializer.Serialize(writer, States[i]);
                 }
             }
+            #endregion*/
         }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }

@@ -78,6 +78,8 @@ namespace SoulsFormats
             Effect.Write(bw, classNames);
         }
 
+        // Disabled to get rid of trim warnings since this isn't used in DSMS
+        /*
         #region XML Serialization
         private static XmlSerializer _ffxSerializer;
         private static XmlSerializer _stateSerializer;
@@ -115,6 +117,7 @@ namespace SoulsFormats
 
         public void XmlSerialize(XmlWriter xmlWriter)
             => FFXSerializer.Serialize(xmlWriter, this);
+        #endregion*/
 
         private static class DLVector
         {

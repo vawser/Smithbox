@@ -10,11 +10,6 @@ namespace SoulsFormats
     public class NVM : SoulsFile<NVM>
     {
         /// <summary>
-        /// Filename. The exact name is decidedly important for the game.
-        /// </summary>
-        public string fileName;
-
-        /// <summary>
         /// True for DeS format, false for DS1.
         /// </summary>
         public bool BigEndian;
@@ -178,14 +173,6 @@ namespace SoulsFormats
             /// </summary>
             public TriangleFlags Flags;
 
-            /// <summary>
-            /// Default triangle constructor
-            /// </summary>
-            public Triangle()
-            {
-
-            }
-
             internal Triangle(BinaryReaderEx br)
             {
                 VertexIndex1 = br.ReadInt32();
@@ -291,16 +278,7 @@ namespace SoulsFormats
             // |                  |                  |
             // ---------------------------------------
             // MinValue Corner
-
             public Box ChildBox1, ChildBox2, ChildBox3, ChildBox4;
-
-            /// <summary>
-            /// Default box constructor
-            /// </summary>
-            public Box()
-            {
-
-            }
 
             internal Box(BinaryReaderEx br)
             {
@@ -375,14 +353,6 @@ namespace SoulsFormats
             /// The triangles to be disabled from an event script.
             /// </summary>
             public List<int> TriangleIndices;
-
-            /// <summary>
-            /// Default entity constructor
-            /// </summary>
-            public Entity()
-            {
-
-            }
 
             internal Entity(BinaryReaderEx br)
             {

@@ -1,5 +1,4 @@
 ﻿using HKLib.hk2018;
-using StudioCore.Core;
 using StudioCore.Core.ProjectNS;
 using StudioCore.Resources.JSON;
 using System;
@@ -14,16 +13,14 @@ namespace StudioCore.Editors.BehaviorEditorNS;
 
 public class BehaviorData
 {
-    public BaseEditor BaseEditor;
     public Project Project;
 
     public BehaviorBank PrimaryBank;
 
     public FileDictionary BehaviorFiles;
 
-    public BehaviorData(BaseEditor editor, Project projectOwner)
+    public BehaviorData(Project projectOwner)
     {
-        BaseEditor = editor;
         Project = projectOwner;
 
         PrimaryBank = new(this, "Primary");

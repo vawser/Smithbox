@@ -33,8 +33,6 @@ public class EventScriptEditor
     public EventScriptDecorator Decorator;
     public EventScriptActionHandler ActionHandler;
 
-    private bool DetectShortcuts = false;
-
     public EventScriptEditor(int id, BaseEditor editor, Project projectOwner)
     {
         BaseEditor = editor;
@@ -60,7 +58,7 @@ public class EventScriptEditor
 
     public void Display(float dt, string[] cmd)
     {
-        ImGui.Begin($"Event Script Editor##EventScriptEditor{ID}", Project.BaseEditor.MainWindowFlags);
+        ImGui.Begin($"Event Script Editor##Event ScriptEditor{ID}", Project.BaseEditor.MainWindowFlags);
 
         DetectShortcuts = ShortcutUtils.UpdateShortcutDetection();
 
@@ -160,6 +158,8 @@ public class EventScriptEditor
             ImGui.EndMenuBar();
         }
     }
+
+    private bool DetectShortcuts = false;
 
     private void Shortcuts()
     {
