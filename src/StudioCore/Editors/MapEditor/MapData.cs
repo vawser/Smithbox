@@ -1,6 +1,7 @@
 ﻿using StudioCore;
 using StudioCore.Core;
 using StudioCore.Core.ProjectNS;
+using StudioCore.Editors.EventScriptEditorNS;
 using StudioCore.Editors.MapEditorNS;
 using StudioCore.Resources.JSON;
 using StudioCore.Utilities;
@@ -26,8 +27,6 @@ public class MapData
     public FileDictionary MapFiles;
     public FileDictionary BtabFiles;
 
-    // TODO: may need to add mtd/matbin stuff here for map viewport usage
-
     /// <summary>
     /// JSON stores for this editor
     /// </summary>
@@ -40,7 +39,7 @@ public class MapData
         BaseEditor = baseEditor;
         Project = projectOwner;
 
-        PrimaryBank = new(this, "Primary", Project.FS);
+        PrimaryBank = new(this, "Primary");
 
         Setup();
     }

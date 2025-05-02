@@ -3,9 +3,12 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
+using StudioCore.Scene;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
@@ -607,7 +610,7 @@ public class Universe
     public void LoadRelatedMapsER(string mapid)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(Editor.Project.ProjectType, mapid, LoadedObjectContainers.Keys);
+            SpecialMapConnections.GetRelatedMaps(mapid, LoadedObjectContainers.Keys);
 
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
