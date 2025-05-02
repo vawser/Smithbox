@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGuizmo;
 using Hexa.NET.ImNodes;
 using Hexa.NET.ImPlot;
 using StudioCore.Interface;
@@ -7,6 +8,7 @@ using StudioCore.Scene.Framework;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.IO;
 using System.Numerics;
 using System.Reflection;
@@ -63,6 +65,10 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
 
     private int _windowWidth;
 
+    private ImGuiContextPtr guiContext;
+    private ImNodesContextPtr nodesContext;
+    private ImPlotContextPtr plotContext;
+
     /// <summary>
     ///     Constructs a new ImGuiRenderer.
     /// </summary>
@@ -94,14 +100,30 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
 
         _fontTexture = Renderer.GlobalTexturePool.AllocateTextureDescriptor();
 
-        var context = ImGui.CreateContext();
-        ImGui.SetCurrentContext(context);
+        // Create ImGui context
+        guiContext = ImGui.CreateContext(null);
 
-        var imPlotContext = ImPlot.CreateContext();
-        ImPlot.SetCurrentContext(imPlotContext);
+        // Set ImGui context
+        ImGui.SetCurrentContext(guiContext);
 
-        var imNodesContext = ImNodes.CreateContext();
-        ImNodes.SetCurrentContext(imNodesContext);
+        // Set ImGui context for ImGuizmo
+        ImGuizmo.SetImGuiContext(guiContext);
+
+        // Set ImGui context for ImPlot
+        ImPlot.SetImGuiContext(guiContext);
+
+        // Set ImGui context for ImNodes
+        ImNodes.SetImGuiContext(guiContext);
+
+        // Create and set ImNodes context and set style
+        nodesContext = ImNodes.CreateContext();
+        ImNodes.SetCurrentContext(nodesContext);
+        ImNodes.StyleColorsDark(ImNodes.GetStyle());
+
+        // Create and set ImPlot context and set style
+        plotContext = ImPlot.CreateContext();
+        ImPlot.SetCurrentContext(plotContext);
+        ImPlot.StyleColorsDark(ImPlot.GetStyle());
 
         ImGuiIOPtr io = ImGui.GetIO();
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;

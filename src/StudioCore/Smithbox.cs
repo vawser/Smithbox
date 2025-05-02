@@ -28,6 +28,7 @@ using StudioCore.Tools;
 using StudioCore.Core.Project;
 using StudioCore.Tools.Randomiser;
 using StudioCore.Editors.TextEditor;
+using Hexa.NET.ImGui.Utilities;
 
 namespace StudioCore;
 
@@ -73,6 +74,8 @@ public class Smithbox
     private bool _showImGuiMetricsWindow;
     private bool _showImGuiStackToolWindow;
 
+    public static ImGuiTextureLoader TextureLoader;
+
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
@@ -105,8 +108,7 @@ public class Smithbox
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        UpdateSoulsFormatsToggles();
-        HandleStartupCFGVars();
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
 
         // Handlers
         ProjectHandler = new ProjectHandler();
@@ -117,25 +119,127 @@ public class Smithbox
 
         _soapstoneService = new SoapstoneService(_version);
 
-        ImGui.GetIO().ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
+        SetupImGui();
         SetupFonts();
+
         _context.ImguiRenderer.OnSetupDone();
 
-        ImGuiStylePtr style = ImGui.GetStyle();
+        TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
+    }
+
+    private unsafe void SetupImGui()
+    {
+        // Setup ImGui config.
+        var io = ImGui.GetIO();
+        io.ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;     // Enable Keyboard Controls
+        io.ConfigFlags |= ImGuiConfigFlags.NavEnableGamepad;      // Enable Gamepad Controls
+        io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;         // Enable Docking
+        io.ConfigFlags |= ImGuiConfigFlags.ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
+        io.ConfigViewportsNoAutoMerge = false;
+        io.ConfigViewportsNoTaskBarIcon = false;
+
+        // setup ImGui style
+        var style = ImGui.GetStyle();
         style.TabBorderSize = 0;
     }
 
-    // Reset certain CFG variables on startup
-    public static void HandleStartupCFGVars()
+    private unsafe void SetupFonts()
     {
-        CFG.Current.Param_PinGroups_ShowOnlyPinnedParams = false;
-        CFG.Current.Param_PinGroups_ShowOnlyPinnedRows = false;
-        CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = false;
-    }
+        string EnglishFontRelPath = @"Assets\Fonts\RobotoMono-Light.ttf";
+        string NonEnglishFontRelPath = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
+        string IconFontRelPath = @"Assets\Fonts\forkawesome-webfont.ttf";
 
-    public static void UpdateSoulsFormatsToggles()
-    {
-        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+        if (!string.IsNullOrWhiteSpace(UI.Current.System_English_Font) &&
+            File.Exists(UI.Current.System_English_Font))
+        {
+            EnglishFontRelPath = UI.Current.System_English_Font;
+        }
+
+        if (!string.IsNullOrWhiteSpace(UI.Current.System_Other_Font) &&
+            File.Exists(UI.Current.System_Other_Font))
+        {
+            NonEnglishFontRelPath = UI.Current.System_Other_Font;
+        }
+
+        var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
+        var englishFontData = File.ReadAllBytes(englishFontPath);
+        var englishFontPtr = ImGui.MemAlloc((uint)englishFontData.Length);
+        Marshal.Copy(englishFontData, 0, (nint)englishFontPtr, englishFontData.Length);
+
+        var nonEnglishFontPath = Path.Combine(AppContext.BaseDirectory, NonEnglishFontRelPath);
+        var nonEnglishFontData = File.ReadAllBytes(nonEnglishFontPath);
+        var nonEnglishFontPtr = ImGui.MemAlloc((uint)nonEnglishFontData.Length);
+        Marshal.Copy(nonEnglishFontData, 0, (nint)nonEnglishFontPtr, nonEnglishFontData.Length);
+
+        var iconFontPath = Path.Combine(AppContext.BaseDirectory, IconFontRelPath);
+        var iconFontData = File.ReadAllBytes(iconFontPath);
+        var iconFontPtr = ImGui.MemAlloc((uint)iconFontData.Length);
+        Marshal.Copy(iconFontData, 0, (nint)iconFontPtr, iconFontData.Length);
+
+        ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
+        fonts.Clear();
+
+        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
+        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
+
+        ImFontConfigPtr cfg = ImGui.ImFontConfig();
+
+        // Base English Font
+        cfg.MergeMode = false;
+        cfg.GlyphMinAdvanceX = 5.0f;
+        cfg.OversampleH = 3;
+        cfg.OversampleV = 2;
+
+        fonts.AddFontFromMemoryTTF(englishFontPtr, englishFontData.Length, scaleFine, cfg,
+            fonts.GetGlyphRangesDefault());
+
+        // Non-English Font
+        cfg.MergeMode = true;
+        cfg.GlyphMinAdvanceX = 7.0f;
+        cfg.OversampleH = 2;
+        cfg.OversampleV = 2;
+
+        ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
+        glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
+        Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
+
+        if (UI.Current.System_Font_Chinese)
+            glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
+        if (UI.Current.System_Font_Korean)
+            glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
+        if (UI.Current.System_Font_Thai)
+            glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
+        if (UI.Current.System_Font_Vietnamese)
+            glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
+        if (UI.Current.System_Font_Cyrillic)
+            glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
+
+        ImVector<uint> outGlyphRanges;
+        glyphRanges.BuildRanges(&outGlyphRanges);
+        fonts.AddFontFromMemoryTTF(nonEnglishFontPtr, nonEnglishFontData.Length, scaleFine, cfg, outGlyphRanges.Data);
+        glyphRanges.Destroy();
+
+        // Icon Font
+        cfg.MergeMode = true;
+        cfg.GlyphMinAdvanceX = 7.0f; 
+        cfg.OversampleH = 3;
+        cfg.OversampleV = 3;
+
+        ushort[] iconRangesRaw = { ForkAwesome.IconMin, ForkAwesome.IconMax, 0 };
+
+        ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
+        fixed (ushort* r = iconRangesRaw)
+        {
+            iconGlyphBuilder.AddRanges((uint*)r);
+        }
+
+        ImVector<uint> iconGlyphRanges;
+        iconGlyphBuilder.BuildRanges(&iconGlyphRanges);
+
+        fonts.AddFontFromMemoryTTF(iconFontPtr, iconFontData.Length, scaleFine, cfg, iconGlyphRanges.Data);
+        iconGlyphBuilder.Destroy();
+
+        _context.ImguiRenderer.RecreateFontDeviceTexture();
     }
 
     public static void InitializeBanks()
@@ -153,118 +257,6 @@ public class Smithbox
     public static void SetProgramTitle(string projectName)
     {
         _context.Window.Title = $"{projectName} - {_programTitle}";
-    }
-
-    private unsafe void SetupFonts()
-    {
-        string engFont = @"Assets\Fonts\RobotoMono-Light.ttf";
-        string otherFont = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
-
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_English_Font) && File.Exists(UI.Current.System_English_Font))
-            engFont = UI.Current.System_English_Font;
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_Other_Font) && File.Exists(UI.Current.System_Other_Font))
-            otherFont = UI.Current.System_Other_Font;
-
-        ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
-        var fileEn = Path.Combine(AppContext.BaseDirectory, engFont);
-        var fontEn = File.ReadAllBytes(fileEn);
-        var fontEnNative = ImGui.MemAlloc((uint)fontEn.Length);
-        Marshal.Copy(fontEn, 0, (nint)fontEnNative, fontEn.Length);
-
-        var fileOther = Path.Combine(AppContext.BaseDirectory, otherFont);
-        var fontOther = File.ReadAllBytes(fileOther);
-        var fontOtherNative = ImGui.MemAlloc((uint)fontOther.Length);
-        Marshal.Copy(fontOther, 0, (nint)fontOtherNative, fontOther.Length);
-
-        var fileIcon = Path.Combine(AppContext.BaseDirectory, @"Assets\Fonts\forkawesome-webfont.ttf");
-        var fontIcon = File.ReadAllBytes(fileIcon);
-        var fontIconNative = ImGui.MemAlloc((uint)fontIcon.Length);
-        Marshal.Copy(fontIcon, 0, (nint)fontIconNative, fontIcon.Length);
-
-        fonts.Clear();
-
-        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
-        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
-
-        fonts.AddFontDefault();
-
-        // English fonts
-        //{
-        //    ImFontConfigPtr cfg = ImGui.ImFontConfig();
-        //    cfg.GlyphMinAdvanceX = 5.0f;
-        //    cfg.OversampleH = 3;
-        //    cfg.OversampleV = 2;
-        //    fonts.AddFontFromMemoryTTF(fontEnNative, fontIcon.Length, scaleFine, cfg,
-        //        fonts.GetGlyphRangesDefault());
-        //}
-
-        // Other language fonts
-        {
-            ImFontConfigPtr cfg = ImGui.ImFontConfig();
-            cfg.MergeMode = true;
-            cfg.GlyphMinAdvanceX = 7.0f;
-            cfg.OversampleH = 2;
-            cfg.OversampleV = 2;
-
-            ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
-            glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
-            Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
-
-            if (UI.Current.System_Font_Chinese)
-            {
-                glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-            }
-
-            if (UI.Current.System_Font_Korean)
-            {
-                glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-            }
-
-            if (UI.Current.System_Font_Thai)
-            {
-                glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-            }
-
-            if (UI.Current.System_Font_Vietnamese)
-            {
-                glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-            }
-
-            if (UI.Current.System_Font_Cyrillic)
-            {
-                glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
-            }
-
-            ImVector<uint> outGlyphRanges;
-
-            glyphRanges.BuildRanges(&outGlyphRanges);
-            fonts.AddFontFromMemoryTTF(fontOtherNative, fontOther.Length, scaleLarge, cfg, outGlyphRanges.Data);
-            glyphRanges.Destroy();
-        }
-
-        // Icon fonts
-        {
-            ushort[] ranges = { ForkAwesome.IconMin, ForkAwesome.IconMax, 0 };
-            ImFontConfigPtr cfg = ImGui.ImFontConfig();
-            cfg.MergeMode = true;
-            cfg.GlyphMinAdvanceX = 12.0f;
-            cfg.OversampleH = 3;
-            cfg.OversampleV = 3;
-            ImFontGlyphRangesBuilder b = new();
-
-            fixed (ushort* r = ranges)
-            {
-                ImFontPtr f = fonts.AddFontFromMemoryTTF(fontIconNative, fontIcon.Length, scaleLarge, cfg,
-                    (uint*)r);
-            }
-        }
-
-        _context.ImguiRenderer.RecreateFontDeviceTexture();
-    }
-
-    public void SetupCSharpDefaults()
-    {
-        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
     }
 
     private void CheckProgramUpdate()
@@ -296,7 +288,7 @@ public class Smithbox
 
     public void Run()
     {
-        SetupCSharpDefaults();
+        Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
         if (CFG.Current.Enable_Soapstone_Server)
         {

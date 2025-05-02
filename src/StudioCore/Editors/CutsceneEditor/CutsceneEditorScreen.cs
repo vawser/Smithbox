@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImNodes;
 using SoulsFormats;
 using StudioCore.Core.Project;
 using StudioCore.Editor;

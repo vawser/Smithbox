@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Hexa.NET.ImGuizmo;
 using Hexa.NET.ImNodes;
 using Hexa.NET.ImPlot;
 using Silk.NET.OpenGL;
@@ -40,6 +41,10 @@ public unsafe class OpenGLImGuiRenderer : IImguiRenderer
 
     private int _windowWidth;
 
+    private ImGuiContextPtr guiContext;
+    private ImNodesContextPtr nodesContext;
+    private ImPlotContextPtr plotContext;
+
     public OpenGLImGuiRenderer(GL gl, int width, int height, ColorSpaceHandling colorSpaceHandling)
     {
         GL = gl;
@@ -48,14 +53,30 @@ public unsafe class OpenGLImGuiRenderer : IImguiRenderer
         _windowWidth = width;
         _windowHeight = height;
 
-        var context = ImGui.CreateContext();
-        ImGui.SetCurrentContext(context);
+        // Create ImGui context
+        guiContext = ImGui.CreateContext(null);
 
-        var imPlotContext = ImPlot.CreateContext();
-        ImPlot.SetCurrentContext(imPlotContext);
+        // Set ImGui context
+        ImGui.SetCurrentContext(guiContext);
 
-        var imNodesContext = ImNodes.CreateContext();
-        ImNodes.SetCurrentContext(imNodesContext);
+        // Set ImGui context for ImGuizmo
+        ImGuizmo.SetImGuiContext(guiContext);
+
+        // Set ImGui context for ImPlot
+        ImPlot.SetImGuiContext(guiContext);
+
+        // Set ImGui context for ImNodes
+        ImNodes.SetImGuiContext(guiContext);
+
+        // Create and set ImNodes context and set style
+        nodesContext = ImNodes.CreateContext();
+        ImNodes.SetCurrentContext(nodesContext);
+        ImNodes.StyleColorsDark(ImNodes.GetStyle());
+
+        // Create and set ImPlot context and set style
+        plotContext = ImPlot.CreateContext();
+        ImPlot.SetCurrentContext(plotContext);
+        ImPlot.StyleColorsDark(ImPlot.GetStyle());
 
         ImGuiIOPtr io = ImGui.GetIO();
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;

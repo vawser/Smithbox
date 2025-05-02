@@ -41,7 +41,7 @@ public class SystemTab
             ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
             UIHelper.ShowHoverTooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
-            Smithbox.UpdateSoulsFormatsToggles();
+            BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
         }
 
         if (ImGui.CollapsingHeader("Loggers"))
