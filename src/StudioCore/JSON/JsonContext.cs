@@ -2,7 +2,6 @@
 using StudioCore.Core;
 using StudioCore.Core.ProjectNS;
 using StudioCore.Interface;
-using StudioCore.JSON;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,13 +46,7 @@ namespace StudioCore.Resources.JSON;
 [JsonSerializable(typeof(FormatMaskEntry))]
 [JsonSerializable(typeof(MaskSection))]
 
-// EzState Editor
-[JsonSerializable(typeof(EsdMeta_Root))]
-[JsonSerializable(typeof(EsdMeta_Command))]
-[JsonSerializable(typeof(EsdMeta_Function))]
-[JsonSerializable(typeof(EsdMeta_Arg))]
-[JsonSerializable(typeof(EsdMeta_Enum))]
-[JsonSerializable(typeof(EsdMeta_EnumMember))]
+// 
 
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {

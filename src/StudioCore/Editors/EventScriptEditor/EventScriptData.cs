@@ -54,7 +54,7 @@ public class EventScriptData
             TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to load EMEDF.");
         }
 
-        IsSetup = true;
+            IsSetup = true;
     }
 
     public async Task<bool> LoadEMEDF()

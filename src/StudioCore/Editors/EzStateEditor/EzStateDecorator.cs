@@ -1,21 +1,12 @@
-﻿using StudioCore.Core.ProjectNS;
-using StudioCore.Editors.EventScriptEditorNS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EzStateEditorNS;
-
-public class EzStateDecorator
+namespace StudioCore.Editors.EzStateEditor
 {
-    public Project Project;
-    public EzStateEditor Editor;
-
-    public EzStateDecorator(Project curProject, EzStateEditor editor)
+    internal class EzStateDecorator
     {
-        Project = curProject;
-        Editor = editor;
     }
 }

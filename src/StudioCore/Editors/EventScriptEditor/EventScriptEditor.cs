@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EventScriptEditorNS;
 
-public class EventScriptEditor : IEditor
+public class EventScriptEditor
 {
     public BaseEditor BaseEditor;
     public Project Project;
@@ -46,8 +46,6 @@ public class EventScriptEditor : IEditor
         Selection = new(Project, this);
         InstructionInput = new(Project, this);
 
-        EditorFocus = new(Project, this);
-
         FileList = new(Project, this);
         EventView = new(Project, this);
         InstructionList = new(Project, this);
@@ -66,7 +64,7 @@ public class EventScriptEditor : IEditor
 
         DetectShortcuts = ShortcutUtils.UpdateShortcutDetection();
 
-        uint dockspaceID = ImGui.GetID($"EventScriptEditorDockspace{ID}");
+        uint dockspaceID = ImGui.GetID($"Event ScriptEditorDockspace{ID}");
         ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
 
         Menubar();

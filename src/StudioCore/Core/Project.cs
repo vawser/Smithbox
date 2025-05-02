@@ -6,7 +6,6 @@ using StudioCore.Editor;
 using StudioCore.Editors.BehaviorEditorNS;
 using StudioCore.Editors.CutsceneEditorNS;
 using StudioCore.Editors.EventScriptEditorNS;
-using StudioCore.Editors.EzStateEditorNS;
 using StudioCore.Editors.MapEditorNS;
 using StudioCore.Formats;
 using StudioCore.Interface;
