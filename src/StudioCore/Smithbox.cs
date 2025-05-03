@@ -24,6 +24,7 @@ using Veldrid;
 using Veldrid.Sdl2;
 using static StudioCore.Configuration.Help.HelpWindow;
 using static StudioCore.Configuration.Keybinds.KeybindWindow;
+using static StudioCore.Configuration.SettingsWindow;
 using static StudioCore.Tools.Development.DebugWindow;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
@@ -485,9 +486,81 @@ public class Smithbox
         if (ImGui.BeginMainMenuBar())
         {
             // Settings
-            if (ImGui.MenuItem("Settings"))
+            if (ImGui.BeginMenu("Settings"))
             {
-                Settings.ToggleMenuVisibility();
+                if (ImGui.MenuItem("System"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.System);
+                }
+                UIHelper.Tooltip("Open the settings related to Smithbox's systems.");
+
+                if (ImGui.MenuItem("Viewport"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.Viewport);
+                }
+                UIHelper.Tooltip("Open the settings related to Viewport in Smithbox.");
+
+                if (ImGui.MenuItem("Interface"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.Interface);
+                }
+                UIHelper.Tooltip("Open the settings related to interface of Smithbox.");
+
+                if (ImGui.MenuItem("Map Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.MapEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Map Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Model Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.ModelEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Model Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Param Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.ParamEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Param Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Text Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.TextEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Text Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Graphics PAram Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.GparamEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Gparam Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Time Act Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.TimeActEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Time Act Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Event Script Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.EmevdEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Emevd Editor in Smithbox.");
+
+                if (ImGui.MenuItem("EzState Script Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.EsdEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Esd Editor in Smithbox.");
+
+                if (ImGui.MenuItem("Texture Viewer"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.TextureViewer);
+                }
+                UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
+
+                ImGui.EndMenu();
             }
 
             // Help

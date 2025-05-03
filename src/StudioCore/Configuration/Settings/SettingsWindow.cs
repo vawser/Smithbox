@@ -27,6 +27,8 @@ public class SettingsWindow
 
     public bool TabInitialized = false;
 
+    private SelectedSettingTab CurrentTab;
+
     public SettingsWindow(Smithbox baseEditor)
     {
         BaseEditor = baseEditor;
@@ -50,6 +52,21 @@ public class SettingsWindow
         MenuOpenState = !MenuOpenState;
     }
 
+    public void ToggleWindow(SelectedSettingTab focusedTab, bool ignoreIfOpen = true)
+    {
+        CurrentTab = focusedTab;
+
+        if (!ignoreIfOpen)
+        {
+            MenuOpenState = !MenuOpenState;
+        }
+
+        if (!MenuOpenState)
+        {
+            MenuOpenState = true;
+        }
+    }
+
     public void Display()
     {
         var scale = DPI.GetUIScale();
@@ -69,62 +86,82 @@ public class SettingsWindow
 
         if (ImGui.Begin("Settings##SettingsWindow", ref MenuOpenState, ImGuiWindowFlags.NoDocking))
         {
-            ImGui.BeginTabBar("##settingTabs");
-
-            ImGui.BeginTabItem("System");
-            SystemSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Interface");
-            InterfaceSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Viewport");
-            ViewportSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Map Editor");
-            MapEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Model Editor");
-            ModelEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Param Editor");
-            ParamEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Text Editor");
-            TextEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Graphics Param Editor");
-            GparamEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Time Act Editor");
-            TimeActEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Event Script Editor");
-            EmevdEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("EzState Script Editor");
-            EsdEditorSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.BeginTabItem("Texture Viewer");
-            TextureViewerSettings.Display();
-            ImGui.EndTabItem();
-
-            ImGui.EndTabBar();
+            ImGui.BeginChild("configurationTab");
+            switch (CurrentTab)
+            {
+                case SelectedSettingTab.System:
+                    SystemSettings.Display();
+                    break;
+                case SelectedSettingTab.Viewport:
+                    ViewportSettings.Display();
+                    break;
+                case SelectedSettingTab.MapEditor:
+                    MapEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.ModelEditor:
+                    ModelEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.ParamEditor:
+                    ParamEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.TextEditor:
+                    TextEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.GparamEditor:
+                    GparamEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.TimeActEditor:
+                    TimeActEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.EmevdEditor:
+                    EmevdEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.EsdEditor:
+                    EsdEditorSettings.Display();
+                    break;
+                case SelectedSettingTab.TextureViewer:
+                    TextureViewerSettings.Display();
+                    break;
+                case SelectedSettingTab.Interface:
+                    InterfaceSettings.Display();
+                    break;
+            }
+            ImGui.EndChild();
         }
 
         ImGui.End();
 
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(5);
+    }
+    public enum SelectedSettingTab
+    {
+        [Display(Name = "System")] System,
+        [Display(Name = "Project")] Project,
+        [Display(Name = "Viewport")] Viewport,
+        [Display(Name = "Map Editor")] MapEditor,
+        [Display(Name = "Model Editor")] ModelEditor,
+        [Display(Name = "Param Editor")] ParamEditor,
+        [Display(Name = "Text Editor")] TextEditor,
+        [Display(Name = "GPARAM Editor")] GparamEditor,
+        [Display(Name = "Time Act Editor")] TimeActEditor,
+        [Display(Name = "EMEVD Editor")] EmevdEditor,
+        [Display(Name = "ESD Editor")] EsdEditor,
+        [Display(Name = "Texture Viewer")] TextureViewer,
+        [Display(Name = "Interface")] Interface,
+
+        [Display(Name = "Characters")] ProjectAliases_Characters,
+        [Display(Name = "Assets")] ProjectAliases_Assets,
+        [Display(Name = "Parts")] ProjectAliases_Parts,
+        [Display(Name = "Map Pieces")] ProjectAliases_MapPieces,
+        [Display(Name = "GPARAM")] ProjectAliases_Gparams,
+        [Display(Name = "Event Flags")] ProjectAliases_EventFlags,
+        [Display(Name = "Particles")] ProjectAliases_Particles,
+        [Display(Name = "Cutscenes")] ProjectAliases_Cutscenes,
+        [Display(Name = "Movies")] ProjectAliases_Movies,
+        [Display(Name = "Sounds")] ProjectAliases_Sounds,
+        [Display(Name = "Map Names")] ProjectAliases_MapNames,
+        [Display(Name = "Time Acts")] ProjectAliases_TimeActs,
+        [Display(Name = "Talk Scripts")] ProjectAliases_Talks
     }
 }
