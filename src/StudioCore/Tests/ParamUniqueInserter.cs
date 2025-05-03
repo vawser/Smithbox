@@ -12,11 +12,13 @@ namespace StudioCore.Tests;
 
 public static class ParamUniqueRowFinder
 {
-    public static void Run()
+    public static void Run(Smithbox baseEditor)
     {
-        var baseID = ParamBank.PrimaryBank.Params.Values.Max(p => p.Rows.Max(r => r.ID)) + 1;
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
+        var baseID = curProject.ParamData.PrimaryBank.Params.Values.Max(p => p.Rows.Max(r => r.ID)) + 1;
         var i = baseID;
-        foreach (var p in ParamBank.PrimaryBank.Params.Values)
+        foreach (var p in curProject.ParamData.PrimaryBank.Params.Values)
         {
             Andre.Formats.Param.Row row = new(p.Rows.First());
             row.ID = i;

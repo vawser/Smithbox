@@ -10,12 +10,14 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using static SoapstoneLib.SoulsFmg;
 
 #pragma warning disable CS1998 // Async method lacks 'await'. Return without Task is convenient, though
 
@@ -52,14 +54,14 @@ public class SoapstoneService : SoapstoneServiceV1
     private static readonly Dictionary<KeyNamespace, MsbEntityType> revMapNamespaces =
         mapNamespaces.ToDictionary(e => e.Value, e => e.Key);
 
-    private readonly MapEditorScreen MapEditor;
+    private readonly Smithbox BaseEditor;
 
     private readonly string Version;
 
-    public SoapstoneService(string version)
+    public SoapstoneService(Smithbox baseEditor, string version)
     {
-        this.Version = version;
-        this.MapEditor = Smithbox.EditorHandler.MapEditor;
+        Version = version;
+        BaseEditor = baseEditor;
     }
 
     public override async Task<ServerInfoResponse> GetServerInfo(ServerCallContext context)
@@ -71,67 +73,76 @@ public class SoapstoneService : SoapstoneServiceV1
             ServerPath = Process.GetCurrentProcess().MainModule?.FileName
         };
 
-        if (Smithbox.GameRoot != null
-            && gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame gameType))
+        if (BaseEditor.ProjectManager.SelectedProject != null)
         {
-            EditorResource projectResource = new()
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+            if (curProject.DataPath != null
+                && gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame gameType))
             {
-                Type = EditorResourceType.Project,
-                ProjectJsonPath = Path.Combine(Smithbox.ProjectRoot, "project.json"),
-                Game = gameType
-            };
-            response.Resources.Add(projectResource);
-            if (MapEditor.Universe.LoadedObjectContainers.Count > 0)
-            {
-                foreach (KeyValuePair<string, ObjectContainer> entry in MapEditor.Universe.LoadedObjectContainers)
+                EditorResource projectResource = new()
                 {
-                    if (entry.Value != null)
+                    Type = EditorResourceType.Project,
+                    ProjectJsonPath = Path.Combine(curProject.ProjectPath, "project.json"),
+                    Game = gameType
+                };
+                response.Resources.Add(projectResource);
+
+                if (curProject.MapEditor != null)
+                {
+                    if (curProject.MapEditor.Universe.LoadedObjectContainers.Count > 0)
                     {
-                        EditorResource mapResource = new()
+                        foreach (KeyValuePair<string, ObjectContainer> entry in curProject.MapEditor.Universe.LoadedObjectContainers)
                         {
-                            Type = EditorResourceType.Map,
-                            ProjectJsonPath = projectResource.ProjectJsonPath,
-                            Game = projectResource.Game,
-                            Name = entry.Key
-                        };
-                        response.Resources.Add(mapResource);
+                            if (entry.Value != null)
+                            {
+                                EditorResource mapResource = new()
+                                {
+                                    Type = EditorResourceType.Map,
+                                    ProjectJsonPath = projectResource.ProjectJsonPath,
+                                    Game = projectResource.Game,
+                                    Name = entry.Key
+                                };
+                                response.Resources.Add(mapResource);
+                            }
+                        }
                     }
                 }
-            }
 
-            if (ParamBank.PrimaryBank?.Params != null && ParamBank.PrimaryBank?.Params.Count > 0)
-            {
-                EditorResource paramResource = new()
+                if (curProject.ParamEditor != null)
                 {
-                    Type = EditorResourceType.Param,
-                    ProjectJsonPath = projectResource.ProjectJsonPath,
-                    Game = projectResource.Game
-                };
-                response.Resources.Add(paramResource);
-            }
+                    if (curProject.ParamData.PrimaryBank?.Params != null && curProject.ParamData.PrimaryBank?.Params.Count > 0)
+                    {
+                        EditorResource paramResource = new()
+                        {
+                            Type = EditorResourceType.Param,
+                            ProjectJsonPath = projectResource.ProjectJsonPath,
+                            Game = projectResource.Game
+                        };
+                        response.Resources.Add(paramResource);
+                    }
+                }
 
-            if (FMGBankLoaded(projectResource.Game, out SoulsFmg.FmgLanguage lang))
-            {
-                EditorResource textResource = new()
+                if (curProject.TextEditor != null)
                 {
-                    Type = EditorResourceType.Fmg,
-                    ProjectJsonPath = projectResource.ProjectJsonPath,
-                    Game = projectResource.Game,
-                    // At the moment, this is limited to known languages, as otherwise FmgKey cannot be constructed.
-                    Name = lang.ToString()
-                };
-                response.Resources.Add(textResource);
+                    FmgLanguage lang;
+
+                    SoulsFmg.TryGetFmgLanguageEnum(projectResource.Game, CFG.Current.TextEditor_PrimaryCategory.ToString(), out lang);
+
+                    EditorResource textResource = new()
+                    {
+                        Type = EditorResourceType.Fmg,
+                        ProjectJsonPath = projectResource.ProjectJsonPath,
+                        Game = projectResource.Game,
+                        // At the moment, this is limited to known languages, as otherwise FmgKey cannot be constructed.
+                        Name = lang.ToString()
+                    };
+                    response.Resources.Add(textResource);
+                }
             }
         }
 
         return response;
-    }
-
-    private static bool FMGBankLoaded(FromSoftGame game, out SoulsFmg.FmgLanguage lang)
-    {
-        lang = default;
-        return TextBank.PrimaryBankLoaded
-               && SoulsFmg.TryGetFmgLanguageEnum(game, CFG.Current.TextEditor_PrimaryCategory.ToString(), out lang);
     }
 
     private static object AccessParamFile(SoulsKey.GameParamKey p, string key)
@@ -278,37 +289,48 @@ public class SoapstoneService : SoapstoneServiceV1
         RequestedProperties properties)
     {
         List<SoulsObject> results = new();
-        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
+
+        if (BaseEditor.ProjectManager.SelectedProject == null)
         {
             return results;
         }
 
-        if (resource.Type == EditorResourceType.Param
-            && ParamBank.PrimaryBank?.Params is IReadOnlyDictionary<string, Param> paramDict)
-        {
-            foreach (SoulsKey getKey in keys)
-            {
-                if (getKey.File is not SoulsKey.GameParamKey fileKey
-                    || paramDict.TryGetValue(fileKey.Param, out Param param))
-                {
-                    continue;
-                }
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
 
-                if (getKey is SoulsKey.GameParamKey gameParamKey)
+        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
+        {
+            return results;
+        }
+
+        if (curProject.ParamEditor != null)
+        {
+            if (resource.Type == EditorResourceType.Param
+                && curProject.ParamData.PrimaryBank?.Params is IReadOnlyDictionary<string, Param> paramDict)
+            {
+                foreach (SoulsKey getKey in keys)
                 {
-                    SoulsObject obj = new(gameParamKey);
-                    obj.AddRequestedProperties(properties, key => AccessParamFile(gameParamKey, key));
-                    results.Add(obj);
-                }
-                else if (getKey is SoulsKey.GameParamRowKey gameParamRowKey)
-                {
-                    // This ignores DataIndex for now
-                    Param.Row row = param[gameParamRowKey.ID];
-                    if (row != null)
+                    if (getKey.File is not SoulsKey.GameParamKey fileKey
+                        || paramDict.TryGetValue(fileKey.Param, out Param param))
                     {
-                        SoulsObject obj = new(gameParamRowKey);
-                        obj.AddRequestedProperties(properties, key => AccessParamProperty(fileKey.Param, row, key));
+                        continue;
+                    }
+
+                    if (getKey is SoulsKey.GameParamKey gameParamKey)
+                    {
+                        SoulsObject obj = new(gameParamKey);
+                        obj.AddRequestedProperties(properties, key => AccessParamFile(gameParamKey, key));
                         results.Add(obj);
+                    }
+                    else if (getKey is SoulsKey.GameParamRowKey gameParamRowKey)
+                    {
+                        // This ignores DataIndex for now
+                        Param.Row row = param[gameParamRowKey.ID];
+                        if (row != null)
+                        {
+                            SoulsObject obj = new(gameParamRowKey);
+                            obj.AddRequestedProperties(properties, key => AccessParamProperty(fileKey.Param, row, key));
+                            results.Add(obj);
+                        }
                     }
                 }
             }
@@ -358,37 +380,40 @@ public class SoapstoneService : SoapstoneServiceV1
         }
         */
 
-        if (resource.Type == EditorResourceType.Map)
+        if (curProject.MapEditor != null)
         {
-            foreach (SoulsKey getKey in keys)
+            if (resource.Type == EditorResourceType.Map)
             {
-                if (getKey.File is not SoulsKey.MsbKey fileKey
-                    || !MapEditor.Universe.LoadedObjectContainers.TryGetValue(fileKey.Map,
-                        out ObjectContainer container)
-                    || !MatchesResource(resource, fileKey.Map))
+                foreach (SoulsKey getKey in keys)
                 {
-                    continue;
-                }
-
-                if (getKey is SoulsKey.MsbKey msbKey)
-                {
-                    SoulsObject obj = new(msbKey);
-                    obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
-                    results.Add(obj);
-                }
-                else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && container is MapContainer m)
-                {
-                    foreach (Entity ob in m.GetObjectsByName(msbEntryKey.Name))
+                    if (getKey.File is not SoulsKey.MsbKey fileKey
+                        || !curProject.MapEditor.Universe.LoadedObjectContainers.TryGetValue(fileKey.Map,
+                            out ObjectContainer container)
+                        || !MatchesResource(resource, fileKey.Map))
                     {
-                        if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
-                            ns != msbEntryKey.Namespace)
-                        {
-                            continue;
-                        }
+                        continue;
+                    }
 
-                        SoulsObject obj = new(msbEntryKey);
-                        obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
+                    if (getKey is SoulsKey.MsbKey msbKey)
+                    {
+                        SoulsObject obj = new(msbKey);
+                        obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
                         results.Add(obj);
+                    }
+                    else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && container is MapContainer m)
+                    {
+                        foreach (Entity ob in m.GetObjectsByName(msbEntryKey.Name))
+                        {
+                            if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
+                                ns != msbEntryKey.Namespace)
+                            {
+                                continue;
+                            }
+
+                            SoulsObject obj = new(msbEntryKey);
+                            obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
+                            results.Add(obj);
+                        }
                     }
                 }
             }
@@ -406,7 +431,15 @@ public class SoapstoneService : SoapstoneServiceV1
         SearchOptions options)
     {
         List<SoulsObject> results = new();
-        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
+
+        if (BaseEditor.ProjectManager.SelectedProject == null)
+        {
+            return results;
+        }
+
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return results;
         }
@@ -421,43 +454,46 @@ public class SoapstoneService : SoapstoneServiceV1
 
         // Some of the iterations below may have interference with concurrent modification issues,
         // but transient errors are basically acceptable here. If not, use concurrent collections instead.
-        if (resource.Type == EditorResourceType.Param)
+        if(curProject.ParamEditor != null)
         {
-            Predicate<object> fileFilter = search.GetKeyFilter("Param");
-            foreach (KeyValuePair<string, Param> entry in ParamBank.PrimaryBank?.Params ??
-                                                          new Dictionary<string, Param>())
+            if (resource.Type == EditorResourceType.Param)
             {
-                if (!fileFilter(entry.Key))
+                Predicate<object> fileFilter = search.GetKeyFilter("Param");
+                foreach (KeyValuePair<string, Param> entry in curProject.ParamData.PrimaryBank?.Params ??
+                                                              new Dictionary<string, Param>())
                 {
-                    continue;
-                }
-
-                SoulsKey.GameParamKey fileKey = new(entry.Key);
-                if (resultType.Matches(typeof(SoulsKey.GameParamKey)))
-                {
-                    // The only property of GameParamKey has already been filtered, so no need to check IsMatch.
-                    SoulsObject obj = new(fileKey);
-                    obj.AddRequestedProperties(properties, key => AccessParamFile(fileKey, key));
-                    if (addResult(obj))
+                    if (!fileFilter(entry.Key))
                     {
-                        goto limitReached;
+                        continue;
                     }
-                }
 
-                if (resultType.Matches(typeof(SoulsKey.GameParamRowKey)))
-                {
-                    foreach (Param.Row row in entry.Value.Rows)
+                    SoulsKey.GameParamKey fileKey = new(entry.Key);
+                    if (resultType.Matches(typeof(SoulsKey.GameParamKey)))
                     {
-                        if (search.IsMatch(key => AccessParamProperty(entry.Key, row, key)))
+                        // The only property of GameParamKey has already been filtered, so no need to check IsMatch.
+                        SoulsObject obj = new(fileKey);
+                        obj.AddRequestedProperties(properties, key => AccessParamFile(fileKey, key));
+                        if (addResult(obj))
                         {
-                            // Currently, Param doesn't expose DataIndex.
-                            // If there is a way to do that without breaking abstractions, we should add it here,
-                            // since Soapstone does support identical param rows having indices.
-                            SoulsObject obj = new(new SoulsKey.GameParamRowKey(fileKey, row.ID));
-                            obj.AddRequestedProperties(properties, key => AccessParamProperty(entry.Key, row, key));
-                            if (addResult(obj))
+                            goto limitReached;
+                        }
+                    }
+
+                    if (resultType.Matches(typeof(SoulsKey.GameParamRowKey)))
+                    {
+                        foreach (Param.Row row in entry.Value.Rows)
+                        {
+                            if (search.IsMatch(key => AccessParamProperty(entry.Key, row, key)))
                             {
-                                goto limitReached;
+                                // Currently, Param doesn't expose DataIndex.
+                                // If there is a way to do that without breaking abstractions, we should add it here,
+                                // since Soapstone does support identical param rows having indices.
+                                SoulsObject obj = new(new SoulsKey.GameParamRowKey(fileKey, row.ID));
+                                obj.AddRequestedProperties(properties, key => AccessParamProperty(entry.Key, row, key));
+                                if (addResult(obj))
+                                {
+                                    goto limitReached;
+                                }
                             }
                         }
                     }
@@ -523,50 +559,53 @@ public class SoapstoneService : SoapstoneServiceV1
         }
         */
 
-        if (resource.Type == EditorResourceType.Map)
+        if (curProject.MapEditor != null)
         {
-            Predicate<object> fileFilter = search.GetKeyFilter("Map");
-            // LoadedObjectContainers is never null, starts out an empty dictionary
-            foreach (KeyValuePair<string, ObjectContainer> entry in MapEditor.Universe.LoadedObjectContainers)
+            if (resource.Type == EditorResourceType.Map)
             {
-                if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key))
+                Predicate<object> fileFilter = search.GetKeyFilter("Map");
+                // LoadedObjectContainers is never null, starts out an empty dictionary
+                foreach (KeyValuePair<string, ObjectContainer> entry in curProject.MapEditor.Universe.LoadedObjectContainers)
                 {
-                    continue;
-                }
-
-                SoulsKey.MsbKey fileKey = new(entry.Key);
-                // For MsbKey, we don't care about the container actually being loaded or not.
-                // Just include it if it's not been filtered.
-                if (resultType.Matches(typeof(SoulsKey.MsbKey)))
-                {
-                    // The only property of MsbKey has already been filtered, so no need to check IsMatch.
-                    SoulsObject obj = new(fileKey);
-                    // For now, don't include a map alias property here, as it's not part of ObjectContainer directly.
-                    // We could also use a separate EditorResourceType.Alias for that.
-                    obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
-                    if (addResult(obj))
+                    if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key))
                     {
-                        goto limitReached;
+                        continue;
                     }
-                }
 
-                if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value is MapContainer m)
-                {
-                    // Use similar enumeration as SearchProperties
-                    foreach (Entity ob in m.Objects)
+                    SoulsKey.MsbKey fileKey = new(entry.Key);
+                    // For MsbKey, we don't care about the container actually being loaded or not.
+                    // Just include it if it's not been filtered.
+                    if (resultType.Matches(typeof(SoulsKey.MsbKey)))
                     {
-                        if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns))
+                        // The only property of MsbKey has already been filtered, so no need to check IsMatch.
+                        SoulsObject obj = new(fileKey);
+                        // For now, don't include a map alias property here, as it's not part of ObjectContainer directly.
+                        // We could also use a separate EditorResourceType.Alias for that.
+                        obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
+                        if (addResult(obj))
                         {
-                            continue;
+                            goto limitReached;
                         }
+                    }
 
-                        if (search.IsMatch(key => AccessMapProperty(e, key)))
+                    if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value is MapContainer m)
+                    {
+                        // Use similar enumeration as SearchProperties
+                        foreach (Entity ob in m.Objects)
                         {
-                            SoulsObject obj = new(new SoulsKey.MsbEntryKey(fileKey, ns, e.Name));
-                            obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
-                            if (addResult(obj))
+                            if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns))
                             {
-                                goto limitReached;
+                                continue;
+                            }
+
+                            if (search.IsMatch(key => AccessMapProperty(e, key)))
+                            {
+                                SoulsObject obj = new(new SoulsKey.MsbEntryKey(fileKey, ns, e.Name));
+                                obj.AddRequestedProperties(properties, key => AccessMapProperty(e, key));
+                                if (addResult(obj))
+                                {
+                                    goto limitReached;
+                                }
                             }
                         }
                     }
@@ -580,9 +619,11 @@ public class SoapstoneService : SoapstoneServiceV1
 
     public override async Task OpenResource(ServerCallContext context, EditorResource resource)
     {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
         // At the moment, only loading maps is supported.
         // This could be extended to switching FMG language, or adding a param view, or opening a model to view.
-        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -599,7 +640,12 @@ public class SoapstoneService : SoapstoneServiceV1
         EditorResource resource,
         SoulsKey key)
     {
-        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (BaseEditor.ProjectManager.SelectedProject == null)
+            return;
+
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }
@@ -639,7 +685,6 @@ public class SoapstoneService : SoapstoneServiceV1
             }
         }
         else if (resource.Type == EditorResourceType.Fmg
-                 && FMGBankLoaded(game, out SoulsFmg.FmgLanguage lang)
                  && key.File is SoulsKey.FmgKey fmgKey
                  && SoulsFmg.TryGetFmgInfo(game, fmgKey, out SoulsFmg.FmgKeyInfo fmgKeyInfo))
         {
@@ -664,9 +709,14 @@ public class SoapstoneService : SoapstoneServiceV1
         PropertySearch search,
         bool openFirstResult)
     {
+        if (BaseEditor.ProjectManager.SelectedProject == null)
+            return;
+
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
         // At the moment, just map properties, since there are some multi-keyed things like entity groups
         // Params are also possible; FMG might require a new command
-        if (!gameMapping.TryGetValue(Smithbox.ProjectType, out FromSoftGame game) || resource.Game != game)
+        if (!gameMapping.TryGetValue(curProject.ProjectType, out FromSoftGame game) || resource.Game != game)
         {
             return;
         }

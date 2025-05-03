@@ -34,7 +34,7 @@ public class TextBank
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var fmgList = TextLocator.GetFmgs("menu\\text\\");
+            var fmgList = TextLocator.GetFmgs(Project, "menu\\text\\");
 
             foreach (var path in fmgList)
             {
@@ -43,7 +43,7 @@ public class TextBank
         }
         else if (Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
-            var fmgList = TextLocator.GetFmgs("lang\\");
+            var fmgList = TextLocator.GetFmgs(Project, "lang\\");
 
             foreach (var path in fmgList)
             {
@@ -52,7 +52,7 @@ public class TextBank
         }
         else
         {
-            var fmgContainerList = TextLocator.GetFmgContainers();
+            var fmgContainerList = TextLocator.GetFmgContainers(Project);
 
             foreach (var path in fmgContainerList)
             {

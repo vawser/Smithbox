@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Memory;
 using StudioCore.Tasks;
 using System;
 using System.Collections;
@@ -13,14 +13,23 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudioCore.Memory;
+namespace StudioCore.Editors.ParamEditor;
 
-internal class ParamReloader
+public class ParamReloader
 {
-    public static uint numberOfItemsToGive = 1;
-    public static uint upgradeLevelItemToGive;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
 
-    private static readonly List<ProjectType> _supportedGames = new()
+    public ParamReloader(ParamEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
+    public uint numberOfItemsToGive = 1;
+    public uint upgradeLevelItemToGive;
+
+    private readonly List<ProjectType> _supportedGames = new()
     {
         ProjectType.DS1,
         ProjectType.DS1R,
@@ -30,14 +39,14 @@ internal class ParamReloader
         ProjectType.AC6
     };
 
-    public static bool GameIsSupported(ProjectType gameType)
+    public bool GameIsSupported(ProjectType gameType)
     {
         return _supportedGames.Contains(gameType);
     }
 
-    public static bool CanReloadMemoryParams(ParamBank bank)
+    public bool CanReloadMemoryParams(ParamBank bank)
     {
-        if (GameIsSupported(Smithbox.ProjectType) && bank.IsLoadingParams == false)
+        if (GameIsSupported(Project.ProjectType))
         {
             return true;
         }
@@ -45,7 +54,7 @@ internal class ParamReloader
         return false;
     }
 
-    public static void ReloadMemoryParam(ParamBank bank, string paramName)
+    public void ReloadMemoryParam(ParamBank bank, string paramName)
     {
         if (paramName != null)
         {
@@ -53,7 +62,7 @@ internal class ParamReloader
         }
     }
 
-    public static void ReloadMemoryParams(ParamBank bank, string[] paramNames)
+    public void ReloadMemoryParams(ParamBank bank, string[] paramNames)
     {
         TaskManager.LiveTask task = new(
             "paramEditor_reloadParamData",
@@ -78,7 +87,7 @@ internal class ParamReloader
 
                 if (processArray.Any())
                 {
-                    SoulsMemoryHandler memoryHandler = new(processArray.First());
+                    SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
 
                     ReloadMemoryParamsThreads(bank, offsets, paramNames, memoryHandler);
                     memoryHandler.Terminate();
@@ -94,7 +103,7 @@ internal class ParamReloader
         TaskManager.Run(task);
     }
 
-    private static void ReloadMemoryParamsThreads(ParamBank bank, GameOffsetsEntry offsets, string[] paramNames,
+    private void ReloadMemoryParamsThreads(ParamBank bank, GameOffsetsEntry offsets, string[] paramNames,
         SoulsMemoryHandler handler)
     {
         nint soloParamRepositoryPtr;
@@ -152,7 +161,7 @@ internal class ParamReloader
         }
     }
 
-    public static void GiveItem(GameOffsetsEntry offsets, List<Param.Row> rowsToGib, string studioParamType,
+    public void GiveItem(GameOffsetsEntry offsets, List<Param.Row> rowsToGib, string studioParamType,
         int itemQuantityReceived, int upgradeLevelItemToGive = 0)
     {
         if (rowsToGib.Any())
@@ -162,7 +171,7 @@ internal class ParamReloader
             Process[] processArray = Process.GetProcessesByName(name);
             if (processArray.Any())
             {
-                SoulsMemoryHandler memoryHandler = new(processArray.First());
+                SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
 
                 memoryHandler.PlayerItemGive(offsets, rowsToGib, studioParamType, itemQuantityReceived, -1,
                     upgradeLevelItemToGive);
@@ -172,14 +181,14 @@ internal class ParamReloader
         }
     }
 
-    private static void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, int paramOffset,
+    private void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, int paramOffset,
         SoulsMemoryHandler memoryHandler, nint soloParamRepositoryPtr)
     {
         var BasePtr = memoryHandler.GetParamPtr(soloParamRepositoryPtr, offsets, paramOffset);
         WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
     }
 
-    private static void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, nint BasePtr,
+    private void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, nint BasePtr,
         SoulsMemoryHandler memoryHandler)
     {
         var BaseDataPtr = memoryHandler.GetToRowPtr(offsets, BasePtr);
@@ -225,7 +234,7 @@ internal class ParamReloader
         }
     }
 
-    private static void WriteMemoryRow(Param.Row row, nint RowDataSectionPtr, SoulsMemoryHandler memoryHandler)
+    private void WriteMemoryRow(Param.Row row, nint RowDataSectionPtr, SoulsMemoryHandler memoryHandler)
     {
         var offset = 0;
         var bitFieldPos = 0;
@@ -238,7 +247,7 @@ internal class ParamReloader
         }
     }
 
-    private static int WriteMemoryCell(Param.Cell cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
+    private int WriteMemoryCell(Param.Cell cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
         SoulsMemoryHandler memoryHandler)
     {
         PARAMDEF.DefType displayType = cell.Def.DisplayType;
@@ -401,7 +410,7 @@ internal class ParamReloader
         throw new Exception("Unexpected Field Type");
     }
 
-    private static int WriteBitArray(Param.Cell? cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
+    private int WriteBitArray(Param.Cell? cell, nint CellDataPtr, ref int bitFieldPos, ref BitArray bits,
         SoulsMemoryHandler memoryHandler, bool flushBits)
     {
         if (!flushBits)
@@ -480,14 +489,14 @@ internal class ParamReloader
         return 0;
     }
 
-    public static GameOffsetsEntry GetGameOffsets()
+    public GameOffsetsEntry GetGameOffsets()
     {
-        ProjectType game = Smithbox.ProjectType;
+        ProjectType game = Project.ProjectType;
         if (!GameOffsetsEntry.GameOffsetBank.ContainsKey(game))
         {
             try
             {
-                GameOffsetsEntry.GameOffsetBank.Add(game, new GameOffsetsEntry(game));
+                GameOffsetsEntry.GameOffsetBank.Add(game, new GameOffsetsEntry(Project));
             }
             catch (Exception e)
             {
@@ -500,7 +509,7 @@ internal class ParamReloader
         return GameOffsetsEntry.GameOffsetBank[game];
     }
 
-    public static string[] GetReloadableParams()
+    public string[] GetReloadableParams()
     {
         GameOffsetsEntry offs = GetGameOffsets();
         if (offs == null)
@@ -514,7 +523,7 @@ internal class ParamReloader
     /// <summary>
     /// Returns dictionary of Row ID keys corresponding with Queue of rows, for the purpose of handling duplicate row IDs.
     /// </summary>
-    private static Dictionary<int, Queue<Param.Row>> GetRowQueueDictionary(Param param)
+    private Dictionary<int, Queue<Param.Row>> GetRowQueueDictionary(Param param)
     {
         Dictionary<int, Queue<Param.Row>> rows = new();
 
@@ -525,5 +534,68 @@ internal class ParamReloader
         }
 
         return rows;
+    }
+
+    public void ReloadCurrentParam(ParamEditorScreen editor)
+    {
+        var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
+
+        if (canHotReload)
+        {
+            if (editor._activeView._selection.GetActiveParam() != null)
+            {
+                ReloadMemoryParam(editor.Project.ParamData.PrimaryBank, editor._activeView._selection.GetActiveParam());
+            }
+            else
+            {
+                TaskLogs.AddLog("No param has been selected yet for the Param Reloder.");
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
+        }
+    }
+
+    public void ReloadAllParams(ParamEditorScreen editor)
+    {
+        var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
+
+        if (canHotReload)
+        {
+            ReloadMemoryParams(editor.Project.ParamData.PrimaryBank, editor.Project.ParamData.PrimaryBank.Params.Keys.ToArray());
+        }
+        else
+        {
+            TaskLogs.AddLog("Param Reloader cannot reload for this project.");
+        }
+    }
+
+    public int SpawnedItemAmount = 1;
+    public int SpawnWeaponLevel = 0;
+
+    public void GiveItem(ParamEditorScreen editor)
+    {
+        var activeParam = editor._activeView._selection.GetActiveParam();
+        if (activeParam != null)
+        {
+            GameOffsetsEntry offsets = GetGameOffsets();
+
+            var rowsToGib = editor._activeView._selection.GetSelectedRows();
+            var param = editor._activeView._selection.GetActiveParam();
+
+            if (activeParam is "EquipParamGoods" or "EquipParamProtector" or "EquipParamAccessory")
+            {
+                GiveItem(offsets, rowsToGib, param, SpawnedItemAmount);
+            }
+            if (activeParam == "EquipParamWeapon")
+            {
+                GiveItem(offsets, rowsToGib, param, SpawnedItemAmount, SpawnWeaponLevel);
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog("No param selected yet for Item Gib.");
+        }
     }
 }

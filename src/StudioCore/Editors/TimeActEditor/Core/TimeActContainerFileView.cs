@@ -74,7 +74,7 @@ public class TimeActContainerFileView
 
                     if (ImGui.IsItemVisible())
                     {
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name, TimeActAliasType.Character);
+                        TimeActUtils.DisplayTimeActFileAlias(Editor, info.Name, TimeActAliasType.Character);
                     }
 
                     Selection.ContextMenu.ContainerMenu(isSelected, info.Name);
@@ -89,7 +89,7 @@ public class TimeActContainerFileView
             }
         }
 
-        var title = $"{TimeActUtils.GetObjectTitle()}s";
+        var title = $"{TimeActUtils.GetObjectTitle(Editor.Project)}s";
 
         if (ImGui.CollapsingHeader(title))
         {
@@ -125,7 +125,7 @@ public class TimeActContainerFileView
 
                     if (ImGui.IsItemVisible())
                     {
-                        TimeActUtils.DisplayTimeActFileAlias(info.Name, TimeActAliasType.Asset);
+                        TimeActUtils.DisplayTimeActFileAlias(Editor, info.Name, TimeActAliasType.Asset);
                     }
 
                     Selection.ContextMenu.ContainerMenu(isSelected, info.Name);

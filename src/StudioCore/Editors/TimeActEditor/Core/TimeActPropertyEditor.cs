@@ -85,7 +85,7 @@ public class TimeActPropertyEditor
             Editor.Selection.ContainerInfo.IsModified = true;
 
             // Re-select row at new index
-            TimeActUtils.SelectAdjustedAnimation(anim);
+            TimeActUtils.SelectAdjustedAnimation(Editor, anim);
         }
 
         changed = false;

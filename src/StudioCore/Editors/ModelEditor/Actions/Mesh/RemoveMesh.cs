@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class RemoveMesh : ViewportAction
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelViewportManager ViewportManager;
 
@@ -21,13 +21,13 @@ public class RemoveMesh : ViewportAction
     private int PreviousSelectionIndex;
     private int Index;
 
-    public RemoveMesh(ModelEditorScreen screen, FLVER2 flver, int index)
+    public RemoveMesh(ModelEditorScreen editor, FLVER2 flver, int index)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ViewportManager = screen.ViewportManager;
+        Editor = editor;
+        Selection = editor.Selection;
+        ViewportManager = editor.ViewportManager;
 
-        PreviousSelectionIndex = screen.Selection._selectedMesh;
+        PreviousSelectionIndex = editor.Selection._selectedMesh;
 
         CurrentFLVER = flver;
         RemovedObject = CurrentFLVER.Meshes[index].Clone();
@@ -39,7 +39,7 @@ public class RemoveMesh : ViewportAction
         Selection._selectedMesh = -1;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -49,7 +49,7 @@ public class RemoveMesh : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, RemovedObject);
         Selection._selectedMesh = PreviousSelectionIndex;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
+        Editor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }

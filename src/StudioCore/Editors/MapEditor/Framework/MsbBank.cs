@@ -2,6 +2,7 @@
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Resource.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -43,7 +44,7 @@ public class MsbBank
 
         Meta._MsbMetas = new();
 
-        var metaPath = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{MiscLocator.GetGameIDForDir()}\\Meta";
+        var metaPath = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{ProjectUtils.GetGameDirectory(Project)}\\Meta";
 
         //TaskLogs.AddLog($"metaPath: {metaPath}");
 

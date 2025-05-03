@@ -53,7 +53,7 @@ public class GlobalModelSearch
                 foreach (var entry in Directory.EnumerateFiles(dir, wildcard, SearchOption.AllDirectories))
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                    ResourceDescriptor ad = MapLocator.GetMapMSB(name);
+                    ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
                     if (ad.AssetPath != null)
                     {
                         resMaps.Add(ad);

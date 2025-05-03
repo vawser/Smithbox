@@ -127,7 +127,7 @@ public class ParamData
         ParamDefs = new Dictionary<string, PARAMDEF>();
         FakeParamTypes = new Dictionary<string, string>();
 
-        var dir = ParamLocator.GetParamdefDir();
+        var dir = ParamLocator.GetParamdefDir(Project);
         var files = Directory.GetFiles(dir, "*.xml");
         List<(string, PARAMDEF)> defPairs = new();
 
@@ -138,7 +138,7 @@ public class ParamData
             defPairs.Add((f, pdef));
         }
 
-        var tentativeMappingPath = ParamLocator.GetTentativeParamTypePath();
+        var tentativeMappingPath = ParamLocator.GetTentativeParamTypePath(Project);
 
         if (File.Exists(tentativeMappingPath))
         {
@@ -175,7 +175,7 @@ public class ParamData
     {
         await Task.Delay(1000);
 
-        var mdir = ParamLocator.GetParammetaDir();
+        var mdir = ParamLocator.GetParammetaDir(Project);
 
         if (CFG.Current.Param_UseProjectMeta)
         {
@@ -190,7 +190,7 @@ public class ParamData
 
             if (CFG.Current.Param_UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
             {
-                var metaDir = ParamLocator.GetParammetaDir();
+                var metaDir = ParamLocator.GetParammetaDir(Project);
                 var projectDir = $"{Project.ProjectPath}\\.smithbox\\{metaDir}";
                 ParamMetaData.XmlDeserialize($@"{projectDir}\{fName}", pdef);
             }
@@ -205,7 +205,7 @@ public class ParamData
 
     public void CreateProjectMeta()
     {
-        var metaDir = ParamLocator.GetParammetaDir();
+        var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
         var projectDir = $"{Project.ProjectPath}\\.smithbox\\{metaDir}";
 

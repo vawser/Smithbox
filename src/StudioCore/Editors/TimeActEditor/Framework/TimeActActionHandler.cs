@@ -127,7 +127,7 @@ public class TimeActActionHandler
             Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
             TAE.Event curEvent = Editor.Selection.CurrentTimeActEvent;
-            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(TimeActTemplateType.Character);
+            TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(Editor, TimeActTemplateType.Character);
 
             if (curEvent != null && curTemplate != null)
             {
@@ -310,7 +310,7 @@ public class TimeActActionHandler
             // Select last newly duplicated event
             if (lastAnimIdx != -1)
             {
-                TimeActUtils.SelectNewAnimation(lastAnimIdx);
+                TimeActUtils.SelectNewAnimation(Editor, lastAnimIdx);
             }
 
             timeact.Animations.Sort();
@@ -446,7 +446,7 @@ public class TimeActActionHandler
             // Select last newly duplicated event
             if (lastEventIdx != -1)
             {
-                TimeActUtils.SelectNewEvent(lastEventIdx);
+                TimeActUtils.SelectNewEvent(Editor, lastEventIdx);
             }
         }
     }

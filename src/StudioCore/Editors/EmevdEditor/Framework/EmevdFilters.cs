@@ -12,15 +12,15 @@ namespace StudioCore.Editors.EmevdEditor;
 /// </summary>
 public class EmevdFilters
 {
-    private EmevdEditorScreen Screen;
+    private EmevdEditorScreen Editor;
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
 
-    public EmevdFilters(EmevdEditorScreen screen)
+    public EmevdFilters(EmevdEditorScreen editor)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Decorator = editor.Decorator;
+        Selection = editor.Selection;
     }
 
     public string FileFilterInput = "";
@@ -121,7 +121,7 @@ public class EmevdFilters
     /// </summary>
     public bool IsEventFilterMatch(EMEVD.Event evt)
     {
-        var aliasText = EmevdUtils.GetDS2ItemAlias(evt);
+        var aliasText = EmevdUtils.GetDS2ItemAlias(Editor, evt);
         var text = $"{evt.ID} {evt.Name} {aliasText}";
 
 
@@ -212,7 +212,7 @@ public class EmevdFilters
     public bool IsInstructionFilterMatch(Instruction ins, string overrideInput = "")
     {
         var name = $"{ins.Bank}[{ins.ID}]";
-        var argDocName = EmevdUtils.GetArgDocName(Screen, ins);
+        var argDocName = EmevdUtils.GetArgDocName(Editor, ins);
 
         bool isValid = true;
         var input = InstructionFilterInput.ToLower();
@@ -230,7 +230,7 @@ public class EmevdFilters
             // Prop filter
             if (input.StartsWith("prop:") && input.Length > 4)
             {
-                (var argumentDocs, var arguments) = EmevdUtils.BuildArgumentList(Screen, ins);
+                (var argumentDocs, var arguments) = EmevdUtils.BuildArgumentList(Editor, ins);
 
                 if (argumentDocs != null && arguments != null)
                 {

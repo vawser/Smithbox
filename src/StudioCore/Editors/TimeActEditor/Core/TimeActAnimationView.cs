@@ -83,12 +83,6 @@ public class TimeActAnimationView
                     Selection.SelectAnimation = true;
                 }
 
-                if (ImGui.IsItemVisible())
-                {
-                    if (CFG.Current.TimeActEditor_DisplayAnimRow_GeneratorInfo)
-                        TimeActUtils.DisplayAnimationAlias(Selection, entry.ID);
-                }
-
                 Selection.ContextMenu.TimeActAnimationMenu(isSelected, entry.ID.ToString());
 
                 if (Selection.FocusAnimation)

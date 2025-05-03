@@ -11,10 +11,10 @@ using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Memory;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -118,6 +118,8 @@ public class ParamEditorScreen : EditorScreen
     public RowIDFinder RowIDFinder;
     public RowNamer RowNamer;
 
+    public ParamReloader ParamReloader;
+
     private bool HasSetupFmgDecorators = false;
 
     private ParamEditorShortcuts EditorShortcuts;
@@ -148,6 +150,8 @@ public class ParamEditorScreen : EditorScreen
         RowNameFinder = new(this);
         RowIDFinder = new(this);
         RowNamer = new(this);
+
+        ParamReloader = new(this, Project);
     }
 
     public void OnGUI(string[] initcmd)
@@ -1128,9 +1132,9 @@ public class ParamEditorScreen : EditorScreen
 
         try
         {
-            var baseDir = ParamLocator.GetUpgraderAssetsDir();
-            var wlFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(), "version.txt");
-            var massEditFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(), "massedit.txt");
+            var baseDir = ParamLocator.GetUpgraderAssetsDir(Project);
+            var wlFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(Project), "version.txt");
+            var massEditFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(Project), "massedit.txt");
 
             if (!File.Exists(wlFile) || !File.Exists(massEditFile))
             {
@@ -1221,7 +1225,7 @@ public class ParamEditorScreen : EditorScreen
     {
         var oldRegulationPath = "";
         var regulationFolder = "";
-        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Regulations\\\\";
+        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Regulations\\\\";
 
         if (Project.ProjectType == ProjectType.ER)
         {

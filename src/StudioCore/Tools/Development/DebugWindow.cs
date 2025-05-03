@@ -21,15 +21,23 @@ namespace StudioCore.Tools.Development;
 
 public class DebugWindow
 {
+    private Smithbox BaseEditor;
+
     private bool MenuOpenState;
 
-    public bool _showImGuiDemoWindow = false;
-    public bool _showImGuiMetricsWindow = false;
-    public bool _showImGuiDebugLogWindow = false;
-    public bool _showImGuiStackToolWindow = false;
+    public ParamValidationTool ParamValidationTool;
+    public MapValidationTool MapValidationTool;
+    public TimeActValidationTool TimeActValidationTool;
+    public DokuWikiHelper DokuWikiHelper;
 
-    public DebugWindow()
+    public DebugWindow(Smithbox baseEditor)
     {
+        BaseEditor = baseEditor;
+
+        ParamValidationTool = new(baseEditor);
+        MapValidationTool = new(baseEditor);
+        TimeActValidationTool = new(baseEditor);
+        DokuWikiHelper = new(baseEditor);
     }
 
     public void ToggleMenuVisibility()
@@ -62,20 +70,12 @@ public class DebugWindow
         [Display(Name = "Task Status")] DisplayTaskStatus,
         [Display(Name = "Resource Manager")] ResourceManager,
 
-        // ImGui
-        [Display(Name = "ImGui Demo")] ImGuiDemo,
-        [Display(Name = "ImGui Metrics")] ImGuiMetrics,
-        [Display(Name = "ImGui Debug Log")] ImGuiLog,
-        [Display(Name = "ImGui Stack Tool")] ImGuiStackTool,
-        [Display(Name = "ImGui Test Panel")] ImGuiTestPanel,
-
         // Validation
         [Display(Name = "Paramdef Validation")] ValidateParamdef,
         [Display(Name = "MSB Validation")] ValidateMSB,
         [Display(Name = "TAE Validation")] ValidateTAE,
 
         // Helpers
-        [Display(Name = "FMG Ref Print")] FmgRefPrint,
         [Display(Name = "FLVER Layout Helper")] FlverDumpHelper,
         [Display(Name = "Mod Generator")] ModGenerator,
 
@@ -121,23 +121,6 @@ public class DebugWindow
                     DisplayResourceManager();
                     break;
 
-                // ImGui
-                case SelectedDebugTab.ImGuiDemo:
-                    DisplayImGuiDemo();
-                    break;
-                case SelectedDebugTab.ImGuiMetrics:
-                    DisplayImGuiMetrics();
-                    break;
-                case SelectedDebugTab.ImGuiLog:
-                    DisplayImGuiDebugLog();
-                    break;
-                case SelectedDebugTab.ImGuiStackTool:
-                    DisplayImGuiStackTool();
-                    break;
-                case SelectedDebugTab.ImGuiTestPanel:
-                    DisplayImGuiTestPanel();
-                    break;
-
                 // Validation
                 case SelectedDebugTab.ValidateParamdef:
                     DisplayTool_ParamValidation();
@@ -150,14 +133,8 @@ public class DebugWindow
                     break;
 
                 // Helpers
-                case SelectedDebugTab.FmgRefPrint:
-                    DisplayHelper_FmgRefPrint();
-                    break;
                 case SelectedDebugTab.FlverDumpHelper:
                     DisplayHelper_FLVERDumper();
-                    break;
-                case SelectedDebugTab.ModGenerator:
-                    DisplayHelper_ModGenerator();
                     break;
 
                 // Tests
@@ -228,54 +205,6 @@ public class DebugWindow
     private void DisplayResourceManager()
     {
         ResourceManagerWindow.Display();
-    }
-
-    // ImGui
-    private void DisplayImGuiDemo()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Demo", buttonSize))
-        {
-            _showImGuiDemoWindow = !_showImGuiDemoWindow;
-        }
-    }
-    private void DisplayImGuiMetrics()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Metrics", buttonSize))
-        {
-            _showImGuiMetricsWindow = !_showImGuiMetricsWindow;
-        }
-    }
-    private void DisplayImGuiDebugLog()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Debug Log", buttonSize))
-        {
-            _showImGuiDebugLogWindow = !_showImGuiDebugLogWindow;
-        }
-    }
-    private void DisplayImGuiStackTool()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Stack Tool", buttonSize))
-        {
-            _showImGuiStackToolWindow = !_showImGuiStackToolWindow;
-        }
-    }
-    private void DisplayImGuiTestPanel()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        // For testing ImGui elements
-        foreach(var entry in ParamBank.AuxBanks)
-        {
-            ImGui.Text($"{entry.Key}");
-        }
     }
 
     // Validation
@@ -349,15 +278,6 @@ public class DebugWindow
 
     // Helpers
 
-    private void DisplayHelper_FmgRefPrint()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Print FMG Refs for current param", buttonSize))
-        {
-        }
-    }
-
     private void DisplayHelper_FLVERDumper()
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
@@ -367,16 +287,6 @@ public class DebugWindow
             FlverDumpTools.DumpFlverLayouts();
         }
     }
-    private void DisplayHelper_ModGenerator()
-    {
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
-
-        if (ImGui.Button("Generate Mod", buttonSize))
-        {
-            ModGenerationHelper.GenerateGrandMerchant();
-        }
-    }
-
     // Tests
     private void DisplayTest_MSBE()
     {
@@ -384,13 +294,13 @@ public class DebugWindow
 
         if (ImGui.Button("MSBE read/write test", buttonSize))
         {
-            Test_MSB_ER_BytePerfect.Run();
+            Test_MSB_ER_BytePerfect.Run(BaseEditor);
         }
     }
 
     private void DisplayTest_MSB_AC6()
     {
-        Test_MSB_AC6_BytePerfect.Display();
+        Test_MSB_AC6_BytePerfect.Display(BaseEditor);
     }
 
     private void DisplayTest_MSBFA()
@@ -399,7 +309,7 @@ public class DebugWindow
 
         if (ImGui.Button("MSBFA read/write test", buttonSize))
         {
-            Test_MSB_ACFA_BytePerfect.Run();
+            Test_MSB_ACFA_BytePerfect.Run(BaseEditor);
         }
     }
 
@@ -409,7 +319,7 @@ public class DebugWindow
 
         if (ImGui.Button("MSBV read/write test", buttonSize))
         {
-            Test_MSB_ACV_BytePerfect.Run();
+            Test_MSB_ACV_BytePerfect.Run(BaseEditor);
         }
     }
 
@@ -419,7 +329,7 @@ public class DebugWindow
 
         if (ImGui.Button("MSBVD read/write test", buttonSize))
         {
-            Test_MSB_ACVD_BytePerfect.Run();
+            Test_MSB_ACVD_BytePerfect.Run(BaseEditor);
         }
     }
 
@@ -429,7 +339,7 @@ public class DebugWindow
 
         if (ImGui.Button("BTL read/write test", buttonSize))
         {
-            Test_BTL_BytePerfect.Run();
+            Test_BTL_BytePerfect.Run(BaseEditor);
         }
     }
 
@@ -439,12 +349,12 @@ public class DebugWindow
 
         if (ImGui.Button("Insert unique rows IDs into params", buttonSize))
         {
-            ParamUniqueRowFinder.Run();
+            ParamUniqueRowFinder.Run(BaseEditor);
         }
     }
     private void DisplayTest_FLVER2()
     {
-        Test_FLVER2_BytePerfect.Display();
+        Test_FLVER2_BytePerfect.Display(BaseEditor);
     }
 
     private void DisplayTest_BHV()

@@ -16,46 +16,46 @@ public static class MapLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static ResourceDescriptor GetMapMSB(string mapid, bool writemode = false, bool gameRootOnly = false)
+    public static ResourceDescriptor GetMapMSB(ProjectEntry project, string mapid, bool writemode = false, bool gameRootOnly = false)
     {
         ResourceDescriptor ad = new();
         ad.AssetPath = null;
         if (mapid.Length != 12 &&
-            Smithbox.ProjectType != ProjectType.AC4 &&
-            Smithbox.ProjectType != ProjectType.ACFA &&
-            Smithbox.ProjectType != ProjectType.ACV &&
-            Smithbox.ProjectType != ProjectType.ACVD)
+            project.ProjectType != ProjectType.AC4 &&
+            project.ProjectType != ProjectType.ACFA &&
+            project.ProjectType != ProjectType.ACV &&
+            project.ProjectType != ProjectType.ACVD)
             return ad;
 
         string preferredPath = "";
         string backupPath = "";
 
         // SOFTS
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             preferredPath = $@"map\{mapid}\{mapid}.msb";
             backupPath = $@"map\{mapid}\{mapid}.msb";
         }
         // BB chalice maps
-        else if (Smithbox.ProjectType is ProjectType.BB && mapid.StartsWith("m29"))
+        else if (project.ProjectType is ProjectType.BB && mapid.StartsWith("m29"))
         {
             preferredPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb";
         }
         // DeS, DS1, DS1R
-        else if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+        else if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb";
             backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
         }
         // BB, DS3, ER, SDT, AC6
-        else if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
+        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid}.msb";
         }
         // ACFA
-        else if (Smithbox.ProjectType is ProjectType.ACFA)
+        else if (project.ProjectType is ProjectType.ACFA)
         {
             if (mapid.StartsWith("model") || mapid.StartsWith("system"))
             {
@@ -83,7 +83,7 @@ public static class MapLocator
             }
         }
         // ACV
-        else if (Smithbox.ProjectType is ProjectType.ACV)
+        else if (project.ProjectType is ProjectType.ACV)
         {
             if (mapid.StartsWith("ingamegarage"))
             {
@@ -117,7 +117,7 @@ public static class MapLocator
             }
         }
         // ACVD
-        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        else if (project.ProjectType is ProjectType.ACVD)
         {
             if (mapid.StartsWith("ch"))
             {
@@ -157,21 +157,21 @@ public static class MapLocator
             }
         }
 
-        if (!gameRootOnly && Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{preferredPath}") || writemode && Smithbox.ProjectRoot != null)
+        if (!gameRootOnly && project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{preferredPath}") || writemode && project.ProjectPath != null)
         {
-            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{preferredPath}";
+            ad.AssetPath = $@"{project.ProjectPath}\{preferredPath}";
         }
-        else if (!gameRootOnly && Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{backupPath}") || writemode && Smithbox.ProjectRoot != null)
+        else if (!gameRootOnly && project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{backupPath}") || writemode && project.ProjectPath != null)
         {
-            ad.AssetPath = $@"{Smithbox.ProjectRoot}\{backupPath}";
+            ad.AssetPath = $@"{project.ProjectPath}\{backupPath}";
         }
-        else if (File.Exists($@"{Smithbox.GameRoot}\{preferredPath}"))
+        else if (File.Exists($@"{project.DataPath}\{preferredPath}"))
         {
-            ad.AssetPath = $@"{Smithbox.GameRoot}\{preferredPath}";
+            ad.AssetPath = $@"{project.DataPath}\{preferredPath}";
         }
-        else if (File.Exists($@"{Smithbox.GameRoot}\{backupPath}"))
+        else if (File.Exists($@"{project.DataPath}\{backupPath}"))
         {
-            ad.AssetPath = $@"{Smithbox.GameRoot}\{backupPath}";
+            ad.AssetPath = $@"{project.DataPath}\{backupPath}";
         }
 
         ad.AssetName = mapid;
@@ -184,25 +184,25 @@ public static class MapLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static List<ResourceDescriptor> GetMapBTLs(string mapid, bool writemode = false)
+    public static List<ResourceDescriptor> GetMapBTLs(ProjectEntry project, string mapid, bool writemode = false)
     {
         List<ResourceDescriptor> adList = new();
         if (mapid.Length != 12)
             return adList;
 
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             // DS2 BTL is located inside map's .gibdt file
             ResourceDescriptor ad = new();
             var path = $@"model\map\g{mapid[1..]}.gibhd";
 
-            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") || writemode && Smithbox.ProjectRoot != null)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}") || writemode && project.ProjectPath != null)
             {
-                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
+                ad.AssetPath = $@"{project.ProjectPath}\{path}";
             }
-            else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
+            else if (File.Exists($@"{project.DataPath}\{path}"))
             {
-                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}";
+                ad.AssetPath = $@"{project.DataPath}\{path}";
             }
 
             if (ad.AssetPath != null)
@@ -215,13 +215,13 @@ public static class MapLocator
             ResourceDescriptor ad2 = new();
             path = $@"model_lq\map\g{mapid[1..]}.gibhd";
 
-            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}") || writemode && Smithbox.ProjectRoot != null)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}") || writemode && project.ProjectPath != null)
             {
-                ad2.AssetPath = $@"{Smithbox.ProjectRoot}\{path}";
+                ad2.AssetPath = $@"{project.ProjectPath}\{path}";
             }
-            else if (File.Exists($@"{Smithbox.GameRoot}\{path}"))
+            else if (File.Exists($@"{project.DataPath}\{path}"))
             {
-                ad2.AssetPath = $@"{Smithbox.GameRoot}\{path}";
+                ad2.AssetPath = $@"{project.DataPath}\{path}";
             }
 
             if (ad2.AssetPath != null)
@@ -231,10 +231,10 @@ public static class MapLocator
                 adList.Add(ad2);
             }
         }
-        else if (Smithbox.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             string path;
-            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 path = $@"map\{mapid[..3]}\{mapid}";
             }
@@ -245,17 +245,17 @@ public static class MapLocator
 
             List<string> files = new();
 
-            if (Directory.Exists($@"{Smithbox.GameRoot}\{path}"))
+            if (Directory.Exists($@"{project.DataPath}\{path}"))
             {
-                files.AddRange(Directory.GetFiles($@"{Smithbox.GameRoot}\{path}", "*.btl").ToList());
-                files.AddRange(Directory.GetFiles($@"{Smithbox.GameRoot}\{path}", "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.DataPath}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.DataPath}\{path}", "*.btl.dcx").ToList());
             }
 
-            if (Directory.Exists($@"{Smithbox.ProjectRoot}\{path}"))
+            if (Directory.Exists($@"{project.ProjectPath}\{path}"))
             {
                 // Check for additional BTLs the user has created.
-                files.AddRange(Directory.GetFiles($@"{Smithbox.ProjectRoot}\{path}", "*.btl").ToList());
-                files.AddRange(Directory.GetFiles($@"{Smithbox.ProjectRoot}\{path}", "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.ProjectPath}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.ProjectPath}\{path}", "*.btl.dcx").ToList());
                 files = files.DistinctBy(f => f.Split("\\").Last()).ToList();
             }
 
@@ -264,13 +264,13 @@ public static class MapLocator
                 ResourceDescriptor ad = new();
                 var fileName = file.Split("\\").Last();
 
-                if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}\{fileName}") || writemode && Smithbox.ProjectRoot != null)
+                if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}\{fileName}") || writemode && project.ProjectPath != null)
                 {
-                    ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}\{fileName}";
+                    ad.AssetPath = $@"{project.ProjectPath}\{path}\{fileName}";
                 }
-                else if (File.Exists($@"{Smithbox.GameRoot}\{path}\{fileName}"))
+                else if (File.Exists($@"{project.DataPath}\{path}\{fileName}"))
                 {
-                    ad.AssetPath = $@"{Smithbox.GameRoot}\{path}\{fileName}";
+                    ad.AssetPath = $@"{project.DataPath}\{path}\{fileName}";
                 }
 
                 if (ad.AssetPath != null)
@@ -290,7 +290,7 @@ public static class MapLocator
     /// <param name="mapid"></param>
     /// <param name="writemode"></param>
     /// <returns></returns>
-    public static ResourceDescriptor GetMapNVA(string mapid, bool writemode = false)
+    public static ResourceDescriptor GetMapNVA(ProjectEntry project, string mapid, bool writemode = false)
     {
         ResourceDescriptor ad = new();
         ad.AssetPath = null;
@@ -298,38 +298,38 @@ public static class MapLocator
         if (mapid.Length != 12)
             return ad;
 
-        if (Smithbox.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
+        if (project.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
         {
             var path = $@"\map\{mapid.Substring(0, 9)}_00\{mapid}";
 
-            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva.dcx") || writemode && Smithbox.ProjectRoot != null && Smithbox.ProjectType != ProjectType.DS1)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva.dcx") || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva.dcx";
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva.dcx";
             }
-            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva.dcx"))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva.dcx"))
             {
-                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva.dcx";
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva.dcx";
             }
         }
         else
         {
             var path = $@"\map\{mapid}\{mapid}";
 
-            if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva.dcx") || writemode && Smithbox.ProjectRoot != null && Smithbox.ProjectType != ProjectType.DS1)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva.dcx") || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva.dcx";
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva.dcx";
             }
-            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva.dcx"))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva.dcx"))
             {
-                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva.dcx";
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva.dcx";
             }
-            else if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{path}.nva") || writemode && Smithbox.ProjectRoot != null)
+            else if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva") || writemode && project.ProjectPath != null)
             {
-                ad.AssetPath = $@"{Smithbox.ProjectRoot}\{path}.nva";
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva";
             }
-            else if (File.Exists($@"{Smithbox.GameRoot}\{path}.nva"))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva"))
             {
-                ad.AssetPath = $@"{Smithbox.GameRoot}\{path}.nva";
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva";
             }
         }
 
@@ -342,9 +342,9 @@ public static class MapLocator
     /// Basically if there's an msb for it, it will be in this list.
     /// </summary>
     /// <returns></returns>
-    public static List<string> GetFullMapList()
+    public static List<string> GetFullMapList(ProjectEntry project)
     {
-        if (Smithbox.GameRoot == null)
+        if (project.DataPath == null)
             return null;
 
         if (FullMapList != null)
@@ -368,34 +368,34 @@ public static class MapLocator
             }
 
             // DS2, ACFA, ACV, and ACVD have their own structure for msbs, where they are all inside individual folders
-            if (Smithbox.ProjectType is ProjectType.ACFA)
+            if (project.ProjectType is ProjectType.ACFA)
             {
-                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
-                SearchLooseMaps(Smithbox.GameRoot + @"\model\system", "*.msb");
-                if (Smithbox.ProjectRoot != null)
+                SearchLooseMaps(project.DataPath + @"\model\map", "*.msb");
+                SearchLooseMaps(project.DataPath + @"\model\system", "*.msb");
+                if (project.ProjectPath != null)
                 {
-                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
-                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\system", "*.msb");
+                    SearchLooseMaps(project.ProjectPath + @"\model\map", "*.msb");
+                    SearchLooseMaps(project.ProjectPath + @"\model\system", "*.msb");
                 }
 
                 checkRegex = false;
             }
-            else if (Smithbox.ProjectType is ProjectType.ACV)
+            else if (project.ProjectType is ProjectType.ACV)
             {
-                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
-                if (Smithbox.ProjectRoot != null)
+                SearchLooseMaps(project.DataPath + @"\model\map", "*.msb");
+                if (project.ProjectPath != null)
                 {
-                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
+                    SearchLooseMaps(project.ProjectPath + @"\model\map", "*.msb");
                 }
 
                 checkRegex = false;
             }
-            else if (Smithbox.ProjectType is ProjectType.ACVD)
+            else if (project.ProjectType is ProjectType.ACVD)
             {
-                SearchLooseMaps(Smithbox.GameRoot + @"\model\map", "*.msb");
-                if (Smithbox.ProjectRoot != null)
+                SearchLooseMaps(project.DataPath + @"\model\map", "*.msb");
+                if (project.ProjectPath != null)
                 {
-                    SearchLooseMaps(Smithbox.ProjectRoot + @"\model\map", "*.msb");
+                    SearchLooseMaps(project.ProjectPath + @"\model\map", "*.msb");
                 }
 
                 // Remove a few ACV format MSBs
@@ -408,25 +408,25 @@ public static class MapLocator
 
                 checkRegex = false;
             }
-            else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+            else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             {
-                SearchLooseMaps(Smithbox.GameRoot + @"\map", @"m*");
-                if (Smithbox.ProjectRoot != null)
+                SearchLooseMaps(project.DataPath + @"\map", @"m*");
+                if (project.ProjectPath != null)
                 {
-                    SearchLooseMaps(Smithbox.ProjectRoot + @"\map", @"m*");
+                    SearchLooseMaps(project.ProjectPath + @"\map", @"m*");
                 }
             }
             else
             {
-                var msbFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb")
+                var msbFiles = Directory.GetFileSystemEntries(project.DataPath + @"\map\MapStudio\", @"*.msb")
                     .Select(Path.GetFileNameWithoutExtension).ToList();
 
-                msbFiles.AddRange(Directory.GetFileSystemEntries(Smithbox.GameRoot + @"\map\MapStudio\", @"*.msb.dcx")
+                msbFiles.AddRange(Directory.GetFileSystemEntries(project.DataPath + @"\map\MapStudio\", @"*.msb.dcx")
                     .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
 
-                if(Smithbox.ProjectType is ProjectType.BB)
+                if(project.ProjectType is ProjectType.BB)
                 {
-                    string[] folders = Directory.GetDirectories(Smithbox.GameRoot + @"\map\MapStudio\", "m29_*");
+                    string[] folders = Directory.GetDirectories(project.DataPath + @"\map\MapStudio\", "m29_*");
                     foreach (var folder in folders)
                     {
                         msbFiles.AddRange(Directory.GetFileSystemEntries(folder, @"*.msb.dcx")
@@ -434,20 +434,20 @@ public static class MapLocator
                     }
                 }
 
-                if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + @"\map\MapStudio\"))
+                if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + @"\map\MapStudio\"))
                 {
                     msbFiles.AddRange(Directory
-                        .GetFileSystemEntries(Smithbox.ProjectRoot + @"\map\MapStudio\", @"*.msb")
+                        .GetFileSystemEntries(project.ProjectPath + @"\map\MapStudio\", @"*.msb")
                         .Select(Path.GetFileNameWithoutExtension).ToList());
 
                     msbFiles.AddRange(Directory
-                        .GetFileSystemEntries(Smithbox.ProjectRoot + @"\map\MapStudio\", @"*.msb.dcx")
+                        .GetFileSystemEntries(project.ProjectPath + @"\map\MapStudio\", @"*.msb.dcx")
                         .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension)
                         .ToList());
 
-                    if (Smithbox.ProjectType is ProjectType.BB)
+                    if (project.ProjectType is ProjectType.BB)
                     {
-                        string[] folders = Directory.GetDirectories(Smithbox.ProjectRoot + @"\map\MapStudio\", "m29_*");
+                        string[] folders = Directory.GetDirectories(project.ProjectPath + @"\map\MapStudio\", "m29_*");
                         foreach (var folder in folders)
                         {
                             msbFiles.AddRange(Directory.GetFileSystemEntries(folder, @"*.msb.dcx")
@@ -481,7 +481,7 @@ public static class MapLocator
     /// Get list of maps for target project path
     /// </summary>
     /// <returns></returns>
-    public static List<string> GetMapList(string projectPath)
+    public static List<string> GetMapList(ProjectEntry project, string projectPath)
     {
         HashSet<string> mapSet = new();
 
@@ -500,20 +500,20 @@ public static class MapLocator
         }
 
         // DS2, ACFA, ACV, and ACVD have their own structure for msbs, where they are all inside individual folders
-        if (Smithbox.ProjectType is ProjectType.ACFA)
+        if (project.ProjectType is ProjectType.ACFA)
         {
             SearchLooseMaps(projectPath + @"\model\map", "*.msb");
             SearchLooseMaps(projectPath + @"\model\system", "*.msb");
 
             checkRegex = false;
         }
-        else if (Smithbox.ProjectType is ProjectType.ACV)
+        else if (project.ProjectType is ProjectType.ACV)
         {
             SearchLooseMaps(projectPath + @"\model\map", "*.msb");
 
             checkRegex = false;
         }
-        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        else if (project.ProjectType is ProjectType.ACVD)
         {
             SearchLooseMaps(projectPath + @"\model\map", "*.msb");
 
@@ -527,7 +527,7 @@ public static class MapLocator
 
             checkRegex = false;
         }
-        else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             SearchLooseMaps(projectPath + @"\map", @"m*");
         }
@@ -541,7 +541,7 @@ public static class MapLocator
                 .GetFileSystemEntries(projectPath + @"\map\MapStudio\", @"*.msb.dcx")
                 .Select(Path.GetFileNameWithoutExtension).Select(Path.GetFileNameWithoutExtension).ToList());
 
-            if (Smithbox.ProjectType is ProjectType.BB)
+            if (project.ProjectType is ProjectType.BB)
             {
                 string[] folders = Directory.GetDirectories(projectPath + @"\map\MapStudio\", "m29_*");
                 foreach (var folder in folders)
@@ -570,13 +570,13 @@ public static class MapLocator
     /// </summary>
     /// <param name="mapid">The msb map ID to adjust</param>
     /// <returns>The map ID for the purpose of asset storage</returns>
-    public static string GetAssetMapID(string mapid)
+    public static string GetAssetMapID(ProjectEntry project, string mapid)
     {
-        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.AC6)
         {
             return mapid;
         }
-        else if (Smithbox.ProjectType is ProjectType.DS1R)
+        else if (project.ProjectType is ProjectType.DS1R)
         {
             if (mapid.StartsWith("m99"))
             {
@@ -584,7 +584,7 @@ public static class MapLocator
                 return mapid;
             }
         }
-        else if (Smithbox.ProjectType is ProjectType.BB)
+        else if (project.ProjectType is ProjectType.BB)
         {
             if (mapid.StartsWith("m29"))
             {
@@ -592,15 +592,15 @@ public static class MapLocator
                 return "m29_00_00_00";
             }
         }
-        else if (Smithbox.ProjectType is ProjectType.ACFA)
+        else if (project.ProjectType is ProjectType.ACFA)
         {
             return mapid[..4];
         }
-        else if (Smithbox.ProjectType is ProjectType.ACV)
+        else if (project.ProjectType is ProjectType.ACV)
         {
             return mapid[..5];
         }
-        else if (Smithbox.ProjectType is ProjectType.ACVD)
+        else if (project.ProjectType is ProjectType.ACVD)
         {
             if (mapid.Length == 12 && mapid.StartsWith("ch"))
             {
@@ -617,12 +617,12 @@ public static class MapLocator
     /// <summary>
     /// Get a BTAB asset.
     /// </summary>
-    public static List<ResourceDescriptor> GetMapBTABs(string mapid)
+    public static List<ResourceDescriptor> GetMapBTABs(ProjectEntry project, string mapid)
     {
         List<ResourceDescriptor> resourceDescriptors = new();
 
-        var rootDirectory = $"{Smithbox.GameRoot}\\map\\{mapid}";
-        var projectDirectory = $"{Smithbox.ProjectRoot}\\map\\{mapid}";
+        var rootDirectory = $"{project.DataPath}\\map\\{mapid}";
+        var projectDirectory = $"{project.ProjectPath}\\map\\{mapid}";
 
         // Get the names
         var names = new List<string>();
@@ -656,7 +656,7 @@ public static class MapLocator
         // Get the resource descriptors
         foreach (var name in names)
         {
-            var path = LocatorUtils.GetAssetPath($"\\map\\{mapid}\\{name}.btab.dcx");
+            var path = LocatorUtils.GetAssetPath(project, $"\\map\\{mapid}\\{name}.btab.dcx");
             paths.Add(path);
         }
 
@@ -675,12 +675,12 @@ public static class MapLocator
     /// <summary>
     /// Get a HKX Collision asset.
     /// </summary>
-    public static List<ResourceDescriptor> GetMapCollisions(string mapid)
+    public static List<ResourceDescriptor> GetMapCollisions(ProjectEntry project, string mapid)
     {
         List<ResourceDescriptor> resourceDescriptors = new();
 
-        var rootDirectory = $"{Smithbox.GameRoot}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
-        var projectDirectory = $"{Smithbox.ProjectRoot}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
+        var rootDirectory = $"{project.DataPath}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
+        var projectDirectory = $"{project.ProjectPath}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
 
         // Get the names
         var names = new List<string>();
@@ -714,7 +714,7 @@ public static class MapLocator
         // Get the resource descriptors
         foreach (var name in names)
         {
-            var path = LocatorUtils.GetAssetPath($"\\map\\{mapid}\\{name}.hkxbhd");
+            var path = LocatorUtils.GetAssetPath(project, $"\\map\\{mapid}\\{name}.hkxbhd");
             paths.Add(path);
         }
 

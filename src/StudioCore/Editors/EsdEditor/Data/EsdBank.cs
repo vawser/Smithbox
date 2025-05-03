@@ -55,7 +55,7 @@ public class EsdBank
         var fileDir = @"\script\talk";
         var fileExt = @".talkesdbnd.dcx";
 
-        List<string> talkNames = MiscLocator.GetTalkBinders();
+        List<string> talkNames = MiscLocator.GetTalkBinders(Project);
 
         foreach (var name in talkNames)
         {

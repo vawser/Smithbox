@@ -295,15 +295,19 @@ public class ArrayPropertyCopyAction : ViewportAction
 
 public class MultipleEntityPropertyChangeAction : ViewportAction
 {
+    private MapEditorScreen Editor;
+
     private readonly HashSet<Entity> ChangedEnts = new();
     private readonly List<PropertyChange> Changes = new();
 
     public bool UpdateRenderModel = false;
     public bool ClearName { get; set; }
 
-    public MultipleEntityPropertyChangeAction(PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
+    public MultipleEntityPropertyChangeAction(MapEditorScreen editor, PropertyInfo prop, HashSet<Entity> changedEnts, object newval,
         int index = -1, int classIndex = -1, bool clearName = true)
     {
+        Editor = editor;
+
         ClearName = clearName;
         ChangedEnts = changedEnts;
         foreach (Entity o in changedEnts)
@@ -381,7 +385,7 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
             {
                 if (UpdateRenderModel)
                 {
-                    e.UpdateRenderModel();
+                    e.UpdateRenderModel(Editor);
                 }
 
                 // Clear name cache, forcing it to update.
@@ -424,7 +428,7 @@ public class MultipleEntityPropertyChangeAction : ViewportAction
         {
             if (UpdateRenderModel)
             {
-                e.UpdateRenderModel();
+                e.UpdateRenderModel(Editor);
             }
 
             // Clear name cache, forcing it to update.
@@ -604,7 +608,7 @@ public class CloneMapObjectsAction : ViewportAction
                     ViewportActionCommon.ClearEntityGroupID(Editor, newobj, m);
                 }
 
-                newobj.UpdateRenderModel();
+                newobj.UpdateRenderModel(Editor);
                 if (newobj.RenderSceneMesh != null)
                 {
                     newobj.RenderSceneMesh.SetSelectable(newobj);
@@ -710,7 +714,7 @@ public class AddMapObjectsAction : ViewportAction
             {
                 Map.Objects.Add(Added[i]);
                 Parent.AddChild(Added[i]);
-                Added[i].UpdateRenderModel();
+                Added[i].UpdateRenderModel(Editor);
                 if (Added[i].RenderSceneMesh != null)
                 {
                     Added[i].RenderSceneMesh.SetSelectable(Added[i]);
@@ -1725,7 +1729,7 @@ public class ReplicateMapObjectsAction : ViewportAction
                         ViewportActionCommon.ClearEntityGroupID(Editor, newobj, m);
                     }
 
-                    newobj.UpdateRenderModel();
+                    newobj.UpdateRenderModel(Editor);
                     if (newobj.RenderSceneMesh != null)
                     {
                         newobj.RenderSceneMesh.SetSelectable(newobj);

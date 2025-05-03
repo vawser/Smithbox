@@ -86,7 +86,7 @@ public class MapQueryBank
                         if (fileEntry.Contains(".msb"))
                         {
                             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(fileEntry));
-                            ResourceDescriptor ad = MapLocator.GetMapMSB(name);
+                            ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
                             if (ad.AssetPath != null)
                             {
                                 MapResources.Add(ad);
@@ -127,7 +127,7 @@ public class MapQueryBank
                     if (entry.Contains($"{ext}"))
                     {
                         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                        ResourceDescriptor ad = MapLocator.GetMapMSB(name);
+                        ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
                         if (ad.AssetPath != null)
                         {
                             MapResources.Add(ad);

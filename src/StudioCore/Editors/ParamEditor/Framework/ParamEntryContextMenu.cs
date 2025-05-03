@@ -77,13 +77,13 @@ public static class ParamEntryContextMenu
             {
                 if (ImGui.Selectable("Copy Param List"))
                 {
-                    DokuWikiHelper.OutputParamTableInformation();
+                    editor.BaseEditor.DebugTools.DokuWikiHelper.OutputParamTableInformation();
                 }
                 UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
                 if (ImGui.Selectable("Copy Param Field List"))
                 {
-                    DokuWikiHelper.OutputParamInformation(paramKey);
+                    editor.BaseEditor.DebugTools.DokuWikiHelper.OutputParamInformation(paramKey);
                 }
                 UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }

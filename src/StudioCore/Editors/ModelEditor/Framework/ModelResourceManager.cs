@@ -222,8 +222,7 @@ public class ModelResourceManager : IResourceEventListener
         }
 
         // Load HKX for collision
-        HavokCollisionManager.Screen = Editor;
-        HavokCollisionManager.OnLoadModel(name, FlverContainerType.Object);
+        Editor.CollisionManager.OnLoadModel(name, FlverContainerType.Object);
 
         ResetState(name);
 
@@ -231,13 +230,13 @@ public class ModelResourceManager : IResourceEventListener
 
         if (Editor.Project.ProjectType is ProjectType.ER)
         {
-            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
+            if(Editor.CollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
             {
-                LoadedFlverContainer.ER_HighCollision = HavokCollisionManager.HavokContainers[$"{name}_h".ToLower()];
+                LoadedFlverContainer.ER_HighCollision = Editor.CollisionManager.HavokContainers[$"{name}_h".ToLower()];
             }
-            if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_l".ToLower()))
+            if (Editor.CollisionManager.HavokContainers.ContainsKey($"{name}_l".ToLower()))
             {
-                LoadedFlverContainer.ER_LowCollision = HavokCollisionManager.HavokContainers[$"{name}_l".ToLower()];
+                LoadedFlverContainer.ER_LowCollision = Editor.CollisionManager.HavokContainers[$"{name}_l".ToLower()];
             }
         }
 
@@ -529,7 +528,7 @@ public class ModelResourceManager : IResourceEventListener
         // Add the loose tpfs parts have in AC6
         if (Editor.Project.ProjectType is ProjectType.AC6)
         {
-            textureAssets.Add(TextureLocator.GetPartTpf_Ac6(modelid));
+            textureAssets.Add(TextureLocator.GetPartTpf_Ac6(Editor.Project, modelid));
         }
 
         foreach (var entry in textureAssets)
@@ -566,7 +565,7 @@ public class ModelResourceManager : IResourceEventListener
     {
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading collision");
 
-        ResourceDescriptor colAsset = AssetLocator.GetAssetGeomHKXBinder(modelid, postfix);
+        ResourceDescriptor colAsset = AssetLocator.GetAssetGeomHKXBinder(Editor.Project, modelid, postfix);
 
         // Ignore if the col type doesn't exist
         if (!File.Exists(colAsset.AssetPath))
@@ -610,19 +609,19 @@ public class ModelResourceManager : IResourceEventListener
         switch (modelType)
         {
             case FlverContainerType.Character:
-                asset = ModelLocator.GetChrModel(containerId, modelid);
+                asset = ModelLocator.GetChrModel(Editor.Project, containerId, modelid);
                 break;
             case FlverContainerType.Enemy:
-                asset = ModelLocator.GetEneModel(modelid);
+                asset = ModelLocator.GetEneModel(Editor.Project, modelid);
                 break;
             case FlverContainerType.Object:
-                asset = ModelLocator.GetObjModel(containerId, modelid);
+                asset = ModelLocator.GetObjModel(Editor.Project, containerId, modelid);
                 break;
             case FlverContainerType.Parts:
-                asset = ModelLocator.GetPartsModel(containerId, modelid);
+                asset = ModelLocator.GetPartsModel(Editor.Project, containerId, modelid);
                 break;
             case FlverContainerType.MapPiece:
-                asset = ModelLocator.GetMapModel(mapid, containerId, modelid);
+                asset = ModelLocator.GetMapModel(Editor.Project, mapid, containerId, modelid);
                 break;
             default:
                 asset = ModelLocator.GetNullAsset();
@@ -642,19 +641,19 @@ public class ModelResourceManager : IResourceEventListener
         switch (modelType)
         {
             case FlverContainerType.Character:
-                assets.Add(TextureLocator.GetChrTextures(modelid));
+                assets.Add(TextureLocator.GetChrTextures(Editor.Project, modelid));
                 break;
             case FlverContainerType.Enemy:
-                assets.Add(TextureLocator.GetObjTextureContainer(modelid));
+                assets.Add(TextureLocator.GetObjTextureContainer(Editor.Project, modelid));
                 break;
             case FlverContainerType.Object:
-                assets.Add(TextureLocator.GetObjTextureContainer(modelid));
+                assets.Add(TextureLocator.GetObjTextureContainer(Editor.Project, modelid));
                 break;
             case FlverContainerType.Parts:
-                assets.Add(TextureLocator.GetPartTextureContainer(modelid));
+                assets.Add(TextureLocator.GetPartTextureContainer(Editor.Project, modelid));
                 break;
             case FlverContainerType.MapPiece:
-                assets = TextureLocator.GetMapTextures(mapid);
+                assets = TextureLocator.GetMapTextures(Editor.Project, mapid);
                 break;
             default:
                 assets.Add(ModelLocator.GetNullAsset());

@@ -294,7 +294,7 @@ public class ActionHandler
 
     private void ExportRowNamesForParam(string param)
     {
-        var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+        var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\Names";
         var path = Path.Combine(dir, $"{param}.txt");
 
         Param p = Editor.Project.ParamData.PrimaryBank.Params[param];

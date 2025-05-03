@@ -1,7 +1,6 @@
-﻿using Pfim;
-using SoulsFormats;
-using StudioCore.Editors.MapEditor;
+﻿using SoulsFormats;
 using StudioCore.Memory;
+using StudioCore.Resource;
 using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
@@ -465,12 +464,17 @@ public class TexturePool
                 "world_map_sote"
             };
 
-            // Ignore if in the Texture Viewer, or for the world map textures
-            if (Smithbox.EditorHandler.FocusedEditor is not TextureViewerScreen && !exlusions.Contains(tex.Name))
+            if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)
             {
-                if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
+                var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
+                // Ignore if in the Texture Viewer, or for the world map textures
+                if (curProject.FocusedEditor is not TextureViewerScreen && !exlusions.Contains(tex.Name))
                 {
-                    return;
+                    if (!Utils.IsPowerTwo(width) || !Utils.IsPowerTwo(height))
+                    {
+                        return;
+                    }
                 }
             }
 

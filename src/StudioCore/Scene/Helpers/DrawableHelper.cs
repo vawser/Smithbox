@@ -1,7 +1,11 @@
 ﻿using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.ModelEditor;
+using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.DebugPrimitives;
@@ -23,9 +27,22 @@ public static class DrawableHelper
     /// <summary>
     /// The drawable proxies for a Part map object
     /// </summary>
-    public static RenderableProxy GetModelDrawable(RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
+    public static RenderableProxy GetModelDrawable(EditorScreen editor, RenderScene scene, MapContainer map, Entity obj, string modelname, bool load, IEnumerable<int> masks)
     {
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+        Universe curUniverse = null;
+        ProjectEntry curProject = null;
+
+        if(editor is MapEditorScreen)
+        {
+            var curEditor = editor as MapEditorScreen;
+            curProject = curEditor.Project;
+            curUniverse = curEditor.Universe;
+        }
+        if (editor is ModelEditorScreen)
+        {
+            var curEditor = editor as ModelEditorScreen;
+            curProject = curEditor.Project;
+        }
 
         ResourceDescriptor asset;
         var loadcol = false;
@@ -33,39 +50,39 @@ public static class DrawableHelper
         var loadflver = false;
         var filt = RenderFilter.All;
 
-        var amapid = MapLocator.GetAssetMapID(map.Name);
+        var amapid = MapLocator.GetAssetMapID(curProject, map.Name);
 
         ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob(@"Loading mesh");
         if (modelname.StartsWith("m", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
-            var name = ModelLocator.MapModelNameToAssetName(amapid, modelname);
-            asset = ModelLocator.GetMapModel(amapid, name, name);
+            var name = ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname);
+            asset = ModelLocator.GetMapModel(curProject, amapid, name, name);
             filt = RenderFilter.MapPiece;
         }
         else if (modelname.StartsWith("c", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
-            asset = ModelLocator.GetChrModel(modelname, modelname);
+            asset = ModelLocator.GetChrModel(curProject, modelname, modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.StartsWith("e", StringComparison.CurrentCultureIgnoreCase))
         {
             loadflver = true;
-            asset = ModelLocator.GetEneModel(modelname);
+            asset = ModelLocator.GetEneModel(curProject, modelname);
             filt = RenderFilter.Character;
         }
         else if (modelname.StartsWith("o", StringComparison.CurrentCultureIgnoreCase) || modelname.StartsWith("AEG"))
         {
             loadflver = true;
-            asset = ModelLocator.GetObjModel(modelname, modelname);
+            asset = ModelLocator.GetObjModel(curProject, modelname, modelname);
             filt = RenderFilter.Object;
         }
         else if (modelname.StartsWith("h", StringComparison.CurrentCultureIgnoreCase))
         {
             loadcol = true;
-            asset = ModelLocator.GetMapCollisionModel(amapid,
-                ModelLocator.MapModelNameToAssetName(amapid, modelname), false);
+            asset = ModelLocator.GetMapCollisionModel(curProject, amapid,
+                ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname), false);
 
             if (asset == null || asset.AssetPath == null) loadcol = false;
 
@@ -74,7 +91,7 @@ public static class DrawableHelper
         else if (modelname.StartsWith("n", StringComparison.CurrentCultureIgnoreCase))
         {
             loadnav = true;
-            asset = ModelLocator.GetMapNVMModel(amapid, ModelLocator.MapModelNameToAssetName(amapid, modelname));
+            asset = ModelLocator.GetMapNVMModel(curProject, amapid, ModelLocator.MapModelNameToAssetName(curProject, amapid, modelname));
             filt = RenderFilter.Navmesh;
         }
         else
@@ -108,16 +125,19 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (universe.HasProcessedMapLoad)
+                if (curUniverse != null)
                 {
-                    task.Wait();
+                    if (curUniverse.HasProcessedMapLoad)
+                    {
+                        task.Wait();
+                    }
                 }
             }
 
             return mesh;
         }
 
-        if (loadnav && Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+        if (loadnav && curProject.ProjectType != ProjectType.DS2S && curProject.ProjectType != ProjectType.DS2)
         {
             var mesh = MeshRenderableProxy.MeshRenderableFromNVMResource(
                 scene, asset.AssetVirtualPath, modelMarkerType);
@@ -139,9 +159,12 @@ public static class DrawableHelper
                 }
 
                 Task task = job.Complete();
-                if (universe.HasProcessedMapLoad)
+                if (curUniverse != null)
                 {
-                    task.Wait();
+                    if (curUniverse.HasProcessedMapLoad)
+                    {
+                        task.Wait();
+                    }
                 }
             }
 
@@ -157,7 +180,7 @@ public static class DrawableHelper
         {
             if (asset.AssetName == "c0000")
             {
-                asset = ModelLocator.GetChrModel(CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
+                asset = ModelLocator.GetChrModel(curProject, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID, CFG.Current.MapEditor_Substitute_PseudoPlayer_ChrID);
             }
         }
 
@@ -180,9 +203,12 @@ public static class DrawableHelper
             }
 
             Task task = job.Complete();
-            if (universe.HasProcessedMapLoad)
+            if (curUniverse != null)
             {
-                task.Wait();
+                if (curUniverse.HasProcessedMapLoad)
+                {
+                    task.Wait();
+                }
             }
         }
 

@@ -11,63 +11,63 @@ namespace StudioCore.Tools
     /// <summary>
     /// Example of a Tree node that recurses for all child nodes
     /// </summary>
-    internal class TreeNodeExample
-    {
-        private void RootNode()
-        {
-            Entity RootObject = new Entity(); // Ignore this
+    //internal class TreeNodeExample
+    //{
+    //    private void RootNode()
+    //    {
+    //        Entity RootObject = new Entity(); // Ignore this
 
-            ImGui.Begin("ExampleWindow");
+    //        ImGui.Begin("ExampleWindow");
 
-            if (ImGui.CollapsingHeader("Root Node"))
-            {
-                ImGui.PushID("RootNode");
+    //        if (ImGui.CollapsingHeader("Root Node"))
+    //        {
+    //            ImGui.PushID("RootNode");
 
-                var open = ImGui.TreeNodeEx(RootObject.Name, ImGuiTreeNodeFlags.DefaultOpen);
-                if (open)
-                {
-                    for (var i = 0; i < RootObject.Children.Count; i++)
-                    {
-                        var childObject = RootObject.Children[i];
-                        ChildNode(childObject, i);
-                    }
+    //            var open = ImGui.TreeNodeEx(RootObject.Name, ImGuiTreeNodeFlags.DefaultOpen);
+    //            if (open)
+    //            {
+    //                for (var i = 0; i < RootObject.Children.Count; i++)
+    //                {
+    //                    var childObject = RootObject.Children[i];
+    //                    ChildNode(childObject, i);
+    //                }
 
-                    ImGui.TreePop();
-                }
+    //                ImGui.TreePop();
+    //            }
 
-                ImGui.PopID();
-            }
+    //            ImGui.PopID();
+    //        }
 
-            ImGui.End();
-        }
+    //        ImGui.End();
+    //    }
 
-        private void ChildNode(Entity curObject, int index)
-        {
-            ImGui.PushID($"{curObject.Name}{index}");
+    //    private void ChildNode(Entity curObject, int index)
+    //    {
+    //        ImGui.PushID($"{curObject.Name}{index}");
 
-            var open = ImGui.TreeNodeEx(curObject.Name, ImGuiTreeNodeFlags.DefaultOpen);
-            if (open)
-            {
-                for (var i = 0; i < curObject.Children.Count; i++)
-                {
-                    var childObject = curObject.Children[i];
-                    ImGui.PushID(i);
+    //        var open = ImGui.TreeNodeEx(curObject.Name, ImGuiTreeNodeFlags.DefaultOpen);
+    //        if (open)
+    //        {
+    //            for (var i = 0; i < curObject.Children.Count; i++)
+    //            {
+    //                var childObject = curObject.Children[i];
+    //                ImGui.PushID(i);
 
-                    var childOpen = ImGui.TreeNodeEx($"{childObject.Name}{i}", ImGuiTreeNodeFlags.DefaultOpen);
+    //                var childOpen = ImGui.TreeNodeEx($"{childObject.Name}{i}", ImGuiTreeNodeFlags.DefaultOpen);
 
-                    if (childOpen)
-                    {
-                        ChildNode(childObject, i);
-                        ImGui.TreePop();
-                    }
+    //                if (childOpen)
+    //                {
+    //                    ChildNode(childObject, i);
+    //                    ImGui.TreePop();
+    //                }
 
-                    ImGui.PopID();
-                }
+    //                ImGui.PopID();
+    //            }
 
-                ImGui.TreePop();
-            }
+    //            ImGui.TreePop();
+    //        }
 
-            ImGui.PopID();
-        }
-    }
+    //        ImGui.PopID();
+    //    }
+    //}
 }

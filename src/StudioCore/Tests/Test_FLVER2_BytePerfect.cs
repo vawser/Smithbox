@@ -16,13 +16,13 @@ public static class Test_FLVER2_BytePerfect
 {
     public static List<string> Output = new List<string>();
 
-    public static void Display()
+    public static void Display(Smithbox baseEditor)
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
         if (ImGui.Button("Check Loaded Model for Byte Perfectness", buttonSize))
         {
-            Run();
+            Run(baseEditor);
         }
 
         ImGui.Separator();
@@ -34,11 +34,13 @@ public static class Test_FLVER2_BytePerfect
         }
     }
 
-    public static void Run()
+    public static void Run(Smithbox baseEditor)
     {
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
         Output = new List<string>();
 
-        var currentFlver = Smithbox.EditorHandler.ModelEditor.ResManager.GetCurrentInternalFile();
+        var currentFlver = curProject.ModelEditor.ResManager.GetCurrentInternalFile();
 
         if(currentFlver == null)
         {
@@ -53,7 +55,7 @@ public static class Test_FLVER2_BytePerfect
         Output.Add($"Old Bytes: {oldBytes.Length}");
         Output.Add($"New Bytes: {newBytes.Length}");
 
-        var outputDir = $"{Smithbox.ProjectRoot}\\_flverTest\\";
+        var outputDir = $"{curProject.ProjectPath}\\_flverTest\\";
 
         // Cleanup old files
         if(Directory.Exists(outputDir))

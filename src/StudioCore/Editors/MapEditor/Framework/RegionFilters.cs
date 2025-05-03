@@ -15,13 +15,13 @@ namespace StudioCore.Editors.MapEditor.Framework;
 
 public class RegionFilters
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     public List<bool> RegionVisibilityTruth { get; set; }
 
     public RegionFilters(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
 
         SetupTruthList(true);
     }
@@ -33,7 +33,7 @@ public class RegionFilters
 
     public void SetupTruthList(bool defaultValue)
     {
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             // Supported Project Types
             case ProjectType.DS2:
@@ -58,7 +58,7 @@ public class RegionFilters
 
     public void DisplayOptions()
     {
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             // Supported Project Types
             case ProjectType.DS2:
@@ -225,7 +225,7 @@ public class RegionFilters
     {
         if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
-            foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
             {
                 if (entry is MapContainer)
                 {
@@ -244,7 +244,7 @@ public class RegionFilters
 
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
-            foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
             {
                 if (entry is MapContainer)
                 {
@@ -269,7 +269,7 @@ public class RegionFilters
         var show = false;
 
         // Only show if region type is present
-        foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
+        foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
         {
             if (entry is MapContainer)
             {
@@ -288,7 +288,7 @@ public class RegionFilters
         {
             if (ImGui.MenuItem($"Toggle: {name}"))
             {
-                foreach (var entry in Screen.Universe.LoadedObjectContainers.Values)
+                foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
                 {
                     if (entry is MapContainer)
                     {

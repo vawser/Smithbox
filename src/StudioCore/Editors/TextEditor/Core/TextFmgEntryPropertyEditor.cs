@@ -379,7 +379,7 @@ public class TextFmgEntryPropertyEditor
 
             if (idCommit)
             {
-                var action = new ChangeFmgEntryID(Selection.SelectedContainerWrapper, entry, _idCache);
+                var action = new ChangeFmgEntryID(Editor, Selection.SelectedContainerWrapper, entry, _idCache);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
 
@@ -409,7 +409,7 @@ public class TextFmgEntryPropertyEditor
             var textCommit = ImGui.IsItemDeactivatedAfterEdit();
             if (textCommit)
             {
-                var action = new ChangeFmgEntryText(Selection.SelectedContainerWrapper, entry, _textCache);
+                var action = new ChangeFmgEntryText(Editor, Selection.SelectedContainerWrapper, entry, _textCache);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
 

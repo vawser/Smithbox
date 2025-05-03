@@ -11,13 +11,22 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Tools.Generation;
 
-public static class DokuWikiHelper
+public class DokuWikiHelper
 {
-    public static void OutputParamTableInformation()
+    private Smithbox BaseEditor;
+
+    public DokuWikiHelper(Smithbox editor)
     {
+        BaseEditor = editor;
+    }
+
+    public void OutputParamTableInformation()
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
         var output = "^ Param ^ Description ^\n";
 
-        foreach(var param in ParamBank.PrimaryBank.Params)
+        foreach(var param in curProject.ParamData.PrimaryBank.Params)
         {
             var targetParamMeta = ParamMetaData.Get(param.Value.AppliedParamdef);
 
@@ -29,11 +38,13 @@ public static class DokuWikiHelper
         PlatformUtils.Instance.SetClipboardText(output);
     }
 
-    public static void OutputParamInformation(string paramKey)
+    public void OutputParamInformation(string paramKey)
     {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
         var namespacePrefix = "XXX";
 
-        switch(Smithbox.ProjectType)
+        switch(curProject.ProjectType)
         {
             case ProjectType.DES: namespacePrefix = "des"; break;
             case ProjectType.DS1: namespacePrefix = "ds1"; break;
@@ -51,7 +62,7 @@ public static class DokuWikiHelper
             $"===== Fields =====\n" +
             $"^ Field ^ Type ^ Offset ^ Description ^ Notes ^\n";
 
-        var targetParamDef = ParamBank.PrimaryBank.GetParamFromName(paramKey);
+        var targetParamDef = curProject.ParamData.PrimaryBank.GetParamFromName(paramKey);
         var targetParamMeta = ParamMetaData.Get(targetParamDef.AppliedParamdef);
 
         // Fields

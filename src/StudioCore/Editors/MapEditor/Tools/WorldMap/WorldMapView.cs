@@ -400,7 +400,7 @@ public class WorldMapView : IResourceEventListener
         var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
 
 
-        VanillaLayout = new WorldMapLayout("60", 480, 55);
+        VanillaLayout = new WorldMapLayout(Editor, "60", 480, 55);
         VanillaLayout.GenerateTiles(smallRows, smallCols, "00", 124);
         VanillaLayout.GenerateTiles(mediumRows, mediumCols, "01", 248);
         VanillaLayout.GenerateTiles(largeRows, largeCols, "02", 496);
@@ -418,7 +418,7 @@ public class WorldMapView : IResourceEventListener
         var largeRows = new List<int>() { 10, 11, 12, 13, 14 };
         var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
 
-        SoteLayout = new WorldMapLayout("61", SOTE_xOffset, SOTE_yOffset);
+        SoteLayout = new WorldMapLayout(Editor, "61", SOTE_xOffset, SOTE_yOffset);
         SoteLayout.GenerateTiles(smallRows, smallCols, "00", 256);
         SoteLayout.GenerateTiles(mediumRows, mediumCols, "01", 528);
         SoteLayout.GenerateTiles(largeRows, largeCols, "02", 1056);

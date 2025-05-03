@@ -242,7 +242,7 @@ public class FmgImporter
     {
         ImportSources = new();
 
-        var wrapperPathList = TextLocator.GetStoredContainerWrappers();
+        var wrapperPathList = TextLocator.GetStoredContainerWrappers(Editor.Project);
 
         if (wrapperPathList.Count > 0)
         {

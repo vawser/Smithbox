@@ -324,22 +324,11 @@ public class ParamEditorTab
                 ImGui.DragFloat("##imagePreviewScale", ref CFG.Current.Param_FieldContextMenu_ImagePreviewScale, 0.1f, 0.1f, 10.0f);
                 UIHelper.Tooltip("Scale of the previewed image.");
 
-                if (ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu))
-                {
-                    if (!TextureFolderBank.IsLoaded)
-                    {
-                        TextureFolderBank.LoadTextureFolders();
-                    }
-                }
+                ImGui.Checkbox("Display image preview in field context menu", ref CFG.Current.Param_FieldContextMenu_ImagePreview_ContextMenu);
                 UIHelper.Tooltip("Display image preview of any image index fields if possible within the field context menu.");
 
                 ImGui.Checkbox("Display image preview in field column", ref CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn);
-                {
-                    if (!TextureFolderBank.IsLoaded)
-                    {
-                        TextureFolderBank.LoadTextureFolders();
-                    }
-                }
+
                 UIHelper.Tooltip("Display image preview of any image index fields if possible at the bottom of the field column.");
             }
 

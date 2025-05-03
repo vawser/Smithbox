@@ -9,49 +9,8 @@ using static SoulsFormats.MSBB.Event;
 namespace StudioCore.Resource.Locators;
 public static class MiscLocator
 {
-    public static string GetGameIDForDir()
-    {
-        var gametype = Smithbox.ProjectHandler.CurrentProject.Config.GameType;
-
-        switch (gametype)
-        {
-            case ProjectType.Undefined:
-                return "UNDEFINED";
-            case ProjectType.DES:
-                return "DES";
-            case ProjectType.DS1:
-                return "DS1";
-            case ProjectType.DS1R:
-                return "DS1R";
-            case ProjectType.DS2:
-                return "DS2";
-            case ProjectType.DS2S:
-                return "DS2S";
-            case ProjectType.BB:
-                return "BB";
-            case ProjectType.DS3:
-                return "DS3";
-            case ProjectType.SDT:
-                return "SDT";
-            case ProjectType.ER:
-                return "ER";
-            case ProjectType.AC6:
-                return "AC6";
-            case ProjectType.AC4:
-                return "AC4";
-            case ProjectType.ACFA:
-                return "ACFA";
-            case ProjectType.ACV:
-                return "ACV";
-            case ProjectType.ACVD:
-                return "ACVD";
-            default:
-                throw new Exception("Game type not set");
-        }
-    }
-
     // TAE
-    public static List<string> GetCharacterTimeActBinders(bool ignoreProject = false)
+    public static List<string> GetCharacterTimeActBinders(ProjectEntry project, bool ignoreProject = false)
     {
         List<string> ret = new List<string>();
 
@@ -59,51 +18,51 @@ public static class MiscLocator
         var paramDir = @"\chr";
         var paramExt = @".anibnd.dcx";
 
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             paramDir = @"\timeact\chr";
             paramExt = @".tae";
         }
 
-        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt, ignoreProject);
 
         return ret;
     }
 
     // AC6
-    public static List<string> GetCharacterBehaviorTimeActBinders(bool ignoreProject = false)
+    public static List<string> GetCharacterBehaviorTimeActBinders(ProjectEntry project, bool ignoreProject = false)
     {
         List<string> ret = new List<string>();
 
         var paramDir = @"\chr";
         var paramExt = @".behbnd.dcx";
 
-        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt, ignoreProject);
 
         return ret;
     }
 
-    public static List<string> GetObjectTimeActBinders(bool ignoreProject = false)
+    public static List<string> GetObjectTimeActBinders(ProjectEntry project, bool ignoreProject = false)
     {
         List<string> ret = new List<string>();
 
         var paramDir = @"\obj";
         var paramExt = @".objbnd.dcx";
 
-        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt, ignoreProject);
 
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             paramDir = @"\timeact\obj";
             paramExt = @".tae";
 
-            ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+            ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt, ignoreProject);
         }
 
         return ret;
     }
 
-    public static Dictionary<string, List<string>> GetAssetTimeActBinders_ER(bool ignoreProject = false)
+    public static Dictionary<string, List<string>> GetAssetTimeActBinders_ER(ProjectEntry project, bool ignoreProject = false)
     {
         Dictionary<string, List<string>> assetDict = new();
 
@@ -112,34 +71,34 @@ public static class MiscLocator
 
         List<string> ret = new List<string>();
 
-        var searchDir = $"{Smithbox.GameRoot}\\{paramDir}";
+        var searchDir = $"{project.DataPath}\\{paramDir}";
         foreach (var folderPath in Directory.EnumerateDirectories(searchDir))
         {
             var folderName = folderPath.Substring(folderPath.Length - 6);
 
-            ret = LocatorUtils.GetAssetFiles($"{paramDir}\\{folderName}\\", paramExt, ignoreProject);
+            ret = LocatorUtils.GetAssetFiles(project, $"{paramDir}\\{folderName}\\", paramExt, ignoreProject);
             assetDict.Add(folderName, ret);
         }
 
         return assetDict;
     }
 
-    public static List<string> GetAssetTimeActBinders_AC6(bool ignoreProject = false)
+    public static List<string> GetAssetTimeActBinders_AC6(ProjectEntry project, bool ignoreProject = false)
     {
         List<string> ret = new List<string>();
 
         var paramDir = @"\asset\environment\geometry\";
         var paramExt = @".geombnd.dcx";
 
-        ret = LocatorUtils.GetAssetFiles(paramDir, paramExt, ignoreProject);
+        ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt, ignoreProject);
 
         return ret;
     }
 
-    public static List<string> GetHavokBehaviorBinders()
+    public static List<string> GetHavokBehaviorBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS1
+        if (project.ProjectType is ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.DS2S
             or ProjectType.DS2
@@ -153,16 +112,16 @@ public static class MiscLocator
         var paramDir = @"\chr";
         var paramExt = @".behbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
 
     }
 
-    public static List<string> GetHavokCollisionBinders()
+    public static List<string> GetHavokCollisionBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS1
+        if (project.ProjectType is ProjectType.DS1
             or ProjectType.DS1R
             or ProjectType.DS2S
             or ProjectType.DS2
@@ -176,7 +135,7 @@ public static class MiscLocator
         }
 
         // ER
-        var baseDir = $"{Smithbox.GameRoot}\\map";
+        var baseDir = $"{project.DataPath}\\map";
         var targetExt = @".hkxbhd";
 
         List<string> combinedList = new();
@@ -207,10 +166,10 @@ public static class MiscLocator
         return combinedList;
     }
 
-    public static List<string> GetCharacterBinders()
+    public static List<string> GetCharacterBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
+        if (project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -222,16 +181,16 @@ public static class MiscLocator
         var paramDir = @"\chr";
         var paramExt = @".chrbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }
 
     // Cutscene
-    public static List<string> GetCutsceneBinders()
+    public static List<string> GetCutsceneBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
+        if (project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -244,22 +203,22 @@ public static class MiscLocator
         var paramExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
-        if (Smithbox.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
             paramDir = @"\cutscene";
             paramExt = @".cutscenebnd.dcx";
         }
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }
 
     // Material
-    public static List<string> GetMaterialBinders()
+    public static List<string> GetMaterialBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
+        if (project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -271,23 +230,31 @@ public static class MiscLocator
         var paramDir = @"\mtd";
         var paramExt = @".mtdbnd.dcx";
 
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            paramDir = @"\material";
-            paramExt = @".matbinbnd.dcx";
-            // Account for .devpatch in ER (e.g. matbinbnd.devpatch.dcx)
-        }
-
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }
 
+    public static List<string> GetMaterialBinBinders(ProjectEntry project)
+    {
+        if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            var paramDir = @"\material";
+            var paramExt = @".matbinbnd.dcx";
+
+            List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
+            return ret;
+
+        }
+
+        return new List<string>();
+    }
+
     // Particle 
-    public static List<string> GetParticleBinders()
+    public static List<string> GetParticleBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
+        if (project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.BB
             or ProjectType.DES)
@@ -299,16 +266,16 @@ public static class MiscLocator
         var paramDir = @"\sfx";
         var paramExt = @".ffxbnd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }
 
     // Scipt
-    public static List<string> GetEventBinders()
+    public static List<string> GetEventBinders(ProjectEntry project)
     {
         // Not supported
-        if (Smithbox.ProjectType is ProjectType.DS2S
+        if (project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2
             or ProjectType.DES)
         {
@@ -319,16 +286,16 @@ public static class MiscLocator
         var paramDir = @"\event";
         var paramExt = @".emevd.dcx";
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }
 
     // Talk
-    public static List<string> GetTalkBinders()
+    public static List<string> GetTalkBinders(ProjectEntry project)
     {
         // Not supported + Sekiro
-        if (Smithbox.ProjectType is ProjectType.DES)
+        if (project.ProjectType is ProjectType.DES)
         {
             return new List<string>();
         }
@@ -337,13 +304,13 @@ public static class MiscLocator
         var paramDir = @"\script\talk";
         var paramExt = @".talkesdbnd.dcx";
 
-        if(Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if(project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             paramDir = @"\ezstate\";
             paramExt = @".esd";
         }
 
-        List<string> ret = LocatorUtils.GetAssetFiles(paramDir, paramExt);
+        List<string> ret = LocatorUtils.GetAssetFiles(project, paramDir, paramExt);
 
         return ret;
     }

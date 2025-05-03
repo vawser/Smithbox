@@ -1,6 +1,7 @@
 ﻿using Octokit;
 using StudioCore.Core;
 using StudioCore.Resource.Locators;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,7 @@ public class EsdMeta
         TalkEsdBank.functions = new List<EsdMeta_Function>();
         TalkEsdBank.enums = new List<EsdMeta_Enum>();
 
-        var metaDir = $"{AppContext.BaseDirectory}\\Assets\\ESD\\{MiscLocator.GetGameIDForDir()}";
+        var metaDir = $"{AppContext.BaseDirectory}\\Assets\\ESD\\{ProjectUtils.GetGameDirectory(Project)}";
 
         // Only supporting Talk ESD currently (change this based on project type)
         var resourcePath = $"{metaDir}\\Talk.json";

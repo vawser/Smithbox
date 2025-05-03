@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
 using StudioCore.Core;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,8 @@ namespace StudioCore.Memory;
 
 public class SoulsMemoryHandler
 {
+    private ParamEditorScreen Editor;
+
     internal record RelativeOffset(int StartOffset, int EndOffset);
 
     // Outer dict: key = process ID. Inner dict: key = arbitrary id, value = memory offset.
@@ -24,8 +27,10 @@ public class SoulsMemoryHandler
     public readonly Dictionary<string, int> _processOffsets;
     public nint memoryHandle;
 
-    public SoulsMemoryHandler(Process gameProcess)
+    public SoulsMemoryHandler(ParamEditorScreen editor, Process gameProcess)
     {
+        Editor = editor;
+
         this.gameProcess = gameProcess;
         memoryHandle = NativeWrapper.OpenProcess(
             ProcessAccessFlags.CreateThread | ProcessAccessFlags.ReadWrite | ProcessAccessFlags.Execute |
@@ -312,7 +317,7 @@ public class SoulsMemoryHandler
         int itemQuantityReceived = 1, int itemDurabilityReceived = -1, int upgradeLevelItemToGive = 0)
     {
         // ItemGib - DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
             //Thanks Church Guard for providing the foundation of this.
             //Only supports ds3 as of now
@@ -381,7 +386,7 @@ public class SoulsMemoryHandler
         }
 
         // ItemGib - ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
             var MapItemMan = "48 8B 0D ?? ?? ?? ?? C7 44 24 50 FF FF FF FF";
 

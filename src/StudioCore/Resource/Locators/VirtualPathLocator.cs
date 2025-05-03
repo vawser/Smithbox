@@ -15,8 +15,11 @@ public static class VirtualPathLocator
 {
     public static string TexturePathToVirtual(string texpath)
     {
+        // Usage of the global BaseEditor here:
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         // For these projects, return the texture name only
-        if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        if (curProject.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             // HACK: Only include texture name and not full virtual path
             return Path.GetFileNameWithoutExtension(texpath);
@@ -81,6 +84,9 @@ public static class VirtualPathLocator
 
     public static string VirtualToRealPath(string virtualPath, out string bndpath)
     {
+        // Usage of the global BaseEditor here:
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         var pathElements = virtualPath.Split('/');
 
         // Parse the virtual path with a DFA and convert it to a game path
@@ -108,7 +114,7 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("tex"))
             {
                 i++;
-                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
                 {
                     var mid = pathElements[i];
                     i++;
@@ -116,34 +122,34 @@ public static class VirtualPathLocator
                     if (id == "tex")
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath($@"model\map\t{mid.Substring(1)}.tpfbhd");
+                        return LocatorUtils.GetAssetPath(curProject, $@"model\map\t{mid.Substring(1)}.tpfbhd");
                     }
                 }
-                else if (Smithbox.ProjectType == ProjectType.DES)
+                else if (curProject.ProjectType == ProjectType.DES)
                 {
                     var mid = pathElements[i];
                     i++;
                     bndpath = "";
-                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{pathElements[i]}.tpf.dcx");
+                    return LocatorUtils.GetAssetPath(curProject, $@"map\{mid}\{mid}_{pathElements[i]}.tpf.dcx");
                 }
-                else if (Smithbox.ProjectType == ProjectType.ACFA)
+                else if (curProject.ProjectType == ProjectType.ACFA)
                 {
                     var mid = pathElements[i];
                     bndpath = "";
-                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{mid}_t.bnd");
+                    return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mid}\{mid}_t.bnd");
                 }
-                else if (Smithbox.ProjectType == ProjectType.ACV)
+                else if (curProject.ProjectType == ProjectType.ACV)
                 {
                     var mid = pathElements[i];
                     i++;
                     bndpath = "";
-                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{pathElements[i]}.tpf.dcx");
+                    return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mid}\{pathElements[i]}.tpf.dcx");
                 }
-                else if (Smithbox.ProjectType == ProjectType.ACVD)
+                else if (curProject.ProjectType == ProjectType.ACVD)
                 {
                     var mid = pathElements[i];
                     bndpath = "";
-                    return LocatorUtils.GetAssetPath($@"model\map\{mid}\{mid}_htdcx.bnd");
+                    return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mid}\{mid}_htdcx.bnd");
                 }
                 else
                 {
@@ -154,13 +160,13 @@ public static class VirtualPathLocator
 
                     if (pathElements[i] == "env")
                     {
-                        if (Smithbox.ProjectType == ProjectType.DS1R)
-                            return LocatorUtils.GetAssetPath($@"map\{mid}\GI_EnvM_{mid}.tpf.dcx");
+                        if (curProject.ProjectType == ProjectType.DS1R)
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mid}\GI_EnvM_{mid}.tpf.dcx");
 
-                        return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_envmap.tpf.dcx");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mid}\{mid}_envmap.tpf.dcx");
                     }
 
-                    return LocatorUtils.GetAssetPath($@"map\{mid}\{mid}_{id}.tpfbhd");
+                    return LocatorUtils.GetAssetPath(curProject, $@"map\{mid}\{mid}_{id}.tpfbhd");
                 }
             }
             else if (GeneratedRegexMethods.IsMapId(pathElements[i]))
@@ -171,28 +177,28 @@ public static class VirtualPathLocator
                 {
                     i++;
                     bndpath = "";
-                    if (Smithbox.ProjectType == ProjectType.DS1)
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver");
+                    if (curProject.ProjectType == ProjectType.DS1)
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}.flver");
 
-                    if (Smithbox.ProjectType == ProjectType.DS1R)
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
+                    if (curProject.ProjectType == ProjectType.DS1R)
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}.flver.dcx");
 
-                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}.mapbhd");
+                    if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
+                        return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mapid}.mapbhd");
 
-                    if (Smithbox.ProjectType == ProjectType.BB || Smithbox.ProjectType == ProjectType.DES)
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.flver.dcx");
+                    if (curProject.ProjectType == ProjectType.BB || curProject.ProjectType == ProjectType.DES)
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}.flver.dcx");
 
-                    if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-                        return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
+                    if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
 
-                    if (Smithbox.ProjectType is ProjectType.ACFA)
-                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.bnd");
+                    if (curProject.ProjectType is ProjectType.ACFA)
+                        return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mapid}\{mapid}_m.bnd");
 
-                    if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
-                        return LocatorUtils.GetAssetPath($@"model\map\{mapid}\{mapid}_m.dcx.bnd");
+                    if (curProject.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                        return LocatorUtils.GetAssetPath(curProject, $@"model\map\{mapid}\{mapid}_m.dcx.bnd");
 
-                    return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");
+                    return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}.mapbnd.dcx");
                 }
 
                 if (pathElements[i].Equals("hit"))
@@ -200,12 +206,12 @@ public static class VirtualPathLocator
                     i++;
                     var hittype = pathElements[i];
                     i++;
-                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DES)
+                    if (curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DES)
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{pathElements[i]}");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}");
                     }
-                    else if (Smithbox.ProjectType == ProjectType.DS1R)
+                    else if (curProject.ProjectType == ProjectType.DS1R)
                     {
                         if (CFG.Current.PTDE_Collision_Root != "")
                         {
@@ -217,40 +223,40 @@ public static class VirtualPathLocator
                         }
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                    if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath($@"model\map\h{mapid.Substring(1)}.hkxbhd");
+                        return LocatorUtils.GetAssetPath(curProject, $@"model\map\h{mapid.Substring(1)}.hkxbhd");
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.BB)
-                    {
-                        bndpath = "";
-                        if (hittype == "lo")
-                            return LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
-
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
-                    }
-
-                    if (Smithbox.ProjectType == ProjectType.SDT)
+                    if (curProject.ProjectType == ProjectType.DS3 || curProject.ProjectType == ProjectType.BB)
                     {
                         bndpath = "";
                         if (hittype == "lo")
-                            return LocatorUtils.GetAssetPath($@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
 
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.ER)
+                    if (curProject.ProjectType == ProjectType.SDT)
+                    {
+                        bndpath = "";
+                        if (hittype == "lo")
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                    }
+
+                    if (curProject.ProjectType == ProjectType.ER)
                     {
                         bndpath = "";
                         if (hittype == "lo")
                         {
-                            return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid.Substring(0, 3)}\{mapid}\l{mapid.Substring(1)}.hkxbhd");
                         }
                         else if (hittype == "hi")
                         {
-                            return LocatorUtils.GetAssetPath($@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid.Substring(0, 3)}\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                         }
                     }
 
@@ -261,30 +267,30 @@ public static class VirtualPathLocator
                 if (pathElements[i].Equals("nav"))
                 {
                     i++;
-                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DES ||
-                        Smithbox.ProjectType == ProjectType.DS1R)
+                    if (curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DES ||
+                        curProject.ProjectType == ProjectType.DS1R)
                     {
                         if (i < pathElements.Length)
                             bndpath = $@"{pathElements[i]}";
                         else
                             bndpath = "";
 
-                        if (Smithbox.ProjectType == ProjectType.DS1R)
-                            return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmbnd.dcx");
+                        if (curProject.ProjectType == ProjectType.DS1R)
+                            return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{mapid}.nvmbnd.dcx");
 
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmbnd");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{mapid}.nvmbnd");
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.DS3)
+                    if (curProject.ProjectType == ProjectType.DS3)
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
                     }
 
-                    if (Smithbox.ProjectType == ProjectType.SDT)
+                    if (curProject.ProjectType == ProjectType.SDT)
                     {
                         bndpath = "";
-                        return LocatorUtils.GetAssetPath($@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
+                        return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{mapid}.nvmhktbnd.dcx");
                     }
 
                     bndpath = "";
@@ -301,16 +307,16 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("model"))
             {
                 bndpath = "";
-                if (Smithbox.ProjectType == ProjectType.DS1)
-                    return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd");
+                if (curProject.ProjectType == ProjectType.DS1)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"chr\{chrid}.chrbnd");
 
-                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-                    return LocatorUtils.GetOverridenFilePath($@"model\chr\{chrid}.bnd");
+                if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"model\chr\{chrid}.bnd");
 
-                if (Smithbox.ProjectType == ProjectType.DES)
-                    return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}\{chrid}.chrbnd.dcx");
+                if (curProject.ProjectType == ProjectType.DES)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"chr\{chrid}\{chrid}.chrbnd.dcx");
 
-                return LocatorUtils.GetOverridenFilePath($@"chr\{chrid}.chrbnd.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"chr\{chrid}.chrbnd.dcx");
             }
 
             if (pathElements[i].Equals("tex"))
@@ -329,7 +335,7 @@ public static class VirtualPathLocator
                     }
                 }
 
-                return TextureLocator.GetChrTexturePath(chrid, isLowDetail);
+                return TextureLocator.GetChrTexturePath(curProject, chrid, isLowDetail);
             }
         }
         // OBJECTS
@@ -342,43 +348,43 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("model") || pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                if (Smithbox.ProjectType == ProjectType.DS1)
-                    return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd");
+                if (curProject.ProjectType == ProjectType.DS1)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"obj\{objid}.objbnd");
 
-                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
-                    return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}.bnd");
+                if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}.bnd");
 
-                if (Smithbox.ProjectType is ProjectType.ACFA)
+                if (curProject.ProjectType is ProjectType.ACFA)
                     if (pathElements[i].Equals("model"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_m.bnd");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}\{objid}_m.bnd");
                     else if (pathElements[i].Equals("tex"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_t.bnd");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}\{objid}_t.bnd");
 
-                if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                if (curProject.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                     if (pathElements[i].Equals("model"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}_m.bnd.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}\{objid}_m.bnd.dcx");
                     else if (pathElements[i].Equals("tex"))
-                        return LocatorUtils.GetOverridenFilePath($@"model\obj\{objid}\{objid}.tpf.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}\{objid}.tpf.dcx");
 
-                if (Smithbox.ProjectType == ProjectType.ER)
+                if (curProject.ProjectType == ProjectType.ER)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
                     {
-                        return LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"asset\aeg\{objid.Substring(0, 6)}\{objid}.geombnd.dcx");
                     }
                     return null;
                 }
 
-                if (Smithbox.ProjectType == ProjectType.AC6)
+                if (curProject.ProjectType == ProjectType.AC6)
                 {
                     if (objid.Length >= 6)
-                        return LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{objid}.geombnd.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"asset\environment\geometry\{objid}.geombnd.dcx");
 
                     return null;
                 }
 
-                return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"obj\{objid}.objbnd.dcx");
             }
             if (pathElements[i].Equals("collision"))
             {
@@ -388,26 +394,26 @@ public static class VirtualPathLocator
 
                 bndpath = "";
 
-                if (Smithbox.ProjectType == ProjectType.ER)
+                if (curProject.ProjectType == ProjectType.ER)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
                     {
-                        var path = LocatorUtils.GetOverridenFilePath($@"asset\aeg\{objid.Substring(0, 6)}\{colName}.geomhkxbnd.dcx");
+                        var path = LocatorUtils.GetOverridenFilePath(curProject, $@"asset\aeg\{objid.Substring(0, 6)}\{colName}.geomhkxbnd.dcx");
                         return path;
                     }
                     return null;
                 }
 
-                if (Smithbox.ProjectType == ProjectType.AC6)
+                if (curProject.ProjectType == ProjectType.AC6)
                 {
                     if (objid.Length >= 6)
-                        return LocatorUtils.GetOverridenFilePath($@"asset\environment\geometry\{colName}.geomhkxbnd.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"asset\environment\geometry\{colName}.geomhkxbnd.dcx");
 
                     return null;
                 }
 
-                return LocatorUtils.GetOverridenFilePath($@"obj\{objid}.objbnd.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"obj\{objid}.objbnd.dcx");
             }
         }
         // ENEMIES
@@ -419,26 +425,26 @@ public static class VirtualPathLocator
 
             if (pathElements[i].Equals("model"))
             {
-                if (Smithbox.ProjectType == ProjectType.ACFA)
+                if (curProject.ProjectType == ProjectType.ACFA)
                 {
                     bndpath = "";
-                    return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_m.bnd");
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"model\ene\{eneid}\{eneid}_m.bnd");
                 }
 
                 bndpath = "";
-                return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_m.bnd.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"model\ene\{eneid}\{eneid}_m.bnd.dcx");
             }
 
             if (pathElements[i].Equals("tex"))
             {
-                if (Smithbox.ProjectType == ProjectType.ACFA)
+                if (curProject.ProjectType == ProjectType.ACFA)
                 {
                     bndpath = "";
-                    return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}_t.bnd");
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"model\ene\{eneid}\{eneid}_t.bnd");
                 }
 
                 bndpath = "";
-                return LocatorUtils.GetOverridenFilePath($@"model\ene\{eneid}\{eneid}.tpf.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"model\ene\{eneid}\{eneid}.tpf.dcx");
             }
         }
         // PARTS
@@ -452,10 +458,10 @@ public static class VirtualPathLocator
             {
                 bndpath = "";
 
-                if (Smithbox.ProjectType == ProjectType.DS1)
-                    return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd");
+                if (curProject.ProjectType == ProjectType.DS1)
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}.partsbnd");
 
-                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
                 {
                     var partType = "";
                     switch (partsId.Substring(0, 2))
@@ -488,34 +494,34 @@ public static class VirtualPathLocator
                             break;
                     }
 
-                    return LocatorUtils.GetOverridenFilePath($@"model\parts\{partType}\{partsId}.bnd");
+                    return LocatorUtils.GetOverridenFilePath(curProject, $@"model\parts\{partType}\{partsId}.bnd");
                 }
 
-                if (Smithbox.ProjectType is ProjectType.ER)
+                if (curProject.ProjectType is ProjectType.ER)
                 {
                     if (pathElements.Length == 4)
                     {
                         i++;
                         if (pathElements[i].Equals("low"))
                         {
-                            return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
+                            return LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}_l.partsbnd.dcx");
                         }
                     }
 
                     if (partsId == "common_body")
                     {
-                        return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.tpf.dcx");
+                        return LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}.tpf.dcx");
                     }
                 }
 
-                if (Smithbox.ProjectType == ProjectType.AC6 && pathElements[i].Equals("tex"))
+                if (curProject.ProjectType == ProjectType.AC6 && pathElements[i].Equals("tex"))
                 {
                     if (pathElements.Length == 4)
                     {
                         i++;
                         if (pathElements[i].Equals("low"))
                         {
-                            return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_l.partsbnd.dcx");
+                            return LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}_l.partsbnd.dcx");
                         }
                         else if (pathElements[i].Equals("tpf"))
                         {
@@ -527,23 +533,23 @@ public static class VirtualPathLocator
                                 if (partsId.EndsWith("_l"))
                                 {
                                     id = partsId[..^2].Split("_").Last();
-                                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}_l.tpf.dcx");
+                                    path = LocatorUtils.GetOverridenFilePath(curProject, $@"parts\wp_{id}_l.tpf.dcx");
                                 }
                                 else
                                 {
                                     id = partsId.Split("_").Last();
-                                    path = LocatorUtils.GetOverridenFilePath($@"parts\wp_{id}.tpf.dcx");
+                                    path = LocatorUtils.GetOverridenFilePath(curProject, $@"parts\wp_{id}.tpf.dcx");
                                 }
                             }
                             else
-                                path = LocatorUtils.GetOverridenFilePath($@"parts\{partsId}_u.tpf.dcx");
+                                path = LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}_u.tpf.dcx");
 
                             return path;
                         }
                     }
                 }
 
-                return LocatorUtils.GetOverridenFilePath($@"parts\{partsId}.partsbnd.dcx");
+                return LocatorUtils.GetOverridenFilePath(curProject, $@"parts\{partsId}.partsbnd.dcx");
             }
         }
         // MENU
@@ -558,7 +564,7 @@ public static class VirtualPathLocator
             {
                 bndpath = "";
 
-                if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+                if (curProject.ProjectType == ProjectType.DS2S || curProject.ProjectType == ProjectType.DS2)
                 {
                     var path = $@"menu\tex\icon\{containerName}.tpf";
 
@@ -592,10 +598,10 @@ public static class VirtualPathLocator
                         path = $@"menu\tex\icon\vow\{containerName}.tpf";
                     }
 
-                    return LocatorUtils.GetOverridenFilePath(path);
+                    return LocatorUtils.GetOverridenFilePath(curProject, path);
                 }
 
-                return TextureLocator.GetMenuTextureContainerPath(containerName);
+                return TextureLocator.GetMenuTextureContainerPath(curProject, containerName);
             }
         }
         // SMITHBOX
@@ -621,7 +627,7 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureLocator.GetAssetTextureContainerPath(containerName);
+                return TextureLocator.GetAssetTextureContainerPath(curProject, containerName);
             }
         }
         // Particle
@@ -635,7 +641,7 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureLocator.GetParticleTextureContainerPath(containerName);
+                return TextureLocator.GetParticleTextureContainerPath(curProject, containerName);
             }
         }
         // OTHER
@@ -649,7 +655,7 @@ public static class VirtualPathLocator
             if (pathElements[i].Equals("tex"))
             {
                 bndpath = "";
-                return TextureLocator.GetOtherTextureContainerPath(containerName);
+                return TextureLocator.GetOtherTextureContainerPath(curProject, containerName);
             }
         }
         // DIRECT

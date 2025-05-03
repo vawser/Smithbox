@@ -13,14 +13,17 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class RotateMesh : ViewportAction
 {
+    private ModelEditorScreen Editor;
+
     private FLVER2 CurrentFLVER;
     private List<FLVER.Vertex> OriginalVertices;
     private FLVER2.Mesh CurrentMesh;
     private float ChangeAngle;
     private RotationAxis ChangeAxis;
 
-    public RotateMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, float angle, RotationAxis axis)
+    public RotateMesh(ModelEditorScreen editor, FLVER2 curFlver, FLVER2.Mesh curMesh, float angle, RotationAxis axis)
     {
+        Editor = editor;
         CurrentFLVER = curFlver;
 
         OriginalVertices = new List<FLVER.Vertex>();
@@ -38,7 +41,7 @@ public class RotateMesh : ViewportAction
     {
         VertexUtils.RotateMesh(CurrentMesh, ChangeAngle, ChangeAxis);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -47,7 +50,7 @@ public class RotateMesh : ViewportAction
     {
         CurrentMesh.Vertices = OriginalVertices;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }

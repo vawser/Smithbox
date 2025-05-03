@@ -8,101 +8,108 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Tools.Validation
+namespace StudioCore.Tools.Validation;
+
+public class MapValidationTool
 {
-    public static class MapValidationTool
+    private Smithbox BaseEditor;
+
+    public MapValidationTool(Smithbox editor)
     {
+        BaseEditor = editor;
+    }
 
-        public static bool HasFinished = false;
+    public bool HasFinished = false;
 
-        public static bool TargetProject = false;
+    public bool TargetProject = false;
 
-        public static List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
+    public List<ResourceDescriptor> resMaps = new List<ResourceDescriptor>();
 
-        public static void ValidateMSB()
+    public void ValidateMSB()
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        // Disable this since it ignores asserts if on.
+        CFG.Current.System_IgnoreAsserts = false;
+        HasFinished = false;
+
+        var mapDir = $"{curProject.DataPath}/map/mapstudio/";
+
+        if (TargetProject)
         {
-            // Disable this since it ignores asserts if on.
-            CFG.Current.System_IgnoreAsserts = false;
-            HasFinished = false;
-
-            var mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
-
-            if (TargetProject)
-            {
-                mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
-            }
-
-            foreach (var entry in Directory.EnumerateFiles(mapDir))
-            {
-                if (entry.Contains(".msb.dcx"))
-                {
-                    var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                    ResourceDescriptor ad = MapLocator.GetMapMSB(name);
-                    if (ad.AssetPath != null)
-                    {
-                        resMaps.Add(ad);
-                    }
-                }
-            }
-
-            if (Smithbox.ProjectType == ProjectType.DES)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSBD.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSB1.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS2S)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSB2.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSB3.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.BB)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSBB.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.SDT)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSBS.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSBE.Read(res.AssetPath);
-                }
-            }
-            if (Smithbox.ProjectType == ProjectType.AC6)
-            {
-                foreach (var res in resMaps)
-                {
-                    var msb = MSB_AC6.Read(res.AssetPath);
-                }
-            }
-
-            HasFinished = true;
+            mapDir = $"{curProject.ProjectPath}/map/mapstudio/";
         }
+
+        foreach (var entry in Directory.EnumerateFiles(mapDir))
+        {
+            if (entry.Contains(".msb.dcx"))
+            {
+                var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
+                ResourceDescriptor ad = MapLocator.GetMapMSB(curProject, name);
+                if (ad.AssetPath != null)
+                {
+                    resMaps.Add(ad);
+                }
+            }
+        }
+
+        if (curProject.ProjectType == ProjectType.DES)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSBD.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DS1R)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSB1.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.DS2 || curProject.ProjectType == ProjectType.DS2S)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSB2.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.DS3)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSB3.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.BB)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSBB.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.SDT)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSBS.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.ER)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSBE.Read(res.AssetPath);
+            }
+        }
+        if (curProject.ProjectType == ProjectType.AC6)
+        {
+            foreach (var res in resMaps)
+            {
+                var msb = MSB_AC6.Read(res.AssetPath);
+            }
+        }
+
+        HasFinished = true;
     }
 }

@@ -121,12 +121,12 @@ public class ModelAssetCopyManager
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // ChrBND
-            ResourceDescriptor chrBnd = AssetLocator.GetCharacterBinder(copyChr);
+            ResourceDescriptor chrBnd = AssetLocator.GetCharacterBinder(Editor.Project, copyChr);
             if (chrBnd.AssetPath != null)
                 SaveContainer(chrBnd.AssetPath, copyChr, newChr);
 
             // AniBND
-            ResourceDescriptor aniBnd = AssetLocator.GetCharacterAnimationBinder(copyChr);
+            ResourceDescriptor aniBnd = AssetLocator.GetCharacterAnimationBinder(Editor.Project, copyChr);
 
             if (aniBnd.AssetPath != null)
                 SaveContainer(aniBnd.AssetPath, copyChr, newChr);
@@ -134,26 +134,26 @@ public class ModelAssetCopyManager
             // AniBND _div0X
             for (int i = 0; i < 6; i++)
             {
-                ResourceDescriptor aniBnd_div0X = AssetLocator.GetCharacterAnimationBinder(copyChr, $"_div0{i}");
+                ResourceDescriptor aniBnd_div0X = AssetLocator.GetCharacterAnimationBinder(Editor.Project, copyChr, $"_div0{i}");
 
                 if (aniBnd_div0X.AssetPath != null)
                     SaveContainer(aniBnd_div0X.AssetPath, copyChr, newChr);
             }
 
             // BehBND
-            ResourceDescriptor behBnd = AssetLocator.GetCharacterBehaviorBinder(copyChr);
+            ResourceDescriptor behBnd = AssetLocator.GetCharacterBehaviorBinder(Editor.Project, copyChr);
 
             if (behBnd.AssetPath != null)
                 SaveContainer(behBnd.AssetPath, copyChr, newChr);
 
             // TexBND _l
-            ResourceDescriptor texBnd_l = AssetLocator.GetCharacterTextureBinder(copyChr, "_l");
+            ResourceDescriptor texBnd_l = AssetLocator.GetCharacterTextureBinder(Editor.Project, copyChr, "_l");
 
             if (texBnd_l.AssetPath != null)
                 SaveContainer(texBnd_l.AssetPath, copyChr, newChr);
 
             // TexBND _h
-            ResourceDescriptor texBnd_h = AssetLocator.GetCharacterTextureBinder(copyChr, "_h");
+            ResourceDescriptor texBnd_h = AssetLocator.GetCharacterTextureBinder(Editor.Project, copyChr, "_h");
 
             if (texBnd_h.AssetPath != null)
                 SaveContainer(texBnd_h.AssetPath, copyChr, newChr);
@@ -315,18 +315,18 @@ public class ModelAssetCopyManager
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // GeomBND
-            ResourceDescriptor assetGeom = AssetLocator.GetAssetGeomBinder(copyAsset);
+            ResourceDescriptor assetGeom = AssetLocator.GetAssetGeomBinder(Editor.Project, copyAsset);
             if (assetGeom.AssetPath != null)
                 SaveContainer(assetGeom.AssetPath, copyAsset, newAsset, true);
 
             // GeomHKXBND _l
-            ResourceDescriptor assetGeomHKX_l = AssetLocator.GetAssetGeomHKXBinder(copyAsset, "_l");
+            ResourceDescriptor assetGeomHKX_l = AssetLocator.GetAssetGeomHKXBinder(Editor.Project, copyAsset, "_l");
 
             if (assetGeomHKX_l.AssetPath != null)
                 SaveContainer(assetGeomHKX_l.AssetPath, copyAsset, newAsset, true);
 
             // GeomHKXBND _h
-            ResourceDescriptor assetGeomHKX_h = AssetLocator.GetAssetGeomHKXBinder(copyAsset, "_h");
+            ResourceDescriptor assetGeomHKX_h = AssetLocator.GetAssetGeomHKXBinder(Editor.Project, copyAsset, "_h");
 
             if (assetGeomHKX_h.AssetPath != null)
                 SaveContainer(assetGeomHKX_h.AssetPath, copyAsset, newAsset, true);
@@ -439,17 +439,17 @@ public class ModelAssetCopyManager
         if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // PartBND
-            ResourceDescriptor partBnd = AssetLocator.GetPartBinder(copyPart);
+            ResourceDescriptor partBnd = AssetLocator.GetPartBinder(Editor.Project, copyPart);
             if (partBnd.AssetPath != null)
                 SaveContainer(partBnd.AssetPath, copyPart, newPart, true);
 
             // PartBND _l
-            ResourceDescriptor partBnd_l = AssetLocator.GetPartBinder(copyPart, "_l");
+            ResourceDescriptor partBnd_l = AssetLocator.GetPartBinder(Editor.Project, copyPart, "_l");
             if (partBnd_l.AssetPath != null)
                 SaveContainer(partBnd_l.AssetPath, copyPart, newPart, true);
 
             // PartBND _u
-            ResourceDescriptor partBnd_u = AssetLocator.GetPartBinder(copyPart, "_u");
+            ResourceDescriptor partBnd_u = AssetLocator.GetPartBinder(Editor.Project, copyPart, "_u");
             if (partBnd_u.AssetPath != null)
                 SaveContainer(partBnd_u.AssetPath, copyPart, newPart, true);
         }
@@ -457,17 +457,17 @@ public class ModelAssetCopyManager
         if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             // TPF
-            ResourceDescriptor partTpf = AssetLocator.GetPartTpf(copyPart, "");
+            ResourceDescriptor partTpf = AssetLocator.GetPartTpf(Editor.Project, copyPart, "");
             if (partTpf.AssetPath != null)
                 SaveFile(partTpf.AssetPath, copyPart, newPart, true);
 
             // TPF _l
-            ResourceDescriptor partTpf_l = AssetLocator.GetPartTpf(copyPart, "_l");
+            ResourceDescriptor partTpf_l = AssetLocator.GetPartTpf(Editor.Project, copyPart, "_l");
             if (partTpf_l.AssetPath != null)
                 SaveFile(partTpf_l.AssetPath, copyPart, newPart, true);
 
             // TPF _u
-            ResourceDescriptor partTpf_u = AssetLocator.GetPartTpf(copyPart, "_u");
+            ResourceDescriptor partTpf_u = AssetLocator.GetPartTpf(Editor.Project, copyPart, "_u");
             if (partTpf_u.AssetPath != null)
                 SaveFile(partTpf_u.AssetPath, copyPart, newPart, true);
         }
@@ -586,7 +586,7 @@ public class ModelAssetCopyManager
         if(Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
             dir = $@"{topMapId}\{mapId}";
 
-        ResourceDescriptor partBnd = AssetLocator.GetMapPiece(dir, copyMapPiece);
+        ResourceDescriptor partBnd = AssetLocator.GetMapPiece(Editor.Project, dir, copyMapPiece);
         if (partBnd.AssetPath != null)
             SaveContainer(partBnd.AssetPath, copyMapPiece, newMapPiece, true);
 

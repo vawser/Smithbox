@@ -161,7 +161,7 @@ public class Universe
 
         if (!fastLoad)
         {
-            HavokCollisionManager.OnLoadMap(mapid);
+            Editor.CollisionManager.OnLoadMap(mapid);
         }
 
         try
@@ -170,7 +170,7 @@ public class Universe
 
             Editor.DisplayGroupView.SetupDrawgroupCount();
 
-            MapContainer map = new(mapid);
+            MapContainer map = new(Editor, mapid);
 
             MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
 
@@ -206,7 +206,7 @@ public class Universe
             {
                 if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                 {
-                    if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
+                    if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid, LoadedObjectContainers) is Transform
                         loadTransform)
                     {
                         map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
@@ -286,12 +286,12 @@ public class Universe
 
     public void SaveMap(MapContainer map)
     {
-        SaveBTL(map);
+        SaveBTL(Editor, map);
 
         try
         {
-            ResourceDescriptor ad = MapLocator.GetMapMSB(map.Name);
-            ResourceDescriptor adw = MapLocator.GetMapMSB(map.Name, true);
+            ResourceDescriptor ad = MapLocator.GetMapMSB(Project, map.Name);
+            ResourceDescriptor adw = MapLocator.GetMapMSB(Project, map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
             if (Editor.Project.ProjectType == ProjectType.DS3)
@@ -469,7 +469,7 @@ public class Universe
         Dictionary<long, Param.Row> eventLocationParams = new();
         Dictionary<long, Param.Row> objectInstanceParams = new();
 
-        Param regparam = ParamBank.PrimaryBank.Params[$"generatorregistparam_{mapid}"];
+        Param regparam = Project.ParamData.PrimaryBank.Params[$"generatorregistparam_{mapid}"];
         foreach (Param.Row row in regparam.Rows)
         {
             if (string.IsNullOrEmpty(row.Name))
@@ -483,7 +483,7 @@ public class Universe
             map.AddObject(obj);
         }
 
-        Param locparam = ParamBank.PrimaryBank.Params[$"generatorlocation_{mapid}"];
+        Param locparam = Project.ParamData.PrimaryBank.Params[$"generatorlocation_{mapid}"];
         foreach (Param.Row row in locparam.Rows)
         {
             if (string.IsNullOrEmpty(row.Name))
@@ -503,7 +503,7 @@ public class Universe
         }
 
         HashSet<ResourceDescriptor> chrsToLoad = new();
-        Param genparam = ParamBank.PrimaryBank.Params[$"generatorparam_{mapid}"];
+        Param genparam = Project.ParamData.PrimaryBank.Params[$"generatorparam_{mapid}"];
         foreach (Param.Row row in genparam.Rows)
         {
             if (row.Name == null || row.Name == "")
@@ -529,11 +529,11 @@ public class Universe
             if (registParams.ContainsKey(registid))
             {
                 Param.Row regist = registParams[registid];
-                var chrid = ParamBank.PrimaryBank.GetChrIDForEnemy(
+                var chrid = Project.ParamData.PrimaryBank.GetChrIDForEnemy(
                     (int)regist.GetCellHandleOrThrow("EnemyParamID").Value);
                 if (chrid != null)
                 {
-                    ResourceDescriptor asset = ModelLocator.GetChrModel($@"c{chrid}", $@"c{chrid}");
+                    ResourceDescriptor asset = ModelLocator.GetChrModel(Editor.Project, $@"c{chrid}", $@"c{chrid}");
                     MeshRenderableProxy model = MeshRenderableProxy.MeshRenderableFromFlverResource(
                         RenderScene, asset.AssetVirtualPath, ModelMarkerType.Enemy, null);
                     model.DrawFilter = RenderFilter.Character;
@@ -543,7 +543,7 @@ public class Universe
 
                     if (CFG.Current.Viewport_Enable_Texturing)
                     {
-                        ResourceDescriptor tasset = TextureLocator.GetChrTextures($@"c{chrid}");
+                        ResourceDescriptor tasset = TextureLocator.GetChrTextures(Editor.Project, $@"c{chrid}");
                         if (tasset.AssetVirtualPath != null || tasset.AssetArchiveVirtualPath != null)
                         {
                             chrsToLoad.Add(tasset);
@@ -553,7 +553,7 @@ public class Universe
             }
         }
 
-        Param evtparam = ParamBank.PrimaryBank.Params[$"eventparam_{mapid}"];
+        Param evtparam = Project.ParamData.PrimaryBank.Params[$"eventparam_{mapid}"];
         foreach (Param.Row row in evtparam.Rows)
         {
             if (string.IsNullOrEmpty(row.Name))
@@ -567,7 +567,7 @@ public class Universe
             map.AddObject(obj);
         }
 
-        Param evtlparam = ParamBank.PrimaryBank.Params[$"eventlocation_{mapid}"];
+        Param evtlparam = Project.ParamData.PrimaryBank.Params[$"eventlocation_{mapid}"];
         foreach (Param.Row row in evtlparam.Rows)
         {
             if (string.IsNullOrEmpty(row.Name))
@@ -589,7 +589,7 @@ public class Universe
             mesh.SetSelectable(obj);
         }
 
-        Param objparam = ParamBank.PrimaryBank.Params[$"mapobjectinstanceparam_{mapid}"];
+        Param objparam = Project.ParamData.PrimaryBank.Params[$"mapobjectinstanceparam_{mapid}"];
         foreach (Param.Row row in objparam.Rows)
         {
             if (string.IsNullOrEmpty(row.Name))
@@ -623,7 +623,7 @@ public class Universe
     public void PopulateMapList()
     {
         LoadedObjectContainers.Clear();
-        foreach (var m in MapLocator.GetFullMapList())
+        foreach (var m in MapLocator.GetFullMapList(Project))
         {
             LoadedObjectContainers.Add(m, null);
         }
@@ -645,7 +645,7 @@ public class Universe
     {
         if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            if (ParamBank.PrimaryBank.Params == null)
+            if (Project.ParamEditor == null)
             {
                 // ParamBank must be loaded for DS2 maps
                 TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
@@ -654,7 +654,7 @@ public class Universe
             }
         }
 
-        ResourceDescriptor ad = MapLocator.GetMapMSB(mapid);
+        ResourceDescriptor ad = MapLocator.GetMapMSB(Project, mapid);
         if (ad.AssetPath == null)
         {
             return false;
@@ -753,40 +753,40 @@ public class Universe
     private void SaveDS2Generators(MapContainer map)
     {
         // Load all the params
-        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(map.Name);
-        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(map.Name, true);
+        ResourceDescriptor regparamad = ParamLocator.GetDS2GeneratorRegistParam(Editor.Project, map.Name);
+        ResourceDescriptor regparamadw = ParamLocator.GetDS2GeneratorRegistParam(Editor.Project, map.Name, true);
         Param regparam = Param.Read(regparamad.AssetPath);
-        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(regparam.ParamType);
+        PARAMDEF reglayout = ParamLocator.GetParamdefForParam(Editor.Project, regparam.ParamType);
         regparam.ApplyParamdef(reglayout);
 
-        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(map.Name);
-        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(map.Name, true);
+        ResourceDescriptor locparamad = ParamLocator.GetDS2GeneratorLocationParam(Editor.Project, map.Name);
+        ResourceDescriptor locparamadw = ParamLocator.GetDS2GeneratorLocationParam(Editor.Project, map.Name, true);
         Param locparam = Param.Read(locparamad.AssetPath);
-        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(locparam.ParamType);
+        PARAMDEF loclayout = ParamLocator.GetParamdefForParam(Editor.Project, locparam.ParamType);
         locparam.ApplyParamdef(loclayout);
 
-        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(map.Name);
-        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(map.Name, true);
+        ResourceDescriptor genparamad = ParamLocator.GetDS2GeneratorParam(Editor.Project, map.Name);
+        ResourceDescriptor genparamadw = ParamLocator.GetDS2GeneratorParam(Editor.Project, map.Name, true);
         Param genparam = Param.Read(genparamad.AssetPath);
-        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(genparam.ParamType);
+        PARAMDEF genlayout = ParamLocator.GetParamdefForParam(Editor.Project, genparam.ParamType);
         genparam.ApplyParamdef(genlayout);
 
-        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(map.Name);
-        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(map.Name, true);
+        ResourceDescriptor evtparamad = ParamLocator.GetDS2EventParam(Editor.Project, map.Name);
+        ResourceDescriptor evtparamadw = ParamLocator.GetDS2EventParam(Editor.Project, map.Name, true);
         Param evtparam = Param.Read(evtparamad.AssetPath);
-        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(evtparam.ParamType);
+        PARAMDEF evtlayout = ParamLocator.GetParamdefForParam(Editor.Project, evtparam.ParamType);
         evtparam.ApplyParamdef(evtlayout);
 
-        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(map.Name);
-        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(map.Name, true);
+        ResourceDescriptor evtlparamad = ParamLocator.GetDS2EventLocationParam(Editor.Project, map.Name);
+        ResourceDescriptor evtlparamadw = ParamLocator.GetDS2EventLocationParam(Editor.Project, map.Name, true);
         Param evtlparam = Param.Read(evtlparamad.AssetPath);
-        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(evtlparam.ParamType);
+        PARAMDEF evtllayout = ParamLocator.GetParamdefForParam(Editor.Project, evtlparam.ParamType);
         evtlparam.ApplyParamdef(evtllayout);
 
-        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(map.Name);
-        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(map.Name, true);
+        ResourceDescriptor objparamad = ParamLocator.GetDS2ObjInstanceParam(Editor.Project, map.Name);
+        ResourceDescriptor objparamadw = ParamLocator.GetDS2ObjInstanceParam(Editor.Project, map.Name, true);
         Param objparam = Param.Read(objparamad.AssetPath);
-        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(objparam.ParamType);
+        PARAMDEF objlayout = ParamLocator.GetParamdefForParam(Editor.Project, objparam.ParamType);
         objparam.ApplyParamdef(objlayout);
 
         // Clear them out
@@ -987,10 +987,10 @@ public class Universe
     /// <summary>
     ///     Save BTL light data
     /// </summary>
-    public void SaveBTL(MapContainer map)
+    public void SaveBTL(MapEditorScreen editor, MapContainer map)
     {
-        List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(map.Name);
-        List<ResourceDescriptor> BTLs_w = MapLocator.GetMapBTLs(map.Name, true);
+        List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(Project, map.Name);
+        List<ResourceDescriptor> BTLs_w = MapLocator.GetMapBTLs(Project, map.Name, true);
         DCX.Type compressionType = GetCompressionType();
         if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
         {
@@ -1011,8 +1011,8 @@ public class Universe
                         file.Bytes = btl.Write(DCX.Type.DCX_DFLT_10000_24_9);
                         var bdtPath = BTLs_w[i].AssetPath[..^3] + "bdt";
 
-                        Utils.WriteWithBackup(Utils.GetLocalAssetPath(bdtPath), bdt,
-                            Utils.GetLocalAssetPath(BTLs_w[i].AssetPath));
+                        Utils.WriteWithBackup(editor.Project, Utils.GetLocalAssetPath(editor.Project, bdtPath), bdt,
+                            Utils.GetLocalAssetPath(editor.Project, BTLs_w[i].AssetPath));
                     }
                 }
             }
@@ -1032,7 +1032,7 @@ public class Universe
                     {
                         btl.Lights = newLights;
 
-                        Utils.WriteWithBackup(Utils.GetLocalAssetPath(BTLs_w[i].AssetPath), btl);
+                        Utils.WriteWithBackup(editor.Project, Utils.GetLocalAssetPath(editor.Project, BTLs_w[i].AssetPath), btl);
                     }
                 }
             }
@@ -1055,7 +1055,7 @@ public class Universe
 
     public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
     {
-        HavokCollisionManager.OnUnloadMap(container.Name);
+        Editor.CollisionManager.OnUnloadMap(container.Name);
 
         if (LoadedObjectContainers.ContainsKey(container.Name))
         {

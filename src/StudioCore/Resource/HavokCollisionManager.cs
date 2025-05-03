@@ -3,19 +3,13 @@ using HKLib.hk2018.hkcdStaticMeshTree;
 using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Resource.Locators;
-using StudioCore.Resource.Types;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Resource.Types.HavokCollisionResource;
 
 namespace StudioCore.Resource;
@@ -26,32 +20,39 @@ public enum HavokCollisionType
     High
 }
 
-public static class HavokCollisionManager
+public class HavokCollisionManager
 {
-    public static Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
+    public EditorScreen Editor;
+    public ProjectEntry Project;
 
-    public static HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
+    public Dictionary<string, hkRootLevelContainer> HavokContainers = new Dictionary<string, hkRootLevelContainer>();
 
-    public static ModelEditorScreen Screen;
+    public HavokCollisionType VisibleCollisionType = HavokCollisionType.Low;
 
-    public static void OnLoadMap(string mapId)
+    public HavokCollisionManager(EditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
+    public void OnLoadMap(string mapId)
     {
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Project.ProjectType == ProjectType.ER)
         {
             LoadMapCollision(mapId, "h");
             LoadMapCollision(mapId, "l");
         }
     }
 
-    public static void OnUnloadMap(string mapId)
+    public void OnUnloadMap(string mapId)
     {
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Project.ProjectType == ProjectType.ER)
         {
             // HACK: clear all viewport collisions on load
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
@@ -64,14 +65,14 @@ public static class HavokCollisionManager
         }
     }
 
-    private static void LoadMapCollision(string mapId, string type)
+    private void LoadMapCollision(string mapId, string type)
     {
         // Mark as invalid by default
         bool isValid = false;
         byte[] CompendiumBytes = null;
 
-        var bdtPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
-        var bhdPath = $"{Smithbox.GameRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
+        var bdtPath = $"{Project.DataPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
+        var bhdPath = $"{Project.DataPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
         // If game root version exists, mark as valid
         if (File.Exists(bdtPath) && File.Exists(bhdPath))
@@ -80,8 +81,8 @@ public static class HavokCollisionManager
         }
 
         // If project version exists, point path to that instead, and mark as valid
-        var projectBdtPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
-        var projectBhdPath = $"{Smithbox.ProjectRoot}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
+        var projectBdtPath = $"{Project.ProjectPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
+        var projectBhdPath = $"{Project.ProjectPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
         if (File.Exists(projectBdtPath) && File.Exists(projectBhdPath))
         {
@@ -154,31 +155,31 @@ public static class HavokCollisionManager
         }
     }
 
-    public static void OnLoadModel(string modelName, FlverContainerType modelType)
+    public void OnLoadModel(string modelName, FlverContainerType modelType)
     {
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Project.ProjectType == ProjectType.ER)
         {
             LoadModelCollision(modelName, "h", modelType);
             LoadModelCollision(modelName, "l", modelType);
         }
     }
 
-    public static void OnUnloadModel(string modelName)
+    public void OnUnloadModel(string modelName)
     {
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Project.ProjectType == ProjectType.ER)
         {
             //UnloadModelCollision(mapId, "h");
             //UnloadModelCollision(mapId, "l");
         }
     }
 
-    private static void LoadModelCollision(string modelName, string colType, FlverContainerType modelType)
+    private void LoadModelCollision(string modelName, string colType, FlverContainerType modelType)
     {
         var checkedName = $"{modelName}_{colType}".ToLower();
 
@@ -190,7 +191,7 @@ public static class HavokCollisionManager
         // Mark as invalid by default
         bool isValid = false;
 
-        var bndPath = $"{Smithbox.GameRoot}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
+        var bndPath = $"{Project.DataPath}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
 
         // If game root version exists, mark as valid
         if (File.Exists(bndPath))
@@ -199,7 +200,7 @@ public static class HavokCollisionManager
         }
 
         // If project version exists, point path to that instead, and mark as valid
-        var projectBndPath = $"{Smithbox.ProjectRoot}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
+        var projectBndPath = $"{Project.ProjectPath}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
 
         if (File.Exists(projectBndPath))
         {

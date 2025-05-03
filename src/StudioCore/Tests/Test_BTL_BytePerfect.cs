@@ -10,15 +10,17 @@ namespace StudioCore.Tests;
 
 public static class Test_BTL_BytePerfect
 {
-    public static bool Run()
+    public static bool Run(Smithbox baseEditor)
     {
-        List<string> msbs = MapLocator.GetFullMapList();
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
+        List<string> msbs = MapLocator.GetFullMapList(curProject);
         List<string> floats = new();
         List<string> noWrite = new();
         List<string> ver = new();
         foreach (var msb in msbs)
         {
-            List<ResourceDescriptor> btls = MapLocator.GetMapBTLs(msb);
+            List<ResourceDescriptor> btls = MapLocator.GetMapBTLs(curProject, msb);
 
             foreach (ResourceDescriptor file in btls)
             {

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Octokit;
+using SoulsFormats;
 using StudioCore.Core;
 using System;
 using System.Collections.Generic;
@@ -12,17 +13,17 @@ namespace StudioCore.Resource.Locators;
 public static class ResourceListLocator
 {
     // Used to get the map model list from within the mapbhd/bdt
-    public static List<ResourceDescriptor> GetMapModelsFromBXF(string mapid)
+    public static List<ResourceDescriptor> GetMapModelsFromBXF(ProjectEntry project, string mapid)
     {
         List<ResourceDescriptor> ret = new();
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
         {
-            var path = $@"{Smithbox.ProjectRoot}/model/map/{mapid}.mapbdt";
+            var path = $@"{project.ProjectPath}/model/map/{mapid}.mapbdt";
 
             if (!File.Exists(path))
             {
-                path = $@"{Smithbox.GameRoot}/model/map/{mapid}.mapbdt";
+                path = $@"{project.DataPath}/model/map/{mapid}.mapbdt";
             }
 
             if (File.Exists(path))
@@ -54,16 +55,16 @@ public static class ResourceListLocator
         return ret;
     }
 
-    public static List<ResourceDescriptor> GetMapModels(string mapid)
+    public static List<ResourceDescriptor> GetMapModels(ProjectEntry project, string mapid)
     {
         List<ResourceDescriptor> ret = new();
-        if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT)
+        if (project.ProjectType == ProjectType.DS3 || project.ProjectType == ProjectType.SDT)
         {
-            if (!Directory.Exists(Smithbox.GameRoot + $@"\map\{mapid}\"))
+            if (!Directory.Exists(project.DataPath + $@"\map\{mapid}\"))
                 return ret;
 
             var mapfiles = Directory
-                .GetFileSystemEntries(Smithbox.GameRoot + $@"\map\{mapid}\", @"*.mapbnd.dcx").ToList();
+                .GetFileSystemEntries(project.DataPath + $@"\map\{mapid}\", @"*.mapbnd.dcx").ToList();
             foreach (var f in mapfiles)
             {
                 ResourceDescriptor ad = new();
@@ -75,9 +76,9 @@ public static class ResourceListLocator
                 ret.Add(ad);
             }
         }
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (project.ProjectType == ProjectType.ER)
         {
-            var mapPath = Smithbox.GameRoot + $@"\map\{mapid[..3]}\{mapid}";
+            var mapPath = project.DataPath + $@"\map\{mapid[..3]}\{mapid}";
             if (!Directory.Exists(mapPath))
                 return ret;
 
@@ -93,9 +94,9 @@ public static class ResourceListLocator
                 ret.Add(ad);
             }
         }
-        else if (Smithbox.ProjectType == ProjectType.AC6)
+        else if (project.ProjectType == ProjectType.AC6)
         {
-            var mapPath = Smithbox.GameRoot + $@"\map\{mapid[..3]}\{mapid}";
+            var mapPath = project.DataPath + $@"\map\{mapid[..3]}\{mapid}";
             if (!Directory.Exists(mapPath))
                 return ret;
 
@@ -113,11 +114,11 @@ public static class ResourceListLocator
         }
         else
         {
-            if (!Directory.Exists(Smithbox.GameRoot + $@"\map\{mapid}\"))
+            if (!Directory.Exists(project.DataPath + $@"\map\{mapid}\"))
                 return ret;
 
-            var ext = Smithbox.ProjectType == ProjectType.DS1 ? @"*.flver" : @"*.flver.dcx";
-            var mapfiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + $@"\map\{mapid}\", ext)
+            var ext = project.ProjectType == ProjectType.DS1 ? @"*.flver" : @"*.flver.dcx";
+            var mapfiles = Directory.GetFileSystemEntries(project.DataPath + $@"\map\{mapid}\", ext)
                 .ToList();
             foreach (var f in mapfiles)
             {
@@ -136,7 +137,7 @@ public static class ResourceListLocator
         return ret;
     }
 
-    public static List<string> GetChrModels()
+    public static List<string> GetChrModels(ProjectEntry project)
     {
         try
         {
@@ -146,17 +147,17 @@ public static class ResourceListLocator
             var modelDir = @"\chr";
             var modelExt = @".chrbnd.dcx";
 
-            if (Smithbox.ProjectType == ProjectType.DS1)
+            if (project.ProjectType == ProjectType.DS1)
                 modelExt = ".chrbnd";
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
             {
                 modelDir = @"\model\chr";
                 modelExt = ".bnd";
             }
 
-            if (Smithbox.ProjectType == ProjectType.DES)
+            if (project.ProjectType == ProjectType.DES)
             {
-                var chrdirs = Directory.GetDirectories(Smithbox.GameRoot + modelDir);
+                var chrdirs = Directory.GetDirectories(project.DataPath + modelDir);
                 foreach (var f in chrdirs)
                 {
                     var name = Path.GetFileNameWithoutExtension(f + ".dummy");
@@ -167,7 +168,7 @@ public static class ResourceListLocator
                 return ret;
             }
 
-            var chrfiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + modelDir, $@"*{modelExt}")
+            var chrfiles = Directory.GetFileSystemEntries(project.DataPath + modelDir, $@"*{modelExt}")
                 .ToList();
             foreach (var f in chrfiles)
             {
@@ -176,9 +177,9 @@ public static class ResourceListLocator
                 chrs.Add(name);
             }
 
-            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + modelDir))
+            if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + modelDir))
             {
-                chrfiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + modelDir, $@"*{modelExt}").ToList();
+                chrfiles = Directory.GetFileSystemEntries(project.ProjectPath + modelDir, $@"*{modelExt}").ToList();
                 foreach (var f in chrfiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -201,7 +202,7 @@ public static class ResourceListLocator
         }
     }
 
-    public static List<string> GetObjModels(bool useProject = false)
+    public static List<string> GetObjModels(ProjectEntry project, bool useProject = false)
     {
         HashSet<string> objs = new();
         List<string> ret = new();
@@ -209,30 +210,30 @@ public static class ResourceListLocator
         var modelDir = @"\obj";
         var modelExt = @".objbnd.dcx";
 
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        if (project.ProjectType == ProjectType.DS1)
         {
             modelExt = ".objbnd";
         }
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
         {
             modelDir = @"\model\obj";
             modelExt = ".bnd";
         }
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (project.ProjectType == ProjectType.ER)
         {
             // AEGs are objs in my heart :(
             modelDir = @"\asset\aeg";
             modelExt = ".geombnd.dcx";
         }
-        else if (Smithbox.ProjectType == ProjectType.AC6)
+        else if (project.ProjectType == ProjectType.AC6)
         {
             // AEGs are objs in my heart :(
             modelDir = @"\asset\environment\geometry";
             modelExt = ".geombnd.dcx";
         }
 
-        var rootDir = Smithbox.GameRoot + modelDir;
-        var modDir = Smithbox.ProjectRoot + modelDir;
+        var rootDir = project.DataPath + modelDir;
+        var modDir = project.ProjectPath + modelDir;
 
         if (!Directory.Exists(rootDir))
         {
@@ -246,7 +247,7 @@ public static class ResourceListLocator
             objs.Add(name);
         }
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (project.ProjectType == ProjectType.ER)
         {
             foreach (var folder in Directory.GetDirectories(rootDir).ToList())
             {
@@ -270,7 +271,7 @@ public static class ResourceListLocator
             }
         }
 
-        if (Smithbox.ProjectRoot != null && Directory.Exists(modDir))
+        if (project.ProjectPath != null && Directory.Exists(modDir))
         {
             foreach (var f in Directory.GetFileSystemEntries(modDir, $@"*{modelExt}").ToList())
             {
@@ -282,7 +283,7 @@ public static class ResourceListLocator
                 }
             }
 
-            if (Smithbox.ProjectType == ProjectType.ER)
+            if (project.ProjectType == ProjectType.ER)
             {
                 foreach (var folder in Directory.GetDirectories(modDir).ToList())
                 {
@@ -312,7 +313,7 @@ public static class ResourceListLocator
         return ret;
     }
 
-    public static List<string> GetPartsModels()
+    public static List<string> GetPartsModels(ProjectEntry project)
     {
         try
         {
@@ -322,15 +323,15 @@ public static class ResourceListLocator
             var modelDir = @"\parts";
             var modelExt = @".partsbnd.dcx";
 
-            if (Smithbox.ProjectType == ProjectType.DS1)
+            if (project.ProjectType == ProjectType.DS1)
             {
                 modelExt = ".partsbnd";
             }
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
             {
                 modelDir = @"\model\parts";
                 modelExt = ".bnd";
-                var partsGatheredFiles = Directory.GetFiles(Smithbox.GameRoot + modelDir, "*", SearchOption.AllDirectories);
+                var partsGatheredFiles = Directory.GetFiles(project.DataPath + modelDir, "*", SearchOption.AllDirectories);
 
                 foreach (var f in partsGatheredFiles)
                 {
@@ -342,7 +343,7 @@ public static class ResourceListLocator
                 return ret;
             }
 
-            var partsFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + modelDir, $@"*{modelExt}")
+            var partsFiles = Directory.GetFileSystemEntries(project.DataPath + modelDir, $@"*{modelExt}")
                 .ToList();
 
             foreach (var f in partsFiles)
@@ -352,9 +353,9 @@ public static class ResourceListLocator
                 parts.Add(name);
             }
 
-            if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + modelDir))
+            if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + modelDir))
             {
-                partsFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + modelDir, $@"*{modelExt}").ToList();
+                partsFiles = Directory.GetFileSystemEntries(project.ProjectPath + modelDir, $@"*{modelExt}").ToList();
                 foreach (var f in partsFiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));

@@ -35,10 +35,13 @@ public static class ModelMaskToggler
         var filename = editor.Selection._selectedFileName;
         var npcParamKey = "NpcParam";
 
-        if (!ParamBank.PrimaryBank.Params.ContainsKey(npcParamKey))
+        if (editor.Project.ParamEditor == null)
             return;
 
-        var npcParam = ParamBank.PrimaryBank.Params[npcParamKey];
+        if (!editor.Project.ParamData.PrimaryBank.Params.ContainsKey(npcParamKey))
+            return;
+
+        var npcParam = editor.Project.ParamData.PrimaryBank.Params[npcParamKey];
 
         if(npcParam == null)
             return;

@@ -8,12 +8,14 @@ namespace StudioCore.Tests;
 
 public static class Test_MSB_ACV_BytePerfect
 {
-    public static bool Run()
+    public static bool Run(Smithbox baseEditor)
     {
-        List<string> msbs = MapLocator.GetFullMapList();
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
+        List<string> msbs = MapLocator.GetFullMapList(curProject);
         foreach (var msb in msbs)
         {
-            ResourceDescriptor path = MapLocator.GetMapMSB(msb);
+            ResourceDescriptor path = MapLocator.GetMapMSB(curProject, msb);
 #if MSB_READ_WRITE_TEST_LOG_ON_CRASH
             try
             {

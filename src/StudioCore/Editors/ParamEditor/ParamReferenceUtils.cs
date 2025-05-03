@@ -96,7 +96,7 @@ public static class ParamReferenceUtils
                 rowMapId = $"m{sAA}_{sBB}_00_00";
             }
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -166,7 +166,7 @@ public static class ParamReferenceUtils
 
             rowMapId = $"m{sAA}_{sBB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -269,7 +269,7 @@ public static class ParamReferenceUtils
                 }
             }
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -386,7 +386,7 @@ public static class ParamReferenceUtils
             var width = ImGui.GetColumnWidth();
 
             if(AssetList == null)
-                AssetList = ResourceListLocator.GetObjModels();
+                AssetList = ResourceListLocator.GetObjModels(editor.Project);
 
             if (AssetList.Contains(assetID.ToLower()) && assetID != "")
             {
@@ -500,7 +500,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -754,7 +754,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -767,7 +767,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_DS1 = MSB1.Read(mapPath.AssetPath);
                 }
 
@@ -838,7 +838,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -851,7 +851,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_BB = MSBB.Read(mapPath.AssetPath);
                 }
 
@@ -929,7 +929,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -942,7 +942,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_DS3 = MSB3.Read(mapPath.AssetPath);
                 }
 
@@ -1011,7 +1011,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_00_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1024,7 +1024,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_SDT = MSBS.Read(mapPath.AssetPath);
                 }
 
@@ -1092,7 +1092,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1105,7 +1105,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_ER = MSBE.Read(mapPath.AssetPath);
                 }
 
@@ -1165,7 +1165,7 @@ public static class ParamReferenceUtils
 
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
-            var mapList = MapLocator.GetFullMapList();
+            var mapList = MapLocator.GetFullMapList(editor.Project);
 
             if (mapList.Contains(rowMapId))
             {
@@ -1178,7 +1178,7 @@ public static class ParamReferenceUtils
                 if (CurrentMapID != rowMapId)
                 {
                     CurrentMapID = rowMapId;
-                    var mapPath = MapLocator.GetMapMSB(rowMapId);
+                    var mapPath = MapLocator.GetMapMSB(editor.Project, rowMapId);
                     CurrentPeekMap_AC6 = MSB_AC6.Read(mapPath.AssetPath);
                 }
 
@@ -1250,7 +1250,7 @@ public static class ParamReferenceUtils
 
     private static void DisplayColorPicker(ParamEditorScreen editor, Param.Row row, string name, string redField, string greenField, string blueField)
     {
-        var param = ParamBank.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
+        var param = editor.Project.ParamData.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
 
         if (param == null)
             return;

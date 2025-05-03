@@ -225,17 +225,17 @@ public class TexImagePreview : IResourceEventListener
 
         if (info.Category == TextureViewCategory.Menu)
         {
-            ad = TextureLocator.GetMenuTextureContainer(Selection.SelectedPreviewTextureContainerKey);
+            ad = TextureLocator.GetMenuTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Asset)
         {
-            ad = TextureLocator.GetAssetTextureContainer(Selection.SelectedPreviewTextureContainerKey);
+            ad = TextureLocator.GetAssetTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Object)
         {
-            ad = TextureLocator.GetObjTextureContainer(Selection.SelectedPreviewTextureContainerKey);
+            ad = TextureLocator.GetObjTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Part)
@@ -247,17 +247,17 @@ public class TexImagePreview : IResourceEventListener
                 isLowDetail = true;
             }
 
-            ad = TextureLocator.GetPartTextureContainer(Selection.SelectedPreviewTextureContainerKey, isLowDetail);
+            ad = TextureLocator.GetPartTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey, isLowDetail);
         }
 
         if (info.Category == TextureViewCategory.Other)
         {
-            ad = TextureLocator.GetOtherTextureContainer(Selection.SelectedPreviewTextureContainerKey);
+            ad = TextureLocator.GetOtherTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Particle)
         {
-            ad = TextureLocator.GetParticleTextureContainer(Selection.SelectedPreviewTextureContainerKey);
+            ad = TextureLocator.GetParticleTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)
@@ -275,7 +275,7 @@ public class TexImagePreview : IResourceEventListener
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
 
-            ad = TextureLocator.GetChrTextures(chrId, isLowDetail);
+            ad = TextureLocator.GetChrTextures(Editor.Project, chrId, isLowDetail);
         }
 
         if (ad != null)

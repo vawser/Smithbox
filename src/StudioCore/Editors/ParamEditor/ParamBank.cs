@@ -14,6 +14,7 @@ using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.Core;
 using System.Threading.Tasks;
+using StudioCore.Utilities;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -218,24 +219,24 @@ public class ParamBank
 
     public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false, bool useDeveloperNames = false, IEnumerable<Param.Row> affectedRows = null)
     {
-        var dir = ParamLocator.GetParamNamesDir();
+        var dir = ParamLocator.GetParamNamesDir(Project);
 
         if (useProjectNames && Project.ProjectType != ProjectType.Undefined)
         {
-            dir = $"{Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+            dir = $"{Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Names";
 
             // Fallback to Smithbox if the project ones don't exist
             if(!Directory.Exists(dir))
-                dir = ParamLocator.GetParamNamesDir();
+                dir = ParamLocator.GetParamNamesDir(Project);
         }
 
         if (useDeveloperNames && Project.ProjectType != ProjectType.Undefined)
         {
-            dir = $"{AppContext.BaseDirectory}\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Developer Names";
+            dir = $"{AppContext.BaseDirectory}\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Developer Names";
 
             // Fallback to Smithbox if the developer ones don't exist
             if (!Directory.Exists(dir))
-                dir = ParamLocator.GetParamNamesDir();
+                dir = ParamLocator.GetParamNamesDir(Project);
         }
 
         var files = param == null
@@ -718,7 +719,7 @@ public class ParamBank
 
         if (Project.ProjectType is ProjectType.SDT)
         {
-            var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+            var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
             if (File.Exists(graphicsConfigParam))
             {
                 LoadParamsBBSekiroFromFile(graphicsConfigParam, "graphicsconfig");
@@ -998,7 +999,7 @@ public class ParamBank
 
         param = $@"{mod}\regulation.bin";
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             LoadParamsERFromFile(sysParam, false, "systemparam");
@@ -1008,7 +1009,7 @@ public class ParamBank
             TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             LoadParamsERFromFile(eventParam, false, "eventparam");
@@ -1075,7 +1076,7 @@ public class ParamBank
 
         LoadParamsAC6FromFile(param);
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             LoadParamsAC6FromFile(sysParam, false, "systemparam");
@@ -1085,7 +1086,7 @@ public class ParamBank
             TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
             LoadParamsAC6FromFile(graphicsConfigParam, false, "graphicsconfig");
@@ -1095,7 +1096,7 @@ public class ParamBank
             TaskLogs.AddLog("Graphic Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             LoadParamsAC6FromFile(eventParam, false, "eventparam");
@@ -1344,7 +1345,7 @@ public class ParamBank
             }
         }
 
-        Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
@@ -1365,7 +1366,7 @@ public class ParamBank
                     }
                 }
 
-                Utils.WriteWithBackup(dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
+                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
         }
     }
@@ -1406,7 +1407,7 @@ public class ParamBank
             }
         }
 
-        Utils.WriteWithBackup(dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_DS1)
         {
@@ -1428,7 +1429,7 @@ public class ParamBank
                     }
                 }
 
-                Utils.WriteWithBackup(dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
+                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
         }
     }
@@ -1530,7 +1531,7 @@ public class ParamBank
                     else
                     {
                         // Regulation does not contain this param, write param loosely.
-                        Utils.WriteWithBackup(dir, mod, $@"Param\{p.Key}.param", p.Value);
+                        Utils.WriteWithBackup(BaseEditor, dir, mod, $@"Param\{p.Key}.param", p.Value);
                     }
                 }
             }
@@ -1575,7 +1576,7 @@ public class ParamBank
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in _params)
                 {
-                    Utils.WriteWithBackup(dir, mod, $@"Param\{p.Key}.param", p.Value);
+                    Utils.WriteWithBackup(BaseEditor, dir, mod, $@"Param\{p.Key}.param", p.Value);
                 }
             }
             catch
@@ -1593,7 +1594,7 @@ public class ParamBank
             }
         }
 
-        Utils.WriteWithBackup(dir, mod, @"enc_regulation.bnd.dcx", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"enc_regulation.bnd.dcx", paramBnd);
         paramBnd.Dispose();
     }
 
@@ -1636,7 +1637,7 @@ public class ParamBank
         // If not loose write out the new regulation
         if (!CFG.Current.Param_UseLooseParams)
         {
-            Utils.WriteWithBackup(dir, mod, @"Data0.bdt", paramBnd, ProjectType.DS3);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"Data0.bdt", paramBnd, ProjectType.DS3);
         }
         else
         {
@@ -1654,7 +1655,7 @@ public class ParamBank
                 Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
             };
 
-            Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
             //Utils.WriteWithBackup(dir, mod, @"param\stayparam\stayparam.parambnd.dcx", stayBND);
         }
 
@@ -1712,7 +1713,7 @@ public class ParamBank
         }
 
         OverwriteParamsBB(paramBnd);
-        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
@@ -1768,7 +1769,7 @@ public class ParamBank
         }
 
         OverwriteParamsSDT(paramBnd);
-        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_SDT)
         {
@@ -1776,12 +1777,12 @@ public class ParamBank
         }
 
         // Graphics Config
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
             using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
             OverwriteParamsSDT(graphicsConfigParams);
-            Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
         }
     }
 
@@ -1829,20 +1830,20 @@ public class ParamBank
         var naParamPath = @"param\gameparam\gameparamna.parambnd.dcx";
         if (File.Exists($@"{dir}\{naParamPath}"))
         {
-            Utils.WriteWithBackup(dir, mod, naParamPath, paramBnd);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, naParamPath, paramBnd);
         }
 
-        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
 
         // Decompressed
         paramBnd.Compression = DCX.Type.None;
         naParamPath = @"param\gameparam\gameparamna.parambnd";
         if (File.Exists($@"{dir}\{naParamPath}"))
         {
-            Utils.WriteWithBackup(dir, mod, naParamPath, paramBnd);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, naParamPath, paramBnd);
         }
 
-        Utils.WriteWithBackup(dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_DES)
         {
@@ -1876,7 +1877,7 @@ public class ParamBank
                     }
                 }
 
-                Utils.WriteWithBackup(dir, mod, @$"param\drawparam\{Path.GetFileName(bnd)}", drawParamBnd);
+                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\drawparam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
         }
     }
@@ -1926,28 +1927,28 @@ public class ParamBank
 
         OverwriteParamsER(regParams);
 
-        Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.ER);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"regulation.bin", regParams, ProjectType.ER);
 
         if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             RestoreStrippedRowNames();
         }
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
+        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
 
         if (File.Exists(sysParam))
         {
             using var sysParams = BND4.Read(sysParam);
             OverwriteParamsER(sysParams);
-            Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
         if (File.Exists(eventParam))
         {
             using var eventParams = BND4.Read(eventParam);
             OverwriteParamsER(eventParams);
-            Utils.WriteWithBackup(dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
         }
 
         _pendingUpgrade = false;
@@ -2012,35 +2013,35 @@ public class ParamBank
         }
 
         OverwriteParamsAC6(regParams);
-        Utils.WriteWithBackup(dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
 
         if (CFG.Current.Param_StripRowNamesOnSave_AC6)
         {
             RestoreStrippedRowNames();
         }
 
-        var sysParam = LocatorUtils.GetAssetPath(@"param\systemparam\systemparam.parambnd.dcx");
+        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
         if (File.Exists(sysParam))
         {
             using var sysParams = BND4.Read(sysParam);
             OverwriteParamsAC6(sysParams);
-            Utils.WriteWithBackup(dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(@"param\graphicsconfig\graphicsconfig.parambnd.dcx");
+        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
         if (File.Exists(graphicsConfigParam))
         {
             using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
             OverwriteParamsAC6(graphicsConfigParams);
-            Utils.WriteWithBackup(dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
         }
 
-        var eventParam = LocatorUtils.GetAssetPath(@"param\eventparam\eventparam.parambnd.dcx");
+        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
         if (File.Exists(eventParam))
         {
             using var eventParams = BND4.Read(eventParam);
             OverwriteParamsAC6(eventParams);
-            Utils.WriteWithBackup(dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
+            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
         }
 
         _pendingUpgrade = false;
@@ -2531,7 +2532,7 @@ public class ParamBank
         var failCount = 0;
         foreach (KeyValuePair<string, Param> p in _params)
         {
-            var path = ParamLocator.GetStrippedRowNamesPath(p.Key);
+            var path = ParamLocator.GetStrippedRowNamesPath(Project, p.Key);
             if (File.Exists(path))
             {
                 var names = File.ReadAllLines(path);
@@ -2575,7 +2576,7 @@ public class ParamBank
                 r.Name = "";
             }
 
-            var path = ParamLocator.GetStrippedRowNamesPath(p.Key);
+            var path = ParamLocator.GetStrippedRowNamesPath(Project, p.Key);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllLines(path, list);
         }

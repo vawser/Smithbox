@@ -78,7 +78,7 @@ public static class LocatorUtils
         return success;
     }
 
-    public static List<string> GetAssetFiles(string paramDir, string paramExt, bool ignoreProject = false)
+    public static List<string> GetAssetFiles(ProjectEntry project, string paramDir, string paramExt, bool ignoreProject = false)
     {
         try
         {
@@ -86,7 +86,7 @@ public static class LocatorUtils
             List<string> ret = new();
 
             // ROOT
-            var paramFiles = Directory.GetFileSystemEntries(Smithbox.GameRoot + paramDir, $@"*{paramExt}")
+            var paramFiles = Directory.GetFileSystemEntries(project.DataPath + paramDir, $@"*{paramExt}")
                 .ToList();
             foreach (var f in paramFiles)
             {
@@ -98,9 +98,9 @@ public static class LocatorUtils
             // PROJECT
             if (!ignoreProject)
             {
-                if (Smithbox.ProjectRoot != null && Directory.Exists(Smithbox.ProjectRoot + paramDir))
+                if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + paramDir))
                 {
-                    paramFiles = Directory.GetFileSystemEntries(Smithbox.ProjectRoot + paramDir, $@"*{paramExt}").ToList();
+                    paramFiles = Directory.GetFileSystemEntries(project.ProjectPath + paramDir, $@"*{paramExt}").ToList();
                     foreach (var f in paramFiles)
                     {
                         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -122,16 +122,16 @@ public static class LocatorUtils
         }
     }
 
-    public static string GetAssetPath(string relpath)
+    public static string GetAssetPath(ProjectEntry project, string relpath)
     {
-        if (Smithbox.ProjectRoot != null)
+        if (project.ProjectPath != null)
         {
-            var modpath = $@"{Smithbox.ProjectRoot}\{relpath}";
+            var modpath = $@"{project.ProjectPath}\{relpath}";
             if (File.Exists(modpath))
                 return modpath;
         }
 
-        return $@"{Smithbox.GameRoot}\{relpath}";
+        return $@"{project.DataPath}\{relpath}";
     }
     public static string GetAssetPath_CollisionHack(string relpath)
     {
@@ -179,23 +179,23 @@ public static class LocatorUtils
         return true;
     }
 
-    public static bool FileExists(string relpath)
+    public static bool FileExists(ProjectEntry project, string relpath)
     {
-        if (Smithbox.ProjectRoot != null && File.Exists($@"{Smithbox.ProjectRoot}\{relpath}"))
+        if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{relpath}"))
             return true;
 
-        if (File.Exists($@"{Smithbox.GameRoot}\{relpath}"))
+        if (File.Exists($@"{project.DataPath}\{relpath}"))
             return true;
 
         return false;
     }
 
-    public static string GetOverridenFilePath(string relpath)
+    public static string GetOverridenFilePath(ProjectEntry project, string relpath)
     {
-        var rootPath = $@"{Smithbox.GameRoot}\{relpath}";
-        var modPath = $@"{Smithbox.ProjectRoot}\{relpath}";
+        var rootPath = $@"{project.DataPath}\{relpath}";
+        var modPath = $@"{project.ProjectPath}\{relpath}";
 
-        if (Smithbox.ProjectRoot != null && File.Exists(modPath))
+        if (project.ProjectPath != null && File.Exists(modPath))
             return modPath;
 
         if (File.Exists($@"{rootPath}"))

@@ -36,7 +36,7 @@ public class ModelContainer : ObjectContainer
         // Meshes
         for (var i = 0; i < flver.Meshes.Count; i++)
         {
-            var meshNode = new NamedEntity(this, flver.Meshes[i], $@"Mesh {i}", i);
+            var meshNode = new NamedEntity(Editor, this, flver.Meshes[i], $@"Mesh {i}", i);
             if (CFG.Current.Viewport_Enable_Rendering)
             {
                 if (flverProxy.Submeshes.Count > 0 && i < flverProxy.Submeshes.Count)
@@ -62,7 +62,7 @@ public class ModelContainer : ObjectContainer
         // Bones
         for (var i = 0; i < flver.Nodes.Count; i++)
         {
-            var boneNode = new TransformableNamedEntity(this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
+            var boneNode = new TransformableNamedEntity(Editor, this, flver.Nodes[i], $"Bone {i} {{ {flver.Nodes[i].Name} }}", i);
 
             boneNode.RenderSceneMesh = DrawableHelper.GetBoneDrawable(Universe.RenderScene, this, boneNode);
             if(CFG.Current.ModelEditor_ViewDummyPolys)
@@ -81,7 +81,7 @@ public class ModelContainer : ObjectContainer
         // Dummy Polygons
         for (var i = 0; i < flver.Dummies.Count; i++)
         {
-            var dummyPolyNode = new TransformableNamedEntity(this, flver.Dummies[i], $@"Dummy {i}", i);
+            var dummyPolyNode = new TransformableNamedEntity(Editor, this, flver.Dummies[i], $@"Dummy {i}", i);
 
             dummyPolyNode.RenderSceneMesh = DrawableHelper.GetDummyPolyDrawable(Universe.RenderScene, this, dummyPolyNode);
 

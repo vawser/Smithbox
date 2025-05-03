@@ -31,14 +31,14 @@ public class GameOffsetsEntry
     internal int rowPointerOffset;
     internal ProjectType type;
 
-    internal GameOffsetsEntry(ProjectType type)
+    internal GameOffsetsEntry(ProjectEntry project)
     {
-        var data = Smithbox.BankHandler.GameOffsets.Offsets.list[CFG.Current.SelectedGameOffsetData];
+        var data = project.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
 
         paramOffsets = new();
         itemGibOffsets = new();
 
-        exeName = Smithbox.BankHandler.GameOffsets.Offsets.exeName;
+        exeName = project.ParamMemoryOffsets.exeName;
 
         if (data.paramBase != "" || data.paramBase == null)
         {

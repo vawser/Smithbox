@@ -179,7 +179,7 @@ public class TimeActSelectionManager
 
         Reset(false, true, true);
 
-        TimeActUtils.ApplyTemplate(CurrentTimeAct, CurrentTimeActType);
+        TimeActUtils.ApplyTemplate(Editor, CurrentTimeAct, CurrentTimeActType);
 
         // Auto-Select first Animation if not empty
         if (CurrentTimeAct.Animations.Count > 0)

@@ -16,236 +16,248 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace StudioCore.Tools.Validation
-{
-    public static class ParamValidationTool
-    {
-        private static Dictionary<string, PARAMDEF> _paramdefs = new Dictionary<string, PARAMDEF>();
-        private static Dictionary<string, Param> _params = new Dictionary<string, Param>();
-        private static ulong _paramVersion;
+namespace StudioCore.Tools.Validation;
 
-        public static void ValidatePadding(bool allParams = false)
+public class ParamValidationTool
+{
+    private Smithbox BaseEditor;
+
+    public ParamValidationTool(Smithbox editor)
+    {
+        BaseEditor = editor;
+    }
+
+    private Dictionary<string, PARAMDEF> _paramdefs = new Dictionary<string, PARAMDEF>();
+    private Dictionary<string, Param> _params = new Dictionary<string, Param>();
+    private ulong _paramVersion;
+
+    public void ValidatePadding(bool allParams = false)
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        if (allParams)
         {
-            if (allParams)
+            foreach (var entry in curProject.ParamData.VanillaBank.Params)
             {
-                foreach (var entry in ParamBank.VanillaBank.Params)
-                {
-                    var selectedParamName = entry.Key;
-                    ValidatePaddingForParam(selectedParamName);
-                }
-            }
-            else
-            {
-                var selectedParamName = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
-                if (selectedParamName != null)
-                {
-                    ValidatePaddingForParam(selectedParamName);
-                }
+                var selectedParamName = entry.Key;
+                ValidatePaddingForParam(selectedParamName);
             }
         }
-
-        public static void ValidatePaddingForParam(string selectedParamName)
+        else
         {
-            var currentParam = ParamBank.VanillaBank.Params[selectedParamName];
-            var currentRow = 0;
+            var selectedParamName = curProject.ParamEditor._activeView._selection.GetActiveParam();
+            if (selectedParamName != null)
+            {
+                ValidatePaddingForParam(selectedParamName);
+            }
+        }
+    }
 
-            TaskManager.LiveTask task = new(
-                "system_runParamValidation",
-                "System",
-                "The param validation has run.",
-                "The param validation has failed to run.",
-                TaskManager.RequeueType.None,
-                false,
-                () =>
+    public void ValidatePaddingForParam(string selectedParamName)
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        var currentParam = curProject.ParamData.VanillaBank.Params[selectedParamName];
+        var currentRow = 0;
+
+        TaskManager.LiveTask task = new(
+            "system_runParamValidation",
+            "System",
+            "The param validation has run.",
+            "The param validation has failed to run.",
+            TaskManager.RequeueType.None,
+            false,
+            () =>
+            {
+                foreach (var row in currentParam.Rows)
                 {
-                    foreach (var row in currentParam.Rows)
+                    currentRow = row.ID;
+
+                    foreach (var cell in row.Cells)
                     {
-                        currentRow = row.ID;
-
-                        foreach (var cell in row.Cells)
+                        if (cell.Def.InternalType == "dummy8")
                         {
-                            if (cell.Def.InternalType == "dummy8")
+                            //TaskLogs.AddLog(cell.Value.GetType().Name);
+
+                            if (cell.Value.GetType() == typeof(byte[]))
                             {
-                                //TaskLogs.AddLog(cell.Value.GetType().Name);
+                                // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
 
-                                if (cell.Value.GetType() == typeof(byte[]))
+                                byte[] bytes = (byte[])cell.Value;
+                                foreach (var b in bytes)
                                 {
-                                    // TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
-
-                                    byte[] bytes = (byte[])cell.Value;
-                                    foreach (var b in bytes)
-                                    {
-                                        if (b != 0)
-                                        {
-                                            TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
-                                        }
-                                    }
-                                }
-                                else if (cell.Value.GetType() == typeof(byte))
-                                {
-                                    //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
-
-                                    byte b = (byte)cell.Value;
                                     if (b != 0)
                                     {
                                         TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
                                     }
                                 }
                             }
+                            else if (cell.Value.GetType() == typeof(byte))
+                            {
+                                //TaskLogs.AddLog($"{currentParam}: {cell.Def.InternalName}");
+
+                                byte b = (byte)cell.Value;
+                                if (b != 0)
+                                {
+                                    TaskLogs.AddLog($"{selectedParamName}: {currentRow}: {cell.Def.InternalName} contains non-zero values");
+                                }
+                            }
                         }
                     }
                 }
-            );
+            }
+        );
 
-            TaskManager.Run(task);
-        }
+        TaskManager.Run(task);
+    }
 
-        public static void ValidateParamdef()
+    public void ValidateParamdef()
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        // Read params from regulation.bin via SF PARAM impl
+        _paramdefs = curProject.ParamData.ParamDefs;
+
+        var dir = curProject.DataPath;
+        var mod = curProject.ProjectPath;
+
+        var param = $@"{mod}\regulation.bin";
+
+        // DES, DS1, DS1R
+        if (curProject.ProjectType == ProjectType.DES || curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DS1R)
         {
-            // Read params from regulation.bin via SF PARAM impl
-            _paramdefs = ParamBank._paramdefs;
-
-            var dir = Smithbox.GameRoot;
-            var mod = Smithbox.ProjectRoot;
-
-            var param = $@"{mod}\regulation.bin";
-
-            // DES, DS1, DS1R
-            if (Smithbox.ProjectType == ProjectType.DES || Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+            try
             {
-                try
-                {
-                    using BND3 bnd = BND3.Read(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                using BND3 bnd = BND3.Read(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
             }
-
-            // DS2
-            if (Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS2S)
+            catch (Exception e)
             {
-                try
-                {
-                    using BND4 bnd = SFUtil.DecryptDS2Regulation(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-
-            // DS3
-            if (Smithbox.ProjectType == ProjectType.DS3)
-            {
-                param = $@"{mod}\Data0.bdt";
-
-                try
-                {
-                    using BND4 bnd = SFUtil.DecryptDS3Regulation(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-
-            // BB, SDT
-            if (Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.BB)
-            {
-                try
-                {
-                    using BND4 bnd = BND4.Read(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            // ER
-            if (Smithbox.ProjectType == ProjectType.ER)
-            {
-                try
-                {
-                    using BND4 bnd = SFUtil.DecryptERRegulation(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            // AC6
-            if (Smithbox.ProjectType == ProjectType.AC6)
-            {
-                try
-                {
-                    using BND4 bnd = SFUtil.DecryptAC6Regulation(param);
-                    LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private static void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
-            bool checkVersion = false, bool validatePadding = false)
+        // DS2
+        if (curProject.ProjectType == ProjectType.DS2 || curProject.ProjectType == ProjectType.DS2S)
         {
-            var success = ulong.TryParse(parambnd.Version, out version);
-            if (checkVersion && !success)
+            try
             {
-                throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
+                using BND4 bnd = SFUtil.DecryptDS2Regulation(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // DS3
+        if (curProject.ProjectType == ProjectType.DS3)
+        {
+            param = $@"{mod}\Data0.bdt";
+
+            try
+            {
+                using BND4 bnd = SFUtil.DecryptDS3Regulation(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // BB, SDT
+        if (curProject.ProjectType == ProjectType.SDT || curProject.ProjectType == ProjectType.BB)
+        {
+            try
+            {
+                using BND4 bnd = BND4.Read(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        // ER
+        if (curProject.ProjectType == ProjectType.ER)
+        {
+            try
+            {
+                using BND4 bnd = SFUtil.DecryptERRegulation(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        // AC6
+        if (curProject.ProjectType == ProjectType.AC6)
+        {
+            try
+            {
+                using BND4 bnd = SFUtil.DecryptAC6Regulation(param);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Param Load failed: {param}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    }
+
+    private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
+        bool checkVersion = false, bool validatePadding = false)
+    {
+        var success = ulong.TryParse(parambnd.Version, out version);
+        if (checkVersion && !success)
+        {
+            throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
+        }
+
+        // Load every param in the regulation
+        foreach (BinderFile f in parambnd.Files)
+        {
+            var paramName = Path.GetFileNameWithoutExtension(f.Name);
+
+            if (!f.Name.ToUpper().EndsWith(".PARAM"))
+            {
+                continue;
             }
 
-            // Load every param in the regulation
-            foreach (BinderFile f in parambnd.Files)
+            PARAM p;
+
+            p = PARAM.ReadIgnoreCompression(f.Bytes);
+            if (!_paramdefs.ContainsKey(p.ParamType ?? ""))
             {
-                var paramName = Path.GetFileNameWithoutExtension(f.Name);
-
-                if (!f.Name.ToUpper().EndsWith(".PARAM"))
-                {
-                    continue;
-                }
-
-                PARAM p;
-
-                p = PARAM.ReadIgnoreCompression(f.Bytes);
-                if (!_paramdefs.ContainsKey(p.ParamType ?? ""))
-                {
-                    TaskLogs.AddLog(
-                        $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
-                        LogLevel.Warning);
-                    continue;
-                }
-
-                if (p.ParamType == null)
-                {
-                    throw new Exception("Param type is unexpectedly null");
-                }
-
-                PARAMDEF def = _paramdefs[p.ParamType];
-                try
-                {
-                    p.ApplyParamdef(def);
-                }
-                catch (Exception e)
-                {
-                    var name = f.Name.Split("\\").Last();
-                    var message = $"Could not apply ParamDef for {name}";
-
-                    TaskLogs.AddLog(message,
-                            LogLevel.Warning, LogPriority.Normal, e);
-                }
-
-                TaskLogs.AddLog($"{paramName} validated");
+                TaskLogs.AddLog(
+                    $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
+                    LogLevel.Warning);
+                continue;
             }
+
+            if (p.ParamType == null)
+            {
+                throw new Exception("Param type is unexpectedly null");
+            }
+
+            PARAMDEF def = _paramdefs[p.ParamType];
+            try
+            {
+                p.ApplyParamdef(def);
+            }
+            catch (Exception e)
+            {
+                var name = f.Name.Split("\\").Last();
+                var message = $"Could not apply ParamDef for {name}";
+
+                TaskLogs.AddLog(message,
+                        LogLevel.Warning, LogPriority.Normal, e);
+            }
+
+            TaskLogs.AddLog($"{paramName} validated");
         }
     }
 }

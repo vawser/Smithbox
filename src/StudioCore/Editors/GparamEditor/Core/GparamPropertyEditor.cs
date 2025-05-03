@@ -6,6 +6,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
@@ -16,7 +17,7 @@ using static StudioCore.Editors.GparamEditor.Data.GparamBank;
 namespace StudioCore.Editors.GparamEditor.Core;
 public class GparamPropertyEditor
 {
-    private GparamEditorScreen Screen;
+    private GparamEditorScreen Editor;
 
     private object _editedValueCache;
 
@@ -32,9 +33,9 @@ public class GparamPropertyEditor
     private bool _isHoldingColor;
     private Vector4 _heldColor;
 
-    public GparamPropertyEditor(GparamEditorScreen screen)
+    public GparamPropertyEditor(GparamEditorScreen editor)
     {
-        Screen = screen;
+        Editor = editor;
     }
 
     public unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
@@ -55,7 +56,7 @@ public class GparamPropertyEditor
             int intInput = fieldValue;
             oldValue = fieldValue;
 
-            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -99,7 +100,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{uintInput}";
 
-            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -143,7 +144,7 @@ public class GparamPropertyEditor
             int shortInput = fieldValue;
             oldValue = fieldValue;
 
-            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -182,7 +183,7 @@ public class GparamPropertyEditor
             int sbyteInput = fieldValue;
             oldValue = fieldValue;
 
-            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -223,7 +224,7 @@ public class GparamPropertyEditor
 
             var strval = $@"{byteInput}";
 
-            if (Smithbox.BankHandler.GPARAM_Info.IsBooleanProperty(field.Key))
+            if (FormatInformationUtils.IsBooleanProperty(Editor.Project.GparamInformation, field.Key))
             {
                 bool boolInput = false;
                 if (fieldValue > 0)
@@ -439,9 +440,9 @@ public class GparamPropertyEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
-                    action = new GparamValueChangeAction(Screen.Selection._selectedGparamKey, Screen.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
+                    action = new GparamValueChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
-                    Screen.EditorActionManager.ExecuteAction(action);
+                    Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
             // Only used for Vec4 color
@@ -505,9 +506,9 @@ public class GparamPropertyEditor
                 {
                     _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
-                    action = new GparamTimeOfDayChangeAction(Screen.Selection._selectedGparamKey, Screen.Selection._selectedParamGroup.Name, field, value, newValue, idx);
+                    action = new GparamTimeOfDayChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx);
 
-                    Screen.EditorActionManager.ExecuteAction(action);
+                    Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
         }

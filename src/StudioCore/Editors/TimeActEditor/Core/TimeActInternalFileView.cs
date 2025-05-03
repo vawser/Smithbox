@@ -83,7 +83,7 @@ public class TimeActInternalFileView
                 if (ImGui.IsItemVisible())
                 {
                     if (CFG.Current.TimeActEditor_DisplayTimeActRow_AliasInfo)
-                        TimeActUtils.DisplayTimeActAlias(Selection.ContainerInfo, entry.ID);
+                        TimeActUtils.DisplayTimeActAlias(Editor, Selection.ContainerInfo, entry.ID);
                 }
 
                 Selection.ContextMenu.TimeActMenu(isSelected, entry.ID.ToString());

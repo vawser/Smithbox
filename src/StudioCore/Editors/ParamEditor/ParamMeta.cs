@@ -276,11 +276,6 @@ public class ParamMetaData
 
     public static ParamMetaData Get(PARAMDEF def)
     {
-        if (!ParamBank.IsMetaLoaded)
-        {
-            return null;
-        }
-
         return _ParamMetas[def];
     }
 
@@ -811,11 +806,6 @@ public class FieldMetaData
 
     public static FieldMetaData Get(PARAMDEF.Field def)
     {
-        if (!ParamBank.IsMetaLoaded)
-        {
-            return null;
-        }
-
         FieldMetaData fieldMeta = _FieldMetas[def];
         if (fieldMeta == null)
         {

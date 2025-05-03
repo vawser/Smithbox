@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.TalkEditor;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,21 +16,21 @@ namespace StudioCore.Editors.EsdEditor.EsdLang;
 public static class EzInfixor
 {
     private static Dictionary<string, int[]> Operators = new Dictionary<string, int[]>
-            {
-                { "^", new int[] { 5, 1 } },
-                { "*", new int[] { 4, 0 } },
-                { "/", new int[] { 4, 0 } },
-                { "+", new int[] { 3, 0 } },
-                { "-", new int[] { 3, 0 } },
-                { "<", new int[] { 2, 0 } },
-                { ">", new int[] { 2, 0 } },
-                { "==", new int[] { 2, 0 } },
-                { "!=", new int[] { 2, 0 } },
-                { ">=", new int[] { 2, 0 } },
-                { "<=", new int[] { 2, 0 } },
-                { "&&", new int[] { 1, 0 } },
-                { "||", new int[] { 1, 0 } },
-            };
+    {
+        { "^", new int[] { 5, 1 } },
+        { "*", new int[] { 4, 0 } },
+        { "/", new int[] { 4, 0 } },
+        { "+", new int[] { 3, 0 } },
+        { "-", new int[] { 3, 0 } },
+        { "<", new int[] { 2, 0 } },
+        { ">", new int[] { 2, 0 } },
+        { "==", new int[] { 2, 0 } },
+        { "!=", new int[] { 2, 0 } },
+        { ">=", new int[] { 2, 0 } },
+        { "<=", new int[] { 2, 0 } },
+        { "&&", new int[] { 1, 0 } },
+        { "||", new int[] { 1, 0 } },
+    };
 
     private static string GetExpressionWithParenthesesIfContainsOperator(string exp, string op)
     {
@@ -50,9 +51,14 @@ public static class EzInfixor
 
     }
 
-    private static string GetFunctionInfo(int id)
+    private static string GetFunctionInfo(EsdEditorScreen editor, int id)
     {
-        var functionMeta = EsdMeta.GetAllFunctionMeta();
+        if (editor.BaseEditor.ProjectManager.SelectedProject == null)
+            return $"f{id}";
+
+        var curProject = editor.BaseEditor.ProjectManager.SelectedProject;
+
+        var functionMeta = curProject.EsdBank.Meta.GetAllFunctionMeta();
         foreach(var entry in functionMeta)
         {
             if(entry.id == id)
@@ -64,7 +70,7 @@ public static class EzInfixor
         return $"f{id}";
     }
 
-    public static Expr BytecodeToInfix(byte[] Bytes, bool isBigEndian = false)
+    public static Expr BytecodeToInfix(EsdEditorScreen editor, byte[] Bytes, bool isBigEndian = false)
     {
         var bigEndianReverseBytes = Bytes.Reverse().ToArray();
 
@@ -148,31 +154,31 @@ public static class EzInfixor
             }
             else if (b == 0x84)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(0), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(0), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x85)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(1), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(1), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x86)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(2), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(2), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x87)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(3), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(3), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x88)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(4), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(4), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x89)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(5), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(5), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (b == 0x8A)
             {
-                exprs.Push(new FunctionCall { Args = popArgs(6), Name = GetFunctionInfo(exprs.Pop().AsInt()) });
+                exprs.Push(new FunctionCall { Args = popArgs(6), Name = GetFunctionInfo(editor, exprs.Pop().AsInt()) });
             }
             else if (CommonDefinitions.OperatorsByByte.ContainsKey(b))
             {

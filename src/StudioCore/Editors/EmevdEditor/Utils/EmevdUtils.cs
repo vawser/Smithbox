@@ -115,10 +115,18 @@ public static class EmevdUtils
         return (argDocList, argList);
     }
 
-    public static string GetDS2ItemAlias(EMEVD.Event evt)
+    public static string GetDS2ItemAlias(EmevdEditorScreen editor, EMEVD.Event evt)
     {
+        if (editor.BaseEditor.ProjectManager.SelectedProject == null)
+            return "";
+
+        var curProject = editor.BaseEditor.ProjectManager.SelectedProject;
+
+        if (curProject.ParamEditor == null)
+            return "";
+
         var eventName = evt.Name;
-        var itemName = ParamBank.PrimaryBank.GetParamFromName("ItemParam");
+        var itemName = curProject.ParamData.PrimaryBank.GetParamFromName("ItemParam");
 
         if (itemName != null)
         {

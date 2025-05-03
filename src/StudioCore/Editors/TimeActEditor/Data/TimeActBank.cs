@@ -62,7 +62,7 @@ public class TimeActBank
                 fileExt = @".tae";
             }
 
-            List<string> fileNames = MiscLocator.GetCharacterTimeActBinders();
+            List<string> fileNames = MiscLocator.GetCharacterTimeActBinders(Project);
 
             foreach (string name in fileNames)
             {
@@ -83,7 +83,7 @@ public class TimeActBank
             {
                 fileDir = @"\chr";
                 fileExt = @".behbnd.dcx";
-                fileNames = MiscLocator.GetCharacterBehaviorTimeActBinders();
+                fileNames = MiscLocator.GetCharacterBehaviorTimeActBinders(Project);
 
                 foreach (string name in fileNames)
                 {
@@ -128,7 +128,7 @@ public class TimeActBank
 
                 if (Project.ProjectType is ProjectType.ER)
                 {
-                    assetDict = MiscLocator.GetAssetTimeActBinders_ER();
+                    assetDict = MiscLocator.GetAssetTimeActBinders_ER(Project);
                 }
 
                 foreach (var entry in assetDict)
@@ -152,11 +152,11 @@ public class TimeActBank
             }
             else
             {
-                List<string> fileNames = MiscLocator.GetObjectTimeActBinders();
+                List<string> fileNames = MiscLocator.GetObjectTimeActBinders(Project);
 
                 if (Project.ProjectType is ProjectType.AC6)
                 {
-                    fileNames = MiscLocator.GetAssetTimeActBinders_AC6();
+                    fileNames = MiscLocator.GetAssetTimeActBinders_AC6(Project);
                 }
 
                 foreach (string name in fileNames)

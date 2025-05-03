@@ -295,30 +295,30 @@ public static class Utils
         return fileName;
     }
 
-    public static string GetLocalAssetPath(string assetPath)
+    public static string GetLocalAssetPath(ProjectEntry project, string assetPath)
     {
-        if (assetPath.StartsWith(Smithbox.ProjectRoot))
+        if (assetPath.StartsWith(project.ProjectPath))
         {
-            return assetPath.Replace(Smithbox.ProjectRoot, "");
+            return assetPath.Replace(project.ProjectPath, "");
         }
 
-        if (assetPath.StartsWith(Smithbox.GameRoot))
+        if (assetPath.StartsWith(project.DataPath))
         {
-            return assetPath.Replace(Smithbox.GameRoot, "");
+            return assetPath.Replace(project.DataPath, "");
         }
 
         throw new DirectoryNotFoundException(
             $"Asset path did not start with game or project directory: {assetPath}");
     }
 
-    public static void WriteWithBackup<T>(string assetPath, T item,
+    public static void WriteWithBackup<T>(ProjectEntry project, string assetPath, T item,
         params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        WriteWithBackup(Smithbox.GameRoot, Smithbox.ProjectRoot, assetPath, item,
-            Smithbox.ProjectType, writeparms);
+        WriteWithBackup(project.BaseEditor, project.DataPath, project.ProjectPath, assetPath, item,
+            project.ProjectType, writeparms);
     }
 
-    public static void WriteWithBackup<T>(string gamedir, string moddir, string assetpath, T item,
+    public static void WriteWithBackup<T>(Smithbox baseEditor, string gamedir, string moddir, string assetpath, T item,
         ProjectType gameType = ProjectType.Undefined, params object[] writeparms) where T : SoulsFile<T>, new()
     {
         var assetgamepath = $@"{gamedir}\{assetpath}";
@@ -353,19 +353,27 @@ public static class Utils
             }
             else if (gameType == ProjectType.ER && item is BND4 bndER)
             {
-                // If DLC version or higher, force compression to ZSTD (to account for regulations that have previous form of compression)
-                if(ParamBank.PrimaryBank.ParamVersion >= 11210015L && !CFG.Current.Param_SaveERAsDFLT)
+                if (baseEditor.ProjectManager.SelectedProject != null)
                 {
-                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_ZSTD);
-                }
-                else if (ParamBank.PrimaryBank.ParamVersion >= 11210015L && CFG.Current.Param_SaveERAsDFLT)
-                {
-                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_DFLT_11000_44_9_15);
-                }
-                // Otherwise use the compression type that is defined within the container.
-                else
-                {
-                    SFUtil.EncryptERRegulation(writepath + ".temp", bndER);
+                    var curProject = baseEditor.ProjectManager.SelectedProject;
+
+                    if (curProject.ParamEditor != null)
+                    {
+                        // If DLC version or higher, force compression to ZSTD (to account for regulations that have previous form of compression)
+                        if (curProject.ParamData.PrimaryBank.ParamVersion >= 11210015L && !CFG.Current.Param_SaveERAsDFLT)
+                        {
+                            SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_ZSTD);
+                        }
+                        else if (curProject.ParamData.PrimaryBank.ParamVersion >= 11210015L && CFG.Current.Param_SaveERAsDFLT)
+                        {
+                            SFUtil.EncryptERRegulation(writepath + ".temp", bndER, DCX.Type.DCX_DFLT_11000_44_9_15);
+                        }
+                        // Otherwise use the compression type that is defined within the container.
+                        else
+                        {
+                            SFUtil.EncryptERRegulation(writepath + ".temp", bndER);
+                        }
+                    }
                 }
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)

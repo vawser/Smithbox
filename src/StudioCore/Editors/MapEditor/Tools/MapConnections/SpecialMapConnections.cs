@@ -28,10 +28,11 @@ internal class SpecialMapConnections
     private static Dictionary<string, DungeonOffset> eldenRingOffsets;
 
     public static Transform? GetEldenMapTransform(
+        MapEditorScreen editor,
         string mapid,
         IReadOnlyDictionary<string, ObjectContainer> loadedMaps)
     {
-        if (!TryInitializeEldenOffsets())
+        if (!TryInitializeEldenOffsets(editor))
         {
             return null;
         }
@@ -239,14 +240,17 @@ internal class SpecialMapConnections
         return relations;
     }
 
-    private static bool TryInitializeEldenOffsets()
+    private static bool TryInitializeEldenOffsets(MapEditorScreen editor)
     {
         if (eldenRingOffsets != null)
         {
             return eldenRingOffsets.Count > 0;
         }
 
-        IReadOnlyDictionary<string, Param> loadedParams = ParamBank.PrimaryBank.Params;
+        if (editor.Project.ParamEditor == null)
+            return false;
+
+        IReadOnlyDictionary<string, Param> loadedParams = editor.Project.ParamData.PrimaryBank.Params;
         // Do not explicitly check ParamBank's game type here, but fail gracefully if the param does not exist
         if (loadedParams == null || !loadedParams.TryGetValue("WorldMapLegacyConvParam", out Param convParam))
         {

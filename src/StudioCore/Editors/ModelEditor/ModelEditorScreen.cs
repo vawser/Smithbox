@@ -57,6 +57,8 @@ public class ModelEditorScreen : EditorScreen
     public FlverDataSelectionView FlverDataSelection;
     public ModelPropertyView ModelPropertyEditor;
 
+    public HavokCollisionManager CollisionManager;
+
     // public GxDescriptorBank GxItemDescriptors;
 
     public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
@@ -102,6 +104,8 @@ public class ModelEditorScreen : EditorScreen
         InternalFileSelection = new InternalFileSelectionView(this);
         FlverDataSelection = new FlverDataSelectionView(this);
         ModelPropertyEditor = new ModelPropertyView(this);
+
+        CollisionManager = new(this, Project);
     }
 
     public string EditorName => "Model Editor";

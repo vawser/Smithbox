@@ -934,7 +934,7 @@ public class MapPropertyView
                                 firstEnt.RenderSceneMesh = null;
                             }
 
-                            firstEnt.UpdateRenderModel();
+                            firstEnt.UpdateRenderModel(Editor);
                             firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                         });
                         ContextActionManager.ExecuteAction(action);
@@ -988,7 +988,7 @@ public class MapPropertyView
                             firstEnt.RenderSceneMesh = null;
                         }
 
-                        firstEnt.UpdateRenderModel();
+                        firstEnt.UpdateRenderModel(Editor);
                         firstEnt.RenderSceneMesh.RenderSelectionOutline = selected;
                     });
                     ContextActionManager.ExecuteAction(action);
@@ -1613,7 +1613,7 @@ public class MapPropertyView
                             }
                         }
 
-                        selection.UpdateRenderModel();
+                        selection.UpdateRenderModel(Editor);
                     });
                 }
 
@@ -1713,7 +1713,7 @@ public class MapPropertyView
             }
         }
 
-        action = new MultipleEntityPropertyChangeAction((PropertyInfo)prop, set, newval, arrayindex, classIndex);
+        action = new MultipleEntityPropertyChangeAction(Editor, (PropertyInfo)prop, set, newval, arrayindex, classIndex);
         ContextActionManager.ExecuteAction(action);
 
         _lastUncommittedAction = action;

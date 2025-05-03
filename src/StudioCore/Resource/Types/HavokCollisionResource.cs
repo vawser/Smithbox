@@ -27,32 +27,40 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(Memory<byte> bytes, AccessLevel al, string virtPath)
     {
+        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+            return false;
+
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         // HKLib - ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.ER)
         {
-            // Map collision
-            var pathElements = virtPath.Split('/');
-            var filename = pathElements[4];
+            if (curProject.MapEditor != null)
+            {
+                // Map collision
+                var pathElements = virtPath.Split('/');
+                var filename = pathElements[4];
 
-            if (HavokCollisionManager.VisibleCollisionType is HavokCollisionType.High)
-            {
-                filename = $"h{filename.Substring(1)}";
-            }
+                if (curProject.MapEditor.CollisionManager.VisibleCollisionType is HavokCollisionType.High)
+                {
+                    filename = $"h{filename.Substring(1)}";
+                }
 
-            // HKX for ER is loaded directly in HavokCollisionManager
-            // This is required since the parallel nature of the
-            // Resource Manager doesn't work with the HavokBinarySerializer
-            if (HavokCollisionManager.HavokContainers.ContainsKey(filename))
-            {
-                ER_HKX = HavokCollisionManager.HavokContainers[filename];
-            }
-            else
-            {
-                return false;
+                // HKX for ER is loaded directly in HavokCollisionManager
+                // This is required since the parallel nature of the
+                // Resource Manager doesn't work with the HavokBinarySerializer
+                if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
+                {
+                    ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         // HKX2 - DS3
-        else if (Smithbox.ProjectType is ProjectType.DS3)
+        else if (curProject.ProjectType is ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(bytes, out t);
@@ -61,7 +69,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        else if (Smithbox.ProjectType is ProjectType.BB)
+        else if (curProject.ProjectType is ProjectType.BB)
         {
             Hkx = HKX.Read(bytes, HKX.HKXVariation.HKXBloodBorne);
         }
@@ -71,7 +79,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -80,12 +88,12 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.ER)
         {
             return LoadInternal_ER(al);
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (curProject.ProjectType is ProjectType.DS3)
         {
             return LoadInternal_DS3(al);
         }
@@ -96,48 +104,56 @@ public class HavokCollisionResource : IResource, IDisposable
 
     public bool _Load(string file, AccessLevel al, string virtPath)
     {
+        if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
+            return false;
+
+        var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
+
         // HKLib - ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.ER)
         {
-            var pathElements = virtPath.Split('/');
-
-            // Asset Collision
-            if (pathElements[0] == "obj")
+            if (curProject.MapEditor != null)
             {
-                var filename = Path.GetFileNameWithoutExtension(pathElements[3]).ToLower();
+                var pathElements = virtPath.Split('/');
 
-                // HKX for ER is loaded directly in HavokCollisionManager
-                // This is required since the parallel nature of the
-                // Resource Manager doesn't work with the HavokBinarySerializer
-                if (HavokCollisionManager.HavokContainers.ContainsKey(filename))
+                // Asset Collision
+                if (pathElements[0] == "obj")
                 {
-                    ER_HKX = HavokCollisionManager.HavokContainers[filename];
+                    var filename = Path.GetFileNameWithoutExtension(pathElements[3]).ToLower();
+
+                    // HKX for ER is loaded directly in HavokCollisionManager
+                    // This is required since the parallel nature of the
+                    // Resource Manager doesn't work with the HavokBinarySerializer
+                    if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
+                    {
+                        ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
+                // Fallback for map collision
                 else
                 {
-                    return false;
-                }
-            }
-            // Fallback for map collision
-            else
-            {
-                var filename = pathElements[4];
+                    var filename = pathElements[4];
 
-                // HKX for ER is loaded directly in HavokCollisionManager
-                // This is required since the parallel nature of the
-                // Resource Manager doesn't work with the HavokBinarySerializer
-                if (HavokCollisionManager.HavokContainers.ContainsKey(filename))
-                {
-                    ER_HKX = HavokCollisionManager.HavokContainers[filename];
-                }
-                else
-                {
-                    return false;
+                    // HKX for ER is loaded directly in HavokCollisionManager
+                    // This is required since the parallel nature of the
+                    // Resource Manager doesn't work with the HavokBinarySerializer
+                    if (curProject.MapEditor.CollisionManager.HavokContainers.ContainsKey(filename))
+                    {
+                        ER_HKX = curProject.MapEditor.CollisionManager.HavokContainers[filename];
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
         }
         // HKX2 - DS3
-        else if (Smithbox.ProjectType is ProjectType.DS3)
+        else if (curProject.ProjectType is ProjectType.DS3)
         {
             DCX.Type t;
             Memory<byte> decomp = DCX.Decompress(file, out t);
@@ -146,7 +162,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx2 = (hkRootLevelContainer)des.Deserialize(br);
         }
         // HKX - BB
-        else if (Smithbox.ProjectType is ProjectType.BB)
+        else if (curProject.ProjectType is ProjectType.BB)
         {
             Hkx = HKX.Read(file, HKX.HKXVariation.HKXBloodBorne);
         }
@@ -156,7 +172,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -165,12 +181,12 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (curProject.ProjectType is ProjectType.ER)
         {
             return LoadInternal_ER(al);
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (curProject.ProjectType is ProjectType.DS3)
         {
             return LoadInternal_DS3(al);
         }

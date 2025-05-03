@@ -119,7 +119,7 @@ public class EmevdBank
         }
         else
         {
-            List<string> paramNames = MiscLocator.GetEventBinders();
+            List<string> paramNames = MiscLocator.GetEventBinders(Project);
 
             foreach (var name in paramNames)
             {
@@ -393,7 +393,7 @@ public class EmevdBank
         }
 
 
-        Utils.WriteWithBackup(dir, mod, @"enc_regulation.bnd.dcx", emevdBnd);
+        Utils.WriteWithBackup(BaseEditor, dir, mod, @"enc_regulation.bnd.dcx", emevdBnd);
         emevdBnd.Dispose();
 
         TaskLogs.AddLog("Saved EMEVD scripts.", LogLevel.Information);

@@ -120,7 +120,7 @@ internal class Prefab<T> : Prefab
     void Load(HashSet<MsbEntity> entities)
     {
         pseudoMap = new();
-        MapContainer map = new(null);
+        MapContainer map = new(Editor, null);
         var entries = entities.Select(ent => ent.WrappedObject as IMsbEntry);
         foreach (var ent in entities)
         {

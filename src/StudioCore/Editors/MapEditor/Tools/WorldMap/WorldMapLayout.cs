@@ -10,14 +10,17 @@ namespace StudioCore.Editors.MapEditor.Tools.WorldMap;
 
 public class WorldMapLayout
 {
+    public MapEditorScreen Editor;
+
     public List<WorldMapTile> Tiles { get; set; }
 
     private string Prefix = "";
     private float XOffset;
     private float YOffset;
 
-    public WorldMapLayout(string prefix, int xOffset, int yOffset)
+    public WorldMapLayout(MapEditorScreen editor, string prefix, int xOffset, int yOffset)
     {
+        Editor = editor;
         Prefix = prefix;
         XOffset = xOffset;
         YOffset = yOffset;
@@ -36,7 +39,7 @@ public class WorldMapLayout
 
     public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment)
     {
-        var mapList = MapLocator.GetFullMapList();
+        var mapList = MapLocator.GetFullMapList(Editor.Project);
 
         float CurX = XOffset;
         float CurY = YOffset;

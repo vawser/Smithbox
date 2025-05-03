@@ -94,6 +94,8 @@ public class MapEditorScreen : EditorScreen
     public RotationIncrement RotationIncrement;
     public KeyboardMovement KeyboardMovement;
 
+    public HavokCollisionManager CollisionManager;
+
     // Viewport
     public MapEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -139,6 +141,8 @@ public class MapEditorScreen : EditorScreen
 
         RotationIncrement = new RotationIncrement(this, project);
         KeyboardMovement = new KeyboardMovement(this, project);
+
+        CollisionManager = new HavokCollisionManager(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
@@ -841,17 +845,17 @@ public class MapEditorScreen : EditorScreen
                 {
                     if (ImGui.MenuItem("Low"))
                     {
-                        HavokCollisionManager.VisibleCollisionType = HavokCollisionType.Low;
+                        CollisionManager.VisibleCollisionType = HavokCollisionType.Low;
                     }
                     UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.Low);
+                    UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.Low);
 
                     if (ImGui.MenuItem("High"))
                     {
-                        HavokCollisionManager.VisibleCollisionType = HavokCollisionType.High;
+                        CollisionManager.VisibleCollisionType = HavokCollisionType.High;
                     }
                     UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
-                    UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.High);
+                    UIHelper.ShowActiveStatus(CollisionManager.VisibleCollisionType == HavokCollisionType.High);
 
                     ImGui.EndMenu();
                 }

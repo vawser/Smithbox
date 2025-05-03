@@ -13,13 +13,15 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class ScaleMesh : ViewportAction
 {
+    private ModelEditorScreen Editor;
     private FLVER2 CurrentFLVER;
     private List<FLVER.Vertex> OriginalVertices;
     private FLVER2.Mesh CurrentMesh;
     private Vector3 ChangeVector;
 
-    public ScaleMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 changeVector)
+    public ScaleMesh(ModelEditorScreen editor, FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 changeVector)
     {
+        Editor = editor;
         CurrentFLVER = curFlver;
 
         OriginalVertices = new List<FLVER.Vertex>();
@@ -36,7 +38,7 @@ public class ScaleMesh : ViewportAction
     {
         VertexUtils.ScaleMesh(CurrentMesh, ChangeVector);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -45,7 +47,7 @@ public class ScaleMesh : ViewportAction
     {
         CurrentMesh.Vertices = OriginalVertices;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }

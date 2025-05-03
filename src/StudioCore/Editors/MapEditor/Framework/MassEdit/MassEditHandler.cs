@@ -439,7 +439,7 @@ public class MassEditHandler
         selection.ClearSelection(Editor);
 
         // Get filtered list of maps
-        var mapList = MapLocator.GetFullMapList();
+        var mapList = MapLocator.GetFullMapList(Editor.Project);
         var availableList = new List<string>();
         foreach (var entry in mapList)
         {

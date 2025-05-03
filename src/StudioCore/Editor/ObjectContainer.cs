@@ -12,10 +12,10 @@ public class ObjectContainer
     {
     }
 
-    public ObjectContainer(string name)
+    public ObjectContainer(EditorScreen editor, string name)
     {
         Name = name;
-        RootObject = new Entity(this, new MapTransformNode());
+        RootObject = new Entity(editor, this, new MapTransformNode());
     }
 
     public string Name { get; set; }

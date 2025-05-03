@@ -1723,13 +1723,19 @@ public class MsbEntity : Entity
             return enabledMasks;
         }
 
+        ParamEditorScreen paramEditor = null;
         var curProjectType = ProjectType.Undefined;
         if(Editor is MapEditorScreen)
         {
             var curEditor = (MapEditorScreen)Editor;
 
             curProjectType = curEditor.Project.ProjectType;
+
+            paramEditor = curEditor.Project.ParamEditor;
         }
+
+        if (paramEditor == null)
+            return null;
 
         switch (curProjectType)
         {
@@ -1737,35 +1743,35 @@ public class MsbEntity : Entity
                 if (WrappedObject is MSB3.Part.EnemyBase ds3e)
                 {
                     var npcParamId = ds3e.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
                 break;
             case ProjectType.BB:
                 if (WrappedObject is MSBB.Part.EnemyBase bbe)
                 {
                     var npcParamId = bbe.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
                 break;
             case ProjectType.SDT:
                 if (WrappedObject is MSB3.Part.EnemyBase sdte)
                 {
                     var npcParamId = sdte.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
                 break;
             case ProjectType.ER:
                 if (WrappedObject is MSBE.Part.EnemyBase ere)
                 {
                     var npcParamId = ere.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId]);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
                 }
                 break;
             case ProjectType.DES:
                 if (WrappedObject is MSBD.Part.EnemyBase dese)
                 {
                     var npcParamId = dese.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
                 }
                 break;
             case ProjectType.DS1:
@@ -1773,7 +1779,7 @@ public class MsbEntity : Entity
                 if (WrappedObject is MSB1.Part.EnemyBase ds1e)
                 {
                     var npcParamId = ds1e.NPCParamID;
-                    return callback(ParamBank.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
+                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
                 }
 
                 break;
@@ -1905,7 +1911,7 @@ public class MsbEntity : Entity
                         // Get model
                         if (model != null)
                         {
-                            _renderSceneMesh = DrawableHelper.GetModelDrawable(universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
+                            _renderSceneMesh = DrawableHelper.GetModelDrawable(Editor, universe.RenderScene, ContainingMap, this, model, true, ModelMasks);
                         }
 
                         if (universe.Selection.IsSelected(this))
@@ -1968,7 +1974,7 @@ public class MsbEntity : Entity
                 }
 
                 // For now, the map relationship type is not given here (dictionary values), just all related maps.
-                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Editor, Name, universe.LoadedObjectContainers.Keys, connects).Keys)
+                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(curEditor, Name, universe.LoadedObjectContainers.Keys, connects).Keys)
                 {
                     References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
                 }

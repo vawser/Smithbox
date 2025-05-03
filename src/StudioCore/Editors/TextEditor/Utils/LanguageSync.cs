@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Hexa.NET.ImGui;
-using Microsoft.Extensions.DependencyModel;
-using Octokit;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Interface;
-using StudioCore.Utilities;
 using StudioCore.Core;
+using StudioCore.Interface;
 using StudioCore.TextEditor;
+using StudioCore.Utilities;
+using System.Linq;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 
@@ -93,7 +86,7 @@ public class LanguageSync
     /// <summary>
     /// Sync currently selected category into chosen category
     /// </summary>
-    private static void SyncLanguage(TextContainerWrapper targetContainer, TextContainerWrapper sourceContainer)
+    private void SyncLanguage(TextContainerWrapper targetContainer, TextContainerWrapper sourceContainer)
     {
         foreach(var targetWrapper in targetContainer.FmgWrappers)
         {
@@ -107,7 +100,7 @@ public class LanguageSync
         }
     }
 
-    private static void ProcessFmg(TextFmgWrapper targetWrapper, TextFmgWrapper sourceWrapper)
+    private void ProcessFmg(TextFmgWrapper targetWrapper, TextFmgWrapper sourceWrapper)
     {
         foreach (var srcEntry in sourceWrapper.File.Entries)
         {

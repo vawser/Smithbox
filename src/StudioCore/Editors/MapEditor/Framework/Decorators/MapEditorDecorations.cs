@@ -106,14 +106,18 @@ public static class MapEditorDecorations
             EditorDecorations.ParamRefText(refs, null);
 
             ImGui.NextColumn();
-            EditorDecorations.ParamRefsSelectables(ParamBank.PrimaryBank, refs, null, val);
-            EditorDecorations.ParamRefEnumQuickLink(ParamBank.PrimaryBank, val, refs, null, null, null, null);
 
-            if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+            if (editor.Project.ParamEditor != null)
             {
-                var opened = EditorDecorations.ParamRefEnumContextMenuItems(editor.Project.ParamEditor, ParamBank.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
-                ImGui.EndPopup();
-                return opened;
+                EditorDecorations.ParamRefsSelectables(editor.Project.ParamData.PrimaryBank, refs, null, val);
+                EditorDecorations.ParamRefEnumQuickLink(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, refs, null, null, null, null);
+
+                if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
+                {
+                    var opened = EditorDecorations.ParamRefEnumContextMenuItems(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
+                    ImGui.EndPopup();
+                    return opened;
+                }
             }
         }
 

@@ -40,6 +40,8 @@ public static class ResourceManager
         All = 0xFFFFFFF
     }
 
+    public static Smithbox BaseEditor;
+
     private static QueuedTaskScheduler JobScheduler = new(4, "JobMaster");
     private static readonly TaskFactory JobTaskFactory = new(JobScheduler);
 
@@ -112,14 +114,19 @@ public static class ResourceManager
         {
             TPF.Texture tex = tpf.Textures[i];
 
-            // HACK: Only include texture name and not full virtual path for these projects
-            if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+            if (curProject != null)
             {
-                ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i, action._accessLevel);
-            }
-            else
-            {
-                ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i, action._accessLevel);
+                // HACK: Only include texture name and not full virtual path for these projects
+                if (curProject.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                {
+                    ret[i] = new LoadTPFTextureResourceRequest(tex.Name, tpf, i, action._accessLevel);
+                }
+                else
+                {
+                    ret[i] = new LoadTPFTextureResourceRequest($@"{action._virtpathbase}/{tex.Name}", tpf, i, action._accessLevel);
+                }
             }
         }
 
@@ -209,13 +216,19 @@ public static class ResourceManager
         if (action.Binder != null)
         {
             // We always want to dispose when using the Model Editor (so we can save the container), so we ignore the refcount logic
-            if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+            if (curProject != null)
             {
-                action.Binder.Dispose(true);
-            }
-            else
-            {
-                action.Binder.Dispose();
+                if (curProject.FocusedEditor is ModelEditorScreen)
+                {
+                    action.Binder.Dispose(true);
+                }
+                else
+                {
+                    action.Binder.Dispose();
+                }
             }
         }
 
@@ -573,7 +586,13 @@ public static class ResourceManager
                     return;
                 }
 
-                Binder = new(InstantiateBinderReaderForFile(BinderAbsolutePath, Smithbox.ProjectType));
+                var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+                if (curProject != null)
+                {
+                    Binder = new(InstantiateBinderReaderForFile(BinderAbsolutePath, curProject.ProjectType));
+                }
+
                 if (Binder == null)
                 {
                     return;
@@ -989,7 +1008,12 @@ public static class ResourceManager
                     string path = null;
                     if (texpath.StartsWith("map/tex"))
                     {
-                        path = $@"{Smithbox.GameRoot}\map\tx\{Path.GetFileName(texpath)}.tpf";
+                        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+                        if (curProject != null)
+                        {
+                            path = $@"{curProject.DataPath}\map\tx\{Path.GetFileName(texpath)}.tpf";
+                        }
                     }
 
                     if (path != null && File.Exists(path))
@@ -1015,70 +1039,76 @@ public static class ResourceManager
                     var texpath = r.Key;
 
                     string path = null;
-                    if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+
+                    var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+                    if (curProject != null)
                     {
-                        if (texpath.StartsWith("aet/"))
+                        if (curProject.ProjectType == ProjectType.ER || curProject.ProjectType == ProjectType.AC6)
                         {
-                            var splits = texpath.Split('/');
-                            var aetid = splits[1];
-                            var aetname = splits[2];
-
-                            var fullaetid = aetid;
-
-                            if (aetname.Length >= 10)
+                            if (texpath.StartsWith("aet/"))
                             {
-                                fullaetid = aetname.Substring(0, 10);
+                                var splits = texpath.Split('/');
+                                var aetid = splits[1];
+                                var aetname = splits[2];
+
+                                var fullaetid = aetid;
+
+                                if (aetname.Length >= 10)
+                                {
+                                    fullaetid = aetname.Substring(0, 10);
+                                }
+
+                                if (assetTpfs.Contains(fullaetid))
+                                {
+                                    continue;
+                                }
+
+                                path = TextureLocator.GetAetTexture(curProject, fullaetid).AssetPath;
+
+                                assetTpfs.Add(fullaetid);
                             }
 
-                            if (assetTpfs.Contains(fullaetid))
+                            // Common Body
+                            if (texpath.StartsWith("aat"))
                             {
-                                continue;
+                                var aatname = Path.GetFileName(texpath);
+
+                                if (assetTpfs.Contains(aatname))
+                                {
+                                    continue;
+                                }
+
+                                path = TextureLocator.GetAatTexture(curProject, aatname).AssetPath;
+
+                                assetTpfs.Add(aatname);
                             }
-
-                            path = TextureLocator.GetAetTexture(fullaetid).AssetPath;
-
-                            assetTpfs.Add(fullaetid);
                         }
 
-                        // Common Body
-                        if (texpath.StartsWith("aat"))
+                        if (curProject.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB)
                         {
-                            var aatname = Path.GetFileName(texpath);
-
-                            if (assetTpfs.Contains(aatname))
+                            // Systex
+                            if (texpath.Contains("systex"))
                             {
-                                continue;
+                                var systexname = Path.GetFileName(texpath);
+
+                                if (assetTpfs.Contains(systexname))
+                                {
+                                    continue;
+                                }
+
+                                path = TextureLocator.GetSystexTexture(curProject, systexname).AssetPath;
+
+                                assetTpfs.Add(systexname);
                             }
-
-                            path = TextureLocator.GetAatTexture(aatname).AssetPath;
-
-                            assetTpfs.Add(aatname);
                         }
-                    }
 
-                    if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB)
-                    {
-                        // Systex
-                        if (texpath.Contains("systex"))
+                        if (path != null && File.Exists(path))
                         {
-                            var systexname = Path.GetFileName(texpath);
-
-                            if (assetTpfs.Contains(systexname))
-                            {
-                                continue;
-                            }
-
-                            path = TextureLocator.GetSystexTexture(systexname).AssetPath;
-
-                            assetTpfs.Add(systexname);
+                            _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
+                                Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
+                                AccessLevel.AccessGPUOptimizedOnly));
                         }
-                    }
-
-                    if (path != null && File.Exists(path))
-                    {
-                        _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                            Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
-                            AccessLevel.AccessGPUOptimizedOnly));
                     }
                 }
             }

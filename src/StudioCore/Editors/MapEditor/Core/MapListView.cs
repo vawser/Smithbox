@@ -58,18 +58,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         var scale = DPI.GetUIScale();
 
-        if (Editor.Project.ProjectType == ProjectType.Undefined)
-            return;
-
-        // Wait for DS2 params to finish loading
-        if (Editor.Project.ProjectType is ProjectType.DS2S || Editor.Project.ProjectType is ProjectType.DS2)
-        {
-            if (ParamBank.PrimaryBank.IsLoadingParams)
-            {
-                return;
-            }
-        }
-
         if (UI.Current.Interface_MapEditor_MapList)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

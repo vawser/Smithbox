@@ -59,7 +59,7 @@ public class MassEditScript
             return;
 
         var cdir = ParamLocator.GetMassEditScriptCommonDir();
-        var dir = ParamLocator.GetMassEditScriptGameDir();
+        var dir = ParamLocator.GetMassEditScriptGameDir(editor.Project);
         scriptList = new List<MassEditScript>();
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);

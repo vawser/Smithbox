@@ -12,13 +12,15 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class TranslateMesh : ViewportAction
 {
+    private ModelEditorScreen Editor;
     private FLVER2 CurrentFLVER;
     private List<FLVER.Vertex> OriginalVertices;
     private FLVER2.Mesh CurrentMesh;
     private Vector3 ChangeVector;
 
-    public TranslateMesh(FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 changeVector)
+    public TranslateMesh(ModelEditorScreen editor, FLVER2 curFlver, FLVER2.Mesh curMesh, Vector3 changeVector)
     {
+        Editor = editor;
         CurrentFLVER = curFlver;
 
         OriginalVertices = new List<FLVER.Vertex>();
@@ -35,7 +37,7 @@ public class TranslateMesh : ViewportAction
     {
         VertexUtils.TranslateMesh(CurrentMesh, ChangeVector);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -44,7 +46,7 @@ public class TranslateMesh : ViewportAction
     {
         CurrentMesh.Vertices = OriginalVertices;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }

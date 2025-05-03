@@ -38,46 +38,44 @@ public class TimeActEditorTab
         // Files
         if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var objTitle = TimeActUtils.GetObjectTitle().ToLower();
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
 
-            ImGui.Text("Each set of Time Acts will increase the setup time of the Time Act Editor, so only enable what you need.");
-
-            ImGui.Checkbox("Load character time acts", ref CFG.Current.TimeActEditor_Load_CharacterTimeActs);
-            UIHelper.Tooltip("Load the character time act files when setting up the Time Act Editor.");
-
-            ImGui.Checkbox("Load character time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaCharacterTimeActs);
-            UIHelper.Tooltip("Load the vanilla character time act files when setting up the Time Act Editor.");
-
-            ImGui.Checkbox($"Load {objTitle} time acts", ref CFG.Current.TimeActEditor_Load_ObjectTimeActs);
-            UIHelper.Tooltip($"Load the {objTitle} time act files when setting up the Time Act Editor.");
-
-            ImGui.Checkbox($"Load {objTitle} time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaObjectTimeActs);
-            UIHelper.Tooltip($"Load the vanilla {objTitle} time act files when setting up the Time Act Editor.");
-
-
-            var curProjectType = ProjectType.Undefined;
-
-            if (BaseEditor.ProjectManager.SelectedProject != null)
+            if (curProject != null)
             {
-                curProjectType = BaseEditor.ProjectManager.SelectedProject.ProjectType;
-            }
 
-            if (curProjectType is ProjectType.ER or ProjectType.AC6)
-            {
-                if (ImGui.BeginCombo("Compression Type", CFG.Current.CurrentTimeActCompressionType.ToString()))
+                var objTitle = TimeActUtils.GetObjectTitle(curProject).ToLower();
+
+                ImGui.Text("Each set of Time Acts will increase the setup time of the Time Act Editor, so only enable what you need.");
+
+                ImGui.Checkbox("Load character time acts", ref CFG.Current.TimeActEditor_Load_CharacterTimeActs);
+                UIHelper.Tooltip("Load the character time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox("Load character time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaCharacterTimeActs);
+                UIHelper.Tooltip("Load the vanilla character time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox($"Load {objTitle} time acts", ref CFG.Current.TimeActEditor_Load_ObjectTimeActs);
+                UIHelper.Tooltip($"Load the {objTitle} time act files when setting up the Time Act Editor.");
+
+                ImGui.Checkbox($"Load {objTitle} time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaObjectTimeActs);
+                UIHelper.Tooltip($"Load the vanilla {objTitle} time act files when setting up the Time Act Editor.");
+
+                if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
-                    foreach (var entry in Enum.GetValues(typeof(TimeactCompressionType)))
+                    if (ImGui.BeginCombo("Compression Type", CFG.Current.CurrentTimeActCompressionType.ToString()))
                     {
-                        var type = (TimeactCompressionType)entry;
-
-                        if (ImGui.Selectable(type.GetDisplayName()))
+                        foreach (var entry in Enum.GetValues(typeof(TimeactCompressionType)))
                         {
-                            CFG.Current.CurrentTimeActCompressionType = (TimeactCompressionType)entry;
+                            var type = (TimeactCompressionType)entry;
+
+                            if (ImGui.Selectable(type.GetDisplayName()))
+                            {
+                                CFG.Current.CurrentTimeActCompressionType = (TimeactCompressionType)entry;
+                            }
                         }
+                        ImGui.EndCombo();
                     }
-                    ImGui.EndCombo();
+                    UIHelper.Tooltip("Change the compression type used when saving the Time Act container (if applicable).");
                 }
-                UIHelper.Tooltip("Change the compression type used when saving the Time Act container (if applicable).");
             }
         }
 

@@ -176,7 +176,7 @@ public class ToolWindow
                     {
                         if (Editor.Project.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }
@@ -209,7 +209,7 @@ public class ToolWindow
                     {
                         if (Editor.Project.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }
@@ -455,7 +455,7 @@ public class ToolWindow
             }
 
             // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported(Editor))
+            if (Editor.ParamReloader.GameIsSupported(Editor.Project.ProjectType))
             {
                 if (ImGui.CollapsingHeader("Param Reloader"))
                 {
@@ -464,13 +464,13 @@ public class ToolWindow
 
                     if (ImGui.Button("Reload Current Param", defaultButtonSize))
                     {
-                        ParamMemoryTools.ReloadCurrentParam(Editor);
+                        Editor.ParamReloader.ReloadCurrentParam(Editor);
                     }
                     UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.Button("Reload All Params", defaultButtonSize))
                     {
-                        ParamMemoryTools.ReloadAllParams(Editor);
+                        Editor.ParamReloader.ReloadAllParams(Editor);
                     }
                     UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
@@ -489,18 +489,18 @@ public class ToolWindow
                     if (activeParam == "EquipParamGoods")
                     {
                         UIHelper.WrappedText("Number of Spawned Items");
-                        ImGui.InputInt("##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                        ImGui.InputInt("##spawnItemCount", ref Editor.ParamReloader.SpawnedItemAmount);
                     }
                     if (activeParam == "EquipParamWeapon")
                     {
                         UIHelper.WrappedText("Reinforcement of Spawned Weapon");
-                        ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
+                        ImGui.InputInt("##spawnWeaponLevel", ref Editor.ParamReloader.SpawnWeaponLevel);
 
                         if (Editor.Project.ProjectType is ProjectType.DS3)
                         {
-                            if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                            if (Editor.ParamReloader.SpawnWeaponLevel > 10)
                             {
-                                ParamMemoryTools.SpawnWeaponLevel = 10;
+                                Editor.ParamReloader.SpawnWeaponLevel = 10;
                             }
                         }
                     }
@@ -508,7 +508,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
                     if (ImGui.Button("Give Item", defaultButtonSize))
                     {
-                        ParamMemoryTools.GiveItem(Editor);
+                        Editor.ParamReloader.GiveItem(Editor);
                     }
 
                 }

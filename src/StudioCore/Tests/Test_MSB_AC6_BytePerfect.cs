@@ -18,13 +18,13 @@ public static class Test_MSB_AC6_BytePerfect
 
     public static bool RunOnce = false;
 
-    public static void Display()
+    public static void Display(Smithbox baseEditor)
     {
         var buttonSize = new Vector2(ImGui.GetWindowWidth(), 32);
 
         if (ImGui.Button("Check all Maps for Byte-Perfect Match", buttonSize))
         {
-            Run();
+            Run(baseEditor);
         }
 
         ImGui.Separator();
@@ -47,16 +47,18 @@ public static class Test_MSB_AC6_BytePerfect
         }
     }
 
-    public static bool Run()
+    public static bool Run(Smithbox baseEditor)
     {
+        var curProject = baseEditor.ProjectManager.SelectedProject;
+
         mismatches = new List<MismatchData>();
         regionTypes = new List<RegionType>();
 
-        List<string> msbs = MapLocator.GetFullMapList();
+        List<string> msbs = MapLocator.GetFullMapList(curProject);
 
         foreach (var msb in msbs)
         {
-            ResourceDescriptor path = MapLocator.GetMapMSB(msb, false, true);
+            ResourceDescriptor path = MapLocator.GetMapMSB(curProject, msb, false, true);
             var basepath = Path.GetDirectoryName(path.AssetPath);
 
             var bytes = File.ReadAllBytes(path.AssetPath);

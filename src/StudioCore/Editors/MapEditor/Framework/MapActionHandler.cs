@@ -1016,7 +1016,7 @@ public class MapActionHandler
                         }
                     }
 
-                    obj.UpdateRenderModel();
+                    obj.UpdateRenderModel(Editor);
                 }
             }
         }
@@ -1051,19 +1051,19 @@ public class MapActionHandler
                             areaDirectories.Add(Path.Combine(Editor.Project.DataPath, "map", orderMap.Key));
                         }
                     }
-                    SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
                 }
                 else
                 {
                     var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
-                    SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
+                    SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
                 }
             }
             else if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
                 var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
 
-                SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: false);
+                SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: false);
             }
         }
 
@@ -1629,7 +1629,7 @@ public class MapActionHandler
     {
         var list = new List<MapObjectNameInfo>();
 
-        var dir = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{MiscLocator.GetGameIDForDir()}\\namelist.csv";
+        var dir = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\namelist.csv";
 
         if (File.Exists(dir))
         {

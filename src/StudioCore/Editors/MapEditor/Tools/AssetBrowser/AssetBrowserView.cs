@@ -233,7 +233,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
 
         private void DisplayMapPieceList()
         {
-            var maps = MapLocator.GetFullMapList();
+            var maps = MapLocator.GetFullMapList(Editor.Project);
 
             if (ImGui.CollapsingHeader("Map Pieces"))
             {

@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class DuplicateMesh : ViewportAction
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelViewportManager ViewportManager;
 
@@ -21,13 +21,13 @@ public class DuplicateMesh : ViewportAction
     private int PreviousSelectionIndex;
     private int Index;
 
-    public DuplicateMesh(ModelEditorScreen screen, FLVER2 flver, int index)
+    public DuplicateMesh(ModelEditorScreen editor, FLVER2 flver, int index)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ViewportManager = screen.ViewportManager;
+        Editor = editor;
+        Selection = editor.Selection;
+        ViewportManager = editor.ViewportManager;
 
-        PreviousSelectionIndex = screen.Selection._selectedMesh;
+        PreviousSelectionIndex = editor.Selection._selectedMesh;
 
         CurrentFLVER = flver;
         DupedObject = CurrentFLVER.Meshes[index].Clone();
@@ -39,7 +39,7 @@ public class DuplicateMesh : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, DupedObject);
         Selection._selectedMesh = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(Index);
+        Editor.ViewportManager.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -49,7 +49,7 @@ public class DuplicateMesh : ViewportAction
         Selection._selectedMesh = PreviousSelectionIndex;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
+        Editor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }

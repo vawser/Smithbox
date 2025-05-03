@@ -19,13 +19,13 @@ namespace StudioCore.Editors.TimeActEditor.Utils;
 
 public class TimeActSearch
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     public TimeActActionHandler ActionHandler;
 
 
     public TimeActSearch(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         ActionHandler = screen.ActionHandler;
     }
 
@@ -36,7 +36,7 @@ public class TimeActSearch
 
     public void Display()
     {
-        if (Screen.Selection.ContainerInfo == null)
+        if (Editor.Selection.ContainerInfo == null)
         {
             UIHelper.WrappedText("You must select a File first.");
             return;
@@ -66,7 +66,7 @@ public class TimeActSearch
         {
             UIHelper.WrappedText("");
             UIHelper.WrappedText($"Event Value will only match within the currently selected Time Act container:");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{Screen.Selection.ContainerInfo.Name}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{Editor.Selection.ContainerInfo.Name}");
         }
         UIHelper.WrappedText("");
 
@@ -78,7 +78,7 @@ public class TimeActSearch
 
         if (ImGui.Button("Search##searchButton", defaultButtonSize))
         {
-            if (Screen.Selection.ContainerIndex != -1 && Screen.Selection.CurrentTimeActKey != -1)
+            if (Editor.Selection.ContainerIndex != -1 && Editor.Selection.CurrentTimeActKey != -1)
             {
                 if (SearchInput != "")
                 {
@@ -117,7 +117,7 @@ public class TimeActSearch
 
                 if (ImGui.Selectable($"{displayName}##{displayName}_{i}"))
                 {
-                    var containerType = Smithbox.EditorHandler.TimeActEditor.Selection.CurrentFileContainerType;
+                    var containerType = Editor.Selection.CurrentFileContainerType;
 
                     var command = $"timeact/select/none/{res.ContainerIndex}/{res.TimeActIndex}";
 
@@ -154,12 +154,12 @@ public class TimeActSearch
     {
         searchResults = new();
 
-        var containerIndex = Screen.Selection.ContainerIndex;
+        var containerIndex = Editor.Selection.ContainerIndex;
 
-        for (int j = 0; j < Screen.Selection.ContainerInfo.InternalFiles.Count; j++)
+        for (int j = 0; j < Editor.Selection.ContainerInfo.InternalFiles.Count; j++)
         {
-            var timeActFile = Screen.Selection.ContainerInfo.InternalFiles[j].TAE;
-            var timeActName = Screen.Selection.ContainerInfo.InternalFiles[j].Name;
+            var timeActFile = Editor.Selection.ContainerInfo.InternalFiles[j].TAE;
+            var timeActName = Editor.Selection.ContainerInfo.InternalFiles[j].Name;
 
             for (int i = 0; i < timeActFile.Animations.Count; i++)
             {
@@ -202,7 +202,7 @@ public class TimeActSearch
                             {
                                 if (evt.Type.ToString().Contains(SearchInput))
                                 {
-                                    TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
+                                    TimeActUtils.ApplyTemplate(Editor, timeActFile, Editor.Selection.CurrentTimeActType);
 
                                     var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
                                     result.ContainerIndex = containerIndex;
@@ -216,7 +216,7 @@ public class TimeActSearch
                             {
                                 if (evt.Type.ToString() == SearchInput)
                                 {
-                                    TimeActUtils.ApplyTemplate(timeActFile, Screen.Selection.CurrentTimeActType);
+                                    TimeActUtils.ApplyTemplate(Editor, timeActFile, Editor.Selection.CurrentTimeActType);
 
                                     var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
                                     result.ContainerIndex = containerIndex;

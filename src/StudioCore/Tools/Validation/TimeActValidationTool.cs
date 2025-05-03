@@ -14,24 +14,33 @@ namespace StudioCore.Tools.Validation;
 /// <summary>
 /// This will check every TAE, and if the event template fails, it will report the issue(s).
 /// </summary>
-public static class TimeActValidationTool
+public class TimeActValidationTool
 {
-    public static bool HasFinished = false;
+    private Smithbox BaseEditor;
 
-    public static void ValidateTAE()
+    public TimeActValidationTool(Smithbox editor)
     {
+        BaseEditor = editor;
+    }
+
+    public bool HasFinished = false;
+
+    public void ValidateTAE()
+    {
+        var curProject = BaseEditor.ProjectManager.SelectedProject;
+
         SortedDictionary<int, string> errors = new();
 
-        for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
+        for (int i = 0; i < curProject.TimeActData.PrimaryCharacterBank.Entries.Count; i++)
         {
-            var info = TimeActBank.FileChrBank.ElementAt(i).Key;
-            var binder = TimeActBank.FileChrBank.ElementAt(i).Value;
+            var info = curProject.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Key;
+            var binder = curProject.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Value;
 
             for (int k = 0; k < info.InternalFiles.Count; k++)
             {
                 TAE entry = info.InternalFiles[k].TAE;
 
-                ApplyTemplate(entry, TimeActTemplateType.Character);
+                ApplyTemplate(curProject.TimeActEditor, entry, TimeActTemplateType.Character);
 
                 for (int j = 0; j < entry.Animations.Count; j++)
                 {
@@ -54,16 +63,16 @@ public static class TimeActValidationTool
             }
         }
 
-        for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
+        for (int i = 0; i < curProject.TimeActData.PrimaryObjectBank.Entries.Count; i++)
         {
-            var info = TimeActBank.FileObjBank.ElementAt(i).Key;
-            var binder = TimeActBank.FileObjBank.ElementAt(i).Value;
+            var info = curProject.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Key;
+            var binder = curProject.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Value;
 
             for (int k = 0; k < info.InternalFiles.Count; k++)
             {
                 TAE entry = info.InternalFiles[k].TAE;
 
-                ApplyTemplate(entry, TimeActTemplateType.Character);
+                ApplyTemplate(curProject.TimeActEditor, entry, TimeActTemplateType.Character);
 
                 for (int j = 0; j < entry.Animations.Count; j++)
                 {

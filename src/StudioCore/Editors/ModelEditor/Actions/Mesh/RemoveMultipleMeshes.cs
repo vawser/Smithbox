@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class RemoveMultipleMeshes : ViewportAction
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelViewportManager ViewportManager;
 
@@ -22,11 +22,11 @@ public class RemoveMultipleMeshes : ViewportAction
     private List<FLVER2.Mesh> StoredObjects;
     private List<int> StoredIndices;
 
-    public RemoveMultipleMeshes(ModelEditorScreen screen, FLVER2 flver, Multiselection multiselect)
+    public RemoveMultipleMeshes(ModelEditorScreen editor, FLVER2 flver, Multiselection multiselect)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ViewportManager = screen.ViewportManager;
+        Editor = editor;
+        Selection = editor.Selection;
+        ViewportManager = editor.ViewportManager;
 
         CurrentFLVER = flver;
         Multiselect = multiselect;
@@ -55,7 +55,7 @@ public class RemoveMultipleMeshes : ViewportAction
 
         Multiselect.StoredIndices = new List<int>();
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }
@@ -67,7 +67,7 @@ public class RemoveMultipleMeshes : ViewportAction
             CurrentFLVER.Meshes.Insert(StoredIndices[i], StoredObjects[i]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(-1);
+        Editor.ViewportManager.UpdateRepresentativeModel(-1);
 
         return ActionEvent.NoEvent;
     }

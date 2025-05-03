@@ -121,17 +121,17 @@ public class TexViewSelection
 
         if (info.Category == TextureViewCategory.Menu)
         {
-            ad = TextureLocator.GetMenuTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetMenuTextureContainer(Editor.Project, _selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Asset)
         {
-            ad = TextureLocator.GetAssetTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetAssetTextureContainer(Editor.Project, _selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Object)
         {
-            ad = TextureLocator.GetObjTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetObjTextureContainer(Editor.Project, _selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Part)
@@ -143,17 +143,17 @@ public class TexViewSelection
                 isLowDetail = true;
             }
 
-            ad = TextureLocator.GetPartTextureContainer(_selectedTextureContainerKey, isLowDetail);
+            ad = TextureLocator.GetPartTextureContainer(Editor.Project, _selectedTextureContainerKey, isLowDetail);
         }
 
         if (info.Category == TextureViewCategory.Other)
         {
-            ad = TextureLocator.GetOtherTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetOtherTextureContainer(Editor.Project, _selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Particle)
         {
-            ad = TextureLocator.GetParticleTextureContainer(_selectedTextureContainerKey);
+            ad = TextureLocator.GetParticleTextureContainer(Editor.Project, _selectedTextureContainerKey);
         }
 
         if (info.Category == TextureViewCategory.Character)
@@ -171,7 +171,7 @@ public class TexViewSelection
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
 
-            ad = TextureLocator.GetChrTextures(chrId, isLowDetail);
+            ad = TextureLocator.GetChrTextures(Editor.Project, chrId, isLowDetail);
         }
 
         if (ad != null)

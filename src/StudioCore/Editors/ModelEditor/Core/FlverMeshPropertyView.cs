@@ -180,7 +180,7 @@ public class FlverMeshPropertyView
 
             if (ImGui.Button("Translate", new Vector2(150, 24)))
             {
-                var action = new TranslateMesh(curFlver, entry, StoredTranslationInput);
+                var action = new TranslateMesh(Editor, curFlver, entry, StoredTranslationInput);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Translate the selected mesh by the specified vector.");
@@ -196,7 +196,7 @@ public class FlverMeshPropertyView
 
             if (ImGui.Button("Scale", new Vector2(150, 24)))
             {
-                var action = new ScaleMesh(curFlver, entry, StoredScaleInput);
+                var action = new ScaleMesh(Editor, curFlver, entry, StoredScaleInput);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Scale the selected mesh by the specified vector.");
@@ -212,7 +212,7 @@ public class FlverMeshPropertyView
 
             if (ImGui.Button("Rotate X##rotateXbutton", new Vector2(150, 24)))
             {
-                var action = new RotateMesh(curFlver, entry, StoredRotationInput_X, RotationAxis.X);
+                var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_X, RotationAxis.X);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Rotate the selected mesh on the X-axis by the specified angle.");
@@ -228,7 +228,7 @@ public class FlverMeshPropertyView
 
             if (ImGui.Button("Rotate Y##rotateYbutton", new Vector2(150, 24)))
             {
-                var action = new RotateMesh(curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
+                var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Rotate the selected mesh on the Y-axis by the specified angle.");
@@ -244,7 +244,7 @@ public class FlverMeshPropertyView
 
             if (ImGui.Button("Rotate Z##rotateZbutton", new Vector2(150, 24)))
             {
-                var action = new RotateMesh(curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
+                var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
                 Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.Tooltip("Rotate the selected mesh on the Z-axis by the specified angle.");

@@ -154,18 +154,7 @@ Some common tools for mapstudio include:
 
             if (ImGui.BeginPopupContextItem(id))
             {
-                if (ParamEditorScreen.EditorMode && canEdit) //remove this, editor mode should be called earlier
-                {
-                    ImGui.InputTextMultiline("", ref hint, 8196, new Vector2(720, 480) * scale);
-                    if (ImGui.IsItemDeactivatedAfterEdit())
-                    {
-                        ret = true;
-                    }
-                }
-                else
-                {
-                    ImGui.Text(hint);
-                }
+                ImGui.Text(hint);
 
                 ImGui.EndPopup();
             }
@@ -182,18 +171,7 @@ Some common tools for mapstudio include:
 
             if (ImGui.BeginPopup("##ParamHelp"))
             {
-                if (ParamEditorScreen.EditorMode && canEdit) //remove this, editor mode should be called earlier
-                {
-                    ImGui.InputTextMultiline("", ref hint, 8196, new Vector2(720, 480) * scale);
-                    if (ImGui.IsItemDeactivatedAfterEdit())
-                    {
-                        ret = true;
-                    }
-                }
-                else
-                {
-                    ImGui.Text(hint);
-                }
+                ImGui.Text(hint);
 
                 ImGui.EndPopup();
             }

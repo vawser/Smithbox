@@ -296,7 +296,7 @@ public class FileSelectionView
 
     private void DisplayMapPieceList()
     {
-        var maps = MapLocator.GetFullMapList();
+        var maps = MapLocator.GetFullMapList(Editor.Project);
 
         if (ImGui.CollapsingHeader("Map Pieces"))
         {

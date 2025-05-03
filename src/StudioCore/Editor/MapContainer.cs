@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Platform;
@@ -27,6 +28,9 @@ public class MapContainer : ObjectContainer
     /// </summary>
     [XmlIgnore] public List<Entity> BTLParents = new();
 
+    [XmlIgnore]
+    private MapEditorScreen Editor;
+
     // This keeps all models that exist when loading a map, so that saves
     // can be byte perfect
     private readonly Dictionary<string, IMsbModel> LoadedModels = new();
@@ -40,13 +44,14 @@ public class MapContainer : ObjectContainer
     public List<Entity> Routes = new();
     public Entity MapOffsetNode { get; set; }
 
-    public MapContainer(string mapid)
+    public MapContainer(MapEditorScreen editor, string mapid)
     {
+        Editor = editor;
         Name = mapid;
 
         var t = new MapTransformNode(mapid);
-        RootObject = new MsbEntity(this, t, MsbEntityType.MapRoot);
-        MapOffsetNode = new MsbEntity(this, new MapTransformNode(mapid));
+        RootObject = new MsbEntity(Editor, this, t, MsbEntityType.MapRoot);
+        MapOffsetNode = new MsbEntity(Editor, this, new MapTransformNode(mapid));
 
         RootObject.AddChild(MapOffsetNode);
     }
@@ -79,7 +84,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbPart p in msb.Parts.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Part);
+            var n = new MsbEntity(Editor, this, p, MsbEntityType.Part);
             Parts.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -87,7 +92,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbRegion p in msb.Regions.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Region);
+            var n = new MsbEntity(Editor, this, p, MsbEntityType.Region);
             Regions.Add(n);
             Objects.Add(n);
             RootObject.AddChild(n);
@@ -95,7 +100,7 @@ public class MapContainer : ObjectContainer
 
         foreach (IMsbEvent p in msb.Events.GetEntries())
         {
-            var n = new MsbEntity(this, p, MsbEntityType.Event);
+            var n = new MsbEntity(Editor, this, p, MsbEntityType.Event);
             Events.Add(n);
 
             if (p is MSB2.Event.MapOffset mo1)
@@ -175,11 +180,11 @@ public class MapContainer : ObjectContainer
 
     public void LoadBTL(ResourceDescriptor ad, BTL btl)
     {
-        var btlParent = new MsbEntity(this, ad, MsbEntityType.Editor);
+        var btlParent = new MsbEntity(Editor, this, ad, MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
         foreach (BTL.Light l in btl.Lights)
         {
-            var n = new MsbEntity(this, l, MsbEntityType.Light);
+            var n = new MsbEntity(Editor, this, l, MsbEntityType.Light);
             Objects.Add(n);
             btlParent.AddChild(n);
         }

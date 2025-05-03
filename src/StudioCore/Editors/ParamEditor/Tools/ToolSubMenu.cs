@@ -259,19 +259,19 @@ public class ToolSubMenu
             }
 
             // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported(Editor))
+            if (Editor.ParamReloader.GameIsSupported(Editor.Project.ProjectType))
             {
                 if (ImGui.BeginMenu("Param Reloader"))
                 {
                     if (ImGui.MenuItem("Current Param"))
                     {
-                        ParamMemoryTools.ReloadCurrentParam(Editor);
+                        Editor.ParamReloader.ReloadCurrentParam(Editor);
                     }
                     UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.MenuItem("All Params"))
                     {
-                        ParamMemoryTools.ReloadAllParams(Editor);
+                        Editor.ParamReloader.ReloadAllParams(Editor);
                     }
                     UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
 
@@ -288,20 +288,21 @@ public class ToolSubMenu
 
                     if (activeParam == "EquipParamGoods")
                     {
-                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamMemoryTools.SpawnedItemAmount);
+                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref Editor.ParamReloader.SpawnedItemAmount);
                     }
                     if (activeParam == "EquipParamWeapon")
                     {
-                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
-                        if (ParamMemoryTools.SpawnWeaponLevel > 10)
+                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref Editor.ParamReloader.SpawnWeaponLevel);
+
+                        if (Editor.ParamReloader.SpawnWeaponLevel > 10)
                         {
-                            ParamMemoryTools.SpawnWeaponLevel = 10;
+                            Editor.ParamReloader.SpawnWeaponLevel = 10;
                         }
                     }
 
                     if (ImGui.MenuItem("Give Selected Item"))
                     {
-                        ParamMemoryTools.GiveItem(Editor);
+                        Editor.ParamReloader.GiveItem(Editor);
                     }
                     UIHelper.Tooltip("Spawns selected item in-game.");
 

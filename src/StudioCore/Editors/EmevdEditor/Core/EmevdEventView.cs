@@ -12,7 +12,7 @@ namespace StudioCore.Editors.EmevdEditor;
 /// </summary>
 public class EmevdEventView
 {
-    private EmevdEditorScreen Screen;
+    private EmevdEditorScreen Editor;
     private EmevdPropertyDecorator Decorator;
     private EmevdSelectionManager Selection;
     private EmevdFilters Filters;
@@ -20,7 +20,7 @@ public class EmevdEventView
 
     public EmevdEventView(EmevdEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
@@ -55,9 +55,9 @@ public class EmevdEventView
                 var evt = Selection.SelectedScript.Events[i];
 
                 var eventName = evt.Name;
-                if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    eventName = EmevdUtils.GetDS2ItemAlias(evt);
+                    eventName = EmevdUtils.GetDS2ItemAlias(Editor, evt);
                 }
 
                 if (Filters.IsEventFilterMatch(evt))

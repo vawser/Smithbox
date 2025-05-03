@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using StudioCore.Core;
+using System.Collections.Generic;
 using System.IO;
 
 namespace StudioCore.Resource.Locators;
@@ -10,13 +11,13 @@ public static class TextLocator
     /// <summary>
     /// Get all msgbnd paths
     /// </summary>
-    public static List<string> GetFmgContainers(bool rootOnly = false, string targetDir = "")
+    public static List<string> GetFmgContainers(ProjectEntry project, bool rootOnly = false, string targetDir = "")
     {
         FileList = new();
 
         if(targetDir == "")
         {
-            targetDir = Smithbox.GameRoot;
+            targetDir = project.DataPath;
         }
 
         var rootPath = $"{targetDir}\\msg\\";
@@ -24,7 +25,7 @@ public static class TextLocator
 
         if (Directory.Exists(rootPath))
         {
-            SearchFolder(rootPath, filePattern, rootOnly);
+            SearchFolder(project, rootPath, filePattern, rootOnly);
         }
 
         return FileList;
@@ -33,13 +34,13 @@ public static class TextLocator
     /// <summary>
     /// Get all fmg paths (for DS2, ACFA, ACV, and ACVD)
     /// </summary>
-    public static List<string> GetFmgs(string dir, bool rootOnly = false, string targetDir = "")
+    public static List<string> GetFmgs(ProjectEntry project, string dir, bool rootOnly = false, string targetDir = "")
     {
         FileList = new();
 
         if (targetDir == "")
         {
-            targetDir = Smithbox.GameRoot;
+            targetDir = project.DataPath;
         }
 
         var rootPath = $"{targetDir}\\{dir}";
@@ -47,30 +48,30 @@ public static class TextLocator
 
         if (Directory.Exists(rootPath))
         {
-            SearchFolder(rootPath, filePattern, rootOnly);
+            SearchFolder(project, rootPath, filePattern, rootOnly);
         }
         return FileList;
     }
 
-    public static void SearchFolder(string rootPath, string filePattern, bool rootOnly)
+    public static void SearchFolder(ProjectEntry project, string rootPath, string filePattern, bool rootOnly)
     {
         var entries = Directory.EnumerateFiles(rootPath, "*", SearchOption.AllDirectories);
         foreach (var entry in entries)
         {
             if (entry.EndsWith(filePattern) || entry.EndsWith($"{filePattern}.dcx"))
             {
-                AddFile(entry, rootOnly);
+                AddFile(project, entry, rootOnly);
             }
         }
     }
 
-    private static void AddFile(string rootPath, bool rootOnly)
+    private static void AddFile(ProjectEntry project, string rootPath, bool rootOnly)
     {
         var path = rootPath;
 
         if (!rootOnly)
         {
-            var projectPath = rootPath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+            var projectPath = rootPath.Replace(project.DataPath, project.ProjectPath);
 
             if (File.Exists(projectPath))
             {
@@ -91,16 +92,16 @@ public static class TextLocator
         return false;
     }
 
-    public static string GetStoredTextDirectory()
+    public static string GetStoredTextDirectory(ProjectEntry project)
     {
-        return $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Exported Text";
+        return $"{project.ProjectPath}\\.smithbox\\Workflow\\Exported Text";
     }
 
-    public static List<string> GetStoredContainerWrappers()
+    public static List<string> GetStoredContainerWrappers(ProjectEntry project)
     {
         List<string> results = new();
 
-        var wrapperDir = GetStoredTextDirectory();
+        var wrapperDir = GetStoredTextDirectory(project);
 
         if (Directory.Exists(wrapperDir))
         {

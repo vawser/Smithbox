@@ -16,15 +16,15 @@ namespace StudioCore.Editors.EsdEditor;
 /// </summary>
 public class EsdStateNodePropertyView
 {
-    private EsdEditorScreen Screen;
+    private EsdEditorScreen Editor;
     private EsdPropertyDecorator Decorator;
     private EsdSelectionManager Selection;
 
-    public EsdStateNodePropertyView(EsdEditorScreen screen)
+    public EsdStateNodePropertyView(EsdEditorScreen editor)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Decorator = editor.Decorator;
+        Selection = editor.Selection;
     }
 
     /// <summary>
@@ -143,7 +143,7 @@ public class EsdStateNodePropertyView
         ImGui.TableSetColumnIndex(3);
 
         // Alias
-        var cmdMeta = Screen.Project.EsdBank.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdMeta = Editor.Project.EsdBank.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
         if (cmdMeta != null)
         {
             var displayAlias = cmdMeta.displayName;
@@ -157,13 +157,13 @@ public class EsdStateNodePropertyView
     /// </summary>
     private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
-        var cmdArgMeta = Screen.Project.EsdBank.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdArgMeta = Editor.Project.EsdBank.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
         for(int i = 0; i < cmd.Arguments.Count; i++)
         {
             var arg = cmd.Arguments[i];
 
-            var expr = EzInfixor.BytecodeToInfix(arg);
+            var expr = EzInfixor.BytecodeToInfix(Editor, arg);
 
             ImGui.TableSetColumnIndex(1);
 
@@ -316,7 +316,7 @@ public class EsdStateNodePropertyView
 
         ImGui.TableSetColumnIndex(1);
 
-        var expr = EzInfixor.BytecodeToInfix(cond.Evaluator);
+        var expr = EzInfixor.BytecodeToInfix(Editor, cond.Evaluator);
 
         //ImGui.Text($"{expr.GetType()}");
 
@@ -392,7 +392,7 @@ public class EsdStateNodePropertyView
             ImGui.TableSetColumnIndex(3);
 
             // Alias
-            var cmdMeta = Screen.Project.EsdBank.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdMeta = Editor.Project.EsdBank.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
             if (cmdMeta != null)
             {
                 var displayAlias = cmdMeta.displayName;
@@ -402,13 +402,13 @@ public class EsdStateNodePropertyView
 
             ImGui.TableNextRow();
 
-            var cmdArgMeta = Screen.Project.EsdBank.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdArgMeta = Editor.Project.EsdBank.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
 
             for (int i = 0; i < passCmd.Arguments.Count; i++)
             {
                 var arg = passCmd.Arguments[i];
 
-                var expr = EzInfixor.BytecodeToInfix(arg);
+                var expr = EzInfixor.BytecodeToInfix(Editor, arg);
 
                 ImGui.TableSetColumnIndex(1);
 
