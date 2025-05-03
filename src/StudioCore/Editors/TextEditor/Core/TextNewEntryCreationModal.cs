@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
@@ -13,6 +12,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 

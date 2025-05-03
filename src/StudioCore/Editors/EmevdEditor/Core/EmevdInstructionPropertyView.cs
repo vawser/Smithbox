@@ -1,19 +1,8 @@
-﻿using DotNext.Collections.Generic;
-using Hexa.NET.ImGui;
-using Octokit;
-using SoulsFormats;
+﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
-using StudioCore.Interface;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using static SoulsFormats.EMEVD;
-using static SoulsFormats.EMEVD.Instruction;
 using static StudioCore.Editors.EmevdEditor.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor;
@@ -61,9 +50,9 @@ public class EmevdInstructionPropertyView
         {
             var instruction = Selection.SelectedInstruction;
 
-            if (EmevdUtils.HasArgDoc(instruction))
+            if (EmevdUtils.HasArgDoc(Screen, instruction))
             {
-                (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(instruction);
+                (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(Screen, instruction);
                 Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
 
                 ImGui.Columns(2);

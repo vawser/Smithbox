@@ -1,5 +1,5 @@
 ﻿using SoulsFormats.KF4;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -14,7 +14,14 @@ namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapEntityTypeCache
 {
+    private MapEditorScreen Editor;
+
     public Dictionary<string, Dictionary<MsbEntityType, Dictionary<Type, List<MsbEntity>>>> _cachedTypeView;
+
+    public MapEntityTypeCache(MapEditorScreen editor)
+    {
+        Editor = editor;
+    }
 
     public void InvalidateCache()
     {
@@ -78,7 +85,7 @@ public class MapEntityTypeCache
         }
         */
 
-        if (Smithbox.ProjectType is ProjectType.BB
+        if (Editor.Project.ProjectType is ProjectType.BB
             or ProjectType.DS3
             or ProjectType.SDT
             or ProjectType.ER
@@ -87,7 +94,7 @@ public class MapEntityTypeCache
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());
         }
 
-        else if (Smithbox.ProjectType is ProjectType.DS2S
+        else if (Editor.Project.ProjectType is ProjectType.DS2S
             or ProjectType.DS2)
         {
             mapcache.Add(MsbEntityType.Light, new Dictionary<Type, List<MsbEntity>>());

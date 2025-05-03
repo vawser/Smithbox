@@ -1,7 +1,6 @@
 ﻿using HKLib.hk2018.hkaiCollisionAvoidance;
 using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
@@ -12,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -107,13 +107,13 @@ public class TexFileContainerView
                     switch (displayCategory)
                     {
                         case TextureViewCategory.Character:
-                            aliasName = AliasUtils.GetCharacterAlias(rawName);
+                            aliasName = AliasUtils.GetCharacterAlias(Screen.Project, rawName);
                             break;
                         case TextureViewCategory.Asset:
-                            aliasName = AliasUtils.GetAssetAlias(rawName);
+                            aliasName = AliasUtils.GetAssetAlias(Screen.Project, rawName);
                             break;
                         case TextureViewCategory.Part:
-                            aliasName = AliasUtils.GetPartAlias(rawName);
+                            aliasName = AliasUtils.GetPartAlias(Screen.Project, rawName);
                             break;
                     }
 
@@ -152,7 +152,7 @@ public class TexFileContainerView
 
                         if (ImGui.IsItemVisible())
                         {
-                            var alias = AliasUtils.GetTextureContainerAliasName(info);
+                            var alias = AliasUtils.GetTextureContainerAliasName(Screen.Project, info);
                             UIHelper.DisplayAlias(alias);
                         }
 

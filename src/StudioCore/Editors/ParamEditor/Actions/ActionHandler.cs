@@ -1,15 +1,10 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
-using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
-using StudioCore.Tasks;
-using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -17,9 +12,6 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.BHD5;
 
 namespace StudioCore.Editors.ParamEditor.Actions;
 public enum TargetType
@@ -215,7 +207,7 @@ public class ActionHandler
 
     public void ExportRowNameHandler()
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        var selectedParam = Screen._activeView._selection;
 
         if (selectedParam.ActiveParamExists())
         {
@@ -264,7 +256,7 @@ public class ActionHandler
 
     private void ExportRowNames()
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        var selectedParam = Screen._activeView._selection;
         var activeParam = selectedParam.GetActiveParam();
 
         switch (CurrentTargetCategory)
@@ -335,7 +327,7 @@ public class ActionHandler
 
     public void ImportRowNameHandler()
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        var selectedParam = Screen._activeView._selection;
 
         bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
         bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
@@ -405,7 +397,7 @@ public class ActionHandler
 
     public void RowNameTrimHandler()
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        var selectedParam = Screen._activeView._selection;
 
         if (selectedParam.ActiveParamExists())
         {
@@ -548,9 +540,9 @@ public class ActionHandler
 
     public void ExecuteMassEdit(string command)
     {
-        Smithbox.EditorHandler.ParamEditor._activeView._selection.SortSelection();
+        Screen._activeView._selection.SortSelection();
         (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-            command, Smithbox.EditorHandler.ParamEditor._activeView._selection);
+            command, Screen._activeView._selection);
 
         if (child != null)
         {

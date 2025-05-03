@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
@@ -17,7 +17,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class TimeActEditorTab
 {
-    public TimeActEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public TimeActEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public enum TimeactCompressionType
     {
@@ -49,7 +54,15 @@ public class TimeActEditorTab
             ImGui.Checkbox($"Load {objTitle} time acts for vanilla comparison", ref CFG.Current.TimeActEditor_Load_VanillaObjectTimeActs);
             UIHelper.ShowHoverTooltip($"Load the vanilla {objTitle} time act files when setting up the Time Act Editor.");
 
-            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+
+            var curProjectType = ProjectType.Undefined;
+
+            if (BaseEditor.ProjectManager.SelectedProject != null)
+            {
+                curProjectType = BaseEditor.ProjectManager.SelectedProject.ProjectType;
+            }
+
+            if (curProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 if (ImGui.BeginCombo("Compression Type", CFG.Current.CurrentTimeActCompressionType.ToString()))
                 {

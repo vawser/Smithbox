@@ -7,10 +7,10 @@ using StudioCore.Resource;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using StudioCore.Core.Project;
 using StudioCore.Resource.Types;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.Framework;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 
@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 /// </summary>
 public class NavmeshBuilderView
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     private readonly MeshRenderableProxy _previewMesh = null;
     private readonly ViewportSelection _selection;
@@ -41,7 +41,7 @@ public class NavmeshBuilderView
 
     public NavmeshBuilderView(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         _selection = screen.Selection;
     }
 
@@ -49,7 +49,7 @@ public class NavmeshBuilderView
     {
         if (ImGui.Begin("Navmesh Build"))
         {
-            if (Smithbox.ProjectType != ProjectType.DS3)
+            if (Editor.Project.ProjectType != ProjectType.DS3)
             {
                 ImGui.Text("Navmesh building only supported for DS3");
                 ImGui.End();
@@ -125,7 +125,7 @@ public class NavmeshBuilderView
                         _previewMesh.World = mrp.World;
 
                         // Do a test save
-                        var path = $@"{Smithbox.ProjectRoot}\navout\test.hkx";
+                        var path = $@"{Editor.Project.ProjectPath}\navout\test.hkx";
                         using (FileStream s2 = File.Create(path))
                         {
                             BinaryWriterEx bw = new(false, s2);

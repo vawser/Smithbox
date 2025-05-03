@@ -1,22 +1,16 @@
 ﻿using Andre.Formats;
-using HKLib.hk2018.hkHashMapDetail;
 using Hexa.NET.ImGui;
-using SoapstoneLib.Proto.Internal;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.ProjectEnumBank;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor.Actions;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -163,13 +157,12 @@ public class TimeActDecorator
                 {
                     alias = $"FFX ID: {propertyValue}";
 
-                    var bank = Smithbox.BankHandler.ParticleAliases;
-                    var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
+                    var enumEntry = Screen.Project.Aliases.Particles.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
                         if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
                         {
-                            alias = $"FFX ID: {propertyValue} [{enumEntry.name}]";
+                            alias = $"FFX ID: {propertyValue} [{enumEntry.Name}]";
                         }
                     }
                 }
@@ -179,13 +172,12 @@ public class TimeActDecorator
                 {
                     alias = $"Sound ID: {propertyValue}";
 
-                    var bank = Smithbox.BankHandler.SoundAliases;
-                    var enumEntry = bank.Aliases.list.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
+                    var enumEntry = Screen.Project.Aliases.Sounds.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
                         if(CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
                         {
-                            alias = $"Sound ID: {propertyValue} [{enumEntry.name}]";
+                            alias = $"Sound ID: {propertyValue} [{enumEntry.Name}]";
                         }
                     }
                 }
@@ -206,18 +198,13 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        var bank = Smithbox.BankHandler.ProjectEnums;
-
-        if (bank == null)
+        if (Screen.Project.ProjectParamEnums == null)
             return;
 
-        if (bank.Enums == null)
+        if (Screen.Project.ProjectParamEnums.List == null)
             return;
 
-        if (bank.Enums.List == null)
-            return;
-
-        if (bank.Enums.List.Count == 0)
+        if (Screen.Project.ProjectParamEnums.List.Count == 0)
             return;
 
         Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_4_Color;
@@ -234,7 +221,7 @@ public class TimeActDecorator
             if (template.ProjectEnum != null && propertyValue.ToString() != "0" && propertyValue.ToString() != "-1")
             {
                 var projectEnumType = template.ProjectEnum;
-                var enumEntry = bank.Enums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
+                var enumEntry = Screen.Project.ProjectParamEnums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
 
                 var option = enumEntry.Options.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                 if (option != null)
@@ -375,17 +362,17 @@ public class TimeActDecorator
         if (template.AliasEnum != null)
         {
             var aliasType = template.AliasEnum;
-            List<AliasReference> aliases = new List<AliasReference>();
+            List<AliasEntry> aliases = new List<AliasEntry>();
 
             // Particle
             if (aliasType == "Particle")
             {
-                aliases = Smithbox.BankHandler.ParticleAliases.Aliases.list;
+                aliases = Screen.Project.Aliases.Particles;
             }
             // Sound
             if (aliasType == "Sound")
             {
-                aliases = Smithbox.BankHandler.SoundAliases.Aliases.list;
+                aliases = Screen.Project.Aliases.Sounds;
             }
 
             if (aliases.Count > 0)
@@ -394,7 +381,7 @@ public class TimeActDecorator
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
                 if (aliases.Contains(propertyValue))
                 {
-                    var result = aliases.Where(e => e.id == propertyValue.ToString()).FirstOrDefault();
+                    var result = aliases.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                     ImGui.Text($"{result}");
                 }
                 else
@@ -413,13 +400,13 @@ public class TimeActDecorator
                     {
                         foreach (var entry in aliases)
                         {
-                            if (SearchFilters.IsEditorSearchMatch(_enumSearchInput, entry.id, " ")
-                                || SearchFilters.IsEditorSearchMatch(_enumSearchInput, entry.name, " ")
+                            if (SearchFilters.IsEditorSearchMatch(_enumSearchInput, entry.ID, " ")
+                                || SearchFilters.IsEditorSearchMatch(_enumSearchInput, entry.Name, " ")
                                 || _enumSearchInput == "")
                             {
-                                if (ImGui.Selectable($"{entry.id}: {entry.name}"))
+                                if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
                                 {
-                                    var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.id, propertyValue.GetType());
+                                    var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.ID, propertyValue.GetType());
                                     EditorActionManager.ExecuteAction(action);
                                 }
                             }

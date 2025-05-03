@@ -1,4 +1,5 @@
-﻿using StudioCore.MsbEditor;
+﻿using StudioCore.Editors.MapEditor;
+using StudioCore.MsbEditor;
 using StudioCore.Scene.Interfaces;
 
 namespace StudioCore.Editor;
@@ -25,9 +26,9 @@ public class ObjectContainerReference : ISelectable
         // No visual change from selection
     }
 
-    public ISelectable GetSelectionTarget()
+    public ISelectable GetSelectionTarget(MapEditorScreen editor)
     {
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+        var universe = editor.Universe;
 
         if (universe != null && universe.LoadedObjectContainers.TryGetValue(Name, out ObjectContainer container)
             && container?.RootObject != null)

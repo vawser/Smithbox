@@ -5,11 +5,6 @@ using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -49,9 +44,9 @@ public class GparamFileListView
         ImGui.BeginChild("GparamFileSection");
         Selection.SwitchWindowContext(GparamEditorContext.File);
 
-        foreach (var (name, info) in GparamParamBank.ParamBank)
+        foreach (var (name, info) in Screen.Project.GparamBank.ParamBank)
         {
-            var alias = AliasUtils.GetGparamAliasName(info.Name);
+            var alias = AliasUtils.GetGparamAliasName(Screen.Project, info.Name);
 
             if (Filters.IsFileFilterMatch(name, alias))
             {

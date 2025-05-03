@@ -13,14 +13,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverNodePropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverNodePropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -33,7 +33,7 @@ public class FlverNodePropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Nodes.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Nodes.Count < index)
             return;
 
         if (Selection.NodeMultiselect.StoredIndices.Count > 1)
@@ -48,7 +48,7 @@ public class FlverNodePropertyView
         ImGui.Text("Node");
         ImGui.Separator();
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Nodes[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Nodes[index];
 
         var name = entry.Name;
         int parentIndex = entry.ParentIndex;
@@ -131,7 +131,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Name != name)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_Name(entry, entry.Name, name));
         }
 
@@ -140,7 +140,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.ParentIndex != parentIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_ParentIndex(entry, entry.ParentIndex, parentIndex));
         }
 
@@ -151,7 +151,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.FirstChildIndex != firstChildIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
         }
 
@@ -162,7 +162,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NextSiblingIndex != nextSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
         }
 
@@ -173,7 +173,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.PreviousSiblingIndex != previousSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
         }
 
@@ -184,7 +184,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Translation != translation)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_Translation(entry, entry.Translation, translation));
         }
 
@@ -193,7 +193,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Rotation != rotation)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_Rotation(entry, entry.Rotation, rotation));
         }
 
@@ -202,7 +202,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Scale != scale)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_Scale(entry, entry.Scale, scale));
         }
 
@@ -211,7 +211,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.BoundingBoxMin != bbMin)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_BoundingBoxMin(entry, entry.BoundingBoxMin, bbMin));
         }
 
@@ -220,7 +220,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.BoundingBoxMax != bbMax)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_BoundingBoxMax(entry, entry.BoundingBoxMax, bbMax));
         }
 
@@ -230,7 +230,7 @@ public class FlverNodePropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if ((int)entry.Flags != flags)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERNode_Flags(entry, (int)entry.Flags, flags));
         }
 
@@ -240,7 +240,7 @@ public class FlverNodePropertyView
         if (Selection._trackedNodeTranslation != entry.Translation)
         {
             Selection._trackedNodeTranslation = entry.Translation;
-            Screen.ViewportManager.UpdateRepresentativeNode(index, entry.Translation, entry.Rotation, entry.Scale);
+            Editor.ViewportManager.UpdateRepresentativeNode(index, entry.Translation, entry.Rotation, entry.Scale);
         }
     }
 }

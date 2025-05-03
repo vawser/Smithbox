@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
@@ -17,7 +16,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Reflection;
 using System.Threading.Tasks;
 using Veldrid.Utilities;
 
@@ -25,10 +23,11 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelResourceManager : IResourceEventListener
 {
+    public ModelEditorScreen Editor;
+
     public ViewportActionManager EditorActionManager;
     public FlverContainer LoadedFlverContainer { get; set; }
 
-    public ModelEditorScreen Screen;
     public ModelSelectionManager Selection;
     public ModelToolView ToolView;
     public ModelViewportManager ViewportManager;
@@ -47,7 +46,7 @@ public class ModelResourceManager : IResourceEventListener
 
     public ModelResourceManager(ModelEditorScreen screen, IViewport viewport)
     {
-        Screen = screen;
+        Editor = screen;
         Viewport = viewport;
         EditorActionManager = screen.EditorActionManager;
         ToolView = screen.ToolView;
@@ -118,11 +117,11 @@ public class ModelResourceManager : IResourceEventListener
         Selection.ResetSelection();
         Selection.ResetMultiSelection();
 
-        Screen._selection.ClearSelection();
+        Editor._selection.ClearSelection(Editor);
 
-        Screen.ToolView.ModelUsageSearch._searchInput = name;
+        Editor.ToolView.ModelUsageSearch._searchInput = name;
 
-        Screen._universe.UnloadTransformableEntities();
+        Editor._universe.UnloadTransformableEntities();
 
         if (_flverhandle != null)
         {
@@ -154,15 +153,15 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadLooseFLVER(string name, string loosePath)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, loosePath);
+        LoadedFlverContainer = new FlverContainer(Editor, name, loosePath);
 
         LoadEditableModel(name, name, FlverContainerType.Loose, null, loosePath);
         SetDefaultAssociatedModel();
@@ -175,9 +174,9 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name"></param>
     public void LoadCharacter(string name)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -196,9 +195,9 @@ public class ModelResourceManager : IResourceEventListener
     /// <param name="name">The name of the flver.</param>
     public void LoadEnemy(string name)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -216,21 +215,21 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadAsset(string name)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
         // Load HKX for collision
-        HavokCollisionManager.Screen = Screen;
+        HavokCollisionManager.Screen = Editor;
         HavokCollisionManager.OnLoadModel(name, FlverContainerType.Object);
 
         ResetState(name);
 
         LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Object, "");
 
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
             if (HavokCollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
             {
@@ -252,9 +251,9 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadPart(string name)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -272,9 +271,9 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadMapPiece(string name, string mapId)
     {
-        if (!ModelEditorUtils.IsSupportedProjectType(Smithbox.ProjectType))
+        if (!ModelEditorUtils.IsSupportedProjectType(Editor.Project.ProjectType))
         {
-            TaskLogs.AddLog($"Model Editor is not supported for {Smithbox.ProjectType}.", LogLevel.Warning);
+            TaskLogs.AddLog($"Model Editor is not supported for {Editor.Project.ProjectType}.", LogLevel.Warning);
             return;
         }
 
@@ -376,7 +375,7 @@ public class ModelResourceManager : IResourceEventListener
             if (binderType is FlverBinderType.BND)
             {
                 BinderReader bndReader;
-                if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                if (Editor.Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     bndReader = new BND3Reader(modelAsset.AssetPath);
                 }
@@ -411,7 +410,7 @@ public class ModelResourceManager : IResourceEventListener
             if (binderType is FlverBinderType.BND)
             {
                 BinderReader bndReader;
-                if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.ACV or ProjectType.ACVD)
+                if (Editor.Project.ProjectType is ProjectType.ACFA or ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.ACV or ProjectType.ACVD)
                 {
                     // BND3: DES, DS1
                     bndReader = new BND3Reader(modelAsset.AssetPath);
@@ -432,7 +431,7 @@ public class ModelResourceManager : IResourceEventListener
                         var proceed = true;
 
                         // DS2
-                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
                             proceed = false;
 
@@ -473,7 +472,7 @@ public class ModelResourceManager : IResourceEventListener
     /// </summary>
     public void LoadRepresentativeModel(string containerId, string modelid, FlverContainerType modelType, string mapid = null)
     {
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
             if (modelType is FlverContainerType.Object)
             {
@@ -485,14 +484,6 @@ public class ModelResourceManager : IResourceEventListener
         LoadModelInternal(containerId, modelid, modelType, mapid);
         LoadTexturesInternal(modelid, modelType, mapid);
 
-        // If model ID has additional textures associated with it, load them
-        if (Smithbox.BankHandler.AdditionalTextureInfo.HasAdditionalTextures(modelid))
-        {
-            foreach (var entry in Smithbox.BankHandler.AdditionalTextureInfo.GetAdditionalTextures(modelid))
-            {
-                LoadTexturesInternal(modelid, modelType, mapid);
-            }
-        }
     }
 
     /// <summary>
@@ -536,7 +527,7 @@ public class ModelResourceManager : IResourceEventListener
         List<ResourceDescriptor> textureAssets = GetTextureAssetDescriptorList(modelid, modelType, mapid);
 
         // Add the loose tpfs parts have in AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             textureAssets.Add(TextureLocator.GetPartTpf_Ac6(modelid));
         }
@@ -731,8 +722,8 @@ public class ModelResourceManager : IResourceEventListener
                     var directory = $"map\\{container.MapID}\\";
                     var path = $"map\\{container.MapID}\\{container.ContainerName}.flver";
 
-                    var projectDirectory = $"{Smithbox.ProjectRoot}\\{directory}";
-                    var savePath = $"{Smithbox.ProjectRoot}\\{path}";
+                    var projectDirectory = $"{Editor.Project.ProjectPath}\\{directory}";
+                    var savePath = $"{Editor.Project.ProjectPath}\\{path}";
 
                     if (!Directory.Exists(projectDirectory))
                     {
@@ -751,7 +742,7 @@ public class ModelResourceManager : IResourceEventListener
                 // The rest
                 if (binderType is FlverBinderType.BND)
                 {
-                    if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+                    if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
                     {
                         WriteModelBinderBND3();
                     }
@@ -800,7 +791,7 @@ public class ModelResourceManager : IResourceEventListener
         var bdtPath = info.ModBinderPath.Replace("bhd", "bdt");
 
         // Change the name to the map ID for DS2 map pieces
-        if(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             var containerName = LoadedFlverContainer.ContainerName;
             bhdPath = bhdPath.Replace(containerName, info.MapID);
@@ -976,7 +967,7 @@ public class ModelResourceManager : IResourceEventListener
 
         if (CFG.Current.Viewport_Enable_Rendering)
         {
-            var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Screen.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
+            var meshRenderableProxy = MeshRenderableProxy.MeshRenderableFromFlverResource(Editor.RenderScene, modelAsset.AssetVirtualPath, ModelMarkerType.None, null);
             meshRenderableProxy.World = Matrix4x4.Identity;
 
             _Flver_RenderMesh = meshRenderableProxy;
@@ -1003,7 +994,7 @@ public class ModelResourceManager : IResourceEventListener
                     _HighCollision_RenderMesh.Dispose();
                 }
 
-                _HighCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
+                _HighCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Editor.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
                 _HighCollision_RenderMesh.World = Matrix4x4.Identity;
             }
 
@@ -1015,7 +1006,7 @@ public class ModelResourceManager : IResourceEventListener
                     _LowCollision_RenderMesh.Dispose();
                 }
 
-                _LowCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Screen.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
+                _LowCollision_RenderMesh = MeshRenderableProxy.MeshRenderableFromCollisionResource(Editor.RenderScene, collisionAsset.AssetVirtualPath, ModelMarkerType.None, collisionAsset.AssetVirtualPath);
                 _LowCollision_RenderMesh.World = Matrix4x4.Identity;
             }
         }
@@ -1048,7 +1039,7 @@ public class ModelResourceManager : IResourceEventListener
         // FLVER
         if (handle is ResourceHandle<FlverResource>)
         {
-            var curFlver = Screen.ResManager.GetCurrentFLVER();
+            var curFlver = Editor.ResManager.GetCurrentFLVER();
 
             _flverhandle = (ResourceHandle<FlverResource>)handle;
             _flverhandle.Acquire();
@@ -1076,12 +1067,12 @@ public class ModelResourceManager : IResourceEventListener
             {
                 var currentFlverClone = curFlver.Clone();
 
-                Screen._universe.LoadedModelContainer = new(Screen._universe, currentFlverClone, _Flver_RenderMesh);
+                Editor._universe.LoadedModelContainer = new(Editor, Editor._universe, currentFlverClone, _Flver_RenderMesh);
             }
 
             if (CFG.Current.Viewport_Enable_Texturing)
             {
-                Screen._universe.ScheduleTextureRefresh();
+                Editor._universe.ScheduleTextureRefresh();
             }
         }
     }

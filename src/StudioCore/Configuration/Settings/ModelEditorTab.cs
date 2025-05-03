@@ -12,7 +12,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class ModelEditorTab
 {
-    public ModelEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public ModelEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

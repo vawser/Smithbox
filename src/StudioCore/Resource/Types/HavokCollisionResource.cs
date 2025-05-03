@@ -10,7 +10,7 @@ using Vortice.Vulkan;
 using System.IO;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Reflection.hk2018;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 
 namespace StudioCore.Resource.Types;
 

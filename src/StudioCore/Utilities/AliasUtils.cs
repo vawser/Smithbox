@@ -1,19 +1,18 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextureViewer.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
-using StudioCore.TextEditor;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
+using static StudioCore.Editors.EmevdEditor.EMEDF;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Utilities;
@@ -48,143 +47,79 @@ public static class AliasUtils
         }
     }
 
-    public static Dictionary<string, string> CharacterNameAliasCache = new Dictionary<string, string>();
-    public static Dictionary<string, string> AssetNameAliasCache = new Dictionary<string, string>();
-    public static Dictionary<string, string> PartNameAliasCache = new Dictionary<string, string>();
-    public static Dictionary<string, string> MapPieceNameAliasCache = new Dictionary<string, string>();
-    public static Dictionary<string, string> MapNameAliasCache = new Dictionary<string, string>();
-    public static Dictionary<string, List<string>> MapTagAliasCache = new Dictionary<string, List<string>>();
-
-    public static string GetMapNameAlias(string name)
+    public static string GetMapNameAlias(ProjectEntry project, string name)
     {
-        if (MapNameAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.MapNames)
         {
-            return MapNameAliasCache[name];
-        }
-        else
-        {
-
-            foreach (var alias in Smithbox.BankHandler.MapAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    MapNameAliasCache.Add(name, alias.name);
-                    return alias.name;
-                }
+                return alias.Name;
             }
-
         }
 
-        MapNameAliasCache.Add(name, "");
         return "";
     }
 
-    public static List<string> GetMapTags(string name)
+    public static List<string> GetMapTags(ProjectEntry project, string name)
     {
-        if (MapTagAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.MapNames)
         {
-            return MapTagAliasCache[name];
-        }
-        else
-        {
-
-            foreach (var alias in Smithbox.BankHandler.MapAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    MapTagAliasCache.Add(name, alias.tags);
-                    return alias.tags;
-                }
+                return alias.Tags;
             }
-
         }
 
-        MapTagAliasCache.Add(name, new List<string>());
         return new List<string>();
     }
 
-    public static string GetCharacterAlias(string name)
+    public static string GetCharacterAlias(ProjectEntry project, string name)
     {
-        if (CharacterNameAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.Characters)
         {
-            return CharacterNameAliasCache[name];
-        }
-        else
-        {
-            foreach (var alias in Smithbox.BankHandler.CharacterAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    CharacterNameAliasCache.Add(name, alias.name);
-                    return alias.name;
-                }
+                return alias.Name;
             }
         }
 
-        CharacterNameAliasCache.Add(name, "");
         return "";
     }
-    public static string GetAssetAlias(string name)
+    public static string GetAssetAlias(ProjectEntry project, string name)
     {
-        if (AssetNameAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.Assets)
         {
-            return AssetNameAliasCache[name];
-        }
-        else
-        {
-            foreach (var alias in Smithbox.BankHandler.AssetAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    AssetNameAliasCache.Add(name, alias.name);
-                    return alias.name;
-                }
+                return alias.Name;
             }
         }
 
-        AssetNameAliasCache.Add(name, "");
         return "";
     }
-    public static string GetPartAlias(string name)
+
+    public static string GetPartAlias(ProjectEntry project, string name)
     {
-        if (PartNameAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.Parts)
         {
-            return PartNameAliasCache[name];
-        }
-        else
-        {
-            foreach (var alias in Smithbox.BankHandler.PartAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    PartNameAliasCache.Add(name, alias.name);
-                    return alias.name;
-                }
+                return alias.Name;
             }
         }
 
-        PartNameAliasCache.Add(name, "");
         return "";
     }
-    public static string GetMapPieceAlias(string name)
+    public static string GetMapPieceAlias(ProjectEntry project, string name)
     {
-        if (MapPieceNameAliasCache.ContainsKey(name))
+        foreach (var alias in project.Aliases.MapPieces)
         {
-            return MapPieceNameAliasCache[name];
-        }
-        else
-        {
-            foreach (var alias in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
+            if (name == alias.ID)
             {
-                if (name == alias.id)
-                {
-                    MapPieceNameAliasCache.Add(name, alias.name);
-                    return alias.name;
-                }
+                return alias.Name;
             }
         }
 
-        MapPieceNameAliasCache.Add(name, "");
         return "";
     }
 
@@ -226,7 +161,7 @@ public static class AliasUtils
     }
 
     // Gparam Editor
-    public static string GetGparamAliasName(string gparamName)
+    public static string GetGparamAliasName(ProjectEntry project, string gparamName)
     {
         var mPrefix = gparamName;
         var sPrefix = gparamName;
@@ -238,15 +173,12 @@ public static class AliasUtils
             sPrefix = gparamName.Substring(0, 6).Replace("s", "m"); // Cutscene
         }
 
-        if (Smithbox.BankHandler.GparamAliases.Aliases.list != null)
+        foreach (var entry in project.Aliases.Gparams)
         {
-            foreach (var entry in Smithbox.BankHandler.GparamAliases.Aliases.list)
+            // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
+            if (entry.ID == gparamName || entry.ID == mPrefix || entry.ID == sPrefix)
             {
-                // Check for normal entries, and for mXX_XX prefix or sXX_XX prefix
-                if (entry.id == gparamName || entry.id == mPrefix || entry.id == sPrefix)
-                {
-                    return entry.name;
-                }
+                return entry.Name;
             }
         }
 
@@ -254,7 +186,7 @@ public static class AliasUtils
     }
 
     // Texture Viewer
-    public static string GetTextureContainerAliasName(TextureViewInfo info)
+    public static string GetTextureContainerAliasName(ProjectEntry project, TextureViewInfo info)
     {
         var rawName = info.Name;
         var usedName = rawName;
@@ -295,10 +227,7 @@ public static class AliasUtils
                     usedName = rawName.Replace("_l", "");
                 }
 
-                if (Smithbox.BankHandler.CharacterAliases.Aliases != null)
-                {
-                    aliasName = GetCharacterAlias(usedName);
-                }
+                aliasName = GetCharacterAlias(project, usedName);
             }
 
             if (info.Category == TextureViewCategory.Asset || info.Category == TextureViewCategory.Object)
@@ -314,10 +243,7 @@ public static class AliasUtils
                     usedName = usedName.Replace("aet", "aeg");
                 }
 
-                if (Smithbox.BankHandler.AssetAliases.Aliases != null)
-                {
-                    aliasName = GetAssetAlias(usedName);
-                }
+                aliasName = GetAssetAlias(project, usedName);
             }
 
             if (info.Category == TextureViewCategory.Part)
@@ -327,10 +253,7 @@ public static class AliasUtils
                     usedName = rawName.Replace("_l", "");
                 }
 
-                if (Smithbox.BankHandler.PartAliases.Aliases != null)
-                {
-                    aliasName = GetPartAlias(usedName);
-                }
+                aliasName = GetPartAlias(project, usedName);
             }
 
             info.CachedName = aliasName;
@@ -344,7 +267,7 @@ public static class AliasUtils
 
     }
 
-    public static void UpdateEntityAliasName(Entity e)
+    public static void UpdateEntityAliasName(ProjectEntry project, Entity e)
     {
         var aliasName = "";
         var modelName = "";
@@ -365,29 +288,20 @@ public static class AliasUtils
         {
             if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
-                if (Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
-                {
-                    aliasName = GetCharacterAlias(modelName);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetCharacterAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
-                if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
-                {
-                    aliasName = GetAssetAlias(modelName);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetAssetAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
             {
-                if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
-                {
-                    aliasName = GetMapPieceAlias(modelName);
-                    aliasName = $"{aliasName}";
-                };
+                aliasName = GetMapPieceAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             // Player/System Characters: peek in param/fmg for name
@@ -415,7 +329,7 @@ public static class AliasUtils
     }
 
     // Map Editor
-    public static string GetEntityAliasName(Entity e)
+    public static string GetEntityAliasName(ProjectEntry project, Entity e)
     {
         var aliasName = "";
         var modelName = "";
@@ -449,29 +363,20 @@ public static class AliasUtils
         {
             if (CFG.Current.MapEditor_MapObjectList_ShowCharacterNames && (e.IsPartEnemy() || e.IsPartDummyEnemy()))
             {
-                if (Smithbox.BankHandler.CharacterAliases.Aliases.list != null)
-                {
-                    aliasName = GetCharacterAlias(modelName);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetCharacterAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowAssetNames && (e.IsPartAsset() || e.IsPartDummyAsset()))
             {
-                if (Smithbox.BankHandler.AssetAliases.Aliases.list != null)
-                {
-                    aliasName = GetAssetAlias(modelName);
-                    aliasName = $"{aliasName}";
-                }
+                aliasName = GetAssetAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             if (CFG.Current.MapEditor_MapObjectList_ShowMapPieceNames && e.IsPartMapPiece())
             {
-                if (Smithbox.BankHandler.MapPieceAliases.Aliases.list != null)
-                {
-                    aliasName = GetMapPieceAlias(modelName);
-                    aliasName = $"{aliasName}";
-                };
+                aliasName = GetMapPieceAlias(project, modelName);
+                aliasName = $"{aliasName}";
             }
 
             // Player/System Characters: peek in param/fmg for name

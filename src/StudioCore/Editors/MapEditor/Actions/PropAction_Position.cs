@@ -19,7 +19,7 @@ namespace StudioCore.Editors.MapEditor.Actions
             //CFG.Current.SavedPosition = (Vector3)prop.GetValue(obj, null);
         }
 
-        public static void PasteSavedPosition(ViewportSelection _selection)
+        public static void PasteSavedPosition(MapEditorScreen editor, ViewportSelection _selection)
         {
             List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
@@ -28,7 +28,7 @@ namespace StudioCore.Editors.MapEditor.Actions
             }
 
             Actions.Viewport.CompoundAction action = new(actlist);
-            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
+            editor.EditorActionManager.ExecuteAction(action);
         }
     }
 }

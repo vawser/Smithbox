@@ -11,7 +11,7 @@ namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_Region_Connection
 {
-    public static void Display(Entity firstEnt)
+    public static void Display(MapEditorScreen editor, Entity firstEnt)
     {
         if (firstEnt.IsRegionConnection())
         {
@@ -50,7 +50,7 @@ public static class PropInfo_Region_Connection
             ImGui.Separator();
 
             ImGui.Text(mapString);
-            UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(mapString));
+            UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(editor.Project, mapString));
             ImGui.Text("");
         }
     }

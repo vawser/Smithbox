@@ -2,9 +2,6 @@
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 
 namespace StudioCore.Editors.EmevdEditor.Framework;
@@ -29,7 +26,7 @@ public class EmevdActionHandler
     {
         List<string> loggedInstructions = new List<string>();
 
-        foreach (var (info, binder) in EmevdBank.ScriptBank)
+        foreach (var (info, binder) in Screen.Project.EmevdBank.ScriptBank)
         {
             foreach (var evt in binder.Events)
             {
@@ -39,7 +36,7 @@ public class EmevdActionHandler
                 {
                     var insName = $"{ins.Bank}[{ins.ID}]";
 
-                    if (!EmevdUtils.HasArgDoc(ins))
+                    if (!EmevdUtils.HasArgDoc(Screen, ins))
                     {
                         if (!loggedInstructions.Contains(insName))
                         {

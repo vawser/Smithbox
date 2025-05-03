@@ -1,5 +1,5 @@
 ﻿using Andre.Formats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using System;
@@ -81,6 +81,7 @@ internal class SpecialMapConnections
     }
 
     public static IReadOnlyDictionary<string, RelationType> GetRelatedMaps(
+        MapEditorScreen editor,
         string mapid,
         IReadOnlyCollection<string> allMapIds,
         List<byte[]> connectColMaps = null)
@@ -92,7 +93,7 @@ internal class SpecialMapConnections
             return relations;
         }
 
-        if (Smithbox.ProjectType == ProjectType.ER && (parts[0] == 60 || parts[0] == 61) && parts[1] > 0 && parts[2] > 0)
+        if (editor.Project.ProjectType == ProjectType.ER && (parts[0] == 60 || parts[0] == 61) && parts[1] > 0 && parts[2] > 0)
         {
             var topIndex = parts[0];
 
@@ -202,17 +203,17 @@ internal class SpecialMapConnections
             }
 
             // Avoid putting in tons of maps. These types of cols are not used in the vanilla game.
-            if (Smithbox.ProjectType == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
+            if (editor.Project.ProjectType == ProjectType.ER && connectParts[0] == 60 && firstWildcard < 3)
             {
                 continue;
             }
 
-            if (Smithbox.ProjectType == ProjectType.BB && connectParts[0] == 29)
+            if (editor.Project.ProjectType == ProjectType.BB && connectParts[0] == 29)
             {
                 continue;
             }
 
-            if (Smithbox.ProjectType == ProjectType.AC6)
+            if (editor.Project.ProjectType == ProjectType.AC6)
             {
                 //TODO AC6
             }

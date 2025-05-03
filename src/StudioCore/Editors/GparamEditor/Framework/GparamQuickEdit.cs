@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
@@ -14,7 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
+using static StudioCore.Editors.GparamEditor.Data.GparamBank;
 
 namespace StudioCore.Editors.GparamEditor.Framework
 {
@@ -315,7 +314,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
 
             List<EditorAction> actionList = new();
 
-            foreach (var (name, info) in GparamParamBank.ParamBank)
+            foreach (var (name, info) in Screen.Project.GparamBank.ParamBank)
             {
                 if (IsTargetFile(name, info))
                 {
@@ -374,7 +373,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             }
         }
 
-        public bool IsTargetFile(string name, GparamParamBank.GparamInfo info)
+        public bool IsTargetFile(string name, GparamBank.GparamInfo info)
         {
             var match = false;
 
@@ -584,7 +583,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             bool foundValue = false;
 
             // Find vanilla value
-            foreach (var (name, info) in GparamParamBank.VanillaParamBank)
+            foreach (var (name, info) in Screen.Project.GparamBank.VanillaParamBank)
             {
                 if (name == Screen.Selection._selectedGparamKey)
                 {

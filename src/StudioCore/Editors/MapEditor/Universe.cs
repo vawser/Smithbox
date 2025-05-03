@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using SoulsFormats.KF4;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
@@ -35,6 +35,9 @@ namespace StudioCore.MsbEditor;
 /// </summary>
 public class Universe
 {
+    private MapEditorScreen Editor;
+    private ProjectEntry Project;
+
     /// <summary>
     /// The rendering scene context
     /// </summary>
@@ -65,10 +68,13 @@ public class Universe
     /// </summary>
     private List<Task> Tasks = new();
 
-    public Universe(RenderScene scene, ViewportSelection sel)
+    public Universe(MapEditorScreen editor, ProjectEntry project)
     {
-        RenderScene = scene;
-        Selection = sel;
+        Editor = editor;
+        Project = project;
+
+        RenderScene = editor.MapViewportView.RenderScene;
+        Selection = editor.Selection;
 
         if (RenderScene == null)
         {
@@ -162,11 +168,11 @@ public class Universe
         {
             HasProcessedMapLoad = false;
 
-            Smithbox.EditorHandler.MapEditor.DisplayGroupView.SetupDrawgroupCount();
+            Editor.DisplayGroupView.SetupDrawgroupCount();
 
             MapContainer map = new(mapid);
 
-            MapResourceHandler resourceHandler = new MapResourceHandler(mapid);
+            MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
 
             // Get the Map MSB resource
             bool exists = resourceHandler.GetMapMSB();
@@ -183,10 +189,10 @@ public class Universe
 
             if (CFG.Current.Viewport_Enable_Rendering)
             {
-                if (Smithbox.ProjectType != ProjectType.AC4 &&
-                    Smithbox.ProjectType != ProjectType.ACFA &&
-                    Smithbox.ProjectType != ProjectType.ACV &&
-                    Smithbox.ProjectType != ProjectType.ACVD)
+                if (Editor.Project.ProjectType != ProjectType.AC4 &&
+                    Editor.Project.ProjectType != ProjectType.ACFA &&
+                    Editor.Project.ProjectType != ProjectType.ACV &&
+                    Editor.Project.ProjectType != ProjectType.ACVD)
                     resourceHandler.SetupHumanEnemySubstitute();
 
                 resourceHandler.SetupModelLoadLists();
@@ -198,7 +204,7 @@ public class Universe
 
             if (CFG.Current.Viewport_Enable_Rendering)
             {
-                if (Smithbox.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+                if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                 {
                     if (SpecialMapConnections.GetEldenMapTransform(mapid, LoadedObjectContainers) is Transform
                         loadTransform)
@@ -223,12 +229,12 @@ public class Universe
                 // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
                 if (selectOnLoad)
                 {
-                    Selection.ClearSelection();
-                    Selection.AddSelection(map.RootObject);
+                    Selection.ClearSelection(Editor);
+                    Selection.AddSelection(Editor, map.RootObject);
                 }
             }
 
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
                 LoadDS2Generators(resourceHandler.AdjustedMapID, map);
             }
@@ -254,7 +260,7 @@ public class Universe
                 // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
                 foreach (Entity obj in map.Objects)
                 {
-                    obj.UpdateRenderModel();
+                    obj.UpdateRenderModel(Editor);
                 }
             }
 
@@ -288,7 +294,7 @@ public class Universe
             ResourceDescriptor adw = MapLocator.GetMapMSB(map.Name, true);
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
-            if (Smithbox.ProjectType == ProjectType.DS3)
+            if (Editor.Project.ProjectType == ProjectType.DS3)
             {
                 var prev = MSB3.Read(ad.AssetPath);
                 MSB3 n = new();
@@ -297,7 +303,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.ER)
+            else if (Editor.Project.ProjectType == ProjectType.ER)
             {
                 var prev = MSBE.Read(ad.AssetPath);
                 MSBE n = new();
@@ -305,7 +311,7 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.AC6)
+            else if (Editor.Project.ProjectType == ProjectType.AC6)
             {
                 var prev = MSB_AC6.Read(ad.AssetPath);
                 MSB_AC6 n = new();
@@ -313,14 +319,14 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
                 var prev = MSB2.Read(ad.AssetPath);
                 MSB2 n = new();
                 n.PartPoses = prev.PartPoses;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.SDT)
+            else if (Editor.Project.ProjectType == ProjectType.SDT)
             {
                 var prev = MSBS.Read(ad.AssetPath);
                 MSBS n = new();
@@ -329,11 +335,11 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.BB)
+            else if (Editor.Project.ProjectType == ProjectType.BB)
             {
                 msb = new MSBB();
             }
-            else if (Smithbox.ProjectType == ProjectType.DES)
+            else if (Editor.Project.ProjectType == ProjectType.DES)
             {
                 var prev = MSBD.Read(ad.AssetPath);
                 MSBD n = new();
@@ -341,7 +347,7 @@ public class Universe
                 msb = n;
             }
             //TODO ACFA
-            else if (Smithbox.ProjectType == ProjectType.ACFA)
+            else if (Editor.Project.ProjectType == ProjectType.ACFA)
             {
                 MSBFA prev = MSBFA.Read(ad.AssetPath);
                 MSBFA n = new();
@@ -354,7 +360,7 @@ public class Universe
                 n.CollisionTree = prev.CollisionTree;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.ACV)
+            else if (Editor.Project.ProjectType == ProjectType.ACV)
             {
                 MSBV prev = MSBV.Read(ad.AssetPath);
                 MSBV n = new();
@@ -367,7 +373,7 @@ public class Universe
                 n.CollisionTree = prev.CollisionTree;
                 msb = n;
             }
-            else if (Smithbox.ProjectType == ProjectType.ACVD)
+            else if (Editor.Project.ProjectType == ProjectType.ACVD)
             {
                 MSBVD prev = MSBVD.Read(ad.AssetPath);
                 MSBVD n = new();
@@ -387,7 +393,7 @@ public class Universe
                 //((MSB1)msb).Models = t.Models;
             }
 
-            map.SerializeToMSB(msb, Smithbox.ProjectType);
+            map.SerializeToMSB(msb, Editor.Project.ProjectType);
 
             // Create the map directory if it doesn't exist
             if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
@@ -429,7 +435,7 @@ public class Universe
 
             File.Move(mapPath + ".temp", mapPath);
 
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
                 SaveDS2Generators(map);
             }
@@ -473,7 +479,7 @@ public class Universe
 
             registParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2GeneratorRegist);
+            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2GeneratorRegist);
             map.AddObject(obj);
         }
 
@@ -490,7 +496,7 @@ public class Universe
             mergedRow.AddRow("generator-loc", row);
             generatorParams.Add(row.ID, mergedRow);
 
-            MsbEntity obj = new(map, mergedRow, MsbEntityType.DS2Generator);
+            MsbEntity obj = new(Editor, map, mergedRow, MsbEntityType.DS2Generator);
             generatorObjs.Add(row.ID, obj);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
@@ -514,7 +520,7 @@ public class Universe
                 MergedParamRow mergedRow = new("GENERATOR_MERGED_PARAM");
                 mergedRow.AddRow("generator", row);
                 generatorParams.Add(row.ID, mergedRow);
-                MsbEntity obj = new(map, mergedRow, MsbEntityType.DS2Generator);
+                MsbEntity obj = new(Editor, map, mergedRow, MsbEntityType.DS2Generator);
                 generatorObjs.Add(row.ID, obj);
                 map.AddObject(obj);
             }
@@ -557,7 +563,7 @@ public class Universe
 
             eventParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2Event);
+            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2Event);
             map.AddObject(obj);
         }
 
@@ -571,7 +577,7 @@ public class Universe
 
             eventLocationParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2EventLocation);
+            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2EventLocation);
             map.AddObject(obj);
             map.MapOffsetNode.AddChild(obj);
 
@@ -593,7 +599,7 @@ public class Universe
 
             objectInstanceParams.Add(row.ID, row);
 
-            MsbEntity obj = new(map, row, MsbEntityType.DS2ObjectInstance);
+            MsbEntity obj = new(Editor, map, row, MsbEntityType.DS2ObjectInstance);
             map.AddObject(obj);
         }
 
@@ -626,18 +632,18 @@ public class Universe
     public void LoadRelatedMapsER(string mapid)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(mapid, LoadedObjectContainers.Keys);
+            SpecialMapConnections.GetRelatedMaps(Editor, mapid, LoadedObjectContainers.Keys);
 
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
             LoadMap(map.Key);
-            Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(map.Key);
+            Editor.MapListView.SignalLoad(map.Key);
         }
     }
 
     public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
             if (ParamBank.PrimaryBank.Params == null)
             {
@@ -664,7 +670,7 @@ public class Universe
         {
             BTL btl;
 
-            if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
                 using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
                 BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
@@ -944,33 +950,33 @@ public class Universe
 
     private DCX.Type GetCompressionType()
     {
-        if (Smithbox.ProjectType == ProjectType.DS3)
+        if (Editor.Project.ProjectType == ProjectType.DS3)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Editor.Project.ProjectType == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType == ProjectType.AC6)
         {
             return DCX.Type.DCX_KRAK_MAX;
         }
-        else if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
         {
             return DCX.Type.None;
         }
-        else if (Smithbox.ProjectType == ProjectType.SDT)
+        else if (Editor.Project.ProjectType == ProjectType.SDT)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Smithbox.ProjectType == ProjectType.BB)
+        else if (Editor.Project.ProjectType == ProjectType.BB)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
-        else if (Smithbox.ProjectType == ProjectType.DES)
+        else if (Editor.Project.ProjectType == ProjectType.DES)
         {
             return DCX.Type.None;
         }
@@ -986,7 +992,7 @@ public class Universe
         List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(map.Name);
         List<ResourceDescriptor> BTLs_w = MapLocator.GetMapBTLs(map.Name, true);
         DCX.Type compressionType = GetCompressionType();
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
         {
             for (var i = 0; i < BTLs.Count; i++)
             {
@@ -1109,7 +1115,7 @@ public class Universe
 
     public void ScheduleTextureRefresh()
     {
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        if (Editor.Project.ProjectType == ProjectType.DS1)
         {
             ResourceManager.ScheduleUDSMFRefresh();
         }

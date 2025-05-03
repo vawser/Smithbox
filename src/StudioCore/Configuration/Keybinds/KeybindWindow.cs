@@ -16,6 +16,8 @@ using Veldrid;
 namespace StudioCore.Configuration.Keybinds;
 public class KeybindWindow
 {
+    public Smithbox BaseEditor;
+
     public bool MenuOpenState;
 
     private CommonKeybindTab CommonKeybinds;
@@ -28,8 +30,10 @@ public class KeybindWindow
     private TimeActEditorKeybindTab TimeActEditorKeybinds;
     private TextureViewerKeybindTab TextureViewerKeybinds;
 
-    public KeybindWindow()
+    public KeybindWindow(Smithbox baseEditor)
     {
+        BaseEditor = baseEditor;
+
         CommonKeybinds = new CommonKeybindTab();
         ViewportKeybinds = new ViewportKeybindTab();
         MapEditorKeybinds = new MapEditorKeybindTab();

@@ -30,7 +30,7 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelViewportManager
 {
-    public ModelEditorScreen Screen;
+    public ModelEditorScreen Editor;
 
     public IViewport Viewport;
 
@@ -39,13 +39,13 @@ public class ModelViewportManager
 
     public ModelViewportManager(ModelEditorScreen screen, IViewport viewport)
     {
-        Screen = screen;
+        Editor = screen;
         Viewport = viewport;
     }
 
     public bool HasValidLoadedContainer()
     {
-        if (Screen._universe.LoadedModelContainer == null)
+        if (Editor._universe.LoadedModelContainer == null)
             return false;
 
         return true;
@@ -55,21 +55,21 @@ public class ModelViewportManager
     {
         IsUpdatingViewportModel = true;
 
-        Screen._selection.ClearSelection();
+        Editor._selection.ClearSelection(Editor);
 
         UpdateRepresentativeModel();
 
-        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Dummy)
+        if (Editor.Selection._selectedFlverGroupType == GroupSelectionType.Dummy)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.DummyPoly_RootNode);
+            SelectViewportDummy(selectionIndex, Editor._universe.LoadedModelContainer.DummyPoly_RootNode);
         }
-        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Node)
+        if (Editor.Selection._selectedFlverGroupType == GroupSelectionType.Node)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.Bone_RootNode);
+            SelectViewportDummy(selectionIndex, Editor._universe.LoadedModelContainer.Bone_RootNode);
         }
-        if (Screen.Selection._selectedFlverGroupType == GroupSelectionType.Mesh)
+        if (Editor.Selection._selectedFlverGroupType == GroupSelectionType.Mesh)
         {
-            SelectViewportDummy(selectionIndex, Screen._universe.LoadedModelContainer.Mesh_RootNode);
+            SelectViewportDummy(selectionIndex, Editor._universe.LoadedModelContainer.Mesh_RootNode);
         }
 
         IsUpdatingViewportModel = false;
@@ -84,7 +84,7 @@ public class ModelViewportManager
             {
                 if (idx == selectIndex)
                 {
-                    Screen._selection.AddSelection(entry);
+                    Editor._selection.AddSelection(Editor, entry);
                 }
                 idx++;
             }
@@ -93,14 +93,14 @@ public class ModelViewportManager
 
     public void UpdateRepresentativeModel()
     {
-        var currentInfo = Screen.ResManager.LoadedFlverContainer;
+        var currentInfo = Editor.ResManager.LoadedFlverContainer;
 
         var containerId = currentInfo.ContainerName;
         var modelId = currentInfo.ContainerName;
         var modelType = currentInfo.Type;
         var mapId = currentInfo.MapID;
 
-        Screen.ResManager.LoadRepresentativeModel(containerId, modelId, modelType, mapId);
+        Editor.ResManager.LoadRepresentativeModel(containerId, modelId, modelType, mapId);
     }
 
     public void UpdateRepresentativeDummy(int index, Vector3 position)
@@ -112,14 +112,14 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
 
         var curNode = container.DummyPoly_RootNode.Children[index];
-        ChangeVisualDummyTransform act = new(curNode, position);
-        Screen.EditorActionManager.ExecuteAction(act);
+        ChangeVisualDummyTransform act = new(Editor, curNode, position);
+        Editor.EditorActionManager.ExecuteAction(act);
     }
 
     public void UpdateRepresentativeNode(int index, Vector3 position, Vector3 rotation, Vector3 scale)
@@ -131,14 +131,14 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
 
         var curNode = container.Bone_RootNode.Children[index];
-        ChangeVisualNodeTransform act = new(curNode, position, rotation, scale);
-        Screen.EditorActionManager.ExecuteAction(act);
+        ChangeVisualNodeTransform act = new(Editor, curNode, position, rotation, scale);
+        Editor.EditorActionManager.ExecuteAction(act);
     }
 
     public void SelectRepresentativeDummy(int index, Multiselection multiSelect)
@@ -150,20 +150,20 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
 
         if (multiSelect.HasValidMultiselection())
         {
-            Screen._selection.ClearSelection();
+            Editor._selection.ClearSelection(Editor);
 
             foreach (var entry in multiSelect.StoredIndices)
             {
                 var curNode = container.DummyPoly_RootNode.Children[entry];
                 IgnoreHierarchyFocus = true;
-                Screen._selection.AddSelection(curNode);
+                Editor._selection.AddSelection(Editor, curNode);
             }
         }
         else
@@ -171,8 +171,8 @@ public class ModelViewportManager
 
             var curNode = container.DummyPoly_RootNode.Children[index];
             IgnoreHierarchyFocus = true;
-            Screen._selection.ClearSelection();
-            Screen._selection.AddSelection(curNode);
+            Editor._selection.ClearSelection(Editor);
+            Editor._selection.AddSelection(Editor, curNode);
         }
     }
 
@@ -185,15 +185,15 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
 
         var curNode = container.Bone_RootNode.Children[index];
         IgnoreHierarchyFocus = true;
-        Screen._selection.ClearSelection();
-        Screen._selection.AddSelection(curNode);
+        Editor._selection.ClearSelection(Editor);
+        Editor._selection.AddSelection(Editor, curNode);
     }
     public void SelectRepresentativeMesh(int index)
     {
@@ -204,15 +204,15 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
 
         var curMesh = container.Mesh_RootNode.Children[index];
         IgnoreHierarchyFocus = true;
-        Screen._selection.ClearSelection();
-        Screen._selection.AddSelection(curMesh);
+        Editor._selection.ClearSelection(Editor);
+        Editor._selection.AddSelection(Editor, curMesh);
     }
 
     public void DisplayRepresentativeDummyState(int index)
@@ -224,7 +224,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -274,7 +274,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.DummyPoly_RootNode.Children.Count - 1)
             return;
@@ -292,7 +292,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -342,7 +342,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Bone_RootNode.Children.Count - 1)
             return;
@@ -359,7 +359,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
@@ -409,7 +409,7 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        var container = Screen._universe.LoadedModelContainer;
+        var container = Editor._universe.LoadedModelContainer;
 
         if (index > container.Mesh_RootNode.Children.Count - 1)
             return;
@@ -438,8 +438,8 @@ public class ModelViewportManager
         {
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
-            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Dummy;
-            Screen.Selection._selectedDummy = transformEnt.Index;
+            Editor.Selection._selectedFlverGroupType = GroupSelectionType.Dummy;
+            Editor.Selection._selectedDummy = transformEnt.Index;
 
             if (IgnoreHierarchyFocus)
             {
@@ -447,7 +447,7 @@ public class ModelViewportManager
             }
             else
             {
-                Screen.Selection.FocusSelection = true;
+                Editor.Selection.FocusSelection = true;
             }
         }
         // Bones
@@ -455,8 +455,8 @@ public class ModelViewportManager
         {
             TransformableNamedEntity transformEnt = (TransformableNamedEntity)ent;
 
-            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Node;
-            Screen.Selection._selectedNode = transformEnt.Index;
+            Editor.Selection._selectedFlverGroupType = GroupSelectionType.Node;
+            Editor.Selection._selectedNode = transformEnt.Index;
 
             if (IgnoreHierarchyFocus)
             {
@@ -464,7 +464,7 @@ public class ModelViewportManager
             }
             else
             {
-                Screen.Selection.FocusSelection = true;
+                Editor.Selection.FocusSelection = true;
             }
         }
         // Mesh
@@ -472,8 +472,8 @@ public class ModelViewportManager
         {
             NamedEntity namedEnt = (NamedEntity)ent;
 
-            Screen.Selection._selectedFlverGroupType = GroupSelectionType.Mesh;
-            Screen.Selection._selectedMesh = namedEnt.Index;
+            Editor.Selection._selectedFlverGroupType = GroupSelectionType.Mesh;
+            Editor.Selection._selectedMesh = namedEnt.Index;
 
             if (IgnoreHierarchyFocus)
             {
@@ -481,7 +481,7 @@ public class ModelViewportManager
             }
             else
             {
-                Screen.Selection.FocusSelection = true;
+                Editor.Selection.FocusSelection = true;
             }
         }
     }
@@ -539,10 +539,10 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        if (Screen.Selection._selectedDummy == -1)
+        if (Editor.Selection._selectedDummy == -1)
             return;
 
-        var dummy = Screen.ResManager.GetCurrentFLVER().Dummies[Screen.Selection._selectedDummy];
+        var dummy = Editor.ResManager.GetCurrentFLVER().Dummies[Editor.Selection._selectedDummy];
         var entDummy = (FLVER.Dummy)transformEnt.WrappedObject;
 
         if (dummy.Position != entDummy.Position)
@@ -556,10 +556,10 @@ public class ModelViewportManager
         if (!HasValidLoadedContainer())
             return;
 
-        if (Screen.Selection._selectedNode == -1)
+        if (Editor.Selection._selectedNode == -1)
             return;
 
-        var bone = Screen.ResManager.GetCurrentFLVER().Nodes[Screen.Selection._selectedNode];
+        var bone = Editor.ResManager.GetCurrentFLVER().Nodes[Editor.Selection._selectedNode];
         var entBone = (FLVER.Node)transformEnt.WrappedObject;
 
         if (bone.Translation != entBone.Translation)

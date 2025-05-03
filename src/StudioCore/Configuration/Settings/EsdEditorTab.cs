@@ -10,7 +10,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class EsdEditorTab
 {
-    public EsdEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public EsdEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

@@ -12,6 +12,8 @@ namespace StudioCore.Editors.ModelEditor.Actions.Viewport;
 
 public class ChangeVisualNodeTransform : ViewportAction
 {
+    private ModelEditorScreen Editor;
+
     private Entity Node;
     private Vector3 OldTranslation;
     private Vector3 NewTranslation;
@@ -21,8 +23,9 @@ public class ChangeVisualNodeTransform : ViewportAction
     private Vector3 NewScale;
     private FLVER.Node BoneNode;
 
-    public ChangeVisualNodeTransform(Entity node, Vector3 newTranslation, Vector3 newRotation, Vector3 newScale)
+    public ChangeVisualNodeTransform(ModelEditorScreen editor, Entity node, Vector3 newTranslation, Vector3 newRotation, Vector3 newScale)
     {
+        Editor = editor;
         Node = node;
         BoneNode = (FLVER.Node)node.WrappedObject;
         OldTranslation = BoneNode.Translation;
@@ -38,7 +41,7 @@ public class ChangeVisualNodeTransform : ViewportAction
         BoneNode.Translation = NewTranslation;
         BoneNode.Rotation = NewRotation;
         BoneNode.Scale = NewScale;
-        Node.UpdateRenderModel();
+        Node.UpdateRenderModel(Editor);
 
         return ActionEvent.NoEvent;
     }
@@ -48,7 +51,7 @@ public class ChangeVisualNodeTransform : ViewportAction
         BoneNode.Translation = OldTranslation;
         BoneNode.Rotation = OldRotation;
         BoneNode.Scale = OldScale;
-        Node.UpdateRenderModel();
+        Node.UpdateRenderModel(Editor);
 
         return ActionEvent.NoEvent;
     }

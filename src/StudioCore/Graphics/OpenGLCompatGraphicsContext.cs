@@ -1,5 +1,6 @@
 ﻿using Silk.NET.OpenGL;
 using Silk.NET.SDL;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(List<EditorScreen> editors, EditorScreen focusedEditor)
+    public void Draw(ProjectManager projectManager)
     {
         Debug.Assert(Window.Exists);
         var width = Window.Width;
@@ -94,10 +95,8 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
             RecreateWindowFramebuffers();
 
             _imGuiRenderer.WindowResized(width, height);
-            foreach (EditorScreen editor in editors)
-            {
-                editor.EditorResized(Window, null);
-            }
+
+            projectManager.EditorResized(Window, null);
         }
 
         if (_windowMoved)

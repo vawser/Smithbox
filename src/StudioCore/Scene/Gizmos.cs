@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Octokit;
 using StudioCore.Configuration;
+using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
@@ -109,8 +110,12 @@ public class Gizmos
     private Vector3 OriginProjection;
     private Axis TransformAxis = Axis.None;
 
-    public Gizmos(ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
+    private EditorScreen Editor;
+
+    public Gizmos(EditorScreen editor, ViewportActionManager am, ViewportSelection selection, MeshRenderables renderlist)
     {
+        Editor = editor;
+
         ActionManager = am;
         TranslateGizmoX = new DbgPrimGizmoTranslateArrow(Axis.PosX);
         TranslateGizmoY = new DbgPrimGizmoTranslateArrow(Axis.PosY);
@@ -312,11 +317,11 @@ public class Gizmos
                 List<ViewportAction> actlist = new();
                 foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                 {
-                    sel.ClearTemporaryTransform(false);
+                    sel.ClearTemporaryTransform(Editor, false);
                     actlist.Add(sel.GetUpdateTransformAction(ProjectTransformDelta(sel)));
                 }
 
-                CompoundAction action = new(actlist);
+                Editors.MapEditor.Actions.Viewport.CompoundAction action = new(actlist);
                 ActionManager.ExecuteAction(action);
             }
             else
@@ -371,7 +376,7 @@ public class Gizmos
                     //Selection.GetSingleSelection().SetTemporaryTransform(CurrentTransform);
                     foreach (Entity sel in _selection.GetFilteredSelection<Entity>(o => o.HasTransform))
                     {
-                        sel.SetTemporaryTransform(ProjectTransformDelta(sel));
+                        sel.SetTemporaryTransform(Editor, ProjectTransformDelta(sel));
                     }
                 }
             }

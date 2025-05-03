@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.Material;
@@ -20,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class MaterialGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Material Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> MaterialGroupFiles = new List<string>();
 
@@ -30,8 +31,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static MaterialList SelectedMaterialList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Material Groups\\";
+
             UpdateMaterialGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -43,8 +46,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedMaterialGroup = entry;
                         SelectedMaterialList = ReadMaterialGroup(entry);
 
-                        var action = new ReplaceMaterialList(screen, SelectedMaterialList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceMaterialList(editor, SelectedMaterialList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -60,8 +63,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedMaterialGroup = entry;
                         SelectedMaterialList = ReadMaterialGroup(entry);
 
-                        var action = new AppendMaterialList(screen, SelectedMaterialList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendMaterialList(editor, SelectedMaterialList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

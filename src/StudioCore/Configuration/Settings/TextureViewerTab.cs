@@ -10,7 +10,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class TextureViewerTab
 {
-    public TextureViewerTab() { }
+    public Smithbox BaseEditor;
+
+    public TextureViewerTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

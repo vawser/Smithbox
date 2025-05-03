@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
@@ -18,6 +18,9 @@ namespace StudioCore.TextEditor;
 
 public class TextEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ActionManager EditorActionManager = new();
 
     public TextSelectionManager Selection;
@@ -42,8 +45,14 @@ public class TextEditorScreen : EditorScreen
     public TextNewEntryCreationModal EntryCreationModal;
     public TextExporterModal TextExportModal;
 
-    public TextEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public FmgExporter FmgExporter;
+    public FmgImporter FmgImporter;
+
+    public TextEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         Selection = new TextSelectionManager(this);
         Decorator = new TextPropertyDecorator(this);
         ContextMenu = new TextContextMenu(this);
@@ -65,11 +74,15 @@ public class TextEditorScreen : EditorScreen
 
         EntryCreationModal = new TextNewEntryCreationModal(this);
         TextExportModal = new TextExporterModal(this);
+
+        FmgExporter = new FmgExporter(this, project);
     }
 
     public string EditorName => "Text Editor";
     public string CommandEndpoint => "text";
     public string SaveType => "Text";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
     public void EditDropdown()
     {

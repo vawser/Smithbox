@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Caching.Memory;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -22,7 +22,7 @@ public enum BlockSeperatorType
 
 public class EntityIdentifierOverview
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     private string SearchText = "";
     private bool HideUnassigned = false;
@@ -32,7 +32,7 @@ public class EntityIdentifierOverview
 
     public EntityIdentifierOverview(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
 
@@ -41,8 +41,8 @@ public class EntityIdentifierOverview
         if (!UI.Current.Interface_MapEditor_EntityIdentifierOverview)
             return;
 
-        // DS2 is supported currently since it uses Entity IDs differently to the other games.
-        if(Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        // DS2 is not supported currently since it uses Entity IDs differently to the other games.
+        if(Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             return;
         }
@@ -96,7 +96,7 @@ public class EntityIdentifierOverview
 
             ImGui.BeginChild($"EIO_Overview");
 
-            if (Screen.MapListView.SelectedMap == "")
+            if (Editor.MapListView.SelectedMap == "")
                 ImGui.Text("No map has been loaded and selected yet.");
 
             DisplayEIOList();
@@ -123,11 +123,11 @@ public class EntityIdentifierOverview
         if (oldKey == newKey)
             return;
 
-        var mapID = Screen.MapListView.SelectedMap;
+        var mapID = Editor.MapListView.SelectedMap;
 
-        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
+        if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
-            var curView = Screen.MapListView.ContentViews[mapID];
+            var curView = Editor.MapListView.ContentViews[mapID];
 
             if (EntityCache.ContainsKey(mapID))
             {
@@ -148,11 +148,11 @@ public class EntityIdentifierOverview
 
     public void SetupEntityCache()
     {
-        var mapID = Screen.MapListView.SelectedMap;
+        var mapID = Editor.MapListView.SelectedMap;
 
-        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
+        if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
-            var curView = Screen.MapListView.ContentViews[mapID];
+            var curView = Editor.MapListView.ContentViews[mapID];
 
             Dictionary<string, Entity> cacheEntry = new Dictionary<string, Entity>();
 
@@ -172,11 +172,11 @@ public class EntityIdentifierOverview
 
     public void DisplayEIOList()
     {
-        var mapID = Screen.MapListView.SelectedMap;
+        var mapID = Editor.MapListView.SelectedMap;
 
-        if (Screen.MapListView.ContentViews.ContainsKey(mapID))
+        if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
-            var curView = Screen.MapListView.ContentViews[mapID];
+            var curView = Editor.MapListView.ContentViews[mapID];
 
             if (EntityCache.ContainsKey(mapID))
             {
@@ -226,9 +226,9 @@ public class EntityIdentifierOverview
 
                         if (entity != null)
                         {
-                            Screen.Selection.ClearSelection();
-                            Screen.Selection.AddSelection(entity);
-                            Screen.ActionHandler.ApplyFrameInViewport();
+                            Editor.Selection.ClearSelection(Editor);
+                            Editor.Selection.AddSelection(Editor, entity);
+                            Editor.ActionHandler.ApplyFrameInViewport();
                         }
                     }
 
@@ -308,7 +308,7 @@ public class EntityIdentifierOverview
         var baseId = 0;
         var baseIdStr = mapId.Replace("m", "").Replace("_", "");
 
-        switch(Smithbox.ProjectType)
+        switch(Editor.Project.ProjectType)
         {
             // 4 digit range with no prefix
             case ProjectType.DES:

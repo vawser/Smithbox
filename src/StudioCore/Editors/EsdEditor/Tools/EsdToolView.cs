@@ -1,15 +1,10 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EsdEditor;
 
@@ -37,7 +32,7 @@ public class EsdToolView
 
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Screen.Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

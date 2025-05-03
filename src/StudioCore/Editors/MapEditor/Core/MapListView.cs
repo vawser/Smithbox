@@ -1,30 +1,21 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Configuration;
+using StudioCore.Core;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Scene;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using Veldrid;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.MsbEditor;
-using StudioCore.Editor;
-using StudioCore.Core.Project;
-using StudioCore.Interface;
-using StudioCore.Resource.Locators;
-using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Tools.WorldMap;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using System.ComponentModel;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapListView : Actions.Viewport.IActionEventHandler
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
@@ -45,7 +36,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
     public MapListView(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
 
         EditorActionManager = screen.EditorActionManager;
         Selection = screen.Selection;
@@ -67,11 +58,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         var scale = DPI.GetUIScale();
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
         // Wait for DS2 params to finish loading
-        if (Smithbox.ProjectType is ProjectType.DS2S || Smithbox.ProjectType is ProjectType.DS2)
+        if (Editor.Project.ProjectType is ProjectType.DS2S || Editor.Project.ProjectType is ProjectType.DS2)
         {
             if (ParamBank.PrimaryBank.IsLoadingParams)
             {
@@ -90,13 +81,13 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
                 // World Map
-                Screen.WorldMapView.DisplayWorldMapButton();
-                Screen.WorldMapView.DisplayWorldMap();
+                Editor.WorldMapView.DisplayWorldMapButton();
+                Editor.WorldMapView.DisplayWorldMap();
 
                 DisplaySearchbar();
                 ImGui.SameLine();
                 DisplayUnloadAllButton();
-                if (Smithbox.ProjectType is ProjectType.BB)
+                if (Editor.Project.ProjectType is ProjectType.BB)
                 {
                     ImGui.SameLine();
                     DisplayChaliceToggleButton();
@@ -105,13 +96,13 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 ImGui.Separator();
 
                 // Setup the Content Views
-                if (Screen.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
+                if (Editor.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
                 {
                     SetupContentViews = true;
 
-                    foreach (var entry in Screen.Universe.GetMapContainerList())
+                    foreach (var entry in Editor.Universe.GetMapContainerList())
                     {
-                        var newView = new MapContentView(Screen, entry.Key, entry.Value);
+                        var newView = new MapContentView(Editor, entry.Key, entry.Value);
 
                         if (!ContentViews.ContainsKey(newView.MapID))
                         {
@@ -192,13 +183,13 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
             if (result == DialogResult.Yes)
             {
-                foreach (var entry in Screen.MapListView.ContentViews)
+                foreach (var entry in Editor.MapListView.ContentViews)
                 {
                     if(entry.Value.ContentLoadState == MapContentLoadState.Loaded)
                         entry.Value.Unload();
                 }
 
-                Screen.Universe.UnloadAllMaps();
+                Editor.Universe.UnloadAllMaps();
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
                 GC.Collect();
@@ -229,7 +220,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             MapContentView curView = null;
 
             // Skip entry if it isn't valid for the searchbar input
-            if(!SearchFilters.IsMapSearchMatch(SearchBarText, entry, AliasUtils.GetMapNameAlias(entry), AliasUtils.GetMapTags(entry)) && loadType == MapContentLoadState.Unloaded)
+            if(!SearchFilters.IsMapSearchMatch(SearchBarText, entry, AliasUtils.GetMapNameAlias(Editor.Project, entry), AliasUtils.GetMapTags(Editor.Project, entry)) && loadType == MapContentLoadState.Unloaded)
             {
                 continue;
             }
@@ -278,7 +269,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
                 if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
                 {
-                    var mapName = AliasUtils.GetMapNameAlias(curView.MapID);
+                    var mapName = AliasUtils.GetMapNameAlias(Editor.Project, curView.MapID);
                     displayedName = $"{mapId}: {mapName}";
                 }
 
@@ -327,11 +318,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                     {
                         try
                         {
-                            Screen.Universe.SaveMap(m);
+                            Editor.Universe.SaveMap(m);
                         }
                         catch (SavingFailedException e)
                         {
-                            Screen.HandleSaveException(e);
+                            Editor.HandleSaveException(e);
                         }
                     }
 
@@ -344,14 +335,14 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
 
             // ER: Load Related Maps
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Editor.Project.ProjectType is ProjectType.ER)
             {
                 if (entry.StartsWith("m60") || entry.StartsWith("m61"))
                 {
                     if (ImGui.Selectable("Load Related Maps"))
                     {
                         curView.Load(true);
-                        Screen.Universe.LoadRelatedMapsER(entry);
+                        Editor.Universe.LoadRelatedMapsER(entry);
                     }
                 }
             }
@@ -365,14 +356,14 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             }
             if (ImGui.Selectable("Copy Map Name"))
             {
-                var mapName = AliasUtils.GetMapNameAlias(entry);
+                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, entry);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (Screen.MapQueryView.IsOpen)
+            if (Editor.MapQueryView.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Screen.MapQueryView.AddMapFilterInput(entry);
+                    Editor.MapQueryView.AddMapFilterInput(entry);
                 }
             }
 
@@ -384,7 +375,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         if (evt.HasFlag(Actions.Viewport.ActionEvent.ObjectAddedRemoved))
         {
-            Screen.EntityTypeCache.InvalidateCache();
+            Editor.EntityTypeCache.InvalidateCache();
         }
     }
 

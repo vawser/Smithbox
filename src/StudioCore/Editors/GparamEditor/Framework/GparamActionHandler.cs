@@ -4,17 +4,8 @@ using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Actions;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Utils;
-using StudioCore.Editors.TextureViewer;
 using StudioCore.GraphicsEditor;
-using StudioCore.Platform;
-using StudioCore.Resource;
-using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -51,12 +42,12 @@ public class GparamActionHandler
     /// Remove target GPARAM file from project
     /// </summary>
     /// <param name="info"></param>
-    public void RemoveGparamFile(GparamParamBank.GparamInfo info)
+    public void RemoveGparamFile(GparamBank.GparamInfo info)
     {
         string filePath = info.Path;
         string baseFileName = info.Name;
 
-        filePath = filePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
+        filePath = filePath.Replace($"{Screen.Project.DataPath}", $"{Screen.Project.ProjectPath}");
 
         if (File.Exists(filePath))
         {
@@ -68,14 +59,14 @@ public class GparamActionHandler
             TaskLogs.AddLog($"{baseFileName} does not exist within your project.");
         }
 
-        GparamParamBank.LoadGraphicsParams();
+        Screen.Project.GparamBank.LoadGPARAM();
     }
 
     /// <summary>
     /// Copy and rename target GPARAM file
     /// </summary>
     /// <param name="info"></param>
-    public void CopyGparamFile(GparamParamBank.GparamInfo info)
+    public void CopyGparamFile(GparamBank.GparamInfo info)
     {
         string filePath = info.Path;
         string baseFileName = info.Name;
@@ -84,7 +75,7 @@ public class GparamActionHandler
         string newFilePath = filePath.Replace(baseFileName, tryFileName);
 
         // If the original is in the root dir, change the path to mod
-        newFilePath = newFilePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
+        newFilePath = newFilePath.Replace($"{Screen.Project.DataPath}", $"{Screen.Project.ProjectPath}");
 
         if (!File.Exists(newFilePath))
         {
@@ -95,7 +86,7 @@ public class GparamActionHandler
             TaskLogs.AddLog($"{newFilePath} already exists!", LogLevel.Warning);
         }
 
-        GparamParamBank.LoadGraphicsParams();
+        Screen.Project.GparamBank.LoadGPARAM();
     }
 
     public void DisplayCopyFileNameInput(string name)
@@ -123,7 +114,7 @@ public class GparamActionHandler
             string newFilePath = filePath.Replace(baseFileName, currentfileName);
 
             // If the original is in the root dir, change the path to mod
-            newFilePath = newFilePath.Replace($"{Smithbox.GameRoot}", $"{Smithbox.ProjectRoot}");
+            newFilePath = newFilePath.Replace($"{Screen.Project.DataPath}", $"{Screen.Project.ProjectPath}");
 
             if (!File.Exists(newFilePath))
             {
@@ -138,6 +129,6 @@ public class GparamActionHandler
         }
         while (!isValidFile);
 
-        GparamParamBank.LoadGraphicsParams();
+        Screen.Project.GparamBank.LoadGPARAM();
     }
 }

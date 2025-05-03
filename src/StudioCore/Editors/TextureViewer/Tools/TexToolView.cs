@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;

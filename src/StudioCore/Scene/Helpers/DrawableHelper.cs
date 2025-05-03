@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;

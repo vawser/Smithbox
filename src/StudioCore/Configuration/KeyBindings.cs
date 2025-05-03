@@ -1,10 +1,7 @@
-﻿using SoapstoneLib.Proto.Internal;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Veldrid;
-using static SoapstoneLib.SoulsKey;
-using static SoulsFormats.BHD5;
 
 namespace StudioCore;
 

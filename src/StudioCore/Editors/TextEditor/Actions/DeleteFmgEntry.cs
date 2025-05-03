@@ -1,6 +1,7 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace StudioCore.Editors.TextEditor;
 
 public class DeleteFmgEntry : EditorAction
 {
+    private TextEditorScreen Editor;
+
     private FMG Fmg;
     private FMG.Entry Entry;
     private FMG.Entry OldEntry;
@@ -18,8 +21,9 @@ public class DeleteFmgEntry : EditorAction
 
     private TextContainerWrapper Info;
 
-    public DeleteFmgEntry(TextContainerWrapper info, FMG currentFmg, FMG.Entry entry)
+    public DeleteFmgEntry(TextEditorScreen editor, TextContainerWrapper info, FMG currentFmg, FMG.Entry entry)
     {
+        Editor = editor;
         Info = info;
         Fmg = currentFmg;
         Entry = entry;
@@ -42,7 +46,7 @@ public class DeleteFmgEntry : EditorAction
         Fmg.Entries.RemoveAt(InsertionIndex);
         Info.IsModified = true;
 
-        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
+        Editor.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -52,7 +56,7 @@ public class DeleteFmgEntry : EditorAction
         Fmg.Entries.Insert(InsertionIndex, OldEntry);
         Info.IsModified = false;
 
-        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
+        Editor.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

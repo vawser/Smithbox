@@ -11,11 +11,11 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelCommandQueue
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
 
     public ModelCommandQueue(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public void Parse(string[] initcmd)
@@ -29,26 +29,26 @@ public class ModelCommandQueue
 
                 if (assetType == "Character")
                 {
-                    Screen.FileSelection._searchInput = modelName;
-                    Screen.ResManager.LoadCharacter(modelName);
+                    Editor.FileSelection._searchInput = modelName;
+                    Editor.ResManager.LoadCharacter(modelName);
                 }
 
                 if (assetType == "Enemy")
                 {
-                    Screen.FileSelection._searchInput = modelName;
-                    Screen.ResManager.LoadEnemy(modelName);
+                    Editor.FileSelection._searchInput = modelName;
+                    Editor.ResManager.LoadEnemy(modelName);
                 }
 
                 if (assetType == "Asset")
                 {
-                    Screen.FileSelection._searchInput = modelName;
-                    Screen.ResManager.LoadAsset(modelName);
+                    Editor.FileSelection._searchInput = modelName;
+                    Editor.ResManager.LoadAsset(modelName);
                 }
 
                 if (assetType == "Part")
                 {
-                    Screen.FileSelection._searchInput = modelName;
-                    Screen.ResManager.LoadPart(modelName);
+                    Editor.FileSelection._searchInput = modelName;
+                    Editor.ResManager.LoadPart(modelName);
                 }
 
                 if (initcmd.Length > 3)
@@ -58,8 +58,8 @@ public class ModelCommandQueue
                     if (assetType == "MapPiece")
                     {
                         var mapPieceName = modelName.Replace(mapId, "m");
-                        Screen.FileSelection._searchInput = mapPieceName;
-                        Screen.ResManager.LoadMapPiece(modelName, mapId);
+                        Editor.FileSelection._searchInput = mapPieceName;
+                        Editor.ResManager.LoadMapPiece(modelName, mapId);
                     }
                 }
             }

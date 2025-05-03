@@ -17,14 +17,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverMeshPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverMeshPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -37,7 +37,7 @@ public class FlverMeshPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Meshes.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Meshes.Count < index)
             return;
 
         if (Selection.MeshMultiselect.StoredIndices.Count > 1)
@@ -52,7 +52,7 @@ public class FlverMeshPropertyView
         ImGui.Text("Mesh");
         ImGui.Separator();
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Meshes[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Meshes[index];
 
         var useBoneWeights = entry.UseBoneWeights;
         int dynamic = entry.Dynamic;
@@ -87,7 +87,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.UseBoneWeights != useBoneWeights)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_UseBoneWeights(entry, entry.UseBoneWeights, useBoneWeights));
         }
 
@@ -96,7 +96,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.MaterialIndex != materialIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_MaterialIndex(entry, entry.MaterialIndex, materialIndex));
         }
 
@@ -107,7 +107,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NodeIndex != nodeIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_NodeIndex(entry, entry.NodeIndex, nodeIndex));
         }
 
@@ -167,7 +167,7 @@ public class FlverMeshPropertyView
         UIHelper.WrappedText("Mesh Adjustments");
         ImGui.Separator();
 
-        var curFlver = Screen.ResManager.GetCurrentFLVER();
+        var curFlver = Editor.ResManager.GetCurrentFLVER();
 
         if (ImGui.BeginTable($"meshAdjustmentsTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -181,7 +181,7 @@ public class FlverMeshPropertyView
             if (ImGui.Button("Translate", new Vector2(150, 24)))
             {
                 var action = new TranslateMesh(curFlver, entry, StoredTranslationInput);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.ShowHoverTooltip("Translate the selected mesh by the specified vector.");
 
@@ -197,7 +197,7 @@ public class FlverMeshPropertyView
             if (ImGui.Button("Scale", new Vector2(150, 24)))
             {
                 var action = new ScaleMesh(curFlver, entry, StoredScaleInput);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.ShowHoverTooltip("Scale the selected mesh by the specified vector.");
 
@@ -213,7 +213,7 @@ public class FlverMeshPropertyView
             if (ImGui.Button("Rotate X##rotateXbutton", new Vector2(150, 24)))
             {
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_X, RotationAxis.X);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.ShowHoverTooltip("Rotate the selected mesh on the X-axis by the specified angle.");
 
@@ -229,7 +229,7 @@ public class FlverMeshPropertyView
             if (ImGui.Button("Rotate Y##rotateYbutton", new Vector2(150, 24)))
             {
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Y-axis by the specified angle.");
 
@@ -245,7 +245,7 @@ public class FlverMeshPropertyView
             if (ImGui.Button("Rotate Z##rotateZbutton", new Vector2(150, 24)))
             {
                 var action = new RotateMesh(curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
             UIHelper.ShowHoverTooltip("Rotate the selected mesh on the Z-axis by the specified angle.");
 
@@ -305,7 +305,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if ((int)faceset.Flags != flags)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_FaceSet_Flags(faceset, (int)faceset.Flags, flags));
         }
 
@@ -314,7 +314,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (faceset.TriangleStrip != triangleStrip)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_FaceSet_TriangleStrip(faceset, faceset.TriangleStrip, triangleStrip));
         }
 
@@ -323,7 +323,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (faceset.CullBackfaces != cullBackfaces)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_FaceSet_CullBackfaces(faceset, faceset.CullBackfaces, cullBackfaces));
         }
 
@@ -332,7 +332,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (faceset.Unk06 != unk06)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_FaceSet_Unk06(faceset, faceset.Unk06, unk06));
         }
 
@@ -379,7 +379,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (vertexBuffer.LayoutIndex != layoutIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMesh_VertexBuffer_VertexBuffer(vertexBuffer, vertexBuffer.LayoutIndex, layoutIndex));
         }
 
@@ -425,12 +425,12 @@ public class FlverMeshPropertyView
         {
             if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on X"))
             {
-                Screen.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, true));
+                Editor.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, true));
             }
             ImGui.SameLine();
             if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on Y"))
             {
-                Screen.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, false));
+                Editor.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, false));
             }
 
             // For testing purposes: Show first vertex UV
@@ -514,7 +514,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (boundingBox.Min != bbMin)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERMesh_BoundingBoxes_Min(boundingBox, boundingBox.Min, bbMin));
         }
 
@@ -523,7 +523,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (boundingBox.Max != bbMax)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERMesh_BoundingBoxes_Max(boundingBox, boundingBox.Max, bbMax));
         }
 
@@ -532,7 +532,7 @@ public class FlverMeshPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (boundingBox.Unk != bbUnk)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERMesh_BoundingBoxes_Unk(boundingBox, boundingBox.Unk, bbUnk));
         }
 

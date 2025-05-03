@@ -1,24 +1,17 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.WellKnownTypes;
 using Hexa.NET.ImGui;
-using SoulsFormats;
-using SoulsFormats.KF4;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
-using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 using static StudioCore.Editors.EmevdEditor.EMEDF;
 
@@ -64,12 +57,12 @@ public class EmevdPropertyDecorator
     public bool HasParamReference(string parameterName)
     {
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID" ||
                 parameterName == "DamageParam ID" ||
@@ -84,27 +77,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -131,12 +124,12 @@ public class EmevdPropertyDecorator
     public void DetermineParamReferenceSpacing(string parameterName, string value, int i)
     {
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID")
             {
@@ -168,27 +161,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
-        // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        // ER   
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -219,12 +212,12 @@ public class EmevdPropertyDecorator
         var currentEventID = Selection.SelectedEvent.ID.ToString(); 
 
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID")
             {
@@ -253,27 +246,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -327,38 +320,38 @@ public class EmevdPropertyDecorator
     public bool HasTextReference(string parameterName)
     {
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
 
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -375,37 +368,37 @@ public class EmevdPropertyDecorator
     public void DetermineTextReferenceSpacing(string parameterName, string value, int i)
     {
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -420,37 +413,37 @@ public class EmevdPropertyDecorator
     public void DetermineTextReference(string parameterName, string value, int i)
     {
         // DS1
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
         }
 
         // DS3
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Screen.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (Screen.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (Screen.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Screen.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -509,15 +502,15 @@ public class EmevdPropertyDecorator
     {
         if (IsFlagParameter(parameterName))
         {
-            var entries = Smithbox.BankHandler.EventFlagAliases.Aliases.list;
+            var entries = Screen.Project.Aliases.EventFlags;
             if (entries != null)
             {
                 foreach(var entry in entries)
                 {
-                    if(entry.id == value)
+                    if(entry.ID == value)
                     {
                         ImGui.AlignTextToFramePadding();
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.name}");
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
                     }
                     else
                     {
@@ -529,15 +522,15 @@ public class EmevdPropertyDecorator
 
         if (IsParticleParameter(parameterName))
         {
-            var entries = Smithbox.BankHandler.ParticleAliases.Aliases.list;
+            var entries = Screen.Project.Aliases.Particles;
             if (entries != null)
             {
                 foreach (var entry in entries)
                 {
-                    if (entry.id == value)
+                    if (entry.ID == value)
                     {
                         ImGui.AlignTextToFramePadding();
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.name}");
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
                     }
                     else
                     {
@@ -549,15 +542,15 @@ public class EmevdPropertyDecorator
 
         if (IsSoundParameter(parameterName))
         {
-            var entries = Smithbox.BankHandler.SoundAliases.Aliases.list;
+            var entries = Screen.Project.Aliases.Sounds;
             if (entries != null)
             {
                 foreach (var entry in entries)
                 {
-                    if (entry.id == value)
+                    if (entry.ID == value)
                     {
                         ImGui.AlignTextToFramePadding();
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.name}");
+                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
                     }
                     else
                     {
@@ -603,7 +596,7 @@ public class EmevdPropertyDecorator
     {
         var mapID = Selection.SelectedFileInfo.Name; // To determine map ID
 
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Screen.Project.ProjectType is ProjectType.AC6)
         {
             // Referring to base map from mission EMEVD
             if (value.Length > 4)
@@ -676,7 +669,7 @@ public class EmevdPropertyDecorator
 
     public void DisplayEnumReference(ArgDoc argDoc, object arg, int i)
     {
-        var enumDoc = EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
+        var enumDoc = Screen.Project.EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
         var alias = enumDoc.Values.Where(e => e.Key == $"{arg}").FirstOrDefault();
 
         ImGui.AlignTextToFramePadding();

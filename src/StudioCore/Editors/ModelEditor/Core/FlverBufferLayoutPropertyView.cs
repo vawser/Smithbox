@@ -13,14 +13,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverBufferLayoutPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverBufferLayoutPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -33,7 +33,7 @@ public class FlverBufferLayoutPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().BufferLayouts.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().BufferLayouts.Count < index)
             return;
 
         if (Selection.BufferLayoutMultiselect.StoredIndices.Count > 1)
@@ -44,7 +44,7 @@ public class FlverBufferLayoutPropertyView
             return;
         }
 
-        var entry = Screen.ResManager.GetCurrentFLVER().BufferLayouts[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().BufferLayouts[index];
 
         for (int i = 0; i < entry.Count; i++)
         {
@@ -100,7 +100,7 @@ public class FlverBufferLayoutPropertyView
         {
             short unk00refconv = (short)unk00ref;
             if (layout.Unk00 != unk00refconv)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERBufferLayout_LayoutMember_Unk00(layout, layout.Unk00, unk00));
         }
 
@@ -109,7 +109,7 @@ public class FlverBufferLayoutPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if ((int)layout.Type != type)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERBufferLayout_LayoutMember_Type(layout, (int)layout.Type, type));
         }
 
@@ -120,7 +120,7 @@ public class FlverBufferLayoutPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if ((int)layout.Semantic != semantic)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERBufferLayout_LayoutMember_Semantic(layout, (int)layout.Semantic, semantic));
         }
 
@@ -131,7 +131,7 @@ public class FlverBufferLayoutPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (layout.Index != layoutIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERBufferLayout_LayoutMember_Index(layout, layout.Index, layoutIndex));
         }
 

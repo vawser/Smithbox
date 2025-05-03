@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 using StudioCore.Interface;
@@ -19,28 +19,28 @@ namespace StudioCore.Editors.MapEditor.Tools;
 
 public class ToolSubMenu
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private MapActionHandler Handler;
 
     private bool PatrolsVisualised = false;
 
     public ToolSubMenu(MapEditorScreen screen, MapActionHandler handler)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = handler;
     }
 
     public void Shortcuts()
     {
         /// Toggle Patrol Route Visualisation
-        if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_TogglePatrolRouteRendering))
             {
                 if (!PatrolsVisualised)
                 {
                     PatrolsVisualised = true;
-                    PatrolDrawManager.Generate();
+                    PatrolDrawManager.Generate(Editor);
                 }
                 else
                 {
@@ -50,11 +50,11 @@ public class ToolSubMenu
             }
         }
 
-        RotationIncrement.Shortcuts();
-        KeyboardMovement.Shortcuts();
+        Editor.RotationIncrement.Shortcuts();
+        Editor.KeyboardMovement.Shortcuts();
 
         //Selection Groups
-        Screen.SelectionGroupView.SelectionGroupShortcuts();
+        Editor.SelectionGroupView.SelectionGroupShortcuts();
     }
 
     public void OnProjectChanged()
@@ -105,13 +105,13 @@ public class ToolSubMenu
             ///--------------------
             /// Patrol Route Visualisation
             ///--------------------
-            if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+            if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
             {
                 if (ImGui.BeginMenu("Patrol Route Visualisation"))
                 {
                     if (ImGui.MenuItem("Display"))
                     {
-                        PatrolDrawManager.Generate();
+                        PatrolDrawManager.Generate(Editor);
                     }
                     if (ImGui.MenuItem("Clear"))
                     {
@@ -125,7 +125,7 @@ public class ToolSubMenu
             ///--------------------
             /// Generate Navigation Data
             ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DES || Smithbox.ProjectType is ProjectType.DS1 || Smithbox.ProjectType is ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DES || Editor.Project.ProjectType is ProjectType.DS1 || Editor.Project.ProjectType is ProjectType.DS1R)
             {
                 if (ImGui.BeginMenu("Navigation Data"))
                 {
@@ -141,15 +141,15 @@ public class ToolSubMenu
             ///--------------------
             /// Entity ID Checker
             ///--------------------
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
             {
                 if (ImGui.BeginMenu("Entity ID Checker"))
                 {
-                    if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
+                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
                     {
                         if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                         {
-                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
                             {
                                 if (obj.Value != null)
                                 {
@@ -177,15 +177,15 @@ public class ToolSubMenu
             /// Name Map Objects
             ///--------------------
             // Tool for AC6 since its maps come with unnamed Regions and Events
-            if (Smithbox.ProjectType is ProjectType.AC6)
+            if (Editor.Project.ProjectType is ProjectType.AC6)
             {
                 if (ImGui.BeginMenu("Rename Map Objects"))
                 {
-                    if (Screen.Universe.LoadedObjectContainers != null && Screen.Universe.LoadedObjectContainers.Any())
+                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
                     {
                         if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                         {
-                            foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
                             {
                                 if (obj.Value != null)
                                 {

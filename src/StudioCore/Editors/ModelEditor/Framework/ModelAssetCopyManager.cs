@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -15,21 +14,22 @@ using System.Numerics;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class ModelAssetCopyManager
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
 
     public ModelAssetCopyManager(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public bool IsSupportedProjectType()
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             return true;
         }
@@ -86,7 +86,7 @@ public class ModelAssetCopyManager
                 {
                     var matchChr = $"c{newChrIdStr}";
 
-                    if (Smithbox.BankHandler.CharacterAliases.Aliases.list.Any(x => x.id == matchChr))
+                    if (Editor.Project.Aliases.Characters.Any(x => x.ID == matchChr))
                     {
                         createChr = false;
                         PlatformUtils.Instance.MessageBox($"{matchChr} already exists.", "Warning", MessageBoxButtons.OK);
@@ -118,7 +118,7 @@ public class ModelAssetCopyManager
 
     public void CreateCharacter(string copyChr, string newChr)
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // ChrBND
             ResourceDescriptor chrBnd = AssetLocator.GetCharacterBinder(copyChr);
@@ -158,10 +158,6 @@ public class ModelAssetCopyManager
             if (texBnd_h.AssetPath != null)
                 SaveContainer(texBnd_h.AssetPath, copyChr, newChr);
         }
-
-        // Reload banks so the addition appears in the lists
-        Smithbox.BankHandler.ReloadAliasBanks = true;
-        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
 
@@ -206,7 +202,7 @@ public class ModelAssetCopyManager
 
             ImGui.Separator();
 
-            if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
                 ImGui.Text("New Asset Category ID");
                 ImGui.InputInt("##newAssetCategoryId", ref NewAssetCategoryID, 1);
@@ -228,7 +224,7 @@ public class ModelAssetCopyManager
                 var prefix = "";
                 var matchAsset = "";
 
-                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+                if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     prefix = "aeg";
 
@@ -250,7 +246,7 @@ public class ModelAssetCopyManager
                         NewAssetID >= 0 && NewAssetID <= 999 &&
                         NewAssetCategoryID >= 0 && NewAssetCategoryID <= 999)
                     {
-                        if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
+                        if (Editor.Project.Aliases.Assets.Any(x => x.ID == matchAsset))
                         {
                             createAsset = false;
                             PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
@@ -283,7 +279,7 @@ public class ModelAssetCopyManager
                     if (matchAsset != "" &&
                         NewAssetID >= 0 && NewAssetID <= 999999)
                     {
-                        if (Smithbox.BankHandler.AssetAliases.Aliases.list.Any(x => x.id == matchAsset))
+                        if (Editor.Project.Aliases.Assets.Any(x => x.ID == matchAsset))
                         {
                             createAsset = false;
                             PlatformUtils.Instance.MessageBox($"{matchAsset} already exists.", "Warning", MessageBoxButtons.OK);
@@ -316,7 +312,7 @@ public class ModelAssetCopyManager
 
     public void CreateAsset(string copyAsset, string newAsset)
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // GeomBND
             ResourceDescriptor assetGeom = AssetLocator.GetAssetGeomBinder(copyAsset);
@@ -335,10 +331,6 @@ public class ModelAssetCopyManager
             if (assetGeomHKX_h.AssetPath != null)
                 SaveContainer(assetGeomHKX_h.AssetPath, copyAsset, newAsset, true);
         }
-
-        // Reload banks so the addition appears in the lists
-        Smithbox.BankHandler.ReloadAliasBanks = true;
-        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
     private string SourcePartName = "";
@@ -412,7 +404,7 @@ public class ModelAssetCopyManager
 
                 if (NewPartID >= 0 && NewPartID <= 9999)
                 {
-                    if (Smithbox.BankHandler.PartAliases.Aliases.list.Any(x => x.id == matchPart))
+                    if (Editor.Project.Aliases.Parts.Any(x => x.ID == matchPart))
                     {
                         createPart = false;
                         PlatformUtils.Instance.MessageBox($"{matchPart} already exists.", "Warning", MessageBoxButtons.OK);
@@ -444,7 +436,7 @@ public class ModelAssetCopyManager
 
     public void CreatePart(string copyPart, string newPart)
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             // PartBND
             ResourceDescriptor partBnd = AssetLocator.GetPartBinder(copyPart);
@@ -462,7 +454,7 @@ public class ModelAssetCopyManager
                 SaveContainer(partBnd_u.AssetPath, copyPart, newPart, true);
         }
 
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             // TPF
             ResourceDescriptor partTpf = AssetLocator.GetPartTpf(copyPart, "");
@@ -479,10 +471,6 @@ public class ModelAssetCopyManager
             if (partTpf_u.AssetPath != null)
                 SaveFile(partTpf_u.AssetPath, copyPart, newPart, true);
         }
-
-        // Reload banks so the addition appears in the lists
-        Smithbox.BankHandler.ReloadAliasBanks = true;
-        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
 
@@ -553,7 +541,7 @@ public class ModelAssetCopyManager
 
                 if (NewMapPieceID >= 0 && NewMapPieceID <= 999999)
                 {
-                    if (Smithbox.BankHandler.MapAliases.Aliases.list.Any(x => x.id == matchMapPiece))
+                    if (Editor.Project.Aliases.MapPieces.Any(x => x.ID == matchMapPiece))
                     {
                         createMapPiece = false;
                         PlatformUtils.Instance.MessageBox($"{matchMapPiece} already exists.", "Warning", MessageBoxButtons.OK);
@@ -595,23 +583,20 @@ public class ModelAssetCopyManager
 
         var dir = $"{mapId}";
 
-        if(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if(Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
             dir = $@"{topMapId}\{mapId}";
 
         ResourceDescriptor partBnd = AssetLocator.GetMapPiece(dir, copyMapPiece);
         if (partBnd.AssetPath != null)
             SaveContainer(partBnd.AssetPath, copyMapPiece, newMapPiece, true);
 
-        // Reload banks so the addition appears in the lists
-        Smithbox.BankHandler.ReloadAliasBanks = true;
-        Smithbox.AliasCacheHandler.ReloadAliasCaches = true;
     }
 
     private void SaveFile(string binderPath, string oldId, string newId, bool uppercaseReplace = false)
     {
         var rootFilePath = binderPath;
         var newFilePath = binderPath.Replace(oldId, newId);
-        newFilePath = newFilePath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+        newFilePath = newFilePath.Replace(Editor.Project.DataPath, Editor.Project.ProjectPath);
 
         var newBinderDirectory = Path.GetDirectoryName(newFilePath);
 
@@ -626,7 +611,7 @@ public class ModelAssetCopyManager
     private void SaveContainer(string binderPath, string oldId, string newId, bool uppercaseReplace = false)
     {
         var newBinderPath = binderPath.Replace(oldId, newId);
-        newBinderPath = newBinderPath.Replace(Smithbox.GameRoot, Smithbox.ProjectRoot);
+        newBinderPath = newBinderPath.Replace(Editor.Project.DataPath, Editor.Project.ProjectPath);
 
         var newBinderDirectory = Path.GetDirectoryName(newBinderPath);
 
@@ -635,7 +620,7 @@ public class ModelAssetCopyManager
             Directory.CreateDirectory(newBinderDirectory);
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             byte[] fileBytes = null;
 
@@ -659,7 +644,7 @@ public class ModelAssetCopyManager
                 // Then write those bytes to file
                 BND3 writeBinder = binder as BND3;
 
-                switch (Smithbox.ProjectType)
+                switch (Editor.Project.ProjectType)
                 {
                     case ProjectType.DS1:
                     case ProjectType.DS1R:
@@ -699,7 +684,7 @@ public class ModelAssetCopyManager
                 // Then write those bytes to file
                 BND4 writeBinder = binder as BND4;
 
-                switch (Smithbox.ProjectType)
+                switch (Editor.Project.ProjectType)
                 {
                     case ProjectType.DS3:
                         fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);

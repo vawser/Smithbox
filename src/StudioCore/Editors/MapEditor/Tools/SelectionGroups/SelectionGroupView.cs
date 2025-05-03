@@ -1,33 +1,38 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.Scene;
 using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Text.Json;
 
 namespace StudioCore.Editors.MapEditor.Tools.SelectionGroups;
 
 public class SelectionGroupView
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private IViewport _viewport;
     private ViewportSelection _selection;
 
     private MsbEntity selectedEntity;
 
-    public SelectionGroupView(MapEditorScreen screen)
+    public SelectionGroupView(MapEditorScreen editor)
     {
-        Screen = screen;
+        Editor = editor;
 
-        _selection = screen.Selection;
-        _viewport = screen.MapViewportView.Viewport;
+        _selection = editor.Selection;
+        _viewport = editor.MapViewportView.Viewport;
+
+        CreateSelectionGroups();
     }
 
     private string selectedResourceName = "";
@@ -46,9 +51,142 @@ public class SelectionGroupView
 
     private string _searchInput = "";
 
-    public void OnProjectChanged()
+    public void CreateSelectionGroups()
     {
-        Smithbox.BankHandler.EntitySelectionGroups.CreateSelectionGroups();
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
+            return;
+
+        if (Editor.Project.ProjectPath == "")
+            return;
+
+        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
+        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+
+        if (!Directory.Exists(SelectionDirectory))
+        {
+            try
+            {
+                Directory.CreateDirectory(SelectionDirectory);
+            }
+            catch
+            {
+                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}", LogLevel.Error);
+                return;
+            }
+
+            string template = "{ \"Resources\": [ ] }";
+            try
+            {
+                var fs = new FileStream(SelectionPath, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to write selection group resource file: {SelectionPath}\n{ex}");
+            }
+        }
+    }
+
+    public bool DeleteSelectionGroup(string currentResourceName)
+    {
+        var resource = Editor.Project.MapEntitySelections.Resources.Where(x => x.Name == currentResourceName).FirstOrDefault();
+
+        Editor.Project.MapEntitySelections.Resources.Remove(resource);
+
+        SaveSelectionGroups();
+
+        return true;
+    }
+
+    public bool AddSelectionGroup(string name, List<string> tags, List<string> selection, int keybindIndex, bool isEdit = false, string oldName = "")
+    {
+        if (name == "")
+        {
+            PlatformUtils.Instance.MessageBox("Group name is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        else if (!isEdit && Editor.Project.MapEntitySelections.Resources.Any(x => x.Name == name))
+        {
+            PlatformUtils.Instance.MessageBox("Group name already exists.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        else if (!isEdit && selection == null)
+        {
+            PlatformUtils.Instance.MessageBox("Selection is invalid.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        else if (!isEdit && selection.Count == 0)
+        {
+            PlatformUtils.Instance.MessageBox("Selection is empty.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        else if (keybindIndex != -1 && Editor.Project.MapEntitySelections.Resources.Any(x => x.SelectionGroupKeybind == keybindIndex))
+        {
+            var group = Editor.Project.MapEntitySelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex).First();
+            if (isEdit)
+            {
+                group = Editor.Project.MapEntitySelections.Resources.Where(x => x.SelectionGroupKeybind == keybindIndex && x.Name != name).First();
+            }
+            PlatformUtils.Instance.MessageBox($"Keybind already assigned to another selection group: {group.Name}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+        else
+        {
+            // Delete old entry, since we will create it a-new with the edits immediately
+            if (isEdit)
+            {
+                DeleteSelectionGroup(oldName);
+            }
+
+            var res = new EntitySelectionGroupResource();
+            res.Name = name;
+            res.Tags = tags;
+            res.Selection = selection;
+            res.SelectionGroupKeybind = keybindIndex;
+
+            Editor.Project.MapEntitySelections.Resources.Add(res);
+
+            SaveSelectionGroups();
+        }
+
+        return false;
+    }
+
+    public bool SaveSelectionGroups()
+    {
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
+            return false;
+
+        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
+        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+
+        string jsonString = JsonSerializer.Serialize(Editor.Project.MapEntitySelections, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+
+        if (Directory.Exists(SelectionDirectory))
+        {
+            try
+            {
+                var fs = new FileStream(SelectionPath, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to save selection group resource file: {SelectionPath}\n{ex}");
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public void SelectionGroupShortcuts()
@@ -107,10 +245,10 @@ public class SelectionGroupView
 
     public void OnGui()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Smithbox.BankHandler.EntitySelectionGroups.Groups == null || Smithbox.BankHandler.EntitySelectionGroups.Groups.Resources == null)
+        if (Editor.Project.MapEntitySelections.Resources == null)
             return;
 
         // This exposes the pop-up to the map editor
@@ -127,10 +265,10 @@ public class SelectionGroupView
     /// </summary>
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
-        if (Smithbox.BankHandler.EntitySelectionGroups.Groups == null || Smithbox.BankHandler.EntitySelectionGroups.Groups.Resources == null)
+        if (Editor.Project.MapEntitySelections.Resources == null)
             return;
 
         var width = ImGui.GetWindowWidth();
@@ -156,7 +294,7 @@ public class SelectionGroupView
         ImGui.InputText($"Search", ref _searchInput, 255);
         UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
 
-        foreach (var entry in Smithbox.BankHandler.EntitySelectionGroups.Groups.Resources)
+        foreach (var entry in Editor.Project.MapEntitySelections.Resources)
         {
             var displayName = $"{entry.Name}";
 
@@ -394,24 +532,24 @@ public class SelectionGroupView
 
         if (result == DialogResult.Yes)
         {
-            Smithbox.BankHandler.EntitySelectionGroups.DeleteSelectionGroup(selectedResourceName);
+            DeleteSelectionGroup(selectedResourceName);
 
             selectedResourceName = "";
             selectedResourceTags = new List<string>();
             selectedResourceContents = new List<string>();
 
-            Smithbox.BankHandler.EntitySelectionGroups.LoadBank();
+            SaveSelectionGroups();
         }
     }
 
     private void SelectSelectionGroup()
     {
-        _selection.ClearSelection();
+        _selection.ClearSelection(Editor);
 
         List<Entity> entities = new List<Entity>();
 
         // TODO: add something to prevent confusion if multiple maps are loaded with the same names within
-        foreach (var entry in Screen.Universe.GetLoadedMapContainerList())
+        foreach (var entry in Editor.Universe.GetLoadedMapContainerList())
         {
             foreach (var mapObj in entry.Objects)
             {
@@ -425,13 +563,13 @@ public class SelectionGroupView
 
         foreach (var entry in entities)
         {
-            _selection.AddSelection(entry);
+            _selection.AddSelection(Editor, entry);
         }
 
         if (CFG.Current.MapEditor_SelectionGroup_FrameSelection)
         {
-            Screen.ActionHandler.ApplyFrameInViewport();
-            Screen.ActionHandler.ApplyGoToInObjectList();
+            Editor.ActionHandler.ApplyFrameInViewport();
+            Editor.ActionHandler.ApplyGoToInObjectList();
         }
     }
 
@@ -453,15 +591,15 @@ public class SelectionGroupView
             }
         }
 
-        if (Smithbox.BankHandler.EntitySelectionGroups.AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
+        if (AddSelectionGroup(createPromptGroupName, tagList, selectionList, currentKeyBindOption, isEdit, editPromptOldGroupName))
         {
-            Smithbox.BankHandler.EntitySelectionGroups.LoadBank();
+            SaveSelectionGroups();
         }
     }
 
     public void ShortcutSelectGroup(int index)
     {
-        foreach (var entry in Smithbox.BankHandler.EntitySelectionGroups.Groups.Resources)
+        foreach (var entry in Editor.Project.MapEntitySelections.Resources)
         {
             if (entry.SelectionGroupKeybind == index)
             {

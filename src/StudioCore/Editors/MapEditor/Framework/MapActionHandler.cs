@@ -1,16 +1,10 @@
-﻿using CsvHelper;
-using Hexa.NET.ImGui;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.MapEditor.Tools;
-using StudioCore.Editors.ModelEditor.Utils;
-using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
@@ -19,22 +13,18 @@ using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 using static SoulsFormats.MSBE.Part;
-using static SoulsFormats.NVA;
 
 namespace StudioCore.Editors.MapEditor.Framework;
 
 public class MapActionHandler
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
+    private ProjectEntry Project;
 
     public Type _createPartSelectedType;
     public Type _createRegionSelectedType;
@@ -49,9 +39,10 @@ public class MapActionHandler
     public (string, ObjectContainer) _comboTargetMap = ("None", null);
     public (string, Entity) _dupeSelectionTargetedParent = ("None", null);
 
-    public MapActionHandler(MapEditorScreen screen)
+    public MapActionHandler(MapEditorScreen baseEditor, ProjectEntry project)
     {
-        Screen = screen;
+        Editor = baseEditor;
+        Project = project;
     }
 
     /// <summary>
@@ -59,7 +50,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyObjectCreation()
     {
-        if (!Screen.Universe.LoadedObjectContainers.Any())
+        if (!Editor.Universe.LoadedObjectContainers.Any())
             return;
 
         if (_targetMap != (null, null))
@@ -103,18 +94,18 @@ public class MapActionHandler
     private void AddNewEntity(Type typ, MsbEntityType etype, MapContainer map, Entity parent = null)
     {
         var newent = typ.GetConstructor(Type.EmptyTypes).Invoke(new object[0]);
-        MsbEntity obj = new(map, newent, etype);
+        MsbEntity obj = new(Editor, map, newent, etype);
 
         parent ??= map.RootObject;
 
-        AddMapObjectsAction act = new(map, Screen.MapViewportView.RenderScene, new List<MsbEntity> { obj }, true, parent);
-        Screen.EditorActionManager.ExecuteAction(act);
+        AddMapObjectsAction act = new(Editor, map, new List<MsbEntity> { obj }, true, parent);
+        Editor.EditorActionManager.ExecuteAction(act);
     }
 
     public void PopulateClassNames()
     {
         Type msbclass;
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);
@@ -180,10 +171,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyDuplicate()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            CloneMapObjectsAction action = new(Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
-            Screen.EditorActionManager.ExecuteAction(action);
+            CloneMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -216,13 +207,13 @@ public class MapActionHandler
     /// </summary>
     public void DisplayDuplicateToMapMenu(MapDuplicateToMapType displayType)
     {
-        if (!Screen.Selection.IsSelection())
+        if (!Editor.Selection.IsSelection())
             return;
 
-        if (Screen.Universe.LoadedObjectContainers == null)
+        if (Editor.Universe.LoadedObjectContainers == null)
             return;
 
-        if (!Screen.Universe.LoadedObjectContainers.Any())
+        if (!Editor.Universe.LoadedObjectContainers.Any())
             return;
 
         if (displayType is MapDuplicateToMapType.ToolWindow)
@@ -235,7 +226,7 @@ public class MapActionHandler
             ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 1.0f), "Duplicate selection to specific map");
         }
 
-        foreach (var obj in Screen.Universe.LoadedObjectContainers)
+        foreach (var obj in Editor.Universe.LoadedObjectContainers)
         {
             var mapID = obj.Key;
             var map = obj.Value;
@@ -248,7 +239,7 @@ public class MapActionHandler
                     ApplyImmediately = true;
                 }
 
-                var mapName = AliasUtils.GetMapNameAlias(mapID);
+                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, mapID);
                 UIHelper.DisplayAlias(mapName);
             }
         }
@@ -258,7 +249,7 @@ public class MapActionHandler
 
         MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
-        var sel = Screen.Selection.GetFilteredSelection<MsbEntity>().ToList();
+        var sel = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
 
         if (sel.Any(e => e.WrappedObject is BTL.Light))
         {
@@ -285,8 +276,8 @@ public class MapActionHandler
 
             Entity targetParent = _dupeSelectionTargetedParent.Item2;
 
-            var action = new CloneMapObjectsAction(Screen.MapViewportView.RenderScene, sel, true, targetMap, targetParent);
-            Screen.EditorActionManager.ExecuteAction(action);
+            var action = new CloneMapObjectsAction(Editor, sel, true, targetMap, targetParent);
+            Editor.EditorActionManager.ExecuteAction(action);
             _comboTargetMap = ("None", null);
             _dupeSelectionTargetedParent = ("None", null);
         }
@@ -297,11 +288,11 @@ public class MapActionHandler
     /// </summary>
     public void ApplyDelete()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            DeleteMapObjectsAction action = new(Screen.MapViewportView.RenderScene,
-            Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
-            Screen.EditorActionManager.ExecuteAction(action);
+            DeleteMapObjectsAction action = new(Editor,
+            Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -314,9 +305,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyFrameInViewport()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            HashSet<Entity> selected = Screen.Selection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>();
             var first = false;
             BoundingBox box = new();
 
@@ -356,7 +347,7 @@ public class MapActionHandler
 
             if (first)
             {
-                Screen.MapViewportView.Viewport.FrameBox(box);
+                Editor.MapViewportView.Viewport.FrameBox(box);
             }
         }
         else
@@ -370,9 +361,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyGoToInObjectList()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            Screen.Selection.GotoTreeTarget = Screen.Selection.GetSingleSelection();
+            Editor.Selection.GotoTreeTarget = Editor.Selection.GetSingleSelection();
         }
         else
         {
@@ -385,13 +376,13 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            HashSet<Entity> sels = Screen.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+            HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Screen.MapViewportView.Viewport.WorldView.CameraTransform.RotationMatrix);
-            Vector3 camPos = Screen.MapViewportView.Viewport.WorldView.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.MapViewportView.Viewport.WorldView.CameraTransform.RotationMatrix);
+            Vector3 camPos = Editor.MapViewportView.Viewport.WorldView.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections
@@ -436,7 +427,7 @@ public class MapActionHandler
             if (actlist.Any())
             {
                 Actions.Viewport.CompoundAction action = new(actlist);
-                Screen.EditorActionManager.ExecuteAction(action);
+                Editor.EditorActionManager.ExecuteAction(action);
             }
         }
         else
@@ -450,7 +441,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyRotation()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
             if (CFG.Current.Toolbar_Rotate_X)
             {
@@ -478,7 +469,7 @@ public class MapActionHandler
     public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
     {
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Screen.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         // Get the center position of the selections
         Vector3 accumPos = Vector3.Zero;
@@ -502,7 +493,7 @@ public class MapActionHandler
 
             if (axis.X != 0)
             {
-                radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
+                radianRotateAmount = Editor.RotationIncrement.GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis X argument is negative
                 radianRotateAmount = (axis.X < 0 ) ? -radianRotateAmount : radianRotateAmount;
                 rot_x = objT.EulerRotation.X + radianRotateAmount;
@@ -510,7 +501,7 @@ public class MapActionHandler
 
             if (axis.Y != 0)
             {
-                radianRotateAmount = RotationIncrement.GetRadianRotateAmount();
+                radianRotateAmount = Editor.RotationIncrement.GetRadianRotateAmount();
                 // Makes radian rotate amount negative if axis Y argument is negative
                 radianRotateAmount = (axis.Y < 0 ) ? -radianRotateAmount : radianRotateAmount;
                 rot_y = objT.EulerRotation.Y + radianRotateAmount;
@@ -533,7 +524,7 @@ public class MapActionHandler
         if (actlist.Any())
         {
             Actions.Viewport.CompoundAction action = new(actlist);
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -541,7 +532,7 @@ public class MapActionHandler
     {
         List<ViewportAction> actlist = new();
 
-        HashSet<Entity> selected = Screen.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
         foreach (Entity s in selected)
         {
             Vector3 pos = s.GetLocalTransform().Position;
@@ -553,7 +544,7 @@ public class MapActionHandler
         if (actlist.Any())
         {
             Actions.Viewport.CompoundAction action = new(actlist);
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
     }
 
@@ -562,10 +553,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMapObjectOrderChange(OrderMoveDir direction)
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            OrderMapObjectsAction action = new(Screen.MapViewportView.RenderScene, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList(), direction);
-            Screen.EditorActionManager.ExecuteAction(action);
+            OrderMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -578,17 +569,17 @@ public class MapActionHandler
     /// </summary>
     public void ApplyScramble()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Screen.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(false);
+                sel.ClearTemporaryTransform(Editor, false);
                 actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel), true));
             }
 
             Actions.Viewport.CompoundAction action = new(actlist);
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -699,10 +690,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyReplicate()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
-            ReplicateMapObjectsAction action = new(Screen, Screen.Selection.GetFilteredSelection<MsbEntity>().ToList());
-            Screen.EditorActionManager.ExecuteAction(action);
+            ReplicateMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList());
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -715,17 +706,17 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMovetoGrid()
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Screen.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
-                sel.ClearTemporaryTransform(false);
+                sel.ClearTemporaryTransform(Editor, false);
                 actlist.Add(sel.GetUpdateTransformAction(GetGridTransform(sel)));
             }
 
             Actions.Viewport.CompoundAction action = new(actlist);
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
         }
         else
         {
@@ -791,7 +782,7 @@ public class MapActionHandler
     {
         if (targetType == EditorVisibilityType.Selected)
         {
-            HashSet<Entity> selected = Screen.Selection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>();
 
             foreach (Entity s in selected)
             {
@@ -808,7 +799,7 @@ public class MapActionHandler
 
         if (targetType == EditorVisibilityType.All)
         {
-            foreach (ObjectContainer m in Screen.Universe.LoadedObjectContainers.Values)
+            foreach (ObjectContainer m in Editor.Universe.LoadedObjectContainers.Values)
             {
                 if (m == null)
                 {
@@ -846,16 +837,16 @@ public class MapActionHandler
 
     public void ApplyGameVisibilityChange(GameVisibilityType targetType, GameVisibilityState targetState)
     {
-        if (Screen.Selection.IsSelection())
+        if (Editor.Selection.IsSelection())
         {
             if (targetType == GameVisibilityType.GameEditionDisable)
             {
                 if (targetState == GameVisibilityState.Disable)
                 {
-                    List<MsbEntity> sourceList = Screen.Selection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Smithbox.ProjectType == ProjectType.ER)
+                        if (Editor.Project.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 1);
                         }
@@ -863,10 +854,10 @@ public class MapActionHandler
                 }
                 if (targetState == GameVisibilityState.Enable)
                 {
-                    List<MsbEntity> sourceList = Screen.Selection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
-                        if (Smithbox.ProjectType == ProjectType.ER)
+                        if (Editor.Project.ProjectType == ProjectType.ER)
                         {
                             s.SetPropertyValue("GameEditionDisable", 0);
                         }
@@ -899,7 +890,7 @@ public class MapActionHandler
     public void ChangeMapObjectType(string[] sourceTypes, string[] targetTypes)
     {
         Type msbclass;
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             case ProjectType.DES:
                 msbclass = typeof(MSBD);
@@ -940,10 +931,10 @@ public class MapActionHandler
             default:
                 throw new ArgumentException("type must be valid");
         }
-        List<MsbEntity> sourceList = Screen.Selection.GetFilteredSelection<MsbEntity>().ToList();
+        List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
 
-        ChangeMapObjectType action = new(msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
-        Screen.EditorActionManager.ExecuteAction(action);
+        ChangeMapObjectType action = new(Editor, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
+        Editor.EditorActionManager.ExecuteAction(action);
     }
 
     /// <summary>
@@ -951,7 +942,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyEditorVisibilityChangeByTag()
     {
-        foreach (ObjectContainer m in Screen.Universe.LoadedObjectContainers.Values)
+        foreach (ObjectContainer m in Editor.Universe.LoadedObjectContainers.Values)
         {
             if (m == null)
             {
@@ -962,17 +953,17 @@ public class MapActionHandler
             {
                 if (obj.IsPart())
                 {
-                    if (Smithbox.BankHandler.AssetAliases.Aliases != null)
+                    if (Project.Aliases.Assets != null)
                     {
-                        foreach (var entry in Smithbox.BankHandler.AssetAliases.Aliases.list)
+                        foreach (var entry in Project.Aliases.Assets)
                         {
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
-                            if (entry.id == modelName)
+                            if (entry.ID == modelName)
                             {
                                 bool change = false;
 
-                                foreach (var tag in entry.tags)
+                                foreach (var tag in entry.Tags)
                                 {
                                     if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
                                         change = true;
@@ -993,18 +984,18 @@ public class MapActionHandler
                         }
                     }
 
-                    if (Smithbox.BankHandler.MapPieceAliases.Aliases != null)
+                    if (Project.Aliases.MapPieces != null)
                     {
-                        foreach (var entry in Smithbox.BankHandler.MapPieceAliases.Aliases.list)
+                        foreach (var entry in Project.Aliases.MapPieces)
                         {
-                            var entryName = $"m{entry.id.Split("_").Last()}";
+                            var entryName = $"m{entry.ID.Split("_").Last()}";
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
                             if (entryName == modelName)
                             {
                                 bool change = false;
 
-                                foreach (var tag in entry.tags)
+                                foreach (var tag in entry.Tags)
                                 {
                                     if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
                                         change = true;
@@ -1036,14 +1027,14 @@ public class MapActionHandler
     /// </summary>
     public void GenerateNavigationData()
     {
-        Dictionary<string, ObjectContainer> orderedMaps = Screen.Universe.LoadedObjectContainers;
+        Dictionary<string, ObjectContainer> orderedMaps = Editor.Universe.LoadedObjectContainers;
 
         HashSet<string> idCache = new();
         foreach (var map in orderedMaps)
         {
             string mapid = map.Key;
 
-            if (Smithbox.ProjectType is ProjectType.DES)
+            if (Editor.Project.ProjectType is ProjectType.DES)
             {
                 if (mapid != "m03_01_00_99" && !mapid.StartsWith("m99"))
                 {
@@ -1057,20 +1048,20 @@ public class MapActionHandler
                     {
                         if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
                         {
-                            areaDirectories.Add(Path.Combine(Smithbox.GameRoot, "map", orderMap.Key));
+                            areaDirectories.Add(Path.Combine(Editor.Project.DataPath, "map", orderMap.Key));
                         }
                     }
                     SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                 }
                 else
                 {
-                    var areaDirectories = new List<string> { Path.Combine(Smithbox.GameRoot, "map", mapid) };
+                    var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
                     SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: true);
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            else if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                var areaDirectories = new List<string> { Path.Combine(Smithbox.GameRoot, "map", mapid) };
+                var areaDirectories = new List<string> { Path.Combine(Editor.Project.DataPath, "map", mapid) };
 
                 SoulsMapMetadataGenerator.GenerateMCGMCP(areaDirectories, toBigEndian: false);
             }
@@ -1084,10 +1075,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyEntityChecker()
     {
-        if (Screen.Universe.LoadedObjectContainers == null)
+        if (Editor.Universe.LoadedObjectContainers == null)
             return;
 
-        if (!Screen.Universe.LoadedObjectContainers.Any())
+        if (!Editor.Universe.LoadedObjectContainers.Any())
             return;
 
         HashSet<uint> vals = new();
@@ -1127,7 +1118,36 @@ public class MapActionHandler
             // Entity Group ID
             foreach (var e in loadedMap?.Objects)
             {
-                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+                if (Editor.Project.ProjectType == ProjectType.AC6)
+                {
+                    if (e.WrappedObject is MSB_AC6.Part)
+                    {
+                        MSB_AC6.Part part = (MSB_AC6.Part)e.WrappedObject;
+
+                        List<uint> checkedEntityGroups = new List<uint>();
+
+                        for (int i = 0; i < part.EntityGroupIDs.Length; i++)
+                        {
+                            if (part.EntityGroupIDs[i] == 0)
+                                continue;
+
+                            if (checkedEntityGroups.Count > 0)
+                            {
+                                foreach (var group in checkedEntityGroups)
+                                {
+                                    if (part.EntityGroupIDs[i] == group)
+                                    {
+                                        hasError = true;
+                                        TaskLogs.AddLog($"Duplicate Entity Group ID: {part.EntityGroupIDs[i].ToString()} in {e.Name}");
+                                    }
+                                }
+                            }
+
+                            checkedEntityGroups.Add(part.EntityGroupIDs[i]);
+                        }
+                    }
+                }
+                if (Editor.Project.ProjectType == ProjectType.ER)
                 {
                     if (e.WrappedObject is MSBE.Part)
                     {
@@ -1156,7 +1176,7 @@ public class MapActionHandler
                         }
                     }
                 }
-                if (Smithbox.ProjectType == ProjectType.SDT)
+                if (Editor.Project.ProjectType == ProjectType.SDT)
                 {
                     if (e.WrappedObject is MSBS.Part)
                     {
@@ -1185,7 +1205,7 @@ public class MapActionHandler
                         }
                     }
                 }
-                if (Smithbox.ProjectType == ProjectType.DS3)
+                if (Editor.Project.ProjectType == ProjectType.DS3)
                 {
                     if (e.WrappedObject is MSB3.Part)
                     {
@@ -1241,12 +1261,12 @@ public class MapActionHandler
     public void ApplyEntityAssigner()
     {
         // Save current and then unload
-        Smithbox.EditorHandler.MapEditor.Save();
-        Screen.Universe.UnloadAll();
+        Editor.Save();
+        Editor.Universe.UnloadAll();
 
         if (SelectedMapFilter == "All")
         {
-            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Screen.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
+            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Editor.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
 
             foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
             {
@@ -1261,10 +1281,10 @@ public class MapActionHandler
 
     public void ApplyEntityGroupIdChange(string mapid)
     {
-        var filepath = $"{Smithbox.ProjectRoot}\\map\\MapStudio\\{mapid}.msb.dcx";
+        var filepath = $"{Editor.Project.ProjectPath}\\map\\MapStudio\\{mapid}.msb.dcx";
 
         // Armored Core
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType == ProjectType.AC6)
         {
             MSB_AC6 map = MSB_AC6.Read(filepath);
 
@@ -1324,7 +1344,7 @@ public class MapActionHandler
         }
 
         // Elden Ring
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Editor.Project.ProjectType == ProjectType.ER)
         {
             MSBE map = MSBE.Read(filepath);
 
@@ -1384,7 +1404,7 @@ public class MapActionHandler
         }
 
         // Sekiro
-        if (Smithbox.ProjectType == ProjectType.SDT)
+        if (Editor.Project.ProjectType == ProjectType.SDT)
         {
             MSBS map = MSBS.Read(filepath);
 
@@ -1444,7 +1464,7 @@ public class MapActionHandler
         }
 
         // DS3
-        if (Smithbox.ProjectType == ProjectType.DS3)
+        if (Editor.Project.ProjectType == ProjectType.DS3)
         {
             MSB3 map = MSB3.Read(filepath);
 
@@ -1509,10 +1529,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMapObjectNames(bool useJapaneseNames)
     {
-        if (Screen.Universe.LoadedObjectContainers == null)
+        if (Editor.Universe.LoadedObjectContainers == null)
             return;
 
-        if (!Screen.Universe.LoadedObjectContainers.Any())
+        if (!Editor.Universe.LoadedObjectContainers.Any())
             return;
 
         if (_targetMap != (null, null))
@@ -1601,7 +1621,7 @@ public class MapActionHandler
             }
 
             var compoundAction = new Actions.Viewport.CompoundAction(actionList);
-            Screen.EditorActionManager.ExecuteAction(compoundAction);
+            Editor.EditorActionManager.ExecuteAction(compoundAction);
         }
     }
 

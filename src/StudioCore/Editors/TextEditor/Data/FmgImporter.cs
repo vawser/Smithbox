@@ -1,41 +1,42 @@
 ﻿using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
-using SoulsFormats;
-using StudioCore.Banks.AliasBank;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.TextEditor.Actions;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
 
-public static class FmgImporter
+public class FmgImporter
 {
-    public static Dictionary<string, StoredFmgContainer> ImportSources = new();
+    public TextEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public Dictionary<string, StoredFmgContainer> ImportSources = new();
+
+    public FmgImporter(TextEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
 
     /// <summary>
     /// Context Menu options in the Container list
     /// </summary>
-    public static void MenubarOptions()
+    public void MenubarOptions()
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         if (ImGui.BeginMenu("Import"))
         {
-            if (ImGui.BeginMenu("File", editor.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu("File", Editor.Selection.SelectedContainerWrapper != null))
             {
                 DisplayImportList(ImportType.Container);
 
@@ -43,7 +44,7 @@ public static class FmgImporter
             }
             UIHelper.ShowHoverTooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
 
-            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
             {
                 DisplayImportList(ImportType.FMG);
 
@@ -51,7 +52,7 @@ public static class FmgImporter
             }
             UIHelper.ShowHoverTooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
 
-            if (ImGui.BeginMenu("Text Entry", editor.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
             {
                 DisplayImportList(ImportType.FMG_Entries);
 
@@ -62,10 +63,11 @@ public static class FmgImporter
             ImGui.EndMenu();
         }
     }
+
     /// <summary>
     /// Context Menu options in the Container list
     /// </summary>
-    public static void FileContextMenuOptions()
+    public void FileContextMenuOptions()
     {
         if (ImGui.BeginMenu("Import Text"))
         {
@@ -78,7 +80,7 @@ public static class FmgImporter
     /// <summary>
     /// Context Menu options in the FMG list
     /// </summary>
-    public static void FmgContextMenuOptions()
+    public void FmgContextMenuOptions()
     {
         if (ImGui.BeginMenu("Import Text"))
         {
@@ -91,7 +93,7 @@ public static class FmgImporter
     /// <summary>
     /// Context Menu options in the FMG Entry list
     /// </summary>
-    public static void FmgEntryContextMenuOptions()
+    public void FmgEntryContextMenuOptions()
     {
         if (ImGui.BeginMenu("Import Text"))
         {
@@ -104,7 +106,7 @@ public static class FmgImporter
     /// <summary>
     /// Get the FMG Wrapper sources on project load
     /// </summary>
-    public static void OnProjectChanged()
+    public void OnProjectChanged()
     {
         LoadWrappers();
     }
@@ -112,7 +114,7 @@ public static class FmgImporter
     /// <summary>
     /// Display the possible import sources for the user to select from
     /// </summary>
-    public static void DisplayImportList(ImportType importType)
+    public void DisplayImportList(ImportType importType)
     {
         LoadWrappers();
 
@@ -173,9 +175,9 @@ public static class FmgImporter
         UIHelper.ShowHoverTooltip("The selected stored text will be added to the current Text file.\n\nExisting entries WILL be modified by the contents of the stored text.");
     }
 
-    private static List<EditorAction> ImportActions;
+    private List<EditorAction> ImportActions;
 
-    private static void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior)
+    private void ImportText(StoredFmgContainer containerWrapper, ImportBehavior importBehavior)
     {
         if(containerWrapper.FmgWrappers == null)
         {
@@ -184,9 +186,7 @@ public static class FmgImporter
 
         ImportActions = new List<EditorAction>();
 
-        var editor = Smithbox.EditorHandler.TextEditor;
-
-        var targetContainer = editor.Selection.SelectedContainerWrapper;
+        var targetContainer = Editor.Selection.SelectedContainerWrapper;
 
         if (targetContainer == null)
             return;
@@ -203,9 +203,9 @@ public static class FmgImporter
         }
 
         var groupAction = new FmgGroupedAction(ImportActions);
-        editor.EditorActionManager.ExecuteAction(groupAction);
+        Editor.EditorActionManager.ExecuteAction(groupAction);
     }
-    private static void ProcessFmg(
+    private void ProcessFmg(
         TextContainerWrapper containerWrapper, 
         TextFmgWrapper fmgWrapper, 
         StoredFmgWrapper storedWrapper, 
@@ -220,7 +220,7 @@ public static class FmgImporter
             // New entry
             if (!targetEntries.Any(e => e.ID == storedEntry.ID))
             {
-                ImportActions.Add(new AddFmgEntry(containerWrapper, storedEntry, storedEntry, storedEntry.ID));
+                ImportActions.Add(new AddFmgEntry(Editor, containerWrapper, storedEntry, storedEntry, storedEntry.ID));
             }
             // Existing entry
             else if(targetEntries.Any(e => e.ID == storedEntry.ID) && importBehavior is not ImportBehavior.Append)
@@ -238,7 +238,7 @@ public static class FmgImporter
     /// <summary>
     /// Load the wrappers into the FmgWrapper object and fill the ImportSources dictionary
     /// </summary>
-    private static void LoadWrappers()
+    private void LoadWrappers()
     {
         ImportSources = new();
 
@@ -271,7 +271,7 @@ public static class FmgImporter
         }
     }
 
-    private static StoredFmgContainer GenerateStoredFmgContainer(string path)
+    private StoredFmgContainer GenerateStoredFmgContainer(string path)
     {
         var filename = Path.GetFileName(path);
         var wrapper = new StoredFmgContainer();
@@ -296,7 +296,7 @@ public static class FmgImporter
         return wrapper;
     }
 
-    private static void PromptExternalTextImport(ImportBehavior type)
+    private void PromptExternalTextImport(ImportBehavior type)
     {
         if (PlatformUtils.Instance.OpenFileDialog("Select stored text JSON", ["json"], out var path))
         {

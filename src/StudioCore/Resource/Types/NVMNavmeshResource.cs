@@ -1,5 +1,4 @@
 ﻿using SoulsFormats;
-using StudioCore.UserProject;
 using StudioCore.Scene;
 using System;
 using System.Collections.Generic;

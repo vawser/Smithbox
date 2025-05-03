@@ -1,39 +1,30 @@
-﻿using HKLib.hk2018;
-using HKLib.hk2018.hkaiCollisionAvoidance;
-using HKLib.hk2018.TypeRegistryTest;
-using Hexa.NET.ImGui;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor;
-using StudioCore.Editors.TextureViewer;
-using StudioCore.MsbEditor;
-using StudioCore.Resource;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Numerics;
-using static SoulsFormats.BTPB;
 
 namespace StudioCore.Editor;
 
 public class ModelContainer : ObjectContainer
 {
+    public ModelEditorScreen Editor;
+
     public ModelUniverse Universe { get; set; }
 
     public Entity Mesh_RootNode { get; set; }
     public Entity Bone_RootNode { get; set; }
     public Entity DummyPoly_RootNode { get; set; }
 
-    public ModelContainer(ModelUniverse u, FLVER2 flver, MeshRenderableProxy flverProxy)
+    public ModelContainer(ModelEditorScreen editor, ModelUniverse u, FLVER2 flver, MeshRenderableProxy flverProxy)
     {
         Universe = u;
 
-        RootObject = new Entity(this, new ModelRootNode("Root"));
-        Mesh_RootNode = new Entity(this, new ModelRootNode("Meshes"));
-        Bone_RootNode = new Entity(this, new ModelRootNode("Bones"));
-        DummyPoly_RootNode = new Entity(this, new ModelRootNode("Dummy Polygons"));
+        RootObject = new Entity(Editor, this, new ModelRootNode("Root"));
+        Mesh_RootNode = new Entity(Editor, this, new ModelRootNode("Meshes"));
+        Bone_RootNode = new Entity(Editor, this, new ModelRootNode("Bones"));
+        DummyPoly_RootNode = new Entity(Editor, this, new ModelRootNode("Dummy Polygons"));
 
         RootObject.AddChild(Mesh_RootNode);
         RootObject.AddChild(Bone_RootNode);

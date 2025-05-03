@@ -12,13 +12,13 @@ namespace StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
 public class AppendAllSkeletonList : ViewportAction
 {
     private FLVER2 CurrentFLVER;
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private List<FLVER2.SkeletonSet.Bone> OldAllSkeletonBones;
     private List<FLVER2.SkeletonSet.Bone> NewAllSkeletonBones;
 
     public AppendAllSkeletonList(ModelEditorScreen screen, List<FLVER2.SkeletonSet.Bone> AllSkeletonBones)
     {
-        Screen = screen;
+        Editor = screen;
         CurrentFLVER = screen.ResManager.GetCurrentFLVER();
         OldAllSkeletonBones = [.. CurrentFLVER.Skeletons.AllSkeletons];
         NewAllSkeletonBones = AllSkeletonBones;

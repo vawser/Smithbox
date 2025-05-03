@@ -12,14 +12,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverBaseSkeletonPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverBaseSkeletonPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -32,10 +32,10 @@ public class FlverBaseSkeletonPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton.Count < index)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton == null)
+        if (Editor.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton == null)
             return;
 
         if (Selection.BaseSkeletonMultiselect.StoredIndices.Count > 1)
@@ -51,7 +51,7 @@ public class FlverBaseSkeletonPropertyView
         ImGui.Separator();
         UIHelper.ShowHoverTooltip("Contains the standard skeleton hierarchy, which corresponds to the node hierarchy.");
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Skeletons.BaseSkeleton[index];
 
         int parentIndex = entry.ParentIndex;
         int firstChildIndex = entry.FirstChildIndex;
@@ -104,7 +104,7 @@ public class FlverBaseSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.ParentIndex != parentIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_ParentIndex(entry, entry.ParentIndex, parentIndex));
         }
 
@@ -115,7 +115,7 @@ public class FlverBaseSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.FirstChildIndex != firstChildIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
         }
 
@@ -126,7 +126,7 @@ public class FlverBaseSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NextSiblingIndex != nextSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
         }
 
@@ -137,7 +137,7 @@ public class FlverBaseSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.PreviousSiblingIndex != previousSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
         }
 
@@ -148,7 +148,7 @@ public class FlverBaseSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NodeIndex != nodeIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_NodeIndex(entry, entry.NodeIndex, nodeIndex));
         }
 

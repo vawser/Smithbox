@@ -1,21 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor;
 using StudioCore.Editors.EsdEditor.Framework;
-using StudioCore.Editors.EsdEditor.Utils;
-using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
-using System.Collections.Generic;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.TalkEditor;
 
 public class EsdEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ActionManager EditorActionManager = new();
 
     public EsdSelectionManager Selection;
@@ -34,8 +31,11 @@ public class EsdEditorScreen : EditorScreen
     public EsdStateNodeView StateNodeView;
     public EsdStateNodePropertyView StateNodePropertyView;
 
-    public EsdEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public EsdEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         EditorShortcuts = new EsdShortcuts(this);
         Selection = new EsdSelectionManager(this);
         Decorator = new EsdPropertyDecorator(this);
@@ -56,12 +56,90 @@ public class EsdEditorScreen : EditorScreen
     public string EditorName => "ESD Editor##TalkScriptEditor";
     public string CommandEndpoint => "esd";
     public string SaveType => "ESD";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
-    public void EditDropdown()
+    /// <summary>
+    /// The editor loop
+    /// </summary>
+    public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
+        var scale = DPI.GetUIScale();
 
+        // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+
+        var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        if (UI.Current.Interface_EsdEditor_FileList)
+        {
+            FileView.Display();
+        }
+        if (UI.Current.Interface_EsdEditor_ScriptList)
+        {
+            ScriptView.Display();
+        }
+        if (UI.Current.Interface_EsdEditor_StateGroupList)
+        {
+            StateGroupView.Display();
+        }
+        if (UI.Current.Interface_EsdEditor_StateNodeList)
+        {
+            StateNodeView.Display();
+        }
+        if (UI.Current.Interface_EsdEditor_StateNodeContents)
+        {
+            StateNodePropertyView.Display();
+        }
+        if (UI.Current.Interface_EsdEditor_ToolConfigurationWindow)
+        {
+            ToolView.Display();
+        }
+
+        ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
+
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -97,11 +175,8 @@ public class EsdEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -146,111 +221,9 @@ public class EsdEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
         ToolMenubar.Display();
-    }
-
-    /// <summary>
-    /// The editor loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-
-        var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (!EsdUtils.SupportsEditor())
-        {
-            ImGui.Begin("Editor##InvalidEsdEditor");
-
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-
-            ImGui.End();
-        }
-        else
-        {
-            if (!EsdBank.IsLoaded)
-            {
-                EsdBank.LoadEsdScripts();
-                EsdMeta.SetupMeta();
-            }
-
-            if (EsdBank.IsLoaded)
-            {
-                if (UI.Current.Interface_EsdEditor_FileList)
-                {
-                    FileView.Display();
-                }
-                if (UI.Current.Interface_EsdEditor_ScriptList)
-                {
-                    ScriptView.Display();
-                }
-                if (UI.Current.Interface_EsdEditor_StateGroupList)
-                {
-                    StateGroupView.Display();
-                }
-                if (UI.Current.Interface_EsdEditor_StateNodeList)
-                {
-                    StateNodeView.Display();
-                }
-                if (UI.Current.Interface_EsdEditor_StateNodeContents)
-                {
-                    StateNodePropertyView.Display();
-                }
-                if (UI.Current.Interface_EsdEditor_ToolConfigurationWindow)
-                {
-                    ToolView.Display();
-                }
-            }
-        }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
-    }
-
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
-        Selection.ResetScript();
-        Selection.ResetStateGroup();
-        Selection.ResetStateGroupNode();
-
-        FileView.OnProjectChanged();
-        ScriptView.OnProjectChanged();
-        StateGroupView.OnProjectChanged();
-        StateNodeView.OnProjectChanged();
-        StateNodePropertyView.OnProjectChanged();
-
-        ToolView.OnProjectChanged();
-        ToolMenubar.OnProjectChanged();
-
-        EsdBank.LoadEsdScripts();
-        EsdMeta.SetupMeta();
-
-        ResetActionManager();
     }
 
     public void Save()
@@ -258,11 +231,10 @@ public class EsdEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_ESD)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
-        if (EsdBank.IsLoaded)
-            EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
+        Project.EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
     }
 
     public void SaveAll()
@@ -270,15 +242,6 @@ public class EsdEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_ESD)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (EsdBank.IsLoaded)
-            EsdBank.SaveEsdScripts();
-    }
-
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
+        Project.EsdBank.SaveEsdScripts();
     }
 }

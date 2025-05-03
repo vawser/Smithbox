@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Interface;
@@ -51,10 +50,10 @@ public class EsdFileView
         ImGui.BeginChild("FileListSection");
         Selection.SwitchWindowContext(EsdEditorContext.File);
 
-        foreach (var (info, binder) in EsdBank.TalkBank)
+        foreach (var (info, binder) in Screen.Project.EsdBank.TalkBank)
         {
             var displayName = $"{info.Name}";
-            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
+            var aliasName = AliasUtils.GetMapNameAlias(Screen.Project, info.Name);
 
             if (Filters.IsFileFilterMatch(displayName, aliasName))
             {

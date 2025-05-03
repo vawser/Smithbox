@@ -1,7 +1,8 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
@@ -77,15 +78,19 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Default constructor.
     /// </summary>
-    public Entity()
+    public Entity(EditorScreen editor)
     {
+        Editor = editor;
     }
+
+    private EditorScreen Editor;
 
     /// <summary>
     /// Constructor: container, object
     /// </summary>
-    public Entity(ObjectContainer map, object msbo)
+    public Entity(EditorScreen editor, ObjectContainer map, object msbo)
     {
+        Editor = editor;
         Container = map;
         WrappedObject = msbo;
     }
@@ -130,7 +135,7 @@ public class Entity : ISelectable, IDisposable
         set
         {
             _renderSceneMesh = value;
-            UpdateRenderModel();
+            UpdateRenderModel(Editor);
         }
         get => _renderSceneMesh;
     }
@@ -235,33 +240,43 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Function executed upon the selection of this entity.
     /// </summary>
-    public void OnSelected()
+    public void OnSelected(EditorScreen editor)
     {
         IsSelected = true;
 
-        UpdateRenderModel();
+        UpdateRenderModel(Editor);
 
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = true;
         }
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntitySelected(this);
+
+        if(editor is ModelEditorScreen)
+        {
+            var modelEditor = (ModelEditorScreen)editor;
+            modelEditor.ViewportManager.OnRepresentativeEntitySelected(this);
+        }
     }
 
     /// <summary>
     /// Function executed upon the deselection of this entity.
     /// </summary>
-    public void OnDeselected()
+    public void OnDeselected(EditorScreen editor)
     {
         IsSelected = false;
 
-        UpdateRenderModel();
+        UpdateRenderModel(Editor);
 
         if (RenderSceneMesh != null)
         {
             RenderSceneMesh.RenderSelectionOutline = false;
         }
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntityDeselected(this);
+
+        if (editor is ModelEditorScreen)
+        {
+            var modelEditor = (ModelEditorScreen)editor;
+            modelEditor.ViewportManager.OnRepresentativeEntityDeselected(this);
+        }
     }
 
     /// <summary>
@@ -283,7 +298,7 @@ public class Entity : ISelectable, IDisposable
         }
 
         Children.Add(child);
-        child.UpdateRenderModel();
+        child.UpdateRenderModel(Editor);
     }
 
     /// <summary>
@@ -298,7 +313,7 @@ public class Entity : ISelectable, IDisposable
 
         child.Parent = this;
         Children.Insert(index, child);
-        child.UpdateRenderModel();
+        child.UpdateRenderModel(Editor);
     }
 
     /// <summary>
@@ -360,7 +375,7 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     internal virtual Entity DuplicateEntity(object clone)
     {
-        return new Entity(Container, clone);
+        return new Entity(Editor, Container, clone);
     }
 
     /// <summary>
@@ -957,23 +972,23 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Set temporary transform for this object.
     /// </summary>
-    public void SetTemporaryTransform(Transform t)
+    public void SetTemporaryTransform(EditorScreen editor, Transform t)
     {
         TempTransform = t;
         UseTempTransform = true;
 
-        UpdateRenderModel();
+        UpdateRenderModel(editor);
     }
 
     /// <summary>
     /// Clear temporary transform for this object.
     /// </summary>
-    public void ClearTemporaryTransform(bool updaterender = true)
+    public void ClearTemporaryTransform(EditorScreen editor, bool updaterender = true)
     {
         UseTempTransform = false;
         if (updaterender)
         {
-            UpdateRenderModel();
+            UpdateRenderModel(editor);
         }
     }
 
@@ -996,7 +1011,7 @@ public class Entity : ISelectable, IDisposable
             Actions.Viewport.CompoundAction act = new(actions);
             act.SetPostExecutionAction(undo =>
             {
-                UpdateRenderModel();
+                UpdateRenderModel(Editor);
             });
             return act;
         }
@@ -1045,7 +1060,7 @@ public class Entity : ISelectable, IDisposable
 
             act.SetPostExecutionAction(undo =>
             {
-                UpdateRenderModel();
+                UpdateRenderModel(Editor);
             });
             return act;
         }
@@ -1059,7 +1074,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel();
+            UpdateRenderModel(Editor);
         });
         return act;
     }
@@ -1071,7 +1086,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel();
+            UpdateRenderModel(Editor);
         });
         return act;
     }
@@ -1084,7 +1099,7 @@ public class Entity : ISelectable, IDisposable
 
         act.SetPostExecutionAction(undo =>
         {
-            UpdateRenderModel();
+            UpdateRenderModel(Editor);
         });
         return act;
     }
@@ -1099,7 +1114,7 @@ public class Entity : ISelectable, IDisposable
         var act = new Actions.Viewport.CompoundAction(actions);
         act.SetPostExecutionAction((undo) =>
         {
-            UpdateRenderModel();
+            UpdateRenderModel(Editor);
         });
         return act;
     }
@@ -1107,7 +1122,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Updates entity's render groups (DrawGroups/DispGroups). Uses CollisionName references if possible.
     /// </summary>
-    private void UpdateDispDrawGroups()
+    private void UpdateDispDrawGroups(EditorScreen editor)
     {
         RenderGroupRefName = "";
 
@@ -1148,15 +1163,19 @@ public class Entity : ISelectable, IDisposable
                     return;
                 }
 
-                var universe = Smithbox.EditorHandler.MapEditor.Universe;
-                if (universe.HasProcessedMapLoad)
+                if(editor is MapEditorScreen)
                 {
-                    if (collisionNameValue != "")
+                    var curEditor = (MapEditorScreen)editor;
+                    var universe = curEditor.Universe;
+                    if (universe.HasProcessedMapLoad)
                     {
-                        // CollisionName referenced doesn't exist
-                        TaskLogs.AddLog(
-                            $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
-                            LogLevel.Warning);
+                        if (collisionNameValue != "")
+                        {
+                            // CollisionName referenced doesn't exist
+                            TaskLogs.AddLog(
+                                $"{Container?.Name}: {Name} references to CollisionName {collisionNameValue} which doesn't exist",
+                                LogLevel.Warning);
+                        }
                     }
                 }
             }
@@ -1175,7 +1194,7 @@ public class Entity : ISelectable, IDisposable
     /// <summary>
     /// Update the render model for this entity.
     /// </summary>
-    public virtual void UpdateRenderModel()
+    public virtual void UpdateRenderModel(EditorScreen editor)
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
@@ -1205,7 +1224,7 @@ public class Entity : ISelectable, IDisposable
         {
             if (c.HasTransform)
             {
-                c.UpdateRenderModel();
+                c.UpdateRenderModel(editor);
             }
         }
 
@@ -1214,25 +1233,27 @@ public class Entity : ISelectable, IDisposable
             RenderSceneMesh.Visible = _EditorVisible;
         }
 
-        // Map Editor
-        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+        if(editor is MapEditorScreen)
         {
+            var curEditor = (MapEditorScreen)editor;
+
             // Render Group management
             if (HasRenderGroups != false)
             {
                 if (RenderSceneMesh != null)
                 {
-                    UpdateDispDrawGroups();
+                    UpdateDispDrawGroups(Editor);
                     RenderSceneMesh.DrawGroups.AlwaysVisible = false;
                     RenderSceneMesh.DrawGroups.RenderGroups = Drawgroups;
                 }
             }
         }
 
-        // Model Editor
-        if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (editor is ModelEditorScreen)
         {
-            Smithbox.EditorHandler.ModelEditor.ViewportManager.OnRepresentativeEntityUpdate(this);
+            var curEditor = (ModelEditorScreen)editor;
+
+            curEditor.ViewportManager.OnRepresentativeEntityUpdate(this);
         }
     }
 
@@ -1483,7 +1504,7 @@ public class Entity : ISelectable, IDisposable
 /// </summary>
 public class NamedEntity : Entity
 {
-    public NamedEntity(ObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
+    public NamedEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx) : base(editor, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1498,7 +1519,7 @@ public class NamedEntity : Entity
 /// </summary>
 public class CollisionEntity : Entity
 {
-    public CollisionEntity(ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(map, msbo)
+    public CollisionEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx, HavokCollisionType type) : base(editor, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1516,7 +1537,7 @@ public class CollisionEntity : Entity
 /// </summary>
 public class TransformableNamedEntity : Entity
 {
-    public TransformableNamedEntity(ObjectContainer map, object msbo, string name, int idx) : base(map, msbo)
+    public TransformableNamedEntity(EditorScreen editor, ObjectContainer map, object msbo, string name, int idx) : base(editor, map, msbo)
     {
         Name = name;
         Index = idx;
@@ -1550,21 +1571,25 @@ public class MapSerializationEntity
 /// </summary>
 public class MsbEntity : Entity
 {
+    protected EditorScreen Editor;
+
     protected int CurrentNPCParamID = 0;
     protected int[] ModelMasks = null;
 
     /// <summary>
     /// Constructor
     /// </summary>
-    public MsbEntity()
+    public MsbEntity(EditorScreen editor) : base (editor)
     {
+        Editor = editor;
     }
 
     /// <summary>
     /// Constructer: container, object
     /// </summary>
-    public MsbEntity(ObjectContainer map, object msbo)
+    public MsbEntity(EditorScreen editor, ObjectContainer map, object msbo) : base(editor, map, msbo)
     {
+        Editor = editor;
         Container = map;
         WrappedObject = msbo;
     }
@@ -1572,8 +1597,9 @@ public class MsbEntity : Entity
     /// <summary>
     /// Constructer: container, object, entity type
     /// </summary>
-    public MsbEntity(ObjectContainer map, object msbo, MsbEntityType type)
+    public MsbEntity(EditorScreen editor, ObjectContainer map, object msbo, MsbEntityType type) : base(editor, map, msbo)
     {
+        Editor = editor;
         Container = map;
         WrappedObject = msbo;
         Type = type;
@@ -1697,7 +1723,15 @@ public class MsbEntity : Entity
             return enabledMasks;
         }
 
-        switch (Smithbox.ProjectType)
+        var curProjectType = ProjectType.Undefined;
+        if(Editor is MapEditorScreen)
+        {
+            var curEditor = (MapEditorScreen)Editor;
+
+            curProjectType = curEditor.Project.ProjectType;
+        }
+
+        switch (curProjectType)
         {
             case ProjectType.DS3:
                 if (WrappedObject is MSB3.Part.EnemyBase ds3e)
@@ -1793,17 +1827,20 @@ public class MsbEntity : Entity
     /// <summary>
     /// Update the render model of this entity.
     /// </summary>
-    public override void UpdateRenderModel()
+    public override void UpdateRenderModel(EditorScreen editor)
     {
         if (!CFG.Current.Viewport_Enable_Rendering)
         {
             return;
         }
 
+        
+
         // Map Editor
-        if (Smithbox.EditorHandler.FocusedEditor is MapEditorScreen)
+        if (editor is MapEditorScreen)
         {
-            var universe = Smithbox.EditorHandler.MapEditor.Universe;
+            var curEditor = (MapEditorScreen)editor;
+            var universe = curEditor.Universe;
 
             if (Type == MsbEntityType.DS2Generator)
             {
@@ -1873,7 +1910,7 @@ public class MsbEntity : Entity
 
                         if (universe.Selection.IsSelected(this))
                         {
-                            OnSelected();
+                            OnSelected(curEditor);
                         }
 
                         if (universe.HasProcessedMapLoad)
@@ -1886,12 +1923,12 @@ public class MsbEntity : Entity
         }
 
         // Model Editor
-        if (Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (editor is ModelEditorScreen)
         {
-            var universe = Smithbox.EditorHandler.ModelEditor._universe;
+            var curEditor = (ModelEditorScreen)editor;
         }
 
-        base.UpdateRenderModel();
+        base.UpdateRenderModel(editor);
     }
 
     /// <summary>
@@ -1899,43 +1936,47 @@ public class MsbEntity : Entity
     /// </summary>
     public override void BuildReferenceMap()
     {
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
-
-        if (Type == MsbEntityType.MapRoot && universe != null)
+        if (Editor is MapEditorScreen)
         {
-            // Special handling for map itself, as it references objects outside of the map.
-            // This depends on Type, which is only defined in MapEntity.
-            List<byte[]> connects = new();
-            foreach (Entity child in Children)
+            var curEditor = (MapEditorScreen)Editor;
+            var universe = curEditor.Universe;
+
+            if (Type == MsbEntityType.MapRoot && universe != null)
             {
-                // This could use an annotation, but it would require both a custom type and field annotation.
-                if (child.WrappedObject?.GetType().Name != "ConnectCollision")
+                // Special handling for map itself, as it references objects outside of the map.
+                // This depends on Type, which is only defined in MapEntity.
+                List<byte[]> connects = new();
+                foreach (Entity child in Children)
                 {
-                    continue;
+                    // This could use an annotation, but it would require both a custom type and field annotation.
+                    if (child.WrappedObject?.GetType().Name != "ConnectCollision")
+                    {
+                        continue;
+                    }
+
+                    PropertyInfo mapProp = child.WrappedObject.GetType().GetProperty("MapID");
+                    if (mapProp == null || mapProp.PropertyType != typeof(byte[]))
+                    {
+                        continue;
+                    }
+
+                    var mapId = (byte[])mapProp.GetValue(child.WrappedObject);
+                    if (mapId != null)
+                    {
+                        connects.Add(mapId);
+                    }
                 }
 
-                PropertyInfo mapProp = child.WrappedObject.GetType().GetProperty("MapID");
-                if (mapProp == null || mapProp.PropertyType != typeof(byte[]))
+                // For now, the map relationship type is not given here (dictionary values), just all related maps.
+                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Editor, Name, universe.LoadedObjectContainers.Keys, connects).Keys)
                 {
-                    continue;
-                }
-
-                var mapId = (byte[])mapProp.GetValue(child.WrappedObject);
-                if (mapId != null)
-                {
-                    connects.Add(mapId);
+                    References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
                 }
             }
-
-            // For now, the map relationship type is not given here (dictionary values), just all related maps.
-            foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(Name, universe.LoadedObjectContainers.Keys, connects).Keys)
+            else
             {
-                References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
+                base.BuildReferenceMap();
             }
-        }
-        else
-        {
-            base.BuildReferenceMap();
         }
     }
 
@@ -2033,7 +2074,7 @@ public class MsbEntity : Entity
     /// </summary>
     internal override Entity DuplicateEntity(object clone)
     {
-        return new MsbEntity(Container, clone);
+        return new MsbEntity(Editor, Container, clone);
     }
 
     /// <summary>

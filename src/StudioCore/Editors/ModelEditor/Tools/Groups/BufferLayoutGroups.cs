@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
@@ -21,7 +22,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class BufferLayoutGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Buffer Layout Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> BufferLayoutGroupFiles = new List<string>();
 
@@ -31,8 +32,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static BufferLayoutList SelectedBufferLayoutList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Buffer Layout Groups\\";
+
             UpdateBufferLayoutGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -44,8 +47,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedBufferLayoutGroup = entry;
                         SelectedBufferLayoutList = ReadBufferLayoutGroup(entry);
 
-                        var action = new ReplaceBufferLayoutList(screen, SelectedBufferLayoutList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceBufferLayoutList(editor, SelectedBufferLayoutList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -61,8 +64,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedBufferLayoutGroup = entry;
                         SelectedBufferLayoutList = ReadBufferLayoutGroup(entry);
 
-                        var action = new AppendBufferLayoutList(screen, SelectedBufferLayoutList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendBufferLayoutList(editor, SelectedBufferLayoutList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

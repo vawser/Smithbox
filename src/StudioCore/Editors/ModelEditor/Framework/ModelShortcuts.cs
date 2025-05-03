@@ -18,15 +18,15 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelShortcuts
 {
+    private ModelEditorScreen Editor;
     private ViewportActionManager EditorActionManager;
-    private ModelEditorScreen Screen;
     private FileSelectionView Selection;
     private ModelResourceManager ResourceManager;
     private ModelActionHandler ActionHandler;
 
     public ModelShortcuts(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.FileSelection;
         EditorActionManager = screen.EditorActionManager;
         ActionHandler = screen.ActionHandler;
@@ -78,7 +78,7 @@ public class ModelShortcuts
             CFG.Current.Viewport_Enable_Selection_Outline = !CFG.Current.Viewport_Enable_Selection_Outline;
         }
 
-        if (!Screen.ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
+        if (!Editor.ViewportUsingKeyboard && !ImGui.GetIO().WantCaptureKeyboard)
         {
             if (InputTracker.GetKeyDown(KeyBindings.Current.VIEWPORT_GizmoTranslationMode))
             {
@@ -106,7 +106,7 @@ public class ModelShortcuts
             // F key frames the selection
             if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_FrameSelection))
             {
-                HashSet<Entity> selected = Screen._selection.GetFilteredSelection<Entity>();
+                HashSet<Entity> selected = Editor._selection.GetFilteredSelection<Entity>();
                 var first = false;
                 BoundingBox box = new();
                 foreach (Entity s in selected)
@@ -127,24 +127,24 @@ public class ModelShortcuts
 
                 if (first)
                 {
-                    Screen.Viewport.FrameBox(box);
+                    Editor.Viewport.FrameBox(box);
                 }
             }
 
             // Render settings
             if (InputTracker.GetControlShortcut(Key.Number1))
             {
-                Screen.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character |
+                Editor.RenderScene.DrawFilter = RenderFilter.MapPiece | RenderFilter.Object | RenderFilter.Character |
                                          RenderFilter.Region;
             }
             else if (InputTracker.GetControlShortcut(Key.Number2))
             {
-                Screen.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character |
+                Editor.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Object | RenderFilter.Character |
                                          RenderFilter.Region;
             }
             else if (InputTracker.GetControlShortcut(Key.Number3))
             {
-                Screen.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object |
+                Editor.RenderScene.DrawFilter = RenderFilter.Collision | RenderFilter.Navmesh | RenderFilter.Object |
                                          RenderFilter.Character | RenderFilter.Region;
             }
         }

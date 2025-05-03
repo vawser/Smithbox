@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ParamEditor.Actions;
@@ -15,16 +15,12 @@ using StudioCore.Memory;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Threading.Tasks;
-using Veldrid;
-using Veldrid.Sdl2;
 using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
@@ -35,7 +31,15 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorScreen : EditorScreen
 {
-    public static bool EditorMode;
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+    public string EditorName => "Param Editor";
+    public string CommandEndpoint => "param";
+    public string SaveType => "Params";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
+
+    public bool EditorMode;
 
     /// <summary>
     ///     Whitelist of games and maximum param version to allow param upgrading.
@@ -106,27 +110,381 @@ public class ParamEditorScreen : EditorScreen
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
     public ActionHandler Handler;
+    public ParamComparisonReport ComparisonReport;
 
     private bool HasSetupFmgDecorators = false;
 
     private ParamEditorShortcuts EditorShortcuts;
 
-    public ParamEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public ParamEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         EditorShortcuts = new ParamEditorShortcuts(this);
 
         ToolWindow = new ToolWindow(this);
         ToolSubMenu = new ToolSubMenu(this);
         Handler = new ActionHandler(this);
 
-        _views = new List<ParamEditorView>();
-        _views.Add(new ParamEditorView(this, 0));
+        ComparisonReport = new ParamComparisonReport(this, project);
+
+        _views = [new ParamEditorView(this, 0)];
+
         _activeView = _views[0];
     }
 
-    public string EditorName => "Param Editor";
-    public string CommandEndpoint => "param";
-    public string SaveType => "Params";
+    public void OnGUI(string[] initcmd)
+    {
+        if (!CFG.Current.EnableEditor_PARAM)
+            return;
+
+        var scale = DPI.GetUIScale();
+
+        if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
+        {
+            // Keyboard shortcuts
+            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+            {
+                ParamUndo();
+            }
+
+            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+            {
+                ParamUndo();
+            }
+
+            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+            {
+                ParamRedo();
+            }
+
+            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+            {
+                ParamRedo();
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
+            {
+                ParamBank.ClipboardParam = _activeView._selection.GetActiveParam();
+
+                foreach (Param.Row row in UICache.GetCached(this, (_activeView._viewIndex, _activeView._selection.GetActiveParam()),
+                    () => RowSearchEngine.rse.Search((ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()]),
+                    _activeView._selection.GetCurrentRowSearchString(), true, true)))
+                {
+                    _activeView._selection.AddRowToSelection(row);
+                }
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
+            {
+                CopySelectionToClipboard();
+            }
+
+            if (ParamBank.ClipboardRows.Count > 00 && ParamBank.ClipboardParam == _activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
+            {
+                ImGui.OpenPopup("ctrlVPopup");
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            {
+                Handler.DuplicateHandler();
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            {
+                DeleteSelection();
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
+            {
+                GotoSelectedRow = true;
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
+            {
+                Handler.CopyRowDetailHandler();
+            }
+
+            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
+            {
+                Handler.CopyRowDetailHandler(true);
+            }
+        }
+
+        EditorShortcuts.Shortcuts();
+
+        ToolSubMenu.Shortcuts();
+        ToolWindow.Shortcuts();
+
+        if (ParamBank.PrimaryBank.IsLoadingParams)
+        {
+            ImGui.Text("Loading Params...");
+            return;
+        }
+
+        if (ParamBank.PrimaryBank.Params == null)
+        {
+            ImGui.Text("No params loaded");
+            return;
+        }
+
+        if (!ParamBank.IsMetaLoaded)
+        {
+            ImGui.Text("Loading Meta...");
+            return;
+        }
+
+        if (TextBank.PrimaryBankLoaded)
+        {
+            if (!HasSetupFmgDecorators)
+            {
+                HasSetupFmgDecorators = true;
+
+                SetupFmgDecorators();
+            }
+        }
+
+        //Hot Reload shortcut keys
+        if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank))
+        {
+            if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadAllParams))
+            {
+                ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params.Keys.ToArray());
+            }
+            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && _activeView._selection.GetActiveParam() != null)
+            {
+                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam());
+            }
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ViewMassEdit))
+        {
+            EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
+        {
+            EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
+        {
+            EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
+        }
+
+        // Parse commands
+        var doFocus = false;
+
+        // Parse select commands
+        if (initcmd != null)
+        {
+            if (initcmd[0] == "select" || initcmd[0] == "view")
+            {
+                if (initcmd.Length > 2 && ParamBank.PrimaryBank.Params.ContainsKey(initcmd[2]))
+                {
+                    doFocus = initcmd[0] == "select";
+                    if (!doFocus)
+                        GotoSelectedRow = true;
+
+                    ParamEditorView viewToModify = _activeView;
+                    if (initcmd[1].Equals("new"))
+                    {
+                        viewToModify = AddView();
+                    }
+                    else
+                    {
+                        var cmdIndex = -1;
+                        var parsable = int.TryParse(initcmd[1], out cmdIndex);
+                        if (parsable && cmdIndex >= 0 && cmdIndex < _views.Count)
+                            viewToModify = _views[cmdIndex];
+                    }
+
+                    _activeView = viewToModify;
+                    viewToModify._selection.SetActiveParam(initcmd[2]);
+                    if (initcmd.Length > 3)
+                    {
+                        bool onlyAddToSelection = initcmd.Length > 4 && initcmd[4] == "addOnly";
+                        if (!onlyAddToSelection)
+                            viewToModify._selection.SetActiveRow(null, doFocus);
+
+                        Param p = ParamBank.PrimaryBank.Params[viewToModify._selection.GetActiveParam()];
+                        int id;
+                        var parsed = int.TryParse(initcmd[3], out id);
+                        if (parsed)
+                        {
+                            Param.Row r = p.Rows.FirstOrDefault(r => r.ID == id);
+                            if (r != null)
+                            {
+                                if (onlyAddToSelection)
+                                    viewToModify._selection.AddRowToSelection(r);
+                                else
+                                    viewToModify._selection.SetActiveRow(r, doFocus);
+                            }
+                        }
+                    }
+                }
+            }
+            else if (initcmd[0] == "back")
+            {
+                _activeView._selection.PopHistory();
+            }
+            else if (initcmd[0] == "search")
+            {
+                if (initcmd.Length > 1)
+                {
+                    _activeView._selection.SetCurrentRowSearchString(initcmd[1]);
+                }
+            }
+            else if (initcmd[0] == "menu" && initcmd.Length > 1)
+            {
+                if (initcmd[1] == "ctrlVPopup")
+                {
+                    ImGui.OpenPopup("ctrlVPopup");
+                }
+                else if (initcmd[1] == "massEditRegex")
+                {
+                    _currentMEditRegexInput = initcmd.Length > 2 ? initcmd[2] : _currentMEditRegexInput;
+                    OpenMassEditPopup("massEditMenuRegex");
+                }
+                else if (initcmd[1] == "massEditCSVExport")
+                {
+                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[2]));
+                    _currentMEditCSVOutput = ParamIO.GenerateCSV(rows,
+                        ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
+                        CFG.Current.Param_Export_Delimiter[0]);
+                    OpenMassEditPopup("massEditMenuCSVExport");
+                }
+                else if (initcmd[1] == "massEditCSVImport")
+                {
+                    OpenMassEditPopup("massEditMenuCSVImport");
+                }
+                else if (initcmd[1] == "massEditSingleCSVExport")
+                {
+                    _currentMEditSingleCSVField = initcmd[2];
+                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[3]));
+                    _currentMEditCSVOutput = ParamIO.GenerateSingleCSV(rows,
+                        ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
+                        _currentMEditSingleCSVField,
+                        CFG.Current.Param_Export_Delimiter[0]);
+                    OpenMassEditPopup("massEditMenuSingleCSVExport");
+                }
+                else if (initcmd[1] == "massEditSingleCSVImport" && initcmd.Length > 2)
+                {
+                    _currentMEditSingleCSVField = initcmd[2];
+                    OpenMassEditPopup("massEditMenuSingleCSVImport");
+                }
+                else if (initcmd[1] == "distributionPopup" && initcmd.Length > 2)
+                {
+                    Param p = ParamBank.PrimaryBank.GetParamFromName(_activeView._selection.GetActiveParam());
+                    (PseudoColumn, Param.Column) col = p.GetCol(initcmd[2]);
+                    _distributionOutput =
+                        ParamUtils.GetParamValueDistribution(_activeView._selection.GetSelectedRows(), col);
+                    _statisticPopupOutput = string.Join('\n',
+                        _distributionOutput.Select(e =>
+                            e.Item1.ToString().PadLeft(9) + " " + e.Item2.ToParamEditorString() + " times"));
+                    _statisticPopupParameter = initcmd[2];
+                    OpenStatisticPopup("distributionPopup");
+                }
+            }
+        }
+
+        ShortcutPopups();
+        MassEditPopups();
+        StatisticPopups();
+
+        if (CFG.Current.UI_CompactParams)
+        {
+            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(1.0f, 1.0f) * scale);
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 1.0f) * scale);
+            ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5.0f, 1.0f) * scale);
+        }
+        else
+        {
+            ImGuiStylePtr style = ImGui.GetStyle();
+            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing,
+                style.ItemSpacing * scale - new Vector2(3.5f, 0f) * scale);
+        }
+
+        ComparisonReport.HandleReportModal();
+
+        // Views
+        var dsid = ImGui.GetID("DockSpace_ParamView");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        foreach (ParamEditorView view in _views)
+        {
+            if (view == null)
+            {
+                continue;
+            }
+
+            if (!UI.Current.Interface_ParamEditor_Table)
+            {
+                continue;
+            }
+
+            var name = view._selection.GetActiveRow() != null ? view._selection.GetActiveRow().Name : null;
+            var toDisplay = (view == _activeView ? "**" : "") +
+                            (name == null || name.Trim().Equals("")
+                                ? "Param Editor View"
+                                : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
+
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+
+            if (CountViews() == 1)
+            {
+                toDisplay = "Param Editor";
+            }
+
+            if (ImGui.Begin($@"{toDisplay}###ParamEditorView##{view._viewIndex}"))
+            {
+                if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
+                {
+                    _activeView = view;
+                }
+
+                // Don't let the user close if their is only 1 view
+                if (CountViews() > 1)
+                {
+                    if (ImGui.BeginPopupContextItem())
+                    {
+                        if (ImGui.MenuItem("Close View"))
+                        {
+                            RemoveView(view);
+                            ImGui.EndMenu();
+                            ImGui.End();
+                            ImGui.PopStyleColor(1);
+                            break; //avoid concurrent modification
+                        }
+
+                        ImGui.EndMenu();
+                    }
+                }
+            }
+
+            view.ParamView(doFocus && view == _activeView, view == _activeView);
+
+            ImGui.End();
+            ImGui.PopStyleColor(1);
+        }
+
+        // Toolbar
+        if (UI.Current.Interface_ParamEditor_ToolConfiguration)
+        {
+            ToolWindow.OnGui();
+        }
+
+        if (CFG.Current.UI_CompactParams)
+        {
+            ImGui.PopStyleVar(3);
+        }
+        else
+        {
+            ImGui.PopStyleVar();
+        }
+    }
 
     public void EditDropdown()
     {
@@ -578,7 +936,7 @@ public class ParamEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("View comparison report"))
             {
-                ParamComparisonReport.ViewReport();
+                ComparisonReport.ViewReport();
             }
             UIHelper.ShowHoverTooltip("View a text report that details the differences between the current project params and the vanilla params.");
 
@@ -621,7 +979,7 @@ public class ParamEditorScreen : EditorScreen
 
                 try
                 {
-                    if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+                    if (Project.ProjectType != ProjectType.DS2S && Project.ProjectType != ProjectType.DS2)
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
                         {
@@ -697,364 +1055,6 @@ public class ParamEditorScreen : EditorScreen
         ParamUpgradeDisplay();
     }
 
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_PARAM)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
-        {
-            // Keyboard shortcuts
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
-            {
-                ParamUndo();
-            }
-
-            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-            {
-                ParamUndo();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-            {
-                ParamRedo();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-            {
-                ParamRedo();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
-            {
-                ParamBank.ClipboardParam = _activeView._selection.GetActiveParam();
-
-                foreach (Param.Row row in UICache.GetCached(this, (_activeView._viewIndex, _activeView._selection.GetActiveParam()), 
-                    () => RowSearchEngine.rse.Search((ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()]),
-                    _activeView._selection.GetCurrentRowSearchString(), true, true)))
-                {
-                    _activeView._selection.AddRowToSelection(row);
-                }
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
-            {
-                CopySelectionToClipboard();
-            }
-
-            if (ParamBank.ClipboardRows.Count > 00 && ParamBank.ClipboardParam == _activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
-            {
-                ImGui.OpenPopup("ctrlVPopup");
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
-            {
-                Handler.DuplicateHandler();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-            {
-                DeleteSelection();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
-            {
-                GotoSelectedRow = true;
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
-            {
-                Handler.CopyRowDetailHandler();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
-            {
-                Handler.CopyRowDetailHandler(true);
-            }
-        }
-
-        EditorShortcuts.Shortcuts();
-
-        ToolSubMenu.Shortcuts();
-        ToolWindow.Shortcuts();
-
-        if (Smithbox.ProjectHandler.CurrentProject == null)
-        {
-            ImGui.Text("No project loaded. File -> New Project");
-            return;
-        }
-
-        if (ParamBank.PrimaryBank.IsLoadingParams)
-        {
-            ImGui.Text("Loading Params...");
-            return;
-        }
-
-        if (ParamBank.PrimaryBank.Params == null)
-        {
-            ImGui.Text("No params loaded");
-            return;
-        }
-
-        if (!ParamBank.IsMetaLoaded)
-        {
-            ImGui.Text("Loading Meta...");
-            return;
-        }
-
-        if (TextBank.PrimaryBankLoaded)
-        {
-            if (!HasSetupFmgDecorators)
-            {
-                HasSetupFmgDecorators = true;
-
-                SetupFmgDecorators();
-            }
-        }
-
-        //Hot Reload shortcut keys
-        if (ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank))
-        {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadAllParams))
-            {
-                ParamReloader.ReloadMemoryParams(ParamBank.PrimaryBank, ParamBank.PrimaryBank.Params.Keys.ToArray());
-            }
-            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && _activeView._selection.GetActiveParam() != null)
-            {
-                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, _activeView._selection.GetActiveParam());
-            }
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ViewMassEdit))
-        {
-            EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
-        {
-            EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
-        {
-            EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
-        }
-        
-        // Parse commands
-        var doFocus = false;
-
-        // Parse select commands
-        if (initcmd != null)
-        {
-            if (initcmd[0] == "select" || initcmd[0] == "view")
-            {
-                if (initcmd.Length > 2 && ParamBank.PrimaryBank.Params.ContainsKey(initcmd[2]))
-                {
-                    doFocus = initcmd[0] == "select";
-                    if (!doFocus)
-                        GotoSelectedRow = true;
-
-                    ParamEditorView viewToModify = _activeView;
-                    if (initcmd[1].Equals("new"))
-                    {
-                        viewToModify = AddView();
-                    }
-                    else
-                    {
-                        var cmdIndex = -1;
-                        var parsable = int.TryParse(initcmd[1], out cmdIndex);
-                        if (parsable && cmdIndex >= 0 && cmdIndex < _views.Count)
-                            viewToModify = _views[cmdIndex];
-                    }
-
-                    _activeView = viewToModify;
-                    viewToModify._selection.SetActiveParam(initcmd[2]);
-                    if (initcmd.Length > 3)
-                    {
-                        bool onlyAddToSelection = initcmd.Length > 4 && initcmd[4] == "addOnly";
-                        if (!onlyAddToSelection)
-                            viewToModify._selection.SetActiveRow(null, doFocus);
-
-                        Param p = ParamBank.PrimaryBank.Params[viewToModify._selection.GetActiveParam()];
-                        int id;
-                        var parsed = int.TryParse(initcmd[3], out id);
-                        if (parsed)
-                        {
-                            Param.Row r = p.Rows.FirstOrDefault(r => r.ID == id);
-                            if (r != null)
-                            {
-                                if (onlyAddToSelection)
-                                    viewToModify._selection.AddRowToSelection(r);
-                                else
-                                    viewToModify._selection.SetActiveRow(r, doFocus);
-                            }
-                        }
-                    }
-                }
-            }
-            else if (initcmd[0] == "back")
-            {
-                _activeView._selection.PopHistory();
-            }
-            else if (initcmd[0] == "search")
-            {
-                if (initcmd.Length > 1)
-                {
-                    _activeView._selection.SetCurrentRowSearchString(initcmd[1]);
-                }
-            }
-            else if (initcmd[0] == "menu" && initcmd.Length > 1)
-            {
-                if (initcmd[1] == "ctrlVPopup")
-                {
-                    ImGui.OpenPopup("ctrlVPopup");
-                }
-                else if (initcmd[1] == "massEditRegex")
-                {
-                    _currentMEditRegexInput = initcmd.Length > 2 ? initcmd[2] : _currentMEditRegexInput;
-                    OpenMassEditPopup("massEditMenuRegex");
-                }
-                else if (initcmd[1] == "massEditCSVExport")
-                {
-                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[2]));
-                    _currentMEditCSVOutput = ParamIO.GenerateCSV(rows,
-                        ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
-                        CFG.Current.Param_Export_Delimiter[0]);
-                    OpenMassEditPopup("massEditMenuCSVExport");
-                }
-                else if (initcmd[1] == "massEditCSVImport")
-                {
-                    OpenMassEditPopup("massEditMenuCSVImport");
-                }
-                else if (initcmd[1] == "massEditSingleCSVExport")
-                {
-                    _currentMEditSingleCSVField = initcmd[2];
-                    IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[3]));
-                    _currentMEditCSVOutput = ParamIO.GenerateSingleCSV(rows,
-                        ParamBank.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
-                        _currentMEditSingleCSVField,
-                        CFG.Current.Param_Export_Delimiter[0]);
-                    OpenMassEditPopup("massEditMenuSingleCSVExport");
-                }
-                else if (initcmd[1] == "massEditSingleCSVImport" && initcmd.Length > 2)
-                {
-                    _currentMEditSingleCSVField = initcmd[2];
-                    OpenMassEditPopup("massEditMenuSingleCSVImport");
-                }
-                else if (initcmd[1] == "distributionPopup" && initcmd.Length > 2)
-                {
-                    Param p = ParamBank.PrimaryBank.GetParamFromName(_activeView._selection.GetActiveParam());
-                    (PseudoColumn, Param.Column) col = p.GetCol(initcmd[2]);
-                    _distributionOutput =
-                        ParamUtils.GetParamValueDistribution(_activeView._selection.GetSelectedRows(), col);
-                    _statisticPopupOutput = string.Join('\n',
-                        _distributionOutput.Select(e =>
-                            e.Item1.ToString().PadLeft(9) + " " + e.Item2.ToParamEditorString() + " times"));
-                    _statisticPopupParameter = initcmd[2];
-                    OpenStatisticPopup("distributionPopup");
-                }
-            }
-        }
-
-        ShortcutPopups();
-        MassEditPopups();
-        StatisticPopups();
-
-        if (CFG.Current.UI_CompactParams)
-        {
-            ImGui.PushStyleVar(ImGuiStyleVar.FramePadding, new Vector2(1.0f, 1.0f) * scale);
-            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(5.0f, 1.0f) * scale);
-            ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5.0f, 1.0f) * scale);
-        }
-        else
-        {
-            ImGuiStylePtr style = ImGui.GetStyle();
-            ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing,
-                style.ItemSpacing * scale - new Vector2(3.5f, 0f) * scale);
-        }
-
-        ParamComparisonReport.HandleReportModal();
-
-        // Views
-        var dsid = ImGui.GetID("DockSpace_ParamView");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        foreach (ParamEditorView view in _views)
-        {
-            if (view == null)
-            {
-                continue;
-            }
-
-            if(!UI.Current.Interface_ParamEditor_Table)
-            {
-                continue;
-            }
-
-            var name = view._selection.GetActiveRow() != null ? view._selection.GetActiveRow().Name : null;
-            var toDisplay = (view == _activeView ? "**" : "") +
-                            (name == null || name.Trim().Equals("")
-                                ? "Param Editor View"
-                                : Utils.ImGuiEscape(name, "null")) + (view == _activeView ? "**" : "");
-
-            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-            ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
-
-            if(CountViews() == 1)
-            {
-                toDisplay = "Param Editor";
-            }
-
-            if (ImGui.Begin($@"{toDisplay}###ParamEditorView##{view._viewIndex}"))
-            {
-                if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
-                {
-                    _activeView = view;
-                }
-
-                // Don't let the user close if their is only 1 view
-                if (CountViews() > 1)
-                {
-                    if (ImGui.BeginPopupContextItem())
-                    {
-                        if (ImGui.MenuItem("Close View"))
-                        {
-                            RemoveView(view);
-                            ImGui.EndMenu();
-                            ImGui.End();
-                            ImGui.PopStyleColor(1);
-                            break; //avoid concurrent modification
-                        }
-
-                        ImGui.EndMenu();
-                    }
-                }
-            }
-
-            view.ParamView(doFocus && view == _activeView, view == _activeView);
-
-            ImGui.End();
-            ImGui.PopStyleColor(1);
-        }
-
-        // Toolbar
-        if (UI.Current.Interface_ParamEditor_ToolConfiguration)
-        {
-            ToolWindow.OnGui();
-        }
-
-        if (CFG.Current.UI_CompactParams)
-        {
-            ImGui.PopStyleVar(3);
-        }
-        else
-        {
-            ImGui.PopStyleVar();
-        }
-    }
-
     public void OnProjectChanged()
     {
         if (!CFG.Current.EnableEditor_PARAM)
@@ -1105,7 +1105,7 @@ public class ParamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_PARAM)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         try
@@ -1130,7 +1130,7 @@ public class ParamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_PARAM)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         try
@@ -1221,7 +1221,7 @@ public class ParamEditorScreen : EditorScreen
         if (ParamBank.IsDefsLoaded
             && ParamBank.PrimaryBank.Params != null
             && ParamBank.VanillaBank.Params != null
-            && ParamUpgrade_SupportedGames.Contains(Smithbox.ProjectType)
+            && ParamUpgrade_SupportedGames.Contains(Project.ProjectType)
             && !ParamBank.PrimaryBank.IsLoadingParams
             && !ParamBank.VanillaBank.IsLoadingParams
             && ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
@@ -1280,7 +1280,7 @@ public class ParamEditorScreen : EditorScreen
         var regulationFolder = "";
         var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Regulations\\\\";
 
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (Project.ProjectType == ProjectType.ER)
         {
             switch (versionString)
             {
@@ -1310,7 +1310,7 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (Project.ProjectType == ProjectType.AC6)
         {
             switch (versionString)
             {
@@ -1378,7 +1378,7 @@ public class ParamEditorScreen : EditorScreen
         if (result == ParamBank.ParamUpgradeResult.RowConflictsFound)
         {
             // If there's row conflicts write a conflict log
-            var logPath = $@"{Smithbox.ProjectRoot}\regulationUpgradeLog.txt";
+            var logPath = $@"{Project.ProjectPath}\regulationUpgradeLog.txt";
             if (File.Exists(logPath))
             {
                 File.Delete(logPath);
@@ -1454,7 +1454,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (msgRes == DialogResult.Yes)
             {
-                Smithbox.EditorHandler.ParamEditor.Save();
+                Save();
             }
         }
 

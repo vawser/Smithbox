@@ -17,7 +17,7 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverMaterialPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
@@ -26,7 +26,7 @@ public class FlverMaterialPropertyView
 
     public FlverMaterialPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -41,7 +41,7 @@ public class FlverMaterialPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Materials.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Materials.Count < index)
             return;
 
         if (Selection.MaterialMultiselect.StoredIndices.Count > 1)
@@ -56,7 +56,7 @@ public class FlverMaterialPropertyView
         ImGui.Text("Material");
         ImGui.Separator();
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Materials[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Materials[index];
 
         var name = entry.Name;
         var mtd = entry.MTD;
@@ -95,7 +95,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Name != name)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_Name(entry, entry.Name, name));
         }
 
@@ -105,7 +105,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.MTD != mtd)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_MTD(entry, entry.MTD, mtd));
         }
 
@@ -114,7 +114,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.GXIndex != gxIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_GXIndex(entry, entry.GXIndex, gxIndex));
         }
 
@@ -125,7 +125,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Index != mtdIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_MTDIndex(entry, entry.Index, mtdIndex));
         }
 
@@ -194,7 +194,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (texture.Type != type)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_Texture_Type(texture, texture.Type, type));
         }
 
@@ -215,7 +215,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (texture.Path != path)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_Texture_Path(texture, texture.Path, path));
         }
 
@@ -226,7 +226,7 @@ public class FlverMaterialPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (texture.Scale != scale)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERMaterial_Texture_Scale(texture, texture.Scale, scale));
         }
 

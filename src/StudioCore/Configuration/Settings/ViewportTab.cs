@@ -13,12 +13,16 @@ namespace StudioCore.Configuration.Settings;
 
 public class ViewportTab
 {
-    public ViewportTab() { }
+    public Smithbox BaseEditor;
+
+    public ViewportTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {
         var defaultButtonSize = new Vector2(ImGui.GetWindowWidth(), 24);
-
 
         //---------------------------------------
         // Rendering
@@ -187,29 +191,36 @@ public class ViewportTab
                 CFG.Current.Viewport_RenderDistance_Max = farClip;
             UIHelper.ShowHoverTooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
 
-            var worldView = Smithbox.EditorHandler.MapEditor.MapViewportView.Viewport.WorldView;
-
-            if (ImGui.SliderFloat("Map camera speed (slow)",
-                    ref worldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
-            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
-
-            if (ImGui.SliderFloat("Map camera speed (normal)",
-                    ref worldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
-            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
-
-            if (ImGui.SliderFloat("Map camera speed (fast)",
-                    ref worldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
-                CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
-            UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
-
-            if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
+            if (BaseEditor.ProjectManager.SelectedProject != null)
             {
-                ResetCameraCFG();
-            }
-            UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+                var curProject = BaseEditor.ProjectManager.SelectedProject;
 
+                if (curProject.MapEditor != null)
+                {
+                    var worldView = curProject.MapEditor.MapViewportView.Viewport.WorldView;
+
+                    if (ImGui.SliderFloat("Map camera speed (slow)",
+                            ref worldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
+                        CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
+                    UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
+
+                    if (ImGui.SliderFloat("Map camera speed (normal)",
+                            ref worldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
+                        CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
+                    UIHelper.ShowHoverTooltip("Set the speed at which the camera will move whilst moving normally.");
+
+                    if (ImGui.SliderFloat("Map camera speed (fast)",
+                            ref worldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
+                        CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
+                    UIHelper.ShowHoverTooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
+                }
+
+                if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
+                {
+                    ResetCameraCFG();
+                }
+                UIHelper.ShowHoverTooltip("Resets all of the values within this section to their default values.");
+            }
         }
 
         //---------------------------------------

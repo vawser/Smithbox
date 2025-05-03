@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Interface;
 using System;
@@ -14,7 +14,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class MapEditorTab
 {
-    public MapEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public MapEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {
@@ -30,9 +35,12 @@ public class MapEditorTab
             ImGui.Checkbox("Exclude loaded maps from search filter", ref CFG.Current.MapEditor_Always_List_Loaded_Maps);
             UIHelper.ShowHoverTooltip("This option will cause loaded maps to always be visible within the map list, ignoring the search filter.");
 
-            if (Smithbox.ProjectHandler.CurrentProject.Config != null)
+            ImGui.Checkbox("Enable global property search", ref CFG.Current.MapEditor_LoadMapQueryData);
+            UIHelper.ShowHoverTooltip("This option will allow the global property search to be used. Note, this will load all map files into memory.\nYou need to restart Smithbox after enabling this.");
+
+            if(BaseEditor.ProjectManager.SelectedProject != null)
             {
-                if (Smithbox.ProjectType is ProjectType.ER)
+                if(BaseEditor.ProjectManager.SelectedProject.ProjectType is ProjectType.ER)
                 {
                     ImGui.Checkbox("Enable Elden Ring auto map offset", ref CFG.Current.Viewport_Enable_ER_Auto_Map_Offset);
                     UIHelper.ShowHoverTooltip("");
@@ -41,10 +49,6 @@ public class MapEditorTab
                     UIHelper.ShowHoverTooltip("Enables the viewing of Elden Ring collisions. Note this will add delay to map loading if enabled.");
                 }
             }
-
-            ImGui.Checkbox("Enable global property search", ref CFG.Current.MapEditor_LoadMapQueryData);
-            UIHelper.ShowHoverTooltip("This option will allow the global property search to be used. Note, this will load all map files into memory.\nYou need to restart Smithbox after enabling this.");
-
         }
 
         // Scene View

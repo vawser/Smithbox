@@ -54,10 +54,10 @@ public class EmevdFileView
         ImGui.BeginChild("FileListSection");
         Selection.SwitchWindowContext(EmevdEditorContext.File);
 
-        foreach (var (info, binder) in EmevdBank.ScriptBank)
+        foreach (var (info, binder) in Screen.Project.EmevdBank.ScriptBank)
         {
             var displayName = $"{info.Name}";
-            var aliasName = AliasUtils.GetMapNameAlias(info.Name);
+            var aliasName = AliasUtils.GetMapNameAlias(Screen.Project, info.Name);
 
             if (Filters.IsFileFilterMatch(displayName, aliasName))
             {

@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Utils;
@@ -20,7 +20,7 @@ namespace StudioCore.Editors.ModelEditor.Actions;
 
 public class ModelToolView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     public GlobalModelSearch ModelUsageSearch;
 
@@ -28,7 +28,7 @@ public class ModelToolView
 
     public ModelToolView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ModelUsageSearch = new GlobalModelSearch(screen);
     }
@@ -40,9 +40,6 @@ public class ModelToolView
 
     public void OnGui()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
@@ -113,11 +110,11 @@ public class ModelToolView
                 {
                     if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
                     {
-                        ModelColladaExporter.ExportModel(Screen);
+                        ModelColladaExporter.ExportModel(Editor);
                     }
                     if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
                     {
-                        ModelObjectExporter.ExportModel(Screen);
+                        ModelObjectExporter.ExportModel(Editor);
                     }
                 }
             }
@@ -130,7 +127,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Solve", defaultButtonSize))
                 {
-                    Screen.ActionHandler.SolveBoundingBoxes();
+                    Editor.ActionHandler.SolveBoundingBoxes();
                 }
             }
 
@@ -142,7 +139,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
-                    Screen.ActionHandler.ReverseMeshFaceSet();
+                    Editor.ActionHandler.ReverseMeshFaceSet();
                 }
             }
 
@@ -154,7 +151,7 @@ public class ModelToolView
 
                 if (ImGui.Button("Reverse", defaultButtonSize))
                 {
-                    Screen.ActionHandler.ReverseMeshNormals();
+                    Editor.ActionHandler.ReverseMeshNormals();
                 }
             }
 
@@ -163,47 +160,47 @@ public class ModelToolView
             // FLVER Groups
             if (ImGui.CollapsingHeader("Groups: FLVER"))
             {
-                FlverGroups.DisplayConfiguration(Screen);
+                FlverGroups.DisplayConfiguration(Editor);
             }
             // Dummy Groups
             if (ImGui.CollapsingHeader("Groups: Dummy"))
             {
-                DummyGroups.DisplayConfiguration(Screen);
+                DummyGroups.DisplayConfiguration(Editor);
             }
             // Material Groups
             if (ImGui.CollapsingHeader("Groups: Material"))
             {
-                MaterialGroups.DisplayConfiguration(Screen);
+                MaterialGroups.DisplayConfiguration(Editor);
             }
             // GX List Groups
             if (ImGui.CollapsingHeader("Groups: GX List"))
             {
-                GXListGroups.DisplayConfiguration(Screen);
+                GXListGroups.DisplayConfiguration(Editor);
             }
             // Node Groups
             if (ImGui.CollapsingHeader("Groups: Node"))
             {
-                NodeGroups.DisplayConfiguration(Screen);
+                NodeGroups.DisplayConfiguration(Editor);
             }
             // Mesh Groups
             if (ImGui.CollapsingHeader("Groups: Mesh"))
             {
-                MeshGroups.DisplayConfiguration(Screen);
+                MeshGroups.DisplayConfiguration(Editor);
             }
             // Buffer Layout Groups
             if (ImGui.CollapsingHeader("Groups: Buffer Layout"))
             {
-                BufferLayoutGroups.DisplayConfiguration(Screen);
+                BufferLayoutGroups.DisplayConfiguration(Editor);
             }
             // Base Skeleton Bone Groups
             if (ImGui.CollapsingHeader("Groups: Base Skeleton Bone"))
             {
-                BaseSkeletonBoneGroups.DisplayConfiguration(Screen);
+                BaseSkeletonBoneGroups.DisplayConfiguration(Editor);
             }
             // All Skeleton Bone Groups
             if (ImGui.CollapsingHeader("Groups: All Skeleton Bone"))
             {
-                AllSkeletonBoneGroups.DisplayConfiguration(Screen);
+                AllSkeletonBoneGroups.DisplayConfiguration(Editor);
             }
 
             ImGui.Separator();
@@ -237,9 +234,9 @@ public class ModelToolView
             }
 
             // Model Mask Toggler
-            if (Screen.Selection._selectedFileModelType is FileSelectionType.Character)
+            if (Editor.Selection._selectedFileModelType is FileSelectionType.Character)
             {
-                if (ModelMaskToggler.IsSupportedProjectType())
+                if (ModelMaskToggler.IsSupportedProjectType(Editor.Project))
                 {
                     if (ImGui.CollapsingHeader("Model Mask Toggler"))
                     {
@@ -248,7 +245,7 @@ public class ModelToolView
 
                         ImGui.Separator();
 
-                        ModelMaskToggler.Display();
+                        ModelMaskToggler.Display(Editor);
                     }
                 }
             }

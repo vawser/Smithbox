@@ -1,16 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Configuration;
-using StudioCore.Editors.GparamEditor.Utils;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
 using StudioCore.Tools;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor.Tools;
 

@@ -12,7 +12,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class TextEditorTab
 {
-    public TextEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public TextEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {
@@ -32,26 +37,34 @@ public class TextEditorTab
         // Primary Category
         if (ImGui.CollapsingHeader("Primary Category", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
+            if (BaseEditor.ProjectManager.SelectedProject != null)
             {
-                foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
+                var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+                if (ImGui.BeginCombo("Primary Category##primaryCategoryCombo", CFG.Current.TextEditor_PrimaryCategory.GetDisplayName()))
                 {
-                    var type = (TextContainerCategory)entry;
-
-                    if (TextUtils.IsSupportedLanguage((TextContainerCategory)entry))
+                    foreach (var entry in Enum.GetValues(typeof(TextContainerCategory)))
                     {
-                        if (ImGui.Selectable(type.GetDisplayName()))
-                        {
-                            CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+                        var type = (TextContainerCategory)entry;
 
-                            // Refresh the param editor FMG decorators when the category changes.
-                            Smithbox.EditorHandler.ParamEditor.ClearFmgDecorators();
+                        if (TextUtils.IsSupportedLanguage(curProject, (TextContainerCategory)entry))
+                        {
+                            if (ImGui.Selectable(type.GetDisplayName()))
+                            {
+                                CFG.Current.TextEditor_PrimaryCategory = (TextContainerCategory)entry;
+
+                                // Refresh the param editor FMG decorators when the category changes.
+                                if (curProject.ParamEditor != null)
+                                {
+                                    curProject.ParamEditor.ClearFmgDecorators();
+                                }
+                            }
                         }
                     }
+                    ImGui.EndCombo();
                 }
-                ImGui.EndCombo();
+                UIHelper.ShowHoverTooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
             }
-            UIHelper.ShowHoverTooltip("Change the primary category, this determines which text files are used for FMG references and other stuff.");
 
             ImGui.Checkbox("Hide non-primary categories in list", ref CFG.Current.TextEditor_DisplayPrimaryCategoryOnly);
             UIHelper.ShowHoverTooltip("Hide the non-primary categories in the File List.");

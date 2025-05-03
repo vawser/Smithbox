@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Tools;
@@ -15,12 +15,12 @@ namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class ToolSubMenu
 {
-    private ParamEditorScreen Screen;
+    private ParamEditorScreen Editor;
     public ActionHandler Handler;
 
     public ToolSubMenu(ParamEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = new ActionHandler(screen);
     }
 
@@ -28,18 +28,18 @@ public class ToolSubMenu
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateParamPinGroup))
         {
-            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Param");
-            Screen.ToolWindow.PinGroupHandler.CreateParamGroup();
+            Editor.ToolWindow.PinGroupHandler.SetAutoGroupName("Param");
+            Editor.ToolWindow.PinGroupHandler.CreateParamGroup();
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateRowPinGroup))
         {
-            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Row");
-            Screen.ToolWindow.PinGroupHandler.CreateRowGroup();
+            Editor.ToolWindow.PinGroupHandler.SetAutoGroupName("Row");
+            Editor.ToolWindow.PinGroupHandler.CreateRowGroup();
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CreateFieldPinGroup))
         {
-            Screen.ToolWindow.PinGroupHandler.SetAutoGroupName("Field");
-            Screen.ToolWindow.PinGroupHandler.CreateFieldGroup();
+            Editor.ToolWindow.PinGroupHandler.SetAutoGroupName("Field");
+            Editor.ToolWindow.PinGroupHandler.CreateFieldGroup();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedParams))
@@ -89,7 +89,7 @@ public class ToolSubMenu
 
             if (ImGui.MenuItem("Trim Row Names"))
             {
-                if (Screen._activeView._selection.ActiveParamExists())
+                if (Editor._activeView._selection.ActiveParamExists())
                 {
                     Handler.RowNameTrimHandler();
                 }
@@ -97,7 +97,7 @@ public class ToolSubMenu
 
             if (ImGui.MenuItem("Sort Rows"))
             {
-                if (Screen._activeView._selection.ActiveParamExists())
+                if (Editor._activeView._selection.ActiveParamExists())
                 {
                     Handler.SortRowsHandler();
                 }
@@ -114,7 +114,7 @@ public class ToolSubMenu
                     {
                         if (ImGui.MenuItem("Selected Rows"))
                         {
-                            if (Screen._activeView._selection.RowSelectionExists())
+                            if (Editor._activeView._selection.RowSelectionExists())
                             {
                                 Handler.CurrentSourceCategory = SourceType.Developer;
                                 Handler.CurrentTargetCategory = TargetType.SelectedRows;
@@ -125,7 +125,7 @@ public class ToolSubMenu
 
                         if (ImGui.MenuItem("Selected Param"))
                         {
-                            if (Screen._activeView._selection.RowSelectionExists())
+                            if (Editor._activeView._selection.RowSelectionExists())
                             {
                                 Handler.CurrentSourceCategory = SourceType.Developer;
                                 Handler.CurrentTargetCategory = TargetType.SelectedParam;
@@ -151,7 +151,7 @@ public class ToolSubMenu
                 {
                     if (ImGui.MenuItem("Selected Rows"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
+                        if (Editor._activeView._selection.RowSelectionExists())
                         {
                             Handler.CurrentSourceCategory = SourceType.Smithbox;
                             Handler.CurrentTargetCategory = TargetType.SelectedRows;
@@ -162,7 +162,7 @@ public class ToolSubMenu
 
                     if (ImGui.MenuItem("Selected Param"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
+                        if (Editor._activeView._selection.RowSelectionExists())
                         {
                             Handler.CurrentSourceCategory = SourceType.Smithbox;
                             Handler.CurrentTargetCategory = TargetType.SelectedParam;
@@ -187,7 +187,7 @@ public class ToolSubMenu
                 {
                     if (ImGui.MenuItem("Selected Rows"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
+                        if (Editor._activeView._selection.RowSelectionExists())
                         {
                             Handler.CurrentSourceCategory = SourceType.Smithbox;
                             Handler.CurrentTargetCategory = TargetType.SelectedRows;
@@ -198,7 +198,7 @@ public class ToolSubMenu
 
                     if (ImGui.MenuItem("Selected Param"))
                     {
-                        if (Screen._activeView._selection.RowSelectionExists())
+                        if (Editor._activeView._selection.RowSelectionExists())
                         {
                             Handler.CurrentSourceCategory = SourceType.Smithbox;
                             Handler.CurrentTargetCategory = TargetType.SelectedParam;
@@ -228,7 +228,7 @@ public class ToolSubMenu
                 if (ImGui.MenuItem("Export Selected Rows"))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedRows;
-                    if (Screen._activeView._selection.RowSelectionExists())
+                    if (Editor._activeView._selection.RowSelectionExists())
                     {
                         Handler.ExportRowNameHandler();
                     }
@@ -238,7 +238,7 @@ public class ToolSubMenu
                 if (ImGui.MenuItem("Export Selected Param"))
                 {
                     Handler.CurrentTargetCategory = TargetType.SelectedParam;
-                    if (Screen._activeView._selection.RowSelectionExists())
+                    if (Editor._activeView._selection.RowSelectionExists())
                     {
                         Handler.ExportRowNameHandler();
                     }
@@ -248,7 +248,7 @@ public class ToolSubMenu
                 if (ImGui.MenuItem("Export All"))
                 {
                     Handler.CurrentTargetCategory = TargetType.AllParams;
-                    if (Screen._activeView._selection.RowSelectionExists())
+                    if (Editor._activeView._selection.RowSelectionExists())
                     {
                         Handler.ExportRowNameHandler();
                     }

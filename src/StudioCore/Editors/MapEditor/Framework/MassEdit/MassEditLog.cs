@@ -12,7 +12,7 @@ namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
 public class MassEditLog
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private MassEditHandler Handler;
 
     private List<MapActionGroup> MassEditActions = new List<MapActionGroup>();
@@ -21,7 +21,7 @@ public class MassEditLog
 
     public MassEditLog(MapEditorScreen screen, MassEditHandler handler)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = handler;
     }
 
@@ -49,7 +49,7 @@ public class MassEditLog
                 foreach (var entry in MassEditActions)
                 {
                     var displayName = entry.MapID;
-                    var alias = AliasUtils.GetMapNameAlias(entry.MapID);
+                    var alias = AliasUtils.GetMapNameAlias(Editor.Project, entry.MapID);
                     if (alias != null)
                         displayName = $"{displayName} {alias}";
 

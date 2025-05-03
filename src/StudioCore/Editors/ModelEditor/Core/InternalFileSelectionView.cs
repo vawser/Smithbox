@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
@@ -14,13 +14,13 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class InternalFileSelectionView
 {
-    public ModelEditorScreen Screen;
+    public ModelEditorScreen Editor;
     public ModelSelectionManager Selection;
     public ModelResourceManager ResManager;
 
     public InternalFileSelectionView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ResManager = screen.ResManager;
     }
@@ -32,12 +32,6 @@ public class InternalFileSelectionView
     public void Display()
     {
         var scale = DPI.GetUIScale();
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
-            return;
 
         if (!UI.Current.Interface_ModelEditor_AssetBrowser)
             return;

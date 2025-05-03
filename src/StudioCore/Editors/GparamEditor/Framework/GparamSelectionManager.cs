@@ -2,15 +2,8 @@
 using SoulsFormats;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.Editors.TextEditor;
 using StudioCore.GraphicsEditor;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
+using static StudioCore.Editors.GparamEditor.Data.GparamBank;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -18,7 +11,7 @@ public class GparamSelectionManager
 {
     private GparamEditorScreen Screen;
 
-    public GparamParamBank.GparamInfo _selectedGparamInfo;
+    public GparamBank.GparamInfo _selectedGparamInfo;
     public GPARAM _selectedGparam;
     public string _selectedGparamKey;
 

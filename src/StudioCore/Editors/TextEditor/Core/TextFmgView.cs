@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using Silk.NET.OpenGL;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
@@ -12,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static SoulsFormats.MSBS.Event;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 

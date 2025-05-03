@@ -1,10 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.ParamCategoryBank;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
+using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.Utilities;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Text;
+using System.Text.Json;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -22,9 +30,9 @@ public static class ParamCategories
     private static List<string> NewEntryParams = new List<string>();
     private static int NewEntryParamsCount = 1;
 
-    public static void Display()
+    public static void Display(ParamEditorScreen editor)
     {
-        var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
+        var categories = editor.Project.ParamCategories;
 
         if (categories == null)
         {
@@ -57,7 +65,7 @@ public static class ParamCategories
         ImGui.SameLine();
         if (ImGui.Button("Save Changes", new Vector2(sectionWidth * 0.5f, 24)))
         {
-            Smithbox.BankHandler.ParamCategories.WriteProjectParamCategories();
+            Write(editor);
             isNewEntryMode = false;
             isEditEntryMode = false;
         }
@@ -74,7 +82,7 @@ public static class ParamCategories
         ImGui.SameLine();
         if (ImGui.Button("Delete Selected Entry", new Vector2(sectionWidth * 0.5f, 24)))
         {
-            Smithbox.BankHandler.ParamCategories.Categories.Categories.Remove(_selectedUserCategory);
+            editor.Project.ParamCategories.Categories.Remove(_selectedUserCategory);
             _selectedUserCategory = null;
             isNewEntryMode = false;
             isEditEntryMode = false;
@@ -87,7 +95,7 @@ public static class ParamCategories
 
             if (result is DialogResult.Yes)
             {
-                Smithbox.BankHandler.ParamCategories.LoadBank(true);
+                RestoreDefault(editor);
                 isNewEntryMode = false;
                 isEditEntryMode = false;
             }
@@ -97,7 +105,7 @@ public static class ParamCategories
         // List
         ImGui.Separator();
 
-        foreach(var category in categories)
+        foreach(var category in editor.Project.ParamCategories.Categories)
         {
             if (ImGui.Selectable($"{category.DisplayName}##userCategory_{category.DisplayName}", category == _selectedUserCategory, ImGuiSelectableFlags.AllowDoubleClick))
             {
@@ -168,7 +176,7 @@ public static class ParamCategories
                 newCategoryEntry.DisplayName = NewEntryName;
                 newCategoryEntry.Params = NewEntryParams;
 
-                Smithbox.BankHandler.ParamCategories.Categories.Categories.Add(newCategoryEntry);
+                editor.Project.ParamCategories.Categories.Add(newCategoryEntry);
             }
         }
 
@@ -218,7 +226,7 @@ public static class ParamCategories
                 {
                     isEditEntryMode = false;
 
-                    var curEntry = Smithbox.BankHandler.ParamCategories.Categories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
+                    var curEntry = editor.Project.ParamCategories.Categories.Where(e => e.DisplayName == NewEntryName).FirstOrDefault();
 
                     if (curEntry != null)
                     {
@@ -246,6 +254,63 @@ public static class ParamCategories
                         }
                     }
                 }
+            }
+        }
+    }
+
+    public static void RestoreDefault(ParamEditorScreen editor)
+    {
+        var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(editor.Project.ProjectType)}";
+        var sourceFile = Path.Combine(sourceFolder, "Categories.json");
+
+        if (File.Exists(sourceFile))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(sourceFile);
+                var options = new JsonSerializerOptions();
+                editor.Project.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+
+                if (editor.Project.ParamCategories == null)
+                {
+                    throw new Exception("[Smithbox] Failed to read param categories.");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Failed to read param categories.");
+            }
+        }
+    }
+
+    public static void Write(ParamEditorScreen editor)
+    {
+        if (editor.Project.ProjectType == ProjectType.Undefined)
+            return;
+
+        var modResourceDir = $"{editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(editor.Project)}\\";
+        var modResourcePath = Path.Combine(modResourceDir, "Categories.json");
+
+        if (!Directory.Exists(modResourceDir))
+        {
+            Directory.CreateDirectory(modResourceDir);
+        }
+
+        if (Directory.Exists(modResourceDir))
+        {
+            string jsonString = JsonSerializer.Serialize(editor.Project.ParamCategories, typeof(ParamCategoryResource), SmithboxSerializerContext.Default);
+
+            try
+            {
+                var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(jsonString);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to write project param categories:\n{ex}", LogLevel.Error);
             }
         }
     }

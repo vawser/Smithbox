@@ -1,20 +1,15 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.AliasBank;
+using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_ReferencedBy
 {
-    public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         if (firstEnt.GetReferencingObjects().Count == 0)
             return;
@@ -62,15 +57,15 @@ public static class PropInfo_ReferencedBy
 
                 if (m.IsPartEnemy() || m.IsPartDummyEnemy())
                 {
-                    aliasName = AliasUtils.GetCharacterAlias(modelName);
+                    aliasName = AliasUtils.GetCharacterAlias(editor.Project, modelName);
                 }
                 if (m.IsPartAsset() || m.IsPartDummyAsset())
                 {
-                    aliasName = AliasUtils.GetAssetAlias(modelName);
+                    aliasName = AliasUtils.GetAssetAlias(editor.Project, modelName);
                 }
                 if (m.IsPartMapPiece())
                 {
-                    aliasName = AliasUtils.GetMapPieceAlias(modelName);
+                    aliasName = AliasUtils.GetMapPieceAlias(editor.Project, modelName);
                 }
 
                 if (aliasName != "")
@@ -84,8 +79,8 @@ public static class PropInfo_ReferencedBy
 
             if (ImGui.Button(displayName + "##MSBRefBy" + refID, new Vector2(width * 94, 20 * scale)))
             {
-                selection.ClearSelection();
-                selection.AddSelection(m);
+                selection.ClearSelection(editor);
+                selection.AddSelection(editor, m);
             }
 
             refID++;

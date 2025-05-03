@@ -1,14 +1,10 @@
-﻿using SoulsFormats;
-using StudioCore.Core.Project;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Interface;
-using StudioCore.Utilities;
+using StudioCore.EmevdEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 using static SoulsFormats.EMEVD.Instruction;
 using static StudioCore.Editors.EmevdEditor.EMEDF;
@@ -29,9 +25,9 @@ public static class EmevdUtils
     /// <summary>
     /// Does the passed Instruction have an ArgDoc entry?
     /// </summary>
-    public static bool HasArgDoc(Instruction ins)
+    public static bool HasArgDoc(EmevdEditorScreen editor, Instruction ins)
     {
-        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -51,9 +47,9 @@ public static class EmevdUtils
     /// <summary>
     /// Get ArgDoc Name for instruction
     /// </summary>
-    public static string GetArgDocName(Instruction ins)
+    public static string GetArgDocName(EmevdEditorScreen editor, Instruction ins)
     {
-        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -73,12 +69,12 @@ public static class EmevdUtils
     /// <summary>
     /// Constructs two lists with the ArgDoc and raw ArgData for the current Instruction.
     /// </summary>
-    public static (List<ArgDoc>, List<object>) BuildArgumentList(Instruction ins)
+    public static (List<ArgDoc>, List<object>) BuildArgumentList(EmevdEditorScreen editor, Instruction ins)
     {
         var argList = new List<object>();
         var argDocList = new List<ArgDoc>();
 
-        var classDoc = EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -111,7 +107,7 @@ public static class EmevdUtils
         catch(Exception ex)
         {
             // Clear the input so we don't lag out
-            Smithbox.EditorHandler.EmevdEditor.Filters.EventFilterInput = "";
+            editor.Filters.EventFilterInput = "";
 
             TaskLogs.AddLog($"ArgDoc is incorrect for: {ins.Bank}[{ins.ID}] - ArgData Size: {ins.ArgData.Length}");
         }

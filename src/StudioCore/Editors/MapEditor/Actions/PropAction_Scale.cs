@@ -18,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Actions
             CFG.Current.SavedScale = (Vector3)prop.GetValue(obj, null);
         }
 
-        public static void PasteSavedScale(ViewportSelection _selection)
+        public static void PasteSavedScale(MapEditorScreen editor, ViewportSelection _selection)
         {
             List<ViewportAction> actlist = new();
             foreach (Entity sel in _selection.GetFilteredSelection<Entity>())
@@ -27,7 +27,7 @@ namespace StudioCore.Editors.MapEditor.Actions
             }
 
             Actions.Viewport.CompoundAction action = new(actlist);
-            Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(action);
+            editor.EditorActionManager.ExecuteAction(action);
         }
     }
 }

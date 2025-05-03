@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Resource.Locators;
 using System;
@@ -11,104 +11,41 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
-public static class MaterialBank
+
+public class MaterialBank
 {
-    public static bool IsLoaded { get; private set; }
-    public static bool IsLoading { get; private set; }
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static Dictionary<MaterialFileInfo, IBinder> FileBank { get; private set; } = new();
+    public Dictionary<MaterialFileInfo, IBinder> FileBank { get; private set; } = new();
 
-    public static void SaveMaterials()
+    public MaterialBank(Smithbox baseEditor, ProjectEntry project)
     {
-        foreach (var (info, binder) in FileBank)
-        {
-            SaveMaterial(info, binder);
-        }
+        BaseEditor = baseEditor;
+        Project = project;
     }
 
-    public static void SaveMaterial(MaterialFileInfo info, IBinder binder)
+    public async Task<bool> Setup()
     {
-        if (binder == null)
-            return;
+        await Task.Delay(1000);
 
-        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
+        // MTD
+        Task<bool> mtdTask = LoadMaterials();
+        bool mtdTaskResult = await mtdTask;
 
-        var fileDir = @"\mtd";
-        var fileExt = @".mtdbnd.dcx";
-
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            fileDir = @"\material";
-            fileExt = @".matbinbnd.dcx";
-        }
-
-        foreach (BinderFile file in binder.Files)
-        {
-            foreach (MTD mFile in info.MaterialFiles)
-            {
-                file.Bytes = mFile.Write();
-            }
-        }
-
-        BND4 writeBinder = binder as BND4;
-        byte[] fileBytes = null;
-
-        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
-
-        switch (Smithbox.ProjectType)
-        {
-            case ProjectType.DS3:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.SDT:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.ER:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.AC6:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                break;
-            default:
-                return;
-        }
-
-        // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
-        {
-            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
+        return true;
     }
 
-    public static void LoadMaterials()
+    public async Task<bool> LoadMaterials()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-        {
-            return;
-        }
-
-        IsLoaded = false;
-        IsLoading = true;
+        await Task.Delay(1000);
 
         FileBank = new();
 
         var fileDir = @"\mtd";
         var fileExt = @".mtdbnd.dcx";
 
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             fileDir = @"\material";
             fileExt = @".matbinbnd.dcx";
@@ -120,23 +57,22 @@ public static class MaterialBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+            if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
             {
-                LoadMaterial($"{Smithbox.ProjectRoot}\\{filePath}");
+                LoadMaterial($"{Project.ProjectPath}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadMaterial($"{Smithbox.GameRoot}\\{filePath}");
+                LoadMaterial($"{Project.DataPath}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
-        IsLoaded = true;
-        IsLoading = false;
+        return true;
     }
 
-    public static void LoadMaterial(string path)
+    public void LoadMaterial(string path)
     {
         if (path == null)
         {
@@ -153,7 +89,7 @@ public static class MaterialBank
 
         var fileExt = @".mtd";
 
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             fileExt = @".matbin";
         }
@@ -192,6 +128,82 @@ public static class MaterialBank
             }
 
             FileBank.Add(fileStruct, binder);
+        }
+    }
+
+
+    public void SaveMaterials()
+    {
+        foreach (var (info, binder) in FileBank)
+        {
+            SaveMaterial(info, binder);
+        }
+    }
+
+    public void SaveMaterial(MaterialFileInfo info, IBinder binder)
+    {
+        if (binder == null)
+            return;
+
+        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
+
+        var fileDir = @"\mtd";
+        var fileExt = @".mtdbnd.dcx";
+
+        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        {
+            fileDir = @"\material";
+            fileExt = @".matbinbnd.dcx";
+        }
+
+        foreach (BinderFile file in binder.Files)
+        {
+            foreach (MTD mFile in info.MaterialFiles)
+            {
+                file.Bytes = mFile.Write();
+            }
+        }
+
+        BND4 writeBinder = binder as BND4;
+        byte[] fileBytes = null;
+
+        var assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
+
+        switch (Project.ProjectType)
+        {
+            case ProjectType.DS3:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                break;
+            case ProjectType.SDT:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.ER:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                break;
+            case ProjectType.AC6:
+                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                break;
+            default:
+                return;
+        }
+
+        // Add folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Project.ProjectPath}\\{fileDir}\\"))
+        {
+            Directory.CreateDirectory($"{Project.ProjectPath}\\{fileDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 

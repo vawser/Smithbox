@@ -1,12 +1,6 @@
 ﻿using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.GraphicsEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 

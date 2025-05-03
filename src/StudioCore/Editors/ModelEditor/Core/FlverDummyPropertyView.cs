@@ -15,14 +15,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverDummyPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverDummyPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -35,7 +35,7 @@ public class FlverDummyPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Dummies.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Dummies.Count < index)
             return;
 
         if (Selection.DummyMultiselect.StoredIndices.Count > 1)
@@ -50,7 +50,7 @@ public class FlverDummyPropertyView
         ImGui.Text("Dummy");
         ImGui.Separator();
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Dummies[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Dummies[index];
 
         // Variables
         var position = entry.Position;
@@ -121,7 +121,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Position != position)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Position(entry, entry.Position, position));
         }
 
@@ -131,7 +131,7 @@ public class FlverDummyPropertyView
         {
             if (entry.Forward != forward)
             {
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Forward(entry, entry.Forward, forward));
 
             }
@@ -142,7 +142,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Upward != upward)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Upward(entry, entry.Upward, upward));
         }
 
@@ -151,7 +151,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.ReferenceID != refId)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_ReferenceID(entry, entry.ReferenceID, refId));
         }
 
@@ -160,7 +160,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.ParentBoneIndex != parentBoneIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_ParentBoneIndex(entry, entry.ParentBoneIndex, parentBoneIndex));
         }
 
@@ -171,7 +171,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.AttachBoneIndex != attachBoneIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_AttachBoneIndex(entry, entry.AttachBoneIndex, attachBoneIndex));
         }
 
@@ -182,7 +182,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Flag1 != flag1)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Flag1(entry, entry.Flag1, flag1));
         }
 
@@ -191,7 +191,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.UseUpwardVector != useUpwardVector)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_UseUpwardVector(entry, entry.UseUpwardVector, useUpwardVector));
         }
 
@@ -200,7 +200,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Unk30 != unk30)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Unk30(entry, entry.Unk30, unk30));
         }
 
@@ -209,7 +209,7 @@ public class FlverDummyPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Unk34 != unk34)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERDummy_Unk34(entry, entry.Unk34, unk34));
         }
 
@@ -219,7 +219,7 @@ public class FlverDummyPropertyView
         if (Selection._trackedDummyPosition != entry.Position)
         {
             Selection._trackedDummyPosition = entry.Position;
-            Screen.ViewportManager.UpdateRepresentativeDummy(index, entry.Position);
+            Editor.ViewportManager.UpdateRepresentativeDummy(index, entry.Position);
         }
     }
 }

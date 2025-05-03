@@ -1,5 +1,6 @@
 ﻿using Octokit;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Resource.Locators;
 using System;
@@ -13,49 +14,20 @@ using System.Xml;
 
 namespace StudioCore.Editors.MapEditor.Framework.META;
 
-public static class MsbMeta
+public class MsbMeta
 {
-    private static Dictionary<string, MapEntityPropertyMeta> _MsbMetas = new();
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static void SetupMeta()
+    public Dictionary<string, MapEntityPropertyMeta> _MsbMetas = new();
+
+    public MsbMeta(Smithbox baseEditor, ProjectEntry project)
     {
-        _MsbMetas = new();
-
-        var metaPath = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{MiscLocator.GetGameIDForDir()}\\Meta";
-
-        //TaskLogs.AddLog($"metaPath: {metaPath}");
-
-        if (Path.Exists(metaPath))
-        {
-            foreach (var folder in Directory.EnumerateDirectories(metaPath))
-            {
-                //TaskLogs.AddLog($"folder: {folder}");
-
-                var rootType = new DirectoryInfo(folder).Name;
-
-                //TaskLogs.AddLog($"rootType: {rootType}");
-
-                var typeMetaPath = $"{metaPath}\\{rootType}";
-                //TaskLogs.AddLog($"typeMetaPath: {typeMetaPath}");
-
-                if (Path.Exists(typeMetaPath))
-                {
-                    foreach (var file in Directory.EnumerateFiles(typeMetaPath))
-                    {
-                        var currentPath = file;
-                        var specificType = Path.GetFileNameWithoutExtension(file);
-
-                        //TaskLogs.AddLog($"currentPath: {currentPath}");
-
-                        var newMeta = new MapEntityPropertyMeta(currentPath);
-                        _MsbMetas.Add($"{rootType}_{specificType}", newMeta);
-                    }
-                }
-            }
-        }
+        BaseEditor = baseEditor;
+        Project = project;
     }
 
-    public static MapEntityPropertyMeta GetMeta(Type type, bool sharedMeta)
+    public MapEntityPropertyMeta GetMeta(Type type, bool sharedMeta)
     {
         // Get the strings from the passed type
         var typeString = $"{type}";
@@ -96,7 +68,7 @@ public static class MsbMeta
     /// <summary>
     /// For DS2 MSB params
     /// </summary>
-    public static MapEntityPropertyMeta GetParamMeta(string paramName)
+    public MapEntityPropertyMeta GetParamMeta(string paramName)
     {
         if (_MsbMetas.ContainsKey(paramName))
             return _MsbMetas[paramName];
@@ -104,7 +76,7 @@ public static class MsbMeta
         return new MapEntityPropertyMeta();
     }
 
-    public static MapEntityPropertyFieldMeta GetFieldMeta(string field, Type type)
+    public MapEntityPropertyFieldMeta GetFieldMeta(string field, Type type)
     {
         var rootMeta = GetMeta(type, true);
         var specificMeta = GetMeta(type, false);
@@ -131,7 +103,7 @@ public static class MsbMeta
     /// <summary>
     /// For DS2 MSB params
     /// </summary>
-    public static MapEntityPropertyFieldMeta GetParamFieldMeta(string field, string paramName)
+    public MapEntityPropertyFieldMeta GetParamFieldMeta(string field, string paramName)
     {
         var rootMeta = GetParamMeta(paramName);
 

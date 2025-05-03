@@ -3,7 +3,14 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.TextEditor;
+using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Formats.JSON;
+using StudioCore.Interface;
+using StudioCore.Tasks;
+using StudioCore.TextureViewer;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,16 +19,6 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 using Veldrid;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Utilities;
-using StudioCore.Core;
-using Google.Protobuf.WellKnownTypes;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Interface;
-using StudioCore.Editors.TextEditor.Utils;
-using Silk.NET.OpenGL;
-using SoapstoneLib.Proto.Internal;
-using StudioCore.Tasks;
 
 namespace StudioCore.Editor;
 
@@ -566,14 +563,14 @@ public class EditorDecorations
         ImGui.PopStyleColor();
     }
 
-    public static void TextureRefSelectable(EditorScreen ownerScreen, List<TexRef> texRefs, Param.Row context,
+    public static void TextureRefSelectable(ParamEditorScreen editor, TextureViewerScreen textureViewer, List<TexRef> texRefs, Param.Row context,
         dynamic oldval)
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
             return;
 
-        if (Smithbox.EditorHandler.TextureViewer.ImagePreview == null)
+        if (textureViewer.ImagePreview == null)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_FmgRef_Text);
@@ -584,7 +581,7 @@ public class EditorDecorations
         {
             if (CFG.Current.EnableViewer_TEXTURE && CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
-                var imageDisplayed = Smithbox.EditorHandler.TextureViewer.ImagePreview.DisplayImagePreview(context, texRef);
+                var imageDisplayed = textureViewer.ImagePreview.DisplayImagePreview(context, texRef);
 
                 // If an image has been displayed, exit the loop so we don't show multiple images
                 if (imageDisplayed)
@@ -657,7 +654,7 @@ public class EditorDecorations
         }
     }
 
-    public static void AliasEnumValueText(Dictionary<string, string> enumValues, string value)
+    public static void AliasEnumValueText(List<AliasEntry> entries, string value)
     {
         var inactiveEnum = false;
 
@@ -668,17 +665,33 @@ public class EditorDecorations
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
                 if (value == "0" || value == "-1")
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                    var entry = entries.FirstOrDefault(e => e.ID == value);
+                    if (entry != null)
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted("None");
+                    }
                 }
                 else
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                    var entry = entries.FirstOrDefault(e => e.ID == value);
+                    if (entry != null)
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted("Not Enumerated");
+                    }
                 }
                 ImGui.PopStyleColor();
             }
         }
     }
-    public static void ConditionalAliasEnumValueText(Dictionary<string, string> enumValues, string value, Param.Row row, string conditionalField, string conditionalValue)
+    public static void ConditionalAliasEnumValueText(List<AliasEntry> entries, string value, Param.Row row, string conditionalField, string conditionalValue)
     {
         var inactiveEnum = false;
 
@@ -695,91 +708,79 @@ public class EditorDecorations
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
                 if(value == "0" || value == "-1")
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "None"));
+                    var entry = entries.FirstOrDefault(e => e.ID == value);
+                    if (entry != null)
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted("None");
+                    }
                 }
                 else
                 {
-                    ImGui.TextUnformatted(enumValues.GetValueOrDefault(value, "Not Enumerated"));
+                    var entry = entries.FirstOrDefault(e => e.ID == value);
+                    if (entry != null)
+                    {
+                        ImGui.TextUnformatted(entry.Name);
+                    }
+                    else
+                    {
+                        ImGui.TextUnformatted("Not Enumerated");
+                    }
                 }
                 ImGui.PopStyleColor();
             }
         }
     }
 
-    public static bool ProjectEnumsLoaded()
-    {
-        var bank = Smithbox.BankHandler.ProjectEnums;
-
-        if(bank == null)
-            return false;
-
-        if(bank.Enums == null)
-            return false;
-
-        if (bank.Enums.List == null)
-            return false;
-
-        if(bank.Enums.List.Count == 0)
-            return false;
-
-        return true;
-    }
-
-    public static void ProjectEnumNameText(string enumType)
+    public static void ProjectEnumNameText(ParamEditorScreen editor, string enumType)
     {
         if (!CFG.Current.Param_ShowFieldEnumLabels)
         {
             return;
         }
 
-        var bank = Smithbox.BankHandler.ProjectEnums;
-        if (ProjectEnumsLoaded())
+        var enumEntry = editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+
+        if (enumEntry != null)
         {
-            var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
+            ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
+            ImGui.PopStyleColor();
 
-            if (enumEntry != null)
+            if (enumEntry.Description != "")
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumName_Text);
-                ImGui.TextUnformatted($@"   {enumEntry.DisplayName}");
-                ImGui.PopStyleColor();
-
-                if (enumEntry.Description != "")
-                {
-                    UIHelper.ShowHoverTooltip($"{enumEntry.Description}");
-                }
+                UIHelper.ShowHoverTooltip($"{enumEntry.Description}");
             }
         }
     }
 
-    public static void ProjectEnumValueText(string enumType, string value)
+    public static void ProjectEnumValueText(ParamEditorScreen editor, string enumType, string value)
     {
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
-            var bank = Smithbox.BankHandler.ProjectEnums;
+            var enumEntry = editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
-            if (ProjectEnumsLoaded())
+            if(enumEntry != null)
             {
-                var enumEntry = bank.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+                var enumValueName = "";
+                var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
 
-                if(enumEntry != null)
+                if (enumValue != null)
                 {
-                    var enumValueName = "";
-                    var enumValue = enumEntry.Options.Where(e => e.ID == value).FirstOrDefault();
-
-                    if (enumValue != null)
-                    {
-                        enumValueName = enumValue.Name;
-                    }
-
-                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
-                    ImGui.TextUnformatted(enumValueName);
-                    ImGui.PopStyleColor();
+                    enumValueName = enumValue.Name;
                 }
+
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
+                ImGui.TextUnformatted(enumValueName);
+                ImGui.PopStyleColor();
             }
         }
     }
 
-    public static void VirtualParamRefSelectables(ParamBank bank, string virtualRefName, object searchValue,
+    public static void VirtualParamRefSelectables(ParamEditorScreen editor, ParamBank bank, string virtualRefName, object searchValue,
         Param.Row context, string fieldName, List<ExtRef> ExtRefs, EditorScreen cacheOwner)
     {
         // Add Goto statements
@@ -809,10 +810,11 @@ public class EditorDecorations
             {
                 List<string> matchedExtRefPath =
                     currentRef.paths.Select(x => string.Format(x, searchValue)).ToList();
-                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, Smithbox.ProjectRoot,
+                ExtRefItem(context, fieldName, $"modded {currentRef.name}", matchedExtRefPath, editor.Project.ProjectPath,
                     cacheOwner);
+
                 ExtRefItem(context, fieldName, $"vanilla {currentRef.name}", matchedExtRefPath,
-                    Smithbox.GameRoot, cacheOwner);
+                    editor.Project.DataPath, cacheOwner);
             }
         }
     }
@@ -946,7 +948,7 @@ public class EditorDecorations
         return result;
     }
 
-    public static bool ParamRefEnumContextMenuItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool ParamRefEnumContextMenuItems(ParamEditorScreen editor, ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
@@ -966,7 +968,7 @@ public class EditorDecorations
 
         if (textureRefs != null)
         {
-            PropertyRowTextureRefsContextItems(textureRefs, context, executor);
+            PropertyRowTextureRefsContextItems(editor, textureRefs, context, executor);
         }
 
         if (Enum != null)
@@ -978,32 +980,37 @@ public class EditorDecorations
         {
             if (cellMeta.ShowParticleEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval, ref newval);
+                result |= PropertyRowAliasEnumContextItems(editor.Project.Aliases.Particles, oldval, ref newval);
             }
 
             if (cellMeta.ShowSoundEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval, ref newval);
+                result |= PropertyRowAliasEnumContextItems(editor.Project.Aliases.Sounds, oldval, ref newval);
             }
 
             if (cellMeta.ShowFlagEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval, ref newval);
+                result |= PropertyRowAliasEnumContextItems(editor.Project.Aliases.EventFlags, oldval, ref newval);
             }
 
             if (cellMeta.ShowCutsceneEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval, ref newval);
+                result |= PropertyRowAliasEnumContextItems(editor.Project.Aliases.Cutscenes, oldval, ref newval);
             }
 
             if (cellMeta.ShowMovieEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval, ref newval);
+                result |= PropertyRowAliasEnumContextItems(editor.Project.Aliases.Movies, oldval, ref newval);
             }
 
             if (cellMeta.ShowProjectEnumList)
             {
-                result |= PropertyRowAliasEnumContextItems(Smithbox.BankHandler.ProjectEnums.GetEnumDictionary(cellMeta.ProjectEnumType), oldval, ref newval);
+                var optionList = editor.Project.ProjectParamEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
+
+                if (optionList != null)
+                {
+                    result |= PropertyRowAliasEnumContextItems(optionList, oldval, ref newval);
+                }
             }
         }
 
@@ -1160,7 +1167,7 @@ public class EditorDecorations
         }
     }
 
-    public static void PropertyRowTextureRefsContextItems(List<TexRef> reftypes, Param.Row context, ActionManager executor)
+    public static void PropertyRowTextureRefsContextItems(ParamEditorScreen editor, List<TexRef> reftypes, Param.Row context, ActionManager executor)
     {
         // Required to stop the LowRequirements build from failing
         if (Smithbox.LowRequirementsMode)
@@ -1170,13 +1177,16 @@ public class EditorDecorations
 
         foreach(var textureRef in reftypes)
         {
-            bool displayedImage = Smithbox.EditorHandler.TextureViewer.ImagePreview.DisplayImagePreview(context, textureRef, false);
-
-            if (displayedImage)
+            if (editor.Project.TextureViewer != null)
             {
-                if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
+                bool displayedImage = editor.Project.TextureViewer.ImagePreview.DisplayImagePreview(context, textureRef, false);
+
+                if (displayedImage)
                 {
-                    EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
+                    if (ImGui.Selectable($@"View {textureRef.TextureFile}"))
+                    {
+                        EditorCommandQueue.AddCommand($@"texture/view/{textureRef.TextureContainer}/{textureRef.TextureFile}");
+                    }
                 }
             }
 
@@ -1189,23 +1199,55 @@ public class EditorDecorations
 
     public static string enumSearchStr = "";
 
-    public static bool PropertyRowAliasEnumContextItems(Dictionary<string, string> en, object oldval, ref object newval)
+    public static bool PropertyRowAliasEnumContextItems(List<AliasEntry> entries, object oldval, ref object newval)
     {
         ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Count))))
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count))))
         {
             try
             {
-                foreach (KeyValuePair<string, string> option in en)
+                foreach (var entry in entries)
                 {
-                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Key, " ")
-                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, option.Value, " ")
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.ID, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
                         || enumSearchStr == "")
                     {
-                        if (ImGui.Selectable($"{option.Key}: {option.Value}"))
+                        if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
                         {
-                            newval = Convert.ChangeType(option.Key, oldval.GetType());
+                            newval = Convert.ChangeType(entry.ID, oldval.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
+    }
+
+    public static bool PropertyRowAliasEnumContextItems(ProjectEnumEntry entries, object oldval, ref object newval)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Options.Count))))
+        {
+            try
+            {
+                foreach (var entry in entries.Options)
+                {
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.ID, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
+                        {
+                            newval = Convert.ChangeType(entry.ID, oldval.GetType());
                             ImGui.EndChild();
                             return true;
                         }

@@ -1,5 +1,5 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,8 @@ namespace StudioCore.Editors.MapEditor.Tools.MapQuery;
 
 public class MapQueryBank
 {
+    private MapEditorScreen Editor;
+
     private IMapQueryEngine Engine;
 
     public bool MapBankInitialized = false;
@@ -20,11 +22,13 @@ public class MapQueryBank
 
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
 
-    public MapQueryBank(IMapQueryEngine engine)
+    public MapQueryBank(MapEditorScreen editor, IMapQueryEngine engine)
     {
+        Editor = editor;
+
         Engine = engine;
 
-        if (Smithbox.ProjectType is ProjectType.Undefined)
+        if (Editor.Project.ProjectType is ProjectType.Undefined)
         {
             MapBankInitialized = true;
         }
@@ -35,7 +39,7 @@ public class MapQueryBank
         MapBankInitialized = false;
         MapList = new Dictionary<string, IMsb>();
 
-        if (Smithbox.ProjectType is ProjectType.Undefined)
+        if (Editor.Project.ProjectType is ProjectType.Undefined)
         {
             MapBankInitialized = true;
         }
@@ -64,13 +68,13 @@ public class MapQueryBank
     {
         MapResources = new List<ResourceDescriptor>();
 
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var mapDir = $"{Smithbox.GameRoot}/map/";
+            var mapDir = $"{Editor.Project.DataPath}/map/";
 
             if (Engine.GetProjectFileUsage())
             {
-                mapDir = $"{Smithbox.ProjectRoot}/map/";
+                mapDir = $"{Editor.Project.ProjectPath}/map/";
             }
 
             if (Directory.Exists(mapDir))
@@ -97,23 +101,23 @@ public class MapQueryBank
             var innerDir = "mapstudio";
             var ext = ".msb.dcx";
 
-            if (Smithbox.ProjectType is ProjectType.DS1)
+            if (Editor.Project.ProjectType is ProjectType.DS1)
             {
                 innerDir = "MapStudio";
                 ext = ".msb";
             }
 
-            if (Smithbox.ProjectType is ProjectType.DS1R)
+            if (Editor.Project.ProjectType is ProjectType.DS1R)
             {
                 innerDir = "MapStudioNew";
                 ext = ".msb";
             }
 
-            var mapDir = $"{Smithbox.GameRoot}/map/{innerDir}/ ";
+            var mapDir = $"{Editor.Project.DataPath}/map/{innerDir}/ ";
 
             if (Engine.GetProjectFileUsage())
             {
-                mapDir = $"{Smithbox.ProjectRoot}/map/{innerDir}/";
+                mapDir = $"{Editor.Project.ProjectPath}/map/{innerDir}/";
             }
 
             if (Directory.Exists(mapDir))
@@ -149,35 +153,35 @@ public class MapQueryBank
             var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(resource.AssetPath));
             IMsb msb = null;
 
-            if (Smithbox.ProjectType == ProjectType.DES)
+            if (Editor.Project.ProjectType == ProjectType.DES)
             {
                 msb = MSBD.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+            if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
             {
                 msb = MSB1.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.DS2 || Smithbox.ProjectType == ProjectType.DS2S)
+            if (Editor.Project.ProjectType == ProjectType.DS2 || Editor.Project.ProjectType == ProjectType.DS2S)
             {
                 msb = MSB2.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.DS3)
+            if (Editor.Project.ProjectType == ProjectType.DS3)
             {
                 msb = MSB3.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.BB)
+            if (Editor.Project.ProjectType == ProjectType.BB)
             {
                 msb = MSBB.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.SDT)
+            if (Editor.Project.ProjectType == ProjectType.SDT)
             {
                 msb = MSBS.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.ER)
+            if (Editor.Project.ProjectType == ProjectType.ER)
             {
                 msb = MSBE.Read(resource.AssetPath);
             }
-            if (Smithbox.ProjectType == ProjectType.AC6)
+            if (Editor.Project.ProjectType == ProjectType.AC6)
             {
                 msb = MSB_AC6.Read(resource.AssetPath);
             }

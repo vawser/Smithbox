@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,17 @@ namespace StudioCore.Editors.TextEditor;
 
 public class AddFmgEntry : EditorAction
 {
+    private TextEditorScreen Editor;
+
     private FMG Fmg;
     private FMG.Entry NewEntry;
     private int InsertionIndex;
 
     private TextContainerWrapper Info;
 
-    public AddFmgEntry(TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
+    public AddFmgEntry(TextEditorScreen editor, TextContainerWrapper info, FMG.Entry sourceEntry, FMG.Entry newEntry, int newID)
     {
+        Editor = editor;
         Info = info;
         Fmg = sourceEntry.Parent;
         NewEntry = newEntry;
@@ -50,7 +54,7 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = true;
 
-        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
+        Editor.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }
@@ -68,7 +72,7 @@ public class AddFmgEntry : EditorAction
 
         Info.IsModified = false;
 
-        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences();
+        Editor.DifferenceManager.TrackFmgDifferences();
 
         return ActionEvent.NoEvent;
     }

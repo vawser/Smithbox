@@ -1,28 +1,23 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Tools
 {
 
     public static class AllSkeletonBoneGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\All Skeleton Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> AllSkeletonGroupFiles = new List<string>();
 
@@ -32,8 +27,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static AllSkeletonList SelectedAllSkeletonList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\All Skeleton Groups\\";
+
             UpdateAllSkeletonGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -45,8 +42,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedAllSkeletonGroup = entry;
                         SelectedAllSkeletonList = ReadAllSkeletonGroup(entry);
 
-                        var action = new ReplaceAllSkeletonList(screen, SelectedAllSkeletonList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceAllSkeletonList(editor, SelectedAllSkeletonList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -62,8 +59,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedAllSkeletonGroup = entry;
                         SelectedAllSkeletonList = ReadAllSkeletonGroup(entry);
 
-                        var action = new AppendAllSkeletonList(screen, SelectedAllSkeletonList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendAllSkeletonList(editor, SelectedAllSkeletonList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

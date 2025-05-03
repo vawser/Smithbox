@@ -1,11 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.GraphicsEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -27,7 +22,7 @@ public class GparamCommandQueue
             if (initcmd[0] == "view" && initcmd.Length >= 2)
             {
                 // Gparam
-                foreach (var (name, info) in GparamParamBank.ParamBank)
+                foreach (var (name, info) in Screen.Project.GparamBank.ParamBank)
                 {
                     if (initcmd[1] == name)
                     {

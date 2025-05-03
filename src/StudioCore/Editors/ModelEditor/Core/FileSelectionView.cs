@@ -1,29 +1,20 @@
-﻿using HKLib.hk2018.hk;
-using Hexa.NET.ImGui;
-using Microsoft.Extensions.FileSystemGlobbing;
-using SoulsFormats.KF4;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
-using StudioCore.Editor;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Editors.ModelEditor.Framework;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using static StudioCore.Configuration.SettingsWindow;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class FileSelectionView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelResourceManager ResManager;
     private ModelAssetCopyManager AssetCopyManager;
@@ -33,34 +24,15 @@ public class FileSelectionView
 
     public FileSelectionView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ResManager = screen.ResManager;
         AssetCopyManager = screen.AssetCopyManager;
     }
 
-    public void OnProjectChanged()
-    {
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            Selection._selectedFileName = "";
-            Selection._selectedAssociatedMapID = "";
-            Selection._selectedFileModelType = FileSelectionType.None;
-        }
-    }
-
     public void Display()
     {
         var scale = DPI.GetUIScale();
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Smithbox.AliasCacheHandler == null)
-            return;
-
-        if (!Smithbox.AliasCacheHandler.AliasCache.UpdateCacheComplete)
-            return;
 
         if (!UI.Current.Interface_ModelEditor_AssetBrowser)
             return;
@@ -98,22 +70,19 @@ public class FileSelectionView
     }
 
 
-    private bool FilterSelectionList(string name, Dictionary<string, AliasReference> referenceDict)
+    private bool FilterSelectionList(AliasEntry entry)
     {
-        var lowerName = name.ToLower();
+        var lowerName = entry.ID.ToLower();
 
         var refName = "";
         var refTagList = new List<string>();
 
-        if (referenceDict.ContainsKey(lowerName))
-        {
-            refName = referenceDict[lowerName].name;
-            refTagList = referenceDict[lowerName].tags;
-        }
+        refName = entry.Name;
+        refTagList = entry.Tags;
 
         if (!CFG.Current.ModelEditor_AssetBrowser_ShowLowDetailParts)
         {
-            if (name.Substring(name.Length - 2) == "_l")
+            if (entry.ID.Substring(entry.ID.Length - 2) == "_l")
             {
                 return false;
             }
@@ -127,25 +96,22 @@ public class FileSelectionView
         return true;
     }
 
-    private void DisplaySelectableAlias(string name, Dictionary<string, AliasReference> referenceDict)
+    private void DisplaySelectableAlias(AliasEntry entry)
     {
-        var lowerName = name.ToLower();
+        var lowerName = entry.ID.ToLower();
 
-        if (referenceDict.ContainsKey(lowerName))
+        if (CFG.Current.ModelEditor_AssetBrowser_ShowAliases)
         {
-            if (CFG.Current.ModelEditor_AssetBrowser_ShowAliases)
-            {
-                var aliasName = referenceDict[lowerName].name;
+            var aliasName = entry.Name;
 
-                UIHelper.DisplayAlias(aliasName);
-            }
+            UIHelper.DisplayAlias(aliasName);
+        }
 
-            // Tags
-            if (CFG.Current.ModelEditor_AssetBrowser_ShowTags)
-            {
-                var tagString = string.Join(" ", referenceDict[lowerName].tags);
-                AliasUtils.DisplayTagAlias(tagString);
-            }
+        // Tags
+        if (CFG.Current.ModelEditor_AssetBrowser_ShowTags)
+        {
+            var tagString = string.Join(" ", entry.Tags);
+            AliasUtils.DisplayTagAlias(tagString);
         }
     }
 
@@ -178,9 +144,6 @@ public class FileSelectionView
 
     private void DisplayLooseSection()
     {
-        if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
-            return;
-
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
 
@@ -205,18 +168,15 @@ public class FileSelectionView
 
     private void DisplayCharacterList()
     {
-        if (Smithbox.BankHandler.CharacterAliases.Aliases == null)
-            return;
-
         if (ImGui.CollapsingHeader("Characters"))
         {
-            foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.CharacterList)
+            foreach (var entry in Editor.Project.Aliases.Characters)
             {
-                if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Characters))
+                if (FilterSelectionList(entry))
                 {
-                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry;
+                        Selection._selectedFileName = entry.ID;
                         Selection._selectedFileModelType = FileSelectionType.Character;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
@@ -227,28 +187,17 @@ public class FileSelectionView
 
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Characters);
+                        DisplaySelectableAlias(entry);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry}"))
+                    if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry.ID}"))
                     {
-                        if (AssetCopyManager.IsSupportedProjectType() && entry != "c0000")
+                        if (AssetCopyManager.IsSupportedProjectType() && entry.ID != "c0000")
                         {
                             if (ImGui.Selectable("Copy as New Character"))
                             {
-                                AssetCopyManager.OpenCharacterCopyMenu(entry);
+                                AssetCopyManager.OpenCharacterCopyMenu(entry.ID);
                             }
-                        }
-
-                        if (ImGui.Selectable("Go to Alias"))
-                        {
-                            if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
-                            {
-                                Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Characters);
-                            }
-
-                            Smithbox.WindowHandler.SettingsWindow.DisplayCharacterTab = true;
-                            Smithbox.WindowHandler.SettingsWindow.TargetChrID = entry;
                         }
 
                         ImGui.EndPopup();
@@ -260,25 +209,22 @@ public class FileSelectionView
 
     private void DisplayAssetList()
     {
-        if (Smithbox.BankHandler.AssetAliases.Aliases == null)
-            return;
-
         var assetLabel = "Objects";
 
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             assetLabel = "Assets";
         }
 
         if (ImGui.CollapsingHeader(assetLabel))
         {
-            foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.AssetList)
+            foreach (var entry in Editor.Project.Aliases.Assets)
             {
-                if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Assets))
+                if (FilterSelectionList(entry))
                 {
-                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry;
+                        Selection._selectedFileName = entry.ID;
                         Selection._selectedFileModelType = FileSelectionType.Asset;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -288,28 +234,17 @@ public class FileSelectionView
                     }
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Assets);
+                        DisplaySelectableAlias(entry);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry}"))
+                    if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry.ID}"))
                     {
                         if (AssetCopyManager.IsSupportedProjectType())
                         {
                             if (ImGui.Selectable("Copy as New Asset"))
                             {
-                                AssetCopyManager.OpenAssetCopyMenu(entry);
+                                AssetCopyManager.OpenAssetCopyMenu(entry.ID);
                             }
-                        }
-
-                        if (ImGui.Selectable("Go to Alias"))
-                        {
-                            if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
-                            {
-                                Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Assets);
-                            }
-
-                            Smithbox.WindowHandler.SettingsWindow.DisplayAssetTab = true;
-                            Smithbox.WindowHandler.SettingsWindow.TargetAssetID = entry;
                         }
 
                         ImGui.EndPopup();
@@ -321,18 +256,15 @@ public class FileSelectionView
 
     private void DisplayPartList()
     {
-        if (Smithbox.BankHandler.PartAliases.Aliases == null)
-            return;
-
         if (ImGui.CollapsingHeader("Parts"))
         {
-            foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.PartList)
+            foreach (var entry in Editor.Project.Aliases.Parts)
             {
-                if (FilterSelectionList(entry, Smithbox.AliasCacheHandler.AliasCache.Parts))
+                if (FilterSelectionList(entry))
                 {
-                    if (ImGui.Selectable(entry, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry;
+                        Selection._selectedFileName = entry.ID;
                         Selection._selectedFileModelType = FileSelectionType.Part;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -342,28 +274,17 @@ public class FileSelectionView
                     }
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.Parts);
+                        DisplaySelectableAlias(entry);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry}"))
+                    if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry.ID}"))
                     {
                         if (AssetCopyManager.IsSupportedProjectType())
                         {
                             if (ImGui.Selectable("Copy as New Part"))
                             {
-                                AssetCopyManager.OpenPartCopyMenu(entry);
+                                AssetCopyManager.OpenPartCopyMenu(entry.ID);
                             }
-                        }
-
-                        if (ImGui.Selectable("Go to Alias"))
-                        {
-                            if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
-                            {
-                                Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_Parts);
-                            }
-
-                            Smithbox.WindowHandler.SettingsWindow.DisplayPartTab = true;
-                            Smithbox.WindowHandler.SettingsWindow.TargetPartID = entry;
                         }
 
                         ImGui.EndPopup();
@@ -375,29 +296,20 @@ public class FileSelectionView
 
     private void DisplayMapPieceList()
     {
-        if (Smithbox.BankHandler.MapPieceAliases.Aliases == null)
-            return;
-
         var maps = MapLocator.GetFullMapList();
 
         if (ImGui.CollapsingHeader("Map Pieces"))
         {
             foreach (var map in maps)
             {
-                if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
-                {
-                    if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map].Count > 0)
-                    {
-                        MapPieceCollapsibleSection(map);
-                    }
-                }
+                MapPieceCollapsibleSection(map);
             }
         }
     }
 
     private void MapPieceCollapsibleSection(string map)
     {
-        var displayedMapName = $"{map} - {AliasUtils.GetMapNameAlias(map)}";
+        var displayedMapName = $"{map} - {AliasUtils.GetMapNameAlias(Editor.Project, map)}";
 
         if (ImGui.CollapsingHeader($"{displayedMapName}"))
         {
@@ -405,58 +317,44 @@ public class FileSelectionView
             var modelName = map.Replace($"{map}_", "m");
             displayedName = $"{modelName}";
 
-            if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+            if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
             {
                 displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
             }
 
-            if (Smithbox.AliasCacheHandler.AliasCache.MapPieceDict.ContainsKey(map))
+            foreach (var entry in Editor.Project.Aliases.MapPieces)
             {
-                foreach (var entry in Smithbox.AliasCacheHandler.AliasCache.MapPieceDict[map])
+                var mapPieceName = $"{entry.ID.Replace(map, "m")}";
+
+                if (ImGui.Selectable(mapPieceName, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    var mapPieceName = $"{entry.Replace(map, "m")}";
+                    Selection._selectedFileName = entry.ID;
+                    Selection._selectedFileModelType = FileSelectionType.MapPiece;
 
-                    if (ImGui.Selectable(mapPieceName, entry == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        Selection._selectedFileName = entry;
-                        Selection._selectedFileModelType = FileSelectionType.MapPiece;
+                        Selection._selectedAssociatedMapID = map;
+                        ResManager.LoadMapPiece(Selection._selectedFileName, map);
+                    }
+                }
+                if (ImGui.IsItemVisible())
+                {
+                    DisplaySelectableAlias(entry);
+                }
 
-                        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry.ID}"))
+                {
+                    /*
+                    if (AssetCopyManager.IsSupportedProjectType())
+                    {
+                        if (ImGui.Selectable("Copy as New Map Piece"))
                         {
-                            Selection._selectedAssociatedMapID = map;
-                            ResManager.LoadMapPiece(Selection._selectedFileName, map);
+                            AssetCopyManager.OpenMapPieceCopyMenu(entry);
                         }
                     }
-                    if (ImGui.IsItemVisible())
-                    {
-                        DisplaySelectableAlias(entry, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
-                    }
+                    */
 
-                    if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry}"))
-                    {
-                        /*
-                        if (AssetCopyManager.IsSupportedProjectType())
-                        {
-                            if (ImGui.Selectable("Copy as New Map Piece"))
-                            {
-                                AssetCopyManager.OpenMapPieceCopyMenu(entry);
-                            }
-                        }
-                        */
-
-                        if (ImGui.Selectable("Go to Alias"))
-                        {
-                            if (!Smithbox.WindowHandler.SettingsWindow.MenuOpenState)
-                            {
-                                Smithbox.WindowHandler.SettingsWindow.ToggleWindow(SelectedSettingTab.ProjectAliases_MapPieces);
-                            }
-
-                            Smithbox.WindowHandler.SettingsWindow.DisplayMapPieceTab = true;
-                            Smithbox.WindowHandler.SettingsWindow.TargetMapPieceID = entry;
-                        }
-
-                        ImGui.EndPopup();
-                    }
+                    ImGui.EndPopup();
                 }
             }
         }

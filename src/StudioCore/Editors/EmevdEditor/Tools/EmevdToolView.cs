@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.EmevdEditor;
@@ -33,7 +33,7 @@ public class EmevdToolView
 
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Screen.Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

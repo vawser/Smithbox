@@ -1,13 +1,6 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.Editors.EmevdEditor;

@@ -1,12 +1,12 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Linq;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 

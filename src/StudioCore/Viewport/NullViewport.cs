@@ -1,6 +1,8 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.ModelEditor;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
@@ -13,18 +15,30 @@ namespace StudioCore.Interface;
 /// </summary>
 public class NullViewport : IViewport
 {
+    public Smithbox BaseEditor;
+    public MapEditorScreen MapEditor;
+    public ModelEditorScreen ModelEditor;
+
+    public ViewportType ViewportType;
+
     private readonly string _vpid = "";
 
     public int X;
     public int Y;
 
     private ViewportType _viewportType;
-    public NullViewport(ViewportType viewportType, string id, ViewportActionManager am, ViewportSelection sel, int width, int height)
+    public NullViewport(Smithbox baseEditor, MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
     {
         _vpid = id;
-        _viewportType = viewportType;
+
+        BaseEditor = baseEditor;
+        MapEditor = mapEditor;
+        ModelEditor = modelEditor;
+        ViewportType = viewportType;
+
         Width = width;
         Height = height;
+
         WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
     }
 

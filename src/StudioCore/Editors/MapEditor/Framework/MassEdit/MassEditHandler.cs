@@ -15,12 +15,13 @@ using System.Numerics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
 public class MassEditHandler
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     private MapListType MapTarget;
 
@@ -40,7 +41,7 @@ public class MassEditHandler
 
     public MassEditHandler(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditLog = new MassEditLog(screen, this);
         Hints = new MassEditHints(screen, this);
         Tools = new MassEditTools(screen, this);
@@ -428,14 +429,14 @@ public class MassEditHandler
     {
         await Task.Delay(1000);
 
-        var selection = Smithbox.EditorHandler.MapEditor.Selection;
-        var listView = Smithbox.EditorHandler.MapEditor.MapListView;
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+        var selection = Editor.Selection;
+        var listView = Editor.MapListView;
+        var universe = Editor.Universe;
 
         List<MapActionGroup> actionGroups = new List<MapActionGroup>();
 
         // Clear selection before applying edits, to ensure the properties view doesn't interfere.
-        selection.ClearSelection();
+        selection.ClearSelection(Editor);
 
         // Get filtered list of maps
         var mapList = MapLocator.GetFullMapList();
@@ -477,8 +478,8 @@ public class MassEditHandler
             if (actionGroups.Count > 0)
             {
                 EditLog.UpdateLogSource(actionGroups);
-                var compoundAction = new MapActionGroupCompoundAction(actionGroups);
-                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+                var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
+                Editor.EditorActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -503,7 +504,7 @@ public class MassEditHandler
             foreach (var entry in availableList)
             {
                 universe.LoadMap(entry, false, true);
-                Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(entry);
+                Editor.MapListView.SignalLoad(entry);
             }
 
             // Process each map
@@ -530,8 +531,8 @@ public class MassEditHandler
             if (actionGroups.Count > 0)
             {
                 EditLog.UpdateLogSource(actionGroups);
-                var compoundAction = new MapActionGroupCompoundAction(actionGroups);
-                Smithbox.EditorHandler.MapEditor.EditorActionManager.ExecuteAction(compoundAction);
+                var compoundAction = new MapActionGroupCompoundAction(Editor, actionGroups);
+                Editor.EditorActionManager.ExecuteAction(compoundAction);
             }
             else
             {
@@ -543,7 +544,7 @@ public class MassEditHandler
             //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                Smithbox.EditorHandler.MapEditor.MapListView.SignalUnload(entry);
+                Editor.MapListView.SignalUnload(entry);
             }
 
             if(restoreRendering)

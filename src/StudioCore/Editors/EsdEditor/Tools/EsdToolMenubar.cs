@@ -2,11 +2,6 @@
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EsdEditor;
 

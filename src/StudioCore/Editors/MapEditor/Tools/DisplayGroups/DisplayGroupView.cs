@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor.Tools.DisplayGroups;
 
 public class DisplayGroupView
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private ViewportActionManager EditorActionManager;
     private RenderScene RenderScene;
     private ViewportSelection Selection;
@@ -29,7 +29,7 @@ public class DisplayGroupView
 
     public DisplayGroupView(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         RenderScene = screen.MapViewportView.RenderScene;
         Selection = screen.Selection;
@@ -37,7 +37,7 @@ public class DisplayGroupView
 
     public void SetupDrawgroupCount()
     {
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             // imgui checkbox click seems to break at some point after 8 (8*32) checkboxes, so let's just hope that never happens, yeah?
             case ProjectType.DES:
@@ -61,7 +61,7 @@ public class DisplayGroupView
                 _dispGroupCount = 8; //?
                 break;
             default:
-                throw new Exception($"Error: Did not expect Gametype {Smithbox.ProjectType}");
+                throw new Exception($"Error: Did not expect Gametype {Editor.Project.ProjectType}");
                 //break;
         }
     }
@@ -97,7 +97,7 @@ public class DisplayGroupView
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(4.0f, 2.0f) * scale);
         if (ImGui.Begin("Render Groups") && RenderScene != null)
         {
-            Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
+            Editor.FocusManager.SwitchWindowContext(MapEditorContext.RenderGroups);
 
             DrawGroup dg = RenderScene.DisplayGroup;
             if (dg.AlwaysVisible || dg.RenderGroups.Length != _dispGroupCount)

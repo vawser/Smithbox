@@ -1,16 +1,9 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -62,7 +55,7 @@ public class EmevdEventView
                 var evt = Selection.SelectedScript.Events[i];
 
                 var eventName = evt.Name;
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     eventName = EmevdUtils.GetDS2ItemAlias(evt);
                 }

@@ -1,26 +1,33 @@
-﻿using StudioCore.Banks.AliasBank;
+﻿using Octokit;
+using StudioCore.Core;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace StudioCore.Editors.EsdEditor;
 
 /// <summary>
 /// Handles the Command/Function meta-data
 /// </summary>
-public static class EsdMeta
+public class EsdMeta
 {
-    private static EsdMeta_Root TalkEsdBank;
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static void SetupMeta()
+    public EsdMeta(Smithbox baseEditor, ProjectEntry project)
+    {
+        BaseEditor = baseEditor;
+        Project = project;
+    }
+
+    private EsdMeta_Root TalkEsdBank;
+
+    public async Task<bool> Setup()
     {
         TalkEsdBank = new EsdMeta_Root();
         TalkEsdBank.commands = new List<EsdMeta_Command>();
@@ -39,29 +46,31 @@ public static class EsdMeta
                 TalkEsdBank = JsonSerializer.Deserialize(stream, EsdMetaDataSerializationContext.Default.EsdMeta_Root);
             }
         }
+
+        return true;
     }
 
-    public static List<EsdMeta_Command> GetAllCommandMeta()
+    public List<EsdMeta_Command> GetAllCommandMeta()
     {
         return TalkEsdBank.commands;
     }
 
-    public static EsdMeta_Command GetCommandMeta(long passedBank, long passedId)
+    public EsdMeta_Command GetCommandMeta(long passedBank, long passedId)
     {
         return TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
     }
 
-    public static List<EsdMeta_Function> GetAllFunctionMeta()
+    public List<EsdMeta_Function> GetAllFunctionMeta()
     {
         return TalkEsdBank.functions;
     }
 
-    public static EsdMeta_Function GetFunctionMeta(long passedId)
+    public EsdMeta_Function GetFunctionMeta(long passedId)
     {
         return TalkEsdBank.functions.Where(e => e.id == passedId).FirstOrDefault();
     }
 
-    public static List<EsdMeta_Arg> GetCommandArgMeta(long passedBank, long passedId)
+    public List<EsdMeta_Arg> GetCommandArgMeta(long passedBank, long passedId)
     {
         if(HasCommandArgMeta(passedBank, passedId))
         {
@@ -74,7 +83,7 @@ public static class EsdMeta
         }
     }
 
-    public static bool HasCommandArgMeta(long passedBank, long passedId)
+    public bool HasCommandArgMeta(long passedBank, long passedId)
     {
         var command = TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
         if(command != null)
@@ -88,7 +97,7 @@ public static class EsdMeta
         return false;
     }
 
-    public static List<EsdMeta_Arg> GetFunctionArgMeta(long passedId)
+    public List<EsdMeta_Arg> GetFunctionArgMeta(long passedId)
     {
         if (HasFunctionArgMeta(passedId))
         {
@@ -101,7 +110,7 @@ public static class EsdMeta
         }
     }
 
-    public static bool HasFunctionArgMeta(long passedId)
+    public bool HasFunctionArgMeta(long passedId)
     {
         var function = TalkEsdBank.commands.Where(e => e.id == passedId).FirstOrDefault();
         if (function != null)
@@ -114,7 +123,7 @@ public static class EsdMeta
 
         return false;
     }
-    public static EsdMeta_Enum GetArgEnum(long passedBank, long passedId, int argIndex, string argEnumName)
+    public EsdMeta_Enum GetArgEnum(long passedBank, long passedId, int argIndex, string argEnumName)
     {
         var command = TalkEsdBank.commands.Where(e => e.bank == passedBank && e.id == passedId).FirstOrDefault();
         if (command != null)

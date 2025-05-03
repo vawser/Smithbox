@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
 using Org.BouncyCastle.Utilities;
 using Pfim;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Resource.Locators;
@@ -23,17 +24,17 @@ namespace StudioCore.Editors.ModelEditor.Utils;
 /// </summary>
 public static class ModelObjectExporter
 {
-    public static string ExportPath = Smithbox.ProjectRoot;
+    public static string ExportPath = "";
 
-    public static void ExportModel(ModelEditorScreen screen)
+    public static void ExportModel(ModelEditorScreen editor)
     {
-        var flver = screen.ResManager.GetCurrentFLVER();
-        var name = screen.ResManager.GetCurrentInternalFile().Name;
-        var path = $"{ExportPath}\\{name}.obj";
-        var mapId = Smithbox.EditorHandler.ModelEditor.Selection._selectedAssociatedMapID;
-        var modelType = Smithbox.EditorHandler.ModelEditor.ResManager.LoadedFlverContainer.Type;
+        var flver = editor.ResManager.GetCurrentFLVER();
+        var name = editor.ResManager.GetCurrentInternalFile().Name;
+        var path = $"{editor.Project.ProjectPath}\\{name}.obj";
+        var mapId = editor.Selection._selectedAssociatedMapID;
+        var modelType = editor.ResManager.LoadedFlverContainer.Type;
 
-        var success = ObjExport(flver, path, name, modelType, mapId);
+        var success = ObjExport(editor, flver, path, name, modelType, mapId);
 
         if (success)
         {
@@ -45,7 +46,7 @@ public static class ModelObjectExporter
         }
     }
 
-    public static bool ObjExport(IFlver iflver, string outPath, string modelName, FlverContainerType modelType, 
+    public static bool ObjExport(ModelEditorScreen editor, IFlver iflver, string outPath, string modelName, FlverContainerType modelType, 
         string mapId = "")
     {
         // Assume FLVER2 for now
@@ -105,23 +106,23 @@ public static class ModelObjectExporter
                 string diffuseTexName = $"{Path.GetFileNameWithoutExtension(diffuse.Path)}.png";
 
                 // Games that use MATBIN
-                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+                if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     diffuse = material.Textures.Find(i => i.Type.Contains("AlbedoMap"));
 
-                    MATBIN.Sampler diffuseTexSampler = GetMatchingSampler(material, "allmaterial");
+                    MATBIN.Sampler diffuseTexSampler = GetMatchingSampler(editor, material, "allmaterial");
 
                     // Look in the dlc ones for ER if no match is found
-                    if(Smithbox.ProjectType is ProjectType.ER)
+                    if(editor.Project.ProjectType is ProjectType.ER)
                     {
                         if (diffuseTexSampler == null)
                         {
-                            diffuseTexSampler = GetMatchingSampler(material, "allmaterial_dlc01");
+                            diffuseTexSampler = GetMatchingSampler(editor, material, "allmaterial_dlc01");
                         }
 
                         if (diffuseTexSampler == null)
                         {
-                            diffuseTexSampler = GetMatchingSampler(material, "allmaterial_dlc02");
+                            diffuseTexSampler = GetMatchingSampler(editor, material, "allmaterial_dlc02");
                         }
                     }
 
@@ -136,7 +137,7 @@ public static class ModelObjectExporter
                     string tpfFileName = $"{tpfPath}.tpf.dcx";
 
                     // Get search dir
-                    var filePathTPF = GetTPFFilePath(tpfFileName, modelType, mapId);
+                    var filePathTPF = GetTPFFilePath(editor, tpfFileName, modelType, mapId);
 
                     // Skip if invalid path
                     if (string.IsNullOrEmpty(filePathTPF) || !TPF.IsRead(filePathTPF, out TPF tpf)) 
@@ -187,11 +188,11 @@ public static class ModelObjectExporter
         return true;
     }
 
-    public static MATBIN.Sampler GetMatchingSampler(FLVER2.Material material, string file)
+    public static MATBIN.Sampler GetMatchingSampler(ModelEditorScreen editor, FLVER2.Material material, string file)
     {
         MATBIN.Sampler diffuseTexSampler = null;
 
-        string matbinBndFilePath = $"{Smithbox.GameRoot}\\material\\{file}.matbinbnd.dcx";
+        string matbinBndFilePath = $"{editor.Project.DataPath}\\material\\{file}.matbinbnd.dcx";
 
         BND4 matbinBnd = BND4.Read(matbinBndFilePath);
         BinderFile? matbinFile = matbinBnd.Files.FirstOrDefault(i => i.Name.Contains(material.Name));
@@ -204,7 +205,7 @@ public static class ModelObjectExporter
         return matbin.Samplers.Find(i => i.Path.Contains("_a"));
     }
 
-    public static string GetTPFFilePath(string tpfFileName, FlverContainerType modelType, string mapId)
+    public static string GetTPFFilePath(ModelEditorScreen editor, string tpfFileName, FlverContainerType modelType, string mapId)
     {
         var path = "";
 
@@ -215,7 +216,7 @@ public static class ModelObjectExporter
 
         if (modelType is FlverContainerType.Object)
         {
-            path = $"{Smithbox.GameRoot}/asset/aet/";
+            path = $"{editor.Project.DataPath}/asset/aet/";
         }
 
         if (modelType is FlverContainerType.Parts)

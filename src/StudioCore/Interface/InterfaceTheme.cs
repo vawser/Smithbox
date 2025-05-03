@@ -1,18 +1,10 @@
-﻿using StudioCore.Banks.FormatBank;
+﻿using StudioCore.Configuration.Interface;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Veldrid;
 using System.IO;
-using StudioCore.Banks.AliasBank;
-using Google.Protobuf.WellKnownTypes;
-using StudioCore.Configuration.Interface;
+using System.Text;
+using System.Text.Json;
 
 namespace StudioCore.Interface
 {

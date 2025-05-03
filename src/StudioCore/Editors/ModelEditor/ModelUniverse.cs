@@ -1,4 +1,4 @@
-﻿using StudioCore.Core.Project;
+﻿using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Resource;
@@ -13,23 +13,17 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelUniverse
 {
-    /// <summary>
-    /// The rendering scene context
-    /// </summary>
+    public ModelEditorScreen Editor;
+
     public RenderScene RenderScene;
 
-    /// <summary>
-    /// The primitive entity container context
-    /// </summary>
     public ModelContainer LoadedModelContainer { get; set; }
 
-    /// <summary>
-    /// The entity selection context
-    /// </summary>
     public ViewportSelection Selection { get; }
 
-    public ModelUniverse(RenderScene scene, ViewportSelection sel)
+    public ModelUniverse(ModelEditorScreen editor, RenderScene scene, ViewportSelection sel)
     {
+        Editor = editor;
         RenderScene = scene;
         Selection = sel;
 
@@ -58,7 +52,7 @@ public class ModelUniverse
 
     public void ScheduleTextureRefresh()
     {
-        if (Smithbox.ProjectType == ProjectType.DS1)
+        if (Editor.Project.ProjectType == ProjectType.DS1)
         {
             ResourceManager.ScheduleUDSMFRefresh();
         }

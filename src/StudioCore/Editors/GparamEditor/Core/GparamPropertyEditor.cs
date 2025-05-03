@@ -11,7 +11,7 @@ using System.Drawing;
 using System.Numerics;
 using System.Reflection;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.GparamEditor.Data.GparamParamBank;
+using static StudioCore.Editors.GparamEditor.Data.GparamBank;
 
 namespace StudioCore.Editors.GparamEditor.Core;
 public class GparamPropertyEditor

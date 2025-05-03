@@ -1,4 +1,6 @@
-﻿namespace StudioCore.Scene.Interfaces;
+﻿using StudioCore.Editor;
+
+namespace StudioCore.Scene.Interfaces;
 
 /// <summary>
 ///     An abstract object held by a render object that can be selected
@@ -8,10 +10,10 @@ public interface ISelectable
     /// <summary>
     /// Function executed upon selection.
     /// </summary>
-    public void OnSelected();
+    public void OnSelected(EditorScreen editor);
 
     /// <summary>
     /// Function executed upon deselection.
     /// </summary>
-    public void OnDeselected();
+    public void OnDeselected(EditorScreen editor);
 }

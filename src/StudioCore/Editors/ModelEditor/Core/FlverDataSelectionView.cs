@@ -9,16 +9,16 @@ using Veldrid;
 using StudioCore.MsbEditor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editor;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 
 public class FlverDataSelectionView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelContextMenu ContextMenu;
     private ModelSelectionManager Selection;
     private ModelResourceManager ResManager;
@@ -28,7 +28,7 @@ public class FlverDataSelectionView
 
     public FlverDataSelectionView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         ResManager = screen.ResManager;
@@ -38,9 +38,6 @@ public class FlverDataSelectionView
     public void Display()
     {
         var scale = DPI.GetUIScale();
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
 
         if (!UI.Current.Interface_ModelEditor_ModelHierarchy)
             return;
@@ -54,7 +51,7 @@ public class FlverDataSelectionView
 
             Filters.DisplayFlverFilter();
 
-            if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
+            if (Editor.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
                 ImGui.BeginChild("modelHierarchySection");
                 Selection.SwitchWindowContext(ModelEditorContext.ModelHierarchy);
@@ -79,13 +76,6 @@ public class FlverDataSelectionView
         ImGui.PopStyleColor(1);
     }
 
-    public void OnProjectChanged()
-    {
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-        }
-    }
-
     private void DisplaySection_Header()
     {
         if (ImGui.Selectable("Header", Selection._selectedEntry == "Header"))
@@ -103,11 +93,11 @@ public class FlverDataSelectionView
         // List
         if (ImGui.CollapsingHeader("Dummies"))
         {
-            for (int i = 0; i < Screen.ResManager.GetCurrentFLVER().Dummies.Count; i++)
+            for (int i = 0; i < Editor.ResManager.GetCurrentFLVER().Dummies.Count; i++)
             {
-                var curDummy = Screen.ResManager.GetCurrentFLVER().Dummies[i];
+                var curDummy = Editor.ResManager.GetCurrentFLVER().Dummies[i];
 
-                if (Filters.IsModelEditorSearchMatch_Dummy(curDummy, Screen.ResManager.GetCurrentFLVER(), i))
+                if (Filters.IsModelEditorSearchMatch_Dummy(curDummy, Editor.ResManager.GetCurrentFLVER(), i))
                 {
                     // Dummy Row
                     if (ImGui.Selectable($"Dummy {i} - [{curDummy.ReferenceID}]",
@@ -140,7 +130,7 @@ public class FlverDataSelectionView
                         }
                     }
 
-                    Screen.ViewportManager.DisplayRepresentativeDummyState(i);
+                    Editor.ViewportManager.DisplayRepresentativeDummyState(i);
 
                     if (Selection.FocusSelection && Selection.IsDummySelected(i))
                     {
@@ -152,7 +142,7 @@ public class FlverDataSelectionView
         }
 
         // Only display this one if the dummy list is empty
-        if (Screen.ResManager.GetCurrentFLVER().Dummies.Count < 1)
+        if (Editor.ResManager.GetCurrentFLVER().Dummies.Count < 1)
         {
             ContextMenu.DummyHeaderContextMenu();
         }
@@ -335,7 +325,7 @@ public class FlverDataSelectionView
                         }
                     }
 
-                    Screen.ViewportManager.DisplayRepresentativeNodeState(i);
+                    Editor.ViewportManager.DisplayRepresentativeNodeState(i);
 
                     if (Selection.FocusSelection && Selection.IsNodeSelection(i))
                     {
@@ -406,7 +396,7 @@ public class FlverDataSelectionView
                         }
                     }
 
-                    Screen.ViewportManager.DisplayRepresentativeMeshState(i);
+                    Editor.ViewportManager.DisplayRepresentativeMeshState(i);
 
                     if (Selection.FocusSelection && Selection.IsMeshSelection(i))
                     {

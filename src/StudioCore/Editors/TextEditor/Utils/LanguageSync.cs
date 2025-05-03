@@ -8,9 +8,9 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.DependencyModel;
 using Octokit;
 using SoulsFormats;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 

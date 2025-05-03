@@ -1,18 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.EmevdEditor.Framework;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.EmevdEditor;
 
 public class EmevdEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ActionManager EditorActionManager = new();
 
     public EmevdSelectionManager Selection;
@@ -37,8 +37,11 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEventCreationModal EventCreationModal;
     public EmevdInstructionCreationModal InstructionCreationModal;
 
-    public EmevdEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public EmevdEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         Selection = new EmevdSelectionManager(this);
         Decorator = new EmevdPropertyDecorator(this);
         ContextMenu = new EmevdContextMenu(this);
@@ -65,12 +68,95 @@ public class EmevdEditorScreen : EditorScreen
     public string EditorName => "EMEVD Editor##EventScriptEditor";
     public string CommandEndpoint => "emevd";
     public string SaveType => "EMEVD";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
-    public void EditDropdown()
+    /// <summary>
+    /// The editor loop
+    /// </summary>
+    public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
+        var scale = DPI.GetUIScale();
 
+        // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+
+        var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if(ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        if (UI.Current.Interface_EmevdEditor_Files)
+        {
+            FileView.Display();
+        }
+        if (UI.Current.Interface_EmevdEditor_Events)
+        {
+            EventView.Display();
+        }
+        if (UI.Current.Interface_EmevdEditor_Instructions)
+        {
+            InstructionView.Display();
+        }
+        if (UI.Current.Interface_EmevdEditor_EventProperties)
+        {
+            EventParameterView.Display();
+        }
+        if (UI.Current.Interface_EmevdEditor_InstructionProperties)
+        {
+            InstructionParameterView.Display();
+        }
+
+        EditorShortcuts.Monitor();
+        EventCreationModal.Display();
+        InstructionCreationModal.Display();
+
+        if (UI.Current.Interface_EmevdEditor_ToolConfigurationWindow)
+        {
+            ToolView.Display();
+        }
+
+        ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
+
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -106,11 +192,8 @@ public class EmevdEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -158,117 +241,11 @@ public class EmevdEditorScreen : EditorScreen
     /// <summary>
     /// The editor menubar
     /// </summary>
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
         ToolMenubar.Display();
 
         ImGui.Separator();
-    }
-
-    /// <summary>
-    /// The editor loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-
-        var dsid = ImGui.GetID("DockSpace_EventScriptEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (!EmevdUtils.SupportsEditor())
-        {
-            ImGui.Begin("Editor##InvalidEmevdEditor");
-
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-
-            ImGui.End();
-        }
-        else
-        {
-            if (!EmevdBank.IsLoaded)
-            {
-                EmevdBank.LoadEventScripts();
-                EmevdBank.LoadEMEDF();
-            }
-
-            if (EmevdBank.IsLoaded && EmevdBank.IsSupported)
-            {
-                if (UI.Current.Interface_EmevdEditor_Files)
-                {
-                    FileView.Display();
-                }
-                if (UI.Current.Interface_EmevdEditor_Events)
-                {
-                    EventView.Display();
-                }
-                if (UI.Current.Interface_EmevdEditor_Instructions)
-                {
-                    InstructionView.Display();
-                }
-                if (UI.Current.Interface_EmevdEditor_EventProperties)
-                {
-                    EventParameterView.Display();
-                }
-                if (UI.Current.Interface_EmevdEditor_InstructionProperties)
-                {
-                    InstructionParameterView.Display();
-                }
-            }
-        }
-
-        EditorShortcuts.Monitor();
-        EventCreationModal.Display();
-        InstructionCreationModal.Display();
-
-        if (UI.Current.Interface_EmevdEditor_ToolConfigurationWindow)
-        {
-            ToolView.Display();
-        }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
-    }
-
-    /// <summary>
-    /// Reset editor state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            Selection.OnProjectChanged();
-            Decorator.OnProjectChanged();
-
-            EventParameterView.OnProjectChanged();
-            InstructionParameterView.OnProjectChanged();
-
-            ToolView.OnProjectChanged();
-            ToolMenubar.OnProjectChanged();
-
-            EmevdBank.LoadEventScripts();
-            EmevdBank.LoadEMEDF();
-        }
-
-        ResetActionManager();
     }
 
     /// <summary>
@@ -279,19 +256,16 @@ public class EmevdEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
-        if (!EmevdBank.IsLoaded)
-            return;
-
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            EmevdBank.SaveEventScripts();
+            Project.EmevdBank.SaveEventScripts();
         }
         else
         {
-            EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
+            Project.EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
         }
     }
 
@@ -303,18 +277,9 @@ public class EmevdEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_EMEVD)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
-        if (EmevdBank.IsLoaded)
-            EmevdBank.SaveEventScripts();
-    }
-
-    /// <summary>
-    /// Reset the undo/redo stack
-    /// </summary>
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
+        Project.EmevdBank.SaveEventScripts();
     }
 }

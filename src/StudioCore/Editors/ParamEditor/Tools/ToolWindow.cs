@@ -1,23 +1,13 @@
 ﻿using Hexa.NET.ImGui;
-using Hexa.NET.ImNodes;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
-using StudioCore.Editor;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
-using System;
-using System.Buffers;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -494,7 +484,7 @@ public class ToolWindow
                     UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
                     UIHelper.WrappedText("");
 
-                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+                    var activeParam = Screen._activeView._selection.GetActiveParam();
 
                     if (activeParam == "EquipParamGoods")
                     {
@@ -560,7 +550,7 @@ public class ToolWindow
 
             if (ImGui.CollapsingHeader("Param Categories"))
             {
-                ParamCategories.Display();
+                ParamCategories.Display(Screen);
             }
         }
 

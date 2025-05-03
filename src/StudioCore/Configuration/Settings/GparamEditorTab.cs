@@ -10,7 +10,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class GparamEditorTab
 {
-    public GparamEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public GparamEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

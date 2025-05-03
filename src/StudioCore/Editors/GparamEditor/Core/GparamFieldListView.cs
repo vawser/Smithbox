@@ -1,18 +1,12 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Banks.FormatBank;
 using StudioCore.Configuration;
 using StudioCore.Editors.GparamEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -63,7 +57,7 @@ public class GparamFieldListView
 
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamFieldAlias)
-                    name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
+                    name = FormatInformationUtils.GetReferenceName(Screen.Project.GparamInformation, entry.Key, entry.Name);
 
                 if (Filters.IsFieldFilterMatch(entry.Name, ""))
                 {
@@ -111,7 +105,7 @@ public class GparamFieldListView
         List<FormatMember> missingFields = new List<FormatMember>();
 
         // Get source Format Reference
-        foreach (var entry in Smithbox.BankHandler.GPARAM_Info.Information.list)
+        foreach (var entry in Screen.Project.GparamInformation.list)
         {
             if (entry.id == Selection._selectedParamGroup.Key)
             {
@@ -158,7 +152,7 @@ public class GparamFieldListView
     /// <param name="missingField"></param>
     public void AddMissingField(Param targetParam, FormatMember missingField)
     {
-        var typeName = Smithbox.BankHandler.GPARAM_Info.GetTypeForProperty(missingField.id);
+        var typeName = FormatInformationUtils.GetTypeForProperty(Screen.Project.GparamInformation, missingField.id);
 
         if (typeName == "Byte")
         {

@@ -9,18 +9,18 @@ using System.Numerics;
 using static SoulsFormats.PARAM;
 using SoulsFormats;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Core.Project;
 using StudioCore.Interface;
 using System.Linq;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 
 public class ModelPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
@@ -42,7 +42,7 @@ public class ModelPropertyView
 
     public ModelPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -65,9 +65,6 @@ public class ModelPropertyView
     {
         var scale = DPI.GetUIScale();
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         if (!UI.Current.Interface_ModelEditor_Properties)
             return;
 
@@ -78,7 +75,7 @@ public class ModelPropertyView
         {
             Selection.SwitchWindowContext(ModelEditorContext.ModelProperties);
 
-            if (Screen.ResManager.GetCurrentFLVER() != null && !SuspendView)
+            if (Editor.ResManager.GetCurrentFLVER() != null && !SuspendView)
             {
                 var entryType = Selection._selectedFlverGroupType;
 
@@ -120,12 +117,12 @@ public class ModelPropertyView
                 }
                 else if (entryType == GroupSelectionType.CollisionLow)
                 {
-                    var lowCol = Screen.ResManager.LoadedFlverContainer.ER_LowCollision;
+                    var lowCol = Editor.ResManager.LoadedFlverContainer.ER_LowCollision;
                     HavokCollisionEditor.Display(lowCol);
                 }
                 else if (entryType == GroupSelectionType.CollisionHigh)
                 {
-                    var highCol = Screen.ResManager.LoadedFlverContainer.ER_HighCollision;
+                    var highCol = Editor.ResManager.LoadedFlverContainer.ER_HighCollision;
                     HavokCollisionEditor.Display(highCol);
                 }
                 else

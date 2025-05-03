@@ -1,4 +1,6 @@
-﻿using Silk.NET.SDL;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using Silk.NET.SDL;
+using StudioCore.Editor;
 using StudioCore.Scene.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -31,11 +33,11 @@ public class ViewportSelection
         _storedSelection = _selected;
     }
 
-    public void ResetSelection()
+    public void ResetSelection(EditorScreen editor)
     {
         foreach (var entry in _selected)
         {
-            AddSelection(entry);
+            AddSelection(editor, entry);
         }
     }
 
@@ -169,10 +171,10 @@ public class ViewportSelection
     /// <summary>
     /// Clear the current Selection.
     /// </summary>
-    public void ClearSelection()
+    public void ClearSelection(EditorScreen editor)
     {
         foreach (ISelectable sel in _selected)
-            sel.OnDeselected();
+            sel.OnDeselected(editor);
 
         _selected.Clear();
     }
@@ -180,11 +182,11 @@ public class ViewportSelection
     /// <summary>
     /// Add the passed Selectable to the current Selection.
     /// </summary>
-    public void AddSelection(ISelectable selected)
+    public void AddSelection(EditorScreen editor, ISelectable selected)
     {
         if (selected != null)
         {
-            selected.OnSelected();
+            selected.OnSelected(editor);
             _selected.Add(selected);
         }
     }
@@ -192,12 +194,12 @@ public class ViewportSelection
     /// <summary>
     /// Add the passed list of Selectables to the current Selection.
     /// </summary>
-    public void AddSelection(List<ISelectable> selected)
+    public void AddSelection(EditorScreen editor, List<ISelectable> selected)
     {
         foreach (ISelectable sel in selected)
             if (sel != null)
             {
-                sel.OnSelected();
+                sel.OnSelected(editor);
                 _selected.Add(sel);
             }
     }
@@ -205,11 +207,11 @@ public class ViewportSelection
     /// <summary>
     /// Remove the passed Selectable from the current selection.
     /// </summary>
-    public void RemoveSelection(ISelectable selected)
+    public void RemoveSelection(EditorScreen editor, ISelectable selected)
     {
         if (selected != null)
         {
-            selected.OnDeselected();
+            selected.OnDeselected(editor);
             _selected.Remove(selected);
         }
     }

@@ -13,7 +13,7 @@ namespace StudioCore.Editors.MapEditor.Helpers;
 
 public static class VisualizationHelper
 {
-    public static void ToggleRenderType(ViewportSelection selection)
+    public static void ToggleRenderType(MapEditorScreen editor, ViewportSelection selection)
     {
         selection.StoreSelection();
         var sel = selection.GetSelection();
@@ -34,6 +34,6 @@ public static class VisualizationHelper
             }
         }
 
-        selection.ResetSelection();
+        selection.ResetSelection(editor);
     }
 }

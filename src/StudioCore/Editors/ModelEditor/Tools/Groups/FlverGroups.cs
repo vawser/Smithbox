@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
@@ -19,7 +20,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class FlverGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\FLVER Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> FLVERGroupFiles = new List<string>();
 
@@ -29,8 +30,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static FLVERList SelectedFLVERList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\FLVER Groups\\";
+
             UpdateFLVERGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -42,8 +45,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedFLVERGroup = entry;
                         SelectedFLVERList = ReadFLVERGroup(entry);
 
-                        var action = new ReplaceFLVERList(screen, SelectedFLVERList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceFLVERList(editor, SelectedFLVERList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

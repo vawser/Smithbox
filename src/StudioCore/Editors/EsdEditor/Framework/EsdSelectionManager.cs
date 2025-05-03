@@ -1,14 +1,8 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.EsdEditor.Enums;
-using StudioCore.Editors.TextEditor;
 using StudioCore.TalkEditor;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.ESD;
 using static StudioCore.Editors.TalkEditor.EsdBank;
 

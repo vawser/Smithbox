@@ -1,14 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.Editors.TextEditor;
 using StudioCore.EmevdEditor;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.Editors.EmevdEditor;

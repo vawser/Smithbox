@@ -1,36 +1,43 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public static class ParamComparisonReport
+public class ParamComparisonReport
 {
-    public static bool ShowReportModal = false;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public static string CurrentParamProcessing = "";
+    public bool ShowReportModal = false;
 
-    public static string ReportText = "";
+    public string CurrentParamProcessing = "";
 
-    public static bool IsReportGenerated = false;
-    public static bool IsGeneratingReport = false;
+    public string ReportText = "";
 
-    public static bool ImportNamesOnGeneration_Primary = false;
-    public static bool ImportNamesOnGeneration_Compare = false;
+    public bool IsReportGenerated = false;
+    public bool IsGeneratingReport = false;
 
-    public static void ViewReport()
+    public bool ImportNamesOnGeneration_Primary = false;
+    public bool ImportNamesOnGeneration_Compare = false;
+
+    public ParamComparisonReport(ParamEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
+    public void ViewReport()
     {
         ShowReportModal = true;
     }
 
-    public static void GenerateReport()
+    public void GenerateReport()
     {
         IsReportGenerated = false;
         IsGeneratingReport = true;
@@ -58,13 +65,13 @@ public static class ParamComparisonReport
 
         if (ImportNamesOnGeneration_Primary)
         {
-            Smithbox.EditorHandler.ParamEditor.EditorActionManager.ExecuteAction(
+            Editor.EditorActionManager.ExecuteAction(
                 primaryBank.LoadParamDefaultNames(null, false, false, false));
         }
 
         if (ImportNamesOnGeneration_Compare)
         {
-            Smithbox.EditorHandler.ParamEditor.EditorActionManager.ExecuteAction(
+            Editor.EditorActionManager.ExecuteAction(
                 compareBank.LoadParamDefaultNames(null, false, false, false));
         }
 
@@ -91,7 +98,7 @@ public static class ParamComparisonReport
         IsReportGenerated = true;
     }
 
-    public static void ReportDifferences(string paramKey, Param primaryParam, Param compareParam)
+    public void ReportDifferences(string paramKey, Param primaryParam, Param compareParam)
     {
         bool HadParamDifference = false;
         bool HadRowDifference = false;
@@ -169,20 +176,20 @@ public static class ParamComparisonReport
         }
     }
 
-    public static void AddLog(string text)
+    public void AddLog(string text)
     {
         ReportText = $"{ReportText}{text}\n";
     }
 
-    public static int CurrentCompareBankType = 0;
+    public int CurrentCompareBankType = 0;
 
-    public static string[] CompareBankType =
+    public string[] CompareBankType =
     {
         "Vanilla Bank",
         "Aux Bank"
     };
 
-    public static void Display()
+    public void Display()
     {
         var textPaneSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ModalHeight);
 
@@ -284,7 +291,7 @@ public static class ParamComparisonReport
         }
     }
 
-    public static void HandleReportModal()
+    public void HandleReportModal()
     {
         if (ShowReportModal)
         {

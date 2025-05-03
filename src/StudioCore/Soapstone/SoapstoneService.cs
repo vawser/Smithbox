@@ -3,7 +3,7 @@ using Grpc.Core;
 using SoapstoneLib;
 using SoapstoneLib.Proto;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Enums;

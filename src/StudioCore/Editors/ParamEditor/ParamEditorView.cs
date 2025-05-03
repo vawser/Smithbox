@@ -3,7 +3,7 @@ using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Framework;
 using StudioCore.Interface;
@@ -23,25 +23,25 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorView
 {
+    internal ParamEditorScreen Editor;
+
     private readonly ParamRowEditor _propEditor;
     private readonly Dictionary<string, string> lastRowSearch = new();
     private bool _arrowKeyPressed;
     private bool _focusRows;
     private int _gotoParamRow = -1;
 
-    internal ParamEditorScreen _paramEditor;
-
     internal ParamEditorSelectionState _selection;
     internal int _viewIndex;
 
     private string lastParamSearch = "";
 
-    public ParamEditorView(ParamEditorScreen parent, int index)
+    public ParamEditorView(ParamEditorScreen editor, int index)
     {
-        _paramEditor = parent;
+        Editor = editor;
         _viewIndex = index;
-        _propEditor = new ParamRowEditor(parent.EditorActionManager, _paramEditor);
-        _selection = new ParamEditorSelectionState(_paramEditor);
+        _propEditor = new ParamRowEditor(editor.EditorActionManager, Editor);
+        _selection = new ParamEditorSelectionState(Editor);
     }
 
     public void OnProjectChanged()
@@ -149,7 +149,7 @@ public class ParamEditorView
 
     private void ParamView_ParamList_Main(bool doFocus, float scale, float scrollTo)
     {
-        List<string> paramKeyList = UICache.GetCached(_paramEditor, _viewIndex, () =>
+        List<string> paramKeyList = UICache.GetCached(Editor, _viewIndex, () =>
         {
             List<(ParamBank, Param)> list =
                 ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
@@ -418,11 +418,11 @@ public class ParamEditorView
 
         if (ImGui.IsItemActive())
         {
-            _paramEditor._isSearchBarActive = true;
+            Editor._isSearchBarActive = true;
         }
         else
         {
-            _paramEditor._isSearchBarActive = false;
+            Editor._isSearchBarActive = false;
         }
 
         ImGui.SameLine();
@@ -432,7 +432,7 @@ public class ParamEditorView
         if (ImGui.Button($"{ForkAwesome.LocationArrow}") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
-            _paramEditor.GotoSelectedRow = true;
+            Editor.GotoSelectedRow = true;
         }
         UIHelper.ShowHoverTooltip($"Go to selected <{KeyBindings.Current.PARAM_GoToSelectedRow.HintText}>");
 
@@ -493,9 +493,9 @@ public class ParamEditorView
         {
             IParamDecorator decorator = null;
 
-            if (_paramEditor._decorators.ContainsKey(activeParam))
+            if (Editor._decorators.ContainsKey(activeParam))
             {
-                decorator = _paramEditor._decorators[activeParam];
+                decorator = Editor._decorators[activeParam];
             }
 
             ParamView_RowList_Header(ref doFocus, isActiveView, ref scrollTo, activeParam);
@@ -586,7 +586,7 @@ public class ParamEditorView
                     _focusRows = false;
                 }
 
-                List<Param.Row> rows = UICache.GetCached(_paramEditor, (_viewIndex, activeParam),
+                List<Param.Row> rows = UICache.GetCached(Editor, (_viewIndex, activeParam),
                     () => RowSearchEngine.rse.Search((ParamBank.PrimaryBank, para),
                         _selection.GetCurrentRowSearchString(), true, true));
 
@@ -763,18 +763,18 @@ public class ParamEditorView
             }
         }
 
-        if (_paramEditor.GotoSelectedRow && !isPinned)
+        if (Editor.GotoSelectedRow && !isPinned)
         {
             var activeRow = _selection.GetActiveRow();
 
             if (activeRow == null)
             {
-                _paramEditor.GotoSelectedRow = false;
+                Editor.GotoSelectedRow = false;
             }
             else if (activeRow.ID == r.ID)
             {
                 ImGui.SetScrollHereY();
-                _paramEditor.GotoSelectedRow = false;
+                Editor.GotoSelectedRow = false;
             }
         }
 
@@ -833,7 +833,7 @@ public class ParamEditorView
         ParamRowContextMenu.Display(
             r, selectionCacheIndex, 
             isPinned, activeParam, 
-            decorator, _selection, _paramEditor);
+            decorator, _selection, Editor);
 
         if (decorator != null)
         {

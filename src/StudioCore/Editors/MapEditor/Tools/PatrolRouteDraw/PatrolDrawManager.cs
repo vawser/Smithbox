@@ -1,16 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.MsbEditor;
 using StudioCore.Scene.Helpers;
-using StudioCore.UserProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 
@@ -24,9 +19,9 @@ public static class PatrolDrawManager
 
     private const float _verticalOffset = 0.8f;
 
-    private static Entity GetDrawEntity(ObjectContainer map)
+    private static Entity GetDrawEntity(MapEditorScreen editor, ObjectContainer map)
     {
-        Entity e = new(map, new DrawEntity());
+        Entity e = new(editor, map, new DrawEntity());
         map.AddObject(e);
         _drawEntities.Add(new WeakReference<Entity>(e));
         return e;
@@ -56,9 +51,9 @@ public static class PatrolDrawManager
     /// <summary>
     ///     Generates the renderable walk routes for all loaded maps.
     /// </summary>
-    public static void Generate()
+    public static void Generate(MapEditorScreen editor)
     {
-        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+        var universe = editor.Universe;
 
         Clear();
 
@@ -71,7 +66,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBD_Enemy.MovePointNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
 
                         bool endAtStart = MSBD_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
@@ -85,7 +80,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSB1_Enemy.MovePointNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
 
                         bool endAtStart = MSB1_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
@@ -100,7 +95,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBB_Enemy.MovePointNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
 
                         // BB move type is probably in an unk somewhere.
                         bool endAtStart = false;
@@ -115,7 +110,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSB3_Patrol.WalkPointNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Objects)
                         {
@@ -142,7 +137,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBS_Patrol.WalkRegionNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Objects)
                         {
@@ -169,7 +164,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBE_Patrol.WalkRegionNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Objects)
                         {
@@ -196,7 +191,7 @@ public static class PatrolDrawManager
                 {
                     if (GetPoints(MSBAC6_Patrol.WalkRegionNames, map, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(map);
+                        Entity drawEntity = GetDrawEntity(editor, map);
                         List<Vector3> enemies = new();
                         foreach (var ent in map.Objects)
                         {

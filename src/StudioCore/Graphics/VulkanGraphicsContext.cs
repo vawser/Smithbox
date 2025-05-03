@@ -1,4 +1,5 @@
-﻿using StudioCore.Editor;
+﻿using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Scene;
 using StudioCore.Utilities;
 using System.Collections.Generic;
@@ -71,7 +72,7 @@ public class VulkanGraphicsContext : IGraphicsContext
             CFG.Current.GFX_Display_Height, ColorSpaceHandling.Legacy);
     }
 
-    public void Draw(List<EditorScreen> editors, EditorScreen focusedEditor)
+    public void Draw(ProjectManager projectManager)
     {
         Debug.Assert(_window.Exists);
         var width = _window.Width;
@@ -93,10 +94,8 @@ public class VulkanGraphicsContext : IGraphicsContext
             cl.Name = "WindowResize";
             RecreateWindowFramebuffers(cl);
             _imGuiRenderer.WindowResized(width, height);
-            foreach (EditorScreen editor in editors)
-            {
-                editor.EditorResized(_window, _gd);
-            }
+
+            projectManager.EditorResized(Window, null);
 
             _gd.SubmitCommands(cl);
         }
@@ -115,10 +114,8 @@ public class VulkanGraphicsContext : IGraphicsContext
         mainWindowCommandList.ClearDepthStencil(0.0f);
         mainWindowCommandList.SetFullViewport(0);
 
-        if (focusedEditor != null)
-        {
-            focusedEditor.Draw(_gd, mainWindowCommandList);
-        }
+        projectManager.Draw(_gd, mainWindowCommandList);
+
         Fence fence = Renderer.Frame(mainWindowCommandList, false);
         mainWindowCommandList.SetFullViewport(0);
         mainWindowCommandList.SetFullScissorRects();

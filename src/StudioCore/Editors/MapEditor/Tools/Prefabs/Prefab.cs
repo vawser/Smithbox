@@ -1,20 +1,19 @@
-﻿using SoulsFormats;
+﻿using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using SoulsFormats;
+using StudioCore.Core;
+using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Platform;
+using StudioCore.Scene;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
-using StudioCore.Platform;
-using StudioCore.Editor;
-using StudioCore.MsbEditor;
-using StudioCore.Scene;
 using System.Linq;
-using Microsoft.Extensions.Logging;
-
 using static MsbUtils;
-using StudioCore.Core.Project;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editors.MapEditor.Tools.Prefabs;
 
@@ -22,36 +21,44 @@ public class PrefabAttributes
 {
     public string PrefabName = "";
     public string PrefixSeparator = "[]";
-    public ProjectType Type = Smithbox.ProjectType;
+    public ProjectType Type;
 
     public List<string> TagList { get; set; }
+
+    public PrefabAttributes(MapEditorScreen editor)
+    {
+        Type = editor.Project.ProjectType;
+    }
 }
 
 public abstract class Prefab : PrefabAttributes
 {
+    protected Prefab(MapEditorScreen editor) : base(editor)
+    {
+    }
+
     public abstract bool ImportJson(string path);
     public abstract List<MsbEntity> GenerateMapEntities(MapContainer targetMap);
     public abstract void ExportSelection(string filepath, string name, string tags, ViewportSelection _selection);
 
     protected abstract IMsb Map();
 
-
-    public static Prefab New(ProjectType type)
+    public static Prefab New(MapEditorScreen editor)
     {
-        return type switch
+        return editor.Project.ProjectType switch
         {
-            ProjectType.ER => new Prefab<MSBE>(),
-            ProjectType.SDT => new Prefab<MSBS>(),
-            ProjectType.DS1 or ProjectType.DS1R => new Prefab<MSB1>(),
-            ProjectType.DS2 or ProjectType.DS2S => new Prefab<MSB2>(),
-            ProjectType.DS3 => new Prefab<MSB3>(),
-            ProjectType.AC6 => new Prefab<MSB_AC6>(),
-            ProjectType.BB => new Prefab<MSBB>(),
+            ProjectType.ER => new Prefab<MSBE>(editor),
+            ProjectType.SDT => new Prefab<MSBS>(editor),
+            ProjectType.DS1 or ProjectType.DS1R => new Prefab<MSB1>(editor),
+            ProjectType.DS2 or ProjectType.DS2S => new Prefab<MSB2>(editor),
+            ProjectType.DS3 => new Prefab<MSB3>(editor),
+            ProjectType.AC6 => new Prefab<MSB_AC6>(editor),
+            ProjectType.BB => new Prefab<MSBB>(editor),
             _ => null,
         };
     }
 
-    public void ImportToMap(MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
+    public void ImportToMap(MapEditorScreen editor, MapContainer targetMap, RenderScene _scene, ViewportActionManager _actionManager, string prefixName = null)
     {
         if (targetMap is null)
         {
@@ -69,7 +76,7 @@ public abstract class Prefab : PrefabAttributes
             RenameWithRefs(entries, entry, prefixName + entry.Name);
         }
 
-        AddMapObjectsAction act = new(targetMap, _scene, ents, true, parent);
+        AddMapObjectsAction act = new(editor, targetMap, ents, true, parent);
         _actionManager.ExecuteAction(act);
     }
 
@@ -88,6 +95,8 @@ public abstract class Prefab : PrefabAttributes
 internal class Prefab<T> : Prefab
     where T : SoulsFile<T>, IMsb, new()
 {
+    private MapEditorScreen Editor;
+
     /// <summary>
     /// Bytes of the MSB that stores prefab data.
     /// </summary>
@@ -95,6 +104,11 @@ internal class Prefab<T> : Prefab
 
     [JsonIgnore]
     public T pseudoMap;
+
+    public Prefab(MapEditorScreen editor) : base(editor)
+    {
+        Editor = editor;
+    }
 
     protected override IMsb Map()
     {
@@ -142,7 +156,7 @@ internal class Prefab<T> : Prefab
             foreach (var part in category.GetEntries())
             {
                 // Using the untyped constructor so that the model is not set
-                var entity = new MsbEntity(targetMap, copy(part)) { Type = type };
+                var entity = new MsbEntity(Editor, targetMap, copy(part)) { Type = type };
                 yield return entity;
             }
         }

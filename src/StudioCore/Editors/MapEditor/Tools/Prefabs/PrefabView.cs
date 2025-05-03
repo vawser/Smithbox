@@ -2,16 +2,15 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using StudioCore;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.Prefabs;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Resource.Locators;
 using StudioCore.Scene;
+using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,7 +18,7 @@ using System.Numerics;
 
 public class PrefabView
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private ViewportActionManager EditorActionManager;
     private RenderScene RenderScene;
 
@@ -39,7 +38,7 @@ public class PrefabView
 
     public PrefabView(MapEditorScreen screen) 
     { 
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         RenderScene = screen.MapViewportView.RenderScene;
     }
@@ -52,7 +51,7 @@ public class PrefabView
         if (loadedPrefab is not null)
             return loadedPrefab;
 
-        loadedPrefab = Prefab.New(Smithbox.ProjectType);
+        loadedPrefab = Prefab.New(Editor);
 
         if (File.Exists(prefabPath))
         {
@@ -70,9 +69,9 @@ public class PrefabView
             TaskLogs.AddLog($"Failed to create prefab {name}: prefab already exists with this name.", LogLevel.Error);
             return;
         }
-        var newPrefab = Prefab.New(Smithbox.ProjectType);
+        var newPrefab = Prefab.New(Editor);
 
-        newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, editFlags, Screen.Universe.Selection);
+        newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, editFlags, Editor.Universe.Selection);
 
         prefabs.Add(name, newPrefab);
         selectedPrefab = newPrefab;
@@ -87,7 +86,7 @@ public class PrefabView
 
     void CreateButton(Vector2 buttonSize)
     {
-        bool selectedEntities = Screen.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         var isDisabled = !selectedEntities || selectedPrefab is not null || !editName.Any();
 
@@ -142,7 +141,7 @@ public class PrefabView
             var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
-                loadedPrefab.ImportToMap(comboMap.map as MapContainer, RenderScene, EditorActionManager, prefixName);
+                loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, RenderScene, EditorActionManager, prefixName);
         }
         UIHelper.ShowHoverTooltip("Import the selected prefab into a loaded map.");
 
@@ -152,7 +151,7 @@ public class PrefabView
 
     void ReplaceButton(Vector2 buttonSize)
     {
-        bool selectedEntities = Screen.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
+        bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         ImGui.BeginDisabled(selectedPrefab is null || !selectedEntities);
 
@@ -193,13 +192,13 @@ public class PrefabView
         ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
         UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-        if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
             UIHelper.ShowHoverTooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
-        if (Smithbox.ProjectType == ProjectType.DS3 || Smithbox.ProjectType == ProjectType.SDT || Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType == ProjectType.DS3 || Editor.Project.ProjectType == ProjectType.SDT || Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
         {
             ImGui.Checkbox("Apply Entity Group ID##prefabApplyEntityGroupID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
@@ -225,13 +224,13 @@ public class PrefabView
         ImGui.Text("Map:");
         ImGui.SameLine();
 
-        if (comboMap.name != null && Screen.Universe.LoadedObjectContainers[comboMap.name] == null)
+        if (comboMap.name != null && Editor.Universe.LoadedObjectContainers[comboMap.name] == null)
             comboMap = (null, null);
 
         ImGui.PushItemWidth(-1);
         if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
         {
-            foreach (var (name, container) in Screen.Universe.LoadedObjectContainers)
+            foreach (var (name, container) in Editor.Universe.LoadedObjectContainers)
             {
                 if (container is null) continue;
                 if (ImGui.Selectable(name))
@@ -333,8 +332,9 @@ public class PrefabView
 
     public void OnProjectChanged()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
+
         RefreshPrefabList();
         selectedPrefab = null;
         editName = "";
@@ -345,7 +345,7 @@ public class PrefabView
     public void RefreshPrefabList()
     {
         prefabs = new();
-        prefabDir = $"{Smithbox.ProjectRoot}\\.smithbox\\{MiscLocator.GetGameIDForDir()}\\prefabs\\";
+        prefabDir = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\prefabs\\";
         if (!Directory.Exists(prefabDir))
         {
             try { Directory.CreateDirectory(prefabDir); } catch { }

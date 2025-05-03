@@ -12,13 +12,16 @@ namespace StudioCore.Editors.ModelEditor.Actions.Viewport;
 
 public class ChangeVisualDummyTransform : ViewportAction
 {
+    private ModelEditorScreen Editor;
+
     private Entity Node;
     private Vector3 OldPosition;
     private Vector3 NewPosition;
     private FLVER.Dummy Dummy;
 
-    public ChangeVisualDummyTransform(Entity node, Vector3 newPosition)
+    public ChangeVisualDummyTransform(ModelEditorScreen editor, Entity node, Vector3 newPosition)
     {
+        Editor = editor;
         Node = node;
         Dummy = (FLVER.Dummy)node.WrappedObject;
         OldPosition = Dummy.Position;
@@ -28,7 +31,7 @@ public class ChangeVisualDummyTransform : ViewportAction
     public override ActionEvent Execute(bool isRedo = false)
     {
         Dummy.Position = NewPosition;
-        Node.UpdateRenderModel();
+        Node.UpdateRenderModel(Editor);
 
         return ActionEvent.NoEvent;
     }
@@ -36,7 +39,7 @@ public class ChangeVisualDummyTransform : ViewportAction
     public override ActionEvent Undo()
     {
         Dummy.Position = OldPosition;
-        Node.UpdateRenderModel();
+        Node.UpdateRenderModel(Editor);
 
         return ActionEvent.NoEvent;
     }

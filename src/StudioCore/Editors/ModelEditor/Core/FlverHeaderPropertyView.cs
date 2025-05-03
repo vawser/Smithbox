@@ -12,14 +12,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverHeaderPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverHeaderPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -27,7 +27,7 @@ public class FlverHeaderPropertyView
 
     public void Display()
     {
-        var entry = Screen.ResManager.GetCurrentFLVER().Header;
+        var entry = Editor.ResManager.GetCurrentFLVER().Header;
 
         ImGui.Separator();
         ImGui.Text("Header");
@@ -66,7 +66,7 @@ public class FlverHeaderPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.BigEndian != bigEndian)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERHeader_BigEndian(entry, entry.BigEndian, bigEndian));
         }
 
@@ -75,7 +75,7 @@ public class FlverHeaderPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Version != version)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERHeader_Version(entry, entry.Version, version));
         }
 
@@ -84,7 +84,7 @@ public class FlverHeaderPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.BoundingBoxMin != bbMin)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERHeader_BoundingBoxMin(entry, entry.BoundingBoxMin, bbMin));
         }
 
@@ -93,7 +93,7 @@ public class FlverHeaderPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.BoundingBoxMax != bbMax)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERHeader_BoundingBoxMax(entry, entry.BoundingBoxMax, bbMax));
         }
 
@@ -102,7 +102,7 @@ public class FlverHeaderPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.Unicode != unicode)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERHeader_Unicode(entry, entry.Unicode, unicode));
         }
 

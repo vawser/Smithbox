@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Silk.NET.Core;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -19,22 +19,46 @@ namespace StudioCore.Editors.EmevdEditor;
 /// Handles the load and save processes for the EMEVD files and their containers, 
 /// as well as applying the EMEDF templates to the EMEVD Files.
 /// </summary>
-public static class EmevdBank
+public class EmevdBank
 {
-    public static bool IsLoaded { get; private set; }
-    public static bool IsLoading { get; private set; }
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static SortedDictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
-    public static EMEDF InfoBank { get; private set; } = new();
+    public SortedDictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
+    public EMEDF InfoBank { get; private set; } = new();
 
-    public static bool IsSupported = false;
+    public bool IsSupported = false;
 
-    public static void LoadEMEDF()
+    public EmevdBank(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+    }
+
+    // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
+    public async Task<bool> Setup()
+    {
+        await Task.Delay(1000);
+
+        // EMEDF
+        Task<bool> emedfTask = LoadEMEDF();
+        bool emedfTaskResult = await emedfTask;
+
+        // EMEVD
+        Task<bool> emevdTask = LoadEMEVD();
+        bool emevdTaskResult = await emevdTask;
+
+        return true;
+    }
+
+    public async Task<bool> LoadEMEDF()
+    {
+        await Task.Delay(1000);
+
         IsSupported = false;
 
         var path = "";
-        switch(Smithbox.ProjectType)
+        switch(Project.ProjectType)
         {
             case ProjectType.DS1:
             case ProjectType.DS1R:
@@ -72,13 +96,158 @@ public static class EmevdBank
             default: break;
         }
 
-        if(IsSupported)
+        if (IsSupported)
             InfoBank = EMEDF.ReadFile(path);
+        else
+            return false;
+
+        return true;
     }
 
-    public static void SaveEventScripts()
+    public async Task<bool> LoadEMEVD()
     {
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        await Task.Delay(1000);
+
+        ScriptBank = new();
+
+        var paramDir = @"\event";
+        var paramExt = @".emevd.dcx";
+
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            LoadDS2EventScripts();
+        }
+        else
+        {
+            List<string> paramNames = MiscLocator.GetEventBinders();
+
+            foreach (var name in paramNames)
+            {
+                var filePath = $"{paramDir}\\{name}{paramExt}";
+
+                if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
+                {
+                    LoadEventScript($"{Project.ProjectPath}\\{filePath}");
+                    //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                }
+                else
+                {
+                    LoadEventScript($"{Project.DataPath}\\{filePath}");
+                    //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void LoadEventScript(string path)
+    {
+        if (path == null)
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
+                    LogLevel.Warning);
+            return;
+        }
+        if (path == "")
+        {
+            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
+                    LogLevel.Warning);
+            return;
+        }
+
+        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
+        EventScriptInfo eventInfo = new EventScriptInfo(name, path);
+        EMEVD eventScript = new EMEVD();
+
+        try
+        {
+            eventScript = EMEVD.Read(DCX.Decompress(path));
+            ScriptBank.Add(eventInfo, eventScript);
+        }
+        catch (Exception ex)
+        {
+            var filename = Path.GetFileNameWithoutExtension(path);
+            TaskLogs.AddLog($"Failed to read EMEVD file: {filename} at {path}.\n{ex}", LogLevel.Error);
+        }
+    }
+
+    // parambank process here as emevd it within regulation.bin
+    private void LoadDS2EventScripts()
+    {
+        var dir = Project.DataPath;
+        var mod = Project.ProjectPath;
+
+        var regulationPath = $@"{mod}\enc_regulation.bnd.dcx";
+        if (!File.Exists(regulationPath))
+        {
+            regulationPath = $@"{dir}\enc_regulation.bnd.dcx";
+        }
+
+        BND4 emevdBnd = null;
+        if (!BND4.Is(regulationPath))
+        {
+            try
+            {
+                emevdBnd = SFUtil.DecryptDS2Regulation(regulationPath);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        else
+        {
+            try
+            {
+                emevdBnd = BND4.Read(regulationPath);
+            }
+            catch (Exception e)
+            {
+                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        LoadScriptsFromBinder(emevdBnd);
+    }
+
+    private void LoadScriptsFromBinder(IBinder emevdBnd)
+    {
+        // Load every script in the regulation
+        foreach (BinderFile f in emevdBnd.Files)
+        {
+            //TaskLogs.AddLog(f.Name);
+            var scriptName = Path.GetFileNameWithoutExtension(f.Name);
+            EventScriptInfo info = new EventScriptInfo(scriptName, f.Name);
+
+            if (!f.Name.ToUpper().EndsWith(".EMEVD"))
+            {
+                //TaskLogs.AddLog("Skipped due to lacking .emevd");
+                continue;
+            }
+
+            if (ScriptBank.ContainsKey(info))
+            {
+                //TaskLogs.AddLog("Skipped as already added");
+                continue;
+            }
+
+            try
+            {
+                EMEVD script = EMEVD.Read(f.Bytes);
+                ScriptBank.Add(info, script);
+                //TaskLogs.AddLog($"{scriptName} added");
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"Failed to load {scriptName}", LogLevel.Warning, LogPriority.Normal, e);
+            }
+        }
+    }
+
+    public void SaveEventScripts()
+    {
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             SaveDS2EventScripts();
         }
@@ -95,14 +264,14 @@ public static class EmevdBank
         }
     }
 
-    public static void SaveEventScript(EventScriptInfo info, EMEVD script)
+    public void SaveEventScript(EventScriptInfo info, EMEVD script)
     {
         if (script == null)
             return;
 
         byte[] fileBytes = null;
 
-        switch (Smithbox.ProjectType)
+        switch (Project.ProjectType)
         {
             case ProjectType.DS1:
                 fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
@@ -132,17 +301,17 @@ public static class EmevdBank
         var paramDir = @"\event\";
         var paramExt = @".emevd.dcx";
 
-        var assetRoot = $@"{Smithbox.GameRoot}\{paramDir}\{info.Name}{paramExt}";
-        var assetMod = $@"{Smithbox.ProjectRoot}\{paramDir}\{info.Name}{paramExt}";
+        var assetRoot = $@"{Project.DataPath}\{paramDir}\{info.Name}{paramExt}";
+        var assetMod = $@"{Project.ProjectPath}\{paramDir}\{info.Name}{paramExt}";
 
         // Add drawparam folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{paramDir}\\"))
+        if (!Directory.Exists($"{Project.ProjectPath}\\{paramDir}\\"))
         {
-            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{paramDir}\\");
+            Directory.CreateDirectory($"{Project.ProjectPath}\\{paramDir}\\");
         }
 
         // Make a backup of the original file if a mod path doesn't exist
-        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
         {
             File.Copy(assetRoot, $@"{assetRoot}.bak", true);
         }
@@ -156,10 +325,10 @@ public static class EmevdBank
     }
 
     // parambank process here as emevd it within regulation.bin
-    private static void SaveDS2EventScripts()
+    private void SaveDS2EventScripts()
     {
-        var dir = Smithbox.GameRoot;
-        var mod = Smithbox.ProjectRoot;
+        var dir = Project.DataPath;
+        var mod = Project.ProjectPath;
 
         if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
         {
@@ -230,151 +399,6 @@ public static class EmevdBank
         TaskLogs.AddLog("Saved EMEVD scripts.", LogLevel.Information);
     }
 
-    public static void LoadEventScripts()
-    {
-        IsLoaded = false;
-        IsLoading = true;
-
-        ScriptBank = new();
-
-        var paramDir = @"\event";
-        var paramExt = @".emevd.dcx";
-
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            LoadDS2EventScripts();
-        }
-        else
-        {
-            List<string> paramNames = MiscLocator.GetEventBinders();
-
-            foreach (var name in paramNames)
-            {
-                var filePath = $"{paramDir}\\{name}{paramExt}";
-
-                if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
-                {
-                    LoadEventScript($"{Smithbox.ProjectRoot}\\{filePath}");
-                    //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-                }
-                else
-                {
-                    LoadEventScript($"{Smithbox.GameRoot}\\{filePath}");
-                    //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
-                }
-            }
-
-            IsLoaded = true;
-            IsLoading = false;
-        }
-    }
-
-    private static void LoadEventScript(string path)
-    {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        EventScriptInfo eventInfo = new EventScriptInfo(name, path);
-        EMEVD eventScript = new EMEVD();
-
-        try
-        {
-            eventScript = EMEVD.Read(DCX.Decompress(path));
-            ScriptBank.Add(eventInfo, eventScript);
-        }
-        catch (Exception ex)
-        {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to read EMEVD file: {filename} at {path}.\n{ex}", LogLevel.Error);
-        }
-    }
-
-    // parambank process here as emevd it within regulation.bin
-    private static void LoadDS2EventScripts()
-    {
-        var dir = Smithbox.GameRoot;
-        var mod = Smithbox.ProjectRoot;
-
-        var regulationPath = $@"{mod}\enc_regulation.bnd.dcx";
-        if (!File.Exists(regulationPath))
-        {
-            regulationPath = $@"{dir}\enc_regulation.bnd.dcx";
-        }
-
-        BND4 emevdBnd = null;
-        if (!BND4.Is(regulationPath))
-        {
-            try
-            {
-                emevdBnd = SFUtil.DecryptDS2Regulation(regulationPath);
-            }
-            catch (Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        else
-        {
-            try
-            {
-                emevdBnd = BND4.Read(regulationPath);
-            }
-            catch (Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        LoadScriptsFromBinder(emevdBnd);
-    }
-
-    private static void LoadScriptsFromBinder(IBinder emevdBnd)
-    {
-        // Load every script in the regulation
-        foreach (BinderFile f in emevdBnd.Files)
-        {
-            //TaskLogs.AddLog(f.Name);
-            var scriptName = Path.GetFileNameWithoutExtension(f.Name);
-            EventScriptInfo info = new EventScriptInfo(scriptName, f.Name);
-
-            if (!f.Name.ToUpper().EndsWith(".EMEVD"))
-            {
-                //TaskLogs.AddLog("Skipped due to lacking .emevd");
-                continue;
-            }
-
-            if (ScriptBank.ContainsKey(info))
-            {
-                //TaskLogs.AddLog("Skipped as already added");
-                continue;
-            }
-
-            try
-            {
-                EMEVD script = EMEVD.Read(f.Bytes);
-                ScriptBank.Add(info, script);
-                //TaskLogs.AddLog($"{scriptName} added");
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load {scriptName}", LogLevel.Warning, LogPriority.Normal, e);
-            }
-        }
-
-        IsLoaded = true;
-        IsLoading = false;
-    }
 
     public class EventScriptInfo : IComparable<EventScriptInfo>
     {

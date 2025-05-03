@@ -1,15 +1,6 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Editors.TimeActEditor.Actions;
-using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.EmevdEditor;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
 

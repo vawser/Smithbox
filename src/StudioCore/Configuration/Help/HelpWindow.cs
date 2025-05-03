@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Banks.HelpBank;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Help;
 using StudioCore.Interface;
 using System.Collections.Generic;
@@ -14,6 +13,8 @@ namespace StudioCore.Configuration.Help;
 
 public class HelpWindow
 {
+    public Smithbox BaseEditor;
+
     private readonly HelpBank _helpBank;
     private bool MenuOpenState;
 
@@ -53,8 +54,9 @@ public class HelpWindow
     private string _inputStrCache_Credit = "";
 
 
-    public HelpWindow()
+    public HelpWindow(Smithbox baseEditor)
     {
+        BaseEditor = baseEditor;
         _helpBank = new HelpBank();
     }
 
@@ -233,7 +235,14 @@ public class HelpWindow
         {
             var sectionName = entry.Title;
 
-            if (entry.ProjectType == (int)Smithbox.ProjectType || entry.ProjectType == 0)
+            ProjectType curProjectType = ProjectType.Undefined;
+
+            if(BaseEditor.ProjectManager.SelectedProject != null)
+            {
+                curProjectType = BaseEditor.ProjectManager.SelectedProject.ProjectType;
+            }
+
+            if (entry.ProjectType == (int)curProjectType || entry.ProjectType == 0)
             {
                 if (MatchEntry(entry, checkedInput))
                 {

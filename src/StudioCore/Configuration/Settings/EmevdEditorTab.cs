@@ -15,7 +15,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class EmevdEditorTab
 {
-    public EmevdEditorTab() { }
+    public Smithbox BaseEditor;
+
+    public EmevdEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

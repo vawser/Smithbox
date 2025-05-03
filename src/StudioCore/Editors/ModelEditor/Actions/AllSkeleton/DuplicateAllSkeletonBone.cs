@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Actions.AllSkeleton;
 
 public class DuplicateAllSkeletonBone : ViewportAction
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelViewportManager ViewportManager;
 
@@ -23,7 +23,7 @@ public class DuplicateAllSkeletonBone : ViewportAction
 
     public DuplicateAllSkeletonBone(ModelEditorScreen screen, FLVER2 flver, int index)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ViewportManager = screen.ViewportManager;
 

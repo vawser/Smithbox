@@ -1,12 +1,16 @@
 ﻿using Hexa.NET.ImGui;
-using Silk.NET.SDL;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Configuration.Help;
+using StudioCore.Configuration.Keybinds;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Graphics;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
@@ -17,34 +21,16 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
+using static StudioCore.Configuration.Help.HelpWindow;
+using static StudioCore.Configuration.Keybinds.KeybindWindow;
 using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Interface;
-using StudioCore.Core;
-using Microsoft.AspNetCore.Components.Forms;
-using StudioCore.Tasks;
-using StudioCore.Tools;
-using StudioCore.Core.Project;
-using StudioCore.Tools.Randomiser;
-using StudioCore.Editors.TextEditor;
-using Hexa.NET.ImGui.Utilities;
 
 namespace StudioCore;
 
 public class Smithbox
 {
-    public static EditorHandler EditorHandler;
-    public static CommonMenubarHandler WindowHandler;
-    public static BankHandler BankHandler;
-    public static AliasCacheHandler AliasCacheHandler;
-    public static ProjectHandler ProjectHandler;
-
-    public static ProjectType ProjectType = ProjectType.Undefined;
-    public static string GameRoot = "";
-    public static string ProjectRoot = "";
-    public static string SmithboxDataRoot = AppContext.BaseDirectory; // Fallback directory
-
     private static double _desiredFrameLengthSeconds = 1.0 / 20.0f;
     private static readonly bool _limitFrameRate = true;
 
@@ -54,53 +40,41 @@ public class Smithbox
 
     public static bool LowRequirementsMode;
 
-    public static IGraphicsContext _context;
+    public IGraphicsContext _context;
 
     public static bool FontRebuildRequest;
 
     public static string _programTitle;
 
-    private readonly string _version;
+    public readonly string _version;
 
     public static bool _programUpdateAvailable;
     public static string _releaseUrl = "";
 
-    private bool _showImGuiDebugLogWindow;
+    public bool _showImGuiDebugLogWindow;
 
-    private readonly SoapstoneService _soapstoneService;
-
-    // ImGui Debug windows
-    private bool _showImGuiDemoWindow;
-    private bool _showImGuiMetricsWindow;
-    private bool _showImGuiStackToolWindow;
+    public SoapstoneService _soapstoneService;
 
     public static ImGuiTextureLoader TextureLoader;
+
+    public ProjectManager ProjectManager;
+
+    public SettingsWindow Settings;
+    public HelpWindow Help;
+    public KeybindWindow Keybinds;
 
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
         _programTitle = $"Version {_version}";
 
+        TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
+
         UIHelper.RestoreImguiIfMissing();
-
-        DPI.UIScaleChanged += (_, _) =>
-        {
-            FontRebuildRequest = true;
-        };
-
         // Hack to make sure dialogs work before the main window is created
         PlatformUtils.InitializeWindows(null);
 
-        CFG.AttemptLoadOrDefault();
-
-        UI.AttemptLoadOrDefault();
-        InterfaceTheme.SetupThemes();
-        InterfaceTheme.SetTheme(true);
-
-        RandomiserCFG.AttemptLoadOrDefault();
-
-        Environment.SetEnvironmentVariable("PATH",
-            Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
+        Setup();
 
         _context = context;
         _context.Initialize();
@@ -108,23 +82,30 @@ public class Smithbox
 
         PlatformUtils.InitializeWindows(context.Window.SdlWindowHandle);
 
-        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+        ProjectManager = new(this);
 
-        // Handlers
-        ProjectHandler = new ProjectHandler();
-        EditorHandler = new EditorHandler(_context);
-        WindowHandler = new CommonMenubarHandler(_context);
-
-        TextBank.LoadTextFiles();
-
-        _soapstoneService = new SoapstoneService(_version);
+        Settings = new(this);
+        Help = new(this);
+        Keybinds = new(this);
 
         SetupImGui();
         SetupFonts();
 
         _context.ImguiRenderer.OnSetupDone();
 
-        TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
+    }
+
+    private void Setup()
+    {
+        Environment.SetEnvironmentVariable("PATH",
+            Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
+
+        CFG.AttemptLoadOrDefault();
+        UI.AttemptLoadOrDefault();
+        InterfaceTheme.SetupThemes();
+        InterfaceTheme.SetTheme(true);
+
+        BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
     }
 
     private unsafe void SetupImGui()
@@ -219,6 +200,7 @@ public class Smithbox
         fonts.AddFontFromMemoryTTF(nonEnglishFontPtr, nonEnglishFontData.Length, scaleFine, cfg, outGlyphRanges.Data);
         glyphRanges.Destroy();
 
+        // TODO: fix this so it works
         // Icon Font
         cfg.MergeMode = true;
         cfg.GlyphMinAdvanceX = 7.0f; 
@@ -241,24 +223,6 @@ public class Smithbox
 
         _context.ImguiRenderer.RecreateFontDeviceTexture();
     }
-
-    public static void InitializeBanks()
-    {
-        BankHandler = new BankHandler();
-        BankHandler.UpdateBanks();
-    }
-
-    public static void InitializeNameCaches()
-    {
-        AliasCacheHandler = new AliasCacheHandler();
-        AliasCacheHandler.UpdateCaches();
-    }
-
-    public static void SetProgramTitle(string projectName)
-    {
-        _context.Window.Title = $"{projectName} - {_programTitle}";
-    }
-
     private void CheckProgramUpdate()
     {
         Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
@@ -290,7 +254,7 @@ public class Smithbox
     {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-        if (CFG.Current.Enable_Soapstone_Server)
+        if (CFG.Current.Enable_Soapstone_Server && _soapstoneService != null)
         {
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",
@@ -359,10 +323,15 @@ public class Smithbox
 
             ctx = Tracy.TracyCZoneNC(1, "Update", 0xFF00FF00);
             InputSnapshot snapshot = null;
+
             Sdl2Events.ProcessEvents();
+
             snapshot = _context.Window.PumpEvents();
+
             InputTracker.UpdateFrameInput(snapshot, _context.Window);
+
             Update((float)deltaSeconds);
+
             Tracy.TracyCZoneEnd(ctx);
 
             if (!_context.Window.Exists)
@@ -374,7 +343,7 @@ public class Smithbox
             {
                 ctx = Tracy.TracyCZoneNC(1, "Draw", 0xFFFF0000);
 
-                _context.Draw(EditorHandler.EditorList, EditorHandler.FocusedEditor);
+                _context.Draw(ProjectManager);
 
                 Tracy.TracyCZoneEnd(ctx);
             }
@@ -433,24 +402,6 @@ public class Smithbox
                     MessageBoxIcon.Warning);
             }
         }
-
-        if (CFG.Current.System_EnableRecoveryFolder)
-        {
-            var success = ProjectHandler.CreateRecoveryProject();
-            if (success)
-            {
-                EditorHandler.SaveAllFocusedEditor();
-
-                PlatformUtils.Instance.MessageBox(
-                    $"Attempted to save project files to {ProjectRoot} for manual recovery.\n" +
-                    "You must manually replace your project files with these recovery files should you wish to restore them.\n" +
-                    "Given the program has crashed, these files may be corrupt and you should backup your last good saved\n" +
-                    "files before attempting to use these.",
-                    "Saved recovery",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-        }
     }
 
     private unsafe void Update(float deltaseconds)
@@ -474,36 +425,45 @@ public class Smithbox
         Tracy.TracyCZoneEnd(ctx);
         TaskManager.ThrowTaskExceptions();
 
-        var commandsplit = EditorCommandQueue.GetNextCommand();
-        if (commandsplit != null && commandsplit[0] == "windowFocus")
-        {
-            //this is a hack, cannot grab focus except for when un-minimising
-            _user32_ShowWindow(_context.Window.Handle, 6);
-            _user32_ShowWindow(_context.Window.Handle, 9);
-        }
+        //var commandsplit = EditorCommandQueue.GetNextCommand();
+        //if (commandsplit != null && commandsplit[0] == "windowFocus")
+        //{
+        //    //this is a hack, cannot grab focus except for when un-minimising
+        //    _user32_ShowWindow(_context.Window.Handle, 6);
+        //    _user32_ShowWindow(_context.Window.Handle, 9);
+        //}
 
         ctx = Tracy.TracyCZoneN(1, "Style");
+
         UIHelper.ApplyBaseStyle();
-        ImGuiViewportPtr vp = ImGui.GetMainViewport();
-        ImGui.SetNextWindowPos(vp.Pos);
-        ImGui.SetNextWindowSize(vp.Size);
+
+        ImGuiViewportPtr viewport = ImGui.GetMainViewport();
+
+        ImGui.SetNextWindowPos(viewport.Pos);
+        ImGui.SetNextWindowSize(viewport.Size);
+        ImGui.SetNextWindowViewport(viewport.ID);
+
         ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
         ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-        ImGuiWindowFlags flags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                 ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
-        flags |= ImGuiWindowFlags.NoDocking | ImGuiWindowFlags.MenuBar;
-        flags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
-        flags |= ImGuiWindowFlags.NoBackground;
+
+        ImGuiWindowFlags windowFlags =
+            ImGuiWindowFlags.NoTitleBar |
+            ImGuiWindowFlags.NoCollapse |
+            ImGuiWindowFlags.NoResize |
+            ImGuiWindowFlags.NoMove |
+            ImGuiWindowFlags.NoBringToFrontOnFocus |
+            ImGuiWindowFlags.NoNavFocus |
+            ImGuiWindowFlags.MenuBar;
 
         ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
-        if (ImGui.Begin("DockSpace_W", flags))
-        {
 
-        }
+        ImGui.Begin("MainDockspace_W", windowFlags);
 
-        var dsid = ImGui.GetID("DockSpace");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.NoDockingSplit);
+        uint dockspaceID = ImGui.GetID("MainDockspace");
+
+        ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
+
         ImGui.PopStyleVar(1);
         ImGui.End();
         ImGui.PopStyleColor(1);
@@ -514,38 +474,141 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
-            WindowHandler.ProjectDropdown();
-            EditorHandler.FileDropdown();
-
-            if (EditorHandler.FocusedEditor != null)
+            // Settings
+            if (ImGui.MenuItem("Settings"))
             {
-                EditorHandler.FocusedEditor.EditDropdown();
-                EditorHandler.FocusedEditor.ViewDropdown();
-                EditorHandler.FocusedEditor.EditorUniqueDropdowns();
+                Settings.ToggleMenuVisibility();
             }
 
-            WindowHandler.HelpDropdown();
-            WindowHandler.AliasDropdown();
-            WindowHandler.KeybindsDropdown();
-            WindowHandler.SettingsDropdown();
-            WindowHandler.DebugDropdown();
+            // Help
+            if (ImGui.BeginMenu("Help"))
+            {
+                if (ImGui.MenuItem("Articles"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Articles);
+                }
+                UIHelper.ShowHoverTooltip("View the articles that relate to this project.");
 
-            WindowHandler.SmithboxUpdateButton();
+                if (ImGui.MenuItem("Tutorials"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
+                }
+                UIHelper.ShowHoverTooltip("View the tutorials that relate to this project.");
 
+                if (ImGui.MenuItem("Glossary"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Glossary);
+                }
+                UIHelper.ShowHoverTooltip("View the glossary that relate to this project.");
+
+                if (ImGui.MenuItem("Mass Edit"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
+                }
+                UIHelper.ShowHoverTooltip("View the mass edit help instructions.");
+
+                if (ImGui.MenuItem("Regex"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Regex);
+                }
+                UIHelper.ShowHoverTooltip("View the regex help instructions.");
+
+                if (ImGui.MenuItem("Links"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Links);
+                }
+                UIHelper.ShowHoverTooltip("View the community links.");
+
+                if (ImGui.MenuItem("Credits"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Credits);
+                }
+                UIHelper.ShowHoverTooltip("View the credits.");
+
+                ImGui.EndMenu();
+            }
+
+            // Keybinds
+            if (ImGui.BeginMenu("Keybinds"))
+            {
+                if (ImGui.MenuItem("Common"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.Common);
+                }
+                UIHelper.ShowHoverTooltip("View the common keybinds shared between all editors.");
+
+                if (ImGui.MenuItem("Viewport"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.Viewport);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply to the viewport.");
+
+                if (ImGui.MenuItem("Map Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.MapEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Map Editor.");
+
+                if (ImGui.MenuItem("Model Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.ModelEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Model Editor.");
+
+                if (ImGui.MenuItem("Param Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.ParamEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Param Editor.");
+
+                if (ImGui.MenuItem("Text Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.TextEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Text Editor.");
+
+                if (ImGui.MenuItem("Gparam Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.GparamEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Gparam Editor.");
+
+                if (ImGui.MenuItem("Time Act Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.TimeActEditor);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Time Act Editor.");
+
+                if (ImGui.MenuItem("Texture Viewer"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
+                }
+                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Texture Viewer.");
+
+                ImGui.EndMenu();
+            }
+
+            // Action Logger
             TaskLogs.DisplayActionLoggerBar();
             TaskLogs.DisplayActionLoggerWindow();
 
-            if (UI.Current.System_ShowActionLogger)
-            {
-                ImGui.Separator();
-            }
-
+            // Warning Logger
             TaskLogs.DisplayWarningLoggerBar();
             TaskLogs.DisplayWarningLoggerWindow();
 
-            if (UI.Current.System_ShowWarningLogger)
+            // Program Update
+            if (Smithbox._programUpdateAvailable)
             {
-                ImGui.Separator();
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
+                if (ImGui.Button("Update Available"))
+                {
+                    Process myProcess = new();
+                    myProcess.StartInfo.UseShellExecute = true;
+                    myProcess.StartInfo.FileName = Smithbox._releaseUrl;
+                    myProcess.Start();
+                }
+
+                ImGui.PopStyleColor();
             }
 
             ImGui.EndMainMenuBar();
@@ -554,33 +617,6 @@ public class Smithbox
         ImGui.PopStyleVar();
         Tracy.TracyCZoneEnd(ctx);
 
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 7.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 1.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(14.0f, 8.0f) * scale);
-
-        // ImGui Debug windows
-        if (WindowHandler.DebugWindow._showImGuiDemoWindow)
-        {
-            ImGui.ShowDemoWindow(ref WindowHandler.DebugWindow._showImGuiDemoWindow);
-        }
-
-        if (WindowHandler.DebugWindow._showImGuiMetricsWindow)
-        {
-            ImGui.ShowMetricsWindow(ref WindowHandler.DebugWindow._showImGuiMetricsWindow);
-        }
-
-        if (WindowHandler.DebugWindow._showImGuiDebugLogWindow)
-        {
-            ImGui.ShowDebugLogWindow(ref WindowHandler.DebugWindow._showImGuiDebugLogWindow);
-        }
-
-        if (WindowHandler.DebugWindow._showImGuiStackToolWindow)
-        {
-            ImGui.ShowIDStackToolWindow(ref WindowHandler.DebugWindow._showImGuiStackToolWindow);
-        }
-
-        ImGui.PopStyleVar(3);
-
         if (FirstFrame)
         {
             ImGui.SetNextWindowFocus();
@@ -588,69 +624,18 @@ public class Smithbox
 
         ctx = Tracy.TracyCZoneN(1, "Editor");
 
-        foreach (EditorScreen editor in EditorHandler.EditorList)
-        {
-            string[] commands = null;
-            if (commandsplit != null && commandsplit[0] == editor.CommandEndpoint)
-            {
-                commands = commandsplit.Skip(1).ToArray();
-                ImGui.SetNextWindowFocus();
-            }
+        ProjectManager.Update(deltaseconds);
 
-            if (_context.Device == null)
-            {
-                ImGui.PushStyleColor(ImGuiCol.WindowBg, *ImGui.GetStyleColorVec4(ImGuiCol.WindowBg));
-            }
-            else
-            {
-                ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
-            }
+        Settings.Display();
+        Help.Display();
+        Keybinds.Display();
 
-            ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-
-            if (ImGui.Begin(editor.EditorName))
-            {
-                ImGui.PopStyleColor(1);
-                ImGui.PopStyleVar(1);
-                editor.OnGUI(commands);
-                ImGui.End();
-                EditorHandler.FocusedEditor = editor;
-                editor.Update(deltaseconds);
-            }
-            else
-            {
-                // Reset this so on Focus the first frame focusing happens
-                editor.OnDefocus();
-                ImGui.PopStyleColor(1);
-                ImGui.PopStyleVar(1);
-                ImGui.End();
-            }
-        }
-
-        // Global shortcut keys
-        if (EditorHandler.FocusedEditor != null)
-        {
-            if (!EditorHandler.FocusedEditor.InputCaptured())
-            {
-                EditorHandler.HandleEditorShortcuts();
-            }
-        }
-
-        ProjectHandler.OnGui();
-        WindowHandler.OnGui();
-
-        if(BankHandler != null)
-            BankHandler.OnGui();
-
-        if(AliasCacheHandler != null)
-            AliasCacheHandler.OnGui();
+        // Tool windows
+        ColorPicker.DisplayColorPicker();
 
         ImGui.PopStyleVar(2);
 
         UIHelper.UnapplyBaseStyle();
-
-        // Tool windows
-        ColorPicker.DisplayColorPicker();
 
         Tracy.TracyCZoneEnd(ctx);
 

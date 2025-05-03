@@ -1,7 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.HavokAliasBank;
 using StudioCore.Interface;
-using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,16 +7,13 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using static SoulsFormats.TAE;
 
 namespace StudioCore.Editors.MapEditor.Framework.MassEdit;
 
 public class MassEditTools
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private MassEditHandler Handler;
 
     private string BackupDir = "";
@@ -30,7 +25,7 @@ public class MassEditTools
 
     public MassEditTools(MapEditorScreen screen, MassEditHandler handler)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = handler;
     }
 
@@ -113,7 +108,7 @@ public class MassEditTools
     private void SetupTemplates()
     {
         Templates = new Dictionary<string, MassEditTemplate>();
-        TemplateDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\MSB\\Mass Edit Templates";
+        TemplateDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\MSB\\Mass Edit Templates";
 
         if (!Directory.Exists(TemplateDir))
         {
@@ -148,13 +143,13 @@ public class MassEditTools
 
     private void BackupMaps()
     {
-        BackupDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\MSB\\Backups";
+        BackupDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\MSB\\Backups";
         if (!Directory.Exists(BackupDir))
         {
             Directory.CreateDirectory(BackupDir);
         }
 
-        string mapRoot = $"{Smithbox.GameRoot}\\map";
+        string mapRoot = $"{Editor.Project.DataPath}\\map";
         var mapFiles = GetMapFiles(mapRoot);
 
         if (BackupDir != "" && mapFiles.Count > 0)

@@ -8,11 +8,11 @@ namespace StudioCore.Editors.ModelEditor.Framework;
 
 public class ModelFilters
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
 
     public ModelFilters(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public string _searchInput = "";

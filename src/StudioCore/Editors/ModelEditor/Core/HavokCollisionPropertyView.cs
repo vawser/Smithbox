@@ -11,11 +11,11 @@ namespace StudioCore.Editors.ModelEditor.Core
 {
     public class HavokCollisionPropertyView
     {
-        private ModelEditorScreen Screen;
+        private ModelEditorScreen Editor;
 
         public HavokCollisionPropertyView(ModelEditorScreen screen)
         {
-            Screen = screen;
+            Editor = screen;
         }
 
         // TODO: do this via reflection

@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Org.BouncyCastle.Utilities;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
 using System;
@@ -19,12 +19,12 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties;
 /// </summary>
 public class MatbinPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private MATBIN CurrentMatbin;
 
     public MatbinPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     /// <summary>
@@ -34,21 +34,24 @@ public class MatbinPropertyView
     {
         var matname = Path.GetFileNameWithoutExtension(mtdPath);
 
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
-            if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(matname))
-            {
-                CurrentMatbin = Smithbox.BankHandler.MaterialBank.Matbins[matname].Matbin;
-            }
+            // TODO: restore once MATBIN bank is added
+            CurrentMatbin = null;
 
-            if (CurrentMatbin != null)
-            {
-                if (ImGui.CollapsingHeader("MATBIN", ImGuiTreeNodeFlags.DefaultOpen))
-                {
-                    DisplayMatbin();
-                }
-                UIHelper.ShowHoverTooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
-            }
+            //if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(matname))
+            //{
+            //    CurrentMatbin = Smithbox.BankHandler.MaterialBank.Matbins[matname].Matbin;
+            //}
+
+            //if (CurrentMatbin != null)
+            //{
+            //    if (ImGui.CollapsingHeader("MATBIN", ImGuiTreeNodeFlags.DefaultOpen))
+            //    {
+            //        DisplayMatbin();
+            //    }
+            //    UIHelper.ShowHoverTooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
+            //}
         }
     }
 

@@ -1,22 +1,18 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.AliasBank;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_ReferencesTo
 {
-    public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         if (firstEnt.References.Count == 0)
             return;
@@ -68,15 +64,15 @@ public static class PropInfo_ReferencesTo
 
                         if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                         {
-                            aliasName = AliasUtils.GetCharacterAlias(modelName);
+                            aliasName = AliasUtils.GetCharacterAlias(editor.Project, modelName);
                         }
                         if (e.IsPartAsset() || e.IsPartDummyAsset())
                         {
-                            aliasName = AliasUtils.GetAssetAlias(modelName);
+                            aliasName = AliasUtils.GetAssetAlias(editor.Project, modelName);
                         }
                         if (e.IsPartMapPiece())
                         {
-                            aliasName = AliasUtils.GetMapPieceAlias(modelName);
+                            aliasName = AliasUtils.GetMapPieceAlias(editor.Project, modelName);
                         }
 
                         if (aliasName != "")
@@ -89,8 +85,8 @@ public static class PropInfo_ReferencesTo
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.Button(displayName + "##MSBRefTo" + refID, new Vector2(width * 94, 20 * scale)))
                     {
-                        selection.ClearSelection();
-                        selection.AddSelection(e);
+                        selection.ClearSelection(editor);
+                        selection.AddSelection(editor, e);
                     }
                 }
                 else if (n is ObjectContainerReference r)
@@ -100,14 +96,14 @@ public static class PropInfo_ReferencesTo
                     // but only the RootObject has the TransformNode and Viewport integration.
                     var mapid = r.Name;
                     var prettyName = $"{ForkAwesome.Cube} {mapid}";
-                    prettyName = $"{prettyName} {AliasUtils.GetMapNameAlias(mapid)}";
+                    prettyName = $"{prettyName} {AliasUtils.GetMapNameAlias(editor.Project, mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
                     if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2(width * 94, 20 * scale)))
                     {
-                        ISelectable rootTarget = r.GetSelectionTarget();
-                        selection.ClearSelection();
-                        selection.AddSelection(rootTarget);
+                        ISelectable rootTarget = r.GetSelectionTarget(editor);
+                        selection.ClearSelection(editor);
+                        selection.AddSelection(editor, rootTarget);
                         // For this type of connection, jump to the object in the list to actually load the map
                         // (is this desirable in other cases?). It could be possible to have a Load context menu
                         // here, but that should be shared with SceneTree.
@@ -116,14 +112,14 @@ public static class PropInfo_ReferencesTo
 
                     if (ImGui.BeginPopupContextItem())
                     {
-                        var universe = Smithbox.EditorHandler.MapEditor.Universe;
+                        var universe = editor.Universe;
                         MapContainer map = universe.GetLoadedMapContainer(mapid);
                         if (map == null)
                         {
                             if (ImGui.Selectable("Load Map"))
                             {
                                 universe.LoadMap(mapid);
-                                Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(mapid);
+                                editor.MapListView.SignalLoad(mapid);
                             }
                         }
                         else

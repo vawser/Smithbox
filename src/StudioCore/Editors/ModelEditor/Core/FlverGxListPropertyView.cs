@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverGxListPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
@@ -25,7 +25,7 @@ public class FlverGxListPropertyView
 
     public FlverGxListPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -40,14 +40,14 @@ public class FlverGxListPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().GXLists.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().GXLists.Count < index)
             return;
 
         ImGui.Separator();
         ImGui.Text("GX List");
         ImGui.Separator();
 
-        var entry = Screen.ResManager.GetCurrentFLVER().GXLists[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().GXLists[index];
 
         for (int i = 0; i < entry.Count; i++)
         {
@@ -97,7 +97,7 @@ public class FlverGxListPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (item.ID != id)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERGXList_GXItem_ID(item, item.ID, id));
         }
 
@@ -107,7 +107,7 @@ public class FlverGxListPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (item.Unk04 != unk04)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                     new UpdateProperty_FLVERGXList_GXItem_Unk04(item, item.Unk04, unk04));
         }
 

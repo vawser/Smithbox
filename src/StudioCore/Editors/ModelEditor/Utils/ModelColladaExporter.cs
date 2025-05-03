@@ -12,15 +12,17 @@ namespace StudioCore.Editors.ModelEditor.Utils;
 // Credit to original author of implementation in FLVER Editor
 public static class ModelColladaExporter
 {
-    public static string ExportPath = Smithbox.ProjectRoot;
+    public static string ExportPath = "";
 
-    public static void ExportModel(ModelEditorScreen screen)
+    public static void ExportModel(ModelEditorScreen editor)
     {
+        ExportPath = editor.Project.ProjectPath;
+
         var path = "";
         var success = false;
 
-        path = $"{ExportPath}\\{screen.ResManager.GetCurrentInternalFile().Name}.dae";
-        success = AssimpExport(screen.ResManager.GetCurrentFLVER(), path, "collada");
+        path = $"{ExportPath}\\{editor.ResManager.GetCurrentInternalFile().Name}.dae";
+        success = AssimpExport(editor.ResManager.GetCurrentFLVER(), path, "collada");
 
         if (success)
         {

@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
 using Microsoft.Extensions.Logging;
 using Silk.NET.OpenGL;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Utilities;
 using System;
@@ -26,9 +26,9 @@ public static class TextUtils
     /// <summary>
     /// Whether the current project supports the passed category
     /// </summary>
-    public static bool IsSupportedLanguage(TextContainerCategory category)
+    public static bool IsSupportedLanguage(ProjectEntry project, TextContainerCategory category)
     {
-        switch (Smithbox.ProjectType)
+        switch (project.ProjectType)
         {
             case ProjectType.DES:
                 return CategoryGroupings.DES_Languages.Contains(category);

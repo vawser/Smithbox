@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Interface;
 
@@ -8,19 +8,19 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
 {
     public class GxDataPropertyView
     {
-        private ModelEditorScreen Screen;
-        private GxDescriptorBank GxItemDescriptors;
+        private ModelEditorScreen Editor;
+        //private GxDescriptorBank GxItemDescriptors;
 
         public GxDataPropertyView(ModelEditorScreen screen)
         {
-            Screen = screen;
-            GxItemDescriptors = screen.GxItemDescriptors;
+            Editor = screen;
+            //GxItemDescriptors = screen.GxItemDescriptors;
         }
 
         public void Display(FLVER2.GXItem item)
         {
             // ER Mappings
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Editor.Project.ProjectType is ProjectType.ER)
             {
                 switch (item.ID)
                 {
@@ -29,7 +29,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
                         break;
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.AC6)
+            else if (Editor.Project.ProjectType is ProjectType.AC6)
             {
                 switch (item.ID)
                 {
@@ -38,7 +38,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
                         break;
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.SDT)
+            else if (Editor.Project.ProjectType is ProjectType.SDT)
             {
                 switch (item.ID)
                 {
@@ -47,7 +47,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
                         break;
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.DS3)
+            else if (Editor.Project.ProjectType is ProjectType.DS3)
             {
                 switch (item.ID)
                 {
@@ -56,7 +56,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
                         break;
                 }
             }
-            else if (Smithbox.ProjectType is ProjectType.DS2)
+            else if (Editor.Project.ProjectType is ProjectType.DS2)
             {
                 switch (item.ID)
                 {
@@ -151,7 +151,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
             if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
             {
                 if (entry.Data[index] != curValue)
-                    Screen.EditorActionManager.ExecuteAction(
+                    Editor.EditorActionManager.ExecuteAction(
                         new UpdateProperty_FLVERGXList_GXItem_Data(entry, entry.Data[index], curValue, index));
             }
 

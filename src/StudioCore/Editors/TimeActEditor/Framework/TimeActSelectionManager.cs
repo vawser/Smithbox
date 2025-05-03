@@ -1,32 +1,16 @@
-﻿using HKLib.hk2018.hkAsyncThreadPool;
-using HKLib.hk2018.hkHashMapDetail;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editor;
-using StudioCore.Editors.HavokEditor.Framework;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
-using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
-using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActSelectionManager
 {
     private TimeActEditorScreen Screen;
-
-    public HavokContainerInfo LoadedHavokContainer;
 
     public TimeActContainerWrapper ContainerInfo;
     public TimeActBinderWrapper ContainerBinder;

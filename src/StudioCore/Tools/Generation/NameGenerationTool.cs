@@ -1,15 +1,9 @@
 ﻿using Andre.Formats;
-using SoulsFormats;
-using StudioCore.Core.Project;
-using StudioCore.Editor;
-using StudioCore.Editors.HavokEditor.Framework;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor.Bank;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Tools.Generation;
 
@@ -26,32 +20,32 @@ public static class NameGenerationTool
 
     public static void GenerateRowNames()
     {
-        if (!TimeActBank.IsLoaded)
-        {
-            return;
-        }
-        if (!HavokFileBank.IsLoaded)
-        {
-            HavokFileBank.LoadAllHavokFiles();
-        }
+        //if (!TimeActBank.IsLoaded)
+        //{
+        //    return;
+        //}
+        //if (!HavokFileBank.IsLoaded)
+        //{
+        //    HavokFileBank.LoadAllHavokFiles();
+        //}
 
-        PlayerTAEContainer = TimeActBank.FileChrBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
-        var playerContainer = HavokFileBank.BehaviorContainerBank.Where(e => e.Filename == "c0000.behbnd.dcx").FirstOrDefault();
+        //PlayerTAEContainer = TimeActBank.FileChrBank.Where(e => e.Key.Name == "c0000").FirstOrDefault().Key;
+        //var playerContainer = HavokFileBank.BehaviorContainerBank.Where(e => e.Filename == "c0000.behbnd.dcx").FirstOrDefault();
 
-        // Read TAE: get animations (behavior judge -> animation ID)
-        // Read HKX: get animations names (clipGen -> CMSG list)
+        //// Read TAE: get animations (behavior judge -> animation ID)
+        //// Read HKX: get animations names (clipGen -> CMSG list)
 
-        EquipWeaponParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamWeapon").First().Value;
-        SwordArtsParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SwordArtsParam").First().Value;
-        BehaviorParam_PC = ParamBank.PrimaryBank.Params.Where(e => e.Key == "BehaviorParam_PC").First().Value;
-        SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").First().Value;
-        Bullet = ParamBank.PrimaryBank.Params.Where(e => e.Key == "Bullet").First().Value;
-        AtkParam_Pc = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").First().Value;
+        //EquipWeaponParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "EquipParamWeapon").First().Value;
+        //SwordArtsParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SwordArtsParam").First().Value;
+        //BehaviorParam_PC = ParamBank.PrimaryBank.Params.Where(e => e.Key == "BehaviorParam_PC").First().Value;
+        //SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").First().Value;
+        //Bullet = ParamBank.PrimaryBank.Params.Where(e => e.Key == "Bullet").First().Value;
+        //AtkParam_Pc = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").First().Value;
 
-        foreach (var entry in EquipWeaponParam.Rows)
-        {
-            DeriveRowNames(entry);
-        }
+        //foreach (var entry in EquipWeaponParam.Rows)
+        //{
+        //    DeriveRowNames(entry);
+        //}
     }
 
     public static void DeriveRowNames(Param.Row row)

@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.TimeActEditor.Actions;
@@ -18,6 +18,8 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
     public bool FirstFrame { get; set; }
 
     public bool ShowSaveOption { get; set; }
@@ -42,8 +44,11 @@ public class TimeActEditorScreen : EditorScreen
     public TimeActEventView EventView;
     public TimeActEventPropertyView EventPropertyView;
 
-    public TimeActEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public TimeActEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         ActionHandler = new TimeActActionHandler(this);
 
         Selection = new TimeActSelectionManager(this);
@@ -67,6 +72,8 @@ public class TimeActEditorScreen : EditorScreen
     public string EditorName => "Time Act Editor##TimeActEditor";
     public string CommandEndpoint => "timeact";
     public string SaveType => "TAE";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
     /// <summary>
     /// The editor main loop

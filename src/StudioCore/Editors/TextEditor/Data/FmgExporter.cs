@@ -1,43 +1,44 @@
-﻿using Google.Protobuf.Reflection;
-using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using Org.BouncyCastle.Crypto;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
+using StudioCore.Core;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public static class FmgExporter
+public class FmgExporter
 {
-    public static void OnGui()
-    {
-        var editor = Smithbox.EditorHandler.TextEditor;
+    public TextEditorScreen Editor;
+    public ProjectEntry Project;
 
-        editor.TextExportModal.Display();
+    public FmgExporter(TextEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
+    public void OnGui()
+    {
+        Editor.TextExportModal.Display();
     }
 
     /// <summary>
     /// Context Menu options in the Container list
     /// </summary>
-    public static void MenubarOptions()
+    public void MenubarOptions()
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         if (ImGui.BeginMenu("Export"))
         {
             // File
-            if (ImGui.BeginMenu("File", editor.Selection.SelectedContainerWrapper != null))
+            if (ImGui.BeginMenu("File", Editor.Selection.SelectedContainerWrapper != null))
             {
                 if (ImGui.Selectable("Export Selected File"))
                 {
@@ -66,7 +67,7 @@ public static class FmgExporter
             UIHelper.ShowHoverTooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
 
             // FMG
-            if (ImGui.BeginMenu("Text File", editor.Selection.SelectedFmgWrapper != null))
+            if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
             {
                 if (ImGui.Selectable("Export Selected Text File"))
                 {
@@ -95,7 +96,7 @@ public static class FmgExporter
             UIHelper.ShowHoverTooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
 
             // FMG Entries
-            if (ImGui.BeginMenu("Text Entry", editor.Selection._selectedFmgEntry != null))
+            if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
             {
                 if (ImGui.Selectable("Export Selected Text Entries"))
                 {
@@ -152,7 +153,7 @@ public static class FmgExporter
     /// <summary>
     /// Context Menu options in the Container list
     /// </summary>
-    public static void FileContextMenuOptions()
+    public void FileContextMenuOptions()
     {
         if (ImGui.BeginMenu("Export Text"))
         {
@@ -186,7 +187,7 @@ public static class FmgExporter
     /// <summary>
     /// Context Menu options in the FMG list
     /// </summary>
-    public static void FmgContextMenuOptions()
+    public void FmgContextMenuOptions()
     {
         if (ImGui.BeginMenu("Export Text"))
         {
@@ -220,7 +221,7 @@ public static class FmgExporter
     /// <summary>
     /// Context Menu options in the FMG Entry list
     /// </summary>
-    public static void FmgEntryContextMenuOptions()
+    public void FmgEntryContextMenuOptions()
     {
         if (ImGui.BeginMenu("Export Text"))
         {
@@ -251,10 +252,8 @@ public static class FmgExporter
         UIHelper.ShowHoverTooltip("Export all selected Text Entries.");
     }
 
-    public static void DisplayExportModal(ExportType exportType, ExportModifier exportModifier = ExportModifier.None)
+    public void DisplayExportModal(ExportType exportType, ExportModifier exportModifier = ExportModifier.None)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         CurrentExportType = exportType;
         CurrentExportModifier = exportModifier;
 
@@ -262,24 +261,22 @@ public static class FmgExporter
         {
             var exportName = CFG.Current.TextEditor_TextExport_QuickExportPrefix;
 
-            FmgExporter.ProcessExport(exportName);
+            ProcessExport(exportName);
         }
         else
         {
-            editor.TextExportModal.ShowModal = true;
+            Editor.TextExportModal.ShowModal = true;
         }
     }
 
-    public static ExportType CurrentExportType = ExportType.Container;
-    public static ExportModifier CurrentExportModifier = ExportModifier.None;
+    public ExportType CurrentExportType = ExportType.Container;
+    public ExportModifier CurrentExportModifier = ExportModifier.None;
 
     /// <summary>
     /// Export the FMG entries and save them under the specified wrapper name.
     /// </summary>
-    public static void ProcessExport(string storedName)
+    public void ProcessExport(string storedName)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         // Stored Text
         var storedFmgContainer = new StoredFmgContainer();
         storedFmgContainer.Name = storedName;
@@ -288,7 +285,7 @@ public static class FmgExporter
         // Container
         if (CurrentExportType is ExportType.Container)
         {
-            var selectedContainer = editor.Selection.SelectedContainerWrapper;
+            var selectedContainer = Editor.Selection.SelectedContainerWrapper;
 
             foreach(var wrapper in selectedContainer.FmgWrappers)
             {
@@ -299,7 +296,7 @@ public static class FmgExporter
         // FMG
         if (CurrentExportType is ExportType.FMG)
         {
-            var selectedFmgWrapper = editor.Selection.SelectedFmgWrapper;
+            var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
 
             ProcessFmg(selectedFmgWrapper, storedFmgContainer);
         }
@@ -307,13 +304,13 @@ public static class FmgExporter
         // FMG Entries
         if (CurrentExportType is ExportType.FMG_Entries)
         {
-            var selectedFmgWrapper = editor.Selection.SelectedFmgWrapper;
+            var selectedFmgWrapper = Editor.Selection.SelectedFmgWrapper;
 
             // Export associated group entries as well
             if(CFG.Current.TextEditor_TextExport_IncludeGroupedEntries)
             {
-                var currentEntry = editor.Selection._selectedFmgEntry;
-                var fmgEntryGroup = editor.EntryGroupManager.GetEntryGroup(currentEntry);
+                var currentEntry = Editor.Selection._selectedFmgEntry;
+                var fmgEntryGroup = Editor.EntryGroupManager.GetEntryGroup(currentEntry);
 
                 if (fmgEntryGroup.SupportsGrouping)
                 {
@@ -322,7 +319,7 @@ public static class FmgExporter
                     // (as an object) is not within the associated wrappers.
                     if (fmgEntryGroup.SupportsTitle)
                     {
-                        var wrapper = editor.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Editor.EntryGroupManager.GetAssociatedTitleWrapper(selectedFmgWrapper.ID);
 
                         // If not null, then use the associated wrapper
                         if(wrapper != null)
@@ -333,7 +330,7 @@ public static class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsSummary)
                     {
-                        var wrapper = editor.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Editor.EntryGroupManager.GetAssociatedSummaryWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -341,7 +338,7 @@ public static class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsDescription)
                     {
-                        var wrapper = editor.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Editor.EntryGroupManager.GetAssociatedDescriptionWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -349,7 +346,7 @@ public static class FmgExporter
                     }
                     if (fmgEntryGroup.SupportsEffect)
                     {
-                        var wrapper = editor.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
+                        var wrapper = Editor.EntryGroupManager.GetAssociatedEffectWrapper(selectedFmgWrapper.ID);
                         if (wrapper != null)
                             ProcessFmg(wrapper, storedFmgContainer, true);
                         else
@@ -371,7 +368,7 @@ public static class FmgExporter
         WriteWrapper(storedFmgContainer);
     }
 
-    private static void ProcessFmg(TextFmgWrapper wrapper, StoredFmgContainer storedFmgText, bool selectionOnly = false)
+    private void ProcessFmg(TextFmgWrapper wrapper, StoredFmgContainer storedFmgText, bool selectionOnly = false)
     {
         // Build wrapper
         var storedFmgWrapper = new StoredFmgWrapper();
@@ -387,7 +384,7 @@ public static class FmgExporter
 
         // We have to call this so the diff cache updates for each wrapper,
         // without changing the user selection
-        Smithbox.EditorHandler.TextEditor.DifferenceManager.TrackFmgDifferences(wrapper.ID);
+        Editor.DifferenceManager.TrackFmgDifferences(wrapper.ID);
 
         // Build FMG entries
         foreach (var entry in wrapper.File.Entries)
@@ -403,16 +400,14 @@ public static class FmgExporter
             storedFmgText.FmgWrappers.Add(storedFmgWrapper);
     }
 
-    private static void ProcessFmgEntries(FMG storedFmg, FMG.Entry entry, bool selectionOnly = false)
+    private void ProcessFmgEntries(FMG storedFmg, FMG.Entry entry, bool selectionOnly = false)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         // For the FMG entry selection only option
         if(selectionOnly)
         {
             bool skip = true;
 
-            foreach(var sel in editor.Selection.FmgEntryMultiselect.StoredEntries)
+            foreach(var sel in Editor.Selection.FmgEntryMultiselect.StoredEntries)
             {
                 var fmgEntry = sel.Value;
 
@@ -437,7 +432,7 @@ public static class FmgExporter
         // Modified Omly
         if (CurrentExportModifier is ExportModifier.ModifiedOnly)
         {
-            if (editor.DifferenceManager.IsDifferentToVanilla(entry))
+            if (Editor.DifferenceManager.IsDifferentToVanilla(entry))
             {
                 var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
                 storedFmg.Entries.Add(storedFmgEntry);
@@ -446,7 +441,7 @@ public static class FmgExporter
         // Unique Only
         if (CurrentExportModifier is ExportModifier.UniqueOnly)
         {
-            if (editor.DifferenceManager.IsUniqueToProject(entry))
+            if (Editor.DifferenceManager.IsUniqueToProject(entry))
             {
                 var storedFmgEntry = new FMG.Entry(storedFmg, entry.ID, entry.Text);
                 storedFmg.Entries.Add(storedFmgEntry);
@@ -454,7 +449,7 @@ public static class FmgExporter
         }
     }
 
-    public static void WriteWrapper(StoredFmgContainer wrapper)
+    public void WriteWrapper(StoredFmgContainer wrapper)
     {
         var writeDir = TextLocator.GetStoredTextDirectory();
         var writePath = $"{writeDir}\\{wrapper.Name}.json";

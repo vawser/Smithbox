@@ -1,15 +1,9 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.EmevdEditor.Enums;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -110,7 +104,7 @@ public class EmevdInstructionView
         var insStr = "Unknown";
         var argsStr = "";
 
-        foreach (var classEntry in EmevdBank.InfoBank.Classes)
+        foreach (var classEntry in Screen.Project.EmevdBank.InfoBank.Classes)
         {
             if (ins.Bank == classEntry.Index)
             {

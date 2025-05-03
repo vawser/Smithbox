@@ -19,7 +19,7 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class ModelSelectionManager
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelViewportManager ViewportManager;
 
     public string _selectedFileName = "";
@@ -78,7 +78,7 @@ public class ModelSelectionManager
 
     public ModelSelectionManager(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         ViewportManager = screen.ViewportManager;
 
         DummyMultiselect = new Multiselection(MultiSelectKey);

@@ -9,13 +9,13 @@ namespace StudioCore.Editors.ModelEditor
 {
     public class ModelPropertyDecorator
     {
-        private ModelEditorScreen Screen;
+        private ModelEditorScreen Editor;
         private ModelSelectionManager Selection;
         private ModelViewportManager ViewportManager;
 
         public ModelPropertyDecorator(ModelEditorScreen screen)
         {
-            Screen = screen;
+            Editor = screen;
             Selection = screen.Selection;
             ViewportManager = screen.ViewportManager;
         }
@@ -29,7 +29,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResManager.GetCurrentFLVER().GXLists.Count; i++)
+                for (int i = 0; i < Editor.ResManager.GetCurrentFLVER().GXLists.Count; i++)
                 {
                     if (i == index)
                     {
@@ -71,11 +71,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResManager.GetCurrentFLVER().Materials.Count; i++)
+                for (int i = 0; i < Editor.ResManager.GetCurrentFLVER().Materials.Count; i++)
                 {
                     if (i == index)
                     {
-                        alias = Screen.ResManager.GetCurrentFLVER().Materials[i].Name;
+                        alias = Editor.ResManager.GetCurrentFLVER().Materials[i].Name;
                     }
                 }
 
@@ -113,11 +113,11 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResManager.GetCurrentFLVER().Nodes.Count; i++)
+                for (int i = 0; i < Editor.ResManager.GetCurrentFLVER().Nodes.Count; i++)
                 {
                     if (i == index)
                     {
-                        alias = Screen.ResManager.GetCurrentFLVER().Nodes[i].Name;
+                        alias = Editor.ResManager.GetCurrentFLVER().Nodes[i].Name;
                     }
                 }
 
@@ -155,7 +155,7 @@ namespace StudioCore.Editors.ModelEditor
 
             if (index != -1)
             {
-                for (int i = 0; i < Screen.ResManager.GetCurrentFLVER().BufferLayouts.Count; i++)
+                for (int i = 0; i < Editor.ResManager.GetCurrentFLVER().BufferLayouts.Count; i++)
                 {
                     if (i == index)
                     {

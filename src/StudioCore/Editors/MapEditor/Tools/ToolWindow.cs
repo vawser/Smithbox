@@ -1,32 +1,23 @@
 ﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Platform;
-using StudioCore.Scene;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.MapEditor.Framework.MapActionHandler;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 
 public class ToolWindow
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     private MapActionHandler Handler;
 
     public ToolWindow(MapEditorScreen screen, MapActionHandler handler)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = handler;
     }
 
@@ -39,7 +30,7 @@ public class ToolWindow
 
     public void OnGui()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
@@ -47,7 +38,7 @@ public class ToolWindow
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_MapEditor"))
         {
-            Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.ToolWindow);
+            Editor.FocusManager.SwitchWindowContext(MapEditorContext.ToolWindow);
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
@@ -62,13 +53,13 @@ public class ToolWindow
                 UIHelper.WrappedText("Create a new object within the target map.");
                 UIHelper.WrappedText("");
 
-                if (Screen.Universe.LoadedObjectContainers == null)
+                if (Editor.Universe.LoadedObjectContainers == null)
                 {
                     UIHelper.WrappedText("No maps have been loaded yet.");
                     UIHelper.WrappedText("");
                 }
-                else if (Screen.Universe.LoadedObjectContainers != null &&
-                    !Screen.Universe.LoadedObjectContainers.Any())
+                else if (Editor.Universe.LoadedObjectContainers != null &&
+                    !Editor.Universe.LoadedObjectContainers.Any())
                 {
                     UIHelper.WrappedText("No maps have been loaded yet.");
                     UIHelper.WrappedText("");
@@ -79,7 +70,7 @@ public class ToolWindow
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                     {
-                        foreach (var obj in Screen.Universe.LoadedObjectContainers)
+                        foreach (var obj in Editor.Universe.LoadedObjectContainers)
                         {
                             if (obj.Value != null)
                             {
@@ -216,7 +207,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Duplicate the current selection.");
                 UIHelper.WrappedText("");
 
-                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+                if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
                 {
                     if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Toolbar_Duplicate_Increment_Entity_ID))
                     {
@@ -228,19 +219,19 @@ public class ToolWindow
                     UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Entity ID.");
                 }
 
-                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+                if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Toolbar_Duplicate_Increment_InstanceID);
                     UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
-                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+                if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Toolbar_Duplicate_Increment_PartNames);
                     UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
                 }
 
-                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+                if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
                 {
                     if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Toolbar_Duplicate_Clear_Entity_ID))
                     {
@@ -731,7 +722,7 @@ public class ToolWindow
                 ImGui.Checkbox("Apply Scramble Configuration", ref CFG.Current.Replicator_Apply_Scramble_Configuration);
                 UIHelper.ShowHoverTooltip("When enabled, the Scramble configuration settings will be applied to the newly duplicated entities.");
 
-                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2 && Smithbox.ProjectType != ProjectType.AC6)
+                if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2 && Editor.Project.ProjectType != ProjectType.AC6)
                 {
                     if (ImGui.Checkbox("Increment Entity ID", ref CFG.Current.Replicator_Increment_Entity_ID))
                     {
@@ -743,19 +734,19 @@ public class ToolWindow
                     UIHelper.ShowHoverTooltip("When enabled, the replicated entities will be given new Entity ID. If disabled, the replicated entity ID will be set to 0.");
                 }
 
-                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+                if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Instance ID", ref CFG.Current.Replicator_Increment_InstanceID);
                     UIHelper.ShowHoverTooltip("When enabled, the duplicated entities will be given a new valid Instance ID.");
                 }
 
-                if (Smithbox.ProjectType == ProjectType.ER || Smithbox.ProjectType == ProjectType.AC6)
+                if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
                 {
                     ImGui.Checkbox("Increment Part Names for Assets", ref CFG.Current.Replicator_Increment_PartNames);
                     UIHelper.ShowHoverTooltip("When enabled, the duplicated Asset entities PartNames property will be updated.");
                 }
 
-                if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+                if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
                 {
                     if (ImGui.Checkbox("Clear Entity ID", ref CFG.Current.Replicator_Clear_Entity_ID))
                     {
@@ -824,8 +815,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Import Prefab"))
             {
-                Screen.PrefabView.ImportPrefabMenu();
-                Screen.PrefabView.PrefabTree();
+                Editor.PrefabView.ImportPrefabMenu();
+                Editor.PrefabView.PrefabTree();
             }
 
             ///--------------------
@@ -833,8 +824,8 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Export Prefab"))
             {
-                Screen.PrefabView.ExportPrefabMenu();
-                Screen.PrefabView.PrefabTree();
+                Editor.PrefabView.ExportPrefabMenu();
+                Editor.PrefabView.PrefabTree();
             }
 
             ///--------------------
@@ -842,7 +833,7 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Selection Groups"))
             {
-                Screen.SelectionGroupView.Display();
+                Editor.SelectionGroupView.Display();
             }
 
             ///--------------------
@@ -855,14 +846,14 @@ public class ToolWindow
 
                 UIHelper.WrappedText("Current Movement Increment:");
                 ImGui.SameLine();
-                KeyboardMovement.DisplayCurrentMovementIncrement();
+                Editor.KeyboardMovement.DisplayCurrentMovementIncrement();
 
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText}");
                 if (ImGui.Button("Cycle Increment", thinButtonSize))
                 {
-                    KeyboardMovement.CycleIncrementType();
+                    Editor.KeyboardMovement.CycleIncrementType();
                 }
                 UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText} to cycle the movement increment used when moving a selection via Keyboard Move.");
                 UIHelper.WrappedText("");
@@ -938,14 +929,14 @@ public class ToolWindow
 
                 UIHelper.WrappedText("Current Rotation Increment:");
                 ImGui.SameLine();
-                RotationIncrement.DisplayCurrentRotateIncrement();
+                Editor.RotationIncrement.DisplayCurrentRotateIncrement();
 
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText}");
                 if (ImGui.Button("Cycle Increment", thinButtonSize))
                 {
-                    RotationIncrement.CycleIncrementType();
+                    Editor.RotationIncrement.CycleIncrementType();
                 }
                 UIHelper.ShowHoverTooltip($"Press {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText} to cycle the degree increment used by Rotate Selection on X/Y Axis.");
                 UIHelper.WrappedText("");
@@ -1018,7 +1009,7 @@ public class ToolWindow
             }
             if (ImGui.CollapsingHeader("Local Property Search"))
             {
-                Screen.LocalSearchView.Display();
+                Editor.LocalSearchView.Display();
             }
 
             ///--------------------
@@ -1026,21 +1017,21 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Global Property Search"))
             {
-                if (!Screen.MapQueryView.Bank.MapBankInitialized && !Screen.MapQueryView.UserLoadedData)
+                if (!Editor.MapQueryView.Bank.MapBankInitialized && !Editor.MapQueryView.UserLoadedData)
                 {
                     if (ImGui.Button("Load Map Data", defaultButtonSize))
                     {
-                        Screen.MapQueryView.Setup();
+                        Editor.MapQueryView.Setup();
                     }
                 }
 
-                Screen.MapQueryView.IsOpen = true;
-                Screen.MapQueryView.DisplayInput();
-                Screen.MapQueryView.DisplayResults();
+                Editor.MapQueryView.IsOpen = true;
+                Editor.MapQueryView.DisplayInput();
+                Editor.MapQueryView.DisplayResults();
             }
             else
             {
-                Screen.MapQueryView.IsOpen = false;
+                Editor.MapQueryView.IsOpen = false;
             }
 
             ///--------------------
@@ -1048,7 +1039,7 @@ public class ToolWindow
             ///--------------------
             if (ImGui.CollapsingHeader("Property Mass Edit"))
             {
-                Screen.MassEditHandler.Display();
+                Editor.MassEditHandler.Display();
             }
         }
 

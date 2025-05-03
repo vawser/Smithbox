@@ -1,13 +1,9 @@
 ﻿using Andre.Formats;
-using SoulsFormats;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text.RegularExpressions;
 
 namespace StudioCore.Editor;
 

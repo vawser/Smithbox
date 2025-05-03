@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 using Hexa.NET.ImGui;
 using System.Text.RegularExpressions;
 using StudioCore.Editor;
-using StudioCore.Core.Project;
 using StudioCore.Utilities;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 
 public class GlobalModelSearch
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
 
     public string _searchInput = "";
     public List<MapModelMatch> Matches = new List<MapModelMatch>();
@@ -32,7 +32,7 @@ public class GlobalModelSearch
 
     public GlobalModelSearch(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public void OnProjectChanged()
@@ -73,19 +73,19 @@ public class GlobalModelSearch
                 }
             }
 
-            if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            if (Editor.Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
             {
                 string modelMapDir;
                 string sysMapDir;
                 if (_targetProjectFiles)
                 {
-                    modelMapDir = $"{Smithbox.ProjectRoot}/model/map/";
-                    sysMapDir = $"{Smithbox.ProjectRoot}/model/system/";
+                    modelMapDir = $"{Editor.Project.ProjectPath}/model/map/";
+                    sysMapDir = $"{Editor.Project.ProjectPath}/model/system/";
                 }
                 else
                 {
-                    modelMapDir = $"{Smithbox.GameRoot}/model/map/";
-                    sysMapDir = $"{Smithbox.GameRoot}/model/system/";
+                    modelMapDir = $"{Editor.Project.DataPath}/model/map/";
+                    sysMapDir = $"{Editor.Project.DataPath}/model/system/";
                 }
 
                 FindLooseMaps(modelMapDir, "*.msb");
@@ -95,14 +95,14 @@ public class GlobalModelSearch
             {
                 string mapDir;
                 if (_targetProjectFiles)
-                    mapDir = $"{Smithbox.ProjectRoot}/map/mapstudio/";
+                    mapDir = $"{Editor.Project.ProjectPath}/map/mapstudio/";
                 else
-                    mapDir = $"{Smithbox.GameRoot}/map/mapstudio/";
+                    mapDir = $"{Editor.Project.DataPath}/map/mapstudio/";
 
                 FindLooseMaps(mapDir, "*.msb.dcx");
             }
 
-            switch (Smithbox.ProjectType)
+            switch (Editor.Project.ProjectType)
             {
                 case ProjectType.DES:
                     AddMaps(MSBD.Read);
@@ -202,7 +202,7 @@ public class GlobalModelSearch
                     EditorCommandQueue.AddCommand($"map/load/{entry.MapName}");
                     EditorCommandQueue.AddCommand($"map/select/{entry.MapName}/{entry.EntityName}/Part");
                 }
-                var aliasName = AliasUtils.GetMapNameAlias(entry.MapName);
+                var aliasName = AliasUtils.GetMapNameAlias(Editor.Project, entry.MapName);
                 UIHelper.DisplayAlias(aliasName);
             }
         }

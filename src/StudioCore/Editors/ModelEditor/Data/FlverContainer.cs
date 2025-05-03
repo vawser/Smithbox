@@ -1,7 +1,7 @@
 ﻿using HKLib.hk2018;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Resource.Locators;
 using System;
@@ -53,9 +53,12 @@ public class FlverContainer
     public hkRootLevelContainer ER_LowCollision { get; set; }
     public hkRootLevelContainer ER_HighCollision { get; set; }
 
+    private ModelEditorScreen Editor;
 
-    public FlverContainer(string name, string loosePath)
+    public FlverContainer(ModelEditorScreen editor, string name, string loosePath)
     {
+        Editor = editor;
+
         InternalFlvers = new List<InternalFlver>();
 
         ContainerName = name;
@@ -67,9 +70,9 @@ public class FlverContainer
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
         BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
-        RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
-        ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
-        ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
+        RootBinderPath = $"{Editor.Project.DataPath}{BinderPath}";
+        ModBinderPath = $"{Editor.Project.ProjectPath}{BinderPath}";
+        ModBinderDirectory = $"{Editor.Project.ProjectPath}{BinderDirectory}";
 
         FlverFileExtension = GetFlverExtension();
         FlverFileName = $"{ContainerName}{FlverFileExtension}";
@@ -90,9 +93,9 @@ public class FlverContainer
         BinderDirectory = GetBinderDirectory();
         BinderExtension = GetBinderExtension();
         BinderPath = $"{BinderDirectory}{ContainerName}{BinderExtension}";
-        RootBinderPath = $"{Smithbox.GameRoot}{BinderPath}";
-        ModBinderPath = $"{Smithbox.ProjectRoot}{BinderPath}";
-        ModBinderDirectory = $"{Smithbox.ProjectRoot}{BinderDirectory}";
+        RootBinderPath = $"{Editor.Project.DataPath}{BinderPath}";
+        ModBinderPath = $"{Editor.Project.ProjectPath}{BinderPath}";
+        ModBinderDirectory = $"{Editor.Project.ProjectPath}{BinderDirectory}";
 
         FlverFileExtension = GetFlverExtension();
         FlverFileName = $"{ContainerName}{FlverFileExtension}";
@@ -136,8 +139,8 @@ public class FlverContainer
             Directory.CreateDirectory(ModBinderDirectory);
         }
 
-        var rootPath = $"{Smithbox.GameRoot}\\{BinderDirectory}\\{name}";
-        var modPath = $"{Smithbox.ProjectRoot}\\{BinderDirectory}\\{name}";
+        var rootPath = $"{Editor.Project.DataPath}\\{BinderDirectory}\\{name}";
+        var modPath = $"{Editor.Project.ProjectPath}\\{BinderDirectory}\\{name}";
 
         if (File.Exists(rootPath))
         {
@@ -164,7 +167,7 @@ public class FlverContainer
     {
         string ext = ".flver";
 
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             ext = ".flv";
         }
@@ -179,7 +182,7 @@ public class FlverContainer
             case FlverContainerType.Character:
                 string chrDir = @"\chr\";
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     chrDir = @"\model\chr\";
                 }
@@ -191,16 +194,16 @@ public class FlverContainer
             case FlverContainerType.Object:
                 string objDir = @"\obj\";
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     objDir = @"\model\obj\";
                 }
-                else if (Smithbox.ProjectType is ProjectType.ER)
+                else if (Editor.Project.ProjectType is ProjectType.ER)
                 {
                     var category = ContainerName.Split("_")[0];
                     objDir = $@"\asset\aeg\{category}\";
                 }
-                else if (Smithbox.ProjectType is ProjectType.AC6)
+                else if (Editor.Project.ProjectType is ProjectType.AC6)
                 {
                     objDir = @"\asset\environment\geometry\";
                 }
@@ -209,7 +212,7 @@ public class FlverContainer
             case FlverContainerType.Parts:
                 string partDir = @"\parts\";
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     partDir = @"\model\parts\";
 
@@ -246,7 +249,7 @@ public class FlverContainer
 
                     partDir = $"{partDir}\\{partType}\\";
                 }
-                else if (Smithbox.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                else if (Editor.Project.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     partDir = @"\model\ac";
 
@@ -351,13 +354,13 @@ public class FlverContainer
             case FlverContainerType.MapPiece:
                 string mapPieceDir = $@"\map\{MapID}\";
 
-                if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+                if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     string shortMapId = MapID.Split("_")[0];
                     mapPieceDir = $@"\map\{shortMapId}\{MapID}\";
                 }
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     mapPieceDir = $@"\model\map\";
                 }
@@ -377,17 +380,17 @@ public class FlverContainer
                 string chrExt = ".chrbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
-                if (Smithbox.ProjectType is ProjectType.DS1)
+                if (Editor.Project.ProjectType is ProjectType.DS1)
                 {
                     chrExt = ".chrbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
+                else if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
                 {
                     chrExt = ".bnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                else if (Editor.Project.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                 {
                     chrExt = ".bnd.dcx";
                     BinderType = FlverBinderType.BND;
@@ -398,7 +401,7 @@ public class FlverContainer
                 string eneExt = ".bnd";
                 BinderType = FlverBinderType.BND;
 
-                if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                if (Editor.Project.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                 {
                     eneExt = ".bnd.dcx";
                     BinderType = FlverBinderType.BND;
@@ -409,22 +412,22 @@ public class FlverContainer
                 string objExt = ".objbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
-                if (Smithbox.ProjectType is ProjectType.DS1)
+                if (Editor.Project.ProjectType is ProjectType.DS1)
                 {
                     objExt = ".objbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+                else if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
                     objExt = ".bnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.ER)
+                else if (Editor.Project.ProjectType is ProjectType.ER)
                 {
                     objExt = ".geombnd.dcx";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.AC6)
+                else if (Editor.Project.ProjectType is ProjectType.AC6)
                 {
                     objExt = ".geombnd.dcx";
                     BinderType = FlverBinderType.BND;
@@ -435,17 +438,17 @@ public class FlverContainer
                 string partExt = ".partsbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
-                if (Smithbox.ProjectType is ProjectType.DS1)
+                if (Editor.Project.ProjectType is ProjectType.DS1)
                 {
                     partExt = ".partsbnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
+                else if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA)
                 {
                     partExt = ".bnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                else if (Editor.Project.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                 {
                     partExt = ".bnd.dcx";
                     BinderType = FlverBinderType.BND;
@@ -456,27 +459,27 @@ public class FlverContainer
                 string mapPieceExt = ".mapbnd.dcx";
                 BinderType = FlverBinderType.BND;
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     mapPieceExt = ".mapbhd";
                     BinderType = FlverBinderType.BXF;
                 }
-                else if (Smithbox.ProjectType is ProjectType.ACFA)
+                else if (Editor.Project.ProjectType is ProjectType.ACFA)
                 {
                     mapPieceExt = ".bnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.ACV or ProjectType.ACVD)
+                else if (Editor.Project.ProjectType is ProjectType.ACV or ProjectType.ACVD)
                 {
                     mapPieceExt = ".dcx.bnd";
                     BinderType = FlverBinderType.BND;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS1R or ProjectType.BB)
+                else if (Editor.Project.ProjectType is ProjectType.DS1R or ProjectType.BB)
                 {
                     mapPieceExt = ".flver.dcx";
                     BinderType = FlverBinderType.None;
                 }
-                else if (Smithbox.ProjectType is ProjectType.DS1)
+                else if (Editor.Project.ProjectType is ProjectType.DS1)
                 {
                     mapPieceExt = ".flver";
                     BinderType = FlverBinderType.None;

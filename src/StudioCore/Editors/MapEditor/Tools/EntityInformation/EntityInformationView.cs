@@ -1,16 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 using StudioCore.Interface;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Meshes;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.MSB.Shape.Composite;
 
 namespace StudioCore.Editors.MapEditor.Tools.EntityInformation;
 

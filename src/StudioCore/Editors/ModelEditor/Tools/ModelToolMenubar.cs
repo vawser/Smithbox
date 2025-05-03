@@ -15,11 +15,11 @@ namespace StudioCore.Editors.ModelEditor.Actions;
 
 public class ModelToolMenubar
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
 
     public ModelToolMenubar(ModelEditorScreen screen) 
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public void OnProjectChanged()
@@ -42,11 +42,11 @@ public class ModelToolMenubar
             {
                 if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
                 {
-                    ModelColladaExporter.ExportModel(Screen);
+                    ModelColladaExporter.ExportModel(Editor);
                 }
                 if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
                 {
-                    ModelObjectExporter.ExportModel(Screen);
+                    ModelObjectExporter.ExportModel(Editor);
                 }
             }
             UIHelper.ShowHoverTooltip($"Export currently loaded model.");
@@ -54,17 +54,17 @@ public class ModelToolMenubar
             // Solve Bounding Boxes
             if (ImGui.MenuItem("Solve Bounding Boxes"))
             {
-                Screen.ActionHandler.SolveBoundingBoxes();
+                Editor.ActionHandler.SolveBoundingBoxes();
             }
             // Reverse Face Set
             if (ImGui.MenuItem("Reverse Mesh Face Set"))
             {
-                Screen.ActionHandler.ReverseMeshFaceSet();
+                Editor.ActionHandler.ReverseMeshFaceSet();
             }
             // Reverse Normals
             if (ImGui.MenuItem("Reverse Mesh Normals"))
             {
-                Screen.ActionHandler.ReverseMeshNormals();
+                Editor.ActionHandler.ReverseMeshNormals();
             }
 
             ImGui.Separator();
@@ -73,7 +73,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("FLVER Groups"))
             {
-                FlverGroups.DisplaySubMenu(Screen);
+                FlverGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -81,7 +81,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Dummy Groups"))
             {
-                DummyGroups.DisplaySubMenu(Screen);
+                DummyGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -89,7 +89,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Material Groups"))
             {
-                MaterialGroups.DisplaySubMenu(Screen);
+                MaterialGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -97,7 +97,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("GX List Groups"))
             {
-                GXListGroups.DisplaySubMenu(Screen);
+                GXListGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -105,7 +105,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Node Groups"))
             {
-                NodeGroups.DisplaySubMenu(Screen);
+                NodeGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -113,7 +113,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Mesh Groups"))
             {
-                MeshGroups.DisplaySubMenu(Screen);
+                MeshGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -121,7 +121,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Buffer Layout Groups"))
             {
-                BufferLayoutGroups.DisplaySubMenu(Screen);
+                BufferLayoutGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -129,7 +129,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("Base Skeleton Bone Groups"))
             {
-                BaseSkeletonBoneGroups.DisplaySubMenu(Screen);
+                BaseSkeletonBoneGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }
@@ -137,7 +137,7 @@ public class ModelToolMenubar
             UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
             if (ImGui.BeginMenu("All Skeleton Bone Groups"))
             {
-                AllSkeletonBoneGroups.DisplaySubMenu(Screen);
+                AllSkeletonBoneGroups.DisplaySubMenu(Editor);
 
                 ImGui.EndMenu();
             }

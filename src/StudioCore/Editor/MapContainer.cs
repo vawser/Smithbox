@@ -1,21 +1,17 @@
 ﻿using Andre.Formats;
 using SoulsFormats;
+using StudioCore.Core;
+using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Platform;
-using StudioCore.Scene;
+using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Xml.Serialization;
-using StudioCore.MsbEditor;
-using StudioCore.Editors.MaterialEditor;
-using StudioCore.Core.Project;
-using StudioCore.Resource.Locators;
 using Veldrid.Utilities;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Banks.MapTransformBank;
-using StudioCore.Editors.MapEditor.Enums;
 
 namespace StudioCore.Editor;
 

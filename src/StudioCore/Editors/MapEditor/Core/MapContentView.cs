@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
@@ -22,7 +22,7 @@ namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapContentView
 {
-    public MapEditorScreen Screen;
+    public MapEditorScreen Editor;
     private IViewport Viewport;
 
     private ViewportActionManager EditorActionManager;
@@ -46,7 +46,7 @@ public class MapContentView
 
     public MapContentView(MapEditorScreen screen, string mapID, ObjectContainer container)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         Selection = screen.Selection;
         Viewport = screen.MapViewportView.Viewport;
@@ -62,9 +62,9 @@ public class MapContentView
     {
         ContentLoadState = MapContentLoadState.Loaded;
 
-        Selection.ClearSelection();
-        Screen.Universe.LoadMap(MapID, selected);
-        Container = Screen.Universe.GetObjectContainerForMap(MapID);
+        Selection.ClearSelection(Editor);
+        Editor.Universe.LoadMap(MapID, selected);
+        Container = Editor.Universe.GetObjectContainerForMap(MapID);
 
         // Reveal hidden entities if "Allow map unload" is false 
         if (!CFG.Current.MapEditor_EnableMapUnload)
@@ -93,14 +93,14 @@ public class MapContentView
         // Unload
         if (CFG.Current.MapEditor_EnableMapUnload)
         {
-            Screen.EntityTypeCache.RemoveMapFromCache(this);
+            Editor.EntityTypeCache.RemoveMapFromCache(this);
 
-            Selection.ClearSelection();
+            Selection.ClearSelection(Editor);
             EditorActionManager.Clear();
 
             if (Container != null)
             {
-                Screen.Universe.UnloadContainer(Container, true);
+                Editor.Universe.UnloadContainer(Container, true);
             }
 
             GC.Collect();
@@ -126,7 +126,7 @@ public class MapContentView
         if (ContentLoadState is MapContentLoadState.Unloaded)
             return;
 
-        Screen.MapContentFilter.DisplaySearch(this);
+        Editor.MapContentFilter.DisplaySearch(this);
 
         DisplayQuickActionButtons();
 
@@ -211,7 +211,7 @@ public class MapContentView
         {
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
-            var mapName = AliasUtils.GetMapNameAlias(MapID);
+            var mapName = AliasUtils.GetMapNameAlias(Editor.Project, MapID);
             UIHelper.DisplayAlias(mapName);
         }
 
@@ -279,17 +279,17 @@ public class MapContentView
                         // Toggle Selection
                         if (Selection.GetSelection().Contains(selectTarget))
                         {
-                            Selection.RemoveSelection(selectTarget);
+                            Selection.RemoveSelection(Editor, selectTarget);
                         }
                         else
                         {
-                            Selection.AddSelection(selectTarget);
+                            Selection.AddSelection(Editor, selectTarget);
                         }
                     }
                     else
                     {
-                        Selection.ClearSelection();
-                        Selection.AddSelection(selectTarget);
+                        Selection.ClearSelection(Editor);
+                        Selection.AddSelection(Editor, selectTarget);
                     }
                 }
 
@@ -324,14 +324,14 @@ public class MapContentView
             }
             if (ImGui.Selectable("Copy Map Name"))
             {
-                var mapName = AliasUtils.GetMapNameAlias(MapID);
+                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, MapID);
                 PlatformUtils.Instance.SetClipboardText(mapName);
             }
-            if (Screen.MapQueryView.IsOpen)
+            if (Editor.MapQueryView.IsOpen)
             {
                 if (ImGui.Selectable("Add to Map Filter"))
                 {
-                    Screen.MapQueryView.AddMapFilterInput(MapID);
+                    Editor.MapQueryView.AddMapFilterInput(MapID);
                 }
             }
 
@@ -353,28 +353,28 @@ public class MapContentView
                 // Move Up
                 if (ImGui.Selectable("Move Up"))
                 {
-                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
+                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Up);
                 }
                 UIHelper.ShowHoverTooltip($"Move the currently selected map objects up by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectUp.HintText}");
 
                 // Move Down
                 if (ImGui.Selectable("Move Down"))
                 {
-                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
+                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Down);
                 }
                 UIHelper.ShowHoverTooltip($"Move the currently selected map objects down by one in the map object list  for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectDown.HintText}");
 
                 // Move Top
                 if (ImGui.Selectable("Move to Top"))
                 {
-                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
+                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Top);
                 }
                 UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the top of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectTop.HintText}");
 
                 // Move Bottom
                 if (ImGui.Selectable("Move to Bottom"))
                 {
-                    Screen.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
+                    Editor.ActionHandler.ApplyMapObjectOrderChange(OrderMoveDir.Bottom);
                 }
                 UIHelper.ShowHoverTooltip($"Move the currently selected map objects to the bottom of the map object list for this object type.\n\nShortcut: {KeyBindings.Current.MAP_MoveObjectBottom.HintText}");
 
@@ -383,19 +383,19 @@ public class MapContentView
 
             if (ImGui.Selectable("Duplicate"))
             {
-                Screen.ActionHandler.ApplyDuplicate();
+                Editor.ActionHandler.ApplyDuplicate();
             }
             UIHelper.ShowHoverTooltip($"Duplicate the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}");
 
             if (ImGui.Selectable("Duplicate to Map"))
             {
-                Screen.ActionHandler.OpenDuplicateToMapPopup = true;
+                Editor.ActionHandler.OpenDuplicateToMapPopup = true;
             }
             UIHelper.ShowHoverTooltip($"Duplicate the selected map objects into another map.\n\nShortcut: {KeyBindings.Current.MAP_DuplicateToMap.HintText}");
 
             if (ImGui.Selectable("Delete"))
             {
-                Screen.ActionHandler.ApplyDelete();
+                Editor.ActionHandler.ApplyDelete();
             }
             UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.\n\nShortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}");
 
@@ -404,7 +404,7 @@ public class MapContentView
             {
                 if (ImGui.Selectable("Scramble"))
                 {
-                    Screen.ActionHandler.ApplyScramble();
+                    Editor.ActionHandler.ApplyScramble();
                 }
                 UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ScrambleSelection.HintText}");
             }
@@ -414,7 +414,7 @@ public class MapContentView
             {
                 if (ImGui.Selectable("Replicate"))
                 {
-                    Screen.ActionHandler.ApplyReplicate();
+                    Editor.ActionHandler.ApplyReplicate();
                 }
                 UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.\n\nShortcut: {KeyBindings.Current.MAP_ReplicateSelection.HintText}");
             }
@@ -426,19 +426,19 @@ public class MapContentView
             {
                 if (ImGui.Selectable("Frame in Viewport"))
                 {
-                    Screen.ActionHandler.ApplyFrameInViewport();
+                    Editor.ActionHandler.ApplyFrameInViewport();
                 }
                 UIHelper.ShowHoverTooltip($"Frames the current selection in the viewport.\n\nShortcut: {KeyBindings.Current.MAP_FrameSelection.HintText}");
 
                 if (ImGui.Selectable("Move to Grid"))
                 {
-                    Screen.ActionHandler.ApplyMovetoGrid();
+                    Editor.ActionHandler.ApplyMovetoGrid();
                 }
                 UIHelper.ShowHoverTooltip($"Move the current selection to the nearest grid point.\n\nShortcut: {KeyBindings.Current.MAP_SetSelectionToGrid.HintText}");
 
                 if (ImGui.Selectable("Move to Camera"))
                 {
-                    Screen.ActionHandler.ApplyMoveToCamera();
+                    Editor.ActionHandler.ApplyMoveToCamera();
                 }
                 UIHelper.ShowHoverTooltip($"Move the current selection to the camera position.\n\nShortcut: {KeyBindings.Current.MAP_MoveToCamera.HintText}");
 
@@ -446,7 +446,7 @@ public class MapContentView
                 {
                     if (ImGui.Selectable("Toggle Render Type"))
                     {
-                        VisualizationHelper.ToggleRenderType(Selection);
+                        VisualizationHelper.ToggleRenderType(Editor, Selection);
                     }
                     UIHelper.ShowHoverTooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
                 }
@@ -456,11 +456,11 @@ public class MapContentView
 
             if (ImGui.Selectable("Copy Name"))
             {
-                if (Screen.Selection.IsMultiSelection())
+                if (Editor.Selection.IsMultiSelection())
                 {
                     var fullStr = "";
 
-                    foreach (var entry in Screen.Selection.GetSelection())
+                    foreach (var entry in Editor.Selection.GetSelection())
                     {
                         var curEnt = (MsbEntity)entry;
 
@@ -489,10 +489,10 @@ public class MapContentView
     /// </summary>
     private void TypeView(MapContainer map)
     {
-        Screen.EntityTypeCache.AddMapToCache(map);
+        Editor.EntityTypeCache.AddMapToCache(map);
 
         foreach (KeyValuePair<MsbEntityType, Dictionary<Type, List<MsbEntity>>> cats in
-                 Screen.EntityTypeCache._cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
+                 Editor.EntityTypeCache._cachedTypeView[map.Name].OrderBy(q => q.Key.ToString()))
         {
             if (cats.Value.Count > 0)
             {
@@ -506,16 +506,16 @@ public class MapContentView
                         {
                             // Regions don't have multiple types in certain games
                             if (cats.Key == MsbEntityType.Region &&
-                                Smithbox.ProjectType is ProjectType.DES
+                                Editor.Project.ProjectType is ProjectType.DES
                                     or ProjectType.DS1
                                     or ProjectType.DS1R
                                     or ProjectType.BB)
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
-                                    AliasUtils.UpdateEntityAliasName(obj);
+                                    AliasUtils.UpdateEntityAliasName(Editor.Project, obj);
 
-                                    if (Screen.MapContentFilter.ContentFilter(this, obj))
+                                    if (Editor.MapContentFilter.ContentFilter(this, obj))
                                     {
                                         MapObjectSelectable(obj, true);
                                     }
@@ -549,9 +549,9 @@ public class MapContentView
                                         {
                                             var curObj = parent.Children[i];
 
-                                            AliasUtils.UpdateEntityAliasName(curObj);
+                                            AliasUtils.UpdateEntityAliasName(Editor.Project, curObj);
 
-                                            if (Screen.MapContentFilter.ContentFilter(this, curObj))
+                                            if (Editor.MapContentFilter.ContentFilter(this, curObj))
                                             {
                                                 MapObjectSelectable(curObj, true);
                                             }
@@ -583,9 +583,9 @@ public class MapContentView
                             {
                                 foreach (MsbEntity obj in typ.Value)
                                 {
-                                    AliasUtils.UpdateEntityAliasName(obj);
+                                    AliasUtils.UpdateEntityAliasName(Editor.Project, obj);
 
-                                    if (Screen.MapContentFilter.ContentFilter(this, obj))
+                                    if (Editor.MapContentFilter.ContentFilter(this, obj))
                                     {
                                         MapObjectSelectable(obj, true);
                                     }
@@ -686,7 +686,7 @@ public class MapContentView
                 arrowKeySelect = true;
             }
 
-            var alias = AliasUtils.GetEntityAliasName(e);
+            var alias = AliasUtils.GetEntityAliasName(Editor.Project, e);
             if (ImGui.IsItemVisible())
             {
                 UIHelper.DisplayAlias(alias);
@@ -757,7 +757,7 @@ public class MapContentView
         }
 
         // If the visibility icon wasn't clicked, perform the selection
-        Utils.EntitySelectionHandler(Selection, e, doSelect, arrowKeySelect);
+        Utils.EntitySelectionHandler(Editor, Selection, e, doSelect, arrowKeySelect);
 
         // If there's children then draw them
         if (nodeopen)
@@ -789,7 +789,7 @@ public class MapContentView
         {
             if (obj is MsbEntity e)
             {
-                if (Screen.MapContentFilter.ContentFilter(this, obj))
+                if (Editor.MapContentFilter.ContentFilter(this, obj))
                 {
                     MapObjectSelectable(e, true);
                 }

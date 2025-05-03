@@ -1,5 +1,7 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +13,15 @@ namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_MapObjectType
 {
-    public static void Display(Entity firstEnt)
+    public static void Display(MapEditorScreen editor, Entity firstEnt)
     {
         var typ = firstEnt.WrappedObject.GetType();
 
         var name = "";
         var desc = "";
 
-        name = Smithbox.BankHandler.MSB_Info.GetClassReferenceName(typ.Name);
-        desc = Smithbox.BankHandler.MSB_Info.GetClassReferenceDescription(typ.Name);
+        name = FormatInformationUtils.GetClassReferenceName(editor.Project.MsbInformation, typ.Name);
+        desc = FormatInformationUtils.GetClassReferenceDescription(editor.Project.MsbInformation, typ.Name);
 
         if (name != "")
         {

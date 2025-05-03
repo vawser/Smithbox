@@ -1,11 +1,6 @@
-﻿using Silk.NET.SDL;
+﻿using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.Scene;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
 using Viewport = StudioCore.Interface.Viewport;
@@ -14,7 +9,10 @@ namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapViewportView
 {
-    private MapEditorScreen Screen;
+    public Smithbox BaseEditor;
+    public MapEditorScreen Editor;
+    public ProjectEntry Project;
+
     private Sdl2Window Window;
     private GraphicsDevice Device;
     public RenderScene RenderScene;
@@ -27,24 +25,28 @@ public class MapViewportView
     public bool ShiftHeld;
     public bool ViewportUsingKeyboard;
 
-    public MapViewportView(MapEditorScreen screen, Sdl2Window window, GraphicsDevice device)
+    public MapViewportView(MapEditorScreen editor, ProjectEntry project, Smithbox baseEditor)
     {
-        Screen = screen;
-        Window = window;
-        Device = device;
+        Editor = editor;
+        Project = project;
+        BaseEditor = baseEditor;
 
-        Rect = window.Bounds;
+        Window = baseEditor._context.Window;
+        Device = baseEditor._context.Device;
 
-        if (device != null)
+        Rect = Window.Bounds;
+
+        if (Device != null)
         {
             RenderScene = new RenderScene();
 
-            Viewport = new Viewport(ViewportType.MapEditor, "Mapeditvp", device, RenderScene, screen.EditorActionManager, screen.Selection, Rect.Width, Rect.Height);
+            Viewport = new Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
         else
         {
-            Viewport = new NullViewport(ViewportType.MapEditor, "Mapeditvp", screen.EditorActionManager, screen.Selection, Rect.Width, Rect.Height);
+            Viewport = new NullViewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
         }
     }
 

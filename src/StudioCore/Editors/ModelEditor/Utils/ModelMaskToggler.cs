@@ -3,26 +3,22 @@ using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 
 public static class ModelMaskToggler
 {
-    public static bool IsSupportedProjectType()
+    public static bool IsSupportedProjectType(ProjectEntry project)
     {
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             return false;
         }
@@ -34,9 +30,9 @@ public static class ModelMaskToggler
     private static int SelectedID = -1;
 
     // NPC Param List
-    public static void Display()
+    public static void Display(ModelEditorScreen editor)
     {
-        var filename = Smithbox.EditorHandler.ModelEditor.Selection._selectedFileName;
+        var filename = editor.Selection._selectedFileName;
         var npcParamKey = "NpcParam";
 
         if (!ParamBank.PrimaryBank.Params.ContainsKey(npcParamKey))
@@ -53,7 +49,7 @@ public static class ModelMaskToggler
             {
                 if(ImGui.Selectable($"[{entry.ID}]##row{entry.ID}", entry.ID == SelectedID, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    ToggleMeshes(entry);
+                    ToggleMeshes(editor, entry);
                     SelectedID = entry.ID;
                 }
 
@@ -62,7 +58,7 @@ public static class ModelMaskToggler
                 {
                     SelectEntry = false;
                     SelectedID = entry.ID;
-                    ToggleMeshes(entry);
+                    ToggleMeshes(editor, entry);
                 }
 
                 if (ImGui.IsItemFocused() && 
@@ -92,7 +88,7 @@ public static class ModelMaskToggler
         return false;
     }
 
-    public static void ToggleMeshes(Param.Row row)
+    public static void ToggleMeshes(ModelEditorScreen editor, Param.Row row)
     {
         List<bool> maskList = new List<bool>();
 
@@ -115,8 +111,6 @@ public static class ModelMaskToggler
                 }
             }
         }
-
-        var editor = Smithbox.EditorHandler.ModelEditor;
 
         var flver = editor.ResManager.GetCurrentFLVER();
 

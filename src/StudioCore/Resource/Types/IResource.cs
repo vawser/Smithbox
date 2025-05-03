@@ -1,5 +1,4 @@
-﻿using StudioCore.UserProject;
-using System;
+﻿using System;
 
 namespace StudioCore.Resource;
 

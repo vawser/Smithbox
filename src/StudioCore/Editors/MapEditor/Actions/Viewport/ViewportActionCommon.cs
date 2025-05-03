@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Silk.NET.SDL;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Utilities;
@@ -22,29 +22,29 @@ namespace StudioCore.Editors.MapEditor.Actions.Viewport;
 /// </summary>
 public static class ViewportActionCommon
 {
-    public static void SetUniqueEntityID(MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
         if (sel.WrappedObject is BTL.Light)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.AC6)
         {
-            SetUniqueEntityID_AC6(sel, map);
+            SetUniqueEntityID_AC6(editor, sel, map);
         }
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (editor.Project.ProjectType == ProjectType.ER)
         {
-            SetUniqueEntityID_ER(sel, map);
+            SetUniqueEntityID_ER(editor, sel, map);
         }
         else
         {
-            SetUniqueEntityID_Int(sel, map);
+            SetUniqueEntityID_Int(editor, sel, map);
         }
     }
 
-    public static void SetUniqueEntityID_AC6(MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID_AC6(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -117,7 +117,7 @@ public static class ViewportActionCommon
         sel.SetPropertyValue("EntityID", newID);
     }
 
-    public static void SetUniqueEntityID_ER(MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID_ER(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
         uint originalID = (uint)sel.GetPropertyValue("EntityID");
 
@@ -208,7 +208,7 @@ public static class ViewportActionCommon
         sel.SetPropertyValue("EntityID", newID);
     }
 
-    public static void SetUniqueEntityID_Int(MsbEntity sel, MapContainer map)
+    public static void SetUniqueEntityID_Int(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
         int originalID = (int)sel.GetPropertyValue("EntityID");
 
@@ -268,7 +268,7 @@ public static class ViewportActionCommon
                     hasMatch = true;
 
                     // This is to ignore the 4 digit Entity IDs used in some DS1 maps
-                    if (Smithbox.ProjectType == ProjectType.DS1 || Smithbox.ProjectType == ProjectType.DS1R)
+                    if (editor.Project.ProjectType == ProjectType.DS1 || editor.Project.ProjectType == ProjectType.DS1R)
                     {
                         if (newID < 10000)
                         {
@@ -292,9 +292,9 @@ public static class ViewportActionCommon
         sel.SetPropertyValue("EntityID", newID);
     }
 
-    public static void SetSelfPartNames(MsbEntity sel, MapContainer map)
+    public static void SetSelfPartNames(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (editor.Project.ProjectType == ProjectType.ER)
         {
             if (sel.WrappedObject is MSBE.Part.Asset)
             {
@@ -335,7 +335,7 @@ public static class ViewportActionCommon
             }
         }
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.AC6)
         {
             if (sel.WrappedObject is MSB_AC6.Part.Asset)
             {
@@ -377,9 +377,9 @@ public static class ViewportActionCommon
         }
     }
 
-    public static void SetUniqueInstanceID(MsbEntity ent, MapContainer m)
+    public static void SetUniqueInstanceID(MapEditorScreen editor, MsbEntity ent, MapContainer m)
     {
-        if (Smithbox.ProjectType == ProjectType.ER)
+        if (editor.Project.ProjectType == ProjectType.ER)
         {
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -409,7 +409,7 @@ public static class ViewportActionCommon
             }
         }
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.AC6)
         {
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -438,9 +438,9 @@ public static class ViewportActionCommon
         }
     }
 
-    public static void SetSpecificEntityGroupID(MsbEntity ent, MapContainer m)
+    public static void SetSpecificEntityGroupID(MapEditorScreen editor, MsbEntity ent, MapContainer m)
     {
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.AC6)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -462,7 +462,7 @@ public static class ViewportActionCommon
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (editor.Project.ProjectType == ProjectType.ER)
         {
             var newID = (uint)CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -484,7 +484,7 @@ public static class ViewportActionCommon
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.DS3)
+        else if (editor.Project.ProjectType == ProjectType.DS3)
         {
             var newID = CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -506,7 +506,7 @@ public static class ViewportActionCommon
 
             part.EntityGroups = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.SDT)
+        else if (editor.Project.ProjectType == ProjectType.SDT)
         {
             var newID = CFG.Current.Prefab_SpecificEntityGroupID;
             var added = false;
@@ -530,12 +530,12 @@ public static class ViewportActionCommon
         }
     }
 
-    public static void ClearEntityID(MsbEntity sel, MapContainer map)
+    public static void ClearEntityID(MapEditorScreen editor, MsbEntity sel, MapContainer map)
     {
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
+        if (editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER)
         {
             ClearEntityID_UINT(sel, map);
         }
@@ -555,12 +555,12 @@ public static class ViewportActionCommon
         sel.SetPropertyValue("EntityID", 0);
     }
 
-    public static void ClearEntityGroupID(MsbEntity ent, MapContainer map)
+    public static void ClearEntityGroupID(MapEditorScreen editor, MsbEntity ent, MapContainer map)
     {
-        if (Smithbox.ProjectType == ProjectType.DS2S || Smithbox.ProjectType == ProjectType.DS2)
+        if (editor.Project.ProjectType == ProjectType.DS2S || editor.Project.ProjectType == ProjectType.DS2)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (editor.Project.ProjectType == ProjectType.AC6)
         {
             var part = ent.WrappedObject as MSB_AC6.Part;
 
@@ -574,7 +574,7 @@ public static class ViewportActionCommon
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.ER)
+        else if (editor.Project.ProjectType == ProjectType.ER)
         {
             var part = ent.WrappedObject as MSBE.Part;
 
@@ -588,7 +588,7 @@ public static class ViewportActionCommon
 
             part.EntityGroupIDs = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.DS3)
+        else if (editor.Project.ProjectType == ProjectType.DS3)
         {
             var part = ent.WrappedObject as MSB3.Part;
 
@@ -602,7 +602,7 @@ public static class ViewportActionCommon
 
             part.EntityGroups = newEntityGroupIDs;
         }
-        else if (Smithbox.ProjectType == ProjectType.SDT)
+        else if (editor.Project.ProjectType == ProjectType.SDT)
         {
             var part = ent.WrappedObject as MSBS.Part;
 

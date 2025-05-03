@@ -15,7 +15,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class SystemTab
 {
-    public SystemTab() { }
+    public Smithbox BaseEditor;
+
+    public SystemTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {

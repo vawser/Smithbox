@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Banks.AliasBank;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -19,7 +18,7 @@ namespace StudioCore.Editors.MapEditor.Tools.MapQuery;
 
 public class MapQueryView : IMapQueryEngine
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
     public MapQueryBank Bank;
 
     public bool IsOpen = false;
@@ -42,8 +41,8 @@ public class MapQueryView : IMapQueryEngine
 
     public MapQueryView(MapEditorScreen screen)
     {
-        Screen = screen;
-        Bank = new MapQueryBank(this);
+        Editor = screen;
+        Bank = new MapQueryBank(Editor, this);
     }
 
     public void OnProjectChanged()
@@ -407,7 +406,7 @@ public class MapQueryView : IMapQueryEngine
             {
                 var pair = Matches.ElementAt(i);
                 var mapName = pair.Key;
-                var mapAlias = AliasUtils.GetMapNameAlias(mapName);
+                var mapAlias = AliasUtils.GetMapNameAlias(Editor.Project, mapName);
                 var displayName = $"{mapName}: {mapAlias}";
                 var objectMatches = pair.Value;
 
@@ -446,9 +445,9 @@ public class MapQueryView : IMapQueryEngine
 
         string alias = "";
 
-        var chrAlias = GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.Characters);
-        var assetAlias = GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.Assets);
-        var mapPieceAlias = GetAlias(rawName, Smithbox.AliasCacheHandler.AliasCache.MapPieces);
+        var chrAlias = AliasUtils.GetCharacterAlias(Editor.Project, rawName);
+        var assetAlias = AliasUtils.GetAssetAlias(Editor.Project, rawName);
+        var mapPieceAlias = AliasUtils.GetMapPieceAlias(Editor.Project, rawName);
 
         if (chrAlias != "")
             return chrAlias;
@@ -460,18 +459,6 @@ public class MapQueryView : IMapQueryEngine
             return mapPieceAlias;
 
         return alias;
-    }
-
-    private string GetAlias(string name, Dictionary<string, AliasReference> referenceDict)
-    {
-        var lowerName = name.ToLower();
-
-        if (referenceDict.ContainsKey(lowerName))
-        {
-            return referenceDict[lowerName].name;
-        }
-
-        return "";
     }
 
     public bool IsMapFilterMatch(string mapName)

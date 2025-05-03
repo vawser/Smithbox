@@ -3,10 +3,7 @@ using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -24,7 +21,7 @@ public class GparamContextMenu
     /// <summary>
     /// Context menu for File list
     /// </summary>
-    public void FileContextMenu(string name, GparamParamBank.GparamInfo info)
+    public void FileContextMenu(string name, GparamBank.GparamInfo info)
     {
         if (info.Name == Selection._selectedGparamKey)
         {
@@ -39,7 +36,7 @@ public class GparamContextMenu
                 UIHelper.ShowHoverTooltip("Add this file to the File Filter in the Quick Edit window.");
 
                 // Only show if the file exists in the project directory
-                if (info.Path.Contains(Smithbox.ProjectRoot))
+                if (info.Path.Contains(Screen.Project.ProjectPath))
                 {
                     if (ImGui.Selectable("Remove"))
                     {

@@ -2,7 +2,6 @@
 using HKLib.hk2018.hkHashMapDetail;
 using Hexa.NET.ImGui;
 using Octokit;
-using StudioCore.Core.Project;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
@@ -14,6 +13,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextEditor;
 

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.Dummy;
@@ -19,7 +20,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 {
     public static class DummyGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Dummy Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> DummyGroupFiles = new List<string>();
 
@@ -29,8 +30,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static DummyList SelectedDummyList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Dummy Groups\\";
+
             UpdateDummyGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -42,8 +45,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);
 
-                        var action = new ReplaceDummyList(screen, SelectedDummyList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceDummyList(editor, SelectedDummyList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -59,8 +62,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedDummyGroup = entry;
                         SelectedDummyList = ReadDummyGroup(entry);
 
-                        var action = new AppendDummyList(screen, SelectedDummyList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendDummyList(editor, SelectedDummyList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

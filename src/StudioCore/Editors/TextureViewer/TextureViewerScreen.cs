@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Tools;
@@ -14,6 +15,9 @@ namespace StudioCore.TextureViewer;
 
 public class TextureViewerScreen : EditorScreen, IResourceEventListener
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ActionManager EditorActionManager = new();
 
     public TexViewSelection Selection;
@@ -35,8 +39,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public TexTextureViewport TextureViewport;
     public TexTexturePropertyView TexturePropertyView;
 
-    public TextureViewerScreen(Sdl2Window window, GraphicsDevice device)
+    public TextureViewerScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         Selection = new TexViewSelection(this);
         Tools = new TexTools(this);
         Filters = new TexFilters(this);
@@ -60,6 +67,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public string EditorName => "Texture Viewer##TextureViewerEditor";
     public string CommandEndpoint => "texture";
     public string SaveType => "Texture";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
     public void EditDropdown()
     {

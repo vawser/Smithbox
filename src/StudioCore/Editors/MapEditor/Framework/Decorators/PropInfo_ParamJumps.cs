@@ -1,23 +1,16 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
-using StudioCore.Scene;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid.Utilities;
 
 namespace StudioCore.Editors.MapEditor.Framework.Decorators;
 
 public static class PropInfo_ParamJumps
 {
-    public static void Display(Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
+    public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         var scale = DPI.GetUIScale();
         var width = ImGui.GetWindowWidth() / 100;
@@ -26,7 +19,7 @@ public static class PropInfo_ParamJumps
             return;
 
         // Only relevant to assets
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
+        if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 && firstEnt.IsPartPureAsset())
         {
             ImGui.Separator();
             ImGui.Text("Params:");
@@ -67,7 +60,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartAsset() || e.IsPartDummyAsset())
                     {
-                        aliasName = AliasUtils.GetAssetAlias(modelName);
+                        aliasName = AliasUtils.GetAssetAlias(editor.Project, modelName);
                     }
 
                     if (aliasName != "")
@@ -87,7 +80,7 @@ public static class PropInfo_ParamJumps
         }
 
         // Only relevant to characters
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6
+        if (editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6
             && (firstEnt.IsPartEnemy() || firstEnt.IsPartDummyEnemy()))
         {
             ImGui.Separator();
@@ -129,7 +122,7 @@ public static class PropInfo_ParamJumps
 
                     if (e.IsPartEnemy() || e.IsPartDummyEnemy())
                     {
-                        aliasName = AliasUtils.GetCharacterAlias(modelName);
+                        aliasName = AliasUtils.GetCharacterAlias(editor.Project, modelName);
                     }
 
                     if (aliasName != "")

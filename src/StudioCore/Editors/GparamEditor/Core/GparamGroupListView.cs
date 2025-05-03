@@ -1,17 +1,11 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Banks.FormatBank;
 using StudioCore.Configuration;
 using StudioCore.Editors.GparamEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.GraphicsEditor;
-using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor;
 
@@ -61,7 +55,7 @@ public class GparamGroupListView
 
                 var name = entry.Key;
                 if (CFG.Current.Gparam_DisplayParamGroupAlias)
-                    name = Smithbox.BankHandler.GPARAM_Info.GetReferenceName(entry.Key, entry.Name);
+                    name = FormatInformationUtils.GetReferenceName(Screen.Project.GparamInformation, entry.Key, entry.Name);
 
                 var display = false;
 
@@ -129,7 +123,7 @@ public class GparamGroupListView
         List<FormatReference> missingGroups = new List<FormatReference>();
 
         // Get source Format Reference
-        foreach (var entry in Smithbox.BankHandler.GPARAM_Info.Information.list)
+        foreach (var entry in Screen.Project.GparamInformation.list)
         {
             bool isPresent = false;
 

@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
@@ -15,7 +15,6 @@ using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
 using StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
 using StudioCore.Editors.MapEditor.Tools.EntityInformation;
-using StudioCore.Editors.MapEditor.Tools.LightmapAtlasEditor;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
 using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
@@ -43,6 +42,9 @@ namespace StudioCore.Editors.MapEditor;
 /// </summary>
 public class MapEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     /// <summary>
     /// Lock variable used to handle pauses to the Update() function.
     /// </summary>
@@ -56,7 +58,7 @@ public class MapEditorScreen : EditorScreen
     public MapActionHandler ActionHandler;
     public ViewportSelection Selection = new();
     public Universe Universe;
-    public MapEntityTypeCache EntityTypeCache = new();
+    public MapEntityTypeCache EntityTypeCache;
     public EditorFocusManager FocusManager;
     public MapPropertyCache MapPropertyCache = new();
     public MapCommandQueue CommandQueue;
@@ -72,7 +74,6 @@ public class MapEditorScreen : EditorScreen
     public DisplayGroupView DisplayGroupView;
     public SelectionGroupView SelectionGroupView;
     public PrefabView PrefabView;
-    public LightmapAtlasView LightmapAtlasView;
     public NavmeshBuilderView NavmeshBuilderView;
     public MapQueryView MapQueryView;
     public WorldMapView WorldMapView;
@@ -90,13 +91,20 @@ public class MapEditorScreen : EditorScreen
     public ToolSubMenu ToolSubMenu;
     public MassEditHandler MassEditHandler;
 
-    // Viewport
+    public RotationIncrement RotationIncrement;
+    public KeyboardMovement KeyboardMovement;
 
-    public MapEditorScreen(Sdl2Window window, GraphicsDevice device)
+    // Viewport
+    public MapEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
-        MapViewportView = new MapViewportView(this, window, device);
-        Universe = new Universe(MapViewportView.RenderScene, Selection);
+        BaseEditor = baseEditor;
+        Project = project;
+
+        MapViewportView = new MapViewportView(this, project, baseEditor);
+
+        Universe = new Universe(this, project);
         FocusManager = new EditorFocusManager(this);
+        EntityTypeCache = new(this);
 
         // Core Views
         MapListView = new MapListView(this);
@@ -107,7 +115,6 @@ public class MapEditorScreen : EditorScreen
         LocalSearchView = new LocalSearchView(this);
 
         AssetBrowserView = new AssetBrowserView(this);
-        LightmapAtlasView = new LightmapAtlasView(this);
         PrefabView = new PrefabView(this);
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
@@ -119,7 +126,7 @@ public class MapEditorScreen : EditorScreen
         MapContentFilter = new MapContentFilters(this);
 
         // Framework
-        ActionHandler = new MapActionHandler(this);
+        ActionHandler = new MapActionHandler(this, Project);
         MapQueryView = new MapQueryView(this);
         WorldMapView = new WorldMapView(this);
         CommandQueue = new MapCommandQueue(this);
@@ -129,6 +136,9 @@ public class MapEditorScreen : EditorScreen
         ToolWindow = new ToolWindow(this, ActionHandler);
         ToolSubMenu = new ToolSubMenu(this, ActionHandler);
         MassEditHandler = new MassEditHandler(this);
+
+        RotationIncrement = new RotationIncrement(this, project);
+        KeyboardMovement = new KeyboardMovement(this, project);
 
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
@@ -156,6 +166,8 @@ public class MapEditorScreen : EditorScreen
     public string EditorName => "Map Editor";
     public string CommandEndpoint => "map";
     public string SaveType => "Maps";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
     public void OnDefocus()
     {
@@ -426,7 +438,7 @@ public class MapEditorScreen : EditorScreen
             ///--------------------
             if (ImGui.MenuItem("Toggle Render Type", KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText))
             {
-                VisualizationHelper.ToggleRenderType(Selection);
+                VisualizationHelper.ToggleRenderType(this, Selection);
             }
             UIHelper.ShowHoverTooltip("Toggle the render type of the current selection.");
 
@@ -593,7 +605,7 @@ public class MapEditorScreen : EditorScreen
                     ActionHandler.ApplyGameVisibilityChange(GameVisibilityType.DummyObject, GameVisibilityState.Enable);
                 }
 
-                if (Smithbox.ProjectType is ProjectType.ER)
+                if (Project.ProjectType is ProjectType.ER)
                 {
                     if (ImGui.MenuItem("Disable Game Presence of Selected", KeyBindings.Current.MAP_DisableGamePresence.HintText))
                     {
@@ -689,15 +701,6 @@ public class MapEditorScreen : EditorScreen
                 CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_Grid);
-
-            if (Smithbox.ProjectType is ProjectType.DS3)
-            {
-                if (ImGui.MenuItem("Lightmap Atlas Editor"))
-                {
-                    UI.Current.Interface_MapEditor_Viewport_LightmapAtlas = !UI.Current.Interface_MapEditor_Viewport_LightmapAtlas;
-                }
-                UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_LightmapAtlas);
-            }
 
             if (ImGui.MenuItem("Entity Identifier Overview"))
             {
@@ -832,7 +835,7 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Project.ProjectType is ProjectType.ER)
             {
                 if (ImGui.BeginMenu("Collision Type"))
                 {
@@ -984,11 +987,6 @@ public class MapEditorScreen : EditorScreen
             NavmeshBuilderView.OnGui();
         }
 
-        if (LightmapAtlasView != null)
-        {
-            LightmapAtlasView.OnGui();
-        }
-
         if (EntityInformationView != null)
         {
             EntityInformationView.OnGui();
@@ -1049,44 +1047,17 @@ public class MapEditorScreen : EditorScreen
         return MapViewportView.InputCaptured();
     }
 
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
-        Selection.ClearSelection();
-        EditorActionManager.Clear();
-
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            MapListView.OnProjectChanged();
-
-            MapQueryView.OnProjectChanged();
-            SelectionGroupView.OnProjectChanged();
-            AssetBrowserView.OnProjectChanged();
-            RegionFilters.OnProjectChanged();
-            PrefabView.OnProjectChanged();
-            ToolWindow.OnProjectChanged();
-            ToolSubMenu.OnProjectChanged();
-            WorldMapView.OnProjectChanged();
-        }
-
-        MapViewportView.OnProjectChanged();
-        ReloadUniverse();
-    }
-
     public void Save()
     {
         if (!CFG.Current.EnableEditor_MSB)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         try
         {
             Universe.SaveAllMaps();
-            LightmapAtlasView.Save();
         }
         catch (SavingFailedException e)
         {
@@ -1099,7 +1070,7 @@ public class MapEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_MSB)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Project.ProjectType == ProjectType.Undefined)
             return;
 
         try
@@ -1130,7 +1101,7 @@ public class MapEditorScreen : EditorScreen
         GC.Collect();
         Universe.PopulateMapList();
 
-        if (Smithbox.ProjectType != ProjectType.Undefined)
+        if (Project.ProjectType != ProjectType.Undefined)
         {
             ActionHandler.PopulateClassNames();
         }
@@ -1156,8 +1127,8 @@ public class MapEditorScreen : EditorScreen
                     {
                         if (obj.WrappedObject == eRef.Referrer)
                         {
-                            Selection.ClearSelection();
-                            Selection.AddSelection(obj);
+                            Selection.ClearSelection(this);
+                            Selection.AddSelection(this, obj);
                             ActionHandler.ApplyFrameInViewport();
                             return;
                         }

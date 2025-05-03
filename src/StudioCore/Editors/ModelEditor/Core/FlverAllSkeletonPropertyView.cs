@@ -12,14 +12,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class FlverAllSkeletonPropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public FlverAllSkeletonPropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -32,10 +32,10 @@ public class FlverAllSkeletonPropertyView
         if (index == -1)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons.Count < index)
+        if (Editor.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons.Count < index)
             return;
 
-        if (Screen.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons == null)
+        if (Editor.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons == null)
             return;
 
         if (Selection.BaseSkeletonMultiselect.StoredIndices.Count > 1)
@@ -51,7 +51,7 @@ public class FlverAllSkeletonPropertyView
         ImGui.Separator();
         UIHelper.ShowHoverTooltip("Contains all skeleton hierarchies including that of the control rig and the ragdoll bones.");
 
-        var entry = Screen.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons[index];
+        var entry = Editor.ResManager.GetCurrentFLVER().Skeletons.AllSkeletons[index];
 
         int parentIndex = entry.ParentIndex;
         int firstChildIndex = entry.FirstChildIndex;
@@ -104,7 +104,7 @@ public class FlverAllSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.ParentIndex != parentIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_ParentIndex(entry, entry.ParentIndex, parentIndex));
         }
 
@@ -115,7 +115,7 @@ public class FlverAllSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.FirstChildIndex != firstChildIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_FirstChildIndex(entry, entry.FirstChildIndex, firstChildIndex));
         }
 
@@ -126,7 +126,7 @@ public class FlverAllSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NextSiblingIndex != nextSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_NextSiblingIndex(entry, entry.NextSiblingIndex, nextSiblingIndex));
         }
 
@@ -137,7 +137,7 @@ public class FlverAllSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.PreviousSiblingIndex != previousSiblingIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_PreviousSiblingIndex(entry, entry.PreviousSiblingIndex, previousSiblingIndex));
         }
 
@@ -148,7 +148,7 @@ public class FlverAllSkeletonPropertyView
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
             if (entry.NodeIndex != nodeIndex)
-                Screen.EditorActionManager.ExecuteAction(
+                Editor.EditorActionManager.ExecuteAction(
                 new UpdateProperty_FLVERSkeleton_Bone_NodeIndex(entry, entry.NodeIndex, nodeIndex));
         }
 

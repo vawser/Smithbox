@@ -1,22 +1,11 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.ImGui;
-using Org.BouncyCastle.Utilities;
-using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.EsdLang;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
-using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static SoulsFormats.ESD;
 using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 
@@ -154,7 +143,7 @@ public class EsdStateNodePropertyView
         ImGui.TableSetColumnIndex(3);
 
         // Alias
-        var cmdMeta = EsdMeta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdMeta = Screen.Project.EsdBank.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
         if (cmdMeta != null)
         {
             var displayAlias = cmdMeta.displayName;
@@ -168,7 +157,7 @@ public class EsdStateNodePropertyView
     /// </summary>
     private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
-        var cmdArgMeta = EsdMeta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdArgMeta = Screen.Project.EsdBank.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
         for(int i = 0; i < cmd.Arguments.Count; i++)
         {
@@ -403,7 +392,7 @@ public class EsdStateNodePropertyView
             ImGui.TableSetColumnIndex(3);
 
             // Alias
-            var cmdMeta = EsdMeta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdMeta = Screen.Project.EsdBank.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
             if (cmdMeta != null)
             {
                 var displayAlias = cmdMeta.displayName;
@@ -413,7 +402,7 @@ public class EsdStateNodePropertyView
 
             ImGui.TableNextRow();
 
-            var cmdArgMeta = EsdMeta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdArgMeta = Screen.Project.EsdBank.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
 
             for (int i = 0; i < passCmd.Arguments.Count; i++)
             {

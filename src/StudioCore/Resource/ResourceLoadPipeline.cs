@@ -1,7 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Resource.Types;
 using StudioCore.Tasks;
-using StudioCore.UserProject;
 using System;
 using System.IO;
 using System.Threading.Tasks.Dataflow;

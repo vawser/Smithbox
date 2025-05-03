@@ -15,10 +15,12 @@ namespace StudioCore.Configuration.Settings;
 
 public class InterfaceTab
 {
+    public Smithbox BaseEditor;
     private float _tempScale;
 
-    public InterfaceTab()
+    public InterfaceTab(Smithbox baseEditor)
     {
+        BaseEditor = baseEditor;
         _tempScale = UI.Current.System_UI_Scale;
     }
 

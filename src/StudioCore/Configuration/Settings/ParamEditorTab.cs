@@ -1,26 +1,22 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Banks.GameOffsetBank;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Configuration.Settings;
 
 public class ParamEditorTab
 {
-    public ParamEditorTab()
-    {
-        SelectedGameOffsetData = null;
-    }
+    public Smithbox BaseEditor;
 
-    private GameOffsetResource SelectedGameOffsetData { get; set; }
+    public ParamEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
 
     public void Display()
     {
@@ -50,7 +46,14 @@ public class ParamEditorTab
 
         if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            switch(Smithbox.ProjectType)
+            var curProjectType = ProjectType.Undefined;
+
+            if (BaseEditor.ProjectManager.SelectedProject != null)
+            {
+                curProjectType = BaseEditor.ProjectManager.SelectedProject.ProjectType;
+            }
+
+            switch (curProjectType)
             {
                 case ProjectType.DES:
                     ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_DES);
@@ -89,7 +92,7 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
 
 
-            switch (Smithbox.ProjectType)
+            switch (curProjectType)
             {
                 case ProjectType.DES:
                     ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES);
@@ -127,7 +130,7 @@ public class ParamEditorTab
             }
             UIHelper.ShowHoverTooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
 
-            if (Smithbox.ProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
+            if (curProjectType is ProjectType.ER && ParamBank.PrimaryBank.ParamVersion >= 11210015L)
             {
                 ImGui.Checkbox("Save regulation.bin as DCX.DFLT", ref CFG.Current.Param_SaveERAsDFLT);
                 UIHelper.ShowHoverTooltip("If enabled, the regulation will be saved with the DCX.DFLT compression instead of the ZSTD compression that Elden Ring uses post patch 1.12.1.\n\nEnable if you want to load the regulation in an older tool that doesn't support ZSTD compression.");
@@ -340,10 +343,12 @@ public class ParamEditorTab
             UIHelper.ShowHoverTooltip("Display image preview of any image index fields if possible at the bottom of the field column.");
         }
 
-        if (SelectedGameOffsetData != null)
+        if(BaseEditor.ProjectManager.SelectedProject != null)
         {
+            var curProject = BaseEditor.ProjectManager.SelectedProject;
+ 
             // Ignore if no game offsets exist for the project type
-            if (Smithbox.BankHandler.GameOffsets.Offsets.list != null)
+            if (curProject.ParamMemoryOffsets != null)
             {
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
                 {
@@ -351,20 +356,13 @@ public class ParamEditorTab
                     UIHelper.ShowHoverTooltip("This should match the executable version you wish to target, otherwise the memory offsets will be incorrect.");
 
                     var index = CFG.Current.SelectedGameOffsetData;
-                    string[] options = Smithbox.BankHandler.GameOffsets.Offsets.list.Select(entry => entry.exeVersion).ToArray();
+                    string[] options = curProject.ParamMemoryOffsets.list.Select(entry => entry.exeVersion).ToArray();
 
                     if (ImGui.Combo("##GameOffsetVersion", ref index, options, options.Length))
                     {
                         CFG.Current.SelectedGameOffsetData = index;
                     }
                 }
-            }
-        }
-        else
-        {
-            if (Smithbox.ProjectType != ProjectType.Undefined)
-            {
-                SelectedGameOffsetData = Smithbox.BankHandler.GameOffsets.Offsets;
             }
         }
     }

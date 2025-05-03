@@ -43,7 +43,7 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
             Screen.EditorActionManager.ExecuteAction(action);
         }
     }
@@ -63,7 +63,7 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
             Screen.EditorActionManager.ExecuteAction(action);
         }
     }
@@ -83,7 +83,7 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
             Screen.EditorActionManager.ExecuteAction(action);
         }
     }
@@ -103,7 +103,7 @@ public class TextActionHandler
 
             newEntry.ID = curEntry.ID;
 
-            var action = new AddAssociatedEntry(selectedContainer, wrapper.File, newEntry);
+            var action = new AddAssociatedEntry(Screen, selectedContainer, wrapper.File, newEntry);
             Screen.EditorActionManager.ExecuteAction(action);
         }
     }
@@ -181,7 +181,7 @@ public class TextActionHandler
                     var titleEntry = fmgEntryGroup.Title;
                     var titleFmg = titleEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(selectedContainer, titleFmg, titleEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, titleFmg, titleEntry, newId));
                 }
 
                 if (fmgEntryGroup.Summary != null)
@@ -189,7 +189,7 @@ public class TextActionHandler
                     var summaryEntry = fmgEntryGroup.Summary;
                     var summaryFmg = summaryEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(selectedContainer, summaryFmg, summaryEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, summaryFmg, summaryEntry, newId));
                 }
 
                 if (fmgEntryGroup.Description != null)
@@ -197,7 +197,7 @@ public class TextActionHandler
                     var descriptionEntry = fmgEntryGroup.Description;
                     var descriptionFmg = descriptionEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(selectedContainer, descriptionFmg, descriptionEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, descriptionFmg, descriptionEntry, newId));
                 }
 
                 if (fmgEntryGroup.Effect != null)
@@ -205,13 +205,13 @@ public class TextActionHandler
                     var effectEntry = fmgEntryGroup.Effect;
                     var effectFmg = effectEntry.Parent;
 
-                    actions.Add(new DuplicateFmgEntry(selectedContainer, effectFmg, effectEntry, newId));
+                    actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, effectFmg, effectEntry, newId));
                 }
             }
             // Otherwise just duplicate selection
             else
             {
-                actions.Add(new DuplicateFmgEntry(selectedContainer, selectedFmg, curEntry, newId));
+                actions.Add(new DuplicateFmgEntry(Screen, selectedContainer, selectedFmg, curEntry, newId));
             }
         }
 
@@ -271,7 +271,7 @@ public class TextActionHandler
                 var titleEntry = fmgEntryGroup.Title;
                 var titleFmg = titleEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(selectedContainer, titleFmg, titleEntry));
+                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, titleFmg, titleEntry));
             }
 
             if (fmgEntryGroup.Summary != null)
@@ -279,7 +279,7 @@ public class TextActionHandler
                 var summaryEntry = fmgEntryGroup.Summary;
                 var summaryFmg = summaryEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(selectedContainer, summaryFmg, summaryEntry));
+                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, summaryFmg, summaryEntry));
             }
 
             if (fmgEntryGroup.Description != null)
@@ -287,7 +287,7 @@ public class TextActionHandler
                 var descriptionEntry = fmgEntryGroup.Description;
                 var descriptionFmg = descriptionEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(selectedContainer, descriptionFmg, descriptionEntry));
+                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, descriptionFmg, descriptionEntry));
             }
 
             if (fmgEntryGroup.Effect != null)
@@ -295,13 +295,13 @@ public class TextActionHandler
                 var effectEntry = fmgEntryGroup.Effect;
                 var effectFmg = effectEntry.Parent;
 
-                actions.Add(new DeleteFmgEntry(selectedContainer, effectFmg, effectEntry));
+                actions.Add(new DeleteFmgEntry(Screen, selectedContainer, effectFmg, effectEntry));
             }
         }
         // Otherwise just duplicate selection
         else
         {
-            actions.Add(new DeleteFmgEntry(selectedContainer, selectedFmg, curEntry));
+            actions.Add(new DeleteFmgEntry(Screen, selectedContainer, selectedFmg, curEntry));
         }
 
         return actions;
@@ -336,7 +336,7 @@ public class TextActionHandler
     /// </summary>
     public void CopyEntryTextToClipboard(bool includeID)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
+        var editor = Screen;
 
         if (!IsCurrentlyCopyingContents)
         {

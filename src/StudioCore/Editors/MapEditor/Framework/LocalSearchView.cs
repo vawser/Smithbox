@@ -17,7 +17,7 @@ namespace StudioCore.Editors.MapEditor.Framework;
 
 public class LocalSearchView
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     private enum SearchMatchType
     {
@@ -63,7 +63,7 @@ public class LocalSearchView
 
     public LocalSearchView(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         _propCache = screen.MapPropertyCache;
     }
 
@@ -73,7 +73,7 @@ public class LocalSearchView
         UIHelper.WrappedText("");
 
         // propcache
-        var selection = Screen.Universe.Selection.GetSingleFilteredSelection<Entity>();
+        var selection = Editor.Universe.Selection.GetSingleFilteredSelection<Entity>();
         if (selection == null)
         {
             ImGui.Text("Select entity for dropdown list.");
@@ -132,7 +132,7 @@ public class LocalSearchView
             // Find the first property that matches the given name.
             // Definitely replace this (along with everything else, really).
             HashSet<Type> typeCache = new();
-            foreach (KeyValuePair<string, ObjectContainer> m in Screen.Universe.LoadedObjectContainers)
+            foreach (KeyValuePair<string, ObjectContainer> m in Editor.Universe.LoadedObjectContainers)
             {
                 if (m.Value == null)
                 {
@@ -177,7 +177,7 @@ public class LocalSearchView
             if (SearchValue(newSearch))
             {
                 FoundObjects.Clear();
-                foreach (ObjectContainer o in Screen.Universe.LoadedObjectContainers.Values)
+                foreach (ObjectContainer o in Editor.Universe.LoadedObjectContainers.Values)
                 {
                     if (o == null)
                     {
@@ -251,19 +251,19 @@ public class LocalSearchView
                         {
                             if (selectFirstResult)
                             {
-                                Screen.Universe.Selection.ClearSelection();
-                                Screen.Universe.Selection.AddSelection(obj);
+                                Editor.Universe.Selection.ClearSelection(Editor);
+                                Editor.Universe.Selection.AddSelection(Editor, obj);
                                 selectFirstResult = false;
                             }
 
                             bool itemFocused = ImGui.IsItemFocused();
                             bool selected = false;
-                            if (ImGui.Selectable(obj.Name, Screen.Universe.Selection.GetSelection().Contains(obj),
+                            if (ImGui.Selectable(obj.Name, Editor.Universe.Selection.GetSelection().Contains(obj),
                                     ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 selected = true;
                             }
-                            Utils.EntitySelectionHandler(Screen.Universe.Selection, obj, selected, itemFocused, f.Value);
+                            Utils.EntitySelectionHandler(Editor, Editor.Universe.Selection, obj, selected, itemFocused, f.Value);
                         }
                     }
 

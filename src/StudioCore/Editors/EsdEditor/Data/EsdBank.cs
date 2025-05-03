@@ -1,128 +1,54 @@
 ﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
+using StudioCore.Editors.EsdEditor;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using static SoulsFormats.MSBFA.Event;
 
 namespace StudioCore.Editors.TalkEditor;
-public static class EsdBank
+
+public class EsdBank
 {
-    public static bool IsLoaded { get; private set; }
-    public static bool IsLoading { get; private set; }
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static Dictionary<EsdScriptInfo, IBinder> TalkBank { get; private set; } = new();
+    public bool IsLoaded { get; private set; }
+    public bool IsLoading { get; private set; }
 
-    public static void SaveEsdScripts()
+    public Dictionary<EsdScriptInfo, IBinder> TalkBank { get; private set; } = new();
+
+    public EsdMeta Meta;
+
+    public EsdBank(Smithbox baseEditor, ProjectEntry project)
     {
-        foreach (var (info, binder) in TalkBank)
-        {
-            SaveEsdScript(info, binder);
-        }
+        BaseEditor = baseEditor;
+        Project = project;
+
+        Meta = new EsdMeta(baseEditor, project);
+    }
+    
+    // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
+    public async Task<bool> Setup()
+    {
+        await Task.Delay(1000);
+
+        // Meta
+        Task<bool> metaTask = Meta.Setup();
+        bool metaTaskResult = await metaTask;
+
+        // EMEVD
+        Task<bool> esdTask = LoadESD();
+        bool esdTaskResult = await esdTask;
+
+        return true;
     }
 
-    public static void SaveEsdScript(EsdScriptInfo info, IBinder binder)
+    public async Task<bool> LoadESD()
     {
-        if (binder == null)
-            return;
-
-        // Ignore loaded scripts that have not been modified
-        // This is to prevent mass-transfer to project folder on Save-All
-        if (!info.IsModified)
-            return;
-
-        //TaskLogs.AddLog($"SaveTalkScript: {info.Path}");
-
-        var fileDir = @"\script\talk";
-        var fileExt = @".talkesdbnd.dcx";
-
-        foreach (BinderFile file in binder.Files)
-        {
-            foreach (ESD eFile in info.EsdFiles)
-            {
-                file.Bytes = eFile.Write();
-            }
-        }
-
-        byte[] fileBytes = null;
-        var assetRoot = $@"{Smithbox.GameRoot}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Smithbox.ProjectRoot}\{fileDir}\{info.Name}{fileExt}";
-
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-            BND3 writeBinder = binder as BND3;
-
-            switch (Smithbox.ProjectType)
-            {
-                case ProjectType.DS1:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                case ProjectType.DS1R:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                default:
-                    return;
-            }
-        }
-        else
-        {
-            BND4 writeBinder = binder as BND4;
-
-            switch (Smithbox.ProjectType)
-            {
-                case ProjectType.BB:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.DS3:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.SDT:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.ER:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.AC6:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                    break;
-                default:
-                    return;
-            }
-        }
-
-        // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Smithbox.ProjectRoot}\\{fileDir}\\"))
-        {
-            Directory.CreateDirectory($"{Smithbox.ProjectRoot}\\{fileDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Smithbox.ProjectRoot == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
-    }
-
-    public static void LoadEsdScripts()
-    {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-        {
-            return;
-        }
-
-        IsLoaded = false;
-        IsLoading = true;
+        await Task.Delay(1000);
 
         TalkBank = new();
 
@@ -135,26 +61,28 @@ public static class EsdBank
         {
             var filePath = $"{fileDir}\\{name}{fileExt}";
 
-            if (File.Exists($"{Smithbox.ProjectRoot}\\{filePath}"))
+            if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
             {
-                LoadEsdScript($"{Smithbox.ProjectRoot}\\{filePath}");
+                LoadEsdScript($"{Project.ProjectPath}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
             }
             else
             {
-                LoadEsdScript($"{Smithbox.GameRoot}\\{filePath}");
+                LoadEsdScript($"{Project.DataPath}\\{filePath}");
                 //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
             }
         }
 
         IsLoaded = true;
         IsLoading = false;
+
+        return true;
     }
 
-    private static void LoadEsdScript(string path)
+    private void LoadEsdScript(string path)
     {
         // TODO: add DS2 ESD support
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             return;
 
         if (path == null)
@@ -175,13 +103,13 @@ public static class EsdBank
 
         IBinder binder = null;
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             try
             {
                 binder = BND3.Read(DCX.Decompress(path));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 var filename = Path.GetFileNameWithoutExtension(path);
                 TaskLogs.AddLog($"Failed to read ESD file: {filename} at {path}.\n{ex}", LogLevel.Error);
@@ -219,6 +147,102 @@ public static class EsdBank
             }
 
             TalkBank.Add(talkInfo, binder);
+        }
+    }
+
+    public void SaveEsdScripts()
+    {
+        foreach (var (info, binder) in TalkBank)
+        {
+            SaveEsdScript(info, binder);
+        }
+    }
+
+    public void SaveEsdScript(EsdScriptInfo info, IBinder binder)
+    {
+        if (binder == null)
+            return;
+
+        // Ignore loaded scripts that have not been modified
+        // This is to prevent mass-transfer to project folder on Save-All
+        if (!info.IsModified)
+            return;
+
+        //TaskLogs.AddLog($"SaveTalkScript: {info.Path}");
+
+        var fileDir = @"\script\talk";
+        var fileExt = @".talkesdbnd.dcx";
+
+        foreach (BinderFile file in binder.Files)
+        {
+            foreach (ESD eFile in info.EsdFiles)
+            {
+                file.Bytes = eFile.Write();
+            }
+        }
+
+        byte[] fileBytes = null;
+        var assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
+        var assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
+
+        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        {
+            BND3 writeBinder = binder as BND3;
+
+            switch (Project.ProjectType)
+            {
+                case ProjectType.DS1:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
+                    break;
+                case ProjectType.DS1R:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
+                    break;
+                default:
+                    return;
+            }
+        }
+        else
+        {
+            BND4 writeBinder = binder as BND4;
+
+            switch (Project.ProjectType)
+            {
+                case ProjectType.BB:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
+                case ProjectType.DS3:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
+                    break;
+                case ProjectType.SDT:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.ER:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
+                    break;
+                case ProjectType.AC6:
+                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                    break;
+                default:
+                    return;
+            }
+        }
+
+        // Add folder if it does not exist in GameModDirectory
+        if (!Directory.Exists($"{Project.ProjectPath}\\{fileDir}\\"))
+        {
+            Directory.CreateDirectory($"{Project.ProjectPath}\\{fileDir}\\");
+        }
+
+        // Make a backup of the original file if a mod path doesn't exist
+        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
+        {
+            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
+        }
+
+        if (fileBytes != null)
+        {
+            File.WriteAllBytes(assetMod, fileBytes);
+            //TaskLogs.AddLog($"Saved at: {assetMod}");
         }
     }
 

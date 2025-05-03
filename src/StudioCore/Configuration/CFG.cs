@@ -1,17 +1,17 @@
-﻿using StudioCore.Platform;
+﻿using StudioCore.Core;
+using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Editors.TextEditor;
+using StudioCore.Interface;
+using StudioCore.Platform;
+using StudioCore.Scene.Enums;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Drawing;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
-using StudioCore.Core.Project;
-using StudioCore.Interface;
-using StudioCore.Editors.ModelEditor.Enums;
-using StudioCore.Editors.TextEditor;
-using StudioCore.Scene.Enums;
 
 namespace StudioCore;
 

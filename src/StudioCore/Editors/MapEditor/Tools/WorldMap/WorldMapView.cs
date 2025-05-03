@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Formats;
@@ -24,7 +24,7 @@ namespace StudioCore.Editors.MapEditor.Tools.WorldMap;
 
 public class WorldMapView : IResourceEventListener
 {
-    private MapEditorScreen Screen;
+    private MapEditorScreen Editor;
 
     private Task _loadingTask;
 
@@ -51,7 +51,7 @@ public class WorldMapView : IResourceEventListener
 
     public WorldMapView(MapEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
 
         IsMapOpen = false;
         IsMapTextureLoaded = false;
@@ -64,7 +64,7 @@ public class WorldMapView : IResourceEventListener
 
     public void OnProjectChanged()
     {
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
             LoadWorldMapTexture();
             GenerateWorldMapLayout_Vanilla();
@@ -120,15 +120,15 @@ public class WorldMapView : IResourceEventListener
     /// </summary>
     public void LoadMapsOnClick(List<string> mapIDs)
     {
-        if (Screen.MapListView.SetupContentViews)
+        if (Editor.MapListView.SetupContentViews)
         {
-            foreach (var entry in Screen.MapListView.MapIDs)
+            foreach (var entry in Editor.MapListView.MapIDs)
             {
                 MapContentView curView = null;
 
-                if (Screen.MapListView.ContentViews.ContainsKey(entry))
+                if (Editor.MapListView.ContentViews.ContainsKey(entry))
                 {
-                    curView = Screen.MapListView.ContentViews[entry];
+                    curView = Editor.MapListView.ContentViews[entry];
                 }
 
                 if (curView != null)
@@ -144,7 +144,7 @@ public class WorldMapView : IResourceEventListener
 
     public void DisplayWorldMapButton()
     {
-        if (Smithbox.ProjectType != ProjectType.ER)
+        if (Editor.Project.ProjectType != ProjectType.ER)
             return;
 
         var scale = DPI.GetUIScale();
@@ -199,14 +199,14 @@ public class WorldMapView : IResourceEventListener
 
     public void DisplayWorldMap()
     {
-        if (Smithbox.ProjectType != ProjectType.ER)
+        if (Editor.Project.ProjectType != ProjectType.ER)
             return;
 
         if (!IsMapOpen)
             return;
 
         ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
-        Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMap);
+        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMap);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
@@ -258,7 +258,7 @@ public class WorldMapView : IResourceEventListener
 
         // Properties
         ImGui.Begin("Properties##WorldMapProperties");
-        Smithbox.EditorHandler.MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMapProperties);
+        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMapProperties);
 
         UIHelper.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
         UIHelper.WrappedText($"");
@@ -301,12 +301,12 @@ public class WorldMapView : IResourceEventListener
             {
                 if (ImGui.Button($"Load##load{match}"))
                 {
-                    Smithbox.EditorHandler.MapEditor.Universe.LoadMap(match, false);
-                    Smithbox.EditorHandler.MapEditor.MapListView.SignalLoad(match);
+                    Editor.Universe.LoadMap(match, false);
+                    Editor.MapListView.SignalLoad(match);
                 }
                 ImGui.SameLine();
                 UIHelper.WrappedText($"{match}");
-                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(match));
+                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(Editor.Project, match));
             }
         }
 
@@ -321,7 +321,7 @@ public class WorldMapView : IResourceEventListener
             foreach (var match in currentHoverMaps)
             {
                 UIHelper.WrappedText($"{match}");
-                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(match));
+                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(Editor.Project, match));
             }
         }
 
@@ -337,7 +337,7 @@ public class WorldMapView : IResourceEventListener
 
                     if (CFG.Current.WorldMap_EnableFilterOnClick)
                     {
-                        Smithbox.EditorHandler.MapEditor.MapListView.SearchBarText = string.Join("|", currentHoverMaps);
+                        Editor.MapListView.SearchBarText = string.Join("|", currentHoverMaps);
                     }
                 }
             }

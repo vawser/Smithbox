@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -15,7 +16,7 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamRowEditor
 {
-    private readonly ParamEditorScreen _paramEditor;
+    public ParamEditorScreen Editor;
 
     private Dictionary<string, PropertyInfo[]> _propCache = new();
     public ActionManager ContextActionManager;
@@ -23,7 +24,7 @@ public class ParamRowEditor
     public ParamRowEditor(ActionManager manager, ParamEditorScreen paramEditorScreen)
     {
         ContextActionManager = manager;
-        _paramEditor = paramEditorScreen;
+        Editor = paramEditorScreen;
     }
 
     private static void PropEditorParamRow_Header(bool isActiveView, ref string propSearchString)
@@ -167,7 +168,7 @@ public class ParamRowEditor
 
             if (field.Equals("-"))
             {
-                if (ParamEditorScreen.EditorMode)
+                if (Editor.EditorMode)
                 {
                     var ncols = ImGui.TableGetColumnCount();
                     ImGui.TableNextRow();
@@ -250,7 +251,7 @@ public class ParamRowEditor
         if (EditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
         {
             List<string> pinnedFields =
-                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.GetValueOrDefault(activeParam, null);
+                Editor.Project.PinnedFields.GetValueOrDefault(activeParam, null);
 
             if (CFG.Current.Param_PinnedRowsStayVisible)
             {
@@ -284,13 +285,13 @@ public class ParamRowEditor
             PropEditorParamRow_RowFields(bank, row, meta, vrow, auxRows, crow, ref imguiId, selection, activeParam);
 
             var search = propSearchString;
-            List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(_paramEditor, row, "fieldFilter",
+            List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, row, "fieldFilter",
                 () => CellSearchEngine.cse.Search((activeParam, row), search, true, true));
 
-            List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(_paramEditor, vrow, "vFieldFilter",
+            List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vrow, "vFieldFilter",
                 () => cols.Select((x, i) => x.GetAs(ParamBank.VanillaBank.GetParamFromName(activeParam))).ToList());
 
-            List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(_paramEditor, auxRows,
+            List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
                 "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(ParamBank.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             if (CFG.Current.Param_PinnedRowsStayVisible)
@@ -314,7 +315,7 @@ public class ParamRowEditor
             {
                 if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
                 {
-                    EditorDecorations.DrawCalcCorrectGraph(_paramEditor, meta, row);
+                    EditorDecorations.DrawCalcCorrectGraph(Editor, meta, row);
                 }
             }
 
@@ -544,7 +545,7 @@ public class ParamRowEditor
             ImGui.SameLine();
 
             // Name column
-            PropertyRowName(fieldOffset, ref internalName, cellMeta);
+            PropertyRowName(Editor, fieldOffset, ref internalName, cellMeta);
 
             if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef)
             {
@@ -612,7 +613,7 @@ public class ParamRowEditor
                 // Project Enum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumNameText(cellMeta.ProjectEnumType);
+                    EditorDecorations.ProjectEnumNameText(Editor, cellMeta.ProjectEnumType);
                 }
 
                 // Param Field Offset
@@ -709,19 +710,22 @@ public class ParamRowEditor
                 // FmgRef
                 if (displayFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(_paramEditor, FmgRef, row, oldval);
+                    EditorDecorations.FmgRefSelectable(Editor, FmgRef, row, oldval);
                 }
 
                 // MapFmgRef
                 if (displayMapFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(_paramEditor, MapFmgRef, row, oldval);
+                    EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, row, oldval);
                 }
 
                 // TextureRef
                 if (displayTextureRef)
                 {
-                    EditorDecorations.TextureRefSelectable(_paramEditor, TextureRef, row, oldval);
+                    if (Editor.Project.TextureViewer != null)
+                    {
+                        EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
+                    }
                 }
 
                 // Enum
@@ -733,37 +737,37 @@ public class ParamRowEditor
                 // ParticleAlias
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, oldval.ToString());
                 }
 
                 // SoundAlias
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, oldval.ToString());
                 }
 
                 // FlagAlias
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // CutsceneAlias
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), oldval.ToString());
+                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, oldval.ToString());
                 }
 
                 // MovieAlias
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // ProjectEnum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, oldval.ToString());
+                    EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, oldval.ToString());
                 }
 
                 // Param Field Offset
@@ -784,10 +788,10 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.ReturnPointParam(activeParam, row, internalName);
-                    ParamReferenceUtils.BonfireWarpParam(activeParam, row, internalName);
-                    ParamReferenceUtils.GameAreaParam(activeParam, row, internalName);
-                    ParamReferenceUtils.ItemLotParam(activeParam, row, internalName);
+                    ParamReferenceUtils.ReturnPointParam(Editor, activeParam, row, internalName);
+                    ParamReferenceUtils.BonfireWarpParam(Editor, activeParam, row, internalName);
+                    ParamReferenceUtils.GameAreaParam(Editor, activeParam, row, internalName);
+                    ParamReferenceUtils.ItemLotParam(Editor, activeParam, row, internalName);
                 }
             }
 
@@ -796,17 +800,17 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.AssetGeometryParam(activeParam, row, internalName);
-                    ParamReferenceUtils.BuddyStoneParam(activeParam, row, internalName);
+                    ParamReferenceUtils.AssetGeometryParam(Editor, activeParam, row, internalName);
+                    ParamReferenceUtils.BuddyStoneParam(Editor, activeParam, row, internalName);
                 }
 
                 // These are placed in-line with the current field
-                ParamReferenceUtils.GrassTypeParam(activeParam, row, internalName);
-                ParamReferenceUtils.BulletParam(activeParam, row, internalName);
+                ParamReferenceUtils.GrassTypeParam(Editor, activeParam, row, internalName);
+                ParamReferenceUtils.BulletParam(Editor, activeParam, row, internalName);
             }
 
             // Color Picker
-            ParamReferenceUtils.ColorPicker(activeParam, row, internalName);
+            ParamReferenceUtils.ColorPicker(Editor, activeParam, row, internalName);
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
@@ -975,17 +979,20 @@ public class ParamRowEditor
 
             if (CFG.Current.Param_HideReferenceRows == false && FmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(_paramEditor, FmgRef, context, colVal);
+                EditorDecorations.FmgRefSelectable(Editor, FmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && MapFmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(_paramEditor, MapFmgRef, context, colVal);
+                EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && TextureRef != null)
             {
-                EditorDecorations.TextureRefSelectable(_paramEditor, TextureRef, context, colVal);
+                if (Editor.Project.TextureViewer != null)
+                {
+                    EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
+                }
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
@@ -996,37 +1003,37 @@ public class ParamRowEditor
             // ParticleAlias
             if (showParticleEnum)
             {
-                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.ParticleAliases.GetEnumDictionary(), colVal.ToString());
+                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, colVal.ToString());
             }
 
             // SoundAlias
             if (showSoundEnum)
             {
-                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.SoundAliases.GetEnumDictionary(), colVal.ToString());
+                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, colVal.ToString());
             }
 
             // FlagAlias
             if (showFlagEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.EventFlagAliases.GetEnumDictionary(), colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
             }
 
             // CutsceneAlias
             if (showCutsceneEnum)
             {
-                EditorDecorations.AliasEnumValueText(Smithbox.BankHandler.CutsceneAliases.GetEnumDictionary(), colVal.ToString());
+                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, colVal.ToString());
             }
 
             // MovieAlias
             if (showMovieEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Smithbox.BankHandler.MovieAliases.GetEnumDictionary(), colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
             }
 
             // ProjectEnum
             if (showProjectEnum)
             {
-                EditorDecorations.ProjectEnumValueText(cellMeta.ProjectEnumType, colVal.ToString());
+                EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, colVal.ToString());
             }
 
             // Param Field Offset
@@ -1059,11 +1066,11 @@ public class ParamRowEditor
         return $"{col.GetByteOffset().ToString("x")} [{offS}-{offS + col.Def.BitSize - 1}]";
     }
 
-    private static void PropertyRowName(string fieldOffset, ref string internalName, FieldMetaData cellMeta)
+    private static void PropertyRowName(ParamEditorScreen editor, string fieldOffset, ref string internalName, FieldMetaData cellMeta)
     {
         var altName = cellMeta?.AltName;
 
-        if (cellMeta != null && ParamEditorScreen.EditorMode)
+        if (cellMeta != null && editor.EditorMode)
         {
             var editName = !string.IsNullOrWhiteSpace(altName) ? altName : internalName;
             ImGui.InputText("##editName", ref editName, 128);
@@ -1174,18 +1181,18 @@ public class ParamRowEditor
         if (ImGui.MenuItem("Add to Mass Edit"))
         {
             var propertyName = internalName.Replace(" ", "\\s");
-            string currInput = _paramEditor.ToolWindow.MassEditHandler._currentMEditRegexInput;
+            string currInput = Editor.ToolWindow.MassEditHandler._currentMEditRegexInput;
 
             if(currInput == "")
             {
                 // Add selection section if input is empty
-                _paramEditor.ToolWindow.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
+                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
             }
             else
             {
                 // Otherwise just add the property name
                 currInput = $"{currInput}{propertyName}";
-                _paramEditor.ToolWindow.MassEditHandler._currentMEditRegexInput = currInput;
+                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = currInput;
             }
         }
 
@@ -1203,12 +1210,12 @@ public class ParamRowEditor
         {
             if (ImGui.MenuItem(isPinned ? "Unpin " : "Pin " + internalName))
             {
-                if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.ContainsKey(activeParam))
+                if (!Editor.Project.PinnedFields.ContainsKey(activeParam))
                 {
-                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.Add(activeParam, new List<string>());
+                    Editor.Project.PinnedFields.Add(activeParam, new List<string>());
                 }
 
-                List<string> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields[activeParam];
+                List<string> pinned = Editor.Project.PinnedFields[activeParam];
 
                 if (isPinned)
                 {
@@ -1222,13 +1229,13 @@ public class ParamRowEditor
 
             if (isPinned)
             {
-                EditorDecorations.PinListReorderOptions(Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields[activeParam],
+                EditorDecorations.PinListReorderOptions(Editor.Project.PinnedFields[activeParam],
                     internalName);
             }
 
             if (ImGui.Selectable("Unpin all"))
             {
-                Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields.Clear();
+                Editor.Project.PinnedFields.Clear();
             }
 
             ImGui.Separator();
@@ -1253,7 +1260,7 @@ public class ParamRowEditor
         }
 
         // Editor Mode
-        if (ParamEditorScreen.EditorMode && cellMeta != null)
+        if (Editor.EditorMode && cellMeta != null)
         {
             if (ImGui.BeginMenu("Add Reference"))
             {
@@ -1323,7 +1330,7 @@ public class ParamRowEditor
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Ref_Text);
 
-                if (EditorDecorations.ParamRefEnumContextMenuItems(bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+                if (EditorDecorations.ParamRefEnumContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
                 {
                     ParamEditorCommon.SetLastPropertyManual(newval);
                 }
@@ -1338,8 +1345,8 @@ public class ParamRowEditor
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_VirtualRef_Text);
-                EditorDecorations.VirtualParamRefSelectables(bank, VirtualRef, oldval, row, internalName, ExtRefs,
-                    _paramEditor);
+                EditorDecorations.VirtualParamRefSelectables(Editor, bank, VirtualRef, oldval, row, internalName, ExtRefs,
+                    Editor);
                 ImGui.PopStyleColor();
             }
         }
@@ -1360,7 +1367,7 @@ public class ParamRowEditor
                 {
                     MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
                         $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
-                         Smithbox.EditorHandler.ParamEditor._activeView._selection);
+                         Editor._activeView._selection);
                 }
             }
             else

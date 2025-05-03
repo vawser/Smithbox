@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.GxList;
@@ -20,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class GXListGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\GX List Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> GXListGroupFiles = new List<string>();
 
@@ -30,8 +31,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static GXListList SelectedGXListList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\GX List Groups\\";
+
             UpdateGXListGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -43,8 +46,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);
 
-                        var action = new ReplaceGxList(screen, SelectedGXListList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceGxList(editor, SelectedGXListList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -60,8 +63,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedGXListGroup = entry;
                         SelectedGXListList = ReadGXListGroup(entry);
 
-                        var action = new AppendGxList(screen, SelectedGXListList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendGxList(editor, SelectedGXListList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

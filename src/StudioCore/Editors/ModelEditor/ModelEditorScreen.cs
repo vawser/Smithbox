@@ -1,32 +1,26 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.ModelEditor.Actions;
+using StudioCore.Editors.ModelEditor.Core;
+using StudioCore.Editors.ModelEditor.Framework;
+using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Scene;
-using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using Veldrid.Utilities;
 using Viewport = StudioCore.Interface.Viewport;
-using StudioCore.Configuration;
-using StudioCore.MsbEditor;
-using StudioCore.Utilities;
-using StudioCore.Editors.ModelEditor.Actions;
-using StudioCore.Core.Project;
-using StudioCore.Interface;
-using System.Xml;
-using StudioCore.Editors.ModelEditor.Tools;
-using StudioCore.Editors.ModelEditor.Framework;
-using StudioCore.Editors.ModelEditor.Core;
-using StudioCore.Editors.ModelEditor.Core.Properties;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.Extensions.Logging;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
 
 namespace StudioCore.Editors.ModelEditor;
 
 public class ModelEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ViewportActionManager EditorActionManager = new();
 
     public ViewportSelection _selection = new();
@@ -63,24 +57,27 @@ public class ModelEditorScreen : EditorScreen
     public FlverDataSelectionView FlverDataSelection;
     public ModelPropertyView ModelPropertyEditor;
 
-    public GxDescriptorBank GxItemDescriptors;
+    // public GxDescriptorBank GxItemDescriptors;
 
-    public ModelEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public ModelEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
-        Rect = window.Bounds;
-        Window = window;
+        BaseEditor = baseEditor;
+        Project = project;
 
-        if (device != null)
+        Rect = baseEditor._context.Window.Bounds;
+        Window = baseEditor._context.Window;
+
+        if (baseEditor._context.Device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport(ViewportType.ModelEditor, "Modeleditvp", device, RenderScene, EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new Viewport(BaseEditor, null, this, ViewportType.ModelEditor, "Modeleditvp", Rect.Width, Rect.Height);
         }
         else
         {
-            Viewport = new NullViewport(ViewportType.ModelEditor, "Modeleditvp", EditorActionManager, _selection, Rect.Width, Rect.Height);
+            Viewport = new NullViewport(BaseEditor, null, this, ViewportType.ModelEditor, "Modeleditvp", Rect.Width, Rect.Height);
         }
 
-        _universe = new ModelUniverse(RenderScene, _selection);
+        _universe = new ModelUniverse(this, RenderScene, _selection);
 
         // Order matters here as classes may fill references via Screen composition
         ViewportManager = new ModelViewportManager(this, Viewport);
@@ -90,7 +87,7 @@ public class ModelEditorScreen : EditorScreen
         ContextMenu = new ModelContextMenu(this);
         Decorator = new ModelPropertyDecorator(this);
         CommandQueue = new ModelCommandQueue(this);
-        GxItemDescriptors = new GxDescriptorBank(this);
+        // GxItemDescriptors = new GxDescriptorBank(this);
 
         ActionHandler = new ModelActionHandler(this);
         Filters = new ModelFilters(this);
@@ -110,12 +107,92 @@ public class ModelEditorScreen : EditorScreen
     public string EditorName => "Model Editor";
     public string CommandEndpoint => "model";
     public string SaveType => "Models";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
-    public void EditDropdown()
+    /// <summary>
+    /// The editor main loop
+    /// </summary>
+    public void OnGUI(string[] initcmd)
     {
         if (!CFG.Current.EnableEditor_FLVER)
             return;
 
+        var scale = DPI.GetUIScale();
+
+        // Docking setup
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+        var dsid = ImGui.GetID("DockSpace_ModelEdit");
+        ImGui.DockSpace(dsid, new Vector2(0, 0));
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        EditorShortcuts.Monitor();
+        CommandQueue.Parse(initcmd);
+
+        Viewport.OnGui();
+
+        FileSelection.Display();
+        InternalFileSelection.Display();
+        FlverDataSelection.Display();
+        ModelPropertyEditor.Display();
+
+        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        {
+            ToolView.OnGui();
+        }
+
+        ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
+
+        if (UI.Current.Interface_ModelEditor_ResourceList)
+        {
+            ResourceListWindow.DisplayWindow("modelResourceList");
+        }
+
+        FocusManager.OnFocus();
+
+        ImGui.PopStyleColor(1);
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
+
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -171,11 +248,8 @@ public class ModelEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Viewport"))
@@ -232,16 +306,9 @@ public class ModelEditorScreen : EditorScreen
 
         ImGui.Separator();
     }
-    /// <summary>
-    /// Handle the editor menubar
-    /// </summary>
-    public void EditorUniqueDropdowns()
+
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
-        ToolMenubar.DisplayMenu();
-
         ImGui.Separator();
 
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
@@ -292,7 +359,7 @@ public class ModelEditorScreen : EditorScreen
             UIHelper.ShowActiveStatus(CFG.Current.ModelEditor_ViewBones);
 
             // Collision
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Project.ProjectType is ProjectType.ER)
             {
                 // High
                 if (ImGui.MenuItem("Collision (High)"))
@@ -386,83 +453,6 @@ public class ModelEditorScreen : EditorScreen
         }
     }
 
-    /// <summary>
-    /// The editor main loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-        var dsid = ImGui.GetID("DockSpace_ModelEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
-
-        EditorShortcuts.Monitor();
-        CommandQueue.Parse(initcmd);
-
-        Viewport.OnGui();
-
-        FileSelection.Display();
-        InternalFileSelection.Display();
-        FlverDataSelection.Display();
-        ModelPropertyEditor.Display();
-
-        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
-        {
-            ToolView.OnGui();
-        }
-
-        ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
-
-        if (UI.Current.Interface_ModelEditor_ResourceList)
-        {
-            ResourceListWindow.DisplayWindow("modelResourceList");
-        }
-
-        FocusManager.OnFocus();
-
-        ImGui.PopStyleColor(1);
-    }
-
-    /// <summary>
-    /// Handle the editor state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            Selection.OnProjectChanged();
-            ResManager.OnProjectChanged();
-
-            FileSelection.OnProjectChanged();
-            InternalFileSelection.OnProjectChanged();
-            FlverDataSelection.OnProjectChanged();
-
-            ToolView.OnProjectChanged();
-            ToolMenubar.OnProjectChanged();
-        }
-
-    }
-
-    /// <summary>
-    /// Handle the editor defocus state
-    /// </summary>
     public void OnDefocus()
     {
         FocusManager.ResetFocus();
@@ -470,13 +460,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (Project.ProjectType == ProjectType.DES)
         {
             TaskLogs.AddLog("Model Editor is not supported for DES.", LogLevel.Warning);
             return;
@@ -487,13 +471,7 @@ public class ModelEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.DES)
+        if (Project.ProjectType == ProjectType.DES)
         {
             TaskLogs.AddLog("Model Editor saving is not supported for DES.", LogLevel.Warning);
             return;
@@ -509,9 +487,6 @@ public class ModelEditorScreen : EditorScreen
 
     public void Update(float dt)
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
 
         if (ResManager._loadingTask != null && ResManager._loadingTask.IsCompleted)
@@ -528,9 +503,6 @@ public class ModelEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (!CFG.Current.EnableEditor_FLVER)
-            return;
-
         if (Viewport != null)
         {
             Viewport.Draw(device, cl);

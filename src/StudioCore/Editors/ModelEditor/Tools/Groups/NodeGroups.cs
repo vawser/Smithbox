@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Actions.Node;
@@ -20,7 +21,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class NodeGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Node Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> NodeGroupFiles = new List<string>();
 
@@ -30,8 +31,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static NodeList SelectedNodeList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Node Groups\\";
+
             UpdateNodeGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -43,8 +46,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedNodeGroup = entry;
                         SelectedNodeList = ReadNodeGroup(entry);
 
-                        var action = new ReplaceNodeList(screen, SelectedNodeList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceNodeList(editor, SelectedNodeList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -60,8 +63,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedNodeGroup = entry;
                         SelectedNodeList = ReadNodeGroup(entry);
 
-                        var action = new AppendNodeList(screen, SelectedNodeList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendNodeList(editor, SelectedNodeList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

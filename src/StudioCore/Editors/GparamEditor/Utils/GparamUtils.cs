@@ -1,30 +1,12 @@
 ﻿using SoulsFormats;
-using StudioCore.Core.Project;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using StudioCore.Core;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor.Utils;
 
 public static class GparamUtils
 {
-    /// <summary>
-    /// Whether the current project type supports the GPARAM Editor
-    /// </summary>
-    public static bool IsSupportedProjectType()
-    {
-        if(Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2S or ProjectType.DS2 or ProjectType.DES or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
     /// <summary>
     /// Search for valid duplicate name for a GPARAM file
     /// </summary>

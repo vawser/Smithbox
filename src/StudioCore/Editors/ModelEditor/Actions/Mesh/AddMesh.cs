@@ -11,7 +11,7 @@ namespace StudioCore.Editors.ModelEditor.Actions.Mesh;
 
 public class AddMesh : ViewportAction
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelViewportManager ViewportManager;
 
@@ -21,13 +21,13 @@ public class AddMesh : ViewportAction
     private int PreviousSelectionIndex;
     private int Index;
 
-    public AddMesh(ModelEditorScreen screen, FLVER2 flver)
+    public AddMesh(ModelEditorScreen editor, FLVER2 flver)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ViewportManager = screen.ViewportManager;
+        Editor = editor;
+        Selection = editor.Selection;
+        ViewportManager = editor.ViewportManager;
 
-        PreviousSelectionIndex = screen.Selection._selectedMesh;
+        PreviousSelectionIndex = editor.Selection._selectedMesh;
 
         CurrentFLVER = flver;
         NewObject = new FLVER2.Mesh();
@@ -47,7 +47,7 @@ public class AddMesh : ViewportAction
         CurrentFLVER.Meshes.Insert(Index, NewObject);
         Selection._selectedMesh = Index;
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(Index);
+        Editor.ViewportManager.UpdateRepresentativeModel(Index);
 
         return ActionEvent.NoEvent;
     }
@@ -57,7 +57,7 @@ public class AddMesh : ViewportAction
         Selection._selectedMesh = PreviousSelectionIndex;
         CurrentFLVER.Meshes.RemoveAt(Index);
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
+        Editor.ViewportManager.UpdateRepresentativeModel(PreviousSelectionIndex);
 
         return ActionEvent.NoEvent;
     }

@@ -1,16 +1,10 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
 namespace StudioCore.Editors.GparamEditor;
@@ -238,7 +232,7 @@ public class GparamValueListView
     {
         ImGui.AlignTextToFramePadding();
 
-        string desc = Smithbox.BankHandler.GPARAM_Info.GetReferenceDescription(Selection._selectedParamGroup.Key, Selection._selectedParamField.Key);
+        string desc = FormatInformationUtils.GetReferenceDescription(Screen.Project.GparamInformation, Selection._selectedParamGroup.Key, Selection._selectedParamField.Key);
 
         UIHelper.WrappedText($"Type: {GparamUtils.GetReadableObjectTypeName(field)}");
         UIHelper.WrappedText($"");
@@ -250,7 +244,8 @@ public class GparamValueListView
         }
 
         // Show enum list if they exist
-        var propertyEnum = Smithbox.BankHandler.GPARAM_Info.GetEnumForProperty(field.Key);
+        var propertyEnum = FormatInformationUtils.GetEnumForProperty(Screen.Project.GparamInformation, Screen.Project.GparamEnums, field.Key);
+
         if (propertyEnum != null)
         {
             foreach (var entry in propertyEnum.members)

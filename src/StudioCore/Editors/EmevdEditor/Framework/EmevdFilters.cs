@@ -1,16 +1,7 @@
-﻿using HKLib.hk2018.hkaiCollisionAvoidance;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Hexa.NET.ImGui;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
-using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 using static StudioCore.Editors.EmevdEditor.EMEDF;
 
@@ -221,7 +212,7 @@ public class EmevdFilters
     public bool IsInstructionFilterMatch(Instruction ins, string overrideInput = "")
     {
         var name = $"{ins.Bank}[{ins.ID}]";
-        var argDocName = EmevdUtils.GetArgDocName(ins);
+        var argDocName = EmevdUtils.GetArgDocName(Screen, ins);
 
         bool isValid = true;
         var input = InstructionFilterInput.ToLower();
@@ -239,7 +230,7 @@ public class EmevdFilters
             // Prop filter
             if (input.StartsWith("prop:") && input.Length > 4)
             {
-                (var argumentDocs, var arguments) = EmevdUtils.BuildArgumentList(ins);
+                (var argumentDocs, var arguments) = EmevdUtils.BuildArgumentList(Screen, ins);
 
                 if (argumentDocs != null && arguments != null)
                 {

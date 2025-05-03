@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
@@ -16,9 +16,9 @@ namespace StudioCore.Editors.ParamEditor;
 public static class ParamReferenceUtils
 {
     // Supports: ER, DS3, SDT
-    public static void BonfireWarpParam(string activeParam, Param.Row row, string currentField)
+    public static void BonfireWarpParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
+        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.SDT))
             return;
 
         if (activeParam == null)
@@ -37,7 +37,7 @@ public static class ParamReferenceUtils
             var rowMapId = "";
             uint entityID = 0;
 
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (editor.Project.ProjectType is ProjectType.ER)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 entityID = (uint)c.Value.Value;
@@ -65,7 +65,7 @@ public static class ParamReferenceUtils
 
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
-            if (Smithbox.ProjectType is ProjectType.DS3)
+            if (editor.Project.ProjectType is ProjectType.DS3)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
@@ -80,7 +80,7 @@ public static class ParamReferenceUtils
 
                 rowMapId = $"m{sAA}_{sBB}_00_00";
             }
-            if (Smithbox.ProjectType is ProjectType.SDT)
+            if (editor.Project.ProjectType is ProjectType.SDT)
             {
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
@@ -125,9 +125,9 @@ public static class ParamReferenceUtils
     }
 
     // Supports: BB
-    public static void ReturnPointParam(string activeParam, Param.Row row, string currentField)
+    public static void ReturnPointParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.BB))
+        if (!(editor.Project.ProjectType is ProjectType.BB))
             return;
 
         if (activeParam == null)
@@ -195,9 +195,9 @@ public static class ParamReferenceUtils
     }
 
     // Supports: ER, DS3, SDT, DS1, DS1R
-    public static void GameAreaParam(string activeParam, Param.Row row, string currentField)
+    public static void GameAreaParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB))
+        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS3 or ProjectType.SDT or ProjectType.BB))
             return;
 
         if (activeParam == null)
@@ -218,7 +218,7 @@ public static class ParamReferenceUtils
             uint entityID = 0;
             entityID = (uint)row.ID;
 
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (editor.Project.ProjectType is ProjectType.ER)
             {
                 Param.Cell? c = row?["bossMapAreaNo"];
                 byte AA = (byte)c.Value.Value;
@@ -243,7 +243,7 @@ public static class ParamReferenceUtils
                 rowMapId = $"m{sAA}_{sBB}_{sCC}_00";
             }
 
-            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
+            if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.BB)
             {
                 var idStr = entityID.ToString();
 
@@ -256,7 +256,7 @@ public static class ParamReferenceUtils
                 }
             }
 
-            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
                 var idStr = entityID.ToString();
 
@@ -298,9 +298,9 @@ public static class ParamReferenceUtils
     }
 
     // Supports: ER, AC6
-    public static void GrassTypeParam(string activeParam, Param.Row row, string currentField)
+    public static void GrassTypeParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6))
+        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -320,7 +320,7 @@ public static class ParamReferenceUtils
                 string modelId1 = "";
                 string modelId2 = "";
 
-                if (Smithbox.ProjectType is ProjectType.ER)
+                if (editor.Project.ProjectType is ProjectType.ER)
                 {
                     c = row?["model0Name"];
                     modelId1 = (string)c.Value.Value;
@@ -329,7 +329,7 @@ public static class ParamReferenceUtils
                     modelId2 = (string)c.Value.Value;
                 }
 
-                if (Smithbox.ProjectType is ProjectType.AC6)
+                if (editor.Project.ProjectType is ProjectType.AC6)
                 {
                     c = row?["modelName"];
                     modelId1 = (string)c.Value.Value;
@@ -365,9 +365,9 @@ public static class ParamReferenceUtils
     private static List<string> AssetList;
 
     // Supports: ER, AC6
-    public static void AssetGeometryParam(string activeParam, Param.Row row, string currentField)
+    public static void AssetGeometryParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6))
+        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -390,7 +390,7 @@ public static class ParamReferenceUtils
 
             if (AssetList.Contains(assetID.ToLower()) && assetID != "")
             {
-                var aliasName = AliasUtils.GetAssetAlias(assetID.ToLower());
+                var aliasName = AliasUtils.GetAssetAlias(editor.Project, assetID.ToLower());
 
                 if (ImGui.Button($"View Model: {assetID}", new Vector2(width, 20)))
                 {
@@ -441,9 +441,9 @@ public static class ParamReferenceUtils
     }
 
     // Supports: ER
-    public static void BuddyStoneParam(string activeParam, Param.Row row, string currentField)
+    public static void BuddyStoneParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER))
+        if (!(editor.Project.ProjectType is ProjectType.ER))
             return;
         
         if (activeParam == null)
@@ -529,9 +529,9 @@ public static class ParamReferenceUtils
     }
 
     // Supports: AC6, ER, DS3
-    public static void BulletParam(string activeParam, Param.Row row, string currentField)
+    public static void BulletParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (!(Smithbox.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.AC6))
+        if (!(editor.Project.ProjectType is ProjectType.ER or ProjectType.DS3 or ProjectType.AC6))
             return;
 
         if (activeParam == null)
@@ -548,11 +548,11 @@ public static class ParamReferenceUtils
             if ((currentField == "assetNo_Hit" || currentField == "assetCreationAssetId"))
             {
                 Param.Cell? c = null;
-                if (Smithbox.ProjectType is ProjectType.AC6)
+                if (editor.Project.ProjectType is ProjectType.AC6)
                 {
                     c = row?["assetCreationAssetId"];
                 }
-                if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                if (editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
                     c = row?["assetNo_Hit"];
                 }
@@ -571,7 +571,7 @@ public static class ParamReferenceUtils
                 string category = "";
                 string modelName = "";
 
-                if (Smithbox.ProjectType is ProjectType.ER || Smithbox.ProjectType is ProjectType.AC6)
+                if (editor.Project.ProjectType is ProjectType.ER || editor.Project.ProjectType is ProjectType.AC6)
                 {
                     if (modelId.Length == 6)
                     {
@@ -672,31 +672,31 @@ public static class ParamReferenceUtils
     public static MSB_AC6 CurrentPeekMap_AC6;
 
     // Supports: DS1, DS3, SDT, ER, AC6
-    public static void ItemLotParam(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
-            ItemLotParam_DS1(activeParam, row, currentField);
+            ItemLotParam_DS1(editor, activeParam, row, currentField);
         }
-        if (Smithbox.ProjectType is ProjectType.BB)
+        if (editor.Project.ProjectType is ProjectType.BB)
         {
-            ItemLotParam_BB(activeParam, row, currentField);
+            ItemLotParam_BB(editor, activeParam, row, currentField);
         }
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (editor.Project.ProjectType is ProjectType.DS3)
         {
-            ItemLotParam_DS3(activeParam, row, currentField);
+            ItemLotParam_DS3(editor, activeParam, row, currentField);
         }
-        if (Smithbox.ProjectType is ProjectType.SDT)
+        if (editor.Project.ProjectType is ProjectType.SDT)
         {
-            ItemLotParam_SDT(activeParam, row, currentField);
+            ItemLotParam_SDT(editor, activeParam, row, currentField);
         }
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (editor.Project.ProjectType is ProjectType.ER)
         {
-            ItemLotParam_ER(activeParam, row, currentField);
+            ItemLotParam_ER(editor, activeParam, row, currentField);
         }
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (editor.Project.ProjectType is ProjectType.AC6)
         {
-            ItemLotParam_AC6(activeParam, row, currentField);
+            ItemLotParam_AC6(editor, activeParam, row, currentField);
         }
     }
 
@@ -718,7 +718,7 @@ public static class ParamReferenceUtils
         UIHelper.ShowHoverTooltip("Loads the map and selects the asset that holds this treasure.");
     }
 
-    public static void ItemLotParam_DS1(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_DS1(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -793,7 +793,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ItemLotParam_BB(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_BB(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -884,7 +884,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ItemLotParam_DS3(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_DS3(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -975,7 +975,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ItemLotParam_SDT(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_SDT(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -1050,7 +1050,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ItemLotParam_ER(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_ER(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -1131,7 +1131,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ItemLotParam_AC6(string activeParam, Param.Row row, string currentField)
+    public static void ItemLotParam_AC6(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (activeParam == null)
             return;
@@ -1204,7 +1204,7 @@ public static class ParamReferenceUtils
         }
     }
 
-    public static void ColorPicker(string activeParam, Param.Row row, string currentField)
+    public static void ColorPicker(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
     {
         if (!CFG.Current.Param_ShowColorPreview)
             return;
@@ -1224,11 +1224,11 @@ public static class ParamReferenceUtils
         string fields = "";
         string placementField = "";
 
-        foreach (var editor in meta.ColorEditors)
+        foreach (var cEditor in meta.ColorEditors)
         {
-            name = editor.Name;
-            fields = editor.Fields;
-            placementField = editor.PlacedField;
+            name = cEditor.Name;
+            fields = cEditor.Fields;
+            placementField = cEditor.PlacedField;
 
             if(currentField == placementField)
             {
@@ -1242,15 +1242,14 @@ public static class ParamReferenceUtils
             List<string> FieldNames = new List<string>();
             FieldNames = fields.Split(",").ToList();
 
-            DisplayColorPicker(row, name, FieldNames[0], FieldNames[1], FieldNames[2]);
+            DisplayColorPicker(editor, row, name, FieldNames[0], FieldNames[1], FieldNames[2]);
         }
     }
 
     private static Vector3 heldColor = new();
 
-    private static void DisplayColorPicker(Param.Row row, string name, string redField, string greenField, string blueField)
+    private static void DisplayColorPicker(ParamEditorScreen editor, Param.Row row, string name, string redField, string greenField, string blueField)
     {
-        var editor = Smithbox.EditorHandler.ParamEditor;
         var param = ParamBank.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
 
         if (param == null)

@@ -5,7 +5,7 @@ using Hexa.NET.ImGui;
 using Microsoft.Win32;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Framework;
@@ -1025,7 +1025,7 @@ public static class Utils
         return "Unknown version format";
     }
 
-    public static void EntitySelectionHandler(ViewportSelection selection, Entity entity,
+    public static void EntitySelectionHandler(MapEditorScreen editor, ViewportSelection selection, Entity entity,
         bool itemSelected, bool isItemFocused, List<WeakReference<Entity>> filteredEntityList = null)
     {
         // Up/Down arrow mass selection
@@ -1045,12 +1045,12 @@ public static class Utils
                     || InputTracker.GetKey(Key.ShiftLeft)
                     || InputTracker.GetKey(Key.ShiftRight))
                 {
-                    selection.AddSelection(entity);
+                    selection.AddSelection(editor, entity);
                 }
                 else
                 {
-                    selection.ClearSelection();
-                    selection.AddSelection(entity);
+                    selection.ClearSelection(editor);
+                    selection.AddSelection(editor, entity);
                 }
             }
             else if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
@@ -1058,11 +1058,11 @@ public static class Utils
                 // Toggle Selection
                 if (selection.GetSelection().Contains(entity))
                 {
-                    selection.RemoveSelection(entity);
+                    selection.RemoveSelection(editor, entity);
                 }
                 else
                 {
-                    selection.AddSelection(entity);
+                    selection.AddSelection(editor, entity);
                 }
             }
             else if (selection.GetSelection().Count > 0
@@ -1122,19 +1122,19 @@ public static class Utils
 
                     for (var i = iStart; i <= iEnd; i++)
                     {
-                        selection.AddSelection(entList[i]);
+                        selection.AddSelection(editor, entList[i]);
                     }
                 }
                 else
                 {
-                    selection.AddSelection(entity);
+                    selection.AddSelection(editor, entity);
                 }
             }
             else
             {
                 // Exclusive Selection
-                selection.ClearSelection();
-                selection.AddSelection(entity);
+                selection.ClearSelection(editor);
+                selection.AddSelection(editor, entity);
             }
         }
     }

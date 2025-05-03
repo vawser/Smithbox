@@ -16,14 +16,17 @@ namespace StudioCore.Editors.ModelEditor.Framework;
 
 public class ModelViewGrid
 {
+    private ModelEditorScreen Editor;
+
     private DbgPrimWireGrid WireGrid;
 
     private DebugPrimitiveRenderableProxy ViewportGrid;
 
     private MeshRenderables _renderlist;
 
-    public ModelViewGrid(MeshRenderables renderlist)
+    public ModelViewGrid(ModelEditorScreen editor, MeshRenderables renderlist)
     {
+        Editor = editor;
         _renderlist = renderlist;
 
         WireGrid = new DbgPrimWireGrid(Color.Red, Color.Red, CFG.Current.ModelEditor_Viewport_Grid_Size, CFG.Current.ModelEditor_Viewport_Grid_Square_Size);
@@ -57,7 +60,7 @@ public class ModelViewGrid
             Regenerate();
         }
 
-        if (UI.Current.Interface_ModelEditor_Viewport_Grid && Smithbox.EditorHandler.FocusedEditor is ModelEditorScreen)
+        if (UI.Current.Interface_ModelEditor_Viewport_Grid && Editor.Project.FocusedEditor is ModelEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

@@ -13,14 +13,14 @@ namespace StudioCore.Editors.ModelEditor;
 
 public class InternalFilePropertyView
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     private ModelSelectionManager Selection;
     private ModelContextMenu ContextMenu;
     private ModelPropertyDecorator Decorator;
 
     public InternalFilePropertyView(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ContextMenu = screen.ContextMenu;
         Decorator = screen.Decorator;
@@ -29,7 +29,7 @@ public class InternalFilePropertyView
     public void Display()
     {
         var buttonSize = new Vector2(20, 20);
-        var container = Screen.ResManager.LoadedFlverContainer;
+        var container = Editor.ResManager.LoadedFlverContainer;
         var name = container.InternalFlvers.First().Name;
 
         ImGui.Separator();

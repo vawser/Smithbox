@@ -1,5 +1,5 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GparamEditor.Core;
@@ -8,15 +8,15 @@ using StudioCore.Editors.GparamEditor.Framework;
 using StudioCore.Editors.GparamEditor.Tools;
 using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.GraphicsEditor;
 
 public class GparamEditorScreen : EditorScreen
 {
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
     public ActionManager EditorActionManager = new();
 
     public GparamSelectionManager Selection;
@@ -38,8 +38,11 @@ public class GparamEditorScreen : EditorScreen
     public GparamFieldListView FieldList;
     public GparamValueListView FieldValueList;
 
-    public GparamEditorScreen(Sdl2Window window, GraphicsDevice device)
+    public GparamEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
+        BaseEditor = baseEditor;
+        Project = project;
+
         Selection = new GparamSelectionManager(this);
         ActionHandler = new GparamActionHandler(this);
         CommandQueue = new GparamCommandQueue(this);
@@ -61,12 +64,89 @@ public class GparamEditorScreen : EditorScreen
     public string EditorName => "Gparam Editor##GparamEditor";
     public string CommandEndpoint => "gparam";
     public string SaveType => "Gparam";
+    public string WindowName => "";
+    public bool HasDocked { get; set; }
 
-    public void EditDropdown()
+    /// <summary>
+    /// The editor main loop
+    /// </summary>
+    public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
+        var scale = DPI.GetUIScale();
 
+        // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+
+        var dsid = ImGui.GetID("DockSpace_GparamEditor");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        EditorShortcuts.Monitor();
+        CommandQueue.Parse(initcmd);
+
+        if (UI.Current.Interface_GparamEditor_Files)
+        {
+            FileList.Display();
+        }
+        if (UI.Current.Interface_GparamEditor_Groups)
+        {
+            GroupList.Display();
+        }
+        if (UI.Current.Interface_GparamEditor_Fields)
+        {
+            FieldList.Display();
+        }
+        if (UI.Current.Interface_GparamEditor_Values)
+        {
+            FieldValueList.Display();
+        }
+        if (UI.Current.Interface_GparamEditor_ToolConfiguration)
+        {
+            ToolView.Display();
+        }
+
+        ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
+    }
+
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
+
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -115,11 +195,8 @@ public class GparamEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -161,107 +238,9 @@ public class GparamEditorScreen : EditorScreen
     /// <summary>
     /// The menubar for the editor 
     /// </summary>
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
         ToolMenubar.DisplayMenu();
-    }
-
-    /// <summary>
-    /// The editor main loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-
-        var dsid = ImGui.GetID("DockSpace_GparamEditor");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (!GparamUtils.IsSupportedProjectType())
-        {
-            ImGui.Begin("Editor##InvalidGparamEditor");
-
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-
-            ImGui.End();
-        }
-        else if(Smithbox.ProjectHandler.CurrentProject == null)
-        {
-            ImGui.Begin("Editor##InvalidGparamEditor");
-
-            ImGui.Text("No project loaded. File -> New Project");
-
-            ImGui.End();
-        }
-        else
-        {
-            if (!GparamParamBank.IsLoaded)
-            {
-                GparamParamBank.LoadGraphicsParams();
-            }
-
-            EditorShortcuts.Monitor();
-            CommandQueue.Parse(initcmd);
-
-            if (GparamParamBank.IsLoaded)
-            {
-                if (UI.Current.Interface_GparamEditor_Files)
-                {
-                    FileList.Display();
-                }
-                if (UI.Current.Interface_GparamEditor_Groups)
-                {
-                    GroupList.Display();
-                }
-                if (UI.Current.Interface_GparamEditor_Fields)
-                {
-                    FieldList.Display();
-                }
-                if (UI.Current.Interface_GparamEditor_Values)
-                {
-                    FieldValueList.Display();
-                }
-            }
-
-            if (UI.Current.Interface_GparamEditor_ToolConfiguration)
-            {
-                ToolView.Display();
-            }
-        }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
-    }
-
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            ToolView.OnProjectChanged();
-            ToolMenubar.OnProjectChanged();
-        }
-
-        GparamParamBank.LoadGraphicsParams();
-
-        ResetActionManager();
     }
 
     public void Save()
@@ -269,11 +248,7 @@ public class GparamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (GparamParamBank.IsLoaded)
-            GparamParamBank.SaveGraphicsParam(Selection._selectedGparamInfo);
+        Project.GparamBank.SaveGraphicsParam(Selection._selectedGparamInfo);
     }
 
     public void SaveAll()
@@ -281,18 +256,6 @@ public class GparamEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_GPARAM)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (GparamParamBank.IsLoaded)
-            GparamParamBank.SaveGraphicsParams();
+        Project.GparamBank.SaveGraphicsParams();
     }
-
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
-    }
-
-
-    
 }

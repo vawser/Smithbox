@@ -1,25 +1,11 @@
-﻿using DotNext.Collections.Generic;
-using HKLib.hk2018;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Org.BouncyCastle.Crypto;
-using SoulsFormats;
-using StudioCore.Banks.AliasBank;
-using StudioCore.Banks.HavokAliasBank;
-using StudioCore.Core.Project;
-using StudioCore.Editors.HavokEditor.Enums;
-using StudioCore.Editors.HavokEditor.Framework;
+﻿using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
 using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;
@@ -111,35 +97,6 @@ public static class TimeActUtils
                 AliasUtils.AliasTooltip(aliasList, "Generators that use this animation:");
             }
         }
-    }
-
-    public static HavokContainerInfo LoadHavokObjects(TimeActContainerWrapper info)
-    {
-        HavokContainerInfo newInfo = null;
-
-        /*
-        foreach (var entry in HavokFileBank.BehaviorContainerBank)
-        {
-            if (entry.Filename == info.Name)
-            {
-                entry.LoadBinder();
-
-                foreach (var file in entry.InternalFileList)
-                {
-                    var name = file.Split("export")[1];
-                    if (name.Contains("behaviors"))
-                    {
-                        newInfo = entry;
-                        newInfo.LoadFile(file.ToLower(), HavokInternalType.Behavior.ToString());
-                        newInfo.ReadHavokObjects(file.ToLower(), HavokInternalType.Behavior.ToString());
-                        return newInfo;
-                    }
-                }
-            }
-        }
-        */
-
-        return newInfo;
     }
 
     public static string GetTimeActName(int id)

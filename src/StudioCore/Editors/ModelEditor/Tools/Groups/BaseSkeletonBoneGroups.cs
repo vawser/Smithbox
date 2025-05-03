@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
@@ -22,7 +23,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
     public static class BaseSkeletonBoneGroups
     {
-        public static string ExportBasePath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Base Skeleton Groups\\";
+        public static string ExportBasePath = "";
 
         public static List<string> BaseSkeletonGroupFiles = new List<string>();
 
@@ -32,8 +33,10 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static BaseSkeletonList SelectedBaseSkeletonList;
 
-        public static void DisplaySubMenu(ModelEditorScreen screen)
+        public static void DisplaySubMenu(ModelEditorScreen editor)
         {
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Base Skeleton Groups\\";
+
             UpdateBaseSkeletonGroupList();
 
             if (ImGui.BeginMenu("Replace"))
@@ -45,8 +48,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedBaseSkeletonGroup = entry;
                         SelectedBaseSkeletonList = ReadBaseSkeletonGroup(entry);
 
-                        var action = new ReplaceBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new ReplaceBaseSkeletonList(editor, SelectedBaseSkeletonList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 
@@ -62,8 +65,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         _selectedBaseSkeletonGroup = entry;
                         SelectedBaseSkeletonList = ReadBaseSkeletonGroup(entry);
 
-                        var action = new AppendBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
-                        screen.EditorActionManager.ExecuteAction(action);
+                        var action = new AppendBaseSkeletonList(editor, SelectedBaseSkeletonList.List);
+                        editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
 

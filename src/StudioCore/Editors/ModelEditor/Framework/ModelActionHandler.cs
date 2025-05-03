@@ -23,69 +23,69 @@ namespace StudioCore.Editors.ModelEditor.Framework;
 
 public class ModelActionHandler
 {
-    private ModelEditorScreen Screen;
+    private ModelEditorScreen Editor;
     public ModelSelectionManager Selection;
 
     public ModelActionHandler(ModelEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 
     public void CreateHandler()
     {
-        if (!Screen.ResManager.HasCurrentFLVER())
+        if (!Editor.ResManager.HasCurrentFLVER())
             return;
 
-        var currentFlver = Screen.ResManager.GetCurrentFLVER();
+        var currentFlver = Editor.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
-        switch (Screen.Selection._selectedFlverGroupType)
+        switch (Editor.Selection._selectedFlverGroupType)
         {
             case GroupSelectionType.None:
             case GroupSelectionType.Header:
                 break;
 
             case GroupSelectionType.Dummy:
-                action = new AddDummy(Screen, currentFlver);
+                action = new AddDummy(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.Material:
-                action = new AddMaterial(Screen, currentFlver);
+                action = new AddMaterial(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.GXList:
-                action = new AddGxList(Screen, currentFlver);
+                action = new AddGxList(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.Node:
-                action = new AddNode(Screen, currentFlver);
+                action = new AddNode(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.Mesh:
-                action = new AddMesh(Screen, currentFlver);
+                action = new AddMesh(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.BufferLayout:
-                action = new AddBufferLayout(Screen, currentFlver);
+                action = new AddBufferLayout(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.BaseSkeleton:
-                action = new AddBaseSkeletonBone(Screen, currentFlver);
+                action = new AddBaseSkeletonBone(Editor, currentFlver);
                 break;
 
             case GroupSelectionType.AllSkeleton:
-                action = new AddAllSkeletonBone(Screen, currentFlver);
+                action = new AddAllSkeletonBone(Editor, currentFlver);
                 break;
         }
 
         if (action != null)
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
     }
 
     public void DuplicateHandler()
     {
-        var currentFlver = Screen.ResManager.GetCurrentFLVER();
+        var currentFlver = Editor.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
         switch (Selection._selectedFlverGroupType)
@@ -96,76 +96,76 @@ public class ModelActionHandler
 
             case GroupSelectionType.Dummy:
                 if (Selection.DummyMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleDummies(Screen, currentFlver, Selection.DummyMultiselect);
+                    action = new DuplicateMultipleDummies(Editor, currentFlver, Selection.DummyMultiselect);
                 else
                     if (Selection._selectedDummy != -1)
-                    action = new DuplicateDummy(Screen, currentFlver, Selection._selectedDummy);
+                    action = new DuplicateDummy(Editor, currentFlver, Selection._selectedDummy);
                 break;
 
             case GroupSelectionType.Material:
                 if (Selection.MaterialMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleMaterials(Screen, currentFlver, Selection.MaterialMultiselect);
+                    action = new DuplicateMultipleMaterials(Editor, currentFlver, Selection.MaterialMultiselect);
                 else
                     if (Selection._selectedMaterial != -1)
-                    action = new DuplicateMaterial(Screen, currentFlver, Selection._selectedMaterial);
+                    action = new DuplicateMaterial(Editor, currentFlver, Selection._selectedMaterial);
                 break;
 
             case GroupSelectionType.GXList:
                 if (Selection.GxListMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleGxLists(Screen, currentFlver, Selection.GxListMultiselect);
+                    action = new DuplicateMultipleGxLists(Editor, currentFlver, Selection.GxListMultiselect);
                 else
                     if (Selection._selectedGXList != -1)
-                    action = new DuplicateGxList(Screen, currentFlver, Selection._selectedGXList);
+                    action = new DuplicateGxList(Editor, currentFlver, Selection._selectedGXList);
                 break;
 
             case GroupSelectionType.Node:
                 if (Selection.NodeMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleNodes(Screen, currentFlver, Selection.NodeMultiselect);
+                    action = new DuplicateMultipleNodes(Editor, currentFlver, Selection.NodeMultiselect);
                 else
                     if (Selection._selectedNode != -1)
-                    action = new DuplicateNode(Screen, currentFlver, Selection._selectedNode);
+                    action = new DuplicateNode(Editor, currentFlver, Selection._selectedNode);
                 break;
 
             case GroupSelectionType.Mesh:
                 if (Selection.MeshMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleMeshes(Screen, currentFlver, Selection.MeshMultiselect);
+                    action = new DuplicateMultipleMeshes(Editor, currentFlver, Selection.MeshMultiselect);
                 else
                     if (Selection._selectedMesh != -1)
-                    action = new DuplicateMesh(Screen, currentFlver, Selection._selectedMesh);
+                    action = new DuplicateMesh(Editor, currentFlver, Selection._selectedMesh);
                 break;
 
             case GroupSelectionType.BufferLayout:
                 if (Selection.BufferLayoutMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleBufferLayouts(Screen, currentFlver, Selection.BufferLayoutMultiselect);
+                    action = new DuplicateMultipleBufferLayouts(Editor, currentFlver, Selection.BufferLayoutMultiselect);
                 else
                     if (Selection._selectedBufferLayout != -1)
-                    action = new DuplicateBufferLayout(Screen, currentFlver, Selection._selectedBufferLayout);
+                    action = new DuplicateBufferLayout(Editor, currentFlver, Selection._selectedBufferLayout);
                 break;
 
             case GroupSelectionType.BaseSkeleton:
                 if (Selection.BaseSkeletonMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleBaseSkeletonBones(Screen, currentFlver, Selection.BaseSkeletonMultiselect);
+                    action = new DuplicateMultipleBaseSkeletonBones(Editor, currentFlver, Selection.BaseSkeletonMultiselect);
                 else
                     if (Selection._selectedBaseSkeletonBone != -1)
-                    action = new DuplicateBaseSkeletonBone(Screen, currentFlver, Selection._selectedBaseSkeletonBone);
+                    action = new DuplicateBaseSkeletonBone(Editor, currentFlver, Selection._selectedBaseSkeletonBone);
                 break;
 
             case GroupSelectionType.AllSkeleton:
                 if (Selection.AllSkeletonMultiselect.HasValidMultiselection())
-                    action = new DuplicateMultipleAllSkeletonBones(Screen, currentFlver, Selection.AllSkeletonMultiselect);
+                    action = new DuplicateMultipleAllSkeletonBones(Editor, currentFlver, Selection.AllSkeletonMultiselect);
                 else
                     if (Selection._selectedAllSkeletonBone != -1)
-                    action = new DuplicateAllSkeletonBone(Screen, currentFlver, Selection._selectedAllSkeletonBone);
+                    action = new DuplicateAllSkeletonBone(Editor, currentFlver, Selection._selectedAllSkeletonBone);
                 break;
         }
 
         if (action != null)
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
     }
 
     public void DeleteHandler()
     {
-        var currentFlver = Screen.ResManager.GetCurrentFLVER();
+        var currentFlver = Editor.ResManager.GetCurrentFLVER();
         ViewportAction action = null;
 
         switch (Selection._selectedFlverGroupType)
@@ -176,71 +176,71 @@ public class ModelActionHandler
 
             case GroupSelectionType.Dummy:
                 if (Selection.DummyMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleDummies(Screen, currentFlver, Selection.DummyMultiselect);
+                    action = new RemoveMultipleDummies(Editor, currentFlver, Selection.DummyMultiselect);
                 else
                     if (Selection._selectedDummy != -1)
-                    action = new RemoveDummy(Screen, currentFlver, Selection._selectedDummy);
+                    action = new RemoveDummy(Editor, currentFlver, Selection._selectedDummy);
                 break;
 
             case GroupSelectionType.Material:
                 if (Selection.MaterialMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleMaterials(Screen, currentFlver, Selection.MaterialMultiselect);
+                    action = new RemoveMultipleMaterials(Editor, currentFlver, Selection.MaterialMultiselect);
                 else
                     if (Selection._selectedMaterial != -1)
-                    action = new RemoveMaterial(Screen, currentFlver, Selection._selectedMaterial);
+                    action = new RemoveMaterial(Editor, currentFlver, Selection._selectedMaterial);
                 break;
 
             case GroupSelectionType.GXList:
                 if (Selection.GxListMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleGxLists(Screen, currentFlver, Selection.GxListMultiselect);
+                    action = new RemoveMultipleGxLists(Editor, currentFlver, Selection.GxListMultiselect);
                 else
                     if (Selection._selectedGXList != -1)
-                    action = new RemoveGxList(Screen, currentFlver, Selection._selectedGXList);
+                    action = new RemoveGxList(Editor, currentFlver, Selection._selectedGXList);
                 break;
 
             case GroupSelectionType.Node:
                 if (Selection.NodeMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleNodes(Screen, currentFlver, Selection.NodeMultiselect);
+                    action = new RemoveMultipleNodes(Editor, currentFlver, Selection.NodeMultiselect);
                 else
                     if (Selection._selectedNode != -1)
-                    action = new RemoveNode(Screen, currentFlver, Selection._selectedNode);
+                    action = new RemoveNode(Editor, currentFlver, Selection._selectedNode);
                 break;
 
             case GroupSelectionType.Mesh:
                 if (Selection.MeshMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleMeshes(Screen, currentFlver, Selection.MeshMultiselect);
+                    action = new RemoveMultipleMeshes(Editor, currentFlver, Selection.MeshMultiselect);
                 else
                     if (Selection._selectedMesh != -1)
-                    action = new RemoveMesh(Screen, currentFlver, Selection._selectedMesh);
+                    action = new RemoveMesh(Editor, currentFlver, Selection._selectedMesh);
                 break;
 
             case GroupSelectionType.BufferLayout:
                 if (Selection.BufferLayoutMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleBufferLayouts(Screen, currentFlver, Selection.BufferLayoutMultiselect);
+                    action = new RemoveMultipleBufferLayouts(Editor, currentFlver, Selection.BufferLayoutMultiselect);
                 else
                     if (Selection._selectedBufferLayout != -1)
-                    action = new RemoveBufferLayout(Screen, currentFlver, Selection._selectedBufferLayout);
+                    action = new RemoveBufferLayout(Editor, currentFlver, Selection._selectedBufferLayout);
                 break;
 
             case GroupSelectionType.BaseSkeleton:
                 if (Selection.BaseSkeletonMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleBaseSkeletonBones(Screen, currentFlver, Selection.BaseSkeletonMultiselect);
+                    action = new RemoveMultipleBaseSkeletonBones(Editor, currentFlver, Selection.BaseSkeletonMultiselect);
                 else
                     if (Selection._selectedBaseSkeletonBone != -1)
-                    action = new RemoveBaseSkeletonBone(Screen, currentFlver, Selection._selectedBaseSkeletonBone);
+                    action = new RemoveBaseSkeletonBone(Editor, currentFlver, Selection._selectedBaseSkeletonBone);
                 break;
 
             case GroupSelectionType.AllSkeleton:
                 if (Selection.AllSkeletonMultiselect.HasValidMultiselection())
-                    action = new RemoveMultipleAllSkeletonBones(Screen, currentFlver, Selection.AllSkeletonMultiselect);
+                    action = new RemoveMultipleAllSkeletonBones(Editor, currentFlver, Selection.AllSkeletonMultiselect);
                 else
                     if (Selection._selectedAllSkeletonBone != -1)
-                    action = new RemoveAllSkeletonBone(Screen, currentFlver, Selection._selectedAllSkeletonBone);
+                    action = new RemoveAllSkeletonBone(Editor, currentFlver, Selection._selectedAllSkeletonBone);
                 break;
         }
 
         if (action != null)
-            Screen.EditorActionManager.ExecuteAction(action);
+            Editor.EditorActionManager.ExecuteAction(action);
     }
 
     /// <summary>
@@ -248,8 +248,8 @@ public class ModelActionHandler
     /// </summary>
     public void ReverseMeshNormals()
     {
-        var model = Screen.ResManager.GetCurrentFLVER();
-        var selectedMesh = Screen.Selection._selectedMesh;
+        var model = Editor.ResManager.GetCurrentFLVER();
+        var selectedMesh = Editor.Selection._selectedMesh;
 
         if (model == null)
         {
@@ -280,7 +280,7 @@ public class ModelActionHandler
             }
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel();
+        Editor.ViewportManager.UpdateRepresentativeModel();
 
         TaskLogs.AddLog("Mesh normals have been reversed.");
     }
@@ -290,9 +290,9 @@ public class ModelActionHandler
     /// </summary>
     public void ReverseMeshFaceSet()
     {
-        var model = Screen.ResManager.GetCurrentFLVER();
-        var selectedMesh = Screen.Selection._selectedMesh;
-        var selectedFaceSet = Screen.Selection._subSelectedFaceSetRow;
+        var model = Editor.ResManager.GetCurrentFLVER();
+        var selectedMesh = Editor.Selection._selectedMesh;
+        var selectedFaceSet = Editor.Selection._subSelectedFaceSetRow;
 
         if (model == null)
         {
@@ -322,7 +322,7 @@ public class ModelActionHandler
             (faceSet.Indices[j + 1], faceSet.Indices[j + 2]) = (faceSet.Indices[j + 2], faceSet.Indices[j + 1]);
         }
 
-        Smithbox.EditorHandler.ModelEditor.ViewportManager.UpdateRepresentativeModel();
+        Editor.ViewportManager.UpdateRepresentativeModel();
 
         TaskLogs.AddLog("Face Set reversed.");
     }
@@ -332,7 +332,7 @@ public class ModelActionHandler
     /// </summary>
     public void SolveBoundingBoxes()
     {
-        var model = Screen.ResManager.GetCurrentFLVER();
+        var model = Editor.ResManager.GetCurrentFLVER();
 
         if(model == null)
         {

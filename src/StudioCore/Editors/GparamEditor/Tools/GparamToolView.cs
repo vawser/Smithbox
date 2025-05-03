@@ -1,17 +1,9 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core.Project;
+using StudioCore.Core;
 using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.Editors.GparamEditor.Framework;
-using StudioCore.Editors.GparamEditor.Utils;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.GparamEditor.Tools;
 
@@ -42,7 +34,7 @@ public class GparamToolView
     /// </summary>
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Screen.Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

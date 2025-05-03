@@ -1,5 +1,4 @@
-﻿using StudioCore.UserProject;
-using Veldrid;
+﻿using Veldrid;
 using Veldrid.Sdl2;
 
 namespace StudioCore.Editor;
@@ -21,35 +20,9 @@ public interface EditorScreen
     /// </summary>
     public string SaveType { get; }
 
-    /// <summary>
-    ///     Called when a new project has been opened
-    /// </summary>
-    /// <param name="newSettings">New settings for the project</param>
-    public void OnProjectChanged();
+    public bool HasDocked { get; set; }
 
-    /// <summary>
-    /// Draw the ImGui menu specific to this editor
-    /// </summary>
-    public void EditDropdown()
-    {
-
-    }
-
-    /// <summary>
-    /// Draw the ImGui menu specific to this editor
-    /// </summary>
-    public void ViewDropdown()
-    {
-
-    }
-
-    /// <summary>
-    /// Draw the ImGui menu specific to this editor
-    /// </summary>
-    public void EditorUniqueDropdowns()
-    {
-        // Default
-    }
+    public string WindowName { get; }
 
     /// <summary>
     ///     Save specific data in this editor

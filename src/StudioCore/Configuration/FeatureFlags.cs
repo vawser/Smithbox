@@ -10,12 +10,4 @@ public static class FeatureFlags
 
     // Feature Toggles
     public static bool EnableNavmeshBuilder = false;
-
-    // Editor Toggles
-    public static bool EnableEditor_Cutscene = false;
-    public static bool EnableEditor_Material = false;
-    public static bool EnableEditor_Particle = false;
-    public static bool EnableEditor_Evemd = true;
-    public static bool EnableEditor_Esd = true;
-    public static bool EnableEditor_HavokBehavior = false;
 }
