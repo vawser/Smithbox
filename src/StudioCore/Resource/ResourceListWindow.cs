@@ -58,24 +58,24 @@ public static class ResourceListWindow
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Text("Name");
-            UIHelper.ShowHoverTooltip("Name of this resource.");
+            UIHelper.Tooltip("Name of this resource.");
 
             ImGui.TableSetColumnIndex(2);
 
             ImGui.Text("Load State");
-            UIHelper.ShowHoverTooltip("The load state of this resource.");
+            UIHelper.Tooltip("The load state of this resource.");
 
             ImGui.TableSetColumnIndex(3);
 
             // Access Level
             ImGui.Text("Access Level");
-            UIHelper.ShowHoverTooltip("The access level of this resource.");
+            UIHelper.Tooltip("The access level of this resource.");
 
             ImGui.TableSetColumnIndex(4);
 
             // Reference Count
             ImGui.Text("Reference Count");
-            UIHelper.ShowHoverTooltip("The reference count for this resource.");
+            UIHelper.Tooltip("The reference count for this resource.");
 
             ImGui.TableSetColumnIndex(5);
 
@@ -100,7 +100,7 @@ public static class ResourceListWindow
                 {
                     SelectedResource = resName;
                 }
-                UIHelper.ShowHoverTooltip("Select this resource.");
+                UIHelper.Tooltip("Select this resource.");
 
                 ImGui.TableSetColumnIndex(1);
 
@@ -142,7 +142,7 @@ public static class ResourceListWindow
                 {
                     resHandle.Release(true);
                 }
-                UIHelper.ShowHoverTooltip("Unload this resource.");
+                UIHelper.Tooltip("Unload this resource.");
 
                 imguiId++;
             }

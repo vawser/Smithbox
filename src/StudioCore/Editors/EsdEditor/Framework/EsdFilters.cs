@@ -33,7 +33,7 @@ public class EsdFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     public bool IsFileFilterMatch(string text, string alias)
@@ -90,7 +90,7 @@ public class EsdFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##internalFileFilterExactMatch", ref InternalFileFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     public bool IsScriptFilterMatch(string text, string alias)
@@ -147,7 +147,7 @@ public class EsdFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##stateGroupFilterExactMatch", ref StateGroupFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     public bool IsStateGroupFilterMatch(string text, string alias)
@@ -204,7 +204,7 @@ public class EsdFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##stateFilterExactMatch", ref StateFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     public bool IsStateFilterMatch(string text, string alias)

@@ -56,21 +56,21 @@ public class MassEditHandler
         var buttonSize = new Vector2(width, 24);
 
         UIHelper.WrappedText("Map Target");
-        UIHelper.ShowHoverTooltip("Determine which maps will be affected by the mass edit.");
+        UIHelper.Tooltip("Determine which maps will be affected by the mass edit.");
         ImGui.Separator();
 
         ConfigureMapTarget();
 
         ImGui.Separator();
         UIHelper.WrappedText("Selection Criteria");
-        UIHelper.ShowHoverTooltip("Determine which map objects will be affected by the mass edit.");
+        UIHelper.Tooltip("Determine which map objects will be affected by the mass edit.");
         ImGui.Separator();
 
         ConfigureSelection();
 
         ImGui.Separator();
         UIHelper.WrappedText("Edit Commands");
-        UIHelper.ShowHoverTooltip("Determine which property to affect and the value change to apply for this mass edit.");
+        UIHelper.Tooltip("Determine which property to affect and the value change to apply for this mass edit.");
         ImGui.Separator();
 
         ConfigureEdit();
@@ -89,7 +89,7 @@ public class MassEditHandler
             {
             }
             ImGui.EndDisabled();
-            UIHelper.ShowHoverTooltip("Mass Edit in the process of being applied.");
+            UIHelper.Tooltip("Mass Edit in the process of being applied.");
         }
 
         ImGui.Separator();
@@ -119,7 +119,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("mapTargetHint");
         }
-        UIHelper.ShowHoverTooltip("View the documentation on map target commands.");
+        UIHelper.Tooltip("View the documentation on map target commands.");
 
         ImGui.SameLine();
 
@@ -128,7 +128,7 @@ public class MassEditHandler
         {
             MapInputs.Add("");
         }
-        UIHelper.ShowHoverTooltip("Add new map selection input row.");
+        UIHelper.Tooltip("Add new map selection input row.");
 
         ImGui.SameLine();
 
@@ -141,7 +141,7 @@ public class MassEditHandler
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
             }
-            UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
+            UIHelper.Tooltip("Remove last added map selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -150,7 +150,7 @@ public class MassEditHandler
             if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemove"))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
-                UIHelper.ShowHoverTooltip("Remove last added map selection input row.");
+                UIHelper.Tooltip("Remove last added map selection input row.");
             }
         }
 
@@ -161,7 +161,7 @@ public class MassEditHandler
         {
             MapInputs = new List<string>() { "" };
         }
-        UIHelper.ShowHoverTooltip("Reset map selection input rows.");
+        UIHelper.Tooltip("Reset map selection input rows.");
 
         ImGui.SameLine();
 
@@ -181,7 +181,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
+        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -203,7 +203,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("Determines how the map list is obtained." +
+        UIHelper.Tooltip("Determines how the map list is obtained." +
             "\n\nLocal means only currently loaded maps will be edited (that match the map selection criteria)." +
             "\n\nGlobal means all maps will be edited (that match the map selection criteria).\nWARNING: editing a large amounts of maps will cause Smithbox to hang until it is finished, which may be several minutes.");
 
@@ -220,7 +220,7 @@ public class MassEditHandler
             {
                 MapInputs[i] = curText;
             }
-            UIHelper.ShowHoverTooltip("The map selection command to process.");
+            UIHelper.Tooltip("The map selection command to process.");
         }
     }
 
@@ -240,7 +240,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("selectionInputHint");
         }
-        UIHelper.ShowHoverTooltip("View documentation on selection commands.");
+        UIHelper.Tooltip("View documentation on selection commands.");
 
         ImGui.SameLine();
 
@@ -249,7 +249,7 @@ public class MassEditHandler
         {
             SelectionInputs.Add("");
         }
-        UIHelper.ShowHoverTooltip("Add new selection input row.");
+        UIHelper.Tooltip("Add new selection input row.");
 
         ImGui.SameLine();
 
@@ -262,7 +262,7 @@ public class MassEditHandler
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
-            UIHelper.ShowHoverTooltip("Remove last added selection input row.");
+            UIHelper.Tooltip("Remove last added selection input row.");
 
             ImGui.EndDisabled();
         }
@@ -271,7 +271,7 @@ public class MassEditHandler
             if (ImGui.Button($"{ForkAwesome.Minus}##selectionRemove"))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
-                UIHelper.ShowHoverTooltip("Remove last added selection input row.");
+                UIHelper.Tooltip("Remove last added selection input row.");
             }
         }
 
@@ -282,7 +282,7 @@ public class MassEditHandler
         {
             SelectionInputs = new List<string>() { "" };
         }
-        UIHelper.ShowHoverTooltip("Reset selection input rows.");
+        UIHelper.Tooltip("Reset selection input rows.");
 
         ImGui.SameLine();
 
@@ -302,7 +302,7 @@ public class MassEditHandler
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("The logic with which to handle the selection inputs." +
+        UIHelper.Tooltip("The logic with which to handle the selection inputs." +
             "\n\nAll must match means all the selection criteria must be true for the map object to be included." +
             "\n\nOne must match means only one of the selection criteria must be true for the map object to be included.");
 
@@ -319,7 +319,7 @@ public class MassEditHandler
             {
                 SelectionInputs[i] = curText;
             }
-            UIHelper.ShowHoverTooltip("The selection command to process.");
+            UIHelper.Tooltip("The selection command to process.");
         }
 
     }
@@ -340,7 +340,7 @@ public class MassEditHandler
         {
             ImGui.OpenPopup("editInputHint");
         }
-        UIHelper.ShowHoverTooltip("View documentation on edit commands.");
+        UIHelper.Tooltip("View documentation on edit commands.");
 
         ImGui.SameLine();
 
@@ -349,7 +349,7 @@ public class MassEditHandler
         {
             EditInputs.Add("");
         }
-        UIHelper.ShowHoverTooltip("Add edit input row.");
+        UIHelper.Tooltip("Add edit input row.");
 
         ImGui.SameLine();
 
@@ -362,7 +362,7 @@ public class MassEditHandler
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.ShowHoverTooltip("Remove last added edit input row.");
+            UIHelper.Tooltip("Remove last added edit input row.");
 
             ImGui.EndDisabled();
         }
@@ -372,7 +372,7 @@ public class MassEditHandler
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
-            UIHelper.ShowHoverTooltip("Remove last added edit input row.");
+            UIHelper.Tooltip("Remove last added edit input row.");
         }
 
         ImGui.SameLine();
@@ -382,7 +382,7 @@ public class MassEditHandler
         {
             EditInputs = new List<string>() { "" };
         }
-        UIHelper.ShowHoverTooltip("Reset edit input rows.");
+        UIHelper.Tooltip("Reset edit input rows.");
 
         //--------------
         // Edit Inputs
@@ -397,7 +397,7 @@ public class MassEditHandler
             {
                 EditInputs[i] = curText;
             }
-            UIHelper.ShowHoverTooltip("The edit command to process.");
+            UIHelper.Tooltip("The edit command to process.");
         }
     }
 

@@ -34,7 +34,7 @@ public class MassEditLog
                 Handler.Tools.ShowToolView = false;
                 ShowMassEditLog = true;
             }
-            UIHelper.ShowHoverTooltip("Toggle visibility of the edit log.");
+            UIHelper.Tooltip("Toggle visibility of the edit log.");
         }
     }
 

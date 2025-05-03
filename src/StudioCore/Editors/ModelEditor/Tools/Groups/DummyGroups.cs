@@ -136,7 +136,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteDummyGroup(entry);
                         }
-                        UIHelper.ShowHoverTooltip("Delete this dummy group.");
+                        UIHelper.Tooltip("Delete this dummy group.");
 
                         ImGui.EndPopup();
                     }
@@ -170,14 +170,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceDummyList(screen, SelectedDummyList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Replace the existing dummies with the dummies within this dummy group.");
+                UIHelper.Tooltip("Replace the existing dummies with the dummies within this dummy group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendDummyList(screen, SelectedDummyList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Append to dummies within this dummy group to the existing dummies.");
+                UIHelper.Tooltip("Append to dummies within this dummy group to the existing dummies.");
             }
 
             ImGui.EndChild();
@@ -193,7 +193,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##dummyGroupName", ref _createDummyGroupName, 255);
-            UIHelper.ShowHoverTooltip("The name of the dummy group.");
+            UIHelper.Tooltip("The name of the dummy group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

@@ -43,7 +43,7 @@ public class TextFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>
@@ -111,7 +111,7 @@ public class TextFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgFilterExactMatch", ref FmgFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>
@@ -195,7 +195,7 @@ public class TextFilters
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgEntryFilterExactMatch", ref FmgEntryFilterExactMatch);
-        UIHelper.ShowHoverTooltip("Filter will ignore partial matches when enabled.");
+        UIHelper.Tooltip("Filter will ignore partial matches when enabled.");
     }
 
     /// <summary>

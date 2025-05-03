@@ -448,7 +448,7 @@ public class ActionHandler
             }
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip(tooltip);
+        UIHelper.Tooltip(tooltip);
         UIHelper.WrappedText("");
     }
 

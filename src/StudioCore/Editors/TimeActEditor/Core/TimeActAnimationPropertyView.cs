@@ -77,11 +77,11 @@ public class TimeActAnimationPropertyView
         // Property Column
         ImGui.AlignTextToFramePadding();
         ImGui.Text("ID");
-        UIHelper.ShowHoverTooltip("ID number of this animation.");
+        UIHelper.Tooltip("ID number of this animation.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Name");
-        UIHelper.ShowHoverTooltip("The name of this animation entry.");
+        UIHelper.Tooltip("The name of this animation entry.");
 
         if (Selection.CurrentTemporaryAnimHeader != null)
         {
@@ -89,26 +89,26 @@ public class TimeActAnimationPropertyView
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Loop by Default");
-                UIHelper.ShowHoverTooltip("Makes the animation loop by default. Only relevant for animations not controlled byESD or HKS such as ObjAct animations.");
+                UIHelper.Tooltip("Makes the animation loop by default. Only relevant for animations not controlled byESD or HKS such as ObjAct animations.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Allow Delay Load");
-                UIHelper.ShowHoverTooltip("Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.");
+                UIHelper.Tooltip("Whether to allow this animation to be loaded from delayload anibnds such as the c0000_cXXXX.anibnd player throw anibnds.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Imports HKX");
-                UIHelper.ShowHoverTooltip("Whether to import the HKX (actual motion data) of the animation with the ID of referenced in Import HKX Source Anim ID.");
+                UIHelper.Tooltip("Whether to import the HKX (actual motion data) of the animation with the ID of referenced in Import HKX Source Anim ID.");
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Import HKX Source Anim ID");
-                UIHelper.ShowHoverTooltip("Anim ID to import HKX from.");
+                UIHelper.Tooltip("Anim ID to import HKX from.");
             }
 
             if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
             {
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Import Anim ID");
-                UIHelper.ShowHoverTooltip("ID of animation from which to import motion dat and all events.");
+                UIHelper.Tooltip("ID of animation from which to import motion dat and all events.");
             }
         }
 

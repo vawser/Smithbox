@@ -167,7 +167,7 @@ public class WorldMapView : IResourceEventListener
                     IsMapOpen = true;
                 };
             }
-            UIHelper.ShowHoverTooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
+            UIHelper.Tooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
 
             ImGui.SameLine();
             if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
@@ -182,7 +182,7 @@ public class WorldMapView : IResourceEventListener
                     IsMapOpen = true;
                 };
             }
-            UIHelper.ShowHoverTooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
+            UIHelper.Tooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
         }
     }
 
@@ -291,7 +291,7 @@ public class WorldMapView : IResourceEventListener
 
         ImGui.Separator();
         ImGui.Text($"Selection:");
-        UIHelper.ShowHoverTooltip("These are the maps that the map object list will be filtered to.");
+        UIHelper.Tooltip("These are the maps that the map object list will be filtered to.");
         ImGui.Separator();
 
         // Stored Click Maps
@@ -312,7 +312,7 @@ public class WorldMapView : IResourceEventListener
 
         ImGui.Separator();
         ImGui.Text($"Maps in Tile:");
-        UIHelper.ShowHoverTooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
+        UIHelper.Tooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
         ImGui.Separator();
 
         // Hover Maps

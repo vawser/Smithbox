@@ -69,7 +69,7 @@ public class ModelToolView
                     }
                     ImGui.EndCombo();
                 }
-                UIHelper.ShowHoverTooltip("Change the type of model export to use.");
+                UIHelper.Tooltip("Change the type of model export to use.");
 
                 if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.OBJ)
                 {
@@ -216,9 +216,9 @@ public class ModelToolView
 
                 UIHelper.WrappedText("");
                 ImGui.Checkbox("Target Project Files", ref ModelUsageSearch._targetProjectFiles);
-                UIHelper.ShowHoverTooltip("Uses the project map files instead of game root.");
+                UIHelper.Tooltip("Uses the project map files instead of game root.");
                 ImGui.Checkbox("Loose Name Match", ref ModelUsageSearch._looseModelNameMatch);
-                UIHelper.ShowHoverTooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
+                UIHelper.Tooltip("Only require the Model Name field to contain the search string, instead of requiring an exact match.");
 
                 UIHelper.WrappedText("");
 
@@ -226,7 +226,7 @@ public class ModelToolView
                 {
                     ModelUsageSearch.SearchMaps();
                 }
-                UIHelper.ShowHoverTooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
+                UIHelper.Tooltip("Initial usage will be slow as all maps have to be loaded. Subsequent usage will be instant.");
 
                 UIHelper.WrappedText("");
 

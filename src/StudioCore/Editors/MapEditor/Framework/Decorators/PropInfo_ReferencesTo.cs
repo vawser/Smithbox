@@ -22,7 +22,7 @@ public static class PropInfo_ReferencesTo
         ImGui.Separator();
         ImGui.Text("References:");
         ImGui.Separator();
-        UIHelper.ShowHoverTooltip("The current selection references these map objects.");
+        UIHelper.Tooltip("The current selection references these map objects.");
 
         var width = ImGui.GetWindowWidth() / 100;
 

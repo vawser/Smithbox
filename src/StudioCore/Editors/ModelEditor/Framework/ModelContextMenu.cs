@@ -41,7 +41,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddDummy(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Dummy at end of Dummies list.");
+                UIHelper.Tooltip("Insert new empty Dummy at end of Dummies list.");
 
                 ImGui.EndPopup();
             }
@@ -58,21 +58,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddDummy(Editor, currentFlver);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Dummy below the currently selected Dummy.");
+                UIHelper.Tooltip("Insert new empty Dummy below the currently selected Dummy.");
 
                 if (ImGui.Selectable($"Duplicate Dummy##dupeAction{index}"))
                 {
                     var action = new DuplicateDummy(Editor, currentFlver, index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Dummy, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Dummy, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Dummy##removeAction{index}"))
                 {
                     var action = new RemoveDummy(Editor, currentFlver, index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Dummy.");
+                UIHelper.Tooltip("Remove the currently selected Dummy.");
 
                 ImGui.EndPopup();
             }
@@ -89,14 +89,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleDummies(Editor, currentFlver, Selection.DummyMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Dummies, new dummies will be inserted at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Dummies, new dummies will be inserted at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Dummies##removeAction"))
                 {
                     var action = new RemoveMultipleDummies(Editor, currentFlver, Selection.DummyMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Dummies.");
+                UIHelper.Tooltip("Remove the currently selected Dummies.");
 
                 ImGui.EndPopup();
             }
@@ -112,7 +112,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddMaterial(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Material at end of Materials list.");
+                UIHelper.Tooltip("Insert new empty Material at end of Materials list.");
 
                 ImGui.EndPopup();
             }
@@ -127,21 +127,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddMaterial(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Material at the end of the list.");
+                UIHelper.Tooltip("Insert new empty Material at the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Material##dupeAction{index}"))
                 {
                     var action = new DuplicateMaterial(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Material, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Material, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Material##removeAction{index}"))
                 {
                     var action = new RemoveMaterial(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Material.");
+                UIHelper.Tooltip("Remove the currently selected Material.");
 
                 ImGui.EndPopup();
             }
@@ -156,14 +156,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleMaterials(Editor, ResManager.GetCurrentFLVER(), Selection.MaterialMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Materials, new Materials will be inserted at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Materials, new Materials will be inserted at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Materials##removeAction"))
                 {
                     var action = new RemoveMultipleMaterials(Editor, ResManager.GetCurrentFLVER(), Selection.MaterialMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Materials.");
+                UIHelper.Tooltip("Remove the currently selected Materials.");
 
                 ImGui.EndPopup();
             }
@@ -179,7 +179,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddGxList(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty GXList at end of GXLists list.");
+                UIHelper.Tooltip("Insert new empty GXList at end of GXLists list.");
 
                 ImGui.EndPopup();
             }
@@ -194,21 +194,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddGxList(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty GX List at the end of the list.");
+                UIHelper.Tooltip("Insert new empty GX List at the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate GX List##dupeAction{index}"))
                 {
                     var action = new DuplicateGxList(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected GX List, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected GX List, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove GX List##removeAction{index}"))
                 {
                     var action = new RemoveGxList(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected GX List.");
+                UIHelper.Tooltip("Remove the currently selected GX List.");
 
                 ImGui.EndPopup();
             }
@@ -223,14 +223,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleGxLists(Editor, ResManager.GetCurrentFLVER(), Selection.GxListMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected GX Lists, inserting them at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected GX Lists, inserting them at the end of the list.");
 
                 if (ImGui.Selectable($"Remove GX Lists##removeAction"))
                 {
                     var action = new RemoveMultipleGxLists(Editor, ResManager.GetCurrentFLVER(), Selection.GxListMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected GX Lists.");
+                UIHelper.Tooltip("Remove the currently selected GX Lists.");
 
                 ImGui.EndPopup();
             }
@@ -246,7 +246,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddNode(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Node at end of the list.");
+                UIHelper.Tooltip("Insert new empty Node at end of the list.");
 
                 ImGui.EndPopup();
             }
@@ -261,21 +261,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddNode(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Node at the end of list.");
+                UIHelper.Tooltip("Insert new empty Node at the end of list.");
 
                 if (ImGui.Selectable($"Duplicate Node##dupeAction{index}"))
                 {
                     var action = new DuplicateNode(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Node, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Node, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Node##removeAction{index}"))
                 {
                     var action = new RemoveNode(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Node.");
+                UIHelper.Tooltip("Remove the currently selected Node.");
 
                 ImGui.EndPopup();
             }
@@ -290,14 +290,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleNodes(Editor, ResManager.GetCurrentFLVER(), Selection.NodeMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Nodes, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Nodes, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Nodes##removeAction"))
                 {
                     var action = new RemoveMultipleNodes(Editor, ResManager.GetCurrentFLVER(), Selection.NodeMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Nodes.");
+                UIHelper.Tooltip("Remove the currently selected Nodes.");
 
                 ImGui.EndPopup();
             }
@@ -313,7 +313,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddMesh(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Mesh at end of the list.");
+                UIHelper.Tooltip("Insert new empty Mesh at end of the list.");
 
                 ImGui.EndPopup();
             }
@@ -328,21 +328,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddMesh(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Mesh at the end of the list.");
+                UIHelper.Tooltip("Insert new empty Mesh at the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Mesh##dupeAction{index}"))
                 {
                     var action = new DuplicateMesh(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Mesh, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Mesh, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Mesh##removeAction{index}"))
                 {
                     var action = new RemoveMesh(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Mesh.");
+                UIHelper.Tooltip("Remove the currently selected Mesh.");
 
                 ImGui.EndPopup();
             }
@@ -357,14 +357,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleMeshes(Editor, ResManager.GetCurrentFLVER(), Selection.MeshMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Meshes, new Meshes will be inserted at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Meshes, new Meshes will be inserted at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Meshes##removeAction"))
                 {
                     var action = new RemoveMultipleMeshes(Editor, ResManager.GetCurrentFLVER(), Selection.MeshMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Meshes.");
+                UIHelper.Tooltip("Remove the currently selected Meshes.");
 
                 ImGui.EndPopup();
             }
@@ -380,7 +380,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddBufferLayout(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Buffer Layout at end of Buffer Layouts list.");
+                UIHelper.Tooltip("Insert new empty Buffer Layout at end of Buffer Layouts list.");
 
                 ImGui.EndPopup();
             }
@@ -395,21 +395,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddBufferLayout(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Buffer Layout at the end of the list.");
+                UIHelper.Tooltip("Insert new empty Buffer Layout at the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Buffer Layout##dupeAction{index}"))
                 {
                     var action = new DuplicateBufferLayout(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Buffer Layout, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Buffer Layout, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Buffer Layout##removeAction{index}"))
                 {
                     var action = new RemoveBufferLayout(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Buffer Layout.");
+                UIHelper.Tooltip("Remove the currently selected Buffer Layout.");
 
                 ImGui.EndPopup();
             }
@@ -424,14 +424,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleBufferLayouts(Editor, ResManager.GetCurrentFLVER(), Selection.BufferLayoutMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Buffer Layouts, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Buffer Layouts, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove BufferLayouts##removeAction"))
                 {
                     var action = new RemoveMultipleBufferLayouts(Editor, ResManager.GetCurrentFLVER(), Selection.BufferLayoutMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Buffer Layouts.");
+                UIHelper.Tooltip("Remove the currently selected Buffer Layouts.");
 
                 ImGui.EndPopup();
             }
@@ -447,7 +447,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddBaseSkeletonBone(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new emptyBone at end of Bone list.");
+                UIHelper.Tooltip("Insert new emptyBone at end of Bone list.");
 
                 ImGui.EndPopup();
             }
@@ -462,21 +462,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddBaseSkeletonBone(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Bone at the end of the list.");
+                UIHelper.Tooltip("Insert new empty Bone at the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Bone##dupeAction{index}"))
                 {
                     var action = new DuplicateBaseSkeletonBone(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Bone, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Bone, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Bone##removeAction{index}"))
                 {
                     var action = new RemoveBaseSkeletonBone(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Bone.");
+                UIHelper.Tooltip("Remove the currently selected Bone.");
 
                 ImGui.EndPopup();
             }
@@ -491,14 +491,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleBaseSkeletonBones(Editor, ResManager.GetCurrentFLVER(), Selection.BaseSkeletonMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Bones, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Bones, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Bones##removeAction"))
                 {
                     var action = new RemoveMultipleBaseSkeletonBones(Editor, ResManager.GetCurrentFLVER(), Selection.BaseSkeletonMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Bones.");
+                UIHelper.Tooltip("Remove the currently selected Bones.");
 
                 ImGui.EndPopup();
             }
@@ -514,7 +514,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddAllSkeletonBone(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Bone at end of Bone list.");
+                UIHelper.Tooltip("Insert new empty Bone at end of Bone list.");
 
                 ImGui.EndPopup();
             }
@@ -529,21 +529,21 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddAllSkeletonBone(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Insert new empty Bone below the currently selected Bone.");
+                UIHelper.Tooltip("Insert new empty Bone below the currently selected Bone.");
 
                 if (ImGui.Selectable($"Duplicate Bone##dupeAction{index}"))
                 {
                     var action = new DuplicateAllSkeletonBone(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Bone, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Bone, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Bone##removeAction{index}"))
                 {
                     var action = new RemoveAllSkeletonBone(Editor, ResManager.GetCurrentFLVER(), index);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Bone.");
+                UIHelper.Tooltip("Remove the currently selected Bone.");
 
                 ImGui.EndPopup();
             }
@@ -558,14 +558,14 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new DuplicateMultipleAllSkeletonBones(Editor, ResManager.GetCurrentFLVER(), Selection.AllSkeletonMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Bones, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Bones, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Bones##removeAction"))
                 {
                     var action = new RemoveMultipleAllSkeletonBones(Editor, ResManager.GetCurrentFLVER(), Selection.AllSkeletonMultiselect);
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Bones.");
+                UIHelper.Tooltip("Remove the currently selected Bones.");
 
                 ImGui.EndPopup();
             }
@@ -581,7 +581,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddTexture(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new Texture entry to the currently selected Material.");
+                UIHelper.Tooltip("Add new Texture entry to the currently selected Material.");
 
                 ImGui.EndPopup();
             }
@@ -599,7 +599,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddTexture(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new Texture entry to the currently selected Material.");
+                UIHelper.Tooltip("Add new Texture entry to the currently selected Material.");
 
                 if (ImGui.Selectable($"Duplicate Texture##dupeAction{index}"))
                 {
@@ -611,7 +611,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Texture entry, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Texture entry, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Texture##removeAction{index}"))
                 {
@@ -623,7 +623,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Texture.");
+                UIHelper.Tooltip("Remove the currently selected Texture.");
 
                 ImGui.EndPopup();
             }
@@ -641,7 +641,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddGxItem(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new GX Item entry to the currently selected GX List.");
+                UIHelper.Tooltip("Add new GX Item entry to the currently selected GX List.");
 
                 if (ImGui.Selectable($"Duplicate GX Item##dupeAction{index}"))
                 {
@@ -653,7 +653,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected GX Item entry, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected GX Item entry, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove GX Item##removeAction{index}"))
                 {
@@ -666,7 +666,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     }
 
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected GX Item.");
+                UIHelper.Tooltip("Remove the currently selected GX Item.");
 
                 ImGui.EndPopup();
             }
@@ -684,7 +684,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddFaceSet(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new Face Set entry to the end of the list.");
+                UIHelper.Tooltip("Add new Face Set entry to the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Face Set##dupeAction{index}"))
                 {
@@ -696,7 +696,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Face Set entry, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Face Set entry, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Face Set##removeAction{index}"))
                 {
@@ -708,7 +708,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Face Set.");
+                UIHelper.Tooltip("Remove the currently selected Face Set.");
 
                 ImGui.EndPopup();
             }
@@ -726,7 +726,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddVertexBuffer(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new Vertex Buffer entry to the end of the list.");
+                UIHelper.Tooltip("Add new Vertex Buffer entry to the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Vertex Buffer##dupeAction{index}"))
                 {
@@ -738,7 +738,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Vertex Buffer entry, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Vertex Buffer entry, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Vertex Buffer##removeAction{index}"))
                 {
@@ -750,7 +750,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Vertex Buffer.");
+                UIHelper.Tooltip("Remove the currently selected Vertex Buffer.");
 
                 ImGui.EndPopup();
             }
@@ -768,7 +768,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                     var action = new AddLayoutMember(Editor, ResManager.GetCurrentFLVER());
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Add new Layout Member entry to the end of the list.");
+                UIHelper.Tooltip("Add new Layout Member entry to the end of the list.");
 
                 if (ImGui.Selectable($"Duplicate Layout Member##dupeAction{index}"))
                 {
@@ -780,7 +780,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected Layout Member entry, inserting it at the end of the list.");
+                UIHelper.Tooltip("Duplicate the selected Layout Member entry, inserting it at the end of the list.");
 
                 if (ImGui.Selectable($"Remove Layout Member##removeAction{index}"))
                 {
@@ -792,7 +792,7 @@ namespace StudioCore.Editors.ModelEditor.Framework
                         Editor.EditorActionManager.ExecuteAction(action);
                     }
                 }
-                UIHelper.ShowHoverTooltip("Remove the currently selected Layout Member.");
+                UIHelper.Tooltip("Remove the currently selected Layout Member.");
 
                 ImGui.EndPopup();
             }

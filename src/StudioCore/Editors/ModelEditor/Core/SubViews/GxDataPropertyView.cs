@@ -142,7 +142,7 @@ namespace StudioCore.Editors.ModelEditor.Core.Properties
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Byte");
-            UIHelper.ShowHoverTooltip("");
+            UIHelper.Tooltip("");
 
             ImGui.NextColumn();
 

@@ -226,7 +226,7 @@ public class TextFmgView
                                         {
                                             if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
-                                                UIHelper.ShowHoverTooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
+                                                UIHelper.Tooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
                                             }
                                         }
                                     }
@@ -252,7 +252,7 @@ public class TextFmgView
                                         {
                                             if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
-                                                UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
+                                                UIHelper.Tooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
                                             }
                                         }
                                     }
@@ -278,7 +278,7 @@ public class TextFmgView
                                         {
                                             if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
-                                                UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
+                                                UIHelper.Tooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
                                             }
                                         }
                                     }

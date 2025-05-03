@@ -70,7 +70,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.CopySelectionToClipboard(_selection);
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyToClipboard.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyToClipboard.HintText}\n\n" +
                     "Copy the current row selection to the clipboard.");
 
                 // Paste
@@ -79,7 +79,7 @@ public static class ParamRowContextMenu
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.PARAM_PasteClipboard.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_PasteClipboard.HintText}\n\n" +
                     "Paste the current row clipboard into the current param.");
 
                 // Delete
@@ -90,7 +90,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.DeleteSelection(_selection);
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DeleteSelectedEntry.HintText}\n\n" +
                     "Delete the current row selection from the param.");
 
                 // Duplicate
@@ -101,7 +101,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.Handler.DuplicateHandler();
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
                     "Duplicate the current row selection, automatically incrementing the row ID.");
 
                 // Duplicate To
@@ -111,7 +111,7 @@ public static class ParamRowContextMenu
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip($"Duplicate the current row selection into the chosen target param.");
+                UIHelper.Tooltip($"Duplicate the current row selection into the chosen target param.");
 
                 // Copy ID
                 if (ImGui.Selectable(@$"Copy ID", false,
@@ -121,7 +121,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.Handler.CopyRowDetailHandler(false);
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyId.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyId.HintText}\n\n" +
                     "Copy the current row selection ID to the clipboard (multiple rows will produce a list of IDs).");
 
                 // Copy ID and Name
@@ -132,7 +132,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.Handler.CopyRowDetailHandler(true);
                 }
-                UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyIdAndName.HintText}\n\n" +
+                UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyIdAndName.HintText}\n\n" +
                     "Copy the current row selection ID and Name to the clipboard (multiple rows will produce a list of IDs and Names).");
 
                 // Revert to Default
@@ -143,7 +143,7 @@ public static class ParamRowContextMenu
                 {
                     _paramEditor.Handler.RevertRowToDefault();
                 }
-                UIHelper.ShowHoverTooltip($"Revert the current row selection field values to the vanilla field values.");
+                UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
 
                 ImGui.Separator();
             }
@@ -171,7 +171,7 @@ public static class ParamRowContextMenu
                             }
                         }
                     }
-                    UIHelper.ShowHoverTooltip($"Pin the current row selection to the top of the row list.");
+                    UIHelper.Tooltip($"Pin the current row selection to the top of the row list.");
                 }
                 // Unpin
                 else if(isPinned)
@@ -193,7 +193,7 @@ public static class ParamRowContextMenu
                             }
                         }
                     }
-                    UIHelper.ShowHoverTooltip($"Unpin the current row selection from top of the row list.");
+                    UIHelper.Tooltip($"Unpin the current row selection from top of the row list.");
                 }
 
                 ImGui.Separator();
@@ -213,7 +213,7 @@ public static class ParamRowContextMenu
                 {
                     _selection.SetCompareRow(r);
                 }
-                UIHelper.ShowHoverTooltip($"Set this row as the row comparison target within the field window.");
+                UIHelper.Tooltip($"Set this row as the row comparison target within the field window.");
             }
 
             // Reverse Lookup Options

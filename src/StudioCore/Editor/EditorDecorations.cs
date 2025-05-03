@@ -760,7 +760,7 @@ public class EditorDecorations
 
             if (enumEntry.Description != "")
             {
-                UIHelper.ShowHoverTooltip($"{enumEntry.Description}");
+                UIHelper.Tooltip($"{enumEntry.Description}");
             }
         }
     }

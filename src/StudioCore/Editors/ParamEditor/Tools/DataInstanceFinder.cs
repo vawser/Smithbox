@@ -54,32 +54,32 @@ public class FieldNameFinder
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText("##searchString", ref SearchText, 255);
 
-        UIHelper.ShowHoverTooltip("The text to search for. Matches loosely by default.");
+        UIHelper.Tooltip("The text to search for. Matches loosely by default.");
 
         // Checkbox: Include Community Name in Search
         ImGui.Checkbox($"Include Community Name in Search##includeCommunityName_{imguiID}",
             ref IncludeCommunityNameInSearch);
 
-        UIHelper.ShowHoverTooltip("Include the community name text for a field in the search.");
+        UIHelper.Tooltip("Include the community name text for a field in the search.");
 
         // Checkbox: Include Descriptions in Search
         ImGui.Checkbox($"Include Descriptions in Search##includeDescriptions_{imguiID}", 
             ref IncludeDescriptionInSearch);
 
-        UIHelper.ShowHoverTooltip("Include the description text for a field in the search.");
+        UIHelper.Tooltip("Include the description text for a field in the search.");
 
         // Checkbox: Match Exactly
         ImGui.Checkbox($"Complete Word Match##matchExact_{imguiID}",
             ref MatchTextExactly);
 
-        UIHelper.ShowHoverTooltip("When matching, ensure the search term is an exact match for a word, not a partial element of the word." +
+        UIHelper.Tooltip("When matching, ensure the search term is an exact match for a word, not a partial element of the word." +
             "\nFor internal names, this will split the string based on capitalization before checking.");
 
         // Checkbox: Display Community Name in Results
         ImGui.Checkbox($"Display Community Name in Results##useCommunityNames_{imguiID}", 
             ref DisplayCommunityNameInResult);
 
-        UIHelper.ShowHoverTooltip("Display the community name for the field instead of the internal name.");
+        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
 
         UIHelper.WrappedText("");
 
@@ -294,14 +294,14 @@ public class FieldValueFinder
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText($"##startSearchValue_{imguiID}", ref RangeSearchText_Start, 255);
 
-            UIHelper.ShowHoverTooltip("The start value in the search range.");
+            UIHelper.Tooltip("The start value in the search range.");
 
             // End Value
             UIHelper.WrappedText("End Value:");
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText($"##endSearchValue_{imguiID}", ref RangeSearchText_End, 255);
 
-            UIHelper.ShowHoverTooltip("The end value in the search range.");
+            UIHelper.Tooltip("The end value in the search range.");
         }
 
         if (!UseRangeMatchMode)
@@ -310,24 +310,24 @@ public class FieldValueFinder
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
 
-            UIHelper.ShowHoverTooltip("The value to search for.");
+            UIHelper.Tooltip("The value to search for.");
         }
 
         // Checkbox: Enable Range Search
         ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
 
-        UIHelper.ShowHoverTooltip("If enabled, the search will search for matches between a start and end value.");
+        UIHelper.Tooltip("If enabled, the search will search for matches between a start and end value.");
 
         // Checkbox: Display First Match Only
         ImGui.Checkbox($"Display First Match Only##firstMatchOnly_{imguiID}", ref DisplayFirstMatchOnlyInResult);
 
-        UIHelper.ShowHoverTooltip("Only display the first match within a param, instead of all matches.");
+        UIHelper.Tooltip("Only display the first match within a param, instead of all matches.");
 
         // Checkbox: Display Community Name in Result
         ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}", 
             ref DisplayCommunityNameInResult);
 
-        UIHelper.ShowHoverTooltip("Display the community name for the field instead of the internal name.");
+        UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
 
         UIHelper.WrappedText("");
 
@@ -480,14 +480,14 @@ public class RowIDFinder
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputInt($"##searchId_{imguiID}", ref SearchID);
 
-        UIHelper.ShowHoverTooltip("The row ID to search for.");
+        UIHelper.Tooltip("The row ID to search for.");
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputInt($"##searchIndex_{imguiID}", ref SearchIndex);
 
-        UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
+        UIHelper.Tooltip("The row index to search for. -1 for any");
 
         UIHelper.WrappedText("");
 
@@ -601,14 +601,14 @@ public class RowNameFinder
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputText($"##searchText_{imguiID}", ref SearchText, 255);
 
-        UIHelper.ShowHoverTooltip("The row name to search for. Matches loosely.");
+        UIHelper.Tooltip("The row name to search for. Matches loosely.");
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
         ImGui.SetNextItemWidth(defaultButtonSize.X);
         ImGui.InputInt($"##rowIndex_{imguiID}", ref SearchIndex);
 
-        UIHelper.ShowHoverTooltip("The row index to search for. -1 for any");
+        UIHelper.Tooltip("The row index to search for. -1 for any");
 
         UIHelper.WrappedText("");
 

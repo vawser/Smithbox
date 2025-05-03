@@ -51,17 +51,17 @@ public class FmgExporter
                 {
                     DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
+                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
 
                 if (ImGui.Selectable("Export Unique Text"))
                 {
                     DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
+            UIHelper.Tooltip("Export your currently selected File (including all of its Text Files and their Text Entries) to a export text file.");
 
             // FMG
             if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
@@ -77,17 +77,17 @@ public class FmgExporter
                 {
                     DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
 
                 if (ImGui.Selectable("Export Unique Text"))
                 {
                     DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
+            UIHelper.Tooltip("Export your currently selected Text File (including all of its entries) to a export text file.");
 
             // FMG Entries
             if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
@@ -103,17 +103,17 @@ public class FmgExporter
                 {
                     DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'modified'.");
+                UIHelper.Tooltip("Only include FMG entries that are considered 'modified'.");
 
                 if (ImGui.Selectable("Export Unique Text"))
                 {
                     DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
                 }
-                UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'unique'.");
+                UIHelper.Tooltip("Only include FMG entries that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Export your currently selected FMG Entries to a export text file.");
+            UIHelper.Tooltip("Export your currently selected FMG Entries to a export text file.");
 
             if (ImGui.MenuItem("Clear Text Storage"))
             {
@@ -135,7 +135,7 @@ public class FmgExporter
                     }
                 }
             }
-            UIHelper.ShowHoverTooltip("Clears all the export text files from the storage folder.");
+            UIHelper.Tooltip("Clears all the export text files from the storage folder.");
 
             ImGui.EndMenu();
         }
@@ -159,17 +159,17 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
 
             if (ImGui.Selectable("Export Unique Text"))
             {
                 DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Export all associated Text Files and the Text Entries within this container.");
+        UIHelper.Tooltip("Export all associated Text Files and the Text Entries within this container.");
     }
 
     /// <summary>
@@ -190,17 +190,17 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
+            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
 
             if (ImGui.Selectable("Export Unique Text"))
             {
                 DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
+            UIHelper.Tooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Export all associated entries within this Text File.");
+        UIHelper.Tooltip("Export all associated entries within this Text File.");
     }
 
     /// <summary>
@@ -221,17 +221,17 @@ public class FmgExporter
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'modified'.");
+            UIHelper.Tooltip("Only include Text Entries that are considered 'modified'.");
 
             if (ImGui.Selectable("Export Unique Text"))
             {
                 DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
             }
-            UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'unique'.");
+            UIHelper.Tooltip("Only include Text Entries that are considered 'unique'.");
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Export all selected Text Entries.");
+        UIHelper.Tooltip("Export all selected Text Entries.");
     }
 
     public void DisplayExportModal(ExportType exportType, ExportModifier exportModifier = ExportModifier.None)

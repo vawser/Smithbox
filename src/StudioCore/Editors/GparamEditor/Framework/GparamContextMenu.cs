@@ -33,7 +33,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Add this file to the File Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
 
                 // Only show if the file exists in the project directory
                 if (info.Path.Contains(Screen.Project.ProjectPath))
@@ -44,7 +44,7 @@ public class GparamContextMenu
 
                         ImGui.CloseCurrentPopup();
                     }
-                    UIHelper.ShowHoverTooltip("Delete the selected file from your project.");
+                    UIHelper.Tooltip("Delete the selected file from your project.");
                 }
 
                 if (ImGui.Selectable("Duplicate"))
@@ -53,7 +53,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
+                UIHelper.Tooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
 
                 if (ImGui.Selectable("Copy"))
                 {
@@ -61,7 +61,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Copy the selected file and rename it to the name specified below");
+                UIHelper.Tooltip("Copy the selected file and rename it to the name specified below");
 
                 ImGui.Separator();
 
@@ -88,7 +88,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Add this group to the Group Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this group to the Group Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -97,7 +97,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Delete the selected group.");
+                UIHelper.Tooltip("Delete the selected group.");
 
                 ImGui.EndPopup();
             }
@@ -119,7 +119,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -128,7 +128,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Delete the selected row.");
+                UIHelper.Tooltip("Delete the selected row.");
 
                 ImGui.EndPopup();
             }
@@ -163,7 +163,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Add this field to the Field Filter in the Quick Edit window.");
+                UIHelper.Tooltip("Add this field to the Field Filter in the Quick Edit window.");
 
                 if (ImGui.Selectable("Remove"))
                 {
@@ -171,7 +171,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Delete the value row.");
+                UIHelper.Tooltip("Delete the value row.");
 
                 if (ImGui.Selectable("Duplicate"))
                 {
@@ -179,7 +179,7 @@ public class GparamContextMenu
 
                     ImGui.CloseCurrentPopup();
                 }
-                UIHelper.ShowHoverTooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
+                UIHelper.Tooltip("Duplicate the selected value row, assigning the specified ID below as the new id.");
 
                 ImGui.InputInt("##valueIdInput", ref Selection._duplicateValueRowId);
 

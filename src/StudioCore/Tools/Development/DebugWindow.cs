@@ -290,19 +290,19 @@ public class DebugWindow
         {
             ParamValidationTool.ValidateParamdef();
         }
-        UIHelper.ShowHoverTooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
+        UIHelper.Tooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
 
         if (ImGui.Button("Validate Padding (for selected param)", buttonSize))
         {
             ParamValidationTool.ValidatePadding();
         }
-        UIHelper.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+        UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
 
         if (ImGui.Button("Validate Padding (for all params)", buttonSize))
         {
             ParamValidationTool.ValidatePadding(true);
         }
-        UIHelper.ShowHoverTooltip("Validate that there are no non-zero values within padding fields.");
+        UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
 
     }
 
@@ -325,7 +325,7 @@ public class DebugWindow
         }
 
         ImGui.Checkbox("Check project files", ref MapValidationTool.TargetProject);
-        UIHelper.ShowHoverTooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
+        UIHelper.Tooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
     }
 
     private void DisplayTool_TimeActValidation()

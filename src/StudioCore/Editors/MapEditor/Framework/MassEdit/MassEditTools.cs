@@ -36,7 +36,7 @@ public class MassEditTools
             Handler.EditLog.ShowMassEditLog = false;
             ShowToolView = true;
         }
-        UIHelper.ShowHoverTooltip("Toggle visibility of the tools.");
+        UIHelper.Tooltip("Toggle visibility of the tools.");
     }
 
     public void Display()
@@ -97,7 +97,7 @@ public class MassEditTools
             {
                 BackupMaps();
             }
-            UIHelper.ShowHoverTooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
+            UIHelper.Tooltip("All maps as they currently exist will be backed up into a ZIP file within the .smithbox folder.");
 
             ImGui.EndChild();
         }

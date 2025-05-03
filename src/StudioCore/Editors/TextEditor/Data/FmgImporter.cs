@@ -42,7 +42,7 @@ public class FmgImporter
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
+            UIHelper.Tooltip("Import the selected text file on the container level, replacing all FMGs and their associated entries (if applicable).");
 
             if (ImGui.BeginMenu("Text File", Editor.Selection.SelectedFmgWrapper != null))
             {
@@ -50,7 +50,7 @@ public class FmgImporter
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
+            UIHelper.Tooltip("Import the selected text file on the FMG level, replacing all associated entries (if applicable).");
 
             if (ImGui.BeginMenu("Text Entry", Editor.Selection._selectedFmgEntry != null))
             {
@@ -58,7 +58,7 @@ public class FmgImporter
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip("Import the selected text file on the FMG Entry level, replacing all matching entries.");
+            UIHelper.Tooltip("Import the selected text file on the FMG Entry level, replacing all matching entries.");
 
             ImGui.EndMenu();
         }
@@ -144,7 +144,7 @@ public class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current File.\n\nExisting entries will be NOT modified by the contents of the stored text.");
+        UIHelper.Tooltip("The selected stored text will be added to the current File.\n\nExisting entries will be NOT modified by the contents of the stored text.");
 
         if (ImGui.BeginMenu("Replace"))
         {
@@ -172,7 +172,7 @@ public class FmgImporter
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("The selected stored text will be added to the current Text file.\n\nExisting entries WILL be modified by the contents of the stored text.");
+        UIHelper.Tooltip("The selected stored text will be added to the current Text file.\n\nExisting entries WILL be modified by the contents of the stored text.");
     }
 
     private List<EditorAction> ImportActions;

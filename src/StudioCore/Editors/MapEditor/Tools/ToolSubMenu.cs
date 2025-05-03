@@ -82,7 +82,7 @@ public class ToolSubMenu
             if (ImGui.BeginMenu("Toggle Editor Visibility by Tag"))
             {
                 ImGui.InputText("##targetTag", ref CFG.Current.Toolbar_Tag_Visibility_Target, 255);
-                UIHelper.ShowHoverTooltip("Specific which tag the map objects will be filtered by.");
+                UIHelper.Tooltip("Specific which tag the map objects will be filtered by.");
 
                 if (ImGui.MenuItem("Enable Visibility"))
                 {
@@ -228,7 +228,7 @@ public class ToolSubMenu
 
                     ImGui.EndMenu();
                 }
-                UIHelper.ShowHoverTooltip("Applies descriptive name for map objects from developer name list.");
+                UIHelper.Tooltip("Applies descriptive name for map objects from developer name list.");
             }
 
             ImGui.EndMenu();

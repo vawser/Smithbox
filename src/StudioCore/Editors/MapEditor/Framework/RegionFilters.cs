@@ -240,7 +240,7 @@ public class RegionFilters
                 }
             }
         }
-        UIHelper.ShowHoverTooltip("Toggle the visibility of regions of all types to invisible.");
+        UIHelper.Tooltip("Toggle the visibility of regions of all types to invisible.");
 
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
@@ -259,7 +259,7 @@ public class RegionFilters
                 }
             }
         }
-        UIHelper.ShowHoverTooltip("Toggle the visibility of regions of all types to visible.");
+        UIHelper.Tooltip("Toggle the visibility of regions of all types to visible.");
 
         ImGui.Separator();
     }
@@ -303,7 +303,7 @@ public class RegionFilters
                     }
                 }
             }
-            UIHelper.ShowHoverTooltip($"Toggle the visibility of regions of the {name} type.");
+            UIHelper.Tooltip($"Toggle the visibility of regions of the {name} type.");
             UIHelper.ShowActiveStatus(RegionVisibilityTruth[truthIndex]);
         }
     }

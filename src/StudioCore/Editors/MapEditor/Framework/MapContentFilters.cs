@@ -44,14 +44,14 @@ public class MapContentFilters
 
         ImGui.SetNextItemWidth(width * 0.6f);
         ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
-        UIHelper.ShowHoverTooltip($"Filter the content tree for {mapId}: {mapName}");
+        UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
         if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))
         {
             ImGui.OpenPopup("searchInputHint");
         }
-        UIHelper.ShowHoverTooltip("View documentation on search commands.");
+        UIHelper.Tooltip("View documentation on search commands.");
 
         if (ImGui.BeginPopup("searchInputHint"))
         {

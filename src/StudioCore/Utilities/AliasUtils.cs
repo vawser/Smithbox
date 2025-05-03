@@ -25,7 +25,7 @@ public static class AliasUtils
     public static void AliasTooltip(List<string> aliases, string title)
     {
         var lines = string.Join("\n- ", aliases);
-        UIHelper.ShowHoverTooltip($"{title}\n- {lines}");
+        UIHelper.Tooltip($"{title}\n- {lines}");
     }
 
     public static void DisplayTagAlias(string aliasName)

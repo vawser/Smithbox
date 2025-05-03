@@ -65,7 +65,7 @@ public class ModelAssetCopyManager
 
             ImGui.Text("New Character ID");
             ImGui.InputInt("##newChrId", ref NewCharacterID, 1);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The new ID the copied asset will have.\n\n" +
                 "Character IDs must be between 0 and 9999 and not already exist.");
 
@@ -206,14 +206,14 @@ public class ModelAssetCopyManager
             {
                 ImGui.Text("New Asset Category ID");
                 ImGui.InputInt("##newAssetCategoryId", ref NewAssetCategoryID, 1);
-                UIHelper.ShowHoverTooltip("" +
+                UIHelper.Tooltip("" +
                     "The category ID the copied asset will have.\n\n" +
                     "Asset category IDs must be between 0 and 999.");
             }
 
             ImGui.Text("New Asset ID");
             ImGui.InputInt("##newAssetId", ref NewAssetID, 1);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The asset ID the copied asset will have.\n\n" +
                 "Asset IDs must be between 0 and 999.");
 
@@ -371,19 +371,19 @@ public class ModelAssetCopyManager
 
             ImGui.Text("New Part Type");
             ImGui.InputText("##newPartType", ref NewPartType, 255);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The part type string the copied part will have.\n\n" +
                 "Part Type string should be hd, fc, bd, am or lg in most cases.");
 
             ImGui.Text("New Part Gender");
             ImGui.InputText("##newPartGender", ref NewPartGender, 255);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The part gender string the copied part will have.\n\n" +
                 "Part Gender string should be m, f or a most cases.");
 
             ImGui.Text("New Part ID");
             ImGui.InputInt("##newPartId", ref NewPartID, 1);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The part ID the copied part will have.\n\n" +
                 "Part IDs must be between 0 and 9999.");
 
@@ -510,13 +510,13 @@ public class ModelAssetCopyManager
 
             ImGui.Text("New Map ID");
             ImGui.InputText("##newMapId", ref NewMapId, 255);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The map ID string the copied map piece will have.\n\n" +
                 "This should match the map ID of the map you want the map piece to work in.");
 
             ImGui.Text("New Map Piece ID");
             ImGui.InputInt("##newMapPieceID", ref NewMapPieceID, 1);
-            UIHelper.ShowHoverTooltip("" +
+            UIHelper.Tooltip("" +
                 "The map piece ID the copied map piece will have.\n\n" +
                 "Map Piece IDs must be between 0 and 999999.");
 

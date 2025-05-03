@@ -24,7 +24,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.ShowHoverTooltip("The current selection references these rows in params");
+            UIHelper.Tooltip("The current selection references these rows in params");
 
             if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Asset" + refID, new Vector2(width * 5, 20 * scale)))
             {
@@ -86,7 +86,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             ImGui.Text("Params:");
             ImGui.Separator();
-            UIHelper.ShowHoverTooltip("The current selection references these rows in params");
+            UIHelper.Tooltip("The current selection references these rows in params");
 
             if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Enemy" + refID, new Vector2(width * 5, 20 * scale)))
             {

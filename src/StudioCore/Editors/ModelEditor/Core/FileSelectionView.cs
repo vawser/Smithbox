@@ -45,7 +45,7 @@ public class FileSelectionView
             Selection.SwitchWindowContext(ModelEditorContext.File);
 
             ImGui.InputText($"Search", ref _searchInput, 255);
-            UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+            UIHelper.Tooltip("Separate terms are split via the + character.");
 
             ImGui.BeginChild("AssetBrowserLists");
             Selection.SwitchWindowContext(ModelEditorContext.File);

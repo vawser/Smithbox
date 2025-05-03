@@ -23,7 +23,7 @@ public class EsdEditorTab
         if (ImGui.CollapsingHeader("Search Filters", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Propagate filter commands to all search bars", ref CFG.Current.EsdEditor_PropagateFilterCommands);
-            UIHelper.ShowHoverTooltip("Apply the special filter commands to all three of the search bars when used.");
+            UIHelper.Tooltip("Apply the special filter commands to all three of the search bars when used.");
         }
     }
 }

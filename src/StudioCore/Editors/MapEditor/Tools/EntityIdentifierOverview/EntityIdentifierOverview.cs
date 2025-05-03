@@ -57,7 +57,7 @@ public class EntityIdentifierOverview
             var width = ImGui.GetWindowWidth();
 
             ImGui.InputText("##EIO_filter", ref SearchText, 255);
-            UIHelper.ShowHoverTooltip("Filter the list.");
+            UIHelper.Tooltip("Filter the list.");
 
             ImGui.SameLine();
 
@@ -65,7 +65,7 @@ public class EntityIdentifierOverview
             {
                 HideUnassigned = !HideUnassigned;
             }
-            UIHelper.ShowHoverTooltip("Toggle the display of unassigned identifiers.");
+            UIHelper.Tooltip("Toggle the display of unassigned identifiers.");
 
             ImGui.SameLine();
 
@@ -84,13 +84,13 @@ public class EntityIdentifierOverview
                     BlockSeperatorType = BlockSeperatorType.None;
                 }
             }
-            UIHelper.ShowHoverTooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
+            UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
 
             if (ImGui.Button("Refresh", new Vector2(width, 32)))
             {
                 SetupEntityCache();
             }
-            UIHelper.ShowHoverTooltip("Refresh the data cache for the currently loaded map.");
+            UIHelper.Tooltip("Refresh the data cache for the currently loaded map.");
 
             ImGui.Separator();
 

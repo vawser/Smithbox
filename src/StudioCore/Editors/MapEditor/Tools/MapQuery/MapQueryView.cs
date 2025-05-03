@@ -69,7 +69,7 @@ public class MapQueryView : IMapQueryEngine
 
             // Map Filter
             UIHelper.WrappedText("Map Filter:");
-            UIHelper.ShowHoverTooltip("Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            UIHelper.Tooltip("Target this specific string when querying the map. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##mapFilter", ref _searchInputMap, 255);
 
             if (ImGui.BeginPopupContextItem($"MapFilterContextMenu"))
@@ -79,14 +79,14 @@ public class MapQueryView : IMapQueryEngine
                 {
                     _searchInputMap = $"^{_searchInputMap}$";
                 }
-                UIHelper.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
 
                 ImGui.EndPopup();
             }
 
             // Property Filter
             UIHelper.WrappedText("Property Filter:");
-            UIHelper.ShowHoverTooltip("Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            UIHelper.Tooltip("Target this specific string when querying the property name. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyNameFilter", ref _searchInputProperty, 255);
 
             // TODO: add arrow button that lets user traverse a tree that displays the MSB structure, allowing them to select properties easily without needing to load a map
@@ -98,19 +98,19 @@ public class MapQueryView : IMapQueryEngine
                 {
                     _searchInputProperty = $"^{_searchInputProperty}$";
                 }
-                UIHelper.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
                 if (ImGui.Selectable("Index"))
                 {
                     _searchInputProperty = @$"{_searchInputProperty}\[0\]";
                 }
-                UIHelper.ShowHoverTooltip("Escaped square brackets for targeting specific index in array properties.");
+                UIHelper.Tooltip("Escaped square brackets for targeting specific index in array properties.");
 
                 ImGui.EndPopup();
             }
 
             // Value Filter
             UIHelper.WrappedText("Value Filter:");
-            UIHelper.ShowHoverTooltip("Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
+            UIHelper.Tooltip("Target this specific string when querying the property value. Supports regex.\n\n" + $"Multiple filters can be used by using the '|' symbol between each filter, acting as an OR operator.");
             ImGui.InputText("##propertyValueFilter", ref _searchInputValue, 255);
 
             if (ImGui.BeginPopupContextItem($"ValueFilterContextMenu"))
@@ -120,19 +120,19 @@ public class MapQueryView : IMapQueryEngine
                 {
                     _searchInputValue = $"^{_searchInputValue}$";
                 }
-                UIHelper.ShowHoverTooltip("Apply regex that makes the current input match exactly.");
+                UIHelper.Tooltip("Apply regex that makes the current input match exactly.");
                 if (ImGui.Selectable("Non-Zero Number"))
                 {
                     _searchInputValue = "^[1-9]\\d*$";
                 }
-                UIHelper.ShowHoverTooltip("Apply regex that makes the current input match non-zero numbers.");
+                UIHelper.Tooltip("Apply regex that makes the current input match non-zero numbers.");
 
                 ImGui.EndPopup();
             }
 
             UIHelper.WrappedText("");
             ImGui.Checkbox("Target Project Files", ref _targetProjectFiles);
-            UIHelper.ShowHoverTooltip("Uses the project map files instead of game root.");
+            UIHelper.Tooltip("Uses the project map files instead of game root.");
 
             UIHelper.WrappedText("");
 
@@ -180,7 +180,7 @@ public class MapQueryView : IMapQueryEngine
 
             ImGui.Separator();
             UIHelper.WrappedText($"Search Results:");
-            UIHelper.ShowHoverTooltip("Result rows are presented as: <entity name>, <name alias>, <matched value>");
+            UIHelper.Tooltip("Result rows are presented as: <entity name>, <name alias>, <matched value>");
             ImGui.Separator();
 
             if (QueryComplete)
@@ -430,7 +430,7 @@ public class MapQueryView : IMapQueryEngine
                         }
                     }
                 }
-                UIHelper.ShowHoverTooltip($"Number of matches: {objectMatches.Count}");
+                UIHelper.Tooltip($"Number of matches: {objectMatches.Count}");
             }
         }
     }

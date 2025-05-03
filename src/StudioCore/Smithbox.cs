@@ -487,43 +487,43 @@ public class Smithbox
                 {
                     Help.ToggleWindow(SelectedHelpTab.Articles);
                 }
-                UIHelper.ShowHoverTooltip("View the articles that relate to this project.");
+                UIHelper.Tooltip("View the articles that relate to this project.");
 
                 if (ImGui.MenuItem("Tutorials"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.Tutorials);
                 }
-                UIHelper.ShowHoverTooltip("View the tutorials that relate to this project.");
+                UIHelper.Tooltip("View the tutorials that relate to this project.");
 
                 if (ImGui.MenuItem("Glossary"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.Glossary);
                 }
-                UIHelper.ShowHoverTooltip("View the glossary that relate to this project.");
+                UIHelper.Tooltip("View the glossary that relate to this project.");
 
                 if (ImGui.MenuItem("Mass Edit"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.MassEdit);
                 }
-                UIHelper.ShowHoverTooltip("View the mass edit help instructions.");
+                UIHelper.Tooltip("View the mass edit help instructions.");
 
                 if (ImGui.MenuItem("Regex"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.Regex);
                 }
-                UIHelper.ShowHoverTooltip("View the regex help instructions.");
+                UIHelper.Tooltip("View the regex help instructions.");
 
                 if (ImGui.MenuItem("Links"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.Links);
                 }
-                UIHelper.ShowHoverTooltip("View the community links.");
+                UIHelper.Tooltip("View the community links.");
 
                 if (ImGui.MenuItem("Credits"))
                 {
                     Help.ToggleWindow(SelectedHelpTab.Credits);
                 }
-                UIHelper.ShowHoverTooltip("View the credits.");
+                UIHelper.Tooltip("View the credits.");
 
                 ImGui.EndMenu();
             }
@@ -535,55 +535,55 @@ public class Smithbox
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.Common);
                 }
-                UIHelper.ShowHoverTooltip("View the common keybinds shared between all editors.");
+                UIHelper.Tooltip("View the common keybinds shared between all editors.");
 
                 if (ImGui.MenuItem("Viewport"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.Viewport);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply to the viewport.");
+                UIHelper.Tooltip("View the keybinds that apply to the viewport.");
 
                 if (ImGui.MenuItem("Map Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.MapEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Map Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Map Editor.");
 
                 if (ImGui.MenuItem("Model Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.ModelEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Model Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Model Editor.");
 
                 if (ImGui.MenuItem("Param Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.ParamEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Param Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Param Editor.");
 
                 if (ImGui.MenuItem("Text Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.TextEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Text Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Text Editor.");
 
                 if (ImGui.MenuItem("Gparam Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.GparamEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Gparam Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Gparam Editor.");
 
                 if (ImGui.MenuItem("Time Act Editor"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.TimeActEditor);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Time Act Editor.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Time Act Editor.");
 
                 if (ImGui.MenuItem("Texture Viewer"))
                 {
                     Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
                 }
-                UIHelper.ShowHoverTooltip("View the keybinds that apply when in the Texture Viewer.");
+                UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
 
                 ImGui.EndMenu();
             }

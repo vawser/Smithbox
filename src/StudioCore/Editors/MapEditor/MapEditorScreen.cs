@@ -247,7 +247,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyDuplicate();
             }
-            UIHelper.ShowHoverTooltip($"Duplicate the currently selected map objects.");
+            UIHelper.Tooltip($"Duplicate the currently selected map objects.");
 
             ///--------------------
             // Delete
@@ -256,7 +256,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyDelete();
             }
-            UIHelper.ShowHoverTooltip($"Delete the currently selected map objects.");
+            UIHelper.Tooltip($"Delete the currently selected map objects.");
 
             ///--------------------
             // Scramble
@@ -265,7 +265,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyScramble();
             }
-            UIHelper.ShowHoverTooltip($"Apply the scramble configuration to the currently selected map objects.");
+            UIHelper.Tooltip($"Apply the scramble configuration to the currently selected map objects.");
 
             ///--------------------
             // Replicate
@@ -274,7 +274,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyReplicate();
             }
-            UIHelper.ShowHoverTooltip($"Apply the replicate configuration to the currently selected map objects.");
+            UIHelper.Tooltip($"Apply the replicate configuration to the currently selected map objects.");
 
             ImGui.Separator();
 
@@ -287,7 +287,7 @@ public class MapEditorScreen : EditorScreen
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip($"Duplicate the selected map objects into another map.");
+            UIHelper.Tooltip($"Duplicate the selected map objects into another map.");
 
             ///--------------------
             // Create
@@ -331,7 +331,7 @@ public class MapEditorScreen : EditorScreen
 
                         ImGui.EndMenu();
                     }
-                    UIHelper.ShowHoverTooltip("Create a Part object.");
+                    UIHelper.Tooltip("Create a Part object.");
 
                     if (ActionHandler._regionClasses.Count == 1)
                     {
@@ -364,7 +364,7 @@ public class MapEditorScreen : EditorScreen
 
                             ImGui.EndMenu();
                         }
-                        UIHelper.ShowHoverTooltip("Create a Region object.");
+                        UIHelper.Tooltip("Create a Region object.");
                     }
 
                     if (ImGui.BeginMenu("Events"))
@@ -384,7 +384,7 @@ public class MapEditorScreen : EditorScreen
 
                         ImGui.EndMenu();
                     }
-                    UIHelper.ShowHoverTooltip("Create an Event object.");
+                    UIHelper.Tooltip("Create an Event object.");
 
                     if (ImGui.MenuItem("Light"))
                     {
@@ -397,12 +397,12 @@ public class MapEditorScreen : EditorScreen
                             ActionHandler.ApplyObjectCreation();
                         }
                     }
-                    UIHelper.ShowHoverTooltip("Create a BTL Light object.");
+                    UIHelper.Tooltip("Create a BTL Light object.");
                 }
 
                 ImGui.EndMenu();
             }
-            UIHelper.ShowHoverTooltip($"Create a new map object.");
+            UIHelper.Tooltip($"Create a new map object.");
 
             ImGui.Separator();
 
@@ -413,7 +413,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyFrameInViewport();
             }
-            UIHelper.ShowHoverTooltip("Frames the current selection in the viewport.");
+            UIHelper.Tooltip("Frames the current selection in the viewport.");
 
             ///--------------------
             // Move to Grid
@@ -422,7 +422,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyMovetoGrid();
             }
-            UIHelper.ShowHoverTooltip("Move the current selection to the nearest grid point.");
+            UIHelper.Tooltip("Move the current selection to the nearest grid point.");
 
             ///--------------------
             // Move to Camera
@@ -431,7 +431,7 @@ public class MapEditorScreen : EditorScreen
             {
                 ActionHandler.ApplyMoveToCamera();
             }
-            UIHelper.ShowHoverTooltip("Move the current selection to the camera position.");
+            UIHelper.Tooltip("Move the current selection to the camera position.");
 
             ///--------------------
             // Toggle Render Type
@@ -440,7 +440,7 @@ public class MapEditorScreen : EditorScreen
             {
                 VisualizationHelper.ToggleRenderType(this, Selection);
             }
-            UIHelper.ShowHoverTooltip("Toggle the render type of the current selection.");
+            UIHelper.Tooltip("Toggle the render type of the current selection.");
 
             ImGui.Separator();
 
@@ -843,14 +843,14 @@ public class MapEditorScreen : EditorScreen
                     {
                         HavokCollisionManager.VisibleCollisionType = HavokCollisionType.Low;
                     }
-                    UIHelper.ShowHoverTooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
+                    UIHelper.Tooltip("Visible collision will use the low-detail mesh.\nUsed for standard collision.\nMap must be reloaded after change to see difference.");
                     UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.Low);
 
                     if (ImGui.MenuItem("High"))
                     {
                         HavokCollisionManager.VisibleCollisionType = HavokCollisionType.High;
                     }
-                    UIHelper.ShowHoverTooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
+                    UIHelper.Tooltip("Visible collision will use the high-detail mesh.\nUsed for IK.\nMap must be reloaded after change to see difference.");
                     UIHelper.ShowActiveStatus(HavokCollisionManager.VisibleCollisionType == HavokCollisionType.High);
 
                     ImGui.EndMenu();
@@ -871,13 +871,13 @@ public class MapEditorScreen : EditorScreen
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Translate;
                 }
-                UIHelper.ShowHoverTooltip($"Set the gizmo to Translation mode.");
+                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
 
                 if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
                 {
                     Gizmos.Mode = Gizmos.GizmosMode.Rotate;
                 }
-                UIHelper.ShowHoverTooltip($"Set the gizmo to Rotation mode.");
+                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
 
                 ImGui.EndMenu();
             }
@@ -888,13 +888,13 @@ public class MapEditorScreen : EditorScreen
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.Local;
                 }
-                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's local position.");
+                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
 
                 if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
                 {
                     Gizmos.Space = Gizmos.GizmosSpace.World;
                 }
-                UIHelper.ShowHoverTooltip($"Place the gizmo origin based on the selection's world position.");
+                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
 
                 ImGui.EndMenu();
             }
@@ -905,13 +905,13 @@ public class MapEditorScreen : EditorScreen
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.World;
                 }
-                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the world position.");
+                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
 
                 if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
                 {
                     Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
                 }
-                UIHelper.ShowHoverTooltip($"Orient the gizmo origin based on the bounding box.");
+                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
 
                 ImGui.EndMenu();
             }

@@ -71,7 +71,7 @@ public static class GlobalTextSearch
 
                 ImGui.EndCombo();
             }
-            UIHelper.ShowHoverTooltip("The search filter to use.");
+            UIHelper.Tooltip("The search filter to use.");
 
             // Row 3
             ImGui.TableNextRow();
@@ -96,7 +96,7 @@ public static class GlobalTextSearch
 
                 ImGui.EndCombo();
             }
-            UIHelper.ShowHoverTooltip("The contents to match with.");
+            UIHelper.Tooltip("The contents to match with.");
 
             // Row 4
             ImGui.TableNextRow();
@@ -107,7 +107,7 @@ public static class GlobalTextSearch
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##ignoreCase", ref IgnoreCase);
-            UIHelper.ShowHoverTooltip("Ignore case sensitivity if enabled.");
+            UIHelper.Tooltip("Ignore case sensitivity if enabled.");
 
             ImGui.EndTable();
         }

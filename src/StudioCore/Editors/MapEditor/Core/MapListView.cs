@@ -167,7 +167,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         {
             ImGui.SetNextItemWidth(width * 0.75f);
             ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
-            UIHelper.ShowHoverTooltip("Filter the map list entries.");
+            UIHelper.Tooltip("Filter the map list entries.");
         }
     }
 
@@ -195,7 +195,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 GC.Collect();
             }
         }
-        UIHelper.ShowHoverTooltip("Unload all currently loaded maps.");
+        UIHelper.Tooltip("Unload all currently loaded maps.");
     }
 
     /// <summary>
@@ -207,7 +207,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
         }
-        UIHelper.ShowHoverTooltip("Toggles the display of chalice dungeon maps within the map list.");
+        UIHelper.Tooltip("Toggles the display of chalice dungeon maps within the map list.");
     }
 
     /// <summary>

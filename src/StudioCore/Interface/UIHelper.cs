@@ -110,18 +110,15 @@ public static class UIHelper
         }
     }
 
-    public static void ShowHoverTooltip(string desc)
+    public static void Tooltip(string desc)
     {
-        if (UI.Current.System_Show_UI_Tooltips)
+        if (ImGui.IsItemHovered())
         {
-            if (ImGui.IsItemHovered())
-            {
-                ImGui.BeginTooltip();
-                ImGui.PushTextWrapPos(450.0f);
-                ImGui.TextUnformatted(desc);
-                ImGui.PopTextWrapPos();
-                ImGui.EndTooltip();
-            }
+            ImGui.BeginTooltip();
+            ImGui.PushTextWrapPos(450.0f);
+            ImGui.TextUnformatted(desc);
+            ImGui.PopTextWrapPos();
+            ImGui.EndTooltip();
         }
     }
 

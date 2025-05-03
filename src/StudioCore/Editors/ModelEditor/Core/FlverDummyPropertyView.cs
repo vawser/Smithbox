@@ -69,49 +69,49 @@ public class FlverDummyPropertyView
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Position");
-        UIHelper.ShowHoverTooltip("Location of the dummy point.");
+        UIHelper.Tooltip("Location of the dummy point.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Forward");
-        UIHelper.ShowHoverTooltip("Vector indicating the dummy point's forward direction.");
+        UIHelper.Tooltip("Vector indicating the dummy point's forward direction.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Upward");
-        UIHelper.ShowHoverTooltip("Vector indicating the dummy point's upward direction.");
+        UIHelper.Tooltip("Vector indicating the dummy point's upward direction.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Reference ID");
-        UIHelper.ShowHoverTooltip("Indicates the type of dummy point this is (hitbox, sfx, etc).");
+        UIHelper.Tooltip("Indicates the type of dummy point this is (hitbox, sfx, etc).");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Parent Bone Index");
-        UIHelper.ShowHoverTooltip("Index of a bone that the dummy point is initially transformed to before binding to the attach bone.");
+        UIHelper.Tooltip("Index of a bone that the dummy point is initially transformed to before binding to the attach bone.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Attach Bone Index");
-        UIHelper.ShowHoverTooltip("Index of the bone that the dummy point follows physically.");
+        UIHelper.Tooltip("Index of the bone that the dummy point follows physically.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Flag1");
-        UIHelper.ShowHoverTooltip("");
+        UIHelper.Tooltip("");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Use Upward Vector");
-        UIHelper.ShowHoverTooltip("If false, the upward vector is not read.");
+        UIHelper.Tooltip("If false, the upward vector is not read.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk30");
-        UIHelper.ShowHoverTooltip("Unknown; only used in Sekiro.");
+        UIHelper.Tooltip("Unknown; only used in Sekiro.");
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Unk34");
-        UIHelper.ShowHoverTooltip("Unknown; only used in Sekiro.");
+        UIHelper.Tooltip("Unknown; only used in Sekiro.");
 
         ImGui.NextColumn();
 

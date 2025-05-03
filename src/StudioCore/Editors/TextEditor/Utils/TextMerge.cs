@@ -39,7 +39,7 @@ public static class TextMerge
             ImGui.TableSetColumnIndex(0);
 
             ImGui.Text("Target Project");
-            UIHelper.ShowHoverTooltip("The project you want to merge text from.");
+            UIHelper.Tooltip("The project you want to merge text from.");
 
             ImGui.TableSetColumnIndex(1);
 
@@ -63,7 +63,7 @@ public static class TextMerge
             ImGui.TableSetColumnIndex(1);
 
             ImGui.Checkbox("##replaceModified", ref ReplaceModifiedRows);
-            UIHelper.ShowHoverTooltip("If enabled, then modified rows from the target will overwrite existing rows in our project. If not, then they will be ignored, and only unique rows will be merged.");
+            UIHelper.Tooltip("If enabled, then modified rows from the target will overwrite existing rows in our project. If not, then they will be ignored, and only unique rows will be merged.");
 
             ImGui.EndTable();
         }
@@ -72,7 +72,7 @@ public static class TextMerge
         {
             ApplyMerge(editor);
         }
-        UIHelper.ShowHoverTooltip("May hang whilst processing the merge.");
+        UIHelper.Tooltip("May hang whilst processing the merge.");
     }
 
     private static void ApplyMerge(TextEditorScreen editor)

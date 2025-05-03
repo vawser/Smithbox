@@ -87,7 +87,7 @@ public class LanguageSync
 
             ImGui.EndMenu();
         }
-        UIHelper.ShowHoverTooltip("Sync all unique changes from another category into this category.");
+        UIHelper.Tooltip("Sync all unique changes from another category into this category.");
     }
 
     /// <summary>

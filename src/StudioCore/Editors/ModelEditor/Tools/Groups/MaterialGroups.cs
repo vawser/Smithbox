@@ -137,7 +137,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteMaterialGroup(entry);
                         }
-                        UIHelper.ShowHoverTooltip("Delete this Material group.");
+                        UIHelper.Tooltip("Delete this Material group.");
 
                         ImGui.EndPopup();
                     }
@@ -171,14 +171,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceMaterialList(screen, SelectedMaterialList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Replace the existing Materials with the Materials within this Material group.");
+                UIHelper.Tooltip("Replace the existing Materials with the Materials within this Material group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendMaterialList(screen, SelectedMaterialList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Append to Materials within this Material group to the existing Materials.");
+                UIHelper.Tooltip("Append to Materials within this Material group to the existing Materials.");
             }
 
             ImGui.EndChild();
@@ -194,7 +194,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##MaterialGroupName", ref _createMaterialGroupName, 255);
-            UIHelper.ShowHoverTooltip("The name of the Material group.");
+            UIHelper.Tooltip("The name of the Material group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

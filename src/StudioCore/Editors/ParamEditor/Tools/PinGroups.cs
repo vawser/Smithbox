@@ -69,33 +69,33 @@ public class PinGroups
         ImGui.Separator();
 
         ImGui.Checkbox("Show only pinned params exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedParams);
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedParams.HintText}\nWhen enabled, only pinned params will appear in the param list.");
 
         ImGui.Checkbox("Show only pinned rows exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedRows);
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedRows.HintText}\nWhen enabled, only pinned rows will appear in the rows list.");
 
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
 
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {
             Editor.Project.PinnedParams = new();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", thirdButtonSize))
         {
             Editor.Project.PinnedRows = new();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", thirdButtonSize))
         {
             Editor.Project.PinnedFields = new();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
 
 
         ImGui.Separator();
@@ -110,21 +110,21 @@ public class PinGroups
         {
             CreateParamGroup();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Row Group", thirdButtonSize))
         {
             CreateRowGroup();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Create Field Group", thirdButtonSize))
         {
             CreateFieldGroup();
         }
-        UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
+        UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateFieldPinGroup.HintText}\nCreate a new pin group from the current pinned fields.");
 
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Lists");
@@ -253,7 +253,7 @@ public class PinGroups
                 _selectedParamGroup = entry;
                 LoadParamPinGroup(entry);
             }
-            UIHelper.ShowHoverTooltip("Double-click to set current param pins to this group.");
+            UIHelper.Tooltip("Double-click to set current param pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -271,7 +271,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, ParamGroupPath);
                     }
-                    UIHelper.ShowHoverTooltip("Delete this group.");
+                    UIHelper.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -287,7 +287,7 @@ public class PinGroups
                 _selectedRowGroup = entry;
                 LoadRowPinGroup(entry);
             }
-            UIHelper.ShowHoverTooltip("Double-click to set current row pins to this group.");
+            UIHelper.Tooltip("Double-click to set current row pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -305,7 +305,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, RowGroupPath);
                     }
-                    UIHelper.ShowHoverTooltip("Delete this group.");
+                    UIHelper.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }
@@ -322,7 +322,7 @@ public class PinGroups
                 _selectedFieldGroup = entry;
                 LoadFieldPinGroup(entry);
             }
-            UIHelper.ShowHoverTooltip("Double-click to set current field pins to this group.");
+            UIHelper.Tooltip("Double-click to set current field pins to this group.");
 
             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
             {
@@ -340,7 +340,7 @@ public class PinGroups
                     {
                         DeletePinGroup(entry, FieldGroupPath);
                     }
-                    UIHelper.ShowHoverTooltip("Delete this group.");
+                    UIHelper.Tooltip("Delete this group.");
 
                     ImGui.EndPopup();
                 }

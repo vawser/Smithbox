@@ -58,15 +58,15 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                 Editor.FocusManager.SwitchWindowContext(MapEditorContext.AssetBrowser);
 
                 ImGui.InputText($"Search", ref _searchInput, 255);
-                UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+                UIHelper.Tooltip("Separate terms are split via the + character.");
 
                 ImGui.Checkbox("Update Name on Switch", ref CFG.Current.AssetBrowser_UpdateName);
-                UIHelper.ShowHoverTooltip("When a map object is switched to a new form, update the name to match the new form.");
+                UIHelper.Tooltip("When a map object is switched to a new form, update the name to match the new form.");
 
                 if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     ImGui.Checkbox("Update Instance ID on Switch", ref CFG.Current.AssetBrowser_UpdateInstanceID);
-                    UIHelper.ShowHoverTooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
+                    UIHelper.Tooltip("When a map object is switched to a new form, update the Instance ID to account for the new form.");
                 }
 
                 DisplayCharacterList();
@@ -145,7 +145,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                             {
                                 ApplyMapAssetSelection(entry.ID, FileSelectionType.Character);
                             }
-                            UIHelper.ShowHoverTooltip("Change your current selection's model to this.");
+                            UIHelper.Tooltip("Change your current selection's model to this.");
 
                             ImGui.EndPopup();
                         }
@@ -187,7 +187,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                             {
                                 ApplyMapAssetSelection(entry.ID, FileSelectionType.Asset);
                             }
-                            UIHelper.ShowHoverTooltip("Change your current selection's model to this.");
+                            UIHelper.Tooltip("Change your current selection's model to this.");
 
                             ImGui.EndPopup();
                         }
@@ -222,7 +222,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                             {
                                 ApplyMapAssetSelection(entry.ID, FileSelectionType.Part);
                             }
-                            UIHelper.ShowHoverTooltip("Change your current selection's model to this.");
+                            UIHelper.Tooltip("Change your current selection's model to this.");
 
                             ImGui.EndPopup();
                         }
@@ -274,7 +274,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                                 {
                                     ApplyMapAssetSelection(entry.ID, FileSelectionType.MapPiece, map);
                                 }
-                                UIHelper.ShowHoverTooltip("Change your current selection's model to this.");
+                                UIHelper.Tooltip("Change your current selection's model to this.");
 
                                 ImGui.EndPopup();
                             }

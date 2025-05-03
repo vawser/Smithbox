@@ -906,7 +906,7 @@ public static class MapEditorDecorations
                 EditorCommandQueue.AddCommand($"model/load/{value}/{loadType}");
             }
         }
-        UIHelper.ShowHoverTooltip("View this model in the Model Editor, loading it automatically.");
+        UIHelper.Tooltip("View this model in the Model Editor, loading it automatically.");
 
         ImGui.EndGroup();
     }

@@ -278,7 +278,7 @@ public class SelectionGroupView
         {
             CreateSelectionGroup("Internal");
         }
-        UIHelper.ShowHoverTooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
+        UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.MAP_CreateSelectionGroup.HintText}\nBring up the selection group creation menu to assign your current selection to a selection group.");
 
         if (ImGui.BeginPopup("##selectionGroupModalInternal"))
         {
@@ -292,7 +292,7 @@ public class SelectionGroupView
         ImGui.BeginChild("##selectionGroupList");
 
         ImGui.InputText($"Search", ref _searchInput, 255);
-        UIHelper.ShowHoverTooltip("Separate terms are split via the + character.");
+        UIHelper.Tooltip("Separate terms are split via the + character.");
 
         foreach (var entry in Editor.Project.MapEntitySelections.Resources)
         {
@@ -355,13 +355,13 @@ public class SelectionGroupView
             {
                 SelectSelectionGroup();
             }
-            UIHelper.ShowHoverTooltip("Select the map objects listed by your currently selected group.");
+            UIHelper.Tooltip("Select the map objects listed by your currently selected group.");
 
             if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
             {
                 ImGui.OpenPopup($"##selectionGroupModalEdit");
             }
-            UIHelper.ShowHoverTooltip("Edit the name, tags and keybind for the selected group.");
+            UIHelper.Tooltip("Edit the name, tags and keybind for the selected group.");
 
             if (ImGui.BeginPopup("##selectionGroupModalEdit"))
             {
@@ -374,7 +374,7 @@ public class SelectionGroupView
             {
                 DeleteSelectionGroup();
             }
-            UIHelper.ShowHoverTooltip("Delete this selected group.");
+            UIHelper.Tooltip("Delete this selected group.");
 
             if (selectedResourceTags.Count > 0)
             {
@@ -403,9 +403,9 @@ public class SelectionGroupView
         var buttonWidth = width / 100 * 95;
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref createPromptGroupName, 255);
-        UIHelper.ShowHoverTooltip("The name of the selection group.");
+        UIHelper.Tooltip("The name of the selection group.");
         ImGui.InputText("Tags##selectionGroup_Tags", ref createPromptTags, 255);
-        UIHelper.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
+        UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
 
         var keyBind = GetSelectionGroupKeyBind(currentKeyBindOption);
         var previewString = "None";
@@ -439,7 +439,7 @@ public class SelectionGroupView
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
+        UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
 
         if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
         {
@@ -454,9 +454,9 @@ public class SelectionGroupView
         var buttonWidth = width / 100 * 95;
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref editPromptGroupName, 255);
-        UIHelper.ShowHoverTooltip("The name of the selection group.");
+        UIHelper.Tooltip("The name of the selection group.");
         ImGui.InputText("Tags##selectionGroup_Tags", ref editPromptTags, 255);
-        UIHelper.ShowHoverTooltip("Separate each tag with the , character as a delimiter.");
+        UIHelper.Tooltip("Separate each tag with the , character as a delimiter.");
 
         var keyBind = GetSelectionGroupKeyBind(editPromptKeybind);
         var previewString = "None";
@@ -490,7 +490,7 @@ public class SelectionGroupView
 
             ImGui.EndCombo();
         }
-        UIHelper.ShowHoverTooltip("The keybind to quickly select the contents of this selection group.");
+        UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
 
         if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
         {

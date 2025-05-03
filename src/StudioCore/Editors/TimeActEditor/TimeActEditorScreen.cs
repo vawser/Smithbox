@@ -204,13 +204,13 @@ public class TimeActEditorScreen : EditorScreen
             {
                 ActionHandler.DetermineDuplicateTarget();
             }
-            UIHelper.ShowHoverTooltip($"Duplicates the current selection.");
+            UIHelper.Tooltip($"Duplicates the current selection.");
 
             if (ImGui.MenuItem("Delete", KeyBindings.Current.CORE_DeleteSelectedEntry.HintText))
             {
                 ActionHandler.DetermineDeleteTarget();
             }
-            UIHelper.ShowHoverTooltip($"Deletes the current selection.");
+            UIHelper.Tooltip($"Deletes the current selection.");
 
             ImGui.EndMenu();
         }

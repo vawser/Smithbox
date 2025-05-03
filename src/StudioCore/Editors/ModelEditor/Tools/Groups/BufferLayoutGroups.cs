@@ -138,7 +138,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
                         {
                             DeleteBufferLayoutGroup(entry);
                         }
-                        UIHelper.ShowHoverTooltip("Delete this Buffer Layout group.");
+                        UIHelper.Tooltip("Delete this Buffer Layout group.");
 
                         ImGui.EndPopup();
                     }
@@ -172,14 +172,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     var action = new ReplaceBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Replace the existing Buffer Layouts with the Buffer Layouts within this Buffer Layout group.");
+                UIHelper.Tooltip("Replace the existing Buffer Layouts with the Buffer Layouts within this Buffer Layout group.");
                 ImGui.SameLine();
                 if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
                 {
                     var action = new AppendBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
-                UIHelper.ShowHoverTooltip("Append to Buffer Layouts within this Buffer Layout group to the existing Buffer Layouts.");
+                UIHelper.Tooltip("Append to Buffer Layouts within this Buffer Layout group to the existing Buffer Layouts.");
             }
 
             ImGui.EndChild();
@@ -195,7 +195,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             var buttonWidth = width / 100 * 95;
 
             ImGui.InputText("Name##BufferLayoutGroupName", ref _createBufferLayoutGroupName, 255);
-            UIHelper.ShowHoverTooltip("The name of the Buffer Layout group.");
+            UIHelper.Tooltip("The name of the Buffer Layout group.");
 
             if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
             {

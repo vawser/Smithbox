@@ -74,7 +74,7 @@ public class MapPropertyView
         ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
         ImGui.AlignTextToFramePadding();
         ImGui.InputText("##msbFieldSearch", ref msbFieldSearch, 255);
-        UIHelper.ShowHoverTooltip("Filter the properties by field names that exactly or partially match your input.");
+        UIHelper.Tooltip("Filter the properties by field names that exactly or partially match your input.");
         ImGui.Separator();
 
         // Properties
@@ -392,7 +392,7 @@ public class MapPropertyView
         // Description
         if (meta != null && meta.Wiki != "")
         {
-            UIHelper.ShowHoverTooltip(meta.Wiki);
+            UIHelper.Tooltip(meta.Wiki);
         }
 
         ImGui.NextColumn();
@@ -675,12 +675,12 @@ public class MapPropertyView
 
         if (meta != null)
         {
-            UIHelper.ShowHoverTooltip(meta.Wiki);
+            UIHelper.Tooltip(meta.Wiki);
         }
 
         ImGui.AlignTextToFramePadding();
         ImGui.Text("Map ID");
-        UIHelper.ShowHoverTooltip("The map ID of the map that the first entry of the current selection is found in.");
+        UIHelper.Tooltip("The map ID of the map that the first entry of the current selection is found in.");
 
         ImGui.NextColumn();
 
@@ -1114,7 +1114,7 @@ public class MapPropertyView
         }
 
         // Final description
-        UIHelper.ShowHoverTooltip(text);
+        UIHelper.Tooltip(text);
     }
 
 
