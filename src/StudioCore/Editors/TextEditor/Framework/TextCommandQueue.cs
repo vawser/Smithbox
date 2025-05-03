@@ -9,11 +9,11 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextCommandQueue
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
 
     public TextCommandQueue(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public void Parse(string[] initcmd)
@@ -30,21 +30,21 @@ public class TextCommandQueue
 
                 var index = 0;
 
-                foreach (var (path, info) in TextBank.FmgBank)
+                foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     if(info.ContainerDisplayCategory.ToString() == category)
                     {
                         if(info.Filename == containerName)
                         {
-                            Screen.Selection.FocusFileSelection = true;
-                            Screen.Selection.SelectFileContainer(info, index);
+                            Editor.Selection.FocusFileSelection = true;
+                            Editor.Selection.SelectFileContainer(info, index);
 
                             foreach (var fmg in info.FmgWrappers)
                             {
                                 if(fmg.Name == fmgName)
                                 {
-                                    Screen.Selection.FocusFmgSelection = true;
-                                    Screen.Selection.SelectFmg(fmg);
+                                    Editor.Selection.FocusFmgSelection = true;
+                                    Editor.Selection.SelectFmg(fmg);
 
                                     var entryIndex = 0;
 
@@ -52,8 +52,8 @@ public class TextCommandQueue
                                     {
                                         if($"{entry.ID}" == fmgEntryId)
                                         {
-                                            Screen.Selection.FocusFmgEntrySelection = true;
-                                            Screen.Selection.SelectFmgEntry(entryIndex, entry);
+                                            Editor.Selection.FocusFmgEntrySelection = true;
+                                            Editor.Selection.SelectFmgEntry(entryIndex, entry);
                                         }
 
                                         entryIndex++;

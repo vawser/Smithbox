@@ -13,23 +13,15 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexTextureListView
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
     private TexFilters Filters;
 
     public TexTextureListView(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Filters = screen.Filters;
-    }
-
-    // <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
     }
 
     /// <summary>

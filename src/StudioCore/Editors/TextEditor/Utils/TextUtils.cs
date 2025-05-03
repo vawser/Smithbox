@@ -66,11 +66,11 @@ public static class TextUtils
     /// <summary>
     /// Get the display name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgDisplayName(TextContainerWrapper info, int id, string fmgName)
+    public static string GetFmgDisplayName(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
-        switch(Smithbox.ProjectType)
+        switch(project.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -379,11 +379,11 @@ public static class TextUtils
     /// <summary>
     /// Get the internal name for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgInternalName(TextContainerWrapper info, int id, string fmgName)
+    public static string GetFmgInternalName(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"";
 
-        switch (Smithbox.ProjectType)
+        switch (project.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -665,11 +665,11 @@ public static class TextUtils
     /// <summary>
     /// Get the grouping string for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgGrouping(TextContainerWrapper info, int id, string fmgName)
+    public static string GetFmgGrouping(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
-        switch (Smithbox.ProjectType)
+        switch (project.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -978,11 +978,11 @@ public static class TextUtils
     /// <summary>
     /// Get the grouping string for a FMG based on the BND ID
     /// </summary>
-    public static string GetFmgDlcGrouping(TextContainerWrapper info, int id, string fmgName)
+    public static string GetFmgDlcGrouping(ProjectEntry project, TextContainerWrapper info, int id, string fmgName)
     {
         var name = $"Unknown";
 
-        switch (Smithbox.ProjectType)
+        switch (project.ProjectType)
         {
             case ProjectType.DES:
                 if (IsItemContainer(info))
@@ -1291,13 +1291,13 @@ public static class TextUtils
     /// <summary>
     /// Returns true if there are any FMG entries for the target group string
     /// </summary>
-    public static bool HasGroupEntries(TextContainerWrapper info, string target)
+    public static bool HasGroupEntries(ProjectEntry project, TextContainerWrapper info, string target)
     {
         foreach (var fmgInfo in info.FmgWrappers)
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
-            var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+            var displayGroup = TextUtils.GetFmgGrouping(project, info, id, fmgName);
 
             if (displayGroup == target)
             {
@@ -1310,13 +1310,13 @@ public static class TextUtils
 
     /// Returns true if there are any DLC FMG entries for the target DLC string
     /// </summary>
-    public static bool HasDLCEntries(TextContainerWrapper info, string target)
+    public static bool HasDLCEntries(ProjectEntry project, TextContainerWrapper info, string target)
     {
         foreach (var fmgInfo in info.FmgWrappers)
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
-            var dlcGroup = TextUtils.GetFmgDlcGrouping(info, id, fmgName);
+            var dlcGroup = TextUtils.GetFmgDlcGrouping(project, info, id, fmgName);
 
             if (dlcGroup == target)
             {
@@ -1439,7 +1439,7 @@ public static class TextUtils
     /// Determine the container category based on the container filepath.
     /// Used to determine the 'language' grouping each container belongs to.
     /// </summary>
-    public static TextContainerCategory GetLanguageCategory(string path)
+    public static TextContainerCategory GetLanguageCategory(ProjectEntry project, string path)
     {
         var group = TextContainerCategory.None;
 
@@ -1450,7 +1450,7 @@ public static class TextUtils
         string pathLower = path.ToLowerInvariant();
 
         // Special-case: DES the msg folder has Japanese, so default to Japanese.
-        if(Smithbox.ProjectType is ProjectType.DES)
+        if(project.ProjectType is ProjectType.DES)
         {
             group = TextContainerCategory.Japanese;
         }

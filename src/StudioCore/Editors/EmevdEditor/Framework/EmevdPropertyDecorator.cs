@@ -22,7 +22,7 @@ namespace StudioCore.Editors.EmevdEditor;
 /// </summary>
 public class EmevdPropertyDecorator
 {
-    private EmevdEditorScreen Screen;
+    private EmevdEditorScreen Editor;
     public EmevdSelectionManager Selection;
 
     private Instruction Instruction;
@@ -31,7 +31,7 @@ public class EmevdPropertyDecorator
 
     public EmevdPropertyDecorator(EmevdEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 
@@ -57,12 +57,12 @@ public class EmevdPropertyDecorator
     public bool HasParamReference(string parameterName)
     {
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID" ||
                 parameterName == "DamageParam ID" ||
@@ -77,27 +77,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -124,12 +124,12 @@ public class EmevdPropertyDecorator
     public void DetermineParamReferenceSpacing(string parameterName, string value, int i)
     {
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID")
             {
@@ -161,27 +161,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER   
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -212,12 +212,12 @@ public class EmevdPropertyDecorator
         var currentEventID = Selection.SelectedEvent.ID.ToString(); 
 
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             if (parameterName == "Bullet ID")
             {
@@ -246,27 +246,27 @@ public class EmevdPropertyDecorator
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "SpEffect ID")
             {
@@ -320,38 +320,38 @@ public class EmevdPropertyDecorator
     public bool HasTextReference(string parameterName)
     {
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
 
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -368,37 +368,37 @@ public class EmevdPropertyDecorator
     public void DetermineTextReferenceSpacing(string parameterName, string value, int i)
     {
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -413,37 +413,37 @@ public class EmevdPropertyDecorator
     public void DetermineTextReference(string parameterName, string value, int i)
     {
         // DS1
-        if (Screen.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
         }
 
         // DS2
-        if (Screen.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
         }
 
         // DS3
-        if (Screen.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is ProjectType.DS3)
         {
         }
 
         // BB
-        if (Screen.Project.ProjectType is ProjectType.BB)
+        if (Editor.Project.ProjectType is ProjectType.BB)
         {
         }
 
         // SDT
-        if (Screen.Project.ProjectType is ProjectType.SDT)
+        if (Editor.Project.ProjectType is ProjectType.SDT)
         {
         }
 
         // ER
-        if (Screen.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
         }
 
         // AC6
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             if (parameterName == "Name ID")
             {
@@ -502,7 +502,7 @@ public class EmevdPropertyDecorator
     {
         if (IsFlagParameter(parameterName))
         {
-            var entries = Screen.Project.Aliases.EventFlags;
+            var entries = Editor.Project.Aliases.EventFlags;
             if (entries != null)
             {
                 foreach(var entry in entries)
@@ -522,7 +522,7 @@ public class EmevdPropertyDecorator
 
         if (IsParticleParameter(parameterName))
         {
-            var entries = Screen.Project.Aliases.Particles;
+            var entries = Editor.Project.Aliases.Particles;
             if (entries != null)
             {
                 foreach (var entry in entries)
@@ -542,7 +542,7 @@ public class EmevdPropertyDecorator
 
         if (IsSoundParameter(parameterName))
         {
-            var entries = Screen.Project.Aliases.Sounds;
+            var entries = Editor.Project.Aliases.Sounds;
             if (entries != null)
             {
                 foreach (var entry in entries)
@@ -596,7 +596,7 @@ public class EmevdPropertyDecorator
     {
         var mapID = Selection.SelectedFileInfo.Name; // To determine map ID
 
-        if (Screen.Project.ProjectType is ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.AC6)
         {
             // Referring to base map from mission EMEVD
             if (value.Length > 4)
@@ -669,7 +669,7 @@ public class EmevdPropertyDecorator
 
     public void DisplayEnumReference(ArgDoc argDoc, object arg, int i)
     {
-        var enumDoc = Screen.Project.EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
+        var enumDoc = Editor.Project.EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
         var alias = enumDoc.Values.Where(e => e.Key == $"{arg}").FirstOrDefault();
 
         ImGui.AlignTextToFramePadding();
@@ -806,22 +806,25 @@ public class EmevdPropertyDecorator
     /// </summary>
     private void ConstructParamReference(string paramName, string value, int i)
     {
-        var refValue = int.Parse(value);
-
-        (string, Param.Row, string) match = ResolveParamRef(ParamBank.PrimaryBank, paramName, refValue);
-
-        ImGui.AlignTextToFramePadding();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
-
-        // Context Menu for param ref
-        if (ImGui.BeginPopupContextItem($"ParamContextMenu_{paramName}_{i}"))
+        if (Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor != null)
         {
-            if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
-            {
-                EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
-            }
+            var refValue = int.Parse(value);
 
-            ImGui.EndPopup();
+            (string, Param.Row, string) match = ResolveParamRef(Editor.Project.ParamData.PrimaryBank, paramName, refValue);
+
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
+
+            // Context Menu for param ref
+            if (ImGui.BeginPopupContextItem($"ParamContextMenu_{paramName}_{i}"))
+            {
+                if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
+                {
+                    EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
+                }
+
+                ImGui.EndPopup();
+            }
         }
     }
 
@@ -830,28 +833,28 @@ public class EmevdPropertyDecorator
     /// </summary>
     private void ConstructTextReference(string fmgName, string value, int i)
     {
-        if (!TextBank.PrimaryBankLoaded)
+        if (Editor.BaseEditor.ProjectManager.SelectedProject.TextEditor != null)
         {
-            return;
-        }
+            var textEditor = Editor.BaseEditor.ProjectManager.SelectedProject.TextEditor;
 
-        var refValue = int.Parse(value);
+            var refValue = int.Parse(value);
 
-        TextResult result = TextFinder.GetTextResult(fmgName, refValue);
+            TextResult result = TextFinder.GetTextResult(textEditor, fmgName, refValue);
 
-        if(result != null)
-        {
-            ImGui.AlignTextToFramePadding();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{result.Entry.Text}");
-
-            if (ImGui.BeginPopupContextItem($"TextContextMenu_{fmgName}_{i}"))
+            if (result != null)
             {
-                if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
-                {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
-                }
+                ImGui.AlignTextToFramePadding();
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{result.Entry.Text}");
 
-                ImGui.EndPopup();
+                if (ImGui.BeginPopupContextItem($"TextContextMenu_{fmgName}_{i}"))
+                {
+                    if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
+                    {
+                        EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
+                    }
+
+                    ImGui.EndPopup();
+                }
             }
         }
     }

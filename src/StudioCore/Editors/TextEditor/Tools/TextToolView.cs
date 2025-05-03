@@ -19,22 +19,19 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextToolView
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     public TextSelectionManager Selection;
     private TextActionHandler ActionHandler;
 
     public TextToolView(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
     }
 
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
@@ -45,19 +42,19 @@ public class TextToolView
             // Global Text Search
             if (ImGui.CollapsingHeader("Text Search"))
             {
-                GlobalTextSearch.Display();
+                GlobalTextSearch.Display(Editor);
             }
 
             // Global Text Replacement
             if (ImGui.CollapsingHeader("Text Replacement"))
             {
-                GlobalTextReplacement.Display();
+                GlobalTextReplacement.Display(Editor);
             }
 
             // Text Merge
             if (ImGui.CollapsingHeader("Text Merge"))
             {
-                TextMerge.Display();
+                TextMerge.Display(Editor);
             }
         }
 

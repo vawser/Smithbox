@@ -355,7 +355,6 @@ public class DebugWindow
 
         if (ImGui.Button("Print FMG Refs for current param", buttonSize))
         {
-            FmgRefPrintTool.Print();
         }
     }
 

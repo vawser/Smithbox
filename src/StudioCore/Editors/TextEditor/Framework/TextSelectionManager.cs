@@ -1,22 +1,12 @@
-﻿using StudioCore.Configuration;
-using StudioCore.Editor.Multiselection;
-using StudioCore.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using HKLib.hk2018.hkaiCollisionAvoidance;
-using Hexa.NET.ImGui;
-using StudioCore.Utilities;
-using StudioCore.Editors.TimeActEditor.Enums;
+using StudioCore.TextEditor;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextSelectionManager
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
 
     public int SelectedContainerKey;
     public TextContainerWrapper SelectedContainerWrapper;
@@ -43,9 +33,9 @@ public class TextSelectionManager
 
     public TextSelectionManager(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
 
-        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
     }
 
     public void OnProjectChanged()
@@ -67,7 +57,7 @@ public class TextSelectionManager
         FocusFmgSelection = false;
         FocusFmgEntrySelection = false;
 
-        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
     }
 
     /// <summary>
@@ -82,7 +72,10 @@ public class TextSelectionManager
         _selectedFmgEntry = null;
 
         // Refresh the param editor FMG decorators when the file changes.
-        Smithbox.EditorHandler.ParamEditor.SetupFmgDecorators();
+        if (Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor != null)
+        {
+            Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor.SetupFmgDecorators();
+        }
 
         // Auto-select first FMG
         AutoSelectFirstValidFmg();
@@ -96,12 +89,12 @@ public class TextSelectionManager
         SelectedFmgWrapper = fmgInfo;
         SelectedFmgKey = fmgInfo.ID;
 
-        FmgEntryMultiselect = new TextMultiselection(Screen, MultiSelectKey);
+        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
-        Screen.DifferenceManager.TrackFmgDifferences();
+        Editor.DifferenceManager.TrackFmgDifferences();
 
         // Auto-select first FMG Entry
         AutoSelectFmgEntry();
@@ -116,9 +109,9 @@ public class TextSelectionManager
         {
             var id = fmgInfo.ID;
             var fmgName = fmgInfo.Name;
-            var displayName = TextUtils.GetFmgDisplayName(SelectedContainerWrapper, id, fmgName);
+            var displayName = TextUtils.GetFmgDisplayName(Editor.Project, SelectedContainerWrapper, id, fmgName);
 
-            if (Screen.Filters.IsFmgFilterMatch(fmgName, displayName, id))
+            if (Editor.Filters.IsFmgFilterMatch(fmgName, displayName, id))
             {
                 SelectFmg(fmgInfo);
                 break;
@@ -151,7 +144,7 @@ public class TextSelectionManager
             {
                 var entry = SelectedFmgWrapper.File.Entries[i];
 
-                if (Screen.Filters.IsFmgEntryFilterMatch(entry))
+                if (Editor.Filters.IsFmgEntryFilterMatch(entry))
                 {
                     SelectFmgEntry(i, entry);
                     break;

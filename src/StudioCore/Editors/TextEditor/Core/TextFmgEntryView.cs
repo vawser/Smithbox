@@ -18,7 +18,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFmgEntryView
 {
-    public TextEditorScreen Screen;
+    public TextEditorScreen Editor;
     public TextPropertyDecorator Decorator;
     public TextSelectionManager Selection;
     public TextFilters Filters;
@@ -27,7 +27,7 @@ public class TextFmgEntryView
 
     public TextFmgEntryView(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
@@ -121,8 +121,8 @@ public class TextFmgEntryView
                         {
                             ContextMenu.FmgEntryContextMenu(i, Selection.SelectedFmgWrapper, entry, Selection.IsFmgEntrySelected(i));
 
-                            Screen.EditorShortcuts.HandleSelectAll();
-                            Screen.EditorShortcuts.HandleCopyEntryText();
+                            Editor.EditorShortcuts.HandleSelectAll();
+                            Editor.EditorShortcuts.HandleCopyEntryText();
                         }
 
                         // Focus Selection

@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexFilters
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
 
     public string FileFilterSearchStr = "";
@@ -20,7 +20,7 @@ public class TexFilters
 
     public TexFilters(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 

@@ -1,206 +1,87 @@
-﻿using Silk.NET.OpenGL;
-using SoulsFormats;
+﻿using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editor;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextEditor;
 
-public static class TextBank
+public class TextBank
 {
-    public static bool PrimaryBankLoaded = false;
-    public static bool VanillaBankLoaded = false;
-    public static bool VanillaBankLoading = false;
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
 
-    public static SortedDictionary<string, TextContainerWrapper> FmgBank { get; private set; } = new();
+    public string SourcePath;
+    public string FallbackPath;
 
-    public static SortedDictionary<string, TextContainerWrapper> VanillaFmgBank { get; private set; } = new();
+    public SortedDictionary<string, TextContainerWrapper> Entries { get; private set; } = new();
 
-    public static SortedDictionary<string, TextContainerWrapper> TargetFmgBank { get; private set; } = new();
-
-    /// <summary>
-    /// Load all FMG containers
-    /// </summary>
-    public static void LoadTextFiles()
+    public TextBank(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
     {
-        PrimaryBankLoaded = false;
-        VanillaBankLoaded = false;
-
-        FmgBank = new();
-        VanillaFmgBank = new();
-
-        TaskManager.LiveTask task = new(
-            "textEditor_primaryBankSetup",
-            "Text Editor",
-            "primary text bank has been setup.",
-            "primary text bank setup has failed.",
-            TaskManager.RequeueType.None,
-            false,
-            () =>
-            {
-                if (Smithbox.ProjectType is not ProjectType.Undefined)
-                {
-                    if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                    {
-                        var fmgList = TextLocator.GetFmgs("menu\\text\\");
-
-                        foreach (var path in fmgList)
-                        {
-                            LoadFmg(path, FmgBank);
-                        }
-                    }
-                    else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-                    {
-                        var fmgList = TextLocator.GetFmgs("lang\\");
-
-                        foreach (var path in fmgList)
-                        {
-                            LoadFmg(path, FmgBank);
-                        }
-                    }
-                    else
-                    {
-                        var fmgContainerList = TextLocator.GetFmgContainers();
-
-                        foreach (var path in fmgContainerList)
-                        {
-                            LoadFmgContainer(path, FmgBank);
-                        }
-                    }
-                }
-
-                PrimaryBankLoaded = true;
-            }
-        );
-
-        TaskManager.Run(task);
+        BaseEditor = baseEditor;
+        Project = project;
+        SourcePath = sourcePath;
+        FallbackPath = fallbackPath;
     }
 
-    /// <summary>
-    /// Load text files for target project
-    /// </summary>
-    public static void LoadTargetTextFiles(string targetDir)
+    public async Task<bool> Setup()
     {
-        TargetFmgBank = new();
+        await Task.Delay(1000);
 
-        if (Smithbox.ProjectType is not ProjectType.Undefined)
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            {
-                var fmgList = TextLocator.GetFmgs("menu\\text\\", false, targetDir);
+            var fmgList = TextLocator.GetFmgs("menu\\text\\");
 
-                foreach (var path in fmgList)
-                {
-                    LoadFmg(path, TargetFmgBank);
-                }
-            }
-            else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+            foreach (var path in fmgList)
             {
-                var fmgList = TextLocator.GetFmgs("lang\\", false, targetDir);
-
-                foreach (var path in fmgList)
-                {
-                    LoadFmg(path, TargetFmgBank);
-                }
-            }
-            else
-            {
-                var fmgContainerList = TextLocator.GetFmgContainers(false, targetDir);
-
-                foreach (var path in fmgContainerList)
-                {
-                    LoadFmgContainer(path, TargetFmgBank);
-                }
+                LoadFmg(path);
             }
         }
-    }
-
-    /// <summary>
-    /// Load all vanilla FMG containers
-    /// </summary>
-    public static void LoadVanillaTextFiles()
-    {
-        VanillaBankLoading = true;
-
-        // Skip if disabled
-        if (!CFG.Current.TextEditor_IncludeVanillaCache)
+        else if (Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
-            VanillaBankLoaded = true;
-            VanillaBankLoading = false;
+            var fmgList = TextLocator.GetFmgs("lang\\");
 
-            return;
+            foreach (var path in fmgList)
+            {
+                LoadFmg(path);
+            }
+        }
+        else
+        {
+            var fmgContainerList = TextLocator.GetFmgContainers();
+
+            foreach (var path in fmgContainerList)
+            {
+                LoadFmgContainer(path);
+            }
         }
 
-        TaskManager.LiveTask task = new(
-            "textEditor_vanillaBankSetup",
-            "Text Editor",
-            "vanilla text bank has been setup.",
-            "vanilla text bank setup has failed.",
-            TaskManager.RequeueType.None,
-            false,
-            () =>
-            {
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-                {
-                    var fmgList = TextLocator.GetFmgs("menu\\text\\", true);
-
-                    foreach (var path in fmgList)
-                    {
-                        LoadFmg(path, VanillaFmgBank);
-                    }
-                }
-                else if (Smithbox.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-                {
-                    var fmgList = TextLocator.GetFmgs("lang\\", true);
-
-                    foreach (var path in fmgList)
-                    {
-                        LoadFmg(path, VanillaFmgBank);
-                    }
-                }
-                else if (Smithbox.ProjectType is not ProjectType.Undefined)
-                {
-                    var fmgContainerList = TextLocator.GetFmgContainers(true);
-
-                    foreach (var path in fmgContainerList)
-                    {
-                        LoadFmgContainer(path, VanillaFmgBank);
-                    }
-                }
-
-                VanillaBankLoaded = true;
-                VanillaBankLoading = false;
-            }
-        );
-
-        TaskManager.Run(task);
+        return true;
     }
 
     /// <summary>
     /// Load FMG file
     /// </summary>
-    public static void LoadFmg(string path, SortedDictionary<string, TextContainerWrapper> bank)
+    public void LoadFmg(string path)
     {
         var name = Path.GetFileName(path);
 
         // TODO: need a better method for building the relative path, this seems to cause issues with some people's setups, causing a crash as the resulting relative path is empty
         var containerRelPath = path;
-        if (containerRelPath.Contains(Smithbox.ProjectRoot))
+        if (containerRelPath.Contains(Project.ProjectPath))
         {
-            containerRelPath = containerRelPath.Replace(Smithbox.ProjectRoot, "");
+            containerRelPath = containerRelPath.Replace(Project.ProjectPath, "");
         }
-        if (containerRelPath.Contains(Smithbox.GameRoot))
+
+        if (containerRelPath.Contains(Project.DataPath))
         {
-            containerRelPath = containerRelPath.Replace(Smithbox.GameRoot, "");
+            containerRelPath = containerRelPath.Replace(Project.DataPath, "");
         }
+
         if (containerRelPath.Contains(name))
         {
             containerRelPath = containerRelPath.Replace(name, "");
@@ -209,7 +90,7 @@ public static class TextBank
         //TaskLogs.AddLog(containerRelPath);
 
         var containerType = TextContainerType.Loose;
-        var containerCategory = TextUtils.GetLanguageCategory(containerRelPath);
+        var containerCategory = TextUtils.GetLanguageCategory(Project, containerRelPath);
 
         // Skip non-English if this is disabled
         if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -235,7 +116,7 @@ public static class TextBank
             var fmg = FMG.Read(path);
             fmg.Name = name; // Assign this to make it easier to grab FMGs
 
-            TextContainerWrapper containerWrapper = new();
+            TextContainerWrapper containerWrapper = new(Project);
             containerWrapper.Filename = name;
             containerWrapper.ReadPath = path;
             containerWrapper.RelativePath = containerRelPath;
@@ -254,12 +135,12 @@ public static class TextBank
 
             containerWrapper.FmgWrappers = fmgWrappers;
 
-            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
                 containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(path);
             }
 
-            bank.Add(path, containerWrapper);
+            Entries.Add(path, containerWrapper);
         }
         catch (Exception ex)
         {
@@ -271,18 +152,20 @@ public static class TextBank
     /// <summary>
     /// Load FMG container
     /// </summary>
-    public static void LoadFmgContainer(string path, SortedDictionary<string, TextContainerWrapper> bank)
+    public void LoadFmgContainer(string path)
     {
         var name = Path.GetFileName(path);
         var containerRelPath = path;
-        if (containerRelPath.Contains(Smithbox.ProjectRoot))
+        if (containerRelPath.Contains(Project.ProjectPath))
         {
-            containerRelPath = containerRelPath.Replace(Smithbox.ProjectRoot, "");
+            containerRelPath = containerRelPath.Replace(Project.ProjectPath, "");
         }
-        if (containerRelPath.Contains(Smithbox.GameRoot))
+
+        if (containerRelPath.Contains(Project.DataPath))
         {
-            containerRelPath = containerRelPath.Replace(Smithbox.GameRoot, "");
+            containerRelPath = containerRelPath.Replace(Project.DataPath, "");
         }
+
         if (containerRelPath.Contains(name))
         {
             containerRelPath = containerRelPath.Replace(name, "");
@@ -291,7 +174,7 @@ public static class TextBank
         //TaskLogs.AddLog(containerRelPath);
 
         var containerType = TextContainerType.BND;
-        var containerCategory = TextUtils.GetLanguageCategory(containerRelPath);
+        var containerCategory = TextUtils.GetLanguageCategory(Project, containerRelPath);
 
         // Skip non-English if this is disabled
         if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -312,7 +195,7 @@ public static class TextBank
             SFUtil.GetDecompressedBR(reader, out compressionType);
 
             // Create the Text Container wrapper and and add it to the bank
-            TextContainerWrapper containerWrapper = new();
+            TextContainerWrapper containerWrapper = new(Project);
             containerWrapper.Filename = name;
             containerWrapper.ReadPath = path;
             containerWrapper.RelativePath = containerRelPath;
@@ -324,7 +207,7 @@ public static class TextBank
             // Populate the Text Fmg wrappers with their contents
             List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
-            if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
+            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
                 using (IBinder binder = BND3.Read(path))
                 {
@@ -376,7 +259,7 @@ public static class TextBank
             // Add the fmg wrappers to the container wrapper
             containerWrapper.FmgWrappers = fmgWrappers;
 
-            bank.Add(path, containerWrapper);
+            Entries.Add(path, containerWrapper);
         }
         catch (Exception ex)
         {
@@ -388,14 +271,14 @@ public static class TextBank
     /// <summary>
     /// Save all modified FMG Containers
     /// </summary>
-    public static void SaveTextFiles()
+    public void SaveTextFiles()
     {
-        foreach (var (path, containerInfo) in FmgBank)
+        foreach (var (path, containerInfo) in Entries)
         {
             // Only save all modified files
             if (containerInfo.IsModified)
             {
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     SaveLooseFmgs(containerInfo);
                 }
@@ -410,7 +293,7 @@ public static class TextBank
     /// <summary>
     /// Save passed FMG container
     /// </summary>
-    public static void SaveFmgContainer(TextContainerWrapper containerWrapper)
+    public void SaveFmgContainer(TextContainerWrapper containerWrapper)
     {
         var rootContainerPath = containerWrapper.ReadPath;
         var projectContainerPath = containerWrapper.GetWritePath();
@@ -428,7 +311,7 @@ public static class TextBank
 
         byte[] fileBytes = null;
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
+        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
         {
             using (IBinder binder = BND3.Read(projectContainerPath))
             {
@@ -462,7 +345,7 @@ public static class TextBank
         WriteFile(fileBytes, projectContainerPath);
     }
 
-    private static void WriteFmgContents(BinderFile file, List<TextFmgWrapper> fmgList)
+    private void WriteFmgContents(BinderFile file, List<TextFmgWrapper> fmgList)
     {
         if (file.Name.Contains(".fmg"))
         {
@@ -486,7 +369,7 @@ public static class TextBank
     /// <summary>
     /// Saved passed loose FMG file
     /// </summary>
-    public static void SaveLooseFmgs(TextContainerWrapper containerWrapper)
+    public void SaveLooseFmgs(TextContainerWrapper containerWrapper)
     {
         var rootContainerPath = containerWrapper.ReadPath;
         var projectContainerPath = containerWrapper.GetWritePath();
@@ -510,7 +393,7 @@ public static class TextBank
     /// <summary>
     /// Write out a non-container file.
     /// </summary>
-    public static void WriteFile(byte[] data, string path)
+    public void WriteFile(byte[] data, string path)
     {
         if (data != null)
         {

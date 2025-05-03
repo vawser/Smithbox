@@ -13,12 +13,12 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActShortcuts
 {
     private ActionManager ActionManager;
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActActionHandler ActionHandler;
 
     public TimeActShortcuts(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         ActionManager = screen.EditorActionManager;
         ActionHandler = screen.ActionHandler;
     }

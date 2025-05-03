@@ -12,19 +12,6 @@ namespace StudioCore.Editors.TextureViewer.Utils;
 
 public static class TexUtils
 {
-    /// <summary>
-    /// Whether the current project type supports the Texture Viewer
-    /// </summary>
-    public static bool IsSupportedProjectType()
-    {
-        // Need to add PS3 deswizzling support for these to work
-        if (Smithbox.ProjectType is ProjectType.DES or ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
-        {
-            return false;
-        }
-
-        return true;
-    }
     public static void ExportDDSImage(string exportFilePath, byte[] bytes)
     {
         File.WriteAllBytes($"{exportFilePath}.dds", bytes);

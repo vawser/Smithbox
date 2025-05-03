@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +10,23 @@ namespace StudioCore.Editors.TextEditor.Utils;
 
 public static class TextParamUtils
 {
-    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(string paramName)
+    public static List<FMG.Entry> GetFmgEntriesByAssociatedParam(ParamEditorScreen editor, string paramName)
     {
+        if (editor.Project.TextEditor == null)
+            return new List<FMG.Entry>();
+
         List<FMG.Entry> entries = new List<FMG.Entry>();
 
         var searchStr = GetAssociatedEnumString(paramName);
         if(searchStr != "")
         {
-            foreach(var (path, entry) in TextBank.FmgBank)
+            foreach(var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
             {
                 if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                 {
                     foreach (var fmgInfo in entry.FmgWrappers)
                     {
-                        var enumName = TextUtils.GetFmgInternalName(entry, fmgInfo.ID, fmgInfo.Name);
+                        var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmgInfo.ID, fmgInfo.Name);
 
                         if (enumName.Contains(searchStr))
                         {

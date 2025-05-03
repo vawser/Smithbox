@@ -43,12 +43,12 @@ public class ParamComparisonReport
         IsGeneratingReport = true;
         ReportText = "";
 
-        var primaryBank = ParamBank.PrimaryBank;
-        var compareBank = ParamBank.VanillaBank;
+        var primaryBank = Editor.Project.ParamData.PrimaryBank;
+        var compareBank = Editor.Project.ParamData.VanillaBank;
 
         if(CurrentCompareBankType == 1)
         {
-            if (ParamBank.AuxBanks.Count <= 0)
+            if (Editor.Project.ParamData.AuxBanks.Count <= 0)
             {
                 PlatformUtils.Instance.MessageBox("No comparison bank has been loaded. Report generation ended.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -58,7 +58,7 @@ public class ParamComparisonReport
             }
             else
             {
-                var auxBank = ParamBank.AuxBanks.First().Value;
+                var auxBank = Editor.Project.ParamData.AuxBanks.First().Value;
                 compareBank = auxBank;
             }
         }
@@ -195,17 +195,17 @@ public class ParamComparisonReport
 
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
         ImGui.Separator();
-        UIHelper.WrappedText($"Primary Bank - Param Version: {ParamBank.PrimaryBank.ParamVersion}");
+        UIHelper.WrappedText($"Primary Bank - Param Version: {Editor.Project.ParamData.PrimaryBank.ParamVersion}");
 
         if (CurrentCompareBankType == 0)
         {
-            UIHelper.WrappedText($"Comparison Bank - Param Version: {ParamBank.VanillaBank.ParamVersion}");
+            UIHelper.WrappedText($"Comparison Bank - Param Version: {Editor.Project.ParamData.VanillaBank.ParamVersion}");
         }
         else if (CurrentCompareBankType == 1)
         {
-            if (ParamBank.AuxBanks.Count > 0)
+            if (Editor.Project.ParamData.AuxBanks.Count > 0)
             {
-                var auxBank = ParamBank.AuxBanks.First().Value;
+                var auxBank = Editor.Project.ParamData.AuxBanks.First().Value;
                 UIHelper.WrappedText($"Comparison Bank - Param Version: {auxBank.ParamVersion}");
             }
             else

@@ -1,25 +1,16 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
-using StudioCore.Editors.TimeActEditor.Enums;
-using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.TimeActSelectionManager;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActContextMenu
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Handler;
 
     public TimeActContextMenu(TimeActEditorScreen screen, TimeActSelectionManager handler)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = handler;
     }
 
@@ -28,9 +19,6 @@ public class TimeActContextMenu
     /// </summary>
     public void ContainerMenu(bool isSelected, string key)
     {
-        if (TimeActBank.IsSaving)
-            return;
-
         if (!isSelected)
             return;
 
@@ -45,9 +33,6 @@ public class TimeActContextMenu
     /// </summary>
     public void TimeActMenu(bool isSelected, string key)
     {
-        if (TimeActBank.IsSaving)
-            return;
-
         if (!isSelected)
             return;
 
@@ -55,11 +40,11 @@ public class TimeActContextMenu
         {
             if(ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.ActionHandler.DetermineDuplicateTarget();
+                Editor.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.ActionHandler.DetermineDeleteTarget();
+                Editor.ActionHandler.DetermineDeleteTarget();
             }
 
             ImGui.EndPopup();
@@ -71,9 +56,6 @@ public class TimeActContextMenu
     /// </summary>
     public void TimeActAnimationMenu(bool isSelected, string key)
     {
-        if (TimeActBank.IsSaving)
-            return;
-
         if (!isSelected)
             return;
 
@@ -81,11 +63,11 @@ public class TimeActContextMenu
         {
             if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.ActionHandler.DetermineDuplicateTarget();
+                Editor.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.ActionHandler.DetermineDeleteTarget();
+                Editor.ActionHandler.DetermineDeleteTarget();
             }
 
             ImGui.EndPopup();
@@ -96,9 +78,6 @@ public class TimeActContextMenu
     /// </summary>
     public void TimeActEventMenu(bool isSelected, string key)
     {
-        if (TimeActBank.IsSaving)
-            return;
-
         if (!isSelected)
             return;
 
@@ -106,15 +85,15 @@ public class TimeActContextMenu
         {
             if (ImGui.Selectable($"Create##createAction{key}"))
             {
-                Screen.ActionHandler.DetermineCreateTarget();
+                Editor.ActionHandler.DetermineCreateTarget();
             }
             if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
             {
-                Screen.ActionHandler.DetermineDuplicateTarget();
+                Editor.ActionHandler.DetermineDuplicateTarget();
             }
             if (ImGui.Selectable($"Delete##deleteAction{key}"))
             {
-                Screen.ActionHandler.DetermineDeleteTarget();
+                Editor.ActionHandler.DetermineDeleteTarget();
             }
 
             ImGui.EndPopup();
@@ -125,9 +104,6 @@ public class TimeActContextMenu
     /// </summary>
     public void TimeActEventPropertiesMenu(bool isSelected, string key)
     {
-        if (TimeActBank.IsSaving)
-            return;
-
         if (!isSelected)
             return;
 

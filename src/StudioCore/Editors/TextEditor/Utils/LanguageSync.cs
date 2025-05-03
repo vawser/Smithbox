@@ -11,26 +11,31 @@ using SoulsFormats;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using StudioCore.Core;
+using StudioCore.TextEditor;
 
 namespace StudioCore.Editors.TextEditor.Utils;
 
-public static class LanguageSync
+public class LanguageSync
 {
+    public TextEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public LanguageSync(TextEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
     /// <summary>
     /// Options to sync to
     /// </summary>
-    public static void DisplaySyncOptions()
+    public void DisplaySyncOptions()
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
-        if (!TextBank.VanillaBankLoaded)
-            return;
-        
-        var currentContainerWrapper = editor.Selection.SelectedContainerWrapper;
+        var currentContainerWrapper = Editor.Selection.SelectedContainerWrapper;
 
         if (ImGui.BeginMenu("Sync With"))
         {
-            foreach(var entry in TextBank.FmgBank)
+            foreach(var entry in Editor.Project.TextData.PrimaryBank.Entries)
             {
                 var container = entry.Value;
 
@@ -63,9 +68,9 @@ public static class LanguageSync
                     if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
-                        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
-                            displayName = TextUtils.GetFmgDisplayName(container, -1, container.Filename);
+                            displayName = TextUtils.GetFmgDisplayName(Project, container, -1, container.Filename);
                         }
                         else
                         {
@@ -104,8 +109,6 @@ public static class LanguageSync
 
     private static void ProcessFmg(TextFmgWrapper targetWrapper, TextFmgWrapper sourceWrapper)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         foreach (var srcEntry in sourceWrapper.File.Entries)
         {
             // Unique to source
@@ -127,7 +130,7 @@ public static class LanguageSync
 
                 if(targetEntry != null)
                 {
-                    if (editor.DifferenceManager.IsDifferentToVanilla(srcEntry))
+                    if (Editor.DifferenceManager.IsDifferentToVanilla(srcEntry))
                     {
                         var newText = targetEntry.Text;
 

@@ -15,7 +15,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFileView
 {
-    public TextEditorScreen Screen;
+    public TextEditorScreen Editor;
     public TextPropertyDecorator Decorator;
     public TextSelectionManager Selection;
     public TextFilters Filters;
@@ -23,7 +23,7 @@ public class TextFileView
 
     public TextFileView(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
@@ -39,37 +39,34 @@ public class TextFileView
         {
             Selection.SwitchWindowContext(TextEditorContext.File);
 
-            if (TextBank.PrimaryBankLoaded)
+            Filters.DisplayFileFilterSearch();
+
+            int index = 0;
+
+            ImGui.BeginChild("CategoryList");
+            Selection.SwitchWindowContext(TextEditorContext.File);
+
+            // Categories
+            foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
             {
-                Filters.DisplayFileFilterSearch();
+                ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
 
-                int index = 0;
-
-                ImGui.BeginChild("CategoryList");
-                Selection.SwitchWindowContext(TextEditorContext.File);
-
-                // Categories
-                foreach (TextContainerCategory category in Enum.GetValues(typeof(TextContainerCategory)))
+                if (category == CFG.Current.TextEditor_PrimaryCategory)
                 {
-                    ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags.None;
-
-                    if (category == CFG.Current.TextEditor_PrimaryCategory)
-                    {
-                        flags = ImGuiTreeNodeFlags.DefaultOpen;
-                    }
-
-                    // Only display if the category contains something
-                    if (TextBank.FmgBank.Any(e => e.Value.ContainerDisplayCategory == category))
-                    {
-                        if (AllowedCategory(category))
-                        {
-                            DisplaySubCategories(category, flags, index);
-                        }
-                    }
+                    flags = ImGuiTreeNodeFlags.DefaultOpen;
                 }
 
-                ImGui.EndChild();
+                // Only display if the category contains something
+                if (Editor.Project.TextData.PrimaryBank.Entries.Any(e => e.Value.ContainerDisplayCategory == category))
+                {
+                    if (AllowedCategory(category))
+                    {
+                        DisplaySubCategories(category, flags, index);
+                    }
+                }
             }
+
+            ImGui.EndChild();
 
             ImGui.End();
         }
@@ -81,7 +78,7 @@ public class TextFileView
     private void DisplaySubCategories(TextContainerCategory category, ImGuiTreeNodeFlags flags, int index)
     {
         // DS2 
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             // Category Header
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
@@ -89,12 +86,12 @@ public class TextFileView
                 // Common Sub-Header
                 if (ImGui.CollapsingHeader($"Common", flags))
                 {
-                    foreach (var (path, info) in TextBank.FmgBank)
+                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
 
                         if (displayGroup == "Common")
                         {
@@ -110,12 +107,12 @@ public class TextFileView
                 // Blood Message Sub-Header
                 if (ImGui.CollapsingHeader($"Blood Message", flags))
                 {
-                    foreach (var (path, info) in TextBank.FmgBank)
+                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
 
                         if (displayGroup == "Blood Message")
                         {
@@ -131,12 +128,12 @@ public class TextFileView
                 // Talk Sub-Header
                 if (ImGui.CollapsingHeader($"Talk", flags))
                 {
-                    foreach (var (path, info) in TextBank.FmgBank)
+                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
                         var fmgName = fmgWrapper.Name;
-                        var displayGroup = TextUtils.GetFmgGrouping(info, id, fmgName);
+                        var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, info, id, fmgName);
 
                         if (displayGroup == "Talk")
                         {
@@ -157,7 +154,7 @@ public class TextFileView
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (path, info) in TextBank.FmgBank)
+                foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {
@@ -180,9 +177,9 @@ public class TextFileView
         if(CFG.Current.TextEditor_DisplayCommunityContainerName)
         {
             // To get nice DS2 names, apply the FMG display name stuff on the container level
-            if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                displayName = TextUtils.GetFmgDisplayName(wrapper, -1, wrapper.Filename);
+                displayName = TextUtils.GetFmgDisplayName(Editor.Project, wrapper, -1, wrapper.Filename);
             }
             else
             {
@@ -236,7 +233,7 @@ public class TextFileView
             // Display hint if normal File List is displayed to user knows about the game's usage of the containers
             if (CFG.Current.TextEditor_DisplayContainerPrecedenceHint && !CFG.Current.TextEditor_SimpleFileList)
             {
-                if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
                     if (wrapper.Filename.Contains("item") || wrapper.Filename.Contains("menu"))
                     {

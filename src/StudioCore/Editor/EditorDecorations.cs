@@ -54,7 +54,7 @@ public class EditorDecorations
         }
     }
 
-    public static void ParamFieldOffsetValueText(string activeParam, Param.Row context, string index)
+    public static void ParamFieldOffsetValueText(ParamEditorScreen editor, string activeParam, Param.Row context, string index)
     {
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
@@ -151,7 +151,7 @@ public class EditorDecorations
                     break;
             }
 
-            var firstRow = ParamBank.PrimaryBank.Params[paramString].Rows.First();
+            var firstRow = editor.Project.ParamData.PrimaryBank.Params[paramString].Rows.First();
             var internalName = "";
             var displayName = "";
 
@@ -492,14 +492,9 @@ public class EditorDecorations
         return rows;
     }
 
-    private static List<TextResult> resolveFMGRefs(List<FMGRef> fmgRefs, Param.Row context,
+    private static List<TextResult> resolveFMGRefs(ParamEditorScreen editor, List<FMGRef> fmgRefs, Param.Row context,
         dynamic oldval)
     {
-        if (!TextBank.PrimaryBankLoaded)
-        {
-            return new List<TextResult>();
-        }
-
         List<TextResult> newTextResults = new();
 
         foreach(var entry in fmgRefs)
@@ -520,12 +515,18 @@ public class EditorDecorations
             {
                 uint tempVal = (uint)oldval;
 
-                TextResult result = TextFinder.GetTextResult(entry.fmg, (int)tempVal, entry.offset);
-
-                if (result != null)
+                if (editor.BaseEditor.ProjectManager.SelectedProject.TextEditor != null)
                 {
-                    newTextResults.Add(result);
+                    var textEditor = editor.BaseEditor.ProjectManager.SelectedProject.TextEditor;
+
+                    TextResult result = TextFinder.GetTextResult(textEditor, entry.fmg, (int)tempVal, entry.offset);
+
+                    if (result != null)
+                    {
+                        newTextResults.Add(result);
+                    }
                 }
+
             }
         }
 
@@ -535,11 +536,18 @@ public class EditorDecorations
     public static void FmgRefSelectable(EditorScreen ownerScreen, List<FMGRef> fmgNames, Param.Row context,
         dynamic oldval)
     {
+        if(ownerScreen is not ParamEditorScreen)
+        {
+            return;
+        }
+
+        var paramEditor = ownerScreen as ParamEditorScreen;
+
         List<string> textsToPrint = new List<string>();
 
-        textsToPrint = UICache.GetCached(ownerScreen, (int)oldval, "PARAM META FMGREF", () =>
+        textsToPrint = UICache.GetCached(paramEditor, (int)oldval, "PARAM META FMGREF", () =>
         {
-            List<TextResult> refs = resolveFMGRefs(fmgNames, context, oldval);
+            List<TextResult> refs = resolveFMGRefs(paramEditor, fmgNames, context, oldval);
             return refs.Where(x => x.Entry != null)
                 .Select(x =>
                 {
@@ -869,7 +877,7 @@ public class EditorDecorations
         return currentPath;
     }
 
-    public static void ParamRefEnumQuickLink(ParamBank bank, object oldval, List<ParamRef> RefTypes,
+    public static void ParamRefEnumQuickLink(ParamEditorScreen editor, ParamBank bank, object oldval, List<ParamRef> RefTypes,
         Param.Row context, List<FMGRef> fmgRefs, ParamEnum Enum, List<TexRef> textureRefs)
     {
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
@@ -895,7 +903,7 @@ public class EditorDecorations
             }
             else if (fmgRefs != null)
             {
-                TextResult? primaryRef = resolveFMGRefs(fmgRefs, context, oldval)?.FirstOrDefault();
+                TextResult? primaryRef = resolveFMGRefs(editor, fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef != null)
                 {
                     EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
@@ -958,12 +966,12 @@ public class EditorDecorations
 
         if (fmgRefs != null)
         {
-            PropertyRowFMGRefsContextItems(fmgRefs, context, oldval, executor);
+            PropertyRowFMGRefsContextItems(editor, fmgRefs, context, oldval, executor);
         }
 
         if (mapFmgRefs != null)
         {
-            PropertyRowFMGRefsContextItems(mapFmgRefs, context, oldval, executor);
+            PropertyRowFMGRefsContextItems(editor, mapFmgRefs, context, oldval, executor);
         }
 
         if (textureRefs != null)
@@ -1116,11 +1124,11 @@ public class EditorDecorations
         return false;
     }
 
-    public static void PropertyRowFMGRefsContextItems(List<FMGRef> reftypes, Param.Row context, dynamic oldval,
+    public static void PropertyRowFMGRefsContextItems(ParamEditorScreen editor, List<FMGRef> reftypes, Param.Row context, dynamic oldval,
         ActionManager executor)
     {
         // Add Goto statements
-        List<TextResult> refs = resolveFMGRefs(reftypes, context, oldval);
+        List<TextResult> refs = resolveFMGRefs(editor, reftypes, context, oldval);
 
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
 

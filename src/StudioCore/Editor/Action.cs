@@ -142,6 +142,7 @@ public class PropertiesChangedAction : EditorAction
 
 public class AddParamsAction : EditorAction
 {
+    private ParamEditorScreen Editor;
     private readonly bool appOnly;
     private readonly List<Param.Row> Clonables = new();
     private readonly List<Param.Row> Clones = new();
@@ -154,9 +155,10 @@ public class AddParamsAction : EditorAction
     private int IdOffset;
     private bool IsDuplicate;
 
-    public AddParamsAction(Param param, string pstring, List<Param.Row> rows, bool appendOnly, bool replaceParams,
+    public AddParamsAction(ParamEditorScreen editor, Param param, string pstring, List<Param.Row> rows, bool appendOnly, bool replaceParams,
         int index = -1, int idOffset = 1, bool isDuplicate = false)
     {
+        Editor = editor;
         Param = param;
         Clonables.AddRange(rows);
         ParamString = pstring;
@@ -292,7 +294,7 @@ public class AddParamsAction : EditorAction
             Clones.Add(newrow);
         }
 
-        ParamBank.RefreshParamDifferenceCacheTask();
+        Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
 
         return ActionEvent.NoEvent;
     }
@@ -323,13 +325,15 @@ public class AddParamsAction : EditorAction
 
 public class DeleteParamsAction : EditorAction
 {
+    private ParamEditorScreen Editor;
     private readonly List<Param.Row> Deletables = new();
     private readonly Param Param;
     private readonly List<int> RemoveIndices = new();
     private readonly bool SetSelection = false;
 
-    public DeleteParamsAction(Param param, List<Param.Row> rows)
+    public DeleteParamsAction(ParamEditorScreen editor, Param param, List<Param.Row> rows)
     {
+        Editor = editor;
         Param = param;
         Deletables.AddRange(rows);
     }
@@ -360,7 +364,7 @@ public class DeleteParamsAction : EditorAction
         {
         }
 
-        ParamBank.RefreshParamDifferenceCacheTask();
+        Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
 
         return ActionEvent.NoEvent;
     }

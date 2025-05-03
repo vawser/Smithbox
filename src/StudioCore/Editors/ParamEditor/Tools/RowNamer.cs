@@ -7,14 +7,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
-public static class RowNamer
+public class RowNamer
 {
-    public static bool MayUseRowNamer()
+    public ParamEditorScreen Editor;
+
+    public RowNamer(ParamEditorScreen editor)
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        Editor = editor;
+    }
+
+    public bool MayUseRowNamer()
+    {
+        var selectedParam = Editor._activeView._selection;
         var activeParam = selectedParam.GetActiveParam();
 
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER)
         {
             if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
             {
@@ -25,7 +32,7 @@ public static class RowNamer
         return false;
     }
 
-    public static void AddNameToReferencedRow(Param param, Param.Row baseRow, string rowIDstr, string postfix)
+    public void AddNameToReferencedRow(Param param, Param.Row baseRow, string rowIDstr, string postfix)
     {
         try
         {
@@ -54,13 +61,13 @@ public static class RowNamer
         }
     }
 
-    public static void ApplyRowNamer()
+    public void ApplyRowNamer()
     {
-        var selectedParam = Smithbox.EditorHandler.ParamEditor._activeView._selection;
+        var selectedParam = Editor._activeView._selection;
 
         if (selectedParam.ActiveParamExists())
         {
-            if (ParamBank.PrimaryBank.Params != null)
+            if (Editor.Project.ParamData.PrimaryBank.Params != null)
             {
                 var activeParam = selectedParam.GetActiveParam();
                 var rows = selectedParam.GetSelectedRows();
@@ -71,7 +78,7 @@ public static class RowNamer
         }
     }
 
-    public static void HandleBehaviorParam(string activeParam, List<Param.Row> rows)
+    public void HandleBehaviorParam(string activeParam, List<Param.Row> rows)
     {
         if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
         {
@@ -88,7 +95,7 @@ public static class RowNamer
                     {
                         if (activeParam == "BehaviorParam")
                         {
-                            var AtkParam_Npc = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
+                            var AtkParam_Npc = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
 
                             if (AtkParam_Npc.Value != null)
                             {
@@ -98,7 +105,7 @@ public static class RowNamer
                         }
                         else if (activeParam == "BehaviorParam_PC")
                         {
-                            var AtkParam_PC = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
+                            var AtkParam_PC = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
                             if (AtkParam_PC.Value != null)
                             {
                                 var param = AtkParam_PC.Value;
@@ -109,7 +116,7 @@ public static class RowNamer
                     // Bullet 
                     if (equipType == "1")
                     {
-                        var Bullet = ParamBank.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
+                        var Bullet = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
                         if (Bullet.Value != null)
                         {
                             var param = Bullet.Value;
@@ -119,7 +126,7 @@ public static class RowNamer
                     // SpEffect 
                     if (equipType == "2")
                     {
-                        var SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
+                        var SpEffectParam = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
                         if (SpEffectParam.Value != null)
                         {
                             var param = SpEffectParam.Value;
@@ -134,18 +141,18 @@ public static class RowNamer
                     {
                         var chrID = $"c{row.ID.ToString().Substring(1, 4)}";
 
-                        var result = Smithbox.BankHandler.CharacterAliases.Aliases.list.Where(e => e.id == chrID).FirstOrDefault();
+                        var result = Editor.Project.Aliases.Characters.Where(e => e.ID == chrID).FirstOrDefault();
                         if(result != null)
                         {
                             if (row.Name == "")
                             {
-                                if (result.tags.Contains("sote"))
+                                if (result.Tags.Contains("sote"))
                                 {
-                                    row.Name = $"[DLC - {result.name}]";
+                                    row.Name = $"[DLC - {result.Name}]";
                                 }
                                 else
                                 {
-                                    row.Name = $"[{result.name}]";
+                                    row.Name = $"[{result.Name}]";
                                 }
                             }
                         }
@@ -155,7 +162,7 @@ public static class RowNamer
         }
     }
 
-    public static void HandleBulletParam(string activeParam, List<Param.Row> rows)
+    public void HandleBulletParam(string activeParam, List<Param.Row> rows)
     {
         if (activeParam == "Bullet")
         {
@@ -177,14 +184,14 @@ public static class RowNamer
                 if (row.Name != "")
                 {
                     // AtkParam
-                    var AtkParam_PC = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
+                    var AtkParam_PC = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Pc").FirstOrDefault();
                     if (AtkParam_PC.Value != null)
                     {
                         var param = AtkParam_PC.Value;
                         AddNameToReferencedRow(param, row, atkId_Bullet, "Bullet");
                     }
 
-                    var AtkParam_Npc = ParamBank.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
+                    var AtkParam_Npc = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "AtkParam_Npc").FirstOrDefault();
 
                     if (AtkParam_Npc.Value != null)
                     {
@@ -193,7 +200,7 @@ public static class RowNamer
                     }
 
                     // Bullet
-                    var Bullet = ParamBank.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
+                    var Bullet = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "Bullet").FirstOrDefault();
                     if (Bullet.Value != null)
                     {
                         var param = Bullet.Value;
@@ -202,7 +209,7 @@ public static class RowNamer
                     }
 
                     // SpEffect
-                    var SpEffectParam = ParamBank.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
+                    var SpEffectParam = Editor.Project.ParamData.PrimaryBank.Params.Where(e => e.Key == "SpEffectParam").FirstOrDefault();
                     if (SpEffectParam.Value != null)
                     {
                         var param = Bullet.Value;
@@ -218,11 +225,11 @@ public static class RowNamer
         }
     }
 
-    public static void ApplyWeaponDeepRowNamer()
+    public void ApplyWeaponDeepRowNamer()
     {
 
     }
-    public static void ApplyEnemyDeepRowNamer()
+    public void ApplyEnemyDeepRowNamer()
     {
 
     }

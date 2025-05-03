@@ -12,13 +12,13 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActEventGraphView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private ActionManager EditorActionManager;
     private TimeActSelectionManager Selection;
 
     public TimeActEventGraphView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         Selection = screen.Selection;
     }

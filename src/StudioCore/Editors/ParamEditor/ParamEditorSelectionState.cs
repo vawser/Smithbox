@@ -7,18 +7,19 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamEditorSelectionState
 {
+    private readonly ParamEditorScreen Editor;
+
     private static string _globalRowSearchString = "";
     private static string _globalPropSearchString = "";
     private readonly Dictionary<string, ParamEditorParamSelectionState> _paramStates = new();
-    private readonly ParamEditorScreen _scr;
 
     private readonly List<(string, Param.Row)> pastStack = new();
     private string _activeParam;
     internal string currentParamSearchString = "";
 
-    public ParamEditorSelectionState(ParamEditorScreen paramEditor)
+    public ParamEditorSelectionState(ParamEditorScreen editor)
     {
-        _scr = paramEditor;
+        Editor = editor;
     }
 
     private void PushHistory(string newParam, Param.Row newRow)
@@ -191,9 +192,9 @@ public class ParamEditorSelectionState
         {
             ParamEditorParamSelectionState s = _paramStates[_activeParam];
 
-            if (s.activeRow != null && !ParamBank.VanillaBank.IsLoadingParams)
+            if (s.activeRow != null)
             {
-                ParamBank.PrimaryBank.RefreshParamRowDiffs(s.activeRow, _activeParam);
+                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
             }
 
             if (!isHistory)
@@ -204,8 +205,8 @@ public class ParamEditorSelectionState
             s.activeRow = row;
             s.selectionRows.Clear();
             s.selectionRows.Add(row);
-            if (s.activeRow != null && !ParamBank.VanillaBank.IsLoadingParams)
-                ParamBank.PrimaryBank.RefreshParamRowDiffs(s.activeRow, _activeParam);
+            if (s.activeRow != null)
+                Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, s.activeRow, _activeParam);
 
             s.selectionCacheDirty = true;
         }
@@ -309,10 +310,10 @@ public class ParamEditorSelectionState
         // We maintain this flag as clearing the cache properly is slow for the number of times we modify selection
         if (s.selectionCacheDirty)
         {
-            UICache.RemoveCache(_scr, s);
+            UICache.RemoveCache(Editor, s);
         }
 
-        return UICache.GetCached(_scr, s, "selectionCache" + cacheVer, () =>
+        return UICache.GetCached(Editor, s, "selectionCache" + cacheVer, () =>
         {
             s.selectionCacheDirty = false;
             return rows.Select(x => GetSelectedRows().Contains(x)).ToArray();
@@ -350,7 +351,7 @@ public class ParamEditorSelectionState
         if (_activeParam != null)
         {
             ParamEditorParamSelectionState s = _paramStates[_activeParam];
-            Param p = ParamBank.PrimaryBank.Params[_activeParam];
+            Param p = Editor.Project.ParamData.PrimaryBank.Params[_activeParam];
             s.selectionRows.Sort((a, b) => { return p.IndexOfRow(a) - p.IndexOfRow(b); });
         }
     }

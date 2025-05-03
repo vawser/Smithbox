@@ -289,10 +289,10 @@ public class ParamRowEditor
                 () => CellSearchEngine.cse.Search((activeParam, row), search, true, true));
 
             List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vrow, "vFieldFilter",
-                () => cols.Select((x, i) => x.GetAs(ParamBank.VanillaBank.GetParamFromName(activeParam))).ToList());
+                () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
 
             List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
-                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(ParamBank.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
 
             if (CFG.Current.Param_PinnedRowsStayVisible)
             {
@@ -773,14 +773,14 @@ public class ParamRowEditor
                 // Param Field Offset
                 if (showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetValueText(activeParam, row, paramFieldIndex);
+                    EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
 
             }
 
-            EditorDecorations.ParamRefEnumQuickLink(bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
+            EditorDecorations.ParamRefEnumQuickLink(Editor, bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
@@ -914,8 +914,9 @@ public class ParamRowEditor
 
         var committed = ParamEditorCommon.UpdateProperty(ContextActionManager,
             nullableCell != null ? nullableCell : row, proprow, oldval);
-        if (committed && !ParamBank.VanillaBank.IsLoadingParams)
-            ParamBank.PrimaryBank.RefreshParamRowDiffs(row, activeParam);
+
+        if (committed)
+            Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, row, activeParam);
 
         ImGui.PopID();
         imguiId++;
@@ -1039,7 +1040,7 @@ public class ParamRowEditor
             // Param Field Offset
             if (showParamFieldOffset)
             {
-                EditorDecorations.ParamFieldOffsetValueText(activeParam, context, paramFieldIndex);
+                EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, context, paramFieldIndex);
             }
         }
     }
@@ -1365,7 +1366,7 @@ public class ParamRowEditor
 
                 if (ImGui.Selectable("Reset to vanilla"))
                 {
-                    MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
+                    MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
                         $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
                          Editor._activeView._selection);
                 }

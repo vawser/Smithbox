@@ -13,13 +13,16 @@ namespace StudioCore.Editors.TimeActEditor.Actions;
 /// </summary>
 public class TaeAnimEndTimeChange : EditorAction
 {
+    private TimeActEditorScreen Editor;
+
     private TAE.Animation Animation;
     private object OldValue;
     private object NewValue;
     private TransientAnimHeader OldTempHeader;
 
-    public TaeAnimEndTimeChange(TAE.Animation entry, object oldValue, object newValue, TransientAnimHeader tempHeader)
+    public TaeAnimEndTimeChange(TimeActEditorScreen editor, TAE.Animation entry, object oldValue, object newValue, TransientAnimHeader tempHeader)
     {
+        Editor = editor;
         Animation = entry;
         OldValue = oldValue;
         NewValue = newValue;
@@ -36,7 +39,7 @@ public class TaeAnimEndTimeChange : EditorAction
     public override ActionEvent Undo()
     {
         Animation.MiniHeader = (TAE.Animation.AnimMiniHeader)OldValue;
-        Smithbox.EditorHandler.TimeActEditor.Selection.CurrentTemporaryAnimHeader = OldTempHeader;
+        Editor.Selection.CurrentTemporaryAnimHeader = OldTempHeader;
 
         return ActionEvent.NoEvent;
     }

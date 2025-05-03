@@ -14,12 +14,12 @@ public class TextMultiselection
 {
     public SortedDictionary<int, FMG.Entry> StoredEntries = new();
 
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     private KeyBind AssociatedKeybind;
 
     public TextMultiselection(TextEditorScreen screen, KeyBind associatedKeyBind)
     {
-        Screen = screen;
+        Editor = screen;
         AssociatedKeybind = associatedKeyBind;
     }
 
@@ -40,8 +40,6 @@ public class TextMultiselection
 
     public void HandleMultiselect(int currentSelectionIndex, int currentIndex)
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
-
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
         {
@@ -58,12 +56,12 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(k))
                 {
-                    if (Screen.Selection.SelectedFmgWrapper != null && Screen.Selection.SelectedFmgWrapper.File != null)
+                    if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
                     {
-                        if (k < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                        if (k < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
-                            var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[k];
-                            if (editor.Filters.IsFmgEntryFilterMatch(curEntry))
+                            var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[k];
+                            if (Editor.Filters.IsFmgEntryFilterMatch(curEntry))
                             {
                                 StoredEntries.Add(k, curEntry);
                             }
@@ -83,11 +81,11 @@ public class TextMultiselection
             {
                 if (!StoredEntries.ContainsKey(currentIndex))
                 {
-                    if (Screen.Selection.SelectedFmgWrapper != null &&  Screen.Selection.SelectedFmgWrapper.File != null)
+                    if (Editor.Selection.SelectedFmgWrapper != null &&  Editor.Selection.SelectedFmgWrapper.File != null)
                     {
-                        if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                        if (currentIndex < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
                         {
-                            var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                            var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                             StoredEntries.Add(currentIndex, curEntry);
                         }
                     }
@@ -99,11 +97,11 @@ public class TextMultiselection
         {
             StoredEntries.Clear();
 
-            if (Screen.Selection.SelectedFmgWrapper != null && Screen.Selection.SelectedFmgWrapper.File != null)
+            if (Editor.Selection.SelectedFmgWrapper != null && Editor.Selection.SelectedFmgWrapper.File != null)
             {
-                if (currentIndex < Screen.Selection.SelectedFmgWrapper.File.Entries.Count)
+                if (currentIndex < Editor.Selection.SelectedFmgWrapper.File.Entries.Count)
                 {
-                    var curEntry = Screen.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
+                    var curEntry = Editor.Selection.SelectedFmgWrapper.File.Entries[currentIndex];
                     StoredEntries.Add(currentIndex, curEntry);
                 }
             }

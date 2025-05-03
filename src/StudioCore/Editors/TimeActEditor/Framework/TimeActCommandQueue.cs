@@ -12,13 +12,13 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public class TimeActCommandQueue
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActCommandQueue(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Decorator = screen.Decorator;
     }
@@ -39,9 +39,9 @@ public class TimeActCommandQueue
 
                 if (containerType == "chr")
                 {
-                    for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
+                    for (int i = 0; i < Editor.Project.TimeActData.PrimaryCharacterBank.Entries.Count; i++)
                     {
-                        var container = TimeActBank.FileChrBank.ElementAt(i);
+                        var container = Editor.Project.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i);
                         var index = int.Parse(containerIndex);
 
                         if (i == index)
@@ -57,9 +57,9 @@ public class TimeActCommandQueue
 
                 if (containerType == "obj")
                 {
-                    for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
+                    for (int i = 0; i < Editor.Project.TimeActData.PrimaryObjectBank.Entries.Count; i++)
                     {
-                        var container = TimeActBank.FileObjBank.ElementAt(i);
+                        var container = Editor.Project.TimeActData.PrimaryObjectBank.Entries.ElementAt(i);
                         var index = int.Parse(containerIndex);
 
                         if (i == index)

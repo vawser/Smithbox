@@ -1,6 +1,7 @@
 #nullable enable
 using Andre.Formats;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace StudioCore.Editors.ParamEditor;
 
 public class ParamIO
 {
-    public static string GenerateColumnLabels(Param param, char separator)
+    public static string GenerateColumnLabels(ProjectEntry project, Param param, char separator)
     {
         var str = "";
         str += $@"ID{separator}Name{separator}";
-        foreach (PARAMDEF.Field? f in param.AppliedParamdef.Fields.FindAll(f => f.IsValidForRegulationVersion(ParamBank.PrimaryBank.ParamVersion)))
+        foreach (PARAMDEF.Field? f in param.AppliedParamdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.ParamData.PrimaryBank.ParamVersion)))
         {
             str += $@"{f.InternalName}{separator}";
         }
@@ -21,10 +22,10 @@ public class ParamIO
         return str + "\n";
     }
 
-    public static string GenerateCSV(IReadOnlyList<Param.Row> rows, Param param, char separator)
+    public static string GenerateCSV(ProjectEntry project, IReadOnlyList<Param.Row> rows, Param param, char separator)
     {
         var gen = "";
-        gen += GenerateColumnLabels(param, separator);
+        gen += GenerateColumnLabels(project, param, separator);
 
         foreach (Param.Row row in rows)
         {
@@ -64,7 +65,7 @@ public class ParamIO
         return gen;
     }
 
-    public static (string, CompoundAction?) ApplyCSV(ParamBank bank, string csvString, string param,
+    public static (string, CompoundAction?) ApplyCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
         bool appendOnly, bool replaceParams, char separator)
     {
 #if !DEBUG
@@ -149,7 +150,7 @@ public class ParamIO
         addedCount = addedParams.Count;
         if (addedCount != 0)
         {
-            actions.Add(new AddParamsAction(p, "legacystring", addedParams, appendOnly, replaceParams));
+            actions.Add(new AddParamsAction(project.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
         }
 
         return ($@"{changeCount} cells affected, {addedCount} rows added", new CompoundAction(actions));
@@ -164,7 +165,7 @@ public class ParamIO
 #endif
     }
 
-    public static (string, CompoundAction?) ApplySingleCSV(ParamBank bank, string csvString, string param,
+    public static (string, CompoundAction?) ApplySingleCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
         string field, char separator, bool ignoreMissingRows, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool skipInvalidLines = false)
     {
         var getVanillaRow = onlyAffectVanillaNames;
@@ -196,7 +197,7 @@ public class ParamIO
             Param? p_vanilla = null;
             if (getVanillaRow)
             {
-                p_vanilla = ParamBank.VanillaBank.Params[param];
+                p_vanilla = project.ParamData.VanillaBank.Params[param];
             }
             if (p == null)
             {

@@ -30,7 +30,7 @@ public enum SourceType
 
 public class ActionHandler
 {
-    private ParamEditorScreen Screen;
+    private ParamEditorScreen Editor;
 
     public TargetType CurrentTargetCategory = TargetType.SelectedParam;
     public SourceType CurrentSourceCategory = SourceType.Smithbox;
@@ -40,23 +40,21 @@ public class ActionHandler
 
     public ActionHandler(ParamEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public bool IsCommutativeParam()
     {
         var isValid = false;
 
-        var paramName = Screen._activeView._selection.GetActiveParam();
+        var paramName = Editor._activeView._selection.GetActiveParam();
 
-        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
 
-        Param param = ParamBank.PrimaryBank.Params[paramName];
-
-        if (groups.Groups == null)
+        if (Editor.Project.CommutativeParamGroups.Groups == null)
             return false;
 
-        if(groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if(Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
             isValid = true;
         }
@@ -69,14 +67,12 @@ public class ActionHandler
     /// </summary>
     public void DisplayCommutativeDuplicateToolMenu()
     {
-        var paramName = Screen._activeView._selection.GetActiveParam();
-        Param param = ParamBank.PrimaryBank.Params[paramName];
+        var paramName = Editor._activeView._selection.GetActiveParam();
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
 
-        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
-
-        if (groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
-            var targetGroup = groups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;
@@ -105,14 +101,12 @@ public class ActionHandler
     /// </summary>
     public void DisplayCommutativeDuplicateMenu()
     {
-        var paramName = Screen._activeView._selection.GetActiveParam();
-        Param param = ParamBank.PrimaryBank.Params[paramName];
+        var paramName = Editor._activeView._selection.GetActiveParam();
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
 
-        var groups = Smithbox.BankHandler.ParamCommutativeGroups.CommutativeGroups;
-
-        if (groups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
         {
-            var targetGroup = groups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;
@@ -136,7 +130,7 @@ public class ActionHandler
 
     public void CommutativeDuplicateHandler()
     {
-        var currentParamName = Screen._activeView._selection.GetActiveParam();
+        var currentParamName = Editor._activeView._selection.GetActiveParam();
         var targetParamName = CFG.Current.Param_Toolbar_CommutativeDuplicate_Target;
 
         if (targetParamName == "")
@@ -145,13 +139,13 @@ public class ActionHandler
         if (currentParamName == targetParamName)
             return;
 
-        Param currentParam = ParamBank.PrimaryBank.Params[currentParamName];
-        Param targetParam = ParamBank.PrimaryBank.Params[targetParamName];
+        Param currentParam = Editor.Project.ParamData.PrimaryBank.Params[currentParamName];
+        Param targetParam = Editor.Project.ParamData.PrimaryBank.Params[targetParamName];
 
         if(targetParam == null) 
             return;
 
-        List<Param.Row> selectedRows = Screen._activeView._selection.GetSelectedRows();
+        List<Param.Row> selectedRows = Editor._activeView._selection.GetSelectedRows();
 
         if (selectedRows.Count == 0)
         {
@@ -168,17 +162,17 @@ public class ActionHandler
 
         List<EditorAction> actions = new List<EditorAction>();
 
-        actions.Add(new AddParamsAction(targetParam, "legacystring", rowsToInsert, false, CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows, -1, CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset, false));
+        actions.Add(new AddParamsAction(Editor, targetParam, "legacystring", rowsToInsert, false, CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows, -1, CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset, false));
 
         var compoundAction = new CompoundAction(actions);
 
-        Screen.EditorActionManager.ExecuteAction(compoundAction);
+        Editor.EditorActionManager.ExecuteAction(compoundAction);
     }
 
     public void DuplicateHandler()
     {
-        Param param = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
-        List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
+        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
 
         if (rows.Count == 0)
         {
@@ -197,21 +191,21 @@ public class ActionHandler
 
         for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
         {
-            actions.Add(new AddParamsAction(param, "legacystring", rowsToInsert, false, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
+            actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
         }
 
         var compoundAction = new CompoundAction(actions);
 
-        Screen.EditorActionManager.ExecuteAction(compoundAction);
+        Editor.EditorActionManager.ExecuteAction(compoundAction);
     }
 
     public void ExportRowNameHandler()
     {
-        var selectedParam = Screen._activeView._selection;
+        var selectedParam = Editor._activeView._selection;
 
         if (selectedParam.ActiveParamExists())
         {
-            if (ParamBank.PrimaryBank.Params != null)
+            if (Editor.Project.ParamData.PrimaryBank.Params != null)
             {
                 ExportRowNames();
             }
@@ -219,8 +213,8 @@ public class ActionHandler
     }
     public void CopyRowDetailHandler(bool includeName = false)
     {
-        Param param = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
-        List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
+        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
 
         if (rows.Count == 0)
         {
@@ -256,7 +250,7 @@ public class ActionHandler
 
     private void ExportRowNames()
     {
-        var selectedParam = Screen._activeView._selection;
+        var selectedParam = Editor._activeView._selection;
         var activeParam = selectedParam.GetActiveParam();
 
         switch (CurrentTargetCategory)
@@ -270,7 +264,7 @@ public class ActionHandler
                 PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             case TargetType.AllParams:
-                foreach (var param in ParamBank.PrimaryBank.Params)
+                foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
                 {
                     ExportRowNamesForParam(param.Key);
                 }
@@ -283,9 +277,6 @@ public class ActionHandler
 
     private void ExportRowNamesForRows(IEnumerable<Param.Row> rows)
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         var dialog = NativeFileDialogSharp.Dialog.FileSave("txt");
         if (!dialog.IsOk) return;
 
@@ -303,13 +294,10 @@ public class ActionHandler
 
     private void ExportRowNamesForParam(string param)
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+        var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
         var path = Path.Combine(dir, $"{param}.txt");
 
-        Param p = ParamBank.PrimaryBank.Params[param];
+        Param p = Editor.Project.ParamData.PrimaryBank.Params[param];
 
         List<string> contents = IterateRows(p.Rows);
 
@@ -327,12 +315,12 @@ public class ActionHandler
 
     public void ImportRowNameHandler()
     {
-        var selectedParam = Screen._activeView._selection;
+        var selectedParam = Editor._activeView._selection;
 
         bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
         bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
 
-        if (ParamBank.PrimaryBank.Params != null)
+        if (Editor.Project.ParamData.PrimaryBank.Params != null)
         {
             if (selectedParam.ActiveParamExists())
             {
@@ -340,8 +328,8 @@ public class ActionHandler
                 {
                     case TargetType.SelectedRows:
                         var rows = selectedParam.GetSelectedRows();
-                        Screen.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
+                        Editor.EditorActionManager.ExecuteAction(
+                            Editor.Project.ParamData.PrimaryBank.LoadParamDefaultNames(
                                 selectedParam.GetActiveParam(),
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
@@ -351,8 +339,8 @@ public class ActionHandler
                         );
                         break;
                     case TargetType.SelectedParam:
-                        Screen.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
+                        Editor.EditorActionManager.ExecuteAction(
+                            Editor.Project.ParamData.PrimaryBank.LoadParamDefaultNames(
                                 selectedParam.GetActiveParam(),
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
@@ -361,8 +349,8 @@ public class ActionHandler
                         );
                         break;
                     case TargetType.AllParams:
-                        Screen.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
+                        Editor.EditorActionManager.ExecuteAction(
+                            Editor.Project.ParamData.PrimaryBank.LoadParamDefaultNames(
                                 null,
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
@@ -379,8 +367,8 @@ public class ActionHandler
                 switch (CurrentTargetCategory)
                 {
                     case TargetType.AllParams:
-                        Screen.EditorActionManager.ExecuteAction(
-                            ParamBank.PrimaryBank.LoadParamDefaultNames(
+                        Editor.EditorActionManager.ExecuteAction(
+                            Editor.Project.ParamData.PrimaryBank.LoadParamDefaultNames(
                                 null,
                                 _rowNameImporter_EmptyOnly,
                                 _rowNameImporter_VanillaOnly,
@@ -397,11 +385,11 @@ public class ActionHandler
 
     public void RowNameTrimHandler()
     {
-        var selectedParam = Screen._activeView._selection;
+        var selectedParam = Editor._activeView._selection;
 
         if (selectedParam.ActiveParamExists())
         {
-            if (ParamBank.PrimaryBank.Params != null)
+            if (Editor.Project.ParamData.PrimaryBank.Params != null)
             {
                 var activeParam = selectedParam.GetActiveParam();
                 var rows = selectedParam.GetSelectedRows();
@@ -417,7 +405,7 @@ public class ActionHandler
                         PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case TargetType.AllParams:
-                        foreach (var param in ParamBank.PrimaryBank.Params)
+                        foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
                         {
                             TrimRowNames(param.Key);
                         }
@@ -439,7 +427,7 @@ public class ActionHandler
     }
     private void TrimRowNames(string param)
     {
-        Param p = ParamBank.PrimaryBank.Params[param];
+        Param p = Editor.Project.ParamData.PrimaryBank.Params[param];
         TrimRowNames(p.Rows);
     }
 
@@ -485,10 +473,10 @@ public class ActionHandler
 
     public void SortRowsHandler()
     {
-        if (Screen._activeView._selection.ActiveParamExists())
+        if (Editor._activeView._selection.ActiveParamExists())
         {
-            TaskLogs.AddLog($"Param rows sorted for {Screen._activeView._selection.GetActiveParam()}");
-            Screen.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(ParamBank.PrimaryBank, Screen._activeView._selection.GetActiveParam()));
+            TaskLogs.AddLog($"Param rows sorted for {Editor._activeView._selection.GetActiveParam()}");
+            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor, Editor.Project.ParamData.PrimaryBank, Editor._activeView._selection.GetActiveParam()));
         }
     }
 
@@ -518,13 +506,14 @@ public class ActionHandler
             return;
         }
 
-        ParamBank.LoadAuxBank(targetRegulationPath, null, null);
-        if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        Editor.Project.ParamData.SetupAuxBank(targetRegulationPath, Editor.Project.DataPath);
+
+        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            ParamBank.LoadAuxBank(targetRegulationPath, targetLooseParamPath, targetEnemyParamPath);
+            Editor.Project.ParamData.SetupAuxBank(targetRegulationPath, Editor.Project.DataPath);
         }
 
-        var auxBank = ParamBank.AuxBanks.First();
+        var auxBank = Editor.Project.ParamData.AuxBanks.First();
 
         // Apply the merge massedit script here
         var command = $"auxparam {auxBank.Key} .*: modified && unique ID: paste;";
@@ -540,25 +529,25 @@ public class ActionHandler
 
     public void ExecuteMassEdit(string command)
     {
-        Screen._activeView._selection.SortSelection();
-        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-            command, Screen._activeView._selection);
+        Editor._activeView._selection.SortSelection();
+        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
+            command, Editor._activeView._selection);
 
         if (child != null)
         {
-            Screen.EditorActionManager.PushSubManager(child);
+            Editor.EditorActionManager.PushSubManager(child);
         }
 
         if (r.Type == MassEditResultType.SUCCESS)
         {
-            ParamBank.RefreshParamDifferenceCacheTask();
+            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
         }
     }
 
     public void RevertRowToDefault()
     {
-        Param baseParam = ParamBank.PrimaryBank.Params[Screen._activeView._selection.GetActiveParam()];
-        Param vanillaParam = ParamBank.VanillaBank.Params[Screen._activeView._selection.GetActiveParam()];
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
+        Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params[Editor._activeView._selection.GetActiveParam()];
 
         if (baseParam == null)
             return;
@@ -566,7 +555,7 @@ public class ActionHandler
         if (vanillaParam == null)
             return;
 
-        List<Param.Row> rows = Screen._activeView._selection.GetSelectedRows();
+        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
 
         List<Param.Row> rowsToInsert = new();
 
@@ -585,10 +574,10 @@ public class ActionHandler
 
         List<EditorAction> actions = new List<EditorAction>();
 
-        actions.Add(new AddParamsAction(baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
+        actions.Add(new AddParamsAction(Editor, baseParam, "legacystring", rowsToInsert, false, true, -1, 0, false));
 
         var compoundAction = new CompoundAction(actions);
 
-        Screen.EditorActionManager.ExecuteAction(compoundAction);
+        Editor.EditorActionManager.ExecuteAction(compoundAction);
     }
 }

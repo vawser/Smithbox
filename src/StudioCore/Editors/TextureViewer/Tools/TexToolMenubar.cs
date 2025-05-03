@@ -13,12 +13,12 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexToolMenubar
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     public TexTools Tools;
 
     public TexToolMenubar(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Tools = screen.Tools;
     }
 

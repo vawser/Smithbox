@@ -17,13 +17,13 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexFileContainerView
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
     private TexFilters Filters;
 
     public TexFileContainerView(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Filters = screen.Filters;
     }
@@ -49,7 +49,7 @@ public class TexFileContainerView
         ImGui.BeginChild("TextureFileCategories");
         Selection.SwitchWindowContext(TextureViewerContext.FileList);
 
-        if (Smithbox.ProjectType is ProjectType.AC6 or ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.AC6 or ProjectType.ER)
         {
             DisplayFileSection("Asset", TextureViewCategory.Asset);
         }
@@ -61,7 +61,7 @@ public class TexFileContainerView
         DisplayFileSection("Characters", TextureViewCategory.Character);
 
         // AC6 needs some adjustments to support its parts properly
-        if (Smithbox.ProjectType != ProjectType.AC6)
+        if (Editor.Project.ProjectType != ProjectType.AC6)
         {
             DisplayFileSection("Parts", TextureViewCategory.Part);
         }
@@ -71,7 +71,7 @@ public class TexFileContainerView
         DisplayFileSection("Menu", TextureViewCategory.Menu);
 
         // DS2S doesn't have an other folder
-        if (Smithbox.ProjectType != ProjectType.DS2S && Smithbox.ProjectType != ProjectType.DS2)
+        if (Editor.Project.ProjectType != ProjectType.DS2S && Editor.Project.ProjectType != ProjectType.DS2)
         {
             DisplayFileSection("Other", TextureViewCategory.Other);
         }
@@ -88,7 +88,7 @@ public class TexFileContainerView
     {
         if (ImGui.CollapsingHeader($"{title}"))
         {
-            foreach (var (name, info) in TextureFolderBank.FolderBank)
+            foreach (var (name, info) in Editor.Project.TextureData.PrimaryBank.Entries)
             {
                 // Skip if info is null
                 if (info == null)
@@ -107,13 +107,13 @@ public class TexFileContainerView
                     switch (displayCategory)
                     {
                         case TextureViewCategory.Character:
-                            aliasName = AliasUtils.GetCharacterAlias(Screen.Project, rawName);
+                            aliasName = AliasUtils.GetCharacterAlias(Editor.Project, rawName);
                             break;
                         case TextureViewCategory.Asset:
-                            aliasName = AliasUtils.GetAssetAlias(Screen.Project, rawName);
+                            aliasName = AliasUtils.GetAssetAlias(Editor.Project, rawName);
                             break;
                         case TextureViewCategory.Part:
-                            aliasName = AliasUtils.GetPartAlias(Screen.Project, rawName);
+                            aliasName = AliasUtils.GetPartAlias(Editor.Project, rawName);
                             break;
                     }
 
@@ -152,7 +152,7 @@ public class TexFileContainerView
 
                         if (ImGui.IsItemVisible())
                         {
-                            var alias = AliasUtils.GetTextureContainerAliasName(Screen.Project, info);
+                            var alias = AliasUtils.GetTextureContainerAliasName(Editor.Project, info);
                             UIHelper.DisplayAlias(alias);
                         }
 

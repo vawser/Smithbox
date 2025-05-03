@@ -13,16 +13,10 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
-public static class DataInstanceFinder
-{
-    public static FieldNameFinder FieldNameFinder = new();
-    public static FieldValueFinder FieldValueFinder = new();
-    public static RowNameFinder RowNameFinder = new();
-    public static RowIDFinder RowIDFinder = new();
-}
-
 public class FieldNameFinder
 {
+    public ParamEditorScreen Editor;
+
     public string imguiID = "FieldNameFinder";
 
     public string SearchText = "";
@@ -34,11 +28,14 @@ public class FieldNameFinder
 
     public List<DataSearchResult> Results = new();
 
-    public FieldNameFinder() { }
+    public FieldNameFinder(ParamEditorScreen editor) 
+    {
+        Editor = editor;
+    }
 
     public void Display()
     {
-        if (ParamBank.PrimaryBank.Params == null)
+        if (Editor.Project.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -128,7 +125,7 @@ public class FieldNameFinder
         // Search Button
         if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
         {
-            if (ParamBank.PrimaryBank.Params != null)
+            if (Editor.Project.ParamData.PrimaryBank.Params != null)
             {
                 CachedSearchText = SearchText;
 
@@ -147,7 +144,7 @@ public class FieldNameFinder
 
         var searchComponents = SearchText.ToLower().Split(" ");
 
-        foreach (var p in ParamBank.PrimaryBank.Params)
+        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
             var def = p.Value.AppliedParamdef;
             var meta = ParamMetaData.Get(def);
@@ -255,6 +252,8 @@ public class FieldNameFinder
 
 public class FieldValueFinder
 {
+    public ParamEditorScreen Editor;
+
     public string imguiID = "FieldValueFinder";
 
     public string SearchText = "";
@@ -268,11 +267,13 @@ public class FieldValueFinder
 
     public List<DataSearchResult> Results = new();
 
-    public FieldValueFinder() { }
-
+    public FieldValueFinder(ParamEditorScreen editor)
+    {
+        Editor = editor;
+    }
     public void Display()
     {
-        if (ParamBank.PrimaryBank.Params == null)
+        if (Editor.Project.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -392,7 +393,7 @@ public class FieldValueFinder
         var startValue = RangeSearchText_Start;
         var endValue = RangeSearchText_End;
 
-        foreach (var p in ParamBank.PrimaryBank.Params)
+        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
@@ -441,6 +442,8 @@ public class FieldValueFinder
 
 public class RowIDFinder
 {
+    public ParamEditorScreen Editor;
+
     public string imguiID = "RowIDFinder";
 
     public int SearchID = -1;
@@ -451,11 +454,14 @@ public class RowIDFinder
 
     public List<DataSearchResult> Results = new();
 
-    public RowIDFinder() { }
+    public RowIDFinder(ParamEditorScreen editor) 
+    { 
+        Editor = editor;
+    }
 
     public void Display()
     {
-        if (ParamBank.PrimaryBank.Params == null)
+        if (Editor.Project.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -534,7 +540,7 @@ public class RowIDFinder
     {
         List<DataSearchResult> output = new();
 
-        foreach (var p in ParamBank.PrimaryBank.Params)
+        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
@@ -560,6 +566,8 @@ public class RowIDFinder
 
 public class RowNameFinder
 {
+    public ParamEditorScreen Editor;
+
     public string imguiID = "RowNameFinder";
 
     public string SearchText = "";
@@ -567,11 +575,14 @@ public class RowNameFinder
     public int SearchIndex = -1;
 
     public List<DataSearchResult> Results = new();
-    public RowNameFinder() { }
+    public RowNameFinder(ParamEditorScreen editor) 
+    {
+        Editor = editor;
+    }
 
     public void Display()
     {
-        if (ParamBank.PrimaryBank.Params == null)
+        if (Editor.Project.ParamData.PrimaryBank.Params == null)
         {
             return;
         }
@@ -652,7 +663,7 @@ public class RowNameFinder
 
         var searchElements = SearchText.Split(" ");
 
-        foreach (var p in ParamBank.PrimaryBank.Params)
+        foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {

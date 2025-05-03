@@ -1,5 +1,6 @@
 ﻿using HKLib.hk2018.hk;
 using HKLib.hk2018.hkAsyncThreadPool;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Interface;
@@ -21,7 +22,7 @@ public static class TimeActFilters
     public static string _timeActEventFilterString = "";
     public static string _timeActEventPropertyFilterString = "";
 
-    public static bool FileContainerFilter(TimeActContainerWrapper info)
+    public static bool FileContainerFilter(TimeActEditorScreen editor, TimeActContainerWrapper info)
     {
         bool isValid = true;
         var input = _fileContainerFilterString.ToLower();
@@ -33,14 +34,14 @@ public static class TimeActFilters
 
             var id = info.Name.ToLower();
 
-            var referenceDict = Smithbox.AliasCacheHandler.AliasCache.Characters;
+            var aliasEntry = editor.Project.Aliases.Characters.Where(e => e.ID == id).FirstOrDefault();
             var alias = "";
             var tags = new List<string>();
 
-            if (referenceDict.ContainsKey(info.Name))
+            if (aliasEntry != null)
             {
-                alias = referenceDict[info.Name].name.ToLower();
-                tags = referenceDict[info.Name].tags;
+                alias = aliasEntry.Name;
+                tags = aliasEntry.Tags;
             }
 
             for (int i = 0; i < partTruth.Length; i++)
@@ -79,7 +80,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActFilter(TimeActContainerWrapper info, TAE taeEntry)
+    public static bool TimeActFilter(TimeActEditorScreen editor, TimeActContainerWrapper info, TAE taeEntry)
     {
         bool isValid = true;
         var input = _timeActFilterString.ToLower();
@@ -93,20 +94,16 @@ public static class TimeActFilters
             var alias = "";
             var tags = new List<string>();
 
-            if (Smithbox.BankHandler.TimeActAliases.Aliases != null)
+            var idStr = id.ToString();
+            var idSection = idStr.Substring(idStr.Length - 3);
+
+            var searchStr = $"{info.Name}_{idSection}";
+            var aliasEntry = editor.Project.Aliases.TimeActs.Where(e => e.ID == searchStr).FirstOrDefault();
+
+            if (aliasEntry != null)
             {
-                var idStr = id.ToString();
-                var idSection = idStr.Substring(idStr.Length - 3);
-
-                var searchStr = $"{info.Name}_{idSection}";
-                var refAlias = Smithbox.BankHandler.TimeActAliases.Aliases.list.Where(e => e.id == searchStr)
-                    .FirstOrDefault();
-
-                if (refAlias != null)
-                {
-                    alias = refAlias.name.ToLower();
-                    tags = refAlias.tags;
-                }
+                alias = aliasEntry.Name.ToLower();
+                tags = aliasEntry.Tags;
             }
 
             for (int i = 0; i < partTruth.Length; i++)
@@ -158,8 +155,6 @@ public static class TimeActFilters
             var id = animEntry.ID.ToString();
             var tags = new List<string>();
 
-            var refAlias = Smithbox.BankHandler.HavokGeneratorAliases.HavokAliases.List.Where(e => e.ID == animEntry.ID.ToString()).FirstOrDefault();
-
             for (int i = 0; i < partTruth.Length; i++)
             {
                 string entry = inputParts[i];
@@ -169,24 +164,6 @@ public static class TimeActFilters
 
                 if (id.Contains(entry))
                     partTruth[i] = true;
-
-                if (refAlias != null)
-                {
-                    if (entry == refAlias.ID)
-                        partTruth[i] = true;
-
-                    if (refAlias.ID.Contains(entry))
-                        partTruth[i] = true;
-
-                    foreach (string generator in refAlias.Generators)
-                    {
-                        if (entry == generator.ToLower())
-                            partTruth[i] = true;
-
-                        if (generator.ToLower().Contains(entry))
-                            partTruth[i] = true;
-                    }
-                }
             }
 
             foreach (bool entry in partTruth)

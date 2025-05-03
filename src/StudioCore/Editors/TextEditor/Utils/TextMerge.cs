@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +18,7 @@ public static class TextMerge
 
     public static bool ReplaceModifiedRows = true;
 
-    public static void Display()
+    public static void Display(TextEditorScreen editor)
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
@@ -69,12 +70,12 @@ public static class TextMerge
 
         if(ImGui.Button("Merge", defaultButtonSize))
         {
-            ApplyMerge();
+            ApplyMerge(editor);
         }
         UIHelper.ShowHoverTooltip("May hang whilst processing the merge.");
     }
 
-    private static void ApplyMerge()
+    private static void ApplyMerge(TextEditorScreen editor)
     {
         if(TargetProjectDir == "")
         {
@@ -85,21 +86,21 @@ public static class TextMerge
         // Load target project text files in
         if (Directory.Exists(TargetProjectDir))
         {
-            TextBank.LoadTargetTextFiles(TargetProjectDir);
+            editor.Project.TextData.LoadAuxBank(TargetProjectDir);
         }
 
-        StartFmgMerge();
+        StartFmgMerge(editor);
     }
 
-    private static void StartFmgMerge()
+    private static void StartFmgMerge(TextEditorScreen editor)
     {
         /// Filter through containers, only process FMGs for each if they match
-        foreach (var entry in TextBank.FmgBank)
+        foreach (var entry in editor.Project.TextData.PrimaryBank.Entries)
         {
             var primaryKey = Path.GetFileName(entry.Key);
             var currentContainer = entry.Value;
 
-            foreach (var pEntry in TextBank.TargetFmgBank)
+            foreach (var pEntry in editor.Project.TextData.AuxBank.Entries)
             {
                 var targetKey = Path.GetFileName(pEntry.Key);
                 var targetContainer = entry.Value;
@@ -111,7 +112,7 @@ public static class TextMerge
                     if (primaryKey == targetKey)
                     {
                         // Get the container wrapper from the target bank
-                        var targetWrapper = TextBank.TargetFmgBank.Where(
+                        var targetWrapper = editor.Project.TextData.AuxBank.Entries.Where(
                             e => e.Value.ContainerDisplayCategory == targetContainer.ContainerDisplayCategory &&
                             e.Value.Filename == targetKey).FirstOrDefault().Value;
 

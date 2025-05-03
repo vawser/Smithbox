@@ -15,7 +15,7 @@ namespace StudioCore.Editors.ParamEditor.Framework;
 
 public static class ParamEntryContextMenu
 {
-    public static void Display(Param param, string paramKey, bool isPinnedEntry = false)
+    public static void Display(ParamEditorScreen editor, Param param, string paramKey, bool isPinnedEntry = false)
     {
         if (ImGui.BeginPopupContextItem($"{paramKey}"))
         {
@@ -34,7 +34,7 @@ public static class ParamEntryContextMenu
             {
                 if (ImGui.Selectable($"Pin"))
                 {
-                    List<string> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams;
+                    List<string> pinned = editor.Project.PinnedParams;
 
                     if (!pinned.Contains(paramKey))
                     {
@@ -48,7 +48,7 @@ public static class ParamEntryContextMenu
             {
                 if (ImGui.Selectable($"Unpin"))
                 {
-                    List<string> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams;
+                    List<string> pinned = editor.Project.PinnedParams;
 
                     if (pinned.Contains(paramKey))
                     {
@@ -58,7 +58,7 @@ public static class ParamEntryContextMenu
                 UIHelper.ShowHoverTooltip($"Unpin the current param selection from the top of the param list.");
             }
 
-            if (ParamEditorScreen.EditorMode && param != null)
+            if (editor.EditorMode && param != null)
             {
                 var meta = ParamMetaData.Get(param.AppliedParamdef);
 

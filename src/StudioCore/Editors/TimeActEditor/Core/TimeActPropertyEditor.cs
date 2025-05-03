@@ -1,21 +1,11 @@
-﻿using Assimp;
-using Google.Protobuf.WellKnownTypes;
-using Hexa.NET.ImGui;
-using Newtonsoft.Json.Linq;
-using SoapstoneLib.Proto.Internal;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
-using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Utils;
-using StudioCore.Interface;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static SoulsFormats.DRB;
 using static SoulsFormats.TAE;
 using static SoulsFormats.TAE.Animation;
 
@@ -27,21 +17,18 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActPropertyEditor
 {
     private ActionManager EditorActionManager;
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActDecorator Decorator;
 
     public TimeActPropertyEditor(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         Decorator = screen.Decorator;
     }
 
     public void AnimationHeaderSection(TimeActSelectionManager handler)
     {
-        if (TimeActBank.IsSaving)
-            ImGui.BeginDisabled();
-
         var anim = handler.CurrentTimeActAnimation;
         var width = ImGui.GetWindowWidth();
         var buttonSize = new Vector2(width * 0.975f, 32);
@@ -57,9 +44,9 @@ public class TimeActPropertyEditor
                 newHeader.ImportFromAnimID = tempHeader.ImportFromAnimID;
                 newHeader.Unknown = tempHeader.Unknown;
 
-                var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
-                Screen.Selection.ContainerInfo.IsModified = true;
+                Editor.Selection.ContainerInfo.IsModified = true;
             }
         }
         if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
@@ -74,21 +61,15 @@ public class TimeActPropertyEditor
                 newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
                 newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
 
-                var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                 EditorActionManager.ExecuteAction(action);
-                Screen.Selection.ContainerInfo.IsModified = true;
+                Editor.Selection.ContainerInfo.IsModified = true;
             }
         }
-
-        if (TimeActBank.IsSaving)
-            ImGui.EndDisabled();
     }
 
     public void AnimationValueSection(TimeActSelectionManager handler)
     {
-        if (TimeActBank.IsSaving)
-            ImGui.BeginDisabled();
-
         var anim = handler.CurrentTimeActAnimation;
         var tempHeader = handler.CurrentTemporaryAnimHeader;
 
@@ -101,7 +82,7 @@ public class TimeActPropertyEditor
         {
             var action = new TaeAnimIdChange(anim, anim.ID, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.Selection.ContainerInfo.IsModified = true;
+            Editor.Selection.ContainerInfo.IsModified = true;
 
             // Re-select row at new index
             TimeActUtils.SelectAdjustedAnimation(anim);
@@ -114,7 +95,7 @@ public class TimeActPropertyEditor
         {
             var action = new TaeAnimFileNameChange(anim, anim.AnimFileName, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.Selection.ContainerInfo.IsModified = true;
+            Editor.Selection.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -139,9 +120,9 @@ public class TimeActPropertyEditor
                     newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
                     newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
 
-                    var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.Selection.ContainerInfo.IsModified = true;
+                    Editor.Selection.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -160,9 +141,9 @@ public class TimeActPropertyEditor
                     newHeader.AllowDelayLoad = (bool)newValue;
                     newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
 
-                    var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.Selection.ContainerInfo.IsModified = true;
+                    Editor.Selection.ContainerInfo.IsModified = true;
 
                 }
 
@@ -182,9 +163,9 @@ public class TimeActPropertyEditor
                     newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
                     newHeader.ImportHKXSourceAnimID = tempHeader.ImportHKXSourceAnimID;
 
-                    var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.Selection.ContainerInfo.IsModified = true;
+                    Editor.Selection.ContainerInfo.IsModified = true;
                 }
 
                 changed = false;
@@ -203,9 +184,9 @@ public class TimeActPropertyEditor
                     newHeader.AllowDelayLoad = tempHeader.AllowDelayLoad;
                     newHeader.ImportHKXSourceAnimID = (int)newValue;
 
-                    var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.Selection.ContainerInfo.IsModified = true;
+                    Editor.Selection.ContainerInfo.IsModified = true;
                 }
             }
 
@@ -224,22 +205,16 @@ public class TimeActPropertyEditor
                     newHeader.ImportFromAnimID = (int)newValue;
                     newHeader.Unknown = tempHeader.Unknown;
 
-                    var action = new TaeAnimEndTimeChange(anim, anim.MiniHeader, newHeader, tempHeaderOld);
+                    var action = new TaeAnimEndTimeChange(Editor, anim, anim.MiniHeader, newHeader, tempHeaderOld);
                     EditorActionManager.ExecuteAction(action);
-                    Screen.Selection.ContainerInfo.IsModified = true;
+                    Editor.Selection.ContainerInfo.IsModified = true;
                 }
             }
         }
-
-        if (TimeActBank.IsSaving)
-            ImGui.EndDisabled();
     }
 
     public void ValueSection(TimeActSelectionManager handler)
     {
-        if (TimeActBank.IsSaving)
-            ImGui.BeginDisabled();
-
         var parameters = handler.CurrentTimeActEvent.Parameters;
         var paramValues = handler.CurrentTimeActEvent.Parameters.ParameterValues;
 
@@ -251,7 +226,7 @@ public class TimeActPropertyEditor
         {
             var action = new TaeEventStartTimeChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.StartTime, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.Selection.ContainerInfo.IsModified = true;
+            Editor.Selection.ContainerInfo.IsModified = true;
         }
 
         changed = false;
@@ -262,7 +237,7 @@ public class TimeActPropertyEditor
         {
             var action = new TaeEventEndTimeChange(handler.CurrentTimeActEvent, handler.CurrentTimeActEvent.EndTime, newValue);
             EditorActionManager.ExecuteAction(action);
-            Screen.Selection.ContainerInfo.IsModified = true;
+            Editor.Selection.ContainerInfo.IsModified = true;
         }
 
         for (int i = 0; i < paramValues.Count; i++)
@@ -279,14 +254,11 @@ public class TimeActPropertyEditor
             {
                 var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, newValue, propertyValue.GetType());
                 EditorActionManager.ExecuteAction(action);
-                Screen.Selection.ContainerInfo.IsModified = true;
+                Editor.Selection.ContainerInfo.IsModified = true;
             }
 
             Decorator.HandleValueColumn(paramValues, i);
         }
-
-        if (TimeActBank.IsSaving)
-            ImGui.EndDisabled();
     }
 
     private object _editedValueCache;

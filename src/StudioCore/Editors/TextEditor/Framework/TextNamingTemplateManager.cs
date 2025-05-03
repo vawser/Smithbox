@@ -14,10 +14,10 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextNamingTemplateManager
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
 
-    public string RootPath = $"{AppContext.BaseDirectory}\\Assets\\Workflow\\Naming Templates\\";
-    public string ProjectPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Naming Templates\\";
+    public string RootPath = "";
+    public string ProjectPath = "";
 
     public Dictionary<string, FmgEntryGeneratorBase> GeneratorDictionary = new();
 
@@ -25,9 +25,11 @@ public class TextNamingTemplateManager
 
     public FmgEntryGeneratorBase SelectedGenerateBase;
 
-    public TextNamingTemplateManager(TextEditorScreen screen)
+    public TextNamingTemplateManager(TextEditorScreen editor)
     {
-        Screen = screen;
+        Editor = editor;
+        RootPath = $"{AppContext.BaseDirectory}\\Assets\\Workflow\\Naming Templates\\";
+        ProjectPath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Naming Templates\\";
     }
 
     public FmgEntryGeneratorBase GetGenerator(string name)
@@ -45,7 +47,7 @@ public class TextNamingTemplateManager
 
     public void SetupTemplates()
     {
-        if (Smithbox.ProjectType is not ProjectType.Undefined)
+        if (Editor.Project.ProjectType is not ProjectType.Undefined)
         {
             if (!Directory.Exists(ProjectPath))
             {
@@ -69,11 +71,11 @@ public class TextNamingTemplateManager
 
     public void OnProjectChanged()
     {
-        ProjectPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Naming Templates\\";
+        ProjectPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Naming Templates\\";
 
         GeneratorDictionary = new();
 
-        if (Smithbox.ProjectType is not ProjectType.Undefined)
+        if (Editor.Project.ProjectType is not ProjectType.Undefined)
         {
             SetupTemplates();
             CFG.Current.TextEditor_CreationModal_IncrementalNaming_Template = "";

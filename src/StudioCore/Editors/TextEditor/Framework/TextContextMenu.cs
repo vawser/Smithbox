@@ -2,23 +2,17 @@
 using SoulsFormats;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.TextEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.EmevdEditor.EmevdBank;
 
 namespace StudioCore.Editors.TextEditor;
 
 public class TextContextMenu
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     public TextEntryGroupManager EntryGroupManager;
 
     public TextContextMenu(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EntryGroupManager = screen.EntryGroupManager;
     }
 
@@ -29,10 +23,10 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Filename}"))
         {
-            LanguageSync.DisplaySyncOptions();
+            Editor.LanguageSync.DisplaySyncOptions();
 
-            FmgImporter.FileContextMenuOptions();
-            FmgExporter.FileContextMenuOptions();
+            Editor.FmgImporter.FileContextMenuOptions();
+            Editor.FmgExporter.FileContextMenuOptions();
 
             ImGui.EndPopup();
         }
@@ -45,8 +39,8 @@ public class TextContextMenu
     {
         if (ImGui.BeginPopupContextItem($"FmgContext##FmgContext{fmgInfo.ID}"))
         {
-            FmgImporter.FmgContextMenuOptions();
-            FmgExporter.FmgContextMenuOptions();
+            Editor.FmgImporter.FmgContextMenuOptions();
+            Editor.FmgExporter.FmgContextMenuOptions();
 
             ImGui.EndPopup();
         }
@@ -61,25 +55,25 @@ public class TextContextMenu
             // Create
             if(ImGui.Selectable("Create"))
             {
-                Screen.EntryCreationModal.ShowModal = true;
+                Editor.EntryCreationModal.ShowModal = true;
             }
 
             // Duplicate
             if (ImGui.Selectable("Duplicate"))
             {
-                Screen.ActionHandler.DuplicateEntries();
+                Editor.ActionHandler.DuplicateEntries();
             }
 
             // Delete
             if (ImGui.Selectable("Delete"))
             {
-                Screen.ActionHandler.DeleteEntries();
+                Editor.ActionHandler.DeleteEntries();
             }
 
             ImGui.Separator();
 
-            FmgImporter.FmgEntryContextMenuOptions();
-            FmgExporter.FmgEntryContextMenuOptions();
+            Editor.FmgImporter.FmgEntryContextMenuOptions();
+            Editor.FmgExporter.FmgEntryContextMenuOptions();
 
             ImGui.EndPopup();
         }

@@ -15,14 +15,14 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexTools
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
 
     public string[] exportTypes = new[] { "DDS", "PNG", "BMP", "TGA", "TIFF", "JPEG", "WEBP" };
 
     public TexTools(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 

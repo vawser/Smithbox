@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using Org.BouncyCastle.Crypto;
+using Silk.NET.SDL;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
+using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -24,7 +26,7 @@ public static class GlobalTextSearch
 
     private static bool HasSearched = false;
 
-    public static void Display()
+    public static void Display(TextEditorScreen editor)
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
@@ -113,7 +115,7 @@ public static class GlobalTextSearch
         if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
-            SearchResults = TextFinder.GetGlobalTextResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
+            SearchResults = TextFinder.GetGlobalTextResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
         if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
@@ -166,7 +168,7 @@ public static class GlobalTextSearch
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(editor.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

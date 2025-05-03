@@ -16,23 +16,15 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexTextureViewport
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
     private TexViewerZoom ViewerZoom;
 
     public TexTextureViewport(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ViewerZoom = screen.ViewerZoom;
-    }
-
-    // <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
     }
 
     /// <summary>

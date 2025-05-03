@@ -2,6 +2,7 @@
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Interface;
+using StudioCore.TextEditor;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ public static class GlobalTextReplacement
     private static bool IgnorePatternWhitespace = false;
 
     private static bool HasSearched = false;
-    public static void Display()
+    public static void Display(TextEditorScreen editor)
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
@@ -163,7 +164,7 @@ public static class GlobalTextReplacement
         if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
         {
             HasSearched = true;
-            ReplacementResults = TextFinder.GetReplacementResult(_globalSearchInput, FilterType, MatchType, IgnoreCase);
+            ReplacementResults = TextFinder.GetReplacementResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         UIHelper.ShowHoverTooltip("Populate the edit preview list.");
         ImGui.SameLine();
@@ -207,11 +208,11 @@ public static class GlobalTextReplacement
                 foreach (var result in ReplacementResults)
                 {
                     var newText = Regex.Replace(result.Entry.Text, searchText, replaceText, options);
-                    actions.Add(new ChangeFmgEntryText(result.ContainerWrapper, result.Entry, newText));
+                    actions.Add(new ChangeFmgEntryText(editor, result.ContainerWrapper, result.Entry, newText));
                 }
 
                 var groupedAction = new FmgGroupedAction(actions);
-                Smithbox.EditorHandler.TextEditor.EditorActionManager.ExecuteAction(groupedAction);
+                editor.EditorActionManager.ExecuteAction(groupedAction);
             }
             UIHelper.ShowHoverTooltip("All the entries listed in the list below will have the Replacement Input regex applied to them.");
 
@@ -255,7 +256,7 @@ public static class GlobalTextReplacement
                 var fmgName = result.FmgName;
                 if (CFG.Current.TextEditor_DisplayFmgPrettyName)
                 {
-                    fmgName = TextUtils.GetFmgDisplayName(result.ContainerWrapper, result.FmgID, result.FmgName);
+                    fmgName = TextUtils.GetFmgDisplayName(editor.Project, result.ContainerWrapper, result.FmgID, result.FmgName);
                 }
 
                 var displayText = $"{containerName} - {fmgName} - {result.Entry.ID}: {foundText}";

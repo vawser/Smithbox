@@ -15,7 +15,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextShortcuts
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     private TextPropertyDecorator Decorator;
     private TextSelectionManager Selection;
     private ActionManager EditorActionManager;
@@ -23,7 +23,7 @@ public class TextShortcuts
     public TextShortcuts(TextEditorScreen screen)
     {
         EditorActionManager = screen.EditorActionManager;
-        Screen = screen;
+        Editor = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
     }
@@ -53,25 +53,25 @@ public class TextShortcuts
         // Create
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_CreateNewEntry))
         {
-            Screen.EntryCreationModal.ShowModal = true;
+            Editor.EntryCreationModal.ShowModal = true;
         }
 
         // Duplicate
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
-            Screen.ActionHandler.DuplicateEntries();
+            Editor.ActionHandler.DuplicateEntries();
         }
 
         // Delete
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
-            Screen.ActionHandler.DeleteEntries();
+            Editor.ActionHandler.DeleteEntries();
         }
 
         // Focus Selected Entry
         if (InputTracker.GetKeyDown(KeyBindings.Current.TEXT_FocusSelectedEntry))
         {
-            Screen.Selection.FocusFmgEntrySelection = true;
+            Editor.Selection.FocusFmgEntrySelection = true;
         }
     }
 
@@ -80,7 +80,6 @@ public class TextShortcuts
     /// </summary>
     public void HandleSelectAll()
     {
-        var editor = Smithbox.EditorHandler.TextEditor;
         var selectionContext = Selection.CurrentWindowContext;
         var multiselect = Selection.FmgEntryMultiselect;
 
@@ -102,7 +101,7 @@ public class TextShortcuts
                     {
                         var tEntry = fmg.Entries[j];
 
-                        if (editor.Filters.IsFmgEntryFilterMatch(tEntry))
+                        if (Editor.Filters.IsFmgEntryFilterMatch(tEntry))
                         {
                             multiselect.StoredEntries.Add(j, tEntry);
                         }
@@ -124,7 +123,7 @@ public class TextShortcuts
         {
             if (InputTracker.GetKey(KeyBindings.Current.TEXT_CopyEntryContents))
             {
-                Screen.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
+                Editor.ActionHandler.CopyEntryTextToClipboard(CFG.Current.TextEditor_TextCopy_IncludeID);
             }
         }
     }

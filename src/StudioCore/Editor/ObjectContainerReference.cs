@@ -16,12 +16,12 @@ public class ObjectContainerReference : ISelectable
 
     public string Name { get; set; }
 
-    public void OnSelected()
+    public void OnSelected(EditorScreen editor)
     {
         // No visual change from selection
     }
 
-    public void OnDeselected()
+    public void OnDeselected(EditorScreen editor)
     {
         // No visual change from selection
     }

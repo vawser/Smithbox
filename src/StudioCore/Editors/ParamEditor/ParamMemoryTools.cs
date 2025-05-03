@@ -10,20 +10,20 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamMemoryTools
 {
-    public static bool IsParamReloaderSupported()
+    public static bool IsParamReloaderSupported(ParamEditorScreen editor)
     {
-        return ParamReloader.GameIsSupported(Smithbox.ProjectType);
+        return ParamReloader.GameIsSupported(editor.Project.ProjectType);
     }
 
-    public static void ReloadCurrentParam()
+    public static void ReloadCurrentParam(ParamEditorScreen editor)
     {
         var canHotReload = ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank);
 
         if (canHotReload)
         {
-            if(Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam() != null)
+            if(editor._activeView._selection.GetActiveParam() != null)
             {
-                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam());
+                ParamReloader.ReloadMemoryParam(ParamBank.PrimaryBank, editor._activeView._selection.GetActiveParam());
             }
             else
             {
@@ -36,7 +36,7 @@ public static class ParamMemoryTools
         }
     }
 
-    public static void ReloadAllParams()
+    public static void ReloadAllParams(ParamEditorScreen editor)
     {
         var canHotReload = ParamReloader.CanReloadMemoryParams(ParamBank.PrimaryBank);
 
@@ -53,15 +53,15 @@ public static class ParamMemoryTools
     public static int SpawnedItemAmount = 1;
     public static int SpawnWeaponLevel = 0;
 
-    public static void GiveItem()
+    public static void GiveItem(ParamEditorScreen editor)
     {
-        var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+        var activeParam = editor._activeView._selection.GetActiveParam();
         if (activeParam != null)
         {
             GameOffsetsEntry offsets = ParamReloader.GetGameOffsets();
 
-            var rowsToGib = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetSelectedRows();
-            var param = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+            var rowsToGib = editor._activeView._selection.GetSelectedRows();
+            var param = editor._activeView._selection.GetActiveParam();
 
             if (activeParam is "EquipParamGoods" or "EquipParamProtector" or "EquipParamAccessory")
             {

@@ -1,4 +1,5 @@
 ﻿using HKLib.hk2018.hkAsyncThreadPool;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -61,8 +62,11 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public List<TextFmgWrapper> FmgWrappers { get; set; }
 
-    public TextContainerWrapper() 
+    private ProjectEntry Project;
+
+    public TextContainerWrapper(ProjectEntry project) 
     {
+        Project = project;
         IsModified = false;
     }
 
@@ -76,7 +80,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public string GetWritePath()
     {
-        return $"{Smithbox.ProjectRoot}//{RelativePath}//{Filename}";
+        return $"{Project.ProjectPath}//{RelativePath}//{Filename}";
     }
 
     /// <summary>
@@ -87,7 +91,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     public bool IsContainerUnused()
     {
         // Hide Base and DLC1 containers as they are not used
-        if (Smithbox.ProjectType is ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER)
         {
             if (Filename == "item.msgbnd.dcx" || 
                 Filename == "menu.msgbnd.dcx" ||
@@ -98,7 +102,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
             }
         }
         // Hide Base and DLC1 containers as they are not used
-        if (Smithbox.ProjectType is ProjectType.DS3)
+        if (Project.ProjectType is ProjectType.DS3)
         {
             if (Filename == "item_dlc1.msgbnd.dcx" || 
                 Filename == "menu_dlc1.msgbnd.dcx")
@@ -140,7 +144,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
                 prettyName = $"{prettyName} - DLC 2";
         }
 
-        if (Smithbox.ProjectType is ProjectType.DES)
+        if (Project.ProjectType is ProjectType.DES)
         {
             if (name.Contains("sample"))
                 prettyName = "Sample";

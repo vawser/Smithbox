@@ -16,7 +16,7 @@ public static class ParamRowContextMenu
     /// <summary>
     /// Display the context menu for a Row entry in the Param Editor
     /// </summary>
-    public static void Display(Param.Row r, int selectionCacheIndex, 
+    public static void Display(ParamEditorScreen editor, Param.Row r, int selectionCacheIndex, 
         bool isPinned, string activeParam,
         IParamDecorator decorator, ParamEditorSelectionState _selection, ParamEditorScreen _paramEditor)
     {
@@ -39,12 +39,11 @@ public static class ParamRowContextMenu
 
                         if (ImGui.IsItemDeactivatedAfterEdit())
                         {
-                            var editor = Smithbox.EditorHandler.ParamEditor;
                             var editCommand = $"selection: Name := {name}";
                             editor._activeView._selection.SortSelection();
 
-                            (MassEditResult res, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-                                editCommand, Smithbox.EditorHandler.ParamEditor._activeView._selection);
+                            (MassEditResult res, ActionManager child) = MassParamEditRegex.PerformMassEdit(editor.Project.ParamData.PrimaryBank,
+                                editCommand, editor._activeView._selection);
 
                             if (child != null)
                             {
@@ -53,7 +52,7 @@ public static class ParamRowContextMenu
 
                             if (res.Type == MassEditResultType.SUCCESS)
                             {
-                                ParamBank.RefreshParamDifferenceCacheTask();
+                                editor.Project.ParamData.RefreshParamDifferenceCacheTask();
                             }
                         }
                     }
@@ -76,7 +75,7 @@ public static class ParamRowContextMenu
 
                 // Paste
                 if (ImGui.Selectable(@$"Paste", false,
-                        ParamBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
+                        editor.Project.ParamData.PrimaryBank.ClipboardRows.Any() ? ImGuiSelectableFlags.None : ImGuiSelectableFlags.Disabled))
                 {
                     EditorCommandQueue.AddCommand(@"param/menu/ctrlVPopup");
                 }
@@ -106,9 +105,9 @@ public static class ParamRowContextMenu
                     "Duplicate the current row selection, automatically incrementing the row ID.");
 
                 // Duplicate To
-                if (ImGui.BeginMenu("Duplicate To", Smithbox.EditorHandler.ParamEditor.Handler.IsCommutativeParam()))
+                if (ImGui.BeginMenu("Duplicate To", editor.Handler.IsCommutativeParam()))
                 {
-                    Smithbox.EditorHandler.ParamEditor.Handler.DisplayCommutativeDuplicateMenu();
+                    editor.Handler.DisplayCommutativeDuplicateMenu();
 
                     ImGui.EndMenu();
                 }
@@ -157,12 +156,12 @@ public static class ParamRowContextMenu
                 {
                     if (ImGui.Selectable($"Pin"))
                     {
-                        if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
+                        if (!editor.Project.PinnedRows.ContainsKey(activeParam))
                         {
-                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Add(activeParam, new List<int>());
+                            editor.Project.PinnedRows.Add(activeParam, new List<int>());
                         }
 
-                        List<int> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam];
+                        List<int> pinned = editor.Project.PinnedRows[activeParam];
 
                         foreach (var entry in _selection.GetSelectedRows())
                         {
@@ -179,12 +178,12 @@ public static class ParamRowContextMenu
                 {
                     if (ImGui.Selectable($"Unpin"))
                     {
-                        if (!Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.ContainsKey(activeParam))
+                        if (!editor.Project.PinnedRows.ContainsKey(activeParam))
                         {
-                            Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows.Add(activeParam, new List<int>());
+                            editor.Project.PinnedRows.Add(activeParam, new List<int>());
                         }
 
-                        List<int> pinned = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows[activeParam];
+                        List<int> pinned = editor.Project.PinnedRows[activeParam];
 
                         foreach (var entry in _selection.GetSelectedRows())
                         {
@@ -220,7 +219,7 @@ public static class ParamRowContextMenu
             // Reverse Lookup Options
             if (CFG.Current.Param_RowContextMenu_ReverseLoopup)
             {
-                EditorDecorations.ParamRefReverseLookupSelectables(_paramEditor, ParamBank.PrimaryBank, activeParam, r.ID);
+                EditorDecorations.ParamRefReverseLookupSelectables(_paramEditor, editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
             }
 
             ImGui.EndPopup();

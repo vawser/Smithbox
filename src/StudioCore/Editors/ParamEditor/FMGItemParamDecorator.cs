@@ -30,13 +30,16 @@ public interface IParamDecorator
 
 public class FMGItemParamDecorator : IParamDecorator
 {
+    private ParamEditorScreen Editor;
+
     private readonly Dictionary<int, FMG.Entry> _entryCache = new();
 
     private string ParamName;
     private string CommandLine;
 
-    public FMGItemParamDecorator(string paramName)
+    public FMGItemParamDecorator(ParamEditorScreen editor, string paramName)
     {
+        Editor = editor;
         ParamName = paramName;
         CommandLine = "";
     }
@@ -70,6 +73,9 @@ public class FMGItemParamDecorator : IParamDecorator
             return;
         }
 
+        if (Editor.Project.TextEditor == null)
+            return;
+
         if (CommandLine == "")
         {
             var category = CFG.Current.TextEditor_PrimaryCategory.ToString();
@@ -81,7 +87,7 @@ public class FMGItemParamDecorator : IParamDecorator
                 var fmg = cachedEntry.Parent;
                 var fmgName = fmg.Name;
 
-                foreach (var (path, entry) in TextBank.FmgBank)
+                foreach (var (path, entry) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
                     {
@@ -113,9 +119,9 @@ public class FMGItemParamDecorator : IParamDecorator
     private void PopulateDecorator()
     {
         // FMG Name decoration on row 
-        if (_entryCache.Count == 0 && TextBank.PrimaryBankLoaded)
+        if (_entryCache.Count == 0)
         {
-            List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(ParamName);
+            List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(Editor, ParamName);
             foreach (FMG.Entry fmgEntry in fmgEntries)
             {
                 _entryCache[fmgEntry.ID] = fmgEntry;

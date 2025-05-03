@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,11 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class ShoeboxLayoutContainer
 {
-    private TextureViewerScreen Screen;
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+
+    public string SourcePath;
+    public string FallbackPath;
 
     public string ContainerName = "";
 
@@ -20,23 +25,28 @@ public class ShoeboxLayoutContainer
 
     public Dictionary<string, List<SubTexture>> Textures = new Dictionary<string, List<SubTexture>>();
 
-    public ShoeboxLayoutContainer(TextureViewerScreen screen)
+    public ShoeboxLayoutContainer(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
     {
-        Screen = screen;
+        BaseEditor = baseEditor;
+        Project = project;
+        SourcePath = sourcePath;
+        FallbackPath = fallbackPath;
     }
 
-    public void OnProjectChanged()
+    public async Task<bool> Setup()
     {
-        if (Smithbox.ProjectType is ProjectType.ER or ProjectType.AC6)
+        await Task.Delay(1000);
+
+        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
             string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
-            if (File.Exists($@"{Smithbox.ProjectRoot}\{sourcePath}"))
+            if (File.Exists($@"{SourcePath}\{sourcePath}"))
             {
-                sourcePath = $@"{Smithbox.ProjectRoot}\{sourcePath}";
+                sourcePath = $@"{SourcePath}\{sourcePath}";
             }
             else
             {
-                sourcePath = $@"{Smithbox.GameRoot}\{sourcePath}";
+                sourcePath = $@"{FallbackPath}\{sourcePath}";
             }
 
             if (File.Exists(sourcePath))
@@ -50,6 +60,8 @@ public class ShoeboxLayoutContainer
                 TaskLogs.AddLog($"Failed to load Shoebox Layout: {filename} at {sourcePath}");
             }
         }
+
+        return true;
     }
 
     public void LoadLayouts(string filepath)

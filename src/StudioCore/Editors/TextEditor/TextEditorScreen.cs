@@ -2,17 +2,9 @@
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Platform;
-using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
-using System;
-using System.Diagnostics;
-using System.IO;
 using System.Numerics;
-using System.Timers;
-using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.TextEditor;
 
@@ -47,6 +39,7 @@ public class TextEditorScreen : EditorScreen
 
     public FmgExporter FmgExporter;
     public FmgImporter FmgImporter;
+    public LanguageSync LanguageSync;
 
     public TextEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -76,6 +69,8 @@ public class TextEditorScreen : EditorScreen
         TextExportModal = new TextExporterModal(this);
 
         FmgExporter = new FmgExporter(this, project);
+        FmgImporter = new FmgImporter(this, project);
+        LanguageSync = new LanguageSync(this, project);
     }
 
     public string EditorName => "Text Editor";
@@ -84,11 +79,92 @@ public class TextEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
-    public void EditDropdown()
+    /// <summary>
+    /// The editor loop
+    /// </summary>
+    public void OnGUI(string[] initcmd)
     {
         if (!CFG.Current.EnableEditor_FMG)
             return;
 
+        var scale = DPI.GetUIScale();
+
+        // Docking setup
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+
+        var dsid = ImGui.GetID("DockSpace_TextEntries");
+        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        if (UI.Current.Interface_TextEditor_FileContainerList)
+        {
+            FileView.Display();
+        }
+        if (UI.Current.Interface_TextEditor_FmgList)
+        {
+            FmgView.Display();
+        }
+        if (UI.Current.Interface_TextEditor_FmgEntryList)
+        {
+            FmgEntryView.Display();
+        }
+        if (UI.Current.Interface_TextEditor_FmgEntryProperties)
+        {
+            FmgEntryPropertyEditor.Display();
+        }
+        EditorShortcuts.Monitor();
+
+        if (UI.Current.Interface_TextEditor_ToolConfigurationWindow)
+        {
+            ToolView.Display();
+        }
+
+        CommandQueue.Parse(initcmd);
+        EntryCreationModal.Display();
+
+        ImGui.PopStyleVar();
+        ImGui.PopStyleColor(1);
+
+        FmgExporter.OnGui();
+    }
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
+
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -147,11 +223,8 @@ public class TextEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Files"))
@@ -193,11 +266,8 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// The editor menubar
     /// </summary>
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
         if (ImGui.BeginMenu("Data"))
         {
             FmgImporter.MenubarOptions();
@@ -216,114 +286,6 @@ public class TextEditorScreen : EditorScreen
     }
 
     /// <summary>
-    /// The editor loop
-    /// </summary>
-    public void OnGUI(string[] initcmd)
-    {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(4, 4) * scale);
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-
-        var dsid = ImGui.GetID("DockSpace_TextEntries");
-        ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
-
-        if (!TextUtils.IsSupportedProjectType() || !TextBank.PrimaryBankLoaded)
-        {
-            ImGui.Begin("Editor##InvalidTextEditor");
-
-            if (!TextUtils.IsSupportedProjectType())
-            {
-                ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-            }
-            else
-            {
-                ImGui.Text($"This editor is still loading...");
-            }
-
-            ImGui.End();
-        }
-        else
-        {
-            if (TextBank.PrimaryBankLoaded)
-            {
-                if(!TextBank.VanillaBankLoaded && !TextBank.VanillaBankLoading)
-                {
-                    TextBank.LoadVanillaTextFiles();
-                }
-
-                if (UI.Current.Interface_TextEditor_FileContainerList)
-                {
-                    FileView.Display();
-                }
-                if (UI.Current.Interface_TextEditor_FmgList)
-                {
-                    FmgView.Display();
-                }
-                if (UI.Current.Interface_TextEditor_FmgEntryList)
-                {
-                    FmgEntryView.Display();
-                }
-                if (UI.Current.Interface_TextEditor_FmgEntryProperties)
-                {
-                    FmgEntryPropertyEditor.Display();
-                }
-            }
-
-            EditorShortcuts.Monitor();
-
-            if (UI.Current.Interface_TextEditor_ToolConfigurationWindow)
-            {
-                ToolView.Display();
-            }
-
-            CommandQueue.Parse(initcmd);
-            EntryCreationModal.Display();
-        }
-
-        ImGui.PopStyleVar();
-        ImGui.PopStyleColor(1);
-
-        FmgExporter.OnGui();
-    }
-
-    /// <summary>
-    /// Reset editor state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
-        SetupDifferenceTimer();
-
-        if (Smithbox.ProjectType != ProjectType.Undefined)
-        {
-            Selection.OnProjectChanged();
-            Decorator.OnProjectChanged();
-
-            ActionHandler.OnProjectChanged();
-            NamingTemplateManager.OnProjectChanged();
-
-            FmgImporter.OnProjectChanged();
-        }
-
-        TextBank.LoadTextFiles();
-
-        ResetActionManager();
-    }
-
-    /// <summary>
     /// Save currently selected FMG container
     /// </summary>
     public void Save()
@@ -331,19 +293,13 @@ public class TextEditorScreen : EditorScreen
         if (!CFG.Current.EnableEditor_FMG)
             return;
 
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
-            TextBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);
+            Project.TextData.PrimaryBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);
         }
         else
         {
-            if (TextBank.PrimaryBankLoaded)
-            {
-                TextBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
-            }
+            Project.TextData.PrimaryBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
         }
     }
 
@@ -352,48 +308,6 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        TextBank.SaveTextFiles();
-    }
-
-    /// <summary>
-    /// Reset the undo/redo stack
-    /// </summary>
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
-    }
-
-    public Timer AutomaticDiffTimer;
-
-    private void SetupDifferenceTimer()
-    {
-        if (AutomaticDiffTimer != null)
-        {
-            AutomaticDiffTimer.Close();
-        }
-
-        var interval = 3000;
-
-        AutomaticDiffTimer = new Timer(interval);
-        AutomaticDiffTimer.Elapsed += OnAutomaticDiff;
-        AutomaticDiffTimer.AutoReset = true;
-        AutomaticDiffTimer.Enabled = true;
-    }
-
-    public void OnAutomaticDiff(object source, ElapsedEventArgs e)
-    {
-        if (CFG.Current.TextEditor_EnableAutomaticDifferenceCheck)
-        {
-            if (TextBank.VanillaBankLoaded)
-            {
-                DifferenceManager.TrackFmgDifferences();
-            }
-        }
+        Project.TextData.PrimaryBank.SaveTextFiles();
     }
 }

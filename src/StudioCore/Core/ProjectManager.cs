@@ -9,6 +9,8 @@ using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TalkEditor;
+using StudioCore.Editors.TextEditor.Data;
+using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EmevdEditor;
 using StudioCore.Formats.JSON;
@@ -80,12 +82,15 @@ public class ProjectManager
                 "F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game",
                 ProjectType.ER);
 
-            Projects.Add(newProject);
+            if (!Projects.Contains(newProject))
+            {
+                Projects.Add(newProject);
 
-            Task<bool> projectSetupTask = newProject.Init();
-            bool projectSetupTaskResult = await projectSetupTask;
+                Task<bool> projectSetupTask = newProject.Init();
+                bool projectSetupTaskResult = await projectSetupTask;
 
-            SelectedProject = newProject;
+                SelectedProject = newProject;
+            }
         }
     }
 
@@ -208,16 +213,25 @@ public class ProjectEntry
     [JsonIgnore]
     public TextureViewerScreen TextureViewer;
 
+    // Data Banks
     [JsonIgnore]
-    public EmevdBank EmevdBank;
+    public EmevdBank EmevdBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
-    public EsdBank EsdBank;
+    public EsdBank EsdBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
-    public GparamBank GparamBank;
+    public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
-    public MsbBank MsbBank;
+    public MsbBank MsbBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
-    public MaterialBank MaterialBank;
+    public MaterialBank MaterialBank; // TODO: utilise file dictionary, change this to lazy load style
+    [JsonIgnore]
+    public ParamData ParamData; // TODO: utilise file dictionary
+    [JsonIgnore]
+    public TextData TextData; // TODO: utilise file dictionary, change this to lazy load style
+    [JsonIgnore]
+    public TextureData TextureData; // TODO: utilise file dictionary
+    [JsonIgnore]
+    public TimeActData TimeActData; // TODO: utilise file dictionary, change this to lazy load style
 
     // Additional Data
     [JsonIgnore]
@@ -454,7 +468,7 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup Entity Selection Groups.");
         }
 
-        // Editors
+        // ---- Map Editor ----
         if (EnableMapEditor)
         {
             MsbBank = new(BaseEditor, this);
@@ -474,22 +488,77 @@ public class ProjectEntry
 
             MapEditor = new MapEditorScreen(BaseEditor, this);
         }
+
+        // ---- Model Editor ----
         if (EnableModelEditor)
         {
             ModelEditor = new ModelEditorScreen(BaseEditor, this);
         }
+
+        // ---- Text Editor ----
         if (EnableTextEditor)
         {
+            TextData = new(BaseEditor, this);
+
+            // Text Banks
+            Task<bool> textBankTask = TextData.Setup();
+            bool textBankTaskResult = await textBankTask;
+
+            if (textBankTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Setup FMG Banks.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Failed to setup FMG Banks.");
+            }
+
             TextEditor = new TextEditorScreen(BaseEditor, this);
         }
+
+        // ---- Param Editor ----
         if (EnableParamEditor)
         {
+            ParamData = new(BaseEditor, this);
+
+            // Param Banks
+            Task<bool> paramBankTask = ParamData.Setup();
+            bool paramBankTaskResult = await paramBankTask;
+
+            if (paramBankTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup PARAM Banks.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup PARAM Banks.");
+            }
+
             ParamEditor = new ParamEditorScreen(BaseEditor, this);
         }
+
+        // ---- Time Act Editor ----
         if (EnableTimeActEditor)
         {
+            TimeActData = new(BaseEditor, this);
+
+            // Time Act Banks
+            Task<bool> timeActTask = TimeActData.Setup();
+            bool timeActTaskResult = await timeActTask;
+
+            if (timeActTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
+            }
+
             TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
         }
+
+        // ---- Graphics Param Editor ----
         if (EnableGparamEditor)
         {
             GparamBank = new(BaseEditor, this);
@@ -509,6 +578,8 @@ public class ProjectEntry
 
             GparamEditor = new GparamEditorScreen(BaseEditor, this);
         }
+
+        // ---- Material Editor ----
         if (EnableMaterialEditor)
         {
             MaterialBank = new(BaseEditor, this);
@@ -528,6 +599,8 @@ public class ProjectEntry
 
             MaterialEditor = new MaterialEditorScreen(BaseEditor, this);
         }
+
+        // ---- Event Script Editor ----
         if (EnableEmevdEditor)
         {
             EmevdBank = new(BaseEditor, this);
@@ -547,6 +620,8 @@ public class ProjectEntry
 
             EmevdEditor = new EmevdEditorScreen(BaseEditor, this);
         }
+
+        // ---- EzState Script Editor ----
         if (EnableEsdEditor)
         {
             EsdBank = new(BaseEditor, this);
@@ -566,8 +641,25 @@ public class ProjectEntry
 
             EsdEditor = new EsdEditorScreen(BaseEditor, this);
         }
+
+        // ---- Texture Viewer ----
         if (EnableTextureViewer)
         {
+            TextureData = new(BaseEditor, this);
+
+            // Texture Banks
+            Task<bool> textureDataTask = TextureData.Setup();
+            bool textureDataTaskResult = await textureDataTask;
+
+            if (textureDataTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Setup texture bank.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Failed to setup texture bank.");
+            }
+
             TextureViewer = new TextureViewerScreen(BaseEditor, this);
         }
 

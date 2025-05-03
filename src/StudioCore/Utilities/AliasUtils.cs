@@ -309,19 +309,19 @@ public static class AliasUtils
             {
                 if (modelName == "c0000")
                 {
-                    aliasName = FindPlayerCharacterName(e, modelName);
+                    aliasName = FindPlayerCharacterName(project, e, modelName);
                 }
 
                 if (modelName == "c0100" || modelName == "c0110" || modelName == "c0120" || modelName == "c1000")
                 {
-                    aliasName = FindSystemCharacterName(e, modelName);
+                    aliasName = FindSystemCharacterName(project, e, modelName);
                 }
             }
 
             // Treasure: show itemlot row name
             if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
             {
-                aliasName = FindTreasureName(e);
+                aliasName = FindTreasureName(project, e);
             }
 
             e.CachedAliasName = aliasName;
@@ -384,19 +384,19 @@ public static class AliasUtils
             {
                 if (modelName == "c0000")
                 {
-                    aliasName = FindPlayerCharacterName(e, modelName);
+                    aliasName = FindPlayerCharacterName(project, e, modelName);
                 }
 
                 if (modelName == "c0100" || modelName == "c0110" || modelName == "c0120" || modelName == "c1000")
                 {
-                    aliasName = FindSystemCharacterName(e, modelName);
+                    aliasName = FindSystemCharacterName(project, e, modelName);
                 }
             }
 
             // Treasure: show itemlot row name
             if (CFG.Current.MapEditor_MapObjectList_ShowTreasureNames && e.IsEventTreasure())
             {
-                aliasName = FindTreasureName(e);
+                aliasName = FindTreasureName(project, e);
             }
 
             e.CachedAliasName = aliasName;
@@ -409,14 +409,20 @@ public static class AliasUtils
         return aliasName;
     }
 
-    public static string FindPlayerCharacterName(Entity e, string modelName)
+    public static string FindPlayerCharacterName(ProjectEntry project, Entity e, string modelName)
     {
+        if (project.ParamEditor == null)
+            return "";
+
+        if (project.TextEditor == null)
+            return "";
+
         var aliasName = "";
 
         int npcId = e.GetPropertyValue<int>("NPCParamID");
         try
         {
-            var param = ParamBank.PrimaryBank.GetParamFromName("NpcParam");
+            var param = project.ParamData.PrimaryBank.GetParamFromName("NpcParam");
             if (param != null)
             {
                 Param.Row row = param[npcId];
@@ -433,16 +439,13 @@ public static class AliasUtils
                         var term = c.Value.ToParamEditorString();
                         var result = term;
 
-                        if (TextBank.PrimaryBankLoaded)
-                        {
-                            var searchValue = int.Parse(term);
-                            var textResult = TextFinder.GetTextResult("Title_Characters", searchValue);
+                        var searchValue = int.Parse(term);
+                        var textResult = TextFinder.GetTextResult(project.TextEditor, "Title_Characters", searchValue);
 
-                            if (textResult != null)
-                            {
-                                result = textResult.Entry.Text;
-                                nameSuccess = true;
-                            }
+                        if (textResult != null)
+                        {
+                            result = textResult.Entry.Text;
+                            nameSuccess = true;
                         }
 
                         aliasName = $"{result}";
@@ -461,14 +464,17 @@ public static class AliasUtils
         return aliasName;
     }
 
-    public static string FindSystemCharacterName(Entity e, string modelName)
+    public static string FindSystemCharacterName(ProjectEntry project, Entity e, string modelName)
     {
+        if (project.ParamEditor == null)
+            return "";
+
         var aliasName = "";
 
         int npcId = e.GetPropertyValue<int>("NPCParamID");
         try
         {
-            var param = ParamBank.PrimaryBank.GetParamFromName("NpcParam");
+            var param = project.ParamData.PrimaryBank.GetParamFromName("NpcParam");
             if (param != null)
             {
                 Param.Row row = param[npcId];
@@ -481,23 +487,26 @@ public static class AliasUtils
         return aliasName;
     }
 
-    public static string FindTreasureName(Entity e)
+    public static string FindTreasureName(ProjectEntry project, Entity e)
     {
+        if (project.ParamEditor == null)
+            return "";
+
         var aliasName = "";
 
         int itemlotId = e.GetPropertyValue<int>("ItemLotID");
 
-        if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.BB)
+        if (project.ProjectType is ProjectType.DS3 or ProjectType.BB)
             itemlotId = e.GetPropertyValue<int>("ItemLot1");
 
-        if (Smithbox.ProjectType is ProjectType.DES)
+        if (project.ProjectType is ProjectType.DES)
         {
             var treasureObject = (MSBD.Event.Treasure)e.WrappedObject;
 
             itemlotId = treasureObject.ItemLots[0];
         }
 
-        if (Smithbox.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
         {
             var treasureObject = (MSB1.Event.Treasure)e.WrappedObject;
 
@@ -508,12 +517,12 @@ public static class AliasUtils
         {
             var paramName = "ItemLotParam";
 
-            if (Smithbox.ProjectType == ProjectType.ER)
+            if (project.ProjectType == ProjectType.ER)
             {
                 paramName = "ItemLotParam_map";
             }
 
-            var param = ParamBank.PrimaryBank.GetParamFromName(paramName);
+            var param = project.ParamData.PrimaryBank.GetParamFromName(paramName);
             if (param != null)
             {
                 Param.Row row = param[itemlotId];

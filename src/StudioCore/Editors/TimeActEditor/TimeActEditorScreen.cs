@@ -1,18 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.TimeActEditor.Actions;
-using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Core;
 using StudioCore.Editors.TimeActEditor.Tools;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Scene;
-using StudioCore.Utilities;
 using System.Numerics;
-using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -98,63 +90,49 @@ public class TimeActEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TimeActEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
-        if (!TimeActBank.IsSupportedProjectType())
+        CommandQueue.Parse(initcmd);
+
+        EditorShortcuts.Monitor();
+
+        if (ImGui.BeginMenuBar())
         {
-            ImGui.Begin("Editor##InvalidTaeEditor");
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
 
-            ImGui.Text($"This editor does not support {Smithbox.ProjectType}.");
-
-            ImGui.End();
+            ImGui.EndMenuBar();
         }
-        else
+
+        if (UI.Current.Interface_TimeActEditor_ContainerFileList)
         {
-            TimeActBank.Load();
+            ContainerFileView.Display();
+        }
 
-            if (!TaskManager.AnyActiveTasks() && TimeActBank.IsLoaded)
-            {
-                CommandQueue.Parse(initcmd);
+        if (UI.Current.Interface_TimeActEditor_TimeActList)
+        {
+            InternalFileView.Display();
+        }
 
-                EditorShortcuts.Monitor();
+        if (UI.Current.Interface_TimeActEditor_AnimationList)
+        {
+            AnimationView.Display();
+            //EventGraphView.Display();
+        }
 
-                if (UI.Current.Interface_TimeActEditor_ContainerFileList)
-                {
-                    ContainerFileView.Display();
-                }
+        if (UI.Current.Interface_TimeActEditor_AnimationProperties)
+        {
+            AnimationPropertyView.Display();
+        }
 
-                if (UI.Current.Interface_TimeActEditor_TimeActList)
-                {
-                    InternalFileView.Display();
-                }
+        if (UI.Current.Interface_TimeActEditor_EventList)
+        {
+            EventView.Display();
+        }
 
-                if (UI.Current.Interface_TimeActEditor_AnimationList)
-                {
-                    AnimationView.Display();
-                    //EventGraphView.Display();
-                }
-
-                if (UI.Current.Interface_TimeActEditor_AnimationProperties)
-                {
-                    AnimationPropertyView.Display();
-                }
-
-                if (UI.Current.Interface_TimeActEditor_EventList)
-                {
-                    EventView.Display();
-                }
-
-                if (UI.Current.Interface_TimeActEditor_EventProperties)
-                {
-                    EventPropertyView.Display();
-                }
-            }
-            else
-            {
-                ImGui.Begin("Editor##LoadingTaeEditor");
-
-                TimeActBank.DisplayLoadState();
-
-                ImGui.End();
-            }
+        if (UI.Current.Interface_TimeActEditor_EventProperties)
+        {
+            EventPropertyView.Display();
         }
 
         if (UI.Current.Interface_TimeActEditor_ToolConfiguration)
@@ -168,11 +146,29 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.PopStyleColor(1);
     }
 
-    public void EditDropdown()
+    public void FileMenu()
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
 
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+
+        ImGui.Separator();
+    }
+
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -222,11 +218,8 @@ public class TimeActEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("TAE Files"))
@@ -280,86 +273,30 @@ public class TimeActEditorScreen : EditorScreen
     /// <summary>
     /// Handle the editor menubar
     /// </summary>
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
         // ToolMenubar.DisplayMenu();
-    }
-
-    /// <summary>
-    /// Handle the editor state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
-        Selection.OnProjectChanged();
-
-        TimeActBank.IsLoaded = false;
-        TimeActBank.IsTemplatesLoaded = false;
-        TimeActBank.IsCharacterTimeActsLoaded = false;
-        TimeActBank.IsObjectTimeActsLoaded = false;
-
-        TimeActBank.Load();
-
-        ResetActionManager();
     }
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Smithbox.ProjectType is ProjectType.AC6)
+        if (Project.ProjectType is ProjectType.AC6)
         {
             TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
             return;
         }
 
-        if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
-        {
-            TaskLogs.AddLog("File will now be saved.");
-            TimeActBank.SaveTimeActTask(Selection.ContainerInfo, Selection.ContainerBinder);
-        }
-        else if (TimeActBank.IsSaving)
-        {
-            TaskLogs.AddLog("File is already in the process of being saved.");
-        }
+        Project.TimeActData.PrimaryCharacterBank.SaveTimeActTask(Selection.ContainerInfo, Selection.ContainerBinder);
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
-        if(Smithbox.ProjectType is ProjectType.AC6)
+        if (Project.ProjectType is ProjectType.AC6)
         {
             TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
             return;
         }
 
-        if (TimeActBank.IsLoaded && !TimeActBank.IsSaving)
-        {
-            TaskLogs.AddLog("Modified files will now be saved.");
-            TimeActBank.SaveTimeActsTask();
-        }
-        else if (TimeActBank.IsSaving)
-        {
-            TaskLogs.AddLog("Modified files are already in the process of being saved.");
-        }
-    }
-
-    private void ResetActionManager()
-    {
-        EditorActionManager.Clear();
+        Project.TimeActData.PrimaryCharacterBank.SaveTimeActsTask();
     }
 }

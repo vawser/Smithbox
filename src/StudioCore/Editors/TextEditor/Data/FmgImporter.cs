@@ -229,7 +229,7 @@ public class FmgImporter
 
                 if (targetEntry != null)
                 {
-                    ImportActions.Add(new ChangeFmgEntryText(containerWrapper, targetEntry, storedEntry.Text));
+                    ImportActions.Add(new ChangeFmgEntryText(Editor, containerWrapper, targetEntry, storedEntry.Text));
                 }
             }
         }

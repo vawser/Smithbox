@@ -45,22 +45,19 @@ public class FmgExporter
                     DisplayExportModal(ExportType.Container);
                 }
 
-                if (TextBank.VanillaBankLoaded)
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
                 {
-                    ImGui.Separator();
-
-                    if (ImGui.Selectable("Export Modified Text"))
-                    {
-                        DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
-
-                    if (ImGui.Selectable("Export Unique Text"))
-                    {
-                        DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                    DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
                 }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files)) that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
@@ -74,22 +71,19 @@ public class FmgExporter
                     DisplayExportModal(ExportType.FMG);
                 }
 
-                if (TextBank.VanillaBankLoaded)
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
                 {
-                    ImGui.Separator();
-
-                    if (ImGui.Selectable("Export Modified Text"))
-                    {
-                        DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
-
-                    if (ImGui.Selectable("Export Unique Text"))
-                    {
-                        DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                    DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
                 }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
@@ -103,22 +97,19 @@ public class FmgExporter
                     DisplayExportModal(ExportType.FMG_Entries);
                 }
 
-                if (TextBank.VanillaBankLoaded)
+                ImGui.Separator();
+
+                if (ImGui.Selectable("Export Modified Text"))
                 {
-                    ImGui.Separator();
-
-                    if (ImGui.Selectable("Export Modified Text"))
-                    {
-                        DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'modified'.");
-
-                    if (ImGui.Selectable("Export Unique Text"))
-                    {
-                        DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
-                    }
-                    UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'unique'.");
+                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
                 }
+                UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'modified'.");
+
+                if (ImGui.Selectable("Export Unique Text"))
+                {
+                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
+                }
+                UIHelper.ShowHoverTooltip("Only include FMG entries that are considered 'unique'.");
 
                 ImGui.EndMenu();
             }
@@ -162,22 +153,19 @@ public class FmgExporter
                 DisplayExportModal(ExportType.Container);
             }
 
-            if (TextBank.VanillaBankLoaded)
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Export Modified Text"))
             {
-                ImGui.Separator();
-
-                if (ImGui.Selectable("Export Modified Text"))
-                {
-                    DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
-
-                if (ImGui.Selectable("Export Unique Text"))
-                {
-                    DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
+                DisplayExportModal(ExportType.Container, ExportModifier.ModifiedOnly);
             }
+            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'modified'.");
+
+            if (ImGui.Selectable("Export Unique Text"))
+            {
+                DisplayExportModal(ExportType.Container, ExportModifier.UniqueOnly);
+            }
+            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text Files) that are considered 'unique'.");
 
             ImGui.EndMenu();
         }
@@ -196,22 +184,19 @@ public class FmgExporter
                 DisplayExportModal(ExportType.FMG);
             }
 
-            if (TextBank.VanillaBankLoaded)
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Export Modified Text"))
             {
-                ImGui.Separator();
-
-                if (ImGui.Selectable("Export Modified Text"))
-                {
-                    DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
-
-                if (ImGui.Selectable("Export Unique Text"))
-                {
-                    DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
+                DisplayExportModal(ExportType.FMG, ExportModifier.ModifiedOnly);
             }
+            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'modified'.");
+
+            if (ImGui.Selectable("Export Unique Text"))
+            {
+                DisplayExportModal(ExportType.FMG, ExportModifier.UniqueOnly);
+            }
+            UIHelper.ShowHoverTooltip("Only include Text Entries (and therefore the associated Text File) that are considered 'unique'.");
 
             ImGui.EndMenu();
         }
@@ -230,22 +215,19 @@ public class FmgExporter
                 DisplayExportModal(ExportType.FMG_Entries);
             }
 
-            if (TextBank.VanillaBankLoaded)
+            ImGui.Separator();
+
+            if (ImGui.Selectable("Export Modified Text"))
             {
-                ImGui.Separator();
-
-                if (ImGui.Selectable("Export Modified Text"))
-                {
-                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'modified'.");
-
-                if (ImGui.Selectable("Export Unique Text"))
-                {
-                    DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
-                }
-                UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'unique'.");
+                DisplayExportModal(ExportType.FMG_Entries, ExportModifier.ModifiedOnly);
             }
+            UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'modified'.");
+
+            if (ImGui.Selectable("Export Unique Text"))
+            {
+                DisplayExportModal(ExportType.FMG_Entries, ExportModifier.UniqueOnly);
+            }
+            UIHelper.ShowHoverTooltip("Only include Text Entries that are considered 'unique'.");
 
             ImGui.EndMenu();
         }

@@ -10,7 +10,7 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActSelectionManager
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
 
     public TimeActContainerWrapper ContainerInfo;
     public TimeActBinderWrapper ContainerBinder;
@@ -55,7 +55,7 @@ public class TimeActSelectionManager
 
     public TimeActSelectionManager(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
 
         ContextMenu = new(screen, this);
     }
@@ -314,7 +314,7 @@ public class TimeActSelectionManager
 
     public void TimeActSelection(int currentSelectionIndex, int currentIndex)
     {
-        var timeAct = Screen.Selection.ContainerInfo.InternalFiles[currentIndex].TAE;
+        var timeAct = Editor.Selection.ContainerInfo.InternalFiles[currentIndex].TAE;
 
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
@@ -357,7 +357,7 @@ public class TimeActSelectionManager
 
     public void AnimationSelection(int currentSelectionIndex, int currentIndex)
     {
-        var animation = Screen.Selection.CurrentTimeAct.Animations[currentIndex];
+        var animation = Editor.Selection.CurrentTimeAct.Animations[currentIndex];
 
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))
@@ -400,7 +400,7 @@ public class TimeActSelectionManager
 
     public void EventSelection(int currentSelectionIndex, int currentIndex)
     {
-        var animEvent = Screen.Selection.CurrentTimeActAnimation.Events[currentIndex];
+        var animEvent = Editor.Selection.CurrentTimeActAnimation.Events[currentIndex];
 
         // Multi-Select: Range Select
         if (InputTracker.GetKey(Veldrid.Key.LShift))

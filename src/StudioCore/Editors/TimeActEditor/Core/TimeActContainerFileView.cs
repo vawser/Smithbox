@@ -17,13 +17,13 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActContainerFileView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActContainerFileView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Decorator = screen.Decorator;
     }
@@ -42,12 +42,12 @@ public class TimeActContainerFileView
 
         if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            for (int i = 0; i < TimeActBank.FileChrBank.Count; i++)
+            for (int i = 0; i < Editor.Project.TimeActData.PrimaryCharacterBank.Entries.Count; i++)
             {
-                var info = TimeActBank.FileChrBank.ElementAt(i).Key;
-                var binder = TimeActBank.FileChrBank.ElementAt(i).Value;
+                var info = Editor.Project.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Key;
+                var binder = Editor.Project.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Value;
 
-                if (TimeActFilters.FileContainerFilter(info))
+                if (TimeActFilters.FileContainerFilter(Editor, info))
                 {
                     var isSelected = false;
                     if (i == Selection.ContainerIndex)
@@ -93,12 +93,12 @@ public class TimeActContainerFileView
 
         if (ImGui.CollapsingHeader(title))
         {
-            for (int i = 0; i < TimeActBank.FileObjBank.Count; i++)
+            for (int i = 0; i < Editor.Project.TimeActData.PrimaryObjectBank.Entries.Count; i++)
             {
-                var info = TimeActBank.FileObjBank.ElementAt(i).Key;
-                var binder = TimeActBank.FileObjBank.ElementAt(i).Value;
+                var info = Editor.Project.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Key;
+                var binder = Editor.Project.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Value;
 
-                if (TimeActFilters.FileContainerFilter(info))
+                if (TimeActFilters.FileContainerFilter(Editor, info))
                 {
                     var isSelected = false;
                     if (i == Selection.ContainerIndex)

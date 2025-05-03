@@ -16,22 +16,19 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexToolView
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
     public TexTools Tools;
 
     public TexToolView(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Tools = screen.Tools;
     }
 
     public void Display()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 

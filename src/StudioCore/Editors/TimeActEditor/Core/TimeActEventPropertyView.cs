@@ -12,7 +12,7 @@ namespace StudioCore.Editors.TimeActEditor.Core;
 
 public class TimeActEventPropertyView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private ActionManager EditorActionManager;
     private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
@@ -20,7 +20,7 @@ public class TimeActEventPropertyView
 
     public TimeActEventPropertyView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         Selection = screen.Selection;
         Decorator = screen.Decorator;

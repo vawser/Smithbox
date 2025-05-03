@@ -57,12 +57,12 @@ public class ParamEditorView
         ImGui.Text("Params");
 
         // Param Version
-        if (ParamBank.PrimaryBank.ParamVersion != 0)
+        if (Editor.Project.ParamData.PrimaryBank.ParamVersion != 0)
         {
             ImGui.SameLine();
-            ImGui.Text($"- Version {Utils.ParseParamVersion(ParamBank.PrimaryBank.ParamVersion)}");
+            ImGui.Text($"- Version {Utils.ParseParamVersion(Editor.Project.ParamData.PrimaryBank.ParamVersion)}");
 
-            if (ParamBank.PrimaryBank.ParamVersion < ParamBank.VanillaBank.ParamVersion)
+            if (Editor.Project.ParamData.PrimaryBank.ParamVersion < Editor.Project.ParamData.VanillaBank.ParamVersion)
             {
                 ImGui.SameLine();
                 UIHelper.WrappedTextColored(UI.Current.ImGui_Warning_Text_Color, "(out of date)");
@@ -104,18 +104,18 @@ public class ParamEditorView
 
     private void ParamView_ParamList_Pinned(float scale)
     {
-        List<string> pinnedParamKeyList = new(Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams);
+        List<string> pinnedParamKeyList = new(Editor.Project.PinnedParams);
 
         if (pinnedParamKeyList.Count > 0)
         {
             //ImGui.Text("        Pinned Params");
             foreach (var paramKey in pinnedParamKeyList)
             {
-                HashSet<int> primary = ParamBank.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+                HashSet<int> primary = Editor.Project.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
 
-                if (ParamBank.PrimaryBank.Params.ContainsKey(paramKey))
+                if (Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
                 {
-                    Param p = ParamBank.PrimaryBank.Params[paramKey];
+                    Param p = Editor.Project.ParamData.PrimaryBank.Params[paramKey];
                     if (p != null)
                     {
                         var meta = ParamMetaData.Get(p.AppliedParamdef);
@@ -135,7 +135,7 @@ public class ParamEditorView
                         EditorCommandQueue.AddCommand($@"param/view/{_viewIndex}/{paramKey}");
                     }
 
-                    ParamEntryContextMenu.Display(p, paramKey, true);
+                    ParamEntryContextMenu.Display(Editor, p, paramKey, true);
 
                     ImGui.Unindent(15.0f * scale);
                 }
@@ -154,8 +154,8 @@ public class ParamEditorView
             List<(ParamBank, Param)> list =
                 ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
 
-            var keyList = list.Where(param => param.Item1 == ParamBank.PrimaryBank)
-                .Select(param => ParamBank.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
+            var keyList = list.Where(param => param.Item1 == Editor.Project.ParamData.PrimaryBank)
+                .Select(param => Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
 
             if (CFG.Current.Param_AlphabeticalParams)
             {
@@ -166,8 +166,8 @@ public class ParamEditorView
         });
 
 
-        var categoryObj = Smithbox.BankHandler.ParamCategories.Categories;
-        var categories = Smithbox.BankHandler.ParamCategories.Categories.Categories;
+        var categoryObj = Editor.Project.ParamCategories;
+        var categories = Editor.Project.ParamCategories.Categories;
 
         if (categories != null && CFG.Current.Param_DisplayParamCategories)
         {
@@ -253,8 +253,8 @@ public class ParamEditorView
     {
         foreach (var paramKey in paramKeyList)
         {
-            HashSet<int> primary = ParamBank.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
-            Param p = ParamBank.PrimaryBank.Params[paramKey];
+            HashSet<int> primary = Editor.Project.ParamData.PrimaryBank.VanillaDiffCache.GetValueOrDefault(paramKey, null);
+            Param p = Editor.Project.ParamData.PrimaryBank.Params[paramKey];
 
             if (!visibleParams.Contains(paramKey))
                 continue;
@@ -316,7 +316,7 @@ public class ParamEditorView
             }
 
             // Context Menu
-            ParamEntryContextMenu.Display(p, paramKey);
+            ParamEntryContextMenu.Display(Editor, p, paramKey);
 
             ImGui.Unindent(15.0f * scale);
         }
@@ -329,7 +329,7 @@ public class ParamEditorView
 
     private void DisplayDS2MapNameAlias(string paramKey)
     {
-        if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             Regex pattern = new Regex(@"(m[0-9]{2}_[0-9]{2}_[0-9]{2}_[0-9]{2})");
             Match match = pattern.Match(paramKey);
@@ -338,13 +338,11 @@ public class ParamEditorView
 
             if (match.Captures.Count > 0)
             {
-                var aliasRef = Smithbox.BankHandler.MapAliases.GetEntries()
-                    .Where(e => e.Key == match.Captures[0].Value)
-                    .FirstOrDefault();
+                var matchResult = Editor.Project.Aliases.MapNames.Where(e => e.ID == match.Captures[0].Value).FirstOrDefault();
 
-                if (aliasRef.Key != null)
+                if (matchResult != null)
                 {
-                    alias = aliasRef.Value.name;
+                    alias = matchResult.Name;
                 }
             }
 
@@ -500,9 +498,11 @@ public class ParamEditorView
 
             ParamView_RowList_Header(ref doFocus, isActiveView, ref scrollTo, activeParam);
 
-            Param para = ParamBank.PrimaryBank.Params[activeParam];
-            HashSet<int> vanillaDiffCache = ParamBank.PrimaryBank.GetVanillaDiffRows(activeParam);
-            var auxDiffCaches = ParamBank.AuxBanks.Select((bank, i) =>
+            Param para = Editor.Project.ParamData.PrimaryBank.Params[activeParam];
+
+            HashSet<int> vanillaDiffCache = Editor.Project.ParamData.PrimaryBank.GetVanillaDiffRows(activeParam);
+
+            var auxDiffCaches = Editor.Project.ParamData.AuxBanks.Select((bank, i) =>
                 (bank.Value.GetVanillaDiffRows(activeParam), bank.Value.GetPrimaryDiffRows(activeParam))).ToList();
 
             Param.Column compareCol = _selection.GetCompareCol();
@@ -511,8 +511,9 @@ public class ParamEditorView
             //ImGui.BeginChild("rows" + activeParam);
             if (EditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
-                var meta = ParamMetaData.Get(ParamBank.PrimaryBank.Params[activeParam].AppliedParamdef);
-                var pinnedRowList = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows
+                var meta = ParamMetaData.Get(Editor.Project.ParamData.PrimaryBank.Params[activeParam].AppliedParamdef);
+
+                var pinnedRowList = Editor.Project.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
 
                 ImGui.TableSetupColumn("rowCol", ImGuiTableColumnFlags.None, 1f);
@@ -587,7 +588,8 @@ public class ParamEditorView
                 }
 
                 List<Param.Row> rows = UICache.GetCached(Editor, (_viewIndex, activeParam),
-                    () => RowSearchEngine.rse.Search((ParamBank.PrimaryBank, para),
+                    () => RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, para),
+
                         _selection.GetCurrentRowSearchString(), true, true));
 
                 var enableGrouping = !CFG.Current.Param_DisableRowGrouping && meta.ConsecutiveIDs;
@@ -664,13 +666,13 @@ public class ParamEditorView
         else
         {
             ImGui.BeginChild("columns" + activeParam);
-            Param vanillaParam = ParamBank.VanillaBank.Params?.GetValueOrDefault(activeParam);
+            Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
 
             _propEditor.PropEditorParamRow(
-                ParamBank.PrimaryBank,
+                Editor.Project.ParamData.PrimaryBank,
                 activeRow,
                 vanillaParam?[activeRow.ID],
-                ParamBank.AuxBanks.Select((bank, i) =>
+                Editor.Project.ParamData.AuxBanks.Select((bank, i) =>
                     (bank.Key, bank.Value.Params?.GetValueOrDefault(activeParam)?[activeRow.ID])).ToList(),
                 _selection.GetCompareRow(),
                 ref _selection.GetCurrentPropSearchString(),
@@ -831,6 +833,7 @@ public class ParamEditorView
         ImGui.PopStyleColor();
 
         ParamRowContextMenu.Display(
+            Editor,
             r, selectionCacheIndex, 
             isPinned, activeParam, 
             decorator, _selection, Editor);
@@ -879,9 +882,9 @@ public class ParamEditorView
                 ParamEditorCommon.PropertyField(compareCol.ValueType, c.Value, ref newval, false, false);
 
                 if (ParamEditorCommon.UpdateProperty(_propEditor.ContextActionManager, c, compareColProp,
-                        c.Value) && !ParamBank.VanillaBank.IsLoadingParams)
+                        c.Value))
                 {
-                    ParamBank.PrimaryBank.RefreshParamRowDiffs(r, activeParam);
+                    Editor.Project.ParamData.PrimaryBank.RefreshParamRowDiffs(Editor, r, activeParam);
                 }
 
                 ImGui.PopStyleVar();

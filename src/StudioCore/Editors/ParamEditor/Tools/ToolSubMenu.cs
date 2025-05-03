@@ -44,15 +44,15 @@ public class ToolSubMenu
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedParams))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
+            Editor.Project.PinnedParams = new();
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedRows))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
+            Editor.Project.PinnedRows = new();
         }
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ClearCurrentPinnedFields))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
+            Editor.Project.PinnedFields = new();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_OnlyShowPinnedParams))
@@ -70,7 +70,7 @@ public class ToolSubMenu
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ApplyRowNamer))
         {
-            RowNamer.ApplyRowNamer();
+            Editor.RowNamer.ApplyRowNamer();
         }
     }
 
@@ -108,7 +108,7 @@ public class ToolSubMenu
             // Import
             if (ImGui.BeginMenu("Import Row Names"))
             {
-                if (Smithbox.ProjectType is ProjectType.BB or ProjectType.AC6)
+                if (Editor.Project.ProjectType is ProjectType.BB or ProjectType.AC6)
                 {
                     if (ImGui.BeginMenu("Developer"))
                     {
@@ -259,19 +259,19 @@ public class ToolSubMenu
             }
 
             // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported())
+            if (ParamMemoryTools.IsParamReloaderSupported(Editor))
             {
                 if (ImGui.BeginMenu("Param Reloader"))
                 {
                     if (ImGui.MenuItem("Current Param"))
                     {
-                        ParamMemoryTools.ReloadCurrentParam();
+                        ParamMemoryTools.ReloadCurrentParam(Editor);
                     }
                     UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.MenuItem("All Params"))
                     {
-                        ParamMemoryTools.ReloadAllParams();
+                        ParamMemoryTools.ReloadAllParams(Editor);
                     }
                     UIHelper.ShowHoverTooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
 
@@ -280,11 +280,11 @@ public class ToolSubMenu
             }
 
             // Item Gib
-            if (Smithbox.ProjectType == ProjectType.DS3)
+            if (Editor.Project.ProjectType == ProjectType.DS3)
             {
                 if (ImGui.BeginMenu("Item Gib"))
                 {
-                    var activeParam = Smithbox.EditorHandler.ParamEditor._activeView._selection.GetActiveParam();
+                    var activeParam = Editor._activeView._selection.GetActiveParam();
 
                     if (activeParam == "EquipParamGoods")
                     {
@@ -301,7 +301,7 @@ public class ToolSubMenu
 
                     if (ImGui.MenuItem("Give Selected Item"))
                     {
-                        ParamMemoryTools.GiveItem();
+                        ParamMemoryTools.GiveItem(Editor);
                     }
                     UIHelper.ShowHoverTooltip("Spawns selected item in-game.");
 
@@ -314,21 +314,21 @@ public class ToolSubMenu
             {
                 if (ImGui.MenuItem("Toggle"))
                 {
-                    ParamEditorScreen.EditorMode = !ParamEditorScreen.EditorMode;
+                    Editor.EditorMode = !Editor.EditorMode;
                 }
                 UIHelper.ShowHoverTooltip("Toggle Editor Mode, allowing you to edit the Param Meta within Smithbox.");
-                UIHelper.ShowActiveStatus(ParamEditorScreen.EditorMode);
+                UIHelper.ShowActiveStatus(Editor.EditorMode);
 
                 if (ImGui.MenuItem("Save Changes"))
                 {
                     ParamMetaData.SaveAll();
-                    ParamEditorScreen.EditorMode = false;
+                    Editor.EditorMode = false;
                 }
                 UIHelper.ShowHoverTooltip("Save current Param Meta changes.");
 
                 if (ImGui.MenuItem("Discard Changes"))
                 {
-                    ParamEditorScreen.EditorMode = false;
+                    Editor.EditorMode = false;
                 }
                 UIHelper.ShowHoverTooltip("Discard current Param Meta changes.");
 

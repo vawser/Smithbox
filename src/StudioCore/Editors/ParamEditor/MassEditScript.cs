@@ -53,9 +53,9 @@ public class MassEditScript
         this.args = args;
     }
 
-    public static void ReloadScripts()
+    public static void ReloadScripts(ParamEditorScreen editor)
     {
-        if (Smithbox.ProjectType is ProjectType.Undefined)
+        if (editor.Project.ProjectType is ProjectType.Undefined)
             return;
 
         var cdir = ParamLocator.GetMassEditScriptCommonDir();
@@ -64,7 +64,7 @@ public class MassEditScript
         LoadScriptsFromDir(cdir);
         LoadScriptsFromDir(dir);
 
-        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
+        var projectScriptDir = $"{editor.Project.ProjectPath}\\.smithbox\\Assets\\Scripts\\";
 
         if (Directory.Exists(projectScriptDir))
         {

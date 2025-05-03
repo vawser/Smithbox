@@ -13,25 +13,15 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexTexturePropertyView
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
-    private ShoeboxLayoutContainer ShoeboxLayouts;
     private TexTextureViewport TextureViewport;
 
     public TexTexturePropertyView(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
-        ShoeboxLayouts = screen.ShoeboxLayouts;
         TextureViewport = screen.TextureViewport;
-    }
-
-    // <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
     }
 
     /// <summary>
@@ -78,11 +68,11 @@ public class TexTexturePropertyView
                 ImGui.Text("");
                 ImGui.Text($"Relative Position: {relativePos}");
 
-                if (ShoeboxLayouts != null)
+                if (Editor.Project.TextureData.Shoebox != null)
                 {
-                    if (ShoeboxLayouts.Textures.ContainsKey(Selection.CurrentTextureName))
+                    if (Editor.Project.TextureData.Shoebox.Textures.ContainsKey(Selection.CurrentTextureName))
                     {
-                        var subTexs = ShoeboxLayouts.Textures[Selection.CurrentTextureName];
+                        var subTexs = Editor.Project.TextureData.Shoebox.Textures[Selection.CurrentTextureName];
                         foreach (var entry in subTexs)
                         {
                             string IconName;

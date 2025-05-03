@@ -17,19 +17,19 @@ namespace StudioCore.Editors.TimeActEditor;
 public class TimeActDecorator
 {
     private ActionManager EditorActionManager;
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
 
     private string _enumSearchInput = "";
 
     public TimeActDecorator(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         EditorActionManager = screen.EditorActionManager;
     }
 
     public void HandleTypeColumn(string propertyName)
     {
-        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
+        var parameters = Editor.Selection.CurrentTimeActEvent.Parameters;
         var template = parameters.GetParamTemplate(propertyName);
 
         // Param Reference
@@ -109,15 +109,18 @@ public class TimeActDecorator
             var template = entry.Parameters.GetParamTemplate(propertyName);
             var propertyValue = entry.Parameters[propertyName];
 
-            // Param Ref
-            if (template.ParamRef != null)
+            if (Editor.Project.ParamEditor != null)
             {
-                var primaryBank = ParamBank.PrimaryBank;
-                (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
-                if (match != (null, null, null))
+                // Param Ref
+                if (template.ParamRef != null)
                 {
-                    foundAlias = true;
-                    alias = $"{match.Item3}";
+                    var primaryBank = Editor.Project.ParamData.PrimaryBank;
+                    (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
+                    if (match != (null, null, null))
+                    {
+                        foundAlias = true;
+                        alias = $"{match.Item3}";
+                    }
                 }
             }
         }
@@ -157,7 +160,7 @@ public class TimeActDecorator
                 {
                     alias = $"FFX ID: {propertyValue}";
 
-                    var enumEntry = Screen.Project.Aliases.Particles.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
+                    var enumEntry = Editor.Project.Aliases.Particles.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
                         if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
@@ -172,7 +175,7 @@ public class TimeActDecorator
                 {
                     alias = $"Sound ID: {propertyValue}";
 
-                    var enumEntry = Screen.Project.Aliases.Sounds.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
+                    var enumEntry = Editor.Project.Aliases.Sounds.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                     if (enumEntry != null)
                     {
                         if(CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName)
@@ -198,13 +201,13 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        if (Screen.Project.ProjectParamEnums == null)
+        if (Editor.Project.ProjectParamEnums == null)
             return;
 
-        if (Screen.Project.ProjectParamEnums.List == null)
+        if (Editor.Project.ProjectParamEnums.List == null)
             return;
 
-        if (Screen.Project.ProjectParamEnums.List.Count == 0)
+        if (Editor.Project.ProjectParamEnums.List.Count == 0)
             return;
 
         Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_4_Color;
@@ -221,7 +224,7 @@ public class TimeActDecorator
             if (template.ProjectEnum != null && propertyValue.ToString() != "0" && propertyValue.ToString() != "-1")
             {
                 var projectEnumType = template.ProjectEnum;
-                var enumEntry = Screen.Project.ProjectParamEnums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
+                var enumEntry = Editor.Project.ProjectParamEnums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
 
                 var option = enumEntry.Options.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                 if (option != null)
@@ -249,7 +252,7 @@ public class TimeActDecorator
 
     public void HandleNameColumn(string propertyName)
     {
-        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
+        var parameters = Editor.Selection.CurrentTimeActEvent.Parameters;
         var template = parameters.GetParamTemplate(propertyName);
 
         // Param Reference
@@ -279,37 +282,40 @@ public class TimeActDecorator
 
     public void HandleValueColumn(Dictionary<string, object> propertyParameters, int index)
     {
-        var paramValues = Screen.Selection.CurrentTimeActEvent.Parameters.ParameterValues;
-        var parameters = Screen.Selection.CurrentTimeActEvent.Parameters;
+        var paramValues = Editor.Selection.CurrentTimeActEvent.Parameters.ParameterValues;
+        var parameters = Editor.Selection.CurrentTimeActEvent.Parameters;
         var propertyName = propertyParameters.ElementAt(index).Key;
         var propertyValue = propertyParameters[propertyName];
         var template = parameters.GetParamTemplate(propertyName);
 
-        // Param Reference
-        if (template.ParamRef != null)
+        if (Editor.Project.ParamEditor != null)
         {
-            var primaryBank = ParamBank.PrimaryBank;
-            (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
-            if (match != (null, null, null))
+            // Param Reference
+            if (template.ParamRef != null)
             {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
-                ImGui.Text(match.Item3);
-                ImGui.PopStyleColor();
-                if (ImGui.BeginPopupContextItem($"valueParamRefContextMenu{propertyName}"))
+                var primaryBank = Editor.Project.ParamData.PrimaryBank;
+                (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
+                if (match != (null, null, null))
                 {
-                    if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
+                    ImGui.Text(match.Item3);
+                    ImGui.PopStyleColor();
+                    if (ImGui.BeginPopupContextItem($"valueParamRefContextMenu{propertyName}"))
                     {
-                        EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
-                    }
+                        if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
+                        {
+                            EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
+                        }
 
-                    ImGui.EndPopup();
+                        ImGui.EndPopup();
+                    }
                 }
-            }
-            else
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
-                ImGui.Text("___");
-                ImGui.PopStyleColor();
+                else
+                {
+                    ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRefMissing_Text);
+                    ImGui.Text("___");
+                    ImGui.PopStyleColor();
+                }
             }
         }
 
@@ -367,12 +373,12 @@ public class TimeActDecorator
             // Particle
             if (aliasType == "Particle")
             {
-                aliases = Screen.Project.Aliases.Particles;
+                aliases = Editor.Project.Aliases.Particles;
             }
             // Sound
             if (aliasType == "Sound")
             {
-                aliases = Screen.Project.Aliases.Sounds;
+                aliases = Editor.Project.Aliases.Sounds;
             }
 
             if (aliases.Count > 0)
@@ -423,7 +429,7 @@ public class TimeActDecorator
         if (template.ProjectEnum != null)
         {
             var enumType = template.ProjectEnum;
-            ProjectEnumEntry enumEntries = Smithbox.BankHandler.ProjectEnums.Enums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            ProjectEnumEntry enumEntries = Editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
             ProjectEnumOption targetOption = enumEntries.Options.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
 
             if (enumEntries != null)

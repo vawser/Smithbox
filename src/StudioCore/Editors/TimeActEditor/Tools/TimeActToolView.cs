@@ -10,14 +10,14 @@ namespace StudioCore.Editors.TimeActEditor.Tools;
 
 public class TimeActToolView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Selection;
     private TimeActActionHandler ActionHandler;
     private TimeActSearch TimeActSearch;
 
     public TimeActToolView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         ActionHandler = screen.ActionHandler;
         TimeActSearch = new TimeActSearch(screen);
@@ -25,9 +25,6 @@ public class TimeActToolView
 
     public void OnGui()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 

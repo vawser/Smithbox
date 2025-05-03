@@ -11,14 +11,14 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewerZoom
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
 
     private Vector2 zoomFactor = new Vector2(1.0f, 1.0f);
     private float zoomFactorStep = 0.1f;
 
     public TexViewerZoom(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
     public void HandleZoom()
     {

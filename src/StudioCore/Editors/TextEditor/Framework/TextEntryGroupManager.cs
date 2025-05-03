@@ -16,12 +16,12 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextEntryGroupManager
 {
-    public TextEditorScreen Screen;
+    public TextEditorScreen Editor;
     public TextSelectionManager Selection;
 
     public TextEntryGroupManager(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 
@@ -139,7 +139,7 @@ public class TextEntryGroupManager
     {
         List<EntryGroupAssociation> groupings = new();
 
-        switch (Smithbox.ProjectType)
+        switch (Editor.Project.ProjectType)
         {
             case ProjectType.DES:
                 // Vanilla

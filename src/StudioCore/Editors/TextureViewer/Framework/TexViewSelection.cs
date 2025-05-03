@@ -21,7 +21,7 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewSelection
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
 
     private Task LoadingTask;
 
@@ -62,7 +62,7 @@ public class TexViewSelection
 
     public TexViewSelection(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     // <summary>
@@ -166,7 +166,7 @@ public class TexViewSelection
                 isLowDetail = true;
             }
 
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Editor.Project.ProjectType is ProjectType.ER)
             {
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
@@ -191,7 +191,7 @@ public class TexViewSelection
                     LoadingTask = job.Complete();
                 }
 
-                ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, Screen, AccessLevel.AccessGPUOptimizedOnly);
+                ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, Editor, AccessLevel.AccessGPUOptimizedOnly);
 
                 _selectedTextureContainer.Textures = TPF.Read(info.Path).Textures;
             }
@@ -209,7 +209,7 @@ public class TexViewSelection
                     LoadingTask = job.Complete();
                 }
 
-                ResourceManager.AddResourceListener<TextureResource>(ad.AssetArchiveVirtualPath, Screen, AccessLevel.AccessGPUOptimizedOnly);
+                ResourceManager.AddResourceListener<TextureResource>(ad.AssetArchiveVirtualPath, Editor, AccessLevel.AccessGPUOptimizedOnly);
 
 
                 _selectedTextureContainer.Textures = GetTexturesFromBinder(info.Path);
@@ -229,7 +229,7 @@ public class TexViewSelection
             return textures;
         }
 
-        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Smithbox.ProjectType);
+        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Editor.Project.ProjectType);
         if (reader != null)
         {
             foreach (var file in reader.Files)

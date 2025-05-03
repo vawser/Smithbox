@@ -27,17 +27,15 @@ namespace StudioCore.Editors.TextureViewer;
 /// </summary>
 public class TexImagePreview : IResourceEventListener
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
-    private ShoeboxLayoutContainer ShoeboxLayouts;
 
     private Task LoadingTask;
 
     public TexImagePreview(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
-        ShoeboxLayouts = screen.ShoeboxLayouts;
     }
 
     // <summary>
@@ -146,7 +144,7 @@ public class TexImagePreview : IResourceEventListener
         }
 
         // Hardcoded logic for AC6
-        if (Smithbox.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType == ProjectType.AC6)
         {
             if (textureRef.LookupType == "Booster")
             {
@@ -272,7 +270,7 @@ public class TexImagePreview : IResourceEventListener
                 isLowDetail = true;
             }
 
-            if (Smithbox.ProjectType is ProjectType.ER)
+            if (Editor.Project.ProjectType is ProjectType.ER)
             {
                 chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
             }
@@ -332,7 +330,7 @@ public class TexImagePreview : IResourceEventListener
             return textures;
         }
 
-        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Smithbox.ProjectType);
+        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Editor.Project.ProjectType);
         if (reader != null)
         {
             foreach (var file in reader.Files)
@@ -358,12 +356,12 @@ public class TexImagePreview : IResourceEventListener
         if (Selection == null)
             return;
 
-        if (TextureFolderBank.FolderBank == null)
+        if (Editor.Project.TextureData.PrimaryBank.Entries == null)
             return;
 
         if (Selection.SelectedPreviewTextureContainerKey != container)
         {
-            foreach (var (name, info) in TextureFolderBank.FolderBank)
+            foreach (var (name, info) in Editor.Project.TextureData.PrimaryBank.Entries)
             {
                 if (name == container)
                 {
@@ -425,12 +423,12 @@ public class TexImagePreview : IResourceEventListener
 
     public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
     {
-        if (ShoeboxLayouts == null)
+        if (Editor.Project.TextureData.Shoebox == null)
             return null;
 
-        if (ShoeboxLayouts.Textures.ContainsKey(currentTextureName))
+        if (Editor.Project.TextureData.Shoebox.Textures.ContainsKey(currentTextureName))
         {
-            var subTexs = ShoeboxLayouts.Textures[currentTextureName];
+            var subTexs = Editor.Project.TextureData.Shoebox.Textures[currentTextureName];
 
             int matchId;
             var successMatch = int.TryParse(imageIndex, out matchId);

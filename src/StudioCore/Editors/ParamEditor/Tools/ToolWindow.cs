@@ -13,14 +13,14 @@ namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class ToolWindow
 {
-    private ParamEditorScreen Screen;
+    private ParamEditorScreen Editor;
     public ActionHandler Handler;
     public MassEditHandler MassEditHandler;
     public PinGroups PinGroupHandler;
 
     public ToolWindow(ParamEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Handler = new ActionHandler(screen);
         MassEditHandler = new MassEditHandler(screen);
         PinGroupHandler = new PinGroups(screen);
@@ -43,7 +43,7 @@ public class ToolWindow
 
     public void OnGui()
     {
-        if (Smithbox.ProjectType == ProjectType.Undefined)
+        if (Editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
@@ -64,7 +64,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Duplicate the selected rows.");
                 UIHelper.WrappedText("");
 
-                if (!Screen._activeView._selection.RowSelectionExists())
+                if (!Editor._activeView._selection.RowSelectionExists())
                 {
                     UIHelper.WrappedText("You must select a row before you can use this action.");
                     UIHelper.WrappedText("");
@@ -118,7 +118,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Duplicate the selected rows to another param that shares the same underlying structure.");
                 UIHelper.WrappedText("");
 
-                if (!Screen._activeView._selection.RowSelectionExists())
+                if (!Editor._activeView._selection.RowSelectionExists())
                 {
                     UIHelper.WrappedText("You must select a row before you can use this action.");
                     UIHelper.WrappedText("");
@@ -150,7 +150,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Import row names for the currently selected param, or for all params.");
                 UIHelper.WrappedText("");
 
-                if (!Screen._activeView._selection.ActiveParamExists())
+                if (!Editor._activeView._selection.ActiveParamExists())
                 {
                     UIHelper.WrappedText("You must select a param before you can use this action.");
                     UIHelper.WrappedText("");
@@ -174,9 +174,9 @@ public class ToolWindow
                     ImGui.SameLine();
                     if (ImGui.Button("Open Project Folder##action_Selection_OpenExportFolder", halfButtonSize))
                     {
-                        if (Smithbox.ProjectType != ProjectType.Undefined)
+                        if (Editor.Project.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }
@@ -190,7 +190,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Export row names for the currently selected param, or for all params.");
                 UIHelper.WrappedText("");
 
-                if (!Screen._activeView._selection.ActiveParamExists())
+                if (!Editor._activeView._selection.ActiveParamExists())
                 {
                     UIHelper.WrappedText("You must select a param before you can use this action.");
                     UIHelper.WrappedText("");
@@ -207,9 +207,9 @@ public class ToolWindow
                     ImGui.SameLine();
                     if (ImGui.Button("Open Project Folder##action_Selection_OpenExportFolder", halfButtonSize))
                     {
-                        if (Smithbox.ProjectType != ProjectType.Undefined)
+                        if (Editor.Project.ProjectType != ProjectType.Undefined)
                         {
-                            var dir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
+                            var dir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{MiscLocator.GetGameIDForDir()}\\Names";
                             Process.Start("explorer.exe", dir);
                         }
                     }
@@ -223,7 +223,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
                 UIHelper.WrappedText("");
 
-                if (!Screen._activeView._selection.ActiveParamExists())
+                if (!Editor._activeView._selection.ActiveParamExists())
                 {
                     UIHelper.WrappedText("You must select a param before you can use this action.");
                     UIHelper.WrappedText("");
@@ -351,7 +351,7 @@ public class ToolWindow
 
                     if (ImGui.Button("Reload", thirdButtonSize))
                     {
-                        MassEditScript.ReloadScripts();
+                        MassEditScript.ReloadScripts(Editor);
                     }
                 }
 
@@ -379,7 +379,7 @@ public class ToolWindow
                 ImGui.SameLine();
                 if (ImGui.Button("Open Script Folder", halfButtonSize))
                 {
-                    var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
+                    var projectScriptDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\Scripts\\";
 
                     Process.Start("explorer.exe", projectScriptDir);
                 }
@@ -415,7 +415,7 @@ public class ToolWindow
                 UIHelper.ShowHoverTooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
                 UIHelper.WrappedText("");
 
-                if (Smithbox.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
                     UIHelper.WrappedText("Target Loose Params");
                     UIHelper.ShowHoverTooltip("This is the target loose param folder you wish to merge.");
@@ -455,7 +455,7 @@ public class ToolWindow
             }
 
             // Param Reloader
-            if (ParamMemoryTools.IsParamReloaderSupported())
+            if (ParamMemoryTools.IsParamReloaderSupported(Editor))
             {
                 if (ImGui.CollapsingHeader("Param Reloader"))
                 {
@@ -464,27 +464,27 @@ public class ToolWindow
 
                     if (ImGui.Button("Reload Current Param", defaultButtonSize))
                     {
-                        ParamMemoryTools.ReloadCurrentParam();
+                        ParamMemoryTools.ReloadCurrentParam(Editor);
                     }
                     UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
                     if (ImGui.Button("Reload All Params", defaultButtonSize))
                     {
-                        ParamMemoryTools.ReloadAllParams();
+                        ParamMemoryTools.ReloadAllParams(Editor);
                     }
                     UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
                 }
             }
 
             // Item Gib
-            if (Smithbox.ProjectType is ProjectType.DS3)
+            if (Editor.Project.ProjectType is ProjectType.DS3)
             {
                 if (ImGui.CollapsingHeader("Item Gib"))
                 {
                     UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
                     UIHelper.WrappedText("");
 
-                    var activeParam = Screen._activeView._selection.GetActiveParam();
+                    var activeParam = Editor._activeView._selection.GetActiveParam();
 
                     if (activeParam == "EquipParamGoods")
                     {
@@ -496,7 +496,7 @@ public class ToolWindow
                         UIHelper.WrappedText("Reinforcement of Spawned Weapon");
                         ImGui.InputInt("##spawnWeaponLevel", ref ParamMemoryTools.SpawnWeaponLevel);
 
-                        if (Smithbox.ProjectType is ProjectType.DS3)
+                        if (Editor.Project.ProjectType is ProjectType.DS3)
                         {
                             if (ParamMemoryTools.SpawnWeaponLevel > 10)
                             {
@@ -508,7 +508,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
                     if (ImGui.Button("Give Item", defaultButtonSize))
                     {
-                        ParamMemoryTools.GiveItem();
+                        ParamMemoryTools.GiveItem(Editor);
                     }
 
                 }
@@ -519,25 +519,25 @@ public class ToolWindow
             // Find Field Instances
             if (ImGui.CollapsingHeader("Find Field Name Instances"))
             {
-                DataInstanceFinder.FieldNameFinder.Display();
+                Editor.FieldNameFinder.Display();
             }
 
             // Find Field Value Instances
             if (ImGui.CollapsingHeader("Find Field Value Instances"))
             {
-                DataInstanceFinder.FieldValueFinder.Display();
+                Editor.FieldValueFinder.Display();
             }
 
             // Find Row Name Instances
             if (ImGui.CollapsingHeader("Find Row Name Instances"))
             {
-                DataInstanceFinder.RowNameFinder.Display();
+                Editor.RowNameFinder.Display();
             }
 
             // Find Row ID Instances
             if (ImGui.CollapsingHeader("Find Row ID Instances"))
             {
-                DataInstanceFinder.RowIDFinder.Display();
+                Editor.RowIDFinder.Display();
             }
 
             ImGui.Separator();
@@ -550,7 +550,7 @@ public class ToolWindow
 
             if (ImGui.CollapsingHeader("Param Categories"))
             {
-                ParamCategories.Display(Screen);
+                ParamCategories.Display(Editor);
             }
         }
 

@@ -351,6 +351,8 @@ public class CFG
     //****************************
     // Settings: Param Editor
     //****************************
+    public bool Param_UseLooseParams = false;
+
     // Done per project so we can default ON for DS2 and ER without forcing stripping for the others
     public bool Param_StripRowNamesOnSave_DES = false;
     public bool Param_StripRowNamesOnSave_DS1 = false;

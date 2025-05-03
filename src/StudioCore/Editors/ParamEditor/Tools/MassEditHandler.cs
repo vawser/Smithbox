@@ -14,7 +14,7 @@ namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class MassEditHandler
 {
-    private ParamEditorScreen Screen;
+    private ParamEditorScreen Editor;
 
     public string _currentMEditRegexInput = "";
     public string _lastMEditRegexInput = "";
@@ -26,9 +26,9 @@ public class MassEditHandler
     public bool _newScriptIsCommon = true;
     public MassEditScript _selectedMassEditScript;
 
-    public MassEditHandler(ParamEditorScreen screen)
+    public MassEditHandler(ParamEditorScreen editor)
     {
-        Screen = screen;
+        Editor = editor;
     }
 
     public void Shortcuts()
@@ -43,20 +43,20 @@ public class MassEditHandler
     {
         var command = _currentMEditRegexInput;
 
-        Smithbox.EditorHandler.ParamEditor._activeView._selection.SortSelection();
-        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(ParamBank.PrimaryBank,
-            _currentMEditRegexInput, Smithbox.EditorHandler.ParamEditor._activeView._selection);
+        Editor._activeView._selection.SortSelection();
+        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
+            _currentMEditRegexInput, Editor._activeView._selection);
 
         if (child != null)
         {
-            Screen.EditorActionManager.PushSubManager(child);
+            Editor.EditorActionManager.PushSubManager(child);
         }
 
         if (r.Type == MassEditResultType.SUCCESS)
         {
             _lastMEditRegexInput = _currentMEditRegexInput;
             _currentMEditRegexInput = "";
-            ParamBank.RefreshParamDifferenceCacheTask();
+            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
         }
 
         _mEditRegexResult = r.Information;
@@ -86,7 +86,7 @@ public class MassEditHandler
             return;
         }
 
-        var projectScriptDir = $"{Smithbox.ProjectRoot}\\.smithbox\\Assets\\Scripts\\";
+        var projectScriptDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\Scripts\\";
         var scriptPath = $"{projectScriptDir}{_newScriptName}.txt";
 
         // Check both so the name is unique everywhere
@@ -114,6 +114,6 @@ public class MassEditHandler
             PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
         }
 
-        MassEditScript.ReloadScripts();
+        MassEditScript.ReloadScripts(Editor);
     }
 }

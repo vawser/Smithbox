@@ -11,7 +11,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextExporterModal
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     private TextSelectionManager Selection;
 
     public bool ShowModal = false;
@@ -20,7 +20,7 @@ public class TextExporterModal
 
     public TextExporterModal(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 
@@ -52,7 +52,7 @@ public class TextExporterModal
             if (ImGui.Button("Export", UI.ModalButtonHalfSize))
             {
                 ShowModal = false;
-                FmgExporter.ProcessExport(WrapperName);
+                Editor.FmgExporter.ProcessExport(WrapperName);
             }
             if (WrapperName == "")
             {

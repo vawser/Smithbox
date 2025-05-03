@@ -15,13 +15,13 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActInternalFileView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
 
     public TimeActInternalFileView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Decorator = screen.Decorator;
     }
@@ -48,7 +48,7 @@ public class TimeActInternalFileView
             InternalTimeActWrapper info = Selection.ContainerInfo.InternalFiles[i];
             TAE entry = Selection.ContainerInfo.InternalFiles[i].TAE;
 
-            if (TimeActFilters.TimeActFilter(Selection.ContainerInfo, entry))
+            if (TimeActFilters.TimeActFilter(Editor, Selection.ContainerInfo, entry))
             {
                 // Ignore entries marked for removal
                 if (info.MarkForRemoval)

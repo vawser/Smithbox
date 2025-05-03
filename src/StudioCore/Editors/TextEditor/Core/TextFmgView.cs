@@ -20,7 +20,7 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextFmgView
 {
-    public TextEditorScreen Screen;
+    public TextEditorScreen Editor;
     public TextPropertyDecorator Decorator;
     public TextSelectionManager Selection;
     public TextFilters Filters;
@@ -31,7 +31,7 @@ public class TextFmgView
 
     public TextFmgView(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Decorator = screen.Decorator;
         Selection = screen.Selection;
         Filters = screen.Filters;
@@ -55,7 +55,7 @@ public class TextFmgView
             if (Selection.SelectedContainerWrapper != null && Selection.SelectedContainerWrapper.FmgWrappers != null)
             {
                 // Ignore the grouping stuff for DS2 as it happens on the FMG Container level
-                if (Smithbox.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+                if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
                     foreach (var fmgInfo in Selection.SelectedContainerWrapper.FmgWrappers)
                     {
@@ -70,7 +70,7 @@ public class TextFmgView
                         var info = Selection.SelectedContainerWrapper;
 
                         // Common
-                        if (TextUtils.HasGroupEntries(info, "Common"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Common"))
                         {
                             if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -78,7 +78,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Common")
                                     {
@@ -89,7 +89,7 @@ public class TextFmgView
                         }
 
                         // Menu
-                        if (TextUtils.HasGroupEntries(info, "Menu"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Menu"))
                         {
                             if (ImGui.CollapsingHeader("Menu", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -97,7 +97,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Menu")
                                     {
@@ -108,7 +108,7 @@ public class TextFmgView
                         }
 
                         // Title
-                        if (TextUtils.HasGroupEntries(info, "Title"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Title"))
                         {
                             if (ImGui.CollapsingHeader("Titles", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -116,7 +116,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Title")
                                     {
@@ -127,7 +127,7 @@ public class TextFmgView
                         }
 
                         // Summary
-                        if (TextUtils.HasGroupEntries(info, "Summary"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Summary"))
                         {
                             if (ImGui.CollapsingHeader("Summaries", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -135,7 +135,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Summary")
                                     {
@@ -146,7 +146,7 @@ public class TextFmgView
                         }
 
                         // Description
-                        if (TextUtils.HasGroupEntries(info, "Description"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Description"))
                         {
                             if (ImGui.CollapsingHeader("Descriptions", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -154,7 +154,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Description")
                                     {
@@ -165,7 +165,7 @@ public class TextFmgView
                         }
 
                         // Effect
-                        if (TextUtils.HasGroupEntries(info, "Effect"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Effect"))
                         {
                             if (ImGui.CollapsingHeader("Effects", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -173,7 +173,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Effect")
                                     {
@@ -184,7 +184,7 @@ public class TextFmgView
                         }
 
                         // Unknown - Fallback group
-                        if (TextUtils.HasGroupEntries(info, "Unknown"))
+                        if (TextUtils.HasGroupEntries(Editor.Project, info, "Unknown"))
                         {
                             if (ImGui.CollapsingHeader("Unknown", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -192,7 +192,7 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (displayGroup == "Unknown")
                                     {
@@ -208,7 +208,7 @@ public class TextFmgView
                         var info = Selection.SelectedContainerWrapper;
 
                         // Base
-                        if (TextUtils.HasDLCEntries(info, ""))
+                        if (TextUtils.HasDLCEntries(Editor.Project, info, ""))
                         {
                             if (ImGui.CollapsingHeader("Base", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -216,15 +216,15 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "")
                                     {
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.ShowHoverTooltip("This FMG has the highest priority for new entries, so it is recommended you always add new entries in this section.");
                                             }
@@ -234,7 +234,7 @@ public class TextFmgView
                             }
                         }
                         // DLC 1
-                        if (TextUtils.HasDLCEntries(info, "DLC 1"))
+                        if (TextUtils.HasDLCEntries(Editor.Project, info, "DLC 1"))
                         {
                             if (ImGui.CollapsingHeader("DLC 1", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -242,15 +242,15 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 1")
                                     {
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 1, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base section FMG will take precedence.");
                                             }
@@ -260,7 +260,7 @@ public class TextFmgView
                             }
                         }
                         // DLC 2
-                        if (TextUtils.HasDLCEntries(info, "DLC 2"))
+                        if (TextUtils.HasDLCEntries(Editor.Project, info, "DLC 2"))
                         {
                             if (ImGui.CollapsingHeader("DLC 2", ImGuiTreeNodeFlags.DefaultOpen))
                             {
@@ -268,15 +268,15 @@ public class TextFmgView
                                 {
                                     var id = fmgInfo.ID;
                                     var fmgName = fmgInfo.Name;
-                                    var displayGroup = TextUtils.GetFmgGrouping(Selection.SelectedContainerWrapper, id, fmgName);
-                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+                                    var displayGroup = TextUtils.GetFmgGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
+                                    var dlcGroup = TextUtils.GetFmgDlcGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
                                     if (TextUtils.IsSimpleFmg(displayGroup) && dlcGroup == "DLC 2")
                                     {
                                         HandleFmgView(fmgInfo);
                                         if (CFG.Current.TextEditor_DisplayFmgPrecedenceHint)
                                         {
-                                            if (Smithbox.ProjectType is ProjectType.DS3 or ProjectType.ER)
+                                            if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                                             {
                                                 UIHelper.ShowHoverTooltip("This FMG contains entries associated with DLC 2, edit them here.\n\nHowever, it is NOT recommended to add new entries in this FMG, as any entry with the same ID in the Base or DLC 1 section FMG will take precedence.");
                                             }
@@ -298,8 +298,8 @@ public class TextFmgView
     {
         var id = info.ID;
         var fmgName = info.Name;
-        var displayName = TextUtils.GetFmgDisplayName(Selection.SelectedContainerWrapper, id, fmgName);
-        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Selection.SelectedContainerWrapper, id, fmgName);
+        var displayName = TextUtils.GetFmgDisplayName(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
+        var dlcGroupingName = TextUtils.GetFmgDlcGrouping(Editor.Project, Selection.SelectedContainerWrapper, id, fmgName);
 
         if (Filters.IsFmgFilterMatch(fmgName, displayName, id))
         {

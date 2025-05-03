@@ -12,12 +12,12 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextToolMenubar
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     private TextActionHandler ActionHandler;
 
     public TextToolMenubar(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         ActionHandler = screen.ActionHandler;
     }
 

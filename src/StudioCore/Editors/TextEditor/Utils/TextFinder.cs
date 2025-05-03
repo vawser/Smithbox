@@ -1,6 +1,7 @@
 ﻿using SoulsFormats;
 using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,7 +21,7 @@ public static class TextFinder
     /// <summary>
     /// Get FMG reference, caching it on initial search, and then accessing cache on future usage
     /// </summary>
-    public static TextResult GetTextResult(string fmgName, int value, int offset = 0)
+    public static TextResult GetTextResult(TextEditorScreen editor, string fmgName, int value, int offset = 0)
     {
         var cacheName = $"{fmgName}{value}{offset}";
 
@@ -29,12 +30,7 @@ public static class TextFinder
             return CachedResults[cacheName];
         }
 
-        if (!TextBank.PrimaryBankLoaded)
-        {
-            return null;
-        }
-
-        foreach(var (path, entry) in TextBank.FmgBank)
+        foreach(var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
             var containerName = Path.GetFileName(path);
 
@@ -42,7 +38,7 @@ public static class TextFinder
             {
                 foreach (var fmg in entry.FmgWrappers)
                 {
-                    var enumName = TextUtils.GetFmgInternalName(entry, fmg.ID, fmg.Name);
+                    var enumName = TextUtils.GetFmgInternalName(editor.Project, entry, fmg.ID, fmg.Name);
 
                     // Contains here to capture the _DLC, _DLC1 and _DLC2 fmgs
                     if (enumName.Contains(fmgName))
@@ -81,16 +77,11 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global search.
     /// </summary>
-    public static List<TextResult> GetGlobalTextResult(string searchTerm, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
+    public static List<TextResult> GetGlobalTextResult(TextEditorScreen editor, string searchTerm, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<TextResult>();
 
-        if (!TextBank.PrimaryBankLoaded)
-        {
-            return results;
-        }
-
-        foreach (var (path, entry) in TextBank.FmgBank)
+        foreach (var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
             var containerName = Path.GetFileName(path);
 
@@ -170,16 +161,11 @@ public static class TextFinder
     /// <summary>
     /// Get text result for global replacement.
     /// </summary>
-    public static List<ReplacementResult> GetReplacementResult(string searchPattern, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
+    public static List<ReplacementResult> GetReplacementResult(TextEditorScreen editor, string searchPattern, SearchFilterType searchFilterType, SearchMatchType matchType, bool ignoreCase)
     {
         var results = new List<ReplacementResult>();
 
-        if (!TextBank.PrimaryBankLoaded)
-        {
-            return results;
-        }
-
-        foreach (var (path, entry) in TextBank.FmgBank)
+        foreach (var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
             var containerName = Path.GetFileName(path);
 

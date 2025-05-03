@@ -15,14 +15,14 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActAnimationView
 {
-    private TimeActEditorScreen Screen;
+    private TimeActEditorScreen Editor;
     private TimeActSelectionManager Selection;
     private TimeActDecorator Decorator;
     private TimeActEventGraphView EventGraphView;
 
     public TimeActAnimationView(TimeActEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         Decorator = screen.Decorator;
         EventGraphView = screen.EventGraphView;

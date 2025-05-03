@@ -14,7 +14,7 @@ namespace StudioCore.Tools.Development
     {
         public static void TestRead()
         {
-            foreach (var (name, info) in TextureFolderBank.FolderBank)
+            foreach (var (name, info) in TextureFolderBank.Entries)
             {
                 if (info.Path.Contains("bnd.dcx"))
                 {

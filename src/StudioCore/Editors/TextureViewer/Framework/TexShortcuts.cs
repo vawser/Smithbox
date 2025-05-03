@@ -12,13 +12,13 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexShortcuts
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     public TexTools Tools;
     public TexViewerZoom ViewerZoom;
 
     public TexShortcuts(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Tools = screen.Tools;
         ViewerZoom = screen.ViewerZoom;
     }

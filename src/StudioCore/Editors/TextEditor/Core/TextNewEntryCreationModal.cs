@@ -18,7 +18,7 @@ namespace StudioCore.Editors.TextEditor;
 
 public class TextNewEntryCreationModal
 {
-    private TextEditorScreen Screen;
+    private TextEditorScreen Editor;
     private TextSelectionManager Selection;
     private TextEntryGroupManager EntryGroupManager;
     private TextNamingTemplateManager NamingTemplateManager;
@@ -35,7 +35,7 @@ public class TextNewEntryCreationModal
 
     public TextNewEntryCreationModal(TextEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
         EntryGroupManager = screen.EntryGroupManager;
         NamingTemplateManager = screen.NamingTemplateManager;
@@ -180,7 +180,7 @@ public class TextNewEntryCreationModal
                         {
                             foreach(var (name, generator) in NamingTemplateManager.GeneratorDictionary)
                             {
-                                if ((ProjectType)generator.ProjectType == Smithbox.ProjectType)
+                                if ((ProjectType)generator.ProjectType == Editor.Project.ProjectType)
                                 {
                                     if (ImGui.Selectable(name))
                                     {
@@ -311,7 +311,7 @@ public class TextNewEntryCreationModal
                 // Reverse add order so they are added to the entry list in the expected order (0, 100, 200, etc)
                 groupedActions.Reverse();
 
-                Screen.EditorActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
+                Editor.EditorActionManager.ExecuteAction(new FmgGroupedAction(groupedActions));
                 ShowModal = false;
             }
             ImGui.SameLine();
@@ -586,6 +586,6 @@ public class TextNewEntryCreationModal
         var currentFmg = entry.Parent;
         var newEntry = new FMG.Entry(currentFmg, id, contents);
 
-        return new AddFmgEntry(Selection.SelectedContainerWrapper, entry, newEntry, id);
+        return new AddFmgEntry(Editor, Selection.SelectedContainerWrapper, entry, newEntry, id);
     }
 }

@@ -11,12 +11,12 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexCommandQueue
 {
-    private TextureViewerScreen Screen;
+    private TextureViewerScreen Editor;
     private TexViewSelection Selection;
 
     public TexCommandQueue(TextureViewerScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         Selection = screen.Selection;
     }
 
@@ -44,7 +44,7 @@ public class TexCommandQueue
     {
         if (Selection._selectedTextureContainerKey != container)
         {
-            foreach (var (name, info) in TextureFolderBank.FolderBank)
+            foreach (var (name, info) in Editor.Project.TextureData.PrimaryBank.Entries)
             {
                 if (name == container)
                 {

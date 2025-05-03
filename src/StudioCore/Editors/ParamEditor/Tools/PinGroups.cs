@@ -20,7 +20,7 @@ public class PinGroups
     public string RowGroupPath;
     public string FieldGroupPath;
 
-    private ParamEditorScreen Screen;
+    private ParamEditorScreen Editor;
 
     private PinGroupDisplayState CurrentDisplayState = PinGroupDisplayState.Param;
 
@@ -41,15 +41,15 @@ public class PinGroups
 
     public PinGroups(ParamEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
         _newGroupName = "";
     }
 
     public void OnProjectChanged()
     {
-        ParamGroupPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Pin Groups\\Params\\";
-        RowGroupPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Pin Groups\\Rows\\";
-        FieldGroupPath = $"{Smithbox.ProjectRoot}\\.smithbox\\Workflow\\Pin Groups\\Fields\\";
+        ParamGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Params\\";
+        RowGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Rows\\";
+        FieldGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Fields\\";
     }
 
     public void Display()
@@ -79,21 +79,21 @@ public class PinGroups
 
         if (ImGui.Button("Clear Param Pins", thirdButtonSize))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = new();
+            Editor.Project.PinnedParams = new();
         }
         UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Row Pins", thirdButtonSize))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = new();
+            Editor.Project.PinnedRows = new();
         }
         UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
         if (ImGui.Button("Clear Field Pins", thirdButtonSize))
         {
-            Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = new();
+            Editor.Project.PinnedFields = new();
         }
         UIHelper.ShowHoverTooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedFields.HintText}\nClear current pinned fields.");
 
@@ -259,7 +259,7 @@ public class PinGroups
             {
                 if (_selectedParamPinGroup != null)
                 {
-                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams = _selectedParamPinGroup.Pins;
+                    Editor.Project.PinnedParams = _selectedParamPinGroup.Pins;
                 }
             }
 
@@ -293,7 +293,7 @@ public class PinGroups
             {
                 if (_selectedRowPinGroup != null)
                 {
-                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows = _selectedRowPinGroup.Pins;
+                    Editor.Project.PinnedRows = _selectedRowPinGroup.Pins;
                 }
             }
 
@@ -328,7 +328,7 @@ public class PinGroups
             {
                 if (_selectedFieldPinGroup != null)
                 {
-                    Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields = _selectedFieldPinGroup.Pins;
+                    Editor.Project.PinnedFields = _selectedFieldPinGroup.Pins;
                 }
             }
 
@@ -413,7 +413,7 @@ public class PinGroups
 
         ParamPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Smithbox.ProjectHandler.CurrentProject.Config.PinnedParams;
+        newGroup.Pins = Editor.Project.PinnedParams;
 
         var jsonString = JsonSerializer.Serialize(newGroup, ParamPinGroupSerializationContext.Default.ParamPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, ParamGroupPath, "Param Pin Group");
@@ -428,7 +428,7 @@ public class PinGroups
 
         RowPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Smithbox.ProjectHandler.CurrentProject.Config.PinnedRows;
+        newGroup.Pins = Editor.Project.PinnedRows;
 
         var jsonString = JsonSerializer.Serialize(newGroup, RowPinGroupSerializationContext.Default.RowPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, RowGroupPath, "Row Pin Group");
@@ -443,7 +443,7 @@ public class PinGroups
 
         FieldPinGroup newGroup = new();
         newGroup.Name = _newGroupName;
-        newGroup.Pins = Smithbox.ProjectHandler.CurrentProject.Config.PinnedFields;
+        newGroup.Pins = Editor.Project.PinnedFields;
 
         var jsonString = JsonSerializer.Serialize(newGroup, FieldPinGroupSerializationContext.Default.FieldPinGroup);
         WritePinGroup($"{_newGroupName}.json", jsonString, FieldGroupPath, "Field Pin Group");
