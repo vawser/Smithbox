@@ -1,1 +1,1 @@
-Viewport not working correctly for Map/Model Editor
+Viewport doesn't appear correct nested in the Project -> Editor hierarchy (will appear if placed at the top next to Projects)

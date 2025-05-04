@@ -340,10 +340,6 @@ ASALocalRun/
 # Precompiled Headers
 *.gch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
 # Fortran module files
 *.mod
 *.smod

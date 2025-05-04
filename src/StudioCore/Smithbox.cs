@@ -301,14 +301,11 @@ public class Smithbox
         long previousFrameTicks = 0;
         Stopwatch sw = new();
         sw.Start();
-        Tracy.Startup();
+
         while (_context.Window.Exists)
         {
-            Tracy.TracyCFrameMark();
-
             // Limit frame rate when window isn't focused unless we are profiling
-            var focused = Tracy.EnableTracy ? true : _context.Window.Focused;
-            if (!focused)
+            if (!_context.Window.Focused)
             {
                 _desiredFrameLengthSeconds = 1.0 / 20.0f;
             }
@@ -320,19 +317,15 @@ public class Smithbox
             var currentFrameTicks = sw.ElapsedTicks;
             var deltaSeconds = (currentFrameTicks - previousFrameTicks) / (double)Stopwatch.Frequency;
 
-            Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneNC(1, "Sleep", 0xFF0000FF);
             while (_limitFrameRate && deltaSeconds < _desiredFrameLengthSeconds)
             {
                 currentFrameTicks = sw.ElapsedTicks;
                 deltaSeconds = (currentFrameTicks - previousFrameTicks) / (double)Stopwatch.Frequency;
-                Thread.Sleep(focused ? 0 : 1);
+                Thread.Sleep(_context.Window.Focused ? 0 : 1);
             }
-
-            Tracy.TracyCZoneEnd(ctx);
 
             previousFrameTicks = currentFrameTicks;
 
-            ctx = Tracy.TracyCZoneNC(1, "Update", 0xFF00FF00);
             InputSnapshot snapshot = null;
 
             Sdl2Events.ProcessEvents();
@@ -343,30 +336,14 @@ public class Smithbox
 
             Update((float)deltaSeconds);
 
-            Tracy.TracyCZoneEnd(ctx);
+            _context.Draw(ProjectManager);
 
             if (!_context.Window.Exists)
             {
                 break;
             }
-
-            if (true) //_window.Focused)
-            {
-                ctx = Tracy.TracyCZoneNC(1, "Draw", 0xFFFF0000);
-
-                _context.Draw(ProjectManager);
-
-                Tracy.TracyCZoneEnd(ctx);
-            }
-            else
-            {
-                // Flush the background queues
-                Renderer.Frame(null, true);
-            }
         }
 
-        //DestroyAllObjects();
-        Tracy.Shutdown();
         ResourceManager.Shutdown();
         _context.Dispose();
         CFG.Save();
@@ -417,8 +394,6 @@ public class Smithbox
 
     private unsafe void Update(float deltaseconds)
     {
-        Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, "Imgui");
-
         DPI.UpdateDpi(_context);
         UI.OnGui();
         var scale = DPI.GetUIScale();
@@ -433,7 +408,6 @@ public class Smithbox
             _context.ImguiRenderer.Update(deltaseconds, InputTracker.FrameSnapshot, null);
         }
 
-        Tracy.TracyCZoneEnd(ctx);
         TaskManager.ThrowTaskExceptions();
 
         //var commandsplit = EditorCommandQueue.GetNextCommand();
@@ -443,8 +417,6 @@ public class Smithbox
         //    _user32_ShowWindow(_context.Window.Handle, 6);
         //    _user32_ShowWindow(_context.Window.Handle, 9);
         //}
-
-        ctx = Tracy.TracyCZoneN(1, "Style");
 
         UIHelper.ApplyBaseStyle();
 
@@ -478,9 +450,7 @@ public class Smithbox
         ImGui.PopStyleVar(1);
         ImGui.End();
         ImGui.PopStyleColor(1);
-        Tracy.TracyCZoneEnd(ctx);
 
-        ctx = Tracy.TracyCZoneN(1, "Menu");
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
         if (ImGui.BeginMainMenuBar())
@@ -794,14 +764,11 @@ public class Smithbox
         }
 
         ImGui.PopStyleVar();
-        Tracy.TracyCZoneEnd(ctx);
 
         if (FirstFrame)
         {
             ImGui.SetNextWindowFocus();
         }
-
-        ctx = Tracy.TracyCZoneN(1, "Editor");
 
         ProjectManager.Update(deltaseconds);
 
@@ -817,11 +784,7 @@ public class Smithbox
 
         UIHelper.UnapplyBaseStyle();
 
-        Tracy.TracyCZoneEnd(ctx);
-
-        ctx = Tracy.TracyCZoneN(1, "Resource");
         ResourceManager.UpdateTasks();
-        Tracy.TracyCZoneEnd(ctx);
 
         if (!_initialLoadComplete)
         {

@@ -194,6 +194,7 @@ namespace StudioCore.Interface
             Shortcuts();
             if (UI.Current.Interface_Editor_Viewport)
             {
+                ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
                 if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
                 {
                     if(ViewportType is ViewportType.MapEditor)
@@ -210,6 +211,8 @@ namespace StudioCore.Interface
                     Vector2 s = ImGui.GetWindowSize();
                     Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
                     ResizeViewport(_device, newvp);
+
+                    // Inputs
                     if (InputTracker.GetMouseButtonDown(MouseButton.Right) && MouseInViewport())
                     {
                         ImGui.SetWindowFocus();
@@ -270,11 +273,15 @@ namespace StudioCore.Interface
                     // Clamp coordinates to window area
                     start = Vector2.Clamp(start, ImGui.GetWindowPos(), ImGui.GetWindowPos() + ImGui.GetWindowSize());
                     end = Vector2.Clamp(end, ImGui.GetWindowPos(), ImGui.GetWindowPos() + ImGui.GetWindowSize());
-                    drawList.AddRect(start, end, ImGui.GetColorU32(new Vector4(0f, 0.5f, 1f, 1f)), 0f, ImDrawFlags.None, 2f);
+
+                    drawList.AddRect(start, end, ImGui.GetColorU32(new Vector4(0.5f, 0.5f, 1f, 1f)), 0f, ImDrawFlags.None, 2f);
                     drawList.AddRectFilled(start, end, ImGui.GetColorU32(new Vector4(0f, 0.5f, 1f, 0.15f)));
                 }
                 ImGui.End();
+                ImGui.PopStyleColor();
             }
+
+            // Profiling window
             if (UI.Current.Interface_Editor_Profiling)
             {
                 if (ImGui.Begin($@"Profiling##{_vpid}"))
