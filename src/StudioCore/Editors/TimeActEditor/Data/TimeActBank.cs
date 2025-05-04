@@ -49,7 +49,7 @@ public class TimeActBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         if(TimeActType is TimeActType.Character)
         {
@@ -552,7 +552,7 @@ public class TimeActBank
     /// </summary>
     public async Task<bool> SaveTimeAct(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {

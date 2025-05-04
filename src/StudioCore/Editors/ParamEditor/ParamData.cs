@@ -39,7 +39,7 @@ public class ParamData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         PrimaryBank = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);
         VanillaBank = new(BaseEditor, Project, Project.DataPath, Project.DataPath);
@@ -101,7 +101,7 @@ public class ParamData
 
     public async Task<bool> SetupAuxBank(string sourcePath, string fallbackPath)
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         var newAuxBank = new ParamBank(BaseEditor, Project, sourcePath, fallbackPath);
 
@@ -122,7 +122,7 @@ public class ParamData
 
     public async Task<bool> SetupParamDefs()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ParamDefs = new Dictionary<string, PARAMDEF>();
         FakeParamTypes = new Dictionary<string, string>();
@@ -173,7 +173,7 @@ public class ParamData
 
     public async Task<bool> SetupParamMeta()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         var mdir = ParamLocator.GetParammetaDir(Project);
 

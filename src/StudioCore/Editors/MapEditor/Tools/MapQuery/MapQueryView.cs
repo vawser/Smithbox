@@ -254,7 +254,7 @@ public class MapQueryView : IMapQueryEngine
 
     public async Task<bool> BuildResults()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         // Map
         foreach (KeyValuePair<string, IMsb> entry in Bank.GetMaps())

@@ -20,7 +20,7 @@ public class TextureData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         PrimaryBank = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);
         Shoebox = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);

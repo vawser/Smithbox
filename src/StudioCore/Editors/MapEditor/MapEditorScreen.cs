@@ -147,6 +147,8 @@ public class MapEditorScreen : EditorScreen
         // Focus
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
+
+        MapViewportView.Setup();
     }
 
     private bool PauseUpdate

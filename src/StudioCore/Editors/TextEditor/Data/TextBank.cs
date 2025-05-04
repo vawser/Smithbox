@@ -30,7 +30,7 @@ public class TextBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {

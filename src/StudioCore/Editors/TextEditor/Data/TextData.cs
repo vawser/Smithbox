@@ -25,7 +25,7 @@ public class TextData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         PrimaryBank = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);
         VanillaBank = new(BaseEditor, Project, Project.DataPath, Project.DataPath);

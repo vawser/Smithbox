@@ -28,7 +28,7 @@ public class TimeActData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         PrimaryCharacterBank = new(BaseEditor, Project, TimeActType.Character, Project.ProjectPath, Project.DataPath);
         VanillaCharacterBank = new(BaseEditor, Project, TimeActType.Character, Project.DataPath, Project.DataPath);
@@ -106,7 +106,7 @@ public class TimeActData
 
     public async Task<bool> LoadTimeActTemplates()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         string templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
         foreach (string file in Directory.EnumerateFiles(templateDir, "*.xml"))

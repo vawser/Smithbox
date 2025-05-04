@@ -43,7 +43,7 @@ public class ParamBank
     /// <returns></returns>
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         _params = new Dictionary<string, Param>();
 

@@ -39,7 +39,13 @@ public class MapViewportView
         if (Device != null)
         {
             RenderScene = new RenderScene();
+        }
+    }
 
+    public void Setup()
+    {
+        if (Device != null)
+        {
             Viewport = new Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;

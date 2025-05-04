@@ -33,7 +33,7 @@ public class MaterialBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         // MTD
         Task<bool> mtdTask = LoadMaterials();
@@ -56,7 +56,7 @@ public class MaterialBank
 
     public async Task<bool> LoadMaterials()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Materials = new();
 
@@ -146,7 +146,7 @@ public class MaterialBank
 
     public async Task<bool> LoadMatbins()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Materials = new();
 
@@ -325,7 +325,7 @@ public class MaterialBank
 
     public async Task<bool> LoadMatbinsForMapTexturing()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         MATBINs = new Dictionary<string, MaterialInfo>();
 
@@ -381,7 +381,7 @@ public class MaterialBank
 
     public async Task<bool> LoadMaterialsForMapTexturing()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         MTDs = new Dictionary<string, MaterialInfo>();
 

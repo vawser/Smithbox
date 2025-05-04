@@ -33,7 +33,7 @@ public class EsdBank
     // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         // Meta
         Task<bool> metaTask = Meta.Setup();
@@ -48,7 +48,7 @@ public class EsdBank
 
     public async Task<bool> LoadESD()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         TalkBank = new();
 

@@ -26,7 +26,7 @@ public class GparamBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         // GPARAM
         Task<bool> gparamTask = LoadGPARAM();
@@ -37,7 +37,7 @@ public class GparamBank
 
     public async Task<bool> LoadGPARAM()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ParamBank = new();
         VanillaParamBank = new();

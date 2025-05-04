@@ -27,7 +27,7 @@ public class MsbBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Meta = new MsbMeta(BaseEditor, Project);
 
@@ -40,7 +40,7 @@ public class MsbBank
 
     public async Task<bool> LoadMeta()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Meta._MsbMetas = new();
 

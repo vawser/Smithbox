@@ -292,16 +292,28 @@ public class ProjectEntry
         ImportedParamRowNames = false;
         EnableParamRowStrip = false;
 
+        //EnableMapEditor = true;
+        //EnableModelEditor = true;
+        //EnableTextEditor = true;
+        //EnableParamEditor = true;
+        //EnableTimeActEditor = true;
+        //EnableGparamEditor = true;
+        //EnableMaterialEditor = true;
+        //EnableEmevdEditor = true;
+        //EnableEsdEditor = true;
+        //EnableTextureViewer = true;
+
+        // TESTING
         EnableMapEditor = true;
-        EnableModelEditor = true;
-        EnableTextEditor = true;
-        EnableParamEditor = true;
-        EnableTimeActEditor = true;
-        EnableGparamEditor = true;
-        EnableMaterialEditor = true;
-        EnableEmevdEditor = true;
-        EnableEsdEditor = true;
-        EnableTextureViewer = true;
+        EnableModelEditor = false;
+        EnableTextEditor = false;
+        EnableParamEditor = false;
+        EnableTimeActEditor = false;
+        EnableGparamEditor = false;
+        EnableMaterialEditor = false;
+        EnableEmevdEditor = false;
+        EnableEsdEditor = false;
+        EnableTextureViewer = false;
     }
 
     /// <summary>
@@ -321,7 +333,7 @@ public class ProjectEntry
         Initialized = false;
         IsInitializing = true;
 
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         EditorList.Clear();
         FocusedEditor = null;
@@ -351,58 +363,6 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
         }
 
-        // MSB Information
-        Task<bool> msbInfoTask = SetupMsbInfo();
-        bool msbInfoResult = await msbInfoTask;
-
-        if (msbInfoResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup MSB information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup MSB information.");
-        }
-
-        // FLVER Information
-        Task<bool> flverInfoTask = SetupFlverInfo();
-        bool flverInfoResult = await flverInfoTask;
-
-        if (flverInfoResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup FLVER information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup FLVER information.");
-        }
-
-        // GPARAM Information
-        Task<bool> gparamInfoTask = SetupGparamInfo();
-        bool gparamInfoResult = await gparamInfoTask;
-
-        if (gparamInfoResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup GPARAM information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup GPARAM information.");
-        }
-
-        // Game Offsets (per project)
-        Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
-        bool gameOffsetResult = await gameOffsetTask;
-
-        if (gameOffsetResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Param Memory Offsets.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Param Memory Offsets.");
-        }
-
         // Project Enums (per project)
         Task<bool> projectParamEnumTask = SetupProjectParamEnums();
         bool projectParamEnumResult = await projectParamEnumTask;
@@ -416,61 +376,48 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
         }
 
-        // Param Categories (per project)
-        Task<bool> paramCategoryTask = SetupParamCategories();
-        bool paramCategoryResult = await paramCategoryTask;
-
-        if (paramCategoryResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Param Categories.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Param Categories.");
-        }
-
-        // Commutative Param Groups (per project)
-        Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
-        bool commutativeParamGroupResult = await commutativeParamGroupTask;
-
-        if (commutativeParamGroupResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Commutative Param Groups.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Commutative Param Groups.");
-        }
-
-        // Spawn States (per project) -- DS2 specific
-        Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
-        bool mapSpawnStatesResult = await mapSpawnStatesTask;
-
-        if (mapSpawnStatesResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Spawn States information.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Spawn States information.");
-        }
-
-        // Entity Selection Groups (per project)
-        Task<bool> entitySelectionGroupTask = SetupMapEntitySelections();
-        bool entitySelectionGroupResult = await entitySelectionGroupTask;
-
-        if (entitySelectionGroupResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Entity Selection Groups.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Entity Selection Groups.");
-        }
-
         // ---- Map Editor ----
         if (EnableMapEditor)
         {
+            // MSB Information
+            Task<bool> msbInfoTask = SetupMsbInfo();
+            bool msbInfoResult = await msbInfoTask;
+
+            if (msbInfoResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
+            }
+
+            // Spawn States (per project) -- DS2 specific
+            Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
+            bool mapSpawnStatesResult = await mapSpawnStatesTask;
+
+            if (mapSpawnStatesResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
+            }
+
+            // Entity Selection Groups (per project)
+            Task<bool> entitySelectionGroupTask = SetupMapEntitySelections();
+            bool entitySelectionGroupResult = await entitySelectionGroupTask;
+
+            if (entitySelectionGroupResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
+            }
+
             MsbBank = new(BaseEditor, this);
 
             // MSB Bank
@@ -492,6 +439,19 @@ public class ProjectEntry
         // ---- Model Editor ----
         if (EnableModelEditor)
         {
+            // FLVER Information
+            Task<bool> flverInfoTask = SetupFlverInfo();
+            bool flverInfoResult = await flverInfoTask;
+
+            if (flverInfoResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+            }
+
             ModelEditor = new ModelEditorScreen(BaseEditor, this);
         }
 
@@ -519,6 +479,46 @@ public class ProjectEntry
         // ---- Param Editor ----
         if (EnableParamEditor)
         {
+            // Game Offsets (per project)
+            Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
+            bool gameOffsetResult = await gameOffsetTask;
+
+            if (gameOffsetResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+            }
+
+            // Param Categories (per project)
+            Task<bool> paramCategoryTask = SetupParamCategories();
+            bool paramCategoryResult = await paramCategoryTask;
+
+            if (paramCategoryResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
+            }
+
+            // Commutative Param Groups (per project)
+            Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
+            bool commutativeParamGroupResult = await commutativeParamGroupTask;
+
+            if (commutativeParamGroupResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+            }
+
+
             ParamData = new(BaseEditor, this);
 
             // Param Banks
@@ -561,6 +561,19 @@ public class ProjectEntry
         // ---- Graphics Param Editor ----
         if (EnableGparamEditor)
         {
+            // GPARAM Information
+            Task<bool> gparamInfoTask = SetupGparamInfo();
+            bool gparamInfoResult = await gparamInfoTask;
+
+            if (gparamInfoResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+            }
+
             GparamBank = new(BaseEditor, this);
 
             // Gparam Bank
@@ -802,7 +815,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupDLLs()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         if (ProjectType is ProjectType.SDT or ProjectType.ER)
         {
@@ -849,7 +862,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupAliases()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Aliases = new();
 
@@ -895,7 +908,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMsbInfo()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         MsbInformation = new();
         MsbEnums = new();
@@ -1005,7 +1018,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupFlverInfo()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         FlverInformation = new();
         FlverEnums = new();
@@ -1083,7 +1096,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupGparamInfo()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         GparamInformation = new();
         GparamEnums = new();
@@ -1161,7 +1174,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupParamMemoryOffsets()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ParamMemoryOffsets = new();
 
@@ -1199,7 +1212,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupProjectParamEnums()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ProjectParamEnums = new();
 
@@ -1245,7 +1258,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupParamCategories()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ParamCategories = new();
 
@@ -1291,7 +1304,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupCommutativeParamGroups()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         CommutativeParamGroups = new();
 
@@ -1337,7 +1350,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMapSpawnStates()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         MapSpawnStates = new();
 
@@ -1383,7 +1396,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMapEntitySelections()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         MapEntitySelections = new();
 

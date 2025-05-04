@@ -38,7 +38,7 @@ public class EmevdBank
     // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         // EMEDF
         Task<bool> emedfTask = LoadEMEDF();
@@ -53,7 +53,7 @@ public class EmevdBank
 
     public async Task<bool> LoadEMEDF()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         IsSupported = false;
 
@@ -106,7 +106,7 @@ public class EmevdBank
 
     public async Task<bool> LoadEMEVD()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         ScriptBank = new();
 

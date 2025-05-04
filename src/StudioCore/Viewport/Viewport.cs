@@ -319,8 +319,17 @@ namespace StudioCore.Interface
             _cursorX = (int)pos.X; // - X;
             _cursorY = (int)pos.Y; // - Y;
             _gizmos.Update(ray, _canInteract && MouseInViewport());
-            _mapEditor_Viewport_Grid.Update(ray);
-            _modelEditor_Viewport_Grid.Update(ray);
+
+            if (ViewportType is ViewportType.MapEditor)
+            {
+                _mapEditor_Viewport_Grid.Update(ray);
+            }
+
+            if (ViewportType is ViewportType.ModelEditor)
+            {
+                _modelEditor_Viewport_Grid.Update(ray);
+            }
+
             _viewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
             _viewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;
             _viewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_DefaultRender_SelectColor.X, CFG.Current.Viewport_DefaultRender_SelectColor.Y,

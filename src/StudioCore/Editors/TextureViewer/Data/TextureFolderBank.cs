@@ -31,7 +31,7 @@ public class TextureFolderBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         Entries = new();
 

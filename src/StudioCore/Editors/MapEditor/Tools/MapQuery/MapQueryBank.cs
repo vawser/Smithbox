@@ -140,7 +140,7 @@ public class MapQueryBank
 
     public async Task<bool> ReadMaps()
     {
-        await Task.Delay(1000);
+        await Task.Delay(1);
 
         foreach (var resource in MapResources)
         {
