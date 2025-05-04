@@ -532,6 +532,13 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         for (var i = 0; i < keyEvents.Count; i++)
         {
             KeyEvent keyEvent = keyEvents[i];
+
+            ImGuiKey imguiKey = MapToImGuiKey(keyEvent.Key);
+            if (imguiKey != ImGuiKey.None)
+            {
+                io.AddKeyEvent(imguiKey, keyEvent.Down);
+            }
+
             if (keyEvent.Key == Key.ControlLeft || keyEvent.Key == Key.ControlRight)
             {
                 _controlDown = keyEvent.Down;
@@ -548,9 +555,35 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
             }
         }
 
+
         io.KeyCtrl = _controlDown;
         io.KeyAlt = _altDown;
         io.KeyShift = _shiftDown;
+    }
+    
+    private ImGuiKey MapToImGuiKey(Key key)
+    {
+        switch (key)
+        {
+            case Key.BackSpace: return ImGuiKey.Backspace;
+            case Key.Delete: return ImGuiKey.Delete;
+            case Key.Enter: return ImGuiKey.Enter;
+            case Key.Tab: return ImGuiKey.Tab;
+            case Key.Left: return ImGuiKey.LeftArrow;
+            case Key.Right: return ImGuiKey.RightArrow;
+            case Key.Up: return ImGuiKey.UpArrow;
+            case Key.Down: return ImGuiKey.DownArrow;
+            case Key.ControlLeft: return ImGuiKey.LeftCtrl;
+            case Key.ControlRight: return ImGuiKey.RightCtrl;
+            case Key.ShiftLeft: return ImGuiKey.LeftShift;
+            case Key.ShiftRight: return ImGuiKey.RightShift;
+            case Key.AltLeft: return ImGuiKey.LeftAlt;
+            case Key.AltRight: return ImGuiKey.RightAlt;
+
+            // NOTE: if a key isn't working, you need to add a mapping here for it
+
+            default: return ImGuiKey.None;
+        }
     }
 
     private unsafe void RenderImDrawData(ImDrawDataPtr draw_data, GraphicsDevice gd, CommandList cl)

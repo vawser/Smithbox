@@ -54,7 +54,7 @@ public class Smithbox
     public static bool _programUpdateAvailable;
     public static string _releaseUrl = "";
 
-    public bool _showImGuiDebugLogWindow;
+    public bool _showImGuiDemo;
 
     public SoapstoneService _soapstoneService;
 
@@ -453,6 +453,11 @@ public class Smithbox
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
+        if (_showImGuiDemo)
+        {
+            ImGui.ShowDemoWindow();
+        }
+
         if (ImGui.BeginMainMenuBar())
         {
             // Settings
@@ -649,6 +654,11 @@ public class Smithbox
                     DebugTools.ToggleWindow(SelectedDebugTab.DisplayTaskStatus);
                 }
                 UIHelper.Tooltip("Display on-going tasks.");
+
+                if (ImGui.MenuItem($"ImGui Demo"))
+                {
+                    _showImGuiDemo = !_showImGuiDemo;
+                }
 
                 ImGui.Separator();
 

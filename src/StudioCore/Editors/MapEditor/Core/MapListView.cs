@@ -44,13 +44,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         FocusManager = screen.FocusManager;
     }
 
-    public void OnProjectChanged()
-    {
-        MapIDs = new();
-        ContentViews = new();
-        SetupContentViews = false;
-    }
-
     /// <summary>
     /// Handles the update for each frame
     /// </summary>
@@ -68,21 +61,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             {
                 FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
-                // World Map
-                Editor.WorldMapView.DisplayWorldMapButton();
-                Editor.WorldMapView.DisplayWorldMap();
-
-                DisplaySearchbar();
-                ImGui.SameLine();
-                DisplayUnloadAllButton();
-                if (Editor.Project.ProjectType is ProjectType.BB)
-                {
-                    ImGui.SameLine();
-                    DisplayChaliceToggleButton();
-                }
-
-                ImGui.Separator();
-
                 // Setup the Content Views
                 if (Editor.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
                 {
@@ -99,6 +77,21 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                         }
                     }
                 }
+
+                // World Map
+                Editor.WorldMapView.DisplayWorldMapButton();
+                Editor.WorldMapView.DisplayWorldMap();
+
+                DisplaySearchbar();
+                ImGui.SameLine();
+                DisplayUnloadAllButton();
+                if (Editor.Project.ProjectType is ProjectType.BB)
+                {
+                    ImGui.SameLine();
+                    DisplayChaliceToggleButton();
+                }
+
+                ImGui.Separator();
 
                 // Display List of Maps
                 if (SetupContentViews)
@@ -144,6 +137,12 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         Selection.ClearGotoTarget();
     }
 
+    private string _lastSearchText = "";
+    private HashSet<string> _cachedSearchMatches = new HashSet<string>();
+    private Dictionary<string, string> _cachedMapNameAliases = new Dictionary<string, string>();
+    private Dictionary<string, List<string>> _cachedMapTags = new Dictionary<string, List<string>>();
+    private bool _updateMapList = true;
+
     /// <summary>
     /// Handles the display of the searchbar
     /// </summary>
@@ -155,7 +154,40 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         {
             ImGui.SetNextItemWidth(width * 0.75f);
             ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                if (_lastSearchText != SearchBarText)
+                {
+                    _lastSearchText = SearchBarText;
+                    _updateMapList = true;
+                }
+            }
             UIHelper.Tooltip("Filter the map list entries.");
+        }
+
+        if (_updateMapList)
+        {
+            _updateMapList = false;
+
+            _cachedSearchMatches.Clear();
+            _cachedMapNameAliases.Clear();
+            _cachedMapTags.Clear();
+
+            foreach (var entry in MapIDs)
+            {
+                var nameAlias = AliasUtils.GetMapNameAlias(Editor.Project, entry);
+                var tags = AliasUtils.GetMapTags(Editor.Project, entry);
+
+                _cachedMapNameAliases[entry] = nameAlias;
+                _cachedMapTags[entry] = tags;
+
+                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, entry, nameAlias, tags);
+
+                if (isMatch || _lastSearchText == "")
+                {
+                    _cachedSearchMatches.Add(entry);
+                }
+            }
         }
     }
 
@@ -203,30 +235,35 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     private void DisplayMapList(MapContentLoadState loadType)
     {
+        var filteredEntries = new List<string>();
         foreach (var entry in MapIDs)
         {
-            MapContentView curView = null;
-
-            // Skip entry if it isn't valid for the searchbar input
-            if(!SearchFilters.IsMapSearchMatch(SearchBarText, entry, AliasUtils.GetMapNameAlias(Editor.Project, entry), AliasUtils.GetMapTags(Editor.Project, entry)) && loadType == MapContentLoadState.Unloaded)
+            if (!_cachedSearchMatches.Contains(entry) && loadType == MapContentLoadState.Unloaded)
             {
                 continue;
             }
 
-            if(!DisplayChaliceDungeons)
+            if (!DisplayChaliceDungeons && entry.Contains("m29_"))
             {
-                if (entry.Contains("m29_"))
-                    continue;
+                continue;
             }
 
-            if (ContentViews.ContainsKey(entry))
+            if (ContentViews.TryGetValue(entry, out var curView) && curView.ContentLoadState == loadType)
             {
-                curView = ContentViews[entry];
+                filteredEntries.Add(entry);
             }
+        }
 
-            // Display map ID entry
-            if (curView != null && curView.ContentLoadState == loadType)
+        var clipper = new ImGuiListClipper();
+        clipper.Begin(filteredEntries.Count);
+
+        while (clipper.Step())
+        {
+            for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
             {
+                var entry = filteredEntries[i];
+                var curView = ContentViews[entry];
+
                 if (ImGui.Selectable($"##mapListEntry{entry}", entry == SelectedMap, ImGuiSelectableFlags.AllowDoubleClick))
                 {
                     if (loadType == MapContentLoadState.Loaded)
@@ -234,20 +271,17 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                         SelectedMap = entry;
                     }
 
-                    if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click)
+                    if (CFG.Current.MapEditor_Enable_Map_Load_on_Double_Click && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                     {
-                        if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                        if (loadType == MapContentLoadState.Loaded)
                         {
-                            if (loadType == MapContentLoadState.Loaded)
-                            {
-                                curView.Unload();
-                                SelectedMap = "";
-                            }
-                            else
-                            {
-                                curView.Load(true);
-                                SelectedMap = entry;
-                            }
+                            curView.Unload();
+                            SelectedMap = "";
+                        }
+                        else
+                        {
+                            curView.Load(true);
+                            SelectedMap = entry;
                         }
                     }
                 }
@@ -257,7 +291,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
                 if (CFG.Current.MapEditor_MapObjectList_ShowMapNames)
                 {
-                    var mapName = AliasUtils.GetMapNameAlias(Editor.Project, curView.MapID);
+                    var mapName = _cachedMapNameAliases.TryGetValue(curView.MapID, out var cachedName) ? cachedName : "";
                     displayedName = $"{mapId}: {mapName}";
                 }
 
@@ -274,6 +308,8 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 DisplayContextMenu(entry, curView);
             }
         }
+
+        clipper.End();
 
         if (loadType == MapContentLoadState.Loaded)
             ImGui.Separator();
