@@ -218,7 +218,14 @@ public class Smithbox
         cfg.OversampleV = 3;
 
         ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
-        iconGlyphBuilder.AddChar(0xf0c9);  // Example: bars
+
+        const int IconMin = 0xf000;
+        const int IconMax = 0xf339;
+
+        for (int i = IconMin; i <= IconMax; i++)
+        {
+            iconGlyphBuilder.AddChar((char)i);
+        }
 
         ImVector<uint> iconGlyphRanges;
         iconGlyphBuilder.BuildRanges(&iconGlyphRanges);
