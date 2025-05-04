@@ -67,6 +67,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Andre\Andre.IO\Andre.IO.csproj" />
     <ProjectReference Include="..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
     <ProjectReference Include="..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
     <ProjectReference Include="..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />

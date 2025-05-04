@@ -21,6 +21,9 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(ProjectEntry))]
 [JsonSerializable(typeof(ProjectDisplayOrder))]
 
+[JsonSerializable(typeof(FileDictionary))]
+[JsonSerializable(typeof(FileDictionaryEntry))]
+
 // Alias Data
 [JsonSerializable(typeof(AliasStore))]
 [JsonSerializable(typeof(AliasEntry))]

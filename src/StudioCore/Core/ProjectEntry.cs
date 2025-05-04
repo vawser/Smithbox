@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.IO.VFS;
+using Hexa.NET.ImGui;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GparamEditor.Data;
@@ -61,6 +62,20 @@ public class ProjectEntry
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
     public Dictionary<string, List<string>> PinnedFields { get; set; } = new();
+
+    // Filesystems
+    [JsonIgnore]
+    public VirtualFileSystem FS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem ProjectFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaBinderFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaRealFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public FileDictionary FileDictionary;
 
     // Editors
     [JsonIgnore]
@@ -215,7 +230,17 @@ public class ProjectEntry
         }
 
         // VFS
-        // TODO
+        Task<bool> vfsTask = SetupVFS();
+        bool vfsSetup = await vfsTask;
+
+        if (vfsSetup)
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Setup virtual filesystem.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Failed to setup virtual filesystem.");
+        }
 
         // Aliases
         Task<bool> aliasesTask = SetupAliases();
@@ -728,6 +753,7 @@ public class ProjectEntry
         }
     }
 
+    #region Setup DLLS
     /// <summary>
     /// Grab the decompression DLLs if relevant to this project
     /// </summary>
@@ -774,7 +800,134 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup VFS
+    public async Task<bool> SetupVFS()
+    {
+        await Task.Delay(1000);
+
+        List<VirtualFileSystem> fileSystems = [];
+
+        ProjectFS.Dispose();
+        VanillaRealFS.Dispose();
+        VanillaBinderFS.Dispose();
+        VanillaFS.Dispose();
+        FS.Dispose();
+
+        // Order of addition to FS determines precendence when getting a file
+        // e.g. ProjectFS is prioritised over VanillaFS
+
+        // Project File System
+        if (Directory.Exists(ProjectPath))
+        {
+            ProjectFS = new RealVirtualFileSystem(ProjectPath, false);
+            fileSystems.Add(ProjectFS);
+        }
+        else
+        {
+            ProjectFS = EmptyVirtualFileSystem.Instance;
+        }
+
+        // Vanilla File System
+        if (Directory.Exists(DataPath))
+        {
+            VanillaRealFS = new RealVirtualFileSystem(DataPath, false);
+            fileSystems.Add(VanillaRealFS);
+
+            var andreGame = ProjectType.AsAndreGame();
+
+            if (andreGame != null)
+            {
+                if (!ProjectType.IsLooseGame())
+                {
+                    VanillaBinderFS = ArchiveBinderVirtualFileSystem.FromGameFolder(DataPath, andreGame.Value);
+                    fileSystems.Add(VanillaBinderFS);
+                }
+
+                VanillaFS = new CompundVirtualFileSystem([VanillaRealFS, VanillaBinderFS]);
+            }
+            else
+            {
+                VanillaRealFS = EmptyVirtualFileSystem.Instance;
+                VanillaFS = EmptyVirtualFileSystem.Instance;
+            }
+        }
+        else
+        {
+            VanillaRealFS = EmptyVirtualFileSystem.Instance;
+            VanillaFS = EmptyVirtualFileSystem.Instance;
+        }
+
+
+        if (fileSystems.Count == 0)
+            FS = EmptyVirtualFileSystem.Instance;
+        else
+            FS = new CompundVirtualFileSystem(fileSystems);
+
+        var folder = @$"{AppContext.BaseDirectory}\Assets\File Dictionaries\";
+        var file = "";
+
+        // Build the file dictionary JSON objects here
+        switch (ProjectType)
+        {
+            case ProjectType.DES:
+                file = "DES-File-Dictionary.json"; break;
+            case ProjectType.DS1:
+                file = "DS1-File-Dictionary.json"; break;
+            case ProjectType.DS1R:
+                file = "DS1R-File-Dictionary.json"; break;
+            case ProjectType.DS2:
+                file = "DS2-File-Dictionary.json"; break;
+            case ProjectType.DS2S:
+                file = "DS2S-File-Dictionary.json"; break;
+            case ProjectType.DS3:
+                file = "DS3-File-Dictionary.json"; break;
+            case ProjectType.BB:
+                file = "BB-File-Dictionary.json"; break;
+            case ProjectType.SDT:
+                file = "SDT-File-Dictionary.json"; break;
+            case ProjectType.ER:
+                file = "ER-File-Dictionary.json"; break;
+            case ProjectType.AC6:
+                file = "AC6-File-Dictionary.json"; break;
+            default: break;
+        }
+
+        var filepath = $"{folder}{file}";
+
+        FileDictionary = new();
+        FileDictionary.Entries = new();
+
+        if (File.Exists(filepath))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(filepath);
+                var options = new JsonSerializerOptions();
+                FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
+
+                if (FileDictionary == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Failed to load file dictionary.");
+            }
+        }
+
+        // Create merged dictionary, including unique entries present in the project directory only.
+        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath);
+        FileDictionary = ProjectUtils.MergeFileDictionaries(FileDictionary, projectFileDictionary);
+
+        return true;
+    }
+
+    #endregion
+
+    #region Setup Aliases
     /// <summary>
     /// Setup the alias store for this project
     /// </summary>
@@ -819,8 +972,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
-
+    #region Setup MSB Information
     /// <summary>
     /// Setup the MSB information for this project
     /// </summary>
@@ -930,7 +1084,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup FLVER Information
     /// <summary>
     /// Setup the FLVER information for this project
     /// </summary>
@@ -1008,7 +1164,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup GPARAM Information
     /// <summary>
     /// Setup the GPARAM information for this project
     /// </summary>
@@ -1086,7 +1244,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Param Reloader Offsets
     /// <summary>
     /// Setup the PARAM memory offsets for this project
     /// </summary>
@@ -1124,7 +1284,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Project Enums
     /// <summary>
     /// Setup the project-specific PARAM enums for this project
     /// </summary>
@@ -1170,7 +1332,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Param Categories
     /// <summary>
     /// Setup the param categories for this project
     /// </summary>
@@ -1216,6 +1380,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
+
+    #region Setup Commutative Param Groups
 
     /// <summary>
     /// Setup the param categories for this project
@@ -1262,7 +1429,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Map Spawn States
     /// <summary>
     /// Setup the map spawn states for this project
     /// </summary>
@@ -1308,7 +1477,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Map Entity Selections
     /// <summary>
     /// Setup the map spawn states for this project
     /// </summary>
@@ -1344,4 +1515,5 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 }
