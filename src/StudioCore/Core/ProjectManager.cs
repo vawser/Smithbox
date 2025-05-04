@@ -59,11 +59,7 @@ public class ProjectManager
         ImGui.End();
 
         // Project Dock
-        ImGui.Begin("Project##projectDock");
-
         DisplayProjectDock(dt);
-
-        ImGui.End();
     }
 
     /// <summary>
@@ -102,26 +98,8 @@ public class ProjectManager
     {
         if(SelectedProject == null)
         {
-            ImGui.Text("No project has been selected yet.");
             return;
         }
-
-        ImGuiWindowFlags windowFlags =
-            ImGuiWindowFlags.NoTitleBar |
-            ImGuiWindowFlags.NoCollapse |
-            ImGuiWindowFlags.NoResize |
-            ImGuiWindowFlags.NoMove |
-            ImGuiWindowFlags.NoBringToFrontOnFocus |
-            ImGuiWindowFlags.NoNavFocus |
-            ImGuiWindowFlags.MenuBar;
-
-        ImGui.Begin("ProjectDockspace_W", windowFlags);
-
-        uint dockspaceID = ImGui.GetID("ProjectDockspace");
-
-        ImGui.End();
-
-        ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
 
         SelectedProject.Update(dt);
     }
@@ -304,7 +282,7 @@ public class ProjectEntry
         //EnableTextureViewer = true;
 
         // TESTING
-        EnableMapEditor = false;
+        EnableMapEditor = true;
         EnableModelEditor = true;
         EnableTextEditor = false;
         EnableParamEditor = false;
@@ -799,11 +777,11 @@ public class ProjectEntry
     /// <param name="cl"></param>
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (EnableMapEditor)
+        if (EnableMapEditor && FocusedEditor is MapEditorScreen)
         {
             MapEditor.Draw(device, cl);
         }
-        if (EnableModelEditor)
+        if (EnableModelEditor && FocusedEditor is ModelEditorScreen)
         {
             ModelEditor.Draw(device, cl);
         }

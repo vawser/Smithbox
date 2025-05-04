@@ -1,1 +1,2 @@
 Viewport doesn't appear correct nested in the Project -> Editor hierarchy (will appear if placed at the top next to Projects)
+ Seems to be a draw ordering issue
