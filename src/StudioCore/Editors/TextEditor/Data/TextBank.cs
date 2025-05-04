@@ -3,6 +3,7 @@ using StudioCore.Core;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,7 @@ public class TextBank
     public string SourcePath;
     public string FallbackPath;
 
-    public SortedDictionary<string, TextContainerWrapper> Entries { get; private set; } = new();
+    public ConcurrentDictionary<string, TextContainerWrapper> Entries { get; private set; } = new();
 
     public TextBank(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
     {
@@ -30,7 +31,7 @@ public class TextBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        var tasks = new List<Task>();
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
@@ -38,7 +39,7 @@ public class TextBank
 
             foreach (var path in fmgList)
             {
-                LoadFmg(path);
+                tasks.Add(Task.Run(() => LoadFmg(path)));
             }
         }
         else if (Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
@@ -47,7 +48,7 @@ public class TextBank
 
             foreach (var path in fmgList)
             {
-                LoadFmg(path);
+                tasks.Add(Task.Run(() => LoadFmg(path)));
             }
         }
         else
@@ -56,9 +57,11 @@ public class TextBank
 
             foreach (var path in fmgContainerList)
             {
-                LoadFmgContainer(path);
+                tasks.Add(Task.Run(() => LoadFmgContainer(path)));
             }
         }
+
+        await Task.WhenAll(tasks);
 
         return true;
     }
@@ -140,7 +143,7 @@ public class TextBank
                 containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(path);
             }
 
-            Entries.Add(path, containerWrapper);
+            Entries.TryAdd(path, containerWrapper);
         }
         catch (Exception ex)
         {
@@ -259,7 +262,7 @@ public class TextBank
             // Add the fmg wrappers to the container wrapper
             containerWrapper.FmgWrappers = fmgWrappers;
 
-            Entries.Add(path, containerWrapper);
+            Entries.TryAdd(path, containerWrapper);
         }
         catch (Exception ex)
         {
