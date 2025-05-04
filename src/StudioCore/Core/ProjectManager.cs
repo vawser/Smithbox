@@ -304,8 +304,8 @@ public class ProjectEntry
         //EnableTextureViewer = true;
 
         // TESTING
-        EnableMapEditor = true;
-        EnableModelEditor = false;
+        EnableMapEditor = false;
+        EnableModelEditor = true;
         EnableTextEditor = false;
         EnableParamEditor = false;
         EnableTimeActEditor = false;

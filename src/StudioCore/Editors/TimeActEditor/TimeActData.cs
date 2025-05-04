@@ -75,31 +75,31 @@ public class TimeActData
             TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Vanilla Character Time Act bank.");
         }
 
-        // Primary Bank (Obj)
-        Task<bool> primaryObjBankTask = PrimaryObjectBank.Setup();
-        bool primaryObjBankTaskResult = await primaryObjBankTask;
+        //// Primary Bank (Obj)
+        //Task<bool> primaryObjBankTask = PrimaryObjectBank.Setup();
+        //bool primaryObjBankTaskResult = await primaryObjBankTask;
 
-        if (primaryObjBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Primary Object Time Act bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Primary Object Time Act bank.");
-        }
+        //if (primaryObjBankTaskResult)
+        //{
+        //    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Primary Object Time Act bank.");
+        //}
+        //else
+        //{
+        //    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Primary Object Time Act bank.");
+        //}
 
-        // Vanilla Bank (Obj)
-        Task<bool> vanillaObjectBankTask = VanillaObjectBank.Setup();
-        bool vanillaObjectBankTaskResult = await vanillaObjectBankTask;
+        //// Vanilla Bank (Obj)
+        //Task<bool> vanillaObjectBankTask = VanillaObjectBank.Setup();
+        //bool vanillaObjectBankTaskResult = await vanillaObjectBankTask;
 
-        if (vanillaObjectBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Vanilla Object Time Act bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Vanilla Object Time Act bank.");
-        }
+        //if (vanillaObjectBankTaskResult)
+        //{
+        //    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Vanilla Object Time Act bank.");
+        //}
+        //else
+        //{
+        //    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Vanilla Object Time Act bank.");
+        //}
 
         return true;
     }

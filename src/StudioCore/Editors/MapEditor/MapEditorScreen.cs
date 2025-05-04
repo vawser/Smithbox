@@ -103,6 +103,7 @@ public class MapEditorScreen : EditorScreen
         Project = project;
 
         MapViewportView = new MapViewportView(this, project, baseEditor);
+        MapViewportView.Setup();
 
         Universe = new Universe(this, project);
         FocusManager = new EditorFocusManager(this);
@@ -148,7 +149,8 @@ public class MapEditorScreen : EditorScreen
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
 
-        MapViewportView.Setup();
+        Universe.PopulateMapList();
+        ActionHandler.PopulateClassNames();
     }
 
     private bool PauseUpdate
@@ -1039,9 +1041,6 @@ public class MapEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         if (MapViewportView.Viewport != null)
         {
             MapViewportView.Draw(device, cl);

@@ -182,7 +182,7 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Character, "");
+        LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.Character, "");
 
         LoadEditableModel(name, name, FlverContainerType.Character);
         SetDefaultAssociatedModel();
@@ -203,7 +203,7 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Enemy, "");
+        LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.Enemy, "");
 
         LoadEditableModel(name, name, FlverContainerType.Enemy);
         SetDefaultAssociatedModel();
@@ -226,7 +226,7 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Object, "");
+        LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.Object, "");
 
         if (Editor.Project.ProjectType is ProjectType.ER)
         {
@@ -258,7 +258,7 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.Parts, "");
+        LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.Parts, "");
 
         LoadEditableModel(name, name, FlverContainerType.Parts);
         SetDefaultAssociatedModel();
@@ -278,7 +278,7 @@ public class ModelResourceManager : IResourceEventListener
 
         ResetState(name);
 
-        LoadedFlverContainer = new FlverContainer(name, FlverContainerType.MapPiece, mapId);
+        LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.MapPiece, mapId);
 
         LoadEditableModel(name, name, FlverContainerType.MapPiece, mapId);
         SetDefaultAssociatedModel();

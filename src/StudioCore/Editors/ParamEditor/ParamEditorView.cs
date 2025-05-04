@@ -154,15 +154,20 @@ public class ParamEditorView
             List<(ParamBank, Param)> list =
                 ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
 
-            var keyList = list.Where(param => param.Item1 == Editor.Project.ParamData.PrimaryBank)
-                .Select(param => Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
-
-            if (CFG.Current.Param_AlphabeticalParams)
+            if (list != null)
             {
-                keyList.Sort();
+                var keyList = list.Where(param => param.Item1 == Editor.Project.ParamData.PrimaryBank)
+                    .Select(param => Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param.Item2)).ToList();
+
+                if (CFG.Current.Param_AlphabeticalParams)
+                {
+                    keyList.Sort();
+                }
+
+                return keyList;
             }
 
-            return keyList;
+            return new List<string>();
         });
 
 

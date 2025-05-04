@@ -221,6 +221,9 @@ public class FlverResource : IResource, IDisposable
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
+        if (curProject.MaterialBank == null)
+            return;
+
         var path = mpath;
         if (mpath == "")
         {

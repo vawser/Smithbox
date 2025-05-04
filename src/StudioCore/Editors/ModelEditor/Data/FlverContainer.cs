@@ -80,8 +80,10 @@ public class FlverContainer
         LoosePath = loosePath;
     }
 
-    public FlverContainer(string modelName, FlverContainerType modelType, string mapId)
+    public FlverContainer(ModelEditorScreen editor, string modelName, FlverContainerType modelType, string mapId)
     {
+        Editor = editor;
+
         InternalFlvers = new List<InternalFlver>();
 
         ContainerName = modelName;

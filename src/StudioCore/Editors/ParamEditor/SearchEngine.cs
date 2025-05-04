@@ -113,7 +113,12 @@ internal class SearchEngine<A, B>
 
     public List<B> Search(A param, string command, bool lenient, bool failureAllOrNone)
     {
-        return Search(param, unpacker(param), command, lenient, failureAllOrNone);
+        if (unpacker != null)
+        {
+            return Search(param, unpacker(param), command, lenient, failureAllOrNone);
+        }
+
+        return null;
     }
 
     public virtual List<B> Search(A context, List<B> sourceSet, string command, bool lenient, bool failureAllOrNone)
