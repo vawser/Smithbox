@@ -61,7 +61,7 @@ public class EntityIdentifierOverview
 
             ImGui.SameLine();
 
-            if(ImGui.Button($"{ForkAwesome.Eye}##hideUnassigned"))
+            if(ImGui.Button($"{Icons.Eye}##hideUnassigned"))
             {
                 HideUnassigned = !HideUnassigned;
             }
@@ -69,7 +69,7 @@ public class EntityIdentifierOverview
 
             ImGui.SameLine();
 
-            if(ImGui.Button($"{ForkAwesome.Bars}##toggleBlockSeperators"))
+            if(ImGui.Button($"{Icons.Bars}##toggleBlockSeperators"))
             {
                 if(BlockSeperatorType is BlockSeperatorType.None)
                 {

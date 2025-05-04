@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +39,7 @@ public class InternalFilePropertyView
         foreach (var entry in container.InternalFlvers)
         {
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button($"{ForkAwesome.Bars}", buttonSize))
+            if (ImGui.Button($"{Icons.Bars}", buttonSize))
             {
                 UIHelper.CopyToClipboard(entry.Name);
             }

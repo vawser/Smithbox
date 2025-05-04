@@ -144,7 +144,7 @@ public class MapContentView
         ImGui.SameLine();
 
         // Show All
-        if (ImGui.Button($"{ForkAwesome.Eye}"))
+        if (ImGui.Button($"{Icons.Eye}"))
         {
             foreach (var entry in Container.Objects)
             {
@@ -155,7 +155,7 @@ public class MapContentView
 
         // Hide All
         ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.EyeSlash}"))
+        if (ImGui.Button($"{Icons.EyeSlash}"))
         {
             foreach (var entry in Container.Objects)
             {
@@ -166,7 +166,7 @@ public class MapContentView
 
         // Switch View Type
         ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.Sort}"))
+        if (ImGui.Button($"{Icons.Sort}"))
         {
             if (ContentViewType is MapContentViewType.ObjectType)
             {
@@ -204,8 +204,8 @@ public class MapContentView
 
         ImGui.BeginGroup();
 
-        string treeNodeName = $@"{ForkAwesome.Cube} {MapID}";
-        string treeNodeNameFormat = $@"{ForkAwesome.Cube} {MapID}{unsaved}";
+        string treeNodeName = $@"{Icons.Cube} {MapID}";
+        string treeNodeNameFormat = $@"{Icons.Cube} {MapID}{unsaved}";
 
         if (Container != null && ContentLoadState is MapContentLoadState.Loaded)
         {
@@ -537,7 +537,7 @@ public class MapContentView
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-                                        ImGui.TextWrapped(visible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+                                        ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
                                         ImGui.PopStyleColor();
                                         if (ImGui.IsItemClicked(0))
                                         {
@@ -569,7 +569,7 @@ public class MapContentView
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-                                        ImGui.TextWrapped(visible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+                                        ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
                                         ImGui.PopStyleColor();
                                         if (ImGui.IsItemClicked(0))
                                         {
@@ -747,7 +747,7 @@ public class MapContentView
             ImGui.PushStyleColor(ImGuiCol.Text, visible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(visible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+            ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
             ImGui.PopStyleColor();
             if (ImGui.IsItemClicked(0))
             {

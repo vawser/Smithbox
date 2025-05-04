@@ -7,7 +7,6 @@ using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -55,7 +54,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "File Filters:");
             ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##fileFilterToggle"))
+            if (ImGui.Button($"{Icons.Bars}##fileFilterToggle"))
             {
                 displayFileFilterSection = !displayFileFilterSection;
             }
@@ -78,7 +77,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Group Filters:");
             ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##groupFilterToggle"))
+            if (ImGui.Button($"{Icons.Bars}##groupFilterToggle"))
             {
                 displayGroupFilterSection = !displayGroupFilterSection;
             }
@@ -101,7 +100,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Field Filters:");
             ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##fieldFilterToggle"))
+            if (ImGui.Button($"{Icons.Bars}##fieldFilterToggle"))
             {
                 displayFieldFilterSection = !displayFieldFilterSection;
             }
@@ -124,7 +123,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Filters:");
             ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##valueFilterToggle"))
+            if (ImGui.Button($"{Icons.Bars}##valueFilterToggle"))
             {
                 displayValueFilterSection = !displayValueFilterSection;
             }
@@ -156,7 +155,7 @@ namespace StudioCore.Editors.GparamEditor.Framework
             ImGui.Separator();
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Commands:");
             ImGui.SameLine();
-            if (ImGui.Button($"{ForkAwesome.Bars}##valueCommandToggle"))
+            if (ImGui.Button($"{Icons.Bars}##valueCommandToggle"))
             {
                 displayValueCommandSection = !displayValueCommandSection;
             }

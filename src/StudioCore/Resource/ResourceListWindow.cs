@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Interface;
 using StudioCore.Resource.Types;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,7 +95,7 @@ public static class ResourceListWindow
                 ImGui.TableSetColumnIndex(0);
 
                 // Select
-                if(ImGui.Button($"{ForkAwesome.Bars}##{imguiId}_select"))
+                if(ImGui.Button($"{Icons.Bars}##{imguiId}_select"))
                 {
                     SelectedResource = resName;
                 }
@@ -138,7 +137,7 @@ public static class ResourceListWindow
                 ImGui.TableSetColumnIndex(5);
 
                 // Unload
-                if (ImGui.Button($"{ForkAwesome.Times}##{imguiId}_unload"))
+                if (ImGui.Button($"{Icons.Times}##{imguiId}_unload"))
                 {
                     resHandle.Release(true);
                 }

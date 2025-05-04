@@ -26,7 +26,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             UIHelper.Tooltip("The current selection references these rows in params");
 
-            if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Asset" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Asset" + refID, new Vector2(width * 5, 20 * scale)))
             {
                 BoundingBox box = new();
 
@@ -88,7 +88,7 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             UIHelper.Tooltip("The current selection references these rows in params");
 
-            if (ImGui.Button(ForkAwesome.Binoculars + "##ParamJump_ViewRef_Enemy" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Enemy" + refID, new Vector2(width * 5, 20 * scale)))
             {
                 BoundingBox box = new();
 

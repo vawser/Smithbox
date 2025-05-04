@@ -26,7 +26,7 @@ public static class PropInfo_ReferencedBy
         foreach (Entity m in firstEnt.GetReferencingObjects())
         {
             // View Reference in Viewport
-            if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
             {
                 BoundingBox box = new();
 

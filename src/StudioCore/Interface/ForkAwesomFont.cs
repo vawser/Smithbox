@@ -2,9 +2,9 @@
 // from https://raw.githubusercontent.com/ForkAwesome/Fork-Awesome/master/src/icons/icons.yml
 // for use with https://github.com/ForkAwesome/Fork-Awesome/blob/master/fonts/forkawesome-webfont.ttf
 
-namespace StudioCore.Utilities;
+namespace StudioCore.Interface;
 
-public class ForkAwesome
+public class Icons
 {
     public const string FontIconFileName = "forkawesome-webfont.ttf";
 

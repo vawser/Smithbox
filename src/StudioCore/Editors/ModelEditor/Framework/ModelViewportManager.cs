@@ -14,7 +14,6 @@ using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.Scene;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -243,7 +242,7 @@ public class ModelViewportManager
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
             ImGui.PopStyleColor();
 
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -311,7 +310,7 @@ public class ModelViewportManager
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
             ImGui.PopStyleColor();
 
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -378,7 +377,7 @@ public class ModelViewportManager
             ImGui.PushStyleColor(ImGuiCol.Text, isVisible
                 ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                 : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(isVisible ? ForkAwesome.Eye : ForkAwesome.EyeSlash);
+            ImGui.TextWrapped(isVisible ? Icons.Eye : Icons.EyeSlash);
             ImGui.PopStyleColor();
 
             if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))

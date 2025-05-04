@@ -196,7 +196,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     private void DisplayUnloadAllButton()
     {
-        if (ImGui.Button($"{ForkAwesome.MinusSquareO}"))
+        if (ImGui.Button($"{Icons.MinusSquareO}"))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
                         MessageBoxButtons.YesNo);
@@ -223,7 +223,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     private void DisplayChaliceToggleButton()
     {
-        if (ImGui.Button($"{ForkAwesome.Adjust}"))
+        if (ImGui.Button($"{Icons.Adjust}"))
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
         }

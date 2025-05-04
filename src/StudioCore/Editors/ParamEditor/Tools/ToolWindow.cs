@@ -5,7 +5,6 @@ using StudioCore.Editors.ParamEditor.Actions;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
 using System.Diagnostics;
 using System.Numerics;
 
@@ -403,7 +402,7 @@ public class ToolWindow
                 ImGui.SetNextItemWidth(inputBoxSize.X);
                 ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
                 ImGui.SameLine();
-                if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                if (ImGui.Button($@"{Icons.FileO}"))
                 {
                     if (PlatformUtils.Instance.OpenFileDialog("Select target regulation.bin...", Handler.allParamTypes, out var path))
                     {
@@ -423,7 +422,7 @@ public class ToolWindow
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
                     ImGui.SameLine();
-                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                    if (ImGui.Button($@"{Icons.FileO}"))
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
                         {
@@ -438,7 +437,7 @@ public class ToolWindow
                     ImGui.SetNextItemWidth(inputBoxSize.X);
                     ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
                     ImGui.SameLine();
-                    if (ImGui.Button($@"{ForkAwesome.FileO}"))
+                    if (ImGui.Button($@"{Icons.FileO}"))
                     {
                         if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
                         {

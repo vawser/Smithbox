@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.EmevdEditor;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -26,7 +25,7 @@ public class EmevdToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{Icons.Bars}");
             if (ImGui.MenuItem("Test"))
             {
 

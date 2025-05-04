@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
 using StudioCore.TalkEditor;
-using StudioCore.Utilities;
 
 namespace StudioCore.Editors.EsdEditor;
 
@@ -26,7 +25,7 @@ public class EsdToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{Icons.Bars}");
             if (ImGui.MenuItem("Test"))
             {
 

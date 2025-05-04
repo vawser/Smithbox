@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -31,7 +30,7 @@ public class MassEditTools
 
     public void DisplayButton()
     {
-        if (ImGui.Button($"{ForkAwesome.Database}##mapMassEditToolView"))
+        if (ImGui.Button($"{Icons.Database}##mapMassEditToolView"))
         {
             Handler.EditLog.ShowMassEditLog = false;
             ShowToolView = true;

@@ -47,7 +47,7 @@ public class MapContentFilters
         UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))
+        if (ImGui.Button($"{Icons.QuestionCircle}"))
         {
             ImGui.OpenPopup("searchInputHint");
         }

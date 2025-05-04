@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -98,14 +97,14 @@ public static class UIHelper
         {
             ImGui.SameLine();
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-            ImGui.TextUnformatted($"{ForkAwesome.CheckSquare}");
+            ImGui.TextUnformatted($"{Icons.CheckSquare}");
             ImGui.PopStyleVar(1);
         }
         else
         {
             ImGui.SameLine();
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0, ImGui.GetStyle().ItemSpacing.Y));
-            ImGui.TextUnformatted($"{ForkAwesome.Square}");
+            ImGui.TextUnformatted($"{Icons.Square}");
             ImGui.PopStyleVar(1);
         }
     }

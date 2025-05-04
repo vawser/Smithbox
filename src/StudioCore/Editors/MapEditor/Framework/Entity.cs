@@ -9,6 +9,7 @@ using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Tools.MapConnections;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;
 using StudioCore.Scene;
@@ -1630,43 +1631,43 @@ public class MsbEntity : Entity
             var icon = "";
             if (Type == MsbEntityType.Part)
             {
-                icon = ForkAwesome.PuzzlePiece;
+                icon = Icons.PuzzlePiece;
             }
             else if (Type == MsbEntityType.Event)
             {
-                icon = ForkAwesome.Flag;
+                icon = Icons.Flag;
             }
             else if (Type == MsbEntityType.Region)
             {
-                icon = ForkAwesome.LocationArrow;
+                icon = Icons.LocationArrow;
             }
             else if (Type == MsbEntityType.MapRoot)
             {
-                icon = ForkAwesome.Cube;
+                icon = Icons.Cube;
             }
             else if (Type == MsbEntityType.Light)
             {
-                icon = ForkAwesome.LightbulbO;
+                icon = Icons.LightbulbO;
             }
             else if (Type == MsbEntityType.DS2Generator)
             {
-                icon = ForkAwesome.Male;
+                icon = Icons.Male;
             }
             else if (Type == MsbEntityType.DS2GeneratorRegist)
             {
-                icon = ForkAwesome.UserCircleO;
+                icon = Icons.UserCircleO;
             }
             else if (Type == MsbEntityType.DS2EventLocation)
             {
-                icon = ForkAwesome.FlagO;
+                icon = Icons.FlagO;
             }
             else if (Type == MsbEntityType.DS2Event)
             {
-                icon = ForkAwesome.FlagCheckered;
+                icon = Icons.FlagCheckered;
             }
             else if (Type == MsbEntityType.DS2ObjectInstance)
             {
-                icon = ForkAwesome.Database;
+                icon = Icons.Database;
             }
 
             return $@"{icon} {Utils.ImGuiEscape(Name, null)}";

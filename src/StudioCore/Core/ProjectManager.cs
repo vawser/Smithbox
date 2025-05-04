@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using Octokit;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -57,7 +56,7 @@ public class ProjectManager
     {
         if (ImGui.BeginMenuBar())
         {
-            if (ImGui.BeginMenu($"File {ForkAwesome.Bars}"))
+            if (ImGui.BeginMenu($"File"))
             {
                 if (ImGui.MenuItem("New Project"))
                 {

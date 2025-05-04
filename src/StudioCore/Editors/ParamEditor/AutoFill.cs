@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Editor;
-using StudioCore.Utilities;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -211,7 +211,7 @@ internal class AutoFill
 
     public static string ParamSearchBarAutoFill()
     {
-        ImGui.Button($@"{ForkAwesome.CaretDown}");
+        ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select params...");
@@ -225,7 +225,7 @@ internal class AutoFill
 
     public static string RowSearchBarAutoFill()
     {
-        ImGui.Button($@"{ForkAwesome.CaretDown}");
+        ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select rows...");
@@ -239,7 +239,7 @@ internal class AutoFill
 
     public static string ColumnSearchBarAutoFill()
     {
-        ImGui.Button($@"{ForkAwesome.CaretDown}");
+        ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select fields...");
@@ -255,7 +255,7 @@ internal class AutoFill
     {
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
-        ImGui.Button($@"{ForkAwesome.CaretDown}");
+        ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
@@ -440,7 +440,7 @@ internal class AutoFill
                 ImGui.InputTextWithHint("##meautoinputop" + argIndices[i], cmd.Item2[i],
                     ref staticArgs[argIndices[i]], 256);
                 ImGui.SameLine();
-                ImGui.Button($@"{ForkAwesome.CaretDown}");
+                ImGui.Button($@"{Icons.CaretDown}");
                 if (ImGui.BeginPopupContextItem("##meautoinputoapopup" + argIndices[i],
                         ImGuiPopupFlags.MouseButtonLeft))
                 {

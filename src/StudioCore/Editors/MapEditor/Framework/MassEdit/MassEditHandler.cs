@@ -115,7 +115,7 @@ public class MassEditHandler
         // Actions
         //--------------
         // Documentation
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##mapTargetHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##mapTargetHintButton"))
         {
             ImGui.OpenPopup("mapTargetHint");
         }
@@ -124,7 +124,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{ForkAwesome.Plus}##mapSelectionAdd"))
+        if (ImGui.Button($"{Icons.Plus}##mapSelectionAdd"))
         {
             MapInputs.Add("");
         }
@@ -137,7 +137,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemoveDisabled"))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
             }
@@ -147,7 +147,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{ForkAwesome.Minus}##mapSelectionRemove"))
+            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemove"))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
                 UIHelper.Tooltip("Remove last added map selection input row.");
@@ -236,7 +236,7 @@ public class MassEditHandler
         // Actions
         //--------------
         // Documentation
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##selectionHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##selectionHintButton"))
         {
             ImGui.OpenPopup("selectionInputHint");
         }
@@ -245,7 +245,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{ForkAwesome.Plus}##selectionAdd"))
+        if (ImGui.Button($"{Icons.Plus}##selectionAdd"))
         {
             SelectionInputs.Add("");
         }
@@ -258,7 +258,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{ForkAwesome.Minus}##selectionRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##selectionRemoveDisabled"))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
@@ -268,7 +268,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{ForkAwesome.Minus}##selectionRemove"))
+            if (ImGui.Button($"{Icons.Minus}##selectionRemove"))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
                 UIHelper.Tooltip("Remove last added selection input row.");
@@ -336,7 +336,7 @@ public class MassEditHandler
         // Actions Inputs
         //--------------
         // Documentation
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}##editHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##editHintButton"))
         {
             ImGui.OpenPopup("editInputHint");
         }
@@ -345,7 +345,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{ForkAwesome.Plus}##editAdd"))
+        if (ImGui.Button($"{Icons.Plus}##editAdd"))
         {
             EditInputs.Add("");
         }
@@ -358,7 +358,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{ForkAwesome.Minus}##editRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##editRemoveDisabled"))
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
@@ -368,7 +368,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{ForkAwesome.Minus}##editRemove"))
+            if (ImGui.Button($"{Icons.Minus}##editRemove"))
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }

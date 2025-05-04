@@ -1,7 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Interface;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ public class TextToolMenubar
     {
         if (ImGui.BeginMenu("Tools"))
         {
-            UIHelper.ShowMenuIcon($"{ForkAwesome.Bars}");
+            UIHelper.ShowMenuIcon($"{Icons.Bars}");
             if (ImGui.MenuItem("Test"))
             {
 

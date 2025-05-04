@@ -33,7 +33,7 @@ public static class PropInfo_ReferencesTo
                 if (n is Entity e)
                 {
                     // View Reference in Viewport
-                    if (ImGui.Button(ForkAwesome.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
+                    if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
                     {
                         BoundingBox box = new();
 
@@ -95,7 +95,7 @@ public static class PropInfo_ReferencesTo
                     // It's not the end of the world if we choose the wrong one, as SceneTree can use either,
                     // but only the RootObject has the TransformNode and Viewport integration.
                     var mapid = r.Name;
-                    var prettyName = $"{ForkAwesome.Cube} {mapid}";
+                    var prettyName = $"{Icons.Cube} {mapid}";
                     prettyName = $"{prettyName} {AliasUtils.GetMapNameAlias(editor.Project, mapid)}";
 
                     ImGui.SetNextItemWidth(-1);

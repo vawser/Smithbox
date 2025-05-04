@@ -5,7 +5,6 @@ using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -202,7 +201,7 @@ public class FlverMaterialPropertyView
         ImGui.SetNextItemWidth(colWidth * 0.9f);
         ImGui.InputText($"##Path_texture{index}", ref path, 255);
         ImGui.SameLine();
-        if (ImGui.Button($@"{ForkAwesome.FileO}##filePicker{index}"))
+        if (ImGui.Button($@"{Icons.FileO}##filePicker{index}"))
         {
             if (PlatformUtils.Instance.OpenFileDialog("Select target texture...", new string[] { "png", "dds", "tif", "jpeg", "bmp" }, out var tPath))
             {

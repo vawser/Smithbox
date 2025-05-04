@@ -9,7 +9,6 @@ using StudioCore.Editors.ParamEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tools.Generation;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -432,7 +431,7 @@ public class ParamEditorView
 
         // Go to selected
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{ForkAwesome.LocationArrow}") ||
+        if (ImGui.Button($"{Icons.LocationArrow}") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             Editor.GotoSelectedRow = true;
@@ -443,7 +442,7 @@ public class ParamEditorView
 
         // Go to ID
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{ForkAwesome.InfoCircle}") ||
+        if (ImGui.Button($"{Icons.InfoCircle}") ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             ImGui.OpenPopup("gotoParamRow");
@@ -470,7 +469,7 @@ public class ParamEditorView
         // Mass Edit Hint
         ImGui.AlignTextToFramePadding();
 
-        if (ImGui.Button($"{ForkAwesome.QuestionCircle}"))
+        if (ImGui.Button($"{Icons.QuestionCircle}"))
         {
             ImGui.OpenPopup("massEditHint");
         }

@@ -4,7 +4,6 @@ using SoulsFormats;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -46,7 +45,7 @@ public static class TextMerge
             ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f); 
             ImGui.InputText("##targetProjectDir", ref TargetProjectDir, 255);
             ImGui.SameLine();
-            if (ImGui.Button($@"{ForkAwesome.FileO}"))
+            if (ImGui.Button($@"{Icons.FileO}"))
             {
                 if (PlatformUtils.Instance.OpenFolderDialog("Select project directory...", out var path))
                 {
