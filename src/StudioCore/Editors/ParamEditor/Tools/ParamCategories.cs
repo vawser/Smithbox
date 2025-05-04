@@ -5,7 +5,6 @@ using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

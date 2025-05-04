@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Formats.JSON;
 
+// -------------- Project Display Order --------------
+public class ProjectDisplayOrder
+{
+    public Dictionary<int, Guid> DisplayOrder { get; set; }
+}
+
+
 // -------------- Aliases --------------
 public class AliasStore
 {

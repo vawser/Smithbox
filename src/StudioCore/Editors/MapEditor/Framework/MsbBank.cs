@@ -2,7 +2,6 @@
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Resource.Locators;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;

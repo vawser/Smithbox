@@ -119,7 +119,7 @@ public class ModelEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_FLVER)
+        if (Project.IsInitializing)
             return;
 
         var scale = DPI.GetUIScale();
@@ -491,6 +491,9 @@ public class ModelEditorScreen : EditorScreen
 
     public void Update(float dt)
     {
+        if (Project.IsInitializing)
+            return;
+
         ViewportUsingKeyboard = Viewport.Update(Window, dt);
 
         if (ResManager._loadingTask != null && ResManager._loadingTask.IsCompleted)
@@ -501,12 +504,18 @@ public class ModelEditorScreen : EditorScreen
 
     public void EditorResized(Sdl2Window window, GraphicsDevice device)
     {
+        if (Project.IsInitializing)
+            return;
+
         Window = window;
         Rect = window.Bounds;
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
+        if (Project.IsInitializing)
+            return;
+
         if (Viewport != null)
         {
             Viewport.Draw(device, cl);

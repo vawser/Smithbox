@@ -14,7 +14,6 @@ using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.Core;
 using System.Threading.Tasks;
-using StudioCore.Utilities;
 
 namespace StudioCore.Editors.ParamEditor;
 

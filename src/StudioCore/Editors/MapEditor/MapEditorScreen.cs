@@ -184,7 +184,7 @@ public class MapEditorScreen : EditorScreen
 
     public void Update(float dt)
     {
-        if (!CFG.Current.EnableEditor_MSB)
+        if (Project.IsInitializing)
             return;
 
         if (GCNeedsCollection)
@@ -930,7 +930,7 @@ public class MapEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_MSB)
+        if (Project.IsInitializing)
             return;
 
         var scale = DPI.GetUIScale();
@@ -1041,6 +1041,9 @@ public class MapEditorScreen : EditorScreen
 
     public void Draw(GraphicsDevice device, CommandList cl)
     {
+        if (Project.IsInitializing)
+            return;
+
         if (MapViewportView.Viewport != null)
         {
             MapViewportView.Draw(device, cl);

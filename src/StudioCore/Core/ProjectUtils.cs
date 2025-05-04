@@ -1,11 +1,10 @@
-﻿using StudioCore.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Utilities;
+namespace StudioCore.Core;
 
 public class ProjectUtils
 {
@@ -43,5 +42,20 @@ public class ProjectUtils
             default:
                 throw new Exception("Game type not set");
         }
+    }
+
+    public static string GetBaseFolder()
+    {
+        return @$"{AppContext.BaseDirectory}\.smithbox";
+    }
+
+    public static string GetConfigurationFolder()
+    {
+        return @$"{AppContext.BaseDirectory}\.smithbox\Configuration";
+    }
+
+    public static string GetProjectsFolder()
+    {
+        return @$"{AppContext.BaseDirectory}\.smithbox\Projects";
     }
 }

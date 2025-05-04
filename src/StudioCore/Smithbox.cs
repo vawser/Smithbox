@@ -17,7 +17,6 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
@@ -26,7 +25,6 @@ using static StudioCore.Configuration.Help.HelpWindow;
 using static StudioCore.Configuration.Keybinds.KeybindWindow;
 using static StudioCore.Configuration.SettingsWindow;
 using static StudioCore.Tools.Development.DebugWindow;
-using Renderer = StudioCore.Scene.Renderer;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
 
@@ -91,6 +89,7 @@ public class Smithbox
         ResourceManager.BaseEditor = this;
 
         ProjectManager = new(this);
+        ProjectManager.Setup();
 
         Settings = new(this);
         Help = new(this);
@@ -218,13 +217,8 @@ public class Smithbox
         cfg.OversampleH = 3;
         cfg.OversampleV = 3;
 
-        ushort[] iconRangesRaw = { ForkAwesome.IconMin, ForkAwesome.IconMax, 0 };
-
         ImFontGlyphRangesBuilderPtr iconGlyphBuilder = ImGui.ImFontGlyphRangesBuilder();
-        fixed (ushort* r = iconRangesRaw)
-        {
-            iconGlyphBuilder.AddRanges((uint*)r);
-        }
+        iconGlyphBuilder.AddChar(0xf0c9);  // Example: bars
 
         ImVector<uint> iconGlyphRanges;
         iconGlyphBuilder.BuildRanges(&iconGlyphRanges);
@@ -344,10 +338,9 @@ public class Smithbox
             }
         }
 
+        ProjectManager.Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
-        CFG.Save();
-        UI.Save();
     }
 
 
@@ -456,6 +449,15 @@ public class Smithbox
         if (_showImGuiDemo)
         {
             ImGui.ShowDemoWindow();
+        }
+
+        ProjectCreation.Draw();
+
+        // Create new project if triggered to do so
+        if (ProjectCreation.Create)
+        {
+            ProjectCreation.Create = false;
+            ProjectManager.CreateProject();
         }
 
         if (ImGui.BeginMainMenuBar())

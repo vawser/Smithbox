@@ -14,7 +14,6 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
-using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

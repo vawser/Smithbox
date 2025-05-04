@@ -299,10 +299,11 @@ public class Renderer
             return null;
         }
 
-        foreach (RenderQueue rq in RenderQueues)
+        for (int i = 0; i < RenderQueues.Count; i++)
         {
-            rq.Execute(drawCommandList, _drawFences[_nextBuffer]);
-            rq.Clear();
+            var curRq = RenderQueues[i];
+            curRq.Execute(drawCommandList, _drawFences[_nextBuffer]);
+            curRq.Clear();
         }
 
         // Handle readbacks

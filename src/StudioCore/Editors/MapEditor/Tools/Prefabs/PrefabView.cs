@@ -10,7 +10,6 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.Prefabs;
 using StudioCore.Interface;
 using StudioCore.Scene;
-using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

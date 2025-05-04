@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using Octokit;
+using StudioCore.Core;
+using System.Text.Json.Serialization;
 
 namespace StudioCore.Formats.JSON;
 
@@ -7,6 +9,10 @@ namespace StudioCore.Formats.JSON;
     WriteIndented = true,
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
+
+// Project
+[JsonSerializable(typeof(ProjectEntry))]
+[JsonSerializable(typeof(ProjectDisplayOrder))]
 
 // Alias Data
 [JsonSerializable(typeof(AliasStore))]
