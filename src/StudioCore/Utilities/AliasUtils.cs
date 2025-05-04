@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Octokit;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;

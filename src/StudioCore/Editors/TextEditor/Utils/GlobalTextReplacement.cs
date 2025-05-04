@@ -34,6 +34,8 @@ public static class GlobalTextReplacement
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
 
+        var buttonSize = new Vector2(windowWidth / 2, 32 * DPI.GetUIScale());
+
         if (ImGui.BeginTable($"globalReplacementTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -161,14 +163,14 @@ public static class GlobalTextReplacement
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Preview Edit##executeSearch", UI.GetStandardHalfButtonSize()))
+        if (ImGui.Button("Preview Edit##executeSearch", buttonSize))
         {
             HasSearched = true;
             ReplacementResults = TextFinder.GetReplacementResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         UIHelper.Tooltip("Populate the edit preview list.");
         ImGui.SameLine();
-        if (ImGui.Button("Clear Preview##clearSearchResults", UI.GetStandardHalfButtonSize()))
+        if (ImGui.Button("Clear Preview##clearSearchResults", buttonSize))
         {
             HasSearched = false;
             ReplacementResults.Clear();

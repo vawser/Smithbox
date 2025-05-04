@@ -1,4 +1,5 @@
 ﻿using Silk.NET.SDL;
+using StudioCore.Configuration;
 using StudioCore.Graphics;
 using System;
 using System.Collections.Generic;

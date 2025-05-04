@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Utilities;

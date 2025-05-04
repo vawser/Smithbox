@@ -2,7 +2,6 @@
 using SoulsFormats;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextEditor;
-using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ using Andre.Formats;
 using StudioCore.Editor;
 using HKLib.hk2018.hkWeakPtrTest;
 using Silk.NET.OpenGL;
+using StudioCore.Configuration;
 
 namespace StudioCore.Editors.ParamEditor;
 

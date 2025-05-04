@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Caching.Memory;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;

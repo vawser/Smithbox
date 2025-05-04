@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using System;

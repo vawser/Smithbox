@@ -2,8 +2,6 @@
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Configuration.Help;
-using StudioCore.Configuration.Keybinds;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Graphics;
@@ -21,12 +19,13 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Configuration.Help.HelpWindow;
-using static StudioCore.Configuration.Keybinds.KeybindWindow;
-using static StudioCore.Configuration.SettingsWindow;
+using static StudioCore.Configuration.Windows.HelpWindow;
+using static StudioCore.Configuration.Windows.KeybindWindow;
+using static StudioCore.Configuration.Windows.SettingsWindow;
 using static StudioCore.Tools.Development.DebugWindow;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
+using StudioCore.Configuration.Windows;
 
 namespace StudioCore;
 
@@ -105,17 +104,36 @@ public class Smithbox
 
     }
 
+    /// <summary>
+    /// Called when Smithbox is starting up
+    /// </summary>
     private void Setup()
     {
+        CFG.Setup();
+        UI.Setup();
+        KeyBindings.Setup();
+
+        CFG.Load();
+        UI.Load();
+        KeyBindings.Load();
+
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
-        CFG.AttemptLoadOrDefault();
-        UI.AttemptLoadOrDefault();
         InterfaceTheme.SetupThemes();
         InterfaceTheme.SetTheme(true);
 
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+    }
+
+    /// <summary>
+    /// Called when Smithbox is shutting down
+    /// </summary>
+    private void Exit()
+    {
+        CFG.Save();
+        UI.Save();
+        KeyBindings.Save();
     }
 
     private unsafe void SetupImGui()
@@ -341,11 +359,15 @@ public class Smithbox
 
             if (!_context.Window.Exists)
             {
+                ProjectManager.Exit();
+                Exit();
+
                 break;
             }
         }
 
         ProjectManager.Exit();
+        Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
     }
@@ -376,7 +398,6 @@ public class Smithbox
             // Program crashed on initial load, clear recent project to let the user launch the program next time without issue.
             try
             {
-                CFG.Current.LastProjectFile = "";
                 CFG.Save();
                 UI.Save();
             }
@@ -395,7 +416,7 @@ public class Smithbox
     private unsafe void Update(float deltaseconds)
     {
         DPI.UpdateDpi(_context);
-        UI.OnGui();
+
         var scale = DPI.GetUIScale();
 
         if (FontRebuildRequest)
@@ -459,6 +480,7 @@ public class Smithbox
         }
 
         ProjectCreation.Draw();
+        ProjectSettings.Draw();
 
         // Create new project if triggered to do so
         if (ProjectCreation.Create)
@@ -547,54 +569,6 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
-            // Help
-            if (ImGui.BeginMenu("Help"))
-            {
-                if (ImGui.MenuItem("Articles"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Articles);
-                }
-                UIHelper.Tooltip("View the articles that relate to this project.");
-
-                if (ImGui.MenuItem("Tutorials"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
-                }
-                UIHelper.Tooltip("View the tutorials that relate to this project.");
-
-                if (ImGui.MenuItem("Glossary"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Glossary);
-                }
-                UIHelper.Tooltip("View the glossary that relate to this project.");
-
-                if (ImGui.MenuItem("Mass Edit"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
-                }
-                UIHelper.Tooltip("View the mass edit help instructions.");
-
-                if (ImGui.MenuItem("Regex"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Regex);
-                }
-                UIHelper.Tooltip("View the regex help instructions.");
-
-                if (ImGui.MenuItem("Links"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Links);
-                }
-                UIHelper.Tooltip("View the community links.");
-
-                if (ImGui.MenuItem("Credits"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Credits);
-                }
-                UIHelper.Tooltip("View the credits.");
-
-                ImGui.EndMenu();
-            }
-
             // Keybinds
             if (ImGui.BeginMenu("Keybinds"))
             {
@@ -651,6 +625,54 @@ public class Smithbox
                     Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
                 }
                 UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
+
+                ImGui.EndMenu();
+            }
+
+            // Help
+            if (ImGui.BeginMenu("Help"))
+            {
+                if (ImGui.MenuItem("Articles"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Articles);
+                }
+                UIHelper.Tooltip("View the articles that relate to this project.");
+
+                if (ImGui.MenuItem("Tutorials"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
+                }
+                UIHelper.Tooltip("View the tutorials that relate to this project.");
+
+                if (ImGui.MenuItem("Glossary"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Glossary);
+                }
+                UIHelper.Tooltip("View the glossary that relate to this project.");
+
+                if (ImGui.MenuItem("Mass Edit"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
+                }
+                UIHelper.Tooltip("View the mass edit help instructions.");
+
+                if (ImGui.MenuItem("Regex"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Regex);
+                }
+                UIHelper.Tooltip("View the regex help instructions.");
+
+                if (ImGui.MenuItem("Links"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Links);
+                }
+                UIHelper.Tooltip("View the community links.");
+
+                if (ImGui.MenuItem("Credits"))
+                {
+                    Help.ToggleWindow(SelectedHelpTab.Credits);
+                }
+                UIHelper.Tooltip("View the credits.");
 
                 ImGui.EndMenu();
             }

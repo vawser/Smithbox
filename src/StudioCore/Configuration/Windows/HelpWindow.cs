@@ -9,7 +9,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace StudioCore.Configuration.Help;
+namespace StudioCore.Configuration.Windows;
 
 public class HelpWindow
 {

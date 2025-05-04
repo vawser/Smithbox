@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Editors.ParamEditor;

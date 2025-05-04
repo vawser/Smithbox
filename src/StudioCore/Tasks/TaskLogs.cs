@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;

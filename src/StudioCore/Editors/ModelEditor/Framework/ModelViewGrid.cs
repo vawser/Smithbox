@@ -1,5 +1,5 @@
-﻿using StudioCore.Editors.MapEditor;
-using StudioCore.Interface;
+﻿using StudioCore.Configuration;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
 using StudioCore.Scene.Framework;

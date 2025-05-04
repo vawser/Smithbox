@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Formats.JSON;

@@ -169,28 +169,18 @@ public class ProjectEntry
         ImportedParamRowNames = false;
         EnableParamRowStrip = false;
 
-        //EnableMapEditor = true;
-        //EnableModelEditor = true;
-        //EnableTextEditor = true;
-        //EnableParamEditor = true;
-        //EnableTimeActEditor = true;
-        //EnableGparamEditor = true;
-        //EnableMaterialEditor = true;
-        //EnableEmevdEditor = true;
-        //EnableEsdEditor = true;
-        //EnableTextureViewer = true;
-
-        // TESTING
+        // Defaults
         EnableMapEditor = true;
         EnableModelEditor = true;
-        EnableTextEditor = false;
-        EnableParamEditor = false;
+        EnableTextEditor = true;
+        EnableParamEditor = true;
+        EnableGparamEditor = true;
+        EnableTextureViewer = true;
+
         EnableTimeActEditor = false;
-        EnableGparamEditor = false;
         EnableMaterialEditor = false;
         EnableEmevdEditor = false;
         EnableEsdEditor = false;
-        EnableTextureViewer = false;
     }
 
     /// <summary>
@@ -252,6 +242,39 @@ public class ProjectEntry
         {
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
         }
+
+        InitializeEditors();
+        
+        Initialized = true;
+        IsInitializing = false;
+
+        return true;
+    }
+
+    public async void InitializeEditors()
+    {
+        // Clear all existing editors and editor data
+        MapEditor = null;
+        ModelEditor = null;
+        TextEditor = null;
+        ParamEditor = null;
+        TimeActEditor = null;
+        GparamEditor = null;
+        MaterialEditor = null;
+        EmevdEditor = null;
+        EsdEditor = null;
+        TextureViewer = null;
+        MapEditor = null;
+
+        EmevdBank = null;
+        EsdBank = null;
+        GparamBank = null;
+        MsbBank = null;
+        MaterialBank = null;
+        ParamData = null;
+        TextData = null;
+        TextureData = null;
+        TimeActData = null;
 
         // ---- Map Editor ----
         if (EnableMapEditor)
@@ -553,10 +576,6 @@ public class ProjectEntry
             TextureViewer = new TextureViewerScreen(BaseEditor, this);
         }
 
-        Initialized = true;
-        IsInitializing = false;
-
-        return true;
     }
 
     /// <summary>
@@ -582,43 +601,43 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor)
+        if (EnableMapEditor && MapEditor != null)
         {
             HandleEditor(MapEditor, dt);
         }
-        if (EnableModelEditor)
+        if (EnableModelEditor && ModelEditor != null)
         {
             HandleEditor(ModelEditor, dt);
         }
-        if (EnableTextEditor)
+        if (EnableTextEditor && TextEditor != null)
         {
             HandleEditor(TextEditor, dt);
         }
-        if (EnableParamEditor)
+        if (EnableParamEditor && ParamEditor != null)
         {
             HandleEditor(ParamEditor, dt);
         }
-        if (EnableTimeActEditor)
+        if (EnableTimeActEditor && TimeActEditor != null)
         {
             HandleEditor(TimeActEditor, dt);
         }
-        if (EnableGparamEditor)
+        if (EnableGparamEditor && GparamEditor != null)
         {
             HandleEditor(GparamEditor, dt);
         }
-        if (EnableMaterialEditor)
+        if (EnableMaterialEditor && MaterialEditor != null)
         {
             HandleEditor(MaterialEditor, dt);
         }
-        if (EnableEmevdEditor)
+        if (EnableEmevdEditor && EmevdEditor != null)
         {
             HandleEditor(EmevdEditor, dt);
         }
-        if (EnableEsdEditor)
+        if (EnableEsdEditor && EsdEditor != null)
         {
             HandleEditor(EsdEditor, dt);
         }
-        if (EnableTextureViewer)
+        if (EnableTextureViewer && TextureViewer != null)
         {
             HandleEditor(TextureViewer, dt);
         }
@@ -679,11 +698,11 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor)
+        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
         {
             MapEditor.EditorResized(window, device);
         }
-        if (EnableModelEditor)
+        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
         {
             ModelEditor.EditorResized(window, device);
         }
@@ -699,11 +718,11 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor && FocusedEditor is MapEditorScreen)
+        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
         {
             MapEditor.Draw(device, cl);
         }
-        if (EnableModelEditor && FocusedEditor is ModelEditorScreen)
+        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
         {
             ModelEditor.Draw(device, cl);
         }

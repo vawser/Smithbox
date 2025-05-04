@@ -1,19 +1,15 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using StudioCore.Platform;
 using System;
 using System.IO;
 using System.Numerics;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace StudioCore.Interface;
-
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(UI))]
-internal partial class UISerializerContext : JsonSerializerContext
-{
-}
+namespace StudioCore.Configuration;
 
 public class UI
 {
@@ -22,19 +18,6 @@ public class UI
 
     public static bool IsEnabled = true;
     private static readonly object _lock_SaveLoadCFG = new();
-
-    public static UI Current { get; private set; }
-    public static UI Default { get; } = new();
-
-    //**************
-    // Common Size Definitions
-    //**************
-    public static Vector2 MenuButtonSize = new Vector2(200, 24);
-    public static Vector2 MenuButtonWideSize = new Vector2(350, 24);
-
-    public static Vector2 ModalButtonThirdSize = new Vector2(172, 24);
-    public static Vector2 ModalButtonHalfSize = new Vector2(260, 24);
-    public static Vector2 ModalButtonSize = new Vector2(520, 24);
 
     //**************
     // System
@@ -286,32 +269,34 @@ public class UI
     public Vector4 DisplayGroupEditor_CombinedActive_Frame = new Vector4(0.4f, 0.4f, 0.06f, 1.0f);
     public Vector4 DisplayGroupEditor_CombinedActive_Checkbox = new Vector4(1f, 1f, 0.02f, 1.0f);
 
-    //**************
-    // Functions
-    //**************
-    public static string GetConfigFilePath()
+    //****************************
+    // UI
+    //****************************
+    public static UI Current { get; private set; }
+    public static UI Default { get; } = new();
+
+    public static void Setup()
     {
-        return $@"{GetConfigFolderPath()}\{Config_FileName}";
+        Current = new UI();
     }
 
-    public static string GetConfigFolderPath()
+    public static void Load()
     {
-        return $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\{FolderName}";
-    }
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Interface.json");
 
-    private static void LoadConfig()
-    {
-        if (!File.Exists(GetConfigFilePath()))
+        if (!File.Exists(file))
         {
             Current = new UI();
+            Save();
         }
         else
         {
             try
             {
+                var filestring = File.ReadAllText(file);
                 var options = new JsonSerializerOptions();
-                Current = JsonSerializer.Deserialize(File.ReadAllText(GetConfigFilePath()),
-                    UISerializerContext.Default.UI);
+                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
 
                 if (Current == null)
                 {
@@ -320,84 +305,29 @@ public class UI
             }
             catch (Exception e)
             {
-                DialogResult result = PlatformUtils.Instance.MessageBox(
-                    $"{e.Message}\n\nConfig could not be loaded. Reset settings?",
-                    $"{Config_FileName} Load Error", MessageBoxButtons.YesNo);
-                if (result == DialogResult.No)
-                {
-                    throw new Exception($"{Config_FileName} could not be loaded.\n\n{e.Message}");
-                }
+                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.");
 
                 Current = new UI();
-                SaveConfig();
+                Save();
             }
         }
-        DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-    }
-
-    private static void SaveConfig()
-    {
-        var json = JsonSerializer.Serialize(
-            Current, UISerializerContext.Default.UI);
-
-        File.WriteAllText(GetConfigFilePath(), json);
     }
 
     public static void Save()
     {
-        if (IsEnabled)
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Interface.json");
+
+        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+
+        File.WriteAllText(file, json);
+    }
+
+    public static void ResetToDefault()
+    {
+        foreach (var field in typeof(UI).GetFields(BindingFlags.Instance | BindingFlags.Public))
         {
-            lock (_lock_SaveLoadCFG)
-            {
-                if (!Directory.Exists(GetConfigFolderPath()))
-                {
-                    Directory.CreateDirectory(GetConfigFolderPath());
-                }
-
-                SaveConfig();
-            }
+            field.SetValue(Current, field.GetValue(Default));
         }
-    }
-
-    public static void AttemptLoadOrDefault()
-    {
-        if (IsEnabled)
-        {
-            lock (_lock_SaveLoadCFG)
-            {
-                if (!Directory.Exists(GetConfigFolderPath()))
-                {
-                    Directory.CreateDirectory(GetConfigFolderPath());
-                }
-
-                LoadConfig();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Updates the common size definitions to account for current UI scale
-    /// </summary>
-    public static void OnGui()
-    {
-        // Menubar
-        MenuButtonSize = new Vector2(200 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-        MenuButtonWideSize = new Vector2(350 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-
-        // Modal
-        ModalButtonThirdSize = new Vector2(172 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-        ModalButtonHalfSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-        ModalButtonSize = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-    }
-
-    public static Vector2 GetStandardButtonSize()
-    {
-        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
-        return new Vector2(windowWidth, 32 * DPI.GetUIScale());
-    }
-    public static Vector2 GetStandardHalfButtonSize()
-    {
-        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
-        return new Vector2(windowWidth / 2, 32 * DPI.GetUIScale());
     }
 }

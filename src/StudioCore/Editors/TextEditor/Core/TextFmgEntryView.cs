@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;

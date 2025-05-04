@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -14,7 +15,6 @@ using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
 using StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
-using StudioCore.Editors.MapEditor.Tools.EntityInformation;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
 using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
@@ -78,7 +78,6 @@ public class MapEditorScreen : EditorScreen
     public MapQueryView MapQueryView;
     public WorldMapView WorldMapView;
     public LocalSearchView LocalSearchView;
-    public EntityInformationView EntityInformationView;
     public EntityIdentifierOverview EntityIdentifierOverview;
 
     // Menubar
@@ -121,7 +120,6 @@ public class MapEditorScreen : EditorScreen
         PrefabView = new PrefabView(this);
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
-        EntityInformationView = new EntityInformationView(this);
         EntityIdentifierOverview = new EntityIdentifierOverview(this);
 
         BasicFilters = new BasicFilters(this);
@@ -716,16 +714,6 @@ public class MapEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityIdentifierOverview);
 
-            // Debug only
-            if (CFG.Current.DisplayDebugTools)
-            {
-                if (ImGui.MenuItem("Entity Information"))
-                {
-                    UI.Current.Interface_MapEditor_EntityInformation = !UI.Current.Interface_MapEditor_EntityInformation;
-                }
-                UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityInformation);
-            }
-
             ImGui.Separator();
 
             if (ImGui.MenuItem("Map Object List: Categories"))
@@ -993,11 +981,6 @@ public class MapEditorScreen : EditorScreen
         if (FeatureFlags.EnableNavmeshBuilder)
         {
             NavmeshBuilderView.OnGui();
-        }
-
-        if (EntityInformationView != null)
-        {
-            EntityInformationView.OnGui();
         }
 
         if (EntityIdentifierOverview != null)

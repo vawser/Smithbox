@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -34,19 +35,20 @@ public static class ProjectCreation
     public static void Draw()
     {
         var inputWidth = 400.0f;
+        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
 
         var viewport = ImGui.GetMainViewport();
         Vector2 center = viewport.Pos + viewport.Size / 2;
 
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
 
-        ImGui.SetNextWindowSize(new Vector2(640, 240), ImGuiCond.Always);
+        //ImGui.SetNextWindowSize(new Vector2(640, 240), ImGuiCond.Always);
 
         if (Display)
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-            if (ImGui.Begin("Project Creation##projectCreationWindow", ref Display, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove))
+            if (ImGui.Begin("Project Creation##projectCreationWindow", ref Display, flags))
             {
                 if (ImGui.BeginTable($"projectCreationTable", 3, ImGuiTableFlags.SizingFixedFit))
                 {

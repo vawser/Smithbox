@@ -14,6 +14,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using StudioCore.Core;
+using StudioCore.Configuration;
 
 namespace StudioCore.Editors.TextEditor;
 

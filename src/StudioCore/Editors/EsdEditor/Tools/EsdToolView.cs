@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.Framework;

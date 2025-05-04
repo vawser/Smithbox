@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using System.Text.Json.Serialization;
 
@@ -9,6 +10,12 @@ namespace StudioCore.Formats.JSON;
     WriteIndented = true,
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
+
+// Program
+[JsonSerializable(typeof(CFG))]
+[JsonSerializable(typeof(UI))]
+[JsonSerializable(typeof(KeyBindings.Bindings))]
+[JsonSerializable(typeof(KeyBind))]
 
 // Project
 [JsonSerializable(typeof(ProjectEntry))]

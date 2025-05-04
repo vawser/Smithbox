@@ -15,6 +15,7 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Core;
+using StudioCore.Configuration;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 

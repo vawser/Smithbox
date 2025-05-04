@@ -1,11 +1,11 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Formats.JSON;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

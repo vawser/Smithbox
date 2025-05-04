@@ -16,6 +16,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using SoapstoneLib;
 using static StudioCore.Editor.TaskManager;
+using StudioCore.Configuration;
 
 namespace StudioCore.Tools.Development;
 

@@ -1,10 +1,11 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Configuration.Settings;
 using StudioCore.Interface;
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace StudioCore.Configuration;
+namespace StudioCore.Configuration.Windows;
 
 public class SettingsWindow
 {
@@ -67,6 +68,8 @@ public class SettingsWindow
         }
     }
 
+    private bool wasOpenLastFrame = true;
+
     public void Display()
     {
         var scale = DPI.GetUIScale();
@@ -128,11 +131,18 @@ public class SettingsWindow
             }
             ImGui.EndChild();
         }
-
         ImGui.End();
 
         ImGui.PopStyleVar(3);
         ImGui.PopStyleColor(5);
+
+        if (wasOpenLastFrame && !MenuOpenState)
+        {
+            CFG.Save();
+            UI.Save();
+        }
+
+        wasOpenLastFrame = MenuOpenState;
     }
     public enum SelectedSettingTab
     {

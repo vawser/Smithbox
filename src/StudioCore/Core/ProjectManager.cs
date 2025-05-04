@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Octokit;
+using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System;
@@ -147,7 +148,7 @@ public class ProjectManager
 
                 if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
                 {
-                    //ProjectSettings.Show(this, SelectedProject);
+                    ProjectSettings.Show(BaseEditor, SelectedProject);
                 }
 
                 if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
@@ -218,9 +219,6 @@ public class ProjectManager
         {
             SaveProject(projectEntry);
         }
-
-        CFG.Save();
-        UI.Save();
     }
 
     public void Setup()
@@ -340,8 +338,12 @@ public class ProjectManager
             {
                 if (projectEntry.AutoSelect)
                 {
-                    SelectedProject = projectEntry;
-                    SelectedProject.IsSelected = true;
+                    if (!IsProjectLoading)
+                    {
+                        StartupProject(projectEntry);
+                        SelectedProject = projectEntry;
+                        SelectedProject.IsSelected = true;
+                    }
                 }
             }
         }
@@ -420,8 +422,12 @@ public class ProjectManager
 
         IsProjectLoading = true;
 
-        Task<bool> projectSetupTask = curProject.Init();
-        bool projectSetupTaskResult = await projectSetupTask;
+        // Only setup editors 
+        if (!curProject.Initialized)
+        {
+            Task<bool> projectSetupTask = curProject.Init();
+            bool projectSetupTaskResult = await projectSetupTask;
+        }
 
         foreach (var tEntry in Projects)
         {
