@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MapEditor.Framework;
+namespace StudioCore.Editors.MapEditor;
 
 public class MsbBank
 {

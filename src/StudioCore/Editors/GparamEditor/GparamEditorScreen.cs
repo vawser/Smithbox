@@ -101,23 +101,23 @@ public class GparamEditorScreen : EditorScreen
         EditorShortcuts.Monitor();
         CommandQueue.Parse(initcmd);
 
-        if (UI.Current.Interface_GparamEditor_Files)
+        if (CFG.Current.Interface_GparamEditor_FileList)
         {
             FileList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Groups)
+        if (CFG.Current.Interface_GparamEditor_GroupList)
         {
             GroupList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Fields)
+        if (CFG.Current.Interface_GparamEditor_FieldList)
         {
             FieldList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Values)
+        if (CFG.Current.Interface_GparamEditor_FieldValues)
         {
             FieldValueList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_ToolConfiguration)
+        if (CFG.Current.Interface_GparamEditor_ToolWindow)
         {
             ToolView.Display();
         }
@@ -202,33 +202,33 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_GparamEditor_Files = !UI.Current.Interface_GparamEditor_Files;
+                CFG.Current.Interface_GparamEditor_FileList = !CFG.Current.Interface_GparamEditor_FileList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Files);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FileList);
 
             if (ImGui.MenuItem("Groups"))
             {
-                UI.Current.Interface_GparamEditor_Groups = !UI.Current.Interface_GparamEditor_Groups;
+                CFG.Current.Interface_GparamEditor_GroupList = !CFG.Current.Interface_GparamEditor_GroupList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Groups);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_GroupList);
 
             if (ImGui.MenuItem("Fields"))
             {
-                UI.Current.Interface_GparamEditor_Fields = !UI.Current.Interface_GparamEditor_Fields;
+                CFG.Current.Interface_GparamEditor_FieldList = !CFG.Current.Interface_GparamEditor_FieldList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Fields);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FieldList);
 
             if (ImGui.MenuItem("Values"))
             {
-                UI.Current.Interface_GparamEditor_Values = !UI.Current.Interface_GparamEditor_Values;
+                CFG.Current.Interface_GparamEditor_FieldValues = !CFG.Current.Interface_GparamEditor_FieldValues;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Values);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FieldValues);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_GparamEditor_ToolConfiguration = !UI.Current.Interface_GparamEditor_ToolConfiguration;
+                CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

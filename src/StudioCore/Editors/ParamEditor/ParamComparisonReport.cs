@@ -192,7 +192,7 @@ public class ParamComparisonReport
 
     public void Display()
     {
-        var textPaneSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ModalHeight);
+        var textPaneSize = new Vector2(800, 600);
 
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
         ImGui.Separator();
@@ -226,7 +226,7 @@ public class ParamComparisonReport
 
         if (IsReportGenerated)
         {
-            var buttonSize = new Vector2(UI.Current.Interface_ModalWidth / 3, UI.Current.Interface_ButtonHeight);
+            var buttonSize = new Vector2(800 / 3, 32);
 
             ImGui.InputTextMultiline("##reportText", ref ReportText, uint.MaxValue, textPaneSize, ImGuiInputTextFlags.ReadOnly);
 
@@ -256,7 +256,7 @@ public class ParamComparisonReport
         }
         else if(IsGeneratingReport)
         {
-            var buttonSize = new Vector2(UI.Current.Interface_ModalWidth, UI.Current.Interface_ButtonHeight);
+            var buttonSize = new Vector2(800, 32);
 
             ImGui.Text("Report is being generated...");
             ImGui.Text($"Current Param: {CurrentParamProcessing}");
@@ -268,7 +268,7 @@ public class ParamComparisonReport
         }
         else
         {
-            var buttonSize = new Vector2(UI.Current.Interface_ModalWidth / 2, UI.Current.Interface_ButtonHeight);
+            var buttonSize = new Vector2(800 / 2, 32);
 
             if (ImGui.Button("Generate", buttonSize))
             {

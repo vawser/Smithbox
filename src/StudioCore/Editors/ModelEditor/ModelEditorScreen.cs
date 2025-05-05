@@ -159,14 +159,14 @@ public class ModelEditorScreen : EditorScreen
         FlverDataSelection.Display();
         ModelPropertyEditor.Display();
 
-        if (UI.Current.Interface_ModelEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_ModelEditor_ToolWindow)
         {
             ToolView.OnGui();
         }
 
         ResourceLoadWindow.DisplayWindow(Viewport.Width, Viewport.Height);
 
-        if (UI.Current.Interface_ModelEditor_ResourceList)
+        if (CFG.Current.Interface_ModelEditor_ResourceList)
         {
             ResourceListWindow.DisplayWindow("modelResourceList");
         }
@@ -259,52 +259,52 @@ public class ModelEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
 
             if (ImGui.MenuItem("Model Hierarchy"))
             {
-                UI.Current.Interface_ModelEditor_ModelHierarchy = !UI.Current.Interface_ModelEditor_ModelHierarchy;
+                CFG.Current.Interface_ModelEditor_ModelHierarchy = !CFG.Current.Interface_ModelEditor_ModelHierarchy;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ModelHierarchy);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ModelHierarchy);
 
             if (ImGui.MenuItem("Properties"))
             {
-                UI.Current.Interface_ModelEditor_Properties = !UI.Current.Interface_ModelEditor_Properties;
+                CFG.Current.Interface_ModelEditor_Properties = !CFG.Current.Interface_ModelEditor_Properties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Properties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Properties);
 
             if (ImGui.MenuItem("Asset Browser"))
             {
-                UI.Current.Interface_ModelEditor_AssetBrowser = !UI.Current.Interface_ModelEditor_AssetBrowser;
+                CFG.Current.Interface_ModelEditor_AssetBrowser = !CFG.Current.Interface_ModelEditor_AssetBrowser;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_AssetBrowser);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_AssetBrowser);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_ModelEditor_ToolConfigurationWindow = !UI.Current.Interface_ModelEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_ModelEditor_ToolWindow = !CFG.Current.Interface_ModelEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
 
             if (ImGui.MenuItem("Profiling"))
             {
-                UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
+                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
 
             if (ImGui.MenuItem("Resource List"))
             {
-                UI.Current.Interface_ModelEditor_ResourceList = !UI.Current.Interface_ModelEditor_ResourceList;
+                CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_ResourceList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
             if (ImGui.MenuItem("Viewport Grid"))
             {
-                UI.Current.Interface_ModelEditor_Viewport_Grid = !UI.Current.Interface_ModelEditor_Viewport_Grid;
+                CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
                 CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ModelEditor_Viewport_Grid);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
 
             ImGui.EndMenu();
         }

@@ -38,19 +38,21 @@ public class ProjectManager
         var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoMove;
 
         // Project List
-        ImGui.Begin("Projects##projectList", flags);
+        if (CFG.Current.Interface_Editor_ProjectList)
+        {
+            ImGui.Begin("Projects##projectList", flags);
 
-        Menubar();
-        DisplayProjectList();
+            Menubar();
+            DisplayProjectList();
 
-        ImGui.End();
+            ImGui.End();
+        }
 
         // Project Dock
         if (SelectedProject != null)
         {
             SelectedProject.Update(dt);
         }
-
     }
 
     private void Menubar()

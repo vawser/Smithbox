@@ -52,7 +52,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     {
         var scale = DPI.GetUIScale();
 
-        if (UI.Current.Interface_MapEditor_MapList)
+        if (CFG.Current.Interface_MapEditor_MapList)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
@@ -109,7 +109,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             ImGui.PopStyleColor();
         }
 
-        if (UI.Current.Interface_MapEditor_MapContents)
+        if (CFG.Current.Interface_MapEditor_MapContents)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);

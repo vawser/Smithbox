@@ -39,7 +39,7 @@ public class FlverDataSelectionView
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_ModelEditor_ModelHierarchy)
+        if (!CFG.Current.Interface_ModelEditor_ModelHierarchy)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

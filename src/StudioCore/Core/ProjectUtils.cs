@@ -58,6 +58,11 @@ public class ProjectUtils
     {
         return @$"{AppContext.BaseDirectory}\.smithbox\Configuration";
     }
+    public static string GetThemeFolder()
+    {
+        return @$"{AppContext.BaseDirectory}\Assets\Themes";
+    }
+
 
     public static string GetProjectsFolder()
     {

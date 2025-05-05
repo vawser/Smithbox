@@ -397,7 +397,7 @@ public static class ParamReferenceUtils
                 {
                     EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
                 }
-                UIHelper.ShowWideHoverTooltip($"{assetID}: {aliasName}");
+                UIHelper.WideTooltip($"{assetID}: {aliasName}");
             }
         }
     }

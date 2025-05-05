@@ -61,7 +61,7 @@ public class MapPropertyView
         var scale = DPI.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
-        if (!UI.Current.Interface_MapEditor_Properties)
+        if (!CFG.Current.Interface_MapEditor_Properties)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);

@@ -120,9 +120,6 @@ public class Smithbox
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
-        InterfaceTheme.SetupThemes();
-        InterfaceTheme.SetTheme(true);
-
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
     }
 
@@ -158,16 +155,16 @@ public class Smithbox
         string NonEnglishFontRelPath = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
         string IconFontRelPath = @"Assets\Fonts\forkawesome-webfont.ttf";
 
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_English_Font) &&
-            File.Exists(UI.Current.System_English_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
+            File.Exists(CFG.Current.System_English_Font))
         {
-            EnglishFontRelPath = UI.Current.System_English_Font;
+            EnglishFontRelPath = CFG.Current.System_English_Font;
         }
 
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_Other_Font) &&
-            File.Exists(UI.Current.System_Other_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) &&
+            File.Exists(CFG.Current.System_Other_Font))
         {
-            NonEnglishFontRelPath = UI.Current.System_Other_Font;
+            NonEnglishFontRelPath = CFG.Current.System_Other_Font;
         }
 
         var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
@@ -188,8 +185,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
-        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.GetUIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.GetUIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -212,15 +209,15 @@ public class Smithbox
         glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-        if (UI.Current.System_Font_Chinese)
+        if (CFG.Current.System_Font_Chinese)
             glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-        if (UI.Current.System_Font_Korean)
+        if (CFG.Current.System_Font_Korean)
             glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-        if (UI.Current.System_Font_Thai)
+        if (CFG.Current.System_Font_Thai)
             glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-        if (UI.Current.System_Font_Vietnamese)
+        if (CFG.Current.System_Font_Vietnamese)
             glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-        if (UI.Current.System_Font_Cyrillic)
+        if (CFG.Current.System_Font_Cyrillic)
             glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
 
         ImVector<uint> outGlyphRanges;
@@ -288,9 +285,9 @@ public class Smithbox
         {
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",
-                "System",
-                "soapstone server is running.",
-                "soapstone server is not running.",
+                "[System]",
+                "Soapstone server is running.",
+                "Soapstone server is not running.",
                 TaskManager.RequeueType.None,
                 false,
                 () =>
@@ -306,9 +303,9 @@ public class Smithbox
         {
             TaskManager.LiveTask task = new(
                 "system_checkProgramUpdate",
-                "System",
-                "program update check has run.",
-                "program update check has failed to run.",
+                "[System]",
+                "Program update check has run.",
+                "Program update check has failed to run.",
                 TaskManager.RequeueType.None,
                 true,
                 CheckProgramUpdate
@@ -774,6 +771,18 @@ public class Smithbox
                     DebugTools.ToggleWindow(SelectedDebugTab.Test_UniqueParamRowIDs);
                 }
                 UIHelper.Tooltip("Display the test panel.");
+
+                ImGui.EndMenu();
+            }
+
+            // View
+            if (ImGui.BeginMenu("View"))
+            {
+                if (ImGui.MenuItem("Project List"))
+                {
+                    CFG.Current.Interface_Editor_ProjectList = !CFG.Current.Interface_Editor_ProjectList;
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_ProjectList);
 
                 ImGui.EndMenu();
             }

@@ -60,7 +60,7 @@ public class ModelViewGrid
             Regenerate();
         }
 
-        if (UI.Current.Interface_ModelEditor_Viewport_Grid && Editor.Project.FocusedEditor is ModelEditorScreen)
+        if (CFG.Current.Interface_ModelEditor_Viewport_Grid && Editor.Project.FocusedEditor is ModelEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.ModelEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

@@ -90,27 +90,27 @@ public class EsdEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_EsdEditor_FileList)
+        if (CFG.Current.Interface_EsdEditor_FileList)
         {
             FileView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_ScriptList)
+        if (CFG.Current.Interface_EsdEditor_ScriptList)
         {
             ScriptView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateGroupList)
+        if (CFG.Current.Interface_EsdEditor_StateGroupList)
         {
             StateGroupView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateNodeList)
+        if (CFG.Current.Interface_EsdEditor_StateNodeList)
         {
             StateNodeView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateNodeContents)
+        if (CFG.Current.Interface_EsdEditor_StateNodeContents)
         {
             StateNodePropertyView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_EsdEditor_ToolConfigurationWindow)
         {
             ToolView.Display();
         }
@@ -182,39 +182,39 @@ public class EsdEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_EsdEditor_FileList = !UI.Current.Interface_EsdEditor_FileList;
+                CFG.Current.Interface_EsdEditor_FileList = !CFG.Current.Interface_EsdEditor_FileList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_FileList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_FileList);
 
             if (ImGui.MenuItem("Scripts"))
             {
-                UI.Current.Interface_EsdEditor_ScriptList = !UI.Current.Interface_EsdEditor_ScriptList;
+                CFG.Current.Interface_EsdEditor_ScriptList = !CFG.Current.Interface_EsdEditor_ScriptList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_ScriptList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ScriptList);
 
             if (ImGui.MenuItem("State Groups"))
             {
-                UI.Current.Interface_EsdEditor_StateGroupList = !UI.Current.Interface_EsdEditor_StateGroupList;
+                CFG.Current.Interface_EsdEditor_StateGroupList = !CFG.Current.Interface_EsdEditor_StateGroupList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateGroupList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateGroupList);
 
             if (ImGui.MenuItem("State Nodes"))
             {
-                UI.Current.Interface_EsdEditor_StateNodeList = !UI.Current.Interface_EsdEditor_StateNodeList;
+                CFG.Current.Interface_EsdEditor_StateNodeList = !CFG.Current.Interface_EsdEditor_StateNodeList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateNodeList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateNodeList);
 
             if (ImGui.MenuItem("Node Contents"))
             {
-                UI.Current.Interface_EsdEditor_StateNodeContents = !UI.Current.Interface_EsdEditor_StateNodeContents;
+                CFG.Current.Interface_EsdEditor_StateNodeContents = !CFG.Current.Interface_EsdEditor_StateNodeContents;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateNodeContents);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateNodeContents);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_EsdEditor_ToolConfigurationWindow = !UI.Current.Interface_EsdEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_EsdEditor_ToolConfigurationWindow = !CFG.Current.Interface_EsdEditor_ToolConfigurationWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ToolConfigurationWindow);
 
             ImGui.EndMenu();
         }

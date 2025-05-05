@@ -54,7 +54,7 @@ public class NullViewport : IViewport
 
     public void OnGui()
     {
-        if (UI.Current.Interface_Editor_Viewport)
+        if (CFG.Current.Interface_Editor_Viewport)
         {
             if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
             {
@@ -68,7 +68,7 @@ public class NullViewport : IViewport
             ImGui.End();
         }
 
-        if (UI.Current.Interface_Editor_Profiling)
+        if (CFG.Current.Interface_Editor_Profiling)
         {
             if (ImGui.Begin($@"Profiling##{_vpid}"))
             {

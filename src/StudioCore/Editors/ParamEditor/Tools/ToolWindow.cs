@@ -265,7 +265,7 @@ public class ToolWindow
 
                 // Options
                 ImGui.Checkbox("Retain Input", ref MassEditHandler.retainMassEditCommand);
-                UIHelper.ShowWideHoverTooltip("Retain the mass edit command in the input text area after execution.");
+                UIHelper.WideTooltip("Retain the mass edit command in the input text area after execution.");
                 UIHelper.WrappedText("");
 
                 // AutoFill
@@ -298,7 +298,7 @@ public class ToolWindow
 
                 // Output
                 UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Output:");
-                UIHelper.ShowWideHoverTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
+                UIHelper.WideTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
                 ImGui.SameLine();
                 UIHelper.WrappedText($"{MassEditHandler._mEditRegexResult}");
 

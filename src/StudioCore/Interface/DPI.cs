@@ -24,7 +24,7 @@ public static class DPI
             if (Math.Abs(_dpi - value) < 0.0001f) return; // Skip doing anything if no difference
 
             _dpi = value;
-            if (UI.Current.System_ScaleByDPI)
+            if (CFG.Current.System_ScaleByDPI)
                 UIScaleChanged?.Invoke(null, EventArgs.Empty);
         }
     }
@@ -45,8 +45,8 @@ public static class DPI
 
     public static float GetUIScale()
     {
-        var scale = UI.Current.System_UI_Scale;
-        if (UI.Current.System_ScaleByDPI)
+        var scale = CFG.Current.System_UI_Scale;
+        if (CFG.Current.System_ScaleByDPI)
             scale = scale / DefaultDpi * Dpi;
         return scale;
     }

@@ -39,7 +39,7 @@ public class EntityIdentifierOverview
 
     public void OnGui()
     {
-        if (!UI.Current.Interface_MapEditor_EntityIdentifierOverview)
+        if (!CFG.Current.Interface_MapEditor_EntityIdentifierOverview)
             return;
 
         // DS2 is not supported currently since it uses Entity IDs differently to the other games.

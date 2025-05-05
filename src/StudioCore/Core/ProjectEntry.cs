@@ -622,45 +622,47 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
+        var commands = EditorCommandQueue.GetNextCommand();
+
         if (EnableMapEditor && MapEditor != null)
         {
-            HandleEditor(MapEditor, dt);
+            HandleEditor(commands, MapEditor, dt);
         }
         if (EnableModelEditor && ModelEditor != null)
         {
-            HandleEditor(ModelEditor, dt);
+            HandleEditor(commands, ModelEditor, dt);
         }
         if (EnableTextEditor && TextEditor != null)
         {
-            HandleEditor(TextEditor, dt);
+            HandleEditor(commands, TextEditor, dt);
         }
         if (EnableParamEditor && ParamEditor != null)
         {
-            HandleEditor(ParamEditor, dt);
+            HandleEditor(commands, ParamEditor, dt);
         }
         if (EnableTimeActEditor && TimeActEditor != null)
         {
-            HandleEditor(TimeActEditor, dt);
+            HandleEditor(commands, TimeActEditor, dt);
         }
         if (EnableGparamEditor && GparamEditor != null)
         {
-            HandleEditor(GparamEditor, dt);
+            HandleEditor(commands, GparamEditor, dt);
         }
         if (EnableMaterialEditor && MaterialEditor != null)
         {
-            HandleEditor(MaterialEditor, dt);
+            HandleEditor(commands, MaterialEditor, dt);
         }
         if (EnableEmevdEditor && EmevdEditor != null)
         {
-            HandleEditor(EmevdEditor, dt);
+            HandleEditor(commands, EmevdEditor, dt);
         }
         if (EnableEsdEditor && EsdEditor != null)
         {
-            HandleEditor(EsdEditor, dt);
+            HandleEditor(commands, EsdEditor, dt);
         }
         if (EnableTextureViewer && TextureViewer != null)
         {
-            HandleEditor(TextureViewer, dt);
+            HandleEditor(commands, TextureViewer, dt);
         }
     }
 
@@ -669,9 +671,17 @@ public class ProjectEntry
     /// </summary>
     /// <param name="screen"></param>
     /// <param name="dt"></param>
-    public unsafe void HandleEditor(EditorScreen screen, float dt)
+    public unsafe void HandleEditor(string[] commands, EditorScreen screen, float dt)
     {
-        var commands = EditorCommandQueue.GetNextCommand();
+        if (commands != null)
+        {
+            TaskLogs.AddLog("Test");
+
+            if(commands[0] == screen.CommandEndpoint)
+            {
+                TaskLogs.AddLog("Test");
+            }
+        }
 
         if (commands != null && commands[0] == screen.CommandEndpoint)
         {

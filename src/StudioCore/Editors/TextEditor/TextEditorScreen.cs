@@ -113,25 +113,25 @@ public class TextEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_TextEditor_FileContainerList)
+        if (CFG.Current.Interface_TextEditor_FileContainerList)
         {
             FileView.Display();
         }
-        if (UI.Current.Interface_TextEditor_FmgList)
+        if (CFG.Current.Interface_TextEditor_FmgList)
         {
             FmgView.Display();
         }
-        if (UI.Current.Interface_TextEditor_FmgEntryList)
+        if (CFG.Current.Interface_TextEditor_TextEntryList)
         {
             FmgEntryView.Display();
         }
-        if (UI.Current.Interface_TextEditor_FmgEntryProperties)
+        if (CFG.Current.Interface_TextEditor_TextEntryContents)
         {
             FmgEntryPropertyEditor.Display();
         }
         EditorShortcuts.Monitor();
 
-        if (UI.Current.Interface_TextEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_TextEditor_ToolWindow)
         {
             ToolView.Display();
         }
@@ -230,33 +230,33 @@ public class TextEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_TextEditor_FileContainerList = !UI.Current.Interface_TextEditor_FileContainerList;
+                CFG.Current.Interface_TextEditor_FileContainerList = !CFG.Current.Interface_TextEditor_FileContainerList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FileContainerList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_FileContainerList);
 
             if (ImGui.MenuItem("Text Files"))
             {
-                UI.Current.Interface_TextEditor_FmgList = !UI.Current.Interface_TextEditor_FmgList;
+                CFG.Current.Interface_TextEditor_FmgList = !CFG.Current.Interface_TextEditor_FmgList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_FmgList);
 
             if (ImGui.MenuItem("Text Entries"))
             {
-                UI.Current.Interface_TextEditor_FmgEntryList = !UI.Current.Interface_TextEditor_FmgEntryList;
+                CFG.Current.Interface_TextEditor_TextEntryList = !CFG.Current.Interface_TextEditor_TextEntryList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntryList);
 
             if (ImGui.MenuItem("Contents"))
             {
-                UI.Current.Interface_TextEditor_FmgEntryProperties = !UI.Current.Interface_TextEditor_FmgEntryProperties;
+                CFG.Current.Interface_TextEditor_TextEntryContents = !CFG.Current.Interface_TextEditor_TextEntryContents;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_FmgEntryProperties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_TextEntryContents);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_TextEditor_ToolConfigurationWindow = !UI.Current.Interface_TextEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_TextEditor_ToolWindow = !CFG.Current.Interface_TextEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

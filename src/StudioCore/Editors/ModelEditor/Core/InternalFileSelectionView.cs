@@ -34,7 +34,7 @@ public class InternalFileSelectionView
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_ModelEditor_AssetBrowser)
+        if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

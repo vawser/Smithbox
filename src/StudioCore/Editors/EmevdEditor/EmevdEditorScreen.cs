@@ -102,23 +102,23 @@ public class EmevdEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_EmevdEditor_Files)
+        if (CFG.Current.Interface_EmevdEditor_Files)
         {
             FileView.Display();
         }
-        if (UI.Current.Interface_EmevdEditor_Events)
+        if (CFG.Current.Interface_EmevdEditor_Events)
         {
             EventView.Display();
         }
-        if (UI.Current.Interface_EmevdEditor_Instructions)
+        if (CFG.Current.Interface_EmevdEditor_Instructions)
         {
             InstructionView.Display();
         }
-        if (UI.Current.Interface_EmevdEditor_EventProperties)
+        if (CFG.Current.Interface_EmevdEditor_EventProperties)
         {
             EventParameterView.Display();
         }
-        if (UI.Current.Interface_EmevdEditor_InstructionProperties)
+        if (CFG.Current.Interface_EmevdEditor_InstructionProperties)
         {
             InstructionParameterView.Display();
         }
@@ -127,7 +127,7 @@ public class EmevdEditorScreen : EditorScreen
         EventCreationModal.Display();
         InstructionCreationModal.Display();
 
-        if (UI.Current.Interface_EmevdEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow)
         {
             ToolView.Display();
         }
@@ -199,39 +199,39 @@ public class EmevdEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_EmevdEditor_Files = !UI.Current.Interface_EmevdEditor_Files;
+                CFG.Current.Interface_EmevdEditor_Files = !CFG.Current.Interface_EmevdEditor_Files;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Files);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Files);
 
             if (ImGui.MenuItem("Events"))
             {
-                UI.Current.Interface_EmevdEditor_Events = !UI.Current.Interface_EmevdEditor_Events;
+                CFG.Current.Interface_EmevdEditor_Events = !CFG.Current.Interface_EmevdEditor_Events;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Events);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Events);
 
             if (ImGui.MenuItem("Instructions"))
             {
-                UI.Current.Interface_EmevdEditor_Instructions = !UI.Current.Interface_EmevdEditor_Instructions;
+                CFG.Current.Interface_EmevdEditor_Instructions = !CFG.Current.Interface_EmevdEditor_Instructions;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_Instructions);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_Instructions);
 
             if (ImGui.MenuItem("Event Properties"))
             {
-                UI.Current.Interface_EmevdEditor_EventProperties = !UI.Current.Interface_EmevdEditor_EventProperties;
+                CFG.Current.Interface_EmevdEditor_EventProperties = !CFG.Current.Interface_EmevdEditor_EventProperties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_EventProperties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_EventProperties);
 
             if (ImGui.MenuItem("Instruction Properties"))
             {
-                UI.Current.Interface_EmevdEditor_InstructionProperties = !UI.Current.Interface_EmevdEditor_InstructionProperties;
+                CFG.Current.Interface_EmevdEditor_InstructionProperties = !CFG.Current.Interface_EmevdEditor_InstructionProperties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_InstructionProperties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_InstructionProperties);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_EmevdEditor_ToolConfigurationWindow = !UI.Current.Interface_EmevdEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow = !CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EmevdEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EmevdEditor_ToolConfigurationWindow);
 
             ImGui.EndMenu();
         }

@@ -105,38 +105,38 @@ public class TimeActEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_TimeActEditor_ContainerFileList)
+        if (CFG.Current.Interface_TimeActEditor_ContainerFileList)
         {
             ContainerFileView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_TimeActList)
+        if (CFG.Current.Interface_TimeActEditor_TimeActList)
         {
             InternalFileView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_AnimationList)
+        if (CFG.Current.Interface_TimeActEditor_AnimationList)
         {
             AnimationView.Display();
             //EventGraphView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_AnimationProperties)
+        if (CFG.Current.Interface_TimeActEditor_AnimationProperties)
         {
             AnimationPropertyView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_EventList)
+        if (CFG.Current.Interface_TimeActEditor_EventList)
         {
             EventView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_EventProperties)
+        if (CFG.Current.Interface_TimeActEditor_EventProperties)
         {
             EventPropertyView.Display();
         }
 
-        if (UI.Current.Interface_TimeActEditor_ToolConfiguration)
+        if (CFG.Current.Interface_TimeActEditor_ToolConfiguration)
         {
             ToolView.OnGui();
         }
@@ -225,45 +225,45 @@ public class TimeActEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("TAE Files"))
             {
-                UI.Current.Interface_TimeActEditor_ContainerFileList = !UI.Current.Interface_TimeActEditor_ContainerFileList;
+                CFG.Current.Interface_TimeActEditor_ContainerFileList = !CFG.Current.Interface_TimeActEditor_ContainerFileList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ContainerFileList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ContainerFileList);
 
             if (ImGui.MenuItem("Time Acts"))
             {
-                UI.Current.Interface_TimeActEditor_TimeActList = !UI.Current.Interface_TimeActEditor_TimeActList;
+                CFG.Current.Interface_TimeActEditor_TimeActList = !CFG.Current.Interface_TimeActEditor_TimeActList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_TimeActList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_TimeActList);
 
             if (ImGui.MenuItem("Animations"))
             {
-                UI.Current.Interface_TimeActEditor_AnimationList = !UI.Current.Interface_TimeActEditor_AnimationList;
+                CFG.Current.Interface_TimeActEditor_AnimationList = !CFG.Current.Interface_TimeActEditor_AnimationList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_AnimationList);
 
             if (ImGui.MenuItem("Animation Properties"))
             {
-                UI.Current.Interface_TimeActEditor_AnimationProperties = !UI.Current.Interface_TimeActEditor_AnimationProperties;
+                CFG.Current.Interface_TimeActEditor_AnimationProperties = !CFG.Current.Interface_TimeActEditor_AnimationProperties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_AnimationProperties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_AnimationProperties);
 
             if (ImGui.MenuItem("Events"))
             {
-                UI.Current.Interface_TimeActEditor_EventList = !UI.Current.Interface_TimeActEditor_EventList;
+                CFG.Current.Interface_TimeActEditor_EventList = !CFG.Current.Interface_TimeActEditor_EventList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_EventList);
 
             if (ImGui.MenuItem("Event Properties"))
             {
-                UI.Current.Interface_TimeActEditor_EventProperties = !UI.Current.Interface_TimeActEditor_EventProperties;
+                CFG.Current.Interface_TimeActEditor_EventProperties = !CFG.Current.Interface_TimeActEditor_EventProperties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_EventProperties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_EventProperties);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_TimeActEditor_ToolConfiguration = !UI.Current.Interface_TimeActEditor_ToolConfiguration;
+                CFG.Current.Interface_TimeActEditor_ToolConfiguration = !CFG.Current.Interface_TimeActEditor_ToolConfiguration;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TimeActEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ToolConfiguration);
 
             ImGui.EndMenu();
         }

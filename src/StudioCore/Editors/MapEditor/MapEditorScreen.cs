@@ -260,7 +260,7 @@ public class MapEditorScreen : EditorScreen
         }
 
         ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
-        if (UI.Current.Interface_MapEditor_ResourceList)
+        if (CFG.Current.Interface_MapEditor_ResourceList)
         {
             ResourceListWindow.DisplayWindow("mapResourceList");
         }
@@ -269,7 +269,7 @@ public class MapEditorScreen : EditorScreen
         AssetBrowserView.OnGui();
         SelectionGroupView.OnGui();
 
-        if (UI.Current.Interface_MapEditor_ToolWindow)
+        if (CFG.Current.Interface_MapEditor_ToolWindow)
         {
             ToolWindow.OnGui();
         }
@@ -775,57 +775,57 @@ public class MapEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
 
             if (ImGui.MenuItem("Map List"))
             {
-                UI.Current.Interface_MapEditor_MapList = !UI.Current.Interface_MapEditor_MapList;
+                CFG.Current.Interface_MapEditor_MapList = !CFG.Current.Interface_MapEditor_MapList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapList);
 
             if (ImGui.MenuItem("Map Contents"))
             {
-                UI.Current.Interface_MapEditor_MapContents = !UI.Current.Interface_MapEditor_MapContents;
+                CFG.Current.Interface_MapEditor_MapContents = !CFG.Current.Interface_MapEditor_MapContents;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapContents);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapContents);
 
             if (ImGui.MenuItem("Properties"))
             {
-                UI.Current.Interface_MapEditor_Properties = !UI.Current.Interface_MapEditor_Properties;
+                CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Properties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_MapEditor_ToolWindow = !UI.Current.Interface_MapEditor_ToolWindow;
+                CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ToolWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
             if (ImGui.MenuItem("Asset Browser"))
             {
-                UI.Current.Interface_MapEditor_AssetBrowser = !UI.Current.Interface_MapEditor_AssetBrowser;
+                CFG.Current.Interface_MapEditor_AssetBrowser = !CFG.Current.Interface_MapEditor_AssetBrowser;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_AssetBrowser);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
 
             if (ImGui.MenuItem("Render Groups"))
             {
-                UI.Current.Interface_MapEditor_RenderGroups = !UI.Current.Interface_MapEditor_RenderGroups;
+                CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_RenderGroups);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
 
             if (ImGui.MenuItem("Profiling"))
             {
-                UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
+                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
 
             if (ImGui.MenuItem("Resource List"))
             {
-                UI.Current.Interface_MapEditor_ResourceList = !UI.Current.Interface_MapEditor_ResourceList;
+                CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ResourceList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
             if (ImGui.MenuItem("Viewport Information Panel"))
             {
@@ -835,16 +835,16 @@ public class MapEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Viewport Grid"))
             {
-                UI.Current.Interface_MapEditor_Viewport_Grid = !UI.Current.Interface_MapEditor_Viewport_Grid;
+                CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
                 CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_Grid);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_Grid);
 
             if (ImGui.MenuItem("Entity Identifier Overview"))
             {
-                UI.Current.Interface_MapEditor_EntityIdentifierOverview = !UI.Current.Interface_MapEditor_EntityIdentifierOverview;
+                CFG.Current.Interface_MapEditor_EntityIdentifierOverview = !CFG.Current.Interface_MapEditor_EntityIdentifierOverview;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityIdentifierOverview);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_EntityIdentifierOverview);
 
             ImGui.Separator();
 

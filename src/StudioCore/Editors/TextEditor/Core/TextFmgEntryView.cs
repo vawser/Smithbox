@@ -84,12 +84,12 @@ public class TextFmgEntryView
                         // Unique rows
                         if (DifferenceManager.IsUniqueToProject(entry))
                         {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueRow_Text);
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
                         }
                         // Modified rows
                         else if (DifferenceManager.IsDifferentToVanilla(entry))
                         {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedRow_Text);
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
                         }
 
                         // Script row

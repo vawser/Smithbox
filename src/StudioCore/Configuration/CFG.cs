@@ -16,7 +16,6 @@ namespace StudioCore;
 
 public class CFG
 {
-
     ///------------------------------------------------------------
     /// Developer
     ///------------------------------------------------------------
@@ -26,16 +25,202 @@ public class CFG
     public bool EnableWikiTools = false;
 
     ///------------------------------------------------------------
+    /// Interface
+    ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the Action Logger elements are visible.
+    /// </summary>
+    public bool System_ShowActionLogger = true;
+
+    /// <summary>
+    /// If true, the Warning Logger elements are visible.
+    /// </summary>
+    public bool System_ShowWarningLogger = true;
+
+    /// <summary>
+    /// If true, the alias text will be wrapped if required.
+    /// </summary>
+    public bool System_WrapAliasDisplay = true;
+
+    /// <summary>
+    /// The scale value to apply to interface sizing.
+    /// </summary>
+    public float System_UI_Scale = 1.0f;
+
+    /// <summary>
+    /// If true, the interface sizing is affected by DPI.
+    /// </summary>
+    public bool System_ScaleByDPI = true;
+
+    /// <summary>
+    /// If true, Chinese characters are supported by the ImGui font.
+    /// </summary>
+    public bool System_Font_Chinese = false;
+
+    /// <summary>
+    /// If true, Russian characters are supported by the ImGui font.
+    /// </summary>
+    public bool System_Font_Cyrillic = false;
+
+    /// <summary>
+    /// If true, Korean characters are supported by the ImGui font.
+    /// </summary>
+    public bool System_Font_Korean = false;
+
+    /// <summary>
+    /// If true, Thai characters are supported by the ImGui font.
+    /// </summary>
+    public bool System_Font_Thai = false;
+
+    /// <summary>
+    /// If true, Vietnamese characters are supported by the ImGui font.
+    /// </summary>
+    public bool System_Font_Vietnamese = false;
+
+    /// <summary>
+    /// The relative path (from the Smithbox.exe) to the font used for English text.
+    /// </summary>
+    public string System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
+
+    /// <summary>
+    /// The relative path (from the Smithbox.exe) to the font used for non-English text.
+    /// </summary>
+    public string System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
+
+    /// <summary>
+    /// The current theme a user has selected to override the default.
+    /// </summary>
+    public string SelectedTheme = "";
+
+    /// <summary>
+    /// The size of the font used by ImGui (before scaling).
+    /// </summary>
+    public float Interface_FontSize = 14.0f;
+
+    /// <summary>
+    /// If true, the viewport window (in Map or Model Editor) is visible.
+    /// </summary>
+    public bool Interface_Editor_Viewport = true;
+
+    /// <summary>
+    /// If true, the profiling window (in Map or Model Editor) is visible.
+    /// </summary>
+    public bool Interface_Editor_Profiling = true;
+
+    /// <summary>
+    /// If true, the project list window is visible.
+    /// </summary>
+    public bool Interface_Editor_ProjectList = true;
+
+    ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the viewport grid is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_Viewport_Grid = true;
+
+    /// <summary>
+    /// If true, the map list window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_MapList = true;
+
+    /// <summary>
+    /// If true, the map content window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_MapContents = true;
+
+    /// <summary>
+    /// If true, the properties window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_Properties = true;
+
+    /// <summary>
+    /// If true, the render groups window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_RenderGroups = true;
+
+    /// <summary>
+    /// If true, the asset browser window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_AssetBrowser = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_ToolWindow = true;
+
+    /// <summary>
+    /// If true, the resource list window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_ResourceList = true;
+
+    /// <summary>
+    /// If true, the entity identifier window is visible in the Map Editor.
+    /// </summary>
+    public bool Interface_MapEditor_EntityIdentifierOverview = false;
 
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the viewport grid is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_Viewport_Grid = true;
+
+    /// <summary>
+    /// If true, the model hierarchy window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_ModelHierarchy = true;
+
+    /// <summary>
+    /// If true, the properties window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_Properties = true;
+
+    /// <summary>
+    /// If true, the asset browser window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_AssetBrowser = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_ToolWindow = true;
+
+    /// <summary>
+    /// If true, the resource list window is visible in the Model Editor.
+    /// </summary>
+    public bool Interface_ModelEditor_ResourceList = true;
 
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the file container window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_TextEditor_FileContainerList = true;
+
+    /// <summary>
+    /// If true, the text file window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_TextEditor_FmgList = true;
+
+    /// <summary>
+    /// If true, the text entries window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_TextEditor_TextEntryList = true;
+
+    /// <summary>
+    /// If true, the text entry contents window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_TextEditor_TextEntryContents = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_TextEditor_ToolWindow = true;
+
 
     ///------------------------------------------------------------
     /// Param Editor
@@ -84,32 +269,90 @@ public class CFG
     }
     private string _Param_Export_Delimiter = ",";
 
+    /// <summary>
+    /// If true, the editor window is visible in the Param Editor.
+    /// </summary>
+    public bool Interface_ParamEditor_Table = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Param Editor.
+    /// </summary>
+    public bool Interface_ParamEditor_ToolWindow = true;
+
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the file list window is visible in the Graphics Param Editor.
+    /// </summary>
+    public bool Interface_GparamEditor_FileList = true;
+
+    /// <summary>
+    /// If true, the group list window is visible in the Graphics Param Editor.
+    /// </summary>
+    public bool Interface_GparamEditor_GroupList = true;
+
+    /// <summary>
+    /// If true, the field list window is visible in the Graphics Param Editor.
+    /// </summary>
+    public bool Interface_GparamEditor_FieldList = true;
+
+    /// <summary>
+    /// If true, the field values window is visible in the Graphics Param Editor.
+    /// </summary>
+    public bool Interface_GparamEditor_FieldValues = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Graphics Param Editor.
+    /// </summary>
+    public bool Interface_GparamEditor_ToolWindow = true;
+
 
     ///------------------------------------------------------------
     /// Texture Viewer
     ///------------------------------------------------------------
-
+    public bool Interface_TextureViewer_Files = true;
+    public bool Interface_TextureViewer_Textures = true;
+    public bool Interface_TextureViewer_Viewer = true;
+    public bool Interface_TextureViewer_Properties = true;
+    public bool Interface_TextureViewer_ToolConfiguration = true;
+    public bool Interface_TextureViewer_ResourceList = true;
 
     ///------------------------------------------------------------
     /// Time Act Editor
     ///------------------------------------------------------------
-
+    public bool Interface_TimeActEditor_ContainerFileList = true;
+    public bool Interface_TimeActEditor_TimeActList = true;
+    public bool Interface_TimeActEditor_AnimationList = true;
+    public bool Interface_TimeActEditor_AnimationProperties = true;
+    public bool Interface_TimeActEditor_EventList = true;
+    public bool Interface_TimeActEditor_EventProperties = true;
+    public bool Interface_TimeActEditor_ToolConfiguration = true;
 
     ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
 
-
     ///------------------------------------------------------------
     /// Event Script Editor
     ///------------------------------------------------------------
+    public bool Interface_EmevdEditor_Files = true;
+    public bool Interface_EmevdEditor_Events = true;
+    public bool Interface_EmevdEditor_Instructions = true;
+    public bool Interface_EmevdEditor_EventProperties = true;
+    public bool Interface_EmevdEditor_InstructionProperties = true;
+    public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
 
     ///------------------------------------------------------------
     /// EzState Script Editor
     ///------------------------------------------------------------
+    public bool Interface_EsdEditor_FileList = true;
+    public bool Interface_EsdEditor_ScriptList = true;
+    public bool Interface_EsdEditor_StateGroupList = true;
+    public bool Interface_EsdEditor_StateNodeList = true;
+    public bool Interface_EsdEditor_StateNodeContents = true;
+    public bool Interface_EsdEditor_ToolConfigurationWindow = true;
+
 
     //**************
     // Actions

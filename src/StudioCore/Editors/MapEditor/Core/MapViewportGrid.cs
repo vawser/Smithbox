@@ -54,7 +54,7 @@ public class MapViewportGrid
             Regenerate();
         }
 
-        if (UI.Current.Interface_MapEditor_Viewport_Grid && Editor.Project.FocusedEditor is MapEditorScreen)
+        if (CFG.Current.Interface_MapEditor_Viewport_Grid && Editor.Project.FocusedEditor is MapEditorScreen)
         {
             ViewportGrid.BaseColor = GetViewGridColor(CFG.Current.MapEditor_Viewport_Grid_Color);
             ViewportGrid.Visible = true;

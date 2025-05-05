@@ -35,7 +35,7 @@ public static class AliasUtils
         {
             ImGui.SameLine();
 
-            if (UI.Current.System_WrapAliasDisplay)
+            if (CFG.Current.System_WrapAliasDisplay)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");

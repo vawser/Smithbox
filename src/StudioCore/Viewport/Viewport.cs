@@ -192,7 +192,7 @@ namespace StudioCore.Interface
         public void OnGui()
         {
             Shortcuts();
-            if (UI.Current.Interface_Editor_Viewport)
+            if (CFG.Current.Interface_Editor_Viewport)
             {
                 ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
                 if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
@@ -282,7 +282,7 @@ namespace StudioCore.Interface
             }
 
             // Profiling window
-            if (UI.Current.Interface_Editor_Profiling)
+            if (CFG.Current.Interface_Editor_Profiling)
             {
                 if (ImGui.Begin($@"Profiling##{_vpid}"))
                 {

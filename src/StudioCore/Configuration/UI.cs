@@ -1,168 +1,25 @@
-﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
+﻿using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Platform;
+using StudioCore.Utilities;
 using System;
 using System.IO;
 using System.Numerics;
 using System.Reflection;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace StudioCore.Configuration;
 
+/// <summary>
+/// This is for all ImGui coloring and presentation adjustments
+/// ONLY those elements should be in here, to allow interface themes to be easily handled
+/// -- The theme is simply an alternative UI JSON that is loaded in.
+/// </summary>
 public class UI
 {
-    public const string FolderName = "Smithbox";
-    public const string Config_FileName = "Smithbox_Interface.json";
-
-    public static bool IsEnabled = true;
-    private static readonly object _lock_SaveLoadCFG = new();
-
-    //**************
-    // System
-    //**************
-    public bool System_Show_UI_Tooltips = true;
-    public bool System_ShowActionLogger = true;
-    public bool System_ShowWarningLogger = true;
-
-    public bool System_WrapAliasDisplay = true;
-    public float System_UI_Scale = 1.0f;
-    public bool System_ScaleByDPI = true;
-    public bool System_Font_Chinese = false;
-    public bool System_Font_Cyrillic = false;
-    public bool System_Font_Korean = false;
-    public bool System_Font_Thai = false;
-    public bool System_Font_Vietnamese = false;
-    public string System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
-    public string System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
-
-    public bool System_DisplayResourceLoadingWindow = true;
-
-    //**************
-    // Theme
-    //**************
-    public string SelectedThemeName = "";
-    public int SelectedTheme = 0;
-    public string NewThemeName = "";
-
-    //**************
-    // Interface
-    //**************
-    public float Interface_FontSize = 14.0f;
-
-    public float Interface_ButtonHeight = 32.0f;
-    public float Interface_ThinButtonHeight = 24.0f;
-
-    public float Interface_ModalHeight = 600.0f;
-    public float Interface_ModalWidth = 800.0f;
-
-    //**************
-    // View Toggles
-    //**************
-    public bool Interface_Editor_Viewport = true;
-    public bool Interface_Editor_Profiling = true;
-
-    // Map Editor
-    public bool Interface_MapEditor_MapList = true;
-    public bool Interface_MapEditor_MapContents = true;
-    public bool Interface_MapEditor_Properties = true;
-    public bool Interface_MapEditor_PropertySearch = true;
-    public bool Interface_MapEditor_RenderGroups = true;
-    public bool Interface_MapEditor_AssetBrowser = true;
-    public bool Interface_MapEditor_ToolWindow = true;
-    public bool Interface_MapEditor_ResourceList = true;
-    public bool Interface_MapEditor_Selection_Groups = true;
-    public bool Interface_MapEditor_Viewport_Grid = true;
-    public bool Interface_MapEditor_Viewport_LightmapAtlas = true;
-    public bool Interface_MapEditor_EntityInformation = false;
-    public bool Interface_MapEditor_EntityIdentifierOverview = false;
-
-    // Model Editor
-    public bool Interface_ModelEditor_ModelHierarchy = true;
-    public bool Interface_ModelEditor_Properties = true;
-    public bool Interface_ModelEditor_AssetBrowser = true;
-    public bool Interface_ModelEditor_ToolConfigurationWindow = true;
-    public bool Interface_ModelEditor_ResourceList = true;
-    public bool Interface_ModelEditor_Viewport_Grid = true;
-
-    // Param Editor
-    public bool Interface_ParamEditor_Table = true;
-    public bool Interface_ParamEditor_MassEdit = true;
-    public bool Interface_ParamEditor_ToolConfiguration = true;
-
-    // Text Editor
-    public bool Interface_TextEditor_FileContainerList = true;
-    public bool Interface_TextEditor_FmgList = true;
-    public bool Interface_TextEditor_FmgEntryList = true;
-    public bool Interface_TextEditor_FmgEntryProperties = true;
-    public bool Interface_TextEditor_ToolConfigurationWindow = true;
-
-    // GPARM EDitor
-    public bool Interface_GparamEditor_Files = true;
-    public bool Interface_GparamEditor_Groups = true;
-    public bool Interface_GparamEditor_Fields = true;
-    public bool Interface_GparamEditor_Values = true;
-    public bool Interface_GparamEditor_ToolConfiguration = true;
-
-    // SFX Editor
-    public bool Interface_ParticleEditor_Files = true;
-    public bool Interface_ParticleEditor_Particles = true;
-    public bool Interface_ParticleEditor_Data = true;
-    public bool Interface_ParticleEditor_Toolbar = true;
-
-    // TAE Editor
-    public bool Interface_TimeActEditor_ContainerFileList = true;
-    public bool Interface_TimeActEditor_TimeActList = true;
-    public bool Interface_TimeActEditor_AnimationList = true;
-    public bool Interface_TimeActEditor_AnimationProperties = true;
-    public bool Interface_TimeActEditor_EventList = true;
-    public bool Interface_TimeActEditor_EventProperties = true;
-    public bool Interface_TimeActEditor_ToolConfiguration = true;
-
-    // EMEVD Editor
-    public bool Interface_EmevdEditor_Files = true;
-    public bool Interface_EmevdEditor_Events = true;
-    public bool Interface_EmevdEditor_Instructions = true;
-    public bool Interface_EmevdEditor_EventProperties = true;
-    public bool Interface_EmevdEditor_InstructionProperties = true;
-    public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
-
-    // ESD Editor
-    public bool Interface_EsdEditor_FileList = true;
-    public bool Interface_EsdEditor_ScriptList = true;
-    public bool Interface_EsdEditor_StateGroupList = true;
-    public bool Interface_EsdEditor_StateNodeList = true;
-    public bool Interface_EsdEditor_StateNodeContents = true;
-    public bool Interface_EsdEditor_ToolConfigurationWindow = true;
-
-    // Texture Viewer
-    public bool Interface_TextureViewer_Files = true;
-    public bool Interface_TextureViewer_Textures = true;
-    public bool Interface_TextureViewer_Viewer = true;
-    public bool Interface_TextureViewer_Properties = true;
-    public bool Interface_TextureViewer_ToolConfiguration = true;
-    public bool Interface_TextureViewer_ResourceList = true;
-
-    public bool Interface_MapEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_ModelEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_ParamEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_TextEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_GparamEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_ParticleEditor_Toolbar_ActionList_TopToBottom = true;
-    public bool Interface_TextureViewer_Toolbar_ActionList_TopToBottom = true;
-
-    public bool Interface_MapEditor_PromptUser = true;
-    public bool Interface_GparamEditor_PromptUser = true;
-    public bool Interface_ModelEditor_PromptUser = true;
-    public bool Interface_ParamEditor_PromptUser = true;
-    public bool Interface_TextEditor_PromptUser = true;
-    public bool Interface_ParticleEditor_PromptUser = true;
-    public bool Interface_TextureViewer_PromptUser = true;
-
-    //**************
-    // Interface Colors
-    //**************
+    ///------------------------------------------------------------
+    /// Interface: General Coloring
+    ///------------------------------------------------------------
     // Fixed Window
     public Vector4 ImGui_MainBg = new Vector4(0.176f, 0.176f, 0.188f, 1.0f);
     public Vector4 ImGui_ChildBg = new Vector4(0.145f, 0.145f, 0.149f, 1.0f);
@@ -224,11 +81,6 @@ public class UI
     public Vector4 ImGui_Benefit_Text_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_Invalid_Text_Color = new Vector4(1.0f, 0.3f, 0.3f, 1.0f);
 
-    public Vector4 ImGui_TimeAct_InfoText_1_Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f); // Green
-    public Vector4 ImGui_TimeAct_InfoText_2_Color = new Vector4(0.409f, 0.967f, 0.693f, 1.0f); // Cyan
-    public Vector4 ImGui_TimeAct_InfoText_3_Color = new Vector4(0.237f, 0.925f, 1.000f, 1.0f); // Light Blue
-    public Vector4 ImGui_TimeAct_InfoText_4_Color = new Vector4(1f, 0.470f, 0.884f, 1.0f); // Purple
-
     public Vector4 ImGui_ParamRef_Text = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
     public Vector4 ImGui_ParamRefMissing_Text = new Vector4(0.0f, 0.0f, 0.0f, 1.0f);
     public Vector4 ImGui_ParamRefInactive_Text = new Vector4(0.7f, 0.7f, 0.7f, 1.0f);
@@ -246,28 +98,60 @@ public class UI
     public Vector4 ImGui_ParamRow_Text = new Vector4(0.8f, 0.8f, 0.8f, 1.0f);
     public Vector4 ImGui_AliasName_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
 
-    public Vector4 ImGui_TextEditor_ModifiedRow_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
-    public Vector4 ImGui_TextEditor_UniqueRow_Text = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
-
+    // Logger
     public Vector4 ImGui_Logger_Information_Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
     public Vector4 ImGui_Logger_Warning_Color = new Vector4(1.0f, 0f, 0f, 1.0f);
     public Vector4 ImGui_Logger_Error_Color = new Vector4(1.0f, 0.5f, 0.5f, 1.0f);
 
-    public Vector4 ImGui_Havok_Header = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
-    public Vector4 ImGui_Havok_Reference = new Vector4(0.0f, 1.0f, 0.0f, 1.0f);
-    public Vector4 ImGui_Havok_Highlight = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
-    public Vector4 ImGui_Havok_Warning = new Vector4(1.0f, 0f, 0f, 1.0f);
-
-    //**************
-    // Interface Styles
-    //**************
+    /// <summary>
+    /// Coloring for the border highlight in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_Border_Highlight = new Vector4(1.0f, 0.2f, 0.2f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the dispgroup active frame in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_DisplayActive_Frame = new Vector4(0.4f, 0.06f, 0.06f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the dispgroup active checkbox in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_DisplayActive_Checkbox = new Vector4(1.0f, 0.2f, 0.2f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the drawgroup active frame in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_DrawActive_Frame = new Vector4(0.02f, 0.3f, 0.02f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the drawgroup active checkbox in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_DrawActive_Checkbox = new Vector4(0.2f, 1.0f, 0.2f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the disp/drawgroup combined frame in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_CombinedActive_Frame = new Vector4(0.4f, 0.4f, 0.06f, 1.0f);
+
+    /// <summary>
+    /// Coloring for the disp/drawgroup combined checkbox in the Render Group window.
+    /// </summary>
     public Vector4 DisplayGroupEditor_CombinedActive_Checkbox = new Vector4(1f, 1f, 0.02f, 1.0f);
+
+    /// <summary>
+    /// Coloring for a modified text entry in the Text Editor.
+    /// </summary>
+    public Vector4 ImGui_TextEditor_ModifiedTextEntry_Text = new Vector4(1.0f, 1.0f, 0.0f, 1.0f);
+
+    /// <summary>
+    /// Coloring for an unique text entry in the Text Editor.
+    /// </summary>
+    public Vector4 ImGui_TextEditor_UniqueTextEntry_Text = new Vector4(0.409f, 0.967f, 0.693f, 1.0f);
+
+    public Vector4 ImGui_TimeAct_InfoText_1_Color = new Vector4(1.0f, 1.0f, 0.0f, 1.0f); // Green
+    public Vector4 ImGui_TimeAct_InfoText_2_Color = new Vector4(0.409f, 0.967f, 0.693f, 1.0f); // Cyan
+    public Vector4 ImGui_TimeAct_InfoText_3_Color = new Vector4(0.237f, 0.925f, 1.000f, 1.0f); // Light Blue
+    public Vector4 ImGui_TimeAct_InfoText_4_Color = new Vector4(1f, 0.470f, 0.884f, 1.0f); // Purple
 
     //****************************
     // UI
@@ -281,6 +165,18 @@ public class UI
     }
 
     public static void Load()
+    {
+        if(CFG.Current.SelectedTheme != "")
+        {
+            LoadTheme(CFG.Current.SelectedTheme);
+        }
+        else
+        {
+            LoadDefault();
+        }
+    }
+
+    public static void LoadDefault()
     {
         var folder = ProjectUtils.GetConfigurationFolder();
         var file = Path.Combine(folder, "Interface.json");
@@ -310,6 +206,67 @@ public class UI
                 Current = new UI();
                 Save();
             }
+        }
+    }
+
+    public static void LoadTheme(string name)
+    {
+        var folder = ProjectUtils.GetThemeFolder();
+        var file = Path.Combine(folder, $"{name}.json");
+
+        if (!File.Exists(file))
+        {
+            Current = new UI();
+            Save();
+        }
+        else
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.UI);
+
+                if (Current == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.");
+
+                Current = new UI();
+                Save();
+            }
+        }
+    }
+
+    public static void ExportTheme(string name)
+    {
+        var folder = ProjectUtils.GetThemeFolder();
+        var file = Path.Combine(folder, $"{name}.json");
+
+        if (File.Exists(file))
+        {
+            var result = PlatformUtils.Instance.MessageBox("Theme with this name already exists. Overwrite?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+            if(result  == DialogResult.OK)
+            {
+                var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+
+                File.WriteAllText(file, json);
+            }
+        }
+        else if (name != "" && FilePathUtils.IsValidFileName(name))
+        {
+            var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.UI);
+
+            File.WriteAllText(file, json);
+        }
+        else
+        {
+            PlatformUtils.Instance.MessageBox("Invalid filename.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

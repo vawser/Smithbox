@@ -61,7 +61,7 @@ public class SystemTab
 
         if (ImGui.CollapsingHeader("Loggers"))
         {
-            ImGui.Checkbox("Show Action Logger", ref UI.Current.System_ShowActionLogger);
+            ImGui.Checkbox("Show Action Logger", ref CFG.Current.System_ShowActionLogger);
             UIHelper.Tooltip("If enabled, the action logger will be visible in the menu bar.");
 
             ImGui.InputInt("Action Log Visibility Duration", ref CFG.Current.System_ActionLogger_FadeTime);
@@ -69,7 +69,7 @@ public class SystemTab
 
             ImGui.Separator();
 
-            ImGui.Checkbox("Show Warning Logger", ref UI.Current.System_ShowWarningLogger);
+            ImGui.Checkbox("Show Warning Logger", ref CFG.Current.System_ShowWarningLogger);
             UIHelper.Tooltip("If enabled, the warning logger will be visible in the menu bar.");
 
             ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
@@ -1424,12 +1424,17 @@ public class TimeActEditorTab
 public class InterfaceTab
 {
     public Smithbox BaseEditor;
+
     private float _tempScale;
+    private string newThemeName = "";
+    private string currentThemeName = "";
 
     public InterfaceTab(Smithbox baseEditor)
     {
         BaseEditor = baseEditor;
-        _tempScale = UI.Current.System_UI_Scale;
+        _tempScale = CFG.Current.System_UI_Scale;
+
+        currentThemeName = CFG.Current.SelectedTheme;
     }
 
     public void Display()
@@ -1438,10 +1443,7 @@ public class InterfaceTab
 
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Checkbox("Show tooltips", ref UI.Current.System_Show_UI_Tooltips);
-            UIHelper.Tooltip("This is a tooltip.");
-
-            ImGui.Checkbox("Wrap alias text", ref UI.Current.System_WrapAliasDisplay);
+            ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
             UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off.");
 
             ImGui.AlignTextToFramePadding();
@@ -1449,8 +1451,8 @@ public class InterfaceTab
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 // Round to 0.05
-                UI.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
-                _tempScale = UI.Current.System_UI_Scale;
+                CFG.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
+                _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.Tooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
@@ -1460,13 +1462,13 @@ public class InterfaceTab
             ImGui.AlignTextToFramePadding();
             if (ImGui.Button("Reset", buttonSize))
             {
-                UI.Current.System_UI_Scale = UI.Default.System_UI_Scale;
-                _tempScale = UI.Current.System_UI_Scale;
+                CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
+                _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
                 Smithbox.FontRebuildRequest = true;
             }
 
-            ImGui.Checkbox($"Multiply UI scale by DPI ({(DPI.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref UI.Current.System_ScaleByDPI);
+            ImGui.Checkbox($"Multiply UI scale by DPI ({(DPI.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref CFG.Current.System_ScaleByDPI);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
@@ -1477,24 +1479,24 @@ public class InterfaceTab
         // Fonts
         if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.SliderFloat("Font size", ref UI.Current.Interface_FontSize, 8.0f, 32.0f);
+            ImGui.SliderFloat("Font size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
-                UI.Current.Interface_FontSize = (float)Math.Round(UI.Current.Interface_FontSize);
+                CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
             }
             UIHelper.Tooltip("Adjusts the size of the font in Smithbox.");
 
             ImGui.Text("Current English Font:");
             ImGui.SameLine();
-            ImGui.Text(Path.GetFileName(UI.Current.System_English_Font));
+            ImGui.Text(Path.GetFileName(CFG.Current.System_English_Font));
 
             if (ImGui.Button("Set English font", buttonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
                 {
-                    UI.Current.System_English_Font = path;
+                    CFG.Current.System_English_Font = path;
                     Smithbox.FontRebuildRequest = true;
                 }
             }
@@ -1502,14 +1504,14 @@ public class InterfaceTab
 
             ImGui.Text("Current Non-English Font:");
             ImGui.SameLine();
-            ImGui.Text(Path.GetFileName(UI.Current.System_Other_Font));
+            ImGui.Text(Path.GetFileName(CFG.Current.System_Other_Font));
 
             if (ImGui.Button("Set Non-English font", buttonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
                 {
-                    UI.Current.System_Other_Font = path;
+                    CFG.Current.System_Other_Font = path;
                     Smithbox.FontRebuildRequest = true;
                 }
             }
@@ -1517,8 +1519,8 @@ public class InterfaceTab
 
             if (ImGui.Button("Restore Default Fonts", buttonSize))
             {
-                UI.Current.System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
-                UI.Current.System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
+                CFG.Current.System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
+                CFG.Current.System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
                 Smithbox.FontRebuildRequest = true;
             }
         }
@@ -1526,23 +1528,23 @@ public class InterfaceTab
         // Additional Language Fonts
         if (ImGui.CollapsingHeader("Additional Language Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            if (ImGui.Checkbox("Chinese", ref UI.Current.System_Font_Chinese))
+            if (ImGui.Checkbox("Chinese", ref CFG.Current.System_Font_Chinese))
                 Smithbox.FontRebuildRequest = true;
             UIHelper.Tooltip("Include Chinese font.\nAdditional fonts take more VRAM and increase startup time.");
 
-            if (ImGui.Checkbox("Korean", ref UI.Current.System_Font_Korean))
+            if (ImGui.Checkbox("Korean", ref CFG.Current.System_Font_Korean))
                 Smithbox.FontRebuildRequest = true;
             UIHelper.Tooltip("Include Korean font.\nAdditional fonts take more VRAM and increase startup time.");
 
-            if (ImGui.Checkbox("Thai", ref UI.Current.System_Font_Thai))
+            if (ImGui.Checkbox("Thai", ref CFG.Current.System_Font_Thai))
                 Smithbox.FontRebuildRequest = true;
             UIHelper.Tooltip("Include Thai font.\nAdditional fonts take more VRAM and increase startup time.");
 
-            if (ImGui.Checkbox("Vietnamese", ref UI.Current.System_Font_Vietnamese))
+            if (ImGui.Checkbox("Vietnamese", ref CFG.Current.System_Font_Vietnamese))
                 Smithbox.FontRebuildRequest = true;
             UIHelper.Tooltip("Include Vietnamese font.\nAdditional fonts take more VRAM and increase startup time.");
 
-            if (ImGui.Checkbox("Cyrillic", ref UI.Current.System_Font_Cyrillic))
+            if (ImGui.Checkbox("Cyrillic", ref CFG.Current.System_Font_Cyrillic))
                 Smithbox.FontRebuildRequest = true;
             UIHelper.Tooltip("Include Cyrillic font.\nAdditional fonts take more VRAM and increase startup time.");
         }
@@ -1627,14 +1629,34 @@ public class InterfaceTab
         {
             ImGui.Text("Current Theme");
 
-            if (ImGui.ListBox("##themeSelect", ref UI.Current.SelectedTheme, InterfaceTheme.LoadedThemeNames, InterfaceTheme.LoadedThemeNames.Length))
+            var folder = ProjectUtils.GetThemeFolder();
+            var files = Directory.EnumerateFiles(folder);
+
+            var themeFiles = new List<string>();
+            foreach(var file in files)
             {
-                InterfaceTheme.SetTheme(false);
+                var filename = Path.GetFileNameWithoutExtension(file);
+                themeFiles.Add(filename);
+            }
+
+            if(ImGui.BeginCombo("Theme Selection", currentThemeName))
+            {
+                foreach(var entry in themeFiles)
+                {
+                    if(ImGui.Selectable(entry, entry == currentThemeName))
+                    {
+                        currentThemeName = entry;
+                        CFG.Current.SelectedTheme = currentThemeName;
+                        UI.LoadTheme(entry);
+                    }
+                }
+
+                ImGui.EndCombo();
             }
 
             if (ImGui.Button("Reset to Default"))
             {
-                InterfaceTheme.ResetInterface();
+                UI.LoadDefault();
             }
             ImGui.SameLine();
             if (ImGui.Button("Open Theme Folder"))
@@ -1645,10 +1667,10 @@ public class InterfaceTab
 
             if (ImGui.Button("Export Theme"))
             {
-                InterfaceTheme.ExportThemeJson();
+                UI.ExportTheme(newThemeName);
             }
             ImGui.SameLine();
-            ImGui.InputText("##themeName", ref UI.Current.NewThemeName, 255);
+            ImGui.InputText("##themeName", ref newThemeName, 255);
 
             if (ImGui.CollapsingHeader("Editor Window", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -1741,20 +1763,12 @@ public class InterfaceTab
                 ImGui.ColorEdit4("Param Row Text", ref UI.Current.ImGui_ParamRow_Text);
                 ImGui.ColorEdit4("Aliased Name Text", ref UI.Current.ImGui_AliasName_Text);
 
-                ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedRow_Text);
-                ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueRow_Text);
+                ImGui.ColorEdit4("Text Editor: Modified Row", ref UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
+                ImGui.ColorEdit4("Text Editor: Unique Row", ref UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
 
                 ImGui.ColorEdit4("Logger: Information", ref UI.Current.ImGui_Logger_Information_Color);
                 ImGui.ColorEdit4("Logger: Warning", ref UI.Current.ImGui_Logger_Warning_Color);
                 ImGui.ColorEdit4("Logger: Error", ref UI.Current.ImGui_Logger_Error_Color);
-            }
-
-            if (ImGui.CollapsingHeader("Havok Editor", ImGuiTreeNodeFlags.DefaultOpen))
-            {
-                ImGui.ColorEdit4("Header", ref UI.Current.ImGui_Havok_Header);
-                ImGui.ColorEdit4("Reference", ref UI.Current.ImGui_Havok_Reference);
-                ImGui.ColorEdit4("Highlight", ref UI.Current.ImGui_Havok_Highlight);
-                ImGui.ColorEdit4("Warning", ref UI.Current.ImGui_Havok_Warning);
             }
 
             if (ImGui.CollapsingHeader("Miscellaneous", ImGuiTreeNodeFlags.DefaultOpen))

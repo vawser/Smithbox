@@ -412,7 +412,7 @@ public class ParamEditorScreen : EditorScreen
                 continue;
             }
 
-            if (!UI.Current.Interface_ParamEditor_Table)
+            if (!CFG.Current.Interface_ParamEditor_Table)
             {
                 continue;
             }
@@ -464,7 +464,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         // Toolbar
-        if (UI.Current.Interface_ParamEditor_ToolConfiguration)
+        if (CFG.Current.Interface_ParamEditor_ToolWindow)
         {
             ToolWindow.OnGui();
         }
@@ -599,15 +599,15 @@ public class ParamEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Editor"))
             {
-                UI.Current.Interface_ParamEditor_Table = !UI.Current.Interface_ParamEditor_Table;
+                CFG.Current.Interface_ParamEditor_Table = !CFG.Current.Interface_ParamEditor_Table;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_Table);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Table);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_ParamEditor_ToolConfiguration = !UI.Current.Interface_ParamEditor_ToolConfiguration;
+                CFG.Current.Interface_ParamEditor_ToolWindow = !CFG.Current.Interface_ParamEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_ParamEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_ToolWindow);
 
             ImGui.Separator();
 

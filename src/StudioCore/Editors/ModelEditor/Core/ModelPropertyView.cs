@@ -66,7 +66,7 @@ public class ModelPropertyView
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_ModelEditor_Properties)
+        if (!CFG.Current.Interface_ModelEditor_Properties)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
