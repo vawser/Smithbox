@@ -8,6 +8,20 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
+    public static string ParseRegulationVersion(ulong version)
+    {
+        string verStr = version.ToString();
+        if (verStr.Length != 8)
+        {
+            return "Unknown Version";
+        }
+        char major = verStr[0];
+        string minor = verStr[1..3];
+        char patch = verStr[3];
+        string rev = verStr[4..];
+
+        return $"{major}.{minor}.{patch}.{rev}";
+    }
     public static string Dummy8Write(byte[] dummy8)
     {
         string val = null;

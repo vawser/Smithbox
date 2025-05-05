@@ -42,11 +42,6 @@ public class ParamEditorScreen : EditorScreen
 
     public bool EditorMode;
 
-    /// <summary>
-    ///     Whitelist of games and maximum param version to allow param upgrading.
-    ///     Used to restrict upgrading before DSMS properly supports it.
-    /// </summary>
-    public readonly List<ProjectType> ParamUpgrade_SupportedGames = new() { ProjectType.ER, ProjectType.AC6 };
 
     public ParamEditorView _activeView;
 
@@ -73,9 +68,6 @@ public class ParamEditorScreen : EditorScreen
     private bool _mEditCSVReplaceRows;
     private string _mEditCSVResult = "";
     private string _mEditRegexResult = "";
-    private bool _paramUpgraderLoaded;
-    private bool _rowNameImporter_EmptyOnly = false;
-    private bool _rowNameImporter_VanillaOnly = true;
 
     private string _statisticPopupOutput = "";
     private string _statisticPopupParameter = "";
@@ -84,8 +76,6 @@ public class ParamEditorScreen : EditorScreen
     public ActionManager EditorActionManager = new();
 
     public bool GotoSelectedRow;
-    public List<(ulong, string, string)> ParamUpgradeEdits;
-    public ulong ParamUpgradeVersionSoftWhitelist;
 
     public ToolWindow ToolWindow;
     public ToolSubMenu ToolSubMenu;
@@ -99,6 +89,7 @@ public class ParamEditorScreen : EditorScreen
     public RowNamer RowNamer;
 
     public ParamReloader ParamReloader;
+    public ParamUpgrader ParamUpgrader;
 
     private bool HasSetupFmgDecorators = false;
 
@@ -132,6 +123,7 @@ public class ParamEditorScreen : EditorScreen
         RowNamer = new(this);
 
         ParamReloader = new(this, Project);
+        ParamUpgrader = new(this, Project);
     }
 
     public void OnGUI(string[] initcmd)
@@ -385,7 +377,7 @@ public class ParamEditorScreen : EditorScreen
             OverviewMenu();
             ToolMenu();
 
-            ParamUpgradeDisplay();
+            ParamUpgrader.ParamUpgradeWarning(Project);
 
             ImGui.EndMenuBar();
         }
@@ -485,6 +477,8 @@ public class ParamEditorScreen : EditorScreen
         {
             ImGui.PopStyleVar();
         }
+
+        ParamUpgrader.Draw();
     }
     public void FileMenu()
     {
@@ -498,6 +492,14 @@ public class ParamEditorScreen : EditorScreen
             if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
             {
                 SaveAll();
+            }
+
+            if (ParamUpgrader.SupportsParamUpgrading(Project) && ParamUpgrader.IsParamUpgradeValid(Project))
+            {
+                if (ImGui.MenuItem("Upgrade"))
+                {
+                    ParamUpgrader.Start(Project);
+                }
             }
 
             ImGui.EndMenu();
@@ -1290,340 +1292,7 @@ public class ParamEditorScreen : EditorScreen
         HasSetupFmgDecorators = false;
     }
 
-    private void LoadUpgraderData()
-    {
-        _paramUpgraderLoaded = false;
-        ParamUpgradeVersionSoftWhitelist = 0;
-        ParamUpgradeEdits = null;
-
-        try
-        {
-            var baseDir = ParamLocator.GetUpgraderAssetsDir(Project);
-            var wlFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(Project), "version.txt");
-            var massEditFile = Path.Join(ParamLocator.GetUpgraderAssetsDir(Project), "massedit.txt");
-
-            if (!File.Exists(wlFile) || !File.Exists(massEditFile))
-            {
-                return;
-            }
-
-            var versionWhitelist = ulong.Parse(File.ReadAllText(wlFile).Replace("_", "").Replace("L", ""));
-
-            var parts = File.ReadAllLines(massEditFile);
-            if (parts.Length % 3 != 0)
-            {
-                throw new Exception("Wrong number of lines in upgrader massedit file");
-            }
-
-            List<(ulong, string, string)> upgradeEdits = new();
-            for (var i = 0; i < parts.Length; i += 3)
-            {
-                upgradeEdits.Add((ulong.Parse(parts[i].Replace("_", "").Replace("L", "")), parts[i + 1], parts[i + 2]));
-            }
-
-            ParamUpgradeVersionSoftWhitelist = versionWhitelist;
-            ParamUpgradeEdits = upgradeEdits;
-            _paramUpgraderLoaded = true;
-        }
-        catch (Exception e)
-        {
-            TaskLogs.AddLog("Error loading upgrader data.",
-                LogLevel.Warning, LogPriority.Normal, e);
-        }
-    }
-
-    private void ParamUpgradeDisplay()
-    {
-        if (Project.ParamData.PrimaryBank.Params != null &&
-            Project.ParamData.VanillaBank.Params != null
-            && ParamUpgrade_SupportedGames.Contains(Project.ProjectType)
-            && Project.ParamData.PrimaryBank.ParamVersion < Project.ParamData.VanillaBank.ParamVersion)
-        {
-            ImGui.Separator();
-
-            if (!_paramUpgraderLoaded)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
-
-                if (ImGui.BeginMenu("Upgrade Params"))
-                {
-                    ImGui.PopStyleColor();
-                    ImGui.Text("Unable to obtain param upgrade information from assets folder.");
-                    ImGui.EndMenu();
-                }
-                else
-                {
-                    ImGui.PopStyleColor();
-                }
-            }
-            else if (Project.ParamData.VanillaBank.ParamVersion <= ParamUpgradeVersionSoftWhitelist)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-
-                var newVersionString = Utils.ParseRegulationVersion(Project.ParamData.VanillaBank.ParamVersion);
-                var oldVersionString = Utils.ParseRegulationVersion(Project.ParamData.PrimaryBank.ParamVersion);
-
-                if (ImGui.Button($"Upgrade Params to {newVersionString}"))
-                {
-                    var oldRegulationPath = GetOldRegulationPath(oldVersionString);
-                    UpgradeRegulation(Project.ParamData.PrimaryBank, Project.ParamData.VanillaBank, oldRegulationPath);
-                }
-
-                ImGui.PopStyleColor();
-            }
-            else
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Invalid_Text_Color);
-
-                if (ImGui.BeginMenu("Upgrade Params"))
-                {
-                    ImGui.PopStyleColor();
-                    ImGui.Text("Param version unsupported, Smithbox must be updated first.\nDownload update if available, wait for update otherwise.");
-                    ImGui.EndMenu();
-                }
-                else
-                    ImGui.PopStyleColor();
-            }
-        }
-    }
-
-    private string GetOldRegulationPath(string versionString)
-    {
-        var oldRegulationPath = "";
-        var regulationFolder = "";
-        var storedRegulationDirectory = AppContext.BaseDirectory + $"\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Regulations\\\\";
-
-        if (Project.ProjectType == ProjectType.ER)
-        {
-            switch (versionString)
-            {
-                case "1.02.1.0038": regulationFolder = "1.02.1 (10210038)"; break;
-                case "1.03.1.0059": regulationFolder = "1.03.1 (10310059)"; break;
-                case "1.03.2.0064": regulationFolder = "1.03.2 (10320064)"; break;
-                case "1.03.3.0078": regulationFolder = "1.03.3 (10330078)"; break;
-                case "1.04.1.0090": regulationFolder = "1.04.1 (10410090)"; break;
-                case "1.04.2.0097": regulationFolder = "1.04.2 (10420097)"; break;
-                case "1.05.0.1000": regulationFolder = "1.05 (10501000)"; break;
-                case "1.06.0.1000": regulationFolder = "1.06 (10601000)"; break;
-                case "1.07.0.1000": regulationFolder = "1.07 (10701000)"; break;
-                case "1.07.1.0188": regulationFolder = "1.07.1 (10710188)"; break;
-                case "1.08.0.1000": regulationFolder = "1.08 (10801000)"; break;
-                case "1.08.1.1000": regulationFolder = "1.08.1 (10811000)"; break;
-                case "1.09.0.1000": regulationFolder = "1.09 (10901000)"; break;
-                case "1.09.1.1000": regulationFolder = "1.09.1 (10911000)"; break;
-                case "1.10.0.1000": regulationFolder = "1.10 (11001000)"; break;
-                case "1.12.1.0015": regulationFolder = "1.12.1 (11210015)"; break;
-                case "1.12.2.0021": regulationFolder = "1.12.2 (11220021)"; break;
-                case "1.12.4.0023": regulationFolder = "1.12.4 (11240023)"; break;
-                case "1.13.1.0027": regulationFolder = "1.13.1 (11310027)"; break;
-                case "1.13.2.0031": regulationFolder = "1.13.2 (11320031)"; break;
-                case "1.14.1.0033": regulationFolder = "1.14.1 (11410033)"; break;
-                case "1.15.0.1000": regulationFolder = "1.15.0 (11501000)"; break;
-                case "1.16.0.1000": regulationFolder = "1.16.0 (11601000)"; break;
-            }
-        }
-
-        if (Project.ProjectType == ProjectType.AC6)
-        {
-            switch (versionString)
-            {
-                case "1.01.0.0129": regulationFolder = "1.01 (10100129)"; break;
-                case "1.02.1.0005": regulationFolder = "1.02.1 (10210005)"; break;
-                case "1.03.0.0151": regulationFolder = "1.03 (10300151)"; break;
-                case "1.03.1.0185": regulationFolder = "1.03.1 (10310185)"; break;
-                case "1.04.0.0193": regulationFolder = "1.04 (10400193)"; break;
-                case "1.04.1.0243": regulationFolder = "1.04.1 (10410243)"; break;
-                case "1.05.0.0262": regulationFolder = "1.05 (10500262)"; break;
-                case "1.06.0.0278": regulationFolder = "1.06 (10600278)"; break;
-                case "1.06.1.0279": regulationFolder = "1.06.1 (10610279)"; break;
-                case "1.07.0.0015": regulationFolder = "1.07 (10700015)"; break;
-                case "1.07.1.0016": regulationFolder = "1.07.1 (10710016)"; break;
-                case "1.07.2.0018": regulationFolder = "1.07.2 (10720018)"; break;
-                case "1.08.1.0030": regulationFolder = "1.08.1 (10810030)"; break;
-            }
-        }
-
-        if (regulationFolder != "")
-        {
-            oldRegulationPath = $"{storedRegulationDirectory}\\{regulationFolder}\\regulation.bin";
-        }
-
-        return oldRegulationPath;
-    }
-
-    public void UpgradeRegulation(ParamBank bank, ParamBank vanillaBank, string oldRegulation)
-    {
-        var oldVersion = bank.ParamVersion;
-        var newVersion = vanillaBank.ParamVersion;
-
-        Dictionary<string, HashSet<int>> conflicts = new();
-        ParamBank.ParamUpgradeResult result = bank.UpgradeRegulation(this, vanillaBank, oldRegulation, conflicts);
-
-        if (result == ParamBank.ParamUpgradeResult.OldRegulationNotFound)
-        {
-            PlatformUtils.Instance.MessageBox(
-                @"Unable to load old vanilla regulation.",
-                "Loading error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-
-        if (result == ParamBank.ParamUpgradeResult.OldRegulationVersionMismatch)
-        {
-            PlatformUtils.Instance.MessageBox(
-                @"The version of the vanilla regulation you selected does not match the version of your mod.",
-                "Version mismatch",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            return;
-        }
-
-        if (result == ParamBank.ParamUpgradeResult.OldRegulationMatchesCurrent)
-        {
-            PlatformUtils.Instance.MessageBox(
-                "The version of the vanilla regulation you selected appears to match your mod.\nMake sure you provide the vanilla regulation the mod is based on.",
-                "Old vanilla regulation incorrect",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            return;
-        }
-
-        if (result == ParamBank.ParamUpgradeResult.RowConflictsFound)
-        {
-            // If there's row conflicts write a conflict log
-            var logPath = $@"{Project.ProjectPath}\regulationUpgradeLog.txt";
-            if (File.Exists(logPath))
-            {
-                File.Delete(logPath);
-            }
-
-            using StreamWriter logWriter = new(logPath);
-            logWriter.WriteLine(
-                "The following rows have conflicts (i.e. both you and the game update added these rows).");
-            logWriter.WriteLine(
-                "The conflicting rows have been overwritten with your modded version, but it is recommended");
-            logWriter.WriteLine("that you review these rows and move them to new IDs and try merging again");
-            logWriter.WriteLine("instead of saving your upgraded regulation right away.");
-            logWriter.WriteLine();
-
-            foreach (KeyValuePair<string, HashSet<int>> c in conflicts)
-            {
-                logWriter.WriteLine($@"{c.Key}:");
-
-                foreach (var r in c.Value)
-                {
-                    logWriter.WriteLine($@"    {r}");
-                }
-
-                logWriter.WriteLine();
-            }
-
-            logWriter.Flush();
-
-            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
-                @"Conflicts were found while upgrading params. This is usually caused by a game update adding" +
-                "a new row that has the same ID as the one that you added in your mod.\nIt is highly recommended that you " +
-                "review these conflicts and handle them before saving.\nYou can revert to your original params by " +
-                "reloading your project without saving.\nThen you can move the conflicting rows to new IDs.\n" +
-                "Currently the added rows from your mod will have overwritten " +
-                "the added rows in the vanilla regulation.\n\nThe list of conflicts can be found in regulationUpgradeLog.txt " +
-                "in your mod project directory. Would you like to open them now?",
-                "Row conflicts found",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (msgRes == DialogResult.Yes)
-            {
-                Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = "\"" + logPath + "\"" });
-            }
-        }
-
-        // Apply this even if Row conflicts occur since the user can still save,
-        // so we want the new fields to be populated correctly.
-        if (result == ParamBank.ParamUpgradeResult.Success || result == ParamBank.ParamUpgradeResult.RowConflictsFound)
-        {
-            (List<string> success, List<string> fail) = RunUpgradeEdits(oldVersion, newVersion);
-
-            if (success.Count > 0 || fail.Count > 0)
-            {
-                foreach(var entry in success)
-                {
-                    TaskLogs.AddLog($"SUCCESSFUL: {entry}");
-                }
-                foreach (var entry in fail)
-                {
-                    TaskLogs.AddLog($"FAILED: {entry}");
-                }
-            }
-
-            UICache.ClearCaches();
-            Project.ParamData.RefreshParamDifferenceCacheTask(false);
-
-            DialogResult msgRes = PlatformUtils.Instance.MessageBox(
-                @"Do you wish to save the params?",
-                "Save Params",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information);
-
-            if (msgRes == DialogResult.Yes)
-            {
-                Save();
-            }
-        }
-
-        EditorActionManager.Clear();
-    }
-
-    private (List<string>, List<string>) RunUpgradeEdits(ulong startVersion, ulong endVersion)
-    {
-        if (ParamUpgradeEdits == null)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<string> performed = new();
-        List<string> unperformed = new();
-
-        var hasFailed = false;
-        foreach ((var version, var task, var command) in ParamUpgradeEdits)
-        {
-            // Don't bother updating modified cache between edits
-            if (version <= startVersion || version > endVersion)
-            {
-                continue;
-            }
-
-            if (!hasFailed)
-            {
-                try
-                {
-                    (MassEditResult result, ActionManager actions) =
-                        MassParamEditRegex.PerformMassEdit(Project.ParamData.PrimaryBank, command, null);
-
-                    if (result.Type != MassEditResultType.SUCCESS)
-                    {
-                        hasFailed = true;
-                    }
-                }
-                catch (Exception e)
-                {
-                    hasFailed = true;
-                }
-            }
-
-            if (!hasFailed)
-            {
-                performed.Add(task);
-            }
-            else
-            {
-                unperformed.Add(task);
-            }
-        }
-
-        return (performed, unperformed);
-    }
-
+    
     private void ParamUndo()
     {
         EditorActionManager.UndoAction();

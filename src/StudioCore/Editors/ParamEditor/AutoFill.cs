@@ -179,7 +179,6 @@ internal class AutoFillSearchEngine<A, B>
 
 internal class AutoFill
 {
-    // Type hell. Can't omit the type.
     private static readonly AutoFillSearchEngine<bool, string> autoFillVse = new("vse", VarSearchEngine.vse);
 
     private static string[] _autoFillArgsGop = Enumerable
@@ -199,14 +198,23 @@ internal class AutoFill
     internal static Vector4 HINTCOLOUR = new(0.3f, 0.5f, 1.0f, 1.0f);
     internal static Vector4 PREVIEWCOLOUR = new(0.65f, 0.75f, 0.65f, 1.0f);
 
+    internal static AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
+        autoFillParse;
+    internal static AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse;
+    internal static AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse;
+    internal static AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse;
+
     public static string ParamSearchBarAutoFill(ParamEditorScreen editor)
     {
-        ImGui.Button($@"{Icons.CaretDown}");
+        if(autoFillPse == null)
+        {
+            autoFillPse = new("pse", ParamSearchEngine.Create(editor));
+        }
+
+        ImGui.Button($@"{Icons.CaretDown}##paramAutofillButton");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select params...");
-
-            AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse = new("pse", ParamSearchEngine.Create(editor));
 
             var result = autoFillPse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
@@ -218,11 +226,14 @@ internal class AutoFill
 
     public static string RowSearchBarAutoFill(ParamEditorScreen editor)
     {
-        ImGui.Button($@"{Icons.CaretDown}");
+        if (autoFillRse == null)
+        {
+            autoFillRse = new("rse", RowSearchEngine.Create(editor));
+        }
+
+        ImGui.Button($@"{Icons.CaretDown}##rowAutofillButton");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
-            AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse = new("rse", RowSearchEngine.Create(editor));
-
             ImGui.TextColored(HINTCOLOUR, "Select rows...");
             var result = autoFillRse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
@@ -234,12 +245,15 @@ internal class AutoFill
 
     public static string ColumnSearchBarAutoFill(ParamEditorScreen editor)
     {
-        ImGui.Button($@"{Icons.CaretDown}");
+        if (autoFillCse == null)
+        {
+            autoFillCse = new("cse", CellSearchEngine.Create(editor));
+        }
+
+        ImGui.Button($@"{Icons.CaretDown}##fieldAutofillButton");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select fields...");
-
-            AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
 
             var result = autoFillCse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
@@ -251,17 +265,23 @@ internal class AutoFill
 
     public static string MassEditCompleteAutoFill(ParamEditorScreen editor)
     {
+        if (autoFillParse == null)
+        {
+            autoFillParse = new("parse", ParamAndRowSearchEngine.Create(editor));
+        }
+
+        if (autoFillRse == null)
+        {
+            autoFillRse = new("rse", RowSearchEngine.Create(editor));
+        }
+
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
-        ImGui.Button($@"{Icons.CaretDown}");
+        ImGui.Button($@"{Icons.CaretDown}##masseditAutofillButton");
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
             ImGui.TextColored(HINTCOLOUR, "Select param and rows...");
-
-            AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse = new("rse", RowSearchEngine.Create(editor));
-            AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
-        autoFillParse = new("parse", ParamAndRowSearchEngine.Create(editor));
 
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {

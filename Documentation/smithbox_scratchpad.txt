@@ -5,7 +5,4 @@ Legacy issue, but more obvious now you can swap projects quickly
  
 - Visibility icon is displayed with a bad visual offset (compared to old version)
 
-- Need to update Param Upgrader to use new instruction JSON
 
-- Autofill is broken: the Search engines that were static are now constantly being created, 
-need to adjust it so they are only created once

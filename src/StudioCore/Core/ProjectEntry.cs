@@ -154,9 +154,6 @@ public class ProjectEntry
     public ParamCategoryResource ParamCategories;
 
     [JsonIgnore]
-    public ParamUpgraderInfo ParamUpgraderInfo;
-
-    [JsonIgnore]
     public ParamCommutativeResource CommutativeParamGroups;
 
     [JsonIgnore]
@@ -442,20 +439,6 @@ public class ProjectEntry
             {
                 TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
             }
-
-            // Param Upgrader Instructions (per project)
-            Task<bool> paramUpgraderTask = SetupParamUpgraderInstructions();
-            bool paramUpgraderTaskResult = await paramUpgraderTask;
-
-            if (paramUpgraderTaskResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Upgrader Instructions.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Upgrader Instructions.");
-            }
-
 
             ParamData = new(BaseEditor, this);
 
@@ -1437,55 +1420,6 @@ public class ProjectEntry
             catch (Exception e)
             {
                 TaskLogs.AddLog("[Smithbox] Failed to read commutative param groups.");
-            }
-        }
-
-        return true;
-    }
-    #endregion
-
-    #region Setup Param Upgrader Instructions
-
-    /// <summary>
-    /// Setup the param upgrader instructions for this project
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> SetupParamUpgraderInstructions()
-    {
-        await Task.Delay(1);
-
-        ParamUpgraderInfo = new();
-
-        // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Upgrader Information.json");
-
-        var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "Upgrader Information.json");
-
-        var targetFile = sourceFile;
-
-        if (File.Exists(projectFile))
-        {
-            targetFile = projectFile;
-        }
-
-        if (File.Exists(targetFile))
-        {
-            try
-            {
-                var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                ParamUpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
-
-                if (ParamUpgraderInfo == null)
-                {
-                    throw new Exception("[Smithbox] Failed to read param upgrader instructions.");
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog("[Smithbox] Failed to read param upgrader instructions.");
             }
         }
 
