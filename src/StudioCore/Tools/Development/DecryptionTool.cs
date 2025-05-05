@@ -16,7 +16,7 @@ public static class DecryptionTool
         var writePath = "C:\\Users\\benja\\Modding\\Elden Ring\\Projects\\ER-SOTE\\Mod\\decrypted_regulation.bin";
 
         byte[] bytes = File.ReadAllBytes(path);
-        bytes = SFUtil.DecryptByteArray(SFUtil.erRegulationKey, bytes);
+        bytes = SFUtil.DecryptByteArray(SFUtil.REGULATION_KEY_ER, bytes);
         File.WriteAllBytes(writePath, bytes);
     }
 }

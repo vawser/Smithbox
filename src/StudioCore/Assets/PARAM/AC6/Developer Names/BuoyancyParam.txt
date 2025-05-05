@@ -1,4 +1,0 @@
-0 test -- テスト
-1 small -- 小
-2 Medium -- 中
-3 large -- 大

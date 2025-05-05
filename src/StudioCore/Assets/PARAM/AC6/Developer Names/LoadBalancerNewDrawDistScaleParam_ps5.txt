@@ -1,1 +1,0 @@
-0 [Drawing distance scale] Default (do not scale) -- [描画距離スケール] デフォルト(スケールしない)

@@ -1,8 +1,0 @@
-0 Normal
-2 In Combat
-10 Heat Up 1
-11 Heat Up 2
-12 Heat Up 3
-13 Heat Up 4
-14 Heat Up 5
-999 Death

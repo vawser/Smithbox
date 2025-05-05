@@ -1,11 +1,13 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Framework;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tools.Generation;
@@ -43,11 +45,6 @@ public class ParamEditorView
         _selection = new ParamEditorSelectionState(Editor);
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
     //------------------------------------
     // Param
     //------------------------------------
@@ -72,7 +69,7 @@ public class ParamEditorView
 
         // Autofill
         ImGui.AlignTextToFramePadding();
-        var resAutoParam = AutoFill.ParamSearchBarAutoFill();
+        var resAutoParam = AutoFill.ParamSearchBarAutoFill(Editor);
 
         if (resAutoParam != null)
         {
@@ -117,7 +114,7 @@ public class ParamEditorView
                     Param p = Editor.Project.ParamData.PrimaryBank.Params[paramKey];
                     if (p != null)
                     {
-                        var meta = ParamMetaData.Get(p.AppliedParamdef);
+                        var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
                         var Wiki = meta?.Wiki;
                         if (Wiki != null)
                         {
@@ -151,7 +148,7 @@ public class ParamEditorView
         List<string> paramKeyList = UICache.GetCached(Editor, _viewIndex, () =>
         {
             List<(ParamBank, Param)> list =
-                ParamSearchEngine.pse.Search(true, _selection.currentParamSearchString, true, true);
+                ParamSearchEngine.Create(Editor).Search(true, _selection.currentParamSearchString, true, true);
 
             if (list != null)
             {
@@ -164,6 +161,10 @@ public class ParamEditorView
                 }
 
                 return keyList;
+            }
+            else
+            {
+                var keyList = Editor.Project.ParamData.PrimaryBank.Params.Select(e => e.Key).ToList();
             }
 
             return new List<string>();
@@ -265,7 +266,7 @@ public class ParamEditorView
 
             if (p != null)
             {
-                var meta = ParamMetaData.Get(p.AppliedParamdef);
+                var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
 
                 var Wiki = meta?.Wiki;
                 if (Wiki != null)
@@ -292,7 +293,7 @@ public class ParamEditorView
 
             if (CFG.Current.Param_ShowParamCommunityName)
             {
-                var meta = ParamMetaData.Get(p.AppliedParamdef);
+                var meta = Editor.Project.ParamData.GetParamMeta(p.AppliedParamdef);
                 var names = meta?.DisplayNames;
 
                 if (names != null)
@@ -390,7 +391,7 @@ public class ParamEditorView
 
         // Auto fill
         ImGui.AlignTextToFramePadding();
-        var resAutoRow = AutoFill.RowSearchBarAutoFill();
+        var resAutoRow = AutoFill.RowSearchBarAutoFill(Editor);
 
         if (resAutoRow != null)
         {
@@ -515,7 +516,8 @@ public class ParamEditorView
             //ImGui.BeginChild("rows" + activeParam);
             if (EditorDecorations.ImGuiTableStdColumns("rowList", compareCol == null ? 1 : 2, false))
             {
-                var meta = ParamMetaData.Get(Editor.Project.ParamData.PrimaryBank.Params[activeParam].AppliedParamdef);
+                var curParam = Editor.Project.ParamData.PrimaryBank.Params[activeParam];
+                var meta = Editor.Project.ParamData.GetParamMeta(curParam.AppliedParamdef);
 
                 var pinnedRowList = Editor.Project.PinnedRows
                     .GetValueOrDefault(activeParam, new List<int>()).Select(id => para[id]).ToList();
@@ -592,7 +594,7 @@ public class ParamEditorView
                 }
 
                 List<Param.Row> rows = UICache.GetCached(Editor, (_viewIndex, activeParam),
-                    () => RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, para),
+                    () => RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, para),
 
                         _selection.GetCurrentRowSearchString(), true, true));
 
@@ -721,7 +723,7 @@ public class ParamEditorView
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
-        bool doFocus, bool isPinned, ParamMetaData? meta)
+        bool doFocus, bool isPinned, ParamMeta? meta)
     {
         var diffVanilla = vanillaDiffCache.Contains(r.ID);
         var auxDiffVanilla = auxDiffCaches.Where(cache => cache.Item1.Contains(r.ID)).Count() > 0;
@@ -856,7 +858,7 @@ public class ParamEditorView
     private bool ParamView_RowList_Entry(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
-        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMetaData? meta)
+        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta? meta)
     {
         var scale = DPI.GetUIScale();
 

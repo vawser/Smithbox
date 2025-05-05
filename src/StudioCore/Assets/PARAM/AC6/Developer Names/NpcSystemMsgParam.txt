@@ -1,3 +1,0 @@
-2000 When winning -- 勝利時
-2010 At the time of defeat -- 敗北時
-2020 At the start of the match -- 対戦開始時

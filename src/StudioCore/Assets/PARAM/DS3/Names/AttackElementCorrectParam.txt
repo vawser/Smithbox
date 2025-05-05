@@ -1,9 +1,0 @@
-1000 Firebomb
-1001 Lightning Urn
-1010 Throwing Knife
-1020 Dragon Head Stone
-1030 Twinkling Dragon Torso Stone
-2100 Spear Fragment
-10000 Standard
-15000 Anri's Straight Sword
-16000 Demon's Scar

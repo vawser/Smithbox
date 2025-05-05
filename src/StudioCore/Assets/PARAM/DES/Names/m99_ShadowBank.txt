@@ -1,3 +1,0 @@
-0 Fort entrance
-1 inside the fort
-2 magma zone

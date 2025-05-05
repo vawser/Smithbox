@@ -1,8 +1,0 @@
-0 Basic
-1 celestial sphere
-20 Temporary ID for rough map (m07_00)
-59 Rubble A
-60 Rubble B
-61 boss room
-62 terrace
-63 Character

@@ -1,2 +1,0 @@
-0 Unused -- 未使用
-1 For recontest -- リコンテスト用

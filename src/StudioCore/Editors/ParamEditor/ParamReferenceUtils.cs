@@ -3,6 +3,7 @@ using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
@@ -1218,7 +1219,7 @@ public static class ParamReferenceUtils
         if (currentField == null)
             return;
 
-        var meta = ParamMetaData.Get(row.Def);
+        var meta = editor.Project.ParamData.GetParamMeta(row.Def);
         var proceed = false;
         string name = "";
         string fields = "";

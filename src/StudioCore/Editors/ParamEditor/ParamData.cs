@@ -1,6 +1,10 @@
-﻿using SoulsFormats;
+﻿using Andre.Formats;
+using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using System;
@@ -8,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using static StudioCore.Editors.ParamEditor.ParamBank;
 
@@ -22,14 +27,15 @@ public class ParamData
     public ProjectEntry Project;
 
     public Dictionary<string, PARAMDEF> ParamDefs = new();
-    public Dictionary<string, string> FakeParamTypes = new();
+    public Dictionary<string, PARAMDEF> ParamDefsByFilename = new();
 
     public ParamBank PrimaryBank;
     public ParamBank VanillaBank;
     public Dictionary<string, ParamBank> AuxBanks = new();
 
-    public ParamMetaData Meta;
+    public Dictionary<PARAMDEF, ParamMeta> ParamMeta = new();
 
+    public ParamTypeInfo ParamTypeInfo;
 
     public ParamData(Smithbox baseEditor, ProjectEntry project)
     {
@@ -41,8 +47,8 @@ public class ParamData
     {
         await Task.Delay(1);
 
-        PrimaryBank = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);
-        VanillaBank = new(BaseEditor, Project, Project.DataPath, Project.DataPath);
+        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
+        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
 
         // Param Defs
         Task<bool> paramDefTask = SetupParamDefs();
@@ -71,7 +77,7 @@ public class ParamData
         }
 
         // Primary Bank
-        Task<bool> primaryBankTask = PrimaryBank.Setup();
+        Task<bool> primaryBankTask = PrimaryBank.Load();
         bool primaryBankTaskResult = await primaryBankTask;
 
         if (primaryBankTaskResult)
@@ -84,7 +90,7 @@ public class ParamData
         }
 
         // Vanilla Bank
-        Task<bool> vanillaBankTask = VanillaBank.Setup();
+        Task<bool> vanillaBankTask = VanillaBank.Load();
         bool vanillaBankTaskResult = await vanillaBankTask;
 
         if (vanillaBankTaskResult)
@@ -96,25 +102,56 @@ public class ParamData
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Vanilla PARAM Bank.");
         }
 
+        if(!Project.ImportedParamRowNames)
+        {
+            PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+
+            Project.ImportedParamRowNames = true;
+            BaseEditor.ProjectManager.SaveProject(Project);
+        }
+
+        if (Project.EnableParamRowStrip)
+        {
+            PrimaryBank.RowNameRestore();
+        }
+
         return true;
     }
 
-    public async Task<bool> SetupAuxBank(string sourcePath, string fallbackPath)
+    public async Task<bool> SetupAuxBank(ProjectEntry targetProject)
     {
         await Task.Delay(1);
 
-        var newAuxBank = new ParamBank(BaseEditor, Project, sourcePath, fallbackPath);
-
-        Task<bool> auxBankTask = newAuxBank.Setup();
-        bool auxBankTaskResult = await auxBankTask;
-
-        if (auxBankTaskResult)
+        // If it already exists, just return true;
+        if (AuxBanks.ContainsKey(targetProject.ProjectName))
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank.");
+            return true;
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank.");
+            // If project isn't already loaded, init it
+            if (!targetProject.Initialized)
+            {
+                await targetProject.Init();
+            }
+
+            // Pass in the target project's filesystem,
+            // so we fill it with the param data from that project
+            var newAuxBank = new ParamBank(Project.ProjectName, BaseEditor, Project, targetProject.FS);
+
+            Task<bool> auxBankTask = newAuxBank.Load();
+            bool auxBankTaskResult = await auxBankTask;
+
+            AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+
+            if (auxBankTaskResult)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank.");
+            }
         }
 
         return true;
@@ -125,7 +162,10 @@ public class ParamData
         await Task.Delay(1);
 
         ParamDefs = new Dictionary<string, PARAMDEF>();
-        FakeParamTypes = new Dictionary<string, string>();
+        ParamDefsByFilename = new Dictionary<string, PARAMDEF>();
+        ParamTypeInfo = new();
+        ParamTypeInfo.Mapping = new();
+        ParamTypeInfo.Exceptions = new();
 
         var dir = ParamLocator.GetParamdefDir(Project);
         var files = Directory.GetFiles(dir, "*.xml");
@@ -135,20 +175,38 @@ public class ParamData
         {
             var pdef = PARAMDEF.XmlDeserialize(f, true);
             ParamDefs.Add(pdef.ParamType, pdef);
+            ParamDefsByFilename.Add(f, pdef);
             defPairs.Add((f, pdef));
         }
 
-        var tentativeMappingPath = ParamLocator.GetTentativeParamTypePath(Project);
+        // Param Type Info
+        var paramTypeInfoPath = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Type Info.json";
 
-        if (File.Exists(tentativeMappingPath))
+        if (File.Exists(paramTypeInfoPath))
         {
-            foreach (var line in File.ReadAllLines(tentativeMappingPath).Skip(1))
-            {
-                var parts = line.Split(',');
-                if (parts.Length != 2 || string.IsNullOrWhiteSpace(parts[0]) || string.IsNullOrWhiteSpace(parts[1]))
-                    throw new FormatException($"Malformed line in {tentativeMappingPath}: {line}");
+            var paramTypeInfo = new ParamTypeInfo();
+            paramTypeInfo.Mapping = new();
+            paramTypeInfo.Exceptions = new();
 
-                FakeParamTypes[parts[0]] = parts[1];
+            ParamTypeInfo = paramTypeInfo;
+
+            try
+            {
+                var filestring = File.ReadAllText(paramTypeInfoPath);
+                var options = new JsonSerializerOptions();
+
+                paramTypeInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamTypeInfo);
+
+                if (paramTypeInfo == null)
+                {
+                    throw new Exception($"[{Project.ProjectName}:Param Editor] Failed to read Param Type Info.json");
+                }
+
+                ParamTypeInfo = paramTypeInfo;
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load Param Type Info.json");
             }
         }
 
@@ -175,29 +233,51 @@ public class ParamData
     {
         await Task.Delay(1);
 
-        var mdir = ParamLocator.GetParammetaDir(Project);
+        var rootMetaDir = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
 
-        if (CFG.Current.Param_UseProjectMeta)
+        var projectMetaDir = @$"{Project.ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
+
+        if (CFG.Current.UseProjectMeta)
         {
-            CreateProjectMeta();
+            if (Project.ProjectType != ProjectType.Undefined)
+            {
+                // Create the project meta copy if it doesn't already exist
+                if (!Directory.Exists(projectMetaDir))
+                {
+                    Directory.CreateDirectory(projectMetaDir);
+                    var files = Directory.GetFileSystemEntries(rootMetaDir);
+
+                    foreach (var f in files)
+                    {
+                        var name = Path.GetFileName(f);
+                        var tPath = Path.Combine(rootMetaDir, name);
+                        var pPath = Path.Combine(projectMetaDir, name);
+
+                        if (File.Exists(tPath) && !File.Exists(pPath))
+                        {
+                            File.Copy(tPath, pPath);
+                        }
+                    }
+                }
+            }
         }
 
-        foreach ((var f, PARAMDEF pdef) in ParamDefs)
+        foreach ((var f, PARAMDEF pdef) in ParamDefsByFilename)
         {
+            ParamMeta meta = new(this);
+
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
 
-            //TaskLogs.AddLog(fName);
-
-            if (CFG.Current.Param_UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
+            if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
             {
-                var metaDir = ParamLocator.GetParammetaDir(Project);
-                var projectDir = $"{Project.ProjectPath}\\.smithbox\\{metaDir}";
-                ParamMetaData.XmlDeserialize($@"{projectDir}\{fName}", pdef);
+                meta.XmlDeserialize($@"{projectMetaDir}\{fName}", pdef);
             }
             else
             {
-                ParamMetaData.XmlDeserialize($@"{mdir}\{fName}", pdef);
+                meta.XmlDeserialize($@"{rootMetaDir}\{fName}", pdef);
             }
+
+            ParamMeta.Add(pdef, meta);
         }
 
         return true;
@@ -257,4 +337,29 @@ public class ParamData
 
         UICache.ClearCaches();
     }
+
+    public ParamMeta GetParamMeta(PARAMDEF def)
+    {
+        if(ParamMeta.ContainsKey(def))
+        {
+            return ParamMeta[def];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
+    {
+        if (curMeta.Fields.ContainsKey(def))
+        {
+            return curMeta.Fields[def];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 }

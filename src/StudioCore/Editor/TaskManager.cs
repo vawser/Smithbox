@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Concurrent;
@@ -86,7 +86,6 @@ public class TaskManager
             if (ex != null)
             {
                 // Use this for XML errors to see the file before the file with the bad syntax
-                throw new Exception($"{ParamMetaData.CurrentMetaFile}: {ex}");
                 throw ex;
             }
         }

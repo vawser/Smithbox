@@ -1,2 +1,0 @@
-100 A table that converts a number to an e-s character -- 数値をE～Sの文字へ変換するテーブル
-110 Pledge -- 誓約

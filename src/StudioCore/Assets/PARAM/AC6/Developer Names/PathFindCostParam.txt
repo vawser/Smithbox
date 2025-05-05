@@ -1,3 +1,0 @@
-0 test -- テスト
-1 Ground priority test -- 地上優先テスト
-2 air priority test -- 空中優先テスト

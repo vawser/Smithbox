@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Formats.JSON;
@@ -155,6 +156,8 @@ public class EditorDecorations
             var internalName = "";
             var displayName = "";
 
+            var targetMeta = editor.Project.ParamData.GetParamMeta(firstRow.Def);
+
             foreach (var col in firstRow.Columns)
             {
                 var offset = (int)col.GetByteOffset();
@@ -163,7 +166,7 @@ public class EditorDecorations
                 {
                     internalName = col.Def.InternalName;
 
-                    var cellmeta = FieldMetaData.Get(col.Def);
+                    var cellmeta = editor.Project.ParamData.GetParamFieldMeta(targetMeta, col.Def);
                     displayName = cellmeta.AltName;
                 }
             }
@@ -370,7 +373,7 @@ public class EditorDecorations
         ImGui.PopStyleVar();
     }
 
-    public static void ParamRefsSelectables(ParamBank bank, List<ParamRef> paramRefs, Param.Row context,
+    public static void ParamRefsSelectables(ParamEditorScreen editor, ParamBank bank, List<ParamRef> paramRefs, Param.Row context,
         dynamic oldval)
     {
         if (paramRefs == null)
@@ -381,7 +384,7 @@ public class EditorDecorations
         // Add named row and context menu
         // Lists located params
         // May span lines
-        List<(string, Param.Row, string)> matches = resolveRefs(bank, paramRefs, context, oldval);
+        List<(string, Param.Row, string)> matches = resolveRefs(editor, bank, paramRefs, context, oldval);
         var entryFound = matches.Count > 0;
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
         ImGui.BeginGroup();
@@ -401,7 +404,7 @@ public class EditorDecorations
         ImGui.EndGroup();
     }
 
-    private static List<(string, Param.Row, string)> resolveRefs(ParamBank bank, List<ParamRef> paramRefs,
+    private static List<(string, Param.Row, string)> resolveRefs(ParamEditorScreen editor, ParamBank bank, List<ParamRef> paramRefs,
         Param.Row context, dynamic oldval)
     {
         List<(string, Param.Row, string)> rows = new();
@@ -449,7 +452,7 @@ public class EditorDecorations
                 }
 
                 Param param = bank.Params[rt];
-                ParamMetaData meta = ParamMetaData.Get(bank.Params[rt].AppliedParamdef);
+                var meta = editor.Project.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
                 if (meta != null && meta.Row0Dummy && altval == 0)
                 {
                     continue;
@@ -796,10 +799,14 @@ public class EditorDecorations
         {
             foreach (KeyValuePair<string, Param> param in bank.Params)
             {
+                var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+
                 foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
                 {
-                    if (FieldMetaData.Get(f).VirtualRef != null &&
-                        FieldMetaData.Get(f).VirtualRef.Equals(virtualRefName))
+                    var curFieldMeta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
+
+                    if (curFieldMeta.VirtualRef != null &&
+                        curFieldMeta.VirtualRef.Equals(virtualRefName))
                     {
                         if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
                         {
@@ -886,7 +893,7 @@ public class EditorDecorations
             if (RefTypes != null)
             {
                 (string, Param.Row, string)? primaryRef =
-                    resolveRefs(bank, RefTypes, context, oldval)?.FirstOrDefault();
+                    resolveRefs(editor, bank, RefTypes, context, oldval)?.FirstOrDefault();
                 if (primaryRef?.Item2 != null)
                 {
                     if (InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight))
@@ -920,7 +927,7 @@ public class EditorDecorations
         }
     }
 
-    public static bool ParamRefEnumShortcutItems(ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool ParamRefEnumShortcutItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
 
@@ -935,7 +942,7 @@ public class EditorDecorations
 
                 if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_InheritReferencedRowName))
                 {
-                    List<(string, Param.Row, string)> refs = resolveRefs(bank, RefTypes, context, oldval);
+                    List<(string, Param.Row, string)> refs = resolveRefs(editor, bank, RefTypes, context, oldval);
 
                     foreach ((string, Param.Row, string) rf in refs)
                     {
@@ -956,12 +963,12 @@ public class EditorDecorations
         return result;
     }
 
-    public static bool ParamRefEnumContextMenuItems(ParamEditorScreen editor, ParamBank bank, FieldMetaData cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
+    public static bool ParamRefEnumContextMenuItems(ParamEditorScreen editor, ParamBank bank, ParamFieldMeta cellMeta, object oldval, ref object newval, List<ParamRef> RefTypes, Param.Row context, List<FMGRef> fmgRefs, List<FMGRef> mapFmgRefs, List<TexRef> textureRefs, ParamEnum Enum, ActionManager executor)
     {
         var result = false;
         if (RefTypes != null)
         {
-            result |= PropertyRowRefsContextItems(bank, RefTypes, context, oldval, ref newval, executor);
+            result |= PropertyRowRefsContextItems(editor, bank, RefTypes, context, oldval, ref newval, executor);
         }
 
         if (fmgRefs != null)
@@ -1025,7 +1032,7 @@ public class EditorDecorations
         return result;
     }
 
-    public static bool PropertyRowRefsContextItems(ParamBank bank, List<ParamRef> reftypes, Param.Row context,
+    public static bool PropertyRowRefsContextItems(ParamEditorScreen editor, ParamBank bank, List<ParamRef> reftypes, Param.Row context,
         object oldval, ref object newval, ActionManager executor)
     {
         if (bank.Params == null)
@@ -1034,7 +1041,7 @@ public class EditorDecorations
         }
 
         // Add Goto statements
-        List<(string, Param.Row, string)> refs = resolveRefs(bank, reftypes, context, oldval);
+        List<(string, Param.Row, string)> refs = resolveRefs(editor, bank, reftypes, context, oldval);
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
         foreach ((string, Param.Row, string) rf in refs)
         {
@@ -1082,9 +1089,9 @@ public class EditorDecorations
                     continue;
                 }
 
-                ParamMetaData meta = ParamMetaData.Get(bank.Params[rt].AppliedParamdef);
+                var meta = editor.Project.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
                 var maxResultsPerRefType = 15 / reftypes.Count;
-                List<Param.Row> rows = RowSearchEngine.rse.Search((bank, bank.Params[rt]),
+                List<Param.Row> rows = RowSearchEngine.Create(editor).Search((bank, bank.Params[rt]),
                     _refContextCurrentAutoComplete, true, true);
                 foreach (Param.Row r in rows)
                 {
@@ -1309,7 +1316,8 @@ public class EditorDecorations
         if (ImGui.BeginMenu("Search for references"))
         {
             Dictionary<string, List<(string, ParamRef)>> items = UICache.GetCached(screen, (bank, currentParam),
-                () => ParamRefReverseLookupFieldItems(bank, currentParam));
+                () => ParamRefReverseLookupFieldItems((ParamEditorScreen)screen, bank, currentParam));
+
             foreach (KeyValuePair<string, List<(string, ParamRef)>> paramitems in items)
             {
                 if (ImGui.BeginMenu($@"in {paramitems.Key}..."))
@@ -1319,7 +1327,7 @@ public class EditorDecorations
                         if (ImGui.BeginMenu($@"in {fieldName}"))
                         {
                             List<Param.Row> rows = UICache.GetCached(screen, (bank, currentParam, currentID, paramitems.Key, fieldName),
-                                () => ParamRefReverseLookupRowItems(bank, paramitems.Key, fieldName, currentID,
+                                () => ParamRefReverseLookupRowItems((ParamEditorScreen)screen, bank, paramitems.Key, fieldName, currentID,
                                     pref));
                             foreach (Param.Row row in rows)
                             {
@@ -1352,7 +1360,7 @@ public class EditorDecorations
         }
     }
 
-    public static void DrawCalcCorrectGraph(EditorScreen screen, ParamMetaData meta, Param.Row row)
+    public static void DrawCalcCorrectGraph(EditorScreen screen, ParamMeta meta, Param.Row row)
     {
         try
         {
@@ -1403,17 +1411,20 @@ public class EditorDecorations
         ImGui.NewLine();
     }
 
-    private static Dictionary<string, List<(string, ParamRef)>> ParamRefReverseLookupFieldItems(ParamBank bank,
+    private static Dictionary<string, List<(string, ParamRef)>> ParamRefReverseLookupFieldItems(ParamEditorScreen editor, ParamBank bank,
         string currentParam)
     {
         Dictionary<string, List<(string, ParamRef)>> items = new();
         foreach (KeyValuePair<string, Param> param in bank.Params)
         {
             List<(string, ParamRef)> paramitems = new();
+
+            var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
+
             //get field
             foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
             {
-                FieldMetaData meta = FieldMetaData.Get(f);
+                var meta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
                 if (meta.RefTypes == null)
                 {
                     continue;
@@ -1440,13 +1451,13 @@ public class EditorDecorations
         return items;
     }
 
-    private static List<Param.Row> ParamRefReverseLookupRowItems(ParamBank bank, string paramName, string fieldName,
+    private static List<Param.Row> ParamRefReverseLookupRowItems(ParamEditorScreen editor, ParamBank bank, string paramName, string fieldName,
         int currentID, ParamRef pref)
     {
         var searchTerm = pref.ConditionField != null
             ? $@"prop {fieldName} ^{currentID}$ && prop {pref.ConditionField} ^{pref.ConditionValue}$"
             : $@"prop {fieldName} ^{currentID}$";
-        return RowSearchEngine.rse.Search((bank, bank.Params[paramName]), searchTerm, false, false);
+        return RowSearchEngine.Create(editor).Search((bank, bank.Params[paramName]), searchTerm, false, false);
     }
 
     public static bool ImguiTableSeparator()

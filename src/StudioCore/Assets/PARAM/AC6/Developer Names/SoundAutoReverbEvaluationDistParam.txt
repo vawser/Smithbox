@@ -1,6 +1,0 @@
-0 AvgDistForOutdoor
-1 AvgDistForWall
-2 AvgDistMax
-3 AvgDistMaxForIndoor
-4 AvgDistMaxForUG
-5 AvgDistForUGWall

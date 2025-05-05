@@ -498,8 +498,8 @@ namespace SoulsFormats
             }
         }
 
-        private static readonly byte[] ds2RegulationKey = { 0x40, 0x17, 0x81, 0x30, 0xDF, 0x0A, 0x94, 0x54, 0x33, 0x09, 0xE1, 0x71, 0xEC, 0xBF, 0x25, 0x4C };
-        private static readonly byte[] ds3RegulationKey = SFEncoding.ASCII.GetBytes("ds3#jn/8_7(rsY9pg55GFN7VFL#+3n/)");
+        private static readonly byte[] REGULATION_KEY_DS2 = { 0x40, 0x17, 0x81, 0x30, 0xDF, 0x0A, 0x94, 0x54, 0x33, 0x09, 0xE1, 0x71, 0xEC, 0xBF, 0x25, 0x4C };
+        private static readonly byte[] REGULATION_KEY_DS3 = SFEncoding.ASCII.GetBytes("ds3#jn/8_7(rsY9pg55GFN7VFL#+3n/)");
 
 
         /// <summary>
@@ -518,7 +518,24 @@ namespace SoulsFormats
             Array.Copy(bytes, 32, input, 0, bytes.Length - 32);
             using (var ms = new MemoryStream(input))
             {
-                byte[] decrypted = CryptographyUtility.DecryptAesCtr(ms, ds2RegulationKey, iv);
+                byte[] decrypted = CryptographyUtility.DecryptAesCtr(ms, REGULATION_KEY_DS2, iv);
+                return BND4.Read(decrypted);
+            }
+        }
+
+        public static BND4 DecryptDS2Regulation(Memory<byte> bytes)
+        {
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            byte[] iv = new byte[16];
+            iv[0] = 0x80;
+            bytes[0..11].CopyTo(iv.AsMemory()[1..]);
+            iv[15] = 1;
+            var input = bytes[32..];
+
+            using (var ms = new MemoryStream(input.ToArray()))
+            {
+                byte[] decrypted = CryptographyUtility.DecryptAesCtr(ms, REGULATION_KEY_DS2, iv);
                 return BND4.Read(decrypted);
             }
         }
@@ -531,7 +548,18 @@ namespace SoulsFormats
             byte[] bytes = File.ReadAllBytes(path);
             if (BND4.IsRead(bytes, out BND4 bnd4)) 
                 return bnd4; 
-            bytes = DecryptByteArray(ds3RegulationKey, bytes);
+            bytes = DecryptByteArray(REGULATION_KEY_DS3, bytes);
+            return BND4.Read(bytes);
+        }
+
+        /// <summary>
+        /// Decrypts and unpacks DS3's regulation BND4.
+        /// </summary>
+        public static BND4 DecryptDS3Regulation(byte[] bytes)
+        {
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            bytes = DecryptByteArray(REGULATION_KEY_DS3, bytes);
             return BND4.Read(bytes);
         }
 
@@ -541,12 +569,12 @@ namespace SoulsFormats
         public static void EncryptDS3Regulation(string path, BND4 bnd)
         {
             byte[] bytes = bnd.Write();
-            bytes = EncryptByteArray(ds3RegulationKey, bytes);
+            bytes = EncryptByteArray(REGULATION_KEY_DS3, bytes);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllBytes(path, bytes);
         }
 
-        public static readonly byte[] erRegulationKey = ParseHexString("99 BF FC 36 6A 6B C8 C6 F5 82 7D 09 36 02 D6 76 C4 28 92 A0 1C 20 7F B0 24 D3 AF 4E 49 3F EF 99");
+        public static readonly byte[] REGULATION_KEY_ER = ParseHexString("99 BF FC 36 6A 6B C8 C6 F5 82 7D 09 36 02 D6 76 C4 28 92 A0 1C 20 7F B0 24 D3 AF 4E 49 3F EF 99");
 
         /// <summary>
         /// Decrypts and unpacks ER's regulation BND4 from the specified path.
@@ -556,11 +584,22 @@ namespace SoulsFormats
             byte[] bytes = File.ReadAllBytes(path);
             if (BND4.IsRead(bytes, out BND4 bnd4)) 
                 return bnd4; 
-            bytes = DecryptByteArray(erRegulationKey, bytes);
+            bytes = DecryptByteArray(REGULATION_KEY_ER, bytes);
             return BND4.Read(bytes);
         }
 
-        private static readonly byte[] ac6RegulationKey = ParseHexString("10 CE ED 47 7B 7C D9 D7 E6 93 8E 11 47 13 E7 87 D5 39 13 B1 D 31 8E C1 35 E4 BE 50 50 4E E 10");
+        /// <summary>
+        /// Decrypts and unpacks ER's regulation BND4.
+        /// </summary>
+        public static BND4 DecryptERRegulation(byte[] bytes)
+        {
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            bytes = DecryptByteArray(REGULATION_KEY_ER, bytes);
+            return BND4.Read(bytes);
+        }
+
+        private static readonly byte[] REGULATION_KEY_AC6 = ParseHexString("10 CE ED 47 7B 7C D9 D7 E6 93 8E 11 47 13 E7 87 D5 39 13 B1 D 31 8E C1 35 E4 BE 50 50 4E E 10");
 
         /// <summary>
         /// Decrypts and unpacks ER's regulation BND4 from the specified path.
@@ -570,8 +609,80 @@ namespace SoulsFormats
             byte[] bytes = File.ReadAllBytes(path);
             if (BND4.IsRead(bytes, out BND4 bnd4)) 
                 return bnd4; 
-            bytes = DecryptByteArray(ac6RegulationKey, bytes);
+            bytes = DecryptByteArray(REGULATION_KEY_AC6, bytes);
             return BND4.Read(bytes);
+        }
+
+        /// <summary>
+        /// Decrypts and unpacks ER's regulation BND4.
+        /// </summary>
+        public static BND4 DecryptAC6Regulation(byte[] bytes)
+        {
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            bytes = DecryptByteArray(REGULATION_KEY_AC6, bytes);
+            return BND4.Read(bytes);
+        }
+
+        public static readonly byte[] REGULATION_KEY_ERN = ParseHexString("00");
+
+        /// <summary>
+        /// Decrypts and unpacks Nightreign's regulation BND4 from the specified path.
+        /// </summary>
+        public static BND4 DecryptNightreignRegulation(string path)
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            bytes = DecryptByteArray(REGULATION_KEY_ERN, bytes);
+            return BND4.Read(bytes);
+        }
+
+        /// <summary>
+        /// Decrypts and unpacks Nightreign's regulation BND4.
+        /// </summary>
+        public static BND4 DecryptNightreignRegulation(byte[] bytes)
+        {
+            if (BND4.IsRead(bytes, out BND4 bnd4))
+                return bnd4;
+            bytes = DecryptByteArray(REGULATION_KEY_ERN, bytes);
+            return BND4.Read(bytes);
+        }
+
+        /// <summary>
+        /// Repacks and encrypts Nightreign's regulation BND4 to the specified path.
+        /// </summary>
+        public static void EncryptNightreignRegulation(string path, BND4 bnd, DCX.Type compression = DCX.Type.Unknown)
+        {
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
+            bytes = EncryptByteArray(REGULATION_KEY_ERN, bytes);
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            File.WriteAllBytes(path, bytes);
+        }
+
+        public static byte[] EncryptNightreignRegulation(BND4 bnd, DCX.Type compression = DCX.Type.Unknown)
+        {
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
+            bytes = EncryptByteArray(REGULATION_KEY_ER, bytes);
+            return bytes;
         }
 
         /// <summary>
@@ -589,9 +700,28 @@ namespace SoulsFormats
                 bytes = bnd.Write();
             }
 
-            bytes = EncryptByteArray(erRegulationKey, bytes);
+            bytes = EncryptByteArray(REGULATION_KEY_ER, bytes);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllBytes(path, bytes);
+        }
+
+        /// <summary>
+        /// Repacks and encrypts ER's regulation BND4.
+        /// </summary>
+        public static byte[] EncryptERRegulation(BND4 bnd, DCX.Type compression = DCX.Type.Unknown)
+        {
+            byte[] bytes = null;
+            if (compression != DCX.Type.Unknown)
+            {
+                bytes = bnd.Write(compression);
+            }
+            else
+            {
+                bytes = bnd.Write();
+            }
+
+            bytes = EncryptByteArray(REGULATION_KEY_ER, bytes);
+            return bytes;
         }
 
         /// <summary>
@@ -600,9 +730,29 @@ namespace SoulsFormats
         public static void EncryptAC6Regulation(string path, BND4 bnd)
         {
             byte[] bytes = bnd.Write();
-            bytes = EncryptByteArray(ac6RegulationKey, bytes);
+            bytes = EncryptByteArray(REGULATION_KEY_AC6, bytes);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllBytes(path, bytes);
+        }
+
+        /// <summary>
+        /// Repacks and encrypts ER's regulation BND4.
+        /// </summary>
+        public static byte[] EncryptAC6Regulation(BND4 bnd)
+        {
+            byte[] bytes = bnd.Write();
+            bytes = EncryptByteArray(REGULATION_KEY_AC6, bytes);
+            return bytes;
+        }
+
+        /// <summary>
+        /// Repacks and encrypts DS3's regulation BND4.
+        /// </summary>
+        public static byte[] EncryptDS3Regulation(BND4 bnd)
+        {
+            byte[] bytes = bnd.Write();
+            bytes = EncryptByteArray(REGULATION_KEY_DS3, bytes);
+            return bytes;
         }
 
         private static byte[] EncryptByteArray(byte[] key, byte[] secret)

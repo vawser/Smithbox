@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Actions;
@@ -268,7 +269,7 @@ public class ToolWindow
                 UIHelper.WrappedText("");
 
                 // AutoFill
-                var res = AutoFill.MassEditCompleteAutoFill();
+                var res = AutoFill.MassEditCompleteAutoFill(Editor);
                 if (res != null)
                 {
                     MassEditHandler._currentMEditRegexInput = MassEditHandler._currentMEditRegexInput + res;
@@ -396,55 +397,21 @@ public class ToolWindow
                 UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
                 UIHelper.WrappedText("");
 
-                UIHelper.WrappedText("Target Regulation");
-                UIHelper.Tooltip("This is the target regulation.bin you wish to merge.");
-
-                ImGui.SetNextItemWidth(inputBoxSize.X);
-                ImGui.InputText("##targetRegulationPath", ref Handler.targetRegulationPath, 255);
-                ImGui.SameLine();
-                if (ImGui.Button($@"{Icons.FileO}"))
+                UIHelper.WrappedText("Compatible Projects:");
+                // Display compatible projects
+                foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
                 {
-                    if (PlatformUtils.Instance.OpenFileDialog("Select target regulation.bin...", Handler.allParamTypes, out var path))
+                    if (proj == null)
+                        continue;
+
+                    if (proj.ProjectType == Editor.Project.ProjectType)
                     {
-                        Handler.targetRegulationPath = path;
-                    }
-                }
-
-                ImGui.Checkbox("Unique Only##targetUniqueOnly", ref Handler.targetUniqueOnly);
-                UIHelper.Tooltip("Only merge in unique param rows from the target regulation. If disabled, all modified rows, even if not unique, will be merged.");
-                UIHelper.WrappedText("");
-
-                if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-                {
-                    UIHelper.WrappedText("Target Loose Params");
-                    UIHelper.Tooltip("This is the target loose param folder you wish to merge.");
-
-                    ImGui.SetNextItemWidth(inputBoxSize.X);
-                    ImGui.InputText("##targetLooseParamPath", ref Handler.targetLooseParamPath, 255);
-                    ImGui.SameLine();
-                    if (ImGui.Button($@"{Icons.FileO}"))
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
+                        if (ImGui.Selectable($"{proj.ProjectName}", Handler.ProjectName == proj.ProjectName))
                         {
-                            Handler.targetLooseParamPath = path;
+                            Editor.Project.ParamData.SetupAuxBank(proj);
+                            Handler.ProjectName = proj.ProjectName;
                         }
                     }
-                    UIHelper.WrappedText("");
-
-                    UIHelper.WrappedText("Target Regulation");
-                    UIHelper.Tooltip("This is the target enemy param you wish to merge.");
-
-                    ImGui.SetNextItemWidth(inputBoxSize.X);
-                    ImGui.InputText("##targetEnemyParamPath", ref Handler.targetEnemyParamPath, 255);
-                    ImGui.SameLine();
-                    if (ImGui.Button($@"{Icons.FileO}"))
-                    {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select target loose param folder...", Handler.allParamTypes, out var path))
-                        {
-                            Handler.targetEnemyParamPath = path;
-                        }
-                    }
-                    UIHelper.WrappedText("");
                 }
 
                 if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))

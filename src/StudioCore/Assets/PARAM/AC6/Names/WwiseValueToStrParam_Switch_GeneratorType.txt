@@ -1,3 +1,0 @@
-0 Normal
-1 Energy
-2 Coral

@@ -14,6 +14,11 @@ using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using StudioCore.Core;
 using System.Threading.Tasks;
+using Andre.IO.VFS;
+using StudioCore.Utilities;
+using StudioCore.Formats.JSON;
+using System.Text.Json;
+using Octokit;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -25,132 +30,9 @@ public class ParamBank
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public string SourcePath;
-    public string FallbackPath;
+    public VirtualFileSystem TargetFS;
 
-    public ParamBank(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
-    {
-        BaseEditor = baseEditor;
-        Project = project;
-        SourcePath = sourcePath;
-        FallbackPath = fallbackPath;
-    }
-
-    /// <summary>
-    /// Setup for this bank
-    /// </summary>
-    /// <returns></returns>
-    public async Task<bool> Setup()
-    {
-        await Task.Delay(1);
-
-        _params = new Dictionary<string, Param>();
-
-        UICache.ClearCaches();
-
-        if (Project.ProjectType == ProjectType.DES)
-        {
-            LoadParamsDES();
-        }
-
-        if (Project.ProjectType == ProjectType.DS1)
-        {
-            LoadParamsDS1();
-        }
-
-        if (Project.ProjectType == ProjectType.DS1R)
-        {
-            LoadParamsDS1R();
-        }
-
-        if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
-        {
-            LoadParamsDS2();
-        }
-
-        if (Project.ProjectType == ProjectType.DS3)
-        {
-            LoadParamsDS3();
-        }
-
-        if (Project.ProjectType == ProjectType.BB || Project.ProjectType == ProjectType.SDT)
-        {
-            LoadParamsBBSekiro();
-        }
-
-        if (Project.ProjectType == ProjectType.ER)
-        {
-            LoadParamsER();
-        }
-
-        if (Project.ProjectType == ProjectType.AC6)
-        {
-            LoadParamsAC6();
-        }
-
-        // NOTE: this will be set for the primary bank, meaning any other banks are ignored.
-        if (!Project.ImportedParamRowNames)
-        {
-            Project.ImportedParamRowNames = true;
-
-            try
-            {
-                new ActionManager().ExecuteAction(LoadParamDefaultNames());
-                SaveParams();
-            }
-            catch
-            {
-                TaskLogs.AddLog("Could not locate or apply name files",
-                    LogLevel.Warning);
-            }
-        }
-
-        ClearParamDiffCaches();
-
-        return true;
-    }
-
-
-    public enum ParamUpgradeResult
-    {
-        Success = 0,
-        RowConflictsFound = -1,
-        OldRegulationNotFound = -2,
-        OldRegulationVersionMismatch = -3,
-        OldRegulationMatchesCurrent = -4
-    }
-
-    public enum RowGetType
-    {
-        [Display(Name = "All Rows")] AllRows = 0,
-        [Display(Name = "Modified Rows")] ModifiedRows = 1,
-        [Display(Name = "Selected Rows")] SelectedRows = 2
-    }
-
-    public string ClipboardParam = null;
-    public List<Param.Row> ClipboardRows = new();
-
-    /// <summary>
-    ///     Map related params.
-    /// </summary>
-    public readonly List<string> DS2MapParamlist = new()
-    {
-        "demopointlight",
-        "demospotlight",
-        "eventlocation",
-        "eventparam",
-        "GeneralLocationEventParam",
-        "generatorparam",
-        "generatorregistparam",
-        "generatorlocation",
-        "generatordbglocation",
-        "hitgroupparam",
-        "intrudepointparam",
-        "mapobjectinstanceparam",
-        "maptargetdirparam",
-        "npctalkparam",
-        "treasureboxparam"
-    };
+    public string Name;
 
     private readonly HashSet<int> EMPTYSET = new();
 
@@ -160,17 +42,15 @@ public class ParamBank
 
     private bool _pendingUpgrade;
     private Dictionary<string, HashSet<int>> _primaryDiffCache; //If param != primaryparam
-    private Dictionary<string, List<string>> _storedStrippedRowNames;
 
-    /// <summary>
-    ///     Dictionary of param file names that were given a tentative ParamType, and the original ParamType it had.
-    ///     Used to later restore original ParamType on write (if possible).
-    /// </summary>
-    private Dictionary<string, string> UsedFakeParamTypes;
+    private Dictionary<string, string> _usedTentativeParamTypes;
 
     private Dictionary<string, HashSet<int>> _vanillaDiffCache; //If param != vanillaparam
 
     private Param EnemyParam;
+
+    public string ClipboardParam = null;
+    public List<Param.Row> ClipboardRows = new();
 
     public IReadOnlyDictionary<string, Param> Params
     {
@@ -196,6 +76,91 @@ public class ParamBank
         {
             return _primaryDiffCache;
         }
+    }
+
+    public ParamBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
+    {
+        Name = name;
+        BaseEditor = baseEditor;
+        Project = project;
+        TargetFS = targetFs;
+    }
+
+    /// <summary>
+    /// Load task for this Param bank
+    /// </summary>
+    public async Task<bool> Load()
+    {
+        await Task.Delay(1);
+
+        _params = new Dictionary<string, Param>();
+
+        UICache.ClearCaches();
+
+        var successfulLoad = false;
+
+        switch (Project.ProjectType)
+        {
+            case ProjectType.DES: successfulLoad = LoadParameters_DES(); break;
+            case ProjectType.DS1: successfulLoad = LoadParameters_DS1(); break;
+            case ProjectType.DS1R: successfulLoad = LoadParameters_DS1R(); break;
+            case ProjectType.DS2: successfulLoad = LoadParameters_DS2(); break;
+            case ProjectType.DS2S: successfulLoad = LoadParameters_DS2S(); break;
+            case ProjectType.DS3: successfulLoad = LoadParameters_DS3(); break;
+            case ProjectType.BB: successfulLoad = LoadParameters_BB(); break;
+            case ProjectType.SDT: successfulLoad = LoadParameters_SDT(); break;
+            case ProjectType.ER: successfulLoad = LoadParameters_ER(); break;
+            case ProjectType.AC6: successfulLoad = LoadParameters_AC6(); break;
+            case ProjectType.ERN: successfulLoad = LoadParameters_ERN(); break;
+        }
+
+        ClearParamDiffCaches();
+
+        return successfulLoad;
+    }
+
+    /// <summary>
+    /// Save task for this Param bank
+    /// </summary>
+    public async Task<bool> Save()
+    {
+        await Task.Delay(1000);
+
+        if (_params == null)
+        {
+            return false;
+        }
+
+        var successfulSave = false;
+
+        switch (Project.ProjectType)
+        {
+            case ProjectType.DES:
+                successfulSave = SaveParameters_DES(); break;
+            case ProjectType.DS1:
+                successfulSave = SaveParameters_DS1(); break;
+            case ProjectType.DS1R:
+                successfulSave = SaveParameters_DS1R(); break;
+            case ProjectType.DS2:
+                successfulSave = SaveParameters_DS2(); break;
+            case ProjectType.DS2S:
+                successfulSave = SaveParameters_DS2S(); break;
+            case ProjectType.DS3:
+                successfulSave = SaveParameters_DS3(); break;
+            case ProjectType.BB:
+                successfulSave = SaveParameters_BB(); break;
+            case ProjectType.SDT:
+                successfulSave = SaveParameters_SDT(); break;
+            case ProjectType.ER:
+                successfulSave = SaveParameters_ER(); break;
+            case ProjectType.AC6:
+                successfulSave = SaveParameters_AC6(); break;
+            case ProjectType.ERN:
+                successfulSave = SaveParameters_ERN(); break;
+            default: break;
+        }
+
+        return successfulSave;
     }
 
     private FileNotFoundException CreateParamMissingException(ProjectType type)
@@ -292,14 +257,11 @@ public class ParamBank
         return child;
     }
 
-    public static List<string> GraphicsConfigParams = new List<string>();
-    public static List<string> EventParams = new List<string>();
-    public static List<string> SystemParams = new List<string>();
-
-    private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version,
-        bool checkVersion = false, string parambndFileName = "")
+    #region Param Load
+    private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version, bool checkVersion = false, string parambndFileName = "")
     {
         var success = ulong.TryParse(parambnd.Version, out version);
+
         if (checkVersion && !success)
         {
             throw new Exception(@"Failed to get regulation version. Params might be corrupt.");
@@ -320,545 +282,570 @@ public class ParamBank
                 continue;
             }
 
-            // Populate the side parambnd lists so we can filter them out easily
-            if(parambndFileName == "graphicsconfig")
-            {
-                GraphicsConfigParams.Add(paramName);
-            }
-            if (parambndFileName == "eventparam")
-            {
-                EventParams.Add(paramName);
-            }
-            if (parambndFileName == "systemparam")
-            {
-                SystemParams.Add(paramName);
-            }
-
-            Param p;
+            Param curParam;
 
             // AC6/SDT - Tentative ParamTypes
             if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT)
             {
-                UsedFakeParamTypes = new Dictionary<string, string>();
-                p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!string.IsNullOrEmpty(p.ParamType) )
+                _usedTentativeParamTypes = new Dictionary<string, string>();
+                curParam = Param.ReadIgnoreCompression(f.Bytes);
+
+                // Missing paramtype
+                if (!string.IsNullOrEmpty(curParam.ParamType))
                 {
-                    if (!Project.ParamData.ParamDefs.ContainsKey(p.ParamType) || paramName == "EquipParamWeapon_Npc")
+                    if (!Project.ParamData.ParamDefs.ContainsKey(curParam.ParamType) || Project.ParamData.ParamTypeInfo.Exceptions.Contains(paramName))
                     {
-                        if (Project.ParamData.FakeParamTypes.TryGetValue(paramName, out var newParamType))
+                        if (Project.ParamData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
                         {
-                            UsedFakeParamTypes.Add(paramName, p.ParamType);
-                            p.ParamType = newParamType;
-                            //TaskLogs.AddLog(
-                            //    $"Couldn't find ParamDef for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                            //    LogLevel.Warning);
+                            _usedTentativeParamTypes.Add(paramName, curParam.ParamType);
+                            curParam.ParamType = newParamType;
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for {paramName}, but tentative ParamType \"{newParamType}\" exists.", LogLevel.Debug);
                         }
                         else
                         {
-                            TaskLogs.AddLog(
-                                $"Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.",
-                                LogLevel.Error, LogPriority.High);
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for param {paramName} and no tentative ParamType exists.", LogLevel.Error);
+
                             continue;
                         }
                     }
                 }
                 else
                 {
-                    if (Project.ParamData.FakeParamTypes.TryGetValue(paramName, out var newParamType))
+                    if (Project.ParamData.ParamTypeInfo.Mapping.TryGetValue(paramName, out var newParamType))
                     {
-                        UsedFakeParamTypes.Add(paramName, p.ParamType);
-                        p.ParamType = newParamType;
-                        //TaskLogs.AddLog(
-                        //    $"Couldn't read ParamType for {paramName}, but tentative ParamType \"{newParamType}\" exists.",
-                        //   LogLevel.Warning);
+                        _usedTentativeParamTypes.Add(paramName, curParam.ParamType);
+
+                        curParam.ParamType = newParamType;
+
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't read ParamType for {paramName}, but tentative ParamType \"{newParamType}\" exists.", LogLevel.Debug);
                     }
                     else
                     {
-                        TaskLogs.AddLog(
-                            $"Couldn't read ParamType for {paramName} and no tentative ParamType exists.",
-                            LogLevel.Error, LogPriority.High);
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't read ParamType for {paramName} and no tentative ParamType exists.", LogLevel.Error);
+
                         continue;
                     }
                 }
             }
+            // Normal
             else
             {
-                p = Param.ReadIgnoreCompression(f.Bytes);
-                if (!Project.ParamData.ParamDefs.ContainsKey(p.ParamType ?? ""))
+                curParam = Param.ReadIgnoreCompression(f.Bytes);
+
+                if (!Project.ParamData.ParamDefs.ContainsKey(curParam.ParamType ?? ""))
                 {
-                    TaskLogs.AddLog(
-                        $"Couldn't find ParamDef for param {paramName} with ParamType \"{p.ParamType}\".",
-                        LogLevel.Warning);
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".", LogLevel.Warning);
+
                     continue;
                 }
             }
 
-            // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
-            // it's an easy fixup
-            if (Project.ProjectType == ProjectType.ER && version >= 10601000)
-            {
-                if(p.ParamType == "CHR_MODEL_PARAM_ST")
-                {
-                    if (p.FixupERField(12, 16))
-                        TaskLogs.AddLog($"CHR_MODEL_PARAM_ST fixed up.");
-                }
-            }
+            ApplyParamFixups(curParam);
 
-            // Add in the new data for these two params added in 1.12.1
-            if (Project.ProjectType == ProjectType.ER && version >= 11210015)
-            {
-                if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
-                {
-                    if(p.FixupERField(880, 1024))
-                        TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
-                }
-                if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
-                {
-                    if (p.FixupERField(112, 144))
-                        TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
-                }
-                if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
-                {
-                    if (p.FixupERField(32, 48))
-                        TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
-                }
-            }
-
-            if (p.ParamType == null)
+            if (curParam.ParamType == null)
             {
                 throw new Exception("Param type is unexpectedly null");
             }
 
             // Skip these for DS1 so the param load is not slowed down by the catching
-            if(Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
             {
-                if(paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
+                if (paramName is "m99_ToneCorrectBank" or "m99_ToneMapBank" or "default_ToneCorrectBank")
                 {
-                    TaskLogs.AddLog($"Skipped this param: {paramName}");
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Skipped this param: {paramName}");
                     continue;
                 }
             }
 
-            PARAMDEF def = Project.ParamData.ParamDefs[p.ParamType];
-
-            // Sekiro:
-            // The GraphicsConfig.param within the graphicsconfig.parambnd uses a different layout to the main one
-            // So intercept the used def here and force it to use the alternative one.
-            if (Project.ProjectType is ProjectType.SDT)
-            {
-                if (parambndFileName == "graphicsconfig")
-                {
-                    if (paramName == "GraphicsConfig")
-                    {
-                        def = Project.ParamData.ParamDefs["CS_GRAPHICS_CONFIG_PARAM_ST_ALT"];
-                    }
-                }
-            }
+            PARAMDEF def = Project.ParamData.ParamDefs[curParam.ParamType];
 
             try
             {
-                p.ApplyParamdef(def, version);
-                paramBank.Add(paramName, p);
+                curParam.ApplyParamdef(def, version);
+                paramBank.Add(paramName, curParam);
             }
             catch (Exception e)
             {
                 var name = f.Name.Split("\\").Last();
-                var message = $"Could not apply ParamDef for {name}";
+                var message = $"[{Project.ProjectName}:Param Editor:{Name}] Could not apply ParamDef for {name}: {e}";
 
-                TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
+                TaskLogs.AddLog(message, LogLevel.Warning);
             }
         }
     }
 
-    /// <summary>
-    ///     Checks for DeS paramBNDs and returns the name of the parambnd with the highest priority.
-    /// </summary>
-    private string GetDesGameparamName(string rootDirectory)
+    private void ApplyParamFixups(Param p)
     {
-        var name = "";
-        name = "gameparamna.parambnd.dcx";
-        if (File.Exists($@"{rootDirectory}\param\gameparam\{name}"))
+        // Try to fixup Elden Ring ChrModelParam for ER 1.06 because many have been saving botched params and
+        // it's an easy fixup
+        if (Project.ProjectType is ProjectType.ER && ParamVersion >= 10601000)
         {
-            return name;
-        }
-
-        name = "gameparamna.parambnd";
-        if (File.Exists($@"{rootDirectory}\param\gameparam\{name}"))
-        {
-            return name;
-        }
-
-        name = "gameparam.parambnd.dcx";
-        if (File.Exists($@"{rootDirectory}\param\gameparam\{name}"))
-        {
-            return name;
-        }
-
-        name = "gameparam.parambnd";
-        if (File.Exists($@"{rootDirectory}\param\gameparam\{name}"))
-        {
-            return name;
-        }
-
-        return "";
-    }
-
-    private void LoadParamsDES()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var paramBinderName = GetDesGameparamName(mod);
-        if (paramBinderName == "")
-        {
-            paramBinderName = GetDesGameparamName(dir);
-        }
-
-        // Load params
-        var param = $@"{mod}\param\gameparam\{paramBinderName}";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\gameparam\{paramBinderName}";
-        }
-
-        if (!File.Exists(param))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        LoadParamsDESFromFile(param);
-
-        //DrawParam
-        Dictionary<string, string> drawparams = new();
-        if (Directory.Exists($@"{dir}\param\drawparam"))
-        {
-            foreach (var p in Directory.GetFiles($@"{dir}\param\drawparam", "*.parambnd.dcx"))
+            if (p.ParamType == "CHR_MODEL_PARAM_ST")
             {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
+                if (p.FixupERField(12, 16))
+                    TaskLogs.AddLog($"CHR_MODEL_PARAM_ST fixed up.");
             }
         }
 
-        if (Directory.Exists($@"{mod}\param\drawparam"))
+        // Add in the new data for these two params added in 1.12.1
+        if (Project.ProjectType is ProjectType.ER && ParamVersion >= 11210015)
         {
-            foreach (var p in Directory.GetFiles($@"{mod}\param\drawparam", "*.parambnd.dcx"))
+            if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
             {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
+                if (p.FixupERField(880, 1024))
+                    TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
             }
-        }
-
-        foreach (KeyValuePair<string, string> drawparam in drawparams)
-        {
-            LoadParamsDESFromFile(drawparam.Value);
-        }
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
-        {
-            LoadExternalRowNames();
-        }
-    }
-
-    private void LoadParamsDESFromFile(string path)
-    {
-        try
-        {
-            using var bnd = BND3.Read(path);
-            LoadParamFromBinder(bnd, ref _params, out _paramVersion);
-        }
-        catch (Exception e)
-        {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-    }
-
-    private void LoadParamsDS1()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        // Load params
-        var param = $@"{mod}\param\GameParam\GameParam.parambnd";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\GameParam\GameParam.parambnd";
-        }
-
-        LoadParamsDS1FromFile(param);
-
-        //DrawParam
-        Dictionary<string, string> drawparams = new();
-        if (Directory.Exists($@"{dir}\param\DrawParam"))
-        {
-            foreach (var p in Directory.GetFiles($@"{dir}\param\DrawParam", "*.parambnd"))
+            if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
             {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
+                if (p.FixupERField(112, 144))
+                    TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
             }
-        }
-
-        if (Directory.Exists($@"{mod}\param\DrawParam"))
-        {
-            foreach (var p in Directory.GetFiles($@"{mod}\param\DrawParam", "*.parambnd"))
+            if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
             {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
-            }
-        }
-
-        foreach (KeyValuePair<string, string> drawparam in drawparams)
-        {
-            LoadParamsDS1FromFile(drawparam.Value);
-        }
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
-        {
-            LoadExternalRowNames();
-        }
-    }
-
-    private void LoadParamsDS1FromFile(string path)
-    {
-        try
-        {
-            using var bnd = BND3.Read(path);
-            LoadParamFromBinder(bnd, ref _params, out _paramVersion);
-        }
-        catch (Exception e)
-        {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-    }
-
-    private void LoadParamsDS1R()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-        if (!File.Exists($@"{dir}\\param\GameParam\GameParam.parambnd.dcx"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        // Load params
-        var param = $@"{mod}\param\GameParam\GameParam.parambnd.dcx";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\GameParam\GameParam.parambnd.dcx";
-        }
-
-        LoadParamsDS1RFromFile(param);
-
-        //DrawParam
-        Dictionary<string, string> drawparams = new();
-        if (Directory.Exists($@"{dir}\param\DrawParam"))
-        {
-            foreach (var p in Directory.GetFiles($@"{dir}\param\DrawParam", "*.parambnd.dcx"))
-            {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
-            }
-        }
-
-        if (Directory.Exists($@"{mod}\param\DrawParam"))
-        {
-            foreach (var p in Directory.GetFiles($@"{mod}\param\DrawParam", "*.parambnd.dcx"))
-            {
-                drawparams[Path.GetFileNameWithoutExtension(p)] = p;
-            }
-        }
-
-        foreach (KeyValuePair<string, string> drawparam in drawparams)
-        {
-            LoadParamsDS1RFromFile(drawparam.Value);
-        }
-
-        if (Project.ProjectType is ProjectType.DS1R)
-        {
-            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
-            {
-                LoadExternalRowNames();
+                if (p.FixupERField(32, 48))
+                    TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
             }
         }
     }
+    #endregion
 
-    private void LoadParamsDS1RFromFile(string path)
+    #region Demon's Souls
+    private bool LoadParameters_DES()
     {
-        try
+        var successfulLoad = true;
+
+        var paramPath = GetGameParam_DES(TargetFS);
+
+        if (!TargetFS.FileExists(paramPath))
         {
-            using var bnd = BND3.Read(path);
-            LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
         }
-        catch (Exception e)
+        else
         {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-    }
-
-    private void LoadParamsBBSekiro()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        GraphicsConfigParams = new List<string>();
-
-        if (!File.Exists($@"{dir}\\param\gameparam\gameparam.parambnd.dcx"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        // Load params
-        var param = $@"{mod}\param\gameparam\gameparam.parambnd.dcx";
-
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\gameparam\gameparam.parambnd.dcx";
-        }
-
-        LoadParamsBBSekiroFromFile(param);
-
-        if (Project.ProjectType is ProjectType.SDT)
-        {
-            var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-            if (File.Exists(graphicsConfigParam))
+            try
             {
-                LoadParamsBBSekiroFromFile(graphicsConfigParam, "graphicsconfig");
+                var data = TargetFS.GetFile(paramPath).GetData();
+                using var bnd = BND3.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
             }
-            else
+            catch (Exception e)
             {
-                TaskLogs.AddLog("Graphics Params file could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
-        }
 
-        if (Project.ProjectType is ProjectType.BB)
-        {
-            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+            // Draw Params
+            foreach (var f in TargetFS.FsRoot.GetDirectory("param")?.GetDirectory("drawparam")?.EnumerateFileNames() ?? [])
             {
-                LoadExternalRowNames();
-            }
-        }
-
-        if (Project.ProjectType is ProjectType.SDT)
-        {
-            if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_SDT)
-            {
-                LoadExternalRowNames();
-            }
-        }
-    }
-
-    private void LoadParamsBBSekiroFromFile(string path, string parambndFileName = "")
-    {
-        try
-        {
-            using var bnd = BND4.Read(path);
-            LoadParamFromBinder(bnd, ref _params, out _paramVersion, false, parambndFileName);
-        }
-        catch(Exception e)
-        {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-    }
-
-    private static List<string> GetLooseParamsInDir(string dir)
-    {
-        List<string> looseParams = new();
-
-        if (Directory.Exists($@"{dir}\Param"))
-        {
-            looseParams.AddRange(Directory.GetFileSystemEntries($@"{dir}\Param", @"*.param"));
-        }
-
-        return looseParams;
-    }
-
-    private void LoadParamsDS2()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
-        {
-            
-        }
-
-        // Load loose params (prioritizing ones in mod folder)
-        List<string> looseParams = GetLooseParamsInDir(mod);
-
-        if (Directory.Exists($@"{dir}\Param"))
-        {
-            // Include any params in game folder that are not in mod folder
-            foreach (var path in Directory.GetFileSystemEntries($@"{dir}\Param", @"*.param"))
-            {
-                if (looseParams.Find(e => Path.GetFileName(e) == Path.GetFileName(path)) == null)
+                if (f.EndsWith(".parambnd.dcx"))
                 {
-                    // Project folder does not contain this loose param
-                    looseParams.Add(path);
+                    paramPath = $"param/drawparam/{f}";
+
+                    try
+                    {
+                        var data = TargetFS.GetFile(paramPath).GetData();
+                        using var bnd = BND3.Read(data);
+                        LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                        successfulLoad = false;
+                    }
                 }
             }
         }
 
-        // Load reg params
-        var param = $@"{mod}\enc_regulation.bnd.dcx";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\enc_regulation.bnd.dcx";
-        }
-
-        var enemyFile = $@"{mod}\Param\EnemyParam.param";
-        if (!File.Exists(enemyFile))
-        {
-            enemyFile = $@"{dir}\Param\EnemyParam.param";
-        }
-
-        LoadParamsDS2FromFile(looseParams, param, enemyFile);
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
-        {
-            LoadExternalRowNames();
-        }
+        return successfulLoad;
     }
 
-    private void LoadParamsDS2FromFile(List<string> looseParams, string path, string enemypath)
+    private bool SaveParameters_DES()
     {
-        BND4 paramBnd = null;
-        if (!BND4.Is(path))
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        var paramPath = GetGameParam_DES(fs);
+
+        if (!fs.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.",
+                LogLevel.Error);
+            return false;
+        }
+
+        var data = fs.GetFile(paramPath).GetData().ToArray();
+
+        using var paramBnd = BND3.Read(fs.GetFile(paramPath).GetData());
+
+        // Replace params with edited ones
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            {
+                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+            }
+        }
+
+        // Write all gameparam variations since we don't know which one the the game will use.
+        // Compressed
+        paramBnd.Compression = DCX.Type.DCX_EDGE;
+        var naParamPath = @"param\gameparam\gameparamna.parambnd.dcx";
+
+        if (fs.FileExists(naParamPath))
+        {
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
+        }
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        // Decompressed
+        paramBnd.Compression = DCX.Type.None;
+        naParamPath = @"param\gameparam\gameparamna.parambnd";
+        if (fs.FileExists(naParamPath))
+        {
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
+        }
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd", paramBnd);
+
+        // Drawparam
+        List<string> drawParambndPaths = new();
+        if (fs.DirectoryExists(@"param\drawparam"))
+        {
+            foreach (var bnd in fs.GetFileNamesWithExtensions($@"param\drawparam", ".parambnd", ".parambnd.dcx"))
+            {
+                drawParambndPaths.Add(bnd);
+            }
+
+            foreach (var bnd in drawParambndPaths)
+            {
+                using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+
+                foreach (BinderFile p in drawParamBnd.Files)
+                {
+                    if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                    {
+                        p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                    }
+                }
+
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\drawparam\{Path.GetFileName(bnd)}", drawParamBnd);
+            }
+        }
+
+        return successfulSave;
+    }
+
+    /// <summary>
+    /// Checks for DeS paramBNDs and returns the name of the parambnd with the highest priority.
+    /// </summary>
+    private string GetGameParam_DES(VirtualFileSystem fs)
+    {
+        var name = $@"param\gameparam\gameparamna.parambnd.dcx";
+
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+
+        name = $@"param\gameparam\gameparamna.parambnd";
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+
+        name = $@"param\gameparam\gameparam.parambnd.dcx";
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+
+        name = $@"param\gameparam\gameparam.parambnd";
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+
+        return name;
+    }
+
+    #endregion
+
+    #region Dark Souls
+    private bool LoadParameters_DS1()
+    {
+        var successfulLoad = true;
+
+        var paramPath = GetGameParam_DS1(TargetFS);
+
+        if (!TargetFS.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
         {
             try
             {
-                paramBnd = SFUtil.DecryptDS2Regulation(path);
+                var data = TargetFS.GetFile(paramPath).GetData();
+                using var bnd = BND3.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+
+            // Draw Params
+            foreach (var f in TargetFS.FsRoot.GetDirectory("param")?.GetDirectory("drawparam")?.EnumerateFileNames() ?? [])
+            {
+                if (f.EndsWith(".parambnd.dcx"))
+                {
+                    paramPath = $"param/drawparam/{f}";
+
+                    try
+                    {
+                        var data = TargetFS.GetFile(paramPath).GetData();
+                        using var bnd = BND3.Read(data);
+                        LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                        successfulLoad = false;
+                    }
+                }
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_DS1()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        string param = @"param\GameParam\GameParam.parambnd";
+        if (!fs.FileExists(param))
+        {
+            param += ".dcx";
+            if (!fs.FileExists(param))
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+                return false;
+            }
+        }
+
+        using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
+
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            {
+                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+            }
+        }
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\GameParam\GameParam.parambnd", paramBnd);
+
+        if (fs.DirectoryExists($@"param\DrawParam"))
+        {
+            foreach (var bnd in fs.GetFileNamesWithExtensions(@"param\DrawParam", ".parambnd"))
+            {
+                using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+                foreach (BinderFile p in drawParamBnd.Files)
+                {
+                    if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                    {
+                        p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                    }
+                }
+
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
+            }
+        }
+
+        return successfulSave;
+    }
+
+    public string GetGameParam_DS1(VirtualFileSystem fs)
+    {
+        var name = $@"param\GameParam\GameParam.parambnd";
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+
+        name = $@"param\GameParam\GameParam.parambnd.dcx";
+        if (fs.FileExists($@"{name}"))
+        {
+            return name;
+        }
+        return name;
+    }
+    #endregion
+
+    #region Dark Souls Remastered
+    private bool LoadParameters_DS1R()
+    {
+        var successfulLoad = true;
+
+        var paramPath = $@"param\GameParam\GameParam.parambnd.dcx";
+
+        if (!TargetFS.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(paramPath).GetData();
+                using var bnd = BND3.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+
+            // Draw Params
+            foreach (var f in TargetFS.FsRoot.GetDirectory("param")?.GetDirectory("drawparam")?.EnumerateFileNames() ?? [])
+            {
+                if (f.EndsWith(".parambnd.dcx"))
+                {
+                    paramPath = $"param/drawparam/{f}";
+
+                    try
+                    {
+                        var data = TargetFS.GetFile(paramPath).GetData();
+                        using var bnd = BND3.Read(data);
+                        LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                        successfulLoad = false;
+                    }
+                }
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_DS1R()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project); ;
+        string param = @"param\GameParam\GameParam.parambnd.dcx";
+
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+            return false;
+        }
+
+        using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
+        // Replace params with edited ones
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            {
+                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+            }
+        }
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
+
+        //DrawParam
+        if (fs.DirectoryExists($@"param\DrawParam"))
+        {
+            foreach (var bnd in fs.GetFileNamesWithExtensions($@"param\DrawParam", ".parambnd.dcx"))
+            {
+                using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
+                foreach (BinderFile p in drawParamBnd.Files)
+                {
+                    if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                    {
+                        p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+                    }
+                }
+
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
+            }
+        }
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Dark Souls II
+    private bool LoadParameters_DS2()
+    {
+        var successfulLoad = true;
+
+        var paramPath = $@"enc_regulation.bnd.dcx";
+        var enemyPath = $@"Param\\EnemyParam.param";
+
+        if (!TargetFS.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+
+        // Load loose params (prioritizing ones in mod folder)
+        List<string> looseParams = ProjectUtils.GetLooseParamsInDir(TargetFS, "");
+
+        BND4 paramBnd = null;
+        byte[] data = TargetFS.GetFile(paramPath).GetData().ToArray();
+
+        if (!BND4.Is(data))
+        {
+            try
+            {
+                paramBnd = SFUtil.DecryptDS2Regulation(data);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
         else
         {
             try
             {
-                paramBnd = BND4.Read(path);
+                paramBnd = BND4.Read(data);
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
 
         BinderFile bndfile = paramBnd.Files.Find(x => Path.GetFileName(x.Name) == "EnemyParam.param");
+
         if (bndfile != null)
         {
             EnemyParam = Param.Read(bndfile.Bytes);
         }
 
         // Otherwise the param is a loose param
-        if (File.Exists(enemypath))
+        if (TargetFS.FileExists(enemyPath))
         {
-            EnemyParam = Param.Read(enemypath);
+            var paramData = TargetFS.GetFile(enemyPath).GetData();
+            EnemyParam = Param.Read(paramData);
         }
 
         if (EnemyParam is { ParamType: not null })
@@ -870,8 +857,9 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"Could not apply ParamDef for {EnemyParam.ParamType}",
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Could not apply ParamDef for {EnemyParam.ParamType}",
                     LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
 
@@ -880,19 +868,16 @@ public class ParamBank
         foreach (var p in looseParams)
         {
             var name = Path.GetFileNameWithoutExtension(p);
-            var lp = Param.Read(p);
+            var paramData = TargetFS.GetFile(p).GetData();
+            var lp = Param.Read(paramData);
             var fname = lp.ParamType;
 
-            // Skip this param since it always fails and catching it slows down the param load
-            if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
-            {
-                if (fname is "GENERATOR_DBG_LOCATION_PARAM")
-                    continue;
-            }
+            if (fname is "GENERATOR_DBG_LOCATION_PARAM")
+                continue;
 
             try
             {
-                if (CFG.Current.Param_UseLooseParams)
+                if (CFG.Current.UseLooseParams)
                 {
                     // Loose params: override params already loaded via regulation
                     PARAMDEF def = Project.ParamData.ParamDefs[lp.ParamType];
@@ -902,7 +887,7 @@ public class ParamBank
                 else
                 {
                     // Non-loose params: do not override params already loaded via regulation
-                    if (!_params.ContainsKey(name))
+                    if (!Params.ContainsKey(name))
                     {
                         PARAMDEF def = Project.ParamData.ParamDefs[lp.ParamType];
                         lp.ApplyParamdef(def);
@@ -914,231 +899,966 @@ public class ParamBank
             {
                 var message = $"Could not apply ParamDef for {fname}";
                 TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
 
         paramBnd.Dispose();
+
+        return successfulLoad;
     }
 
-    private void LoadParamsDS3()
+    private bool SaveParameters_DS2()
     {
-        var dir = FallbackPath;
-        var mod = SourcePath;
+        // No need to duplicate code here
+        var successfulSave = SaveParameters_DS2S();
 
-        if (!File.Exists($@"{dir}\Data0.bdt"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        var vparam = $@"{dir}\Data0.bdt";
-        // Load loose params if they exist
-        if (CFG.Current.Param_UseLooseParams && File.Exists($@"{mod}\\param\gameparam\gameparam_dlc2.parambnd.dcx"))
-        {
-            LoadParamsDS3FromFile($@"{mod}\param\gameparam\gameparam_dlc2.parambnd.dcx");
-        }
-        else
-        {
-            var param = $@"{mod}\Data0.bdt";
-
-            if (!File.Exists(param))
-            {
-                param = vparam;
-            }
-
-            LoadParamsDS3FromFile(param);
-        }
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
-        {
-            LoadExternalRowNames();
-        }
+        return successfulSave;
     }
+    #endregion
 
-    private void LoadParamsDS3FromFile(string path, bool isVanillaLoad = false)
+    #region Dark Souls II: Scholar of the First Sin
+    private bool LoadParameters_DS2S()
     {
-        var tryLooseParams = CFG.Current.Param_UseLooseParams;
-        if(isVanillaLoad)
+        var successfulLoad = true;
+
+        var paramPath = $@"enc_regulation.bnd.dcx";
+        var enemyPath = $@"Param\\EnemyParam.param";
+
+        if (!TargetFS.FileExists(paramPath))
         {
-            tryLooseParams = false;
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
         }
 
-        try
-        {
-            using BND4 lparamBnd = tryLooseParams ? BND4.Read(path) : SFUtil.DecryptDS3Regulation(path);
-            LoadParamFromBinder(lparamBnd, ref _params, out _paramVersion);
-        }
-        catch (Exception e)
-        {
-            PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-    }
+        // Load loose params (prioritizing ones in mod folder)
+        List<string> looseParams = ProjectUtils.GetLooseParamsInDir(TargetFS, "");
 
-    private void LoadParamsER()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
+        BND4 paramBnd = null;
+        byte[] data = TargetFS.GetFile(paramPath).GetData().ToArray();
 
-        SystemParams = new List<string>();
-        EventParams = new List<string>();
-
-        if (!File.Exists($@"{dir}\\regulation.bin"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        // Load params
-        var param = $@"{mod}\regulation.bin";
-
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\regulation.bin";
-        }
-
-        LoadParamsERFromFile(param);
-
-        param = $@"{mod}\regulation.bin";
-
-        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
-        if (File.Exists(sysParam))
-        {
-            LoadParamsERFromFile(sysParam, false, "systemparam");
-        }
-        else
-        {
-            TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
-        }
-
-        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
-        if (File.Exists(eventParam))
-        {
-            LoadParamsERFromFile(eventParam, false, "eventparam");
-        }
-        else
-        {
-            //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
-        }
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
-        {
-            LoadExternalRowNames();
-        }
-    }
-
-    private void LoadParamsERFromFile(string path, bool encrypted = true, string parambndFileName = "")
-    {
-        if (encrypted)
+        if (!BND4.Is(data))
         {
             try
             {
-                using BND4 bnd = SFUtil.DecryptERRegulation(path);
-                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true, parambndFileName);
-            }
-            catch(Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path}: {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        else
-        {
-            try
-            {
-                using var bnd = BND4.Read(path);
-                LoadParamFromBinder(bnd, ref _params, out _, false, parambndFileName);
+                paramBnd = SFUtil.DecryptDS2Regulation(data);
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-    }
-
-    private void LoadParamsAC6()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        GraphicsConfigParams = new List<string>();
-        SystemParams = new List<string>();
-        EventParams = new List<string>();
-
-        if (!File.Exists($@"{dir}\\regulation.bin"))
-        {
-            throw CreateParamMissingException(Project.ProjectType);
-        }
-
-        // Load params
-        var param = $@"{mod}\regulation.bin";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\regulation.bin";
-        }
-
-        LoadParamsAC6FromFile(param);
-
-        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
-        if (File.Exists(sysParam))
-        {
-            LoadParamsAC6FromFile(sysParam, false, "systemparam");
-        }
-        else
-        {
-            TaskLogs.AddLog("System Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
-        }
-
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-        if (File.Exists(graphicsConfigParam))
-        {
-            LoadParamsAC6FromFile(graphicsConfigParam, false, "graphicsconfig");
-        }
-        else
-        {
-            TaskLogs.AddLog("Graphic Params could not be found. These require an unpacked game to modify.", LogLevel.Warning, LogPriority.Normal);
-        }
-
-        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
-        if (File.Exists(eventParam))
-        {
-            LoadParamsAC6FromFile(eventParam, false, "eventparam");
-        }
-        else
-        {
-            //TaskLogs.AddLog("Event Params could not be found.", LogLevel.Warning, LogPriority.Normal);
-        }
-
-        if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
-        {
-            LoadExternalRowNames();
-        }
-    }
-
-    private void LoadParamsAC6FromFile(string path, bool encrypted = true, string parambndFileName = "")
-    {
-        if (encrypted)
-        {
-            try
-            {
-                using BND4 bnd = SFUtil.DecryptAC6Regulation(path);
-                LoadParamFromBinder(bnd, ref _params, out _paramVersion, true, parambndFileName);
-            }
-            catch (Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
         else
         {
             try
             {
-                using var bnd = BND4.Read(path);
-                LoadParamFromBinder(bnd, ref _params, out _, false, parambndFileName);
+                paramBnd = BND4.Read(data);
             }
             catch (Exception e)
             {
-                PlatformUtils.Instance.MessageBox($"Param Load failed: {path} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load draw param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
             }
         }
+
+        BinderFile bndfile = paramBnd.Files.Find(x => Path.GetFileName(x.Name) == "EnemyParam.param");
+
+        if (bndfile != null)
+        {
+            EnemyParam = Param.Read(bndfile.Bytes);
+        }
+
+        // Otherwise the param is a loose param
+        if (TargetFS.FileExists(enemyPath))
+        {
+            var paramData = TargetFS.GetFile(enemyPath).GetData();
+            EnemyParam = Param.Read(paramData);
+        }
+
+        if (EnemyParam is { ParamType: not null })
+        {
+            try
+            {
+                PARAMDEF def = Project.ParamData.ParamDefs[EnemyParam.ParamType];
+                EnemyParam.ApplyParamdef(def);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Could not apply ParamDef for {EnemyParam.ParamType}",
+                    LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        LoadParamFromBinder(paramBnd, ref _params, out _paramVersion);
+
+        foreach (var p in looseParams)
+        {
+            var name = Path.GetFileNameWithoutExtension(p);
+            var paramData = TargetFS.GetFile(p).GetData();
+            var lp = Param.Read(paramData);
+            var fname = lp.ParamType;
+
+            if (fname is "GENERATOR_DBG_LOCATION_PARAM")
+                continue;
+
+            try
+            {
+                if (CFG.Current.UseLooseParams)
+                {
+                    // Loose params: override params already loaded via regulation
+                    PARAMDEF def = Project.ParamData.ParamDefs[lp.ParamType];
+                    lp.ApplyParamdef(def);
+                    _params[name] = lp;
+                }
+                else
+                {
+                    // Non-loose params: do not override params already loaded via regulation
+                    if (!Params.ContainsKey(name))
+                    {
+                        PARAMDEF def = Project.ParamData.ParamDefs[lp.ParamType];
+                        lp.ApplyParamdef(def);
+                        _params.Add(name, lp);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                var message = $"Could not apply ParamDef for {fname}";
+                TaskLogs.AddLog(message, LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        paramBnd.Dispose();
+
+        return successfulLoad;
     }
 
+    private bool SaveParameters_DS2S()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project); ;
+        string param = @"enc_regulation.bnd.dcx";
+
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        BND4 paramBnd;
+        var data = fs.GetFile(param).GetData().ToArray();
+        if (!BND4.Is(data))
+        {
+            // Decrypt the file
+            paramBnd = SFUtil.DecryptDS2Regulation(data);
+            // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
+            if (!toFs.FileExists($"{param}.bak"))
+            {
+                toFs.WriteFile($"{param}.bak", data);
+            }
+            toFs.WriteFile(param, paramBnd.Write());
+        }
+        else
+        {
+            paramBnd = BND4.Read(data);
+        }
+
+        if (!CFG.Current.UseLooseParams)
+        {
+            // Save params non-loosely: Replace params regulation and write remaining params loosely.
+            if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
+            {
+                if (CFG.Current.RepackLooseDS2Params)
+                {
+                    paramBnd.Dispose();
+                    param = $@"enc_regulation.bnd.dcx";
+                    data = Project.VanillaFS.GetFile(param).GetData().ToArray();
+
+                    if (!BND4.Is(data))
+                    {
+                        // Decrypt the file.
+                        paramBnd = SFUtil.DecryptDS2Regulation(data);
+
+                        // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
+                        if (!toFs.FileExists($@"{param}.bak"))
+                        {
+                            toFs.WriteFile($"{param}.bak", data);
+                            toFs.WriteFile(param, paramBnd.Write());
+                        }
+                    }
+                    else
+                        paramBnd = BND4.Read(data);
+                }
+            }
+
+            try
+            {
+                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
+                RowNameStrip();
+
+                foreach (KeyValuePair<string, Param> p in Params)
+                {
+                    BinderFile bnd = paramBnd.Files.Find(e => Path.GetFileNameWithoutExtension(e.Name) == p.Key);
+
+                    if (bnd != null)
+                    {
+                        // Regulation contains this param, overwrite it.
+                        bnd.Bytes = p.Value.Write();
+                    }
+                    else
+                    {
+                        // Regulation does not contain this param, write param loosely.
+                        ProjectUtils.WriteWithBackup(Project, fs, toFs, $@"Param\{p.Key}.param", p.Value);
+                    }
+                }
+            }
+            catch
+            {
+                RowNameRestore();
+                throw;
+            }
+
+            RowNameRestore();
+        }
+        else
+        {
+            // Save params loosely: Strip params from regulation and write all params loosely.
+
+            List<BinderFile> newFiles = new();
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                // Strip params from regulation bnd
+                if (!p.Name.ToUpper().Contains(".PARAM"))
+                {
+                    newFiles.Add(p);
+                }
+            }
+
+            paramBnd.Files = newFiles;
+
+            try
+            {
+                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
+                RowNameStrip();
+
+                // Write params to loose files.
+                foreach (KeyValuePair<string, Param> p in Params)
+                {
+                    ProjectUtils.WriteWithBackup(Project, fs, toFs, $@"Param\{p.Key}.param", p.Value);
+                }
+            }
+            catch
+            {
+                RowNameRestore();
+                throw;
+            }
+
+            RowNameRestore();
+        }
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"enc_regulation.bnd.dcx", paramBnd);
+        paramBnd.Dispose();
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Dark Souls III
+    /// <summary>
+    /// Dark Souls III
+    /// </summary>
+    private bool LoadParameters_DS3()
+    {
+        var successfulLoad = true;
+
+        var looseFile = $@"param\\gameparam\\gameparam_dlc2.parambnd.dcx";
+        var packedFile = $@"Data0.bdt";
+
+        if (!TargetFS.FileExists(packedFile))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {packedFile}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            if (CFG.Current.UseLooseParams && TargetFS.FileExists(looseFile))
+            {
+                try
+                {
+                    var data = TargetFS.GetFile(looseFile).GetData();
+                    using var bnd = BND4.Read(data);
+                    LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"Failed to load game param: {looseFile}", LogLevel.Warning, LogPriority.Normal, e);
+                    successfulLoad = false;
+                }
+            }
+            else
+            {
+                try
+                {
+                    var data = TargetFS.GetFile(packedFile).GetData().ToArray();
+                    using var bnd = SFUtil.DecryptDS3Regulation(data);
+                    LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"Failed to load game param: {packedFile}", LogLevel.Warning, LogPriority.Normal, e);
+                    successfulLoad = false;
+                }
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_DS3()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+        string param = @"Data0.bdt";
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = fs.GetFile(param).GetData().ToArray();
+        BND4 paramBnd = SFUtil.DecryptDS3Regulation(data);
+
+        // Replace params with edited ones
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            {
+                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+            }
+        }
+
+        // If not loose write out the new regulation
+        if (!CFG.Current.UseLooseParams)
+        {
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"Data0.bdt", paramBnd, ProjectType.DS3);
+        }
+        else
+        {
+            // Otherwise write them out as parambnds
+            BND4 paramBND = new()
+            {
+                BigEndian = false,
+                Compression = DCX.Type.DCX_DFLT_10000_44_9,
+                Extended = 0x04,
+                Unk04 = false,
+                Unk05 = false,
+                Format = Binder.Format.Compression | Binder.Format.Flag6 | Binder.Format.LongOffsets |
+                         Binder.Format.Names1,
+                Unicode = true,
+                Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
+            };
+
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
+        }
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Bloodborne
+    private bool LoadParameters_BB()
+    {
+        var successfulLoad = true;
+
+        var paramPath = $@"param\gameparam\gameparam.parambnd.dcx";
+
+        if (!TargetFS.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(paramPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_BB()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+        string param = @"param\gameparam\gameparam.parambnd.dcx";
+
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = fs.GetFile(param).GetData().ToArray();
+
+        var paramBnd = BND4.Read(data);
+
+        // Replace params with edited ones
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+            {
+                p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
+            }
+        }
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Sekiro: Shadows Die Twice
+    private bool LoadParameters_SDT()
+    {
+        var successfulLoad = true;
+
+        var paramPath = $@"param\gameparam\gameparam.parambnd.dcx";
+
+        if (!TargetFS.FileExists(paramPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {paramPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(paramPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {paramPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_SDT()
+    {
+        var successfulSave = true;
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+        string param = @"param\gameparam\gameparam.parambnd.dcx";
+
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = fs.GetFile(param).GetData().ToArray();
+
+        var paramBnd = BND4.Read(data);
+
+        // Replace params with edited ones
+        foreach (BinderFile p in paramBnd.Files)
+        {
+            var paramName = Path.GetFileNameWithoutExtension(p.Name);
+            if (Params.TryGetValue(paramName, out Param paramFile))
+            {
+                IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                if (_usedTentativeParamTypes.TryGetValue(paramName, out var oldParamType))
+                {
+                    // This param was given a tentative ParamType, return original ParamType if possible.
+                    oldParamType ??= "";
+                    var prevParamType = paramFile.ParamType;
+                    paramFile.ParamType = oldParamType;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.ParamType = prevParamType;
+                    paramFile.Rows = backup;
+                    continue;
+                }
+
+                p.Bytes = paramFile.Write();
+                paramFile.Rows = backup;
+            }
+        }
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Elden Ring
+    private bool LoadParameters_ER()
+    {
+        var successfulLoad = true;
+
+        var gameParamPath = $@"regulation.bin";
+        var systemParamPath = $@"param\systemparam\systemparam.parambnd.dcx";
+
+        if (!TargetFS.FileExists(gameParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {gameParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(gameParamPath).GetData().ToArray();
+                using BND4 bnd = SFUtil.DecryptERRegulation(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {gameParamPath}", LogLevel.Warning, LogPriority.Normal, e.InnerException);
+                successfulLoad = false;
+            }
+        }
+
+        if (!TargetFS.FileExists(systemParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {systemParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(systemParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_ER()
+    {
+        var successfulSave = true;
+
+        void OverwriteParamsER(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = Params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
+        var sourceFs = Project.FS;
+        var gameFs = Project.VanillaRealFS;
+        var writeFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        string param = @"regulation.bin";
+
+        if (!sourceFs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = sourceFs.GetFile(param).GetData().ToArray();
+
+        // Use the game root version in this case
+        if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        {
+            data = gameFs.GetFile(param).GetData().ToArray();
+        }
+
+        BND4 regParams = SFUtil.DecryptERRegulation(data);
+
+        OverwriteParamsER(regParams);
+
+        ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.ER);
+
+        var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
+
+        if (!sourceFs.FileExists(sysParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate system param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+        {
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsER(sysParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        return successfulSave;
+    }
+    #endregion
+
+    #region Armored Core VI: Fires of Rubicon
+    private bool LoadParameters_AC6()
+    {
+        var successfulLoad = true;
+
+        var dataPath = Project.DataPath;
+        var projectPath = Project.ProjectPath;
+
+        var gameParamPath = $@"regulation.bin";
+        var systemParamPath = $@"param\systemparam\systemparam.parambnd.dcx";
+        var graphicsParamPath = $@"param\graphicsconfig\graphicsconfig.parambnd.dcx";
+        var eventParamPath = $@"param\eventparam\eventparam.parambnd.dcx";
+
+        // Game Param
+        if (!TargetFS.FileExists(gameParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {gameParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(gameParamPath).GetData().ToArray();
+                using BND4 bnd = SFUtil.DecryptAC6Regulation(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {gameParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        // System Param
+        if (!TargetFS.FileExists(systemParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {systemParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(systemParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        // Graphics Param
+        if (!TargetFS.FileExists(graphicsParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {graphicsParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(graphicsParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {graphicsParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        // Event Param
+        if (!TargetFS.FileExists(eventParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(eventParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {eventParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_AC6()
+    {
+        var successfulSave = true;
+
+        void OverwriteParamsAC6(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                var paramName = Path.GetFileNameWithoutExtension(p.Name);
+                if (Params.TryGetValue(paramName, out Param paramFile))
+                {
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    if (_usedTentativeParamTypes.TryGetValue(paramName, out var oldParamType))
+                    {
+                        // This param was given a tentative ParamType, return original ParamType if possible.
+                        oldParamType ??= "";
+                        var prevParamType = paramFile.ParamType;
+                        paramFile.ParamType = oldParamType;
+
+                        p.Bytes = paramFile.Write();
+                        paramFile.ParamType = prevParamType;
+                        paramFile.Rows = backup;
+                        continue;
+                    }
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
+        var sourceFs = Project.FS;
+        var gameFs = Project.VanillaRealFS;
+        var writeFs = ProjectUtils.GetFilesystemForWrite(Project);
+
+        string param = @"regulation.bin";
+        if (!sourceFs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = sourceFs.GetFile(param).GetData().ToArray();
+
+        // Use the game root version in this case
+        if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        {
+            data = gameFs.GetFile(param).GetData().ToArray();
+        }
+
+        BND4 regParams = SFUtil.DecryptAC6Regulation(data);
+        OverwriteParamsAC6(regParams);
+        ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.AC6);
+
+        var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
+
+        if (!sourceFs.FileExists(sysParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate system param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+        {
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsAC6(sysParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
+        }
+
+        var graphicsParam = @"param\graphicsconfig\graphicsconfig.parambnd.dcx";
+
+        if (!sourceFs.FileExists(sysParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate graphics param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
+        {
+            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+            OverwriteParamsAC6(graphicsParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
+        }
+
+        var eventParam = @"param\eventparam\eventparam.parambnd.dcx";
+
+        if (!sourceFs.FileExists(eventParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        if (sourceFs.TryGetFile(eventParam, out var eventParamF))
+        {
+            using var eventParams = BND4.Read(eventParamF.GetData());
+            OverwriteParamsAC6(eventParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
+        }
+
+        return successfulSave;
+    }
+    #endregion
+
+
+    #region Elden Ring: Nightreign
+    private bool LoadParameters_ERN()
+    {
+        var successfulLoad = true;
+
+        var gameParamPath = $@"regulation.bin";
+        var systemParamPath = $@"param\systemparam\systemparam.parambnd.dcx";
+
+        if (!TargetFS.FileExists(gameParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {gameParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(gameParamPath).GetData().ToArray();
+                using BND4 bnd = SFUtil.DecryptERRegulation(data);
+                LoadParamFromBinder(bnd, ref _params, out _paramVersion);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {gameParamPath}", LogLevel.Warning, LogPriority.Normal, e.InnerException);
+                successfulLoad = false;
+            }
+        }
+
+        if (!TargetFS.FileExists(systemParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {systemParamPath}", LogLevel.Warning);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(systemParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Warning, LogPriority.Normal, e);
+                successfulLoad = false;
+            }
+        }
+
+        return successfulLoad;
+    }
+
+    private bool SaveParameters_ERN()
+    {
+        var successfulSave = true;
+
+        void OverwriteParamsER(BND4 paramBnd)
+        {
+            // Replace params with edited ones
+            foreach (BinderFile p in paramBnd.Files)
+            {
+                if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
+                {
+                    Param paramFile = Params[Path.GetFileNameWithoutExtension(p.Name)];
+                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
+
+                    p.Bytes = paramFile.Write();
+                    paramFile.Rows = backup;
+                }
+            }
+        }
+
+        var fs = Project.FS;
+        var toFs = ProjectUtils.GetFilesystemForWrite(Project);
+        string param = @"regulation.bin";
+
+        if (!fs.FileExists(param))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        var data = fs.GetFile(param).GetData().ToArray();
+
+        BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
+
+        OverwriteParamsER(regParams);
+
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.ERN);
+
+        var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
+
+        if (!fs.FileExists(sysParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate system param files. Save failed.", LogLevel.Error);
+
+            return false;
+        }
+
+        if (fs.TryGetFile(sysParam, out var sysParamF))
+        {
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsER(sysParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        return successfulSave;
+    }
+
+    #endregion
+
+    #region Param Difference Cache
     public void ClearParamDiffCaches()
     {
         _vanillaDiffCache = new Dictionary<string, HashSet<int>>();
@@ -1306,794 +2026,9 @@ public class ParamBank
 
         return true;
     }
+    #endregion
 
-    private void SaveParamsDS1()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\param\GameParam\GameParam.parambnd";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\param\GameParam\GameParam.parambnd";
-
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\GameParam\GameParam.parambnd";
-        }
-
-        using var paramBnd = BND3.Read(param);
-
-        if(CFG.Current.Param_StripRowNamesOnSave_DS1)
-        {
-            StripRowNames();
-        }
-
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
-        {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-            {
-                p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-            }
-        }
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\GameParam\GameParam.parambnd", paramBnd);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        // Draw Params
-        if (Directory.Exists($@"{FallbackPath}\param\DrawParam"))
-        {
-            foreach (var bnd in Directory.GetFiles($@"{FallbackPath}\param\DrawParam", "*.parambnd"))
-            {
-                using var drawParamBnd = BND3.Read(bnd);
-                foreach (BinderFile p in drawParamBnd.Files)
-                {
-                    if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                    {
-                        p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-                    }
-                }
-
-                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
-            }
-        }
-    }
-
-    private void SaveParamsDS1R()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\param\GameParam\GameParam.parambnd.dcx";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\param\GameParam\GameParam.parambnd.dcx";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\GameParam\GameParam.parambnd.dcx";
-        }
-
-        using var paramBnd = BND3.Read(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
-        {
-            StripRowNames();
-        }
-
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
-        {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-            {
-                p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-            }
-        }
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\GameParam\GameParam.parambnd.dcx", paramBnd);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        // Drawparam
-        if (Directory.Exists($@"{FallbackPath}\param\DrawParam"))
-        {
-            foreach (var bnd in Directory.GetFiles($@"{FallbackPath}\param\DrawParam", "*.parambnd.dcx"))
-            {
-                using var drawParamBnd = BND3.Read(bnd);
-
-                foreach (BinderFile p in drawParamBnd.Files)
-                {
-                    if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                    {
-                        p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-                    }
-                }
-
-                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
-            }
-        }
-    }
-
-    private void SaveParamsDS2()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\enc_regulation.bnd.dcx";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\enc_regulation.bnd.dcx";
-        BND4 paramBnd;
-
-        if (!File.Exists(param))
-        {
-            // If there is no mod file, check the base file. Decrypt it if you have to.
-            param = $@"{dir}\enc_regulation.bnd.dcx";
-            if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
-            {
-                // Decrypt the file
-                paramBnd = SFUtil.DecryptDS2Regulation(param);
-
-                // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
-                if (!File.Exists($@"{param}.bak"))
-                {
-                    File.Copy(param, $@"{param}.bak", true);
-                    paramBnd.Write(param);
-                }
-            }
-            // No need to decrypt
-            else
-            {
-                paramBnd = BND4.Read(param);
-            }
-        }
-        // Mod file exists, use that.
-        else
-        {
-            paramBnd = BND4.Read(param);
-        }
-
-        if (!CFG.Current.Param_UseLooseParams)
-        {
-            // Save params non-loosely: Replace params regulation and write remaining params loosely.
-
-            if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
-            {
-                if (PlatformUtils.Instance.MessageBox(
-                        "It appears that you are trying to save params non-loosely with an \"enc_regulation.bnd\" that has previously been saved loosely." +
-                        "\n\nWould you like to reinsert params into the bnd that were previously stripped out?",
-                        "DS2 de-loose param",
-                        MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    paramBnd.Dispose();
-                    param = $@"{dir}\enc_regulation.bnd.dcx";
-
-                    if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
-                    {
-                        // Decrypt the file.
-                        paramBnd = SFUtil.DecryptDS2Regulation(param);
-
-                        // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
-                        if (!File.Exists($@"{param}.bak"))
-                        {
-                            File.Copy(param, $@"{param}.bak", true);
-                            paramBnd.Write(param);
-                        }
-                    }
-                    else
-                        paramBnd = BND4.Read(param);
-                }
-            }
-
-            try
-            {
-                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-                {
-                    StripRowNames();
-                }
-
-                foreach (KeyValuePair<string, Param> p in _params)
-                {
-                    BinderFile bnd = paramBnd.Files.Find(e => Path.GetFileNameWithoutExtension(e.Name) == p.Key);
-
-                    if (bnd != null)
-                    {
-                        // Regulation contains this param, overwrite it.
-                        bnd.Bytes = p.Value.Write();
-                    }
-                    else
-                    {
-                        // Regulation does not contain this param, write param loosely.
-                        Utils.WriteWithBackup(BaseEditor, dir, mod, $@"Param\{p.Key}.param", p.Value);
-                    }
-                }
-            }
-            catch
-            {
-                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-                {
-                    RestoreStrippedRowNames();
-                }
-                throw;
-            }
-
-            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-            {
-                RestoreStrippedRowNames();
-            }
-        }
-        else
-        {
-            // Save params loosely: Strip params from regulation and write all params loosely.
-
-            List<BinderFile> newFiles = new();
-            foreach (BinderFile p in paramBnd.Files)
-            {
-                // Strip params from regulation bnd
-                if (!p.Name.ToUpper().Contains(".PARAM"))
-                {
-                    newFiles.Add(p);
-                }
-            }
-
-            paramBnd.Files = newFiles;
-
-            try
-            {
-                // Strip and store row names before saving, as too many row names can cause DS2 to crash.
-                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-                {
-                    StripRowNames();
-                }
-
-                // Write params to loose files.
-                foreach (KeyValuePair<string, Param> p in _params)
-                {
-                    Utils.WriteWithBackup(BaseEditor, dir, mod, $@"Param\{p.Key}.param", p.Value);
-                }
-            }
-            catch
-            {
-                if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-                {
-                    RestoreStrippedRowNames();
-                }
-                throw;
-            }
-
-            if (CFG.Current.Param_StripRowNamesOnSave_DS2)
-            {
-                RestoreStrippedRowNames();
-            }
-        }
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"enc_regulation.bnd.dcx", paramBnd);
-        paramBnd.Dispose();
-    }
-
-    private void SaveParamsDS3()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\Data0.bdt";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\Data0.bdt";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\Data0.bdt";
-        }
-
-        BND4 paramBnd = SFUtil.DecryptDS3Regulation(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
-        {
-            StripRowNames();
-        }
-
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
-        {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-            {
-                p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-            }
-        }
-
-        // If not loose write out the new regulation
-        if (!CFG.Current.Param_UseLooseParams)
-        {
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"Data0.bdt", paramBnd, ProjectType.DS3);
-        }
-        else
-        {
-            // Otherwise write them out as parambnds
-            BND4 paramBND = new()
-            {
-                BigEndian = false,
-                Compression = DCX.Type.DCX_DFLT_10000_44_9,
-                Extended = 0x04,
-                Unk04 = false,
-                Unk05 = false,
-                Format = Binder.Format.Compression | Binder.Format.Flag6 | Binder.Format.LongOffsets |
-                         Binder.Format.Names1,
-                Unicode = true,
-                Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
-            };
-
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
-            //Utils.WriteWithBackup(dir, mod, @"param\stayparam\stayparam.parambnd.dcx", stayBND);
-        }
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
-        {
-            RestoreStrippedRowNames();
-        }
-    }
-
-    /// <summary>
-    /// Param Save: Bloodborne
-    /// </summary>
-    private void SaveParamsBB()
-    {
-        void OverwriteParamsBB(BND4 paramBnd)
-        {
-            // Replace params with edited ones
-            foreach (BinderFile p in paramBnd.Files)
-            {
-                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                {
-                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
-                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
-
-                    p.Bytes = paramFile.Write();
-                    paramFile.Rows = backup;
-                }
-            }
-        }
-
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\param\gameparam\gameparam.parambnd.dcx";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\param\gameparam\gameparam.parambnd.dcx";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\gameparam\gameparam.parambnd.dcx";
-        }
-
-        // Params
-        var paramBnd = BND4.Read(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_BB)
-        {
-            StripRowNames();
-        }
-
-        OverwriteParamsBB(paramBnd);
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_BB)
-        {
-            RestoreStrippedRowNames();
-        }
-    }
-
-    /// <summary>
-    /// Param Save: Sekiro
-    /// </summary>
-    private void SaveParamsSDT()
-    {
-        void OverwriteParamsSDT(BND4 paramBnd)
-        {
-            // Replace params with edited ones
-            foreach (BinderFile p in paramBnd.Files)
-            {
-                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                {
-                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
-                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
-
-                    p.Bytes = paramFile.Write();
-                    paramFile.Rows = backup;
-                }
-            }
-        }
-
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\param\gameparam\gameparam.parambnd.dcx";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\param\gameparam\gameparam.parambnd.dcx";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\gameparam\gameparam.parambnd.dcx";
-        }
-
-        // Params
-        var paramBnd = BND4.Read(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
-        {
-            StripRowNames();
-        }
-
-        OverwriteParamsSDT(paramBnd);
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        // Graphics Config
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-        if (File.Exists(graphicsConfigParam))
-        {
-            using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
-            OverwriteParamsSDT(graphicsConfigParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
-        }
-    }
-
-    private void SaveParamsDES()
-    {
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var paramBinderName = GetDesGameparamName(mod);
-        if (paramBinderName == "")
-            paramBinderName = GetDesGameparamName(dir);
-
-        // Load params
-        var param = $@"{mod}\param\gameparam\{paramBinderName}";
-        if (!File.Exists(param))
-        {
-            param = $@"{dir}\param\gameparam\{paramBinderName}";
-        }
-
-        if (!File.Exists(param))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {param}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        using var paramBnd = BND3.Read(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DES)
-        {
-            StripRowNames();
-        }
-
-        // Replace params with edited ones
-        foreach (BinderFile p in paramBnd.Files)
-        {
-            if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-            {
-                p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-            }
-        }
-
-        // Write all gameparam variations since we don't know which one the the game will use.
-        // Compressed
-        paramBnd.Compression = DCX.Type.DCX_EDGE;
-        var naParamPath = @"param\gameparam\gameparamna.parambnd.dcx";
-        if (File.Exists($@"{dir}\{naParamPath}"))
-        {
-            Utils.WriteWithBackup(BaseEditor, dir, mod, naParamPath, paramBnd);
-        }
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
-
-        // Decompressed
-        paramBnd.Compression = DCX.Type.None;
-        naParamPath = @"param\gameparam\gameparamna.parambnd";
-        if (File.Exists($@"{dir}\{naParamPath}"))
-        {
-            Utils.WriteWithBackup(BaseEditor, dir, mod, naParamPath, paramBnd);
-        }
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\gameparam\gameparam.parambnd", paramBnd);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_DES)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        // Drawparam
-        List<string> drawParambndPaths = new();
-        if (Directory.Exists($@"{FallbackPath}\param\drawparam"))
-        {
-            foreach (var bnd in Directory.GetFiles($@"{FallbackPath}\param\drawparam", "*.parambnd.dcx"))
-            {
-                drawParambndPaths.Add(bnd);
-            }
-
-            // Also save decompressed parambnds because DeS debug uses them.
-            foreach (var bnd in Directory.GetFiles($@"{FallbackPath}\param\drawparam", "*.parambnd"))
-            {
-                drawParambndPaths.Add(bnd);
-            }
-
-            foreach (var bnd in drawParambndPaths)
-            {
-                using var drawParamBnd = BND3.Read(bnd);
-
-                foreach (BinderFile p in drawParamBnd.Files)
-                {
-                    if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                    {
-                        p.Bytes = _params[Path.GetFileNameWithoutExtension(p.Name)].Write();
-                    }
-                }
-
-                Utils.WriteWithBackup(BaseEditor, dir, mod, @$"param\drawparam\{Path.GetFileName(bnd)}", drawParamBnd);
-            }
-        }
-    }
-
-    private void SaveParamsER()
-    {
-        void OverwriteParamsER(BND4 paramBnd)
-        {
-            // Replace params with edited ones
-            foreach (BinderFile p in paramBnd.Files)
-            {
-                if (_params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
-                {
-                    Param paramFile = _params[Path.GetFileNameWithoutExtension(p.Name)];
-                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
-
-                    p.Bytes = paramFile.Write();
-                    paramFile.Rows = backup;
-                }
-            }
-        }
-
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\regulation.bin";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\regulation.bin";
-        if (!File.Exists(param) || _pendingUpgrade)
-        {
-            param = $@"{dir}\regulation.bin";
-        }
-
-        BND4 regParams = SFUtil.DecryptERRegulation(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_ER)
-        {
-            StripRowNames();
-        }
-
-        OverwriteParamsER(regParams);
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"regulation.bin", regParams, ProjectType.ER);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_ER)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
-        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
-
-        if (File.Exists(sysParam))
-        {
-            using var sysParams = BND4.Read(sysParam);
-            OverwriteParamsER(sysParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
-        }
-
-        if (File.Exists(eventParam))
-        {
-            using var eventParams = BND4.Read(eventParam);
-            OverwriteParamsER(eventParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
-        }
-
-        _pendingUpgrade = false;
-    }
-
-    private void SaveParamsAC6()
-    {
-        void OverwriteParamsAC6(BND4 paramBnd)
-        {
-            // Replace params with edited ones
-            foreach (BinderFile p in paramBnd.Files)
-            {
-                var paramName = Path.GetFileNameWithoutExtension(p.Name);
-                if (_params.TryGetValue(paramName, out Param paramFile))
-                {
-                    IReadOnlyList<Param.Row> backup = paramFile.Rows;
-                    if (Project.ProjectType is ProjectType.AC6)
-                    {
-                        if (UsedFakeParamTypes.TryGetValue(paramName, out var oldParamType))
-                        {
-                            // This param was given a tentative ParamType, return original ParamType if possible.
-                            oldParamType ??= "";
-                            var prevParamType = paramFile.ParamType;
-                            paramFile.ParamType = oldParamType;
-
-                            p.Bytes = paramFile.Write();
-                            paramFile.ParamType = prevParamType;
-                            paramFile.Rows = backup;
-                            continue;
-                        }
-                    }
-
-                    p.Bytes = paramFile.Write();
-                    paramFile.Rows = backup;
-                }
-            }
-        }
-
-        var dir = FallbackPath;
-        var mod = SourcePath;
-
-        var savePath = $@"{dir}\\regulation.bin";
-
-        if (!File.Exists(savePath))
-        {
-            TaskLogs.AddLog($"Save failed. Cannot locate param files: {savePath}", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        // Load params
-        var param = $@"{mod}\regulation.bin";
-        if (!File.Exists(param) || _pendingUpgrade)
-        {
-            param = $@"{dir}\regulation.bin";
-        }
-
-        BND4 regParams = SFUtil.DecryptAC6Regulation(param);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
-        {
-            StripRowNames();
-        }
-
-        OverwriteParamsAC6(regParams);
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"regulation.bin", regParams, ProjectType.AC6);
-
-        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
-        {
-            RestoreStrippedRowNames();
-        }
-
-        var sysParam = LocatorUtils.GetAssetPath(Project, @"param\systemparam\systemparam.parambnd.dcx");
-        if (File.Exists(sysParam))
-        {
-            using var sysParams = BND4.Read(sysParam);
-            OverwriteParamsAC6(sysParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
-        }
-
-        var graphicsConfigParam = LocatorUtils.GetAssetPath(Project, @"param\graphicsconfig\graphicsconfig.parambnd.dcx");
-        if (File.Exists(graphicsConfigParam))
-        {
-            using var graphicsConfigParams = BND4.Read(graphicsConfigParam);
-            OverwriteParamsAC6(graphicsConfigParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\graphicsconfig\graphicsconfig.parambnd.dcx", graphicsConfigParams);
-        }
-
-        var eventParam = LocatorUtils.GetAssetPath(Project, @"param\eventparam\eventparam.parambnd.dcx");
-        if (File.Exists(eventParam))
-        {
-            using var eventParams = BND4.Read(eventParam);
-            OverwriteParamsAC6(eventParams);
-            Utils.WriteWithBackup(BaseEditor, dir, mod, @"param\eventparam\eventparam.parambnd.dcx", eventParams);
-        }
-
-        _pendingUpgrade = false;
-    }
-
-    public void SaveParams()
-    {
-        if (_params == null)
-        {
-            return;
-        }
-
-        switch(Project.ProjectType)
-        {
-            case ProjectType.DS1: 
-                SaveParamsDS1(); 
-                break;
-
-            case ProjectType.DS1R: 
-                SaveParamsDS1R(); 
-                break;
-
-            case ProjectType.DES: 
-                SaveParamsDES(); 
-                break;
-
-            case ProjectType.DS2:
-            case ProjectType.DS2S: 
-                SaveParamsDS2(); 
-                break;
-
-            case ProjectType.DS3:
-                SaveParamsDS3(); 
-                break;
-
-            case ProjectType.BB:
-                SaveParamsBB(); 
-                break;
-
-            case ProjectType.SDT:
-                SaveParamsSDT();
-                break;
-
-            case ProjectType.ER: 
-                SaveParamsER(); 
-                break;
-
-            case ProjectType.AC6:
-                SaveParamsAC6(); 
-                break;
-        }
-    }
-
+    #region Param Upgrade
     public static Param UpgradeParam(Param source, Param oldVanilla, Param newVanilla, HashSet<int> rowConflicts)
     {
         //TargetLog(source, source.ParamType);
@@ -2455,7 +2390,9 @@ public class ParamBank
 
         return conflictingParams.Count > 0 ? ParamUpgradeResult.RowConflictsFound : ParamUpgradeResult.Success;
     }
+    #endregion
 
+    #region Utils
     public string GetChrIDForEnemy(long enemyID)
     {
         Param.Row enemy = EnemyParam?[(int)enemyID];
@@ -2521,87 +2458,382 @@ public class ParamBank
 
         return allDiffs[param];
     }
+    #endregion
 
+    #region Row Name Strip / Restore
     /// <summary>
-    ///     Loads row names from external files and applies them to params.
-    ///     Uses indicies rather than IDs.
+    /// Strip and store the row names for this param bank
     /// </summary>
-    private void LoadExternalRowNames()
+    public void RowNameStrip()
     {
-        var failCount = 0;
-        foreach (KeyValuePair<string, Param> p in _params)
+        var store = new RowNameStore();
+        store.Params = new();
+
+        foreach (KeyValuePair<string, Param> p in Params)
         {
-            var path = ParamLocator.GetStrippedRowNamesPath(Project, p.Key);
-            if (File.Exists(path))
+            var paramEntry = new RowNameParam();
+            paramEntry.Name = p.Key;
+            paramEntry.Entries = new();
+
+            for (int i = 0; i < p.Value.Rows.Count; i++)
             {
-                var names = File.ReadAllLines(path);
-                if (names.Length != p.Value.Rows.Count)
+                var row = p.Value.Rows[i];
+
+                // Store
+                var rowEntry = new RowNameEntry();
+
+                rowEntry.Index = i;
+                rowEntry.ID = row.ID;
+                rowEntry.Name = row.Name;
+
+                paramEntry.Entries.Add(rowEntry);
+
+                // Strip
+                p.Value.Rows[i].Name = "";
+            }
+
+            store.Params.Add(paramEntry);
+        }
+
+        var folder = ProjectUtils.GetLocalProjectFolder(Project);
+
+        if (!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+
+        var file = Path.Combine(folder, "Stripped Row Names.json");
+
+        var json = JsonSerializer.Serialize(store, SmithboxSerializerContext.Default.RowNameStore);
+
+        File.WriteAllText(file, json);
+
+        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Stripped row names and stored them in {file}");
+    }
+
+    public void RowNameRestore()
+    {
+        RowNameStore store = null;
+
+        var folder = ProjectUtils.GetLocalProjectFolder(Project);
+        var file = Path.Combine(folder, "Stripped Row Names.json");
+
+        if (!File.Exists(file))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to located {file} for row name restore.", LogLevel.Error);
+        }
+        else
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+
+                if (store == null)
                 {
-                    TaskLogs.AddLog($"External row names could not be applied to {p.Key}, row count does not match",
-                        LogLevel.Warning, LogPriority.Low);
-                    failCount++;
-                    continue;
+                    throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null during RowNameRestore.");
                 }
-
-                for (var i = 0; i < names.Length; i++)
-                    p.Value.Rows[i].Name = names[i];
             }
-        }
-
-        if (failCount > 0)
-        {
-            TaskLogs.AddLog(
-                $"External row names could not be applied to {failCount} params due to non-matching row counts.",
-                LogLevel.Warning);
-        }
-    }
-
-    /// <summary>
-    ///     Strips row names from params, saves them to files, and stores them to be restored after saving params.
-    ///     Should always be used in conjunction with RestoreStrippedRowNames().
-    /// </summary>
-    private void StripRowNames()
-    {
-        _storedStrippedRowNames = new Dictionary<string, List<string>>();
-        foreach (KeyValuePair<string, Param> p in _params)
-        {
-            _storedStrippedRowNames.TryAdd(p.Key, new List<string>());
-            List<string> list = _storedStrippedRowNames[p.Key];
-            foreach (Param.Row r in p.Value.Rows)
+            catch (Exception e)
             {
-                var output = r.Name;
-
-                list.Add(output);
-                r.Name = "";
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error);
             }
+        }
 
-            var path = ParamLocator.GetStrippedRowNamesPath(Project, p.Key);
-            Directory.CreateDirectory(Path.GetDirectoryName(path));
-            File.WriteAllLines(path, list);
+        // Only proceed if we have row names to work with
+        if (store != null)
+        {
+            var storeDict = store.Params.ToDictionary(e => e.Name);
+
+            foreach (KeyValuePair<string, Param> p in Params)
+            {
+                if (!storeDict.ContainsKey(p.Key))
+                    continue;
+
+                var rowNames = storeDict[p.Key];
+                var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+
+                for (var i = 0; i < p.Value.Rows.Count; i++)
+                {
+                    if (CFG.Current.UseIndexMatchForRowNameRestore)
+                    {
+                        p.Value.Rows[i].Name = rowNameDict[i].Name;
+                    }
+                    else
+                    {
+                        // ID may not be unique, so we will manually loop here
+                        foreach (var entry in rowNames.Entries)
+                        {
+                            if (entry.ID == p.Value.Rows[i].ID)
+                            {
+                                p.Value.Rows[i].Name = entry.Name;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Restored row names from {file}");
+    }
+
+    #endregion
+
+    #region Row Name Import
+    /// <summary>
+    /// Import row names
+    /// </summary>
+    /// <param name="importType"></param>
+    /// <param name="sourceType"></param>
+    /// <param name="filepath"></param>
+    public async void ImportRowNames(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
+    {
+        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath);
+        bool rowNamesImported = await importRowNameTask;
+
+        if (rowNamesImported)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Imported row names.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to import row names.");
         }
     }
 
-    /// <summary>
-    ///     Restores stripped row names back to all params.
-    ///     Should always be used in conjunction with StripRowNames().
-    /// </summary>
-    private void RestoreStrippedRowNames()
+    public async Task<bool> ImportRowNamesTask(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
     {
-        if (_storedStrippedRowNames == null)
+        await Task.Delay(1000);
+
+        var sourceFilepath = filepath;
+        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+
+        switch (sourceType)
         {
-            throw new InvalidOperationException("No stripped row names have been stored.");
+            case ImportRowNameSourceType.Community:
+                sourceFilepath = Path.Combine(folder, "Community Row Names.json");
+                break;
+            case ImportRowNameSourceType.Developer:
+                sourceFilepath = Path.Combine(folder, "Developer Row Names.json");
+                break;
         }
 
-        foreach (KeyValuePair<string, Param> p in _params)
+        if (!File.Exists(sourceFilepath))
         {
-            List<string> storedNames = _storedStrippedRowNames[p.Key];
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceFilepath}");
+            return false;
+        }
+
+        RowNameStore store = null;
+
+        try
+        {
+            var filestring = File.ReadAllText(sourceFilepath);
+            var options = new JsonSerializerOptions();
+            store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+
+            if (store == null)
+            {
+                throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFilepath} for row name import.", LogLevel.Error);
+        }
+
+        if (store == null)
+            return false;
+
+        var storeDict = store.Params.ToDictionary(e => e.Name);
+
+        foreach (KeyValuePair<string, Param> p in Params)
+        {
+            if (!storeDict.ContainsKey(p.Key))
+                continue;
+
+            var rowNames = storeDict[p.Key];
+            var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
-                p.Value.Rows[i].Name = storedNames[i];
+                if (importType is ImportRowNameType.Index)
+                {
+                    p.Value.Rows[i].Name = rowNameDict[i].Name;
+                }
+                else if (importType is ImportRowNameType.ID)
+                {
+                    // ID may not be unique, so we will manually loop here
+                    foreach (var entry in rowNames.Entries)
+                    {
+                        if (entry.ID == p.Value.Rows[i].ID)
+                        {
+                            p.Value.Rows[i].Name = entry.Name;
+                        }
+                    }
+                }
             }
         }
 
-        _storedStrippedRowNames = null;
+        return true;
+    }
+
+    #endregion
+
+    #region Row Name Export
+    /// <summary>
+    /// Export row names
+    /// </summary>
+    /// <param name="exportType"></param>
+    /// <param name="filepath"></param>
+    /// <param name="paramName"></param>
+    public async void ExportRowNames(ExportRowNameType exportType, string filepath, string paramName = "")
+    {
+        Task<bool> exportRowNameTask = ExportRowNamesTask(exportType, filepath, paramName);
+        bool rowNamesExported = await exportRowNameTask;
+
+        if (rowNamesExported)
+        {
+            // JSON
+            if (exportType is ExportRowNameType.JSON)
+            {
+                var outputName = $"{Project.ProjectName} -- Row Names.json";
+
+                if (paramName != "")
+                {
+                    outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.json";
+                }
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {outputName}");
+            }
+
+            // Text
+            if (exportType is ExportRowNameType.Text)
+            {
+                var outputName = $"{Project.ProjectName} -- Row Names.txt";
+
+                if (paramName != "")
+                {
+                    outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.txt";
+                }
+
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {outputName}");
+            }
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to export row names.");
+        }
+    }
+
+    public async Task<bool> ExportRowNamesTask(ExportRowNameType exportType, string filepath, string paramName = "")
+    {
+        await Task.Delay(1000);
+
+        var store = new RowNameStore();
+        store.Params = new();
+
+        foreach (KeyValuePair<string, Param> p in Params)
+        {
+            if (paramName != "")
+            {
+                if (p.Key != paramName)
+                    continue;
+            }
+
+            var paramEntry = new RowNameParam();
+            paramEntry.Name = p.Key;
+            paramEntry.Entries = new();
+
+            for (int i = 0; i < p.Value.Rows.Count; i++)
+            {
+                var row = p.Value.Rows[i];
+
+                // Store
+                var rowEntry = new RowNameEntry();
+
+                rowEntry.Index = i;
+                rowEntry.ID = row.ID;
+                rowEntry.Name = row.Name;
+
+                paramEntry.Entries.Add(rowEntry);
+            }
+
+            store.Params.Add(paramEntry);
+        }
+
+        // JSON
+        if (exportType is ExportRowNameType.JSON)
+        {
+            var outputName = $"{Project.ProjectName} -- Row Names.json";
+
+            if (paramName != "")
+            {
+                outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.json";
+            }
+
+            var file = Path.Combine(filepath, outputName);
+
+            var json = JsonSerializer.Serialize(store, SmithboxSerializerContext.Default.RowNameStore);
+
+            File.WriteAllText(file, json);
+
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Exported row names to {file}");
+        }
+
+        // Text
+        if (exportType is ExportRowNameType.Text)
+        {
+            var outputName = $"{Project.ProjectName} -- Row Names.txt";
+
+            if (paramName != "")
+            {
+                outputName = $"{Project.ProjectName} -- {paramName} -- Row Names.txt";
+            }
+
+            var file = Path.Combine(filepath, outputName);
+
+            var textOuput = "";
+
+            foreach (var entry in store.Params)
+            {
+                if (paramName != "")
+                {
+                    if (entry.Name != paramName)
+                        continue;
+                }
+                textOuput = $"{textOuput}\n##{entry.Name}";
+
+                foreach (var row in entry.Entries)
+                {
+                    textOuput = $"{textOuput}\n{row.ID};{row.Name}";
+                }
+            }
+
+
+            File.WriteAllText(file, textOuput);
+        }
+
+        return true;
+    }
+
+    #endregion
+
+    public enum ParamUpgradeResult
+    {
+        Success = 0,
+        RowConflictsFound = -1,
+        OldRegulationNotFound = -2,
+        OldRegulationVersionMismatch = -3,
+        OldRegulationMatchesCurrent = -4
+    }
+
+    public enum RowGetType
+    {
+        [Display(Name = "All Rows")] AllRows = 0,
+        [Display(Name = "Modified Rows")] ModifiedRows = 1,
+        [Display(Name = "Selected Rows")] SelectedRows = 2
     }
 
     private enum EditOperation
@@ -2613,5 +2845,44 @@ public class ParamBank
         Match
     }
 
-    
+    public enum ImportRowNameType
+    {
+        Index,
+        ID
+    }
+
+    public enum ImportRowNameSourceType
+    {
+        Community,
+        Developer,
+        External
+    }
+
+    public enum ExportRowNameType
+    {
+        JSON,
+        Text
+    }
+
+    /// <summary>
+    ///     Map related params.
+    /// </summary>
+    public readonly List<string> DS2MapParamlist = new()
+    {
+        "demopointlight",
+        "demospotlight",
+        "eventlocation",
+        "eventparam",
+        "GeneralLocationEventParam",
+        "generatorparam",
+        "generatorregistparam",
+        "generatorlocation",
+        "generatordbglocation",
+        "hitgroupparam",
+        "intrudepointparam",
+        "mapobjectinstanceparam",
+        "maptargetdirparam",
+        "npctalkparam",
+        "treasureboxparam"
+    };
 }

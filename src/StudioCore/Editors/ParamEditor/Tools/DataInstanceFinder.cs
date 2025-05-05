@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -147,12 +148,12 @@ public class FieldNameFinder
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
             var def = p.Value.AppliedParamdef;
-            var meta = ParamMetaData.Get(def);
+            var meta = Editor.Project.ParamData.GetParamMeta(def);
 
             foreach (var field in def.Fields)
             {
                 bool addResult = false;
-                var fieldMeta = FieldMetaData.Get(field);
+                var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(meta, field);
 
                 foreach (var entry in searchComponents)
                 {
@@ -395,6 +396,8 @@ public class FieldValueFinder
 
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
+            var meta = Editor.Project.ParamData.GetParamMeta(p.Value.AppliedParamdef);
+
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
                 var r = p.Value.Rows[i];
@@ -407,7 +410,7 @@ public class FieldValueFinder
                 {
                     PARAMDEF.DefType type = field.Def.DisplayType;
 
-                    var fieldMeta = FieldMetaData.Get(field.Def);
+                    var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(meta, field.Def);
                     fieldName = field.Def.InternalName;
                     fieldDisplayName = fieldMeta.AltName;
 

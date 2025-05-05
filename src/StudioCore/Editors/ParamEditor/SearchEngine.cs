@@ -1,5 +1,8 @@
 using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Http.HttpResults;
 using SoulsFormats;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.TextEditor;
@@ -7,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -113,10 +117,7 @@ internal class SearchEngine<A, B>
 
     public List<B> Search(A param, string command, bool lenient, bool failureAllOrNone)
     {
-        if (unpacker != null)
-        {
-            return Search(param, unpacker(param), command, lenient, failureAllOrNone);
-        }
+        return Search(param, unpacker(param), command, lenient, failureAllOrNone);
 
         return null;
     }
@@ -243,8 +244,12 @@ internal class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
 internal class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelectionState, (MassEditRowSource,
     Param.Row), (ParamBank, Param), Param.Row>
 {
-    public static SearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)> parse =
-        new ParamAndRowSearchEngine();
+    public static SearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)> Create(ParamEditorScreen editor) => new ParamAndRowSearchEngine(editor);
+
+    private ParamAndRowSearchEngine(ParamEditorScreen editor)
+    {
+        Setup(editor);
+    }
 
     internal override void Setup(ParamEditorScreen editor)
     {
@@ -272,7 +277,7 @@ internal class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelec
                     : editor.Project.ParamData.PrimaryBank.ClipboardParam]);
 
         sourceListGetterForMultiStage = row => row.Item2;
-        searchEngineForMultiStage = RowSearchEngine.rse;
+        searchEngineForMultiStage = RowSearchEngine.Create(editor);
         resultRetrieverForMultiStage = (row, exampleItem) => (exampleItem.Item1, row);
     }
 }
@@ -285,11 +290,13 @@ internal enum MassEditRowSource
 
 internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
 {
-    public static ParamSearchEngine pse = new();
+    public static ParamSearchEngine Create(ParamEditorScreen editor) => new ParamSearchEngine(editor);
     private readonly ParamBank bank;
 
-    private ParamSearchEngine()
+    private ParamSearchEngine(ParamEditorScreen editor)
     {
+        bank = editor.Project.ParamData.PrimaryBank;
+        Setup(editor);
     }
 
     internal override void Setup(ParamEditorScreen editor)
@@ -353,11 +360,13 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
 
 internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 {
-    public static RowSearchEngine rse = new();
+    public static RowSearchEngine Create(ParamEditorScreen editor) => new RowSearchEngine(editor);
     private readonly ParamBank bank;
 
-    private RowSearchEngine()
+    private RowSearchEngine(ParamEditorScreen editor)
     {
+        bank = editor.Project.ParamData.PrimaryBank;
+        Setup(editor);
     }
 
     internal override void Setup(ParamEditorScreen editor)
@@ -531,8 +540,8 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[0];
                 return context =>
                 {
-                    List<ParamRef> validFields = FieldMetaData
-                        .Get(context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
+                    var paramMeta = editor.Project.ParamData.GetParamMeta(context.Item2.AppliedParamdef);
+                    List<ParamRef> validFields = editor.Project.ParamData.GetParamFieldMeta(paramMeta, context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
                         .FindAll(p => bank.Params.ContainsKey(p.ParamName));
                     return row =>
                     {
@@ -570,7 +579,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row =>
                     {
                         (string paramName, Param.Row row) cseSearchContext = (paramName, row);
-                        List<(PseudoColumn, Param.Column)> res = CellSearchEngine.cse.Search(cseSearchContext,
+                        List<(PseudoColumn, Param.Column)> res = CellSearchEngine.Create(editor).Search(cseSearchContext,
                             new List<(PseudoColumn, Param.Column)> { testCol }, args[1], lenient, false);
                         return res.Contains(testCol);
                     };
@@ -756,7 +765,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         throw new Exception("Could not find param " + otherParam);
                     }
 
-                    List<Param.Row> rows = rse.Search((editor.Project.ParamData.PrimaryBank, otherParamReal), otherSearchTerm,
+                    List<Param.Row> rows = RowSearchEngine.Create(editor).Search((editor.Project.ParamData.PrimaryBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
@@ -849,7 +858,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 
 internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)>
 {
-    public static CellSearchEngine cse = new();
+    public static CellSearchEngine Create(ParamEditorScreen editor) => new CellSearchEngine(editor);
+
+    private CellSearchEngine(ParamEditorScreen editor)
+    {
+        Setup(editor);
+    }
 
     internal override void Setup(ParamEditorScreen editor)
     {
@@ -881,8 +895,10 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                     if (cell.Item2 != null)
                     {
-                        FieldMetaData meta = lenient ? FieldMetaData.Get(cell.Item2.Def) : null;
-                        if (lenient && meta?.AltName != null && rx.IsMatch(meta?.AltName))
+                        var paramMeta = editor.Project.ParamData.GetParamMeta(cell.Item2.Def.Parent);
+                        var fieldMeta = editor.Project.ParamData.GetParamFieldMeta(paramMeta, cell.Item2.Def);
+
+                        if (lenient && fieldMeta?.AltName != null && rx.IsMatch(fieldMeta?.AltName))
                         {
                             return true;
                         }

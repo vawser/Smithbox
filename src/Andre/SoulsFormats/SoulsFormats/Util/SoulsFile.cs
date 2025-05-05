@@ -178,6 +178,15 @@ namespace SoulsFormats
         }
 
         /// <summary>
+        /// Returns whether the bytes appear to be a file of this type and reads it if so.
+        /// </summary>
+        public static bool IsRead(Memory<byte> bytes, out TFormat file)
+        {
+            var br = new BinaryReaderEx(false, bytes);
+            return IsRead(br, out file);
+        }
+
+        /// <summary>
         /// Returns whether the file appears to be a file of this type and reads it if so.
         /// </summary>
         public static bool IsRead(string path, out TFormat ret)

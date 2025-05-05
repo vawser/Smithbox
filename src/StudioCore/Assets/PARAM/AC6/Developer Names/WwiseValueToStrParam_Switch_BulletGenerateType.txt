@@ -1,3 +1,0 @@
-0 none -- 無し
-1 Landing -- 着弾
-2 child bullet -- 子弾丸

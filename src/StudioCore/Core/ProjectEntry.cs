@@ -81,8 +81,6 @@ public class ProjectEntry
     [JsonIgnore]
     public Smithbox BaseEditor;
     [JsonIgnore]
-    public List<EditorScreen> EditorList = new();
-    [JsonIgnore]
     public EditorScreen FocusedEditor;
     [JsonIgnore]
     public MapEditorScreen MapEditor;
@@ -156,6 +154,9 @@ public class ProjectEntry
     public ParamCategoryResource ParamCategories;
 
     [JsonIgnore]
+    public ParamUpgraderInfo ParamUpgraderInfo;
+
+    [JsonIgnore]
     public ParamCommutativeResource CommutativeParamGroups;
 
     [JsonIgnore]
@@ -217,7 +218,6 @@ public class ProjectEntry
 
         await Task.Delay(1);
 
-        EditorList.Clear();
         FocusedEditor = null;
 
         // DLLs
@@ -441,6 +441,19 @@ public class ProjectEntry
             else
             {
                 TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+            }
+
+            // Param Upgrader Instructions (per project)
+            Task<bool> paramUpgraderTask = SetupParamUpgraderInstructions();
+            bool paramUpgraderTaskResult = await paramUpgraderTask;
+
+            if (paramUpgraderTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Upgrader Instructions.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Upgrader Instructions.");
             }
 
 
@@ -1259,7 +1272,7 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Offsets.json");
+        var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
 
@@ -1299,10 +1312,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Enums.json");
+        var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "Enums.json");
+        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var targetFile = sourceFile;
 
@@ -1347,10 +1360,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Categories.json");
+        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "Categories.json");
+        var projectFile = Path.Combine(projectFolder, "Param Categories.json");
 
         var targetFile = sourceFile;
 
@@ -1396,10 +1409,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "CommutativeGroups.json");
+        var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "CommutativeGroups.json");
+        var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
 
         var targetFile = sourceFile;
 
@@ -1424,6 +1437,55 @@ public class ProjectEntry
             catch (Exception e)
             {
                 TaskLogs.AddLog("[Smithbox] Failed to read commutative param groups.");
+            }
+        }
+
+        return true;
+    }
+    #endregion
+
+    #region Setup Param Upgrader Instructions
+
+    /// <summary>
+    /// Setup the param upgrader instructions for this project
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> SetupParamUpgraderInstructions()
+    {
+        await Task.Delay(1);
+
+        ParamUpgraderInfo = new();
+
+        // Information
+        var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFile = Path.Combine(sourceFolder, "Upgrader Information.json");
+
+        var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFile = Path.Combine(projectFolder, "Upgrader Information.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(targetFile);
+                var options = new JsonSerializerOptions();
+                ParamUpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
+
+                if (ParamUpgraderInfo == null)
+                {
+                    throw new Exception("[Smithbox] Failed to read param upgrader instructions.");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Failed to read param upgrader instructions.");
             }
         }
 

@@ -163,7 +163,7 @@ public class MassParamEditRegex
                 {
                     (result, actions) = currentEditData.ParseVarStep(currentLine, command);
                 }
-                else if (ParamAndRowSearchEngine.parse.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
+                else if (ParamAndRowSearchEngine.Create(Editor).HandlesCommand(primaryFilter.Split(" ", 2)[0]))
                 {
                     (result, actions) = currentEditData.ParseParamRowStep(currentLine, command);
                 }
@@ -252,7 +252,7 @@ public class MassParamEditRegex
         paramRowSelector = paramrowstage[0].Trim();
         if (paramRowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", ParamAndRowSearchEngine.parse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", ParamAndRowSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramrowstage.Length < 2)
@@ -274,7 +274,7 @@ public class MassParamEditRegex
         paramSelector = paramstage[0].Trim();
         if (paramSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", ParamSearchEngine.pse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", ParamSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramstage.Length < 2)
@@ -291,7 +291,7 @@ public class MassParamEditRegex
         rowSelector = rowstage[0].Trim();
         if (rowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", RowSearchEngine.rse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", RowSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (rowstage.Length < 2)
@@ -313,7 +313,7 @@ public class MassParamEditRegex
         cellSelector = cellstage[0].Trim();
         if (cellSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", CellSearchEngine.cse.AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", CellSearchEngine.Create(Editor).AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
         }
 
         if (cellstage.Length < 2)
@@ -445,7 +445,7 @@ public class MassParamEditRegex
         IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
             paramArgFuncs.Select((func, i) => func(0, activeParam)); // technically invalid for clipboard
         var rowEditCount = -1;
-        foreach ((MassEditRowSource source, Param.Row row) in ParamAndRowSearchEngine.parse.Search(context,
+        foreach ((MassEditRowSource source, Param.Row row) in ParamAndRowSearchEngine.Create(Editor).Search(context,
                      paramRowSelector, false, false))
         {
             rowEditCount++;
@@ -468,7 +468,7 @@ public class MassParamEditRegex
     {
         var paramEditCount = -1;
         var operationForPrint = rowOperation != null ? rowOperation : cellOperation;
-        foreach ((ParamBank b, Param p) in ParamSearchEngine.pse.Search(false, paramSelector, false, false))
+        foreach ((ParamBank b, Param p) in ParamSearchEngine.Create(Editor).Search(false, paramSelector, false, false))
         {
             paramEditCount++;
             IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
@@ -494,7 +494,7 @@ public class MassParamEditRegex
         string paramname, ParamBank b, Param p, List<EditorAction> partialActions)
     {
         var rowEditCount = -1;
-        foreach (Param.Row row in RowSearchEngine.rse.Search((b, p), rowSelector, false, false))
+        foreach (Param.Row row in RowSearchEngine.Create(Editor).Search((b, p), rowSelector, false, false))
         {
             rowEditCount++;
             Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc =
@@ -531,7 +531,7 @@ public class MassParamEditRegex
         string paramname, Param.Row row, List<EditorAction> partialActions)
     {
         var cellEditCount = -1;
-        foreach ((PseudoColumn, Param.Column) col in CellSearchEngine.cse.Search((paramname, row), cellSelector,
+        foreach ((PseudoColumn, Param.Column) col in CellSearchEngine.Create(Editor).Search((paramname, row), cellSelector,
                      false, false))
         {
             cellEditCount++;
@@ -1070,7 +1070,7 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
                 var avg = vals.Average(val => Convert.ToDouble(val));
                 return (j, row) => (k, c) => avg.ToString();
@@ -1087,7 +1087,7 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
                 var avg = vals.OrderBy(val => Convert.ToDouble(val)).ElementAt(vals.Count() / 2);
                 return (j, row) => (k, c) => avg.ToParamEditorString();
@@ -1104,7 +1104,7 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
                 var avg = ParamUtils.GetParamValueDistribution(rows, col).OrderByDescending(g => g.Item2)
                     .First().Item1;
                 return (j, row) => (k, c) => avg.ToParamEditorString();
@@ -1121,7 +1121,7 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
                 var min = rows.Min(r => r[field[0]].Value.Value);
                 return (j, row) => (k, c) => min.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
@@ -1137,7 +1137,7 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
                 var max = rows.Max(r => r[field[0]].Value.Value);
                 return (j, row) => (k, c) => max.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
@@ -1186,7 +1186,7 @@ public class MEOperationArgument
             paramFieldRowSelector =>
             {
                 Param srcParam = Editor.Project.ParamData.PrimaryBank.Params[paramFieldRowSelector[0]];
-                List<Param.Row> srcRows = RowSearchEngine.rse.Search((Editor.Project.ParamData.PrimaryBank, srcParam),
+                List<Param.Row> srcRows = RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, srcParam),
                     paramFieldRowSelector[2], false, false);
                 var values = srcRows.Select((r, i) => r[paramFieldRowSelector[1]].Value.Value).ToArray();
                 return (i, param) =>

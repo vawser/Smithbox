@@ -3,7 +3,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework.META;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -54,7 +54,7 @@ public static class MapEditorDecorations
 
                             paramName = $"{paramName}_{map}".ToLower();
 
-                            refs.Add(new ParamRef(paramName));
+                            refs.Add(new ParamRef(null, paramName));
                         }
                     }
                 }
@@ -77,7 +77,7 @@ public static class MapEditorDecorations
                         if (map == "m15_01_00_00")
                             mapPrefix = "m51_1";
 
-                        refs.Add(new ParamRef($"{mapPrefix}_{paramName}"));
+                        refs.Add(new ParamRef(null, $"{mapPrefix}_{paramName}"));
                     }
                 }
                 // DS2 Map Params
@@ -93,12 +93,12 @@ public static class MapEditorDecorations
 
                         var paramName = pRef.ParamName;
 
-                        refs.Add(new ParamRef($"{paramName}_{map}"));
+                        refs.Add(new ParamRef(null, $"{paramName}_{map}"));
                     }
                 }
                 else
                 {
-                    refs.Add(new ParamRef(pRef.ParamName));
+                    refs.Add(new ParamRef(null, pRef.ParamName));
                 }
             }
 
@@ -110,7 +110,7 @@ public static class MapEditorDecorations
 
             if (editor.Project.ParamEditor != null)
             {
-                EditorDecorations.ParamRefsSelectables(editor.Project.ParamData.PrimaryBank, refs, null, val);
+                EditorDecorations.ParamRefsSelectables(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, refs, null, val);
                 EditorDecorations.ParamRefEnumQuickLink(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, refs, null, null, null, null);
 
                 if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
@@ -139,7 +139,7 @@ public static class MapEditorDecorations
 
             foreach (FMGRef pRef in meta.FmgRef)
             {
-                refs.Add(new FMGRef(pRef.fmg));
+                refs.Add(new FMGRef(null, pRef.fmg));
             }
 
             ImGui.NextColumn();

@@ -3,7 +3,7 @@ using Assimp;
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.MsbEditor;
 using StudioCore.Resource;

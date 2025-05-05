@@ -1,0 +1,176 @@
+{
+  "Categories": [
+    {
+      "DisplayName": "Configuration",
+      "Params": [
+        "default_DofBank",
+        "default_EnvLightTexBank",
+        "default_FogBank",
+        "default_LensFlareBank",
+        "default_LensFlareExBank",
+        "default_LightBank",
+        "default_LightScatteringBank",
+        "default_PointLightBank",
+        "default_ShadowBank",
+        "default_ToneCorrectBank",
+        "default_ToneMapBank",
+        "default_LodBank",
+        "default_AIStandardInfoBank",
+        "default_EnemyBehaviorBank"
+      ]
+    },
+    {
+      "DisplayName": "The Nexus / Below the Nexus",
+      "Params": [
+        "m01_DofBank",
+        "m01_EnvLightTexBank",
+        "m01_FogBank",
+        "m01_LensFlareBank",
+        "m01_LensFlareExBank",
+        "m01_LightBank",
+        "m01_LightScatteringBank",
+        "m01_PointLightBank",
+        "m01_ShadowBank",
+        "m01_ToneCorrectBank",
+        "m01_ToneMapBank",
+        "s01_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Boletarian Palace",
+      "Params": [
+        "m02_DofBank",
+        "m02_EnvLightTexBank",
+        "m02_FogBank",
+        "m02_LensFlareBank",
+        "m02_LensFlareExBank",
+        "m02_LightBank",
+        "m02_LightScatteringBank",
+        "m02_PointLightBank",
+        "m02_ShadowBank",
+        "m02_ToneCorrectBank",
+        "m02_ToneMapBank",
+        "s02_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Shrine of Storms",
+      "Params": [
+        "m03_DofBank",
+        "m03_EnvLightTexBank",
+        "m03_FogBank",
+        "m03_LensFlareBank",
+        "m03_LensFlareExBank",
+        "m03_LightBank",
+        "m03_LightScatteringBank",
+        "m03_PointLightBank",
+        "m03_ShadowBank",
+        "m03_ToneCorrectBank",
+        "m03_ToneMapBank",
+        "s03_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Tower of Latria",
+      "Params": [
+        "m04_DofBank",
+        "m04_EnvLightTexBank",
+        "m04_FogBank",
+        "m04_LensFlareBank",
+        "m04_LensFlareExBank",
+        "m04_LightBank",
+        "m04_LightScatteringBank",
+        "m04_PointLightBank",
+        "m04_ShadowBank",
+        "m04_ToneCorrectBank",
+        "m04_ToneMapBank",
+        "s04_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Valley of Defilement",
+      "Params": [
+        "m05_DofBank",
+        "m05_EnvLightTexBank",
+        "m05_FogBank",
+        "m05_LensFlareBank",
+        "m05_LensFlareExBank",
+        "m05_LightBank",
+        "m05_LightScatteringBank",
+        "m05_PointLightBank",
+        "m05_ShadowBank",
+        "m05_ToneCorrectBank",
+        "m05_ToneMapBank",
+        "s05_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Stonefang Tunnel",
+      "Params": [
+        "m06_DofBank",
+        "m06_EnvLightTexBank",
+        "m06_FogBank",
+        "m06_LensFlareBank",
+        "m06_LensFlareExBank",
+        "m06_LightBank",
+        "m06_LightScatteringBank",
+        "m06_PointLightBank",
+        "m06_ShadowBank",
+        "m06_ToneCorrectBank",
+        "m06_ToneMapBank",
+        "s06_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Northern Limit",
+      "Params": [
+        "m07_DofBank",
+        "m07_EnvLightTexBank",
+        "m07_FogBank",
+        "m07_LensFlareBank",
+        "m07_LensFlareExBank",
+        "m07_LightBank",
+        "m07_LightScatteringBank",
+        "m07_PointLightBank",
+        "m07_ShadowBank",
+        "m07_ToneCorrectBank",
+        "m07_ToneMapBank",
+        "s07_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Tutorial",
+      "Params": [
+        "m08_DofBank",
+        "m08_EnvLightTexBank",
+        "m08_FogBank",
+        "m08_LensFlareBank",
+        "m08_LensFlareExBank",
+        "m08_LightBank",
+        "m08_LightScatteringBank",
+        "m08_PointLightBank",
+        "m08_ShadowBank",
+        "m08_ToneCorrectBank",
+        "m08_ToneMapBank",
+        "s08_LightBank"
+      ]
+    },
+    {
+      "DisplayName": "Development Layouts",
+      "Params": [
+        "m99_DofBank",
+        "m99_EnvLightTexBank",
+        "m99_FogBank",
+        "m99_LensFlareBank",
+        "m99_LensFlareExBank",
+        "m99_LightBank",
+        "m99_LightScatteringBank",
+        "m99_PointLightBank",
+        "m99_ShadowBank",
+        "m99_ToneCorrectBank",
+        "m99_ToneMapBank",
+        "s99_LightBank"
+      ]
+    }
+  ]
+}

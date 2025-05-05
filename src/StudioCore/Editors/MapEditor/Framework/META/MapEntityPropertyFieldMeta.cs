@@ -1,6 +1,6 @@
 ﻿using Octokit;
 using SoulsFormats;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Concurrent;
@@ -92,14 +92,14 @@ public class MapEntityPropertyFieldMeta
         XmlAttribute tParamRef = entry.Attributes["ParamRef"];
         if (tParamRef != null)
         {
-            ParamRef = tParamRef.InnerText.Split(",").Select(x => new ParamRef(x)).ToList();
+            ParamRef = tParamRef.InnerText.Split(",").Select(x => new ParamRef(null, x)).ToList();
         }
 
         // FmgRef
         XmlAttribute tFmgRef = entry.Attributes["FmgRef"];
         if (tFmgRef != null)
         {
-            FmgRef = tFmgRef.InnerText.Split(",").Select(x => new FMGRef(x)).ToList();
+            FmgRef = tFmgRef.InnerText.Split(",").Select(x => new FMGRef(null, x)).ToList();
         }
 
         // Enum

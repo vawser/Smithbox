@@ -1,5 +1,0 @@
-0 Cloth
-770000 [Prototype] Hunter _ head _ New joint
-771000 [Prototype] Hunter _ Torso _ New joint
-772000 [Prototype] Hunter _ arm _ New joint
-773000 [Prototype] Hunter _ leg _ New joint

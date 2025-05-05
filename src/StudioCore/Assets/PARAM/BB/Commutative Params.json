@@ -1,0 +1,18 @@
+{
+  "Groups": [
+    {
+      "Name": "AtkParam",
+      "Params": [
+        "AtkParam_Npc",
+        "AtkParam_Pc"
+      ]
+    },
+    {
+      "Name": "BehaviorParam",
+      "Params": [
+        "BehaviorParam",
+        "BehaviorParam_Pc"
+      ]
+    }
+  ]
+}

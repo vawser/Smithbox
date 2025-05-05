@@ -50,6 +50,9 @@ public class ActionHandler
 
         var paramName = Editor._activeView._selection.GetActiveParam();
 
+        if (paramName == null)
+            return false;
+
         Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
 
         if (Editor.Project.CommutativeParamGroups.Groups == null)
@@ -68,12 +71,16 @@ public class ActionHandler
     /// </summary>
     public void DisplayCommutativeDuplicateToolMenu()
     {
-        var paramName = Editor._activeView._selection.GetActiveParam();
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
 
-        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (curParamKey == null)
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
         {
-            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;
@@ -84,7 +91,7 @@ public class ActionHandler
             foreach (var entry in targetGroup.Params)
             {
                 // Ignore current param
-                if (entry == paramName)
+                if (entry == curParamKey)
                     continue;
 
                 if (ImGui.Selectable($"{entry}", CFG.Current.Param_Toolbar_CommutativeDuplicate_Target == entry))
@@ -102,12 +109,16 @@ public class ActionHandler
     /// </summary>
     public void DisplayCommutativeDuplicateMenu()
     {
-        var paramName = Editor._activeView._selection.GetActiveParam();
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[paramName];
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
 
-        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).Any())
+        if (curParamKey == null)
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).Any())
         {
-            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(paramName)).FirstOrDefault();
+            var targetGroup = Editor.Project.CommutativeParamGroups.Groups.Where(e => e.Params.Contains(curParamKey)).FirstOrDefault();
 
             if (targetGroup == null)
                 return;
@@ -117,7 +128,7 @@ public class ActionHandler
             foreach(var entry in targetGroup.Params)
             {
                 // Ignore current param
-                if (entry == paramName)
+                if (entry == curParamKey)
                     continue;
 
                 if(ImGui.MenuItem($"{entry}"))
@@ -131,16 +142,20 @@ public class ActionHandler
 
     public void CommutativeDuplicateHandler()
     {
-        var currentParamName = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
         var targetParamName = CFG.Current.Param_Toolbar_CommutativeDuplicate_Target;
 
         if (targetParamName == "")
             return;
 
-        if (currentParamName == targetParamName)
+        if (curParamKey == targetParamName)
             return;
 
-        Param currentParam = Editor.Project.ParamData.PrimaryBank.Params[currentParamName];
+        Param currentParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
         Param targetParam = Editor.Project.ParamData.PrimaryBank.Params[targetParamName];
 
         if(targetParam == null) 
@@ -172,7 +187,12 @@ public class ActionHandler
 
     public void DuplicateHandler()
     {
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
+
+        if(curParamKey == null) 
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
         List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
 
         if (rows.Count == 0)
@@ -214,7 +234,12 @@ public class ActionHandler
     }
     public void CopyRowDetailHandler(bool includeName = false)
     {
-        Param param = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
         List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
 
         if (rows.Count == 0)
@@ -252,17 +277,20 @@ public class ActionHandler
     private void ExportRowNames()
     {
         var selectedParam = Editor._activeView._selection;
-        var activeParam = selectedParam.GetActiveParam();
+        var curParamKey = selectedParam.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
 
         switch (CurrentTargetCategory)
         {
             case TargetType.SelectedRows:
                 ExportRowNamesForRows(selectedParam.GetSelectedRows());
-                PlatformUtils.Instance.MessageBox($"Row names for {activeParam} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PlatformUtils.Instance.MessageBox($"Row names for {curParamKey} selected rows have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             case TargetType.SelectedParam:
-                ExportRowNamesForParam(activeParam);
-                PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ExportRowNamesForParam(curParamKey);
+                PlatformUtils.Instance.MessageBox($"Row names for {curParamKey} have been saved.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             case TargetType.AllParams:
                 foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
@@ -317,6 +345,10 @@ public class ActionHandler
     public void ImportRowNameHandler()
     {
         var selectedParam = Editor._activeView._selection;
+        var curParamKey = selectedParam.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
 
         bool _rowNameImport_useProjectNames = CurrentSourceCategory == SourceType.Project;
         bool _rowNameImport_useDeveloperNames = CurrentSourceCategory == SourceType.Developer;
@@ -387,6 +419,10 @@ public class ActionHandler
     public void RowNameTrimHandler()
     {
         var selectedParam = Editor._activeView._selection;
+        var curParamKey = selectedParam.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
 
         if (selectedParam.ActiveParamExists())
         {
@@ -482,9 +518,7 @@ public class ActionHandler
     }
 
     // Merge Params
-    public string targetRegulationPath = "";
-    public string targetLooseParamPath = "";
-    public string targetEnemyParamPath = "";
+    public string ProjectName = "";
 
     public bool targetUniqueOnly = true;
 
@@ -496,32 +530,14 @@ public class ActionHandler
 
     public void MergeParamHandler()
     {
-        if(targetRegulationPath == "")
-            {
-            PlatformUtils.Instance.MessageBox("Target Regulation path is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-        if (!targetRegulationPath.Contains("regulation.bin"))
-        {
-            PlatformUtils.Instance.MessageBox("Target Regulation path is does not point to a regulation.bin file!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
-        Editor.Project.ParamData.SetupAuxBank(targetRegulationPath, Editor.Project.DataPath);
-
-        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            Editor.Project.ParamData.SetupAuxBank(targetRegulationPath, Editor.Project.DataPath);
-        }
-
-        var auxBank = Editor.Project.ParamData.AuxBanks.First();
+        var auxBank = Editor.Project.ParamData.AuxBanks[ProjectName];
 
         // Apply the merge massedit script here
-        var command = $"auxparam {auxBank.Key} .*: modified && unique ID: paste;";
+        var command = $"auxparam {ProjectName} .*: modified && unique ID: paste;";
 
         if(!targetUniqueOnly)
         {
-            command = $"auxparam {auxBank.Key} .*: modified ID: paste;";
+            command = $"auxparam {ProjectName} .*: modified ID: paste;";
         }
 
         //TaskLogs.AddLog(command);
@@ -547,8 +563,13 @@ public class ActionHandler
 
     public void RevertRowToDefault()
     {
-        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()];
-        Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params[Editor._activeView._selection.GetActiveParam()];
+        var curParamKey = Editor._activeView._selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+        Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params[curParamKey];
 
         if (baseParam == null)
             return;

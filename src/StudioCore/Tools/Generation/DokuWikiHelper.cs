@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -24,11 +24,19 @@ public class DokuWikiHelper
     {
         var curProject = BaseEditor.ProjectManager.SelectedProject;
 
+        if (curProject == null)
+            return;
+
+        if (curProject.ParamEditor == null)
+            return;
+
+        var editor = BaseEditor.ProjectManager.SelectedProject.ParamEditor;
+
         var output = "^ Param ^ Description ^\n";
 
         foreach(var param in curProject.ParamData.PrimaryBank.Params)
         {
-            var targetParamMeta = ParamMetaData.Get(param.Value.AppliedParamdef);
+            var targetParamMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
             var sanitizedWiki = $"{targetParamMeta.Wiki}".Replace("\n", ", ").Replace("|", "-");
 
@@ -41,6 +49,14 @@ public class DokuWikiHelper
     public void OutputParamInformation(string paramKey)
     {
         var curProject = BaseEditor.ProjectManager.SelectedProject;
+
+        if (curProject == null)
+            return;
+
+        if (curProject.ParamEditor == null)
+            return;
+
+        var editor = BaseEditor.ProjectManager.SelectedProject.ParamEditor;
 
         var namespacePrefix = "XXX";
 
@@ -63,14 +79,14 @@ public class DokuWikiHelper
             $"^ Field ^ Type ^ Offset ^ Description ^ Notes ^\n";
 
         var targetParamDef = curProject.ParamData.PrimaryBank.GetParamFromName(paramKey);
-        var targetParamMeta = ParamMetaData.Get(targetParamDef.AppliedParamdef);
+        var targetParamMeta = editor.Project.ParamData.GetParamMeta(targetParamDef.AppliedParamdef);
 
         // Fields
         foreach (var field in targetParamDef.AppliedParamdef.Fields)
         {
             var col = targetParamDef.Columns.Where(e => e.Def == field).FirstOrDefault();
 
-            var fieldMeta = FieldMetaData.Get(field);
+            var fieldMeta = editor.Project.ParamData.GetParamFieldMeta(targetParamMeta, field);
 
             var notes = "";
 
@@ -228,12 +244,12 @@ public class DokuWikiHelper
             output = output + $"| {field.InternalName} | ''{field.DisplayType}'' | ''0x{colString}'' | {sanitizedWiki} | {notes} |\n";
         }
 
-        if (targetParamMeta.enums.Count > 0)
+        if (targetParamMeta.ParamEnums.Count > 0)
         {
             output = $"{output}\n\n\n===== Enums =====\n";
 
             // Enums
-            foreach (var entry in targetParamMeta.enums)
+            foreach (var entry in targetParamMeta.ParamEnums)
             {
                 output = $"{output}\n\n==== {entry.Key} ====\n" +
                     $"^ Option ^ Description ^ Notes ^\n";

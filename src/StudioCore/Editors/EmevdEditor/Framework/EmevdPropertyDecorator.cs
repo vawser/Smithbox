@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.EmevdEditor;
@@ -811,7 +812,7 @@ public class EmevdPropertyDecorator
         {
             var refValue = int.Parse(value);
 
-            (string, Param.Row, string) match = ResolveParamRef(Editor.Project.ParamData.PrimaryBank, paramName, refValue);
+            (string, Param.Row, string) match = ResolveParamRef(Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor, Editor.Project.ParamData.PrimaryBank, paramName, refValue);
 
             ImGui.AlignTextToFramePadding();
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
@@ -863,7 +864,7 @@ public class EmevdPropertyDecorator
     /// <summary>
     /// Return Param reference based on passed value.
     /// </summary>
-    private (string, Param.Row, string) ResolveParamRef(ParamBank bank, string paramRef, dynamic oldval)
+    private (string, Param.Row, string) ResolveParamRef(ParamEditorScreen editor, ParamBank bank, string paramRef, dynamic oldval)
     {
         (string, Param.Row, string) row = new();
         if (bank.Params == null)
@@ -879,7 +880,8 @@ public class EmevdPropertyDecorator
             var altval = originalValue;
 
             Param param = bank.Params[paramRef];
-            ParamMetaData meta = ParamMetaData.Get(bank.Params[paramRef].AppliedParamdef);
+
+            var meta = editor.Project.ParamData.GetParamMeta(bank.Params[paramRef].AppliedParamdef);
             if (meta != null && meta.Row0Dummy && altval == 0)
             {
                 return row;

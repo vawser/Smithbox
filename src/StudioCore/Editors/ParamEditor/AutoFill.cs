@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using System;
@@ -178,19 +180,7 @@ internal class AutoFillSearchEngine<A, B>
 internal class AutoFill
 {
     // Type hell. Can't omit the type.
-    private static readonly AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
-        autoFillParse = new("parse", ParamAndRowSearchEngine.parse);
-
     private static readonly AutoFillSearchEngine<bool, string> autoFillVse = new("vse", VarSearchEngine.vse);
-
-    private static readonly AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse =
-        new("pse", ParamSearchEngine.pse);
-
-    private static readonly AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse =
-        new("rse", RowSearchEngine.rse);
-
-    private static readonly AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse =
-        new("cse", CellSearchEngine.cse);
 
     private static string[] _autoFillArgsGop = Enumerable
         .Repeat("", MEGlobalOperation.globalOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
@@ -209,12 +199,15 @@ internal class AutoFill
     internal static Vector4 HINTCOLOUR = new(0.3f, 0.5f, 1.0f, 1.0f);
     internal static Vector4 PREVIEWCOLOUR = new(0.65f, 0.75f, 0.65f, 1.0f);
 
-    public static string ParamSearchBarAutoFill()
+    public static string ParamSearchBarAutoFill(ParamEditorScreen editor)
     {
         ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select params...");
+
+            AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse = new("pse", ParamSearchEngine.Create(editor));
+
             var result = autoFillPse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -223,11 +216,13 @@ internal class AutoFill
         return null;
     }
 
-    public static string RowSearchBarAutoFill()
+    public static string RowSearchBarAutoFill(ParamEditorScreen editor)
     {
         ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
+            AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse = new("rse", RowSearchEngine.Create(editor));
+
             ImGui.TextColored(HINTCOLOUR, "Select rows...");
             var result = autoFillRse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
@@ -237,12 +232,15 @@ internal class AutoFill
         return null;
     }
 
-    public static string ColumnSearchBarAutoFill()
+    public static string ColumnSearchBarAutoFill(ParamEditorScreen editor)
     {
         ImGui.Button($@"{Icons.CaretDown}");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select fields...");
+
+            AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
+
             var result = autoFillCse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -251,7 +249,7 @@ internal class AutoFill
         return null;
     }
 
-    public static string MassEditCompleteAutoFill()
+    public static string MassEditCompleteAutoFill(ParamEditorScreen editor)
     {
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
@@ -260,12 +258,19 @@ internal class AutoFill
         {
             ImGui.PushID("paramrow");
             ImGui.TextColored(HINTCOLOUR, "Select param and rows...");
+
+            AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse = new("rse", RowSearchEngine.Create(editor));
+            AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
+        autoFillParse = new("parse", ParamAndRowSearchEngine.Create(editor));
+
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
                 {
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
+
+                AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
 
                 ImGui.TextColored(HINTCOLOUR, "Select fields...");
                 var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand, inheritedCommand2 =>
@@ -292,6 +297,9 @@ internal class AutoFill
             ImGui.Separator();
             ImGui.PushID("param");
             ImGui.TextColored(HINTCOLOUR, "Select params...");
+
+            AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse = new("pse", ParamSearchEngine.Create(editor));
+
             var result2 = autoFillPse.Menu(true, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -308,6 +316,10 @@ internal class AutoFill
                     }
 
                     ImGui.TextColored(HINTCOLOUR, "Select fields...");
+
+
+                    AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
+
                     var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand2, inheritedCommand3 =>
                     {
                         if (inheritedCommand3 != null)

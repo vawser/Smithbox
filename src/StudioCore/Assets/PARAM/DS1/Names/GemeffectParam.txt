@@ -1,5 +1,0 @@
-0 Nothing is absorbed. -- なにもおこらない
-1 Increased attack power -- 攻撃力アップ
-2 Defense up -- 防御力アップ
-3 HP Regen -- HPリジェネ
-4 Max HP up -- マックスHPアップ

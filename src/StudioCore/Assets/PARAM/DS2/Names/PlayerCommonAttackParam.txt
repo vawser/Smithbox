@@ -1,3 +1,0 @@
-2 A great attack -- 大攻撃
-3 Medium Attack -- 中攻撃
-4 Small attack -- 小攻撃

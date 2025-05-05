@@ -40,6 +40,25 @@ public class CFG
     ///------------------------------------------------------------
     /// Param Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the project Meta files are used instead of the primary Meta files.
+    /// </summary>
+    public bool UseProjectMeta = false;
+
+    /// <summary>
+    /// If true, then loose params are prioitized over packed params (for games where it is relevant)
+    /// </summary>
+    public bool UseLooseParams = false;
+
+    /// <summary>
+    /// If true, then loose params are repacked into the enc_regulation for DS2 projects.
+    /// </summary>
+    public bool RepackLooseDS2Params = false;
+
+    /// <summary>
+    /// If true, then row name restore will use index matching. If false, it will use ID matching.
+    /// </summary>
+    public bool UseIndexMatchForRowNameRestore = true;
 
     /// <summary>
     /// The delimiter character to use when exporting param data.

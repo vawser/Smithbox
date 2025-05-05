@@ -1,0 +1,65 @@
+{
+  "Categories": [
+    {
+      "ForceTop": true,
+      "DisplayName": "Common",
+      "Params": [
+        "AtkParam_Npc",
+        "AtkParam_Pc",
+        "AttackElementCorrectParam",
+        "BehaviorParam",
+        "BehaviorParam_PC",
+        "BonfireWarpParam",
+        "Bullet",
+        "BulletCreateLimitParam",
+        "CharaInitParam",
+        "CalcCorrectGraph",
+        "EquipMtrlSetParam",
+        "EquipParamAccessory",
+        "EquipParamGoods",
+        "EquipParamProtector",
+        "EquipParamWeapon",
+        "GameAreaParam",
+        "ItemLotParam",
+        "LockCamParam",
+        "Magic",
+        "NpcParam",
+        "NpcThinkParam",
+        "ReinforceParamProtector",
+        "ReinforceParamWeapon",
+        "ShopLineupParam",
+        "SpEffectParam",
+        "SpEffectVfxParam",
+        "SwordArtsParam"
+      ]
+    },
+    {
+      "DisplayName": "Configuration",
+      "Params": [
+        "LoadBalancerDrawDistScaleParam",
+        "LoadBalancerParam",
+        "LodParam",
+        "LodParam_ps4",
+        "LodParam_xb1",
+        "NetworkAreaParam",
+        "NetworkMsgParam",
+        "NetworkParam",
+        "PlayRegionParam",
+        "CoolTimeParam",
+        "WhiteSignCoolTimeParam"
+      ]
+    },
+    {
+      "DisplayName": "Development Remnants",
+      "Params": [
+        "GemCategoryParam",
+        "GemDropDopingParam",
+        "GemDropModifyParam",
+        "GemeffectParam",
+        "GemGenParam",
+        "ProtectorGenParam",
+        "WeaponGenParam"
+      ]
+    }
+  ]
+}

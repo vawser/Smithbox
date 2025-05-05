@@ -66,6 +66,20 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(SpawnStateResource))]
 [JsonSerializable(typeof(SpawnStateEntry))]
 [JsonSerializable(typeof(SpawnStatePair))]
+
+// Param Type Info
+[JsonSerializable(typeof(ParamTypeInfo))]
+
+// Row Names
+[JsonSerializable(typeof(RowNameStore))]
+[JsonSerializable(typeof(RowNameParam))]
+[JsonSerializable(typeof(RowNameEntry))]
+
+// Param Upgrader Instructions
+[JsonSerializable(typeof(ParamUpgraderInfo))]
+[JsonSerializable(typeof(OldRegulationEntry))]
+[JsonSerializable(typeof(UpgraderMassEditEntry))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

@@ -14,12 +14,14 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.ParamEditor.ParamBank;
 using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
@@ -47,27 +49,6 @@ public class ParamEditorScreen : EditorScreen
     public readonly List<ProjectType> ParamUpgrade_SupportedGames = new() { ProjectType.ER, ProjectType.AC6 };
 
     public ParamEditorView _activeView;
-
-    private string[] _autoFillArgsCop = Enumerable
-        .Repeat("", MEValueOperation.valueOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsCse =
-        Enumerable.Repeat("", CellSearchEngine.cse.AllCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsOa =
-        Enumerable.Repeat("", MEOperationArgument.arg.AllArguments().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsParse = Enumerable
-        .Repeat("", ParamAndRowSearchEngine.parse.AllCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsPse =
-        Enumerable.Repeat("", ParamSearchEngine.pse.AllCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsRop = Enumerable
-        .Repeat("", MERowOperation.rowOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private string[] _autoFillArgsRse =
-        Enumerable.Repeat("", RowSearchEngine.rse.AllCommands().Sum(x => x.Item2.Length)).ToArray();
 
     // Clipboard vars
     private long _clipboardBaseRow;
@@ -155,9 +136,6 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_PARAM)
-            return;
-
         var scale = DPI.GetUIScale();
 
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
@@ -188,7 +166,7 @@ public class ParamEditorScreen : EditorScreen
                 Project.ParamData.PrimaryBank.ClipboardParam = _activeView._selection.GetActiveParam();
 
                 foreach (Param.Row row in UICache.GetCached(this, (_activeView._viewIndex, _activeView._selection.GetActiveParam()),
-                    () => RowSearchEngine.rse.Search((Project.ParamData.PrimaryBank, Project.ParamData.PrimaryBank.Params[_activeView._selection.GetActiveParam()]),
+                    () => RowSearchEngine.Create(this).Search((Project.ParamData.PrimaryBank, Project.ParamData.PrimaryBank.Params[_activeView._selection.GetActiveParam()]),
                     _activeView._selection.GetCurrentRowSearchString(), true, true)))
                 {
                     _activeView._selection.AddRowToSelection(row);
@@ -395,6 +373,23 @@ public class ParamEditorScreen : EditorScreen
             }
         }
 
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            GameMenu();
+            NamesMenu();
+            DataMenu();
+            ComparisonMenu();
+            OverviewMenu();
+            ToolMenu();
+
+            ParamUpgradeDisplay();
+
+            ImGui.EndMenuBar();
+        }
+
         ShortcutPopups();
         MassEditPopups();
         StatisticPopups();
@@ -491,8 +486,25 @@ public class ParamEditorScreen : EditorScreen
             ImGui.PopStyleVar();
         }
     }
+    public void FileMenu()
+    {
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
 
-    public void EditDropdown()
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
     {
         if (!CFG.Current.EnableEditor_PARAM)
             return;
@@ -577,15 +589,10 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_PARAM)
-            return;
-
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Editor"))
@@ -688,19 +695,10 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
-    public void EditorUniqueDropdowns()
+    public void DataMenu()
     {
-        if (!CFG.Current.EnableEditor_PARAM)
-            return;
-
-        ToolSubMenu.DisplayMenu();
-
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Data"))
         {
             if (ImGui.BeginMenu("Export CSV", _activeView._selection.ActiveParamExists()))
@@ -907,37 +905,10 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+    }
 
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Overviews"))
-        {
-            if (ImGui.MenuItem("New Overview"))
-            {
-                AddView();
-            }
-
-            if (ImGui.MenuItem("Close Overview"))
-            {
-                if (CountViews() > 1)
-                {
-                    RemoveView(_activeView);
-                }
-            }
-
-            /*
-            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowLeft}");
-            if (ImGui.MenuItem("Go back...", KeyBindings.Current.Param_GotoBack.HintText, false, _activeView._selection.HasHistory()))
-            {
-                EditorCommandQueue.AddCommand(@"param/back");
-            }
-            */
-
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
+    public void ComparisonMenu()
+    {
         if (ImGui.BeginMenu("Comparison"))
         {
             if (ImGui.MenuItem("View comparison report"))
@@ -975,66 +946,21 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.MenuItem("Load params for comparison..."))
+            if (ImGui.MenuItem("Select project for param comparison"))
             {
-                string[] allParamTypes =
+                // Display compatible projects
+                foreach (var proj in Project.BaseEditor.ProjectManager.Projects)
                 {
-                    FilterStrings.RegulationBinFilter, FilterStrings.Data0Filter, FilterStrings.ParamBndDcxFilter,
-                    FilterStrings.ParamBndFilter, FilterStrings.EncRegulationFilter
-                };
+                    if (proj == null)
+                        continue;
 
-                try
-                {
-                    if (Project.ProjectType != ProjectType.DS2S && Project.ProjectType != ProjectType.DS2)
+                    if (proj.ProjectType == Project.ProjectType)
                     {
-                        if (PlatformUtils.Instance.OpenFileDialog("Select file containing params", allParamTypes, out var path))
+                        if (ImGui.Selectable($"{proj.ProjectName}"))
                         {
-                            Project.ParamData.SetupAuxBank(path, Project.DataPath);
+                            Project.ParamData.SetupAuxBank(proj);
                         }
                     }
-                    else
-                    {
-                        // NativeFileDialog doesn't show the title currently, so manual dialogs are required for now.
-                        PlatformUtils.Instance.MessageBox(
-                            "To compare DS2 params, select the file locations of alternative params, including\n" +
-                            "the loose params folder, the non-loose parambnd or regulation, and the loose enemy param.\n\n" +
-                            "First, select the loose params folder.",
-                            "Select loose params",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        if (PlatformUtils.Instance.OpenFolderDialog("Select folder for looseparams", out var folder))
-                        {
-                            PlatformUtils.Instance.MessageBox(
-                                "Second, select the non-loose parambnd or regulation",
-                                "Select regulation",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            if (PlatformUtils.Instance.OpenFileDialog(
-                                    "Select file containing remaining, non-loose params", allParamTypes,
-                                    out var fpath))
-                            {
-                                PlatformUtils.Instance.MessageBox(
-                                    "Finally, select the file containing enemyparam",
-                                    "Select enemyparam",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-                                if (PlatformUtils.Instance.OpenFileDialog(
-                                        "Select file containing enemyparam",
-                                        new[] { FilterStrings.ParamLooseFilter }, out var enemyPath))
-                                {
-                                    Project.ParamData.SetupAuxBank(fpath, Project.DataPath);
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    PlatformUtils.Instance.MessageBox(
-                        @"Unable to load regulation.\n" + e.Message,
-                        "Loading error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
                 }
             }
 
@@ -1057,15 +983,256 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+    }
 
-        ParamUpgradeDisplay();
+    public void OverviewMenu()
+    {
+        if (ImGui.BeginMenu("Overview"))
+        {
+            if (ImGui.MenuItem("New Overview"))
+            {
+                AddView();
+            }
+
+            if (ImGui.MenuItem("Close Overview"))
+            {
+                if (CountViews() > 1)
+                {
+                    RemoveView(_activeView);
+                }
+            }
+
+            /*
+            ImguiUtils.ShowMenuIcon($"{ForkAwesome.ArrowLeft}");
+            if (ImGui.MenuItem("Go back...", KeyBindings.Current.Param_GotoBack.HintText, false, _activeView._selection.HasHistory()))
+            {
+                EditorCommandQueue.AddCommand(@"param/back");
+            }
+            */
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void NamesMenu()
+    {
+        if (ImGui.BeginMenu("Names"))
+        {
+            if (ImGui.BeginMenu("Import"))
+            {
+                if (ImGui.BeginMenu("Community Names"))
+                {
+                    if (ImGui.MenuItem($"By Index"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                    }
+                    UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
+
+                    if (ImGui.MenuItem($"By ID"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                    }
+                    UIHelper.Tooltip("This will import the developer names, matching via row ID.");
+
+                    ImGui.EndMenu();
+                }
+
+                // Only these projects have Developer Names
+                if (Project.ProjectType is ProjectType.AC6 or ProjectType.BB)
+                {
+                    if (ImGui.BeginMenu("Developer Names"))
+                    {
+                        if (ImGui.MenuItem($"By Index"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Developer);
+                        }
+                        UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
+
+                        if (ImGui.MenuItem($"By ID"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Developer);
+                        }
+                        UIHelper.Tooltip("This will import the developer names, matching via row ID.");
+
+                        ImGui.EndMenu();
+                    }
+                }
+
+                if (ImGui.BeginMenu("From File"))
+                {
+                    if (ImGui.MenuItem($"By Index"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.External, filePath);
+                        }
+                    }
+                    UIHelper.Tooltip("This will import the external names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
+
+                    if (ImGui.MenuItem($"By ID"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath);
+                        }
+                    }
+                    UIHelper.Tooltip("This will import the external names, matching via row ID.");
+
+                    ImGui.EndMenu();
+                }
+
+                ImGui.EndMenu();
+            }
+
+            if (ImGui.BeginMenu("Export"))
+            {
+                if (ImGui.BeginMenu("JSON"))
+                {
+                    if (ImGui.MenuItem("All"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath);
+                        }
+                    }
+                    UIHelper.Tooltip("Export the row names for your project to the selected folder.");
+
+
+                    if (ImGui.MenuItem("Selected Param"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath, _activeView._selection.GetActiveParam());
+                        }
+                    }
+                    UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
+
+                    ImGui.EndMenu();
+                }
+                UIHelper.Tooltip("Export file will use the JSON storage format.");
+
+                if (ImGui.BeginMenu("Text"))
+                {
+                    if (ImGui.MenuItem("All"))
+                    {
+
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath);
+                        }
+                    }
+                    UIHelper.Tooltip("Export the row names for your project to the selected folder.");
+
+
+                    if (ImGui.MenuItem("Selected Param"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath, _activeView._selection.GetActiveParam());
+                        }
+
+                    }
+                    UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
+
+                    ImGui.EndMenu();
+                }
+                UIHelper.Tooltip("Export file will use the Text storage format. This format cannot be imported back in.");
+
+                ImGui.EndMenu();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void GameMenu()
+    {
+        if (ImGui.BeginMenu("Game"))
+        {
+            // Param Reloader
+            if (ParamReloader.GameIsSupported(Project.ProjectType))
+            {
+                if (ImGui.BeginMenu("Param Reloader"))
+                {
+                    if (ImGui.MenuItem("Current Param"))
+                    {
+                        ParamReloader.ReloadCurrentParam(this);
+                    }
+                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+
+                    if (ImGui.MenuItem("All Params"))
+                    {
+                        ParamReloader.ReloadAllParams(this);
+                    }
+                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            // Item Gib
+            if (Project.ProjectType == ProjectType.DS3)
+            {
+                if (ImGui.BeginMenu("Item Gib"))
+                {
+                    var activeParam = _activeView._selection.GetActiveParam();
+
+                    if (activeParam == "EquipParamGoods")
+                    {
+                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamReloader.SpawnedItemAmount);
+                    }
+                    if (activeParam == "EquipParamWeapon")
+                    {
+                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamReloader.SpawnWeaponLevel);
+
+                        if (ParamReloader.SpawnWeaponLevel > 10)
+                        {
+                            ParamReloader.SpawnWeaponLevel = 10;
+                        }
+                    }
+
+                    if (ImGui.MenuItem("Give Selected Item"))
+                    {
+                        ParamReloader.GiveItem(this);
+                    }
+                    UIHelper.Tooltip("Spawns selected item in-game.");
+
+                    ImGui.EndMenu();
+                }
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void ToolMenu()
+    {
+        ToolSubMenu.DisplayMenu();
     }
 
     public void Save()
     {
         try
         {
-            Project.ParamData.PrimaryBank.SaveParams();
+            Project.ParamData.PrimaryBank.Save();
             TaskLogs.AddLog("Params saved.");
         }
         catch (SavingFailedException e)
@@ -1084,7 +1251,7 @@ public class ParamEditorScreen : EditorScreen
     {
         try
         {
-            Project.ParamData.PrimaryBank.SaveParams();
+            Project.ParamData.PrimaryBank.Save();
             TaskLogs.AddLog("Params saved.");
         }
         catch (SavingFailedException e)
@@ -1707,7 +1874,7 @@ public class ParamEditorScreen : EditorScreen
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
             ImGui.TextUnformatted("Remember to handle clipboard state between edits with the 'clear' command");
 
-            var result = AutoFill.MassEditCompleteAutoFill();
+            var result = AutoFill.MassEditCompleteAutoFill(this);
             if (result != null)
             {
                 if (string.IsNullOrWhiteSpace(_currentMEditRegexInput))

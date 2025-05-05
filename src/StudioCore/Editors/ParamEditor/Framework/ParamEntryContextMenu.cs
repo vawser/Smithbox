@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tools.Generation;
@@ -56,21 +57,6 @@ public static class ParamEntryContextMenu
                     }
                 }
                 UIHelper.Tooltip($"Unpin the current param selection from the top of the param list.");
-            }
-
-            if (editor.EditorMode && param != null)
-            {
-                var meta = ParamMetaData.Get(param.AppliedParamdef);
-
-                if (meta != null && meta.Wiki == null && ImGui.MenuItem("Add wiki..."))
-                {
-                    meta.Wiki = "Empty wiki...";
-                }
-
-                if (meta?.Wiki != null && ImGui.MenuItem("Remove wiki"))
-                {
-                    meta.Wiki = null;
-                }
             }
 
             if (CFG.Current.EnableWikiTools)

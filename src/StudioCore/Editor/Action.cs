@@ -1,5 +1,7 @@
 ﻿using Andre.Formats;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -175,12 +177,14 @@ public class AddParamsAction : EditorAction
         {
             var newrow = new Param.Row(row);
 
+            var paramMeta = Editor.Project.ParamData.GetParamMeta(row.Def);
+
             // Only apply for Duplicate action
-            if(IsDuplicate)
+            if (IsDuplicate)
             {
                 foreach (var cell in newrow.Cells)
                 {
-                    var meta = FieldMetaData.Get(cell.Def);
+                    var meta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, cell.Def);
                     var adjust = false;
 
                     if (meta.DeepCopyTargetType != null)
