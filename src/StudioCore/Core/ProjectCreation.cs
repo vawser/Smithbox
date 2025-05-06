@@ -1,9 +1,11 @@
 ﻿using Hexa.NET.ImGui;
+using HKLib.hk2018.hk.RPC;
 using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 
@@ -19,6 +21,31 @@ public static class ProjectCreation
     public static string DataPath = "";
     public static ProjectType ProjectType = ProjectType.Undefined;
 
+    // These are the automatic Data directory assignments (if they exist on the user's machine)
+    private static string SteamExecutable_DS1 = "";
+    private static string SteamExecutable_DS1R = "";
+    private static string SteamExecutable_DS2 = "";
+    private static string SteamExecutable_DS2S = "";
+    private static string SteamExecutable_DS3 = "";
+    private static string SteamExecutable_SDT = "";
+    private static string SteamExecutable_ER = "";
+    private static string SteamExecutable_AC6 = "";
+
+    // Used so the project type combo box has a specific order
+    private static List<ProjectType> ProjectTypeOrder = new()
+    {
+        ProjectType.DES,
+        ProjectType.DS1,
+        ProjectType.DS1R,
+        ProjectType.DS2,
+        ProjectType.DS2S,
+        ProjectType.BB,
+        ProjectType.DS3,
+        ProjectType.SDT,
+        ProjectType.ER,
+        ProjectType.AC6,
+    };
+
     public static void Reset()
     {
         ProjectName = "";
@@ -29,6 +56,15 @@ public static class ProjectCreation
 
     public static void Show()
     {
+        SteamExecutable_DS1 = SteamGameLocator.FindGameExecutable(211420, "DATA\\DARKSOULS.exe");
+        SteamExecutable_DS1R = SteamGameLocator.FindGameExecutable(570940, "DarkSoulsRemastered.exe");
+        SteamExecutable_DS2 = SteamGameLocator.FindGameExecutable(236430, "Game\\DarkSoulsII.exe");
+        SteamExecutable_DS2S = SteamGameLocator.FindGameExecutable(335300, "Game\\DarkSoulsII.exe");
+        SteamExecutable_DS3 = SteamGameLocator.FindGameExecutable(374320, "Game\\DarkSoulsIII.exe");
+        SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
+        SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
+        SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
+
         Display = true;
     }
 
@@ -71,6 +107,69 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(2);
 
+                    // Project Type
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Project Type");
+                    UIHelper.Tooltip("The game this project is targeting.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.SetNextItemWidth(inputWidth);
+                    if (ImGui.BeginCombo("##projectTypePicker", ProjectType.GetDisplayName()))
+                    {
+                        // Make the combo-box dropdown bigger so there is no need to scroll
+                        ImGui.SetNextWindowSize(new System.Numerics.Vector2(600, 600));
+
+                        foreach (var entry in ProjectTypeOrder)
+                        {
+                            var type = (ProjectType)entry;
+
+                            if (ImGui.Selectable(type.GetDisplayName()))
+                            {
+                                ProjectType = type;
+
+                                if(ProjectType is ProjectType.DS1 && SteamExecutable_DS1 != "" && SteamExecutable_DS1 != null)
+                                {
+                                    DataPath = SteamExecutable_DS1;
+                                }
+                                if (ProjectType is ProjectType.DS1R && SteamExecutable_DS1R != "" && SteamExecutable_DS1R != null)
+                                {
+                                    DataPath = SteamExecutable_DS1R;
+                                }
+                                if (ProjectType is ProjectType.DS2 && SteamExecutable_DS2 != "" && SteamExecutable_DS2 != null)
+                                {
+                                    DataPath = SteamExecutable_DS2;
+                                }
+                                if (ProjectType is ProjectType.DS2S && SteamExecutable_DS2S != "" && SteamExecutable_DS2S != null)
+                                {
+                                    DataPath = SteamExecutable_DS2S;
+                                }
+                                if (ProjectType is ProjectType.DS3 && SteamExecutable_DS3 != "" && SteamExecutable_DS3 != null)
+                                {
+                                    DataPath = SteamExecutable_DS3;
+                                }
+                                if (ProjectType is ProjectType.SDT && SteamExecutable_SDT != "" && SteamExecutable_SDT != null)
+                                {
+                                    DataPath = SteamExecutable_SDT;
+                                }
+                                if (ProjectType is ProjectType.ER && SteamExecutable_ER != "" && SteamExecutable_ER != null)
+                                {
+                                    DataPath = SteamExecutable_ER;
+                                }
+                                if (ProjectType is ProjectType.AC6 && SteamExecutable_AC6 != "" && SteamExecutable_AC6 != null)
+                                {
+                                    DataPath = SteamExecutable_AC6;
+                                }
+                            }
+                        }
+                        ImGui.EndCombo();
+                    }
+
+                    ImGui.TableSetColumnIndex(2);
+
                     // Project Path
                     ImGui.TableNextRow();
                     ImGui.TableSetColumnIndex(0);
@@ -88,12 +187,25 @@ public static class ProjectCreation
 
                     if (ImGui.Button("Select##projectPathSelect"))
                     {
-                        var newProjectPath = "";
-                        var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
-
-                        if(result)
+                        if (CFG.Current.DefaultModDirectory != "")
                         {
-                            ProjectPath = newProjectPath;
+                            var newProjectPath = "";
+                            var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath, CFG.Current.DefaultModDirectory);
+
+                            if (result)
+                            {
+                                ProjectPath = newProjectPath;
+                            }
+                        }
+                        else
+                        {
+                            var newProjectPath = "";
+                            var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
+
+                            if (result)
+                            {
+                                ProjectPath = newProjectPath;
+                            }
                         }
                     }
 
@@ -114,41 +226,27 @@ public static class ProjectCreation
 
                     if (ImGui.Button("Select##dataPathSelect"))
                     {
-                        var newDataPath = "";
-                        var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath);
-
-                        if (result)
+                        if (CFG.Current.DefaultDataDirectory != "")
                         {
-                            DataPath = newDataPath;
-                        }
-                    }
+                            var newDataPath = "";
+                            var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath, CFG.Current.DefaultDataDirectory);
 
-                    // Project Type
-                    ImGui.TableNextRow();
-                    ImGui.TableSetColumnIndex(0);
-
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text("Project Type");
-                    UIHelper.Tooltip("The game this project is targeting.");
-
-                    ImGui.TableSetColumnIndex(1);
-
-                    ImGui.SetNextItemWidth(inputWidth);
-                    if (ImGui.BeginCombo("##projectTypePicker", ProjectType.GetDisplayName()))
-                    {
-                        foreach (var entry in Enum.GetValues<ProjectType>())
-                        {
-                            var type = (ProjectType)entry;
-
-                            if (ImGui.Selectable(type.GetDisplayName()))
+                            if (result)
                             {
-                                ProjectType = type;
+                                DataPath = newDataPath;
                             }
                         }
-                        ImGui.EndCombo();
-                    }
+                        else
+                        {
+                            var newDataPath = "";
+                            var result = PlatformUtils.Instance.OpenFolderDialog("Select Game Directory", out newDataPath);
 
-                    ImGui.TableSetColumnIndex(2);
+                            if (result)
+                            {
+                                DataPath = newDataPath;
+                            }
+                        }
+                    }
 
                     ImGui.EndTable();
 
@@ -214,6 +312,9 @@ public static class ProjectCreation
         if (ProjectName == "")
             isAllowed = false;
 
+        if (ProjectType is ProjectType.Undefined)
+            isAllowed = false;
+
         return isAllowed;
     }
 
@@ -229,6 +330,9 @@ public static class ProjectCreation
 
         if (!Directory.Exists(DataPath))
             tooltip = tooltip + "\n" + "Data Path is set to an invalid path.";
+
+        if (ProjectType is ProjectType.Undefined)
+            tooltip = tooltip + "\n" + "Project type cannot be undefined.";
 
         return tooltip;
     }

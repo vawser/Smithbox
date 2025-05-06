@@ -136,7 +136,7 @@ public class TimeActEditorScreen : EditorScreen
             EventPropertyView.Display();
         }
 
-        if (CFG.Current.Interface_TimeActEditor_ToolConfiguration)
+        if (CFG.Current.Interface_TimeActEditor_ToolWindow)
         {
             ToolView.OnGui();
         }
@@ -261,9 +261,9 @@ public class TimeActEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_TimeActEditor_ToolConfiguration = !CFG.Current.Interface_TimeActEditor_ToolConfiguration;
+                CFG.Current.Interface_TimeActEditor_ToolWindow = !CFG.Current.Interface_TimeActEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_ToolWindow);
 
             ImGui.EndMenu();
         }

@@ -136,7 +136,7 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             TexturePropertyView.Display();
         }
 
-        if (CFG.Current.Interface_TextureViewer_ToolConfiguration)
+        if (CFG.Current.Interface_TextureViewer_ToolWindow)
         {
             ToolWindow.Display();
         }
@@ -237,9 +237,9 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                CFG.Current.Interface_TextureViewer_ToolConfiguration = !CFG.Current.Interface_TextureViewer_ToolConfiguration;
+                CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
 
             if (ImGui.MenuItem("Resource List"))
             {

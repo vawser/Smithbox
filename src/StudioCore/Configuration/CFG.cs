@@ -25,6 +25,19 @@ public class CFG
     public bool EnableWikiTools = false;
 
     ///------------------------------------------------------------
+    /// Project
+    ///------------------------------------------------------------
+    /// <summary>
+    /// The default directory to use for selecting a project directory during Project Creation.
+    /// </summary>
+    public string DefaultModDirectory = "";
+
+    /// <summary>
+    /// The default directory to use for selecting a data directory during Project Creation.
+    /// </summary>
+    public string DefaultDataDirectory = "";
+
+    ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
     /// <summary>
@@ -311,23 +324,73 @@ public class CFG
     ///------------------------------------------------------------
     /// Texture Viewer
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the file list window is visible in the Texture Viewer.
+    /// </summary>
     public bool Interface_TextureViewer_Files = true;
+
+    /// <summary>
+    /// If true, the texture list window is visible in the Texture Viewer.
+    /// </summary>
     public bool Interface_TextureViewer_Textures = true;
+
+    /// <summary>
+    /// If true, the texture view window is visible in the Texture Viewer.
+    /// </summary>
     public bool Interface_TextureViewer_Viewer = true;
+
+    /// <summary>
+    /// If true, the texture properties window is visible in the Texture Viewer.
+    /// </summary>
     public bool Interface_TextureViewer_Properties = true;
-    public bool Interface_TextureViewer_ToolConfiguration = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Texture Viewer.
+    /// </summary>
+    public bool Interface_TextureViewer_ToolWindow = true;
+
+    /// <summary>
+    /// If true, the resource list window is visible in the Texture Viewer.
+    /// </summary>
     public bool Interface_TextureViewer_ResourceList = true;
 
     ///------------------------------------------------------------
     /// Time Act Editor
     ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the container file list window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_ContainerFileList = true;
+
+    /// <summary>
+    /// If true, the time act list window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_TimeActList = true;
+
+    /// <summary>
+    /// If true, the animation list window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_AnimationList = true;
+
+    /// <summary>
+    /// If true, the animation properties window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_AnimationProperties = true;
+
+    /// <summary>
+    /// If true, the event list window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_EventList = true;
+
+    /// <summary>
+    /// If true, the event properties window is visible in the Time Act Editor.
+    /// </summary>
     public bool Interface_TimeActEditor_EventProperties = true;
-    public bool Interface_TimeActEditor_ToolConfiguration = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Time Act Editor.
+    /// </summary>
+    public bool Interface_TimeActEditor_ToolWindow = true;
 
     ///------------------------------------------------------------
     /// Material Editor

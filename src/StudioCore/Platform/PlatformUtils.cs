@@ -177,6 +177,13 @@ public abstract unsafe class PlatformUtils
         return dialogResult.IsOk;
     }
 
+    public bool OpenFolderDialog(string title, out string path, string defaultPath)
+    {
+        NativeFileDialogSharp.DialogResult dialogResult = Dialog.FolderPicker(defaultPath);
+        path = dialogResult.Path;
+        return dialogResult.IsOk;
+    }
+
     private static string CombineNdlFilters(IReadOnlyList<string> filters, bool dropdown)
     {
         // Join with , for simultaneous selection and join with ; for dropdown alternatives.

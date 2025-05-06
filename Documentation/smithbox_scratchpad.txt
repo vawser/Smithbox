@@ -5,4 +5,5 @@ Legacy issue, but more obvious now you can swap projects quickly
  
 - Visibility icon is displayed with a bad visual offset (compared to old version)
 
-
+- Param Editor: fix the Merge Param data target selection -- display list of compatible projects to merge in
+- Param Editor: fix the Aux Comparison column selection -- display list of compatible projects to draw from

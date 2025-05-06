@@ -77,6 +77,45 @@ public class SystemTab
 
         }
 
+        if (ImGui.CollapsingHeader("Project Creation"))
+        {
+            var inputWidth = 400.0f;
+
+            if (ImGui.Button("Select##projectDirSelect"))
+            {
+                var newProjectPath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
+
+                if (result)
+                {
+                    CFG.Current.DefaultModDirectory = newProjectPath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.InputText("Default Project Directory", ref CFG.Current.DefaultModDirectory, 255);
+            UIHelper.Tooltip("The default directory to use during the project directory selection when creating a new project.");
+
+            if (ImGui.Button("Select##ProjectDataDirSelect"))
+            {
+                var newDataPath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Data Directory", out newDataPath);
+
+                if (result)
+                {
+                    CFG.Current.DefaultDataDirectory = newDataPath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
+            UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
+        }
+
         if (ImGui.CollapsingHeader("Editors"))
         {
             UIHelper.WrappedText("Determine which editors are enabled." +
