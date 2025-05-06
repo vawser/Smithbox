@@ -17,8 +17,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Configuration.Settings;
 
@@ -43,10 +41,6 @@ public class SystemTab
                 ref CFG.Current.System_Check_Program_Update);
             UIHelper.Tooltip("When enabled Smithbox will automatically check for new versions upon program start.");
 
-            ImGui.Checkbox("Enable Soapstone Server",
-                ref CFG.Current.Enable_Soapstone_Server);
-            UIHelper.Tooltip("Enables the Soapstone Server, allow for cross-data integration with DarkScript.");
-
             ImGui.Separator();
 
             UIHelper.WrappedText("By default, files are read by Smithbox in a strict manner. Data that is present in locations that it should not be will throw an exception.");
@@ -57,6 +51,81 @@ public class SystemTab
             UIHelper.Tooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
             BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+        }
+
+        if (ImGui.CollapsingHeader("Project"))
+        {
+            var inputWidth = 400.0f;
+
+            // Default Project Directory
+            if (ImGui.Button("Select##projectDirSelect"))
+            {
+                var newProjectPath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
+
+                if (result)
+                {
+                    CFG.Current.DefaultModDirectory = newProjectPath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.InputText("Default Project Directory", ref CFG.Current.DefaultModDirectory, 255);
+            UIHelper.Tooltip("The default directory to use during the project directory selection when creating a new project.");
+
+            // Default Data Directory
+            if (ImGui.Button("Select##ProjectDataDirSelect"))
+            {
+                var newDataPath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Data Directory", out newDataPath);
+
+                if (result)
+                {
+                    CFG.Current.DefaultDataDirectory = newDataPath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
+            UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
+
+            // Mod Engine
+            if (ImGui.Button("Select##modEnginePathSelect"))
+            {
+                var modEnginePath = "";
+                var result = PlatformUtils.Instance.OpenFileDialog("Select Data Directory", ["exe"], out modEnginePath);
+
+                if (result)
+                {
+                    if (modEnginePath.Contains("modengine2_launcher.exe"))
+                    {
+                        CFG.Current.ModEngineInstall = modEnginePath;
+                    }
+                    else
+                    {
+                        PlatformUtils.Instance.MessageBox("Error", "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.InputText("ModEngine 2 Executable Location##modEnginePath", ref CFG.Current.ModEngineInstall, 255);
+            UIHelper.Tooltip("Select the modengine2_launcher.exe within your ModEngine2 install folder.");
+
+            ImGui.InputText("DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngineDlls, 255);
+            UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
+        }
+
+        if (ImGui.CollapsingHeader("Tools"))
+        {
+            ImGui.Checkbox("Enable DokuWiki Tools",
+                ref CFG.Current.EnableWikiTools);
+            UIHelper.Tooltip("Enables various functionality changes for DokuWiki outputs.");
         }
 
         if (ImGui.CollapsingHeader("Loggers"))
@@ -75,102 +144,6 @@ public class SystemTab
             ImGui.InputInt("Warning Log Visibility Duration", ref CFG.Current.System_WarningLogger_FadeTime);
             UIHelper.Tooltip("The number of frames for which the warning logger message stays visible in the menu bar.\n-1 means the message never disappears.");
 
-        }
-
-        if (ImGui.CollapsingHeader("Project Creation"))
-        {
-            var inputWidth = 400.0f;
-
-            if (ImGui.Button("Select##projectDirSelect"))
-            {
-                var newProjectPath = "";
-                var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
-
-                if (result)
-                {
-                    CFG.Current.DefaultModDirectory = newProjectPath;
-                }
-            }
-
-            ImGui.SameLine();
-
-            ImGui.SetNextItemWidth(inputWidth);
-            ImGui.InputText("Default Project Directory", ref CFG.Current.DefaultModDirectory, 255);
-            UIHelper.Tooltip("The default directory to use during the project directory selection when creating a new project.");
-
-            if (ImGui.Button("Select##ProjectDataDirSelect"))
-            {
-                var newDataPath = "";
-                var result = PlatformUtils.Instance.OpenFolderDialog("Select Data Directory", out newDataPath);
-
-                if (result)
-                {
-                    CFG.Current.DefaultDataDirectory = newDataPath;
-                }
-            }
-
-            ImGui.SameLine();
-
-            ImGui.SetNextItemWidth(inputWidth);
-            ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
-            UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
-        }
-
-        if (ImGui.CollapsingHeader("Editors"))
-        {
-            UIHelper.WrappedText("Determine which editors are enabled." +
-                "\nIf an editor was disabled at start, it will only appear once Smithbox is restarted if enabled.");
-            ImGui.Checkbox("Enable Map Editor", ref CFG.Current.EnableEditor_MSB);
-            UIHelper.Tooltip("Enables the Map Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Model Editor", ref CFG.Current.EnableEditor_FLVER);
-            UIHelper.Tooltip("Enables the Model Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Param Editor", ref CFG.Current.EnableEditor_PARAM);
-            UIHelper.Tooltip("Enables the Param Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Text Editor", ref CFG.Current.EnableEditor_FMG);
-            UIHelper.Tooltip("Enables the Text Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Gparam Editor", ref CFG.Current.EnableEditor_GPARAM);
-            UIHelper.Tooltip("Enables the Gparam Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Texture Viewer", ref CFG.Current.EnableViewer_TEXTURE);
-            UIHelper.Tooltip("Enables the Texture Viewer in Smithbox.");
-
-            ImGui.Checkbox("Enable Time Act Editor", ref CFG.Current.EnableEditor_TAE);
-            UIHelper.Tooltip("Enables the Time Act Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable Havok Editor", ref CFG.Current.EnableEditor_HAVOK);
-            UIHelper.Tooltip("Enables the Havok Editor in Smithbox.");
-
-            ImGui.Checkbox("Enable EMEVD Editor", ref CFG.Current.EnableEditor_EMEVD);
-            UIHelper.Tooltip("Enables the EMEVD Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
-
-            ImGui.Checkbox("Enable ESD Editor", ref CFG.Current.EnableEditor_ESD);
-            UIHelper.Tooltip("Enables the ESD Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
-
-            ImGui.Checkbox("Enable Cutscene Editor", ref CFG.Current.EnableEditor_MQB_wip);
-            UIHelper.Tooltip("Enables the Cutscene Editor in Smithbox." +
-                "\nWARNING: this editor is a work-in-progress, so is only suited for read-only uses currently.");
-
-            // WIP
-            /*
-            ImGui.Checkbox("Enable Material Editor", ref CFG.Current.EnableMaterialEditor);
-            ImGui.Checkbox("Enable Particle Editor", ref CFG.Current.EnableParticleEditor);
-            */
-        }
-
-        if (ImGui.CollapsingHeader("Meta Tools"))
-        {
-            ImGui.Checkbox("Change Base Aliases", ref CFG.Current.AliasBank_EditorMode);
-            UIHelper.Tooltip("If enabled, editing the name and tags for alias banks will commit the changes to the Smithbox base version instead of the mod-specific version.");
-
-            ImGui.Checkbox("Enable DokuWiki Tools",
-                ref CFG.Current.EnableWikiTools);
-            UIHelper.Tooltip("Enables various functionality changes for DokuWiki outputs.");
         }
     }
 }

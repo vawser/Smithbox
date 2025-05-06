@@ -134,17 +134,11 @@ public class MaterialEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_MTD_wip)
-            return;
-
         // Project.MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_MTD_wip)
-            return;
-
         Project.MaterialBank.SaveMaterials();
     }
 }

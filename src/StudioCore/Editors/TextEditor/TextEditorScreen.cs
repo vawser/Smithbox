@@ -85,9 +85,6 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -291,9 +288,6 @@ public class TextEditorScreen : EditorScreen
     /// </summary>
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_FMG)
-            return;
-
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
             Project.TextData.PrimaryBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);

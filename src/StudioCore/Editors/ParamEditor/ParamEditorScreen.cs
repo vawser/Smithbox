@@ -508,9 +508,6 @@ public class ParamEditorScreen : EditorScreen
 
     public void EditMenu()
     {
-        if (!CFG.Current.EnableEditor_PARAM)
-            return;
-
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo

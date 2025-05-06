@@ -74,9 +74,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -263,17 +260,11 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         // Nothing
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         // Nothing
     }
 

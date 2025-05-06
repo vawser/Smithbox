@@ -254,9 +254,6 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
@@ -275,9 +272,6 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_EMEVD)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 

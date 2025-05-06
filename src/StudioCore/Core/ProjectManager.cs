@@ -4,6 +4,7 @@ using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -74,6 +75,19 @@ public class ProjectManager
                         Process.Start("explorer.exe", SelectedProject.ProjectPath);
                     }
                     UIHelper.Tooltip("Open the project folder for this project.");
+
+
+                    if (CFG.Current.ModEngineInstall != "")
+                    {
+                        if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
+                        {
+                            if (ImGui.MenuItem($"Launch Mod##launchMod"))
+                            {
+                                ModEngineUtils.LaunchMod(SelectedProject);
+                            }
+                            UIHelper.Tooltip("Launch this project with ModEngine2.");
+                        }
+                    }
                 }
 
                 ImGui.EndMenu();
@@ -158,15 +172,18 @@ public class ProjectManager
                     //ProjectAliasEditor.Show(this, SelectedProject);
                 }
 
-                /*
+
                 if (CFG.Current.ModEngineInstall != "")
                 {
-                    if (ImGui.MenuItem($"Launch Mod##launchMod{imGuiID}"))
+                    if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
                     {
-                        ModEngineUtils.LaunchMod(SelectedProject);
+                        if (ImGui.MenuItem($"Launch Mod##launchMod"))
+                        {
+                            ModEngineUtils.LaunchMod(SelectedProject);
+                        }
+                        UIHelper.Tooltip("Launch this project with ModEngine2.");
                     }
                 }
-                */
 
                 ImGui.EndPopup();
             }

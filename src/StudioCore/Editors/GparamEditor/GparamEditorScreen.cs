@@ -246,17 +246,11 @@ public class GparamEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
         Project.GparamBank.SaveGraphicsParam(Selection._selectedGparamInfo);
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
-
         Project.GparamBank.SaveGraphicsParams();
     }
 }

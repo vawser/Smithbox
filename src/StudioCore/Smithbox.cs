@@ -281,7 +281,7 @@ public class Smithbox
     {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-        if (CFG.Current.Enable_Soapstone_Server && _soapstoneService != null)
+        if (_soapstoneService != null)
         {
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",

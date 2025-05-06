@@ -73,9 +73,6 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableEditor_TAE)
-            return;
-
         var scale = DPI.GetUIScale();
 
         // Docking setup

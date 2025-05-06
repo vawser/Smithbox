@@ -590,7 +590,7 @@ public class EditorDecorations
 
         foreach (var texRef in texRefs)
         {
-            if (CFG.Current.EnableViewer_TEXTURE && CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
+            if (CFG.Current.Param_FieldContextMenu_ImagePreview_FieldColumn)
             {
                 var imageDisplayed = textureViewer.ImagePreview.DisplayImagePreview(context, texRef);
 

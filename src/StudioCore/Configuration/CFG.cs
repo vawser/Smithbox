@@ -37,6 +37,16 @@ public class CFG
     /// </summary>
     public string DefaultDataDirectory = "";
 
+    /// <summary>
+    /// The path to the user's Mod Engine 2 exe.
+    /// </summary>
+    public string ModEngineInstall = "";
+
+    /// <summary>
+    /// The dll arguments to use with the Mod Engine 2 launch.
+    /// </summary>
+    public string ModEngineDlls = "";
+
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------
@@ -434,7 +444,6 @@ public class CFG
     //****************************
     // Settings: System
     //****************************
-    public bool Enable_Soapstone_Server = true;
     public bool System_Check_Program_Update = true;
     public float System_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
@@ -453,22 +462,6 @@ public class CFG
 
     public int System_ActionLogger_FadeTime = 1500;
     public int System_WarningLogger_FadeTime = 1500;
-
-    // Editors
-    public bool EnableEditor_MSB = true;
-    public bool EnableEditor_FLVER = true;
-    public bool EnableEditor_PARAM = true;
-    public bool EnableEditor_FMG = true;
-    public bool EnableEditor_GPARAM = true;
-    public bool EnableViewer_TEXTURE = true;
-
-    public bool EnableEditor_TAE = false;
-    public bool EnableEditor_EMEVD = false;
-    public bool EnableEditor_ESD = false;
-    public bool EnableEditor_HAVOK = true;
-
-    public bool EnableEditor_MQB_wip = false;
-    public bool EnableEditor_MTD_wip = false;
 
     //****************************
     // Settings: Viewport Grid

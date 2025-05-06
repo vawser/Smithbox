@@ -229,9 +229,6 @@ public class EsdEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
@@ -240,9 +237,6 @@ public class EsdEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
-
         Project.EsdBank.SaveEsdScripts();
     }
 }

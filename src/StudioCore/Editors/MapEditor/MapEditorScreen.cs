@@ -1063,9 +1063,6 @@ public class MapEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
@@ -1081,9 +1078,6 @@ public class MapEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 

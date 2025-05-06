@@ -200,7 +200,6 @@ public class DebugWindow
                 : "not running";
             ImGui.Text(
                 $"The server is {running}.\nIt is not accessible over the network, only to other programs on this computer.\nPlease restart the program for changes to take effect.");
-            ImGui.Checkbox("Enable cross-editor features", ref CFG.Current.Enable_Soapstone_Server);
         }
     }
     private void DisplayResourceManager()
