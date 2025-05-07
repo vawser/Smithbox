@@ -54,8 +54,6 @@ public class ParamEditorScreen : EditorScreen
     private string _currentMEditRegexInput = "";
     private string _currentMEditSingleCSVField = "";
 
-    internal Dictionary<string, IParamDecorator> _decorators = new();
-
     private IEnumerable<(object, int)> _distributionOutput;
     public bool _isMEditPopupOpen;
     internal bool _isSearchBarActive = false;
@@ -75,6 +73,8 @@ public class ParamEditorScreen : EditorScreen
 
     public bool GotoSelectedRow;
 
+    public DecoratorHandler DecoratorHandler;
+
     public ParamTools ParamTools;
     public MassEditHandler MassEditHandler;
     public PinGroups PinGroupHandler;
@@ -86,8 +86,6 @@ public class ParamEditorScreen : EditorScreen
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
     public ParamUpgrader ParamUpgrader;
-
-    private bool HasSetupFmgDecorators = false;
 
     private ParamEditorShortcuts EditorShortcuts;
 
@@ -105,6 +103,8 @@ public class ParamEditorScreen : EditorScreen
         _views = [new ParamEditorView(this, 0)];
 
         _activeView = _views[0];
+
+        DecoratorHandler = new(this, Project);
 
         ParamTools = new(this, Project);
         FieldNameFinder = new(this);
@@ -126,15 +126,7 @@ public class ParamEditorScreen : EditorScreen
 
         EditorShortcuts.Shortcuts();
 
-        if(Project.TextEditor != null)
-        {
-            if (!HasSetupFmgDecorators)
-            {
-                HasSetupFmgDecorators = true;
-
-                SetupFmgDecorators();
-            }
-        }
+        DecoratorHandler.Initialize();
 
         // Parse commands
         var doFocus = false;
@@ -1005,29 +997,6 @@ public class ParamEditorScreen : EditorScreen
         }
     }
 
-    public void SetupFmgDecorators()
-    {
-        _decorators.Clear();
-        foreach(var entry in Project.ParamData.PrimaryBank.Params)
-        {
-            var paramName = entry.Key;
-            var entries = TextParamUtils.GetFmgEntriesByAssociatedParam(this, paramName);
-
-            if(entries.Count != 0)
-            {
-                _decorators.Add(paramName, new FMGItemParamDecorator(this, paramName));
-            }
-        }
-    }
-
-    public void ClearFmgDecorators()
-    {
-        foreach (KeyValuePair<string, IParamDecorator> dec in _decorators)
-        {
-            dec.Value.ClearDecoratorCache();
-        }
-        HasSetupFmgDecorators = false;
-    }
 
     private IReadOnlyList<Param.Row> CsvExportGetRows(ParamBank.RowGetType rowType)
     {

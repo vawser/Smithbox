@@ -496,12 +496,7 @@ public class ParamEditorView
         }
         else
         {
-            IParamDecorator decorator = null;
-
-            if (Editor._decorators.ContainsKey(activeParam))
-            {
-                decorator = Editor._decorators[activeParam];
-            }
+            var fmgDecorator = Editor.DecoratorHandler.GetFmgRowDecorator(activeParam);
 
             ParamView_RowList_Header(ref doFocus, isActiveView, ref scrollTo, activeParam);
 
@@ -565,7 +560,7 @@ public class ParamEditorView
                         }
 
                         lastCol = ParamView_RowList_Entry(selectionCachePins, i, activeParam, null, row,
-                            vanillaDiffCache, auxDiffCaches, decorator, ref scrollTo, false, true, compareCol,
+                            vanillaDiffCache, auxDiffCaches, fmgDecorator, ref scrollTo, false, true, compareCol,
                             compareColProp, meta);
                     }
 
@@ -623,7 +618,7 @@ public class ParamEditorView
                             }
 
                             ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
                                 meta);
 
                             if (prev != null && next != null && prev.ID + 1 == currentRow.ID &&
@@ -635,7 +630,7 @@ public class ParamEditorView
                         else
                         {
                             ParamView_RowList_Entry(selectionCache, i, activeParam, rows, currentRow, vanillaDiffCache,
-                                auxDiffCaches, decorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
+                                auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, false, compareCol, compareColProp,
                                 meta);
                         }
                     }
@@ -724,7 +719,7 @@ public class ParamEditorView
 
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
-        List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
+        List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
         bool doFocus, bool isPinned, ParamMeta? meta)
     {
         var diffVanilla = vanillaDiffCache.Contains(r.ID);
@@ -844,11 +839,11 @@ public class ParamEditorView
             Editor,
             r, selectionCacheIndex, 
             isPinned, activeParam, 
-            decorator, _selection, Editor);
+            fmgDecorator, _selection, Editor);
 
-        if (decorator != null)
+        if (fmgDecorator != null)
         {
-            decorator.DecorateParam(r);
+            fmgDecorator.DecorateParam(r);
         }
 
         if (doFocus && _selection.GetActiveRow() == r)
@@ -859,7 +854,7 @@ public class ParamEditorView
 
     private bool ParamView_RowList_Entry(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
-        List<(HashSet<int>, HashSet<int>)> auxDiffCaches, IParamDecorator decorator, ref float scrollTo,
+        List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
         bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta? meta)
     {
         var scale = DPI.GetUIScale();
@@ -875,7 +870,7 @@ public class ParamEditorView
         if (ImGui.TableNextColumn())
         {
             ParamView_RowList_Entry_Row(selectionCache, selectionCacheIndex, activeParam, p, r, vanillaDiffCache,
-                auxDiffCaches, decorator, ref scrollTo, doFocus, isPinned, meta);
+                auxDiffCaches, fmgDecorator, ref scrollTo, doFocus, isPinned, meta);
             lastCol = true;
         }
 

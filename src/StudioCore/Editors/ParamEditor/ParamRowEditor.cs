@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
@@ -318,7 +319,7 @@ public class ParamRowEditor
             {
                 if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
                 {
-                    EditorDecorations.DrawCalcCorrectGraph(Editor, meta, row);
+                    FieldDecorators.DrawCalcCorrectGraph(Editor, meta, row);
                 }
             }
 
@@ -557,72 +558,72 @@ public class ParamRowEditor
                 // Param Ref
                 if (displayRefTypes)
                 {
-                    EditorDecorations.ParamRefText(RefTypes, row);
+                    FieldDecorators.ParamReference_Title(RefTypes, row);
                 }
 
                 // Text Ref
                 if (displayFmgRef)
                 {
-                    EditorDecorations.FmgRefText(FmgRef, row);
+                    FieldDecorators.TextReference_Title(FmgRef, row);
                 }
 
                 // Map Text Ref
                 if(displayMapFmgRef)
                 {
-                    EditorDecorations.FmgRefText(MapFmgRef, row, "MAP FMGS");
+                    FieldDecorators.TextReference_Title(MapFmgRef, row, "MAP FMGS");
                 }
 
                 // Texture Ref
                 if (displayTextureRef)
                 {
-                    EditorDecorations.TextureRefText(TextureRef, row);
+                    FieldDecorators.TextureReference_Title(TextureRef, row);
                 }
 
                 if (displayEnum)
                 {
-                    EditorDecorations.EnumNameText(Enum);
+                    FieldDecorators.Enum_Title(Enum);
                 }
 
                 // Particle list
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("PARTICLES");
+                    FieldDecorators.AliasEnum_Title("PARTICLES");
                 }
 
                 // Sound list
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("SOUNDS");
+                    FieldDecorators.AliasEnum_Title("SOUNDS");
                 }
 
                 // Flag list
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumNameText("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Title("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // Cutscene list
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("CUTSCENES");
+                    FieldDecorators.AliasEnum_Title("CUTSCENES");
                 }
 
                 // Movie list
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumNameText("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Title("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // Project Enum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumNameText(Editor, cellMeta.ProjectEnumType);
+                    FieldDecorators.ProjectEnum_Title(Editor, cellMeta.ProjectEnumType);
                 }
 
                 // Param Field Offset
                 if(showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetText(activeParam, row, paramFieldIndex);
+                    FieldDecorators.ParamFieldOffset_Title(activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
@@ -707,83 +708,82 @@ public class ParamRowEditor
                 // ParamRef
                 if (displayRefTypes)
                 {
-                    EditorDecorations.ParamRefsSelectables(Editor, bank, RefTypes, row, oldval);
+                    FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, row, oldval);
                 }
 
                 // FmgRef
                 if (displayFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(Editor, FmgRef, row, oldval);
+                    FieldDecorators.TextReference_Value(Editor, FmgRef, row, oldval);
                 }
 
                 // MapFmgRef
                 if (displayMapFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, row, oldval);
+                    FieldDecorators.TextReference_Value(Editor, MapFmgRef, row, oldval);
                 }
 
                 // TextureRef
                 if (displayTextureRef)
                 {
-                    if (Editor.Project.TextureViewer != null)
-                    {
-                        EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
-                    }
+                    FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
                 }
 
                 // Enum
                 if (displayEnum)
                 {
-                    EditorDecorations.EnumValueText(Enum.Values, oldval.ToString());
+                    FieldDecorators.Enum_Value(Enum.Values, oldval.ToString());
                 }
 
                 // ParticleAlias
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Particles, oldval.ToString());
                 }
 
                 // SoundAlias
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Sounds, oldval.ToString());
                 }
 
                 // FlagAlias
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.EventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // CutsceneAlias
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Cutscenes, oldval.ToString());
                 }
 
                 // MovieAlias
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // ProjectEnum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, oldval.ToString());
+                    FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, oldval.ToString());
                 }
 
                 // Param Field Offset
                 if (showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, row, paramFieldIndex);
+                    FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
 
             }
 
-            EditorDecorations.ParamRefEnumQuickLink(Editor, bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
+            FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
+            FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
+            FieldDecorators.TextureReference_ContextMenu(Editor, bank, oldval, row, TextureRef);
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
@@ -910,7 +910,7 @@ public class ParamRowEditor
         }
 
         // Context Menu Shortcuts
-        if (EditorDecorations.ParamRefEnumShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+        if (FieldDecorators.ParamReference_ShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
         {
             ParamEditorCommon.SetLastPropertyManual(newval);
         }
@@ -978,72 +978,69 @@ public class ParamRowEditor
 
             if (CFG.Current.Param_HideReferenceRows == false && RefTypes != null)
             {
-                EditorDecorations.ParamRefsSelectables(Editor, bank, RefTypes, context, colVal);
+                FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && FmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(Editor, FmgRef, context, colVal);
+                FieldDecorators.TextReference_Value(Editor, FmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && MapFmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, context, colVal);
+                FieldDecorators.TextReference_Value(Editor, MapFmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && TextureRef != null)
             {
-                if (Editor.Project.TextureViewer != null)
-                {
-                    EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
-                }
+                FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
             {
-                EditorDecorations.EnumValueText(Enum.Values, colVal.ToString());
+                FieldDecorators.Enum_Value(Enum.Values, colVal.ToString());
             }
 
             // ParticleAlias
             if (showParticleEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Particles, colVal.ToString());
             }
 
             // SoundAlias
             if (showSoundEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Sounds, colVal.ToString());
             }
 
             // FlagAlias
             if (showFlagEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.EventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
             }
 
             // CutsceneAlias
             if (showCutsceneEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Cutscenes, colVal.ToString());
             }
 
             // MovieAlias
             if (showMovieEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
             }
 
             // ProjectEnum
             if (showProjectEnum)
             {
-                EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, colVal.ToString());
+                FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, colVal.ToString());
             }
 
             // Param Field Offset
             if (showParamFieldOffset)
             {
-                EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, context, paramFieldIndex);
+                FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, context, paramFieldIndex);
             }
         }
     }
@@ -1277,7 +1274,7 @@ public class ParamRowEditor
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Ref_Text);
 
-                if (EditorDecorations.ParamRefEnumContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+                if (FieldDecorators.Decorator_ContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
                 {
                     ParamEditorCommon.SetLastPropertyManual(newval);
                 }
@@ -1292,8 +1289,8 @@ public class ParamRowEditor
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_VirtualRef_Text);
-                EditorDecorations.VirtualParamRefSelectables(Editor, bank, VirtualRef, oldval, row, internalName, ExtRefs,
-                    Editor);
+                FieldDecorators.VirtualParamReference_ContextMenu(Editor, bank, VirtualRef, oldval, row, internalName);
+                FieldDecorators.ExternalReference_ContextMenu(Editor, bank, VirtualRef, oldval, row, internalName, ExtRefs);
                 ImGui.PopStyleColor();
             }
         }

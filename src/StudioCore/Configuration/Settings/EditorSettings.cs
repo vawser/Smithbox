@@ -509,7 +509,7 @@ public class TextEditorTab
                                 // Refresh the param editor FMG decorators when the category changes.
                                 if (curProject.ParamEditor != null)
                                 {
-                                    curProject.ParamEditor.ClearFmgDecorators();
+                                    curProject.ParamEditor.DecoratorHandler.ClearFmgDecorators();
                                 }
                             }
                         }

@@ -71,10 +71,12 @@ public class TextSelectionManager
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
+        var paramEditor = Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor;
+
         // Refresh the param editor FMG decorators when the file changes.
-        if (Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor != null)
+        if (paramEditor != null)
         {
-            Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor.SetupFmgDecorators();
+            paramEditor.DecoratorHandler.SetupFmgDecorators();
         }
 
         // Auto-select first FMG

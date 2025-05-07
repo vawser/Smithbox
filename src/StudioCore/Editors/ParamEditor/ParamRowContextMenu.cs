@@ -20,7 +20,7 @@ public static class ParamRowContextMenu
     /// </summary>
     public static void Display(ParamEditorScreen editor, Param.Row r, int selectionCacheIndex, 
         bool isPinned, string activeParam,
-        IParamDecorator decorator, ParamEditorSelectionState _selection, ParamEditorScreen _paramEditor)
+        FmgRowDecorator fmgDecorator, ParamEditorSelectionState _selection, ParamEditorScreen _paramEditor)
     {
         // Context Menu
         if (ImGui.BeginPopupContextItem($"{r.ID}_{selectionCacheIndex}"))
@@ -202,9 +202,9 @@ public static class ParamRowContextMenu
             }
 
             // Decorator Options (e.g. Go to Text)
-            if (decorator != null)
+            if (fmgDecorator != null)
             {
-                decorator.DecorateContextMenuItems(r);
+                fmgDecorator.DecorateContextMenuItems(r);
             }
 
 
@@ -221,7 +221,7 @@ public static class ParamRowContextMenu
             // Reverse Lookup Options
             if (CFG.Current.Param_RowContextMenu_ReverseLoopup)
             {
-                EditorDecorations.ParamRefReverseLookupSelectables(_paramEditor, editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
+                FieldDecorators.ParamReverseLookup_Value(_paramEditor, editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
             }
 
             ImGui.EndPopup();

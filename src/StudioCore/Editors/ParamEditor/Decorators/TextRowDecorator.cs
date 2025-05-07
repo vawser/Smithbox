@@ -15,20 +15,11 @@ using StudioCore.Configuration;
 
 namespace StudioCore.Editors.ParamEditor.Decorators;
 
+
 /// <summary>
-///     Interface for decorating param rows with additional information (such as english
-///     strings sourced from FMG files)
+/// A param row decorator that displays FMG entry text if the IDs match.
 /// </summary>
-public interface IParamDecorator
-{
-    public void DecorateParam(Param.Row row);
-
-    public void DecorateContextMenuItems(Param.Row row);
-
-    public void ClearDecoratorCache();
-}
-
-public class FMGItemParamDecorator : IParamDecorator
+public class FmgRowDecorator
 {
     private ParamEditorScreen Editor;
 
@@ -37,7 +28,7 @@ public class FMGItemParamDecorator : IParamDecorator
     private string ParamName;
     private string CommandLine;
 
-    public FMGItemParamDecorator(ParamEditorScreen editor, string paramName)
+    public FmgRowDecorator(ParamEditorScreen editor, string paramName)
     {
         Editor = editor;
         ParamName = paramName;
