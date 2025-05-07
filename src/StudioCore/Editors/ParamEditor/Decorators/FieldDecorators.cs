@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Hexa.NET.ImPlot;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -1478,52 +1479,109 @@ public class FieldDecorators
     #endregion
 
     #region Calculation Correction Graph
-    public static void DrawCalcCorrectGraph(EditorScreen screen, ParamMeta meta, Param.Row row)
+    public static unsafe void DrawCalcCorrectGraph(ParamEditorScreen editor, ParamMeta meta, Param.Row row)
     {
         try
         {
             bool draw = true;
 
-            // Prevent draw for any rows that use inheritanceFcsParamId
-            if (row["inheritanceFcsParamId"] != null)
+            var xAxisTitle = "";
+            var yAxisTitle = "";
+
+            if(editor.Project.ParamData.GraphLegends != null)
             {
-                if (row["inheritanceFcsParamId"].Value.Value.ToString() != "-1")
+                var entry = editor.Project.ParamData.GraphLegends.Entries.Where(e => e.RowID == $"{row.ID}").FirstOrDefault();
+                if(entry != null)
                 {
-                    draw = false;
+                    xAxisTitle = entry.X;
+                    yAxisTitle = entry.Y;
                 }
+            }
+
+            // Prevent draw for rows with inheritance
+            if (row["inheritanceFcsParamId"] != null &&
+                row["inheritanceFcsParamId"].Value.Value.ToString() != "-1")
+            {
+                draw = false;
             }
 
             ImGui.Separator();
             ImGui.NewLine();
             ImGui.Indent();
+
             CalcCorrectDefinition ccd = meta.CalcCorrectDef;
             SoulCostDefinition scd = meta.SoulCostDef;
-            float[] values;
-            int xOffset;
-            float minY;
-            float maxY;
+
+            double[] values;
+            int xOffset = 0;
+            double minY = 0;
+            double maxY = 0;
 
             if (draw)
             {
                 if (scd != null && scd.cost_row == row.ID)
                 {
-                    (values, maxY) = UICache.GetCached(screen, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
+                    (values, maxY) = UICache.GetCached(editor, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
 
-                    ImGui.PlotLines("##graph", ref values[0], values.Length, 0, "", 0, maxY, new Vector2(ImGui.GetColumnWidth(-1) - 30.0f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30.0f));
+                    // Create X values: 0..N-1
+                    double[] xValues = Enumerable.Range(0, values.Length).Select(i => (double)i).ToArray();
+
+                    fixed (double* xPtr = xValues)
+                    fixed (double* yPtr = values)
+                    {
+                        if (ImPlot.BeginPlot("Soul Cost Graph", ImGui.GetContentRegionAvail()))
+                        {
+                            ImPlot.SetupAxes("Level", "Cost");
+                            ImPlot.SetupAxisLimits(ImAxis.X1, 0, xValues.Length - 1);
+                            ImPlot.SetupAxisLimits(ImAxis.Y1, 0, maxY);
+
+                            ImPlot.PlotLine("Soul Cost", xPtr, yPtr, values.Length);
+
+                            ImPlot.EndPlot();
+                        }
+                    }
                 }
                 else if (ccd != null)
                 {
-                    (values, xOffset, minY, maxY) = UICache.GetCached(screen, row, "calcCorrectData",
+                    (values, xOffset, minY, maxY) = UICache.GetCached(editor, row, "calcCorrectData",
                         () => ParamUtils.getCalcCorrectedData(ccd, row));
-                    ImGui.PlotLines("##graph", ref values[0], values.Length, 0,
-                        xOffset == 0 ? "" : $@"Note: add {xOffset} to x coordinate", minY, maxY,
-                        new Vector2(ImGui.GetColumnWidth(-1) - 30f, (ImGui.GetColumnWidth(-1) * 0.5625f) - 30f));
+
+                    // Create X values with offset
+                    double[] xValues = Enumerable.Range(0, values.Length).Select(i => (double)(i + xOffset)).ToArray();
+
+                    fixed (double* xPtr = xValues)
+                    fixed (double* yPtr = values)
+                    {
+                        if (ImPlot.BeginPlot("Calc Correct Graph", ImGui.GetContentRegionAvail()))
+                        {
+                            var xAxisName = "X";
+                            var yAxisName = "Y";
+
+                            if(xAxisTitle != "")
+                            {
+                                xAxisName = xAxisTitle;
+                            }
+                            if (yAxisTitle != "")
+                            {
+                                yAxisName = yAxisTitle;
+                            }
+
+                            ImPlot.SetupAxes(xAxisName, yAxisName);
+                            ImPlot.SetupAxisLimits(ImAxis.X1, xValues[0], xValues[^1]);
+                            ImPlot.SetupAxisLimits(ImAxis.Y1, minY, maxY);
+
+                            ImPlot.PlotLine("Correction", xPtr, yPtr, values.Length);
+
+                            ImPlot.EndPlot();
+                        }
+                    }
                 }
             }
         }
         catch (Exception e)
         {
-            ImGui.TextUnformatted("Unable to draw graph");
+            ImGui.TextColored(new Vector4(1, 0, 0, 1), "Unable to draw graph");
+            ImGui.TextUnformatted(e.Message);
         }
 
         ImGui.NewLine();

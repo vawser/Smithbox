@@ -146,3 +146,17 @@ public class UpgraderMassEditEntry
     public string Message { get; set; }
     public string Command { get; set; }
 }
+
+// -------------- Graph Legends --------------
+public class GraphLegends
+{
+    public List<GraphLegendEntry> Entries { get; set; }
+}
+
+public class GraphLegendEntry
+{
+    public string Param { get; set; }
+    public string RowID { get; set; }
+    public string X { get; set; }
+    public string Y { get; set; }
+}

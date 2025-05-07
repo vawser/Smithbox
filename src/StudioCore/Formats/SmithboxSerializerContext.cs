@@ -80,6 +80,10 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(OldRegulationEntry))]
 [JsonSerializable(typeof(UpgraderMassEditEntry))]
 
+// Graph Legends
+[JsonSerializable(typeof(GraphLegends))]
+[JsonSerializable(typeof(GraphLegendEntry))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

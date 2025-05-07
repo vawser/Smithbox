@@ -37,6 +37,8 @@ public class ParamData
 
     public ParamTypeInfo ParamTypeInfo;
 
+    public GraphLegends GraphLegends;
+
     public ParamData(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -75,6 +77,20 @@ public class ParamData
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup PARAM meta.");
         }
+
+        // Graph Legends
+        Task<bool> graphLegendsTask = SetupGraphLegends();
+        bool graphLegendsTaskResult = await graphLegendsTask;
+
+        if (graphLegendsTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup graph legends.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup graph legends.");
+        }
+
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Load();
@@ -277,6 +293,35 @@ public class ParamData
             }
 
             ParamMeta.Add(pdef, meta);
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SetupGraphLegends()
+    {
+        await Task.Delay(1);
+
+        var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
+        var file = Path.Combine(folder, "Graph Legends.json");
+
+        if (File.Exists(file))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                GraphLegends = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GraphLegends);
+
+                if (GraphLegends == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Graph Legends JSON failed to load.");
+            }
         }
 
         return true;
