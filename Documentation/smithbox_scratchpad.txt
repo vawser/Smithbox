@@ -6,3 +6,5 @@ Legacy issue, but more obvious now you can swap projects quickly
 - Visibility icon is displayed with a bad visual offset (compared to old version)
 
 - Param Editor: Merge Params mass edit script isn't working
+
+- Keybinds: Ctrl+C and Ctrl+V don't work correctly

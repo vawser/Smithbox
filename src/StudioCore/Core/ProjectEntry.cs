@@ -4,6 +4,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Data;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
@@ -106,13 +107,13 @@ public class ProjectEntry
 
     // Data Banks
     [JsonIgnore]
+    public MapData MapData;
+    [JsonIgnore]
     public EmevdBank EmevdBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
     public EsdBank EsdBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
     public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
-    [JsonIgnore]
-    public MsbBank MsbBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
     public MaterialBank MaterialBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
@@ -289,10 +290,10 @@ public class ProjectEntry
         TextureViewer = null;
         MapEditor = null;
 
+        MapData = null;
         EmevdBank = null;
         EsdBank = null;
         GparamBank = null;
-        MsbBank = null;
         MaterialBank = null;
         ParamData = null;
         TextData = null;
@@ -341,19 +342,19 @@ public class ProjectEntry
                 TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
             }
 
-            MsbBank = new(BaseEditor, this);
+            MapData = new(BaseEditor, this);
 
-            // MSB Bank
-            Task<bool> msbBankTask = MsbBank.Setup();
-            bool msbBankTaskResult = await msbBankTask;
+            // Map Data
+            Task<bool> mapDataTask = MapData.Setup();
+            bool mapDataTaskResult = await mapDataTask;
 
-            if (msbBankTaskResult)
+            if (mapDataTaskResult)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Map Data Banks.");
             }
             else
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Map Data Banks.");
             }
 
             MapEditor = new MapEditorScreen(BaseEditor, this);

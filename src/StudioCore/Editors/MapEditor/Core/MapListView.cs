@@ -19,10 +19,6 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     private MapEditorScreen Editor;
     private IViewport Viewport;
 
-    private ViewportActionManager EditorActionManager;
-    private ViewportSelection Selection;
-    private EditorFocusManager FocusManager;
-
     private string ImguiID;
 
     public List<string> MapIDs = new();
@@ -38,11 +34,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     public MapListView(MapEditorScreen screen)
     {
         Editor = screen;
-
-        EditorActionManager = screen.EditorActionManager;
-        Selection = screen.Selection;
         Viewport = screen.MapViewportView.Viewport;
-        FocusManager = screen.FocusManager;
     }
 
     /// <summary>
@@ -60,7 +52,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             // Map List
             if (ImGui.Begin($@"Map List##mapIdList"))
             {
-                FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
+                Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
                 // Setup the Content Views
                 if (Editor.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
@@ -117,7 +109,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             // Map Contents
             if (ImGui.Begin($@"Map Contents##mapContentsPanel"))
             {
-                FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
+                Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapContents);
 
                 if (ContentViews.Count > 0)
                 {
@@ -135,7 +127,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             ImGui.PopStyleColor(1);
         }
 
-        Selection.ClearGotoTarget();
+        Editor.Selection.ClearGotoTarget();
     }
 
     private string _lastSearchText = "";

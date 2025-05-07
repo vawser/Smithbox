@@ -175,13 +175,13 @@ public class MapPropertyView
             {
                 var mergedRow = (MergedParamRow)selection.WrappedObject;
 
-                meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
             }
             if (selection.WrappedObject is Param.Row)
             {
                 var paramRow = (Param.Row)selection.WrappedObject;
 
-                meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
             }
 
 
@@ -210,7 +210,7 @@ public class MapPropertyView
 
         foreach (Param.Column cell in row.Columns)
         {
-            var meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
             PropEditorPropCellRow(meta, row[cell], ref id, null, row.ID);
         }
@@ -470,7 +470,7 @@ public class MapPropertyView
     {
         PropContextRowOpener();
 
-        var meta = Editor.Project.MsbBank.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
 
         // Field Name
         var fieldName = prop.Name;
@@ -662,7 +662,7 @@ public class MapPropertyView
         var first = entities.First();
 
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
-        var meta = Editor.Project.MsbBank.Meta.GetMeta(type, false);
+        var meta = Editor.Project.MapData.Meta.GetMeta(type, false);
 
         if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
         {
@@ -754,7 +754,7 @@ public class MapPropertyView
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
-            var meta = Editor.Project.MsbBank.Meta.GetFieldMeta(prop.Name, type);
+            var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
             var fieldName = prop.Name;

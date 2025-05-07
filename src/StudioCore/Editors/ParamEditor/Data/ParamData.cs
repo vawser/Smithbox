@@ -146,11 +146,11 @@ public class ParamData
 
         if (auxBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank for {targetProject.ProjectName}.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank for {targetProject.ProjectName}.");
         }
 
         return true;
