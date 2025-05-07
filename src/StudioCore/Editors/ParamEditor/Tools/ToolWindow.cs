@@ -8,6 +8,7 @@ using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System.Diagnostics;
 using System.Numerics;
+using System.Reflection.Metadata;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -387,38 +388,8 @@ public class ToolWindow
 
             ImGui.Separator();
 
-            // Merge Params
-            if (ImGui.CollapsingHeader("Merge Params"))
-            {
-                UIHelper.WrappedText("Use this to merge a target regulation.bin into your current project.");
-                UIHelper.WrappedText("");
-                UIHelper.WrappedText("Merging will bring all modified param rows from the target regulation into your project.");
-                UIHelper.WrappedText("");
-                UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
-                UIHelper.WrappedText("");
-
-                UIHelper.WrappedText("Compatible Projects:");
-                // Display compatible projects
-                foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
-                {
-                    if (proj == null)
-                        continue;
-
-                    if (proj.ProjectType == Editor.Project.ProjectType)
-                    {
-                        if (ImGui.Selectable($"{proj.ProjectName}", Handler.ProjectName == proj.ProjectName))
-                        {
-                            Editor.Project.ParamData.SetupAuxBank(proj);
-                            Handler.ProjectName = proj.ProjectName;
-                        }
-                    }
-                }
-
-                if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
-                {
-                    Handler.MergeParamHandler();
-                }
-            }
+            // Param Merge
+            Editor.ParamTools.DisplayParamMerge();
 
             // Param Reloader
             if (Editor.ParamReloader.GameIsSupported(Editor.Project.ProjectType))

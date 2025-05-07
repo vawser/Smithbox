@@ -122,36 +122,35 @@ public class ParamData
     {
         await Task.Delay(1);
 
-        // If it already exists, just return true;
+        // If project isn't already loaded, init it
+        if (!targetProject.Initialized)
+        {
+            await targetProject.Init();
+        }
+
+        // Pass in the target project's filesystem,
+        // so we fill it with the param data from that project
+        var newAuxBank = new ParamBank(Project.ProjectName, BaseEditor, Project, targetProject.FS);
+
+        Task<bool> auxBankTask = newAuxBank.Load();
+        bool auxBankTaskResult = await auxBankTask;
+
         if (AuxBanks.ContainsKey(targetProject.ProjectName))
         {
-            return true;
+            AuxBanks[targetProject.ProjectName] = newAuxBank;
         }
         else
         {
-            // If project isn't already loaded, init it
-            if (!targetProject.Initialized)
-            {
-                await targetProject.Init();
-            }
-
-            // Pass in the target project's filesystem,
-            // so we fill it with the param data from that project
-            var newAuxBank = new ParamBank(Project.ProjectName, BaseEditor, Project, targetProject.FS);
-
-            Task<bool> auxBankTask = newAuxBank.Load();
-            bool auxBankTaskResult = await auxBankTask;
-
             AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+        }
 
-            if (auxBankTaskResult)
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank.");
-            }
+        if (auxBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank.");
         }
 
         return true;

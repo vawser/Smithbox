@@ -673,16 +673,6 @@ public class ProjectEntry
     /// <param name="dt"></param>
     public unsafe void HandleEditor(string[] commands, EditorScreen screen, float dt)
     {
-        if (commands != null)
-        {
-            TaskLogs.AddLog("Test");
-
-            if(commands[0] == screen.CommandEndpoint)
-            {
-                TaskLogs.AddLog("Test");
-            }
-        }
-
         if (commands != null && commands[0] == screen.CommandEndpoint)
         {
             commands = commands[1..]; // Remove the target editor command

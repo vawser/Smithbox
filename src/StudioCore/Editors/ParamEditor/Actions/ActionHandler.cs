@@ -155,7 +155,14 @@ public class ActionHandler
         if (curParamKey == targetParamName)
             return;
 
+        if (!Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(curParamKey))
+            return;
+
         Param currentParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (!Editor.Project.ParamData.PrimaryBank.Params.ContainsKey(targetParamName))
+            return;
+
         Param targetParam = Editor.Project.ParamData.PrimaryBank.Params[targetParamName];
 
         if(targetParam == null) 
@@ -518,48 +525,8 @@ public class ActionHandler
     }
 
     // Merge Params
-    public string ProjectName = "";
+   
 
-    public bool targetUniqueOnly = true;
-
-    public string[] allParamTypes =
-    {
-        FilterStrings.RegulationBinFilter, FilterStrings.Data0Filter, FilterStrings.ParamBndDcxFilter,
-        FilterStrings.ParamBndFilter, FilterStrings.EncRegulationFilter
-    };
-
-    public void MergeParamHandler()
-    {
-        var auxBank = Editor.Project.ParamData.AuxBanks[ProjectName];
-
-        // Apply the merge massedit script here
-        var command = $"auxparam {ProjectName} .*: modified && unique ID: paste;";
-
-        if(!targetUniqueOnly)
-        {
-            command = $"auxparam {ProjectName} .*: modified ID: paste;";
-        }
-
-        //TaskLogs.AddLog(command);
-        ExecuteMassEdit(command);
-    }
-
-    public void ExecuteMassEdit(string command)
-    {
-        Editor._activeView._selection.SortSelection();
-        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
-            command, Editor._activeView._selection);
-
-        if (child != null)
-        {
-            Editor.EditorActionManager.PushSubManager(child);
-        }
-
-        if (r.Type == MassEditResultType.SUCCESS)
-        {
-            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
-        }
-    }
 
     public void RevertRowToDefault()
     {

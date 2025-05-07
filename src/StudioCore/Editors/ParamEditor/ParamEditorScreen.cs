@@ -82,6 +82,7 @@ public class ParamEditorScreen : EditorScreen
     public ActionHandler Handler;
     public ParamComparisonReport ComparisonReport;
 
+    public ParamTools ParamTools;
     public FieldNameFinder FieldNameFinder;
     public FieldValueFinder FieldValueFinder;
     public RowNameFinder RowNameFinder;
@@ -124,6 +125,8 @@ public class ParamEditorScreen : EditorScreen
 
         ParamReloader = new(this, Project);
         ParamUpgrader = new(this, Project);
+
+        ParamTools = new(this, Project);
     }
 
     public void OnGUI(string[] initcmd)
@@ -132,6 +135,11 @@ public class ParamEditorScreen : EditorScreen
 
         if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
         {
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+            {
+                Save();
+            }
+
             // Keyboard shortcuts
             if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
             {
@@ -945,22 +953,29 @@ public class ParamEditorScreen : EditorScreen
                 }
             }
 
-            if (ImGui.MenuItem("Select project for param comparison"))
+            if (ImGui.BeginMenu("Select project for param comparison"))
             {
                 // Display compatible projects
-                foreach (var proj in Project.BaseEditor.ProjectManager.Projects)
+               foreach (var proj in Project.BaseEditor.ProjectManager.Projects)
                 {
                     if (proj == null)
                         continue;
 
-                    if (proj.ProjectType == Project.ProjectType)
+                    if (proj.ProjectType != Project.ProjectType)
+                        continue;
+
+                    if (proj == Project.BaseEditor.ProjectManager.SelectedProject)
+                        continue;
+
+                    var isSelected = false;
+
+                    if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
                     {
-                        if (ImGui.Selectable($"{proj.ProjectName}"))
-                        {
-                            Project.ParamData.SetupAuxBank(proj);
-                        }
+                        Project.ParamData.SetupAuxBank(proj);
                     }
                 }
+
+                ImGui.EndMenu();
             }
 
             ImGui.Separator();
@@ -1232,7 +1247,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             Project.ParamData.PrimaryBank.Save();
-            TaskLogs.AddLog("Params saved.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
         }
         catch (SavingFailedException e)
         {
@@ -1251,7 +1266,7 @@ public class ParamEditorScreen : EditorScreen
         try
         {
             Project.ParamData.PrimaryBank.Save();
-            TaskLogs.AddLog("Params saved.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
         }
         catch (SavingFailedException e)
         {
