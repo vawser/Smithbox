@@ -3,13 +3,14 @@ using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.MassEdit;
 
 internal class AutoFillSearchEngine<A, B>
 {

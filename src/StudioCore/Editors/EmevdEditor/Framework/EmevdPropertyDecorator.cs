@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;

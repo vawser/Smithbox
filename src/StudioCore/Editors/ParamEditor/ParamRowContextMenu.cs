@@ -1,6 +1,8 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using System;
@@ -9,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ParamEditor.Framework;
+namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamRowContextMenu
 {
@@ -99,15 +101,15 @@ public static class ParamRowContextMenu
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.Handler.DuplicateHandler();
+                    _paramEditor.ParamTools.DuplicateRow();
                 }
                 UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText}\n\n" +
                     "Duplicate the current row selection, automatically incrementing the row ID.");
 
                 // Duplicate To
-                if (ImGui.BeginMenu("Duplicate To", editor.Handler.IsCommutativeParam()))
+                if (ImGui.BeginMenu("Duplicate To", editor.ParamTools.IsCommutativeParam()))
                 {
-                    editor.Handler.DisplayCommutativeDuplicateMenu();
+                    _paramEditor.ParamTools.DisplayCommutativeDropDownMenu();
 
                     ImGui.EndMenu();
                 }
@@ -119,7 +121,7 @@ public static class ParamRowContextMenu
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.Handler.CopyRowDetailHandler(false);
+                    _paramEditor.ParamTools.CopyRowDetails(false);
                 }
                 UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyId.HintText}\n\n" +
                     "Copy the current row selection ID to the clipboard (multiple rows will produce a list of IDs).");
@@ -130,7 +132,7 @@ public static class ParamRowContextMenu
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.Handler.CopyRowDetailHandler(true);
+                    _paramEditor.ParamTools.CopyRowDetails(true);
                 }
                 UIHelper.Tooltip($"Shortcut: {KeyBindings.Current.PARAM_CopyIdAndName.HintText}\n\n" +
                     "Copy the current row selection ID and Name to the clipboard (multiple rows will produce a list of IDs and Names).");
@@ -141,7 +143,7 @@ public static class ParamRowContextMenu
                             ? ImGuiSelectableFlags.None
                             : ImGuiSelectableFlags.Disabled))
                 {
-                    _paramEditor.Handler.RevertRowToDefault();
+                    _paramEditor.ParamTools.SetRowToDefault();
                 }
                 UIHelper.Tooltip($"Revert the current row selection field values to the vanilla field values.");
 

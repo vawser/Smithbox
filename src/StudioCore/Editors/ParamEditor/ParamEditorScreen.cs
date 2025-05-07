@@ -6,22 +6,20 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.ParamEditor.Actions;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.Tools;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
-using StudioCore.Utilities;
+using StudioCore.Tools;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using static StudioCore.Editors.ParamEditor.ParamBank;
 using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
@@ -59,10 +57,10 @@ public class ParamEditorScreen : EditorScreen
     internal Dictionary<string, IParamDecorator> _decorators = new();
 
     private IEnumerable<(object, int)> _distributionOutput;
-    private bool _isMEditPopupOpen;
+    public bool _isMEditPopupOpen;
     internal bool _isSearchBarActive = false;
-    private bool _isShortcutPopupOpen;
-    private bool _isStatisticPopupOpen;
+    public bool _isShortcutPopupOpen;
+    public bool _isStatisticPopupOpen;
     private string _lastMEditRegexInput = "";
     private bool _mEditCSVAppendOnly;
     private bool _mEditCSVReplaceRows;
@@ -77,18 +75,15 @@ public class ParamEditorScreen : EditorScreen
 
     public bool GotoSelectedRow;
 
-    public ToolWindow ToolWindow;
-    public ToolSubMenu ToolSubMenu;
-    public ActionHandler Handler;
-    public ParamComparisonReport ComparisonReport;
-
     public ParamTools ParamTools;
+    public MassEditHandler MassEditHandler;
+    public PinGroups PinGroupHandler;
     public FieldNameFinder FieldNameFinder;
     public FieldValueFinder FieldValueFinder;
     public RowNameFinder RowNameFinder;
     public RowIDFinder RowIDFinder;
     public RowNamer RowNamer;
-
+    public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
     public ParamUpgrader ParamUpgrader;
 
@@ -107,112 +102,29 @@ public class ParamEditorScreen : EditorScreen
 
         EditorShortcuts = new ParamEditorShortcuts(this);
 
-        ToolWindow = new ToolWindow(this);
-        ToolSubMenu = new ToolSubMenu(this);
-        Handler = new ActionHandler(this);
-
-        ComparisonReport = new ParamComparisonReport(this, project);
-
         _views = [new ParamEditorView(this, 0)];
 
         _activeView = _views[0];
 
+        ParamTools = new(this, Project);
         FieldNameFinder = new(this);
         FieldValueFinder = new(this);
         RowNameFinder = new(this);
         RowIDFinder = new(this);
         RowNamer = new(this);
-
+        MassEditHandler = new(this);
+        PinGroupHandler = new(this);
+        ComparisonReport = new ParamComparisonReport(this, project);
         ParamReloader = new(this, Project);
         ParamUpgrader = new(this, Project);
 
-        ParamTools = new(this, Project);
     }
 
     public void OnGUI(string[] initcmd)
     {
         var scale = DPI.GetUIScale();
 
-        if (!_isShortcutPopupOpen && !_isMEditPopupOpen && !_isStatisticPopupOpen && !_isSearchBarActive)
-        {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
-            {
-                Save();
-            }
-
-            // Keyboard shortcuts
-            if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
-            {
-                ParamUndo();
-            }
-
-            if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
-            {
-                ParamUndo();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
-            {
-                ParamRedo();
-            }
-
-            if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
-            {
-                ParamRedo();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
-            {
-                Project.ParamData.PrimaryBank.ClipboardParam = _activeView._selection.GetActiveParam();
-
-                foreach (Param.Row row in UICache.GetCached(this, (_activeView._viewIndex, _activeView._selection.GetActiveParam()),
-                    () => RowSearchEngine.Create(this).Search((Project.ParamData.PrimaryBank, Project.ParamData.PrimaryBank.Params[_activeView._selection.GetActiveParam()]),
-                    _activeView._selection.GetCurrentRowSearchString(), true, true)))
-                {
-                    _activeView._selection.AddRowToSelection(row);
-                }
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
-            {
-                CopySelectionToClipboard();
-            }
-
-            if (Project.ParamData.PrimaryBank.ClipboardRows.Count > 00 && Project.ParamData.PrimaryBank.ClipboardParam == _activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
-            {
-                ImGui.OpenPopup("ctrlVPopup");
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
-            {
-                Handler.DuplicateHandler();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
-            {
-                DeleteSelection();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
-            {
-                GotoSelectedRow = true;
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
-            {
-                Handler.CopyRowDetailHandler();
-            }
-
-            if (!ImGui.IsAnyItemActive() && _activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
-            {
-                Handler.CopyRowDetailHandler(true);
-            }
-        }
-
         EditorShortcuts.Shortcuts();
-
-        ToolSubMenu.Shortcuts();
-        ToolWindow.Shortcuts();
 
         if(Project.TextEditor != null)
         {
@@ -222,34 +134,6 @@ public class ParamEditorScreen : EditorScreen
 
                 SetupFmgDecorators();
             }
-        }
-
-        //Hot Reload shortcut keys
-        if (ParamReloader.CanReloadMemoryParams(Project.ParamData.PrimaryBank))
-        {
-            if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadAllParams))
-            {
-                ParamReloader.ReloadMemoryParams(Project.ParamData.PrimaryBank, Project.ParamData.PrimaryBank.Params.Keys.ToArray());
-            }
-            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && _activeView._selection.GetActiveParam() != null)
-            {
-                ParamReloader.ReloadMemoryParam(Project.ParamData.PrimaryBank, _activeView._selection.GetActiveParam());
-            }
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ViewMassEdit))
-        {
-            EditorCommandQueue.AddCommand(@"param/menu/massEditRegex");
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
-        {
-            EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
-        {
-            EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
         }
 
         // Parse commands
@@ -474,7 +358,7 @@ public class ParamEditorScreen : EditorScreen
         // Toolbar
         if (CFG.Current.Interface_ParamEditor_ToolWindow)
         {
-            ToolWindow.OnGui();
+            ParamTools.DisplayToolList();
         }
 
         if (CFG.Current.UI_CompactParams)
@@ -549,13 +433,13 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Duplicate Row", KeyBindings.Current.CORE_DuplicateSelectedEntry.HintText))
             {
-                Handler.DuplicateHandler();
+                ParamTools.DuplicateRow();
             }
             UIHelper.Tooltip($"Duplicates current selection.");
 
-            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", Handler.IsCommutativeParam()))
+            if (ImGui.BeginMenu("Duplicate Row to Commutative Param", ParamTools.IsCommutativeParam()))
             {
-                Handler.DisplayCommutativeDuplicateMenu();
+                ParamTools.DisplayCommutativeDropDownMenu();
 
                 ImGui.EndMenu();
             }
@@ -1032,148 +916,8 @@ public class ParamEditorScreen : EditorScreen
     {
         if (ImGui.BeginMenu("Names"))
         {
-            if (ImGui.BeginMenu("Import"))
-            {
-                if (ImGui.BeginMenu("Community Names"))
-                {
-                    if (ImGui.MenuItem($"By Index"))
-                    {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
-                    }
-                    UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
-
-                    if (ImGui.MenuItem($"By ID"))
-                    {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
-                    }
-                    UIHelper.Tooltip("This will import the developer names, matching via row ID.");
-
-                    ImGui.EndMenu();
-                }
-
-                // Only these projects have Developer Names
-                if (Project.ProjectType is ProjectType.AC6 or ProjectType.BB)
-                {
-                    if (ImGui.BeginMenu("Developer Names"))
-                    {
-                        if (ImGui.MenuItem($"By Index"))
-                        {
-                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Developer);
-                        }
-                        UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
-
-                        if (ImGui.MenuItem($"By ID"))
-                        {
-                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Developer);
-                        }
-                        UIHelper.Tooltip("This will import the developer names, matching via row ID.");
-
-                        ImGui.EndMenu();
-                    }
-                }
-
-                if (ImGui.BeginMenu("From File"))
-                {
-                    if (ImGui.MenuItem($"By Index"))
-                    {
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.External, filePath);
-                        }
-                    }
-                    UIHelper.Tooltip("This will import the external names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
-
-                    if (ImGui.MenuItem($"By ID"))
-                    {
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath);
-                        }
-                    }
-                    UIHelper.Tooltip("This will import the external names, matching via row ID.");
-
-                    ImGui.EndMenu();
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Export"))
-            {
-                if (ImGui.BeginMenu("JSON"))
-                {
-                    if (ImGui.MenuItem("All"))
-                    {
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath);
-                        }
-                    }
-                    UIHelper.Tooltip("Export the row names for your project to the selected folder.");
-
-
-                    if (ImGui.MenuItem("Selected Param"))
-                    {
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.JSON, filePath, _activeView._selection.GetActiveParam());
-                        }
-                    }
-                    UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
-
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Export file will use the JSON storage format.");
-
-                if (ImGui.BeginMenu("Text"))
-                {
-                    if (ImGui.MenuItem("All"))
-                    {
-
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath);
-                        }
-                    }
-                    UIHelper.Tooltip("Export the row names for your project to the selected folder.");
-
-
-                    if (ImGui.MenuItem("Selected Param"))
-                    {
-                        var filePath = "";
-                        var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                        if (result)
-                        {
-                            Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, filePath, _activeView._selection.GetActiveParam());
-                        }
-
-                    }
-                    UIHelper.Tooltip("Export the row names for the currently selected param to the selected folder.");
-
-                    ImGui.EndMenu();
-                }
-                UIHelper.Tooltip("Export file will use the Text storage format. This format cannot be imported back in.");
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenu();
+            ParamTools.DisplayRowNameImportMenu();
+            ParamTools.DisplayRowNameExportMenu();
         }
     }
 
@@ -1182,56 +926,10 @@ public class ParamEditorScreen : EditorScreen
         if (ImGui.BeginMenu("Game"))
         {
             // Param Reloader
-            if (ParamReloader.GameIsSupported(Project.ProjectType))
-            {
-                if (ImGui.BeginMenu("Param Reloader"))
-                {
-                    if (ImGui.MenuItem("Current Param"))
-                    {
-                        ParamReloader.ReloadCurrentParam(this);
-                    }
-                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
-
-                    if (ImGui.MenuItem("All Params"))
-                    {
-                        ParamReloader.ReloadAllParams(this);
-                    }
-                    UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
-
-                    ImGui.EndMenu();
-                }
-            }
+            ParamReloader.DisplayParamReloaderMenu();
 
             // Item Gib
-            if (Project.ProjectType == ProjectType.DS3)
-            {
-                if (ImGui.BeginMenu("Item Gib"))
-                {
-                    var activeParam = _activeView._selection.GetActiveParam();
-
-                    if (activeParam == "EquipParamGoods")
-                    {
-                        ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref ParamReloader.SpawnedItemAmount);
-                    }
-                    if (activeParam == "EquipParamWeapon")
-                    {
-                        ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref ParamReloader.SpawnWeaponLevel);
-
-                        if (ParamReloader.SpawnWeaponLevel > 10)
-                        {
-                            ParamReloader.SpawnWeaponLevel = 10;
-                        }
-                    }
-
-                    if (ImGui.MenuItem("Give Selected Item"))
-                    {
-                        ParamReloader.GiveItem(this);
-                    }
-                    UIHelper.Tooltip("Spawns selected item in-game.");
-
-                    ImGui.EndMenu();
-                }
-            }
+            ParamReloader.DisplayItemGibMenu();
 
             ImGui.EndMenu();
         }
@@ -1239,14 +937,41 @@ public class ParamEditorScreen : EditorScreen
 
     public void ToolMenu()
     {
-        ToolSubMenu.DisplayMenu();
+        if (ImGui.BeginMenu("Tools"))
+        {
+            if (ImGui.MenuItem("Color Picker"))
+            {
+                ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
+            }
+
+            if (ImGui.MenuItem("Trim Row Names"))
+            {
+                if (_activeView._selection.ActiveParamExists())
+                {
+                    ParamTools.TrimRowNames();
+                }
+            }
+            UIHelper.Tooltip("This will trim the whitespace from the front and end of row names.");
+
+            if (ImGui.MenuItem("Sort Rows"))
+            {
+                if (_activeView._selection.ActiveParamExists())
+                {
+                    ParamTools.SortRows();
+                }
+            }
+            UIHelper.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
+
+
+            ImGui.EndMenu();
+        }
     }
 
-    public void Save()
+    public async void Save()
     {
         try
         {
-            Project.ParamData.PrimaryBank.Save();
+            await Project.ParamData.PrimaryBank.Save();
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
         }
         catch (SavingFailedException e)
@@ -1302,25 +1027,6 @@ public class ParamEditorScreen : EditorScreen
             dec.Value.ClearDecoratorCache();
         }
         HasSetupFmgDecorators = false;
-    }
-
-    
-    private void ParamUndo()
-    {
-        EditorActionManager.UndoAction();
-        Project.ParamData.RefreshParamDifferenceCacheTask();
-    }
-
-    private void ParamUndoAll()
-    {
-        EditorActionManager.UndoAllAction();
-        Project.ParamData.RefreshParamDifferenceCacheTask();
-    }
-
-    private void ParamRedo()
-    {
-        EditorActionManager.RedoAction();
-        Project.ParamData.RefreshParamDifferenceCacheTask();
     }
 
     private IReadOnlyList<Param.Row> CsvExportGetRows(ParamBank.RowGetType rowType)

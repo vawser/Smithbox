@@ -13,7 +13,7 @@ using HKLib.hk2018.hkWeakPtrTest;
 using Silk.NET.OpenGL;
 using StudioCore.Configuration;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Decorators;
 
 /// <summary>
 ///     Interface for decorating param rows with additional information (such as english

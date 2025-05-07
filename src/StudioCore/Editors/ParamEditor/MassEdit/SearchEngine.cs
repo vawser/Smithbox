@@ -2,6 +2,7 @@ using Andre.Formats;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Http.HttpResults;
 using SoulsFormats;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
@@ -12,7 +13,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.MassEdit;
 
 /* Restricted characters: colon, space, forward slash, ampersand, exclamation mark
  *
@@ -765,7 +766,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         throw new Exception("Could not find param " + otherParam);
                     }
 
-                    List<Param.Row> rows = RowSearchEngine.Create(editor).Search((editor.Project.ParamData.PrimaryBank, otherParamReal), otherSearchTerm,
+                    List<Param.Row> rows = Create(editor).Search((editor.Project.ParamData.PrimaryBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
@@ -1119,8 +1120,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((sbyteFieldVal >= sbyteStartVal) &&
-                        (sbyteFieldVal <= sbyteEndVal))
+                    if (sbyteFieldVal >= sbyteStartVal &&
+                        sbyteFieldVal <= sbyteEndVal)
                     {
                         return true;
                     }
@@ -1137,8 +1138,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((byteFieldVal >= byteStartVal) &&
-                        (byteFieldVal <= byteEndVal))
+                    if (byteFieldVal >= byteStartVal &&
+                        byteFieldVal <= byteEndVal)
                     {
                         return true;
                     }
@@ -1155,8 +1156,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((shortFieldVal >= shortStartVal) &&
-                        (shortFieldVal <= shortEndVal))
+                    if (shortFieldVal >= shortStartVal &&
+                        shortFieldVal <= shortEndVal)
                     {
                         return true;
                     }
@@ -1173,8 +1174,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((ushortFieldVal >= ushortStartVal) &&
-                        (ushortFieldVal <= ushortEndVal))
+                    if (ushortFieldVal >= ushortStartVal &&
+                        ushortFieldVal <= ushortEndVal)
                     {
                         return true;
                     }
@@ -1191,8 +1192,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((intFieldVal >= intStartVal) &&
-                        (intFieldVal <= intEndVal))
+                    if (intFieldVal >= intStartVal &&
+                        intFieldVal <= intEndVal)
                     {
                         return true;
                     }
@@ -1209,8 +1210,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((uintFieldVal >= uintStartVal) &&
-                        (uintFieldVal <= uintEndVal))
+                    if (uintFieldVal >= uintStartVal &&
+                        uintFieldVal <= uintEndVal)
                     {
                         return true;
                     }
@@ -1227,8 +1228,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if ((floatFieldVal >= floatStartVal) &&
-                        (floatFieldVal <= floatEndVal))
+                    if (floatFieldVal >= floatStartVal &&
+                        floatFieldVal <= floatEndVal)
                     {
                         return true;
                     }

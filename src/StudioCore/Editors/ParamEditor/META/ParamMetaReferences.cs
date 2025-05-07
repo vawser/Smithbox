@@ -3,7 +3,6 @@ using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
@@ -12,9 +11,9 @@ using System.Linq;
 using System.Numerics;
 using System.Reflection;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.META;
 
-public static class ParamReferenceUtils
+public static class ParamMetaReferences
 {
     // Supports: ER, DS3, SDT
     public static void BonfireWarpParam(ParamEditorScreen editor, string activeParam, Param.Row row, string currentField)
@@ -71,7 +70,7 @@ public static class ParamReferenceUtils
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
 
-                entityID = (uint)(int)value;
+                entityID = (uint)value;
                 entityID = entityID - 1000; // To get the enemy ID
 
                 var idStr = entityID.ToString();
@@ -86,7 +85,7 @@ public static class ParamReferenceUtils
                 Param.Cell? c = row?["bonfireEntityId"];
                 var value = (int)c.Value.Value;
 
-                entityID = (uint)(int)value;
+                entityID = (uint)value;
                 entityID = entityID - 1000; // To get the enemy ID
 
                 var idStr = entityID.ToString();
@@ -546,7 +545,7 @@ public static class ParamReferenceUtils
 
         if (activeParam.Contains("Bullet") || activeParam.Contains("Bullet_Npc"))
         {
-            if ((currentField == "assetNo_Hit" || currentField == "assetCreationAssetId"))
+            if (currentField == "assetNo_Hit" || currentField == "assetCreationAssetId")
             {
                 Param.Cell? c = null;
                 if (editor.Project.ProjectType is ProjectType.AC6)
@@ -1317,7 +1316,7 @@ public static class ParamReferenceUtils
             }
             if (curRow[redField].Value.Def.InternalType == "f32")
             {
-                redAction = new PropertiesChangedAction(info, redProp, (float)redValue);
+                redAction = new PropertiesChangedAction(info, redProp, redValue);
             }
 
             PropertiesChangedAction greenAction = null;
@@ -1348,7 +1347,7 @@ public static class ParamReferenceUtils
             }
             if (curRow[greenField].Value.Def.InternalType == "f32")
             {
-                greenAction = new PropertiesChangedAction(info, greenProp, (float)greenValue);
+                greenAction = new PropertiesChangedAction(info, greenProp, greenValue);
             }
 
             PropertiesChangedAction blueAction = null;
@@ -1379,7 +1378,7 @@ public static class ParamReferenceUtils
             }
             if (curRow[blueField].Value.Def.InternalType == "f32")
             {
-                blueAction = new PropertiesChangedAction(info, blueProp, (float)blueValue);
+                blueAction = new PropertiesChangedAction(info, blueProp, blueValue);
             }
 
             if (redAction != null && greenAction != null && blueAction != null)
@@ -1392,9 +1391,9 @@ public static class ParamReferenceUtils
 
     public static Vector3 GetRgbColor(Param.Row curRow, float red, float green, float blue)
     {
-        float rVal = (red * 255);
-        float gVal = (green * 255);
-        float bVal = (blue * 255);
+        float rVal = red * 255;
+        float gVal = green * 255;
+        float bVal = blue * 255;
 
         return new Vector3(rVal, gVal, bVal);
     }
@@ -1407,7 +1406,7 @@ public static class ParamReferenceUtils
         float.TryParse(redValue, out rVal);
         if (rVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
         {
-            rVal = (rVal / 255);
+            rVal = rVal / 255;
         }
 
         // RED
@@ -1417,7 +1416,7 @@ public static class ParamReferenceUtils
         float.TryParse(greenValue, out gVal);
         if (gVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
         {
-            gVal = (gVal / 255);
+            gVal = gVal / 255;
         }
 
         // BLUE
@@ -1427,7 +1426,7 @@ public static class ParamReferenceUtils
         float.TryParse(blueValue, out bVal);
         if (bVal > 1.0) // If greater than 1.0, then it is a 255,255,255 field
         {
-            bVal = (bVal / 255);
+            bVal = bVal / 255;
         }
 
         return new Vector3(rVal, gVal, bVal);

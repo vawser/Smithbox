@@ -3,6 +3,7 @@ using Andre.Formats;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
 using System;
 using System.Collections.Generic;
 

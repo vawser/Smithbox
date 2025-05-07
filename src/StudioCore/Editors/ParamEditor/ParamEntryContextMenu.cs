@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ParamEditor.Framework;
+namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamEntryContextMenu
 {

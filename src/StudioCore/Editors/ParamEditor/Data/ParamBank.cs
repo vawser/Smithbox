@@ -20,7 +20,7 @@ using StudioCore.Formats.JSON;
 using System.Text.Json;
 using Octokit;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Data;
 
 /// <summary>
 ///     Utilities for dealing with global params for a game
@@ -181,81 +181,6 @@ public class ParamBank
             $"Cannot locate param files for {type}.\nYour game folder may be missing game files, please verify game files through steam to restore them.");
     }
 
-    public CompoundAction LoadParamDefaultNames(string param = null, bool onlyAffectEmptyNames = false, bool onlyAffectVanillaNames = false, bool useProjectNames = false, bool useDeveloperNames = false, IEnumerable<Param.Row> affectedRows = null)
-    {
-        var dir = ParamLocator.GetParamNamesDir(Project);
-
-        if (useProjectNames && Project.ProjectType != ProjectType.Undefined)
-        {
-            dir = $"{Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Names";
-
-            // Fallback to Smithbox if the project ones don't exist
-            if(!Directory.Exists(dir))
-                dir = ParamLocator.GetParamNamesDir(Project);
-        }
-
-        if (useDeveloperNames && Project.ProjectType != ProjectType.Undefined)
-        {
-            dir = $"{AppContext.BaseDirectory}\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(Project)}\\Developer Names";
-
-            // Fallback to Smithbox if the developer ones don't exist
-            if (!Directory.Exists(dir))
-                dir = ParamLocator.GetParamNamesDir(Project);
-        }
-
-        var files = param == null
-            ? Directory.GetFiles(dir, "*.txt")
-            : new[] { Path.Combine(dir, $"{param}.txt") };
-
-        List<EditorAction> actions = new();
-
-        foreach (var f in files)
-        {
-            var fName = Path.GetFileNameWithoutExtension(f);
-
-            if(!File.Exists(f))
-            {
-                continue;
-            }
-
-            if (!_params.ContainsKey(fName))
-            {
-                continue;
-            }
-
-            var lines = File.ReadAllLines(f);
-
-            if (affectedRows != null)
-            {
-                var affectedIds = affectedRows.Select(a => a.ID.ToString());
-                lines = lines.Where(n => affectedIds.Any(i => n.StartsWith(i))).ToArray();
-            }
-
-            var names = string.Join(Environment.NewLine, lines);
-
-            (var result, CompoundAction action) =
-                ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank, names, fName, "Name", ' ', true, onlyAffectEmptyNames, onlyAffectVanillaNames, true);
-
-            if (action == null)
-            {
-                TaskLogs.AddLog($"Could not apply name files for {fName}\nFile path: {f}",
-                    LogLevel.Warning);
-            }
-            else
-            {
-                actions.Add(action);
-            }
-        }
-
-        return new CompoundAction(actions);
-    }
-
-    public ActionManager TrimNewlineChrsFromNames()
-    {
-        (MassEditResult r, ActionManager child) =
-            MassParamEditRegex.PerformMassEdit(this, "param .*: id .*: name: replace \r:0", null);
-        return child;
-    }
 
     #region Param Load
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version, bool checkVersion = false, string parambndFileName = "")

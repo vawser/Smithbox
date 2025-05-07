@@ -8,6 +8,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MaterialEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TalkEditor;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer;

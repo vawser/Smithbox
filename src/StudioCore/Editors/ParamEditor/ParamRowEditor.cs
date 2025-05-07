@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using System;
@@ -789,10 +791,10 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.ReturnPointParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.BonfireWarpParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.GameAreaParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.ItemLotParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.ReturnPointParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.BonfireWarpParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.GameAreaParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.ItemLotParam(Editor, activeParam, row, internalName);
                 }
             }
 
@@ -801,17 +803,17 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.AssetGeometryParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.BuddyStoneParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.AssetGeometryParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.BuddyStoneParam(Editor, activeParam, row, internalName);
                 }
 
                 // These are placed in-line with the current field
-                ParamReferenceUtils.GrassTypeParam(Editor, activeParam, row, internalName);
-                ParamReferenceUtils.BulletParam(Editor, activeParam, row, internalName);
+                ParamMetaReferences.GrassTypeParam(Editor, activeParam, row, internalName);
+                ParamMetaReferences.BulletParam(Editor, activeParam, row, internalName);
             }
 
             // Color Picker
-            ParamReferenceUtils.ColorPicker(Editor, activeParam, row, internalName);
+            ParamMetaReferences.ColorPicker(Editor, activeParam, row, internalName);
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
@@ -1183,18 +1185,18 @@ public class ParamRowEditor
         if (ImGui.MenuItem("Add to Mass Edit"))
         {
             var propertyName = internalName.Replace(" ", "\\s");
-            string currInput = Editor.ToolWindow.MassEditHandler._currentMEditRegexInput;
+            string currInput = Editor.MassEditHandler._currentMEditRegexInput;
 
             if(currInput == "")
             {
                 // Add selection section if input is empty
-                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
+                Editor.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
             }
             else
             {
                 // Otherwise just add the property name
                 currInput = $"{currInput}{propertyName}";
-                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = currInput;
+                Editor.MassEditHandler._currentMEditRegexInput = currInput;
             }
         }
 

@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Interface;
 using StudioCore.Memory;
 using StudioCore.Tasks;
 using System;
@@ -11,9 +13,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class ParamReloader
 {
@@ -29,7 +32,7 @@ public class ParamReloader
     public uint numberOfItemsToGive = 1;
     public uint upgradeLevelItemToGive;
 
-    private readonly List<ProjectType> _supportedGames = new()
+    private readonly List<ProjectType> _reloaderSupportedGames = new()
     {
         ProjectType.DS1,
         ProjectType.DS1R,
@@ -39,14 +42,23 @@ public class ParamReloader
         ProjectType.AC6
     };
 
-    public bool GameIsSupported(ProjectType gameType)
+    private readonly List<ProjectType> _itemGibSupportedGames = new()
     {
-        return _supportedGames.Contains(gameType);
+        ProjectType.DS3
+    };
+
+    public bool ParamReloadSupported(ProjectType gameType)
+    {
+        return _reloaderSupportedGames.Contains(gameType);
+    }
+    public bool ItemGibSupported(ProjectType gameType)
+    {
+        return _itemGibSupportedGames.Contains(gameType);
     }
 
     public bool CanReloadMemoryParams(ParamBank bank)
     {
-        if (GameIsSupported(Project.ProjectType))
+        if (ParamReloadSupported(Project.ProjectType))
         {
             return true;
         }
@@ -59,6 +71,141 @@ public class ParamReloader
         if (paramName != null)
         {
             ReloadMemoryParams(bank, new string[] { paramName });
+        }
+    }
+
+    public void DisplayParamReloader()
+    {
+        var windowWidth = ImGui.GetWindowWidth();
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
+        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
+        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
+        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
+
+        // Param Reloader
+        if (ParamReloadSupported(Editor.Project.ProjectType))
+        {
+            if (ImGui.CollapsingHeader("Param Reloader"))
+            {
+                UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
+                UIHelper.WrappedText("");
+
+                if (ImGui.Button("Reload Current Param", defaultButtonSize))
+                {
+                    ReloadCurrentParam(Editor);
+                }
+                UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+
+                if (ImGui.Button("Reload All Params", defaultButtonSize))
+                {
+                    ReloadAllParams(Editor);
+                }
+                UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+            }
+        }
+    }
+
+    public void DisplayParamReloaderMenu()
+    {
+        if (ParamReloadSupported(Project.ProjectType))
+        {
+            if (ImGui.BeginMenu("Param Reloader"))
+            {
+                if (ImGui.MenuItem("Current Param"))
+                {
+                    ReloadCurrentParam(Editor);
+                }
+                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadParam.HintText}");
+
+                if (ImGui.MenuItem("All Params"))
+                {
+                    ReloadAllParams(Editor);
+                }
+                UIHelper.Tooltip($"WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.\n{KeyBindings.Current.PARAM_ReloadAllParams.HintText}");
+
+                ImGui.EndMenu();
+            }
+        }
+    }
+
+    public void DisplayItemGib()
+    {
+        var windowWidth = ImGui.GetWindowWidth();
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
+        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
+        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
+        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
+
+        if (ItemGibSupported(Editor.Project.ProjectType))
+        {
+            if (ImGui.CollapsingHeader("Item Gib"))
+            {
+                UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
+                UIHelper.WrappedText("");
+
+                var activeParam = Editor._activeView._selection.GetActiveParam();
+
+                if (activeParam == "EquipParamGoods")
+                {
+                    UIHelper.WrappedText("Number of Spawned Items");
+                    ImGui.InputInt("##spawnItemCount", ref SpawnedItemAmount);
+                }
+                if (activeParam == "EquipParamWeapon")
+                {
+                    UIHelper.WrappedText("Reinforcement of Spawned Weapon");
+                    ImGui.InputInt("##spawnWeaponLevel", ref SpawnWeaponLevel);
+
+                    if (Editor.Project.ProjectType is ProjectType.DS3)
+                    {
+                        if (SpawnWeaponLevel > 10)
+                        {
+                            SpawnWeaponLevel = 10;
+                        }
+                    }
+                }
+
+                UIHelper.WrappedText("");
+                if (ImGui.Button("Give Item", defaultButtonSize))
+                {
+                    GiveItem(Editor);
+                }
+
+            }
+        }
+    }
+
+    public void DisplayItemGibMenu()
+    {
+        if (ItemGibSupported(Editor.Project.ProjectType))
+        {
+            if (ImGui.BeginMenu("Item Gib"))
+            {
+                var activeParam = Editor._activeView._selection.GetActiveParam();
+
+                if (activeParam == "EquipParamGoods")
+                {
+                    ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref SpawnedItemAmount);
+                }
+                if (activeParam == "EquipParamWeapon")
+                {
+                    ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref SpawnWeaponLevel);
+
+                    if (SpawnWeaponLevel > 10)
+                    {
+                        SpawnWeaponLevel = 10;
+                    }
+                }
+
+                if (ImGui.MenuItem("Give Selected Item"))
+                {
+                    GiveItem(Editor);
+                }
+                UIHelper.Tooltip("Spawns selected item in-game.");
+
+                ImGui.EndMenu();
+            }
         }
     }
 

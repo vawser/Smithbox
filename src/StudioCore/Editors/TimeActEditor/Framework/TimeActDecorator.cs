@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Formats.JSON;

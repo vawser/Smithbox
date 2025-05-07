@@ -17,7 +17,7 @@ using System.Numerics;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class ParamUpgrader
 {

@@ -5,10 +5,12 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Tools;
 
 public class ParamComparisonReport
 {
@@ -47,33 +49,28 @@ public class ParamComparisonReport
         var primaryBank = Editor.Project.ParamData.PrimaryBank;
         var compareBank = Editor.Project.ParamData.VanillaBank;
 
-        if(CurrentCompareBankType == 1)
+        if(TargetProjectName != "Vanilla")
         {
-            if (Editor.Project.ParamData.AuxBanks.Count <= 0)
-            {
-                PlatformUtils.Instance.MessageBox("No comparison bank has been loaded. Report generation ended.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                IsGeneratingReport = false;
-                IsReportGenerated = false;
-                return;
-            }
-            else
-            {
-                var auxBank = Editor.Project.ParamData.AuxBanks.First().Value;
-                compareBank = auxBank;
-            }
+            var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
+            compareBank = auxBank.Value;
         }
 
         if (ImportNamesOnGeneration_Primary)
         {
-            Editor.EditorActionManager.ExecuteAction(
-                primaryBank.LoadParamDefaultNames(null, false, false, false));
+            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
         }
 
         if (ImportNamesOnGeneration_Compare)
         {
-            Editor.EditorActionManager.ExecuteAction(
-                compareBank.LoadParamDefaultNames(null, false, false, false));
+            if(TargetProjectName == "Vanilla")
+            {
+                Project.ParamData.VanillaBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+            }
+            else
+            {
+                var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
+                Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+            }
         }
 
         AddLog($"# Field values follow this format: [Comparison Value] -> [Primary Value]");
@@ -182,15 +179,12 @@ public class ParamComparisonReport
         ReportText = $"{ReportText}{text}\n";
     }
 
-    public int CurrentCompareBankType = 0;
+    public ProjectEntry TargetProject;
+    public string TargetProjectName;
+    public bool AllowGenerate = true;
+    public bool LoadAuxBank = false;
 
-    public string[] CompareBankType =
-    {
-        "Vanilla Bank",
-        "Aux Bank"
-    };
-
-    public void Display()
+    public async void Display()
     {
         var textPaneSize = new Vector2(800, 600);
 
@@ -198,27 +192,79 @@ public class ParamComparisonReport
         ImGui.Separator();
         UIHelper.WrappedText($"Primary Bank - Param Version: {Editor.Project.ParamData.PrimaryBank.ParamVersion}");
 
-        if (CurrentCompareBankType == 0)
+        if (TargetProjectName == "Vanilla")
         {
             UIHelper.WrappedText($"Comparison Bank - Param Version: {Editor.Project.ParamData.VanillaBank.ParamVersion}");
         }
-        else if (CurrentCompareBankType == 1)
+        else
         {
             if (Editor.Project.ParamData.AuxBanks.Count > 0)
             {
-                var auxBank = Editor.Project.ParamData.AuxBanks.First().Value;
-                UIHelper.WrappedText($"Comparison Bank - Param Version: {auxBank.ParamVersion}");
+                if (Editor.Project.ParamData.AuxBanks.ContainsKey(TargetProjectName))
+                {
+                    var auxBank = Editor.Project.ParamData.AuxBanks[TargetProjectName];
+                    UIHelper.WrappedText($"Comparison Bank - Param Version: {auxBank.ParamVersion}");
+                }
             }
             else
             {
                 UIHelper.WrappedText($"Comparison Bank - No Comparison Bank loaded.");
             }
         }
-        ImGui.Separator();
-        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Bank Type");
-        if (ImGui.Combo("##compareBankTarget", ref CurrentCompareBankType, CompareBankType, CompareBankType.Length))
+
+        if (TargetProject == null)
+            AllowGenerate = false;
+
+        var projectList = Editor.Project.BaseEditor.ProjectManager.Projects;
+  
+        if (ImGui.BeginCombo("##targetProjectComparison", TargetProjectName))
         {
+            // Special-case for pointing to the vanilla bank
+            if (ImGui.Selectable($"Vanilla", TargetProjectName == "Vanilla"))
+            {
+                TargetProject = Editor.Project;
+                TargetProjectName = "Vanilla";
+            }
+
+            foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
+            {
+                if (proj == null)
+                    continue;
+
+                if (proj.ProjectType != Editor.Project.ProjectType)
+                    continue;
+
+                if (proj == Editor.Project)
+                    continue;
+
+                var isSelected = false;
+
+                if (TargetProject != null)
+                {
+                    isSelected = TargetProject.ProjectName == proj.ProjectName;
+                }
+
+                if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
+                {
+                    TargetProject = proj;
+                    TargetProjectName = proj.ProjectName;
+                    LoadAuxBank = true;
+                }
+            }
+
+            ImGui.EndCombo();
         }
+
+        if (LoadAuxBank)
+        {
+            AllowGenerate = false;
+            LoadAuxBank = false;
+            await Editor.Project.ParamData.SetupAuxBank(TargetProject);
+            AllowGenerate = true;
+        }
+
+        ImGui.Separator();
+
         ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
         ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
 

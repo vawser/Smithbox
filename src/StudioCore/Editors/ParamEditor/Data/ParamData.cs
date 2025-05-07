@@ -14,9 +14,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static StudioCore.Editors.ParamEditor.ParamBank;
+using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 
-namespace StudioCore.Editors.ParamEditor;
+namespace StudioCore.Editors.ParamEditor.Data;
 
 /// <summary>
 /// Holder for the discrete param banks (primary, vanilla, auxs)

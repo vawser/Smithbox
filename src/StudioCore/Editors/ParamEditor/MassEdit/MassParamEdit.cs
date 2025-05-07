@@ -1,6 +1,8 @@
 #nullable enable
 using Andre.Formats;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.MassEdit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
