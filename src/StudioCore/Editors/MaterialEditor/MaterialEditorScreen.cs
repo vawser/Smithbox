@@ -142,7 +142,7 @@ public class MaterialEditorScreen : EditorScreen
 
     public void SaveAll()
     {
-        Project.MaterialBank.SaveMaterials();
+        // Project.MaterialBank.SaveMaterials();
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

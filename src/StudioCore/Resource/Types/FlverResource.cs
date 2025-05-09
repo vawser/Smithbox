@@ -221,17 +221,21 @@ public class FlverResource : IResource, IDisposable
 
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
-        if (curProject.MaterialBank == null)
+        if (curProject.MaterialData == null || curProject.MaterialData.PrimaryBank == null)
             return;
+
+        var bank = curProject.MaterialData.PrimaryBank;
 
         var path = mpath;
         if (mpath == "")
         {
             var mtdstring = Path.GetFileNameWithoutExtension(mtd);
 
-            if (curProject.MaterialBank.MTDs.ContainsKey(mtdstring))
+            var material = bank.GetMaterial(mtdstring);
+
+            if (material != null)
             {
-                MTD.Texture? tex = curProject.MaterialBank.MTDs[mtdstring].Mtd.Textures.Find(x => x.Type == type);
+                MTD.Texture? tex = material.Textures.Find(x => x.Type == type);
                 if (tex == null || !tex.Extended || tex.Path == "")
                 {
                     //TaskLogs.AddLog($"Failed to find MTD string: {mtdstring} - {type}");
@@ -244,7 +248,9 @@ public class FlverResource : IResource, IDisposable
 
             if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
             {
-                if (curProject.MaterialBank.MATBINs.ContainsKey(mtdstring))
+                var matbin = bank.GetMatbin(mtdstring);
+
+                if (matbin != null)
                 {
                     MATBIN.Sampler? tex = null;
 
@@ -252,7 +258,7 @@ public class FlverResource : IResource, IDisposable
 
                     bool match = false;
 
-                    foreach (var t in curProject.MaterialBank.MATBINs[mtdstring].Matbin.Samplers)
+                    foreach (var t in matbin.Samplers)
                     {
                         if (t.Type == type)
                         {
@@ -265,7 +271,7 @@ public class FlverResource : IResource, IDisposable
                     // If normal match fails, try heuristic match to account for disparities between sampler and source
                     if (!match)
                     {
-                        foreach (var t in curProject.MaterialBank.MATBINs[mtdstring].Matbin.Samplers)
+                        foreach (var t in matbin.Samplers)
                         {
                             // Hack to allow some differing paths between sampler and source to work correctly in ER
                             // Namely for these aspects of the paths:

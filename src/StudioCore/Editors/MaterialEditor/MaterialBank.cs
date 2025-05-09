@@ -1,13 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Resource.Locators;
-using System;
+using StudioCore.Formats.JSON;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditor;
@@ -17,437 +14,158 @@ public class MaterialBank
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public Dictionary<MaterialFileInfo, IBinder> Matbins { get; private set; } = new();
+    public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
 
-    public Dictionary<MaterialFileInfo, IBinder> Materials { get; private set; } = new();
+    public string Name;
 
-    // TEMP: should be independant of a specific editor
-    public Dictionary<string, MaterialInfo> MTDs = new();
-    public Dictionary<string, MaterialInfo> MATBINs = new();
+    public FileDictionary MTD_Files = new();
+    public FileDictionary MATBIN_Files = new();
 
-    public MaterialBank(Smithbox baseEditor, ProjectEntry project)
+    public Dictionary<string, MTDWrapper> MTDs = new();
+    public Dictionary<string, MATBINWrapper> MATBINs = new();
+
+    public MaterialBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
         Project = project;
+        Name = name;
+        TargetFS = targetFs;
     }
 
     public async Task<bool> Setup()
     {
         await Task.Delay(1);
 
-        // MTD
-        Task<bool> mtdTask = LoadMaterials();
-        bool mtdTaskResult = await mtdTask;
+        MTD_Files.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "mtdbnd").ToList();
 
-        // MATBIN
-        Task<bool> matbinTask = LoadMatbins();
-        bool matbinTaskResult = await mtdTask;
+        foreach (var entry in MTD_Files.Entries)
+        {
+            var newMtdEntry = new MTDWrapper(BaseEditor, Project, entry, TargetFS);
+            await newMtdEntry.Load();
+            MTDs.Add(entry.Filename, newMtdEntry);
+        }
 
-        // MTD (for map texturing)
-        Task<bool> mtdMapTask = LoadMatbinsForMapTexturing();
-        bool mtdMapTaskResult = await mtdMapTask;
+        MATBIN_Files.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "matbinbnd").ToList();
 
-        // MATBIN (for map texturing)
-        Task<bool> matbinMapTask = LoadMaterialsForMapTexturing();
-        bool matbinMapTaskResult = await mtdMapTask;
+        foreach (var entry in MATBIN_Files.Entries)
+        {
+            var newMatbinEntry = new MATBINWrapper(BaseEditor, Project, entry, TargetFS);
+            await newMatbinEntry.Load();
+            MATBINs.Add(entry.Filename, newMatbinEntry);
+        }
 
         return true;
     }
 
-    public async Task<bool> LoadMaterials()
+    public MTD GetMaterial(string name)
+    {
+        MTD temp = null;
+
+        foreach (var entry in MTDs)
+        {
+            var targetEntry = entry.Value.Entries.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Key) == name);
+            if(targetEntry.Value != null)
+            {
+                temp = targetEntry.Value;
+            }
+        }
+
+        return temp;
+    }
+    public MATBIN GetMatbin(string name)
+    {
+        MATBIN temp = null;
+
+        foreach (var entry in MATBINs)
+        {
+            var targetEntry = entry.Value.Entries.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Key) == name);
+            if (targetEntry.Value != null)
+            {
+                temp = targetEntry.Value;
+            }
+        }
+
+        return temp;
+    }
+}
+
+public class MTDWrapper
+{
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+    public VirtualFileSystem TargetFS;
+    public string Name { get; set; }
+    public string Path { get; set; }
+    public Dictionary<string, MTD> Entries { get; set; } = new();
+
+    public MTDWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
+    {
+        BaseEditor = baseEditor;
+        Project = project;
+        TargetFS = targetFS;
+        Name = dictEntry.Filename;
+        Path = dictEntry.Path;
+    }
+    public async Task<bool> Load(bool msbOnly = false)
     {
         await Task.Delay(1);
 
-        Materials = new();
+        var successfulLoad = false;
 
-        var fileDir = @"\mtd";
-        var fileExt = @".mtdbnd.dcx";
+        var editor = Project.MapEditor;
+        var binderData = TargetFS.ReadFileOrThrow(Path);
 
-        List<string> fileNames = MiscLocator.GetMaterialBinders(Project);
-
-        foreach (var name in fileNames)
+        var binder = BND4.Read(binderData);
+        foreach (var entry in binder.Files)
         {
-            var filePath = $"{fileDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
+            if (entry.Name.Contains(".mtd"))
             {
-                LoadMaterial($"{Project.ProjectPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-            }
-            else
-            {
-                LoadMaterial($"{Project.DataPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                var mtd = MTD.Read(entry.Bytes);
+                Entries.Add(entry.Name, mtd);
             }
         }
 
-        return true;
+        return successfulLoad;
     }
+}
 
-    public void LoadMaterial(string path)
+public class MATBINWrapper
+{
+    public Smithbox BaseEditor;
+    public ProjectEntry Project;
+    public VirtualFileSystem TargetFS;
+    public string Name { get; set; }
+    public string Path { get; set; }
+    public Dictionary<string, MATBIN> Entries { get; set; } = new();
+
+    public MATBINWrapper(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry dictEntry, VirtualFileSystem targetFS)
     {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        var fileExt = @".mtd";
-
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            fileExt = @".matbin";
-        }
-
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
-
-        IBinder binder = null;
-
-        try
-        {
-            binder = BND4.Read(DCX.Decompress(path));
-        }
-        catch (Exception ex)
-        {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to read Material file: {filename} at {path}.\n{ex}", LogLevel.Error);
-        }
-
-        if (binder != null)
-        {
-            foreach (var file in binder.Files)
-            {
-                if (file.Name.Contains($"{fileExt}"))
-                {
-                    try
-                    {
-                        MTD cFile = MTD.Read(file.Bytes);
-                        fileStruct.MaterialFiles.Add(cFile);
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"Failed to read Material file: {file.ID}.\n{ex}", LogLevel.Error);
-                    }
-                }
-            }
-
-            Materials.Add(fileStruct, binder);
-        }
+        BaseEditor = baseEditor;
+        Project = project;
+        TargetFS = targetFS;
+        Name = dictEntry.Filename;
+        Path = dictEntry.Path;
     }
 
-
-    public async Task<bool> LoadMatbins()
+    public async Task<bool> Load(bool msbOnly = false)
     {
         await Task.Delay(1);
 
-        Materials = new();
+        var successfulLoad = false;
 
-       var fileDir = @"\material";
-       var fileExt = @".matbinbnd.dcx";
+        var editor = Project.MapEditor;
+        var binderData = TargetFS.ReadFileOrThrow(Path);
 
-        List<string> fileNames = MiscLocator.GetMaterialBinBinders(Project);
-
-        foreach (var name in fileNames)
+        var binder = BND4.Read(binderData);
+        foreach(var entry in binder.Files)
         {
-            var filePath = $"{fileDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
+            if(entry.Name.Contains(".matbin"))
             {
-                LoadMatbin($"{Project.ProjectPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-            }
-            else
-            {
-                LoadMatbin($"{Project.DataPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
+                var matbin = MATBIN.Read(entry.Bytes);
+                Entries.Add(entry.Name, matbin);
             }
         }
 
-        return true;
-    }
-
-    public void LoadMatbin(string path)
-    {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading material file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        var fileExt = @".mtd";
-
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            fileExt = @".matbin";
-        }
-
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        MaterialFileInfo fileStruct = new MaterialFileInfo(name, path);
-
-        IBinder binder = null;
-
-        try
-        {
-            binder = BND4.Read(DCX.Decompress(path));
-        }
-        catch (Exception ex)
-        {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to read Material file: {filename} at {path}.\n{ex}", LogLevel.Error);
-        }
-
-        if (binder != null)
-        {
-            foreach (var file in binder.Files)
-            {
-                if (file.Name.Contains($"{fileExt}"))
-                {
-                    try
-                    {
-                        MTD cFile = MTD.Read(file.Bytes);
-                        fileStruct.MaterialFiles.Add(cFile);
-                    }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"Failed to read Material file: {file.ID}.\n{ex}", LogLevel.Error);
-                    }
-                }
-            }
-
-            Materials.Add(fileStruct, binder);
-        }
-    }
-
-    public void SaveMaterials()
-    {
-        foreach (var (info, binder) in Materials)
-        {
-            SaveMaterial(info, binder);
-        }
-    }
-
-    public void SaveMaterial(MaterialFileInfo info, IBinder binder)
-    {
-        if (binder == null)
-            return;
-
-        //TaskLogs.AddLog($"SaveCutscene: {info.Path}");
-
-        var fileDir = @"\mtd";
-        var fileExt = @".mtdbnd.dcx";
-
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            fileDir = @"\material";
-            fileExt = @".matbinbnd.dcx";
-        }
-
-        foreach (BinderFile file in binder.Files)
-        {
-            foreach (MTD mFile in info.MaterialFiles)
-            {
-                file.Bytes = mFile.Write();
-            }
-        }
-
-        BND4 writeBinder = binder as BND4;
-        byte[] fileBytes = null;
-
-        var assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
-
-        switch (Project.ProjectType)
-        {
-            case ProjectType.DS3:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.SDT:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.ER:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.AC6:
-                fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                break;
-            default:
-                return;
-        }
-
-        // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.ProjectPath}\\{fileDir}\\"))
-        {
-            Directory.CreateDirectory($"{Project.ProjectPath}\\{fileDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
-    }
-
-    public class MaterialFileInfo
-    {
-        public MaterialFileInfo(string name, string path)
-        {
-            Name = name;
-            Path = path;
-            MaterialFiles = new List<MTD>();
-        }
-
-        public string Name { get; set; }
-        public string Path { get; set; }
-
-        public List<MTD> MaterialFiles { get; set; }
-    }
-
-    public async Task<bool> LoadMatbinsForMapTexturing()
-    {
-        await Task.Delay(1);
-
-        MATBINs = new Dictionary<string, MaterialInfo>();
-
-        var modPath = $"{Project.ProjectPath}//material//";
-        if (Directory.Exists(modPath))
-        {
-            var modFiles = Directory.GetFiles(modPath);
-
-            // Mod
-            foreach (var file in modFiles)
-            {
-                LoadMatbinFile(file);
-            }
-        }
-
-        var rootPath = $"{Project.DataPath}//material//";
-        if (Directory.Exists(rootPath))
-        {
-            var rootFiles = Directory.GetFiles(rootPath);
-
-            // Root
-            foreach (var file in rootFiles)
-            {
-                LoadMatbinFile(file);
-            }
-        }
-
-        return true;
-    }
-
-    public void LoadMatbinFile(string file)
-    {
-        IBinder binder = null;
-
-        if (file.Contains(".matbinbnd.dcx"))
-        {
-            binder = BND4.Read(file);
-            using (binder)
-            {
-                foreach (BinderFile f in binder.Files)
-                {
-                    var path = f.Name;
-                    var matname = Path.GetFileNameWithoutExtension(f.Name);
-
-                    MaterialInfo info = new MaterialInfo(matname, path, MATBIN.Read(f.Bytes), null);
-
-                    if (!MATBINs.ContainsKey(matname))
-                        MATBINs.Add(matname, info);
-                }
-            }
-        }
-    }
-
-    public async Task<bool> LoadMaterialsForMapTexturing()
-    {
-        await Task.Delay(1);
-
-        MTDs = new Dictionary<string, MaterialInfo>();
-
-        var modPath = $"{Project.ProjectPath}//mtd//";
-        if (Directory.Exists(modPath))
-        {
-            var modFiles = Directory.GetFiles(modPath);
-
-            // Mod
-            foreach (var file in modFiles)
-            {
-                LoadMtdFile(file);
-            }
-        }
-
-        var rootPath = $"{Project.DataPath}//mtd//";
-        if (Directory.Exists(rootPath))
-        {
-            var rootFiles = Directory.GetFiles(rootPath);
-
-            // Root
-            foreach (var file in rootFiles)
-            {
-                LoadMtdFile(file);
-            }
-        }
-
-        return true;
-    }
-
-    public void LoadMtdFile(string file)
-    {
-        IBinder binder = null;
-
-        if (file.Contains(".mtd.dcx"))
-        {
-            binder = BND4.Read(file);
-            using (binder)
-            {
-                foreach (BinderFile f in binder.Files)
-                {
-                    var path = f.Name;
-                    var matname = Path.GetFileNameWithoutExtension(f.Name);
-
-                    MaterialInfo info = new MaterialInfo(matname, path, null, MTD.Read(f.Bytes));
-
-                    if (!MTDs.ContainsKey(matname))
-                        MTDs.Add(matname, info);
-                }
-            }
-        }
-    }
-
-    public struct MaterialInfo
-    {
-        public string Name;
-        public string Path;
-        public MATBIN Matbin;
-        public MTD Mtd;
-
-        public MaterialInfo(string name, string path, MATBIN matbin, MTD mtd)
-        {
-            Name = name;
-            Path = path;
-            Matbin = matbin;
-            Mtd = mtd;
-        }
+        return successfulLoad;
     }
 }

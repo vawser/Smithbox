@@ -5,8 +5,8 @@ using StudioCore.Editors.EmevdEditor;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
-using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.MaterialEditorNS;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
@@ -115,7 +115,7 @@ public class ProjectEntry
     [JsonIgnore]
     public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
-    public MaterialBank MaterialBank; // TODO: utilise file dictionary, change this to lazy load style
+    public MaterialData MaterialData;
     [JsonIgnore]
     public ParamData ParamData; // TODO: utilise file dictionary
     [JsonIgnore]
@@ -267,6 +267,22 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
         }
 
+        // Material Bank
+        // Handled here since this is required for texturing.
+        MaterialData = new(BaseEditor, this);
+
+        Task<bool> materialDataTask = MaterialData.Setup();
+        bool materialDataTaskResult = await materialDataTask;
+
+        if (materialDataTaskResult)
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+        }
+
         InitializeEditors();
         
         Initialized = true;
@@ -294,7 +310,7 @@ public class ProjectEntry
         EmevdBank = null;
         EsdBank = null;
         GparamBank = null;
-        MaterialBank = null;
+        //MaterialData = null;
         ParamData = null;
         TextData = null;
         TextureData = null;
@@ -518,20 +534,7 @@ public class ProjectEntry
         // ---- Material Editor ----
         if (EnableMaterialEditor)
         {
-            MaterialBank = new(BaseEditor, this);
-
-            // Material Bank
-            Task<bool> matBankTask = MaterialBank.Setup();
-            bool matBankTaskResult = await matBankTask;
-
-            if (matBankTaskResult)
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Setup Material Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Failed to setup Material Bank.");
-            }
+            // Material Bank is handled on the project-level since they are used in the Map/Model Editor as well as this editor.
 
             MaterialEditor = new MaterialEditorScreen(BaseEditor, this);
         }
