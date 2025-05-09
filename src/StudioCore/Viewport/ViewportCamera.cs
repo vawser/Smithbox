@@ -5,9 +5,9 @@ using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 
-namespace StudioCore;
+namespace StudioCore.ViewportNS;
 
-public class WorldView
+public class ViewportCamera
 {
     public enum MouseClickType
     {
@@ -19,12 +19,8 @@ public class WorldView
         Extra2
     }
 
-    //非常に悪いカメラピッチ制限    ファトキャット
-    private const float SHITTY_CAM_PITCH_LIMIT_FATCAT = 0.999f;
-
-    //非常に悪いカメラピッチ制限リミッタ    ファトキャット
-    private const float SHITTY_CAM_PITCH_LIMIT_FATCAT_CLAMP = 0.999f;
-    private const float SHITTY_CAM_ZOOM_MIN_DIST = 0.2f;
+    private const float CAMERA_PITCH_LIMIT = 0.999f;
+    private const float CAMERA_ZOOM_MIN_DIST = 0.2f;
 
     public static readonly Vector3 CameraDefaultPos = new(0, 0.25f, -5);
     public static readonly Vector3 CameraDefaultRot = new(0, 0, 0);
@@ -81,12 +77,23 @@ public class WorldView
 
     public Matrix4x4 WorldMatrixMOD = Matrix4x4.Identity;
 
-    //private float ViewportAspectRatio => 1.0f * GFX.LastViewport.Width / GFX.LastViewport.Height;
+    public bool IsOrthographic = false; 
 
-    public WorldView(Rectangle bounds)
+    private float OrthoWidth = 10f;     
+    private float OrthoHeight = 10f;    
+    private float OrthoZoomSpeed = 1f;
+
+    public Viewport ParentViewport;
+
+    public ViewportCamera(IViewport viewport, Rectangle bounds)
     {
         BoundingRect = bounds;
         SDL = SdlProvider.SDL.Value;
+
+        if(viewport is Viewport)
+        {
+            ParentViewport = (Viewport)viewport;
+        }
     }
 
     public Vector3 LightDirectionVector =>
@@ -185,10 +192,22 @@ public class WorldView
     public void UpdateMatrices()
     {
         MatrixWorld = Matrix4x4.CreateRotationY(Utils.Pi)
-                      * Matrix4x4.CreateTranslation(0, 0, 0)
-                      * Matrix4x4.CreateScale(-1, 1, 1)
-            // * Matrix.Invert(CameraOrigin.ViewMatrix)
-            ;
+                     * Matrix4x4.CreateTranslation(0, 0, 0)
+                     * Matrix4x4.CreateScale(-1, 1, 1);
+
+        float aspect = BoundingRect.Width / (float)BoundingRect.Height;
+        if (IsOrthographic)
+        {
+            MatrixProjection = Matrix4x4.CreateOrthographic(OrthoWidth, OrthoHeight, 0.1f, 1000f);
+        }
+        else
+        {
+            MatrixProjection = Matrix4x4.CreatePerspectiveFieldOfView(
+                MathF.PI / 4,
+                aspect,
+                0.1f,
+                1000f);
+        }
     }
 
     public void MoveCamera(float x, float y, float z, float speed)
@@ -325,14 +344,14 @@ public class WorldView
 
             if (IsOrbitCam)
             {
-                OrbitCamDistance = Math.Max(OrbitCamDistance, SHITTY_CAM_ZOOM_MIN_DIST);
+                OrbitCamDistance = Math.Max(OrbitCamDistance, CAMERA_ZOOM_MIN_DIST);
 
                 Vector3 distanceVectorAfterMove = -Vector3.Transform(Vector3.UnitX,
                                                       CameraTransform.RotationMatrixXYZ *
                                                       Matrix4x4.CreateRotationY(Utils.Pi)) *
                                                   new Vector3(-1, 1, 1);
                 CameraTransform.Position =
-                    OrbitCamCenter + (distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance));
+                    OrbitCamCenter + distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance);
             }
             else
             {
@@ -386,30 +405,41 @@ public class WorldView
         // Change camera speed via mousewheel
         float moveMult = 1;
         var mouseWheelSpeedStep = 1.15f;
-        if (InputTracker.GetMouseWheelDelta() > 0)
-        {
-            moveMult *= mouseWheelSpeedStep;
-        }
 
-        if (InputTracker.GetMouseWheelDelta() < 0)
+        if (IsOrthographic)
         {
-            moveMult *= 1 / mouseWheelSpeedStep;
-        }
-
-        if (isSpeedupKeyPressed)
-        {
-            CameraMoveSpeed_Fast *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Fast;
-        }
-        else if (isSlowdownKeyPressed)
-        {
-            CameraMoveSpeed_Slow *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Slow;
+            if (InputTracker.GetMouseWheelDelta() != 0)
+            {
+                ZoomOrtho(InputTracker.GetMouseWheelDelta());
+            }
         }
         else
         {
-            CameraMoveSpeed_Normal *= moveMult;
-            moveMult = dt * CameraMoveSpeed_Normal;
+            if (InputTracker.GetMouseWheelDelta() > 0)
+            {
+                moveMult *= mouseWheelSpeedStep;
+            }
+
+            if (InputTracker.GetMouseWheelDelta() < 0)
+            {
+                moveMult *= 1 / mouseWheelSpeedStep;
+            }
+
+            if (isSpeedupKeyPressed)
+            {
+                CameraMoveSpeed_Fast *= moveMult;
+                moveMult = dt * CameraMoveSpeed_Fast;
+            }
+            else if (isSlowdownKeyPressed)
+            {
+                CameraMoveSpeed_Slow *= moveMult;
+                moveMult = dt * CameraMoveSpeed_Slow;
+            }
+            else
+            {
+                CameraMoveSpeed_Normal *= moveMult;
+                moveMult = dt * CameraMoveSpeed_Normal;
+            }
         }
 
         Vector3 cameraDist = CameraOrigin.Position - CameraTransform.Position;
@@ -453,7 +483,7 @@ public class WorldView
                 }
 
 
-                if (Math.Abs(cameraDist.Length()) <= SHITTY_CAM_ZOOM_MIN_DIST)
+                if (Math.Abs(cameraDist.Length()) <= CAMERA_ZOOM_MIN_DIST)
                 {
                     z = Math.Min(z, 0);
                 }
@@ -538,12 +568,12 @@ public class WorldView
 
                 if (IsOrbitCam && !isMoveLightKeyPressed)
                 {
-                    if (CameraTransform.EulerRotation.X >= Utils.PiOver2 * SHITTY_CAM_PITCH_LIMIT_FATCAT)
+                    if (CameraTransform.EulerRotation.X >= Utils.PiOver2 * CAMERA_PITCH_LIMIT)
                     {
                         camV = Math.Min(camV, 0);
                     }
 
-                    if (CameraTransform.EulerRotation.X <= -Utils.PiOver2 * SHITTY_CAM_PITCH_LIMIT_FATCAT)
+                    if (CameraTransform.EulerRotation.X <= -Utils.PiOver2 * CAMERA_PITCH_LIMIT)
                     {
                         camV = Math.Max(camV, 0);
                     }
@@ -583,12 +613,12 @@ public class WorldView
 
         if (IsOrbitCam)
         {
-            OrbitCamDistance = Math.Max(OrbitCamDistance, SHITTY_CAM_ZOOM_MIN_DIST);
+            OrbitCamDistance = Math.Max(OrbitCamDistance, CAMERA_ZOOM_MIN_DIST);
 
             Vector3 distanceVectorAfterMove = -Vector3.Transform(Vector3.UnitX,
                 CameraTransform.RotationMatrixXYZ * Matrix4x4.CreateRotationY(Utils.Pi)) * new Vector3(-1, 1, 1);
             CameraTransform.Position =
-                OrbitCamCenter + (distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance));
+                OrbitCamCenter + distanceVectorAfterMove * (OrbitCamDistance * OrbitCamDistance);
         }
         else
         {
@@ -610,5 +640,10 @@ public class WorldView
 
         oldMouse = mousePos;
         return true;
+    }
+    public void ZoomOrtho(float delta)
+    {
+        OrthoWidth = MathF.Max(0.1f, OrthoWidth - delta * OrthoZoomSpeed);
+        OrthoHeight = MathF.Max(0.1f, OrthoHeight - delta * OrthoZoomSpeed);
     }
 }

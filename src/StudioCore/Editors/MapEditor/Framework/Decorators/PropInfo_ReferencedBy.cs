@@ -1,7 +1,7 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System.Numerics;
 using Veldrid.Utilities;
 

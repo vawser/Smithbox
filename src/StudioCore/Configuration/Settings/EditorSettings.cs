@@ -1960,76 +1960,6 @@ public class ViewportTab
         }
 
         //---------------------------------------
-        // Camera
-        //---------------------------------------
-        if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            var cam_fov = CFG.Current.Viewport_Camera_FOV;
-
-            if (ImGui.SliderFloat("Camera FOV", ref cam_fov, 40.0f, 140.0f))
-                CFG.Current.Viewport_Camera_FOV = cam_fov;
-            UIHelper.Tooltip("Set the field of view used by the camera within DSMS.");
-
-            var cam_sensitivity = CFG.Current.Viewport_Camera_Sensitivity;
-
-            if (ImGui.SliderFloat("Camera sensitivity", ref cam_sensitivity, 0.0f, 0.1f))
-                CFG.Current.Viewport_Camera_Sensitivity = cam_sensitivity;
-            UIHelper.Tooltip("Mouse sensitivty for turning the camera.");
-
-            var farClip = CFG.Current.Viewport_RenderDistance_Max;
-
-            if (ImGui.SliderFloat("Map max render distance", ref farClip, 10.0f, 500000.0f))
-                CFG.Current.Viewport_RenderDistance_Max = farClip;
-            UIHelper.Tooltip("Set the maximum distance at which entities will be rendered within the DSMS viewport.");
-
-            if (BaseEditor.ProjectManager.SelectedProject != null)
-            {
-                var curProject = BaseEditor.ProjectManager.SelectedProject;
-
-                if (curProject.MapEditor != null)
-                {
-                    var worldView = curProject.MapEditor.MapViewportView.Viewport.WorldView;
-
-                    if (ImGui.SliderFloat("Map camera speed (slow)",
-                            ref worldView.CameraMoveSpeed_Slow, 0.1f, 9999.0f))
-                        CFG.Current.Viewport_Camera_MoveSpeed_Slow = worldView.CameraMoveSpeed_Slow;
-                    UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Shift key is pressed whilst moving.");
-
-                    if (ImGui.SliderFloat("Map camera speed (normal)",
-                            ref worldView.CameraMoveSpeed_Normal, 0.1f, 9999.0f))
-                        CFG.Current.Viewport_Camera_MoveSpeed_Normal = worldView.CameraMoveSpeed_Normal;
-                    UIHelper.Tooltip("Set the speed at which the camera will move whilst moving normally.");
-
-                    if (ImGui.SliderFloat("Map camera speed (fast)",
-                            ref worldView.CameraMoveSpeed_Fast, 0.1f, 9999.0f))
-                        CFG.Current.Viewport_Camera_MoveSpeed_Fast = worldView.CameraMoveSpeed_Fast;
-                    UIHelper.Tooltip("Set the speed at which the camera will move when the Left or Right Control key is pressed whilst moving.");
-                }
-
-                if (ImGui.Button("Reset##ViewportCamera", defaultButtonSize))
-                {
-                    ResetCameraCFG();
-                }
-                UIHelper.Tooltip("Resets all of the values within this section to their default values.");
-            }
-        }
-
-        //---------------------------------------
-        // Information Panel
-        //---------------------------------------
-        if (ImGui.CollapsingHeader("Information Panel", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Display information panel", ref CFG.Current.Viewport_Enable_ViewportInfoPanel);
-            UIHelper.Tooltip("Display the information panel.");
-
-            ImGui.Checkbox("Display degree increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
-            UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
-
-            ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
-            UIHelper.Tooltip("Display the current movement increment type you are using in the information panel.");
-        }
-
-        //---------------------------------------
         // Display Presets
         //---------------------------------------
         if (ImGui.CollapsingHeader("Display Presets"))
@@ -2094,16 +2024,6 @@ public class ViewportTab
         CFG.Current.Viewport_Limit_Renderables = CFG.Default.Viewport_Limit_Renderables;
         CFG.Current.Viewport_Limit_Buffer_Indirect_Draw = CFG.Default.Viewport_Limit_Buffer_Indirect_Draw;
         CFG.Current.Viewport_Limit_Buffer_Flver_Bone = CFG.Default.Viewport_Limit_Buffer_Flver_Bone;
-    }
-
-    private void ResetCameraCFG()
-    {
-        CFG.Current.Viewport_Camera_FOV = CFG.Default.Viewport_Camera_FOV;
-        CFG.Current.Viewport_RenderDistance_Max = CFG.Default.Viewport_RenderDistance_Max;
-        CFG.Current.Viewport_Camera_MoveSpeed_Slow = CFG.Default.Viewport_Camera_MoveSpeed_Slow;
-        CFG.Current.Viewport_Camera_Sensitivity = CFG.Default.Viewport_Camera_Sensitivity;
-        CFG.Current.Viewport_Camera_MoveSpeed_Normal = CFG.Default.Viewport_Camera_MoveSpeed_Normal;
-        CFG.Current.Viewport_Camera_MoveSpeed_Fast = CFG.Default.Viewport_Camera_MoveSpeed_Fast;
     }
 
     private void ResetSceneFilterPresetCFG()

@@ -128,7 +128,7 @@ public class CFG
     /// <summary>
     /// If true, the profiling window (in Map or Model Editor) is visible.
     /// </summary>
-    public bool Interface_Editor_Profiling = true;
+    public bool Viewport_Profiling = true;
 
     /// <summary>
     /// If true, the project list window is visible.
@@ -582,8 +582,8 @@ public class CFG
     public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
 
     public bool Viewport_Enable_ViewportInfoPanel = true;
-    public bool Viewport_ViewportInfoPanel_Display_DegreeIncrement = true;
-    public bool Viewport_ViewportInfoPanel_Display_MovementIncrement = true;
+    public bool Viewport_RotationIncrement = true;
+    public bool Viewport_MovementIncrement = true;
 
     public bool Viewport_Enable_BoxSelection = true;
 

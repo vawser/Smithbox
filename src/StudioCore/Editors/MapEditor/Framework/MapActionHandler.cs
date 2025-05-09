@@ -381,8 +381,8 @@ public class MapActionHandler
             List<ViewportAction> actlist = new();
             HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
-            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.MapViewportView.Viewport.WorldView.CameraTransform.RotationMatrix);
-            Vector3 camPos = Editor.MapViewportView.Viewport.WorldView.CameraTransform.Position;
+            Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
+            Vector3 camPos = Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.Position;
             Vector3 targetCamPos = camPos + camDir * CFG.Current.Toolbar_Move_to_Camera_Offset;
 
             // Get the accumulated center position of all selections

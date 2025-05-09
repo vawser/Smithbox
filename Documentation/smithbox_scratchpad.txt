@@ -1,10 +1,12 @@
 # TODO
+- Implement VFS / data flow changes to the editors
+
 - Rework the Map List content view stuff: implement MapBank msb file list 
 when VFS/File Dictionary is implememented, remove the ContentView aspect entirely.
 Legacy issue, but more obvious now you can swap projects quickly
  
 - Visibility icon is displayed with a bad visual offset (compared to old version)
 
-- Param Editor: Merge Params mass edit script isn't working
+- Param Editor: Mass edit isn't working correctly
 
-- Keybinds: Ctrl+C and Ctrl+V don't work correctly
+- Keybinds: Ctrl+C and Ctrl+V don't work correctly for copying InputText content

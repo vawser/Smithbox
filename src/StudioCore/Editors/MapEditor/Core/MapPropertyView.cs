@@ -15,6 +15,7 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

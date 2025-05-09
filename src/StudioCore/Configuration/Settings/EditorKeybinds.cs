@@ -71,7 +71,7 @@ public class ViewportKeybindTab
 
     public void Display()
     {
-        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))
         {
             KeyBindings.Current.VIEWPORT_CameraForward = InputTracker.KeybindLine(0,
                 KeyBindings.Current.VIEWPORT_CameraForward,
@@ -100,13 +100,6 @@ public class ViewportKeybindTab
             KeyBindings.Current.VIEWPORT_CameraReset = InputTracker.KeybindLine(6,
                 KeyBindings.Current.VIEWPORT_CameraReset,
                 KeyBindings.Default.VIEWPORT_CameraReset);
-        }
-
-        if (ImGui.CollapsingHeader("Information", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            KeyBindings.Current.VIEWPORT_DisplayInformationPanel = InputTracker.KeybindLine(20,
-                KeyBindings.Current.VIEWPORT_DisplayInformationPanel,
-                KeyBindings.Default.VIEWPORT_DisplayInformationPanel);
         }
 
         if (ImGui.CollapsingHeader("Gizmos", ImGuiTreeNodeFlags.DefaultOpen))

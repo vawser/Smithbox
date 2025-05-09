@@ -344,8 +344,6 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -764,8 +762,6 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -815,30 +811,11 @@ public class MapEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
 
-            if (ImGui.MenuItem("Profiling"))
-            {
-                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
-
             if (ImGui.MenuItem("Resource List"))
             {
                 CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
-
-            if (ImGui.MenuItem("Viewport Information Panel"))
-            {
-                CFG.Current.Viewport_Enable_ViewportInfoPanel = !CFG.Current.Viewport_Enable_ViewportInfoPanel;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_ViewportInfoPanel);
-
-            if (ImGui.MenuItem("Viewport Grid"))
-            {
-                CFG.Current.Interface_MapEditor_Viewport_Grid = !CFG.Current.Interface_MapEditor_Viewport_Grid;
-                CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Viewport_Grid);
 
             if (ImGui.MenuItem("Entity Identifier Overview"))
             {
@@ -878,8 +855,6 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ToolMenu()
@@ -889,26 +864,20 @@ public class MapEditorScreen : EditorScreen
 
         // Tools
         ToolSubMenu.DisplayMenu();
+    }
 
-        ImGui.Separator();
+    public void FilterMenu()
+    {
+        var validViewportState = MapViewportView.RenderScene != null &&
+            MapViewportView.Viewport != null;
 
         // Filters
         if (ImGui.BeginMenu("Filters", validViewportState))
         {
             BasicFilters.Display();
 
-            ImGui.Separator();
-
             RegionFilters.DisplayOptions();
 
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
-        // Viewport
-        if (ImGui.BeginMenu("Viewport", validViewportState))
-        {
             if (ImGui.BeginMenu("Filter Presets"))
             {
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name))
@@ -944,22 +913,6 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("Environment Map"))
-            {
-                if (ImGui.MenuItem("Default"))
-                {
-                    MapViewportView.Viewport.SetEnvMap(0);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Scene Lighting"))
-            {
-                MapViewportView.Viewport.SceneParamsGui();
-                ImGui.EndMenu();
-            }
-
             if (Project.ProjectType is ProjectType.ER)
             {
                 if (ImGui.BeginMenu("Collision Type"))
@@ -983,63 +936,6 @@ public class MapEditorScreen : EditorScreen
             }
 
             CFG.Current.LastSceneFilter = MapViewportView.RenderScene.DrawFilter;
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Gizmos"))
-        {
-            if (ImGui.BeginMenu("Mode"))
-            {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
-
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Space"))
-            {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
-
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Origin"))
-            {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
-
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }

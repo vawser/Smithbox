@@ -1,9 +1,8 @@
 ﻿using StudioCore.Core;
-using StudioCore.Interface;
 using StudioCore.Scene;
+using StudioCore.ViewportNS;
 using Veldrid;
 using Veldrid.Sdl2;
-using Viewport = StudioCore.Interface.Viewport;
 
 namespace StudioCore.Editors.MapEditor.Core;
 
@@ -46,7 +45,7 @@ public class MapViewportView
     {
         if (Device != null)
         {
-            Viewport = new Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
+            Viewport = new ViewportNS.Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
             RenderScene.DrawFilter = CFG.Current.LastSceneFilter;
         }
@@ -83,6 +82,6 @@ public class MapViewportView
     }
     public bool InputCaptured()
     {
-        return Viewport.ViewportSelected;
+        return Viewport.IsViewportSelected;
     }
 }

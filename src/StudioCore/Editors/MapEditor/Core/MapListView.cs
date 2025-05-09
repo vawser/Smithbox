@@ -2,12 +2,11 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
-using StudioCore.Editors.ParamEditor;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Numerics;

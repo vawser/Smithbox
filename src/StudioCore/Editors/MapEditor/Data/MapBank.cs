@@ -1,16 +1,10 @@
 ﻿using Andre.IO.VFS;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Formats.JSON;
-using StudioCore.Resource.Locators;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MapEditor.Data;

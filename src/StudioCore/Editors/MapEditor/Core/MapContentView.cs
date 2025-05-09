@@ -12,6 +12,7 @@ using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;

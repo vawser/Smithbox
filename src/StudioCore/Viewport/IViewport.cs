@@ -3,11 +3,11 @@ using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
 
-namespace StudioCore.Interface;
+namespace StudioCore.ViewportNS;
 
 public interface IViewport
 {
-    public WorldView WorldView { get; }
+    public ViewportCamera ViewportCamera { get; }
 
     public int Width { get; }
     public int Height { get; }
@@ -15,10 +15,9 @@ public interface IViewport
     public float NearClip { get; set; }
     public float FarClip { get; }
 
-    public bool ViewportSelected { get; }
+    public bool IsViewportSelected { get; set; }
 
     public void OnGui();
-    public void SceneParamsGui();
     public void ResizeViewport(GraphicsDevice device, Rectangle newvp);
     public bool Update(Sdl2Window window, float dt);
     public void Draw(GraphicsDevice device, CommandList cl);

@@ -10,10 +10,10 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Scene;
+using StudioCore.ViewportNS;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
-using Viewport = StudioCore.Interface.Viewport;
 
 namespace StudioCore.Editors.ModelEditor;
 
@@ -73,7 +73,7 @@ public class ModelEditorScreen : EditorScreen
         if (baseEditor._context.Device != null)
         {
             RenderScene = new RenderScene();
-            Viewport = new Viewport(BaseEditor, null, this, ViewportType.ModelEditor, "Modeleditvp", Rect.Width, Rect.Height);
+            Viewport = new ViewportNS.Viewport(BaseEditor, null, this, ViewportType.ModelEditor, "Modeleditvp", Rect.Width, Rect.Height);
         }
         else
         {
@@ -144,7 +144,6 @@ public class ModelEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
 
             ImGui.EndMenuBar();
         }
@@ -192,8 +191,6 @@ public class ModelEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -249,8 +246,6 @@ public class ModelEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -287,35 +282,18 @@ public class ModelEditorScreen : EditorScreen
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ToolWindow);
 
-            if (ImGui.MenuItem("Profiling"))
-            {
-                CFG.Current.Interface_Editor_Profiling = !CFG.Current.Interface_Editor_Profiling;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Profiling);
-
             if (ImGui.MenuItem("Resource List"))
             {
                 CFG.Current.Interface_ModelEditor_ResourceList = !CFG.Current.Interface_ModelEditor_ResourceList;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_ResourceList);
 
-            if (ImGui.MenuItem("Viewport Grid"))
-            {
-                CFG.Current.Interface_ModelEditor_Viewport_Grid = !CFG.Current.Interface_ModelEditor_Viewport_Grid;
-                CFG.Current.ModelEditor_Viewport_RegenerateMapGrid = true;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Interface_ModelEditor_Viewport_Grid);
-
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
-    public void ToolMenu()
+    public void FilterMenu()
     {
-        ImGui.Separator();
-
         if (ImGui.BeginMenu("Filters", RenderScene != null && Viewport != null))
         {
             ModelContainer container = _universe.LoadedModelContainer;
@@ -385,77 +363,6 @@ public class ModelEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Viewport"))
-        {
-            if (ImGui.BeginMenu("Scene Lighting"))
-            {
-                Viewport.SceneParamsGui();
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Gizmos"))
-        {
-            if (ImGui.BeginMenu("Mode"))
-            {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
-
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Space"))
-            {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
-
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Origin"))
-            {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
-
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
-
-                ImGui.EndMenu();
-            }
-
-            ImGui.EndMenu();
-        }
     }
 
     public void OnDefocus()
@@ -487,7 +394,7 @@ public class ModelEditorScreen : EditorScreen
 
     public bool InputCaptured()
     {
-        return Viewport.ViewportSelected;
+        return Viewport.IsViewportSelected;
     }
 
     public void Update(float dt)
