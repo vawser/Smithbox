@@ -97,21 +97,21 @@ public class ViewportMenu
     {
         if (ImGui.BeginMenu("Camera"))
         {
-            if (ImGui.BeginMenu("View Mode"))
-            {
-                if (ImGui.MenuItem("Perspective", Parent.ViewMode == ViewMode.Perspective))
-                {
-                    Parent.ViewMode = ViewMode.Perspective;
-                }
-                if (ImGui.MenuItem("Orthographic", Parent.ViewMode == ViewMode.Orthographic))
-                {
-                    Parent.ViewMode = ViewMode.Orthographic;
-                }
+            //if (ImGui.BeginMenu("View Mode"))
+            //{
+            //    if (ImGui.MenuItem("Perspective", Parent.ViewMode == ViewMode.Perspective))
+            //    {
+            //        Parent.ViewMode = ViewMode.Perspective;
+            //    }
+            //    if (ImGui.MenuItem("Orthographic", Parent.ViewMode == ViewMode.Orthographic))
+            //    {
+            //        Parent.ViewMode = ViewMode.Orthographic;
+            //    }
 
-                ImGui.EndMenu();
-            }
+            //    ImGui.EndMenu();
+            //}
 
-            ImGui.Separator();
+            //ImGui.Separator();
 
             if (ImGui.BeginMenu("Camera Settings"))
             {
@@ -131,9 +131,17 @@ public class ViewportMenu
                 }
                 UIHelper.Tooltip("Mouse sensitivty for turning the camera.");
 
-                // Clipping Distance
+                // Near Clipping Distance
+                var nearClip = CFG.Current.Viewport_RenderDistance_Min;
+                if (ImGui.SliderFloat("Near clipping distance", ref nearClip, 0.1f, 100.0f))
+                {
+                    CFG.Current.Viewport_RenderDistance_Min = nearClip;
+                }
+                UIHelper.Tooltip("Set the minimum distance at which entities will be rendered within the viewport.");
+
+                // Far Clipping Distance
                 var farClip = CFG.Current.Viewport_RenderDistance_Max;
-                if (ImGui.SliderFloat("Clipping distance", ref farClip, 10.0f, 1000000.0f))
+                if (ImGui.SliderFloat("Far clipping distance", ref farClip, 10.0f, 1000000.0f))
                 {
                     CFG.Current.Viewport_RenderDistance_Max = farClip;
                 }

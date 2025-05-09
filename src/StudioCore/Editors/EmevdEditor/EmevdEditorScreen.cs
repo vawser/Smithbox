@@ -265,6 +265,9 @@ public class EmevdEditorScreen : EditorScreen
         {
             Project.EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     /// <summary>
@@ -276,5 +279,8 @@ public class EmevdEditorScreen : EditorScreen
             return;
 
         Project.EmevdBank.SaveEventScripts();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }

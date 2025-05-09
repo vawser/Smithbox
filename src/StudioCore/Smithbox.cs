@@ -123,6 +123,13 @@ public class Smithbox
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
     }
 
+    public void SaveConfiguration()
+    {
+        CFG.Save();
+        UI.Save();
+        KeyBindings.Save();
+    }
+
     /// <summary>
     /// Called when Smithbox is shutting down
     /// </summary>

@@ -233,10 +233,16 @@ public class EsdEditorScreen : EditorScreen
             return;
 
         Project.EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
         Project.EsdBank.SaveEsdScripts();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }

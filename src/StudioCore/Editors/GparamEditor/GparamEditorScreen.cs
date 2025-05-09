@@ -247,10 +247,16 @@ public class GparamEditorScreen : EditorScreen
     public void Save()
     {
         Project.GparamBank.SaveGraphicsParam(Selection._selectedGparamInfo);
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
         Project.GparamBank.SaveGraphicsParams();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }

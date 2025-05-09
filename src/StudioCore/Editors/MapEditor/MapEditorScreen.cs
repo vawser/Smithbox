@@ -970,6 +970,9 @@ public class MapEditorScreen : EditorScreen
         {
             HandleSaveException(e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
@@ -985,6 +988,9 @@ public class MapEditorScreen : EditorScreen
         {
             HandleSaveException(e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void OnEntityContextMenu(Entity ent)

@@ -1058,7 +1058,7 @@ public class ModelResourceManager : IResourceEventListener
                 Viewport.ViewportCamera.CameraMoveSpeed_Slow = basespeed / 10.0f;
                 Viewport.ViewportCamera.CameraMoveSpeed_Fast = basespeed * 10.0f;
 
-                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
+                //Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
             }
 
             // Update Model Container

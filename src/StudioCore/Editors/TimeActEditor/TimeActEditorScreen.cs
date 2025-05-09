@@ -285,6 +285,9 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         Project.TimeActData.PrimaryCharacterBank.SaveTimeActTask(Selection.ContainerInfo, Selection.ContainerBinder);
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
@@ -296,5 +299,8 @@ public class TimeActEditorScreen : EditorScreen
         }
 
         Project.TimeActData.PrimaryCharacterBank.SaveTimeActsTask();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }

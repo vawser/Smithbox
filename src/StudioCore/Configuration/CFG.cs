@@ -503,6 +503,7 @@ public class CFG
     public float Viewport_Camera_MoveSpeed_Normal { get; set; } = 20.0f;
     public float Viewport_Camera_MoveSpeed_Fast { get; set; } = 200.0f;
     public float Viewport_Camera_Sensitivity { get; set; } = 0.0160f;
+    public float Viewport_RenderDistance_Min { get; set; } = 0.1f;
     public float Viewport_RenderDistance_Max { get; set; } = 50000.0f;
 
     // Rendering Limits

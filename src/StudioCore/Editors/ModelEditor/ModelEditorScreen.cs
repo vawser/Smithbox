@@ -379,6 +379,9 @@ public class ModelEditorScreen : EditorScreen
         }
 
         ResManager.SaveModel();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
@@ -390,6 +393,9 @@ public class ModelEditorScreen : EditorScreen
         }
 
         Save(); // Just call save.
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public bool InputCaptured()

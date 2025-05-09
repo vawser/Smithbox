@@ -135,10 +135,16 @@ public class MaterialEditorScreen : EditorScreen
     public void Save()
     {
         // Project.MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
         Project.MaterialBank.SaveMaterials();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }

@@ -976,6 +976,9 @@ public class ParamEditorScreen : EditorScreen
             TaskLogs.AddLog(e.Message,
                 LogLevel.Error, LogPriority.High, e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
@@ -995,6 +998,9 @@ public class ParamEditorScreen : EditorScreen
             TaskLogs.AddLog($"{e.Message}",
                 LogLevel.Error, LogPriority.High, e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
 

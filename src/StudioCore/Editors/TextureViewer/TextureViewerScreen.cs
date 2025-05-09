@@ -261,11 +261,17 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     public void Save()
     {
         // Nothing
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
         // Nothing
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)

@@ -20,14 +20,12 @@ namespace StudioCore.ViewportNS;
 public enum ViewportType
 {
     MapEditor,
-    ModelEditor,
-    TimeActEditor
+    ModelEditor
 }
 
 /// <summary>
-///     A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
-///     transform
-///     the view within a virtual canvas, or it can be manually configured for say rendering thumbnails
+/// A viewport is a virtual (i.e. render to texture/render target) view of a scene. It can receive input events to
+/// transform the view within a virtual canvas, or it can be manually configured for say rendering thumbnails
 /// </summary>
 public class Viewport : IViewport
 {
@@ -117,7 +115,7 @@ public class Viewport : IViewport
     /// <summary>
     /// The near clipping value for the projection matrix
     /// </summary>
-    public float NearClip { get; set; } = 0.1f;
+    public float NearClip => CFG.Current.Viewport_RenderDistance_Min;
 
     /// <summary>
     /// The far clipping value for the projection matrix

@@ -296,6 +296,9 @@ public class TextEditorScreen : EditorScreen
         {
             Project.TextData.PrimaryBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     /// <summary>
@@ -304,5 +307,8 @@ public class TextEditorScreen : EditorScreen
     public void SaveAll()
     {
         Project.TextData.PrimaryBank.SaveTextFiles();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 }
