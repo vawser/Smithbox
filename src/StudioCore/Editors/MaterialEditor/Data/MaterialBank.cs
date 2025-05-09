@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditor;
+namespace StudioCore.Editors.MaterialEditorNS;
 
 public class MaterialBank
 {
@@ -106,6 +106,7 @@ public class MTDWrapper
         Name = dictEntry.Filename;
         Path = dictEntry.Path;
     }
+
     public async Task<bool> Load(bool msbOnly = false)
     {
         await Task.Delay(1);

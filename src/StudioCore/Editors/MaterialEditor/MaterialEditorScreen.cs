@@ -2,10 +2,11 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MaterialEditorNS;
 using StudioCore.Interface;
 using System.Numerics;
 
-namespace StudioCore.MaterialEditor;
+namespace StudioCore.MaterialEditorNS;
 
 public class MaterialEditorScreen : EditorScreen
 {
@@ -14,10 +15,29 @@ public class MaterialEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
+    public MaterialSelection Selection;
+    public MaterialFilters Filters;
+
+    public MaterialBinderList BinderList;
+    public MaterialFileList FileList;
+
+    public MaterialMTDView MTDView;
+    public MaterialMATBINView MATBINView;
+
+
     public MaterialEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
         Project = project;
+
+        Selection = new(this, project);
+        Filters = new(this, project);
+
+        BinderList = new(this, project);
+        FileList = new(this, project);
+
+        MTDView = new(this, project);
+        MATBINView = new(this, project);
     }
 
     public string EditorName => "Material Editor##MaterialEditor";
@@ -53,7 +73,36 @@ public class MaterialEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        // EDITOR HERE
+        if (true)
+        {
+            ImGui.Begin("Binders##materialBinderList", ImGuiWindowFlags.None);
+            BinderList.Draw();
+            ImGui.End();
+        }
+
+        if (true)
+        {
+            ImGui.Begin("Files##materialFileList", ImGuiWindowFlags.None);
+            FileList.Draw();
+            ImGui.End();
+        }
+
+        if (Selection.SourceType is SourceType.MTD)
+        {
+            ImGui.Begin("MTD Entry##material_MTD_entry", ImGuiWindowFlags.MenuBar);
+            MTDView.Draw();
+            ImGui.End();
+        }
+
+        if (Selection.SourceType is SourceType.MATBIN)
+        {
+            if (MaterialUtils.SupportsMATBIN(Project))
+            {
+                ImGui.Begin("MATBIN Entry##material_MATBIN_entry", ImGuiWindowFlags.MenuBar);
+                MATBINView.Draw();
+                ImGui.End();
+            }
+        }
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
@@ -75,8 +124,6 @@ public class MaterialEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -112,8 +159,6 @@ public class MaterialEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -123,8 +168,6 @@ public class MaterialEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ToolMenu()

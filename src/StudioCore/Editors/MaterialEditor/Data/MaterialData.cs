@@ -1,5 +1,4 @@
 ﻿using StudioCore.Core;
-using StudioCore.Editors.MaterialEditor;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditorNS;
