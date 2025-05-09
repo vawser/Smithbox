@@ -2,15 +2,14 @@
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Configuration.Windows;
 using StudioCore.Core;
+using StudioCore.DebugNS;
 using StudioCore.Editor;
 using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Tools;
-using StudioCore.Tools.Development;
-using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -22,10 +21,8 @@ using Veldrid.Sdl2;
 using static StudioCore.Configuration.Windows.HelpWindow;
 using static StudioCore.Configuration.Windows.KeybindWindow;
 using static StudioCore.Configuration.Windows.SettingsWindow;
-using static StudioCore.Tools.Development.DebugWindow;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
-using StudioCore.Configuration.Windows;
 
 namespace StudioCore;
 
@@ -51,8 +48,6 @@ public class Smithbox
     public static bool _programUpdateAvailable;
     public static string _releaseUrl = "";
 
-    public bool _showImGuiDemo;
-
     public SoapstoneService _soapstoneService;
 
     public static ImGuiTextureLoader TextureLoader;
@@ -62,7 +57,7 @@ public class Smithbox
     public SettingsWindow Settings;
     public HelpWindow Help;
     public KeybindWindow Keybinds;
-    public DebugWindow DebugTools;
+    public DebugTools DebugTools;
 
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
@@ -478,11 +473,6 @@ public class Smithbox
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
-        if (_showImGuiDemo)
-        {
-            ImGui.ShowDemoWindow();
-        }
-
         ProjectCreation.Draw();
         ProjectSettings.Draw();
 
@@ -681,106 +671,8 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
-            // Debug Tools
-            if (ImGui.BeginMenu("Debugging"))
-            {
-                if (ImGui.MenuItem($"Tasks"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.DisplayTaskStatus);
-                }
-                UIHelper.Tooltip("Display on-going tasks.");
-
-                if (ImGui.MenuItem($"ImGui Demo"))
-                {
-                    _showImGuiDemo = !_showImGuiDemo;
-                }
-
-                ImGui.Separator();
-
-                if (ImGui.MenuItem($"PARAMDEF Validation"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateParamdef);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"MSB Validation"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateMSB);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"TAE Validation"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateTAE);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                ImGui.Separator();
-
-                if (ImGui.MenuItem($"FLVER Layout Helper"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.FlverDumpHelper);
-                }
-                UIHelper.Tooltip("Display the helper.");
-
-                if (ImGui.MenuItem($"Mod Generator"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ModGenerator);
-                }
-                UIHelper.Tooltip("Display the helper.");
-
-                ImGui.Separator();
-
-                if (ImGui.MenuItem($"Test: MSBE Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBE_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSB_AC6 Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSB_AC6_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBFA Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBFA_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBV Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBV_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBVD Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBVD_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: BTL Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_BTL_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: FLVER2 Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_FLVER2_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: Unique Param Row IDs"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_UniqueParamRowIDs);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                ImGui.EndMenu();
-            }
+            // Debugging
+            DebugTools.DisplayMenu();
 
             // View
             if (ImGui.BeginMenu("View"))

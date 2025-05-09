@@ -1,9 +1,9 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
-using StudioCore.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Editor;
 using StudioCore.GraphicsEditor;
-using StudioCore.Tools;
 
 namespace StudioCore.Editors.GparamEditor.Tools;
 

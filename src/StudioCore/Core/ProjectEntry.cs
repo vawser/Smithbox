@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor;
+using StudioCore.Editors.EmevdEditor.Data;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
@@ -108,15 +109,16 @@ public class ProjectEntry
     [JsonIgnore]
     public MapData MapData;
     [JsonIgnore]
-    public EmevdBank EmevdBank; // TODO: utilise file dictionary, change this to lazy load style
+    public ParamData ParamData;
+    [JsonIgnore]
+    public MaterialData MaterialData;
+    [JsonIgnore]
+    public EmevdData EmevdData;
+
     [JsonIgnore]
     public EsdBank EsdBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
     public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
-    [JsonIgnore]
-    public MaterialData MaterialData;
-    [JsonIgnore]
-    public ParamData ParamData; // TODO: utilise file dictionary
     [JsonIgnore]
     public TextData TextData; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
@@ -266,22 +268,6 @@ public class ProjectEntry
             TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
         }
 
-        // Material Bank
-        // Handled here since this is required for texturing.
-        MaterialData = new(BaseEditor, this);
-
-        Task<bool> materialDataTask = MaterialData.Setup();
-        bool materialDataTaskResult = await materialDataTask;
-
-        if (materialDataTaskResult)
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
-        }
-
         InitializeEditors();
         
         Initialized = true;
@@ -306,11 +292,11 @@ public class ProjectEntry
         MapEditor = null;
 
         MapData = null;
-        EmevdBank = null;
+        ParamData = null;
+        MaterialData = null;
+        EmevdData = null;
         EsdBank = null;
         GparamBank = null;
-        //MaterialData = null;
-        ParamData = null;
         TextData = null;
         TextureData = null;
         TimeActData = null;
@@ -372,6 +358,24 @@ public class ProjectEntry
                 TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Map Data Banks.");
             }
 
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
+            {
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (materialDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                }
+            }
+
             MapEditor = new MapEditorScreen(BaseEditor, this);
         }
 
@@ -389,6 +393,24 @@ public class ProjectEntry
             else
             {
                 TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+            }
+
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
+            {
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (materialDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                }
             }
 
             ModelEditor = new ModelEditorScreen(BaseEditor, this);
@@ -533,7 +555,23 @@ public class ProjectEntry
         // ---- Material Editor ----
         if (EnableMaterialEditor)
         {
-            // Material Bank is handled on the project-level since they are used in the Map/Model Editor as well as this editor.
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
+            {
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (materialDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                }
+            }
 
             MaterialEditor = new MaterialEditorScreen(BaseEditor, this);
         }
@@ -541,19 +579,19 @@ public class ProjectEntry
         // ---- Event Script Editor ----
         if (EnableEmevdEditor)
         {
-            EmevdBank = new(BaseEditor, this);
+            EmevdData = new(BaseEditor, this);
 
-            // EMEVD Bank
-            Task<bool> emevdBankTask = EmevdBank.Setup();
+            // EMEVD Banks
+            Task<bool> emevdBankTask = EmevdData.Setup();
             bool emevdBankResult = await emevdBankTask;
 
             if (emevdBankResult)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Banks.");
             }
             else
             {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Banks.");
             }
 
             EmevdEditor = new EmevdEditorScreen(BaseEditor, this);

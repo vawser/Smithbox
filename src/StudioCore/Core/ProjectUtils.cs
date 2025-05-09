@@ -83,6 +83,12 @@ public class ProjectUtils
         return looseParams;
     }
 
+    /// <summary>
+    /// Build a FileDictionary from a source path
+    /// </summary>
+    /// <param name="sourcePath"></param>
+    /// <returns></returns>
+    /// <exception cref="DirectoryNotFoundException"></exception>
     public static FileDictionary BuildFromSource(string sourcePath)
     {
         if (!Directory.Exists(sourcePath))

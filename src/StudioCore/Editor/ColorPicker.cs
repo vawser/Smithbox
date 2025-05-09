@@ -9,7 +9,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Tools;
+namespace StudioCore.Editor;
 
 public static class ColorPicker
 {

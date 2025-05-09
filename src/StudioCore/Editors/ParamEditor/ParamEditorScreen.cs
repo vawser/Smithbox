@@ -14,7 +14,6 @@ using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
-using StudioCore.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
