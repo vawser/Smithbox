@@ -1,10 +1,8 @@
-﻿using StudioCore.TalkEditor;
+﻿using StudioCore.EzStateEditorNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 
 namespace StudioCore.Editors.EsdEditor.EsdLang;
@@ -58,7 +56,7 @@ public static class EzInfixor
 
         var curProject = editor.BaseEditor.ProjectManager.SelectedProject;
 
-        var functionMeta = curProject.EsdBank.Meta.GetAllFunctionMeta();
+        var functionMeta = curProject.EsdData.Meta.GetAllFunctionMeta();
         foreach(var entry in functionMeta)
         {
             if(entry.id == id)

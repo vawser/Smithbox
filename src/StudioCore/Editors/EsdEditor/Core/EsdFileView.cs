@@ -1,39 +1,24 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Editors.EsdEditor.Enums;
-using StudioCore.Editors.TalkEditor;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
 using StudioCore.Utilities;
+using System.Linq;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the file selection, viewing and editing.
 /// </summary>
 public class EsdFileView
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
-    private EsdFilters Filters;
-    private EsdContextMenu ContextMenu;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdFileView(EsdEditorScreen screen)
+    public EsdFileView(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -43,51 +28,103 @@ public class EsdFileView
     {
         // File List
         ImGui.Begin("Files##TalkFileList");
-        Selection.SwitchWindowContext(EsdEditorContext.File);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.File);
 
-        Filters.DisplayFileFilterSearch();
+        Editor.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("FileListSection");
-        Selection.SwitchWindowContext(EsdEditorContext.File);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.File);
 
-        foreach (var (info, binder) in Screen.Project.EsdBank.TalkBank)
+        // Talk
+        if (ImGui.CollapsingHeader("Talk", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var displayName = $"{info.Name}";
-            var aliasName = AliasUtils.GetMapNameAlias(Screen.Project, info.Name);
-
-            if (Filters.IsFileFilterMatch(displayName, aliasName))
+            foreach (var entry in Project.EsdData.PrimaryBank.Scripts)
             {
-                // File row
-                if (ImGui.Selectable($@" {displayName}", displayName == Selection._selectedBinderKey))
+                if (entry.Key.Extension == "talkesdbnd")
                 {
-                    Selection.ResetScript();
-                    Selection.ResetStateGroup();
-                    Selection.ResetStateGroupNode();
+                    var displayName = $"{entry.Key.Filename}";
+                    var aliasName = AliasUtils.GetMapNameAlias(Project, displayName);
 
-                    Selection.SetFile(info, binder);
-                }
-
-                // Arrow Selection
-                if (ImGui.IsItemHovered() && Selection.SelectNextFile)
-                {
-                    Selection.SelectNextFile = false;
-                    Selection.SetFile(info, binder);
-                }
-                if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-                {
-                    Selection.SelectNextFile = true;
-                }
-
-                // Only apply to selection
-                if (Selection._selectedBinderKey != "")
-                {
-                    if (Selection._selectedBinderKey == info.Name)
+                    if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
                     {
-                        ContextMenu.FileContextMenu(info);
+                        // File row
+                        if (ImGui.Selectable($@" {displayName}", entry.Key == Editor.Selection.SelectedFileEntry))
+                        {
+                            Editor.Selection.ResetScript();
+                            Editor.Selection.ResetStateGroup();
+                            Editor.Selection.ResetStateGroupNode();
+
+                            Editor.Selection.SetFile(entry.Key);
+                        }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFile)
+                        {
+                            Editor.Selection.SelectNextFile = false;
+                            Editor.Selection.SetFile(entry.Key);
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            Editor.Selection.SelectNextFile = true;
+                        }
+
+                        // Only apply to selection
+                        if (entry.Key == Editor.Selection.SelectedFileEntry)
+                        {
+                            Editor.ContextMenu.FileContextMenu(entry.Key);
+                        }
+
+                        UIHelper.DisplayAlias(aliasName);
                     }
                 }
+            }
+        }
 
-                UIHelper.DisplayAlias(aliasName);
+        // Loose
+        if (Project.EsdData.EsdFiles.Entries.Any(e => e.Extension == "esd"))
+        {
+            if (ImGui.CollapsingHeader("Loose", ImGuiTreeNodeFlags.DefaultOpen))
+            {
+                foreach (var entry in Project.EsdData.PrimaryBank.Scripts)
+                {
+                    if (entry.Key.Extension == "esd")
+                    {
+                        var displayName = $"{entry.Key.Filename}";
+                        var aliasName = AliasUtils.GetMapNameAlias(Project, displayName);
+
+                        if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
+                        {
+                            // File row
+                            if (ImGui.Selectable($@" {displayName}", entry.Key == Editor.Selection.SelectedFileEntry))
+                            {
+                                Editor.Selection.ResetScript();
+                                Editor.Selection.ResetStateGroup();
+                                Editor.Selection.ResetStateGroupNode();
+
+                                Editor.Selection.SetFile(entry.Key);
+                            }
+
+                            // Arrow Selection
+                            if (ImGui.IsItemHovered() && Editor.Selection.SelectNextFile)
+                            {
+                                Editor.Selection.SelectNextFile = false;
+                                Editor.Selection.SetFile(entry.Key);
+                            }
+                            if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                            {
+                                Editor.Selection.SelectNextFile = true;
+                            }
+
+                            // Only apply to selection
+                            if (entry.Key == Editor.Selection.SelectedFileEntry)
+                            {
+                                Editor.ContextMenu.FileContextMenu(entry.Key);
+                            }
+
+                            UIHelper.DisplayAlias(aliasName);
+                        }
+                    }
+                }
             }
         }
 

@@ -1,20 +1,19 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 public class EsdFilters
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdFilters(EsdEditorScreen screen)
+    public EsdFilters(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public string FileFilterInput = "";

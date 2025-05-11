@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditorNS;
+namespace StudioCore.MaterialEditorNS;
 
 /// <summary>
 /// The main window for a MATBIN entry.

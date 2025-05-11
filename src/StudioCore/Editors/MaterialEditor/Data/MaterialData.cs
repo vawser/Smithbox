@@ -3,7 +3,7 @@ using StudioCore.Formats.JSON;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditorNS;
+namespace StudioCore.MaterialEditorNS;
 
 /// <summary>
 /// Holds the data banks for Materials.

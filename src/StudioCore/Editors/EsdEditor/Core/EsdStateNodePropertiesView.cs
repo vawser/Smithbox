@@ -1,31 +1,28 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.EsdEditor.Enums;
 using StudioCore.Editors.EsdEditor.EsdLang;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
 using System.Collections.Generic;
 using static SoulsFormats.ESD;
 using static StudioCore.Editors.EsdEditor.EsdLang.AST;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the state node properties viewing and editing.
 /// </summary>
 public class EsdStateNodePropertyView
 {
-    private EsdEditorScreen Editor;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdStateNodePropertyView(EsdEditorScreen editor)
+    public EsdStateNodePropertyView(EsdEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
-        Decorator = editor.Decorator;
-        Selection = editor.Selection;
+        Project = project;
     }
 
     /// <summary>
@@ -42,9 +39,9 @@ public class EsdStateNodePropertyView
     public void Display()
     {
         ImGui.Begin("State Node##EsdStateNodePropertyView");
-        Selection.SwitchWindowContext(EsdEditorContext.StateNodeContents);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.StateNodeContents);
 
-        var stateNode = Selection._selectedStateGroupNode;
+        var stateNode = Editor.Selection.SelectedNode;
 
         if (stateNode != null)
         {
@@ -127,14 +124,14 @@ public class EsdStateNodePropertyView
             if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
             {
                 var targetStateGroup = cmd.CommandID;
-                var groups = Selection._selectedEsdScript.StateGroups;
+                var groups = Editor.Selection.SelectedScript.StateGroups;
 
                 foreach (var (key, entry) in groups)
                 {
                     if (key == targetStateGroup)
                     {
-                        Selection.ResetStateGroupNode();
-                        Selection.SetStateGroup(key, entry);
+                        Editor.Selection.ResetStateGroupNode();
+                        Editor.Selection.SetStateGroup(key, entry);
                     }
                 }
             }
@@ -144,7 +141,7 @@ public class EsdStateNodePropertyView
         ImGui.TableSetColumnIndex(3);
 
         // Alias
-        var cmdMeta = Editor.Project.EsdBank.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdMeta = Editor.Project.EsdData.Meta.GetCommandMeta(cmd.CommandBank, cmd.CommandID);
         if (cmdMeta != null)
         {
             var displayAlias = cmdMeta.displayName;
@@ -158,7 +155,7 @@ public class EsdStateNodePropertyView
     /// </summary>
     private void DisplayerCommandParameterSection(ESD.State node, List<CommandCall> commands, CommandCall cmd, int imguiId)
     {
-        var cmdArgMeta = Editor.Project.EsdBank.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
+        var cmdArgMeta = Editor.Project.EsdData.Meta.GetCommandArgMeta(cmd.CommandBank, cmd.CommandID);
 
         for(int i = 0; i < cmd.Arguments.Count; i++)
         {
@@ -218,14 +215,14 @@ public class EsdStateNodePropertyView
                     if (target == "StateGroup")
                     {
                         var targetStateGroup = expr.AsInt();
-                        var groups = Selection._selectedEsdScript.StateGroups;
+                        var groups = Editor.Selection.SelectedScript.StateGroups;
 
                         foreach (var (key, entry) in groups)
                         {
                             if (key == targetStateGroup)
                             {
-                                Selection.ResetStateGroupNode();
-                                Selection.SetStateGroup(key, entry);
+                                Editor.Selection.ResetStateGroupNode();
+                                Editor.Selection.SetStateGroup(key, entry);
                             }
                         }
                     }
@@ -243,7 +240,7 @@ public class EsdStateNodePropertyView
                 // EMEVD
                 if (source == "emevd")
                 {
-                    var mapName = Selection._selectedFileInfo.Name;
+                    var mapName = Editor.Selection.SelectedFileEntry.Filename;
                     var eventId = target;
 
                     //EditorCommandQueue.AddCommand($@"param/select/-1/{paramName}/{rowID}");
@@ -376,14 +373,14 @@ public class EsdStateNodePropertyView
                 if (ImGui.ArrowButton($"idJumpLinkButton{imguiId}", ImGuiDir.Right))
                 {
                     var targetStateGroup = passCmd.CommandID;
-                    var groups = Selection._selectedEsdScript.StateGroups;
+                    var groups = Editor.Selection.SelectedScript.StateGroups;
 
                     foreach (var (key, entry) in groups)
                     {
                         if (key == targetStateGroup)
                         {
-                            Selection.ResetStateGroupNode();
-                            Selection.SetStateGroup(key, entry);
+                            Editor.Selection.ResetStateGroupNode();
+                            Editor.Selection.SetStateGroup(key, entry);
                         }
                     }
                 }
@@ -393,7 +390,7 @@ public class EsdStateNodePropertyView
             ImGui.TableSetColumnIndex(3);
 
             // Alias
-            var cmdMeta = Editor.Project.EsdBank.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdMeta = Editor.Project.EsdData.Meta.GetCommandMeta(passCmd.CommandBank, passCmd.CommandID);
             if (cmdMeta != null)
             {
                 var displayAlias = cmdMeta.displayName;
@@ -403,7 +400,7 @@ public class EsdStateNodePropertyView
 
             ImGui.TableNextRow();
 
-            var cmdArgMeta = Editor.Project.EsdBank.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
+            var cmdArgMeta = Editor.Project.EsdData.Meta.GetCommandArgMeta(passCmd.CommandBank, passCmd.CommandID);
 
             for (int i = 0; i < passCmd.Arguments.Count; i++)
             {

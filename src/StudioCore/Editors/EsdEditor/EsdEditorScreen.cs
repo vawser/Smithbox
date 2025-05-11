@@ -2,12 +2,10 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.EsdEditor;
-using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Interface;
 using System.Numerics;
 
-namespace StudioCore.TalkEditor;
+namespace StudioCore.EzStateEditorNS;
 
 public class EsdEditorScreen : EditorScreen
 {
@@ -16,15 +14,11 @@ public class EsdEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public EsdSelectionManager Selection;
-    public EsdPropertyDecorator Decorator;
-    public EsdShortcuts EditorShortcuts;
+    public EsdSelection Selection;
     public EsdContextMenu ContextMenu;
-    public EsdActionHandler ActionHandler;
     public EsdFilters Filters;
 
     public EsdToolView ToolView;
-    public EsdToolMenubar ToolMenubar;
 
     public EsdFileView FileView;
     public EsdScriptView ScriptView;
@@ -37,21 +31,17 @@ public class EsdEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        EditorShortcuts = new EsdShortcuts(this);
-        Selection = new EsdSelectionManager(this);
-        Decorator = new EsdPropertyDecorator(this);
-        ContextMenu = new EsdContextMenu(this);
-        ActionHandler = new EsdActionHandler(this);
-        Filters = new EsdFilters(this);
+        Selection = new EsdSelection(this, Project);
+        ContextMenu = new EsdContextMenu(this, Project);
+        Filters = new EsdFilters(this, Project);
 
-        ToolView = new EsdToolView(this);
-        ToolMenubar = new EsdToolMenubar(this);
+        ToolView = new EsdToolView(this, Project);
 
-        FileView = new EsdFileView(this);
-        ScriptView = new EsdScriptView(this);
-        StateGroupView = new EsdStateGroupView(this);
-        StateNodeView = new EsdStateNodeView(this);
-        StateNodePropertyView = new EsdStateNodePropertyView(this);
+        FileView = new EsdFileView(this, Project);
+        ScriptView = new EsdScriptView(this, Project);
+        StateGroupView = new EsdStateGroupView(this, Project);
+        StateNodeView = new EsdStateNodeView(this, Project);
+        StateNodePropertyView = new EsdStateNodePropertyView(this, Project);
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";
@@ -80,12 +70,13 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        Shortcuts();
+
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
 
             ImGui.EndMenuBar();
         }
@@ -222,27 +213,57 @@ public class EsdEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ToolMenu()
+    public async void Save()
     {
-        ToolMenubar.Display();
-    }
+        await Project.EsdData.PrimaryBank.SaveScript(Selection.SelectedFileEntry);
 
-    public void Save()
-    {
-        if (Project.ProjectType == ProjectType.Undefined)
-            return;
+        if (Selection.SelectedFileEntry.Extension == "talkesdbnd")
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.talkesdbnd.dcx");
+        }
 
-        Project.EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
+        if (Selection.SelectedFileEntry.Extension == "esd")
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.esd");
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
     }
 
-    public void SaveAll()
+    public async void SaveAll()
     {
-        Project.EsdBank.SaveEsdScripts();
+        await Project.EsdData.PrimaryBank.SaveAllScripts();
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
+    }
+
+    public void Shortcuts()
+    {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Save();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
     }
 }

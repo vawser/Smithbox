@@ -4,19 +4,17 @@ using StudioCore.Editor;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
-using StudioCore.Editors.MaterialEditorNS;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
-using StudioCore.Editors.TalkEditor;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
+using StudioCore.EzStateEditorNS;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditorNS;
-using StudioCore.TalkEditor;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
 using System;
@@ -112,9 +110,9 @@ public class ProjectEntry
     public MaterialData MaterialData;
     [JsonIgnore]
     public EmevdData EmevdData;
-
     [JsonIgnore]
-    public EsdBank EsdBank; // TODO: utilise file dictionary, change this to lazy load style
+    public EsdData EsdData;
+
     [JsonIgnore]
     public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
@@ -293,7 +291,7 @@ public class ProjectEntry
         ParamData = null;
         MaterialData = null;
         EmevdData = null;
-        EsdBank = null;
+        EsdData = null;
         GparamBank = null;
         TextData = null;
         TextureData = null;
@@ -598,19 +596,19 @@ public class ProjectEntry
         // ---- EzState Script Editor ----
         if (EnableEsdEditor)
         {
-            EsdBank = new(BaseEditor, this);
+            EsdData = new(BaseEditor, this);
 
-            // ESD Bank
-            Task<bool> esdBankTask = EsdBank.Setup();
+            // ESD Banks
+            Task<bool> esdBankTask = EsdData.Setup();
             bool esdBankResult = await esdBankTask;
 
             if (esdBankResult)
             {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Banks.");
             }
             else
             {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Banks.");
             }
 
             EsdEditor = new EsdEditorScreen(BaseEditor, this);

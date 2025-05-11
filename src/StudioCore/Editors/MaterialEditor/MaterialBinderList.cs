@@ -1,17 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
-using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Formats.JSON;
-using StudioCore.MaterialEditorNS;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.LiveRefresh.RequestFileReload;
 
-namespace StudioCore.Editors.MaterialEditorNS;
+namespace StudioCore.MaterialEditorNS;
 
 /// <summary>
 /// The list of binders for the source type.

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditorNS;
+namespace StudioCore.MaterialEditorNS;
 
 /// <summary>
 /// Determines the material source type: MTD or MATBIN

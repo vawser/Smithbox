@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.MaterialEditorNS;
+namespace StudioCore.MaterialEditorNS;
 
 public class MaterialBank
 {

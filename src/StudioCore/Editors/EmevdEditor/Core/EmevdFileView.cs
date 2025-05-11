@@ -36,24 +36,24 @@ public class EmevdFileView
 
         foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {
-            var fileDictEntry = entry.Key;
+            var fileEntry = entry.Key;
 
-            var displayName = $"{fileDictEntry.Filename}";
-            var aliasName = AliasUtils.GetMapNameAlias(Editor.Project, fileDictEntry.Filename);
+            var displayName = $"{fileEntry.Filename}";
+            var aliasName = AliasUtils.GetMapNameAlias(Editor.Project, fileEntry.Filename);
 
             if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
             {
                 // Script row
-                if (ImGui.Selectable(displayName, fileDictEntry == Editor.Selection.SelectedFileEntry))
+                if (ImGui.Selectable(displayName, fileEntry == Editor.Selection.SelectedFileEntry))
                 {
-                    Editor.Selection.SelectFile(fileDictEntry);
+                    Editor.Selection.SelectFile(fileEntry);
                 }
 
                 // Arrow Selection
                 if (ImGui.IsItemHovered() && Editor.Selection.SelectNextScript)
                 {
                     Editor.Selection.SelectNextScript = false;
-                    Editor.Selection.SelectFile(fileDictEntry);
+                    Editor.Selection.SelectFile(fileEntry);
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
@@ -61,7 +61,7 @@ public class EmevdFileView
                 }
 
                 // Only apply to selection
-                if (fileDictEntry == Editor.Selection.SelectedFileEntry)
+                if (fileEntry == Editor.Selection.SelectedFileEntry)
                 {
                     Editor.ContextMenu.FileContextMenu();
                 }

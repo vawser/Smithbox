@@ -20,11 +20,13 @@ public class EmevdData
 
     public EmevdBank PrimaryBank;
     public EmevdBank VanillaBank;
+
     public EmevdData(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
         Project = project;
     }
+
     public async Task<bool> Setup()
     {
         await Task.Delay(1);

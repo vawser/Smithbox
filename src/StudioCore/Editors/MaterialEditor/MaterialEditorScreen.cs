@@ -2,7 +2,6 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.MaterialEditorNS;
 using StudioCore.Interface;
 using System.Numerics;
 

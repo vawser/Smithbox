@@ -233,9 +233,6 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void Save()
     {
-        if (Project.ProjectType == ProjectType.Undefined)
-            return;
-
         await Project.EmevdData.PrimaryBank.SaveScript(Selection.SelectedFileEntry);
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -256,11 +253,7 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void SaveAll()
     {
-        if (Project.ProjectType == ProjectType.Undefined)
-            return;
-
         await Project.EmevdData.PrimaryBank.SaveAllScripts();
-
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

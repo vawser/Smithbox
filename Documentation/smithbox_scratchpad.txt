@@ -8,6 +8,7 @@
 - Map Editor: re-jig the map load process to use new MapBank approach (e.g. load MSB, build MapContainer from it)
 - Project: add Alias Editor from Smithbox-3000
 - Project: add Param Enum Editor back
+- Map Editor: add option to force camera position and angle
 
 # FIX
 - General: Ctrl+C and Ctrl+V don't work correctly for copying InputText content

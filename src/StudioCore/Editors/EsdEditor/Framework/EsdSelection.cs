@@ -1,47 +1,45 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.EsdEditor.Enums;
-using StudioCore.TalkEditor;
+using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using System.Collections.Generic;
 using static SoulsFormats.ESD;
-using static StudioCore.Editors.TalkEditor.EsdBank;
 
-namespace StudioCore.Editors.EsdEditor;
-public class EsdSelectionManager
+namespace StudioCore.EzStateEditorNS;
+public class EsdSelection
 {
-    private EsdEditorScreen Screen;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdScriptInfo _selectedFileInfo;
-    public IBinder _selectedBinder;
-    public string _selectedBinderKey;
+    public FileDictionaryEntry SelectedFileEntry;
 
-    public ESD _selectedEsdScript;
-    public int _selectedEsdScriptKey;
+    public ESD SelectedScript;
+    public int SelectedScriptIndex;
 
-    public long _selectedStateGroupKey;
-    public Dictionary<long, State> _selectedStateGroups;
+    public long SelectedGroupIndex;
+    public Dictionary<long, State> SelectedGroup;
 
-    public long _selectedStateGroupNodeKey;
-    public State _selectedStateGroupNode;
+    public long SelectNodeIndex;
+    public State SelectedNode;
 
     public bool SelectNextFile = false;
     public bool SelectNextScript = false;
-    public bool SelectNextStateGroup = false;
-    public bool SelectNextStateNode = false;
+    public bool SelectNextGroup = false;
+    public bool SelectNextNode = false;
 
-    public EsdSelectionManager(EsdEditorScreen screen)
+    public EsdSelection(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
     /// Set selected ESD file
     /// </summary>
-    public void SetFile(EsdScriptInfo info, IBinder binder)
+    public async void SetFile(FileDictionaryEntry newFileEntry)
     {
-        _selectedBinderKey = info.Name;
-        _selectedFileInfo = info;
-        _selectedBinder = binder;
+        SelectedFileEntry = newFileEntry;
+        await Project.EsdData.PrimaryBank.LoadScriptBinder(newFileEntry);
     }
 
     /// <summary>
@@ -49,8 +47,8 @@ public class EsdSelectionManager
     /// </summary>
     public void SetScript(int key, ESD entry)
     {
-        _selectedEsdScriptKey = key;
-        _selectedEsdScript = entry;
+        SelectedScriptIndex = key;
+        SelectedScript = entry;
     }
 
     /// <summary>
@@ -58,8 +56,8 @@ public class EsdSelectionManager
     /// </summary>
     public void ResetScript()
     {
-        _selectedEsdScriptKey = -1;
-        _selectedEsdScript = null;
+        SelectedScriptIndex = -1;
+        SelectedScript = null;
     }
 
     /// <summary>
@@ -67,8 +65,8 @@ public class EsdSelectionManager
     /// </summary>
     public void SetStateGroup(long key, Dictionary<long, State> entry)
     {
-        _selectedStateGroupKey = key;
-        _selectedStateGroups = entry;
+        SelectedGroupIndex = key;
+        SelectedGroup = entry;
     }
 
     /// <summary>
@@ -76,8 +74,8 @@ public class EsdSelectionManager
     /// </summary>
     public void ResetStateGroup()
     {
-        _selectedStateGroupKey = -1;
-        _selectedStateGroups = null;
+        SelectedGroupIndex = -1;
+        SelectedGroup = null;
     }
 
     /// <summary>
@@ -85,8 +83,8 @@ public class EsdSelectionManager
     /// </summary>
     public void SetStateGroupNode(long key, State entry)
     {
-        _selectedStateGroupNodeKey = key;
-        _selectedStateGroupNode = entry;
+        SelectNodeIndex = key;
+        SelectedNode = entry;
     }
 
     /// <summary>
@@ -94,8 +92,8 @@ public class EsdSelectionManager
     /// </summary>
     public void ResetStateGroupNode()
     {
-        _selectedStateGroupNodeKey = -1;
-        _selectedStateGroupNode = null;
+        SelectNodeIndex = -1;
+        SelectedNode = null;
     }
 
     public EsdEditorContext CurrentWindowContext = EsdEditorContext.None;
