@@ -1,7 +1,6 @@
 ﻿using Andre.IO.VFS;
 using Hexa.NET.ImGui;
 using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
 using StudioCore.Editors.ModelEditor;
@@ -13,7 +12,7 @@ using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
 using StudioCore.EzStateEditorNS;
 using StudioCore.Formats.JSON;
-using StudioCore.GraphicsEditor;
+using StudioCore.GraphicsParamEditorNS;
 using StudioCore.MaterialEditorNS;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
@@ -112,9 +111,9 @@ public class ProjectEntry
     public EmevdData EmevdData;
     [JsonIgnore]
     public EsdData EsdData;
-
     [JsonIgnore]
-    public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
+    public GparamData GparamData; 
+
     [JsonIgnore]
     public TextData TextData; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
@@ -292,7 +291,7 @@ public class ProjectEntry
         MaterialData = null;
         EmevdData = null;
         EsdData = null;
-        GparamBank = null;
+        GparamData = null;
         TextData = null;
         TextureData = null;
         TimeActData = null;
@@ -530,19 +529,19 @@ public class ProjectEntry
                 TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
             }
 
-            GparamBank = new(BaseEditor, this);
+            GparamData = new(BaseEditor, this);
 
             // Gparam Bank
-            Task<bool> gparamBankTask = GparamBank.Setup();
+            Task<bool> gparamBankTask = GparamData.Setup();
             bool gparamBankTaskResult = await gparamBankTask;
 
             if (gparamBankTaskResult)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Banks.");
             }
             else
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Bank.");
+                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Banks.");
             }
 
             GparamEditor = new GparamEditorScreen(BaseEditor, this);
@@ -953,7 +952,7 @@ public class ProjectEntry
         }
 
         // Create merged dictionary, including unique entries present in the project directory only.
-        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath);
+        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath, FileDictionary);
         FileDictionary = ProjectUtils.MergeFileDictionaries(FileDictionary, projectFileDictionary);
 
         return true;

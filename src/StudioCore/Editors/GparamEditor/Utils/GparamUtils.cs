@@ -3,7 +3,7 @@ using StudioCore.Core;
 using System.Text.RegularExpressions;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor.Utils;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public static class GparamUtils
 {

@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.EmevdEditor.Core;
 using StudioCore.Interface;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.EventScriptEditorNS;
@@ -233,15 +234,20 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void Save()
     {
-        await Project.EmevdData.PrimaryBank.SaveScript(Selection.SelectedFileEntry);
+        var targetScript = Project.EmevdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        if (targetScript.Key != null)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd in enc_regulation.bnd.dcx");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd.dcx");
+            await Project.EmevdData.PrimaryBank.SaveScript(targetScript.Key, targetScript.Value);
+
+            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd in enc_regulation.bnd.dcx");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd.dcx");
+            }
         }
 
         // Save the configuration JSONs

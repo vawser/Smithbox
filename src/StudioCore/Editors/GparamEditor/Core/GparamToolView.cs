@@ -1,18 +1,16 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.GraphicsEditor;
+using StudioCore.GraphicsParamEditorNS;
 using StudioCore.Interface;
 using System.Numerics;
 
-namespace StudioCore.Editors.GparamEditor.Tools;
-
+namespace StudioCore.Editors.GparamEditor.Core;
 
 public class GparamToolView
 {
     private GparamEditorScreen Screen;
-    private GparamSelectionManager Selection;
+    private GparamSelection Selection;
     public GparamActionHandler ActionHandler;
 
     public GparamToolView(GparamEditorScreen screen)

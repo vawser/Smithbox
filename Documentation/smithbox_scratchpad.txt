@@ -1,6 +1,4 @@
 # TODO
-- ESD Editor: implement VFS + data bank overhaul
-- Gparam Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
 - Text Editor: implement VFS + data bank overhaul
 - Texture Viewer: implement VFS + data bank overhaul

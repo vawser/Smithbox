@@ -1,16 +1,14 @@
 ﻿using SoulsFormats;
-using StudioCore.Editors.GparamEditor.Data;
-using StudioCore.GraphicsEditor;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamCommandQueue
 {
-    private GparamEditorScreen Screen;
+    private GparamEditorScreen Editor;
 
     public GparamCommandQueue(GparamEditorScreen screen)
     {
-        Screen = screen;
+        Editor = screen;
     }
 
     public void Parse(string[] initcmd)
@@ -22,20 +20,20 @@ public class GparamCommandQueue
             if (initcmd[0] == "view" && initcmd.Length >= 2)
             {
                 // Gparam
-                foreach (var (name, info) in Screen.Project.GparamBank.ParamBank)
+                foreach (var entry in Editor.Project.GparamData.PrimaryBank.Entries)
                 {
-                    if (initcmd[1] == name)
+                    if (initcmd[1] == entry.Key.Filename)
                     {
-                        Screen.Selection.SetFileSelection(info);
+                        Editor.Selection.SetFileSelection(entry.Key);
                     }
                 }
 
                 // Param Group
                 if (initcmd.Length >= 3)
                 {
-                    if (Screen.Selection.IsFileSelected())
+                    if (Editor.Selection.IsFileSelected())
                     {
-                        GPARAM data = Screen.Selection.GetSelectedGparam();
+                        GPARAM data = Editor.Selection.GetSelectedGparam();
 
                         for (int i = 0; i < data.Params.Count; i++)
                         {
@@ -43,7 +41,7 @@ public class GparamCommandQueue
 
                             if (initcmd[2] == entry.Key)
                             {
-                                Screen.Selection.SetGparamGroup(i, entry);
+                                Editor.Selection.SetGparamGroup(i, entry);
                             }
                         }
                     }
@@ -51,9 +49,9 @@ public class GparamCommandQueue
                     // Fields
                     if (initcmd.Length >= 4)
                     {
-                        if (Screen.Selection.IsGparamGroupSelected())
+                        if (Editor.Selection.IsGparamGroupSelected())
                         {
-                            GPARAM.Param data = Screen.Selection.GetSelectedGparamGroup();
+                            GPARAM.Param data = Editor.Selection.GetSelectedGparamGroup();
 
                             for (int i = 0; i < data.Fields.Count; i++)
                             {
@@ -61,7 +59,7 @@ public class GparamCommandQueue
 
                                 if (initcmd[3] == entry.Key)
                                 {
-                                    Screen.Selection.SetGparamField(i, entry);
+                                    Editor.Selection.SetGparamField(i, entry);
                                 }
                             }
                         }
@@ -69,9 +67,9 @@ public class GparamCommandQueue
                         // Field Row
                         if (initcmd.Length >= 5)
                         {
-                            if (Screen.Selection.IsGparamFieldSelected())
+                            if (Editor.Selection.IsGparamFieldSelected())
                             {
-                                GPARAM.IField field = Screen.Selection.GetSelectedGparamField();
+                                GPARAM.IField field = Editor.Selection.GetSelectedGparamField();
 
                                 for (int i = 0; i < field.Values.Count; i++)
                                 {
@@ -79,7 +77,7 @@ public class GparamCommandQueue
 
                                     if (initcmd[4] == entry.Id.ToString())
                                     {
-                                        Screen.Selection.SetGparamFieldValue(i, entry);
+                                        Editor.Selection.SetGparamFieldValue(i, entry);
                                     }
                                 }
                             }

@@ -1,19 +1,16 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.Editors.GparamEditor.Utils;
-using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamValueListView
 {
     private GparamEditorScreen Screen;
     private GparamFilters Filters;
-    private GparamSelectionManager Selection;
+    private GparamSelection Selection;
     private GparamContextMenu ContextMenu;
 
     private bool[] displayTruth;
@@ -208,7 +205,7 @@ public class GparamValueListView
     public void GparamProperty_TimeOfDay(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Screen.PropertyEditor.TimeOfDayField(index, field, value, Selection._selectedGparamInfo);
+        Screen.PropertyEditor.TimeOfDayField(index, field, value);
     }
 
     /// <summary>
@@ -220,8 +217,7 @@ public class GparamValueListView
     public void GparamProperty_Value(int index, IField field, IFieldValue value)
     {
         ImGui.AlignTextToFramePadding();
-        Screen.PropertyEditor.ValueField(index, field, value,
-        Selection._selectedGparamInfo);
+        Screen.PropertyEditor.ValueField(index, field, value);
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.EzStateEditorNS;
@@ -215,16 +216,21 @@ public class EsdEditorScreen : EditorScreen
 
     public async void Save()
     {
-        await Project.EsdData.PrimaryBank.SaveScript(Selection.SelectedFileEntry);
+        var targetScript = Project.EsdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
-        if (Selection.SelectedFileEntry.Extension == "talkesdbnd")
+        if (targetScript.Key != null)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.talkesdbnd.dcx");
-        }
+            await Project.EsdData.PrimaryBank.SaveScript(targetScript.Key, targetScript.Value);
 
-        if (Selection.SelectedFileEntry.Extension == "esd")
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.esd");
+            if (Selection.SelectedFileEntry.Extension == "talkesdbnd")
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.talkesdbnd.dcx");
+            }
+
+            if (Selection.SelectedFileEntry.Extension == "esd")
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.esd");
+            }
         }
 
         // Save the configuration JSONs

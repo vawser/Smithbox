@@ -1,20 +1,13 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
-using Octokit;
 using SoulsFormats;
-using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor.Actions;
-using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.GraphicsEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
-using System.Reflection;
 using static SoulsFormats.GPARAM;
-using static StudioCore.Editors.GparamEditor.Data.GparamBank;
 
-namespace StudioCore.Editors.GparamEditor.Core;
+namespace StudioCore.GraphicsParamEditorNS;
 public class GparamPropertyEditor
 {
     private GparamEditorScreen Editor;
@@ -38,7 +31,7 @@ public class GparamPropertyEditor
         Editor = editor;
     }
 
-    public unsafe void ValueField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
+    public unsafe void ValueField(int idx, IField field, IFieldValue value)
     {
         _changedCache = false;
         _committedCache = false;
@@ -438,7 +431,6 @@ public class GparamPropertyEditor
                 }
                 else
                 {
-                    _selectedGparamInfo.WasModified = true;
                     GparamValueChangeAction action = null;
                     action = new GparamValueChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx, ValueChangeType.Set);
 
@@ -466,7 +458,7 @@ public class GparamPropertyEditor
         }
     }
 
-    public unsafe void TimeOfDayField(int idx, IField field, IFieldValue value, GparamInfo _selectedGparamInfo)
+    public unsafe void TimeOfDayField(int idx, IField field, IFieldValue value)
     {
         _changedCache = false;
         _committedCache = false;
@@ -504,7 +496,6 @@ public class GparamPropertyEditor
                 }
                 else
                 {
-                    _selectedGparamInfo.WasModified = true;
                     GparamTimeOfDayChangeAction action = null;
                     action = new GparamTimeOfDayChangeAction(Editor.Selection._selectedGparamKey, Editor.Selection._selectedParamGroup.Name, field, value, newValue, idx);
 

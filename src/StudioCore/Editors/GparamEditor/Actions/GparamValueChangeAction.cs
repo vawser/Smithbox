@@ -1,11 +1,10 @@
 ﻿using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor.Enums;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor.Actions;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamValueChangeAction : EditorAction
 {

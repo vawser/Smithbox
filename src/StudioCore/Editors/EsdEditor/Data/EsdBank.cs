@@ -168,38 +168,32 @@ public class EsdBank
 
         foreach (var entry in Scripts)
         {
-            var dictEntry = entry.Key;
-            await SaveScript(dictEntry);
+            await SaveScript(entry.Key, entry.Value);
         }
 
         return true;
     }
 
-    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry)
+    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, BinderContents curContents)
     {
         await Task.Delay(1);
 
         if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
         {
-            var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
-            var fileInfo = scriptEntry.Key;
-
-            var binderContents = scriptEntry.Value;
-
-            if(binderContents.Loose)
+            if(curContents.Loose)
             {
                 // Should only ever be one file in a 'fake' binder
-                var looseFile = binderContents.Files.First().Value;
+                var looseFile = curContents.Files.First().Value;
                 if(looseFile != null)
                 {
                     var esdData = looseFile.Write();
 
-                    Project.ProjectFS.WriteFile(fileInfo.Path, esdData);
+                    Project.ProjectFS.WriteFile(fileEntry.Path, esdData);
                 }
             }
             else
             {
-                foreach(var file in binderContents.Files)
+                foreach(var file in curContents.Files)
                 {
                     var binderFile = file.Key;
                     var esdFile = file.Value;
@@ -207,9 +201,9 @@ public class EsdBank
                     binderFile.Bytes = esdFile.Write();
                 }
 
-                var binderData = binderContents.Binder.Write();
+                var binderData = curContents.Binder.Write();
 
-                Project.ProjectFS.WriteFile(fileInfo.Path, binderData);
+                Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
             }
         }
 

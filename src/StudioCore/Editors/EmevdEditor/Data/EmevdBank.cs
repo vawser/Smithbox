@@ -188,21 +188,18 @@ public class EmevdBank
 
         foreach(var entry in Scripts)
         {
-            var dictEntry = entry.Key;
-            await SaveScript(dictEntry);
+            await SaveScript(entry.Key, entry.Value);
         }
 
         return true;
     }
 
-    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry)
+    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, EMEVD curScript)
     {
         await Task.Delay(1);
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var targetScript = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
-
             var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
             var binder = BND4.Read(regulation);
             foreach (var entry in binder.Files)
@@ -212,7 +209,7 @@ public class EmevdBank
 
                 if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
                 {
-                    entry.Bytes = targetScript.Value.Write();
+                    entry.Bytes = curScript.Write();
                 }
             }
 
@@ -224,16 +221,10 @@ public class EmevdBank
         {
             if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
             {
-                var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
-                var fileInfo = scriptEntry.Key;
-
-                var emevd = scriptEntry.Value;
+                var emevd = curScript;
                 var bytes = emevd.Write();
 
-                Project.ProjectFS.WriteFile(fileInfo.Path, bytes);
-
-                //var filePath = @$"{Project.ProjectPath}\{fileInfo.Path}";
-                //File.WriteAllBytes(filePath, bytes);
+                Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
             }
         }
 

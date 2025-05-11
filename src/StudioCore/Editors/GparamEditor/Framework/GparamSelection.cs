@@ -1,17 +1,16 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.Editors.GparamEditor.Data;
-using StudioCore.Editors.GparamEditor.Enums;
-using StudioCore.GraphicsEditor;
-using static StudioCore.Editors.GparamEditor.Data.GparamBank;
+using StudioCore.Formats.JSON;
+using System.Linq;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
-public class GparamSelectionManager
+public class GparamSelection
 {
-    private GparamEditorScreen Screen;
+    private GparamEditorScreen Editor;
 
-    public GparamBank.GparamInfo _selectedGparamInfo;
+    public FileDictionaryEntry SelectedFileEntry;
+
     public GPARAM _selectedGparam;
     public string _selectedGparamKey;
 
@@ -32,14 +31,9 @@ public class GparamSelectionManager
 
 
 
-    public GparamSelectionManager(GparamEditorScreen screen)
+    public GparamSelection(GparamEditorScreen screen)
     {
-        Screen = screen;
-    }
-
-    public void ToggleSelectedFileModifiedState(bool state)
-    {
-        _selectedGparamInfo.WasModified = state;
+        Editor = screen;
     }
 
     public bool CanAffectSelection()
@@ -94,16 +88,20 @@ public class GparamSelectionManager
     /// <summary>
     /// Set the selected GPARAM file.
     /// </summary>
-    public void SetFileSelection(GparamInfo info)
+    public async void SetFileSelection(FileDictionaryEntry entry)
     {
         ResetGparamGroupSelection();
         ResetGparamFieldSelection();
         ResetGparamFieldValueSelection();
 
-        _selectedGparamKey = info.Name;
-        _selectedGparamInfo = info;
-        _selectedGparam = info.Gparam;
+        await Editor.Project.GparamData.PrimaryBank.LoadGraphicsParam(entry);
 
+        SelectedFileEntry = entry;
+        var targetEntry = Editor.Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename
+         == entry.Filename);
+
+        _selectedGparamKey = targetEntry.Key.Filename;
+        _selectedGparam = targetEntry.Value;
     }
 
     /// <summary>
@@ -153,7 +151,7 @@ public class GparamSelectionManager
 
         _selectedParamField = entry;
         _selectedParamFieldKey = index;
-        Screen.QuickEditHandler.targetParamField = entry;
+        Editor.QuickEditHandler.targetParamField = entry;
     }
 
     /// <summary>

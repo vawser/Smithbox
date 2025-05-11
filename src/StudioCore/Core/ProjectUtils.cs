@@ -89,7 +89,7 @@ public class ProjectUtils
     /// <param name="sourcePath"></param>
     /// <returns></returns>
     /// <exception cref="DirectoryNotFoundException"></exception>
-    public static FileDictionary BuildFromSource(string sourcePath)
+    public static FileDictionary BuildFromSource(string sourcePath, FileDictionary existingDict)
     {
         if (!Directory.Exists(sourcePath))
             throw new DirectoryNotFoundException($"Source path not found: {sourcePath}");
@@ -101,9 +101,19 @@ public class ProjectUtils
 
         string archiveName = new DirectoryInfo(sourcePath).Name;
 
+        // Use HashSet for fast lookup of existing relative paths (normalized to forward slashes)
+        var existingPaths = new HashSet<string>(
+            existingDict.Entries.Select(e => e.Path.Replace('\\', '/')),
+            StringComparer.OrdinalIgnoreCase);
+
         foreach (var filePath in allFiles)
         {
-            string relativePath = Path.GetRelativePath(sourcePath, filePath);
+            string relativePath = @$"/{Path.GetRelativePath(sourcePath, filePath).Replace('\\', '/')}";
+
+            // Skip if already present
+            if (existingPaths.Contains(relativePath))
+                continue;
+
             string folder = Path.GetDirectoryName(relativePath)?.Replace('\\', '/') ?? "";
             string fileName = Path.GetFileNameWithoutExtension(filePath);
             string extension = Path.GetExtension(filePath)?.TrimStart('.').ToLower();
@@ -127,7 +137,7 @@ public class ProjectUtils
             fileDict.Entries.Add(new FileDictionaryEntry
             {
                 Archive = archiveName,
-                Path = relativePath.Replace('\\', '/'),
+                Path = relativePath,
                 Folder = folder,
                 Filename = fileName,
                 Extension = extension
@@ -142,23 +152,33 @@ public class ProjectUtils
         var combined = new FileDictionary();
         combined.Entries = new();
 
-        // Use a HashSet to track unique relative paths (case-insensitive)
-        var seenPaths = new HashSet<string>(first.Entries.Select(e => e.Path), System.StringComparer.OrdinalIgnoreCase);
+        // Normalize and track unique paths
+        var seenPaths = new HashSet<string>(
+            first.Entries
+                 .Select(e => NormalizePath(e.Path))
+                 .Where(p => p != null),
+            StringComparer.OrdinalIgnoreCase);
 
-        // Add all entries from the first dictionary
         combined.Entries.AddRange(first.Entries);
 
-        // Add only unique entries from the second dictionary
         foreach (var entry in second.Entries)
         {
-            if (!seenPaths.Contains(entry.Path))
+            var normalizedPath = NormalizePath(entry.Path);
+            if (normalizedPath != null && !seenPaths.Contains(normalizedPath))
             {
                 combined.Entries.Add(entry);
-                seenPaths.Add(entry.Path);
+                seenPaths.Add(normalizedPath);
             }
         }
 
         return combined;
+    }
+
+    private static string? NormalizePath(string? path)
+    {
+        return string.IsNullOrWhiteSpace(path)
+            ? null
+            : path.Trim().Replace('\\', '/'); // normalize separators and trim
     }
 
     /// <summary>

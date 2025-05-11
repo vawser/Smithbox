@@ -1,14 +1,8 @@
 ﻿using SoulsFormats;
 using StudioCore.Editor;
-using StudioCore.GraphicsEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor.Actions;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamDuplicateValueRow : EditorAction
 {
@@ -34,7 +28,6 @@ public class GparamDuplicateValueRow : EditorAction
         Screen.PropertyEditor.AddPropertyValueRow(SelectedField, SelectedFieldValue, NewRowID);
 
         // Update the group index lists to account for the new ID.
-        Screen.Selection.ToggleSelectedFileModifiedState(true);
         Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
@@ -46,7 +39,6 @@ public class GparamDuplicateValueRow : EditorAction
 
         Screen.PropertyEditor.RemovePropertyValueRowById(SelectedField, SelectedFieldValue, NewRowID);
 
-        Screen.Selection.ToggleSelectedFileModifiedState(false);
         Screen.PropertyEditor.UpdateGroupIndexes(SelectedGPARAM);
 
         return ActionEvent.NoEvent;
