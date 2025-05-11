@@ -1,5 +1,4 @@
 # TODO
-- Emevd Editor: implement VFS + data bank overhaul
 - ESD Editor: implement VFS + data bank overhaul
 - Gparam Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
