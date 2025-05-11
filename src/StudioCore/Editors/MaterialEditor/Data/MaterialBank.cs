@@ -18,11 +18,8 @@ public class MaterialBank
 
     public string Name;
 
-    public FileDictionary MTD_Files = new();
-    public FileDictionary MATBIN_Files = new();
-
-    public Dictionary<string, MTDWrapper> MTDs = new();
-    public Dictionary<string, MATBINWrapper> MATBINs = new();
+    public Dictionary<FileDictionaryEntry, MTDWrapper> MTDs = new();
+    public Dictionary<FileDictionaryEntry, MATBINWrapper> MATBINs = new();
 
     public MaterialBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -36,22 +33,18 @@ public class MaterialBank
     {
         await Task.Delay(1);
 
-        MTD_Files.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "mtdbnd").ToList();
-
-        foreach (var entry in MTD_Files.Entries)
+        foreach (var entry in Project.MaterialData.MTD_Files.Entries)
         {
             var newMtdEntry = new MTDWrapper(BaseEditor, Project, entry, TargetFS);
             await newMtdEntry.Load();
-            MTDs.Add(entry.Filename, newMtdEntry);
+            MTDs.Add(entry, newMtdEntry);
         }
 
-        MATBIN_Files.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "matbinbnd").ToList();
-
-        foreach (var entry in MATBIN_Files.Entries)
+        foreach (var entry in Project.MaterialData.MATBIN_Files.Entries)
         {
             var newMatbinEntry = new MATBINWrapper(BaseEditor, Project, entry, TargetFS);
             await newMatbinEntry.Load();
-            MATBINs.Add(entry.Filename, newMatbinEntry);
+            MATBINs.Add(entry, newMatbinEntry);
         }
 
         return true;

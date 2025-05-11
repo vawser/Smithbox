@@ -1,8 +1,6 @@
 ﻿using Andre.IO.VFS;
 using Hexa.NET.ImGui;
 using StudioCore.Editor;
-using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.EmevdEditor.Data;
 using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
@@ -14,7 +12,7 @@ using StudioCore.Editors.TalkEditor;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
-using StudioCore.EmevdEditor;
+using StudioCore.EventScriptEditorNS;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsEditor;
 using StudioCore.MaterialEditorNS;

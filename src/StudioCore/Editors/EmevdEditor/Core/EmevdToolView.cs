@@ -1,48 +1,35 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.Editors.EmevdEditor.Framework;
-using StudioCore.EmevdEditor;
+using StudioCore.EventScriptEditorNS;
 using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.Editors.EmevdEditor.Core;
 
 /// <summary>
 /// Handles the tool view for this editor.
 /// </summary>
 public class EmevdToolView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdActionHandler ActionHandler;
-    private EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdToolView(EmevdEditorScreen screen)
+    public EmevdToolView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Selection = screen.Selection;
-        ActionHandler = screen.ActionHandler;
+        Editor = editor;
+        Project = project;
     }
-
-    public void OnProjectChanged()
-    {
-
-    }
-
 
     public void Display()
     {
-        if (Screen.Project.ProjectType == ProjectType.Undefined)
-            return;
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_EmevdEditor"))
         {
-            Selection.SwitchWindowContext(EmevdEditorContext.ToolWindow);
+            Editor.Selection.SwitchWindowContext(EmevdEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth, 32);
@@ -53,7 +40,7 @@ public class EmevdToolView
             {
                 if (ImGui.Button("Log Unknown Instructions", defaultButtonSize))
                 {
-                    ActionHandler.LogUnknownInstructions();
+                    Editor.ActionHandler.LogUnknownInstructions();
                 }
             }
         }

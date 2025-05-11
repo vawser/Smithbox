@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using SoulsFormats;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.EmevdEditor;
+﻿using SoulsFormats;
+using StudioCore.EventScriptEditorNS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using static SoulsFormats.EMEVD;
 using static SoulsFormats.EMEVD.Instruction;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
 namespace StudioCore.Editors.EmevdEditor;
 
@@ -27,7 +25,7 @@ public static class EmevdUtils
     /// </summary>
     public static bool HasArgDoc(EmevdEditorScreen editor, Instruction ins)
     {
-        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdData.PrimaryBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -49,7 +47,7 @@ public static class EmevdUtils
     /// </summary>
     public static string GetArgDocName(EmevdEditorScreen editor, Instruction ins)
     {
-        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdData.PrimaryBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -74,7 +72,7 @@ public static class EmevdUtils
         var argList = new List<object>();
         var argDocList = new List<ArgDoc>();
 
-        var classDoc = editor.Project.EmevdBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
+        var classDoc = editor.Project.EmevdData.PrimaryBank.InfoBank.Classes.Where(e => e.Index == ins.Bank).FirstOrDefault();
 
         if (classDoc == null)
         {
@@ -115,7 +113,7 @@ public static class EmevdUtils
         return (argDocList, argList);
     }
 
-    public static string GetDS2ItemAlias(EmevdEditorScreen editor, EMEVD.Event evt)
+    public static string GetDS2ItemAlias(EmevdEditorScreen editor, Event evt)
     {
         if (editor.BaseEditor.ProjectManager.SelectedProject == null)
             return "";

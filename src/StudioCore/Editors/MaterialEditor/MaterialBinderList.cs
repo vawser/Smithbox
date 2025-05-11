@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.MaterialEditorNS;
 using StudioCore.Utilities;
 using System;
@@ -58,10 +59,10 @@ public class MaterialBinderList
         {
             var wrappers = Project.MaterialData.PrimaryBank.MTDs;
 
-            var filteredEntries = new List<string>();
+            var filteredEntries = new List<FileDictionaryEntry>();
             foreach (var entry in wrappers)
             {
-                if (Editor.Filters.IsBinderFilterMatch(entry.Key))
+                if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
                 {
                     filteredEntries.Add(entry.Key);
                 }
@@ -77,11 +78,11 @@ public class MaterialBinderList
                     var key = filteredEntries[i];
                     var curWrapper = Project.MaterialData.PrimaryBank.MTDs[key];
 
-                    var displayName = $"{key}";
+                    var displayName = $"{key.Filename}";
 
-                    if (ImGui.Selectable($"{displayName}##mtdEntry_{key}", key == Editor.Selection.SelectedBinderKey, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"{displayName}##mtdEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Editor.Selection.SelectedBinderKey = key;
+                        Editor.Selection.SelectedBinderEntry = key;
                         Editor.Selection.MTDWrapper = curWrapper;
 
                         Editor.Selection.SelectedFileKey = "";
@@ -100,10 +101,10 @@ public class MaterialBinderList
             {
                 var wrappers = Project.MaterialData.PrimaryBank.MATBINs;
 
-                var filteredEntries = new List<string>();
+                var filteredEntries = new List<FileDictionaryEntry>();
                 foreach (var entry in wrappers)
                 {
-                    if (Editor.Filters.IsBinderFilterMatch(entry.Key))
+                    if (Editor.Filters.IsBinderFilterMatch(entry.Key.Filename))
                     {
                         filteredEntries.Add(entry.Key);
                     }
@@ -119,11 +120,11 @@ public class MaterialBinderList
                         var key = filteredEntries[i];
                         var curWrapper = Project.MaterialData.PrimaryBank.MATBINs[key];
 
-                        var displayName = $"{key}";
+                        var displayName = $"{key.Filename}";
 
-                        if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Editor.Selection.SelectedBinderKey, ImGuiSelectableFlags.AllowDoubleClick))
+                        if (ImGui.Selectable($"{displayName}##matbinEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
-                            Editor.Selection.SelectedBinderKey = key;
+                            Editor.Selection.SelectedBinderEntry = key;
                             Editor.Selection.MATBINWrapper = curWrapper;
 
                             Editor.Selection.SelectedFileKey = "";

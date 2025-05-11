@@ -1,5 +1,6 @@
 ﻿using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using StudioCore.MaterialEditorNS;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ public class MaterialSelection
 
     public SourceType SourceType { get; set; }
 
-    public string SelectedBinderKey { get; set; }
+    public FileDictionaryEntry SelectedBinderEntry { get; set; }
 
     public MTDWrapper MTDWrapper { get; set; }
 

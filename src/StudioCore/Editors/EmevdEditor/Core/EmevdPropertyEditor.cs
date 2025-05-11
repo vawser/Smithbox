@@ -1,26 +1,26 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.EmevdEditor;
 using System;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the editing process for properties
 /// </summary>
 public class EmevdPropertyEditor
 {
-    private EmevdEditorScreen Screen;
-    private EmevdInstructionPropertyView InstructionHandler;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
     private object _changingProperty;
     private EditorAction _lastUncommittedAction;
 
-    public EmevdPropertyEditor(EmevdEditorScreen screen, EmevdInstructionPropertyView insHandler)
+    public EmevdPropertyEditor(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        InstructionHandler = insHandler;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>

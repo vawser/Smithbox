@@ -19,7 +19,8 @@ using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 namespace StudioCore.Editors.ParamEditor.Data;
 
 /// <summary>
-/// Holder for the discrete param banks (primary, vanilla, auxs)
+/// Holds the data banks for params.
+/// Data Flow: Full Load
 /// </summary>
 public class ParamData
 {

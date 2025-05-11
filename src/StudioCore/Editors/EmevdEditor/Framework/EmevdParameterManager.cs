@@ -1,22 +1,19 @@
-﻿using StudioCore.EmevdEditor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudioCore.Core;
 
-namespace StudioCore.Editors.EmevdEditor.Framework;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the function parameters used in instructions and passed by events
 /// </summary>
 public class EmevdParameterManager
 {
-    private EmevdEditorScreen Screen;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdParameterManager(EmevdEditorScreen screen)
+    public EmevdParameterManager(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
+        Editor = editor;
+        Project = project;
     }
 
     // Store all the parameter 'defs' from the events.

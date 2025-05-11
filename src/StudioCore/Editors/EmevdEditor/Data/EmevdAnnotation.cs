@@ -1,16 +1,16 @@
-﻿using StudioCore.EmevdEditor;
+﻿using StudioCore.Core;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 public class EmevdAnnotation
 {
-    private EmevdEditorScreen Screen;
-    public EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdAnnotation(EmevdEditorScreen screen)
+    public EmevdAnnotation(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>

@@ -1,12 +1,21 @@
 ﻿using StudioCore.Core;
+using StudioCore.Formats.JSON;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.MaterialEditorNS;
 
+/// <summary>
+/// Holds the data banks for Materials.
+/// Data Flow: Full Load
+/// </summary>
 public class MaterialData
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;
+
+    public FileDictionary MTD_Files = new();
+    public FileDictionary MATBIN_Files = new();
 
     public MaterialBank PrimaryBank;
     public MaterialBank VanillaBank;
@@ -16,9 +25,16 @@ public class MaterialData
         BaseEditor = baseEditor;
         Project = project;
     }
+
     public async Task<bool> Setup()
     {
         await Task.Delay(1);
+
+        MTD_Files.Entries = 
+            Project.FileDictionary.Entries.Where(e => e.Extension == "mtdbnd").ToList();
+
+        MATBIN_Files.Entries = 
+            Project.FileDictionary.Entries.Where(e => e.Extension == "matbinbnd").ToList();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
         VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);

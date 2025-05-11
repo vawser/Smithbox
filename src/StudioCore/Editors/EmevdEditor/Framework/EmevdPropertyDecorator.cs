@@ -5,10 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
-using StudioCore.Editors.ParamEditor.META;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
-using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -16,26 +13,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using static SoulsFormats.EMEVD;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the decoration of properties for the view classes
 /// </summary>
 public class EmevdPropertyDecorator
 {
-    private EmevdEditorScreen Editor;
-    public EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public EmevdSelection Selection;
 
     private Instruction Instruction;
     private List<ArgDoc> ArgumentDocs;
     private List<object> Arguments;
 
-    public EmevdPropertyDecorator(EmevdEditorScreen screen)
+    public EmevdPropertyDecorator(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void OnProjectChanged()
@@ -597,7 +596,7 @@ public class EmevdPropertyDecorator
     /// </summary>
     public void DetermineMapEntityReference(string parameterName, string value, int i)
     {
-        var mapID = Selection.SelectedFileInfo.Name; // To determine map ID
+        var mapID = Editor.Selection.SelectedFileEntry.Filename; // To determine map ID
 
         if (Editor.Project.ProjectType is ProjectType.AC6)
         {
@@ -672,7 +671,7 @@ public class EmevdPropertyDecorator
 
     public void DisplayEnumReference(ArgDoc argDoc, object arg, int i)
     {
-        var enumDoc = Editor.Project.EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
+        var enumDoc = Editor.Project.EmevdData.PrimaryBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
         var alias = enumDoc.Values.Where(e => e.Key == $"{arg}").FirstOrDefault();
 
         ImGui.AlignTextToFramePadding();

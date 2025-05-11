@@ -1,32 +1,31 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.EmevdEditor;
-using static StudioCore.Editors.EmevdEditor.EmevdBank;
+using StudioCore.Core;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the context menus used by the view classes.
 /// </summary>
 public class EmevdContextMenu
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
+    private EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdContextMenu(EmevdEditorScreen screen)
+    public EmevdContextMenu(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
     /// Context menu for the selection in the File list
     /// </summary>
-    public void FileContextMenu(EventScriptInfo info)
+    public void FileContextMenu()
     {
-        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Name}"))
+        var selectedFile = Editor.Selection.SelectedFileEntry.Filename;
+
+        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{selectedFile}"))
         {
 
             ImGui.EndPopup();
@@ -42,7 +41,7 @@ public class EmevdContextMenu
         {
             if (ImGui.Selectable($"Create##createActionEvent{evt.ID}"))
             {
-                Screen.EventCreationModal.ShowModal = true;
+                Editor.EventCreationModal.ShowModal = true;
             }
 
             ImGui.EndPopup();
@@ -58,7 +57,7 @@ public class EmevdContextMenu
         {
             if (ImGui.Selectable($"Create##createActionInstruction{ins.ID}"))
             {
-                Screen.InstructionCreationModal.ShowModal = true;
+                Editor.InstructionCreationModal.ShowModal = true;
             }
 
             ImGui.EndPopup();

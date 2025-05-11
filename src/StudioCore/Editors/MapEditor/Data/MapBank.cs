@@ -18,9 +18,7 @@ public class MapBank
 
     public string Name;
 
-    public FileDictionary MapFiles = new();
-
-    public Dictionary<string, MapWrapper> Maps = new();
+    public Dictionary<FileDictionaryEntry, MapWrapper> Maps = new();
 
     public MapBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -34,12 +32,10 @@ public class MapBank
     {
         await Task.Delay(1);
         
-        MapFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msb").ToList();
-
-        foreach(var entry in MapFiles.Entries)
+        foreach(var entry in Project.MapData.MapFiles.Entries)
         {
             var newMapEntry = new MapWrapper(BaseEditor, Project, entry, TargetFS);
-            Maps.Add(entry.Filename, newMapEntry);
+            Maps.Add(entry, newMapEntry);
         }
 
         return true;
@@ -47,9 +43,15 @@ public class MapBank
 
     public async Task<bool> LoadMap(string mapID, bool msbOnly = false)
     {
-        if(Maps.ContainsKey(mapID))
+        if(Maps.Any(e => e.Key.Filename == mapID))
         {
-            await Maps[mapID].Load(msbOnly);
+            var mapEntry = Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+
+            if (mapEntry.Value != null)
+            {
+                var key = mapEntry.Key;
+                await Maps[key].Load(msbOnly);
+            }
         }
         else
         {
@@ -60,15 +62,21 @@ public class MapBank
     }
     public async Task<bool> SaveMap(string mapID, bool seralizeContainer = true)
     {
-        if (Maps.ContainsKey(mapID))
+        if (Maps.Any(e => e.Key.Filename == mapID))
         {
+            var fileDictEntry = Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+
             // Seralize container back to MSB here
             if (seralizeContainer)
             {
 
             }
 
-            await Maps[mapID].Save();
+            if (fileDictEntry.Value != null)
+            {
+                var key = fileDictEntry.Key;
+                await Maps[key].Save();
+            }
         }
         else
         {

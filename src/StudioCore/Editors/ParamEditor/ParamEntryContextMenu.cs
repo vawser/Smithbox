@@ -1,16 +1,9 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Debug.Generators;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Tools.Generation;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -63,13 +56,13 @@ public static class ParamEntryContextMenu
             {
                 if (ImGui.Selectable("Copy Param List"))
                 {
-                    editor.BaseEditor.DebugTools.DokuWikiHelper.OutputParamTableInformation();
+                    DokuWikiGenerator.OutputParamTableInformation(editor.BaseEditor, editor.Project);
                 }
                 UIHelper.Tooltip($"Export the param list table for the SoulsModding wiki to the clipboard.");
 
                 if (ImGui.Selectable("Copy Param Field List"))
                 {
-                    editor.BaseEditor.DebugTools.DokuWikiHelper.OutputParamInformation(paramKey);
+                    DokuWikiGenerator.OutputParamInformation(editor.BaseEditor, editor.Project, paramKey);
                 }
                 UIHelper.Tooltip($"Export the param field list table for the SoulsModding wiki for this param to the clipboard.");
             }

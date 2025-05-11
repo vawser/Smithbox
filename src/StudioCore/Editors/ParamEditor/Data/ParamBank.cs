@@ -163,25 +163,6 @@ public class ParamBank
         return successfulSave;
     }
 
-    private FileNotFoundException CreateParamMissingException(ProjectType type)
-    {
-        if (type is ProjectType.DS1 or ProjectType.SDT)
-        {
-            return new FileNotFoundException(
-                $"Cannot locate param files for {type}.\nThis game must be unpacked before modding, please use UXM Selective Unpacker.");
-        }
-
-        if (type is ProjectType.DES or ProjectType.BB)
-        {
-            return new FileNotFoundException(
-                $"Cannot locate param files for {type}.\nYour game folder may be missing game files.");
-        }
-
-        return new FileNotFoundException(
-            $"Cannot locate param files for {type}.\nYour game folder may be missing game files, please verify game files through steam to restore them.");
-    }
-
-
     #region Param Load
     private void LoadParamFromBinder(IBinder parambnd, ref Dictionary<string, Param> paramBank, out ulong version, bool checkVersion = false, string parambndFileName = "")
     {

@@ -165,8 +165,6 @@ public class SceneRenderPipeline
         _pickingEnabled = true;
         Scene.SendGPUPickingRequest();
 
-        Debug.WriteLine("Starting picking request");
-
         Renderer.AddAsyncReadback(PickingResultReadbackBuffer, PickingResultsBuffer, d =>
         {
             MappedResourceView<PickingResult> result = d.Map<PickingResult>(PickingResultReadbackBuffer, MapMode.Read);
@@ -177,8 +175,6 @@ public class SceneRenderPipeline
 
             PickingResultsReady = true;
             _pickingEnabled = false;
-
-            Debug.WriteLine($@"Got picking result: entity {results[0].entityID}, depth {results[0].depth}");
 
             Renderer.AddBackgroundUploadTask((d, cl) =>
             {

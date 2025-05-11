@@ -2,12 +2,11 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.EmevdEditor.Framework;
+using StudioCore.Editors.EmevdEditor.Core;
 using StudioCore.Interface;
 using System.Numerics;
 
-namespace StudioCore.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 public class EmevdEditorScreen : EditorScreen
 {
@@ -16,9 +15,8 @@ public class EmevdEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public EmevdSelectionManager Selection;
+    public EmevdSelection Selection;
     public EmevdPropertyDecorator Decorator;
-    public EmevdShortcuts EditorShortcuts;
     public EmevdContextMenu ContextMenu;
     public EmevdActionHandler ActionHandler;
     public EmevdFilters Filters;
@@ -31,9 +29,9 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdInstructionView InstructionView;
     public EmevdEventParameterView EventParameterView;
     public EmevdInstructionPropertyView InstructionParameterView;
+    public EmevdPropertyEditor PropertyInput;
 
     public EmevdToolView ToolView;
-    public EmevdToolMenubar ToolMenubar;
 
     public EmevdEventCreationModal EventCreationModal;
     public EmevdInstructionCreationModal InstructionCreationModal;
@@ -43,27 +41,25 @@ public class EmevdEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new EmevdSelectionManager(this);
-        Decorator = new EmevdPropertyDecorator(this);
-        ContextMenu = new EmevdContextMenu(this);
-        Filters = new EmevdFilters(this);
-        EditorShortcuts = new EmevdShortcuts(this);
-        AnnotationManager = new EmevdAnnotation(this);
+        Selection = new EmevdSelection(this, Project);
+        Decorator = new EmevdPropertyDecorator(this, Project);
+        ContextMenu = new EmevdContextMenu(this, Project);
+        Filters = new EmevdFilters(this, Project);
+        AnnotationManager = new EmevdAnnotation(this, Project);
+        ParameterManager = new EmevdParameterManager(this, Project);
 
-        ParameterManager = new EmevdParameterManager(this);
+        FileView = new EmevdFileView(this, Project);
+        EventView = new EmevdEventView(this, Project);
+        InstructionView = new EmevdInstructionView(this, Project);
+        EventParameterView = new EmevdEventParameterView(this, Project);
+        InstructionParameterView = new EmevdInstructionPropertyView(this, Project);
+        PropertyInput = new EmevdPropertyEditor(this, Project);
 
-        FileView = new EmevdFileView(this);
-        EventView = new EmevdEventView(this);
-        InstructionView = new EmevdInstructionView(this);
-        EventParameterView = new EmevdEventParameterView(this);
-        InstructionParameterView = new EmevdInstructionPropertyView(this);
+        ActionHandler = new EmevdActionHandler(this, Project);
+        ToolView = new EmevdToolView(this, Project);
 
-        ActionHandler = new EmevdActionHandler(this);
-        ToolView = new EmevdToolView(this);
-        ToolMenubar = new EmevdToolMenubar(this);
-
-        EventCreationModal = new EmevdEventCreationModal(this);
-        InstructionCreationModal = new EmevdInstructionCreationModal(this);
+        EventCreationModal = new EmevdEventCreationModal(this, Project);
+        InstructionCreationModal = new EmevdInstructionCreationModal(this, Project);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -97,7 +93,6 @@ public class EmevdEditorScreen : EditorScreen
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
 
             ImGui.EndMenuBar();
         }
@@ -123,7 +118,7 @@ public class EmevdEditorScreen : EditorScreen
             InstructionParameterView.Display();
         }
 
-        EditorShortcuts.Monitor();
+        Shortcuts();
         EventCreationModal.Display();
         InstructionCreationModal.Display();
 
@@ -152,8 +147,6 @@ public class EmevdEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -189,8 +182,6 @@ public class EmevdEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -235,35 +226,25 @@ public class EmevdEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
-    }
-
-    /// <summary>
-    /// The editor menubar
-    /// </summary>
-    public void ToolMenu()
-    {
-        ToolMenubar.Display();
-
-        ImGui.Separator();
     }
 
     /// <summary>
     /// Save currently selected EMEVD file
     /// </summary>
-    public void Save()
+    public async void Save()
     {
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
+        await Project.EmevdData.PrimaryBank.SaveScript(Selection.SelectedFileEntry);
+
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            Project.EmevdBank.SaveEventScripts();
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd in enc_regulation.bnd.dcx");
         }
         else
         {
-            Project.EmevdBank.SaveEventScript(Selection.SelectedFileInfo, Selection.SelectedScript);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Saved {Selection.SelectedFileEntry.Filename}.emevd.dcx");
         }
 
         // Save the configuration JSONs
@@ -273,14 +254,43 @@ public class EmevdEditorScreen : EditorScreen
     /// <summary>
     /// Save all modified EMEVD files.
     /// </summary>
-    public void SaveAll()
+    public async void SaveAll()
     {
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
-        Project.EmevdBank.SaveEventScripts();
+        await Project.EmevdData.PrimaryBank.SaveAllScripts();
+
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
+    }
+
+    public void Shortcuts()
+    {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Save();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
     }
 }

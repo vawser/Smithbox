@@ -1,38 +1,24 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.EmevdEditor;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
+using System.Linq;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the EMEVD event selection, viewing and editing.
 /// </summary>
 public class EmevdEventView
 {
-    private EmevdEditorScreen Editor;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
-    private EmevdFilters Filters;
-    private EmevdContextMenu ContextMenu;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdEventView(EmevdEditorScreen screen)
+    public EmevdEventView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -41,18 +27,18 @@ public class EmevdEventView
     public void Display()
     {
         ImGui.Begin("Events##EventListView");
-        Selection.SwitchWindowContext(EmevdEditorContext.EventList);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.EventList);
 
-        Filters.DisplayEventFilterSearch();
+        Editor.Filters.DisplayEventFilterSearch();
 
         ImGui.BeginChild("EventListSection");
-        Selection.SwitchWindowContext(EmevdEditorContext.EventList);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.EventList);
 
-        if (Selection.SelectedScript != null)
+        if (Editor.Selection.SelectedScript != null)
         {
-            for (int i = 0; i < Selection.SelectedScript.Events.Count; i++)
+            for (int i = 0; i < Editor.Selection.SelectedScript.Events.Count; i++)
             {
-                var evt = Selection.SelectedScript.Events[i];
+                var evt = Editor.Selection.SelectedScript.Events[i];
 
                 var eventName = evt.Name;
                 if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -60,39 +46,31 @@ public class EmevdEventView
                     eventName = EmevdUtils.GetDS2ItemAlias(Editor, evt);
                 }
 
-                if (Filters.IsEventFilterMatch(evt))
+                if (Editor.Filters.IsEventFilterMatch(evt))
                 {
                     // Event row
-                    if (ImGui.Selectable($@" {evt.ID}##eventRow{i}", evt == Selection.SelectedEvent))
+                    if (ImGui.Selectable($@" {evt.ID}##eventRow{i}", evt == Editor.Selection.SelectedEvent))
                     {
-                        Selection.SelectedEvent = evt;
-                        Selection.SelectedEventIndex = i;
-
-                        Selection.SelectedInstruction = null;
-                        Selection.SelectedInstructionIndex = -1;
+                        Editor.Selection.SelectEvent(evt, i);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextEvent)
+                    if (ImGui.IsItemHovered() && Editor.Selection.SelectNextEvent)
                     {
-                        Selection.SelectNextEvent = false;
-                        Selection.SelectedEvent = evt;
-                        Selection.SelectedEventIndex = i;
-
-                        Selection.SelectedInstruction = null;
-                        Selection.SelectedInstructionIndex = -1;
+                        Editor.Selection.SelectNextEvent = false;
+                        Editor.Selection.SelectEvent(evt, i);
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
-                        Selection.SelectNextEvent = true;
+                        Editor.Selection.SelectNextEvent = true;
                     }
 
                     // Only apply to selection
-                    if (Selection.SelectedEventIndex != -1)
+                    if (Editor.Selection.SelectedEventIndex != -1)
                     {
-                        if (Selection.SelectedEventIndex == i)
+                        if (Editor.Selection.SelectedEventIndex == i)
                         {
-                            ContextMenu.EventContextMenu(evt);
+                            Editor.ContextMenu.EventContextMenu(evt);
                         }
                     }
 

@@ -1,11 +1,12 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
 using static SoulsFormats.EMEVD;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the search filters used by the view classes.
@@ -13,14 +14,12 @@ namespace StudioCore.Editors.EmevdEditor;
 public class EmevdFilters
 {
     private EmevdEditorScreen Editor;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
+    public ProjectEntry Project;
 
-    public EmevdFilters(EmevdEditorScreen editor)
+    public EmevdFilters(EmevdEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
-        Decorator = editor.Decorator;
-        Selection = editor.Selection;
+        Project = project;
     }
 
     public string FileFilterInput = "";
