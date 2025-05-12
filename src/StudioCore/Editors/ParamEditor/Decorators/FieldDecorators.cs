@@ -1488,10 +1488,11 @@ public class FieldDecorators
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if(editor.Project.ParamData.GraphLegends != null)
+            if (editor.Project.ParamData.GraphLegends != null)
             {
-                var entry = editor.Project.ParamData.GraphLegends.Entries.Where(e => e.RowID == $"{row.ID}").FirstOrDefault();
-                if(entry != null)
+                var entry = editor.Project.ParamData.GraphLegends.Entries
+                    .FirstOrDefault(e => e.RowID == $"{row.ID}");
+                if (entry != null)
                 {
                     xAxisTitle = entry.X;
                     yAxisTitle = entry.Y;
@@ -1512,7 +1513,7 @@ public class FieldDecorators
             CalcCorrectDefinition ccd = meta.CalcCorrectDef;
             SoulCostDefinition scd = meta.SoulCostDef;
 
-            double[] values;
+            double[] values = null;
             int xOffset = 0;
             double minY = 0;
             double maxY = 0;
@@ -1522,58 +1523,40 @@ public class FieldDecorators
                 if (scd != null && scd.cost_row == row.ID)
                 {
                     (values, maxY) = UICache.GetCached(editor, row, "soulCostData", () => ParamUtils.getSoulCostData(scd, row));
-
-                    // Create X values: 0..N-1
-                    double[] xValues = Enumerable.Range(0, values.Length).Select(i => (double)i).ToArray();
-
-                    fixed (double* xPtr = xValues)
-                    fixed (double* yPtr = values)
-                    {
-                        if (ImPlot.BeginPlot("Soul Cost Graph", ImGui.GetContentRegionAvail()))
-                        {
-                            ImPlot.SetupAxes("Level", "Cost");
-                            ImPlot.SetupAxisLimits(ImAxis.X1, 0, xValues.Length - 1);
-                            ImPlot.SetupAxisLimits(ImAxis.Y1, 0, maxY);
-
-                            ImPlot.PlotLine("Soul Cost", xPtr, yPtr, values.Length);
-
-                            ImPlot.EndPlot();
-                        }
-                    }
                 }
                 else if (ccd != null)
                 {
                     (values, xOffset, minY, maxY) = UICache.GetCached(editor, row, "calcCorrectData",
                         () => ParamUtils.getCalcCorrectedData(ccd, row));
+                }
 
-                    // Create X values with offset
-                    double[] xValues = Enumerable.Range(0, values.Length).Select(i => (double)(i + xOffset)).ToArray();
+                // Input validation
+                if (values == null || values.Length < 2 || values.Any(v => double.IsNaN(v) || double.IsInfinity(v)))
+                {
+                    ImGui.TextColored(new Vector4(1, 0.5f, 0, 1), "Invalid data range for graphing.");
+                    ImGui.Unindent();
+                    return;
+                }
 
-                    fixed (double* xPtr = xValues)
-                    fixed (double* yPtr = values)
+                double[] xValues = (scd != null)
+                    ? Enumerable.Range(0, values.Length).Select(i => (double)i).ToArray()
+                    : Enumerable.Range(0, values.Length).Select(i => (double)(i + xOffset)).ToArray();
+
+                fixed (double* xPtr = xValues)
+                fixed (double* yPtr = values)
+                {
+                    if (ImPlot.BeginPlot(scd != null ? "Soul Cost Graph" : "Calc Correct Graph", ImGui.GetContentRegionAvail()))
                     {
-                        if (ImPlot.BeginPlot("Calc Correct Graph", ImGui.GetContentRegionAvail()))
-                        {
-                            var xAxisName = "X";
-                            var yAxisName = "Y";
+                        string xAxisName = string.IsNullOrEmpty(xAxisTitle) ? "X" : xAxisTitle;
+                        string yAxisName = string.IsNullOrEmpty(yAxisTitle) ? "Y" : yAxisTitle;
 
-                            if(xAxisTitle != "")
-                            {
-                                xAxisName = xAxisTitle;
-                            }
-                            if (yAxisTitle != "")
-                            {
-                                yAxisName = yAxisTitle;
-                            }
+                        ImPlot.SetupAxes(xAxisName, yAxisName);
+                        ImPlot.SetupAxisLimits(ImAxis.X1, xValues[0], xValues[^1]);
+                        ImPlot.SetupAxisLimits(ImAxis.Y1, minY, maxY > minY ? maxY : minY + 1); // Ensure valid range
 
-                            ImPlot.SetupAxes(xAxisName, yAxisName);
-                            ImPlot.SetupAxisLimits(ImAxis.X1, xValues[0], xValues[^1]);
-                            ImPlot.SetupAxisLimits(ImAxis.Y1, minY, maxY);
+                        ImPlot.PlotLine(scd != null ? "Soul Cost" : "Correction", xPtr, yPtr, values.Length);
 
-                            ImPlot.PlotLine("Correction", xPtr, yPtr, values.Length);
-
-                            ImPlot.EndPlot();
-                        }
+                        ImPlot.EndPlot();
                     }
                 }
             }
