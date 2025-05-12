@@ -521,6 +521,8 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
     }
 
+    private readonly Dictionary<Key, bool> _keyStates = new();
+
     private void UpdateImGuiInput(InputSnapshot snapshot)
     {
         ImGuiIOPtr io = ImGui.GetIO();
@@ -555,49 +557,29 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
             io.AddInputCharacter(c);
         }
 
-        // Modifier tracking
-        bool controlDown = false;
-        bool shiftDown = false;
-        bool altDown = false;
-
         // Key events
         foreach (KeyEvent keyEvent in snapshot.KeyEvents)
         {
-            ImGuiKey imguiKey = MapToImGuiKey(keyEvent.Key);
-            if (imguiKey != ImGuiKey.None)
-            {
-                io.AddKeyEvent(imguiKey, keyEvent.Down);
-            }
-
-            // Track modifier key states
-            switch (keyEvent.Key)
-            {
-                case Key.ControlLeft:
-                case Key.ControlRight:
-                    controlDown |= keyEvent.Down;
-                    break;
-                case Key.ShiftLeft:
-                case Key.ShiftRight:
-                    shiftDown |= keyEvent.Down;
-                    break;
-                case Key.AltLeft:
-                case Key.AltRight:
-                    altDown |= keyEvent.Down;
-                    break;
-            }
-
-            TaskLogs.AddLog($"{keyEvent}");
+            _keyStates[keyEvent.Key] = keyEvent.Down;
         }
 
-        // Send modifier key states to ImGui (mandatory for shortcuts)
-        io.AddKeyEvent(ImGuiKey.ModCtrl, controlDown);
-        io.AddKeyEvent(ImGuiKey.ModShift, shiftDown);
-        io.AddKeyEvent(ImGuiKey.ModAlt, altDown);
+        foreach ((Key key, bool isDown) in _keyStates)
+        {
+            ImGuiKey imguiKey = MapToImGuiKey(key);
+            if (imguiKey != ImGuiKey.None)
+            {
+                io.AddKeyEvent(imguiKey, isDown);
+            }
+        }
 
-        // Optional: still set these for legacy/compat use
-        io.KeyCtrl = controlDown;
-        io.KeyShift = shiftDown;
-        io.KeyAlt = altDown;
+        io.AddKeyEvent(ImGuiKey.ModCtrl, _keyStates.GetValueOrDefault(Key.ControlLeft) || _keyStates.GetValueOrDefault(Key.ControlRight));
+        io.AddKeyEvent(ImGuiKey.ModShift, _keyStates.GetValueOrDefault(Key.ShiftLeft) || _keyStates.GetValueOrDefault(Key.ShiftRight));
+        io.AddKeyEvent(ImGuiKey.ModAlt, _keyStates.GetValueOrDefault(Key.AltLeft) || _keyStates.GetValueOrDefault(Key.AltRight));
+
+        // Optional legacy fields
+        io.KeyCtrl = _keyStates.GetValueOrDefault(Key.ControlLeft) || _keyStates.GetValueOrDefault(Key.ControlRight);
+        io.KeyShift = _keyStates.GetValueOrDefault(Key.ShiftLeft) || _keyStates.GetValueOrDefault(Key.ShiftRight);
+        io.KeyAlt = _keyStates.GetValueOrDefault(Key.AltLeft) || _keyStates.GetValueOrDefault(Key.AltRight);
     }
 
     private ImGuiKey MapToImGuiKey(Key key)

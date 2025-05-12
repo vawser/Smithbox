@@ -14,3 +14,5 @@
 - General: Ctrl+C and Ctrl+V don't work correctly for copying InputText content
 - Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)
 - Param Editor: Mass edit isn't working correctly
+
+
