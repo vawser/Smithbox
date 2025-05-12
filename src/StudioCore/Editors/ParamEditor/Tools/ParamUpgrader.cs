@@ -296,7 +296,7 @@ public class ParamUpgrader
         UICache.ClearCaches();
         TargetProject.ParamData.RefreshAllParamDiffCaches(false);
 
-        TargetProject.ParamData.PrimaryBank.Save();
+        await TargetProject.ParamData.PrimaryBank.Save();
     }
 
     public async Task<bool> UpgradeParamsTask()
@@ -366,7 +366,7 @@ public class ParamUpgrader
         }
         else
         {
-            TaskLogs.AddLog($"[{TargetProject.ProjectName} :Param Editor] Failed to check for conflicts.");
+            TaskLogs.AddLog($"[{TargetProject.ProjectName}:Param Editor] Failed to check for conflicts.");
         }
     }
 

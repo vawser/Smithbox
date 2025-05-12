@@ -2,6 +2,7 @@
 using Silk.NET.SDL;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Veldrid;
 
 namespace StudioCore.Platform;
@@ -145,6 +146,11 @@ public abstract unsafe class PlatformUtils
     public void SetClipboardText(string text)
     {
         SdlProvider.SDL.Value.SetClipboardText((byte*)((FixedUtf8String)text).StringPtr);
+    }
+    public string GetClipboardText()
+    {
+        string managedText = Marshal.PtrToStringUTF8((nint)SdlProvider.SDL.Value.GetClipboardText());
+        return managedText;
     }
 
     // Title arg is currently unusable. We should restore it back if at all possible.

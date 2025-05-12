@@ -1,17 +1,12 @@
 using Andre.Formats;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Http.HttpResults;
 using SoulsFormats;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.META;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
-using StudioCore.TextEditor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace StudioCore.Editors.ParamEditor.MassEdit;
 
