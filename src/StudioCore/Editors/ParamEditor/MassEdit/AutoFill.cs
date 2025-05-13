@@ -1,7 +1,7 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
+using Octokit;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Interface;
@@ -10,10 +10,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.Editors.ParamEditor.MassEdit;
+namespace StudioCore.Editors.ParamEditor;
 
-internal class AutoFillSearchEngine<A, B>
+public class AutoFillSearchEngine<A, B>
 {
+    public ProjectEntry Project;
+
     private readonly string[] _autoFillArgs;
     private readonly SearchEngine<A, B> engine;
     private readonly string id;
@@ -21,8 +23,9 @@ internal class AutoFillSearchEngine<A, B>
     private bool _autoFillNotToggle;
     private bool _useAdditionalCondition;
 
-    internal AutoFillSearchEngine(string id, SearchEngine<A, B> searchEngine)
+    internal AutoFillSearchEngine(ProjectEntry project, string id, SearchEngine<A, B> searchEngine)
     {
+        Project = project;
         this.id = id;
         engine = searchEngine;
         _autoFillArgs = Enumerable.Repeat("", engine.AllCommands().Sum(x => x.Item2.Length)).ToArray();
@@ -56,7 +59,7 @@ internal class AutoFillSearchEngine<A, B>
 
         if (_useAdditionalCondition && _additionalCondition == null)
         {
-            _additionalCondition = new AutoFillSearchEngine<A, B>(id + "0", engine);
+            _additionalCondition = new AutoFillSearchEngine<A, B>(Project, id + "0", engine);
         }
         else if (!_useAdditionalCondition)
         {
@@ -126,10 +129,15 @@ internal class AutoFillSearchEngine<A, B>
 
                 ImGui.InputTextWithHint("##meautoinput" + argIndices[i], cmd.Item2[i],
                     ref _autoFillArgs[argIndices[i]], 256);
-                var var = AutoFill.MassEditAutoFillForVars(argIndices[i]);
-                if (var != null)
+
+                if (Project.ParamEditor.MassEditHandler.AutoFill != null)
                 {
-                    _autoFillArgs[argIndices[i]] = var;
+                    var var = Project.ParamEditor.MassEditHandler.AutoFill.MassEditAutoFillForVars(argIndices[i]);
+
+                    if (var != null)
+                    {
+                        _autoFillArgs[argIndices[i]] = var;
+                    }
                 }
             }
 
@@ -178,45 +186,64 @@ internal class AutoFillSearchEngine<A, B>
     }
 }
 
-internal class AutoFill
+public class AutoFill
 {
-    private static readonly AutoFillSearchEngine<bool, string> autoFillVse = new("vse", VarSearchEngine.vse);
+    public ProjectEntry Project;
 
-    private static string[] _autoFillArgsGop = Enumerable
-        .Repeat("", MEGlobalOperation.globalOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private static string[] _autoFillArgsRop = Enumerable
-        .Repeat("", MERowOperation.rowOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private static string[] _autoFillArgsCop = Enumerable
-        .Repeat("", MEValueOperation.valueOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
-
-    private static string[] _autoFillArgsOa =
-        Enumerable.Repeat("", MEOperationArgument.arg.AllArguments().Sum(x => x.Item2.Length)).ToArray();
-
-    private static string _literalArg = "";
-
-    internal static Vector4 HINTCOLOUR = new(0.3f, 0.5f, 1.0f, 1.0f);
-    internal static Vector4 PREVIEWCOLOUR = new(0.65f, 0.75f, 0.65f, 1.0f);
-
-    internal static AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
+    // Type hell. Can't omit the type.
+    private readonly AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
         autoFillParse;
-    internal static AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse;
-    internal static AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse;
-    internal static AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse;
 
-    public static string ParamSearchBarAutoFill(ParamEditorScreen editor)
+    private readonly AutoFillSearchEngine<bool, string> autoFillVse;
+
+    private readonly AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse;
+
+    private readonly AutoFillSearchEngine<(ParamBank, Param), Param.Row> autoFillRse;
+
+    private readonly AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse;
+
+    private string[] _autoFillArgsGop;
+
+    private string[] _autoFillArgsRop;
+
+    private string[] _autoFillArgsCop;
+
+    private string[] _autoFillArgsOa;
+
+    private string _literalArg = "";
+
+    internal Vector4 HINTCOLOUR = new(0.3f, 0.5f, 1.0f, 1.0f);
+    internal Vector4 PREVIEWCOLOUR = new(0.65f, 0.75f, 0.65f, 1.0f);
+
+    public AutoFill(ProjectEntry project)
     {
-        if(autoFillPse == null)
-        {
-            autoFillPse = new("pse", ParamSearchEngine.Create(editor));
-        }
+        Project = project;
 
-        ImGui.Button($@"{Icons.CaretDown}##paramAutofillButton");
+        autoFillParse = new(Project, "parse", Project.ParamEditor.MassEditHandler.parse);
+        autoFillVse = new(Project, "vse", Project.ParamEditor.MassEditHandler.vse);
+        autoFillPse = new(Project, "pse", Project.ParamEditor.MassEditHandler.pse);
+        autoFillRse = new(Project, "rse", Project.ParamEditor.MassEditHandler.rse);
+        autoFillCse = new(Project, "cse", Project.ParamEditor.MassEditHandler.cse);
+
+        _autoFillArgsGop = Enumerable
+            .Repeat("", project.ParamEditor.MassEditHandler.GlobalOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+
+        _autoFillArgsRop = Enumerable
+            .Repeat("", project.ParamEditor.MassEditHandler.RowOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+
+        _autoFillArgsCop = Enumerable
+            .Repeat("", project.ParamEditor.MassEditHandler.FieldOps.AvailableCommands().Sum(x => x.Item2.Length)).ToArray();
+
+        _autoFillArgsOa = Enumerable
+            .Repeat("", project.ParamEditor.MassEditHandler.OperationArgs.AllArguments().Sum(x => x.Item2.Length)).ToArray();
+    }
+
+    public string ParamSearchBarAutoFill()
+    {
+        ImGui.Button($@"{Icons.CaretDown}##paramAutofill");
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select params...");
-
             var result = autoFillPse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -225,14 +252,9 @@ internal class AutoFill
         return null;
     }
 
-    public static string RowSearchBarAutoFill(ParamEditorScreen editor)
+    public string RowSearchBarAutoFill()
     {
-        if (autoFillRse == null)
-        {
-            autoFillRse = new("rse", RowSearchEngine.Create(editor));
-        }
-
-        ImGui.Button($@"{Icons.CaretDown}##rowAutofillButton");
+        ImGui.Button($@"{Icons.CaretDown}##rowAutofill");
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select rows...");
@@ -244,18 +266,12 @@ internal class AutoFill
         return null;
     }
 
-    public static string ColumnSearchBarAutoFill(ParamEditorScreen editor)
+    public string ColumnSearchBarAutoFill()
     {
-        if (autoFillCse == null)
-        {
-            autoFillCse = new("cse", CellSearchEngine.Create(editor));
-        }
-
-        ImGui.Button($@"{Icons.CaretDown}##fieldAutofillButton");
+        ImGui.Button($@"{Icons.CaretDown}##fieldAutofill");
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select fields...");
-
             var result = autoFillCse.Menu(true, false, "", null, null);
             ImGui.EndPopup();
             return result;
@@ -264,34 +280,21 @@ internal class AutoFill
         return null;
     }
 
-    public static string MassEditCompleteAutoFill(ParamEditorScreen editor)
+    public string MassEditCompleteAutoFill()
     {
-        if (autoFillParse == null)
-        {
-            autoFillParse = new("parse", ParamAndRowSearchEngine.Create(editor));
-        }
-
-        if (autoFillRse == null)
-        {
-            autoFillRse = new("rse", RowSearchEngine.Create(editor));
-        }
-
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
-        ImGui.Button($@"{Icons.CaretDown}##masseditAutofillButton");
+        ImGui.Button($@"{Icons.CaretDown}#massEditAutofill");
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
             ImGui.TextColored(HINTCOLOUR, "Select param and rows...");
-
             var result1 = autoFillParse.Menu(false, autoFillRse, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
                 {
                     ImGui.TextColored(PREVIEWCOLOUR, inheritedCommand);
                 }
-
-                AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
 
                 ImGui.TextColored(HINTCOLOUR, "Select fields...");
                 var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand, inheritedCommand2 =>
@@ -302,11 +305,11 @@ internal class AutoFill
                     }
 
                     ImGui.TextColored(HINTCOLOUR, "Select field operation...");
-                    return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";", null);
+                    return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
                 });
                 ImGui.Separator();
                 ImGui.TextColored(HINTCOLOUR, "Select row operation...");
-                var res2 = MassEditAutoFillForOperation(MERowOperation.rowOps, ref _autoFillArgsRop, ";", null);
+                var res2 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
                 if (res1 != null)
                 {
                     return res1;
@@ -318,9 +321,6 @@ internal class AutoFill
             ImGui.Separator();
             ImGui.PushID("param");
             ImGui.TextColored(HINTCOLOUR, "Select params...");
-
-            AutoFillSearchEngine<bool, (ParamBank, Param)> autoFillPse = new("pse", ParamSearchEngine.Create(editor));
-
             var result2 = autoFillPse.Menu(true, false, ": ", null, inheritedCommand =>
             {
                 if (inheritedCommand != null)
@@ -337,10 +337,6 @@ internal class AutoFill
                     }
 
                     ImGui.TextColored(HINTCOLOUR, "Select fields...");
-
-
-                    AutoFillSearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)> autoFillCse = new("cse", CellSearchEngine.Create(editor));
-
                     var res1 = autoFillCse.Menu(true, true, ": ", inheritedCommand2, inheritedCommand3 =>
                     {
                         if (inheritedCommand3 != null)
@@ -349,7 +345,7 @@ internal class AutoFill
                         }
 
                         ImGui.TextColored(HINTCOLOUR, "Select field operation...");
-                        return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
+                        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
                             null);
                     });
                     string res2 = null;
@@ -357,7 +353,7 @@ internal class AutoFill
                     {
                         ImGui.Separator();
                         ImGui.TextColored(HINTCOLOUR, "Select row operation...");
-                        res2 = MassEditAutoFillForOperation(MERowOperation.rowOps, ref _autoFillArgsRop, ";", null);
+                        res2 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.RowOps, ref _autoFillArgsRop, ";", null);
                     }
 
                     if (res1 != null)
@@ -376,7 +372,7 @@ internal class AutoFill
                 ImGui.Separator();
                 ImGui.PushID("globalop");
                 ImGui.TextColored(HINTCOLOUR, "Select global operation...");
-                result3 = MassEditAutoFillForOperation(MEGlobalOperation.globalOps, ref _autoFillArgsGop, ";",
+                result3 = MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.GlobalOps, ref _autoFillArgsGop, ";",
                     null);
                 ImGui.PopID();
                 if (MassParamEdit.massEditVars.Count != 0)
@@ -392,7 +388,7 @@ internal class AutoFill
                         }
 
                         ImGui.TextColored(HINTCOLOUR, "Select value operation...");
-                        return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";",
+                        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";",
                             null);
                     });
                 }
@@ -420,12 +416,12 @@ internal class AutoFill
         return null;
     }
 
-    public static string MassEditOpAutoFill()
+    public string MassEditOpAutoFill()
     {
-        return MassEditAutoFillForOperation(MEValueOperation.valueOps, ref _autoFillArgsCop, ";", null);
+        return MassEditAutoFillForOperation(Project.ParamEditor.MassEditHandler.FieldOps, ref _autoFillArgsCop, ";", null);
     }
 
-    private static string MassEditAutoFillForOperation<A, B>(MEOperation<A, B> ops, ref string[] staticArgs,
+    private string MassEditAutoFillForOperation<A, B>(MEOperation<A, B> ops, ref string[] staticArgs,
         string suffix, Func<string> subMenu)
     {
         var currentArgIndex = 0;
@@ -477,7 +473,7 @@ internal class AutoFill
                 if (ImGui.BeginPopupContextItem("##meautoinputoapopup" + argIndices[i],
                         ImGuiPopupFlags.MouseButtonLeft))
                 {
-                    var opargResult = MassEditAutoFillForArguments(MEOperationArgument.arg, ref _autoFillArgsOa);
+                    var opargResult = MassEditAutoFillForArguments(Project.ParamEditor.MassEditHandler.OperationArgs, ref _autoFillArgsOa);
                     if (opargResult != null)
                     {
                         staticArgs[argIndices[i]] = opargResult;
@@ -504,7 +500,7 @@ internal class AutoFill
         return result;
     }
 
-    private static string MassEditAutoFillForArguments(MEOperationArgument oa, ref string[] staticArgs)
+    private string MassEditAutoFillForArguments(MEOperationArgument oa, ref string[] staticArgs)
     {
         var currentArgIndex = 0;
         string result = null;
@@ -581,7 +577,7 @@ internal class AutoFill
         return result;
     }
 
-    internal static string MassEditAutoFillForVars(int id)
+    internal string MassEditAutoFillForVars(int id)
     {
         if (MassParamEdit.massEditVars.Count == 0)
         {

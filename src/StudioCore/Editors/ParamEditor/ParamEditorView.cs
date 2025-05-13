@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -64,12 +65,15 @@ public class ParamEditorView
         ImGui.Separator();
 
         // Autofill
-        ImGui.AlignTextToFramePadding();
-        var resAutoParam = AutoFill.ParamSearchBarAutoFill(Editor);
-
-        if (resAutoParam != null)
+        if (Editor.MassEditHandler.AutoFill != null)
         {
-            _selection.SetCurrentParamSearchString(resAutoParam);
+            ImGui.AlignTextToFramePadding();
+            var resAutoParam = Editor.MassEditHandler.AutoFill.ParamSearchBarAutoFill();
+
+            if (resAutoParam != null)
+            {
+                _selection.SetCurrentParamSearchString(resAutoParam);
+            }
         }
 
         ImGui.SameLine();
@@ -143,8 +147,12 @@ public class ParamEditorView
     {
         List<string> paramKeyList = UICache.GetCached(Editor, _viewIndex, () =>
         {
-            List<(ParamBank, Param)> list =
-                ParamSearchEngine.Create(Editor).Search(true, _selection.currentParamSearchString, true, true);
+            List<(ParamBank, Param)> list = null;
+
+            if (Editor.MassEditHandler.pse != null)
+            {
+                list = Editor.MassEditHandler.pse.Search(true, _selection.currentParamSearchString, true, true);
+            }
 
             if (list != null)
             {
@@ -386,12 +394,15 @@ public class ParamEditorView
         scrollTo = 0;
 
         // Auto fill
-        ImGui.AlignTextToFramePadding();
-        var resAutoRow = AutoFill.RowSearchBarAutoFill(Editor);
-
-        if (resAutoRow != null)
+        if (Editor.MassEditHandler.AutoFill != null)
         {
-            _selection.SetCurrentRowSearchString(resAutoRow);
+            ImGui.AlignTextToFramePadding();
+            var resAutoRow = Editor.MassEditHandler.AutoFill.RowSearchBarAutoFill();
+
+            if (resAutoRow != null)
+            {
+                _selection.SetCurrentRowSearchString(resAutoRow);
+            }
         }
 
         ImGui.SameLine();
@@ -585,7 +596,7 @@ public class ParamEditorView
                 }
 
                 List<Param.Row> rows = UICache.GetCached(Editor, (_viewIndex, activeParam),
-                    () => RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, para),
+                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, para),
 
                         _selection.GetCurrentRowSearchString(), true, true));
 

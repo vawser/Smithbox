@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -65,7 +66,7 @@ public class ParamEditorShortcuts
                 Editor.Project.ParamData.PrimaryBank.ClipboardParam = Editor._activeView._selection.GetActiveParam();
 
                 foreach (Param.Row row in UICache.GetCached(Editor, (Editor._activeView._viewIndex, Editor._activeView._selection.GetActiveParam()),
-                    () => RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()]),
+                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()]),
                     Editor._activeView._selection.GetCurrentRowSearchString(), true, true)))
                 {
                     Editor._activeView._selection.AddRowToSelection(row);
@@ -187,7 +188,7 @@ public class ParamEditorShortcuts
         // Execute Mass Editor
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExecuteMassEdit))
         {
-            Editor.MassEditHandler.ExecuteMassEdit();
+            Editor.MassEditHandler.ApplyMassEdit(Editor.MassEditHandler.CurrentInput);
         }
 
         // View Mass Edit

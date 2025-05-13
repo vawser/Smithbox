@@ -490,6 +490,12 @@ public class ProjectEntry
             }
 
             ParamEditor = new ParamEditorScreen(BaseEditor, this);
+
+            // Placed here so the mass edit stuff is initialized once the editor is setup fully
+            if(ParamEditor != null)
+            {
+                ParamEditor.MassEditHandler.Setup();
+            }
         }
 
         // ---- Time Act Editor ----

@@ -1,5 +1,8 @@
 #nullable enable
 using Andre.Formats;
+using HKX2;
+using Microsoft.AspNetCore.Components.Forms;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.MassEdit;
@@ -84,8 +87,6 @@ public static class MassParamEdit
 
 public class MassParamEditRegex
 {
-    private static ParamEditorScreen Editor;
-
     private int argc;
 
     // Run data        
@@ -118,12 +119,15 @@ public class MassParamEditRegex
     // Parsing data
     private string varSelector;
 
-    public static void SetEditor(ParamEditorScreen editor)
+    private ProjectEntry Project;
+
+    public MassParamEditRegex(ProjectEntry project)
     {
-        Editor = editor;
+        Project = project;
+        bank = project.ParamData.PrimaryBank;
     }
 
-    public static (MassEditResult, ActionManager child) PerformMassEdit(ParamBank bank, string commandsString,
+    public (MassEditResult, ActionManager child) PerformMassEdit(ParamBank bank, string commandsString,
         ParamEditorSelectionState context)
     {
         int currentLine = 0;
@@ -143,35 +147,28 @@ public class MassParamEditRegex
                     continue;
                 }
 
-                // VAWSER: ignore ; usage
-                if (command.Contains(';'))
-                {
-                    command = command.Replace(";", "");
-                }
-
                 (MassEditResult result, List<EditorAction> actions) = (null, null);
 
-                MassParamEditRegex currentEditData = new();
-                currentEditData.bank = bank;
-                currentEditData.context = context;
+                this.bank = bank;
+                this.context = context;
 
                 var primaryFilter = command.Split(':', 2)[0].Trim();
 
-                if (MEGlobalOperation.globalOps.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
+                if (Project.ParamEditor.MassEditHandler.GlobalOps.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
                 {
-                    (result, actions) = currentEditData.ParseGlobalOpStep(currentLine, command);
+                    (result, actions) = ParseGlobalOpStep(currentLine, command);
                 }
-                else if (VarSearchEngine.vse.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
+                else if (Project.ParamEditor.MassEditHandler.vse.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
                 {
-                    (result, actions) = currentEditData.ParseVarStep(currentLine, command);
+                    (result, actions) = ParseVarStep(currentLine, command);
                 }
-                else if (ParamAndRowSearchEngine.Create(Editor).HandlesCommand(primaryFilter.Split(" ", 2)[0]))
+                else if (Project.ParamEditor.MassEditHandler.parse.HandlesCommand(primaryFilter.Split(" ", 2)[0]))
                 {
-                    (result, actions) = currentEditData.ParseParamRowStep(currentLine, command);
+                    (result, actions) = ParseParamRowStep(currentLine, command);
                 }
                 else
                 {
-                    (result, actions) = currentEditData.ParseParamStep(currentLine, command);
+                    (result, actions) = ParseParamStep(currentLine, command);
                 }
 
                 if (result.Type != MassEditResultType.SUCCESS)
@@ -195,13 +192,13 @@ public class MassParamEditRegex
     {
         var opStage = restOfStages.Split(" ", 2);
         globalOperation = opStage[0].Trim();
-        if (!MEGlobalOperation.globalOps.operations.ContainsKey(globalOperation))
+        if (!Project.ParamEditor.MassEditHandler.GlobalOps.operations.ContainsKey(globalOperation))
         {
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown global operation {globalOperation} (line {currentLine})"), null);
         }
 
         string wiki;
-        (argNames, wiki, globalFunc) = MEGlobalOperation.globalOps.operations[globalOperation];
+        (argNames, wiki, globalFunc) = Project.ParamEditor.MassEditHandler.GlobalOps.operations[globalOperation];
         ExecParamOperationArguments(currentLine, opStage.Length > 1 ? opStage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
@@ -217,7 +214,7 @@ public class MassParamEditRegex
         varSelector = varstage[0].Trim();
         if (varSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find variable filter. Add : and one of {String.Join(", ", VarSearchEngine.vse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find variable filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.vse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (varstage.Length < 2)
@@ -232,13 +229,13 @@ public class MassParamEditRegex
     {
         var operationstage = restOfStages.TrimStart().Split(" ", 2);
         varOperation = operationstage[0].Trim();
-        if (varOperation.Equals("") || !MEValueOperation.valueOps.operations.ContainsKey(varOperation))
+        if (varOperation.Equals("") || !Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(varOperation))
         {
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
         }
 
         string wiki;
-        (argNames, wiki, genericFunc) = MEValueOperation.valueOps.operations[varOperation];
+        (argNames, wiki, genericFunc) = Project.ParamEditor.MassEditHandler.FieldOps.operations[varOperation];
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
@@ -254,7 +251,7 @@ public class MassParamEditRegex
         paramRowSelector = paramrowstage[0].Trim();
         if (paramRowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", ParamAndRowSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find paramrow filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.parse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramrowstage.Length < 2)
@@ -262,7 +259,7 @@ public class MassParamEditRegex
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation. Check your colon placement. (line {currentLine})"), null);
         }
 
-        if (MERowOperation.rowOps.HandlesCommand(paramrowstage[1].Trim().Split(" ", 2)[0]))
+        if (Project.ParamEditor.MassEditHandler.RowOps.HandlesCommand(paramrowstage[1].Trim().Split(" ", 2)[0]))
         {
             return ParseRowOpStep(currentLine, paramrowstage[1]);
         }
@@ -276,7 +273,7 @@ public class MassParamEditRegex
         paramSelector = paramstage[0].Trim();
         if (paramSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", ParamSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find param filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.pse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (paramstage.Length < 2)
@@ -293,7 +290,7 @@ public class MassParamEditRegex
         rowSelector = rowstage[0].Trim();
         if (rowSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", RowSearchEngine.Create(Editor).AvailableCommandsForHelpText())} (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find row filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.rse.AvailableCommandsForHelpText())} (line {currentLine})"), null);
         }
 
         if (rowstage.Length < 2)
@@ -301,7 +298,7 @@ public class MassParamEditRegex
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell filter or row operation to perform. Check your colon placement. (line {currentLine})"), null);
         }
 
-        if (MERowOperation.rowOps.HandlesCommand(rowstage[1].Trim().Split(" ", 2)[0]))
+        if (Project.ParamEditor.MassEditHandler.RowOps.HandlesCommand(rowstage[1].Trim().Split(" ", 2)[0]))
         {
             return ParseRowOpStep(currentLine, rowstage[1]);
         }
@@ -315,7 +312,7 @@ public class MassParamEditRegex
         cellSelector = cellstage[0].Trim();
         if (cellSelector.Equals(""))
         {
-            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", CellSearchEngine.Create(Editor).AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
+            return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find cell/property filter. Add : and one of {String.Join(", ", Project.ParamEditor.MassEditHandler.cse.AvailableCommandsForHelpText())} or Name (0 args) (line {currentLine})"), null);
         }
 
         if (cellstage.Length < 2)
@@ -331,13 +328,13 @@ public class MassParamEditRegex
     {
         var operationstage = restOfStages.TrimStart().Split(" ", 2);
         rowOperation = operationstage[0].Trim();
-        if (!MERowOperation.rowOps.operations.ContainsKey(rowOperation))
+        if (!Project.ParamEditor.MassEditHandler.RowOps.operations.ContainsKey(rowOperation))
         {
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown row operation {rowOperation} (line {currentLine})"), null);
         }
 
         string wiki;
-        (argNames, wiki, rowFunc) = MERowOperation.rowOps.operations[rowOperation];
+        (argNames, wiki, rowFunc) = Project.ParamEditor.MassEditHandler.RowOps.operations[rowOperation];
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
@@ -354,18 +351,18 @@ public class MassParamEditRegex
         var operationstage = restOfStages.TrimStart().Split(" ", 2);
         cellOperation = operationstage[0].Trim();
 
-        if (cellOperation.Equals("") || !MEValueOperation.valueOps.operations.ContainsKey(cellOperation))
+        if (cellOperation.Equals("") || !Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(cellOperation))
         {
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Could not find operation to perform. Add : and one of + - * / replace (line {currentLine})"), null);
         }
 
-        if (!MEValueOperation.valueOps.operations.ContainsKey(cellOperation))
+        if (!Project.ParamEditor.MassEditHandler.FieldOps.operations.ContainsKey(cellOperation))
         {
             return (new MassEditResult(MassEditResultType.PARSEERROR, $@"Unknown cell operation {cellOperation} (line {currentLine})"), null);
         }
 
         string wiki;
-        (argNames, wiki, genericFunc) = MEValueOperation.valueOps.operations[cellOperation];
+        (argNames, wiki, genericFunc) = Project.ParamEditor.MassEditHandler.FieldOps.operations[cellOperation];
         ExecParamOperationArguments(currentLine, operationstage.Length > 1 ? operationstage[1] : null);
         if (argc != paramArgFuncs.Length)
         {
@@ -379,7 +376,7 @@ public class MassParamEditRegex
     private void ExecParamOperationArguments(int currentLine, string opargs)
     {
         argc = argNames.Length;
-        paramArgFuncs = MEOperationArgument.arg.getContextualArguments(argc, opargs);
+        paramArgFuncs = Project.ParamEditor.MassEditHandler.OperationArgs.getContextualArguments(argc, opargs);
     }
 
     private (MassEditResult, List<EditorAction>) SandboxMassEditExecution(int currentLine,
@@ -417,7 +414,7 @@ public class MassParamEditRegex
         ;
         var varArgs = paramArgFuncs
             .Select((func, i) => func(-1, null)(-1, null)(-1, (PseudoColumn.None, null))).ToArray();
-        foreach (var varName in VarSearchEngine.vse.Search(false, varSelector, false, false))
+        foreach (var varName in Project.ParamEditor.MassEditHandler.vse.Search(false, varSelector, false, false))
         {
             MassEditResult res = ExecVarOpStage(currentLine, varName, varArgs);
             if (res.Type != MassEditResultType.SUCCESS)
@@ -447,7 +444,7 @@ public class MassParamEditRegex
         IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
             paramArgFuncs.Select((func, i) => func(0, activeParam)); // technically invalid for clipboard
         var rowEditCount = -1;
-        foreach ((MassEditRowSource source, Param.Row row) in ParamAndRowSearchEngine.Create(Editor).Search(context,
+        foreach ((MassEditRowSource source, Param.Row row) in Project.ParamEditor.MassEditHandler.parse.Search(context,
                      paramRowSelector, false, false))
         {
             rowEditCount++;
@@ -455,7 +452,7 @@ public class MassParamEditRegex
                 paramArgFunc.Select((rowFunc, i) => rowFunc(rowEditCount, row)).ToArray();
             var paramname = source == MassEditRowSource.Selection
                 ? context.GetActiveParam()
-                : Editor.Project.ParamData.PrimaryBank.ClipboardParam;
+                : Project.ParamData.PrimaryBank.ClipboardParam;
             MassEditResult res = rowOpOrCellStageFunc(currentLine, rowArgFunc, paramname, row, partialActions);
             if (res.Type != MassEditResultType.SUCCESS)
             {
@@ -470,7 +467,7 @@ public class MassParamEditRegex
     {
         var paramEditCount = -1;
         var operationForPrint = rowOperation != null ? rowOperation : cellOperation;
-        foreach ((ParamBank b, Param p) in ParamSearchEngine.Create(Editor).Search(false, paramSelector, false, false))
+        foreach ((ParamBank b, Param p) in Project.ParamEditor.MassEditHandler.pse.Search(false, paramSelector, false, false))
         {
             paramEditCount++;
             IEnumerable<Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>> paramArgFunc =
@@ -496,7 +493,7 @@ public class MassParamEditRegex
         string paramname, ParamBank b, Param p, List<EditorAction> partialActions)
     {
         var rowEditCount = -1;
-        foreach (Param.Row row in RowSearchEngine.Create(Editor).Search((b, p), rowSelector, false, false))
+        foreach (Param.Row row in Project.ParamEditor.MassEditHandler.rse.Search((b, p), rowSelector, false, false))
         {
             rowEditCount++;
             Func<int, (PseudoColumn, Param.Column), string>[] rowArgFunc =
@@ -523,7 +520,8 @@ public class MassParamEditRegex
 
         if (rs != null)
         {
-            partialActions.Add(new AddParamsAction(Editor, p2, "FromMassEdit", new List<Param.Row> { rs }, false, true));
+            var editor = Project.ParamEditor;
+            partialActions.Add(new AddParamsAction(editor, p2, "FromMassEdit", new List<Param.Row> { rs }, false, true));
         }
 
         return new MassEditResult(MassEditResultType.SUCCESS, "");
@@ -533,7 +531,7 @@ public class MassParamEditRegex
         string paramname, Param.Row row, List<EditorAction> partialActions)
     {
         var cellEditCount = -1;
-        foreach ((PseudoColumn, Param.Column) col in CellSearchEngine.Create(Editor).Search((paramname, row), cellSelector,
+        foreach ((PseudoColumn, Param.Column) col in Project.ParamEditor.MassEditHandler.cse.Search((paramname, row), cellSelector,
                      false, false))
         {
             cellEditCount++;
@@ -592,11 +590,14 @@ public class MassParamEditRegex
 
 public class MassParamEditOther
 {
-    public static AddParamsAction SortRows(ParamEditorScreen editor, ParamBank bank, string paramName)
+    public static AddParamsAction SortRows(ProjectEntry project, ParamBank bank, string paramName)
     {
         Param param = bank.Params[paramName];
         List<Param.Row> newRows = new(param.Rows);
         newRows.Sort((a, b) => { return a.ID - b.ID; });
+
+        var editor = project.ParamEditor;
+
         return new AddParamsAction(editor, param, paramName, newRows, true,
             true); //appending same params and allowing overwrite
     }
@@ -604,17 +605,15 @@ public class MassParamEditOther
 
 public class MEOperation<T, O>
 {
-    public ParamEditorScreen Editor;
-
     internal Dictionary<string, (string[], string, Func<T, string[], O>)> operations = new();
 
     internal MEOperation()
     {
+        Setup();
     }
 
-    internal virtual void Setup(ParamEditorScreen editor)
+    internal virtual void Setup()
     {
-        Editor = editor;
     }
 
     internal bool HandlesCommand(string command)
@@ -636,14 +635,22 @@ public class MEOperation<T, O>
 
 public class MEGlobalOperation : MEOperation<ParamEditorSelectionState, bool>
 {
-    public static MEGlobalOperation globalOps = new();
+    public ProjectEntry Project;
 
-    internal override void Setup(ParamEditorScreen editor)
+    public MEGlobalOperation(ProjectEntry project)
+    {
+        Project = project;
+        operations.Clear();
+        Setup();
+    }
+
+    internal override void Setup()
     {
         operations.Add("clear", (new string[0], "Clears clipboard param and rows", (selectionState, args) =>
         {
-            editor.Project.ParamData.PrimaryBank.ClipboardParam = null;
-            editor.Project.ParamData.PrimaryBank.ClipboardRows.Clear();
+            var bank = Project.ParamData.PrimaryBank;
+            bank.ClipboardParam = null;
+            bank.ClipboardRows.Clear();
             return true;
         }
         ));
@@ -679,14 +686,23 @@ public class MEGlobalOperation : MEOperation<ParamEditorSelectionState, bool>
 
 public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row)>
 {
-    public static MERowOperation rowOps = new();
+    public ProjectEntry Project;
 
-    internal override void Setup(ParamEditorScreen editor)
+    public MERowOperation(ProjectEntry project)
+    {
+        Project = project;
+        operations.Clear();
+        Setup();
+    }
+
+    internal override void Setup()
     {
         operations.Add("copy", (new string[0],
             "Adds the selected rows into clipboard. If the clipboard param is different, the clipboard is emptied first",
             (paramAndRow, args) =>
             {
+                var bank = Project.ParamData.PrimaryBank;
+
                 var paramKey = paramAndRow.Item1;
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
@@ -694,20 +710,20 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                     throw new Exception(@"Could not locate param");
                 }
 
-                if (!editor.Project.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
+                if (!bank.Params.ContainsKey(paramKey))
                 {
                     throw new Exception($@"Could not locate param {paramKey}");
                 }
 
-                Param p = editor.Project.ParamData.PrimaryBank.Params[paramKey];
+                Param p = bank.Params[paramKey];
                 // Only supporting single param in clipboard
-                if (editor.Project.ParamData.PrimaryBank.ClipboardParam != paramKey)
+                if (bank.ClipboardParam != paramKey)
                 {
-                    editor.Project.ParamData.PrimaryBank.ClipboardParam = paramKey;
-                    editor.Project.ParamData.PrimaryBank.ClipboardRows.Clear();
+                    bank.ClipboardParam = paramKey;
+                    bank.ClipboardRows.Clear();
                 }
 
-                editor.Project.ParamData.PrimaryBank.ClipboardRows.Add(new Param.Row(row, p));
+                bank.ClipboardRows.Add(new Param.Row(row, p));
                 return (p, null);
             }
         ));
@@ -715,6 +731,8 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
             "Adds the selected rows into clipboard the given number of times. If the clipboard param is different, the clipboard is emptied first",
             (paramAndRow, args) =>
             {
+                var bank = Project.ParamData.PrimaryBank;
+
                 var paramKey = paramAndRow.Item1;
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
@@ -722,23 +740,23 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                     throw new Exception(@"Could not locate param");
                 }
 
-                if (!editor.Project.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
+                if (!bank.Params.ContainsKey(paramKey))
                 {
                     throw new Exception($@"Could not locate param {paramKey}");
                 }
 
                 var count = uint.Parse(args[0]);
-                Param p = editor.Project.ParamData.PrimaryBank.Params[paramKey];
+                Param p = bank.Params[paramKey];
                 // Only supporting single param in clipboard
-                if (editor.Project.ParamData.PrimaryBank.ClipboardParam != paramKey)
+                if (bank.ClipboardParam != paramKey)
                 {
-                    editor.Project.ParamData.PrimaryBank.ClipboardParam = paramKey;
-                    editor.Project.ParamData.PrimaryBank.ClipboardRows.Clear();
+                    bank.ClipboardParam = paramKey;
+                    bank.ClipboardRows.Clear();
                 }
 
                 for (var i = 0; i < count; i++)
                 {
-                    editor.Project.ParamData.PrimaryBank.ClipboardRows.Add(new Param.Row(row, p));
+                    bank.ClipboardRows.Add(new Param.Row(row, p));
                 }
 
                 return (p, null);
@@ -748,6 +766,8 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
             "Adds the selected rows to the primary regulation or parambnd in the selected param",
             (paramAndRow, args) =>
             {
+                var bank = Project.ParamData.PrimaryBank;
+
                 var paramKey = paramAndRow.Item1;
                 Param.Row row = paramAndRow.Item2;
                 if (paramKey == null)
@@ -755,12 +775,12 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
                     throw new Exception(@"Could not locate param");
                 }
 
-                if (!editor.Project.ParamData.PrimaryBank.Params.ContainsKey(paramKey))
+                if (!bank.Params.ContainsKey(paramKey))
                 {
                     throw new Exception($@"Could not locate param {paramKey}");
                 }
 
-                Param p = editor.Project.ParamData.PrimaryBank.Params[paramKey];
+                Param p = bank.Params[paramKey];
                 return (p, new Param.Row(row, p));
             }
         ));
@@ -769,9 +789,16 @@ public class MERowOperation : MEOperation<(string, Param.Row), (Param, Param.Row
 
 public class MEValueOperation : MEOperation<object, object>
 {
-    public static MEValueOperation valueOps = new();
+    public ProjectEntry Project;
 
-    internal override void Setup(ParamEditorScreen editor)
+    public MEValueOperation(ProjectEntry project)
+    {
+        Project = project;
+        operations.Clear();
+        Setup();
+    }
+
+    internal override void Setup()
     {
         operations.Add("=",
             (new[] { "number or text" },
@@ -849,15 +876,17 @@ public class MEValueOperation : MEOperation<object, object>
 
 public class MEOperationArgument
 {
-    public static ParamEditorScreen Editor;
-    public static MEOperationArgument arg = new();
-    private readonly Dictionary<string, OperationArgumentGetter> argumentGetters = new();
-    private OperationArgumentGetter defaultGetter;
+    public ProjectEntry Project;
 
-    private MEOperationArgument()
+    public MEOperationArgument(ProjectEntry project)
     {
+        Project = project;
+        argumentGetters.Clear();
         Setup();
     }
+
+    private readonly Dictionary<string, OperationArgumentGetter> argumentGetters = new();
+    private OperationArgumentGetter defaultGetter;
 
     private OperationArgumentGetter newGetter(string[] args, string wiki,
         Func<string[], Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>>
@@ -870,13 +899,11 @@ public class MEOperationArgument
     {
         defaultGetter = newGetter(new string[0], "Gives the specified value",
             value => (i, param) => (j, row) => (k, col) => value[0]);
-
         argumentGetters.Add("self", newGetter(new string[0], "Gives the value of the currently selected value",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return row.Get(col).ToParamEditorString();
             }));
-
         argumentGetters.Add("field", newGetter(new[] { "field internalName" },
             "Gives the value of the given cell/field for the currently selected row and param", field =>
                 (i, param) =>
@@ -893,21 +920,23 @@ public class MEOperationArgument
                         return (k, c) => v;
                     };
                 }));
-
         argumentGetters.Add("vanilla", newGetter(new string[0],
             "Gives the value of the equivalent cell/field in the vanilla regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added",
             empty =>
             {
-                ParamBank bank = Editor.Project.ParamData.VanillaBank;
+                var vBank = Project.ParamData.VanillaBank;
+                var pBank = Project.ParamData.PrimaryBank;
+
                 return (i, param) =>
                 {
-                    var paramName = Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param);
-                    if (!bank.Params.ContainsKey(paramName))
+
+                    var paramName = pBank.GetKeyForParam(param);
+                    if (!vBank.Params.ContainsKey(paramName))
                     {
                         throw new Exception($@"Could not locate vanilla param for {param.ParamType}");
                     }
 
-                    Param vParam = bank.Params[paramName];
+                    Param vParam = vBank.Params[paramName];
                     return (j, row) =>
                     {
                         Param.Row vRow = vParam?[row.ID];
@@ -928,20 +957,22 @@ public class MEOperationArgument
                     };
                 };
             }));
-
         argumentGetters.Add("aux", newGetter(new[] { "parambank name" },
             "Gives the value of the equivalent cell/field in the specified regulation or parambnd for the currently selected cell/field, row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*",
             bankName =>
             {
-                if (!Editor.Project.ParamData.AuxBanks.ContainsKey(bankName[0]))
+                var pBank = Project.ParamData.PrimaryBank;
+                var auxBanks = Project.ParamData.AuxBanks;
+
+                if (!auxBanks.ContainsKey(bankName[0]))
                 {
                     throw new Exception($@"Could not locate paramBank {bankName[0]}");
                 }
 
-                ParamBank bank = Editor.Project.ParamData.AuxBanks[bankName[0]];
+                ParamBank bank = auxBanks[bankName[0]];
                 return (i, param) =>
                 {
-                    var paramName = Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param);
+                    var paramName = pBank.GetKeyForParam(param);
                     if (!bank.Params.ContainsKey(paramName))
                     {
                         throw new Exception($@"Could not locate aux param for {param.ParamType}");
@@ -967,14 +998,16 @@ public class MEOperationArgument
                         };
                     };
                 };
-            }, () => Editor.Project.ParamData.AuxBanks.Count > 0));
-
+            }, () => Project.ParamData.AuxBanks.Count > 0));
         argumentGetters.Add("vanillafield", newGetter(new[] { "field internalName" },
             "Gives the value of the specified cell/field in the vanilla regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have a vanilla equivilent. Consider using && !added",
             field => (i, param) =>
             {
-                var paramName = Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param);
-                Param? vParam = Editor.Project.ParamData.VanillaBank.GetParamFromName(paramName);
+                var pBank = Project.ParamData.PrimaryBank;
+                var vBank = Project.ParamData.VanillaBank;
+
+                var paramName = pBank.GetKeyForParam(param);
+                Param? vParam = vBank.GetParamFromName(paramName);
                 if (vParam == null)
                 {
                     throw new Exception($@"Could not locate vanilla param for {param.ParamType}");
@@ -998,20 +1031,22 @@ public class MEOperationArgument
                     return (k, c) => v;
                 };
             }));
-
         argumentGetters.Add("auxfield", newGetter(new[] { "parambank name", "field internalName" },
             "Gives the value of the specified cell/field in the specified regulation or parambnd for the currently selected row and param.\nWill fail if a row does not have an aux equivilent. Consider using && auxprop ID .*",
             bankAndField =>
             {
-                if (!Editor.Project.ParamData.AuxBanks.ContainsKey(bankAndField[0]))
+                var pBank = Project.ParamData.PrimaryBank;
+                var auxBanks = Project.ParamData.AuxBanks;
+
+                if (!auxBanks.ContainsKey(bankAndField[0]))
                 {
                     throw new Exception($@"Could not locate paramBank {bankAndField[0]}");
                 }
 
-                ParamBank bank = Editor.Project.ParamData.AuxBanks[bankAndField[0]];
+                ParamBank bank = auxBanks[bankAndField[0]];
                 return (i, param) =>
                 {
-                    var paramName = Editor.Project.ParamData.PrimaryBank.GetKeyForParam(param);
+                    var paramName = pBank.GetKeyForParam(param);
                     if (!bank.Params.ContainsKey(paramName))
                     {
                         throw new Exception($@"Could not locate aux param for {param.ParamType}");
@@ -1036,12 +1071,13 @@ public class MEOperationArgument
                         return (k, c) => v;
                     };
                 };
-            }, () => Editor.Project.ParamData.AuxBanks.Count > 0));
-
+            }, () => Project.ParamData.AuxBanks.Count > 0));
         argumentGetters.Add("paramlookup", newGetter(new[] { "param name", "row id", "field name" },
             "Returns the specific value specified by the exact param, row and field.", address =>
             {
-                Param param = Editor.Project.ParamData.PrimaryBank.Params[address[0]];
+                var pBank = Project.ParamData.PrimaryBank;
+
+                Param param = pBank.Params[address[0]];
                 if (param == null)
                     throw new Exception($@"Could not find param {address[0]}");
                 var id = int.Parse(address[1]);
@@ -1054,11 +1090,12 @@ public class MEOperationArgument
                 var value = row.Get(field).ToParamEditorString();
                 return (i, param) => (j, row) => (k, col) => value;
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("average", newGetter(new[] { "field internalName", "row selector" },
             "Gives the mean value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
             {
+                var pBank = Project.ParamData.PrimaryBank;
+
                 (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
@@ -1072,16 +1109,17 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
                 var avg = vals.Average(val => Convert.ToDouble(val));
                 return (j, row) => (k, c) => avg.ToString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("median", newGetter(new[] { "field internalName", "row selector" },
             "Gives the median value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
             {
+                var pBank = Project.ParamData.PrimaryBank;
+
                 (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
@@ -1089,16 +1127,17 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
                 var avg = vals.OrderBy(val => Convert.ToDouble(val)).ElementAt(vals.Count() / 2);
                 return (j, row) => (k, c) => avg.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("mode", newGetter(new[] { "field internalName", "row selector" },
             "Gives the most common value of the cells/fields found using the given selector, for the currently selected param",
             field => (i, param) =>
             {
+                var pBank = Project.ParamData.PrimaryBank;
+
                 (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
@@ -1106,16 +1145,17 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
                 var avg = ParamUtils.GetParamValueDistribution(rows, col).OrderByDescending(g => g.Item2)
                     .First().Item1;
                 return (j, row) => (k, c) => avg.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("min", newGetter(new[] { "field internalName", "row selector" },
             "Gives the smallest value from the cells/fields found using the given param, row selector and field",
             field => (i, param) =>
             {
+                var pBank = Project.ParamData.PrimaryBank;
+
                 (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
@@ -1123,15 +1163,16 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
                 var min = rows.Min(r => r[field[0]].Value.Value);
                 return (j, row) => (k, c) => min.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("max", newGetter(new[] { "field internalName", "row selector" },
             "Gives the largest value from the cells/fields found using the given param, row selector and field",
             field => (i, param) =>
             {
+                var pBank = Project.ParamData.PrimaryBank;
+
                 (PseudoColumn, Param.Column) col = param.GetCol(field[0]);
                 if (!col.IsColumnValid())
                 {
@@ -1139,11 +1180,10 @@ public class MEOperationArgument
                 }
 
                 List<Param.Row>? rows =
-                    RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, param), field[1], false, false);
+                    Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
                 var max = rows.Max(r => r[field[0]].Value.Value);
                 return (j, row) => (k, c) => max.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("random", newGetter(
             new[] { "minimum number (inclusive)", "maximum number (exclusive)" },
             "Gives a random decimal number between the given values for each selected value", minAndMax =>
@@ -1163,7 +1203,6 @@ public class MEOperationArgument
                 var range = max - min;
                 return (i, param) => (j, row) => (k, c) => ((Random.Shared.NextDouble() * range) + min).ToString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("randint", newGetter(
             new[] { "minimum integer (inclusive)", "maximum integer (inclusive)" },
             "Gives a random integer between the given values for each selected value", minAndMax =>
@@ -1182,33 +1221,31 @@ public class MEOperationArgument
 
                 return (i, param) => (j, row) => (k, c) => Random.Shared.NextInt64(min, max + 1).ToString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("randFrom", newGetter(new[] { "param name", "field internalName", "row selector" },
             "Gives a random value from the cells/fields found using the given param, row selector and field, for each selected value",
             paramFieldRowSelector =>
             {
-                Param srcParam = Editor.Project.ParamData.PrimaryBank.Params[paramFieldRowSelector[0]];
-                List<Param.Row> srcRows = RowSearchEngine.Create(Editor).Search((Editor.Project.ParamData.PrimaryBank, srcParam),
+                var pBank = Project.ParamData.PrimaryBank;
+
+                Param srcParam = pBank.Params[paramFieldRowSelector[0]];
+                List<Param.Row> srcRows = Project.ParamEditor.MassEditHandler.rse.Search((pBank, srcParam),
                     paramFieldRowSelector[2], false, false);
                 var values = srcRows.Select((r, i) => r[paramFieldRowSelector[1]].Value.Value).ToArray();
                 return (i, param) =>
                     (j, row) => (k, c) => values[Random.Shared.NextInt64(values.Length)].ToString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("paramIndex", newGetter(new string[0],
             "Gives an integer for the current selected param, beginning at 0 and increasing by 1 for each param selected",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return i.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("rowIndex", newGetter(new string[0],
             "Gives an integer for the current selected row, beginning at 0 and increasing by 1 for each row selected",
             empty => (i, param) => (j, row) => (k, col) =>
             {
                 return j.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         argumentGetters.Add("fieldIndex", newGetter(new string[0],
             "Gives an integer for the current selected cell/field, beginning at 0 and increasing by 1 for each cell/field selected",
             empty => (i, param) => (j, row) => (k, col) =>

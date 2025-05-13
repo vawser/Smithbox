@@ -150,7 +150,7 @@ public partial class ParamTools
         if (Editor._activeView._selection.ActiveParamExists())
         {
             TaskLogs.AddLog($"Param rows sorted for {Editor._activeView._selection.GetActiveParam()}");
-            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor, Editor.Project.ParamData.PrimaryBank, Editor._activeView._selection.GetActiveParam()));
+            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView._selection.GetActiveParam()));
         }
     }
     #endregion

@@ -1,4 +1,5 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
@@ -41,12 +42,15 @@ public class ParamRowEditor
             }
 
             // Autofill
-            ImGui.AlignTextToFramePadding();
-            var resAutoCol = AutoFill.ColumnSearchBarAutoFill(editor);
-            if (resAutoCol != null)
+            if (editor.MassEditHandler.AutoFill != null)
             {
-                propSearchString = resAutoCol;
-                UICache.ClearCaches();
+                ImGui.AlignTextToFramePadding();
+                var resAutoCol = editor.MassEditHandler.AutoFill.ColumnSearchBarAutoFill();
+                if (resAutoCol != null)
+                {
+                    propSearchString = resAutoCol;
+                    UICache.ClearCaches();
+                }
             }
 
             ImGui.SameLine();
@@ -290,7 +294,7 @@ public class ParamRowEditor
 
             var search = propSearchString;
             List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, row, "fieldFilter",
-                () => CellSearchEngine.Create(Editor).Search((activeParam, row), search, true, true));
+                () => Editor.MassEditHandler.cse.Search((activeParam, row), search, true, true));
 
             List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vrow, "vFieldFilter",
                 () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
@@ -885,7 +889,7 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, 
                 activeParam != null, isPinned, col, selection, propType, Wiki, oldval, true);
-            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+            PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
@@ -903,7 +907,7 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
-            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+            PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
@@ -1181,20 +1185,7 @@ public class ParamRowEditor
         // Add to Mass Edit
         if (ImGui.MenuItem("Add to Mass Edit"))
         {
-            var propertyName = internalName.Replace(" ", "\\s");
-            string currInput = Editor.MassEditHandler._currentMEditRegexInput;
-
-            if(currInput == "")
-            {
-                // Add selection section if input is empty
-                Editor.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
-            }
-            else
-            {
-                // Otherwise just add the property name
-                currInput = $"{currInput}{propertyName}";
-                Editor.MassEditHandler._currentMEditRegexInput = currInput;
-            }
+            Editor.MassEditHandler.ConstructCommandFromField(internalName);
         }
 
         // Search for Non-Default Values
@@ -1263,7 +1254,7 @@ public class ParamRowEditor
         ImGui.PopStyleVar();
     }
 
-    private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, ParamFieldMeta cellMeta, string internalName,
+    private void PropertyRowValueContextMenuItems(ParamEditorScreen editor, ParamBank bank, Param.Row row, ParamFieldMeta cellMeta, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
         List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, List<TexRef> TextureRef, ParamEnum Enum)
     {
@@ -1309,9 +1300,7 @@ public class ParamRowEditor
 
                 if (ImGui.Selectable("Reset to vanilla"))
                 {
-                    MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
-                        $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
-                         Editor._activeView._selection);
+                    Editor.MassEditHandler.ApplyMassEdit($"selection && !added: {Regex.Escape(internalName)}: = vanilla;");
                 }
             }
             else
@@ -1333,11 +1322,15 @@ public class ParamRowEditor
                     }
 
                     ImGui.Separator();
-                    var res = AutoFill.MassEditOpAutoFill();
-                    if (res != null)
+
+                    if (editor.MassEditHandler.AutoFill != null)
                     {
-                        EditorCommandQueue.AddCommand(
-                            $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                        var res = editor.MassEditHandler.AutoFill.MassEditOpAutoFill();
+                        if (res != null)
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                        }
                     }
                 }
             }

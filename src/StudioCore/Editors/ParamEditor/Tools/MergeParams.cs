@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -90,6 +91,7 @@ public partial class ParamTools
             }
         }
     }
+
     public void MergeParamHandler()
     {
         var auxBank = Editor.Project.ParamData.AuxBanks[ParamMerge_TargetProject.ProjectName];
@@ -102,23 +104,6 @@ public partial class ParamTools
             command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified ID: paste;";
         }
 
-        ExecuteMassEdit(command);
-    }
-
-    public void ExecuteMassEdit(string command)
-    {
-        Editor._activeView._selection.SortSelection();
-        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
-            command, Editor._activeView._selection);
-
-        if (child != null)
-        {
-            Editor.EditorActionManager.PushSubManager(child);
-        }
-
-        if (r.Type == MassEditResultType.SUCCESS)
-        {
-            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
-        }
+        Editor.MassEditHandler.ApplyMassEdit(command);
     }
 }

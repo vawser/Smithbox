@@ -750,7 +750,7 @@ public class FieldDecorators
 
                 var meta = editor.Project.ParamData.GetParamMeta(bank.Params[rt].AppliedParamdef);
                 var maxResultsPerRefType = 15 / reftypes.Count;
-                List<Param.Row> rows = RowSearchEngine.Create(editor).Search((bank, bank.Params[rt]),
+                List<Param.Row> rows = editor.MassEditHandler.rse.Search((bank, bank.Params[rt]),
                     _refContextCurrentAutoComplete, true, true);
                 foreach (Param.Row r in rows)
                 {
@@ -1473,7 +1473,7 @@ public class FieldDecorators
         var searchTerm = pref.ConditionField != null
             ? $@"prop {fieldName} ^{currentID}$ && prop {pref.ConditionField} ^{pref.ConditionValue}$"
             : $@"prop {fieldName} ^{currentID}$";
-        return RowSearchEngine.Create(editor).Search((bank, bank.Params[paramName]), searchTerm, false, false);
+        return editor.MassEditHandler.rse.Search((bank, bank.Params[paramName]), searchTerm, false, false);
     }
 
     #endregion

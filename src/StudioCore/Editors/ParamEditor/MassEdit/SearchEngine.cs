@@ -1,29 +1,30 @@
 using Andre.Formats;
+using Octokit;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace StudioCore.Editors.ParamEditor.MassEdit;
+namespace StudioCore.Editors.ParamEditor;
 
 /* Restricted characters: colon, space, forward slash, ampersand, exclamation mark
  *
  */
-internal class SearchEngine<A, B>
+public class SearchEngine<A, B>
 {
     internal SearchEngineCommand<A, B> defaultFilter;
 
     internal Dictionary<string, SearchEngineCommand<A, B>> filterList = new();
     internal Func<A, List<B>> unpacker;
 
-    public SearchEngine()
-    {
-
-    }
 
     protected void addExistsFilter()
     {
@@ -40,9 +41,6 @@ internal class SearchEngine<A, B>
         return context => func;
     }
 
-    internal virtual void Setup(ParamEditorScreen editor)
-    {
-    }
 
     internal SearchEngineCommand<A, B> newCmd(string[] args, string wiki,
         Func<string[], bool, Func<A, Func<B, bool>>> func, Func<bool> shouldShow = null)
@@ -114,8 +112,6 @@ internal class SearchEngine<A, B>
     public List<B> Search(A param, string command, bool lenient, bool failureAllOrNone)
     {
         return Search(param, unpacker(param), command, lenient, failureAllOrNone);
-
-        return null;
     }
 
     public virtual List<B> Search(A context, List<B> sourceSet, string command, bool lenient, bool failureAllOrNone)
@@ -192,7 +188,7 @@ internal class SearchEngine<A, B>
     }
 }
 
-internal class SearchEngineCommand<A, B>
+public class SearchEngineCommand<A, B>
 {
     public string[] args;
     internal Func<string[], bool, Func<A, Func<B, bool>>> func;
@@ -212,7 +208,7 @@ internal class SearchEngineCommand<A, B>
 /*
  *  Handles conversion to a secondary searchengine which handles && conditions and conversion back to the anticipated type
  */
-internal class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
+public class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
 {
     internal Func<A, B, C> contextGetterForMultiStage;
     internal Func<D, B, B> resultRetrieverForMultiStage;
@@ -237,23 +233,26 @@ internal class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
     }
 }
 
-internal class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelectionState, (MassEditRowSource,
+public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelectionState, (MassEditRowSource,
     Param.Row), (ParamBank, Param), Param.Row>
 {
-    public static SearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)> Create(ParamEditorScreen editor) => new ParamAndRowSearchEngine(editor);
+    public ProjectEntry Project;
 
-    private ParamAndRowSearchEngine(ParamEditorScreen editor)
+    public ParamAndRowSearchEngine(ProjectEntry project)
     {
-        Setup(editor);
+        this.Project = project;
+        Setup();
     }
 
-    internal override void Setup(ParamEditorScreen editor)
+    internal void Setup()
     {
         unpacker = selection =>
         {
+            var pBank = Project.ParamData.PrimaryBank;
+
             List<(MassEditRowSource, Param.Row)> list = new();
             list.AddRange(selection.GetSelectedRows().Select((x, i) => (MassEditRowSource.Selection, x)));
-            list.AddRange(editor.Project.ParamData.PrimaryBank.ClipboardRows.Select((x, i) => (MassEditRowSource.Clipboard, x)));
+            list.AddRange(pBank.ClipboardRows.Select((x, i) => (MassEditRowSource.Clipboard, x)));
             return list;
         };
 
@@ -264,41 +263,42 @@ internal class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelec
         filterList.Add("clipboard",
             newCmd(new string[0], "Selects the param of the clipboard and the rows in the clipboard",
                 noArgs(noContext(row => row.Item1 == MassEditRowSource.Clipboard)),
-                () => editor.Project.ParamData.PrimaryBank.ClipboardRows?.Count > 0));
+                () => Project.ParamData.PrimaryBank.ClipboardRows?.Count > 0));
 
-        contextGetterForMultiStage = (state, exampleItem) => (editor.Project.ParamData.PrimaryBank,
-            editor.Project.ParamData.PrimaryBank.Params[
+        contextGetterForMultiStage = (state, exampleItem) => (Project.ParamData.PrimaryBank,
+            Project.ParamData.PrimaryBank.Params[
                 exampleItem.Item1 == MassEditRowSource.Selection
                     ? state.GetActiveParam()
-                    : editor.Project.ParamData.PrimaryBank.ClipboardParam]);
+                    : Project.ParamData.PrimaryBank.ClipboardParam]);
 
         sourceListGetterForMultiStage = row => row.Item2;
-        searchEngineForMultiStage = RowSearchEngine.Create(editor);
+        searchEngineForMultiStage = Project.ParamEditor.MassEditHandler.rse;
         resultRetrieverForMultiStage = (row, exampleItem) => (exampleItem.Item1, row);
     }
 }
 
-internal enum MassEditRowSource
+public enum MassEditRowSource
 {
     Selection,
     Clipboard
 }
 
-internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
+public class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
 {
-    public static ParamSearchEngine Create(ParamEditorScreen editor) => new ParamSearchEngine(editor);
-    private readonly ParamBank bank;
+    public ProjectEntry Project;
 
-    private ParamSearchEngine(ParamEditorScreen editor)
+    public ParamSearchEngine(ProjectEntry project)
     {
-        bank = editor.Project.ParamData.PrimaryBank;
-        Setup(editor);
+        this.Project = project;
+        Setup();
     }
 
-    internal override void Setup(ParamEditorScreen editor)
+    internal void Setup()
     {
+        var bank = Project.ParamData.PrimaryBank;
+
         unpacker = dummy =>
-            editor.Project.ParamData.AuxBanks.Select((aux, i) => aux.Value.Params.Select((x, i) => (aux.Value, x.Value)))
+            Project.ParamData.AuxBanks.Select((aux, i) => aux.Value.Params.Select((x, i) => (aux.Value, x.Value)))
                 .Aggregate(bank.Params.Values.Select((x, i) => (bank, x)), (o, n) => o.Concat(n)).ToList();
 
         filterList.Add("modified", newCmd(new string[0],
@@ -330,7 +330,7 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
             "Selects params from the specified regulation or parambnd where the param name matches the given regex",
             (args, lenient) =>
             {
-                ParamBank auxBank = editor.Project.ParamData.AuxBanks[args[0]];
+                ParamBank auxBank = Project.ParamData.AuxBanks[args[0]];
                 Regex rx = lenient ? new Regex(args[1], RegexOptions.IgnoreCase) : new Regex($@"^{args[1]}$");
                 return noContext(param =>
                     param.Item1 != auxBank
@@ -338,7 +338,7 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
                         : rx.IsMatch(auxBank.GetKeyForParam(param.Item2) == null
                             ? ""
                             : auxBank.GetKeyForParam(param.Item2)));
-            }, () => editor.Project.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
+            }, () => Project.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
 
         defaultFilter = newCmd(new[] { "param name (regex)" },
             "Selects all params whose name matches the given regex", (args, lenient) =>
@@ -354,21 +354,24 @@ internal class ParamSearchEngine : SearchEngine<bool, (ParamBank, Param)>
     }
 }
 
-internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
+public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
 {
-    public static RowSearchEngine Create(ParamEditorScreen editor) => new RowSearchEngine(editor);
-    private readonly ParamBank bank;
+    public ProjectEntry Project;
 
-    private RowSearchEngine(ParamEditorScreen editor)
+    public RowSearchEngine(ProjectEntry project)
     {
-        bank = editor.Project.ParamData.PrimaryBank;
-        Setup(editor);
+        this.Project = project;
+        Setup();
     }
 
-    internal override void Setup(ParamEditorScreen editor)
+    internal void Setup()
     {
-        unpacker = param => new List<Param.Row>(param.Item2.Rows);
+        var meta = Project.ParamData.ParamMeta;
+        var pBank = Project.ParamData.PrimaryBank;
+        var vBank = Project.ParamData.VanillaBank;
+        var auxBanks = Project.ParamData.AuxBanks;
 
+        unpacker = param => new List<Param.Row>(param.Item2.Rows);
         filterList.Add("modified", newCmd(new string[0],
             "Selects rows which do not match the vanilla version, or are added. Ignores row name", noArgs(context =>
             {
@@ -377,21 +380,20 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return row => cache.Contains(row.ID);
             }
             )));
-
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
             {
+
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
-                if (!editor.Project.ParamData.VanillaBank.Params.ContainsKey(paramName))
+                if (!vBank.Params.ContainsKey(paramName))
                 {
                     return row => true;
                 }
 
-                Param vanilParam = editor.Project.ParamData.VanillaBank.Params[paramName];
+                Param vanilParam = vBank.Params[paramName];
                 return row => vanilParam[row.ID] == null;
             }
             )));
-
         filterList.Add("mergeable", newCmd(new string[0],
             "Selects rows which are not modified in the primary regulation or parambnd and there is exactly one equivalent row in another regulation or parambnd that is modified",
             noArgs(context =>
@@ -402,36 +404,33 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row => true;
                 }
 
-                HashSet<int> pCache = editor.Project.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<int>, HashSet<int>)> auxCaches = editor.Project.ParamData.AuxBanks.Select(x =>
+                HashSet<int> pCache = pBank.GetVanillaDiffRows(paramName);
+                List<(HashSet<int>, HashSet<int>)> auxCaches = auxBanks.Select(x =>
                     (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                 return row =>
                     !pCache.Contains(row.ID) &&
                     auxCaches.Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() == 1;
             }
-            ), () => editor.Project.ParamData.AuxBanks.Count > 0));
-
+            ), () => auxBanks.Count > 0));
         filterList.Add("conflicts", newCmd(new string[0],
             "Selects rows which, among all equivalents in the primary and additional regulations or parambnds, there is more than row 1 which is modified",
             noArgs(context =>
             {
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
-                HashSet<int> pCache = editor.Project.ParamData.PrimaryBank.GetVanillaDiffRows(paramName);
-                List<(HashSet<int>, HashSet<int>)> auxCaches = editor.Project.ParamData.AuxBanks.Select(x =>
+                HashSet<int> pCache = pBank.GetVanillaDiffRows(paramName);
+                List<(HashSet<int>, HashSet<int>)> auxCaches = auxBanks.Select(x =>
                     (x.Value.GetPrimaryDiffRows(paramName), x.Value.GetVanillaDiffRows(paramName))).ToList();
                 return row =>
                     (pCache.Contains(row.ID) ? 1 : 0) + auxCaches
                         .Where(x => x.Item2.Contains(row.ID) && x.Item1.Contains(row.ID)).Count() > 1;
             }
-            ), () => editor.Project.ParamData.AuxBanks.Count > 0));
-
+            ), () => auxBanks.Count > 0));
         filterList.Add("id", newCmd(new[] { "row id (regex)" }, "Selects rows whose ID matches the given regex",
             (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0].ToLower()) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.ID.ToString()));
             }));
-
         filterList.Add("idrange", newCmd(new[] { "row id minimum (inclusive)", "row id maximum (inclusive)" },
             "Selects rows whose ID falls in the given numerical range", (args, lenient) =>
             {
@@ -439,14 +438,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[1]);
                 return noContext(row => row.ID >= floor && row.ID <= ceil);
             }));
-
         filterList.Add("name", newCmd(new[] { "row name (regex)" },
             "Selects rows whose Name matches the given regex", (args, lenient) =>
             {
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return noContext(row => rx.IsMatch(row.Name == null ? "" : row.Name));
             }));
-
         filterList.Add("prop", newCmd(new[] { "field internalName", "field value (regex)" },
             "Selects rows where the specified field has a value that matches the given regex", (args, lenient) =>
             {
@@ -465,7 +462,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return rx.IsMatch(term);
                 });
             }));
-
         filterList.Add("proprange", newCmd(
             new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
             "Selects rows where the specified field has a value that falls in the given numerical range",
@@ -485,7 +481,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                 });
             }));
-
         filterList.Add("positive", newCmd(
             new[] { "field internalName" },
             "Selects rows where the specified field has a value that is a positive, non-zero number",
@@ -506,7 +501,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return Convert.ToDouble(c.Value.Value) > 0 && Convert.ToDouble(c.Value.Value) <= ceil;
                 });
             }));
-
         filterList.Add("negative", newCmd(
             new[] { "field internalName" },
             "Selects rows where the specified field has a value that is a negative, non-zero number",
@@ -527,7 +521,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return Convert.ToDouble(c.Value.Value) < 0 && Convert.ToDouble(c.Value.Value) >= floor;
                 });
             }));
-
         filterList.Add("propref", newCmd(new[] { "field internalName", "referenced row name (regex)" },
             "Selects rows where the specified field that references another param has a value referencing a row whose name matches the given regex",
             (args, lenient) =>
@@ -536,9 +529,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[0];
                 return context =>
                 {
-                    var paramMeta = editor.Project.ParamData.GetParamMeta(context.Item2.AppliedParamdef);
-                    List<ParamRef> validFields = editor.Project.ParamData.GetParamFieldMeta(paramMeta, context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
-                        .FindAll(p => bank.Params.ContainsKey(p.ParamName));
+                    var paramMeta = meta[context.Item2.AppliedParamdef];
+
+                    List<ParamRef> validFields = paramMeta
+                        .GetField(context.Item2.AppliedParamdef.Fields.Find(f => f.InternalName.Equals(field))).RefTypes
+                        .FindAll(p => pBank.Params.ContainsKey(p.ParamName));
+
                     return row =>
                     {
                         Param.Cell? c = row[field];
@@ -550,7 +546,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         var val = (int)c.Value.Value;
                         foreach (ParamRef rt in validFields)
                         {
-                            Param.Row r = bank.Params[rt.ParamName][val];
+                            Param.Row r = pBank.Params[rt.ParamName][val];
                             if (r != null && rx.IsMatch(r.Name ?? ""))
                             {
                                 return true;
@@ -561,7 +557,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("propwhere", newCmd(new[] { "field internalName", "cell/field selector" },
             "Selects rows where the specified field appears when the given cell/field search is given",
             (args, lenient) =>
@@ -575,13 +570,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     return row =>
                     {
                         (string paramName, Param.Row row) cseSearchContext = (paramName, row);
-                        List<(PseudoColumn, Param.Column)> res = CellSearchEngine.Create(editor).Search(cseSearchContext,
+                        List<(PseudoColumn, Param.Column)> res = Project.ParamEditor.MassEditHandler.cse.Search(cseSearchContext,
                             new List<(PseudoColumn, Param.Column)> { testCol }, args[1], lenient, false);
                         return res.Contains(testCol);
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("fmg", newCmd(new[] { "fmg title (regex)" },
             "Selects rows which have an attached FMG and that FMG's text matches the given regex",
             (args, lenient) =>
@@ -589,6 +583,8 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 Regex rx = lenient ? new Regex(args[0], RegexOptions.IgnoreCase) : new Regex($@"^{args[0]}$");
                 return context =>
                 {
+                    var editor = Project.ParamEditor;
+
                     var paramName = context.Item1.GetKeyForParam(context.Item2);
                     List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(editor, paramName);
                     Dictionary<int, FMG.Entry> _cache = new();
@@ -609,7 +605,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("vanillaprop", newCmd(new[] { "field internalName", "field value (regex)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that matches the given regex",
             (args, lenient) =>
@@ -618,7 +613,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var field = args[0];
                 return param =>
                 {
-                    Param vparam = editor.Project.ParamData.VanillaBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    Param vparam = vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
                     return row =>
                     {
                         Param.Row vrow = vparam[row.ID];
@@ -639,7 +634,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("vanillaproprange", newCmd(
             new[] { "field internalName", "field value minimum (inclusive)", "field value maximum (inclusive)" },
             "Selects rows where the vanilla equivilent of that row has a value for the given field that falls in the given numerical range",
@@ -650,7 +644,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var ceil = double.Parse(args[2]);
                 return param =>
                 {
-                    Param vparam = editor.Project.ParamData.VanillaBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
+                    Param vparam = vBank.GetParamFromName(param.Item1.GetKeyForParam(param.Item2));
                     return row =>
                     {
                         Param.Row vrow = vparam[row.ID];
@@ -669,7 +663,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     };
                 };
             }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("auxprop", newCmd(new[] { "parambank name", "field internalName", "field value (regex)" },
             "Selects rows where the equivilent of that row in the given regulation or parambnd has a value for the given field that matches the given regex.\nCan be used to determine if an aux row exists.",
             (args, lenient) =>
@@ -677,7 +670,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 Regex rx = lenient ? new Regex(args[2], RegexOptions.IgnoreCase) : new Regex($@"^{args[2]}$");
                 var field = args[1];
                 ParamBank bank;
-                if (!editor.Project.ParamData.AuxBanks.TryGetValue(args[0], out bank))
+                if (!auxBanks.TryGetValue(args[0], out bank))
                 {
                     throw new Exception("Unable to find auxbank " + args[0]);
                 }
@@ -704,8 +697,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return rx.IsMatch(term);
                     };
                 };
-            }, () => editor.Project.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
-
+            }, () => auxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
         filterList.Add("auxproprange", newCmd(
             new[]
             {
@@ -719,7 +711,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 var floor = double.Parse(args[1]);
                 var ceil = double.Parse(args[2]);
                 ParamBank bank;
-                if (!editor.Project.ParamData.AuxBanks.TryGetValue(args[0], out bank))
+                if (!auxBanks.TryGetValue(args[0], out bank))
                 {
                     throw new Exception("Unable to find auxbank " + args[0]);
                 }
@@ -739,8 +731,7 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         return Convert.ToDouble(c.Value.Value) >= floor && Convert.ToDouble(c.Value.Value) <= ceil;
                     };
                 };
-            }, () => editor.Project.ParamData.AuxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
-
+            }, () => auxBanks.Count > 0 && CFG.Current.Param_AdvancedMassedit));
         filterList.Add("semijoin",
             newCmd(
                 new[]
@@ -756,12 +747,12 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                     var otherField = args[2];
                     var otherSearchTerm = args[3];
                     Param otherParamReal;
-                    if (!editor.Project.ParamData.PrimaryBank.Params.TryGetValue(otherParam, out otherParamReal))
+                    if (!pBank.Params.TryGetValue(otherParam, out otherParamReal))
                     {
                         throw new Exception("Could not find param " + otherParam);
                     }
 
-                    List<Param.Row> rows = Create(editor).Search((editor.Project.ParamData.PrimaryBank, otherParamReal), otherSearchTerm,
+                    List<Param.Row> rows = Project.ParamEditor.MassEditHandler.rse.Search((pBank, otherParamReal), otherSearchTerm,
                         lenient, false);
                     (PseudoColumn, Param.Column) otherFieldReal = otherParamReal.GetCol(otherField);
                     if (!otherFieldReal.IsColumnValid())
@@ -786,7 +777,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                         };
                     };
                 }, () => CFG.Current.Param_AdvancedMassedit));
-
         filterList.Add("unique", newCmd(new string[] { "field" }, "Selects all rows where the value in the given field is unique", (args, lenient) =>
         {
             string field = args[0].Replace(@"\s", " ");
@@ -803,7 +793,6 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             };
         }, () => CFG.Current.Param_AdvancedMassedit));
-
         defaultFilter = newCmd(new[] { "row ID or Name (regex)" },
             "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode",
             (args, lenient) =>
@@ -818,53 +807,68 @@ internal class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 {
                     var paramName = paramContext.Item1.GetKeyForParam(paramContext.Item2);
 
+                    var editor = Project.ParamEditor;
+                    var textEditor = Project.TextEditor;
 
-                    List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(editor, paramName);
+                    if (textEditor != null)
+                    {
+                        List<FMG.Entry> fmgEntries = TextParamUtils.GetFmgEntriesByAssociatedParam(editor, paramName);
 
-                    if (editor.Project.TextEditor != null || fmgEntries.Count == 0)
+                        if (fmgEntries.Count == 0)
+                        {
+                            return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
+                        }
+
+                        Dictionary<int, FMG.Entry> _cache = new();
+                        foreach (FMG.Entry fmgEntry in fmgEntries)
+                        {
+                            _cache[fmgEntry.ID] = fmgEntry;
+                        }
+
+                        return row =>
+                        {
+                            if (rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString()))
+                            {
+                                return true;
+                            }
+
+                            if (!_cache.ContainsKey(row.ID))
+                            {
+                                return false;
+                            }
+
+                            FMG.Entry e = _cache[row.ID];
+                            return e != null && rx.IsMatch(e.Text ?? "");
+                        };
+                    }
+                    else
                     {
                         return row => rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString());
                     }
-
-                    Dictionary<int, FMG.Entry> _cache = new();
-                    foreach (FMG.Entry fmgEntry in fmgEntries)
-                    {
-                        _cache[fmgEntry.ID] = fmgEntry;
-                    }
-
-                    return row =>
-                    {
-                        if (rx.IsMatch(row.Name ?? "") || rx.IsMatch(row.ID.ToString()))
-                        {
-                            return true;
-                        }
-
-                        if (!_cache.ContainsKey(row.ID))
-                        {
-                            return false;
-                        }
-
-                        FMG.Entry e = _cache[row.ID];
-                        return e != null && rx.IsMatch(e.Text ?? "");
-                    };
                 };
             });
     }
 }
 
-internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)>
+public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn, Param.Column)>
 {
-    public static CellSearchEngine Create(ParamEditorScreen editor) => new CellSearchEngine(editor);
+    public ProjectEntry Project;
 
-    private CellSearchEngine(ParamEditorScreen editor)
+    public CellSearchEngine(ProjectEntry project)
     {
-        Setup(editor);
+        this.Project = project;
+        Setup();
     }
 
-    internal override void Setup(ParamEditorScreen editor)
+    internal void Setup()
     {
+        ParamMeta pMeta = null;
+
         unpacker = row =>
         {
+            var metaDict = Project.ParamData.ParamMeta;
+            pMeta = metaDict[row.Item2.Def];
+
             List<(PseudoColumn, Param.Column)> list = new();
             list.Add((PseudoColumn.ID, null));
             list.Add((PseudoColumn.Name, null));
@@ -891,10 +895,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                     if (cell.Item2 != null)
                     {
-                        var paramMeta = editor.Project.ParamData.GetParamMeta(cell.Item2.Def.Parent);
-                        var fieldMeta = editor.Project.ParamData.GetParamFieldMeta(paramMeta, cell.Item2.Def);
-
-                        if (lenient && fieldMeta?.AltName != null && rx.IsMatch(fieldMeta?.AltName))
+                        var meta = lenient ? pMeta.GetField(cell.Item2.Def) : null;
+                        if (lenient && meta?.AltName != null && rx.IsMatch(meta?.AltName))
                         {
                             return true;
                         }
@@ -914,7 +916,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
             {
                 var startValue = args[0];
 
-                ParamBank bank = editor.Project.ParamData.PrimaryBank;
+                ParamBank bank = Project.ParamData.PrimaryBank;
 
                 return row =>
                 {
@@ -955,7 +957,6 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     };
                 };
             }));
-
         filterList.Add("field_range", newCmd(new[] { "field start value", "field end value" },
             "Selects cells/fields where the cell has a value between the start and end values specified",
             (args, lenient) =>
@@ -963,7 +964,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                 var startValue = args[0];
                 var endValue = args[1];
 
-                ParamBank bank = editor.Project.ParamData.PrimaryBank;
+                ParamBank bank = Project.ParamData.PrimaryBank;
 
                 return row =>
                 {
@@ -1004,7 +1005,6 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     };
                 };
             }));
-
         filterList.Add("modified", newCmd(new string[0],
             "Selects cells/fields where the equivalent cell in the vanilla regulation or parambnd has a different value",
             (args, lenient) => row =>
@@ -1014,7 +1014,9 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                     throw new Exception("Can't check if cell is modified - not part of a param");
                 }
 
-                Param vParam = editor.Project.ParamData.VanillaBank.Params?[row.Item1];
+                var vBank = Project.ParamData.VanillaBank;
+
+                Param vParam = vBank.Params?[row.Item1];
                 if (vParam == null)
                 {
                     throw new Exception("Can't check if cell is modified - no vanilla param");
@@ -1038,12 +1040,15 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
             "Selects cells/fields where the equivalent cell in the specified regulation or parambnd has a different value",
             (args, lenient) =>
             {
-                if (!editor.Project.ParamData.AuxBanks.ContainsKey(args[0]))
+                var vBank = Project.ParamData.VanillaBank;
+                var auxBank = Project.ParamData.AuxBanks;
+
+                if (!auxBank.ContainsKey(args[0]))
                 {
                     throw new Exception("Can't check if cell is modified - parambank not found");
                 }
 
-                ParamBank bank = editor.Project.ParamData.AuxBanks[args[0]];
+                ParamBank bank = auxBank[args[0]];
                 return row =>
                 {
                     if (row.Item1 == null)
@@ -1057,7 +1062,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                         throw new Exception("Can't check if cell is modified - no aux param");
                     }
 
-                    Param vParam = editor.Project.ParamData.VanillaBank.Params?[row.Item1];
+                    Param vParam = vBank.Params?[row.Item1];
                     if (vParam == null)
                     {
                         throw new Exception("Can't check if cell is modified - no vanilla param");
@@ -1084,8 +1089,7 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
                         return ParamUtils.IsValueDiff(ref valA, ref valB, col.GetColumnType());
                     };
                 };
-            }, () => editor.Project.ParamData.AuxBanks.Count > 0));
-
+            }, () => Project.ParamData.AuxBanks.Count > 0));
         filterList.Add("sftype", newCmd(new[] { "paramdef type" },
             "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex",
             (args, lenient) =>
@@ -1115,8 +1119,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (sbyteFieldVal >= sbyteStartVal &&
-                        sbyteFieldVal <= sbyteEndVal)
+                    if ((sbyteFieldVal >= sbyteStartVal) &&
+                        (sbyteFieldVal <= sbyteEndVal))
                     {
                         return true;
                     }
@@ -1133,8 +1137,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (byteFieldVal >= byteStartVal &&
-                        byteFieldVal <= byteEndVal)
+                    if ((byteFieldVal >= byteStartVal) &&
+                        (byteFieldVal <= byteEndVal))
                     {
                         return true;
                     }
@@ -1151,8 +1155,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (shortFieldVal >= shortStartVal &&
-                        shortFieldVal <= shortEndVal)
+                    if ((shortFieldVal >= shortStartVal) &&
+                        (shortFieldVal <= shortEndVal))
                     {
                         return true;
                     }
@@ -1169,8 +1173,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (ushortFieldVal >= ushortStartVal &&
-                        ushortFieldVal <= ushortEndVal)
+                    if ((ushortFieldVal >= ushortStartVal) &&
+                        (ushortFieldVal <= ushortEndVal))
                     {
                         return true;
                     }
@@ -1187,8 +1191,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (intFieldVal >= intStartVal &&
-                        intFieldVal <= intEndVal)
+                    if ((intFieldVal >= intStartVal) &&
+                        (intFieldVal <= intEndVal))
                     {
                         return true;
                     }
@@ -1205,8 +1209,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (uintFieldVal >= uintStartVal &&
-                        uintFieldVal <= uintEndVal)
+                    if ((uintFieldVal >= uintStartVal) &&
+                        (uintFieldVal <= uintEndVal))
                     {
                         return true;
                     }
@@ -1223,8 +1227,8 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
 
                 if (fieldSuccess && startSuccess && endSuccess)
                 {
-                    if (floatFieldVal >= floatStartVal &&
-                        floatFieldVal <= floatEndVal)
+                    if ((floatFieldVal >= floatStartVal) &&
+                        (floatFieldVal <= floatEndVal))
                     {
                         return true;
                     }
@@ -1237,11 +1241,16 @@ internal class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColum
     }
 }
 
-internal class VarSearchEngine : SearchEngine<bool, string>
+public class VarSearchEngine : SearchEngine<bool, string>
 {
-    public static VarSearchEngine vse = new();
+    public ProjectEntry Project;
+    public VarSearchEngine(ProjectEntry project)
+    {
+        Project = project;
+        Setup();
+    }
 
-    internal override void Setup(ParamEditorScreen editor)
+    internal void Setup()
     {
         unpacker = dummy =>
         {

@@ -1,6 +1,8 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Framework.MassEdit;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Interface;
@@ -44,18 +46,7 @@ public static class ParamRowContextMenu
                             var editCommand = $"selection: Name := {name}";
                             editor._activeView._selection.SortSelection();
 
-                            (MassEditResult res, ActionManager child) = MassParamEditRegex.PerformMassEdit(editor.Project.ParamData.PrimaryBank,
-                                editCommand, editor._activeView._selection);
-
-                            if (child != null)
-                            {
-                                editor.EditorActionManager.PushSubManager(child);
-                            }
-
-                            if (res.Type == MassEditResultType.SUCCESS)
-                            {
-                                editor.Project.ParamData.RefreshParamDifferenceCacheTask();
-                            }
+                            editor.MassEditHandler.ApplyMassEdit(editCommand);
                         }
                     }
                 }

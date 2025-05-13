@@ -1,39 +1,270 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.Formats;
+using Hexa.NET.ImGui;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Interface;
 using StudioCore.Platform;
-using StudioCore.Tasks;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Numerics;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.MassEdit;
 
+/// <summary>
+/// Main handler for all Mass Edit tools
+/// </summary>
 public class MassEditHandler
 {
-    private ParamEditorScreen Editor;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public string _currentMEditRegexInput = "";
-    public string _lastMEditRegexInput = "";
-    public string _mEditRegexResult = "";
-    public bool retainMassEditCommand = false;
+    public string ME_Result = "";
+    public string CurrentInput = "";
+    public string PreviousInput = "";
 
-    public string _newScriptName = "";
-    public string _newScriptBody = "";
-    public bool _newScriptIsCommon = true;
-    public MassEditScript _selectedMassEditScript;
+    public string ME_CSV_Input = "";
+    public string ME_CSV_Output = "";
+    public string ME_Single_CSV_Field = "";
 
-    public MassEditHandler(ParamEditorScreen editor)
+    public bool ME_Edit_Popup_Open;
+    public bool _mEditCSVAppendOnly;
+    public bool _mEditCSVReplaceRows;
+    public string _mEditCSVResult = "";
+
+    public string NewScriptName = "";
+    public string NewScriptContents = "";
+    public bool IsScriptCommon = true;
+
+    public MassEditScript Current_ME_Script;
+
+    // These are created here so the Mass Edit systems are local to the current project
+    public SearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)> parse;
+    public ParamSearchEngine pse;
+    public RowSearchEngine rse;
+    public CellSearchEngine cse;
+    public VarSearchEngine vse;
+    public AutoFill AutoFill;
+
+    public MassParamEditRegex MassParamEditRegex;
+
+    public MEGlobalOperation GlobalOps;
+    public MERowOperation RowOps;
+    public MEValueOperation FieldOps;
+    public MEOperationArgument OperationArgs;
+
+    public MassEditHandler(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
+        Project = project;
     }
 
+    public void Setup()
+    {
+        pse = new ParamSearchEngine(Project);
+        rse = new RowSearchEngine(Project);
+        parse = new ParamAndRowSearchEngine(Project);
+        cse = new CellSearchEngine(Project);
+        vse = new VarSearchEngine(Project);
+
+        MassParamEditRegex = new MassParamEditRegex(Project);
+
+        GlobalOps = new MEGlobalOperation(Project);
+        RowOps = new MERowOperation(Project);
+        FieldOps = new MEValueOperation(Project);
+        OperationArgs = new MEOperationArgument(Project);
+
+        AutoFill = new AutoFill(Project);
+    }
+
+    /// <summary>
+    /// Helper method for the default mass edit configuration
+    /// </summary>
+    /// <param name="commandString"></param>
+    public void ApplyMassEdit(string commandString)
+    {
+        ExecuteMassEdit(commandString, Project.ParamData.PrimaryBank, Editor._activeView._selection);
+    }
+
+    /// <summary>
+    /// Main execution function
+    /// </summary>
+    /// <param name="commandString"></param>
+    /// <param name="targetBank"></param>
+    /// <param name="context"></param>
+    public void ExecuteMassEdit(string commandString, ParamBank targetBank, ParamEditorSelectionState context)
+    {
+        Editor._activeView._selection.SortSelection();
+
+        MassParamEditRegex = new MassParamEditRegex(Project);
+        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(targetBank, commandString, context);
+
+        if (child != null)
+        {
+            Editor.EditorActionManager.PushSubManager(child);
+        }
+
+        if (r.Type == MassEditResultType.SUCCESS)
+        {
+            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
+        }
+
+        ME_Result = r.Information;
+    }
+
+
+    #region Mass Edit Popup Window
+    public void OpenMassEditPopup(string popup)
+    {
+        ImGui.OpenPopup(popup);
+        ME_Edit_Popup_Open = true;
+    }
+
+    public void DisplayMassEditPopupWindow()
+    {
+        var scale = DPI.GetUIScale();
+
+        // Popup size relies on magic numbers. Multiline maxlength is also arbitrary.
+        if (ImGui.BeginPopup("massEditMenuRegex"))
+        {
+            ImGui.Text("param PARAM: id VALUE: FIELD: = VALUE;");
+            UIHints.AddImGuiHintButton("MassEditHint", ref UIHints.MassEditHint);
+
+            ImGui.InputTextMultiline("##MEditRegexInput", ref CurrentInput, 65536,
+                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
+
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
+            {
+                Editor._activeView._selection.SortSelection();
+
+                ApplyMassEdit(CurrentInput);
+            }
+
+            ImGui.Text(ME_Result);
+
+            if (AutoFill != null)
+            {
+                var result = AutoFill.MassEditCompleteAutoFill();
+                if (result != null)
+                {
+                    if (string.IsNullOrWhiteSpace(CurrentInput))
+                    {
+                        CurrentInput = result;
+                    }
+                    else
+                    {
+                        CurrentInput += "\n" + result;
+                    }
+                }
+            }
+
+            ImGui.EndPopup();
+        }
+        else if (ImGui.BeginPopup("massEditMenuCSVExport"))
+        {
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
+            ImGui.EndPopup();
+        }
+        else if (ImGui.BeginPopup("massEditMenuSingleCSVExport"))
+        {
+            ImGui.Text(ME_Single_CSV_Field);
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
+            ImGui.EndPopup();
+        }
+        else if (ImGui.BeginPopup("massEditMenuCSVImport"))
+        {
+            ImGui.InputTextMultiline("##MEditRegexInput", ref ME_CSV_Input, 256 * 65536,
+                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
+            ImGui.Checkbox("Append new rows instead of ID based insertion (this will create out-of-order IDs)",
+                ref _mEditCSVAppendOnly);
+
+            if (_mEditCSVAppendOnly)
+            {
+                ImGui.Checkbox("Replace existing rows instead of updating them (they will be moved to the end)",
+                    ref _mEditCSVReplaceRows);
+            }
+
+            DelimiterInputText();
+
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
+            {
+                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.ParamData.PrimaryBank,
+                    ME_CSV_Input, Editor._activeView._selection.GetActiveParam(), _mEditCSVAppendOnly,
+                    _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
+
+                if (action != null)
+                {
+                    if (action.HasActions)
+                    {
+                        Editor.EditorActionManager.ExecuteAction(action);
+                    }
+
+                    Project.ParamData.RefreshParamDifferenceCacheTask();
+                }
+
+                _mEditCSVResult = result;
+            }
+
+            ImGui.Text(_mEditCSVResult);
+            ImGui.EndPopup();
+        }
+        else if (ImGui.BeginPopup("massEditMenuSingleCSVImport"))
+        {
+            ImGui.Text(ME_Single_CSV_Field);
+            ImGui.InputTextMultiline("##MEditRegexInput", ref ME_CSV_Input, 256 * 65536,
+                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
+
+            DelimiterInputText();
+
+            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
+            {
+                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank,
+                    ME_CSV_Input, Editor._activeView._selection.GetActiveParam(), ME_Single_CSV_Field,
+                    CFG.Current.Param_Export_Delimiter[0], false);
+
+                if (action != null)
+                {
+                    Editor.EditorActionManager.ExecuteAction(action);
+                }
+
+                _mEditCSVResult = result;
+            }
+
+            ImGui.Text(_mEditCSVResult);
+            ImGui.EndPopup();
+        }
+        else
+        {
+            ME_Edit_Popup_Open = false;
+            ME_CSV_Output = "";
+        }
+    }
+
+    private static void DelimiterInputText()
+    {
+        var displayDelimiter = CFG.Current.Param_Export_Delimiter;
+        if (displayDelimiter == "\t")
+        {
+            displayDelimiter = "\\t";
+        }
+
+        if (ImGui.InputText("Delimiter", ref displayDelimiter, 2))
+        {
+            if (displayDelimiter == "\\t")
+                displayDelimiter = "\t";
+
+            CFG.Current.Param_Export_Delimiter = displayDelimiter;
+        }
+    }
+    #endregion
+
+
+    #region Mass Edit Window
     public void DisplayMassEditMenu()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -52,35 +283,32 @@ public class MassEditHandler
             UIHelper.WrappedText("Write and execute mass edit commands here.");
             UIHelper.WrappedText("");
 
-            // Options
-            ImGui.Checkbox("Retain Input", ref retainMassEditCommand);
-            UIHelper.WideTooltip("Retain the mass edit command in the input text area after execution.");
-            UIHelper.WrappedText("");
-
             // AutoFill
-            var res = AutoFill.MassEditCompleteAutoFill(Editor);
-            if (res != null)
+            if (AutoFill != null)
             {
-                _currentMEditRegexInput = _currentMEditRegexInput + res;
+                var res = AutoFill.MassEditCompleteAutoFill();
+                if (res != null)
+                {
+                    CurrentInput = CurrentInput + res;
+                }
             }
 
             // Input
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Input:");
 
-            ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditRegexInput, 65536,
+            ImGui.InputTextMultiline("##MEditRegexInput", ref CurrentInput, 65536,
             new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
 
             if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
             {
-                ExecuteMassEdit();
+                ExecuteMassEdit(CurrentInput, Project.ParamData.PrimaryBank, Editor._activeView._selection);
             }
             UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
-
 
             ImGui.SameLine();
             if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", halfButtonSize))
             {
-                _currentMEditRegexInput = "";
+                CurrentInput = "";
             }
 
             ImGui.Text("");
@@ -89,14 +317,30 @@ public class MassEditHandler
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Output:");
             UIHelper.WideTooltip("Success state of the Mass Edit command that was previously used.\n\nRemember to handle clipboard state between edits with the 'clear' command");
             ImGui.SameLine();
-            UIHelper.WrappedText($"{_mEditRegexResult}");
-
-            ImGui.InputTextMultiline("##MEditRegexOutput", ref _lastMEditRegexInput, 65536,
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()), ImGuiInputTextFlags.ReadOnly);
-            UIHelper.WrappedText("");
+            UIHelper.WrappedText($"{ME_Result}");
         }
     }
 
+    public void ConstructCommandFromField(string internalName)
+    {
+        var propertyName = internalName.Replace(" ", "\\s");
+        string currInput = Editor.MassEditHandler.CurrentInput;
+
+        if (currInput == "")
+        {
+            // Add selection section if input is empty
+            CurrentInput = $"selection: {propertyName}: ";
+        }
+        else
+        {
+            // Otherwise just add the property name
+            currInput = $"{currInput}{propertyName}";
+            CurrentInput = currInput;
+        }
+    }
+    #endregion
+
+    #region Mass Edit Script Window
     public void DisplayMassEditScriptMenu()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -120,29 +364,29 @@ public class MassEditHandler
 
                 // Scripts
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
-                if (ImGui.BeginCombo("##massEditScripts", _selectedMassEditScript.name))
+                if (ImGui.BeginCombo("##massEditScripts", Current_ME_Script.name))
                 {
                     foreach (var script in MassEditScript.scriptList)
                     {
-                        if (ImGui.Selectable(script.name, _selectedMassEditScript.name == script.name))
+                        if (ImGui.Selectable(script.name, Current_ME_Script.name == script.name))
                         {
-                            _selectedMassEditScript = script;
+                            Current_ME_Script = script;
                         }
                     }
 
                     ImGui.EndCombo();
                 }
-                if (_selectedMassEditScript != null)
+                if (Current_ME_Script != null)
                 {
                     if (ImGui.Button("Load", thirdButtonSize))
                     {
-                        _currentMEditRegexInput = _selectedMassEditScript.GenerateMassedit();
+                        CurrentInput = Current_ME_Script.GenerateMassedit();
                     }
                     ImGui.SameLine();
                     if (ImGui.Button("Edit", thirdButtonSize))
                     {
-                        _newScriptName = _selectedMassEditScript.name;
-                        _newScriptBody = _selectedMassEditScript.GenerateMassedit();
+                        NewScriptName = Current_ME_Script.name;
+                        NewScriptContents = Current_ME_Script.GenerateMassedit();
                     }
                     ImGui.SameLine();
                 }
@@ -157,7 +401,7 @@ public class MassEditHandler
 
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             UIHelper.WrappedText("New Script:");
-            ImGui.InputText("##scriptName", ref _newScriptName, 255);
+            ImGui.InputText("##scriptName", ref NewScriptName, 255);
             UIHelper.Tooltip("The file name used for this script.");
             UIHelper.WrappedText("");
 
@@ -167,7 +411,7 @@ public class MassEditHandler
 
             UIHelper.WrappedText("Script:");
             UIHelper.Tooltip("The mass edit script.");
-            ImGui.InputTextMultiline("##newMassEditScript", ref _newScriptBody, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+            ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
             UIHelper.WrappedText("");
 
             if (ImGui.Button("Save", halfButtonSize))
@@ -184,55 +428,27 @@ public class MassEditHandler
         }
     }
 
-    public void ExecuteMassEdit()
-    {
-        var command = _currentMEditRegexInput;
-
-        Editor._activeView._selection.SortSelection();
-        (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
-            _currentMEditRegexInput, Editor._activeView._selection);
-
-        if (child != null)
-        {
-            Editor.EditorActionManager.PushSubManager(child);
-        }
-
-        if (r.Type == MassEditResultType.SUCCESS)
-        {
-            _lastMEditRegexInput = _currentMEditRegexInput;
-            _currentMEditRegexInput = "";
-            Editor.Project.ParamData.RefreshParamDifferenceCacheTask();
-        }
-
-        _mEditRegexResult = r.Information;
-
-        if (retainMassEditCommand)
-        {
-            _currentMEditRegexInput = command;
-        }
-    }
-
     public void MassEditScriptSetup()
     {
         if (MassEditScript.scriptList.Count > 0)
         {
-            if (_selectedMassEditScript == null)
+            if (Current_ME_Script == null)
             {
-                _selectedMassEditScript = MassEditScript.scriptList[0];
+                Current_ME_Script = MassEditScript.scriptList[0];
             }
         }
     }
 
     public void SaveMassEditScript()
     {
-        if (_newScriptName == "")
+        if (NewScriptName == "")
         {
             PlatformUtils.Instance.MessageBox($"Name must not be empty.", "Smithbox", MessageBoxButtons.OK);
             return;
         }
 
         var projectScriptDir = $"{Editor.Project.ProjectPath}\\.smithbox\\Assets\\Scripts\\";
-        var scriptPath = $"{projectScriptDir}{_newScriptName}.txt";
+        var scriptPath = $"{projectScriptDir}{NewScriptName}.txt";
 
         // Check both so the name is unique everywhere
         if (!File.Exists(scriptPath))
@@ -242,7 +458,7 @@ public class MassEditHandler
             try
             {
                 var fs = new FileStream(scriptPath, FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(_newScriptBody);
+                var data = Encoding.ASCII.GetBytes(NewScriptContents);
                 fs.Write(data, 0, data.Length);
                 fs.Flush();
                 fs.Dispose();
@@ -256,9 +472,10 @@ public class MassEditHandler
         }
         else
         {
-            PlatformUtils.Instance.MessageBox($"{_newScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
+            PlatformUtils.Instance.MessageBox($"{NewScriptName}.txt already exists within the Scripts folder.", "Smithbox", MessageBoxButtons.OK);
         }
 
         MassEditScript.ReloadScripts(Editor);
     }
+    #endregion
 }

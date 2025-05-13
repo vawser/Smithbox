@@ -10,7 +10,6 @@ using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.Tools;
-using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
@@ -46,8 +45,6 @@ public class ParamEditorScreen : EditorScreen
     private long _clipboardBaseRow;
     private string _currentCtrlVOffset = "0";
     private string _currentCtrlVValue = "0";
-    private string _currentMEditCSVInput = "";
-    private string _currentMEditCSVOutput = "";
 
     // MassEdit Popup vars
     private string _currentMEditRegexInput = "";
@@ -58,11 +55,6 @@ public class ParamEditorScreen : EditorScreen
     internal bool _isSearchBarActive = false;
     public bool _isShortcutPopupOpen;
     public bool _isStatisticPopupOpen;
-    private string _lastMEditRegexInput = "";
-    private bool _mEditCSVAppendOnly;
-    private bool _mEditCSVReplaceRows;
-    private string _mEditCSVResult = "";
-    private string _mEditRegexResult = "";
 
     private string _statisticPopupOutput = "";
     private string _statisticPopupParameter = "";
@@ -93,10 +85,6 @@ public class ParamEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        // Hack to allow the mass edit stuff to work per project
-        MEOperationArgument.Editor = this;
-        MassParamEditRegex.SetEditor(this);
-
         EditorShortcuts = new ParamEditorShortcuts(this);
 
         _views = [new ParamEditorView(this, 0)];
@@ -111,12 +99,12 @@ public class ParamEditorScreen : EditorScreen
         RowNameFinder = new(this);
         RowIDFinder = new(this);
         RowNamer = new(this);
-        MassEditHandler = new(this);
         PinGroupHandler = new(this);
         ComparisonReport = new ParamComparisonReport(this, project);
         ParamReloader = new(this, Project);
         ParamUpgrader = new(this, Project);
 
+        MassEditHandler = new(this, Project);
     }
 
     public void OnGUI(string[] initcmd)
@@ -198,37 +186,38 @@ public class ParamEditorScreen : EditorScreen
                 }
                 else if (initcmd[1] == "massEditRegex")
                 {
-                    _currentMEditRegexInput = initcmd.Length > 2 ? initcmd[2] : _currentMEditRegexInput;
-                    OpenMassEditPopup("massEditMenuRegex");
+                    MassEditHandler.CurrentInput = initcmd.Length > 2 ? initcmd[2] : _currentMEditRegexInput;
+                    MassEditHandler.OpenMassEditPopup("massEditMenuRegex");
                 }
                 else if (initcmd[1] == "massEditCSVExport")
                 {
                     IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[2]));
-                    _currentMEditCSVOutput = ParamIO.GenerateCSV(Project, rows,
+
+                    MassEditHandler.ME_CSV_Output = ParamIO.GenerateCSV(Project, rows,
                         Project.ParamData.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
                         CFG.Current.Param_Export_Delimiter[0]);
-                    OpenMassEditPopup("massEditMenuCSVExport");
+                    MassEditHandler.OpenMassEditPopup("massEditMenuCSVExport");
                 }
                 else if (initcmd[1] == "massEditCSVImport")
                 {
-                    OpenMassEditPopup("massEditMenuCSVImport");
+                    MassEditHandler.OpenMassEditPopup("massEditMenuCSVImport");
                 }
                 else if (initcmd[1] == "massEditSingleCSVExport")
                 {
-                    _currentMEditSingleCSVField = initcmd[2];
+                    MassEditHandler.ME_Single_CSV_Field = initcmd[2];
                     IReadOnlyList<Param.Row> rows = CsvExportGetRows(Enum.Parse<ParamBank.RowGetType>(initcmd[3]));
 
-                    _currentMEditCSVOutput = ParamIO.GenerateSingleCSV(rows,
+                    MassEditHandler.ME_CSV_Output = ParamIO.GenerateSingleCSV(rows,
                         Project.ParamData.PrimaryBank.Params[_activeView._selection.GetActiveParam()],
-                        _currentMEditSingleCSVField,
+                        MassEditHandler.ME_Single_CSV_Field,
                         CFG.Current.Param_Export_Delimiter[0]);
 
-                    OpenMassEditPopup("massEditMenuSingleCSVExport");
+                    MassEditHandler.OpenMassEditPopup("massEditMenuSingleCSVExport");
                 }
                 else if (initcmd[1] == "massEditSingleCSVImport" && initcmd.Length > 2)
                 {
-                    _currentMEditSingleCSVField = initcmd[2];
-                    OpenMassEditPopup("massEditMenuSingleCSVImport");
+                    MassEditHandler.ME_Single_CSV_Field = initcmd[2];
+                    MassEditHandler.OpenMassEditPopup("massEditMenuSingleCSVImport");
                 }
                 else if (initcmd[1] == "distributionPopup" && initcmd.Length > 2)
                 {
@@ -266,7 +255,7 @@ public class ParamEditorScreen : EditorScreen
         }
 
         ShortcutPopups();
-        MassEditPopups();
+        MassEditHandler.DisplayMassEditPopupWindow();
         StatisticPopups();
 
         if (CFG.Current.UI_CompactParams)
@@ -1183,152 +1172,10 @@ public class ParamEditorScreen : EditorScreen
         });
     }
 
-    
-
-    public void OpenMassEditPopup(string popup)
-    {
-        ImGui.OpenPopup(popup);
-        _isMEditPopupOpen = true;
-    }
-
     public void OpenStatisticPopup(string popup)
     {
         ImGui.OpenPopup(popup);
         _isStatisticPopupOpen = true;
-    }
-
-    public void MassEditPopups()
-    {
-        var scale = DPI.GetUIScale();
-
-        // Popup size relies on magic numbers. Multiline maxlength is also arbitrary.
-        if (ImGui.BeginPopup("massEditMenuRegex"))
-        {
-            ImGui.Text("param PARAM: id VALUE: FIELD: = VALUE;");
-            UIHints.AddImGuiHintButton("MassEditHint", ref UIHints.MassEditHint);
-            ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditRegexInput, 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
-
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
-            {
-                _activeView._selection.SortSelection();
-                (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(Project.ParamData.PrimaryBank,
-                    _currentMEditRegexInput, _activeView._selection);
-
-                if (child != null)
-                {
-                    EditorActionManager.PushSubManager(child);
-                }
-
-                if (r.Type == MassEditResultType.SUCCESS)
-                {
-                    _lastMEditRegexInput = _currentMEditRegexInput;
-                    _currentMEditRegexInput = "";
-                    Project.ParamData.RefreshParamDifferenceCacheTask();
-                }
-
-                _mEditRegexResult = r.Information;
-            }
-
-            ImGui.Text(_mEditRegexResult);
-            ImGui.InputTextMultiline("##MEditRegexOutput", ref _lastMEditRegexInput, 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
-            ImGui.TextUnformatted("Remember to handle clipboard state between edits with the 'clear' command");
-
-            var result = AutoFill.MassEditCompleteAutoFill(this);
-            if (result != null)
-            {
-                if (string.IsNullOrWhiteSpace(_currentMEditRegexInput))
-                {
-                    _currentMEditRegexInput = result;
-                }
-                else
-                {
-                    _currentMEditRegexInput += "\n" + result;
-                }
-            }
-
-            ImGui.EndPopup();
-        }
-        else if (ImGui.BeginPopup("massEditMenuCSVExport"))
-        {
-            ImGui.InputTextMultiline("##MEditOutput", ref _currentMEditCSVOutput, 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
-            ImGui.EndPopup();
-        }
-        else if (ImGui.BeginPopup("massEditMenuSingleCSVExport"))
-        {
-            ImGui.Text(_currentMEditSingleCSVField);
-            ImGui.InputTextMultiline("##MEditOutput", ref _currentMEditCSVOutput, 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
-            ImGui.EndPopup();
-        }
-        else if (ImGui.BeginPopup("massEditMenuCSVImport"))
-        {
-            ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditCSVInput, 256 * 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
-            ImGui.Checkbox("Append new rows instead of ID based insertion (this will create out-of-order IDs)",
-                ref _mEditCSVAppendOnly);
-
-            if (_mEditCSVAppendOnly)
-            {
-                ImGui.Checkbox("Replace existing rows instead of updating them (they will be moved to the end)",
-                    ref _mEditCSVReplaceRows);
-            }
-
-            DelimiterInputText();
-
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
-            {
-                (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.ParamData.PrimaryBank,
-                    _currentMEditCSVInput, _activeView._selection.GetActiveParam(), _mEditCSVAppendOnly,
-                    _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
-
-                if (action != null)
-                {
-                    if (action.HasActions)
-                    {
-                        EditorActionManager.ExecuteAction(action);
-                    }
-
-                    Project.ParamData.RefreshParamDifferenceCacheTask();
-                }
-
-                _mEditCSVResult = result;
-            }
-
-            ImGui.Text(_mEditCSVResult);
-            ImGui.EndPopup();
-        }
-        else if (ImGui.BeginPopup("massEditMenuSingleCSVImport"))
-        {
-            ImGui.Text(_currentMEditSingleCSVField);
-            ImGui.InputTextMultiline("##MEditRegexInput", ref _currentMEditCSVInput, 256 * 65536,
-                new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale);
-            DelimiterInputText();
-
-            if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
-            {
-                (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank,
-                    _currentMEditCSVInput, _activeView._selection.GetActiveParam(), _currentMEditSingleCSVField,
-                    CFG.Current.Param_Export_Delimiter[0], false);
-
-                if (action != null)
-                {
-                    EditorActionManager.ExecuteAction(action);
-                }
-
-                _mEditCSVResult = result;
-            }
-
-            ImGui.Text(_mEditCSVResult);
-            ImGui.EndPopup();
-        }
-        else
-        {
-            _isMEditPopupOpen = false;
-            _currentMEditCSVOutput = "";
-        }
     }
 
     public void StatisticPopups()
