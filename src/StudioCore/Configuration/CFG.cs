@@ -1199,6 +1199,11 @@ public class CFG
         var folder = ProjectUtils.GetConfigurationFolder();
         var file = Path.Combine(folder, "Configuration.json");
 
+        if(!Directory.Exists(folder))
+        {
+            Directory.CreateDirectory(folder);
+        }
+
         var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.CFG);
 
         File.WriteAllText(file, json);

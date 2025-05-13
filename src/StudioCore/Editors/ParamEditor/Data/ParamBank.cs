@@ -2202,7 +2202,10 @@ public class ParamBank
             {
                 if (importType is ImportRowNameType.Index)
                 {
-                    p.Value.Rows[i].Name = rowNameDict[i].Name;
+                    if (rowNameDict.ContainsKey(i))
+                    {
+                        p.Value.Rows[i].Name = rowNameDict[i].Name;
+                    }
                 }
                 else if (importType is ImportRowNameType.ID)
                 {
