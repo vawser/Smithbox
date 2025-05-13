@@ -142,7 +142,7 @@ public class Viewport : IViewport
         float depth = Device.IsDepthRangeZeroToOne ? 1 : 0;
 
         RenderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
-        ViewportCamera = new ViewportCamera(this, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(BaseEditor, this, ViewportType, new Rectangle(0, 0, Width, Height));
 
         if (viewportType is ViewportType.MapEditor)
         {

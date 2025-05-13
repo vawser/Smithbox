@@ -1,10 +1,8 @@
 ﻿using Hexa.NET.ImGui;
-using HKLib.hk2018.hk.RPC;
 using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
@@ -30,6 +28,19 @@ public static class ProjectCreation
     private static string SteamExecutable_SDT = "";
     private static string SteamExecutable_ER = "";
     private static string SteamExecutable_AC6 = "";
+
+    public static bool AutoSelect = false;
+
+    public static bool EnableMapEditor = true;
+    public static bool EnableModelEditor = true;
+    public static bool EnableTextEditor = true;
+    public static bool EnableParamEditor = true;
+    public static bool EnableTimeActEditor = false;
+    public static bool EnableGparamEditor = true;
+    public static bool EnableMaterialEditor = false;
+    public static bool EnableEmevdEditor = false;
+    public static bool EnableEsdEditor = false;
+    public static bool EnableTextureViewer = true;
 
     // Used so the project type combo box has a specific order
     private static List<ProjectType> ProjectTypeOrder = new()
@@ -248,7 +259,26 @@ public static class ProjectCreation
                         }
                     }
 
+                    // Automatic Load
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Automatic Load");
+                    UIHelper.Tooltip("If true, then this project will be automatically loaded when Smithbox launches.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.SetNextItemWidth(inputWidth);
+
+                    ImGui.Checkbox("##projectAutoLoad", ref AutoSelect);
+
+                    ImGui.TableSetColumnIndex(2);
+
                     ImGui.EndTable();
+
+                    // Editor Toggles
+                    DisplayEditorToggles();
 
                     if (!AllowCreation())
                     {
@@ -293,6 +323,173 @@ public static class ProjectCreation
             }
 
             ImGui.PopStyleColor(1);
+        }
+    }
+
+    private static void DisplayEditorToggles()
+    {
+        var inputWidth = 400.0f;
+
+        // Editor Toggles
+        if (ImGui.BeginTable($"editorToggleTable", 6, ImGuiTableFlags.SizingFixedFit))
+        {
+            ImGui.TableSetupColumn("EditorName_Col1", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("EditorToggle_Col1", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("EditorName_Col2", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("EditorToggle_Col2", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("EditorName_Col3", ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn("EditorToggle_Col3", ImGuiTableColumnFlags.WidthFixed);
+
+            // Section 1
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableMapEditor", ref EnableMapEditor);
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Map Editor");
+            UIHelper.Tooltip("If true, the Map Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(2);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableModelEditor", ref EnableModelEditor);
+            ImGui.TableSetColumnIndex(3);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Model Editor");
+            UIHelper.Tooltip("If true, the Model Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(4);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableTextEditor", ref EnableTextEditor);
+
+            ImGui.TableSetColumnIndex(5);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Text Editor");
+            UIHelper.Tooltip("If true, the Text Editor and associated data will be initialized for this project.");
+
+
+            // Section 2
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableParamEditor", ref EnableParamEditor);
+
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Param Editor");
+            UIHelper.Tooltip("If true, the Param Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(2);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableGparamEditor", ref EnableGparamEditor);
+            ImGui.TableSetColumnIndex(3);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Graphics Param Editor");
+            UIHelper.Tooltip("If true, the Graphics Param Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(4);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableTimeActEditor", ref EnableTimeActEditor);
+
+            ImGui.TableSetColumnIndex(5);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Time Act Editor");
+            UIHelper.Tooltip("If true, the Time Act Editor and associated data will be initialized for this project.");
+
+            // Section 3
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableMaterialEditor", ref EnableMaterialEditor);
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Material Editor");
+            UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
+
+
+            ImGui.TableSetColumnIndex(2);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
+            ImGui.TableSetColumnIndex(3);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Event Script Editor");
+            UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(4);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
+            ImGui.TableSetColumnIndex(5);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("EzState Script Editor");
+            UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
+
+            // Section 4
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.SetNextItemWidth(inputWidth);
+
+            ImGui.Checkbox("##projectEnableTextureViewer", ref EnableTextureViewer);
+            ImGui.TableSetColumnIndex(1);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("Texture Viewer");
+            UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
+
+
+            ImGui.TableSetColumnIndex(2);
+
+            //ImGui.SetNextItemWidth(inputWidth);
+
+            //ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
+
+            ImGui.TableSetColumnIndex(3);
+
+            //ImGui.AlignTextToFramePadding();
+            //ImGui.Text("Enable Event Script Editor");
+            //UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
+
+            ImGui.TableSetColumnIndex(4);
+
+            //ImGui.SetNextItemWidth(inputWidth);
+
+            //ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
+
+            ImGui.TableSetColumnIndex(5);
+
+            //ImGui.AlignTextToFramePadding();
+            //ImGui.Text("Enable EzState Script Editor");
+            //UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
+
+            ImGui.EndTable();
         }
     }
 

@@ -1,9 +1,12 @@
 ﻿using Silk.NET.SDL;
 using StudioCore.Configuration;
+using StudioCore.Editors.MapEditor.Framework;
 using System;
+using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
+using Veldrid.Utilities;
 
 namespace StudioCore.ViewportNS;
 
@@ -85,8 +88,12 @@ public class ViewportCamera
 
     public Viewport ParentViewport;
 
-    public ViewportCamera(IViewport viewport, Rectangle bounds)
+    public Smithbox BaseEditor;
+    public ViewportType ViewportType;
+
+    public ViewportCamera(Smithbox baseEditor, IViewport viewport, ViewportType viewportType, Rectangle bounds)
     {
+        BaseEditor = baseEditor;
         BoundingRect = bounds;
         SDL = SdlProvider.SDL.Value;
 

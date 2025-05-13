@@ -37,7 +37,7 @@ public class NullViewport : IViewport
         Width = width;
         Height = height;
 
-        ViewportCamera = new ViewportCamera(this, new Rectangle(0, 0, Width, Height));
+        ViewportCamera = new ViewportCamera(BaseEditor, this, viewportType, new Rectangle(0, 0, Width, Height));
     }
 
     public ViewportCamera ViewportCamera { get; }
