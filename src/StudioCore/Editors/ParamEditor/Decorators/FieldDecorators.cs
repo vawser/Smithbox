@@ -1003,12 +1003,16 @@ public class FieldDecorators
     /// <param name="fmgRefs"></param>
     public static void TextReference_ContextMenu(ParamEditorScreen editor, ParamBank bank, object oldval, Param.Row context, List<FMGRef> fmgRefs)
     {
-        if (fmgRefs != null)
+        if (ImGui.IsItemClicked(ImGuiMouseButton.Left) &&
+            (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
         {
-            TextResult? primaryRef = ReferenceResolver.ResolveTextReferences(editor, fmgRefs, context, oldval)?.FirstOrDefault();
-            if (primaryRef != null)
+            if (fmgRefs != null)
             {
-                EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                TextResult? primaryRef = ReferenceResolver.ResolveTextReferences(editor, fmgRefs, context, oldval)?.FirstOrDefault();
+                if (primaryRef != null)
+                {
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                }
             }
         }
     }
