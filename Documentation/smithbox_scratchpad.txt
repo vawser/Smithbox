@@ -12,4 +12,3 @@
 
 # FIX
 - Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)
-- Param Editor: view in map references is causing lag

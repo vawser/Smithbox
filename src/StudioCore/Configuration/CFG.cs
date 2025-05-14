@@ -582,10 +582,9 @@ public class CFG
 
     public Vector3 Viewport_DefaultRender_SelectColor = new(1.0f, 0.5f, 0.0f);
 
-    public bool Viewport_Enable_ViewportInfoPanel = true;
-    public bool Viewport_RotationIncrement = true;
-    public bool Viewport_MovementIncrement = true;
-
+    public bool Viewport_DisplayControls = true;
+    public bool Viewport_DisplayRotationIncrement = true;
+    public bool Viewport_DisplayMovementIncrement = true;
     public bool Viewport_Enable_BoxSelection = true;
 
     //****************************

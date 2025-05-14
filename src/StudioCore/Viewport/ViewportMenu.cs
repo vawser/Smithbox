@@ -64,7 +64,7 @@ public class ViewportMenu
         {
             if (ImGui.MenuItem("Controls"))
             {
-                DisplayControls = !DisplayControls;
+                CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
             }
             UIHelper.ShowActiveStatus(DisplayControls);
 
@@ -72,15 +72,15 @@ public class ViewportMenu
             {
                 if (ImGui.MenuItem("Movement Increment"))
                 {
-                    CFG.Current.Viewport_MovementIncrement = !CFG.Current.Viewport_MovementIncrement;
+                    CFG.Current.Viewport_DisplayMovementIncrement = !CFG.Current.Viewport_DisplayMovementIncrement;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.Viewport_MovementIncrement);
+                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayMovementIncrement);
 
                 if (ImGui.MenuItem("Rotation Increment"))
                 {
-                    CFG.Current.Viewport_RotationIncrement = !CFG.Current.Viewport_RotationIncrement;
+                    CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
                 }
-                UIHelper.ShowActiveStatus(CFG.Current.Viewport_RotationIncrement);
+                UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
             }
 
             if (ImGui.MenuItem("Profiling"))

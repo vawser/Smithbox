@@ -27,11 +27,11 @@ public class ViewportOverlay
         // Map Editor
         if (Parent.ViewportType is ViewportType.MapEditor)
         {
-            if (CFG.Current.Viewport_RotationIncrement)
+            if (CFG.Current.Viewport_DisplayRotationIncrement)
             {
                 Parent.MapEditor.RotationIncrement.DisplayViewportRotateIncrement();
             }
-            if (CFG.Current.Viewport_MovementIncrement)
+            if (CFG.Current.Viewport_DisplayMovementIncrement)
             {
                 Parent.MapEditor.KeyboardMovement.DisplayViewportMovementIncrement();
             }

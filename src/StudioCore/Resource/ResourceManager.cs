@@ -1153,12 +1153,10 @@ public static class ResourceManager
 /// </summary>
 public static class ResourceLog
 {
-
     public static void AddLog(string text)
     {
-        if(FeatureFlags.EnableResourceLogs)
-        {
-            TaskLogs.AddLog(text);
-        }
+#if DEBUG
+        TaskLogs.AddLog(text);
+#endif
     }
 }
