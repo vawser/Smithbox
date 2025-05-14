@@ -96,12 +96,28 @@ public class TextDifferenceManager
             // DS2
             if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                vanillaEntries.Add($"{entry.ID}{entry.Parent.Name}{containerSubCategory}", entry.Text);
+                var key = $"{entry.ID}{entry.Parent.Name}{containerSubCategory}";
+                if(vanillaEntries.ContainsKey(key))
+                {
+                    vanillaEntries[key] = entry.Text;
+                }
+                else
+                {
+                    vanillaEntries.Add(key, entry.Text);
+                }
             }
             // Other
             else
             {
-                vanillaEntries.Add($"{entry.ID}", entry.Text);
+                var key = $"{entry.ID}";
+                if (vanillaEntries.ContainsKey(key))
+                {
+                    vanillaEntries[key] = entry.Text;
+                }
+                else
+                {
+                    vanillaEntries.Add(key, entry.Text);
+                }
             }
         }
 

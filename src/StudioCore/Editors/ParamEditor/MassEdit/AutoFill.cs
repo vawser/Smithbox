@@ -284,7 +284,7 @@ public class AutoFill
     {
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
-        ImGui.Button($@"{Icons.CaretDown}#massEditAutofill");
+        ImGui.Button($@"{Icons.CaretDown}##massEditAutofill");
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");

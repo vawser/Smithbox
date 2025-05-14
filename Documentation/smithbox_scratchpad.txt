@@ -12,4 +12,4 @@
 
 # FIX
 - Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)
-- Param Editor: FMG jumps seem to apply immediately when viewing valid rows
+- Param Editor: view in map references is causing lag
