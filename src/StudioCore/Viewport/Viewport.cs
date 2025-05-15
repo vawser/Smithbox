@@ -1,5 +1,4 @@
 ﻿using Hexa.NET.ImGui;
-using Silk.NET.SDL;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors;
@@ -7,23 +6,18 @@ using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Scene;
 using StudioCore.Scene.DebugPrimitives;
-using StudioCore.Scene.Framework;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Sdl2;
 using Veldrid.Utilities;
-using Vortice.Vulkan;
-using Renderer = StudioCore.Scene.Renderer;
-using Texture = Veldrid.Texture;
 
 namespace StudioCore.Interface
 {
@@ -41,6 +35,10 @@ namespace StudioCore.Interface
     /// </summary>
     public class Viewport : IViewport
     {
+        public Smithbox BaseEditor;
+        public MapEditorScreen MapEditor;
+        public ModelEditorScreen ModelEditor;
+
         private readonly ViewportActionManager _actionManager;
 
         private readonly FullScreenQuad _clearQuad;
@@ -79,18 +77,17 @@ namespace StudioCore.Interface
 
         private Veldrid.Viewport _renderViewport;
 
+        private float _selectionTolerance = 5f;
+
         //public RenderTarget2D SceneRenderTarget = null;
 
         private bool _vpvisible;
-        public Smithbox BaseEditor;
         private bool DebugRayCastDraw = false;
-        public MapEditorScreen MapEditor;
-        public ModelEditorScreen ModelEditor;
-
-        public ViewportType ViewportType;
 
         public int X;
         public int Y;
+
+        public ViewportType ViewportType;
 
         public Viewport(Smithbox baseEditor, MapEditorScreen mapEditor, ModelEditorScreen modelEditor, ViewportType viewportType, string id, int width, int height)
         {
@@ -98,31 +95,40 @@ namespace StudioCore.Interface
             MapEditor = mapEditor;
             ModelEditor = modelEditor;
             ViewportType = viewportType;
+
             _vpid = id;
             Width = width;
             Height = height;
             _device = BaseEditor._context.Device;
+
             float depth = _device.IsDepthRangeZeroToOne ? 1 : 0;
+
             _renderViewport = new Veldrid.Viewport(0, 0, Width, Height, depth, 1.0f - depth);
             WorldView = new WorldView(new Rectangle(0, 0, Width, Height));
+
             if (viewportType is ViewportType.MapEditor)
             {
                 _renderScene = mapEditor.MapViewportView.RenderScene;
                 _selection = mapEditor.Selection;
                 _actionManager = mapEditor.EditorActionManager;
             }
+
             if (viewportType is ViewportType.ModelEditor)
             {
                 _renderScene = modelEditor.RenderScene;
                 _selection = modelEditor._selection;
                 _actionManager = modelEditor.EditorActionManager;
             }
+
             if (_renderScene != null && _device != null)
             {
                 _viewPipeline = new SceneRenderPipeline(_renderScene, _device, width, height);
+
                 _projectionMat = Utils.CreatePerspective(_device, false,
                     CFG.Current.Viewport_Camera_FOV * (float)Math.PI / 180.0f, width / (float)height, NearClip, FarClip);
+
                 _frustum = new BoundingFrustum(_projectionMat);
+
                 _viewPipeline.SetViewportSetupAction((d, cl) =>
                 {
                     cl.SetFramebuffer(_device.SwapchainFramebuffer);
@@ -146,17 +152,26 @@ namespace StudioCore.Interface
                     _gizmos = new Gizmos(MapEditor, _actionManager, _selection, _renderScene.OverlayRenderables);
                     _mapEditor_Viewport_Grid = new MapViewportGrid(MapEditor, _renderScene.OpaqueRenderables);
                 }
+
                 if (ViewportType is ViewportType.ModelEditor)
                 {
                     _gizmos = new Gizmos(ModelEditor, _actionManager, _selection, _renderScene.OverlayRenderables);
                     _modelEditor_Viewport_Grid = new ModelViewGrid(ModelEditor, _renderScene.OpaqueRenderables);
                 }
+
                 _clearQuad = new FullScreenQuad();
-                Renderer.AddBackgroundUploadTask((gd, cl) =>
+
+                Scene.Renderer.AddBackgroundUploadTask((gd, cl) =>
                 {
                     _clearQuad.CreateDeviceObjects(gd, cl);
                 });
             }
+        }
+
+        public float SelectionTolerance
+        {
+            get => _selectionTolerance;
+            set => _selectionTolerance = MathF.Max(0, value);
         }
 
         public bool DrawGrid { get; set; } = true;
@@ -182,14 +197,16 @@ namespace StudioCore.Interface
                 ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0, 0, 0, 0)); // Transparent
                 if (ImGui.Begin($@"Viewport##{_vpid}", ImGuiWindowFlags.NoBackground | ImGuiWindowFlags.NoNav))
                 {
-                    if (ViewportType is ViewportType.MapEditor)
+                    if(ViewportType is ViewportType.MapEditor)
                     {
                         MapEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
                     }
+
                     if (ViewportType is ViewportType.ModelEditor)
                     {
                         ModelEditor.FocusManager.SwitchWindowContext(MapEditorContext.MapViewport);
                     }
+
                     Vector2 p = ImGui.GetWindowPos();
                     Vector2 s = ImGui.GetWindowSize();
                     Rectangle newvp = new((int)p.X, (int)p.Y + 3, (int)s.X, (int)s.Y - 3);
@@ -256,6 +273,7 @@ namespace StudioCore.Interface
                     // Clamp coordinates to window area
                     start = Vector2.Clamp(start, ImGui.GetWindowPos(), ImGui.GetWindowPos() + ImGui.GetWindowSize());
                     end = Vector2.Clamp(end, ImGui.GetWindowPos(), ImGui.GetWindowPos() + ImGui.GetWindowSize());
+
                     drawList.AddRect(start, end, ImGui.GetColorU32(new Vector4(0.5f, 0.5f, 1f, 1f)), 0f, ImDrawFlags.None, 2f);
                     drawList.AddRectFilled(start, end, ImGui.GetColorU32(new Vector4(0f, 0.5f, 1f, 0.15f)));
                 }
@@ -273,9 +291,9 @@ namespace StudioCore.Interface
                     ImGui.Text($@"Scene Render CPU time: {_viewPipeline.CPURenderTime} ms");
                     ImGui.Text($@"Visible objects: {_renderScene.RenderObjectCount}");
                     ImGui.Text(
-                        $@"Vertex Buffers Size: {Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
+                        $@"Vertex Buffers Size: {Scene.Renderer.GeometryBufferAllocator.TotalVertexFootprint / 1024 / 1024} MB");
                     ImGui.Text(
-                        $@"Index Buffers Size: {Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
+                        $@"Index Buffers Size: {Scene.Renderer.GeometryBufferAllocator.TotalIndexFootprint / 1024 / 1024} MB");
                     //ImGui.Text($@"Selected renderable:  { _viewPipeline._pickingEntity }");
                 }
                 ImGui.End();
@@ -308,19 +326,23 @@ namespace StudioCore.Interface
             _cursorX = (int)pos.X; // - X;
             _cursorY = (int)pos.Y; // - Y;
             _gizmos.Update(ray, _canInteract && MouseInViewport());
+
             if (ViewportType is ViewportType.MapEditor)
             {
                 _mapEditor_Viewport_Grid.Update(ray);
             }
+
             if (ViewportType is ViewportType.ModelEditor)
             {
                 _modelEditor_Viewport_Grid.Update(ray);
             }
+
             _viewPipeline.SceneParams.SimpleFlver_Brightness = CFG.Current.Viewport_DefaultRender_Brightness;
             _viewPipeline.SceneParams.SimpleFlver_Saturation = CFG.Current.Viewport_DefaultRender_Saturation;
             _viewPipeline.SceneParams.SelectionColor = new Vector4(CFG.Current.Viewport_DefaultRender_SelectColor.X, CFG.Current.Viewport_DefaultRender_SelectColor.Y,
                 CFG.Current.Viewport_DefaultRender_SelectColor.Z, 1.0f);
             bool kbbusy = false;
+
             if (!_gizmos.IsMouseBusy() && _canInteract && MouseInViewport())
             {
                 kbbusy = WorldView.UpdateInput(window, dt);
@@ -343,6 +365,7 @@ namespace StudioCore.Interface
                     {
                         targetEditor = ModelEditor;
                     }
+
                     if (targetEditor != null)
                     {
                         ISelectable sel = _viewPipeline.GetSelection();
@@ -457,124 +480,70 @@ namespace StudioCore.Interface
             }
         }
 
-        private void UpdateSelection(WeakReference<ISelectable> obj, EditorScreen targetEditor, bool ctrl)
-        {
-            if (!obj.TryGetTarget(out ISelectable target) || targetEditor == null) return;
-            if (ctrl)
-            {
-                _selection.RemoveSelection(targetEditor, target);
-            }
-            else
-            {
-                _selection.AddSelection(targetEditor, target);
-            }
-        }
-
-        // Method to get the depth at a specific screen position
-        private float GetDepthAtScreenPos(GraphicsDevice device, CommandList cl, Vector2 screenPos)
-        {
-            // Convert screen coordinates to NDC (Normalized Device Coordinates)
-            float x = (2.0f * screenPos.X / Width) - 1.0f;
-            float y = 1.0f - (2.0f * screenPos.Y / Height);
-
-            // Create a viewport to map the screen space position to depth buffer space
-            Veldrid.Viewport viewport = new Veldrid.Viewport(0, 0, Width, Height, 0f, 1f);
-
-            // Read depth from the depth buffer
-            // Assuming we have a framebuffer with a depth buffer bound
-            Texture depthTexture = device.SwapchainFramebuffer.DepthTarget.Value.Target;
-            if (depthTexture == null)
-            {
-                // No depth buffer available
-                return float.MaxValue;
-            }
-
-            // Create a temporary buffer to store the depth data (assuming 32-bit float depth)
-            byte[] depthData = new byte[4];  // RGBA depth data (32-bit float depth)
-
-            // Create a RenderPassDescription
-            AttachmentDescription desc1 = new();
-            AttachmentDescription desc2 = new();
-            TextureViewDescription tvd = new(device.SwapchainFramebuffer.ColorTargets[0].Target);
-            TextureViewDescription tvd2 = new(depthTexture);
-            TextureView view = new(_device, ref tvd);
-            TextureView depthView = new(_device, ref tvd2);
-            desc1.Texture = view;
-            desc1.LoadOp = VkAttachmentLoadOp.Clear;
-            desc1.StoreOp = VkAttachmentStoreOp.Store;
-            desc2.Texture = depthView;
-            desc2.LoadOp = VkAttachmentLoadOp.Clear;
-            desc2.StoreOp = VkAttachmentStoreOp.Store;
-            RenderPassDescription renderPassDescription = new() { ColorAttachments = new[]
-                {
-                    desc1
-                },
-                DepthStencilAttachment = desc2
-            };
-            cl.BeginRenderPass(ref renderPassDescription);
-
-
-            cl.SetFramebuffer(device.SwapchainFramebuffer);
-            cl.SetViewport(0, viewport);
-
-            // TODO: Implement this
-            // cl.CopyTextureToBuffer(depthTexture, depthData);
-
-            cl.EndRenderPass();
-
-            // Now, depthData should hold the information for the given screen position
-            // Convert the depth value (the z value) into a float. Depth is typically stored as a float between 0 and 1
-            float depth = BitConverter.ToSingle(depthData, 0);  // assuming depth is stored as a 32-bit float in the depth buffer
-    
-            return depth;
-        }
-
+        // TODO: Implement far clip and the selection tolerance slider...
         private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
         {
-            // TODO: Make this a slider...
-            EditorScreen targetEditor = ViewportType switch
+            EditorScreen targetEditor = null;
+            if (ViewportType is ViewportType.MapEditor)
             {
-                ViewportType.MapEditor => MapEditor,
-                ViewportType.ModelEditor => ModelEditor,
-                _ => null
-            };
-            float minX = MathF.Min(start.X, end.X) - X;
-            float minY = MathF.Min(start.Y, end.Y) - Y;
-            float maxX = MathF.Max(start.X, end.X) - X;
-            float maxY = MathF.Max(start.Y, end.Y) - Y;
+                targetEditor = MapEditor;
+            }
+            if (ViewportType is ViewportType.ModelEditor)
+            {
+                targetEditor = ModelEditor;
+            }
+
+            float minX = MathF.Min(start.X, end.X);
+            float minY = MathF.Min(start.Y, end.Y);
+            float maxX = MathF.Max(start.X, end.X);
+            float maxY = MathF.Max(start.Y, end.Y);
+            minX -= X;
+            maxX -= X;
+            minY -= Y;
+            maxY -= Y;
             bool shift = InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight);
             bool ctrl = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
-            if (!shift && !ctrl && targetEditor != null)
-                _selection.ClearSelection(targetEditor);
-            List<(WeakReference<ISelectable> obj, float distance)> selectableObjects = new();
+            if (!shift && !ctrl)
+            {
+                if (targetEditor != null)
+                {
+                    _selection.ClearSelection(targetEditor);
+                }
+            }
             for (int i = 0; i < _renderScene.OpaqueRenderables.cBounds.Length; i++)
             {
-                VisibleValidComponent visibleValidComponent = _renderScene.OpaqueRenderables.cVisible[i];
-                bool isCulled = _renderScene.OpaqueRenderables.cCulled[i];
-                if (!(visibleValidComponent._valid && !isCulled)) continue;
                 BoundingBox obj = _renderScene.OpaqueRenderables.cBounds[i];
-                if (_frustum.Contains(obj) != ContainmentType.Contains) continue;
-                Vector3 center = obj.GetCenter();
-                float distanceToCamera = Vector3.Distance(center, WorldView.CameraTransform.Position);
-                WeakReference<ISelectable> selectable = _renderScene.OpaqueRenderables.cSelectables[i];
-                if (selectable == null) continue;
-                Vector2 screenPos = WorldToScreen(center);
-                if (screenPos.X >= minX && screenPos.X <= maxX && screenPos.Y >= minY && screenPos.Y <= maxY)
-                    selectableObjects.Add((selectable, distanceToCamera));
-            }
-            selectableObjects.Sort((a, b) => a.distance.CompareTo(b.distance));
-            float lastSelectedDistance = -1;
-            foreach ((WeakReference<ISelectable> obj, float distanceToCamera) in selectableObjects)
-            {
-                if (lastSelectedDistance < 0)
+                if (_frustum.Contains(obj) == ContainmentType.Disjoint)
                 {
-                    lastSelectedDistance = distanceToCamera;
-                    UpdateSelection(obj, targetEditor, ctrl);
                     continue;
                 }
-                if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_BS_DistThresFactor) break;
-                lastSelectedDistance = distanceToCamera;
-                UpdateSelection(obj, targetEditor, ctrl);
+                Vector3 center = obj.GetCenter();
+                Vector2 screenPos = WorldToScreen(center);
+                if (screenPos.X >= minX - _selectionTolerance
+                    && screenPos.X <= maxX + _selectionTolerance
+                    && screenPos.Y >= minY - _selectionTolerance
+                    && screenPos.Y <= maxY + _selectionTolerance)
+                {
+                    WeakReference<ISelectable> selectable = _renderScene.OpaqueRenderables.cSelectables[i];
+                    if (selectable == null)
+                    {
+                        continue;
+                    }
+                    if (selectable.TryGetTarget(out ISelectable target))
+                    {
+                        if (targetEditor != null)
+                        {
+                            if (ctrl)
+                            {
+                                _selection.RemoveSelection(targetEditor, target);
+                            }
+                            else
+                            {
+                                _selection.AddSelection(targetEditor, target);
+                            }
+                        }
+                    }
+                }
             }
         }
 
