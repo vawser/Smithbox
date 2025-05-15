@@ -259,7 +259,7 @@ public class ParamComparisonReport
         {
             AllowGenerate = false;
             LoadAuxBank = false;
-            await Editor.Project.ParamData.SetupAuxBank(TargetProject);
+            await Editor.Project.ParamData.SetupAuxBank(TargetProject, true);
             AllowGenerate = true;
         }
 

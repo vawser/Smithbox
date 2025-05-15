@@ -4,6 +4,7 @@ using StudioCore.Formats.JSON;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static StudioCore.Core.ProjectEntry;
 
 namespace StudioCore.Editors.MapEditor.Data;
 
@@ -60,14 +61,20 @@ public class MapData
         return true;
     }
 
-    public async Task<bool> SetupAuxBank(ProjectEntry targetProject)
+    public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
         await Task.Delay(1);
 
-        // If project isn't already loaded, init it
-        if (!targetProject.Initialized)
+        if (reloadProject)
         {
-            await targetProject.Init();
+            await targetProject.Init(silent: true, InitType.MapEditorOnly);
+        }
+        else
+        {
+            if (!targetProject.Initialized)
+            {
+                await targetProject.Init(silent: true, InitType.MapEditorOnly);
+            }
         }
 
         var newAuxBank = new MapBank(targetProject.ProjectName, BaseEditor, Project, targetProject.FS);

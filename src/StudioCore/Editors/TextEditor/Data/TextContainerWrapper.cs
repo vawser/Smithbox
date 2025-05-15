@@ -2,6 +2,7 @@
 using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,20 +17,9 @@ namespace StudioCore.Editors.TextEditor;
 /// </summary>
 public class TextContainerWrapper : IComparable<TextContainerWrapper>
 {
-    /// <summary>
-    /// File name of the container (includes extensions)
-    /// </summary>
-    public string Filename { get; set; }
+    public FileDictionaryEntry FileEntry { get; set; }
 
-    /// <summary>
-    /// Read path of the container
-    /// </summary>
-    public string ReadPath { get; set; }
-
-    /// <summary>
-    /// The relative path of the container (excluding filename)
-    /// </summary>
-    public string RelativePath { get; set; }
+    private ProjectEntry Project;
 
     /// <summary>
     /// Whether the contents of this container has been modified
@@ -62,8 +52,6 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public List<TextFmgWrapper> FmgWrappers { get; set; }
 
-    private ProjectEntry Project;
-
     public TextContainerWrapper(ProjectEntry project) 
     {
         Project = project;
@@ -72,15 +60,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
 
     public int CompareTo(TextContainerWrapper other)
     {
-        return string.Compare(Filename, other.Filename);
-    }
-
-    /// <summary>
-    /// Returns the write out path when saving this container.
-    /// </summary>
-    public string GetWritePath()
-    {
-        return $"{Project.ProjectPath}//{RelativePath}//{Filename}";
+        return string.Compare(FileEntry.Filename, other.FileEntry.Filename);
     }
 
     /// <summary>
@@ -93,10 +73,10 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
         // Hide Base and DLC1 containers as they are not used
         if (Project.ProjectType is ProjectType.ER)
         {
-            if (Filename == "item.msgbnd.dcx" || 
-                Filename == "menu.msgbnd.dcx" ||
-                Filename == "item_dlc01.msgbnd.dcx" || 
-                Filename == "menu_dlc01.msgbnd.dcx")
+            if (FileEntry.Filename == "item" ||
+                FileEntry.Filename == "menu" ||
+                FileEntry.Filename == "item_dlc01" ||
+                FileEntry.Filename == "menu_dlc01")
             {
                 return true;
             }
@@ -104,8 +84,8 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
         // Hide Base and DLC1 containers as they are not used
         if (Project.ProjectType is ProjectType.DS3)
         {
-            if (Filename == "item_dlc1.msgbnd.dcx" || 
-                Filename == "menu_dlc1.msgbnd.dcx")
+            if (FileEntry.Filename == "item_dlc1" ||
+                FileEntry.Filename == "menu_dlc1")
             {
                 return true;
             }
@@ -119,7 +99,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
     /// </summary>
     public string GetContainerDisplayName()
     {
-        var name = Filename;
+        var name = FileEntry.Filename;
         var prettyName = name;
 
         if (name.Contains("item"))
@@ -150,7 +130,7 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
                 prettyName = "Sample";
 
             // DES has compressed and uncompressed versions, so add some extra text so it is more obvious which is which
-            if (name.Contains(".dcx"))
+            if (FileEntry.Extension.Contains("dcx"))
             {
                 prettyName = $"{prettyName} [Compressed]";
             }
@@ -158,5 +138,4 @@ public class TextContainerWrapper : IComparable<TextContainerWrapper>
 
         return prettyName;
     }
-
 }

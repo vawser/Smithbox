@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static StudioCore.Core.ProjectEntry;
 using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 
 namespace StudioCore.Editors.ParamEditor.Data;
@@ -135,14 +136,20 @@ public class ParamData
         return true;
     }
 
-    public async Task<bool> SetupAuxBank(ProjectEntry targetProject)
+    public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
         await Task.Delay(1);
 
-        // If project isn't already loaded, init it
-        if (!targetProject.Initialized)
+        if (reloadProject)
         {
-            await targetProject.Init();
+            await targetProject.Init(silent: true, InitType.ParamEditorOnly);
+        }
+        else
+        {
+            if (!targetProject.Initialized)
+            {
+                await targetProject.Init(silent: true, InitType.ParamEditorOnly);
+            }
         }
 
         // Pass in the target project's filesystem,

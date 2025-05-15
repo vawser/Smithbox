@@ -54,7 +54,7 @@ public class TextDifferenceManager
 
         var containerCategory = Selection.SelectedContainerWrapper.ContainerDisplayCategory;
         var containerSubCategory = Selection.SelectedContainerWrapper.ContainerDisplaySubCategory;
-        var containerName = Selection.SelectedContainerWrapper.Filename;
+        var containerName = Selection.SelectedContainerWrapper.FileEntry.Filename;
 
         // Fmg ID for comparison is selected FMG
         var fmgID = Selection.SelectedFmgWrapper.ID;
@@ -68,7 +68,7 @@ public class TextDifferenceManager
         // Get vanilla container and entries
         var vanillaContainer = Editor.Project.TextData.VanillaBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
-            .Where(e => e.Value.Filename == containerName)
+            .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
 
         if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
@@ -76,7 +76,7 @@ public class TextDifferenceManager
             vanillaContainer = Editor.Project.TextData.VanillaBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
-            .Where(e => e.Value.Filename == containerName)
+            .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
         }
 
@@ -124,7 +124,7 @@ public class TextDifferenceManager
         // Get primary container and enetries
         var primaryContainer = Editor.Project.TextData.PrimaryBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
-            .Where(e => e.Value.Filename == containerName)
+            .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
 
         if (primaryContainer.Value == null)
@@ -135,7 +135,7 @@ public class TextDifferenceManager
             primaryContainer = Editor.Project.TextData.PrimaryBank.Entries
             .Where(e => e.Value.ContainerDisplayCategory == containerCategory)
             .Where(e => e.Value.ContainerDisplaySubCategory == containerSubCategory)
-            .Where(e => e.Value.Filename == containerName)
+            .Where(e => e.Value.FileEntry.Filename == containerName)
             .FirstOrDefault();
         }
 

@@ -21,7 +21,7 @@ public class TextContextMenu
     /// </summary>
     public void FileContextMenu(TextContainerWrapper info)
     {
-        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.Filename}"))
+        if (ImGui.BeginPopupContextItem($"FileContext##FileContext{info.FileEntry.Filename}"))
         {
             Editor.LanguageSync.DisplaySyncOptions();
 

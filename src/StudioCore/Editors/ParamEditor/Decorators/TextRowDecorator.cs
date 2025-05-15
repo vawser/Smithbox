@@ -86,7 +86,7 @@ public class FmgRowDecorator
                         {
                             if(fmgInfo.Name == fmgName)
                             {
-                                containerName = entry.Filename;
+                                containerName = entry.FileEntry.Filename;
                             }
                         }
                     }

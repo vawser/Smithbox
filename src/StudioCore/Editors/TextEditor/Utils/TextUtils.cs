@@ -1348,7 +1348,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsItemContainer(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("item"))
+        if (info.FileEntry.Path.Contains("item"))
         {
             return true;
         }
@@ -1361,7 +1361,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsMenuContainer(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("menu"))
+        if (info.FileEntry.Path.Contains("menu"))
         {
             return true;
         }
@@ -1374,7 +1374,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsSampleContainer(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("sample"))
+        if (info.FileEntry.Path.Contains("sample"))
         {
             return true;
         }
@@ -1387,7 +1387,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsNgWordContainer(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("ngword"))
+        if (info.FileEntry.Path.Contains("ngword"))
         {
             return true;
         }
@@ -1400,7 +1400,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsSellRegionContainer(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("sellregion"))
+        if (info.FileEntry.Path.Contains("sellregion"))
         {
             return true;
         }
@@ -1414,7 +1414,7 @@ public static class TextUtils
     public static bool IsBloodMessageFolderFmg(TextContainerWrapper info)
     {
         // Second part is so we ignore the bloodmessage fmgs
-        if (info.ReadPath.Contains("bloodmes") && !info.ReadPath.Contains("bloodmessage"))
+        if (info.FileEntry.Path.Contains("bloodmes") && !info.FileEntry.Path.Contains("bloodmessage"))
         {
             return true;
         }
@@ -1427,7 +1427,7 @@ public static class TextUtils
     /// </summary>
     public static bool IsTalkFolderFmg(TextContainerWrapper info)
     {
-        if (info.ReadPath.Contains("talk"))
+        if (info.FileEntry.Path.Contains("talk"))
         {
             return true;
         }

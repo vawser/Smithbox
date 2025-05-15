@@ -195,10 +195,21 @@ public class ProjectEntry
     }
 
     /// <summary>
+    /// This is used to control which editors are loaded when initing a project via aux bank functions
+    /// </summary>
+    public enum InitType
+    {
+        ProjectDefined,
+        MapEditorOnly,
+        ParamEditorOnly,
+        TextEditorOnly
+    }
+
+    /// <summary>
     /// Setup project
     /// </summary>
     /// <returns></returns>
-    public async Task<bool> Init()
+    public async Task<bool> Init(bool silent = false, InitType initType = InitType.ProjectDefined)
     {
         /// The order of operations here is important:
         /// 1. Externals 
@@ -219,7 +230,7 @@ public class ProjectEntry
         Task<bool> dllGrabTask = SetupDLLs();
         bool dllGrabResult = await dllGrabTask;
 
-        if (!dllGrabResult)
+        if (!dllGrabResult && !silent)
         {
             TaskLogs.AddLog($"[{ProjectName}] Failed to grab oo2core.dll");
         }
@@ -228,42 +239,51 @@ public class ProjectEntry
         Task<bool> vfsTask = SetupVFS();
         bool vfsSetup = await vfsTask;
 
-        if (vfsSetup)
+        if (!silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Setup virtual filesystem.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup virtual filesystem.");
+            if (vfsSetup)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup virtual filesystem.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup virtual filesystem.");
+            }
         }
 
         // Aliases
         Task<bool> aliasesTask = SetupAliases();
         bool aliasesSetup = await aliasesTask;
 
-        if (aliasesSetup)
+        if (!silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Setup aliases.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
+            if (aliasesSetup)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup aliases.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
+            }
         }
 
         // Project Enums (per project)
         Task<bool> projectParamEnumTask = SetupProjectParamEnums();
         bool projectParamEnumResult = await projectParamEnumTask;
 
-        if (projectParamEnumResult)
+        if (!silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Project Param Enums.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+            if (projectParamEnumResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup Project Param Enums.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+            }
         }
 
-        InitializeEditors();
+        InitializeEditors(initType, silent);
         
         Initialized = true;
         IsInitializing = false;
@@ -271,7 +291,7 @@ public class ProjectEntry
         return true;
     }
 
-    public async void InitializeEditors()
+    public async void InitializeEditors(InitType initType, bool silent = false)
     {
         // Clear all existing editors and editor data
         MapEditor = null;
@@ -297,45 +317,54 @@ public class ProjectEntry
         TimeActData = null;
 
         // ---- Map Editor ----
-        if (EnableMapEditor)
+        if (EnableMapEditor && initType is InitType.ProjectDefined or InitType.MapEditorOnly)
         {
             // MSB Information
             Task<bool> msbInfoTask = SetupMsbInfo();
             bool msbInfoResult = await msbInfoTask;
 
-            if (msbInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
+                if (msbInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
+                }
             }
 
             // Spawn States (per project) -- DS2 specific
             Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
             bool mapSpawnStatesResult = await mapSpawnStatesTask;
 
-            if (mapSpawnStatesResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
+                if (mapSpawnStatesResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
+                }
             }
 
             // Entity Selection Groups (per project)
             Task<bool> entitySelectionGroupTask = SetupMapEntitySelections();
             bool entitySelectionGroupResult = await entitySelectionGroupTask;
 
-            if (entitySelectionGroupResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
+                if (entitySelectionGroupResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
+                }
             }
 
             MapData = new(BaseEditor, this);
@@ -344,13 +373,16 @@ public class ProjectEntry
             Task<bool> mapDataTask = MapData.Setup();
             bool mapDataTaskResult = await mapDataTask;
 
-            if (mapDataTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Map Data Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Map Data Banks.");
+                if (mapDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Map Data Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Map Data Banks.");
+                }
             }
 
             // Only do this once, as 3 editors may invoke this.
@@ -361,13 +393,16 @@ public class ProjectEntry
                 Task<bool> materialDataTask = MaterialData.Setup();
                 bool materialDataTaskResult = await materialDataTask;
 
-                if (materialDataTaskResult)
+                if (!silent)
                 {
-                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
                 }
             }
 
@@ -375,19 +410,22 @@ public class ProjectEntry
         }
 
         // ---- Model Editor ----
-        if (EnableModelEditor)
+        if (EnableModelEditor && initType is InitType.ProjectDefined)
         {
             // FLVER Information
             Task<bool> flverInfoTask = SetupFlverInfo();
             bool flverInfoResult = await flverInfoTask;
 
-            if (flverInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+                if (flverInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+                }
             }
 
             // Only do this once, as 3 editors may invoke this.
@@ -398,13 +436,16 @@ public class ProjectEntry
                 Task<bool> materialDataTask = MaterialData.Setup();
                 bool materialDataTaskResult = await materialDataTask;
 
-                if (materialDataTaskResult)
+                if (!silent)
                 {
-                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
                 }
             }
 
@@ -412,7 +453,7 @@ public class ProjectEntry
         }
 
         // ---- Text Editor ----
-        if (EnableTextEditor)
+        if (EnableTextEditor && initType is InitType.ProjectDefined or InitType.TextEditorOnly)
         {
             TextData = new(BaseEditor, this);
 
@@ -420,58 +461,70 @@ public class ProjectEntry
             Task<bool> textBankTask = TextData.Setup();
             bool textBankTaskResult = await textBankTask;
 
-            if (textBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Setup FMG Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Failed to setup FMG Banks.");
+                if (textBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Text Editor] Setup FMG Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Text Editor] Failed to setup FMG Banks.");
+                }
             }
 
             TextEditor = new TextEditorScreen(BaseEditor, this);
         }
 
         // ---- Param Editor ----
-        if (EnableParamEditor)
+        if (EnableParamEditor && initType is InitType.ProjectDefined or InitType.ParamEditorOnly)
         {
             // Game Offsets (per project)
             Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
             bool gameOffsetResult = await gameOffsetTask;
 
-            if (gameOffsetResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+                if (gameOffsetResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+                }
             }
 
             // Param Categories (per project)
             Task<bool> paramCategoryTask = SetupParamCategories();
             bool paramCategoryResult = await paramCategoryTask;
 
-            if (paramCategoryResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
+                if (paramCategoryResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
+                }
             }
 
             // Commutative Param Groups (per project)
             Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
             bool commutativeParamGroupResult = await commutativeParamGroupTask;
 
-            if (commutativeParamGroupResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+                if (commutativeParamGroupResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+                }
             }
 
             ParamData = new(BaseEditor, this);
@@ -480,13 +533,16 @@ public class ProjectEntry
             Task<bool> paramBankTask = ParamData.Setup();
             bool paramBankTaskResult = await paramBankTask;
 
-            if (paramBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup PARAM Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup PARAM Banks.");
+                if (paramBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup PARAM Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup PARAM Banks.");
+                }
             }
 
             ParamEditor = new ParamEditorScreen(BaseEditor, this);
@@ -499,7 +555,7 @@ public class ProjectEntry
         }
 
         // ---- Time Act Editor ----
-        if (EnableTimeActEditor)
+        if (EnableTimeActEditor && initType is InitType.ProjectDefined)
         {
             TimeActData = new(BaseEditor, this);
 
@@ -507,32 +563,38 @@ public class ProjectEntry
             Task<bool> timeActTask = TimeActData.Setup();
             bool timeActTaskResult = await timeActTask;
 
-            if (timeActTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
+                if (timeActTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
+                }
             }
 
             TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
         }
 
         // ---- Graphics Param Editor ----
-        if (EnableGparamEditor)
+        if (EnableGparamEditor && initType is InitType.ProjectDefined)
         {
             // GPARAM Information
             Task<bool> gparamInfoTask = SetupGparamInfo();
             bool gparamInfoResult = await gparamInfoTask;
 
-            if (gparamInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+                if (gparamInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+                }
             }
 
             GparamData = new(BaseEditor, this);
@@ -541,20 +603,23 @@ public class ProjectEntry
             Task<bool> gparamBankTask = GparamData.Setup();
             bool gparamBankTaskResult = await gparamBankTask;
 
-            if (gparamBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Banks.");
+                if (gparamBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Banks.");
+                }
             }
 
             GparamEditor = new GparamEditorScreen(BaseEditor, this);
         }
 
         // ---- Material Editor ----
-        if (EnableMaterialEditor)
+        if (EnableMaterialEditor && initType is InitType.ProjectDefined)
         {
             // Only do this once, as 3 editors may invoke this.
             if (MaterialData == null)
@@ -564,13 +629,16 @@ public class ProjectEntry
                 Task<bool> materialDataTask = MaterialData.Setup();
                 bool materialDataTaskResult = await materialDataTask;
 
-                if (materialDataTaskResult)
+                if (!silent)
                 {
-                    TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
                 }
             }
 
@@ -578,7 +646,7 @@ public class ProjectEntry
         }
 
         // ---- Event Script Editor ----
-        if (EnableEmevdEditor)
+        if (EnableEmevdEditor && initType is InitType.ProjectDefined)
         {
             EmevdData = new(BaseEditor, this);
 
@@ -586,20 +654,23 @@ public class ProjectEntry
             Task<bool> emevdBankTask = EmevdData.Setup();
             bool emevdBankResult = await emevdBankTask;
 
-            if (emevdBankResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Banks.");
+                if (emevdBankResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Banks.");
+                }
             }
 
             EmevdEditor = new EmevdEditorScreen(BaseEditor, this);
         }
 
         // ---- EzState Script Editor ----
-        if (EnableEsdEditor)
+        if (EnableEsdEditor && initType is InitType.ProjectDefined)
         {
             EsdData = new(BaseEditor, this);
 
@@ -607,20 +678,23 @@ public class ProjectEntry
             Task<bool> esdBankTask = EsdData.Setup();
             bool esdBankResult = await esdBankTask;
 
-            if (esdBankResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Banks.");
+                if (esdBankResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Banks.");
+                }
             }
 
             EsdEditor = new EsdEditorScreen(BaseEditor, this);
         }
 
         // ---- Texture Viewer ----
-        if (EnableTextureViewer)
+        if (EnableTextureViewer && initType is InitType.ProjectDefined)
         {
             TextureData = new(BaseEditor, this);
 
@@ -628,13 +702,16 @@ public class ProjectEntry
             Task<bool> textureDataTask = TextureData.Setup();
             bool textureDataTaskResult = await textureDataTask;
 
-            if (textureDataTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Setup texture bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Failed to setup texture bank.");
+                if (textureDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Setup texture bank.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Failed to setup texture bank.");
+                }
             }
 
             TextureViewer = new TextureViewerScreen(BaseEditor, this);

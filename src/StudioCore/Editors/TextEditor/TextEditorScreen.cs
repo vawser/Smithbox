@@ -286,16 +286,21 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save currently selected FMG container
     /// </summary>
-    public void Save()
+    public async void Save()
     {
+        var fileEntry = Selection.SelectedFileDictionaryEntry;
+        var wrapper = Selection.SelectedContainerWrapper;
+
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
         {
-            Project.TextData.PrimaryBank.SaveLooseFmgs(Selection.SelectedContainerWrapper);
+            await Project.TextData.PrimaryBank.SaveLooseFmg(fileEntry, wrapper);
         }
         else
         {
-            Project.TextData.PrimaryBank.SaveFmgContainer(Selection.SelectedContainerWrapper);
+            await Project.TextData.PrimaryBank.SaveFmgContainer(fileEntry, wrapper);
         }
+
+        TaskLogs.AddLog($"Saved {fileEntry.Path}");
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
@@ -304,9 +309,11 @@ public class TextEditorScreen : EditorScreen
     /// <summary>
     /// Save all modified FMG containers
     /// </summary>
-    public void SaveAll()
+    public async void SaveAll()
     {
-        Project.TextData.PrimaryBank.SaveTextFiles();
+        await Project.TextData.PrimaryBank.SaveTextFiles();
+
+        TaskLogs.AddLog($"Saved all modified text files.");
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

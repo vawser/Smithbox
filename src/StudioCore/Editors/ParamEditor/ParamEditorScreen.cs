@@ -835,7 +835,7 @@ public class ParamEditorScreen : EditorScreen
 
                     if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
                     {
-                        Project.ParamData.SetupAuxBank(proj);
+                        Project.ParamData.SetupAuxBank(proj, true);
                     }
                 }
 

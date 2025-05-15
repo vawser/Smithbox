@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Core.ProjectEntry;
 
 namespace StudioCore.Core;
 
@@ -133,7 +134,7 @@ public static class ProjectSettings
 
                 if (EditorStateChanged)
                 {
-                    TargetProject.InitializeEditors();
+                    TargetProject.InitializeEditors(InitType.ProjectDefined);
                 }
             }
             UIHelper.Tooltip("Updates the project settings.");

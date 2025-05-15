@@ -82,7 +82,7 @@ public partial class ParamTools
                 {
                     ParamMerge_InProgress = true;
 
-                    await Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject);
+                    await Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
 
                     MergeParamHandler();
 

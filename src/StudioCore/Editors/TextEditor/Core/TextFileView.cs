@@ -7,6 +7,7 @@ using StudioCore.Utilities;
 using System;
 using System.Linq;
 using StudioCore.Core;
+using StudioCore.Formats.JSON;
 
 namespace StudioCore.Editors.TextEditor;
 
@@ -86,7 +87,7 @@ public class TextFileView
                 // Common Sub-Header
                 if (ImGui.CollapsingHeader($"Common", flags))
                 {
-                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -97,7 +98,7 @@ public class TextFileView
                         {
                             if (info.ContainerDisplayCategory == category)
                             {
-                                DisplayFileEntry(info, index);
+                                DisplayFileEntry(fileEntry, info, index);
                             }
                             index++;
                         }
@@ -107,7 +108,7 @@ public class TextFileView
                 // Blood Message Sub-Header
                 if (ImGui.CollapsingHeader($"Blood Message", flags))
                 {
-                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -118,7 +119,7 @@ public class TextFileView
                         {
                             if (info.ContainerDisplayCategory == category)
                             {
-                                DisplayFileEntry(info, index);
+                                DisplayFileEntry(fileEntry, info, index);
                             }
                             index++;
                         }
@@ -128,7 +129,7 @@ public class TextFileView
                 // Talk Sub-Header
                 if (ImGui.CollapsingHeader($"Talk", flags))
                 {
-                    foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                    foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                     {
                         var fmgWrapper = info.FmgWrappers.First();
                         var id = fmgWrapper.ID;
@@ -139,7 +140,7 @@ public class TextFileView
                         {
                             if (info.ContainerDisplayCategory == category)
                             {
-                                DisplayFileEntry(info, index);
+                                DisplayFileEntry(fileEntry, info, index);
                             }
                             index++;
                         }
@@ -154,11 +155,11 @@ public class TextFileView
             if (ImGui.CollapsingHeader($"{category.GetDisplayName()}", flags))
             {
                 // Get relevant containers for each category
-                foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     if (info.ContainerDisplayCategory == category)
                     {
-                        DisplayFileEntry(info, index);
+                        DisplayFileEntry(fileEntry, info, index);
                     }
                     index++;
                 }
@@ -169,9 +170,9 @@ public class TextFileView
     /// <summary>
     /// Each file entry within a category
     /// </summary>
-    private void DisplayFileEntry(TextContainerWrapper wrapper, int index)
+    private void DisplayFileEntry(FileDictionaryEntry entry, TextContainerWrapper wrapper, int index)
     {
-        var displayName = wrapper.Filename;
+        var displayName = wrapper.FileEntry.Filename;
 
         // Display community name instead of raw container filename
         if(CFG.Current.TextEditor_DisplayCommunityContainerName)
@@ -179,7 +180,7 @@ public class TextFileView
             // To get nice DS2 names, apply the FMG display name stuff on the container level
             if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                displayName = TextUtils.GetFmgDisplayName(Editor.Project, wrapper, -1, wrapper.Filename);
+                displayName = TextUtils.GetFmgDisplayName(Editor.Project, wrapper, -1, wrapper.FileEntry.Filename);
             }
             else
             {
@@ -199,16 +200,16 @@ public class TextFileView
         if (Filters.IsFileFilterMatch(displayName, "", wrapper))
         {
             // Script row
-            if (ImGui.Selectable($"{displayName}##{wrapper.Filename}{index}", index == Selection.SelectedContainerKey))
+            if (ImGui.Selectable($"{displayName}##{wrapper.FileEntry.Filename}{index}", index == Selection.SelectedContainerKey))
             {
-                Selection.SelectFileContainer(wrapper, index);
+                Selection.SelectFileContainer(entry, wrapper, index);
             }
 
             // Arrow Selection
             if (ImGui.IsItemHovered() && Selection.SelectNextFileContainer)
             {
                 Selection.SelectNextFileContainer = false;
-                Selection.SelectFileContainer(wrapper, index);
+                Selection.SelectFileContainer(entry, wrapper, index);
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
             {
@@ -235,13 +236,13 @@ public class TextFileView
             {
                 if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.ER)
                 {
-                    if (wrapper.Filename.Contains("item") || wrapper.Filename.Contains("menu"))
+                    if (wrapper.FileEntry.Filename.Contains("item") || wrapper.FileEntry.Filename.Contains("menu"))
                     {
-                        if (wrapper.Filename.Contains("dlc2") || wrapper.Filename.Contains("dlc02"))
+                        if (wrapper.FileEntry.Filename.Contains("dlc2") || wrapper.FileEntry.Filename.Contains("dlc02"))
                         {
                             UIHelper.Tooltip("This container is the only one used by the game.\nOnly use this one.");
                         }
-                        else if (wrapper.Filename.Contains("dlc1") || wrapper.Filename.Contains("dlc01"))
+                        else if (wrapper.FileEntry.Filename.Contains("dlc1") || wrapper.FileEntry.Filename.Contains("dlc01"))
                         {
                             UIHelper.Tooltip("This container is no longer used by the game.\nDo not use this one.");
                         }
@@ -254,7 +255,7 @@ public class TextFileView
             }
             if (CFG.Current.TextEditor_DisplaySourcePath)
             {
-                UIHelper.Tooltip($"Source File: {wrapper.ReadPath}");
+                UIHelper.Tooltip($"Source File: {wrapper.FileEntry.Path}");
             }
         }
     }

@@ -1011,7 +1011,7 @@ public class FieldDecorators
                 TextResult? primaryRef = ReferenceResolver.ResolveTextReferences(editor, fmgRefs, context, oldval)?.FirstOrDefault();
                 if (primaryRef != null)
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{primaryRef.ContainerWrapper.FileEntry.Filename}/{primaryRef.FmgName}/{primaryRef.Entry.ID}");
                 }
             }
         }
@@ -1039,7 +1039,7 @@ public class FieldDecorators
             {
                 if (ImGui.Selectable($@"Go to FMG entry text"))
                 {
-                    EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
+                    EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.FileEntry.Filename}/{result.FmgName}/{result.Entry.ID}");
                 }
 
                 if (context == null || executor == null)
