@@ -229,6 +229,7 @@ public class CFG
     public bool Viewport_ViewportInfoPanel_Display_MovementIncrement = true;
 
     public bool Viewport_Enable_BoxSelection = true;
+    public float Viewport_BS_DistThresFactor = 1.2f;
 
     //****************************
     // Settings: Map Editor

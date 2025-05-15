@@ -54,7 +54,7 @@ namespace Veldrid
             Format = description.Format ?? description.Target.Format;
         }
         
-        internal TextureView(GraphicsDevice gd, ref TextureViewDescription description)
+        public TextureView(GraphicsDevice gd, ref TextureViewDescription description)
             : this(ref description)
         {
             _gd = gd;

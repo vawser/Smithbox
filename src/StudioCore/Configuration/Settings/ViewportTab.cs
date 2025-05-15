@@ -95,6 +95,9 @@ public class ViewportTab
             ImGui.Checkbox("Enable box selection", ref CFG.Current.Viewport_Enable_BoxSelection);
             UIHelper.Tooltip("Click and drag the mouse to select multiple objects. (Ctrl: Subtract, Shift: Add)");
 
+            ImGui.SliderFloat("Box selection - distance threshold factor", ref CFG.Current.Viewport_BS_DistThresFactor, 1.0f, 2.0f);
+            UIHelper.Tooltip("Lower = select objects closer to each other, higher = select objects farther from each other.");
+
             ImGui.Separator();
 
             ImGui.ColorEdit3("Box region - base color", ref CFG.Current.GFX_Renderable_Box_BaseColor);
