@@ -62,7 +62,7 @@ public class Smithbox
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
-        _programTitle = $"Version {_version}";
+        _programTitle = $"Smithbox - {_version}";
 
         TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
 
@@ -97,6 +97,11 @@ public class Smithbox
 
         _context.ImguiRenderer.OnSetupDone();
 
+    }
+
+    public void SetProgramName(ProjectEntry curProject)
+    {
+        _context.Window.Title = $"{curProject.ProjectName} - {_version}";
     }
 
     /// <summary>
@@ -531,7 +536,7 @@ public class Smithbox
                 }
                 UIHelper.Tooltip("Open the settings related to Text Editor in Smithbox.");
 
-                if (ImGui.MenuItem("Graphics PAram Editor"))
+                if (ImGui.MenuItem("Graphics Param Editor"))
                 {
                     Settings.ToggleWindow(SelectedSettingTab.GparamEditor);
                 }
