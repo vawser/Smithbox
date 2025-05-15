@@ -1,9 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Scene;
 using StudioCore.Scene.Interfaces;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Numerics;
 using Veldrid;
 using Veldrid.Utilities;
@@ -21,13 +22,7 @@ public class BoxSelection
     private bool _isDragging;
     private bool _mouseDragStarted;
 
-    private readonly float _dragThreshold = 5f;
-    private float _selectionTolerance = 5f;
-    public float SelectionTolerance
-    {
-        get => _selectionTolerance;
-        set => _selectionTolerance = MathF.Max(0, value);
-    }
+    private const float DragThreshold = 5f;
 
     public BoxSelection(Smithbox baseEditor, Viewport parent)
     {
@@ -53,7 +48,7 @@ public class BoxSelection
                 _dragEnd = mousePos;
 
                 // Check if the drag threshold has been exceeded
-                if (!_mouseDragStarted && Vector2.Distance(_dragStart, _dragEnd) > _dragThreshold)
+                if (!_mouseDragStarted && Vector2.Distance(_dragStart, _dragEnd) > DragThreshold)
                 {
                     _mouseDragStarted = true;
                 }
@@ -87,70 +82,64 @@ public class BoxSelection
         }
     }
 
-    // TODO: Implement far clip and the selection tolerance slider...
+    private void UpdateSelection(WeakReference<ISelectable> obj, EditorScreen targetEditor, bool ctrl)
+    {
+        if (!obj.TryGetTarget(out ISelectable target) || targetEditor == null) return;
+        if (ctrl)
+        {
+            Parent.ViewportSelection.RemoveSelection(targetEditor, target);
+        }
+        else
+        {
+            Parent.ViewportSelection.AddSelection(targetEditor, target);
+        }
+    }
+
     private void SelectObjectsInDragArea(Vector2 start, Vector2 end)
     {
-        EditorScreen targetEditor = null;
-        if (Parent.ViewportType is ViewportType.MapEditor)
+        EditorScreen targetEditor = Parent.ViewportType switch
         {
-            targetEditor = Parent.MapEditor;
-        }
-        if (Parent.ViewportType is ViewportType.ModelEditor)
-        {
-            targetEditor = Parent.ModelEditor;
-        }
-
-        float minX = MathF.Min(start.X, end.X);
-        float minY = MathF.Min(start.Y, end.Y);
-        float maxX = MathF.Max(start.X, end.X);
-        float maxY = MathF.Max(start.Y, end.Y);
-        minX -= Parent.X;
-        maxX -= Parent.X;
-        minY -= Parent.Y;
-        maxY -= Parent.Y;
+            ViewportType.MapEditor => Parent.MapEditor,
+            ViewportType.ModelEditor => Parent.ModelEditor,
+            _ => null
+        };
+        float minX = MathF.Min(start.X, end.X) - Parent.X;
+        float minY = MathF.Min(start.Y, end.Y) - Parent.Y;
+        float maxX = MathF.Max(start.X, end.X) - Parent.X;
+        float maxY = MathF.Max(start.Y, end.Y) - Parent.Y;
         bool shift = InputTracker.GetKey(Key.ShiftLeft) || InputTracker.GetKey(Key.ShiftRight);
         bool ctrl = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
-        if (!shift && !ctrl)
-        {
-            if (targetEditor != null)
-            {
-                Parent.ViewportSelection.ClearSelection(targetEditor);
-            }
-        }
+        if (!shift && !ctrl && targetEditor != null)
+            Parent.ViewportSelection.ClearSelection(targetEditor);
+        List<(WeakReference<ISelectable> obj, float distance)> selectableObjects = new();
         for (int i = 0; i < Parent.RenderScene.OpaqueRenderables.cBounds.Length; i++)
         {
+            VisibleValidComponent visibleValidComponent = Parent.RenderScene.OpaqueRenderables.cVisible[i];
+            bool isCulled = Parent.RenderScene.OpaqueRenderables.cCulled[i];
+            if (!(visibleValidComponent._valid && !isCulled)) continue;
             BoundingBox obj = Parent.RenderScene.OpaqueRenderables.cBounds[i];
-            if (Parent.Frustum.Contains(obj) == ContainmentType.Disjoint)
+            if (Parent.Frustum.Contains(obj) != ContainmentType.Contains) continue;
+            Vector3 center = obj.GetCenter();
+            float distanceToCamera = Vector3.Distance(center, Parent.ViewportCamera.CameraTransform.Position);
+            WeakReference<ISelectable> selectable = Parent.RenderScene.OpaqueRenderables.cSelectables[i];
+            if (selectable == null) continue;
+            Vector2 screenPos = WorldToScreen(center);
+            if (screenPos.X >= minX && screenPos.X <= maxX && screenPos.Y >= minY && screenPos.Y <= maxY)
+                selectableObjects.Add((selectable, distanceToCamera));
+        }
+        selectableObjects.Sort((a, b) => a.distance.CompareTo(b.distance));
+        float lastSelectedDistance = -1;
+        foreach ((WeakReference<ISelectable> obj, float distanceToCamera) in selectableObjects)
+        {
+            if (lastSelectedDistance < 0)
             {
+                lastSelectedDistance = distanceToCamera;
+                UpdateSelection(obj, targetEditor, ctrl);
                 continue;
             }
-            Vector3 center = obj.GetCenter();
-            Vector2 screenPos = WorldToScreen(center);
-            if (screenPos.X >= minX - _selectionTolerance
-                && screenPos.X <= maxX + _selectionTolerance
-                && screenPos.Y >= minY - _selectionTolerance
-                && screenPos.Y <= maxY + _selectionTolerance)
-            {
-                WeakReference<ISelectable> selectable = Parent.RenderScene.OpaqueRenderables.cSelectables[i];
-                if (selectable == null)
-                {
-                    continue;
-                }
-                if (selectable.TryGetTarget(out ISelectable target))
-                {
-                    if (targetEditor != null)
-                    {
-                        if (ctrl)
-                        {
-                            Parent.ViewportSelection.RemoveSelection(targetEditor, target);
-                        }
-                        else
-                        {
-                            Parent.ViewportSelection.AddSelection(targetEditor, target);
-                        }
-                    }
-                }
-            }
+            if (distanceToCamera > lastSelectedDistance * CFG.Current.Viewport_BS_DistThresFactor) break;
+            lastSelectedDistance = distanceToCamera;
+            UpdateSelection(obj, targetEditor, ctrl);
         }
     }
 
