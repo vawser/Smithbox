@@ -1,10 +1,14 @@
-﻿using StudioCore.Core;
+﻿using Google.Protobuf.Collections;
+using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.EzStateEditorNS;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Core.ProjectEntry;
 
 namespace StudioCore.Editors.TextEditor.Data;
 
@@ -15,7 +19,9 @@ public class TextData
 
     public TextBank PrimaryBank;
     public TextBank VanillaBank;
-    public TextBank AuxBank;
+    public Dictionary<string, TextBank> AuxBanks = new();
+
+    public FileDictionary FmgFiles = new();
 
     public TextData(Smithbox baseEditor, ProjectEntry project)
     {
@@ -27,45 +33,58 @@ public class TextData
     {
         await Task.Delay(1);
 
-        PrimaryBank = new(BaseEditor, Project, Project.ProjectPath, Project.DataPath);
-        VanillaBank = new(BaseEditor, Project, Project.DataPath, Project.DataPath);
+        var msgbndDictionary = new FileDictionary();
+        msgbndDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msgbnd").ToList();
+
+        var fmgDictionary = new FileDictionary();
+        fmgDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "fmg").ToList();
+
+        FmgFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
+
+        PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
+        VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
 
         // Primary Bank
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
-        if (primaryBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Primary FMG Bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Primary FMG Bank.");
-        }
-
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
 
-        if (vanillaBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Vanilla FMG Bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Vanilla FMG Bank.");
-        }
-
         return true;
     }
 
-    public async void LoadAuxBank(string sourcePath)
+    public async Task<bool> LoadAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        AuxBank = new(BaseEditor, Project, sourcePath, Project.DataPath);
+        await Task.Delay(1);
+
+        if (reloadProject)
+        {
+            await targetProject.Init(silent: true, InitType.TextEditorOnly);
+        }
+        else
+        {
+            if (!targetProject.Initialized)
+            {
+                await targetProject.Init(silent: true, InitType.TextEditorOnly);
+            }
+        }
+
+        var newAuxBank = new TextBank($"{targetProject.ProjectName}", BaseEditor, Project, targetProject.FS);
 
         // Aux Bank
-        Task<bool> auxBankTask = AuxBank.Setup();
+        Task<bool> auxBankTask = newAuxBank.Setup();
         bool auxBankTaskResult = await auxBankTask;
+
+        if (AuxBanks.ContainsKey(targetProject.ProjectName))
+        {
+            AuxBanks[targetProject.ProjectName] = newAuxBank;
+        }
+        else
+        {
+            AuxBanks.Add(targetProject.ProjectName, newAuxBank);
+        }
 
         if (auxBankTaskResult)
         {
@@ -75,5 +94,7 @@ public class TextData
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Aux FMG Bank.");
         }
+
+        return true;
     }
 }

@@ -172,6 +172,7 @@ public struct Transform
                 look.X, look.Y, look.Z, c,
                 0.0f, 0.0f, 0.0f, 1.0f));
         }
+        set { }
     }
 
     private static readonly Random rand = new();

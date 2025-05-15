@@ -1,2 +1,0 @@
-1 Range Minimum Value -- 範囲最小値
-2 Range Maximum Value -- 範囲最大値

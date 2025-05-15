@@ -1,29 +1,13 @@
-﻿using HKLib.hk2018.hkHashMapDetail;
-using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editor;
 using StudioCore.Editor.Multiselection;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ModelEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Interface;
-using StudioCore.MsbEditor;
-using StudioCore.Resource;
-using StudioCore.Resource.Locators;
-using StudioCore.Resource.Types;
-using StudioCore.Scene;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using StudioCore.ViewportNS;
 using System.Numerics;
-using System.Reflection;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Veldrid.Utilities;
 
 namespace StudioCore.Editors.ModelEditor;
 

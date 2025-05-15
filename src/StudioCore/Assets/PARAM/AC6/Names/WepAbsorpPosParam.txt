@@ -1,5 +1,0 @@
-100 WEAPON - Gun
-200 WEAPON - Melee
-300 WEAPON - Back
-320 WEAPON - Back Shield
-321 WEAPON - Coral Shield

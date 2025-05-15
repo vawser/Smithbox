@@ -82,4 +82,17 @@ public static class InterfaceUtils
 
         return input.Substring(0, cutoff).TrimEnd() + "...";
     }
+
+    public static string FlagsEnumToString<T>(T value) where T : struct, Enum
+    {
+        var vals = Enum.GetValues<T>();
+        var names = Enum.GetNames<T>();
+        List<string> has = [];
+        foreach (var (val, name) in vals.Zip(names))
+        {
+            if (value.HasFlag(val)) has.Add(name);
+        }
+
+        return string.Join(" | ", has);
+    }
 }

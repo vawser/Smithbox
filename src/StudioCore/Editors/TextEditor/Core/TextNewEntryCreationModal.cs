@@ -57,7 +57,10 @@ public class TextNewEntryCreationModal
         {
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
-            
+
+            var buttonSize = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+            var halfButtonSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+
             if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 if (ImGui.BeginTable($"createConfigurationTable", 2, ImGuiTableFlags.SizingFixedFit))
@@ -197,7 +200,7 @@ public class TextNewEntryCreationModal
                     ImGui.EndTable();
                 }
 
-                if (ImGui.Button("Inherit Text from Selection", UI.ModalButtonSize))
+                if (ImGui.Button("Inherit Text from Selection", buttonSize))
                 {
                     _newId = Selection._selectedFmgEntry.ID;
 
@@ -275,7 +278,7 @@ public class TextNewEntryCreationModal
                 DisplayEditTable(0, ref _newId, ref _newBasicText);
             }
 
-            if (ImGui.Button("Create", UI.ModalButtonHalfSize))
+            if (ImGui.Button("Create", halfButtonSize))
             {
                 var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
                 var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
@@ -315,7 +318,7 @@ public class TextNewEntryCreationModal
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", UI.ModalButtonHalfSize))
+            if (ImGui.Button("Close", halfButtonSize))
             {
                 ShowModal = false;
             }

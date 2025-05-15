@@ -3,6 +3,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System.Numerics;
 using Veldrid.Utilities;
 

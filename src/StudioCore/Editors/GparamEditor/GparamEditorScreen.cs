@@ -1,16 +1,13 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.GparamEditor;
 using StudioCore.Editors.GparamEditor.Core;
-using StudioCore.Editors.GparamEditor.Data;
-using StudioCore.Editors.GparamEditor.Framework;
-using StudioCore.Editors.GparamEditor.Tools;
-using StudioCore.Editors.GparamEditor.Utils;
 using StudioCore.Interface;
+using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.GraphicsEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamEditorScreen : EditorScreen
 {
@@ -19,7 +16,7 @@ public class GparamEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public GparamSelectionManager Selection;
+    public GparamSelection Selection;
 
     public GparamPropertyEditor PropertyEditor;
     public GparamActionHandler ActionHandler;
@@ -27,11 +24,9 @@ public class GparamEditorScreen : EditorScreen
     public GparamContextMenu ContextMenu;
 
     public GparamToolView ToolView;
-    public GparamToolMenubar ToolMenubar;
 
     public GparamQuickEdit QuickEditHandler;
     public GparamCommandQueue CommandQueue;
-    public GparamShortcuts EditorShortcuts;
 
     public GparamFileListView FileList;
     public GparamGroupListView GroupList;
@@ -43,16 +38,14 @@ public class GparamEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new GparamSelectionManager(this);
+        Selection = new GparamSelection(this);
         ActionHandler = new GparamActionHandler(this);
         CommandQueue = new GparamCommandQueue(this);
         Filters = new GparamFilters(this);
         ContextMenu = new GparamContextMenu(this);
-        EditorShortcuts = new GparamShortcuts(this);
 
         PropertyEditor = new GparamPropertyEditor(this);
         ToolView = new GparamToolView(this);
-        ToolMenubar = new GparamToolMenubar(this);
         QuickEditHandler = new GparamQuickEdit(this);
 
         FileList = new GparamFileListView(this);
@@ -87,36 +80,36 @@ public class GparamEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_GparamEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        Shortcuts();
+
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
 
             ImGui.EndMenuBar();
         }
 
-        EditorShortcuts.Monitor();
         CommandQueue.Parse(initcmd);
 
-        if (UI.Current.Interface_GparamEditor_Files)
+        if (CFG.Current.Interface_GparamEditor_FileList)
         {
             FileList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Groups)
+        if (CFG.Current.Interface_GparamEditor_GroupList)
         {
             GroupList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Fields)
+        if (CFG.Current.Interface_GparamEditor_FieldList)
         {
             FieldList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_Values)
+        if (CFG.Current.Interface_GparamEditor_FieldValues)
         {
             FieldValueList.Display();
         }
-        if (UI.Current.Interface_GparamEditor_ToolConfiguration)
+        if (CFG.Current.Interface_GparamEditor_ToolWindow)
         {
             ToolView.Display();
         }
@@ -141,8 +134,6 @@ public class GparamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -191,8 +182,6 @@ public class GparamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -201,61 +190,107 @@ public class GparamEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_GparamEditor_Files = !UI.Current.Interface_GparamEditor_Files;
+                CFG.Current.Interface_GparamEditor_FileList = !CFG.Current.Interface_GparamEditor_FileList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Files);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FileList);
 
             if (ImGui.MenuItem("Groups"))
             {
-                UI.Current.Interface_GparamEditor_Groups = !UI.Current.Interface_GparamEditor_Groups;
+                CFG.Current.Interface_GparamEditor_GroupList = !CFG.Current.Interface_GparamEditor_GroupList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Groups);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_GroupList);
 
             if (ImGui.MenuItem("Fields"))
             {
-                UI.Current.Interface_GparamEditor_Fields = !UI.Current.Interface_GparamEditor_Fields;
+                CFG.Current.Interface_GparamEditor_FieldList = !CFG.Current.Interface_GparamEditor_FieldList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Fields);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FieldList);
 
             if (ImGui.MenuItem("Values"))
             {
-                UI.Current.Interface_GparamEditor_Values = !UI.Current.Interface_GparamEditor_Values;
+                CFG.Current.Interface_GparamEditor_FieldValues = !CFG.Current.Interface_GparamEditor_FieldValues;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_Values);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_FieldValues);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_GparamEditor_ToolConfiguration = !UI.Current.Interface_GparamEditor_ToolConfiguration;
+                CFG.Current.Interface_GparamEditor_ToolWindow = !CFG.Current.Interface_GparamEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_GparamEditor_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_ToolWindow);
 
             ImGui.EndMenu();
         }
+    }
+    public async void Save()
+    {
+        var targetScript = Project.GparamData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
-        ImGui.Separator();
+        if (targetScript.Key != null)
+        {
+            await Project.GparamData.PrimaryBank.SaveGraphicsParam(targetScript.Key, targetScript.Value);
+
+            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Saved {Selection.SelectedFileEntry.Filename}.gparam.dcx");
+        }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
-    /// <summary>
-    /// The menubar for the editor 
-    /// </summary>
-    public void ToolMenu()
+    public async void SaveAll()
     {
-        ToolMenubar.DisplayMenu();
+        await Project.GparamData.PrimaryBank.SaveAllGraphicsParams();
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
-
-    public void Save()
+    public void Shortcuts()
     {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Save();
+        }
 
-        Project.GparamBank.SaveGraphicsParam(Selection._selectedGparamInfo);
-    }
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
 
-    public void SaveAll()
-    {
-        if (!CFG.Current.EnableEditor_GPARAM)
-            return;
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
 
-        Project.GparamBank.SaveGraphicsParams();
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+        {
+            ActionHandler.DeleteValueRow();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+        {
+            ActionHandler.DuplicateValueRow();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ExecuteQuickEdit))
+        {
+            QuickEditHandler.ExecuteQuickEdit();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_GenerateQuickEdit))
+        {
+            QuickEditHandler.GenerateQuickEditCommands();
+        }
+        if (InputTracker.GetKeyDown(KeyBindings.Current.GPARAM_ClearQuickEdit))
+        {
+            QuickEditHandler.ClearQuickEditCommands();
+        }
     }
 }

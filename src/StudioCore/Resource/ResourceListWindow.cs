@@ -8,6 +8,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using StudioCore.Configuration;
 
 namespace StudioCore.Resource;
 

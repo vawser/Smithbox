@@ -30,9 +30,9 @@ public static class TextFinder
             return CachedResults[cacheName];
         }
 
-        foreach(var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach(var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
-            var containerName = Path.GetFileName(path);
+            var containerName = fileEntry.Filename;
 
             if (entry.ContainerDisplayCategory == CFG.Current.TextEditor_PrimaryCategory)
             {
@@ -81,9 +81,9 @@ public static class TextFinder
     {
         var results = new List<TextResult>();
 
-        foreach (var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
-            var containerName = Path.GetFileName(path);
+            var containerName = fileEntry.Filename;
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {
@@ -165,9 +165,9 @@ public static class TextFinder
     {
         var results = new List<ReplacementResult>();
 
-        foreach (var (path, entry) in editor.Project.TextData.PrimaryBank.Entries)
+        foreach (var (fileEntry, entry) in editor.Project.TextData.PrimaryBank.Entries)
         {
-            var containerName = Path.GetFileName(path);
+            var containerName = fileEntry.Filename;
 
             if (searchFilterType is SearchFilterType.PrimaryCategory)
             {

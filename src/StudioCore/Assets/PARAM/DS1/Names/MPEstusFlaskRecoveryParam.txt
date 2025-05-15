@@ -1,3 +1,0 @@
-0 Host -- ホスト
-1 Cooperation Pathway Clients -- 協力経路のクライアント
-2 Intrusion Path Client -- 侵入経路のクライアント

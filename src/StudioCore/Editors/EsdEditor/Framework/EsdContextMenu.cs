@@ -1,32 +1,26 @@
 ﻿using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.EsdEditor;
-using StudioCore.Editors.TalkEditor;
-using StudioCore.TalkEditor;
-using System;
+using StudioCore.Formats.JSON;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the context menus used by the view classes.
 /// </summary>
 public class EsdContextMenu
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdContextMenu(EsdEditorScreen screen)
+    public EsdContextMenu(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
-    public void FileContextMenu(EsdBank.EsdScriptInfo info)
+    public void FileContextMenu(FileDictionaryEntry entry)
     {
 
     }

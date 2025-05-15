@@ -1,4 +1,5 @@
 ﻿using Octokit;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using System.Text.Json.Serialization;
 
@@ -10,9 +11,18 @@ namespace StudioCore.Formats.JSON;
     GenerationMode = JsonSourceGenerationMode.Metadata,
     IncludeFields = true)]
 
+// Program
+[JsonSerializable(typeof(CFG))]
+[JsonSerializable(typeof(UI))]
+[JsonSerializable(typeof(KeyBindings.Bindings))]
+[JsonSerializable(typeof(KeyBind))]
+
 // Project
 [JsonSerializable(typeof(ProjectEntry))]
 [JsonSerializable(typeof(ProjectDisplayOrder))]
+
+[JsonSerializable(typeof(FileDictionary))]
+[JsonSerializable(typeof(FileDictionaryEntry))]
 
 // Alias Data
 [JsonSerializable(typeof(AliasStore))]
@@ -56,6 +66,24 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(SpawnStateResource))]
 [JsonSerializable(typeof(SpawnStateEntry))]
 [JsonSerializable(typeof(SpawnStatePair))]
+
+// Param Type Info
+[JsonSerializable(typeof(ParamTypeInfo))]
+
+// Row Names
+[JsonSerializable(typeof(RowNameStore))]
+[JsonSerializable(typeof(RowNameParam))]
+[JsonSerializable(typeof(RowNameEntry))]
+
+// Param Upgrader Instructions
+[JsonSerializable(typeof(ParamUpgraderInfo))]
+[JsonSerializable(typeof(OldRegulationEntry))]
+[JsonSerializable(typeof(UpgraderMassEditEntry))]
+
+// Graph Legends
+[JsonSerializable(typeof(GraphLegends))]
+[JsonSerializable(typeof(GraphLegendEntry))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

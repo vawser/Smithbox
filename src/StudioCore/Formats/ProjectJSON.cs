@@ -6,14 +6,51 @@ using System.Threading.Tasks;
 
 namespace StudioCore.Formats.JSON;
 
+// -------------- File Dictionary --------------
+#region File Dictionary
+public class FileDictionary
+{
+    public List<FileDictionaryEntry> Entries { get; set; }
+}
+public class FileDictionaryEntry
+{
+    /// <summary>
+    /// The archive this entry belongs to.
+    /// </summary>
+    public string Archive { get; set; }
+
+    /// <summary>
+    /// The relative path for this entry
+    /// </summary>
+    public string Path { get; set; }
+
+    /// <summary>
+    /// The folder path for this entry (excludes the filename and extension)
+    /// </summary>
+    public string Folder { get; set; }
+
+    /// <summary>
+    /// The file name for this entry (excludes extension)
+    /// </summary>
+    public string Filename { get; set; }
+
+    /// <summary>
+    /// The extension for this entry (ignoring .dcx)
+    /// </summary>
+    public string Extension { get; set; }
+}
+#endregion
+
 // -------------- Project Display Order --------------
+#region Project Display Order
 public class ProjectDisplayOrder
 {
     public Dictionary<int, Guid> DisplayOrder { get; set; }
 }
-
+#endregion
 
 // -------------- Aliases --------------
+#region Aliases
 public class AliasStore
 {
     public List<AliasEntry> Assets { get; set; }
@@ -37,8 +74,10 @@ public class AliasEntry
     public string Name { get; set; }
     public List<string> Tags { get; set; }
 }
+#endregion
 
 // -------------- Project Enums --------------
+#region Project Enums
 public class ProjectEnumResource
 {
     public List<ProjectEnumEntry> List { get; set; }
@@ -116,8 +155,10 @@ public class ProjectEnumOption : IComparable
         }
     }
 }
+#endregion
 
 // -------------- Format Information --------------
+#region Format Information
 public class FormatResource
 {
     public List<FormatReference> list { get; set; }
@@ -175,4 +216,4 @@ public class MaskSection
     public string mask { get; set; }
     public string name { get; set; }
 }
-
+#endregion

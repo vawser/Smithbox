@@ -1,5 +1,0 @@
-302 Room2_Little
-303 indoor default -- 屋内デフォルト
-305 Room5_Large
-307 Room7_HugeLarge
-900 outdoor default -- 屋外デフォルト

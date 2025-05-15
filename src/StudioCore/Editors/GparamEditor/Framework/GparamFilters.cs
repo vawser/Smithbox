@@ -1,8 +1,7 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.GraphicsEditor;
 using StudioCore.Interface;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamFilters
 {

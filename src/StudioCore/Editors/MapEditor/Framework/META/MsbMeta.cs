@@ -27,6 +27,39 @@ public class MsbMeta
         Project = project;
     }
 
+    public async Task<bool> Setup()
+    {
+        await Task.Delay(1);
+
+        _MsbMetas = new();
+
+        var metaPath = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{ProjectUtils.GetGameDirectory(Project)}\\Meta";
+
+        if (Path.Exists(metaPath))
+        {
+            foreach (var folder in Directory.EnumerateDirectories(metaPath))
+            {
+                var rootType = new DirectoryInfo(folder).Name;
+
+                var typeMetaPath = $"{metaPath}\\{rootType}";
+
+                if (Path.Exists(typeMetaPath))
+                {
+                    foreach (var file in Directory.EnumerateFiles(typeMetaPath))
+                    {
+                        var currentPath = file;
+                        var specificType = Path.GetFileNameWithoutExtension(file);
+
+                        var newMeta = new MapEntityPropertyMeta(currentPath);
+                        _MsbMetas.Add($"{rootType}_{specificType}", newMeta);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
     public MapEntityPropertyMeta GetMeta(Type type, bool sharedMeta)
     {
         // Get the strings from the passed type

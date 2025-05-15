@@ -1,3 +1,0 @@
-0 Number 0 is a MapUid for starting a resident conversation, so it cannot be used in the garage. -- 0番は常駐会話起動用MapUidなのでガレージには使えません
-100000 helicopter garage -- ヘリガレージ
-200000 D tier garage -- D層ガレージ

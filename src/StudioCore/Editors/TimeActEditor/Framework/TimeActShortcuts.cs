@@ -25,6 +25,16 @@ public class TimeActShortcuts
 
     public void Monitor()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Editor.Save();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
+        {
+            Editor.SaveAll();
+        }
+
         if (ActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             ActionManager.UndoAction();

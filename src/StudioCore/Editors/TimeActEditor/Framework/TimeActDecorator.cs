@@ -1,11 +1,13 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Formats.JSON;
-using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -115,7 +117,7 @@ public class TimeActDecorator
                 if (template.ParamRef != null)
                 {
                     var primaryBank = Editor.Project.ParamData.PrimaryBank;
-                    (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
+                    (string, Param.Row, string) match = ResolveParamRef(Editor.Project.ParamEditor, primaryBank, template.ParamRef, propertyValue);
                     if (match != (null, null, null))
                     {
                         foundAlias = true;
@@ -294,7 +296,7 @@ public class TimeActDecorator
             if (template.ParamRef != null)
             {
                 var primaryBank = Editor.Project.ParamData.PrimaryBank;
-                (string, Param.Row, string) match = ResolveParamRef(primaryBank, template.ParamRef, propertyValue);
+                (string, Param.Row, string) match = ResolveParamRef(Editor.Project.ParamEditor, primaryBank, template.ParamRef, propertyValue);
                 if (match != (null, null, null))
                 {
                     ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_ParamRef_Text);
@@ -475,7 +477,7 @@ public class TimeActDecorator
         }
     }
 
-    private static (string, Param.Row, string) ResolveParamRef(ParamBank bank, string paramRef, dynamic oldval)
+    private static (string, Param.Row, string) ResolveParamRef(ParamEditorScreen editor, ParamBank bank, string paramRef, dynamic oldval)
     {
         (string, Param.Row, string) row = new();
         if (bank.Params == null)
@@ -491,7 +493,7 @@ public class TimeActDecorator
             var altval = originalValue;
 
             Param param = bank.Params[paramRef];
-            ParamMetaData meta = ParamMetaData.Get(bank.Params[paramRef].AppliedParamdef);
+            var meta = editor.Project.ParamData.GetParamMeta(bank.Params[paramRef].AppliedParamdef);
             if (meta != null && meta.Row0Dummy && altval == 0)
             {
                 return row;

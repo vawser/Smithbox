@@ -1,19 +1,14 @@
-﻿using Microsoft.Extensions.Logging;
-using Silk.NET.Core;
+﻿using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.Platform;
-using StudioCore.Resource.Locators;
-using StudioCore.Tasks;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the load and save processes for the EMEVD files and their containers, 
@@ -24,18 +19,24 @@ public class EmevdBank
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public SortedDictionary<EventScriptInfo, EMEVD> ScriptBank { get; private set; } = new();
+    public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
+
+    public string Name;
+
+    public Dictionary<FileDictionaryEntry, EMEVD> Scripts = new();
+
     public EMEDF InfoBank { get; private set; } = new();
 
     public bool IsSupported = false;
 
-    public EmevdBank(Smithbox baseEditor, ProjectEntry project)
+    public EmevdBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
         Project = project;
+        Name = name;
+        TargetFS = targetFs;
     }
 
-    // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
     public async Task<bool> Setup()
     {
         await Task.Delay(1);
@@ -45,7 +46,7 @@ public class EmevdBank
         bool emedfTaskResult = await emedfTask;
 
         // EMEVD
-        Task<bool> emevdTask = LoadEMEVD();
+        Task<bool> emevdTask = SetupEMEVD();
         bool emevdTaskResult = await emevdTask;
 
         return true;
@@ -104,318 +105,129 @@ public class EmevdBank
         return true;
     }
 
-    public async Task<bool> LoadEMEVD()
+    public async Task<bool> SetupEMEVD()
     {
         await Task.Delay(1);
 
-        ScriptBank = new();
+        Scripts = new();
 
-        var paramDir = @"\event";
-        var paramExt = @".emevd.dcx";
+        foreach (var entry in Project.EmevdData.EmevdFiles.Entries)
+        {
+            Scripts.Add(entry, null);
+        }
+
+        return true;
+    }
+
+    public async Task<bool> LoadScript(FileDictionaryEntry fileEntry)
+    {
+        await Task.Delay(1);
+
+        // If already loaded, just ignore
+        if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+        {
+            return true;
+        }
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            LoadDS2EventScripts();
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename))
+            {
+                var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+
+                if (scriptEntry.Key != null)
+                {
+                    var key = scriptEntry.Key;
+
+                    var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
+                    var binder = BND4.Read(regulation);
+                    foreach (var entry in binder.Files)
+                    {
+                        if (!entry.Name.EndsWith("emevd"))
+                            continue;
+
+                        if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
+                        {
+                            var emevdData = entry.Bytes;
+                            var emevd = EMEVD.Read(emevdData);
+
+                            Scripts[key] = emevd;
+                        }
+                    }
+                }
+            }
         }
         else
         {
-            List<string> paramNames = MiscLocator.GetEventBinders(Project);
-
-            foreach (var name in paramNames)
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename))
             {
-                var filePath = $"{paramDir}\\{name}{paramExt}";
+                var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
 
-                if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
+                if (scriptEntry.Key != null)
                 {
-                    LoadEventScript($"{Project.ProjectPath}\\{filePath}");
-                    //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
+                    var key = scriptEntry.Key;
+
+                    var emevdData = TargetFS.ReadFileOrThrow(key.Path);
+                    var emevd = EMEVD.Read(emevdData);
+
+                    Scripts[key] = emevd;
                 }
-                else
-                {
-                    LoadEventScript($"{Project.DataPath}\\{filePath}");
-                    //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
-                }
+            }
+            else
+            {
+                return false;
             }
         }
 
         return true;
     }
 
-    private void LoadEventScript(string path)
+    public async Task<bool> SaveAllScripts()
     {
-        if (path == null)
+        await Task.Delay(1);
+
+        foreach(var entry in Scripts)
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading EMEVD file.",
-                    LogLevel.Warning);
-            return;
+            await SaveScript(entry.Key, entry.Value);
         }
 
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        EventScriptInfo eventInfo = new EventScriptInfo(name, path);
-        EMEVD eventScript = new EMEVD();
-
-        try
-        {
-            eventScript = EMEVD.Read(DCX.Decompress(path));
-            ScriptBank.Add(eventInfo, eventScript);
-        }
-        catch (Exception ex)
-        {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to read EMEVD file: {filename} at {path}.\n{ex}", LogLevel.Error);
-        }
+        return true;
     }
 
-    // parambank process here as emevd it within regulation.bin
-    private void LoadDS2EventScripts()
+    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, EMEVD curScript)
     {
-        var dir = Project.DataPath;
-        var mod = Project.ProjectPath;
+        await Task.Delay(1);
 
-        var regulationPath = $@"{mod}\enc_regulation.bnd.dcx";
-        if (!File.Exists(regulationPath))
-        {
-            regulationPath = $@"{dir}\enc_regulation.bnd.dcx";
-        }
-
-        BND4 emevdBnd = null;
-        if (!BND4.Is(regulationPath))
-        {
-            try
-            {
-                emevdBnd = SFUtil.DecryptDS2Regulation(regulationPath);
-            }
-            catch (Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        else
-        {
-            try
-            {
-                emevdBnd = BND4.Read(regulationPath);
-            }
-            catch (Exception e)
-            {
-                PlatformUtils.Instance.MessageBox($"Regulation load failed: {regulationPath} - {e.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        LoadScriptsFromBinder(emevdBnd);
-    }
-
-    private void LoadScriptsFromBinder(IBinder emevdBnd)
-    {
-        // Load every script in the regulation
-        foreach (BinderFile f in emevdBnd.Files)
-        {
-            //TaskLogs.AddLog(f.Name);
-            var scriptName = Path.GetFileNameWithoutExtension(f.Name);
-            EventScriptInfo info = new EventScriptInfo(scriptName, f.Name);
-
-            if (!f.Name.ToUpper().EndsWith(".EMEVD"))
-            {
-                //TaskLogs.AddLog("Skipped due to lacking .emevd");
-                continue;
-            }
-
-            if (ScriptBank.ContainsKey(info))
-            {
-                //TaskLogs.AddLog("Skipped as already added");
-                continue;
-            }
-
-            try
-            {
-                EMEVD script = EMEVD.Read(f.Bytes);
-                ScriptBank.Add(info, script);
-                //TaskLogs.AddLog($"{scriptName} added");
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"Failed to load {scriptName}", LogLevel.Warning, LogPriority.Normal, e);
-            }
-        }
-    }
-
-    public void SaveEventScripts()
-    {
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            SaveDS2EventScripts();
-        }
-        else
-        {
-            foreach (var (info, script) in ScriptBank)
+            var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
+            var binder = BND4.Read(regulation);
+            foreach (var entry in binder.Files)
             {
-                // Only save all modified files
-                if (info.IsModified)
-                {
-                    SaveEventScript(info, script);
-                }
-            }
-        }
-    }
-
-    public void SaveEventScript(EventScriptInfo info, EMEVD script)
-    {
-        if (script == null)
-            return;
-
-        byte[] fileBytes = null;
-
-        switch (Project.ProjectType)
-        {
-            case ProjectType.DS1:
-                fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                break;
-            case ProjectType.DS1R:
-                fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                break;
-            case ProjectType.BB:
-                fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.DS3:
-                fileBytes = script.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                break;
-            case ProjectType.SDT:
-                fileBytes = script.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.ER:
-                fileBytes = script.Write(DCX.Type.DCX_KRAK);
-                break;
-            case ProjectType.AC6:
-                fileBytes = script.Write(DCX.Type.DCX_KRAK_MAX);
-                break;
-            default:
-                return;
-        }
-
-        var paramDir = @"\event\";
-        var paramExt = @".emevd.dcx";
-
-        var assetRoot = $@"{Project.DataPath}\{paramDir}\{info.Name}{paramExt}";
-        var assetMod = $@"{Project.ProjectPath}\{paramDir}\{info.Name}{paramExt}";
-
-        // Add drawparam folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.ProjectPath}\\{paramDir}\\"))
-        {
-            Directory.CreateDirectory($"{Project.ProjectPath}\\{paramDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            // Write to GameModDirectory
-            File.WriteAllBytes(assetMod, fileBytes);
-            TaskLogs.AddLog($"Saved EMEVD file: {info.Name} at {assetMod}");
-        }
-    }
-
-    // parambank process here as emevd it within regulation.bin
-    private void SaveDS2EventScripts()
-    {
-        var dir = Project.DataPath;
-        var mod = Project.ProjectPath;
-
-        if (!File.Exists($@"{dir}\enc_regulation.bnd.dcx"))
-        {
-            TaskLogs.AddLog("Cannot locate regulation. Save failed.", LogLevel.Error, LogPriority.High);
-            return;
-        }
-
-        var regulation = $@"{mod}\enc_regulation.bnd.dcx";
-        BND4 emevdBnd;
-
-        if (!File.Exists(regulation))
-        {
-            // If there is no mod file, check the base file. Decrypt it if you have to.
-            regulation = $@"{dir}\enc_regulation.bnd.dcx";
-
-            if (!BND4.Is($@"{dir}\enc_regulation.bnd.dcx"))
-            {
-                // Decrypt the file
-                emevdBnd = SFUtil.DecryptDS2Regulation(regulation);
-
-                // Since the file is encrypted, check for a backup. If it has none, then make one and write a decrypted one.
-                if (!File.Exists($@"{regulation}.bak"))
-                {
-                    File.Copy(regulation, $@"{regulation}.bak", true);
-                    emevdBnd.Write(regulation);
-                }
-            }
-            // No need to decrypt
-            else
-            {
-                emevdBnd = BND4.Read(regulation);
-            }
-        }
-        // Mod file exists, use that.
-        else
-        {
-            emevdBnd = BND4.Read(regulation);
-        }
-
-        // Write in edited EMEVD here
-        foreach (var entry in ScriptBank)
-        {
-            var info = entry.Key;
-            var script = entry.Value;
-
-            // Always save everything for DS2
-            foreach (BinderFile f in emevdBnd.Files)
-            {
-                var scriptName = Path.GetFileNameWithoutExtension(f.Name);
-
-                if (!f.Name.ToUpper().EndsWith(".EMEVD"))
-                {
+                if (!entry.Name.EndsWith("emevd"))
                     continue;
-                }
 
-                if (scriptName == info.Name)
+                if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
                 {
-                    var bytes = script.Write();
-                    f.Bytes = bytes;
+                    entry.Bytes = curScript.Write();
                 }
+            }
+
+            var newRegulation = binder.Write();
+
+            Project.ProjectFS.WriteFile("enc_regulation.bnd.dcx", newRegulation);
+        }
+        else
+        {
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+            {
+                var emevd = curScript;
+                var bytes = emevd.Write();
+
+                Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
             }
         }
 
-
-        Utils.WriteWithBackup(BaseEditor, dir, mod, @"enc_regulation.bnd.dcx", emevdBnd);
-        emevdBnd.Dispose();
-
-        TaskLogs.AddLog("Saved EMEVD scripts.", LogLevel.Information);
-    }
-
-
-    public class EventScriptInfo : IComparable<EventScriptInfo>
-    {
-        public EventScriptInfo(string name, string path)
-        {
-            Name = name;
-            Path = path;
-            IsModified = false;
-        }
-
-        public string Name { get; set; }
-        public string Path { get; set; }
-        public bool IsModified { get; set; }
-
-        public int CompareTo(EventScriptInfo other)
-        {
-            return string.Compare(Name, other.Name);
-        }
+        return true;
     }
 }

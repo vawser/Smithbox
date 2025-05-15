@@ -1,38 +1,23 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
 using StudioCore.Interface;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the EMEVD event instruction selection, viewing and editing.
 /// </summary>
 public class EmevdInstructionView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
-    private EmevdFilters Filters;
-    private EmevdContextMenu ContextMenu;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdInstructionView(EmevdEditorScreen screen)
+    public EmevdInstructionView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -41,46 +26,44 @@ public class EmevdInstructionView
     public void Display()
     {
         ImGui.Begin("Instructions##EventInstructionView");
-        Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
 
-        Filters.DisplayInstructionFilterSearch();
+        Editor.Filters.DisplayInstructionFilterSearch();
 
         ImGui.BeginChild("InstructionListSection");
-        Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.InstructionList);
 
-        if (Selection.SelectedEvent != null)
+        if (Editor.Selection.SelectedEvent != null)
         {
-            for (int i = 0; i < Selection.SelectedEvent.Instructions.Count; i++)
+            for (int i = 0; i < Editor.Selection.SelectedEvent.Instructions.Count; i++)
             {
-                var ins = Selection.SelectedEvent.Instructions[i];
+                var ins = Editor.Selection.SelectedEvent.Instructions[i];
                 var name = $"{ins.Bank}[{ins.ID}]";
 
-                if (Filters.IsInstructionFilterMatch(ins))
+                if (Editor.Filters.IsInstructionFilterMatch(ins))
                 {
-                    if (ImGui.Selectable($@" {name}##eventInstruction{i}", ins == Selection.SelectedInstruction))
+                    if (ImGui.Selectable($@" {name}##eventInstruction{i}", ins == Editor.Selection.SelectedInstruction))
                     {
-                        Selection.SelectedInstruction = ins;
-                        Selection.SelectedInstructionIndex = i;
+                        Editor.Selection.SelectInstruction(ins, i);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextInstruction)
+                    if (ImGui.IsItemHovered() && Editor.Selection.SelectNextInstruction)
                     {
-                        Selection.SelectNextInstruction = false;
-                        Selection.SelectedInstruction = ins;
-                        Selection.SelectedInstructionIndex = i;
+                        Editor.Selection.SelectNextInstruction = false;
+                        Editor.Selection.SelectInstruction(ins, i);
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
-                        Selection.SelectNextInstruction = true;
+                        Editor.Selection.SelectNextInstruction = true;
                     }
 
                     // Only apply to selection
-                    if (Selection.SelectedInstructionIndex != -1)
+                    if (Editor.Selection.SelectedInstructionIndex != -1)
                     {
-                        if (Selection.SelectedInstructionIndex == i)
+                        if (Editor.Selection.SelectedInstructionIndex == i)
                         {
-                            ContextMenu.InstructionContextMenu(ins);
+                            Editor.ContextMenu.InstructionContextMenu(ins);
                         }
                     }
 
@@ -104,7 +87,7 @@ public class EmevdInstructionView
         var insStr = "Unknown";
         var argsStr = "";
 
-        foreach (var classEntry in Screen.Project.EmevdBank.InfoBank.Classes)
+        foreach (var classEntry in Project.EmevdData.PrimaryBank.InfoBank.Classes)
         {
             if (ins.Bank == classEntry.Index)
             {

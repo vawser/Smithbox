@@ -1,6 +1,0 @@
-0 does not move
-1 Havok default value
-100 centipede head
-101 centipede tail
-200 blood mite body
-201 blood mite sac

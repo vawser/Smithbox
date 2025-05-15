@@ -1,5 +1,0 @@
-0 candle
-1 Demon's Soul
-2 dignitary candle
-62 Lantern underground outdoor
-63 Lantern indoor

@@ -7,6 +7,7 @@ using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -14,7 +15,6 @@ using StudioCore.Editors.MapEditor.Tools;
 using StudioCore.Editors.MapEditor.Tools.AssetBrowser;
 using StudioCore.Editors.MapEditor.Tools.DisplayGroups;
 using StudioCore.Editors.MapEditor.Tools.EntityIdentifierOverview;
-using StudioCore.Editors.MapEditor.Tools.EntityInformation;
 using StudioCore.Editors.MapEditor.Tools.MapQuery;
 using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
@@ -78,7 +78,6 @@ public class MapEditorScreen : EditorScreen
     public MapQueryView MapQueryView;
     public WorldMapView WorldMapView;
     public LocalSearchView LocalSearchView;
-    public EntityInformationView EntityInformationView;
     public EntityIdentifierOverview EntityIdentifierOverview;
 
     // Menubar
@@ -121,7 +120,6 @@ public class MapEditorScreen : EditorScreen
         PrefabView = new PrefabView(this);
         SelectionGroupView = new SelectionGroupView(this);
         NavmeshBuilderView = new NavmeshBuilderView(this);
-        EntityInformationView = new EntityInformationView(this);
         EntityIdentifierOverview = new EntityIdentifierOverview(this);
 
         BasicFilters = new BasicFilters(this);
@@ -177,6 +175,124 @@ public class MapEditorScreen : EditorScreen
     public string WindowName => "";
     public bool HasDocked { get; set; }
 
+
+
+    public void OnGUI(string[] initcmd)
+    {
+        if (Project.IsInitializing)
+            return;
+
+        var scale = DPI.GetUIScale();
+
+        // Docking setup
+        //var vp = ImGui.GetMainViewport();
+        Vector2 wins = ImGui.GetWindowSize();
+        Vector2 winp = ImGui.GetWindowPos();
+        winp.Y += 20.0f * scale;
+        wins.Y -= 20.0f * scale;
+        ImGui.SetNextWindowPos(winp);
+        ImGui.SetNextWindowSize(wins);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
+        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
+        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 0.0f);
+        ImGuiWindowFlags flags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
+                                 ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
+        flags |= ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
+        flags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
+        flags |= ImGuiWindowFlags.NoBackground;
+        //ImGui.Begin("DockSpace_MapEdit", flags);
+        ImGui.PopStyleVar(4);
+        var dsid = ImGui.GetID("DockSpace_MapEdit");
+        ImGui.DockSpace(dsid, new Vector2(0, 0));
+
+        Shortcuts.Monitor();
+        WorldMapView.Shortcuts();
+        ToolSubMenu.Shortcuts();
+        CommandQueue.Parse(initcmd);
+        ActionHandler.HandleDuplicateToMapMenuPopup();
+
+        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
+
+        Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
+        //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
+        //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
+
+        if (ImGui.BeginMenuBar())
+        {
+            FileMenu();
+            EditMenu();
+            ViewMenu();
+            ToolMenu();
+
+            ImGui.EndMenuBar();
+        }
+
+        MapViewportView.OnGui();
+        MapListView.OnGui();
+
+        if (Smithbox.FirstFrame)
+        {
+            ImGui.SetNextWindowFocus();
+        }
+
+        if (MapPropertyView.Focus)
+        {
+            MapPropertyView.Focus = false;
+            ImGui.SetNextWindowFocus();
+        }
+
+        MapPropertyView.OnGui(Selection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+
+        LocalSearchView.OnGui();
+
+        // Not usable yet
+        if (FeatureFlags.EnableNavmeshBuilder)
+        {
+            NavmeshBuilderView.OnGui();
+        }
+
+        if (EntityIdentifierOverview != null)
+        {
+            EntityIdentifierOverview.OnGui();
+        }
+
+        ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+        if (CFG.Current.Interface_MapEditor_ResourceList)
+        {
+            ResourceListWindow.DisplayWindow("mapResourceList");
+        }
+
+        DisplayGroupView.OnGui();
+        AssetBrowserView.OnGui();
+        SelectionGroupView.OnGui();
+
+        if (CFG.Current.Interface_MapEditor_ToolWindow)
+        {
+            ToolWindow.OnGui();
+        }
+
+        if (_activeModal != null)
+        {
+            if (_activeModal.IsClosed)
+            {
+                _activeModal.OpenModal();
+            }
+
+            _activeModal.OnGui();
+            if (_activeModal.IsClosed)
+            {
+                _activeModal = null;
+            }
+        }
+
+        ImGui.PopStyleColor(1);
+
+        FocusManager.OnFocus();
+    }
+
     public void OnDefocus()
     {
         FocusManager.ResetFocus();
@@ -212,11 +328,26 @@ public class MapEditorScreen : EditorScreen
         MapViewportView.EditorResized(window, device);
     }
 
-    public void EditDropdown()
+    public void FileMenu()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
+        if (ImGui.BeginMenu("File"))
+        {
+            if (ImGui.MenuItem($"Save", $"{KeyBindings.Current.CORE_Save.HintText}"))
+            {
+                Save();
+            }
 
+            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
+            {
+                SaveAll();
+            }
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void EditMenu()
+    {
         if (ImGui.BeginMenu("Edit"))
         {
             // Undo
@@ -631,100 +762,66 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
-    public void ViewDropdown()
+    public void ViewMenu()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         // Dropdown: View
         if (ImGui.BeginMenu("View"))
         {
             if (ImGui.MenuItem("Viewport"))
             {
-                UI.Current.Interface_Editor_Viewport = !UI.Current.Interface_Editor_Viewport;
+                CFG.Current.Interface_Editor_Viewport = !CFG.Current.Interface_Editor_Viewport;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Viewport);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_Viewport);
 
             if (ImGui.MenuItem("Map List"))
             {
-                UI.Current.Interface_MapEditor_MapList = !UI.Current.Interface_MapEditor_MapList;
+                CFG.Current.Interface_MapEditor_MapList = !CFG.Current.Interface_MapEditor_MapList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapList);
 
             if (ImGui.MenuItem("Map Contents"))
             {
-                UI.Current.Interface_MapEditor_MapContents = !UI.Current.Interface_MapEditor_MapContents;
+                CFG.Current.Interface_MapEditor_MapContents = !CFG.Current.Interface_MapEditor_MapContents;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_MapContents);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_MapContents);
 
             if (ImGui.MenuItem("Properties"))
             {
-                UI.Current.Interface_MapEditor_Properties = !UI.Current.Interface_MapEditor_Properties;
+                CFG.Current.Interface_MapEditor_Properties = !CFG.Current.Interface_MapEditor_Properties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Properties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_Properties);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_MapEditor_ToolWindow = !UI.Current.Interface_MapEditor_ToolWindow;
+                CFG.Current.Interface_MapEditor_ToolWindow = !CFG.Current.Interface_MapEditor_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ToolWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ToolWindow);
 
             if (ImGui.MenuItem("Asset Browser"))
             {
-                UI.Current.Interface_MapEditor_AssetBrowser = !UI.Current.Interface_MapEditor_AssetBrowser;
+                CFG.Current.Interface_MapEditor_AssetBrowser = !CFG.Current.Interface_MapEditor_AssetBrowser;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_AssetBrowser);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_AssetBrowser);
 
             if (ImGui.MenuItem("Render Groups"))
             {
-                UI.Current.Interface_MapEditor_RenderGroups = !UI.Current.Interface_MapEditor_RenderGroups;
+                CFG.Current.Interface_MapEditor_RenderGroups = !CFG.Current.Interface_MapEditor_RenderGroups;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_RenderGroups);
-
-            if (ImGui.MenuItem("Profiling"))
-            {
-                UI.Current.Interface_Editor_Profiling = !UI.Current.Interface_Editor_Profiling;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_Editor_Profiling);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_RenderGroups);
 
             if (ImGui.MenuItem("Resource List"))
             {
-                UI.Current.Interface_MapEditor_ResourceList = !UI.Current.Interface_MapEditor_ResourceList;
+                CFG.Current.Interface_MapEditor_ResourceList = !CFG.Current.Interface_MapEditor_ResourceList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_ResourceList);
-
-            if (ImGui.MenuItem("Viewport Information Panel"))
-            {
-                CFG.Current.Viewport_Enable_ViewportInfoPanel = !CFG.Current.Viewport_Enable_ViewportInfoPanel;
-            }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Enable_ViewportInfoPanel);
-
-            if (ImGui.MenuItem("Viewport Grid"))
-            {
-                UI.Current.Interface_MapEditor_Viewport_Grid = !UI.Current.Interface_MapEditor_Viewport_Grid;
-                CFG.Current.MapEditor_Viewport_RegenerateMapGrid = true;
-            }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_Viewport_Grid);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_ResourceList);
 
             if (ImGui.MenuItem("Entity Identifier Overview"))
             {
-                UI.Current.Interface_MapEditor_EntityIdentifierOverview = !UI.Current.Interface_MapEditor_EntityIdentifierOverview;
+                CFG.Current.Interface_MapEditor_EntityIdentifierOverview = !CFG.Current.Interface_MapEditor_EntityIdentifierOverview;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityIdentifierOverview);
-
-            // Debug only
-            if (CFG.Current.DisplayDebugTools)
-            {
-                if (ImGui.MenuItem("Entity Information"))
-                {
-                    UI.Current.Interface_MapEditor_EntityInformation = !UI.Current.Interface_MapEditor_EntityInformation;
-                }
-                UIHelper.ShowActiveStatus(UI.Current.Interface_MapEditor_EntityInformation);
-            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_MapEditor_EntityIdentifierOverview);
 
             ImGui.Separator();
 
@@ -758,40 +855,29 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
-    public void EditorUniqueDropdowns()
+    public void ToolMenu()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         var validViewportState = MapViewportView.RenderScene != null && 
             MapViewportView.Viewport != null;
 
         // Tools
         ToolSubMenu.DisplayMenu();
+    }
 
-        ImGui.Separator();
+    public void FilterMenu()
+    {
+        var validViewportState = MapViewportView.RenderScene != null &&
+            MapViewportView.Viewport != null;
 
         // Filters
         if (ImGui.BeginMenu("Filters", validViewportState))
         {
             BasicFilters.Display();
 
-            ImGui.Separator();
-
             RegionFilters.DisplayOptions();
 
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
-        // Viewport
-        if (ImGui.BeginMenu("Viewport", validViewportState))
-        {
             if (ImGui.BeginMenu("Filter Presets"))
             {
                 if (ImGui.MenuItem(CFG.Current.SceneFilter_Preset_01.Name))
@@ -827,22 +913,6 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
 
-            if (ImGui.BeginMenu("Environment Map"))
-            {
-                if (ImGui.MenuItem("Default"))
-                {
-                    MapViewportView.Viewport.SetEnvMap(0);
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Scene Lighting"))
-            {
-                MapViewportView.Viewport.SceneParamsGui();
-                ImGui.EndMenu();
-            }
-
             if (Project.ProjectType is ProjectType.ER)
             {
                 if (ImGui.BeginMenu("Collision Type"))
@@ -866,177 +936,9 @@ public class MapEditorScreen : EditorScreen
             }
 
             CFG.Current.LastSceneFilter = MapViewportView.RenderScene.DrawFilter;
-            ImGui.EndMenu();
-        }
-
-        ImGui.Separator();
-
-        if (ImGui.BeginMenu("Gizmos"))
-        {
-            if (ImGui.BeginMenu("Mode"))
-            {
-                if (ImGui.MenuItem("Translate", KeyBindings.Current.VIEWPORT_GizmoTranslationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Translate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Translation mode.");
-
-                if (ImGui.MenuItem("Rotate", KeyBindings.Current.VIEWPORT_GizmoRotationMode.HintText))
-                {
-                    Gizmos.Mode = Gizmos.GizmosMode.Rotate;
-                }
-                UIHelper.Tooltip($"Set the gizmo to Rotation mode.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Space"))
-            {
-                if (ImGui.MenuItem("Local", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.Local;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's local position.");
-
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoSpaceMode.HintText))
-                {
-                    Gizmos.Space = Gizmos.GizmosSpace.World;
-                }
-                UIHelper.Tooltip($"Place the gizmo origin based on the selection's world position.");
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.BeginMenu("Origin"))
-            {
-                if (ImGui.MenuItem("World", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.World;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the world position.");
-
-                if (ImGui.MenuItem("Bounding Box", KeyBindings.Current.VIEWPORT_GizmoOriginMode.HintText))
-                {
-                    Gizmos.Origin = Gizmos.GizmosOrigin.BoundingBox;
-                }
-                UIHelper.Tooltip($"Orient the gizmo origin based on the bounding box.");
-
-                ImGui.EndMenu();
-            }
 
             ImGui.EndMenu();
         }
-    }
-
-    public void OnGUI(string[] initcmd)
-    {
-        if (Project.IsInitializing)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        // Docking setup
-        //var vp = ImGui.GetMainViewport();
-        Vector2 wins = ImGui.GetWindowSize();
-        Vector2 winp = ImGui.GetWindowPos();
-        winp.Y += 20.0f * scale;
-        wins.Y -= 20.0f * scale;
-        ImGui.SetNextWindowPos(winp);
-        ImGui.SetNextWindowSize(wins);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowRounding, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowBorderSize, 0.0f);
-        ImGui.PushStyleVar(ImGuiStyleVar.WindowPadding, new Vector2(0.0f, 0.0f));
-        ImGui.PushStyleVar(ImGuiStyleVar.ChildBorderSize, 0.0f);
-        ImGuiWindowFlags flags = ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.NoCollapse |
-                                 ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove;
-        flags |= ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoDocking;
-        flags |= ImGuiWindowFlags.NoBringToFrontOnFocus | ImGuiWindowFlags.NoNavFocus;
-        flags |= ImGuiWindowFlags.NoBackground;
-        //ImGui.Begin("DockSpace_MapEdit", flags);
-        ImGui.PopStyleVar(4);
-        var dsid = ImGui.GetID("DockSpace_MapEdit");
-        ImGui.DockSpace(dsid, new Vector2(0, 0));
-
-        Shortcuts.Monitor();
-        WorldMapView.Shortcuts();
-        ToolSubMenu.Shortcuts();
-        CommandQueue.Parse(initcmd);
-        ActionHandler.HandleDuplicateToMapMenuPopup();
-
-        ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300, 500) * scale, ImGuiCond.FirstUseEver);
-        ImGui.SetNextWindowPos(new Vector2(20, 20) * scale, ImGuiCond.FirstUseEver);
-
-        Vector3 clear_color = new(114f / 255f, 144f / 255f, 154f / 255f);
-        //ImGui.Text($@"Viewport size: {Viewport.Width}x{Viewport.Height}");
-        //ImGui.Text(string.Format("Application average {0:F3} ms/frame ({1:F1} FPS)", 1000f / ImGui.GetIO().Framerate, ImGui.GetIO().Framerate));
-
-        MapViewportView.OnGui();
-        MapListView.OnGui();
-
-        if (Smithbox.FirstFrame)
-        {
-            ImGui.SetNextWindowFocus();
-        }
-
-        if (MapPropertyView.Focus)
-        {
-            MapPropertyView.Focus = false;
-            ImGui.SetNextWindowFocus();
-        }
-
-        MapPropertyView.OnGui(Selection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
-
-        LocalSearchView.OnGui();
-
-        // Not usable yet
-        if (FeatureFlags.EnableNavmeshBuilder)
-        {
-            NavmeshBuilderView.OnGui();
-        }
-
-        if (EntityInformationView != null)
-        {
-            EntityInformationView.OnGui();
-        }
-
-        if (EntityIdentifierOverview != null)
-        {
-            EntityIdentifierOverview.OnGui();
-        }
-
-        ResourceLoadWindow.DisplayWindow(MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
-        if (UI.Current.Interface_MapEditor_ResourceList)
-        {
-            ResourceListWindow.DisplayWindow("mapResourceList");
-        }
-
-        DisplayGroupView.OnGui();
-        AssetBrowserView.OnGui();
-        SelectionGroupView.OnGui();
-
-        if (UI.Current.Interface_MapEditor_ToolWindow)
-        {
-            ToolWindow.OnGui();
-        }
-
-        if (_activeModal != null)
-        {
-            if (_activeModal.IsClosed)
-            {
-                _activeModal.OpenModal();
-            }
-
-            _activeModal.OnGui();
-            if (_activeModal.IsClosed)
-            {
-                _activeModal = null;
-            }
-        }
-
-        ImGui.PopStyleColor(1);
-
-        FocusManager.OnFocus();
     }
 
     public void Draw(GraphicsDevice device, CommandList cl)
@@ -1057,9 +959,6 @@ public class MapEditorScreen : EditorScreen
 
     public void Save()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
@@ -1071,13 +970,13 @@ public class MapEditorScreen : EditorScreen
         {
             HandleSaveException(e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_MSB)
-            return;
-
         if (Project.ProjectType == ProjectType.Undefined)
             return;
 
@@ -1089,6 +988,9 @@ public class MapEditorScreen : EditorScreen
         {
             HandleSaveException(e);
         }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void OnEntityContextMenu(Entity ent)

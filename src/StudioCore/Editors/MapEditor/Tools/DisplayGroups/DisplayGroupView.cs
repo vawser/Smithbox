@@ -70,7 +70,7 @@ public class DisplayGroupView
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_MapEditor_RenderGroups)
+        if (!CFG.Current.Interface_MapEditor_RenderGroups)
             return;
 
         ImGui.SetNextWindowSize(new Vector2(100, 100) * scale);

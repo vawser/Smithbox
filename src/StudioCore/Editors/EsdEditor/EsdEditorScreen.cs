@@ -1,12 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.EsdEditor;
-using StudioCore.Editors.EsdEditor.Framework;
 using StudioCore.Interface;
+using System.Linq;
 using System.Numerics;
 
-namespace StudioCore.TalkEditor;
+namespace StudioCore.EzStateEditorNS;
 
 public class EsdEditorScreen : EditorScreen
 {
@@ -15,15 +15,11 @@ public class EsdEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public EsdSelectionManager Selection;
-    public EsdPropertyDecorator Decorator;
-    public EsdShortcuts EditorShortcuts;
+    public EsdSelection Selection;
     public EsdContextMenu ContextMenu;
-    public EsdActionHandler ActionHandler;
     public EsdFilters Filters;
 
     public EsdToolView ToolView;
-    public EsdToolMenubar ToolMenubar;
 
     public EsdFileView FileView;
     public EsdScriptView ScriptView;
@@ -36,21 +32,17 @@ public class EsdEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        EditorShortcuts = new EsdShortcuts(this);
-        Selection = new EsdSelectionManager(this);
-        Decorator = new EsdPropertyDecorator(this);
-        ContextMenu = new EsdContextMenu(this);
-        ActionHandler = new EsdActionHandler(this);
-        Filters = new EsdFilters(this);
+        Selection = new EsdSelection(this, Project);
+        ContextMenu = new EsdContextMenu(this, Project);
+        Filters = new EsdFilters(this, Project);
 
-        ToolView = new EsdToolView(this);
-        ToolMenubar = new EsdToolMenubar(this);
+        ToolView = new EsdToolView(this, Project);
 
-        FileView = new EsdFileView(this);
-        ScriptView = new EsdScriptView(this);
-        StateGroupView = new EsdStateGroupView(this);
-        StateNodeView = new EsdStateNodeView(this);
-        StateNodePropertyView = new EsdStateNodePropertyView(this);
+        FileView = new EsdFileView(this, Project);
+        ScriptView = new EsdScriptView(this, Project);
+        StateGroupView = new EsdStateGroupView(this, Project);
+        StateNodeView = new EsdStateNodeView(this, Project);
+        StateNodePropertyView = new EsdStateNodePropertyView(this, Project);
     }
 
     public string EditorName => "ESD Editor##TalkScriptEditor";
@@ -79,37 +71,38 @@ public class EsdEditorScreen : EditorScreen
         var dsid = ImGui.GetID("DockSpace_TalkScriptEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
 
+        Shortcuts();
+
         if (ImGui.BeginMenuBar())
         {
             FileMenu();
             EditMenu();
             ViewMenu();
-            ToolMenu();
 
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_EsdEditor_FileList)
+        if (CFG.Current.Interface_EsdEditor_FileList)
         {
             FileView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_ScriptList)
+        if (CFG.Current.Interface_EsdEditor_ScriptList)
         {
             ScriptView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateGroupList)
+        if (CFG.Current.Interface_EsdEditor_StateGroupList)
         {
             StateGroupView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateNodeList)
+        if (CFG.Current.Interface_EsdEditor_StateNodeList)
         {
             StateNodeView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_StateNodeContents)
+        if (CFG.Current.Interface_EsdEditor_StateNodeContents)
         {
             StateNodePropertyView.Display();
         }
-        if (UI.Current.Interface_EsdEditor_ToolConfigurationWindow)
+        if (CFG.Current.Interface_EsdEditor_ToolConfigurationWindow)
         {
             ToolView.Display();
         }
@@ -181,39 +174,39 @@ public class EsdEditorScreen : EditorScreen
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_EsdEditor_FileList = !UI.Current.Interface_EsdEditor_FileList;
+                CFG.Current.Interface_EsdEditor_FileList = !CFG.Current.Interface_EsdEditor_FileList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_FileList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_FileList);
 
             if (ImGui.MenuItem("Scripts"))
             {
-                UI.Current.Interface_EsdEditor_ScriptList = !UI.Current.Interface_EsdEditor_ScriptList;
+                CFG.Current.Interface_EsdEditor_ScriptList = !CFG.Current.Interface_EsdEditor_ScriptList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_ScriptList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ScriptList);
 
             if (ImGui.MenuItem("State Groups"))
             {
-                UI.Current.Interface_EsdEditor_StateGroupList = !UI.Current.Interface_EsdEditor_StateGroupList;
+                CFG.Current.Interface_EsdEditor_StateGroupList = !CFG.Current.Interface_EsdEditor_StateGroupList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateGroupList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateGroupList);
 
             if (ImGui.MenuItem("State Nodes"))
             {
-                UI.Current.Interface_EsdEditor_StateNodeList = !UI.Current.Interface_EsdEditor_StateNodeList;
+                CFG.Current.Interface_EsdEditor_StateNodeList = !CFG.Current.Interface_EsdEditor_StateNodeList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateNodeList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateNodeList);
 
             if (ImGui.MenuItem("Node Contents"))
             {
-                UI.Current.Interface_EsdEditor_StateNodeContents = !UI.Current.Interface_EsdEditor_StateNodeContents;
+                CFG.Current.Interface_EsdEditor_StateNodeContents = !CFG.Current.Interface_EsdEditor_StateNodeContents;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_StateNodeContents);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_StateNodeContents);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_EsdEditor_ToolConfigurationWindow = !UI.Current.Interface_EsdEditor_ToolConfigurationWindow;
+                CFG.Current.Interface_EsdEditor_ToolConfigurationWindow = !CFG.Current.Interface_EsdEditor_ToolConfigurationWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_EsdEditor_ToolConfigurationWindow);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_EsdEditor_ToolConfigurationWindow);
 
             ImGui.EndMenu();
         }
@@ -221,27 +214,62 @@ public class EsdEditorScreen : EditorScreen
         ImGui.Separator();
     }
 
-    public void ToolMenu()
+    public async void Save()
     {
-        ToolMenubar.Display();
+        var targetScript = Project.EsdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
+
+        if (targetScript.Key != null)
+        {
+            await Project.EsdData.PrimaryBank.SaveScript(targetScript.Key, targetScript.Value);
+
+            if (Selection.SelectedFileEntry.Extension == "talkesdbnd")
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.talkesdbnd.dcx");
+            }
+
+            if (Selection.SelectedFileEntry.Extension == "esd")
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Saved {Selection.SelectedFileEntry.Filename}.esd");
+            }
+        }
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
-    public void Save()
+    public async void SaveAll()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
+        await Project.EsdData.PrimaryBank.SaveAllScripts();
 
-        if (Project.ProjectType == ProjectType.Undefined)
-            return;
-
-        Project.EsdBank.SaveEsdScript(Selection._selectedFileInfo, Selection._selectedBinder);
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
-    public void SaveAll()
+    public void Shortcuts()
     {
-        if (!CFG.Current.EnableEditor_ESD)
-            return;
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Save();
+        }
 
-        Project.EsdBank.SaveEsdScripts();
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
     }
 }

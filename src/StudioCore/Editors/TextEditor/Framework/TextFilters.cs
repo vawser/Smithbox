@@ -39,7 +39,7 @@ public class TextFilters
     public void DisplayFileFilterSearch()
     {
         ImGui.InputText($"Search##fileFilterSearch", ref FileFilterInput, 255);
-        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.");
+        UIHelper.WideTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fileFilterExactMatch", ref FileFilterExactMatch);
@@ -107,7 +107,7 @@ public class TextFilters
     public void DisplayFmgFilterSearch()
     {
         ImGui.InputText($"Search##fmgFilterSearch", ref FmgFilterInput, 255);
-        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.");
+        UIHelper.WideTooltip("Chain commands by using the + symbol between them.");
 
         ImGui.SameLine();
         ImGui.Checkbox($"##fmgFilterExactMatch", ref FmgFilterExactMatch);
@@ -186,7 +186,7 @@ public class TextFilters
     public void DisplayFmgEntryFilterSearch()
     {
         ImGui.InputText($"Search##fmgEntryFilterSearch", ref FmgEntryFilterInput, 255);
-        UIHelper.ShowWideHoverTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
+        UIHelper.WideTooltip("Chain commands by using the + symbol between them.\n\nSpecial commands:\nmodified - Displays rows where the text is different to vanilla.\nunique - Displays rows that are unique to your project.");
 
         if (ImGui.IsItemDeactivated())
         {

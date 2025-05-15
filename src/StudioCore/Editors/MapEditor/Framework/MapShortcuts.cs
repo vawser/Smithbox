@@ -36,6 +36,11 @@ public class MapShortcuts
         {
             var type = CFG.Current.MapEditor_Viewport_GridType;
 
+            if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+            {
+                Editor.Save();
+            }
+
             if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
             {
                 EditorActionManager.UndoAction();

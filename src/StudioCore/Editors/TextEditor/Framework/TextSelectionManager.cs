@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Formats.JSON;
 using StudioCore.TextEditor;
 
 namespace StudioCore.Editors.TextEditor;
@@ -8,6 +9,7 @@ public class TextSelectionManager
 {
     private TextEditorScreen Editor;
 
+    public FileDictionaryEntry SelectedFileDictionaryEntry;
     public int SelectedContainerKey;
     public TextContainerWrapper SelectedContainerWrapper;
 
@@ -38,43 +40,27 @@ public class TextSelectionManager
         FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
     }
 
-    public void OnProjectChanged()
-    {
-        SelectedContainerKey = -1;
-        SelectedContainerWrapper = null;
-
-        SelectedFmgWrapper = null;
-        SelectedFmgKey = -1;
-
-        _selectedFmgEntryIndex = -1;
-        _selectedFmgEntry = null;
-
-        SelectNextFileContainer = false;
-        SelectNextFmg = false;
-        SelectNextFmgEntry = false;
-
-        FocusFileSelection = false;
-        FocusFmgSelection = false;
-        FocusFmgEntrySelection = false;
-
-        FmgEntryMultiselect = new TextMultiselection(Editor, MultiSelectKey);
-    }
-
     /// <summary>
     /// Set current File Container selection
     /// </summary>>
-    public void SelectFileContainer(TextContainerWrapper info, int index)
+    public void SelectFileContainer(FileDictionaryEntry entry, TextContainerWrapper info, int index)
     {
+        SelectedFileDictionaryEntry = entry;
         SelectedContainerKey = index;
         SelectedContainerWrapper = info;
+
+        SelectedFmgKey = -1;
+        SelectedFmgWrapper = null;
 
         _selectedFmgEntryIndex = -1;
         _selectedFmgEntry = null;
 
+        var paramEditor = Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor;
+
         // Refresh the param editor FMG decorators when the file changes.
-        if (Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor != null)
+        if (paramEditor != null)
         {
-            Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor.SetupFmgDecorators();
+            paramEditor.DecoratorHandler.SetupFmgDecorators();
         }
 
         // Auto-select first FMG

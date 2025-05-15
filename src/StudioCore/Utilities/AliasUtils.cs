@@ -1,18 +1,15 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Octokit;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TextEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
 using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Utilities;
@@ -34,7 +31,7 @@ public static class AliasUtils
         {
             ImGui.SameLine();
 
-            if (UI.Current.System_WrapAliasDisplay)
+            if (CFG.Current.System_WrapAliasDisplay)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_Benefit_Text_Color, @$"[{aliasName}]");

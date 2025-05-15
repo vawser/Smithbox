@@ -1,8 +1,12 @@
-﻿using System;
+﻿using DotNext.IO.MemoryMappedFiles;
+using DotNext.Threading;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace SoulsFormats
 {
@@ -345,9 +349,30 @@ namespace SoulsFormats
             {
                 byte[] bytes = new byte[PaddedFileSize];
                 bdtStream.Position = FileOffset;
-                bdtStream.Read(bytes, 0, PaddedFileSize);
+                bdtStream.ReadExactly(bytes, 0, PaddedFileSize);
                 AESKey?.Decrypt(bytes);
                 return bytes;
+            }
+
+            /// <summary>
+            /// Read and decrypt (if necessary) file data from the BDT.
+            /// Uses a mutex to enable multithreaded reads.
+            /// </summary>
+            public byte[] ReadFileThreaded(FileStream bdtStream)
+            {
+                byte[] bytes = new byte[PaddedFileSize];
+                using (var h = bdtStream.AcquireWriteLock())
+                {
+                    bdtStream.Position = FileOffset;
+                    bdtStream.ReadExactly(bytes, 0, PaddedFileSize);
+                }
+                AESKey?.Decrypt(bytes);
+                return bytes;
+            }
+
+            public IMappedMemoryOwner GetFile(MemoryMappedFile file)
+            {
+                return file.CreateMemoryAccessor(FileOffset, PaddedFileSize, MemoryMappedFileAccess.Read);
             }
         }
 

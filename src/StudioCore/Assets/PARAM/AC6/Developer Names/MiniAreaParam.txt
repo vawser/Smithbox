@@ -1,2 +1,0 @@
-0 Shouldn't be erased -- 消すべからず
-1 Test data (you can delete it later) -- テスト用データ（後で消してもOK）

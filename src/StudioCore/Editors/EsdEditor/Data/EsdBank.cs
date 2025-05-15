@@ -1,265 +1,218 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Andre.IO.VFS;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.EsdEditor;
-using StudioCore.Resource.Locators;
-using System;
+using StudioCore.Formats.JSON;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.TalkEditor;
+namespace StudioCore.EzStateEditorNS;
 
 public class EsdBank
 {
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public bool IsLoaded { get; private set; }
-    public bool IsLoading { get; private set; }
+    public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
 
-    public Dictionary<EsdScriptInfo, IBinder> TalkBank { get; private set; } = new();
+    public string Name;
 
-    public EsdMeta Meta;
+    public Dictionary<FileDictionaryEntry, BinderContents> Scripts = new();
 
-    public EsdBank(Smithbox baseEditor, ProjectEntry project)
+    public EsdBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
         Project = project;
-
-        Meta = new EsdMeta(baseEditor, project);
+        Name = name;
+        TargetFS = targetFs;
     }
-    
-    // TODO: switch editor to FileDictionary method, where files are only loaded on demand, not all upfront
+
     public async Task<bool> Setup()
     {
         await Task.Delay(1);
 
-        // Meta
-        Task<bool> metaTask = Meta.Setup();
-        bool metaTaskResult = await metaTask;
-
-        // EMEVD
-        Task<bool> esdTask = LoadESD();
+        Task<bool> esdTask = SetupESD();
         bool esdTaskResult = await esdTask;
 
         return true;
     }
 
-    public async Task<bool> LoadESD()
+    public async Task<bool> SetupESD()
     {
         await Task.Delay(1);
 
-        TalkBank = new();
+        Scripts = new();
 
-        var fileDir = @"\script\talk";
-        var fileExt = @".talkesdbnd.dcx";
-
-        List<string> talkNames = MiscLocator.GetTalkBinders(Project);
-
-        foreach (var name in talkNames)
+        foreach (var entry in Project.EsdData.EsdFiles.Entries)
         {
-            var filePath = $"{fileDir}\\{name}{fileExt}";
-
-            if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
-            {
-                LoadEsdScript($"{Project.ProjectPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameModDirectory: {filePath}");
-            }
-            else
-            {
-                LoadEsdScript($"{Project.DataPath}\\{filePath}");
-                //TaskLogs.AddLog($"Loaded from GameRootDirectory: {filePath}");
-            }
+            Scripts.Add(entry, null);
         }
-
-        IsLoaded = true;
-        IsLoading = false;
 
         return true;
     }
 
-    private void LoadEsdScript(string path)
+    /// <summary>
+    /// For talkesdbnd
+    /// </summary>
+    /// <param name="fileEntry"></param>
+    /// <returns></returns>
+    public async Task<bool> LoadScriptBinder(FileDictionaryEntry fileEntry)
     {
-        // TODO: add DS2 ESD support
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            return;
+        await Task.Delay(1);
 
-        if (path == null)
+        // Standard talk binders
+        if (fileEntry.Extension == "talkesdbnd")
         {
-            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading ESD file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        EsdScriptInfo talkInfo = new EsdScriptInfo(name, path);
-
-        IBinder binder = null;
-
-        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-            try
+            // If already loaded, just ignore
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
             {
-                binder = BND3.Read(DCX.Decompress(path));
+                return true;
             }
-            catch (Exception ex)
-            {
-                var filename = Path.GetFileNameWithoutExtension(path);
-                TaskLogs.AddLog($"Failed to read ESD file: {filename} at {path}.\n{ex}", LogLevel.Error);
-            }
-        }
-        else
-        {
-            try
-            {
-                binder = BND4.Read(DCX.Decompress(path));
-            }
-            catch (Exception ex)
-            {
-                var filename = Path.GetFileNameWithoutExtension(path);
-                TaskLogs.AddLog($"Failed to read ESD file: {filename} at {path}.\n{ex}", LogLevel.Error);
-            }
-        }
 
-        if (binder != null)
-        {
-            foreach (var file in binder.Files)
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename))
             {
-                if (file.Name.Contains(".esd"))
+                var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+
+                if (scriptEntry.Key != null)
                 {
-                    try
+                    var key = scriptEntry.Key;
+
+                    var esdBinderData = TargetFS.ReadFileOrThrow(key.Path);
+                    var esdBinder = BND4.Read(esdBinderData);
+
+                    var files = new Dictionary<BinderFile, ESD>();
+
+                    foreach (var file in esdBinder.Files)
                     {
-                        ESD eFile = ESD.Read(file.Bytes);
-                        talkInfo.EsdFiles.Add(eFile);
+                        var data = file.Bytes;
+                        var esdData = ESD.Read(data);
+
+                        files.Add(file, esdData);
                     }
-                    catch (Exception ex)
-                    {
-                        TaskLogs.AddLog($"Failed to read ESD script: {file.ID}.\n{ex}", LogLevel.Error);
-                    }
+
+                    var newBinderContents = new BinderContents();
+                    newBinderContents.Name = fileEntry.Filename;
+                    newBinderContents.Binder = esdBinder;
+                    newBinderContents.Files = files;
+
+                    Scripts[key] = newBinderContents;
                 }
             }
-
-            TalkBank.Add(talkInfo, binder);
-        }
-    }
-
-    public void SaveEsdScripts()
-    {
-        foreach (var (info, binder) in TalkBank)
-        {
-            SaveEsdScript(info, binder);
-        }
-    }
-
-    public void SaveEsdScript(EsdScriptInfo info, IBinder binder)
-    {
-        if (binder == null)
-            return;
-
-        // Ignore loaded scripts that have not been modified
-        // This is to prevent mass-transfer to project folder on Save-All
-        if (!info.IsModified)
-            return;
-
-        //TaskLogs.AddLog($"SaveTalkScript: {info.Path}");
-
-        var fileDir = @"\script\talk";
-        var fileExt = @".talkesdbnd.dcx";
-
-        foreach (BinderFile file in binder.Files)
-        {
-            foreach (ESD eFile in info.EsdFiles)
+            else
             {
-                file.Bytes = eFile.Write();
+                return false;
+            }
+        }
+        // Loose esd files
+        else if(fileEntry.Extension == "esd")
+        {
+            // If already loaded, just ignore
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+            {
+                return true;
+            }
+
+            // Basically creates a fake binder to store the loose ESD in so it fits the standard system.
+            if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename))
+            {
+                var scriptEntry = Scripts.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+
+                if (scriptEntry.Key != null)
+                {
+                    var key = scriptEntry.Key;
+
+                    var fakeBinder = new BND4();
+
+                    var esdFileData = TargetFS.ReadFileOrThrow(key.Path);
+
+                    // Create binder file
+                    var binderFile = new BinderFile();
+                    binderFile.ID = 0;
+                    binderFile.Name = fileEntry.Filename;
+                    binderFile.Bytes = esdFileData;
+                    fakeBinder.Files.Add(binderFile);
+
+                    // Load actual ESD file
+                    var files = new Dictionary<BinderFile, ESD>();
+                    var data = binderFile.Bytes;
+                    var esdData = ESD.Read(data);
+                    files.Add(binderFile, esdData);
+
+                    var newBinderContents = new BinderContents();
+                    newBinderContents.Name = fileEntry.Filename;
+                    newBinderContents.Binder = fakeBinder;
+                    newBinderContents.Files = files;
+                    newBinderContents.Loose = true;
+
+                    Scripts[key] = newBinderContents;
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 
-        byte[] fileBytes = null;
-        var assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
-        var assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
-
-        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-            BND3 writeBinder = binder as BND3;
-
-            switch (Project.ProjectType)
-            {
-                case ProjectType.DS1:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                case ProjectType.DS1R:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                    break;
-                default:
-                    return;
-            }
-        }
-        else
-        {
-            BND4 writeBinder = binder as BND4;
-
-            switch (Project.ProjectType)
-            {
-                case ProjectType.BB:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.DS3:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    break;
-                case ProjectType.SDT:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.ER:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK);
-                    break;
-                case ProjectType.AC6:
-                    fileBytes = writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                    break;
-                default:
-                    return;
-            }
-        }
-
-        // Add folder if it does not exist in GameModDirectory
-        if (!Directory.Exists($"{Project.ProjectPath}\\{fileDir}\\"))
-        {
-            Directory.CreateDirectory($"{Project.ProjectPath}\\{fileDir}\\");
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-            //TaskLogs.AddLog($"Saved at: {assetMod}");
-        }
+        return true;
     }
 
-    public class EsdScriptInfo
+    public async Task<bool> SaveAllScripts()
     {
-        public EsdScriptInfo(string name, string path)
+        await Task.Delay(1);
+
+        foreach (var entry in Scripts)
         {
-            IsModified = false;
-            Name = name;
-            Path = path;
-            EsdFiles = new List<ESD>();
+            await SaveScript(entry.Key, entry.Value);
         }
 
-        public string Name { get; set; }
-        public string Path { get; set; }
-        public bool IsModified { get; set; }
-
-        public List<ESD> EsdFiles { get; set; }
+        return true;
     }
+
+    public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, BinderContents curContents)
+    {
+        await Task.Delay(1);
+
+        if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+        {
+            if(curContents.Loose)
+            {
+                // Should only ever be one file in a 'fake' binder
+                var looseFile = curContents.Files.First().Value;
+                if(looseFile != null)
+                {
+                    var esdData = looseFile.Write();
+
+                    Project.ProjectFS.WriteFile(fileEntry.Path, esdData);
+                }
+            }
+            else
+            {
+                foreach(var file in curContents.Files)
+                {
+                    var binderFile = file.Key;
+                    var esdFile = file.Value;
+
+                    binderFile.Bytes = esdFile.Write();
+                }
+
+                var binderData = curContents.Binder.Write();
+
+                Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+            }
+        }
+
+        return true;
+    }
+}
+
+public class BinderContents
+{
+    public string Name { get; set; }
+    public BND4 Binder { get; set; }
+    public Dictionary<BinderFile, ESD> Files { get; set; }
+
+    /// <summary>
+    /// This is to mark a 'fake' binder used for the loose ESD files
+    /// </summary>
+    public bool Loose { get; set; } = false;
 }

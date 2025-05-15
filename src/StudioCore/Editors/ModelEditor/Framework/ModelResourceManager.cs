@@ -5,12 +5,12 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.ModelEditor.Actions;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Utils;
-using StudioCore.Interface;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -1054,11 +1054,11 @@ public class ModelResourceManager : IResourceEventListener
 
                 var minSpeed = 1.0f;
                 var basespeed = Math.Max(minSpeed, (float)Math.Sqrt(mindim / 3.0f));
-                Viewport.WorldView.CameraMoveSpeed_Normal = basespeed;
-                Viewport.WorldView.CameraMoveSpeed_Slow = basespeed / 10.0f;
-                Viewport.WorldView.CameraMoveSpeed_Fast = basespeed * 10.0f;
+                Viewport.ViewportCamera.CameraMoveSpeed_Normal = basespeed;
+                Viewport.ViewportCamera.CameraMoveSpeed_Slow = basespeed / 10.0f;
+                Viewport.ViewportCamera.CameraMoveSpeed_Fast = basespeed * 10.0f;
 
-                Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
+                //Viewport.NearClip = Math.Max(0.001f, maxdim / 10000.0f);
             }
 
             // Update Model Container

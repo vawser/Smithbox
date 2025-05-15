@@ -1,21 +1,20 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.IO.VFS;
+using Hexa.NET.ImGui;
 using StudioCore.Editor;
-using StudioCore.Editors.EmevdEditor;
-using StudioCore.Editors.GparamEditor.Data;
 using StudioCore.Editors.MapEditor;
-using StudioCore.Editors.MapEditor.Framework;
-using StudioCore.Editors.MaterialEditor;
+using StudioCore.Editors.MapEditor.Data;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TalkEditor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
-using StudioCore.EmevdEditor;
+using StudioCore.EventScriptEditorNS;
+using StudioCore.EzStateEditorNS;
+using StudioCore.FileBrowserNS;
 using StudioCore.Formats.JSON;
-using StudioCore.GraphicsEditor;
-using StudioCore.MaterialEditor;
-using StudioCore.TalkEditor;
+using StudioCore.GraphicsParamEditorNS;
+using StudioCore.MaterialEditorNS;
 using StudioCore.TextEditor;
 using StudioCore.TextureViewer;
 using System;
@@ -56,17 +55,30 @@ public class ProjectEntry
     public bool EnableEmevdEditor;
     public bool EnableEsdEditor;
     public bool EnableTextureViewer;
+    public bool EnableFileBrowser;
 
     // Legacy
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
     public Dictionary<string, List<string>> PinnedFields { get; set; } = new();
 
+    // Filesystems
+    [JsonIgnore]
+    public VirtualFileSystem FS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem ProjectFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaBinderFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaRealFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public VirtualFileSystem VanillaFS = EmptyVirtualFileSystem.Instance;
+    [JsonIgnore]
+    public FileDictionary FileDictionary;
+
     // Editors
     [JsonIgnore]
     public Smithbox BaseEditor;
-    [JsonIgnore]
-    public List<EditorScreen> EditorList = new();
     [JsonIgnore]
     public EditorScreen FocusedEditor;
     [JsonIgnore]
@@ -89,26 +101,37 @@ public class ProjectEntry
     public EsdEditorScreen EsdEditor;
     [JsonIgnore]
     public TextureViewerScreen TextureViewer;
+    [JsonIgnore]
+    public FileBrowserScreen FileBrowser;
 
     // Data Banks
     [JsonIgnore]
-    public EmevdBank EmevdBank; // TODO: utilise file dictionary, change this to lazy load style
+    public MapData MapData;
     [JsonIgnore]
-    public EsdBank EsdBank; // TODO: utilise file dictionary, change this to lazy load style
+    public ParamData ParamData;
     [JsonIgnore]
-    public GparamBank GparamBank; // TODO: utilise file dictionary, change this to lazy load style
+    public MaterialData MaterialData;
     [JsonIgnore]
-    public MsbBank MsbBank; // TODO: utilise file dictionary, change this to lazy load style
+    public EmevdData EmevdData;
     [JsonIgnore]
-    public MaterialBank MaterialBank; // TODO: utilise file dictionary, change this to lazy load style
+    public EsdData EsdData;
     [JsonIgnore]
-    public ParamData ParamData; // TODO: utilise file dictionary
+    public GparamData GparamData; 
+
     [JsonIgnore]
     public TextData TextData; // TODO: utilise file dictionary, change this to lazy load style
     [JsonIgnore]
     public TextureData TextureData; // TODO: utilise file dictionary
     [JsonIgnore]
     public TimeActData TimeActData; // TODO: utilise file dictionary, change this to lazy load style
+    [JsonIgnore]
+    public FileData FileData;
+
+    /// <summary>
+    /// Action manager for project-level changes (e.g. aliases)
+    /// </summary>
+    [JsonIgnore]
+    public ActionManager ActionManager;
 
     // Additional Data
     [JsonIgnore]
@@ -169,35 +192,28 @@ public class ProjectEntry
         ImportedParamRowNames = false;
         EnableParamRowStrip = false;
 
-        //EnableMapEditor = true;
-        //EnableModelEditor = true;
-        //EnableTextEditor = true;
-        //EnableParamEditor = true;
-        //EnableTimeActEditor = true;
-        //EnableGparamEditor = true;
-        //EnableMaterialEditor = true;
-        //EnableEmevdEditor = true;
-        //EnableEsdEditor = true;
-        //EnableTextureViewer = true;
-
-        // TESTING
+        // Defaults
         EnableMapEditor = true;
         EnableModelEditor = true;
-        EnableTextEditor = false;
-        EnableParamEditor = false;
+        EnableTextEditor = true;
+        EnableParamEditor = true;
+        EnableGparamEditor = true;
+        EnableTextureViewer = true;
+
         EnableTimeActEditor = false;
-        EnableGparamEditor = false;
         EnableMaterialEditor = false;
         EnableEmevdEditor = false;
         EnableEsdEditor = false;
-        EnableTextureViewer = false;
+        EnableFileBrowser = false;
+
+        ActionManager = new ActionManager();
     }
 
     /// <summary>
     /// Setup project
     /// </summary>
     /// <returns></returns>
-    public async Task<bool> Init()
+    public async Task<bool> Init(bool silent = false, InitType initType = InitType.ProjectDefined)
     {
         /// The order of operations here is important:
         /// 1. Externals 
@@ -210,130 +226,242 @@ public class ProjectEntry
         Initialized = false;
         IsInitializing = true;
 
+        ActionManager = new();
+
         await Task.Delay(1);
 
-        EditorList.Clear();
         FocusedEditor = null;
 
         // DLLs
         Task<bool> dllGrabTask = SetupDLLs();
         bool dllGrabResult = await dllGrabTask;
 
-        if (!dllGrabResult)
+        if (!dllGrabResult && !silent)
         {
             TaskLogs.AddLog($"[{ProjectName}] Failed to grab oo2core.dll");
         }
 
         // VFS
-        // TODO
+        Task<bool> vfsTask = SetupVFS();
+        bool vfsSetup = await vfsTask;
+
+        if (!silent)
+        {
+            if (vfsSetup)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup virtual filesystem.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup virtual filesystem.");
+            }
+        }
 
         // Aliases
         Task<bool> aliasesTask = SetupAliases();
         bool aliasesSetup = await aliasesTask;
 
-        if (aliasesSetup)
+        if (!silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Setup aliases.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
+            if (aliasesSetup)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup aliases.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup aliases.");
+            }
         }
 
         // Project Enums (per project)
         Task<bool> projectParamEnumTask = SetupProjectParamEnums();
         bool projectParamEnumResult = await projectParamEnumTask;
 
-        if (projectParamEnumResult)
+        if (!silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Setup Project Param Enums.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+            if (projectParamEnumResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup Project Param Enums.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+            }
         }
 
+        InitializeEditors(initType, silent);
+        
+        Initialized = true;
+        IsInitializing = false;
+
+        return true;
+    }
+
+    public async void InitializeEditors(InitType initType, bool silent = false)
+    {
+        // Clear all existing editors and editor data
+        MapEditor = null;
+        ModelEditor = null;
+        TextEditor = null;
+        ParamEditor = null;
+        TimeActEditor = null;
+        GparamEditor = null;
+        MaterialEditor = null;
+        EmevdEditor = null;
+        EsdEditor = null;
+        TextureViewer = null;
+        MapEditor = null;
+        FileBrowser = null;
+
+        MapData = null;
+        ParamData = null;
+        MaterialData = null;
+        EmevdData = null;
+        EsdData = null;
+        GparamData = null;
+        TextData = null;
+        TextureData = null;
+        TimeActData = null;
+        FileData = null;
+
         // ---- Map Editor ----
-        if (EnableMapEditor)
+        if (EnableMapEditor && initType is InitType.ProjectDefined or InitType.MapEditorOnly)
         {
             // MSB Information
             Task<bool> msbInfoTask = SetupMsbInfo();
             bool msbInfoResult = await msbInfoTask;
 
-            if (msbInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
+                if (msbInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB information.");
+                }
             }
 
             // Spawn States (per project) -- DS2 specific
             Task<bool> mapSpawnStatesTask = SetupMapSpawnStates();
             bool mapSpawnStatesResult = await mapSpawnStatesTask;
 
-            if (mapSpawnStatesResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
+                if (mapSpawnStatesResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Spawn States information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Spawn States information.");
+                }
             }
 
             // Entity Selection Groups (per project)
             Task<bool> entitySelectionGroupTask = SetupMapEntitySelections();
             bool entitySelectionGroupResult = await entitySelectionGroupTask;
 
-            if (entitySelectionGroupResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
+                if (entitySelectionGroupResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Entity Selection Groups.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Entity Selection Groups.");
+                }
             }
 
-            MsbBank = new(BaseEditor, this);
+            MapData = new(BaseEditor, this);
 
-            // MSB Bank
-            Task<bool> msbBankTask = MsbBank.Setup();
-            bool msbBankTaskResult = await msbBankTask;
+            // Map Data
+            Task<bool> mapDataTask = MapData.Setup();
+            bool mapDataTaskResult = await mapDataTask;
 
-            if (msbBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup MSB Bank.");
+                if (mapDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Setup Map Data Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup Map Data Banks.");
+                }
             }
-            else
+
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Map Editor] Failed to setup MSB Bank.");
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (!silent)
+                {
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
+                }
             }
 
             MapEditor = new MapEditorScreen(BaseEditor, this);
         }
 
         // ---- Model Editor ----
-        if (EnableModelEditor)
+        if (EnableModelEditor && initType is InitType.ProjectDefined)
         {
             // FLVER Information
             Task<bool> flverInfoTask = SetupFlverInfo();
             bool flverInfoResult = await flverInfoTask;
 
-            if (flverInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
+                if (flverInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Model Editor] Setup FLVER information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+                }
             }
-            else
+
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Model Editor] Failed to setup FLVER information.");
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (!silent)
+                {
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
+                }
             }
 
             ModelEditor = new ModelEditorScreen(BaseEditor, this);
         }
 
         // ---- Text Editor ----
-        if (EnableTextEditor)
+        if (EnableTextEditor && initType is InitType.ProjectDefined or InitType.TextEditorOnly)
         {
             TextData = new(BaseEditor, this);
 
@@ -341,60 +469,71 @@ public class ProjectEntry
             Task<bool> textBankTask = TextData.Setup();
             bool textBankTaskResult = await textBankTask;
 
-            if (textBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Setup FMG Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Text Editor] Failed to setup FMG Banks.");
+                if (textBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Text Editor] Setup FMG Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Text Editor] Failed to setup FMG Banks.");
+                }
             }
 
             TextEditor = new TextEditorScreen(BaseEditor, this);
         }
 
         // ---- Param Editor ----
-        if (EnableParamEditor)
+        if (EnableParamEditor && initType is InitType.ProjectDefined or InitType.ParamEditorOnly)
         {
             // Game Offsets (per project)
             Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
             bool gameOffsetResult = await gameOffsetTask;
 
-            if (gameOffsetResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+                if (gameOffsetResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Memory Offsets.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Memory Offsets.");
+                }
             }
 
             // Param Categories (per project)
             Task<bool> paramCategoryTask = SetupParamCategories();
             bool paramCategoryResult = await paramCategoryTask;
 
-            if (paramCategoryResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
+                if (paramCategoryResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Param Categories.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Param Categories.");
+                }
             }
 
             // Commutative Param Groups (per project)
             Task<bool> commutativeParamGroupTask = SetupCommutativeParamGroups();
             bool commutativeParamGroupResult = await commutativeParamGroupTask;
 
-            if (commutativeParamGroupResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
+                if (commutativeParamGroupResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup Commutative Param Groups.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
+                }
             }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup Commutative Param Groups.");
-            }
-
 
             ParamData = new(BaseEditor, this);
 
@@ -402,20 +541,29 @@ public class ProjectEntry
             Task<bool> paramBankTask = ParamData.Setup();
             bool paramBankTaskResult = await paramBankTask;
 
-            if (paramBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup PARAM Banks.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup PARAM Banks.");
+                if (paramBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Setup PARAM Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Param Editor] Failed to setup PARAM Banks.");
+                }
             }
 
             ParamEditor = new ParamEditorScreen(BaseEditor, this);
+
+            // Placed here so the mass edit stuff is initialized once the editor is setup fully
+            if(ParamEditor != null)
+            {
+                ParamEditor.MassEditHandler.Setup();
+            }
         }
 
         // ---- Time Act Editor ----
-        if (EnableTimeActEditor)
+        if (EnableTimeActEditor && initType is InitType.ProjectDefined)
         {
             TimeActData = new(BaseEditor, this);
 
@@ -423,117 +571,138 @@ public class ProjectEntry
             Task<bool> timeActTask = TimeActData.Setup();
             bool timeActTaskResult = await timeActTask;
 
-            if (timeActTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
+                if (timeActTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
+                }
             }
 
             TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
         }
 
         // ---- Graphics Param Editor ----
-        if (EnableGparamEditor)
+        if (EnableGparamEditor && initType is InitType.ProjectDefined)
         {
             // GPARAM Information
             Task<bool> gparamInfoTask = SetupGparamInfo();
             bool gparamInfoResult = await gparamInfoTask;
 
-            if (gparamInfoResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+                if (gparamInfoResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM information.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM information.");
+                }
             }
 
-            GparamBank = new(BaseEditor, this);
+            GparamData = new(BaseEditor, this);
 
             // Gparam Bank
-            Task<bool> gparamBankTask = GparamBank.Setup();
+            Task<bool> gparamBankTask = GparamData.Setup();
             bool gparamBankTaskResult = await gparamBankTask;
 
-            if (gparamBankTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Bank.");
+                if (gparamBankTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Setup GPARAM Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Graphics Param Editor] Failed to setup GPARAM Banks.");
+                }
             }
 
             GparamEditor = new GparamEditorScreen(BaseEditor, this);
         }
 
         // ---- Material Editor ----
-        if (EnableMaterialEditor)
+        if (EnableMaterialEditor && initType is InitType.ProjectDefined)
         {
-            MaterialBank = new(BaseEditor, this);
-
-            // Material Bank
-            Task<bool> matBankTask = MaterialBank.Setup();
-            bool matBankTaskResult = await matBankTask;
-
-            if (matBankTaskResult)
+            // Only do this once, as 3 editors may invoke this.
+            if (MaterialData == null)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Setup Material Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Material Editor] Failed to setup Material Bank.");
+                MaterialData = new(BaseEditor, this);
+
+                Task<bool> materialDataTask = MaterialData.Setup();
+                bool materialDataTaskResult = await materialDataTask;
+
+                if (!silent)
+                {
+                    if (materialDataTaskResult)
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Setup Material Data.");
+                    }
+                    else
+                    {
+                        TaskLogs.AddLog($"[{ProjectName}] Failed to setup Material Data.");
+                    }
+                }
             }
 
             MaterialEditor = new MaterialEditorScreen(BaseEditor, this);
         }
 
         // ---- Event Script Editor ----
-        if (EnableEmevdEditor)
+        if (EnableEmevdEditor && initType is InitType.ProjectDefined)
         {
-            EmevdBank = new(BaseEditor, this);
+            EmevdData = new(BaseEditor, this);
 
-            // EMEVD Bank
-            Task<bool> emevdBankTask = EmevdBank.Setup();
+            // EMEVD Banks
+            Task<bool> emevdBankTask = EmevdData.Setup();
             bool emevdBankResult = await emevdBankTask;
 
-            if (emevdBankResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Bank.");
+                if (emevdBankResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Banks.");
+                }
             }
 
             EmevdEditor = new EmevdEditorScreen(BaseEditor, this);
         }
 
         // ---- EzState Script Editor ----
-        if (EnableEsdEditor)
+        if (EnableEsdEditor && initType is InitType.ProjectDefined)
         {
-            EsdBank = new(BaseEditor, this);
+            EsdData = new(BaseEditor, this);
 
-            // ESD Bank
-            Task<bool> esdBankTask = EsdBank.Setup();
+            // ESD Banks
+            Task<bool> esdBankTask = EsdData.Setup();
             bool esdBankResult = await esdBankTask;
 
-            if (esdBankResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Bank.");
+                if (esdBankResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Banks.");
+                }
             }
 
             EsdEditor = new EsdEditorScreen(BaseEditor, this);
         }
 
         // ---- Texture Viewer ----
-        if (EnableTextureViewer)
+        if (EnableTextureViewer && initType is InitType.ProjectDefined)
         {
             TextureData = new(BaseEditor, this);
 
@@ -541,22 +710,44 @@ public class ProjectEntry
             Task<bool> textureDataTask = TextureData.Setup();
             bool textureDataTaskResult = await textureDataTask;
 
-            if (textureDataTaskResult)
+            if (!silent)
             {
-                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Setup texture bank.");
-            }
-            else
-            {
-                TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Failed to setup texture bank.");
+                if (textureDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Setup texture bank.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Texture Viewer] Failed to setup texture bank.");
+                }
             }
 
             TextureViewer = new TextureViewerScreen(BaseEditor, this);
         }
 
-        Initialized = true;
-        IsInitializing = false;
+        // ---- File Browser ----
+        if (EnableFileBrowser && initType is InitType.ProjectDefined)
+        {
+            FileData = new(BaseEditor, this);
 
-        return true;
+            // Text Banks
+            Task<bool> fileDataTask = FileData.Setup();
+            bool fileDataTaskResult = await fileDataTask;
+
+            if (!silent)
+            {
+                if (fileDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:File Browser] Setup directories.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:File Browser] Setup directories.");
+                }
+            }
+
+            FileBrowser = new FileBrowserScreen(BaseEditor, this);
+        }
     }
 
     /// <summary>
@@ -582,45 +773,51 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor)
+        var commands = EditorCommandQueue.GetNextCommand();
+
+        if (EnableMapEditor && MapEditor != null)
         {
-            HandleEditor(MapEditor, dt);
+            HandleEditor(commands, MapEditor, dt);
         }
-        if (EnableModelEditor)
+        if (EnableModelEditor && ModelEditor != null)
         {
-            HandleEditor(ModelEditor, dt);
+            HandleEditor(commands, ModelEditor, dt);
         }
-        if (EnableTextEditor)
+        if (EnableTextEditor && TextEditor != null)
         {
-            HandleEditor(TextEditor, dt);
+            HandleEditor(commands, TextEditor, dt);
         }
-        if (EnableParamEditor)
+        if (EnableParamEditor && ParamEditor != null)
         {
-            HandleEditor(ParamEditor, dt);
+            HandleEditor(commands, ParamEditor, dt);
         }
-        if (EnableTimeActEditor)
+        if (EnableTimeActEditor && TimeActEditor != null)
         {
-            HandleEditor(TimeActEditor, dt);
+            HandleEditor(commands, TimeActEditor, dt);
         }
-        if (EnableGparamEditor)
+        if (EnableGparamEditor && GparamEditor != null)
         {
-            HandleEditor(GparamEditor, dt);
+            HandleEditor(commands, GparamEditor, dt);
         }
-        if (EnableMaterialEditor)
+        if (EnableMaterialEditor && MaterialEditor != null)
         {
-            HandleEditor(MaterialEditor, dt);
+            HandleEditor(commands, MaterialEditor, dt);
         }
-        if (EnableEmevdEditor)
+        if (EnableEmevdEditor && EmevdEditor != null)
         {
-            HandleEditor(EmevdEditor, dt);
+            HandleEditor(commands, EmevdEditor, dt);
         }
-        if (EnableEsdEditor)
+        if (EnableEsdEditor && EsdEditor != null)
         {
-            HandleEditor(EsdEditor, dt);
+            HandleEditor(commands, EsdEditor, dt);
         }
-        if (EnableTextureViewer)
+        if (EnableTextureViewer && TextureViewer != null)
         {
-            HandleEditor(TextureViewer, dt);
+            HandleEditor(commands, TextureViewer, dt);
+        }
+        if (EnableFileBrowser && FileBrowser != null)
+        {
+            HandleEditor(commands, FileBrowser, dt);
         }
     }
 
@@ -629,10 +826,8 @@ public class ProjectEntry
     /// </summary>
     /// <param name="screen"></param>
     /// <param name="dt"></param>
-    public unsafe void HandleEditor(EditorScreen screen, float dt)
+    public unsafe void HandleEditor(string[] commands, EditorScreen screen, float dt)
     {
-        var commands = EditorCommandQueue.GetNextCommand();
-
         if (commands != null && commands[0] == screen.CommandEndpoint)
         {
             commands = commands[1..]; // Remove the target editor command
@@ -679,11 +874,11 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor)
+        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
         {
             MapEditor.EditorResized(window, device);
         }
-        if (EnableModelEditor)
+        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
         {
             ModelEditor.EditorResized(window, device);
         }
@@ -699,16 +894,17 @@ public class ProjectEntry
         if (SuspendUpdate)
             return;
 
-        if (EnableMapEditor && FocusedEditor is MapEditorScreen)
+        if (EnableMapEditor && MapEditor != null && FocusedEditor is MapEditorScreen)
         {
             MapEditor.Draw(device, cl);
         }
-        if (EnableModelEditor && FocusedEditor is ModelEditorScreen)
+        if (EnableModelEditor && ModelEditor != null && FocusedEditor is ModelEditorScreen)
         {
             ModelEditor.Draw(device, cl);
         }
     }
 
+    #region Setup DLLS
     /// <summary>
     /// Grab the decompression DLLs if relevant to this project
     /// </summary>
@@ -755,7 +951,134 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup VFS
+    public async Task<bool> SetupVFS()
+    {
+        await Task.Delay(1000);
+
+        List<VirtualFileSystem> fileSystems = [];
+
+        ProjectFS.Dispose();
+        VanillaRealFS.Dispose();
+        VanillaBinderFS.Dispose();
+        VanillaFS.Dispose();
+        FS.Dispose();
+
+        // Order of addition to FS determines precendence when getting a file
+        // e.g. ProjectFS is prioritised over VanillaFS
+
+        // Project File System
+        if (Directory.Exists(ProjectPath))
+        {
+            ProjectFS = new RealVirtualFileSystem(ProjectPath, false);
+            fileSystems.Add(ProjectFS);
+        }
+        else
+        {
+            ProjectFS = EmptyVirtualFileSystem.Instance;
+        }
+
+        // Vanilla File System
+        if (Directory.Exists(DataPath))
+        {
+            VanillaRealFS = new RealVirtualFileSystem(DataPath, false);
+            fileSystems.Add(VanillaRealFS);
+
+            var andreGame = ProjectType.AsAndreGame();
+
+            if (andreGame != null)
+            {
+                if (!ProjectType.IsLooseGame())
+                {
+                    VanillaBinderFS = ArchiveBinderVirtualFileSystem.FromGameFolder(DataPath, andreGame.Value);
+                    fileSystems.Add(VanillaBinderFS);
+                }
+
+                VanillaFS = new CompundVirtualFileSystem([VanillaRealFS, VanillaBinderFS]);
+            }
+            else
+            {
+                VanillaRealFS = EmptyVirtualFileSystem.Instance;
+                VanillaFS = EmptyVirtualFileSystem.Instance;
+            }
+        }
+        else
+        {
+            VanillaRealFS = EmptyVirtualFileSystem.Instance;
+            VanillaFS = EmptyVirtualFileSystem.Instance;
+        }
+
+
+        if (fileSystems.Count == 0)
+            FS = EmptyVirtualFileSystem.Instance;
+        else
+            FS = new CompundVirtualFileSystem(fileSystems);
+
+        var folder = @$"{AppContext.BaseDirectory}\Assets\File Dictionaries\";
+        var file = "";
+
+        // Build the file dictionary JSON objects here
+        switch (ProjectType)
+        {
+            case ProjectType.DES:
+                file = "DES-File-Dictionary.json"; break;
+            case ProjectType.DS1:
+                file = "DS1-File-Dictionary.json"; break;
+            case ProjectType.DS1R:
+                file = "DS1R-File-Dictionary.json"; break;
+            case ProjectType.DS2:
+                file = "DS2-File-Dictionary.json"; break;
+            case ProjectType.DS2S:
+                file = "DS2S-File-Dictionary.json"; break;
+            case ProjectType.DS3:
+                file = "DS3-File-Dictionary.json"; break;
+            case ProjectType.BB:
+                file = "BB-File-Dictionary.json"; break;
+            case ProjectType.SDT:
+                file = "SDT-File-Dictionary.json"; break;
+            case ProjectType.ER:
+                file = "ER-File-Dictionary.json"; break;
+            case ProjectType.AC6:
+                file = "AC6-File-Dictionary.json"; break;
+            default: break;
+        }
+
+        var filepath = $"{folder}{file}";
+
+        FileDictionary = new();
+        FileDictionary.Entries = new();
+
+        if (File.Exists(filepath))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(filepath);
+                var options = new JsonSerializerOptions();
+                FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
+
+                if (FileDictionary == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Failed to load file dictionary.");
+            }
+        }
+
+        // Create merged dictionary, including unique entries present in the project directory only.
+        var projectFileDictionary = ProjectUtils.BuildFromSource(ProjectPath, FileDictionary);
+        FileDictionary = ProjectUtils.MergeFileDictionaries(FileDictionary, projectFileDictionary);
+
+        return true;
+    }
+
+    #endregion
+
+    #region Setup Aliases
     /// <summary>
     /// Setup the alias store for this project
     /// </summary>
@@ -800,8 +1123,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
-
+    #region Setup MSB Information
     /// <summary>
     /// Setup the MSB information for this project
     /// </summary>
@@ -911,7 +1235,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup FLVER Information
     /// <summary>
     /// Setup the FLVER information for this project
     /// </summary>
@@ -989,7 +1315,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup GPARAM Information
     /// <summary>
     /// Setup the GPARAM information for this project
     /// </summary>
@@ -1067,7 +1395,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Param Reloader Offsets
     /// <summary>
     /// Setup the PARAM memory offsets for this project
     /// </summary>
@@ -1080,7 +1410,7 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Offsets.json");
+        var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
 
@@ -1105,7 +1435,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Project Enums
     /// <summary>
     /// Setup the project-specific PARAM enums for this project
     /// </summary>
@@ -1118,10 +1450,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Enums.json");
+        var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "Enums.json");
+        var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var targetFile = sourceFile;
 
@@ -1151,7 +1483,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Param Categories
     /// <summary>
     /// Setup the param categories for this project
     /// </summary>
@@ -1164,10 +1498,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Categories.json");
+        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "Categories.json");
+        var projectFile = Path.Combine(projectFolder, "Param Categories.json");
 
         var targetFile = sourceFile;
 
@@ -1197,6 +1531,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
+
+    #region Setup Commutative Param Groups
 
     /// <summary>
     /// Setup the param categories for this project
@@ -1210,10 +1547,10 @@ public class ProjectEntry
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "CommutativeGroups.json");
+        var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
         var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
-        var projectFile = Path.Combine(projectFolder, "CommutativeGroups.json");
+        var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
 
         var targetFile = sourceFile;
 
@@ -1243,7 +1580,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Map Spawn States
     /// <summary>
     /// Setup the map spawn states for this project
     /// </summary>
@@ -1289,7 +1628,9 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
 
+    #region Setup Map Entity Selections
     /// <summary>
     /// Setup the map spawn states for this project
     /// </summary>
@@ -1325,4 +1666,16 @@ public class ProjectEntry
 
         return true;
     }
+    #endregion
+}
+
+/// <summary>
+/// This is used to control which editors are loaded when initing a project via aux bank functions
+/// </summary>
+public enum InitType
+{
+    ProjectDefined,
+    MapEditorOnly,
+    ParamEditorOnly,
+    TextEditorOnly
 }

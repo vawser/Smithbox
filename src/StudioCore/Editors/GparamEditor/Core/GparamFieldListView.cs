@@ -1,21 +1,19 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editors.GparamEditor.Enums;
 using StudioCore.Formats.JSON;
-using StudioCore.GraphicsEditor;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Numerics;
 using static SoulsFormats.GPARAM;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamFieldListView
 {
     private GparamEditorScreen Screen;
     private GparamFilters Filters;
-    private GparamSelectionManager Selection;
+    private GparamSelection Selection;
     private GparamContextMenu ContextMenu;
 
     public GparamFieldListView(GparamEditorScreen screen)
@@ -137,7 +135,6 @@ public class GparamFieldListView
                 if (ImGui.Button($"Add##{missing.id}"))
                 {
                     AddMissingField(Selection._selectedParamGroup, missing);
-                    Selection.ToggleSelectedFileModifiedState(true);
                 }
                 ImGui.SameLine();
                 ImGui.Text($"{missing.name}");

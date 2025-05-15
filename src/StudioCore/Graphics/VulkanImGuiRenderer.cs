@@ -3,6 +3,7 @@ using Hexa.NET.ImGuizmo;
 using Hexa.NET.ImNodes;
 using Hexa.NET.ImPlot;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Scene.Framework;
 using StudioCore.Utilities;
@@ -12,6 +13,9 @@ using System.ComponentModel.Design.Serialization;
 using System.IO;
 using System.Numerics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 using Veldrid;
 using Vortice.Vulkan;
 
@@ -128,11 +132,41 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         ImGuiIOPtr io = ImGui.GetIO();
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;
 
+        unsafe
+        {
+            ImGuiPlatformIOPtr platformIO = ImGui.GetPlatformIO();
+            platformIO.PlatformSetClipboardTextFn = (void*)Marshal.GetFunctionPointerForDelegate(_setClipboardTextCallback);
+            platformIO.PlatformGetClipboardTextFn = (void*)Marshal.GetFunctionPointerForDelegate(_getClipboardTextCallback);
+            platformIO.PlatformClipboardUserData = (void*)GCHandle.ToIntPtr(_clipboardUserDataHandle);
+        }
+
         ImGui.GetIO().Fonts.AddFontDefault();
 
         CreateDeviceResources(gd, outputDescription);
 
         SetPerFrameImGuiData(1f / 60f);
+    }
+
+    private static SetClipboardTextCallback _setClipboardTextCallback = SetClipboardText;
+    private static GetClipboardTextCallback _getClipboardTextCallback = GetClipboardText;
+    private static readonly GCHandle _clipboardUserDataHandle = GCHandle.Alloc(new object());
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate void SetClipboardTextCallback(IntPtr userData, IntPtr text);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public unsafe delegate IntPtr GetClipboardTextCallback(IntPtr userData);
+
+    private static void SetClipboardText(IntPtr userData, IntPtr text)
+    {
+        string managedText = Marshal.PtrToStringUTF8(text);
+        PlatformUtils.Instance.SetClipboardText(managedText);
+    }
+
+    private static IntPtr GetClipboardText(IntPtr userData)
+    {
+        string clipboardText = PlatformUtils.Instance.GetClipboardText();
+        return Marshal.StringToCoTaskMemUTF8(clipboardText);
     }
 
     /// <summary>
@@ -487,30 +521,26 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
     }
 
+    private readonly Dictionary<Key, bool> _keyStates = new();
+
     private void UpdateImGuiInput(InputSnapshot snapshot)
     {
         ImGuiIOPtr io = ImGui.GetIO();
 
-        // Determine if any of the mouse buttons were pressed during this snapshot period, even if they are no longer held.
+        // Mouse input
         var leftPressed = false;
         var middlePressed = false;
         var rightPressed = false;
-        for (var i = 0; i < snapshot.MouseEvents.Count; i++)
+        for (int i = 0; i < snapshot.MouseEvents.Count; i++)
         {
             MouseEvent me = snapshot.MouseEvents[i];
             if (me.Down)
             {
                 switch (me.MouseButton)
                 {
-                    case MouseButton.Left:
-                        leftPressed = true;
-                        break;
-                    case MouseButton.Middle:
-                        middlePressed = true;
-                        break;
-                    case MouseButton.Right:
-                        rightPressed = true;
-                        break;
+                    case MouseButton.Left: leftPressed = true; break;
+                    case MouseButton.Middle: middlePressed = true; break;
+                    case MouseButton.Right: rightPressed = true; break;
                 }
             }
         }
@@ -521,69 +551,90 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         io.MousePos = snapshot.MousePosition;
         io.MouseWheel = snapshot.WheelDelta;
 
-        IReadOnlyList<char> keyCharPresses = snapshot.KeyCharPresses;
-        for (var i = 0; i < keyCharPresses.Count; i++)
+        // Text input
+        foreach (char c in snapshot.KeyCharPresses)
         {
-            var c = keyCharPresses[i];
-            ImGui.GetIO().AddInputCharacter(c);
+            io.AddInputCharacter(c);
         }
 
-        IReadOnlyList<KeyEvent> keyEvents = snapshot.KeyEvents;
-        for (var i = 0; i < keyEvents.Count; i++)
+        // Key events
+        foreach (KeyEvent keyEvent in snapshot.KeyEvents)
         {
-            KeyEvent keyEvent = keyEvents[i];
+            _keyStates[keyEvent.Key] = keyEvent.Down;
+        }
 
-            ImGuiKey imguiKey = MapToImGuiKey(keyEvent.Key);
+        foreach ((Key key, bool isDown) in _keyStates)
+        {
+            ImGuiKey imguiKey = MapToImGuiKey(key);
             if (imguiKey != ImGuiKey.None)
             {
-                io.AddKeyEvent(imguiKey, keyEvent.Down);
-            }
-
-            if (keyEvent.Key == Key.ControlLeft || keyEvent.Key == Key.ControlRight)
-            {
-                _controlDown = keyEvent.Down;
-            }
-
-            if (keyEvent.Key == Key.ShiftLeft || keyEvent.Key == Key.ShiftRight)
-            {
-                _shiftDown = keyEvent.Down;
-            }
-
-            if (keyEvent.Key == Key.AltLeft || keyEvent.Key == Key.AltRight)
-            {
-                _altDown = keyEvent.Down;
+                io.AddKeyEvent(imguiKey, isDown);
             }
         }
 
+        io.AddKeyEvent(ImGuiKey.ModCtrl, _keyStates.GetValueOrDefault(Key.ControlLeft) || _keyStates.GetValueOrDefault(Key.ControlRight));
+        io.AddKeyEvent(ImGuiKey.ModShift, _keyStates.GetValueOrDefault(Key.ShiftLeft) || _keyStates.GetValueOrDefault(Key.ShiftRight));
+        io.AddKeyEvent(ImGuiKey.ModAlt, _keyStates.GetValueOrDefault(Key.AltLeft) || _keyStates.GetValueOrDefault(Key.AltRight));
 
-        io.KeyCtrl = _controlDown;
-        io.KeyAlt = _altDown;
-        io.KeyShift = _shiftDown;
+        // Optional legacy fields
+        io.KeyCtrl = _keyStates.GetValueOrDefault(Key.ControlLeft) || _keyStates.GetValueOrDefault(Key.ControlRight);
+        io.KeyShift = _keyStates.GetValueOrDefault(Key.ShiftLeft) || _keyStates.GetValueOrDefault(Key.ShiftRight);
+        io.KeyAlt = _keyStates.GetValueOrDefault(Key.AltLeft) || _keyStates.GetValueOrDefault(Key.AltRight);
     }
-    
+
     private ImGuiKey MapToImGuiKey(Key key)
     {
-        switch (key)
+        return key switch
         {
-            case Key.BackSpace: return ImGuiKey.Backspace;
-            case Key.Delete: return ImGuiKey.Delete;
-            case Key.Enter: return ImGuiKey.Enter;
-            case Key.Tab: return ImGuiKey.Tab;
-            case Key.Left: return ImGuiKey.LeftArrow;
-            case Key.Right: return ImGuiKey.RightArrow;
-            case Key.Up: return ImGuiKey.UpArrow;
-            case Key.Down: return ImGuiKey.DownArrow;
-            case Key.ControlLeft: return ImGuiKey.LeftCtrl;
-            case Key.ControlRight: return ImGuiKey.RightCtrl;
-            case Key.ShiftLeft: return ImGuiKey.LeftShift;
-            case Key.ShiftRight: return ImGuiKey.RightShift;
-            case Key.AltLeft: return ImGuiKey.LeftAlt;
-            case Key.AltRight: return ImGuiKey.RightAlt;
-
-            // NOTE: if a key isn't working, you need to add a mapping here for it
-
-            default: return ImGuiKey.None;
-        }
+            Key.Tab => ImGuiKey.Tab,
+            Key.Left => ImGuiKey.LeftArrow,
+            Key.Right => ImGuiKey.RightArrow,
+            Key.Up => ImGuiKey.UpArrow,
+            Key.Down => ImGuiKey.DownArrow,
+            Key.PageUp => ImGuiKey.PageUp,
+            Key.PageDown => ImGuiKey.PageDown,
+            Key.Home => ImGuiKey.Home,
+            Key.End => ImGuiKey.End,
+            Key.Insert => ImGuiKey.Insert,
+            Key.Delete => ImGuiKey.Delete,
+            Key.BackSpace => ImGuiKey.Backspace,
+            Key.Space => ImGuiKey.Space,
+            Key.Enter => ImGuiKey.Enter,
+            Key.Escape => ImGuiKey.Escape,
+            Key.A => ImGuiKey.A,
+            Key.B => ImGuiKey.B,
+            Key.C => ImGuiKey.C,
+            Key.D => ImGuiKey.D,
+            Key.E => ImGuiKey.E,
+            Key.F => ImGuiKey.F,
+            Key.G => ImGuiKey.G,
+            Key.H => ImGuiKey.H,
+            Key.I => ImGuiKey.I,
+            Key.J => ImGuiKey.J,
+            Key.K => ImGuiKey.K,
+            Key.L => ImGuiKey.L,
+            Key.M => ImGuiKey.M,
+            Key.N => ImGuiKey.N,
+            Key.O => ImGuiKey.O,
+            Key.P => ImGuiKey.P,
+            Key.Q => ImGuiKey.Q,
+            Key.R => ImGuiKey.R,
+            Key.S => ImGuiKey.S,
+            Key.T => ImGuiKey.T,
+            Key.U => ImGuiKey.U,
+            Key.V => ImGuiKey.V,
+            Key.W => ImGuiKey.W,
+            Key.X => ImGuiKey.X,
+            Key.Y => ImGuiKey.Y,
+            Key.Z => ImGuiKey.Z,
+            Key.ControlLeft => ImGuiKey.LeftCtrl,
+            Key.ControlRight => ImGuiKey.RightCtrl,
+            Key.ShiftLeft => ImGuiKey.LeftShift,
+            Key.ShiftRight => ImGuiKey.RightShift,
+            Key.AltLeft => ImGuiKey.LeftAlt,
+            Key.AltRight => ImGuiKey.RightAlt,
+            _ => ImGuiKey.None,
+        };
     }
 
     private unsafe void RenderImDrawData(ImDrawDataPtr draw_data, GraphicsDevice gd, CommandList cl)

@@ -1,2 +1,13 @@
-Viewport doesn't appear correct nested in the Project -> Editor hierarchy (will appear if placed at the top next to Projects)
- Seems to be a draw ordering issue
+# TODO
+- Map Editor: implement orthographic view
+
+- Project: add Param Enum Editor back
+
+- Add Behavior Editor
+- Map Editor: re-jig the map load process to use new MapBank approach (e.g. load MSB, build MapContainer from it)
+- Model Editor: implement VFS + data bank overhaul
+- Texture Viewer: implement VFS + data bank overhaul
+- Time Act Editor: implement VFS + data bank overhaul
+
+# FIX
+- Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)

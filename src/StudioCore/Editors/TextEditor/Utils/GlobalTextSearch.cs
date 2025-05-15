@@ -31,6 +31,8 @@ public static class GlobalTextSearch
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
 
+        var buttonSize = new Vector2(windowWidth / 2, 32 * DPI.GetUIScale());
+
         if (ImGui.BeginTable($"globalSearchTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -112,13 +114,13 @@ public static class GlobalTextSearch
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", UI.GetStandardHalfButtonSize()))
+        if (ImGui.Button("Search##executeSearch", buttonSize))
         {
             HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", UI.GetStandardHalfButtonSize()))
+        if (ImGui.Button("Clear##clearSearchResults", buttonSize))
         {
             HasSearched = false;
             SearchResults.Clear();

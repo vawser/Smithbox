@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Concurrent;
@@ -86,7 +86,6 @@ public class TaskManager
             if (ex != null)
             {
                 // Use this for XML errors to see the file before the file with the bad syntax
-                throw new Exception($"{ParamMetaData.CurrentMetaFile}: {ex}");
                 throw ex;
             }
         }
@@ -194,15 +193,21 @@ public class TaskManager
             {
                 if (PassiveTask)
                 {
-                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
-                        LogLevel.Information, LogPriority);
+                    if (TaskName != "")
+                    {
+                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
+                            LogLevel.Information, LogPriority);
+                    }
                 }
 
                 try
                 {
                     TaskAction.Invoke();
-                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
+                    if (TaskName != "")
+                    {
+                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
                         LogLevel.Information, LogPriority);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -212,8 +217,12 @@ public class TaskManager
                         {
                             e = e.InnerException;
                         }
-                        TaskLogs.AddLog($"{TaskName}: {TaskFailedMessage}",
+
+                        if (TaskName != "")
+                        {
+                            TaskLogs.AddLog($"{TaskName} {TaskFailedMessage}",
                             LogLevel.Error, LogPriority, e);
+                        }
                     }
                     else
                     {

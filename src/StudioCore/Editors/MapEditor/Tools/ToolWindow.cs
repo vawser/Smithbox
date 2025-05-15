@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
@@ -915,7 +916,7 @@ public class ToolWindow
 
                 UIHelper.WrappedText("");
 
-                ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_ViewportInfoPanel_Display_MovementIncrement);
+                ImGui.Checkbox("Display movement increment type", ref CFG.Current.Viewport_DisplayMovementIncrement);
                 UIHelper.Tooltip("Display the current movement increment type you are using in the information panel.");
             }
 
@@ -993,7 +994,7 @@ public class ToolWindow
 
                 UIHelper.WrappedText("");
 
-                ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_ViewportInfoPanel_Display_DegreeIncrement);
+                ImGui.Checkbox("Display rotation increment in viewport", ref CFG.Current.Viewport_DisplayRotationIncrement);
                 UIHelper.Tooltip("Display the current degree increment type you are using in the information panel.");
             }
 

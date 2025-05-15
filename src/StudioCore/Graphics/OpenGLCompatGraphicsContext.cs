@@ -79,7 +79,6 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
 
     public void Draw(ProjectManager projectManager)
     {
-        Debug.Assert(Window.Exists);
         var width = Window.Width;
         var height = Window.Height;
         var x = Window.X;

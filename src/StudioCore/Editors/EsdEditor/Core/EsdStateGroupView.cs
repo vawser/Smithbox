@@ -1,29 +1,22 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Editors.EsdEditor.Enums;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the state group selection, viewing and editing.
 /// </summary>
 public class EsdStateGroupView
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
-    private EsdFilters Filters;
-    private EsdContextMenu ContextMenu;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdStateGroupView(EsdEditorScreen screen)
+    public EsdStateGroupView(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -40,15 +33,15 @@ public class EsdStateGroupView
     public void Display()
     {
         ImGui.Begin("State Group Selection##EsdStateGroupSelectView");
-        Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
 
-        var script = Selection._selectedEsdScript;
-        var stateGroupKey = Selection._selectedStateGroupKey;
+        var script = Editor.Selection.SelectedScript;
+        var stateGroupKey = Editor.Selection.SelectedGroupIndex;
 
-        Filters.DisplayStateGroupFilterSearch();
+        Editor.Filters.DisplayStateGroupFilterSearch();
 
         ImGui.BeginChild("StateGroupSection");
-        Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.StateGroup);
 
         if (script != null)
         {
@@ -60,32 +53,32 @@ public class EsdStateGroupView
                 var displayName = $"{entry.Key}";
                 var aliasName = displayName;
 
-                if (Filters.IsStateGroupFilterMatch(displayName, aliasName))
+                if (Editor.Filters.IsStateGroupFilterMatch(displayName, aliasName))
                 {
                     if (ImGui.Selectable($@" {stateId}", stateGroupKey == stateId))
                     {
-                        Selection.ResetStateGroupNode();
+                        Editor.Selection.ResetStateGroupNode();
 
-                        Selection.SetStateGroup(stateId, stateGroups);
+                        Editor.Selection.SetStateGroup(stateId, stateGroups);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextStateGroup)
+                    if (ImGui.IsItemHovered() && Editor.Selection.SelectNextGroup)
                     {
-                        Selection.SelectNextStateGroup = false;
-                        Selection.SetStateGroup(stateId, stateGroups);
+                        Editor.Selection.SelectNextGroup = false;
+                        Editor.Selection.SetStateGroup(stateId, stateGroups);
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
-                        Selection.SelectNextStateGroup = true;
+                        Editor.Selection.SelectNextGroup = true;
                     }
 
                     // Only apply to selection
-                    if (Selection._selectedStateGroupKey != -1)
+                    if (Editor.Selection.SelectedGroupIndex != -1)
                     {
-                        if (Selection._selectedStateGroupKey == entry.Key)
+                        if (Editor.Selection.SelectedGroupIndex == entry.Key)
                         {
-                            ContextMenu.StateGroupContextMenu(entry);
+                            Editor.ContextMenu.StateGroupContextMenu(entry);
                         }
                     }
 

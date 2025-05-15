@@ -1,9 +1,14 @@
 ﻿using Andre.Formats;
+using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.ParamEditor.MassEdit;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -27,7 +32,7 @@ public class ParamRowEditor
         Editor = paramEditorScreen;
     }
 
-    private static void PropEditorParamRow_Header(bool isActiveView, ref string propSearchString)
+    private static void PropEditorParamRow_Header(ParamEditorScreen editor, bool isActiveView, ref string propSearchString)
     {
         if (propSearchString != null)
         {
@@ -37,12 +42,15 @@ public class ParamRowEditor
             }
 
             // Autofill
-            ImGui.AlignTextToFramePadding();
-            var resAutoCol = AutoFill.ColumnSearchBarAutoFill();
-            if (resAutoCol != null)
+            if (editor.MassEditHandler.AutoFill != null)
             {
-                propSearchString = resAutoCol;
-                UICache.ClearCaches();
+                ImGui.AlignTextToFramePadding();
+                var resAutoCol = editor.MassEditHandler.AutoFill.ColumnSearchBarAutoFill();
+                if (resAutoCol != null)
+                {
+                    propSearchString = resAutoCol;
+                    UICache.ClearCaches();
+                }
             }
 
             ImGui.SameLine();
@@ -75,7 +83,7 @@ public class ParamRowEditor
         return (string)matchVal;
     }
 
-    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMetaData? meta, Param.Row vrow,
+    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMeta? meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, 
         string activeParam)
     {
@@ -90,7 +98,7 @@ public class ParamRowEditor
         ImGui.Spacing();
     }
 
-    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMetaData? meta,
+    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMeta? meta,
         Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow, 
         List<(PseudoColumn, Param.Column)> cols, List<(PseudoColumn, Param.Column)> vcols, 
         List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId, string activeParam, 
@@ -123,7 +131,7 @@ public class ParamRowEditor
         }
     }
 
-    private void PropEditorParamRow_MainFields(ParamMetaData? meta, ParamBank bank, Param.Row row, Param.Row vrow,
+    private void PropEditorParamRow_MainFields(ParamMeta? meta, ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
         List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
         string activeParam, ParamEditorSelectionState selection, List<string> pinnedFields)
@@ -223,12 +231,12 @@ public class ParamRowEditor
         Param.Row crow, ref string propSearchString, string activeParam, bool isActiveView,
         ParamEditorSelectionState selection)
     {
-        var meta = ParamMetaData.Get(row.Def);
+        var meta = Editor.Project.ParamData.GetParamMeta(row.Def);
         var imguiId = 0;
         var showParamCompare = auxRows.Count > 0;
         var showRowCompare = crow != null;
 
-        PropEditorParamRow_Header(isActiveView, ref propSearchString);
+        PropEditorParamRow_Header(Editor, isActiveView, ref propSearchString);
 
         //ImGui.BeginChild("Param Fields");
         var columnCount = 2;
@@ -286,7 +294,7 @@ public class ParamRowEditor
 
             var search = propSearchString;
             List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, row, "fieldFilter",
-                () => CellSearchEngine.cse.Search((activeParam, row), search, true, true));
+                () => Editor.MassEditHandler.cse.Search((activeParam, row), search, true, true));
 
             List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vrow, "vFieldFilter",
                 () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
@@ -315,7 +323,7 @@ public class ParamRowEditor
             {
                 if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
                 {
-                    EditorDecorations.DrawCalcCorrectGraph(Editor, meta, row);
+                    FieldDecorators.DrawCalcCorrectGraph(Editor, meta, row);
                 }
             }
 
@@ -325,7 +333,7 @@ public class ParamRowEditor
     }
 
     // Many parameter options, which may be simplified.
-    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMetaData? meta, Param.Row vrow,
+    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMeta? meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId,
         ParamEditorSelectionState selection, string activeParam)
     {
@@ -350,7 +358,7 @@ public class ParamRowEditor
             selection);
     }
 
-    private void PropEditorPropCellRow(ParamBank bank, ParamMetaData? meta, Param.Row row, Param.Row crow,
+    private void PropEditorPropCellRow(ParamBank bank, ParamMeta? meta, Param.Row row, Param.Row crow,
         (PseudoColumn, Param.Column) col, Param.Row vrow, (PseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(PseudoColumn, Param.Column)> auxCols, string fieldOffset,
         ref int imguiId, string activeParam, bool isPinned, ParamEditorSelectionState selection)
@@ -363,7 +371,7 @@ public class ParamRowEditor
             auxRows.Select((r, i) => auxCols[i].IsColumnValid() ? r.Item2?.Get(auxCols[i]) : null).ToList(),
             ref imguiId,
             fieldOffset != null ? "0x" + fieldOffset : null, col.Item2.Def.InternalName,
-            FieldMetaData.Get(col.Item2.Def),
+            Editor.Project.ParamData.GetParamFieldMeta(meta, col.Item2.Def),
             col.GetColumnType(),
             typeof(Param.Cell).GetProperty("Value"),
             row[col.Item2],
@@ -377,8 +385,8 @@ public class ParamRowEditor
 
 
     private void PropEditorPropRow(ParamBank bank, object oldval, object compareval, object vanillaval,
-        List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, FieldMetaData cellMeta,
-        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMetaData? meta, string activeParam,
+        List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta,
+        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta? meta, string activeParam,
         bool isPinned, Param.Column col, ParamEditorSelectionState selection)
     {
         var Wiki = cellMeta?.Wiki;
@@ -554,72 +562,72 @@ public class ParamRowEditor
                 // Param Ref
                 if (displayRefTypes)
                 {
-                    EditorDecorations.ParamRefText(RefTypes, row);
+                    FieldDecorators.ParamReference_Title(RefTypes, row);
                 }
 
                 // Text Ref
                 if (displayFmgRef)
                 {
-                    EditorDecorations.FmgRefText(FmgRef, row);
+                    FieldDecorators.TextReference_Title(FmgRef, row);
                 }
 
                 // Map Text Ref
                 if(displayMapFmgRef)
                 {
-                    EditorDecorations.FmgRefText(MapFmgRef, row, "MAP FMGS");
+                    FieldDecorators.TextReference_Title(MapFmgRef, row, "MAP FMGS");
                 }
 
                 // Texture Ref
                 if (displayTextureRef)
                 {
-                    EditorDecorations.TextureRefText(TextureRef, row);
+                    FieldDecorators.TextureReference_Title(TextureRef, row);
                 }
 
                 if (displayEnum)
                 {
-                    EditorDecorations.EnumNameText(Enum);
+                    FieldDecorators.Enum_Title(Enum);
                 }
 
                 // Particle list
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("PARTICLES");
+                    FieldDecorators.AliasEnum_Title("PARTICLES");
                 }
 
                 // Sound list
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("SOUNDS");
+                    FieldDecorators.AliasEnum_Title("SOUNDS");
                 }
 
                 // Flag list
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumNameText("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Title("FLAGS", row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // Cutscene list
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumNameText("CUTSCENES");
+                    FieldDecorators.AliasEnum_Title("CUTSCENES");
                 }
 
                 // Movie list
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumNameText("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Title("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // Project Enum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumNameText(Editor, cellMeta.ProjectEnumType);
+                    FieldDecorators.ProjectEnum_Title(Editor, cellMeta.ProjectEnumType);
                 }
 
                 // Param Field Offset
                 if(showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetText(activeParam, row, paramFieldIndex);
+                    FieldDecorators.ParamFieldOffset_Title(activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
@@ -704,83 +712,82 @@ public class ParamRowEditor
                 // ParamRef
                 if (displayRefTypes)
                 {
-                    EditorDecorations.ParamRefsSelectables(bank, RefTypes, row, oldval);
+                    FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, row, oldval);
                 }
 
                 // FmgRef
                 if (displayFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(Editor, FmgRef, row, oldval);
+                    FieldDecorators.TextReference_Value(Editor, FmgRef, row, oldval);
                 }
 
                 // MapFmgRef
                 if (displayMapFmgRef)
                 {
-                    EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, row, oldval);
+                    FieldDecorators.TextReference_Value(Editor, MapFmgRef, row, oldval);
                 }
 
                 // TextureRef
                 if (displayTextureRef)
                 {
-                    if (Editor.Project.TextureViewer != null)
-                    {
-                        EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
-                    }
+                    FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, row, oldval);
                 }
 
                 // Enum
                 if (displayEnum)
                 {
-                    EditorDecorations.EnumValueText(Enum.Values, oldval.ToString());
+                    FieldDecorators.Enum_Value(Enum.Values, oldval.ToString());
                 }
 
                 // ParticleAlias
                 if (showParticleEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Particles, oldval.ToString());
                 }
 
                 // SoundAlias
                 if (showSoundEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Sounds, oldval.ToString());
                 }
 
                 // FlagAlias
                 if (showFlagEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.EventFlags, oldval.ToString(), row, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
                 }
 
                 // CutsceneAlias
                 if (showCutsceneEnum)
                 {
-                    EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, oldval.ToString());
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Cutscenes, oldval.ToString());
                 }
 
                 // MovieAlias
                 if (showMovieEnum)
                 {
-                    EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                    FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
                 }
 
                 // ProjectEnum
                 if (showProjectEnum)
                 {
-                    EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, oldval.ToString());
+                    FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, oldval.ToString());
                 }
 
                 // Param Field Offset
                 if (showParamFieldOffset)
                 {
-                    EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, row, paramFieldIndex);
+                    FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, row, paramFieldIndex);
                 }
 
                 ImGui.EndGroup();
 
             }
 
-            EditorDecorations.ParamRefEnumQuickLink(Editor, bank, oldval, RefTypes, row, FmgRef, Enum, TextureRef);
+            FieldDecorators.ParamReference_ContextMenu(Editor, bank, oldval, row, RefTypes);
+            FieldDecorators.TextReference_ContextMenu(Editor, bank, oldval, row, FmgRef);
+            FieldDecorators.TextureReference_ContextMenu(Editor, bank, oldval, row, TextureRef);
 
             // Param Reference Buttons
             if (CFG.Current.Param_ViewInMapOption)
@@ -788,10 +795,10 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.ReturnPointParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.BonfireWarpParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.GameAreaParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.ItemLotParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.ReturnPointParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.BonfireWarpParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.GameAreaParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.ItemLotParam(Editor, activeParam, row, internalName);
                 }
             }
 
@@ -800,17 +807,17 @@ public class ParamRowEditor
                 // These are placed at the top, below the ID row
                 if (imguiId == 1)
                 {
-                    ParamReferenceUtils.AssetGeometryParam(Editor, activeParam, row, internalName);
-                    ParamReferenceUtils.BuddyStoneParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.AssetGeometryParam(Editor, activeParam, row, internalName);
+                    ParamMetaReferences.BuddyStoneParam(Editor, activeParam, row, internalName);
                 }
 
                 // These are placed in-line with the current field
-                ParamReferenceUtils.GrassTypeParam(Editor, activeParam, row, internalName);
-                ParamReferenceUtils.BulletParam(Editor, activeParam, row, internalName);
+                ParamMetaReferences.GrassTypeParam(Editor, activeParam, row, internalName);
+                ParamMetaReferences.BulletParam(Editor, activeParam, row, internalName);
             }
 
             // Color Picker
-            ParamReferenceUtils.ColorPicker(Editor, activeParam, row, internalName);
+            ParamMetaReferences.ColorPicker(Editor, activeParam, row, internalName);
 
             if (ImGui.IsItemClicked(ImGuiMouseButton.Right))
             {
@@ -882,7 +889,7 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, 
                 activeParam != null, isPinned, col, selection, propType, Wiki, oldval, true);
-            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+            PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
@@ -900,14 +907,14 @@ public class ParamRowEditor
         {
             PropertyRowNameContextMenuItems(bank, internalName, cellMeta, meta, activeParam, activeParam != null,
                 isPinned, col, selection, propType, Wiki, oldval, false);
-            PropertyRowValueContextMenuItems(bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
+            PropertyRowValueContextMenuItems(Editor, bank, row, cellMeta, internalName, VirtualRef, ExtRefs, oldval, ref newval,
                 RefTypes, FmgRef, MapFmgRef, TextureRef, Enum);
 
             ImGui.EndPopup();
         }
 
         // Context Menu Shortcuts
-        if (EditorDecorations.ParamRefEnumShortcutItems(bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+        if (FieldDecorators.ParamReference_ShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
         {
             ParamEditorCommon.SetLastPropertyManual(newval);
         }
@@ -923,7 +930,7 @@ public class ParamRowEditor
     }
 
     private void AdditionalColumnValue(string activeParam, object colVal, Type propType, ParamBank bank, List<ParamRef> RefTypes,
-        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix, FieldMetaData cellMeta)
+        List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, Param.Row context, ParamEnum Enum, List<TexRef> TextureRef, string imguiSuffix, ParamFieldMeta cellMeta)
     {
         if (colVal == null)
         {
@@ -975,72 +982,69 @@ public class ParamRowEditor
 
             if (CFG.Current.Param_HideReferenceRows == false && RefTypes != null)
             {
-                EditorDecorations.ParamRefsSelectables(bank, RefTypes, context, colVal);
+                FieldDecorators.ParamReference_Value(Editor, bank, RefTypes, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && FmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(Editor, FmgRef, context, colVal);
+                FieldDecorators.TextReference_Value(Editor, FmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && MapFmgRef != null)
             {
-                EditorDecorations.FmgRefSelectable(Editor, MapFmgRef, context, colVal);
+                FieldDecorators.TextReference_Value(Editor, MapFmgRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideReferenceRows == false && TextureRef != null)
             {
-                if (Editor.Project.TextureViewer != null)
-                {
-                    EditorDecorations.TextureRefSelectable(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
-                }
+                FieldDecorators.TextureReference_Value(Editor, Editor.Project.TextureViewer, TextureRef, context, colVal);
             }
 
             if (CFG.Current.Param_HideEnums == false && Enum != null)
             {
-                EditorDecorations.EnumValueText(Enum.Values, colVal.ToString());
+                FieldDecorators.Enum_Value(Enum.Values, colVal.ToString());
             }
 
             // ParticleAlias
             if (showParticleEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Particles, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Particles, colVal.ToString());
             }
 
             // SoundAlias
             if (showSoundEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Sounds, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Sounds, colVal.ToString());
             }
 
             // FlagAlias
             if (showFlagEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.EventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
+                FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.EventFlags, colVal.ToString(), context, FlagAliasEnum_ConditionalField, FlagAliasEnum_ConditionalValue);
             }
 
             // CutsceneAlias
             if (showCutsceneEnum)
             {
-                EditorDecorations.AliasEnumValueText(Editor.Project.Aliases.Cutscenes, colVal.ToString());
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Cutscenes, colVal.ToString());
             }
 
             // MovieAlias
             if (showMovieEnum)
             {
-                EditorDecorations.ConditionalAliasEnumValueText(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
             }
 
             // ProjectEnum
             if (showProjectEnum)
             {
-                EditorDecorations.ProjectEnumValueText(Editor, cellMeta.ProjectEnumType, colVal.ToString());
+                FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, colVal.ToString());
             }
 
             // Param Field Offset
             if (showParamFieldOffset)
             {
-                EditorDecorations.ParamFieldOffsetValueText(Editor, activeParam, context, paramFieldIndex);
+                FieldDecorators.ParamFieldOffset_Value(Editor, activeParam, context, paramFieldIndex);
             }
         }
     }
@@ -1067,7 +1071,7 @@ public class ParamRowEditor
         return $"{col.GetByteOffset().ToString("x")} [{offS}-{offS + col.Def.BitSize - 1}]";
     }
 
-    private static void PropertyRowName(ParamEditorScreen editor, string fieldOffset, ref string internalName, FieldMetaData cellMeta)
+    private static void PropertyRowName(ParamEditorScreen editor, string fieldOffset, ref string internalName, ParamFieldMeta cellMeta)
     {
         var altName = cellMeta?.AltName;
 
@@ -1112,8 +1116,8 @@ public class ParamRowEditor
         }
     }
 
-    private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, FieldMetaData cellMeta,
-        ParamMetaData? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
+    private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, ParamFieldMeta cellMeta,
+        ParamMeta? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
         var scale = DPI.GetUIScale();
@@ -1181,20 +1185,7 @@ public class ParamRowEditor
         // Add to Mass Edit
         if (ImGui.MenuItem("Add to Mass Edit"))
         {
-            var propertyName = internalName.Replace(" ", "\\s");
-            string currInput = Editor.ToolWindow.MassEditHandler._currentMEditRegexInput;
-
-            if(currInput == "")
-            {
-                // Add selection section if input is empty
-                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = $"selection: {propertyName}: ";
-            }
-            else
-            {
-                // Otherwise just add the property name
-                currInput = $"{currInput}{propertyName}";
-                Editor.ToolWindow.MassEditHandler._currentMEditRegexInput = currInput;
-            }
+            Editor.MassEditHandler.ConstructCommandFromField(internalName);
         }
 
         // Search for Non-Default Values
@@ -1260,67 +1251,10 @@ public class ParamRowEditor
             }
         }
 
-        // Editor Mode
-        if (Editor.EditorMode && cellMeta != null)
-        {
-            if (ImGui.BeginMenu("Add Reference"))
-            {
-                foreach (var p in bank.Params.Keys)
-                {
-                    if (ImGui.MenuItem(p + "##add" + p))
-                    {
-                        if (cellMeta.RefTypes == null)
-                        {
-                            cellMeta.RefTypes = new List<ParamRef>();
-                        }
-
-                        cellMeta.RefTypes.Add(new ParamRef(p));
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (cellMeta.RefTypes != null && ImGui.BeginMenu("Remove Reference"))
-            {
-                foreach (ParamRef p in cellMeta.RefTypes)
-                {
-                    if (ImGui.MenuItem(p.ParamName + "##remove" + p.ParamName))
-                    {
-                        cellMeta.RefTypes.Remove(p);
-
-                        if (cellMeta.RefTypes.Count == 0)
-                        {
-                            cellMeta.RefTypes = null;
-                        }
-
-                        break;
-                    }
-                }
-
-                ImGui.EndMenu();
-            }
-
-            if (ImGui.MenuItem(cellMeta.IsBool ? "Remove bool toggle" : "Add bool toggle"))
-            {
-                cellMeta.IsBool = !cellMeta.IsBool;
-            }
-
-            if (cellMeta.Wiki == null && ImGui.MenuItem("Add wiki..."))
-            {
-                cellMeta.Wiki = "Empty wiki...";
-            }
-
-            if (cellMeta.Wiki != null && ImGui.MenuItem("Remove wiki"))
-            {
-                cellMeta.Wiki = null;
-            }
-        }
-
         ImGui.PopStyleVar();
     }
 
-    private void PropertyRowValueContextMenuItems(ParamBank bank, Param.Row row, FieldMetaData cellMeta, string internalName,
+    private void PropertyRowValueContextMenuItems(ParamEditorScreen editor, ParamBank bank, Param.Row row, ParamFieldMeta cellMeta, string internalName,
         string VirtualRef, List<ExtRef> ExtRefs, dynamic oldval, ref object newval, List<ParamRef> RefTypes,
         List<FMGRef> FmgRef, List<FMGRef> MapFmgRef, List<TexRef> TextureRef, ParamEnum Enum)
     {
@@ -1331,7 +1265,7 @@ public class ParamRowEditor
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Ref_Text);
 
-                if (EditorDecorations.ParamRefEnumContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
+                if (FieldDecorators.Decorator_ContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
                 {
                     ParamEditorCommon.SetLastPropertyManual(newval);
                 }
@@ -1346,8 +1280,8 @@ public class ParamRowEditor
             {
                 ImGui.Separator();
                 ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_VirtualRef_Text);
-                EditorDecorations.VirtualParamRefSelectables(Editor, bank, VirtualRef, oldval, row, internalName, ExtRefs,
-                    Editor);
+                FieldDecorators.VirtualParamReference_ContextMenu(Editor, bank, VirtualRef, oldval, row, internalName);
+                FieldDecorators.ExternalReference_ContextMenu(Editor, bank, VirtualRef, oldval, row, internalName, ExtRefs);
                 ImGui.PopStyleColor();
             }
         }
@@ -1366,9 +1300,7 @@ public class ParamRowEditor
 
                 if (ImGui.Selectable("Reset to vanilla"))
                 {
-                    MassParamEditRegex.PerformMassEdit(Editor.Project.ParamData.PrimaryBank,
-                        $"selection && !added: {Regex.Escape(internalName)}: = vanilla;",
-                         Editor._activeView._selection);
+                    Editor.MassEditHandler.ApplyMassEdit($"selection && !added: {Regex.Escape(internalName)}: = vanilla;");
                 }
             }
             else
@@ -1390,11 +1322,15 @@ public class ParamRowEditor
                     }
 
                     ImGui.Separator();
-                    var res = AutoFill.MassEditOpAutoFill();
-                    if (res != null)
+
+                    if (editor.MassEditHandler.AutoFill != null)
                     {
-                        EditorCommandQueue.AddCommand(
-                            $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                        var res = editor.MassEditHandler.AutoFill.MassEditOpAutoFill();
+                        if (res != null)
+                        {
+                            EditorCommandQueue.AddCommand(
+                                $@"param/menu/massEditRegex/selection: {Regex.Escape(internalName)}: " + res);
+                        }
                     }
                 }
             }

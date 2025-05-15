@@ -15,6 +15,7 @@ using StudioCore.Editors.ModelEditor.Framework;
 using StudioCore.Editors.ModelEditor.Core.Properties;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Core;
+using StudioCore.Configuration;
 
 namespace StudioCore.Editors.ModelEditor.Core;
 
@@ -65,7 +66,7 @@ public class ModelPropertyView
     {
         var scale = DPI.GetUIScale();
 
-        if (!UI.Current.Interface_ModelEditor_Properties)
+        if (!CFG.Current.Interface_ModelEditor_Properties)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -14,6 +15,7 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Tasks;
 using StudioCore.Utilities;
+using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -60,7 +62,7 @@ public class MapPropertyView
         var scale = DPI.GetUIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
-        if (!UI.Current.Interface_MapEditor_Properties)
+        if (!CFG.Current.Interface_MapEditor_Properties)
             return;
 
         ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.ImGui_ChildBg);
@@ -174,13 +176,13 @@ public class MapPropertyView
             {
                 var mergedRow = (MergedParamRow)selection.WrappedObject;
 
-                meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
+                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{mergedRow.MetaName}");
             }
             if (selection.WrappedObject is Param.Row)
             {
                 var paramRow = (Param.Row)selection.WrappedObject;
 
-                meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
+                meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, $"Param_{paramRow.Def.ParamType}");
             }
 
 
@@ -209,7 +211,7 @@ public class MapPropertyView
 
         foreach (Param.Column cell in row.Columns)
         {
-            var meta = Editor.Project.MsbBank.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
+            var meta = Editor.Project.MapData.Meta.GetParamFieldMeta(cell.Def.InternalName, cell.Def.Parent.ParamType);
 
             PropEditorPropCellRow(meta, row[cell], ref id, null, row.ID);
         }
@@ -469,7 +471,7 @@ public class MapPropertyView
     {
         PropContextRowOpener();
 
-        var meta = Editor.Project.MsbBank.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
+        var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, prop.ReflectedType);
 
         // Field Name
         var fieldName = prop.Name;
@@ -661,7 +663,7 @@ public class MapPropertyView
         var first = entities.First();
 
         var type = types.Count() == 1 ? types.First() : typeof(IMsbEntry);
-        var meta = Editor.Project.MsbBank.Meta.GetMeta(type, false);
+        var meta = Editor.Project.MapData.Meta.GetMeta(type, false);
 
         if (CFG.Current.MapEditor_Enable_Property_Property_TopDecoration)
         {
@@ -753,7 +755,7 @@ public class MapPropertyView
         var id = 0;
         foreach (PropertyInfo prop in properties)
         {
-            var meta = Editor.Project.MsbBank.Meta.GetFieldMeta(prop.Name, type);
+            var meta = Editor.Project.MapData.Meta.GetFieldMeta(prop.Name, type);
 
             // Field Name
             var fieldName = prop.Name;

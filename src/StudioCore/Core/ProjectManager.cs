@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Octokit;
+using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,19 +39,21 @@ public class ProjectManager
         var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoMove;
 
         // Project List
-        ImGui.Begin("Projects##projectList", flags);
+        if (CFG.Current.Interface_Editor_ProjectList)
+        {
+            ImGui.Begin("Projects##projectList", flags);
 
-        Menubar();
-        DisplayProjectList();
+            Menubar();
+            DisplayProjectList();
 
-        ImGui.End();
+            ImGui.End();
+        }
 
         // Project Dock
         if (SelectedProject != null)
         {
             SelectedProject.Update(dt);
         }
-
     }
 
     private void Menubar()
@@ -71,6 +75,19 @@ public class ProjectManager
                         Process.Start("explorer.exe", SelectedProject.ProjectPath);
                     }
                     UIHelper.Tooltip("Open the project folder for this project.");
+
+
+                    if (CFG.Current.ModEngineInstall != "")
+                    {
+                        if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
+                        {
+                            if (ImGui.MenuItem($"Launch Mod##launchMod"))
+                            {
+                                ModEngineUtils.LaunchMod(SelectedProject);
+                            }
+                            UIHelper.Tooltip("Launch this project with ModEngine2.");
+                        }
+                    }
                 }
 
                 ImGui.EndMenu();
@@ -113,7 +130,9 @@ public class ProjectManager
             if (ImGui.Selectable($"{project.ProjectName}##{imGuiID}", SelectedProject == project))
             {
                 if (!IsProjectLoading)
+                {
                     StartupProject(project);
+                }
             }
 
             // Begin drag
@@ -147,23 +166,26 @@ public class ProjectManager
 
                 if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
                 {
-                    //ProjectSettings.Show(this, SelectedProject);
+                    ProjectSettings.Show(BaseEditor, SelectedProject);
                 }
 
                 if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
                 {
-                    //ProjectAliasEditor.Show(this, SelectedProject);
+                    ProjectAliasEditor.Show(BaseEditor, SelectedProject);
                 }
 
-                /*
+
                 if (CFG.Current.ModEngineInstall != "")
                 {
-                    if (ImGui.MenuItem($"Launch Mod##launchMod{imGuiID}"))
+                    if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
                     {
-                        ModEngineUtils.LaunchMod(SelectedProject);
+                        if (ImGui.MenuItem($"Launch Mod##launchMod"))
+                        {
+                            ModEngineUtils.LaunchMod(SelectedProject);
+                        }
+                        UIHelper.Tooltip("Launch this project with ModEngine2.");
                     }
                 }
-                */
 
                 ImGui.EndPopup();
             }
@@ -218,9 +240,6 @@ public class ProjectManager
         {
             SaveProject(projectEntry);
         }
-
-        CFG.Save();
-        UI.Save();
     }
 
     public void Setup()
@@ -340,8 +359,12 @@ public class ProjectManager
             {
                 if (projectEntry.AutoSelect)
                 {
-                    SelectedProject = projectEntry;
-                    SelectedProject.IsSelected = true;
+                    if (!IsProjectLoading)
+                    {
+                        StartupProject(projectEntry);
+                        SelectedProject = projectEntry;
+                        SelectedProject.IsSelected = true;
+                    }
                 }
             }
         }
@@ -398,6 +421,20 @@ public class ProjectManager
 
         var newProject = new ProjectEntry(BaseEditor, guid, projectName, projectPath, dataPath, projectType);
 
+        newProject.AutoSelect = ProjectCreation.AutoSelect;
+
+        newProject.EnableMapEditor = ProjectCreation.EnableMapEditor;
+        newProject.EnableModelEditor = ProjectCreation.EnableModelEditor;
+        newProject.EnableTextEditor = ProjectCreation.EnableTextEditor;
+        newProject.EnableParamEditor = ProjectCreation.EnableParamEditor;
+        newProject.EnableTimeActEditor = ProjectCreation.EnableTimeActEditor;
+        newProject.EnableGparamEditor = ProjectCreation.EnableGparamEditor;
+        newProject.EnableMaterialEditor = ProjectCreation.EnableMaterialEditor;
+        newProject.EnableEmevdEditor = ProjectCreation.EnableEmevdEditor;
+        newProject.EnableEsdEditor = ProjectCreation.EnableEsdEditor;
+        newProject.EnableTextureViewer = ProjectCreation.EnableTextureViewer;
+        newProject.EnableFileBrowser = ProjectCreation.EnableFileBrowser;
+
         ProjectCreation.Reset();
 
         Projects.Add(newProject);
@@ -414,14 +451,20 @@ public class ProjectManager
     {
         ProjectEntry oldProject = SelectedProject;
 
+        BaseEditor.SetProgramName(curProject);
+
         // Signal shutdown to existing project if it is loaded
         if (oldProject != null)
             SelectedProject.Suspend();
 
         IsProjectLoading = true;
 
-        Task<bool> projectSetupTask = curProject.Init();
-        bool projectSetupTaskResult = await projectSetupTask;
+        // Only setup editors 
+        if (!curProject.Initialized)
+        {
+            Task<bool> projectSetupTask = curProject.Init();
+            bool projectSetupTaskResult = await projectSetupTask;
+        }
 
         foreach (var tEntry in Projects)
         {

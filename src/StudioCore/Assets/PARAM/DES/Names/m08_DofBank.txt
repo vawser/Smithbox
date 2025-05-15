@@ -1,6 +1,0 @@
-0 Fort entrance
-1 inside the fort
-2 magma zone
-5 Fort entrance (view from the bridge)
-20 For poly drama (p80000
-22 For poly drama (p80200

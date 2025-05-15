@@ -1,25 +1,23 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
 using System.Numerics;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the EMEVD.Instruction creation menu
 /// </summary>
 public class EmevdInstructionCreationModal
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
     public bool ShowModal = false;
 
-    public EmevdInstructionCreationModal(EmevdEditorScreen screen)
+    public EmevdInstructionCreationModal(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()

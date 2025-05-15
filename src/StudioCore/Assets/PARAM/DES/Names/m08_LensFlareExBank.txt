@@ -1,6 +1,0 @@
-0 Fort entrance
-1 inside the fort
-2 magma zone
-60 For poly drama (p80000-A
-61 For poly drama (p80000-B
-62 For poly drama (p80000-C

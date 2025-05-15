@@ -1,29 +1,22 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Editors.EsdEditor.Enums;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the state node selection, viewing and editing.
 /// </summary>
 public class EsdStateNodeView
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
-    private EsdFilters Filters;
-    private EsdContextMenu ContextMenu;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdStateNodeView(EsdEditorScreen screen)
+    public EsdStateNodeView(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -40,15 +33,15 @@ public class EsdStateNodeView
     public void Display()
     {
         ImGui.Begin("State Node Selection##EsdStateNodeSelectView");
-        Selection.SwitchWindowContext(EsdEditorContext.StateNode);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.StateNode);
 
-        var stateGroups = Selection._selectedStateGroups;
-        var stateNodeKey = Selection._selectedStateGroupNodeKey;
+        var stateGroups = Editor.Selection.SelectedGroup;
+        var stateNodeKey = Editor.Selection.SelectNodeIndex;
 
-        Filters.DisplayStateFilterSearch();
+        Editor.Filters.DisplayStateFilterSearch();
 
         ImGui.BeginChild("StateNodeSection");
-        Selection.SwitchWindowContext(EsdEditorContext.StateNode);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.StateNode);
 
         if (stateGroups != null)
         {
@@ -57,30 +50,30 @@ public class EsdStateNodeView
                 var displayName = $"{key}";
                 var aliasName = displayName;
 
-                if (Filters.IsStateFilterMatch(displayName, aliasName))
+                if (Editor.Filters.IsStateFilterMatch(displayName, aliasName))
                 {
                     if (ImGui.Selectable($@" {key}", key == stateNodeKey))
                     {
-                        Selection.SetStateGroupNode(key, entry);
+                        Editor.Selection.SetStateGroupNode(key, entry);
                     }
 
                     // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextStateNode)
+                    if (ImGui.IsItemHovered() && Editor.Selection.SelectNextNode)
                     {
-                        Selection.SelectNextStateNode = false;
-                        Selection.SetStateGroupNode(key, entry);
+                        Editor.Selection.SelectNextNode = false;
+                        Editor.Selection.SetStateGroupNode(key, entry);
                     }
                     if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                     {
-                        Selection.SelectNextStateNode = true;
+                        Editor.Selection.SelectNextNode = true;
                     }
 
                     // Only apply to selection
-                    if (Selection._selectedStateGroupNodeKey != -1)
+                    if (Editor.Selection.SelectNodeIndex != -1)
                     {
-                        if (Selection._selectedStateGroupNodeKey == key)
+                        if (Editor.Selection.SelectNodeIndex == key)
                         {
-                            ContextMenu.StateNodeContextMenu(entry);
+                            Editor.ContextMenu.StateNodeContextMenu(entry);
                         }
                     }
 

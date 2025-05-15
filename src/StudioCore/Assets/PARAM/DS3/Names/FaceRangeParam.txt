@@ -1,2 +1,0 @@
-1 Range Minimum Value
-2 Range Maximum Value

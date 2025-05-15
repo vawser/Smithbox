@@ -14,6 +14,7 @@ using HKLib.hk2018.hkAsyncThreadPool;
 using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor.Enums;
+using StudioCore.Configuration;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;
 

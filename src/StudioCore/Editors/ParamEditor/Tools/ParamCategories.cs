@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;

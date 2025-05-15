@@ -1,6 +1,0 @@
-0 Basic
-1 Libra
-2 fly trap
-40 Octopus head
-62 Lantern B1
-63 Lantern B0

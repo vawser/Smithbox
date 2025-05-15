@@ -1,34 +1,32 @@
-﻿using StudioCore.EmevdEditor;
+﻿using StudioCore.Core;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using static SoulsFormats.EMEVD;
-
-namespace StudioCore.Editors.EmevdEditor.Framework;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Holds the tool functions used by this editor.
 /// </summary>
 public class EmevdActionHandler
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdActionHandler(EmevdEditorScreen screen)
+    public EmevdActionHandler(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void LogUnknownInstructions()
     {
         List<string> loggedInstructions = new List<string>();
 
-        foreach (var (info, binder) in Screen.Project.EmevdBank.ScriptBank)
+        foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {
-            foreach (var evt in binder.Events)
+            foreach (var evt in entry.Value.Events)
             {
                 var eventName = evt.Name;
 
@@ -36,7 +34,7 @@ public class EmevdActionHandler
                 {
                     var insName = $"{ins.Bank}[{ins.ID}]";
 
-                    if (!EmevdUtils.HasArgDoc(Screen, ins))
+                    if (!EmevdUtils.HasArgDoc(Editor, ins))
                     {
                         if (!loggedInstructions.Contains(insName))
                         {

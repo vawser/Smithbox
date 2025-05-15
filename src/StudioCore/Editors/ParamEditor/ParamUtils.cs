@@ -1,4 +1,5 @@
 using Andre.Formats;
+using StudioCore.Editors.ParamEditor.META;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,20 @@ namespace StudioCore.Editors.ParamEditor;
 
 public static class ParamUtils
 {
+    public static string ParseRegulationVersion(ulong version)
+    {
+        string verStr = version.ToString();
+        if (verStr.Length != 8)
+        {
+            return "Unknown Version";
+        }
+        char major = verStr[0];
+        string minor = verStr[1..3];
+        char patch = verStr[3];
+        string rev = verStr[4..];
+
+        return $"{major}.{minor}.{patch}.{rev}";
+    }
     public static string Dummy8Write(byte[] dummy8)
     {
         string val = null;
@@ -174,27 +189,28 @@ public static class ParamUtils
         return vals.GroupBy(val => val).Select(g => (g.Key, g.Count()));
     }
 
-    public static (float[], int, float, float) getCalcCorrectedData(CalcCorrectDefinition ccd, Param.Row row)
+    public static (double[], int, double, double) getCalcCorrectedData(CalcCorrectDefinition ccd, Param.Row row)
     {
-        var stageMaxVal = ccd.stageMaxVal.Select((x, i) => (float)row[x].Value.Value).ToArray();
-        var stageMaxGrowVal = ccd.stageMaxGrowVal.Select((x, i) => (float)row[x].Value.Value).ToArray();
-        float[] adjPoint_maxGrowVal = null;
+        var stageMaxVal = ccd.stageMaxVal.Select((x, i) => double.Parse($"{row[x].Value.Value}")).ToArray();
+        var stageMaxGrowVal = ccd.stageMaxGrowVal.Select((x, i) => double.Parse($"{row[x].Value.Value}")).ToArray();
+
+        double[] adjPoint_maxGrowVal = null;
 
         if (ccd.adjPoint_maxGrowVal != null)
         {
-            adjPoint_maxGrowVal = ccd.adjPoint_maxGrowVal.Select((x, i) => (float)row[x].Value.Value).ToArray();
+            adjPoint_maxGrowVal = ccd.adjPoint_maxGrowVal.Select((x, i) => double.Parse($"{row[x].Value.Value}")).ToArray();
         }
 
         var length = (int)(stageMaxVal[stageMaxVal.Length - 1] - stageMaxVal[0] + 1);
         if (length <= 0 || length > 1000000)
         {
-            return (new float[0], 0, 0, 0);
+            return (new double[0], 0, 0, 0);
         }
 
         if (ccd.fcsMaxdist != null)
-            length = (int)(float)row[ccd.fcsMaxdist].Value.Value;
+            length = (int)(double)row[ccd.fcsMaxdist].Value.Value;
 
-        var values = new float[length];
+        var values = new double[length];
         for (var i = 0; i < values.Length; i++)
         {
             if (ccd.fcsMaxdist != null && i >= stageMaxVal[4])
@@ -220,7 +236,7 @@ public static class ParamUtils
                     ? 0
                     : (baseVal - stageMaxVal[band]) / (stageMaxVal[band + 1] - stageMaxVal[band]);
 
-                float adjGrowValRate;
+                double adjGrowValRate;
 
                 if (adjPoint_maxGrowVal == null)
                 {
@@ -229,8 +245,8 @@ public static class ParamUtils
                 else
                 {
                     adjGrowValRate = adjPoint_maxGrowVal[band] >= 0
-                        ? (float)Math.Pow(adjValRate, adjPoint_maxGrowVal[band])
-                        : 1 - (float)Math.Pow(1 - adjValRate, -adjPoint_maxGrowVal[band]);
+                        ? (double)Math.Pow(adjValRate, adjPoint_maxGrowVal[band])
+                        : 1 - (double)Math.Pow(1 - adjValRate, -adjPoint_maxGrowVal[band]);
                 }
 
                 values[i] = adjGrowValRate * (stageMaxGrowVal[band + 1] - stageMaxGrowVal[band]) +
@@ -238,8 +254,8 @@ public static class ParamUtils
             }
         }
 
-        float graphHeightFloor;
-        float graphHeightCeil;
+        double graphHeightFloor;
+        double graphHeightCeil;
 
         if (ccd.fcsMaxdist == null)
         {
@@ -255,14 +271,14 @@ public static class ParamUtils
         return (values, (int)stageMaxVal[0], graphHeightFloor, graphHeightCeil);
     }
 
-    public static (float[], float) getSoulCostData(SoulCostDefinition scd, Param.Row row)
+    public static (double[], double) getSoulCostData(SoulCostDefinition scd, Param.Row row)
     {
-        var init_inclination_soul = (float)row[scd.init_inclination_soul].Value.Value;
-        var adjustment_value = (float)row[scd.adjustment_value].Value.Value;
-        var boundry_inclination_soul = (float)row[scd.boundry_inclination_soul].Value.Value;
-        var boundry_value = (float)row[scd.boundry_value].Value.Value;
+        var init_inclination_soul = double.Parse($"{row[scd.init_inclination_soul].Value.Value}");
+        var adjustment_value = double.Parse($"{row[scd.adjustment_value].Value.Value}");
+        var boundry_inclination_soul = double.Parse($"{row[scd.boundry_inclination_soul].Value.Value}");
+        var boundry_value = double.Parse($"{row[scd.boundry_value].Value.Value}");
 
-        var values = new float[scd.max_level_for_game + 1];
+        var values = new double[scd.max_level_for_game + 1];
 
         for (var level = 0; level < values.Length; level++)
         {
@@ -271,7 +287,7 @@ public static class ParamUtils
             var boundry = Math.Max(0, level80 - boundry_value);
             var lateScaling = level80S * boundry_inclination_soul * boundry;
             var earlyScaling = level80S * init_inclination_soul;
-            values[level] = float.Floor(lateScaling + earlyScaling + adjustment_value);
+            values[level] = double.Floor(lateScaling + earlyScaling + adjustment_value);
         }
 
         return (values, values[values.Length - 1]);

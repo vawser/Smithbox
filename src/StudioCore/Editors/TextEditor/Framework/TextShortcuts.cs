@@ -30,6 +30,16 @@ public class TextShortcuts
 
     public void Monitor()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Editor.Save();
+        }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_SaveAll))
+        {
+            Editor.SaveAll();
+        }
+
         if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             EditorActionManager.UndoAction();

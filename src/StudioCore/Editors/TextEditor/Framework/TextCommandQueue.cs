@@ -30,14 +30,14 @@ public class TextCommandQueue
 
                 var index = 0;
 
-                foreach (var (path, info) in Editor.Project.TextData.PrimaryBank.Entries)
+                foreach (var (fileEntry, info) in Editor.Project.TextData.PrimaryBank.Entries)
                 {
                     if(info.ContainerDisplayCategory.ToString() == category)
                     {
-                        if(info.Filename == containerName)
+                        if(info.FileEntry.Filename == containerName)
                         {
                             Editor.Selection.FocusFileSelection = true;
-                            Editor.Selection.SelectFileContainer(info, index);
+                            Editor.Selection.SelectFileContainer(fileEntry, info, index);
 
                             foreach (var fmg in info.FmgWrappers)
                             {

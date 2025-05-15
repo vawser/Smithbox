@@ -1,12 +1,12 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
-using StudioCore.Tools;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EsdEditor.Enums;
+namespace StudioCore.EzStateEditorNS;
 
 public enum EsdEditorContext
 {

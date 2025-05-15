@@ -63,3 +63,100 @@ public class ParamCommutativeEntry
     public string Name { get; set; }
     public List<string> Params { get; set; }
 }
+
+// -------------- Param Type Info --------------
+public class ParamTypeInfo
+{
+    /// <summary>
+    /// Filename : Param Type string
+    /// </summary>
+    public Dictionary<string, string> Mapping { get; set; }
+
+    /// <summary>
+    /// This is for params that need skip the !defs.ContainsKey(curParam.ParamType) check (e.g. EquipParamWeapon_Npc)
+    /// </summary>
+    public List<string> Exceptions { get; set; }
+}
+
+// -------------- Row Name Store --------------
+/// <summary>
+/// Full information for row name stripping
+/// </summary>
+public class RowNameStore
+{
+    public List<RowNameParam> Params { get; set; }
+}
+
+/// <summary>
+/// Full information for row name stripping
+/// </summary>
+public class RowNameParam
+{
+    /// <summary>
+    /// The name of the param
+    /// </summary>
+    public string Name { get; set; }
+
+    /// <summary>
+    /// The row name entries for this param
+    /// </summary>
+    public List<RowNameEntry> Entries { get; set; }
+}
+
+/// <summary>
+/// Full information for row name stripping
+/// </summary>
+public class RowNameEntry
+{
+    /// <summary>
+    /// The index of the row
+    /// </summary>
+    public int Index { get; set; }
+
+    /// <summary>
+    /// The row ID
+    /// </summary>
+    public int ID { get; set; }
+
+    /// <summary>
+    /// The row name
+    /// </summary>
+    public string Name { get; set; }
+}
+
+// -------------- Param Upgrader Instructions --------------
+public class ParamUpgraderInfo
+{
+    public string MaxVersion { get; set; }
+
+    public List<OldRegulationEntry> RegulationEntries { get; set; }
+
+    public List<UpgraderMassEditEntry> UpgradeCommands { get; set; }
+}
+
+public class OldRegulationEntry
+{
+    public string Version { get; set; }
+    public string Folder { get; set; }
+}
+
+public class UpgraderMassEditEntry
+{
+    public string Version { get; set; }
+    public string Message { get; set; }
+    public string Command { get; set; }
+}
+
+// -------------- Graph Legends --------------
+public class GraphLegends
+{
+    public List<GraphLegendEntry> Entries { get; set; }
+}
+
+public class GraphLegendEntry
+{
+    public string Param { get; set; }
+    public string RowID { get; set; }
+    public string X { get; set; }
+    public string Y { get; set; }
+}

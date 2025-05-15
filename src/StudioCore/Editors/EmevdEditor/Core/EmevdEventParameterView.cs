@@ -1,34 +1,20 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.Editors.EmevdEditor.Framework;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the EMEVD event parameter viewing and editing.
 /// </summary>
 public class EmevdEventParameterView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
-    private EmevdParameterManager ParameterManager;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdEventParameterView(EmevdEditorScreen screen)
+    public EmevdEventParameterView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        ParameterManager = screen.ParameterManager;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -37,17 +23,17 @@ public class EmevdEventParameterView
     public void Display()
     {
         ImGui.Begin("Event Properties##EventParameterView");
-        Selection.SwitchWindowContext(EmevdEditorContext.EventProperties);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.EventProperties);
 
-        if (Selection.SelectedEvent != null)
+        if (Editor.Selection.SelectedEvent != null)
         {
-            var evt = Selection.SelectedEvent;
+            var evt = Editor.Selection.SelectedEvent;
 
             ImGui.Text($"{evt.RestBehavior}");
 
             ImGui.Separator();
 
-            foreach (var para in Selection.SelectedEvent.Parameters)
+            foreach (var para in Editor.Selection.SelectedEvent.Parameters)
             {
                 ImGui.Text($"InstructionIndex: {para.InstructionIndex}");
                 ImGui.Text($"TargetStartByte: {para.TargetStartByte}");

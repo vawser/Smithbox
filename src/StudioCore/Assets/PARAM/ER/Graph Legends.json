@@ -1,0 +1,304 @@
+{
+  "Entries": [
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "0",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "1",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "2",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "3",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "4",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "5",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "6",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "7",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "8",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "9",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "10",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "11",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "12",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "13",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "14",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "15",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "16",
+      "X": "Stat Level",
+      "Y": "Effectivity Multiplier"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "100",
+      "X": "Vigor",
+      "Y": "HP Amount"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "101",
+      "X": "Attunement",
+      "Y": "FP Amount"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "104",
+      "X": "Endurance",
+      "Y": "Stamina Amount"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "110",
+      "X": "Soul Level",
+      "Y": "Poison Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "111",
+      "X": "Soul Level",
+      "Y": "Scarlet Rot Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "112",
+      "X": "Soul Level",
+      "Y": "Hemorrhage Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "113",
+      "X": "Soul Level",
+      "Y": "Frostbite Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "114",
+      "X": "Soul Level",
+      "Y": "Sleep Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "115",
+      "X": "Soul Level",
+      "Y": "Madness Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "116",
+      "X": "Soul Level",
+      "Y": "Deathblight Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "120",
+      "X": "Stat",
+      "Y": "Poison Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "121",
+      "X": "Stat",
+      "Y": "Scarlet Rot Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "122",
+      "X": "Stat",
+      "Y": "Hemorrhage Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "123",
+      "X": "Frostbite",
+      "Y": "Poison Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "124",
+      "X": "Stat",
+      "Y": "Sleep Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "125",
+      "X": "Stat",
+      "Y": "Madness Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "126",
+      "X": "Stat",
+      "Y": "Deathblight Resistance"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "130",
+      "X": "Strength",
+      "Y": "Physical Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "131",
+      "X": "Vitality",
+      "Y": "Physical Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "132",
+      "X": "Intelligence",
+      "Y": "MAgic Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "133",
+      "X": "Vigor",
+      "Y": "Fire Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "134",
+      "X": "Endurance",
+      "Y": "Lightning Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "135",
+      "X": "Faith",
+      "Y": "Holy Defense"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "140",
+      "X": "Arcane",
+      "Y": "Item Discovery"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "170",
+      "X": "Strength",
+      "Y": "Maximum Weapon Arts Points"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "171",
+      "X": "Dexterity",
+      "Y": "Maximum Weapon Arts Points"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "172",
+      "X": "Intelligence",
+      "Y": "Maximum Weapon Arts Points"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "173",
+      "X": "Faith",
+      "Y": "Maximum Weapon Arts Points"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "210",
+      "X": "Distance (metres)",
+      "Y": "Damage % Addition"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "211",
+      "X": "Equipment Load",
+      "Y": "Damage %"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "212",
+      "X": "Strength",
+      "Y": "Damage %"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "213",
+      "X": "Dexterity",
+      "Y": "Damage %"
+    },
+    {
+      "Param": "CalcCorrectGraph",
+      "RowID": "220",
+      "X": "Endurance",
+      "Y": "Equipment Load"
+    }
+  ]
+}

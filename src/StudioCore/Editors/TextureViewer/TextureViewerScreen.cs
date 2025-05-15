@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer;
@@ -73,9 +74,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         var scale = DPI.GetUIScale();
 
         // Docking setup
@@ -118,29 +116,29 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ImGui.EndMenuBar();
         }
 
-        if (UI.Current.Interface_TextureViewer_Files)
+        if (CFG.Current.Interface_TextureViewer_Files)
         {
             FileContainerView.Display();
         }
-        if (UI.Current.Interface_TextureViewer_Textures)
+        if (CFG.Current.Interface_TextureViewer_Textures)
         {
             TextureListView.Display();
         }
-        if (UI.Current.Interface_TextureViewer_Viewer)
+        if (CFG.Current.Interface_TextureViewer_Viewer)
         {
             TextureViewport.Display();
         }
-        if (UI.Current.Interface_TextureViewer_Properties)
+        if (CFG.Current.Interface_TextureViewer_Properties)
         {
             TexturePropertyView.Display();
         }
 
-        if (UI.Current.Interface_TextureViewer_ToolConfiguration)
+        if (CFG.Current.Interface_TextureViewer_ToolWindow)
         {
             ToolWindow.Display();
         }
 
-        if (UI.Current.Interface_TextureViewer_ResourceList)
+        if (CFG.Current.Interface_TextureViewer_ResourceList)
         {
             ResourceListWindow.DisplayWindow("textureViewerResourceList");
         }
@@ -212,39 +210,39 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
         {
             if (ImGui.MenuItem("Files"))
             {
-                UI.Current.Interface_TextureViewer_Files = !UI.Current.Interface_TextureViewer_Files;
+                CFG.Current.Interface_TextureViewer_Files = !CFG.Current.Interface_TextureViewer_Files;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Files);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Files);
 
             if (ImGui.MenuItem("Textures"))
             {
-                UI.Current.Interface_TextureViewer_Textures = !UI.Current.Interface_TextureViewer_Textures;
+                CFG.Current.Interface_TextureViewer_Textures = !CFG.Current.Interface_TextureViewer_Textures;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Textures);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Textures);
 
             if (ImGui.MenuItem("Viewer"))
             {
-                UI.Current.Interface_TextureViewer_Viewer = !UI.Current.Interface_TextureViewer_Viewer;
+                CFG.Current.Interface_TextureViewer_Viewer = !CFG.Current.Interface_TextureViewer_Viewer;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Viewer);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Viewer);
 
             if (ImGui.MenuItem("Properties"))
             {
-                UI.Current.Interface_TextureViewer_Properties = !UI.Current.Interface_TextureViewer_Properties;
+                CFG.Current.Interface_TextureViewer_Properties = !CFG.Current.Interface_TextureViewer_Properties;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_Properties);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Properties);
 
             if (ImGui.MenuItem("Tool Window"))
             {
-                UI.Current.Interface_TextureViewer_ToolConfiguration = !UI.Current.Interface_TextureViewer_ToolConfiguration;
+                CFG.Current.Interface_TextureViewer_ToolWindow = !CFG.Current.Interface_TextureViewer_ToolWindow;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ToolConfiguration);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ToolWindow);
 
             if (ImGui.MenuItem("Resource List"))
             {
-                UI.Current.Interface_TextureViewer_ResourceList = !UI.Current.Interface_TextureViewer_ResourceList;
+                CFG.Current.Interface_TextureViewer_ResourceList = !CFG.Current.Interface_TextureViewer_ResourceList;
             }
-            UIHelper.ShowActiveStatus(UI.Current.Interface_TextureViewer_ResourceList);
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_ResourceList);
 
             ImGui.EndMenu();
         }
@@ -262,18 +260,18 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public void Save()
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         // Nothing
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void SaveAll()
     {
-        if (!CFG.Current.EnableViewer_TEXTURE)
-            return;
-
         // Nothing
+
+        // Save the configuration JSONs
+        BaseEditor.SaveConfiguration();
     }
 
     public void OnResourceLoaded(IResourceHandle handle, int tag)

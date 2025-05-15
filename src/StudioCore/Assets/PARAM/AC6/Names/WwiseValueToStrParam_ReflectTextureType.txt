@@ -1,5 +1,0 @@
-0 MoonSurface
-1 Concrete
-2 Iron
-3 Water
-4 Snow/Dirt

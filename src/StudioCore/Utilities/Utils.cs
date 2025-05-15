@@ -832,7 +832,7 @@ public static class Utils
 
     public static void PrintBoneInfo(List<FLVER.Node> bones, bool debug)
     {
-        Action<string> write = debug ? (string value) => Debug.Write(value) : Console.Write;
+        Action<string> write = debug ? (string value) => TaskLogs.AddLog(value) : Console.Write;
 
         StringBuilder sb = new StringBuilder();
         sb.AppendLine();
@@ -859,7 +859,7 @@ public static class Utils
 
     public static void PrintTransformInfo(Matrix4x4[] transforms, bool debug)
     {
-        Action<string> write = debug ? (string value) => Debug.Write(value) : Console.Write;
+        Action<string> write = debug ? (string value) => TaskLogs.AddLog(value) : Console.Write;
 
         StringBuilder sb = new StringBuilder();
         sb.AppendLine();

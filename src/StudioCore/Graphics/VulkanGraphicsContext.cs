@@ -74,7 +74,7 @@ public class VulkanGraphicsContext : IGraphicsContext
 
     public void Draw(ProjectManager projectManager)
     {
-        Debug.Assert(_window.Exists);
+        //Debug.Assert(_window.Exists);
         var width = _window.Width;
         var height = _window.Height;
         var x = _window.X;

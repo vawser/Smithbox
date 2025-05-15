@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -141,18 +142,15 @@ public static class UIHelper
         ImGui.PopTextWrapPos();
     }
 
-    public static void ShowWideHoverTooltip(string desc)
+    public static void WideTooltip(string desc)
     {
-        if (UI.Current.System_Show_UI_Tooltips)
+        if (ImGui.IsItemHovered())
         {
-            if (ImGui.IsItemHovered())
-            {
-                ImGui.BeginTooltip();
-                ImGui.PushTextWrapPos(800.0f);
-                ImGui.TextUnformatted(desc);
-                ImGui.PopTextWrapPos();
-                ImGui.EndTooltip();
-            }
+            ImGui.BeginTooltip();
+            ImGui.PushTextWrapPos(800.0f);
+            ImGui.TextUnformatted(desc);
+            ImGui.PopTextWrapPos();
+            ImGui.EndTooltip();
         }
     }
 
@@ -169,7 +167,7 @@ public static class UIHelper
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (UI.Current.System_WrapAliasDisplay)
+            if (CFG.Current.System_WrapAliasDisplay)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(UI.Current.ImGui_AliasName_Text, @$"{aliasName}");
@@ -187,7 +185,7 @@ public static class UIHelper
         if (aliasName != "")
         {
             ImGui.SameLine();
-            if (UI.Current.System_WrapAliasDisplay)
+            if (CFG.Current.System_WrapAliasDisplay)
             {
                 ImGui.PushTextWrapPos();
                 ImGui.TextColored(color, @$"{aliasName}");
@@ -216,7 +214,7 @@ public static class UIHelper
             ImGui.TableSetColumnIndex(0);
 
             ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(UI.Current.ImGui_AliasName_Text, $"{title}");
+            ImGui.TextColored(textColor, $"{title}");
             UIHelper.Tooltip(tooltip);
 
             ImGui.EndTable();

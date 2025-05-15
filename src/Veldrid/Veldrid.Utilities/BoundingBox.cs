@@ -206,6 +206,11 @@ namespace Veldrid.Utilities
             return float.IsNaN(Min.X) || float.IsNaN(Min.Y) || float.IsNaN(Min.Z)
                 || float.IsNaN(Max.X) || float.IsNaN(Max.Y) || float.IsNaN(Max.Z);
         }
-
+        public bool Intersects(in BoundingBox? other)
+        {
+            return !(Max.X < other?.Min.X || Min.X > other?.Max.X
+                  || Max.Y < other?.Min.Y || Min.Y > other?.Max.Y
+                  || Max.Z < other?.Min.Z || Min.Z > other?.Max.Z);
+        }
     }
 }

@@ -1,30 +1,24 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Editors.EsdEditor.Enums;
+using StudioCore.Core;
 using StudioCore.Interface;
-using StudioCore.TalkEditor;
+using System.Linq;
 
-namespace StudioCore.Editors.EsdEditor;
+namespace StudioCore.EzStateEditorNS;
 
 /// <summary>
 /// Handles the script selection, viewing and editing.
 /// </summary>
 public class EsdScriptView
 {
-    private EsdEditorScreen Screen;
-    private EsdPropertyDecorator Decorator;
-    private EsdSelectionManager Selection;
-    private EsdFilters Filters;
-    private EsdContextMenu ContextMenu;
+    public EsdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EsdScriptView(EsdEditorScreen screen)
+    public EsdScriptView(EsdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -41,56 +35,62 @@ public class EsdScriptView
     public void Display()
     {
         ImGui.Begin("Scripts##EsdScriptList");
-        Selection.SwitchWindowContext(EsdEditorContext.Script);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.Script);
 
-        var info = Selection._selectedFileInfo;
-        var scriptKey = Selection._selectedEsdScriptKey;
+        var fileEntry = Editor.Selection.SelectedFileEntry;
+        var scriptKey = Editor.Selection.SelectedScriptIndex;
 
-        Filters.DisplayScriptFilterSearch();
+        Editor.Filters.DisplayScriptFilterSearch();
 
         ImGui.BeginChild("ScriptListSection");
-        Selection.SwitchWindowContext(EsdEditorContext.Script);
+        Editor.Selection.SwitchWindowContext(EsdEditorContext.Script);
 
-        if (info != null)
+        if (Editor.Selection.SelectedFileEntry != null)
         {
-            for (int i = 0; i < info.EsdFiles.Count; i++)
+            var scripts = Project.EsdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key == Editor.Selection.SelectedFileEntry);
+
+            if (scripts.Value != null)
             {
-                ESD entry = info.EsdFiles[i];
-
-                var displayName = $"{entry.Name}";
-                var aliasName = displayName;
-
-                if (Filters.IsScriptFilterMatch(displayName, aliasName))
+                for (int i = 0; i < scripts.Value.Files.Count; i++)
                 {
-                    if (ImGui.Selectable($@" {displayName}", i == scriptKey))
-                    {
-                        Selection.ResetStateGroup();
-                        Selection.ResetStateGroupNode();
+                    var dictEntry = scripts.Value.Files.ElementAt(i);
+                    var entry = dictEntry.Value;
 
-                        Selection.SetScript(i, entry);
-                    }
+                    var displayName = $"{entry.Name}";
+                    var aliasName = displayName;
 
-                    // Arrow Selection
-                    if (ImGui.IsItemHovered() && Selection.SelectNextScript)
+                    if (Editor.Filters.IsScriptFilterMatch(displayName, aliasName))
                     {
-                        Selection.SelectNextScript = false;
-                        Selection.SetScript(i, entry);
-                    }
-                    if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
-                    {
-                        Selection.SelectNextScript = true;
-                    }
-
-                    // Only apply to selection
-                    if (Selection._selectedEsdScriptKey != -1)
-                    {
-                        if (Selection._selectedEsdScriptKey == i)
+                        if (ImGui.Selectable($@" {displayName}", i == scriptKey))
                         {
-                            ContextMenu.ScriptContextMenu(entry);
-                        }
-                    }
+                            Editor.Selection.ResetStateGroup();
+                            Editor.Selection.ResetStateGroupNode();
 
-                    UIHelper.DisplayAlias(aliasName);
+                            Editor.Selection.SetScript(i, entry);
+                        }
+
+                        // Arrow Selection
+                        if (ImGui.IsItemHovered() && Editor.Selection.SelectNextScript)
+                        {
+                            Editor.Selection.SelectNextScript = false;
+                            Editor.Selection.SetScript(i, entry);
+                        }
+                        if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
+                        {
+                            Editor.Selection.SelectNextScript = true;
+                        }
+
+                        // Only apply to selection
+                        if (Editor.Selection.SelectedScriptIndex != -1)
+                        {
+                            if (Editor.Selection.SelectedScriptIndex == i)
+                            {
+                                Editor.ContextMenu.ScriptContextMenu(entry);
+                            }
+                        }
+
+                        UIHelper.DisplayAlias(aliasName);
+                    }
                 }
             }
         }

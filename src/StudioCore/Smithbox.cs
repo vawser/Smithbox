@@ -2,17 +2,14 @@
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
-using StudioCore.Configuration.Help;
-using StudioCore.Configuration.Keybinds;
+using StudioCore.Configuration.Windows;
 using StudioCore.Core;
+using StudioCore.DebugNS;
 using StudioCore.Editor;
 using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
-using StudioCore.Tools;
-using StudioCore.Tools.Development;
-using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -21,10 +18,9 @@ using System.Numerics;
 using System.Runtime.InteropServices;
 using Veldrid;
 using Veldrid.Sdl2;
-using static StudioCore.Configuration.Help.HelpWindow;
-using static StudioCore.Configuration.Keybinds.KeybindWindow;
-using static StudioCore.Configuration.SettingsWindow;
-using static StudioCore.Tools.Development.DebugWindow;
+using static StudioCore.Configuration.Windows.HelpWindow;
+using static StudioCore.Configuration.Windows.KeybindWindow;
+using static StudioCore.Configuration.Windows.SettingsWindow;
 using Thread = System.Threading.Thread;
 using Version = System.Version;
 
@@ -52,8 +48,6 @@ public class Smithbox
     public static bool _programUpdateAvailable;
     public static string _releaseUrl = "";
 
-    public bool _showImGuiDemo;
-
     public SoapstoneService _soapstoneService;
 
     public static ImGuiTextureLoader TextureLoader;
@@ -63,12 +57,12 @@ public class Smithbox
     public SettingsWindow Settings;
     public HelpWindow Help;
     public KeybindWindow Keybinds;
-    public DebugWindow DebugTools;
+    public DebugTools DebugTools;
 
     public unsafe Smithbox(IGraphicsContext context, string version)
     {
         _version = version;
-        _programTitle = $"Version {_version}";
+        _programTitle = $"Smithbox - {_version}";
 
         TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
 
@@ -105,17 +99,45 @@ public class Smithbox
 
     }
 
+    public void SetProgramName(ProjectEntry curProject)
+    {
+        _context.Window.Title = $"{curProject.ProjectName} - {_version}";
+    }
+
+    /// <summary>
+    /// Called when Smithbox is starting up
+    /// </summary>
     private void Setup()
     {
+        CFG.Setup();
+        UI.Setup();
+        KeyBindings.Setup();
+
+        CFG.Load();
+        UI.Load();
+        KeyBindings.Load();
+
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
-        CFG.AttemptLoadOrDefault();
-        UI.AttemptLoadOrDefault();
-        InterfaceTheme.SetupThemes();
-        InterfaceTheme.SetTheme(true);
-
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+    }
+
+    public void SaveConfiguration()
+    {
+        CFG.Save();
+        UI.Save();
+        KeyBindings.Save();
+    }
+
+    /// <summary>
+    /// Called when Smithbox is shutting down
+    /// </summary>
+    private void Exit()
+    {
+        CFG.Save();
+        UI.Save();
+        KeyBindings.Save();
     }
 
     private unsafe void SetupImGui()
@@ -140,16 +162,16 @@ public class Smithbox
         string NonEnglishFontRelPath = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
         string IconFontRelPath = @"Assets\Fonts\forkawesome-webfont.ttf";
 
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_English_Font) &&
-            File.Exists(UI.Current.System_English_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
+            File.Exists(CFG.Current.System_English_Font))
         {
-            EnglishFontRelPath = UI.Current.System_English_Font;
+            EnglishFontRelPath = CFG.Current.System_English_Font;
         }
 
-        if (!string.IsNullOrWhiteSpace(UI.Current.System_Other_Font) &&
-            File.Exists(UI.Current.System_Other_Font))
+        if (!string.IsNullOrWhiteSpace(CFG.Current.System_Other_Font) &&
+            File.Exists(CFG.Current.System_Other_Font))
         {
-            NonEnglishFontRelPath = UI.Current.System_Other_Font;
+            NonEnglishFontRelPath = CFG.Current.System_Other_Font;
         }
 
         var englishFontPath = Path.Combine(AppContext.BaseDirectory, EnglishFontRelPath);
@@ -170,8 +192,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(UI.Current.Interface_FontSize * DPI.GetUIScale());
-        var scaleLarge = (float)Math.Round((UI.Current.Interface_FontSize + 2) * DPI.GetUIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.GetUIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.GetUIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -194,15 +216,15 @@ public class Smithbox
         glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
-        if (UI.Current.System_Font_Chinese)
+        if (CFG.Current.System_Font_Chinese)
             glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
-        if (UI.Current.System_Font_Korean)
+        if (CFG.Current.System_Font_Korean)
             glyphRanges.AddRanges(fonts.GetGlyphRangesKorean());
-        if (UI.Current.System_Font_Thai)
+        if (CFG.Current.System_Font_Thai)
             glyphRanges.AddRanges(fonts.GetGlyphRangesThai());
-        if (UI.Current.System_Font_Vietnamese)
+        if (CFG.Current.System_Font_Vietnamese)
             glyphRanges.AddRanges(fonts.GetGlyphRangesVietnamese());
-        if (UI.Current.System_Font_Cyrillic)
+        if (CFG.Current.System_Font_Cyrillic)
             glyphRanges.AddRanges(fonts.GetGlyphRangesCyrillic());
 
         ImVector<uint> outGlyphRanges;
@@ -266,13 +288,13 @@ public class Smithbox
     {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-        if (CFG.Current.Enable_Soapstone_Server && _soapstoneService != null)
+        if (_soapstoneService != null)
         {
             TaskManager.LiveTask task = new(
                 "system_setupSoapstoneServer",
-                "System",
-                "soapstone server is running.",
-                "soapstone server is not running.",
+                "[System]",
+                "Soapstone server is running.",
+                "Soapstone server is not running.",
                 TaskManager.RequeueType.None,
                 false,
                 () =>
@@ -288,9 +310,9 @@ public class Smithbox
         {
             TaskManager.LiveTask task = new(
                 "system_checkProgramUpdate",
-                "System",
-                "program update check has run.",
-                "program update check has failed to run.",
+                "[System]",
+                "Program update check has run.",
+                "Program update check has failed to run.",
                 TaskManager.RequeueType.None,
                 true,
                 CheckProgramUpdate
@@ -341,11 +363,15 @@ public class Smithbox
 
             if (!_context.Window.Exists)
             {
+                ProjectManager.Exit();
+                Exit();
+
                 break;
             }
         }
 
         ProjectManager.Exit();
+        Exit();
         ResourceManager.Shutdown();
         _context.Dispose();
     }
@@ -376,7 +402,6 @@ public class Smithbox
             // Program crashed on initial load, clear recent project to let the user launch the program next time without issue.
             try
             {
-                CFG.Current.LastProjectFile = "";
                 CFG.Save();
                 UI.Save();
             }
@@ -395,7 +420,7 @@ public class Smithbox
     private unsafe void Update(float deltaseconds)
     {
         DPI.UpdateDpi(_context);
-        UI.OnGui();
+
         var scale = DPI.GetUIScale();
 
         if (FontRebuildRequest)
@@ -453,12 +478,9 @@ public class Smithbox
 
         ImGui.PushStyleVar(ImGuiStyleVar.FrameBorderSize, 0.0f);
 
-        if (_showImGuiDemo)
-        {
-            ImGui.ShowDemoWindow();
-        }
-
         ProjectCreation.Draw();
+        ProjectSettings.Draw();
+        ProjectAliasEditor.Draw();
 
         // Create new project if triggered to do so
         if (ProjectCreation.Create)
@@ -514,7 +536,7 @@ public class Smithbox
                 }
                 UIHelper.Tooltip("Open the settings related to Text Editor in Smithbox.");
 
-                if (ImGui.MenuItem("Graphics PAram Editor"))
+                if (ImGui.MenuItem("Graphics Param Editor"))
                 {
                     Settings.ToggleWindow(SelectedSettingTab.GparamEditor);
                 }
@@ -543,54 +565,6 @@ public class Smithbox
                     Settings.ToggleWindow(SelectedSettingTab.TextureViewer);
                 }
                 UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
-
-                ImGui.EndMenu();
-            }
-
-            // Help
-            if (ImGui.BeginMenu("Help"))
-            {
-                if (ImGui.MenuItem("Articles"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Articles);
-                }
-                UIHelper.Tooltip("View the articles that relate to this project.");
-
-                if (ImGui.MenuItem("Tutorials"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
-                }
-                UIHelper.Tooltip("View the tutorials that relate to this project.");
-
-                if (ImGui.MenuItem("Glossary"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Glossary);
-                }
-                UIHelper.Tooltip("View the glossary that relate to this project.");
-
-                if (ImGui.MenuItem("Mass Edit"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
-                }
-                UIHelper.Tooltip("View the mass edit help instructions.");
-
-                if (ImGui.MenuItem("Regex"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Regex);
-                }
-                UIHelper.Tooltip("View the regex help instructions.");
-
-                if (ImGui.MenuItem("Links"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Links);
-                }
-                UIHelper.Tooltip("View the community links.");
-
-                if (ImGui.MenuItem("Credits"))
-                {
-                    Help.ToggleWindow(SelectedHelpTab.Credits);
-                }
-                UIHelper.Tooltip("View the credits.");
 
                 ImGui.EndMenu();
             }
@@ -655,103 +629,65 @@ public class Smithbox
                 ImGui.EndMenu();
             }
 
-            // Debug Tools
-            if (ImGui.BeginMenu("Debugging"))
+            // Help
+            if (ImGui.BeginMenu("Help"))
             {
-                if (ImGui.MenuItem($"Tasks"))
+                if (ImGui.MenuItem("Articles"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.DisplayTaskStatus);
+                    Help.ToggleWindow(SelectedHelpTab.Articles);
                 }
-                UIHelper.Tooltip("Display on-going tasks.");
+                UIHelper.Tooltip("View the articles that relate to this project.");
 
-                if (ImGui.MenuItem($"ImGui Demo"))
+                if (ImGui.MenuItem("Tutorials"))
                 {
-                    _showImGuiDemo = !_showImGuiDemo;
+                    Help.ToggleWindow(SelectedHelpTab.Tutorials);
                 }
+                UIHelper.Tooltip("View the tutorials that relate to this project.");
 
-                ImGui.Separator();
-
-                if (ImGui.MenuItem($"PARAMDEF Validation"))
+                if (ImGui.MenuItem("Glossary"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateParamdef);
+                    Help.ToggleWindow(SelectedHelpTab.Glossary);
                 }
-                UIHelper.Tooltip("Display the test panel.");
+                UIHelper.Tooltip("View the glossary that relate to this project.");
 
-                if (ImGui.MenuItem($"MSB Validation"))
+                if (ImGui.MenuItem("Mass Edit"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateMSB);
+                    Help.ToggleWindow(SelectedHelpTab.MassEdit);
                 }
-                UIHelper.Tooltip("Display the test panel.");
+                UIHelper.Tooltip("View the mass edit help instructions.");
 
-                if (ImGui.MenuItem($"TAE Validation"))
+                if (ImGui.MenuItem("Regex"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ValidateTAE);
+                    Help.ToggleWindow(SelectedHelpTab.Regex);
                 }
-                UIHelper.Tooltip("Display the test panel.");
+                UIHelper.Tooltip("View the regex help instructions.");
 
-                ImGui.Separator();
-
-                if (ImGui.MenuItem($"FLVER Layout Helper"))
+                if (ImGui.MenuItem("Links"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.FlverDumpHelper);
+                    Help.ToggleWindow(SelectedHelpTab.Links);
                 }
-                UIHelper.Tooltip("Display the helper.");
+                UIHelper.Tooltip("View the community links.");
 
-                if (ImGui.MenuItem($"Mod Generator"))
+                if (ImGui.MenuItem("Credits"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.ModGenerator);
+                    Help.ToggleWindow(SelectedHelpTab.Credits);
                 }
-                UIHelper.Tooltip("Display the helper.");
+                UIHelper.Tooltip("View the credits.");
 
-                ImGui.Separator();
+                ImGui.EndMenu();
+            }
 
-                if (ImGui.MenuItem($"Test: MSBE Byte-Perfect Write"))
+            // Debugging
+            DebugTools.DisplayMenu();
+
+            // View
+            if (ImGui.BeginMenu("View"))
+            {
+                if (ImGui.MenuItem("Project List"))
                 {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBE_BytePerfect);
+                    CFG.Current.Interface_Editor_ProjectList = !CFG.Current.Interface_Editor_ProjectList;
                 }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSB_AC6 Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSB_AC6_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBFA Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBFA_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBV Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBV_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: MSBVD Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_MSBVD_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: BTL Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_BTL_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: FLVER2 Byte-Perfect Write"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_FLVER2_BytePerfect);
-                }
-                UIHelper.Tooltip("Display the test panel.");
-
-                if (ImGui.MenuItem($"Test: Unique Param Row IDs"))
-                {
-                    DebugTools.ToggleWindow(SelectedDebugTab.Test_UniqueParamRowIDs);
-                }
-                UIHelper.Tooltip("Display the test panel.");
+                UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_ProjectList);
 
                 ImGui.EndMenu();
             }

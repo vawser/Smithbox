@@ -34,7 +34,7 @@ public class LanguageSync
 
                 var proceed = false;
 
-                if(container.Filename == currentContainerWrapper.Filename &&
+                if(container.FileEntry.Filename == currentContainerWrapper.FileEntry.Filename &&
                    container.ContainerDisplayCategory != currentContainerWrapper.ContainerDisplayCategory)
                 {
                     proceed = true;
@@ -56,14 +56,14 @@ public class LanguageSync
                 // Not current selection, but the same file in a different category
                 if (proceed)
                 {
-                    var displayName = container.Filename;
+                    var displayName = container.FileEntry.Filename;
 
                     if (CFG.Current.TextEditor_DisplayCommunityContainerName)
                     {
                         // To get nice DS2 names, apply the FMG display name stuff on the container level
                         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                         {
-                            displayName = TextUtils.GetFmgDisplayName(Project, container, -1, container.Filename);
+                            displayName = TextUtils.GetFmgDisplayName(Project, container, -1, container.FileEntry.Filename);
                         }
                         else
                         {
@@ -71,7 +71,7 @@ public class LanguageSync
                         }
                     }
 
-                    if (ImGui.Selectable($"{container.ContainerDisplayCategory.GetDisplayName()}: {displayName}##{container.Filename}"))
+                    if (ImGui.Selectable($"{container.ContainerDisplayCategory.GetDisplayName()}: {displayName}##{container.FileEntry.Filename}"))
                     {
                         SyncLanguage(currentContainerWrapper, container);
                     }

@@ -1,7 +1,0 @@
-0 morning -- 朝
-1 Daytime A -- 昼A
-2 Daytime B -- 昼B
-3 evening -- 夕
-4 night -- 夜
-5 Late night A -- 深夜A
-6 Late night B -- 深夜B

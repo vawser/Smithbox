@@ -1,17 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using StudioCore.Core;
+using StudioCore.Formats.JSON;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Veldrid;
 
 namespace StudioCore;
-
-[JsonSourceGenerationOptions(WriteIndented = true,
-    GenerationMode = JsonSourceGenerationMode.Metadata, IncludeFields = true)]
-[JsonSerializable(typeof(KeyBindings.Bindings))]
-[JsonSerializable(typeof(KeyBind))]
-internal partial class KeybindingsSerializerContext : JsonSerializerContext
-{
-}
 
 public enum KeybindCategory
 {
@@ -104,6 +101,62 @@ public class KeyBindings
 {
     public static Bindings Current { get; set; }
     public static Bindings Default { get; set; } = new();
+
+    public static void Setup()
+    {
+        Current = new Bindings();
+    }
+
+    public static void Load()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Key Bindings.json");
+
+        if (!File.Exists(file))
+        {
+            Current = new Bindings();
+            Save();
+        }
+        else
+        {
+            try
+            {
+                var filestring = File.ReadAllText(file);
+                var options = new JsonSerializerOptions();
+                Current = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.Bindings);
+
+                if (Current == null)
+                {
+                    throw new Exception("JsonConvert returned null");
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog("[Smithbox] Key Bindings failed to load, default key binding has been restored.");
+
+                Current = new Bindings();
+                Save();
+            }
+        }
+    }
+
+    public static void Save()
+    {
+        var folder = ProjectUtils.GetConfigurationFolder();
+        var file = Path.Combine(folder, "Key Bindings.json");
+
+        var json = JsonSerializer.Serialize(Current, SmithboxSerializerContext.Default.Bindings);
+
+        File.WriteAllText(file, json);
+    }
+
+    public static void ResetToDefault()
+    {
+        foreach (var field in typeof(Bindings).GetFields(BindingFlags.Instance | BindingFlags.Public))
+        {
+            field.SetValue(Current, field.GetValue(Default));
+        }
+    }
 
     public static void ResetKeyBinds()
     {

@@ -2,7 +2,6 @@
 using Hexa.NET.ImGui;
 using StudioCore.Configuration;
 using StudioCore.Editor;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.TextEditor;
 using System;
@@ -85,12 +84,12 @@ public class TextFmgEntryView
                         // Unique rows
                         if (DifferenceManager.IsUniqueToProject(entry))
                         {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueRow_Text);
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_UniqueTextEntry_Text);
                         }
                         // Modified rows
                         else if (DifferenceManager.IsDifferentToVanilla(entry))
                         {
-                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedRow_Text);
+                            ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_TextEditor_ModifiedTextEntry_Text);
                         }
 
                         // Script row

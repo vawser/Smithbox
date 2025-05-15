@@ -1,6 +1,0 @@
-0 footsteps -- 足音
-1 landing sound -- 着地音
-2 scraping sound -- 擦過音
-3 brake sound -- ブレーキ音
-4 driving sound -- 駆動音
-5 Own weapon (test) -- 自機武器（テスト）

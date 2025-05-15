@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
+using StudioCore.Configuration;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Settings;
@@ -186,7 +187,7 @@ public static class TaskLogs
     /// </summary>
     public static void DisplayActionLoggerBar()
     {
-        if (UI.Current.System_ShowActionLogger)
+        if (CFG.Current.System_ShowActionLogger)
         {
             if (ImGui.ArrowButton("##actionLoggerToggle", ActionLogger_CurrentDir))
             {
@@ -284,7 +285,7 @@ public static class TaskLogs
     /// </summary>
     public static void DisplayWarningLoggerBar()
     {
-        if (UI.Current.System_ShowWarningLogger)
+        if (CFG.Current.System_ShowWarningLogger)
         {
             if (ImGui.ArrowButton("##warningLoggerToggle", WarningLogger_CurrentDir))
             {
@@ -492,7 +493,7 @@ public static class TaskLogs
                     mes += $" x{MessageCount}";
                 }
 
-                mes = $"[{LogTime.Hour:D2}:{LogTime.Minute:D2}:{LogTime.Second:D2}:{LogTime.Millisecond:D2}] {mes}";
+                mes = $"[{LogTime.Hour:D2}:{LogTime.Minute:D2}:{LogTime.Second:D2}] {mes}";
 
                 return mes;
             }

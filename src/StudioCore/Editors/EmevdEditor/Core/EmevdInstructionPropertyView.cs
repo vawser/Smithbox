@@ -1,41 +1,26 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.Editors.EmevdEditor.Framework;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
+using StudioCore.Editors.EmevdEditor;
 using System.Collections.Generic;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the EMEVD event instruction parameter viewing and editing.
 /// </summary>
 public class EmevdInstructionPropertyView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
-    private EmevdPropertyEditor PropEditor;
-    private EmevdParameterManager ParameterManager;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
     public List<ArgDoc> ArgumentDocs { get; set; }
     public List<object> Arguments { get; set; }
 
-    public EmevdInstructionPropertyView(EmevdEditorScreen screen)
+    public EmevdInstructionPropertyView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        ParameterManager = screen.ParameterManager;
-        PropEditor = new EmevdPropertyEditor(screen, this);
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -44,16 +29,16 @@ public class EmevdInstructionPropertyView
     public void Display()
     {
         ImGui.Begin("Instruction Properties##InstructionParameterView");
-        Selection.SwitchWindowContext(EmevdEditorContext.InstructionProperties);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.InstructionProperties);
 
-        if (Selection.SelectedEvent != null && Selection.SelectedInstruction != null)
+        if (Editor.Selection.SelectedEvent != null && Editor.Selection.SelectedInstruction != null)
         {
-            var instruction = Selection.SelectedInstruction;
+            var instruction = Editor.Selection.SelectedInstruction;
 
-            if (EmevdUtils.HasArgDoc(Screen, instruction))
+            if (EmevdUtils.HasArgDoc(Editor, instruction))
             {
-                (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(Screen, instruction);
-                Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
+                (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(Editor, instruction);
+                Editor.Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
 
                 ImGui.Columns(2);
 
@@ -75,27 +60,27 @@ public class EmevdInstructionPropertyView
                     }
 
                     // Param Reference
-                    if (Decorator.HasParamReference(argDoc.Name))
+                    if (Editor.Decorator.HasParamReference(argDoc.Name))
                     {
-                        Decorator.DetermineParamReferenceSpacing(argDoc.Name, $"{arg}", i);
+                        Editor.Decorator.DetermineParamReferenceSpacing(argDoc.Name, $"{arg}", i);
                     }
 
                     // Text Reference
-                    if (Decorator.HasTextReference(argDoc.Name))
+                    if (Editor.Decorator.HasTextReference(argDoc.Name))
                     {
-                        Decorator.DetermineTextReferenceSpacing(argDoc.Name, $"{arg}", i);
+                        Editor.Decorator.DetermineTextReferenceSpacing(argDoc.Name, $"{arg}", i);
                     }
 
                     // Alias Reference
-                    if (Decorator.HasAliasReference(argDoc.Name))
+                    if (Editor.Decorator.HasAliasReference(argDoc.Name))
                     {
-                        Decorator.DetermineAliasReferenceSpacing(argDoc.Name, $"{arg}", i);
+                        Editor.Decorator.DetermineAliasReferenceSpacing(argDoc.Name, $"{arg}", i);
                     }
 
                     // Entity Reference
-                    if (Decorator.HasMapEntityReference(argDoc.Name))
+                    if (Editor.Decorator.HasMapEntityReference(argDoc.Name))
                     {
-                        Decorator.DetermineMapEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
+                        Editor.Decorator.DetermineMapEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
                     }
                 }
 
@@ -107,7 +92,7 @@ public class EmevdInstructionPropertyView
                     var argDoc = ArgumentDocs[i];
 
                     object newValue;
-                    (bool, bool) propEditResults = PropEditor.InstructionArgumentPropertyRow(argDoc, Arguments[i], out newValue);
+                    (bool, bool) propEditResults = Editor.PropertyInput.InstructionArgumentPropertyRow(argDoc, Arguments[i], out newValue);
 
                     var changed = propEditResults.Item1;
                     var committed = propEditResults.Item2;
@@ -121,10 +106,8 @@ public class EmevdInstructionPropertyView
                         var oldArguments = (byte[])instruction.ArgData.Clone();
                         var newArguments = instruction.UpdateArgs(Arguments);
 
-                        var currentInfo = Selection.SelectedFileInfo;
-
-                        var action = new InstructionArgumentChange(currentInfo, instruction, oldArguments, newArguments);
-                        Screen.EditorActionManager.ExecuteAction(action);
+                        var action = new InstructionArgumentChange(instruction, oldArguments, newArguments);
+                        Editor.EditorActionManager.ExecuteAction(action);
                     }
 
                     //ImGui.Text($"{arg.ArgObject}");
@@ -132,31 +115,31 @@ public class EmevdInstructionPropertyView
                     // Enum Reference
                     if (argDoc.EnumName != null)
                     {
-                        Decorator.DisplayEnumReference(argDoc, Arguments[i], i);
+                        Editor.Decorator.DisplayEnumReference(argDoc, Arguments[i], i);
                     }
 
                     // Param Reference
-                    if (Decorator.HasParamReference(argDoc.Name))
+                    if (Editor.Decorator.HasParamReference(argDoc.Name))
                     {
-                        Decorator.DetermineParamReference(argDoc.Name, $"{Arguments[i]}", i);
+                        Editor.Decorator.DetermineParamReference(argDoc.Name, $"{Arguments[i]}", i);
                     }
 
                     // Text Reference
-                    if (Decorator.HasTextReference(argDoc.Name))
+                    if (Editor.Decorator.HasTextReference(argDoc.Name))
                     {
-                        Decorator.DetermineTextReference(argDoc.Name, $"{Arguments[i]}", i);
+                        Editor.Decorator.DetermineTextReference(argDoc.Name, $"{Arguments[i]}", i);
                     }
 
                     // Alias Reference
-                    if (Decorator.HasAliasReference(argDoc.Name))
+                    if (Editor.Decorator.HasAliasReference(argDoc.Name))
                     {
-                        Decorator.DetermineAliasReference(argDoc.Name, $"{Arguments[i]}", i);
+                        Editor.Decorator.DetermineAliasReference(argDoc.Name, $"{Arguments[i]}", i);
                     }
 
                     // Entity Reference
-                    if (Decorator.HasMapEntityReference(argDoc.Name))
+                    if (Editor.Decorator.HasMapEntityReference(argDoc.Name))
                     {
-                        Decorator.DetermineMapEntityReference(argDoc.Name, $"{Arguments[i]}", i);
+                        Editor.Decorator.DetermineMapEntityReference(argDoc.Name, $"{Arguments[i]}", i);
                     }
                 }
 

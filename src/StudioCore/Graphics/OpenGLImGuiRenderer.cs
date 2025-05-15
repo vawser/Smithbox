@@ -191,7 +191,6 @@ void main()
         if (success == 0)
         {
             var info = GL.GetProgramInfoLog(program);
-            Debug.WriteLine($"GL.LinkProgram had info log [{name}]:\n{info}");
         }
 
         GL.DetachShader(program, vertex);
@@ -214,7 +213,6 @@ void main()
         if (success == 0)
         {
             var info = GL.GetShaderInfoLog(shader);
-            Debug.WriteLine($"GL.CompileShader for shader '{name}' [{type}] had info log:\n{info}");
         }
 
         return shader;

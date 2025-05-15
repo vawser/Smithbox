@@ -1,11 +1,11 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
-using StudioCore.Editors.TextEditor;
+using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Utils;
-using StudioCore.EmevdEditor;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -13,26 +13,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using static SoulsFormats.EMEVD;
-using static StudioCore.Editors.EmevdEditor.EMEDF;
+using static StudioCore.EventScriptEditorNS.EMEDF;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the decoration of properties for the view classes
 /// </summary>
 public class EmevdPropertyDecorator
 {
-    private EmevdEditorScreen Editor;
-    public EmevdSelectionManager Selection;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public EmevdSelection Selection;
 
     private Instruction Instruction;
     private List<ArgDoc> ArgumentDocs;
     private List<object> Arguments;
 
-    public EmevdPropertyDecorator(EmevdEditorScreen screen)
+    public EmevdPropertyDecorator(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     public void OnProjectChanged()
@@ -594,7 +596,7 @@ public class EmevdPropertyDecorator
     /// </summary>
     public void DetermineMapEntityReference(string parameterName, string value, int i)
     {
-        var mapID = Selection.SelectedFileInfo.Name; // To determine map ID
+        var mapID = Editor.Selection.SelectedFileEntry.Filename; // To determine map ID
 
         if (Editor.Project.ProjectType is ProjectType.AC6)
         {
@@ -669,7 +671,7 @@ public class EmevdPropertyDecorator
 
     public void DisplayEnumReference(ArgDoc argDoc, object arg, int i)
     {
-        var enumDoc = Editor.Project.EmevdBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
+        var enumDoc = Editor.Project.EmevdData.PrimaryBank.InfoBank.Enums.Where(e => e.Name == argDoc.EnumName).FirstOrDefault();
         var alias = enumDoc.Values.Where(e => e.Key == $"{arg}").FirstOrDefault();
 
         ImGui.AlignTextToFramePadding();
@@ -810,7 +812,7 @@ public class EmevdPropertyDecorator
         {
             var refValue = int.Parse(value);
 
-            (string, Param.Row, string) match = ResolveParamRef(Editor.Project.ParamData.PrimaryBank, paramName, refValue);
+            (string, Param.Row, string) match = ResolveParamRef(Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor, Editor.Project.ParamData.PrimaryBank, paramName, refValue);
 
             ImGui.AlignTextToFramePadding();
             UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
@@ -850,7 +852,7 @@ public class EmevdPropertyDecorator
                 {
                     if (ImGui.Selectable($"Go to {result.Entry.ID} ({result.Entry.Text})"))
                     {
-                        EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.Filename}/{result.FmgName}/{result.Entry.ID}");
+                        EditorCommandQueue.AddCommand($@"text/select/{result.ContainerWrapper.ContainerDisplayCategory}/{result.ContainerWrapper.FileEntry.Filename}/{result.FmgName}/{result.Entry.ID}");
                     }
 
                     ImGui.EndPopup();
@@ -862,7 +864,7 @@ public class EmevdPropertyDecorator
     /// <summary>
     /// Return Param reference based on passed value.
     /// </summary>
-    private (string, Param.Row, string) ResolveParamRef(ParamBank bank, string paramRef, dynamic oldval)
+    private (string, Param.Row, string) ResolveParamRef(ParamEditorScreen editor, ParamBank bank, string paramRef, dynamic oldval)
     {
         (string, Param.Row, string) row = new();
         if (bank.Params == null)
@@ -878,7 +880,8 @@ public class EmevdPropertyDecorator
             var altval = originalValue;
 
             Param param = bank.Params[paramRef];
-            ParamMetaData meta = ParamMetaData.Get(bank.Params[paramRef].AppliedParamdef);
+
+            var meta = editor.Project.ParamData.GetParamMeta(bank.Params[paramRef].AppliedParamdef);
             if (meta != null && meta.Row0Dummy && altval == 0)
             {
                 return row;

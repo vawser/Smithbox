@@ -1,43 +1,23 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Editors.EmevdEditor.Enums;
-using StudioCore.EmevdEditor;
+using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudioCore.Editors.EmevdEditor;
+namespace StudioCore.EventScriptEditorNS;
 
 /// <summary>
 /// Handles the file selection, viewing and editing.
 /// </summary>
 public class EmevdFileView
 {
-    private EmevdEditorScreen Screen;
-    private EmevdPropertyDecorator Decorator;
-    private EmevdSelectionManager Selection;
-    private EmevdFilters Filters;
-    private EmevdContextMenu ContextMenu;
+    public EmevdEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public EmevdFileView(EmevdEditorScreen screen)
+    public EmevdFileView(EmevdEditorScreen editor, ProjectEntry project)
     {
-        Screen = screen;
-        Decorator = screen.Decorator;
-        Selection = screen.Selection;
-        Filters = screen.Filters;
-        ContextMenu = screen.ContextMenu;
-    }
-
-    /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -47,48 +27,43 @@ public class EmevdFileView
     {
         // File List
         ImGui.Begin("Files##EventScriptFileList");
-        Selection.SwitchWindowContext(EmevdEditorContext.File);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.File);
 
-        Filters.DisplayFileFilterSearch();
+        Editor.Filters.DisplayFileFilterSearch();
 
         ImGui.BeginChild("FileListSection");
-        Selection.SwitchWindowContext(EmevdEditorContext.File);
+        Editor.Selection.SwitchWindowContext(EmevdEditorContext.File);
 
-        foreach (var (info, binder) in Screen.Project.EmevdBank.ScriptBank)
+        foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {
-            var displayName = $"{info.Name}";
-            var aliasName = AliasUtils.GetMapNameAlias(Screen.Project, info.Name);
+            var fileEntry = entry.Key;
 
-            if (Filters.IsFileFilterMatch(displayName, aliasName))
+            var displayName = $"{fileEntry.Filename}";
+            var aliasName = AliasUtils.GetMapNameAlias(Editor.Project, fileEntry.Filename);
+
+            if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
             {
                 // Script row
-                if (ImGui.Selectable(displayName, info.Name == Selection.SelectedScriptKey))
+                if (ImGui.Selectable(displayName, fileEntry == Editor.Selection.SelectedFileEntry))
                 {
-                    Selection.SelectedScriptKey = info.Name;
-                    Selection.SelectedFileInfo = info;
-                    Selection.SelectedScript = binder;
+                    Editor.Selection.SelectFile(fileEntry);
                 }
 
                 // Arrow Selection
-                if (ImGui.IsItemHovered() && Selection.SelectNextScript)
+                if (ImGui.IsItemHovered() && Editor.Selection.SelectNextScript)
                 {
-                    Selection.SelectNextScript = false;
-                    Selection.SelectedScriptKey = info.Name;
-                    Selection.SelectedFileInfo = info;
-                    Selection.SelectedScript = binder;
+                    Editor.Selection.SelectNextScript = false;
+                    Editor.Selection.SelectFile(fileEntry);
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
-                    Selection.SelectNextScript = true;
+                    Editor.Selection.SelectNextScript = true;
                 }
 
                 // Only apply to selection
-                if (Selection.SelectedScriptKey != "")
+                if (fileEntry == Editor.Selection.SelectedFileEntry)
                 {
-                    if (Selection.SelectedScriptKey == displayName)
-                    {
-                        ContextMenu.FileContextMenu(info);
-                    }
+                    Editor.ContextMenu.FileContextMenu();
                 }
 
                 UIHelper.DisplayAlias(aliasName);

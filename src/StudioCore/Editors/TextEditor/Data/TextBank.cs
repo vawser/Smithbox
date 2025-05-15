@@ -1,8 +1,12 @@
-﻿using SoulsFormats;
+﻿using Andre.IO.VFS;
+using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.MapEditor.Data;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,50 +19,43 @@ public class TextBank
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public string SourcePath;
-    public string FallbackPath;
+    public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
 
-    public SortedDictionary<string, TextContainerWrapper> Entries { get; private set; } = new();
+    public string Name;
 
-    public TextBank(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
+    public ConcurrentDictionary<FileDictionaryEntry, TextContainerWrapper> Entries = new();
+
+    public TextBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
         Project = project;
-        SourcePath = sourcePath;
-        FallbackPath = fallbackPath;
+        Name = name;
+        TargetFS = targetFs;
     }
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        var tasks = new List<Task>();
 
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        // msgbnd
+        foreach (var entry in Project.TextData.FmgFiles.Entries)
         {
-            var fmgList = TextLocator.GetFmgs(Project, "menu\\text\\");
+            if (entry.Extension != "msgbnd")
+                continue;
 
-            foreach (var path in fmgList)
-            {
-                LoadFmg(path);
-            }
+            tasks.Add(Task.Run(() => LoadFmgContainer(entry)));
         }
-        else if (Project.ProjectType is ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
+
+        // fmg
+        foreach (var entry in Project.TextData.FmgFiles.Entries)
         {
-            var fmgList = TextLocator.GetFmgs(Project, "lang\\");
+            if (entry.Extension != "fmg")
+                continue;
 
-            foreach (var path in fmgList)
-            {
-                LoadFmg(path);
-            }
+            tasks.Add(Task.Run(() => LoadFmg(entry)));
         }
-        else
-        {
-            var fmgContainerList = TextLocator.GetFmgContainers(Project);
 
-            foreach (var path in fmgContainerList)
-            {
-                LoadFmgContainer(path);
-            }
-        }
+        await Task.WhenAll(tasks);
 
         return true;
     }
@@ -66,31 +63,10 @@ public class TextBank
     /// <summary>
     /// Load FMG file
     /// </summary>
-    public void LoadFmg(string path)
+    public void LoadFmg(FileDictionaryEntry entry)
     {
-        var name = Path.GetFileName(path);
-
-        // TODO: need a better method for building the relative path, this seems to cause issues with some people's setups, causing a crash as the resulting relative path is empty
-        var containerRelPath = path;
-        if (containerRelPath.Contains(Project.ProjectPath))
-        {
-            containerRelPath = containerRelPath.Replace(Project.ProjectPath, "");
-        }
-
-        if (containerRelPath.Contains(Project.DataPath))
-        {
-            containerRelPath = containerRelPath.Replace(Project.DataPath, "");
-        }
-
-        if (containerRelPath.Contains(name))
-        {
-            containerRelPath = containerRelPath.Replace(name, "");
-        }
-
-        //TaskLogs.AddLog(containerRelPath);
-
         var containerType = TextContainerType.Loose;
-        var containerCategory = TextUtils.GetLanguageCategory(Project, containerRelPath);
+        var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
         // Skip non-English if this is disabled
         if(!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -104,22 +80,20 @@ public class TextBank
         try
         {
             // Get compression type
-            var fileBytes = File.ReadAllBytes(path);
+            var fmgFileBytes = TargetFS.ReadFileOrThrow(entry.Path);
 
             DCX.Type compressionType;
-            var reader = new BinaryReaderEx(false, fileBytes);
+            var reader = new BinaryReaderEx(false, fmgFileBytes);
             SFUtil.GetDecompressedBR(reader, out compressionType);
 
             List<TextFmgWrapper> fmgWrappers = new List<TextFmgWrapper>();
 
             var id = -1;
-            var fmg = FMG.Read(path);
-            fmg.Name = name; // Assign this to make it easier to grab FMGs
+            var fmg = FMG.Read(fmgFileBytes);
+            fmg.Name = entry.Filename; // Assign this to make it easier to grab FMGs
 
             TextContainerWrapper containerWrapper = new(Project);
-            containerWrapper.Filename = name;
-            containerWrapper.ReadPath = path;
-            containerWrapper.RelativePath = containerRelPath;
+            containerWrapper.FileEntry = entry;
 
             containerWrapper.CompressionType = compressionType;
             containerWrapper.ContainerType = containerType;
@@ -127,7 +101,7 @@ public class TextBank
 
             TextFmgWrapper fmgInfo = new();
             fmgInfo.ID = id;
-            fmgInfo.Name = name;
+            fmgInfo.Name = entry.Filename;
             fmgInfo.File = fmg;
             fmgInfo.Parent = containerWrapper;
 
@@ -137,44 +111,25 @@ public class TextBank
 
             if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
-                containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(path);
+                containerWrapper.ContainerDisplaySubCategory = TextUtils.GetSubCategory(entry.Path);
             }
 
-            Entries.Add(path, containerWrapper);
+            Entries.TryAdd(entry, containerWrapper);
         }
         catch (Exception ex)
         {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to load FMG: {filename} at {path}\n{ex}");
+            var filename = Path.GetFileNameWithoutExtension(entry.Path);
+            TaskLogs.AddLog($"Failed to load FMG: {filename} at {entry.Path}\n{ex}");
         }
     }
 
     /// <summary>
     /// Load FMG container
     /// </summary>
-    public void LoadFmgContainer(string path)
+    public void LoadFmgContainer(FileDictionaryEntry entry)
     {
-        var name = Path.GetFileName(path);
-        var containerRelPath = path;
-        if (containerRelPath.Contains(Project.ProjectPath))
-        {
-            containerRelPath = containerRelPath.Replace(Project.ProjectPath, "");
-        }
-
-        if (containerRelPath.Contains(Project.DataPath))
-        {
-            containerRelPath = containerRelPath.Replace(Project.DataPath, "");
-        }
-
-        if (containerRelPath.Contains(name))
-        {
-            containerRelPath = containerRelPath.Replace(name, "");
-        }
-
-        //TaskLogs.AddLog(containerRelPath);
-
         var containerType = TextContainerType.BND;
-        var containerCategory = TextUtils.GetLanguageCategory(Project, containerRelPath);
+        var containerCategory = TextUtils.GetLanguageCategory(Project, entry.Path);
 
         // Skip non-English if this is disabled
         if (!CFG.Current.TextEditor_IncludeNonPrimaryContainers)
@@ -187,18 +142,15 @@ public class TextBank
 
         try
         {
-            // Detect the compression type used by the container
-            var fileBytes = File.ReadAllBytes(path);
+            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
 
             DCX.Type compressionType;
-            var reader = new BinaryReaderEx(false, fileBytes);
+            var reader = new BinaryReaderEx(false, containerBytes);
             SFUtil.GetDecompressedBR(reader, out compressionType);
 
             // Create the Text Container wrapper and and add it to the bank
             TextContainerWrapper containerWrapper = new(Project);
-            containerWrapper.Filename = name;
-            containerWrapper.ReadPath = path;
-            containerWrapper.RelativePath = containerRelPath;
+            containerWrapper.FileEntry = entry;
 
             containerWrapper.CompressionType = compressionType;
             containerWrapper.ContainerType = containerType;
@@ -209,7 +161,7 @@ public class TextBank
 
             if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
             {
-                using (IBinder binder = BND3.Read(path))
+                using (IBinder binder = BND3.Read(containerBytes))
                 {
                     foreach (var file in binder.Files)
                     {
@@ -233,7 +185,7 @@ public class TextBank
             }
             else
             {
-                using (IBinder binder = BND4.Read(path))
+                using (IBinder binder = BND4.Read(containerBytes))
                 {
                     foreach (var file in binder.Files)
                     {
@@ -259,61 +211,66 @@ public class TextBank
             // Add the fmg wrappers to the container wrapper
             containerWrapper.FmgWrappers = fmgWrappers;
 
-            Entries.Add(path, containerWrapper);
+            Entries.TryAdd(entry, containerWrapper);
         }
         catch (Exception ex)
         {
-            var filename = Path.GetFileNameWithoutExtension(path);
-            TaskLogs.AddLog($"Failed to load FMG container: {filename} at {path}\n{ex}");
+            var filename = Path.GetFileNameWithoutExtension(entry.Path);
+            TaskLogs.AddLog($"Failed to load FMG container: {filename} at {entry.Path}\n{ex}");
         }
     }
 
     /// <summary>
     /// Save all modified FMG Containers
     /// </summary>
-    public void SaveTextFiles()
+    public async Task<bool> SaveTextFiles()
     {
-        foreach (var (path, containerInfo) in Entries)
+        var success = true;
+
+        foreach (var (fileEntry, containerInfo) in Entries)
         {
             // Only save all modified files
             if (containerInfo.IsModified)
             {
                 if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
-                    SaveLooseFmgs(containerInfo);
+                    Task<bool> saveTask = SaveLooseFmg(fileEntry, containerInfo);
+                    bool saveTaskResult = await saveTask;
+
+                    if (!saveTaskResult)
+                        success = false;
                 }
                 else
                 {
-                    SaveFmgContainer(containerInfo);
+                    Task<bool> saveTask = SaveFmgContainer(fileEntry, containerInfo);
+                    bool saveTaskResult = await saveTask;
+
+                    if (!saveTaskResult)
+                        success = false;
                 }
             }
         }
+
+        return success;
     }
 
     /// <summary>
     /// Save passed FMG container
     /// </summary>
-    public void SaveFmgContainer(TextContainerWrapper containerWrapper)
+    public async Task<bool> SaveFmgContainer(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        var rootContainerPath = containerWrapper.ReadPath;
-        var projectContainerPath = containerWrapper.GetWritePath();
+        await Task.Delay(1);
 
-        var directory = Path.GetDirectoryName(projectContainerPath);
-
-        if(!Directory.Exists(directory))
-        {
-            Directory.CreateDirectory(directory);
-        }
-        if (!File.Exists(projectContainerPath))
-        {
-            File.Copy(rootContainerPath, projectContainerPath, true);
-        }
+        if (entry == null || containerWrapper == null)
+            return false;
 
         byte[] fileBytes = null;
 
+        var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
+
         if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
         {
-            using (IBinder binder = BND3.Read(projectContainerPath))
+            using (IBinder binder = BND3.Read(containerBytes))
             {
                 foreach (var file in binder.Files)
                 {
@@ -328,7 +285,7 @@ public class TextBank
         }
         else
         {
-            using (IBinder binder = BND4.Read(projectContainerPath))
+            using (IBinder binder = BND4.Read(containerBytes))
             {
                 foreach (var file in binder.Files)
                 {
@@ -342,7 +299,9 @@ public class TextBank
             }
         }
 
-        WriteFile(fileBytes, projectContainerPath);
+        Project.ProjectFS.WriteFile(entry.Path, fileBytes);
+
+        return true;
     }
 
     private void WriteFmgContents(BinderFile file, List<TextFmgWrapper> fmgList)
@@ -369,49 +328,18 @@ public class TextBank
     /// <summary>
     /// Saved passed loose FMG file
     /// </summary>
-    public void SaveLooseFmgs(TextContainerWrapper containerWrapper)
+    public async Task<bool> SaveLooseFmg(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        var rootContainerPath = containerWrapper.ReadPath;
-        var projectContainerPath = containerWrapper.GetWritePath();
+        await Task.Delay(1);
 
-        var directory = Path.GetDirectoryName(projectContainerPath);
-
-        if (!Directory.Exists(directory))
-        {
-            Directory.CreateDirectory(directory);
-        }
-        if (!File.Exists(projectContainerPath))
-        {
-            File.Copy(rootContainerPath, projectContainerPath, true);
-        }
+        if (entry == null || containerWrapper == null)
+            return false;
 
         var newFmgBytes = containerWrapper.FmgWrappers.First().File.Write();
 
-        WriteFile(newFmgBytes, projectContainerPath);
-    }
+        Project.ProjectFS.WriteFile(entry.Path, newFmgBytes);
 
-    /// <summary>
-    /// Write out a non-container file.
-    /// </summary>
-    public void WriteFile(byte[] data, string path)
-    {
-        if (data != null)
-        {
-            var filename = Path.GetFileNameWithoutExtension(path);
-
-            try
-            {
-                PathUtils.BackupPrevFile(path);
-                PathUtils.BackupFile(path);
-                File.WriteAllBytes(path, data);
-
-                TaskLogs.AddLog($"Banks: saved FMG container file: {filename} at {path}");
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Banks: failed to save FMG container file: {filename} at {path}\n{ex}");
-            }
-        }
+        return true;
     }
 }
 

@@ -1,16 +1,13 @@
 ﻿using Hexa.NET.ImGui;
-using StudioCore.Editors.GparamEditor.Data;
-using StudioCore.GraphicsEditor;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
-using System;
-using System.Linq;
 
-namespace StudioCore.Editors.GparamEditor;
+namespace StudioCore.GraphicsParamEditorNS;
 
 public class GparamContextMenu
 {
     private GparamEditorScreen Screen;
-    public GparamSelectionManager Selection;
+    public GparamSelection Selection;
 
     public GparamContextMenu(GparamEditorScreen screen)
     {
@@ -21,52 +18,19 @@ public class GparamContextMenu
     /// <summary>
     /// Context menu for File list
     /// </summary>
-    public void FileContextMenu(string name, GparamBank.GparamInfo info)
+    public void FileContextMenu(FileDictionaryEntry entry)
     {
-        if (info.Name == Selection._selectedGparamKey)
+        if (entry.Filename == Selection._selectedGparamKey)
         {
             if (ImGui.BeginPopupContextItem($"Options##Gparam_File_Context"))
             {
                 if (ImGui.Selectable("Target in Quick Edit"))
                 {
-                    Screen.QuickEditHandler.UpdateFileFilter(name);
+                    Screen.QuickEditHandler.UpdateFileFilter(entry.Filename);
 
                     ImGui.CloseCurrentPopup();
                 }
                 UIHelper.Tooltip("Add this file to the File Filter in the Quick Edit window.");
-
-                // Only show if the file exists in the project directory
-                if (info.Path.Contains(Screen.Project.ProjectPath))
-                {
-                    if (ImGui.Selectable("Remove"))
-                    {
-                        Screen.ActionHandler.RemoveGparamFile(info);
-
-                        ImGui.CloseCurrentPopup();
-                    }
-                    UIHelper.Tooltip("Delete the selected file from your project.");
-                }
-
-                if (ImGui.Selectable("Duplicate"))
-                {
-                    Screen.ActionHandler.DuplicateGparamFile();
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Duplicate this file, incrementing the numeric four digit ID at the end of the file name if possible.");
-
-                if (ImGui.Selectable("Copy"))
-                {
-                    Screen.ActionHandler.CopyGparamFile(info);
-
-                    ImGui.CloseCurrentPopup();
-                }
-                UIHelper.Tooltip("Copy the selected file and rename it to the name specified below");
-
-                ImGui.Separator();
-
-                Screen.ActionHandler.DisplayCopyFileNameInput(name);
-
 
                 ImGui.EndPopup();
             }
@@ -93,7 +57,6 @@ public class GparamContextMenu
                 if (ImGui.Selectable("Remove"))
                 {
                     Selection._selectedGparam.Params.Remove(Selection._selectedParamGroup);
-                    Selection.ToggleSelectedFileModifiedState(true);
 
                     ImGui.CloseCurrentPopup();
                 }
@@ -124,7 +87,6 @@ public class GparamContextMenu
                 if (ImGui.Selectable("Remove"))
                 {
                     Selection._selectedParamGroup.Fields.Remove(Selection._selectedParamField);
-                    Selection.ToggleSelectedFileModifiedState(true);
 
                     ImGui.CloseCurrentPopup();
                 }

@@ -2,6 +2,7 @@
 using Silk.NET.SDL;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Veldrid;
 
 namespace StudioCore.Platform;
@@ -146,6 +147,11 @@ public abstract unsafe class PlatformUtils
     {
         SdlProvider.SDL.Value.SetClipboardText((byte*)((FixedUtf8String)text).StringPtr);
     }
+    public string GetClipboardText()
+    {
+        string managedText = Marshal.PtrToStringUTF8((nint)SdlProvider.SDL.Value.GetClipboardText());
+        return managedText;
+    }
 
     // Title arg is currently unusable. We should restore it back if at all possible.
     public bool OpenFileDialog(string title, IReadOnlyList<string> filters, out string path)
@@ -173,6 +179,13 @@ public abstract unsafe class PlatformUtils
     public bool OpenFolderDialog(string title, out string path)
     {
         NativeFileDialogSharp.DialogResult dialogResult = Dialog.FolderPicker();
+        path = dialogResult.Path;
+        return dialogResult.IsOk;
+    }
+
+    public bool OpenFolderDialog(string title, out string path, string defaultPath)
+    {
+        NativeFileDialogSharp.DialogResult dialogResult = Dialog.FolderPicker(defaultPath);
         path = dialogResult.Path;
         return dialogResult.IsOk;
     }

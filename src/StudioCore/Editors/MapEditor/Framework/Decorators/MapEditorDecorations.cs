@@ -1,8 +1,10 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework.META;
-using StudioCore.Editors.ParamEditor;
+using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Utilities;
@@ -53,7 +55,7 @@ public static class MapEditorDecorations
 
                             paramName = $"{paramName}_{map}".ToLower();
 
-                            refs.Add(new ParamRef(paramName));
+                            refs.Add(new ParamRef(null, paramName));
                         }
                     }
                 }
@@ -76,7 +78,7 @@ public static class MapEditorDecorations
                         if (map == "m15_01_00_00")
                             mapPrefix = "m51_1";
 
-                        refs.Add(new ParamRef($"{mapPrefix}_{paramName}"));
+                        refs.Add(new ParamRef(null, $"{mapPrefix}_{paramName}"));
                     }
                 }
                 // DS2 Map Params
@@ -92,29 +94,29 @@ public static class MapEditorDecorations
 
                         var paramName = pRef.ParamName;
 
-                        refs.Add(new ParamRef($"{paramName}_{map}"));
+                        refs.Add(new ParamRef(null, $"{paramName}_{map}"));
                     }
                 }
                 else
                 {
-                    refs.Add(new ParamRef(pRef.ParamName));
+                    refs.Add(new ParamRef(null, pRef.ParamName));
                 }
             }
 
             ImGui.NextColumn();
 
-            EditorDecorations.ParamRefText(refs, null);
+            FieldDecorators.ParamReference_Title(refs, null);
 
             ImGui.NextColumn();
 
             if (editor.Project.ParamEditor != null)
             {
-                EditorDecorations.ParamRefsSelectables(editor.Project.ParamData.PrimaryBank, refs, null, val);
-                EditorDecorations.ParamRefEnumQuickLink(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, refs, null, null, null, null);
+                FieldDecorators.ParamReference_Value(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, refs, null, val);
+                FieldDecorators.ParamReference_ContextMenu(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, val, null, refs);
 
                 if (ImGui.BeginPopupContextItem($"{propinfo.Name}EnumContextMenu"))
                 {
-                    var opened = EditorDecorations.ParamRefEnumContextMenuItems(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
+                    var opened = FieldDecorators.Decorator_ContextMenuItems(editor.Project.ParamEditor, editor.Project.ParamData.PrimaryBank, null, val, ref newObj, refs, null, null, null, null, null, null);
                     ImGui.EndPopup();
                     return opened;
                 }
@@ -138,15 +140,15 @@ public static class MapEditorDecorations
 
             foreach (FMGRef pRef in meta.FmgRef)
             {
-                refs.Add(new FMGRef(pRef.fmg));
+                refs.Add(new FMGRef(null, pRef.fmg));
             }
 
             ImGui.NextColumn();
 
-            EditorDecorations.FmgRefText(refs, null);
+            FieldDecorators.TextReference_Title(refs, null);
 
             ImGui.NextColumn();
-            EditorDecorations.FmgRefSelectable(editor, refs, null, val);
+            FieldDecorators.TextReference_Value(editor, refs, null, val);
         }
 
         return false;

@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
@@ -47,7 +48,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
             if (Editor.Project.ProjectType == ProjectType.Undefined)
                 return;
 
-            if (!UI.Current.Interface_MapEditor_AssetBrowser)
+            if (!CFG.Current.Interface_MapEditor_AssetBrowser)
                 return;
 
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
