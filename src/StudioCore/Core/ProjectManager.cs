@@ -169,7 +169,7 @@ public class ProjectManager
 
                 if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
                 {
-                    //ProjectAliasEditor.Show(this, SelectedProject);
+                    ProjectAliasEditor.Show(BaseEditor, SelectedProject);
                 }
 
 

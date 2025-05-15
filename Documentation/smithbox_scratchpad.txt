@@ -5,7 +5,6 @@
 - Project: add Param Enum Editor back
 
 - Model Editor: implement VFS + data bank overhaul
-- Text Editor: implement VFS + data bank overhaul
 - Texture Viewer: implement VFS + data bank overhaul
 - Time Act Editor: implement VFS + data bank overhaul
 - Map Editor: re-jig the map load process to use new MapBank approach (e.g. load MSB, build MapContainer from it)

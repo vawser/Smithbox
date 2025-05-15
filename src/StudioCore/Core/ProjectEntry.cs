@@ -121,6 +121,12 @@ public class ProjectEntry
     [JsonIgnore]
     public TimeActData TimeActData; // TODO: utilise file dictionary, change this to lazy load style
 
+    /// <summary>
+    /// Action manager for project-level changes (e.g. aliases)
+    /// </summary>
+    [JsonIgnore]
+    public ActionManager ActionManager;
+
     // Additional Data
     [JsonIgnore]
     public AliasStore Aliases;
@@ -192,17 +198,8 @@ public class ProjectEntry
         EnableMaterialEditor = false;
         EnableEmevdEditor = false;
         EnableEsdEditor = false;
-    }
 
-    /// <summary>
-    /// This is used to control which editors are loaded when initing a project via aux bank functions
-    /// </summary>
-    public enum InitType
-    {
-        ProjectDefined,
-        MapEditorOnly,
-        ParamEditorOnly,
-        TextEditorOnly
+        ActionManager = new ActionManager();
     }
 
     /// <summary>
@@ -221,6 +218,8 @@ public class ProjectEntry
         // --- Reset
         Initialized = false;
         IsInitializing = true;
+
+        ActionManager = new();
 
         await Task.Delay(1);
 
@@ -1632,4 +1631,15 @@ public class ProjectEntry
         return true;
     }
     #endregion
+}
+
+/// <summary>
+/// This is used to control which editors are loaded when initing a project via aux bank functions
+/// </summary>
+public enum InitType
+{
+    ProjectDefined,
+    MapEditorOnly,
+    ParamEditorOnly,
+    TextEditorOnly
 }

@@ -475,6 +475,7 @@ public class Smithbox
 
         ProjectCreation.Draw();
         ProjectSettings.Draw();
+        ProjectAliasEditor.Draw();
 
         // Create new project if triggered to do so
         if (ProjectCreation.Create)
