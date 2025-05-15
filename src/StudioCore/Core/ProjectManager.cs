@@ -130,7 +130,9 @@ public class ProjectManager
             if (ImGui.Selectable($"{project.ProjectName}##{imGuiID}", SelectedProject == project))
             {
                 if (!IsProjectLoading)
+                {
                     StartupProject(project);
+                }
             }
 
             // Begin drag
@@ -431,6 +433,7 @@ public class ProjectManager
         newProject.EnableEmevdEditor = ProjectCreation.EnableEmevdEditor;
         newProject.EnableEsdEditor = ProjectCreation.EnableEsdEditor;
         newProject.EnableTextureViewer = ProjectCreation.EnableTextureViewer;
+        newProject.EnableFileBrowser = ProjectCreation.EnableFileBrowser;
 
         ProjectCreation.Reset();
 
@@ -447,6 +450,8 @@ public class ProjectManager
     public async void StartupProject(ProjectEntry curProject)
     {
         ProjectEntry oldProject = SelectedProject;
+
+        BaseEditor.SetProgramName(curProject);
 
         // Signal shutdown to existing project if it is loaded
         if (oldProject != null)

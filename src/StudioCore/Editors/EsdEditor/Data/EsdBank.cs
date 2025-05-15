@@ -1,14 +1,8 @@
 ﻿using Andre.IO.VFS;
-using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.EsdEditor;
 using StudioCore.Formats.JSON;
-using StudioCore.Resource.Locators;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 

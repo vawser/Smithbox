@@ -41,6 +41,7 @@ public static class ProjectCreation
     public static bool EnableEmevdEditor = false;
     public static bool EnableEsdEditor = false;
     public static bool EnableTextureViewer = true;
+    public static bool EnableFileBrowser = false;
 
     // Used so the project type combo box has a specific order
     private static List<ProjectType> ProjectTypeOrder = new()
@@ -458,24 +459,24 @@ public static class ProjectCreation
             ImGui.SetNextItemWidth(inputWidth);
 
             ImGui.Checkbox("##projectEnableTextureViewer", ref EnableTextureViewer);
+
             ImGui.TableSetColumnIndex(1);
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Texture Viewer");
             UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
 
-
             ImGui.TableSetColumnIndex(2);
 
-            //ImGui.SetNextItemWidth(inputWidth);
+            ImGui.SetNextItemWidth(inputWidth);
 
-            //ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
-
+            ImGui.Checkbox("##projectEnableFileBrowser", ref EnableFileBrowser);
+           
             ImGui.TableSetColumnIndex(3);
 
-            //ImGui.AlignTextToFramePadding();
-            //ImGui.Text("Enable Event Script Editor");
-            //UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("File Browser");
+            UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
 
             ImGui.TableSetColumnIndex(4);
 

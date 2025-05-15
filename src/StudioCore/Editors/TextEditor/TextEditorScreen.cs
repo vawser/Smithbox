@@ -157,8 +157,6 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -217,8 +215,6 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -257,8 +253,6 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     /// <summary>
@@ -276,11 +270,6 @@ public class TextEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        // ImGui.Separator();
-
-        // Tools
-        // ToolMenubar.Display();
     }
 
     /// <summary>

@@ -160,8 +160,6 @@ public class TimeActEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
 
@@ -212,8 +210,6 @@ public class TimeActEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -264,8 +260,6 @@ public class TimeActEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
-
-        //ImGui.Separator();
     }
 
     /// <summary>

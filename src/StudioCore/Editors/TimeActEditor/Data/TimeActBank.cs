@@ -1,17 +1,12 @@
-﻿using Hexa.NET.ImGui;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editor;
-using StudioCore.Editors.TimeActEditor.Utils;
-using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using static SoulsFormats.TAE;
 using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.TimeActEditor.Bank;

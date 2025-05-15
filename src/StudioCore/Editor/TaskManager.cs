@@ -193,15 +193,21 @@ public class TaskManager
             {
                 if (PassiveTask)
                 {
-                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
-                        LogLevel.Information, LogPriority);
+                    if (TaskName != "")
+                    {
+                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
+                            LogLevel.Information, LogPriority);
+                    }
                 }
 
                 try
                 {
                     TaskAction.Invoke();
-                    TaskLogs.AddLog($"{TaskName}: {TaskCompletedMessage}",
+                    if (TaskName != "")
+                    {
+                        TaskLogs.AddLog($"{TaskName} {TaskCompletedMessage}",
                         LogLevel.Information, LogPriority);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -211,8 +217,12 @@ public class TaskManager
                         {
                             e = e.InnerException;
                         }
-                        TaskLogs.AddLog($"{TaskName}: {TaskFailedMessage}",
+
+                        if (TaskName != "")
+                        {
+                            TaskLogs.AddLog($"{TaskName} {TaskFailedMessage}",
                             LogLevel.Error, LogPriority, e);
+                        }
                     }
                     else
                     {

@@ -34,6 +34,7 @@ public static class ProjectSettings
     public static bool EnableEmevdEditor = true;
     public static bool EnableEsdEditor = true;
     public static bool EnableTextureViewer = true;
+    public static bool EnableFileBrowser = true;
 
     public static bool EditorStateChanged = false;
 
@@ -58,6 +59,7 @@ public static class ProjectSettings
         EnableEmevdEditor = curProject.EnableEmevdEditor;
         EnableEsdEditor = curProject.EnableEsdEditor;
         EnableTextureViewer = curProject.EnableTextureViewer;
+        EnableFileBrowser = curProject.EnableFileBrowser;
 
         EditorStateChanged = false;
         Display = true;
@@ -128,6 +130,7 @@ public static class ProjectSettings
                 TargetProject.EnableEmevdEditor = EnableEmevdEditor;
                 TargetProject.EnableEsdEditor = EnableEsdEditor;
                 TargetProject.EnableTextureViewer = EnableTextureViewer;
+                TargetProject.EnableFileBrowser = EnableFileBrowser;
 
                 BaseEditor.ProjectManager.SaveProject(TargetProject);
 
@@ -503,18 +506,24 @@ public static class ProjectSettings
             ImGui.Text("Texture Viewer");
             UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
 
-
             ImGui.TableSetColumnIndex(2);
 
-            //ImGui.SetNextItemWidth(inputWidth);
+            ImGui.SetNextItemWidth(inputWidth);
 
-            //ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
+            ImGui.Checkbox("##projectEnableFileBrowser", ref EnableFileBrowser);
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                if (TargetProject.EnableFileBrowser != EnableFileBrowser)
+                {
+                    EditorStateChanged = true;
+                }
+            }
 
             ImGui.TableSetColumnIndex(3);
 
-            //ImGui.AlignTextToFramePadding();
-            //ImGui.Text("Enable Event Script Editor");
-            //UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
+            ImGui.AlignTextToFramePadding();
+            ImGui.Text("File Browser");
+            UIHelper.Tooltip("If true, the File Browser and associated data will be initialized for this project.");
 
             ImGui.TableSetColumnIndex(4);
 

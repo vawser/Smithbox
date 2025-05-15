@@ -426,6 +426,11 @@ public class CFG
     public bool Interface_EsdEditor_StateNodeContents = true;
     public bool Interface_EsdEditor_ToolConfigurationWindow = true;
 
+    ///------------------------------------------------------------
+    /// File Browser
+    ///------------------------------------------------------------
+    public bool Interface_FileBrowser_FileList = true;
+    public bool Interface_FileBrowser_ItemViewer = true;
 
     //**************
     // Actions

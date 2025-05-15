@@ -11,6 +11,7 @@ using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
 using StudioCore.EzStateEditorNS;
+using StudioCore.FileBrowserNS;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsParamEditorNS;
 using StudioCore.MaterialEditorNS;
@@ -54,6 +55,7 @@ public class ProjectEntry
     public bool EnableEmevdEditor;
     public bool EnableEsdEditor;
     public bool EnableTextureViewer;
+    public bool EnableFileBrowser;
 
     // Legacy
     public List<string> PinnedParams { get; set; } = new();
@@ -99,6 +101,8 @@ public class ProjectEntry
     public EsdEditorScreen EsdEditor;
     [JsonIgnore]
     public TextureViewerScreen TextureViewer;
+    [JsonIgnore]
+    public FileBrowserScreen FileBrowser;
 
     // Data Banks
     [JsonIgnore]
@@ -120,6 +124,8 @@ public class ProjectEntry
     public TextureData TextureData; // TODO: utilise file dictionary
     [JsonIgnore]
     public TimeActData TimeActData; // TODO: utilise file dictionary, change this to lazy load style
+    [JsonIgnore]
+    public FileData FileData;
 
     /// <summary>
     /// Action manager for project-level changes (e.g. aliases)
@@ -198,6 +204,7 @@ public class ProjectEntry
         EnableMaterialEditor = false;
         EnableEmevdEditor = false;
         EnableEsdEditor = false;
+        EnableFileBrowser = false;
 
         ActionManager = new ActionManager();
     }
@@ -304,6 +311,7 @@ public class ProjectEntry
         EsdEditor = null;
         TextureViewer = null;
         MapEditor = null;
+        FileBrowser = null;
 
         MapData = null;
         ParamData = null;
@@ -314,6 +322,7 @@ public class ProjectEntry
         TextData = null;
         TextureData = null;
         TimeActData = null;
+        FileData = null;
 
         // ---- Map Editor ----
         if (EnableMapEditor && initType is InitType.ProjectDefined or InitType.MapEditorOnly)
@@ -716,6 +725,29 @@ public class ProjectEntry
             TextureViewer = new TextureViewerScreen(BaseEditor, this);
         }
 
+        // ---- File Browser ----
+        if (EnableFileBrowser && initType is InitType.ProjectDefined)
+        {
+            FileData = new(BaseEditor, this);
+
+            // Text Banks
+            Task<bool> fileDataTask = FileData.Setup();
+            bool fileDataTaskResult = await fileDataTask;
+
+            if (!silent)
+            {
+                if (fileDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:File Browser] Setup directories.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:File Browser] Setup directories.");
+                }
+            }
+
+            FileBrowser = new FileBrowserScreen(BaseEditor, this);
+        }
     }
 
     /// <summary>
@@ -782,6 +814,10 @@ public class ProjectEntry
         if (EnableTextureViewer && TextureViewer != null)
         {
             HandleEditor(commands, TextureViewer, dt);
+        }
+        if (EnableFileBrowser && FileBrowser != null)
+        {
+            HandleEditor(commands, FileBrowser, dt);
         }
     }
 
