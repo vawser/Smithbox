@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
@@ -98,9 +99,21 @@ public class EmevdBank
         }
 
         if (IsSupported)
-            InfoBank = EMEDF.ReadFile(path);
+        {
+            try
+            {
+                InfoBank = EMEDF.ReadFile(path);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read EMEDF at: {path}", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
         else
+        {
             return false;
+        }
 
         return true;
     }
@@ -139,20 +152,46 @@ public class EmevdBank
                 {
                     var key = scriptEntry.Key;
 
-                    var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
-                    var binder = BND4.Read(regulation);
-                    foreach (var entry in binder.Files)
+                    try
                     {
-                        if (!entry.Name.EndsWith("emevd"))
-                            continue;
+                        var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
 
-                        if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
+                        try
                         {
-                            var emevdData = entry.Bytes;
-                            var emevd = EMEVD.Read(emevdData);
+                            var binder = BND4.Read(regulation);
+                            foreach (var entry in binder.Files)
+                            {
+                                if (!entry.Name.EndsWith("emevd"))
+                                    continue;
 
-                            Scripts[key] = emevd;
+                                if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
+                                {
+                                    var emevdData = entry.Bytes;
+
+                                    try
+                                    {
+                                        var emevd = EMEVD.Read(emevdData);
+
+                                        Scripts[key] = emevd;
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read {entry.Name} as EMEVD", LogLevel.Error, Tasks.LogPriority.High, e);
+                                        return false;
+                                    }
+                                }
+                            }
                         }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation.bnd.dcx from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
                     }
                 }
             }
@@ -167,10 +206,27 @@ public class EmevdBank
                 {
                     var key = scriptEntry.Key;
 
-                    var emevdData = TargetFS.ReadFileOrThrow(key.Path);
-                    var emevd = EMEVD.Read(emevdData);
+                    try
+                    {
+                        var emevdData = TargetFS.ReadFileOrThrow(key.Path);
 
-                    Scripts[key] = emevd;
+                        try
+                        {
+                            var emevd = EMEVD.Read(emevdData);
+
+                            Scripts[key] = emevd;
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read {key.Filename} as EMEVD", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read {key.Filename} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
             }
             else
@@ -200,31 +256,89 @@ public class EmevdBank
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
-            var binder = BND4.Read(regulation);
-            foreach (var entry in binder.Files)
+            try
             {
-                if (!entry.Name.EndsWith("emevd"))
-                    continue;
+                var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
 
-                if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
+                try
                 {
-                    entry.Bytes = curScript.Write();
+                    var binder = BND4.Read(regulation);
+                    foreach (var entry in binder.Files)
+                    {
+                        if (!entry.Name.EndsWith("emevd"))
+                            continue;
+
+                        if (Path.GetFileNameWithoutExtension(entry.Name) == fileEntry.Filename)
+                        {
+                            try
+                            {
+                                entry.Bytes = curScript.Write();
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {entry.Name} as EMEVD", LogLevel.Error, Tasks.LogPriority.High, e);
+                                return false;
+                            }
+                        }
+                    }
+
+                    try
+                    {
+                        var newRegulation = binder.Write();
+
+                        try
+                        {
+                            Project.ProjectFS.WriteFile("enc_regulation.bnd.dcx", newRegulation);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write enc_regulation.bnd.dcx", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write enc_regulation to BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                    return false;
                 }
             }
-
-            var newRegulation = binder.Write();
-
-            Project.ProjectFS.WriteFile("enc_regulation.bnd.dcx", newRegulation);
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation.bnd.dcx from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
         }
         else
         {
             if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
             {
                 var emevd = curScript;
-                var bytes = emevd.Write();
 
-                Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
+                try
+                {
+                    var bytes = emevd.Write();
+
+                    try
+                    {
+                        Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename}.emevd.dcx", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as EMEVD", LogLevel.Error, Tasks.LogPriority.High, e);
+                    return false;
+                }
             }
         }
 

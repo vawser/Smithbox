@@ -9,5 +9,7 @@
 - Texture Viewer: implement VFS + data bank overhaul
 - Time Act Editor: implement VFS + data bank overhaul
 
+- Add Project Test Suite: runs project inits with various malformed projects to find any issues
+
 # FIX
 - Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)

@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,9 +44,19 @@ public class MaterialData
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
+        if (!primaryBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
+
+        if (!vanillaBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to fully setup Vanilla Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
 
         return true;
     }

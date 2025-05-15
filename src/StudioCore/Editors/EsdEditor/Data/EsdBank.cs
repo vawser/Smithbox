@@ -1,7 +1,9 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -77,25 +79,51 @@ public class EsdBank
                 {
                     var key = scriptEntry.Key;
 
-                    var esdBinderData = TargetFS.ReadFileOrThrow(key.Path);
-                    var esdBinder = BND4.Read(esdBinderData);
-
-                    var files = new Dictionary<BinderFile, ESD>();
-
-                    foreach (var file in esdBinder.Files)
+                    try
                     {
-                        var data = file.Bytes;
-                        var esdData = ESD.Read(data);
+                        var esdBinderData = TargetFS.ReadFileOrThrow(key.Path);
 
-                        files.Add(file, esdData);
+                        try
+                        {
+                            var esdBinder = BND4.Read(esdBinderData);
+
+                            var files = new Dictionary<BinderFile, ESD>();
+
+                            foreach (var file in esdBinder.Files)
+                            {
+                                var data = file.Bytes;
+
+                                try
+                                {
+                                    var esdData = ESD.Read(data);
+
+                                    files.Add(file, esdData);
+                                }
+                                catch (Exception e)
+                                {
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to {file.Name} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    return false;
+                                }
+                            }
+
+                            var newBinderContents = new BinderContents();
+                            newBinderContents.Name = fileEntry.Filename;
+                            newBinderContents.Binder = esdBinder;
+                            newBinderContents.Files = files;
+
+                            Scripts[key] = newBinderContents;
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
                     }
-
-                    var newBinderContents = new BinderContents();
-                    newBinderContents.Name = fileEntry.Filename;
-                    newBinderContents.Binder = esdBinder;
-                    newBinderContents.Files = files;
-
-                    Scripts[key] = newBinderContents;
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
             }
             else
@@ -123,28 +151,45 @@ public class EsdBank
 
                     var fakeBinder = new BND4();
 
-                    var esdFileData = TargetFS.ReadFileOrThrow(key.Path);
+                    try
+                    {
+                        var esdFileData = TargetFS.ReadFileOrThrow(key.Path);
 
-                    // Create binder file
-                    var binderFile = new BinderFile();
-                    binderFile.ID = 0;
-                    binderFile.Name = fileEntry.Filename;
-                    binderFile.Bytes = esdFileData;
-                    fakeBinder.Files.Add(binderFile);
+                        // Create binder file
+                        var binderFile = new BinderFile();
+                        binderFile.ID = 0;
+                        binderFile.Name = fileEntry.Filename;
+                        binderFile.Bytes = esdFileData;
+                        fakeBinder.Files.Add(binderFile);
 
-                    // Load actual ESD file
-                    var files = new Dictionary<BinderFile, ESD>();
-                    var data = binderFile.Bytes;
-                    var esdData = ESD.Read(data);
-                    files.Add(binderFile, esdData);
+                        // Load actual ESD file
+                        var files = new Dictionary<BinderFile, ESD>();
+                        var data = binderFile.Bytes;
 
-                    var newBinderContents = new BinderContents();
-                    newBinderContents.Name = fileEntry.Filename;
-                    newBinderContents.Binder = fakeBinder;
-                    newBinderContents.Files = files;
-                    newBinderContents.Loose = true;
+                        try
+                        {
+                            var esdData = ESD.Read(data);
+                            files.Add(binderFile, esdData);
 
-                    Scripts[key] = newBinderContents;
+                            var newBinderContents = new BinderContents();
+                            newBinderContents.Name = fileEntry.Filename;
+                            newBinderContents.Binder = fakeBinder;
+                            newBinderContents.Files = files;
+                            newBinderContents.Loose = true;
+
+                            Scripts[key] = newBinderContents;
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to {fileEntry.Filename} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
             }
             else
@@ -180,9 +225,25 @@ public class EsdBank
                 var looseFile = curContents.Files.First().Value;
                 if(looseFile != null)
                 {
-                    var esdData = looseFile.Write();
+                    try
+                    {
+                        var esdData = looseFile.Write();
 
-                    Project.ProjectFS.WriteFile(fileEntry.Path, esdData);
+                        try
+                        {
+                            Project.ProjectFS.WriteFile(fileEntry.Path, esdData);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as ESD", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
             }
             else
@@ -192,12 +253,36 @@ public class EsdBank
                     var binderFile = file.Key;
                     var esdFile = file.Value;
 
-                    binderFile.Bytes = esdFile.Write();
+                    try
+                    {
+                        binderFile.Bytes = esdFile.Write();
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {binderFile.Name} as ESD", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
 
-                var binderData = curContents.Binder.Write();
+                try
+                {
+                    var binderData = curContents.Binder.Write();
 
-                Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+                    try
+                    {
+                        Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
+                    return false;
+                }
             }
         }
 

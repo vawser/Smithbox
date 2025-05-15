@@ -1,7 +1,9 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -70,10 +72,27 @@ public class GparamBank
             {
                 var key = scriptEntry.Key;
 
-                var gparamData = TargetFS.ReadFileOrThrow(key.Path);
-                var gparam = GPARAM.Read(gparamData);
+                try
+                {
+                    var gparamData = TargetFS.ReadFileOrThrow(key.Path);
 
-                Entries[key] = gparam;
+                    try
+                    {
+                        var gparam = GPARAM.Read(gparamData);
+
+                        Entries[key] = gparam;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to read {key.Path} as GPARAM", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to read {key.Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+                    return false;
+                }
             }
         }
         else
@@ -100,9 +119,25 @@ public class GparamBank
     {
         await Task.Delay(1);
 
-        var bytes = gparamEntry.Write();
+        try
+        {
+            var bytes = gparamEntry.Write();
 
-        Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
+            try
+            {
+                Project.ProjectFS.WriteFile(fileEntry.Path, bytes);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to write {fileEntry.Filename} as GPARAM", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
+        }
 
         return true;
     }

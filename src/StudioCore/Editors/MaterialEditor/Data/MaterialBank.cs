@@ -1,7 +1,9 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -107,16 +109,40 @@ public class MTDWrapper
         var successfulLoad = false;
 
         var editor = Project.MapEditor;
-        var binderData = TargetFS.ReadFileOrThrow(Path);
-
-        var binder = BND4.Read(binderData);
-        foreach (var entry in binder.Files)
+        try
         {
-            if (entry.Name.Contains(".mtd"))
+            var binderData = TargetFS.ReadFileOrThrow(Path);
+
+            try
             {
-                var mtd = MTD.Read(entry.Bytes);
-                Entries.Add(entry.Name, mtd);
+                var binder = BND4.Read(binderData);
+                foreach (var entry in binder.Files)
+                {
+                    if (entry.Name.Contains(".mtd"))
+                    {
+                        try
+                        {
+                            var mtd = MTD.Read(entry.Bytes);
+                            Entries.Add(entry.Name, mtd);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                }
             }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
         }
 
         return successfulLoad;
@@ -148,16 +174,41 @@ public class MATBINWrapper
         var successfulLoad = false;
 
         var editor = Project.MapEditor;
-        var binderData = TargetFS.ReadFileOrThrow(Path);
 
-        var binder = BND4.Read(binderData);
-        foreach(var entry in binder.Files)
+        try
         {
-            if(entry.Name.Contains(".matbin"))
+            var binderData = TargetFS.ReadFileOrThrow(Path);
+
+            try
             {
-                var matbin = MATBIN.Read(entry.Bytes);
-                Entries.Add(entry.Name, matbin);
+                var binder = BND4.Read(binderData);
+                foreach (var entry in binder.Files)
+                {
+                    if (entry.Name.Contains(".matbin"))
+                    {
+                        try
+                        {
+                            var matbin = MATBIN.Read(entry.Bytes);
+                            Entries.Add(entry.Name, matbin);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MATBIN", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                }
             }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
         }
 
         return successfulLoad;

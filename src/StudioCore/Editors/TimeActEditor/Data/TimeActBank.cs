@@ -11,12 +11,6 @@ using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.TimeActEditor.Bank;
 
-public enum TimeActType
-{
-    Character,
-    Object
-}
-
 public class TimeActBank
 {
     public Smithbox BaseEditor;
@@ -694,4 +688,10 @@ public class TimeActBank
         return null;
     }
 
+}
+
+public enum TimeActType
+{
+    Character,
+    Object
 }

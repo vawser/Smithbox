@@ -1,8 +1,10 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Formats.JSON;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -128,53 +130,137 @@ public class MapWrapper
         var successfulLoad = false;
 
         var editor = Project.MapEditor;
-        var mapData = TargetFS.ReadFileOrThrow(Path);
 
-        switch (Project.ProjectType)
+        try
         {
-            case ProjectType.DES:
-                MSB = MSBD.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                MSB = MSB1.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-                MSB = MSB2.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.DS3:
-                MSB = MSB3.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.BB:
-                MSB = MSBB.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.SDT:
-                MSB = MSBS.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.ER:
-                MSB = MSBE.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.AC6:
-                MSB = MSB_AC6.Read(mapData);
-                successfulLoad = true;
-                break;
-            case ProjectType.ERN:
-            default: break;
+            var mapData = TargetFS.ReadFileOrThrow(Path);
+
+            switch (Project.ProjectType)
+            {
+                case ProjectType.DES:
+                    try
+                    {
+                        MSB = MSBD.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    try
+                    {
+                        MSB = MSB1.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.DS2:
+                case ProjectType.DS2S:
+                    try
+                    {
+                        MSB = MSB2.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.DS3:
+                    try
+                    {
+                        MSB = MSB3.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.BB:
+                    try
+                    {
+                        MSB = MSBB.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.SDT:
+                    try
+                    {
+                        MSB = MSBS.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.ER:
+                    try
+                    {
+                        MSB = MSBE.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.AC6:
+                    try
+                    {
+                        MSB = MSB_AC6.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                    break;
+                case ProjectType.ERN:
+                    //try
+                    //{
+                    //    MSB = MSBE.Read(mapData);
+                    //    successfulLoad = true;
+                    //}
+                    //catch (Exception e)
+                    //{
+                    //    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+                    //    return false;
+                    //}
+                    break;
+                default: break;
+            }
+
+            // Map Container setup
+            if (!msbOnly)
+            {
+                MapContainer = new(editor, Name);
+                MapContainer.LoadMSB(MSB);
+            }
         }
-
-        // Map Container setup
-        if (!msbOnly)
+        catch (Exception e)
         {
-            MapContainer = new(editor, Name);
-            MapContainer.LoadMSB(MSB);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
         }
 
         return successfulLoad;

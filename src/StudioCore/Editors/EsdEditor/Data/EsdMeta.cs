@@ -1,4 +1,5 @@
-﻿using Octokit;
+﻿using Microsoft.Extensions.Logging;
+using Octokit;
 using StudioCore.Core;
 using StudioCore.Resource.Locators;
 using System;
@@ -41,9 +42,17 @@ public class EsdMeta
 
         if (File.Exists(resourcePath))
         {
-            using (var stream = File.OpenRead(resourcePath))
+            try
             {
-                TalkEsdBank = JsonSerializer.Deserialize(stream, EsdMetaDataSerializationContext.Default.EsdMeta_Root);
+                using (var stream = File.OpenRead(resourcePath))
+                {
+                    TalkEsdBank = JsonSerializer.Deserialize(stream, EsdMetaDataSerializationContext.Default.EsdMeta_Root);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to read ESD Meta JSON file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
             }
         }
 

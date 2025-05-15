@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Framework.META;
 using StudioCore.Formats.JSON;
 using System.Collections.Generic;
@@ -48,9 +49,19 @@ public class MapData
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
+        if (!primaryBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
+
+        if (!vanillaBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to fully setup Vanilla Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
 
         // META
         Meta = new MsbMeta(BaseEditor, Project);
@@ -58,7 +69,12 @@ public class MapData
         Task<bool> metaTask = Meta.Setup();
         bool metaTaskResult = await metaTask;
 
-        return true;
+        if (!metaTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup MSB Meta.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
+        return primaryBankTaskResult && vanillaBankTaskResult;
     }
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
@@ -82,6 +98,12 @@ public class MapData
         Task<bool> auxBankTask = newAuxBank.Setup();
         bool auxBankTaskResult = await auxBankTask;
 
+        if (!auxBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Aux MSB Bank for {targetProject.ProjectName}.");
+            return false;
+        }
+
         if (AuxBanks.ContainsKey(targetProject.ProjectName))
         {
             AuxBanks[targetProject.ProjectName] = newAuxBank;
@@ -91,14 +113,7 @@ public class MapData
             AuxBanks.Add(targetProject.ProjectName, newAuxBank);
         }
 
-        if (auxBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup Aux MSB Bank for {targetProject.ProjectName}.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to setup Aux MSB Bank for {targetProject.ProjectName}.");
-        }
+        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Setup Aux MSB Bank for {targetProject.ProjectName}.");
 
         return true;
     }

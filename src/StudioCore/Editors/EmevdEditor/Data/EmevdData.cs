@@ -1,6 +1,8 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,21 +37,38 @@ public class EmevdData
 
         if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
-            var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
-            var binder = BND4.Read(regulation);
-            foreach(var entry in binder.Files)
+            try
             {
-                if (!entry.Name.EndsWith("emevd"))
-                    continue;
+                var regulation = Project.FS.GetFileOrThrow("enc_regulation.bnd.dcx").GetData();
 
-                var fileDictEntry = new FileDictionaryEntry();
-                fileDictEntry.Archive = "Binder";
-                fileDictEntry.Path = entry.Name;
-                fileDictEntry.Folder = "";
-                fileDictEntry.Filename = Path.GetFileNameWithoutExtension(entry.Name);
-                fileDictEntry.Extension = Path.GetExtension(entry.Name);
+                try
+                {
+                    var binder = BND4.Read(regulation);
+                    foreach (var entry in binder.Files)
+                    {
+                        if (!entry.Name.EndsWith("emevd"))
+                            continue;
 
-                EmevdFiles.Entries.Add(fileDictEntry);
+                        var fileDictEntry = new FileDictionaryEntry();
+                        fileDictEntry.Archive = "Binder";
+                        fileDictEntry.Path = entry.Name;
+                        fileDictEntry.Folder = "";
+                        fileDictEntry.Filename = Path.GetFileNameWithoutExtension(entry.Name);
+                        fileDictEntry.Extension = Path.GetExtension(entry.Name);
+
+                        EmevdFiles.Entries.Add(fileDictEntry);
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to read enc_regulation.bnd.dcx from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
             }
         }
 
@@ -60,10 +79,20 @@ public class EmevdData
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
+        if(!primaryBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
 
-        return true;
+        if (!vanillaBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to fully setup Vanilla Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
+        return primaryBankTaskResult && vanillaBankTaskResult;
     }
 }

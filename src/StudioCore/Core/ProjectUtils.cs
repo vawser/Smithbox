@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
 using StudioCore.Formats.JSON;
@@ -91,11 +92,14 @@ public class ProjectUtils
     /// <exception cref="DirectoryNotFoundException"></exception>
     public static FileDictionary BuildFromSource(string sourcePath, FileDictionary existingDict)
     {
-        if (!Directory.Exists(sourcePath))
-            throw new DirectoryNotFoundException($"Source path not found: {sourcePath}");
-
         var fileDict = new FileDictionary();
         fileDict.Entries = new();
+
+        if (!Directory.Exists(sourcePath))
+        {
+            TaskLogs.AddLog($"[Smithbox] Source path not found: {sourcePath}", LogLevel.Error, Tasks.LogPriority.High);
+            return fileDict;
+        }
 
         var allFiles = Directory.GetFiles(sourcePath, "*", SearchOption.AllDirectories);
 

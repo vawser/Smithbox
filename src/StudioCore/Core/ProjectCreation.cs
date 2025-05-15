@@ -44,7 +44,7 @@ public static class ProjectCreation
     public static bool EnableFileBrowser = false;
 
     // Used so the project type combo box has a specific order
-    private static List<ProjectType> ProjectTypeOrder = new()
+    public static List<ProjectType> ProjectTypeOrder = new()
     {
         ProjectType.DES,
         ProjectType.DS1,

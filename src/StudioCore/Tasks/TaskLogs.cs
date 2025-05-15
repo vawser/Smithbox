@@ -74,7 +74,7 @@ public static class TaskLogs
                     {
                         if (text != ex.Message)
                         {
-                            entry.Message += $": {ex.Message}";
+                            entry.Message += $"\n{ex.Message}";
                         }
 
                         _warningLog.Add(entry);
@@ -100,8 +100,7 @@ public static class TaskLogs
                                 popupMessage += $"\n{ex.StackTrace}";
                             }
 
-                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
-                                MessageBoxButtons.OK);
+                            //PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(), MessageBoxButtons.OK);
                         }
 
                         ResetColorTimer();
@@ -161,8 +160,7 @@ public static class TaskLogs
                                 popupMessage += $"\n{ex.StackTrace}";
                             }
 
-                            PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(),
-                                MessageBoxButtons.OK);
+                            //PlatformUtils.Instance.MessageBox(popupMessage, level.ToString(), MessageBoxButtons.OK);
                         }
 
                         ResetColorTimer();

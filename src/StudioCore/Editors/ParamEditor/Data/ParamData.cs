@@ -98,26 +98,18 @@ public class ParamData
         Task<bool> primaryBankTask = PrimaryBank.Load();
         bool primaryBankTaskResult = await primaryBankTask;
 
-        if (primaryBankTaskResult)
+        if (!primaryBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Primary PARAM Bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Primary PARAM Bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to fully setup Primary Bank.");
         }
 
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Load();
         bool vanillaBankTaskResult = await vanillaBankTask;
 
-        if (vanillaBankTaskResult)
+        if (!vanillaBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Vanilla PARAM Bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Vanilla PARAM Bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to fully setup Vanilla Bank.");
         }
 
         if(!Project.ImportedParamRowNames)
@@ -159,6 +151,11 @@ public class ParamData
         Task<bool> auxBankTask = newAuxBank.Load();
         bool auxBankTaskResult = await auxBankTask;
 
+        if (!auxBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank for {targetProject.ProjectName}.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         if (AuxBanks.ContainsKey(targetProject.ProjectName))
         {
             AuxBanks[targetProject.ProjectName] = newAuxBank;
@@ -168,14 +165,7 @@ public class ParamData
             AuxBanks.Add(targetProject.ProjectName, newAuxBank);
         }
 
-        if (auxBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank for {targetProject.ProjectName}.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to setup Aux PARAM Bank for {targetProject.ProjectName}.");
-        }
+        TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Setup Aux PARAM Bank for {targetProject.ProjectName}.");
 
         return true;
     }
@@ -196,10 +186,17 @@ public class ParamData
 
         foreach (var f in files)
         {
-            var pdef = PARAMDEF.XmlDeserialize(f, true);
-            ParamDefs.Add(pdef.ParamType, pdef);
-            ParamDefsByFilename.Add(f, pdef);
-            defPairs.Add((f, pdef));
+            try
+            {
+                var pdef = PARAMDEF.XmlDeserialize(f, true);
+                ParamDefs.Add(pdef.ParamType, pdef);
+                ParamDefsByFilename.Add(f, pdef);
+                defPairs.Add((f, pdef));
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deseralize {f} as PARAMDEF", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
         }
 
         // Param Type Info
@@ -291,16 +288,23 @@ public class ParamData
 
             var fName = f.Substring(f.LastIndexOf('\\') + 1);
 
-            if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
+            try
             {
-                meta.XmlDeserialize($@"{projectMetaDir}\{fName}", pdef);
-            }
-            else
-            {
-                meta.XmlDeserialize($@"{rootMetaDir}\{fName}", pdef);
-            }
+                if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
+                {
+                    meta.XmlDeserialize($@"{projectMetaDir}\{fName}", pdef);
+                }
+                else
+                {
+                    meta.XmlDeserialize($@"{rootMetaDir}\{fName}", pdef);
+                }
 
-            ParamMeta.Add(pdef, meta);
+                ParamMeta.Add(pdef, meta);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deseralize {fName} as PARAMMETA", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
         }
 
         return true;

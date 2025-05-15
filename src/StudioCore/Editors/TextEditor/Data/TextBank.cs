@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.MapEditor.Data;
@@ -116,10 +117,10 @@ public class TextBank
 
             Entries.TryAdd(entry, containerWrapper);
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
-            TaskLogs.AddLog($"Failed to load FMG: {filename} at {entry.Path}\n{ex}");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to load FMG: {filename} at {entry.Path}", LogLevel.Error, Tasks.LogPriority.High, e);
         }
     }
 
@@ -213,10 +214,10 @@ public class TextBank
 
             Entries.TryAdd(entry, containerWrapper);
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
             var filename = Path.GetFileNameWithoutExtension(entry.Path);
-            TaskLogs.AddLog($"Failed to load FMG container: {filename} at {entry.Path}\n{ex}");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to load FMG container: {filename} at {entry.Path}", LogLevel.Error, Tasks.LogPriority.High, e);
         }
     }
 
@@ -266,40 +267,56 @@ public class TextBank
 
         byte[] fileBytes = null;
 
-        var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
-
-        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
+        try
         {
-            using (IBinder binder = BND3.Read(containerBytes))
-            {
-                foreach (var file in binder.Files)
-                {
-                    WriteFmgContents(file, containerWrapper.FmgWrappers);
-                }
+            var containerBytes = TargetFS.ReadFileOrThrow(entry.Path);
 
-                using (BND3 writeBinder = binder as BND3)
+            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES or ProjectType.ACFA)
+            {
+                using (IBinder binder = BND3.Read(containerBytes))
                 {
-                    fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                    foreach (var file in binder.Files)
+                    {
+                        WriteFmgContents(file, containerWrapper.FmgWrappers);
+                    }
+
+                    using (BND3 writeBinder = binder as BND3)
+                    {
+                        fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                    }
                 }
             }
-        }
-        else
-        {
-            using (IBinder binder = BND4.Read(containerBytes))
+            else
             {
-                foreach (var file in binder.Files)
+                using (IBinder binder = BND4.Read(containerBytes))
                 {
-                    WriteFmgContents(file, containerWrapper.FmgWrappers);
-                }
+                    foreach (var file in binder.Files)
+                    {
+                        WriteFmgContents(file, containerWrapper.FmgWrappers);
+                    }
 
-                using (BND4 writeBinder = binder as BND4)
-                {
-                    fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                    using (BND4 writeBinder = binder as BND4)
+                    {
+                        fileBytes = writeBinder.Write(containerWrapper.CompressionType);
+                    }
                 }
             }
-        }
 
-        Project.ProjectFS.WriteFile(entry.Path, fileBytes);
+            try
+            {
+                Project.ProjectFS.WriteFile(entry.Path, fileBytes);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to read {entry.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
+        }
 
         return true;
     }
@@ -318,7 +335,7 @@ public class TextBank
                     }
                     catch (Exception ex)
                     {
-                        TaskLogs.AddLog($"Failed to write FMG file: {file.ID}\n{ex}");
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write FMG file: {file.ID}\n{ex}");
                     }
                 }
             }
@@ -335,9 +352,25 @@ public class TextBank
         if (entry == null || containerWrapper == null)
             return false;
 
-        var newFmgBytes = containerWrapper.FmgWrappers.First().File.Write();
+        try
+        {
+            var newFmgBytes = containerWrapper.FmgWrappers.First().File.Write();
 
-        Project.ProjectFS.WriteFile(entry.Path, newFmgBytes);
+            try
+            {
+                Project.ProjectFS.WriteFile(entry.Path, newFmgBytes);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to write {entry.Filename} as FMG", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
+        }
 
         return true;
     }

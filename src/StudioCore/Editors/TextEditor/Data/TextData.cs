@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.Collections;
+using Microsoft.Extensions.Logging;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.EzStateEditorNS;
@@ -48,9 +49,19 @@ public class TextData
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
+        if (!primaryBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
+
+        if (!vanillaBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
 
         return true;
     }
@@ -77,6 +88,11 @@ public class TextData
         Task<bool> auxBankTask = newAuxBank.Setup();
         bool auxBankTaskResult = await auxBankTask;
 
+        if (!auxBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Aux FMG Bank.");
+        }
+
         if (AuxBanks.ContainsKey(targetProject.ProjectName))
         {
             AuxBanks[targetProject.ProjectName] = newAuxBank;
@@ -86,14 +102,7 @@ public class TextData
             AuxBanks.Add(targetProject.ProjectName, newAuxBank);
         }
 
-        if (auxBankTaskResult)
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Aux FMG Bank.");
-        }
-        else
-        {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Failed to setup Aux FMG Bank.");
-        }
+        TaskLogs.AddLog($"[{Project.ProjectName}:Text Editor] Setup Aux FMG Bank.");
 
         return true;
     }

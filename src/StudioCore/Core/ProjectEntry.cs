@@ -1,5 +1,6 @@
 ﻿using Andre.IO.VFS;
 using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Data;
@@ -215,6 +216,25 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> Init(bool silent = false, InitType initType = InitType.ProjectDefined)
     {
+        // Sanity checks
+        if(ProjectType is ProjectType.Undefined)
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Project initialization failed. Project Type is undefined.", LogLevel.Error, Tasks.LogPriority.High);
+            return false;
+        }
+
+        if(!Directory.Exists(ProjectPath))
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Project initialization failed. Project path does not exist: {ProjectPath}", LogLevel.Error, Tasks.LogPriority.High);
+            return false;
+        }
+
+        if (!Directory.Exists(DataPath))
+        {
+            TaskLogs.AddLog($"[{ProjectName}] Project initialization failed. Data path does not exist: {DataPath}", LogLevel.Error, Tasks.LogPriority.High);
+            return false;
+        }
+
         /// The order of operations here is important:
         /// 1. Externals 
         /// 2. VFS

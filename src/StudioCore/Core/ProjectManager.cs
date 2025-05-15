@@ -317,7 +317,6 @@ public class ProjectManager
 
             if (File.Exists(entry))
             {
-
                 try
                 {
                     var filestring = File.ReadAllText(entry);
@@ -445,7 +444,7 @@ public class ProjectManager
             StartupProject(newProject);
     }
 
-    private bool IsProjectLoading = false;
+    public bool IsProjectLoading = false;
 
     public async void StartupProject(ProjectEntry curProject)
     {

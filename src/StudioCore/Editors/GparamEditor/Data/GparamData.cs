@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.EventScriptEditorNS;
 using StudioCore.Formats.JSON;
@@ -36,10 +37,20 @@ public class GparamData
         Task<bool> primaryBankTask = PrimaryBank.Setup();
         bool primaryBankTaskResult = await primaryBankTask;
 
+        if (!primaryBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
         // Vanilla Bank
         Task<bool> vanillaBankTask = VanillaBank.Setup();
         bool vanillaBankTaskResult = await vanillaBankTask;
 
-        return true;
+        if (!vanillaBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Graphics Param Editor] Failed to fully setup Primary Bank.", LogLevel.Error, Tasks.LogPriority.High);
+        }
+
+        return primaryBankTaskResult && vanillaBankTaskResult;
     }
 }
