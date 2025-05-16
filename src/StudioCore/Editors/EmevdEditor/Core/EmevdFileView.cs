@@ -34,11 +34,13 @@ public class EmevdFileView
         ImGui.BeginChild("FileListSection");
         Editor.Selection.SwitchWindowContext(EmevdEditorContext.File);
 
+        int index = 0;
+
         foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {
             var fileEntry = entry.Key;
 
-            var displayName = $"{fileEntry.Filename}";
+            var displayName = $"{fileEntry.Filename}##fileEntry{index}";
             var aliasName = AliasUtils.GetMapNameAlias(Editor.Project, fileEntry.Filename);
 
             if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
@@ -68,6 +70,8 @@ public class EmevdFileView
 
                 UIHelper.DisplayAlias(aliasName);
             }
+
+            index++;
         }
 
         ImGui.EndChild();

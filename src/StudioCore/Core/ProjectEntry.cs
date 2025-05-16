@@ -608,8 +608,15 @@ public class ProjectEntry
             TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
         }
 
+        // Don't init editor for these projects as they don't support GPARAM
+        var supportsGparam = true;
+        if(ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S)
+        {
+            supportsGparam = false;
+        }
+
         // ---- Graphics Param Editor ----
-        if (EnableGparamEditor && initType is InitType.ProjectDefined)
+        if (EnableGparamEditor && initType is InitType.ProjectDefined && supportsGparam)
         {
             // GPARAM Information
             Task<bool> gparamInfoTask = SetupGparamInfo();

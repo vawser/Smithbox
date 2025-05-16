@@ -44,7 +44,7 @@ public class MaterialBinderList
             Editor.Selection.SourceType = SourceType.MTD;
         }
 
-            Editor.Filters.DisplayBinderFilterSearch();
+        Editor.Filters.DisplayBinderFilterSearch();
 
         ImGui.BeginChild("BinderList");
 
@@ -73,7 +73,7 @@ public class MaterialBinderList
 
                     var displayName = $"{key.Filename}";
 
-                    if (ImGui.Selectable($"{displayName}##mtdEntry_{key}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"{displayName}##mtdEntry_{key.Filename}{i}", key == Editor.Selection.SelectedBinderEntry, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         Editor.Selection.SelectedBinderEntry = key;
                         Editor.Selection.MTDWrapper = curWrapper;

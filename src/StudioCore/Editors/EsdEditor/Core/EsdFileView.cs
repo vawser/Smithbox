@@ -38,6 +38,8 @@ public class EsdFileView
         // Talk
         if (ImGui.CollapsingHeader("Talk", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            int index = 0;
+
             foreach (var entry in Project.EsdData.PrimaryBank.Scripts)
             {
                 if (entry.Key.Extension == "talkesdbnd")
@@ -48,7 +50,7 @@ public class EsdFileView
                     if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
                     {
                         // File row
-                        if (ImGui.Selectable($@" {displayName}", entry.Key == Editor.Selection.SelectedFileEntry))
+                        if (ImGui.Selectable($@" {displayName}##fileEntry{index}", entry.Key == Editor.Selection.SelectedFileEntry))
                         {
                             Editor.Selection.ResetScript();
                             Editor.Selection.ResetStateGroup();
@@ -77,6 +79,8 @@ public class EsdFileView
                         UIHelper.DisplayAlias(aliasName);
                     }
                 }
+
+                index++;
             }
         }
 
@@ -85,6 +89,8 @@ public class EsdFileView
         {
             if (ImGui.CollapsingHeader("Loose", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                int index = 0;
+
                 foreach (var entry in Project.EsdData.PrimaryBank.Scripts)
                 {
                     if (entry.Key.Extension == "esd")
@@ -95,7 +101,7 @@ public class EsdFileView
                         if (Editor.Filters.IsFileFilterMatch(displayName, aliasName))
                         {
                             // File row
-                            if (ImGui.Selectable($@" {displayName}", entry.Key == Editor.Selection.SelectedFileEntry))
+                            if (ImGui.Selectable($@" {displayName}##looseFileEntry{index}", entry.Key == Editor.Selection.SelectedFileEntry))
                             {
                                 Editor.Selection.ResetScript();
                                 Editor.Selection.ResetStateGroup();
@@ -124,6 +130,8 @@ public class EsdFileView
                             UIHelper.DisplayAlias(aliasName);
                         }
                     }
+
+                    index++;
                 }
             }
         }

@@ -8,6 +8,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace StudioCore.MaterialEditorNS;
@@ -75,6 +76,13 @@ public class MaterialBank
 
     public MATBIN GetMatbin(string name) =>
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
+
+    public async Task<bool> Save()
+    {
+        await Task.Yield();
+
+        return true;
+    }
 }
 
 public class MTDWrapper
@@ -95,28 +103,69 @@ public class MTDWrapper
         Path = dictEntry.Path;
     }
 
-    public async Task<bool> Load(bool msbOnly = false)
+    public async Task<bool> Load()
     {
-        await Task.Yield(); // Better alternative to Task.Delay(1)
+        await Task.Yield();
 
         try
         {
             var binderData = TargetFS.ReadFileOrThrow(Path);
-            var binder = BND4.Read(binderData);
 
-            foreach (var entry in binder.Files)
+            if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
             {
-                if (entry.Name.Contains(".mtd"))
+                var binder = BND3.Read(binderData);
+
+                foreach (var entry in binder.Files)
                 {
-                    try
+                    if (entry.Name.Contains(".mtd"))
                     {
-                        var mtd = MTD.Read(entry.Bytes);
-                        Entries.Add(entry.Name, mtd);
+                        try
+                        {
+                            var mtd = MTD.Read(entry.Bytes);
+
+                            if (Entries.ContainsKey(entry.Name))
+                            {
+                                Entries[entry.Name] = mtd;
+                            }
+                            else
+                            {
+                                Entries.Add(entry.Name, mtd);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
                     }
-                    catch (Exception e)
+                }
+            }
+            else
+            {
+                var binder = BND4.Read(binderData);
+
+                foreach (var entry in binder.Files)
+                {
+                    if (entry.Name.Contains(".mtd"))
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
-                        return false;
+                        try
+                        {
+                            var mtd = MTD.Read(entry.Bytes);
+
+                            if(Entries.ContainsKey(entry.Name))
+                            {
+                                Entries[entry.Name] = mtd;
+                            }
+                            else
+                            {
+                                Entries.Add(entry.Name, mtd);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
                     }
                 }
             }
@@ -128,6 +177,13 @@ public class MTDWrapper
             TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
             return false;
         }
+    }
+
+    public async Task<bool> Save()
+    {
+        await Task.Yield();
+
+        return true;
     }
 }
 
@@ -149,7 +205,7 @@ public class MATBINWrapper
         Path = dictEntry.Path;
     }
 
-    public async Task<bool> Load(bool msbOnly = false)
+    public async Task<bool> Load()
     {
         await Task.Yield();
 
@@ -165,7 +221,14 @@ public class MATBINWrapper
                     try
                     {
                         var matbin = MATBIN.Read(entry.Bytes);
-                        Entries.Add(entry.Name, matbin);
+                        if (Entries.ContainsKey(entry.Name))
+                        {
+                            Entries[entry.Name] = matbin;
+                        }
+                        else
+                        {
+                            Entries.Add(entry.Name, matbin);
+                        }
                     }
                     catch (Exception e)
                     {
@@ -182,5 +245,11 @@ public class MATBINWrapper
             TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
             return false;
         }
+    }
+    public async Task<bool> Save()
+    {
+        await Task.Yield();
+
+        return true;
     }
 }

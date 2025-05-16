@@ -74951,13 +74951,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/deude/item.msgbnd.dcx",
-      "Folder": "/msg/deude",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/deude/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/deude",
       "Filename": "item_dlc1",
@@ -74968,13 +74961,6 @@
       "Path": "/msg/deude/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/deude",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/deude/menu.msgbnd.dcx",
-      "Folder": "/msg/deude",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75000,13 +74986,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/engus/item.msgbnd.dcx",
-      "Folder": "/msg/engus",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/engus/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/engus",
       "Filename": "item_dlc1",
@@ -75017,13 +74996,6 @@
       "Path": "/msg/engus/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/engus",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/engus/menu.msgbnd.dcx",
-      "Folder": "/msg/engus",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75049,13 +75021,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/frafr/item.msgbnd.dcx",
-      "Folder": "/msg/frafr",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/frafr/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/frafr",
       "Filename": "item_dlc1",
@@ -75066,13 +75031,6 @@
       "Path": "/msg/frafr/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/frafr",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/frafr/menu.msgbnd.dcx",
-      "Folder": "/msg/frafr",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75098,13 +75056,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/itait/item.msgbnd.dcx",
-      "Folder": "/msg/itait",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/itait/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/itait",
       "Filename": "item_dlc1",
@@ -75115,13 +75066,6 @@
       "Path": "/msg/itait/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/itait",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/itait/menu.msgbnd.dcx",
-      "Folder": "/msg/itait",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75147,13 +75091,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/jpnjp/item.msgbnd.dcx",
-      "Folder": "/msg/jpnjp",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/jpnjp/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/jpnjp",
       "Filename": "item_dlc1",
@@ -75164,13 +75101,6 @@
       "Path": "/msg/jpnjp/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/jpnjp",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/jpnjp/menu.msgbnd.dcx",
-      "Folder": "/msg/jpnjp",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75196,13 +75126,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/korkr/item.msgbnd.dcx",
-      "Folder": "/msg/korkr",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/korkr/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/korkr",
       "Filename": "item_dlc1",
@@ -75213,13 +75136,6 @@
       "Path": "/msg/korkr/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/korkr",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/korkr/menu.msgbnd.dcx",
-      "Folder": "/msg/korkr",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75245,13 +75161,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/polpl/item.msgbnd.dcx",
-      "Folder": "/msg/polpl",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/polpl/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/polpl",
       "Filename": "item_dlc1",
@@ -75262,13 +75171,6 @@
       "Path": "/msg/polpl/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/polpl",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/polpl/menu.msgbnd.dcx",
-      "Folder": "/msg/polpl",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75294,13 +75196,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/porbr/item.msgbnd.dcx",
-      "Folder": "/msg/porbr",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/porbr/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/porbr",
       "Filename": "item_dlc1",
@@ -75311,13 +75206,6 @@
       "Path": "/msg/porbr/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/porbr",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/porbr/menu.msgbnd.dcx",
-      "Folder": "/msg/porbr",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75343,13 +75231,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/rusru/item.msgbnd.dcx",
-      "Folder": "/msg/rusru",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/rusru/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/rusru",
       "Filename": "item_dlc1",
@@ -75360,13 +75241,6 @@
       "Path": "/msg/rusru/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/rusru",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/rusru/menu.msgbnd.dcx",
-      "Folder": "/msg/rusru",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75392,13 +75266,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/spaar/item.msgbnd.dcx",
-      "Folder": "/msg/spaar",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/spaar/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/spaar",
       "Filename": "item_dlc1",
@@ -75409,13 +75276,6 @@
       "Path": "/msg/spaar/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/spaar",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/spaar/menu.msgbnd.dcx",
-      "Folder": "/msg/spaar",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75441,13 +75301,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/spaes/item.msgbnd.dcx",
-      "Folder": "/msg/spaes",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/spaes/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/spaes",
       "Filename": "item_dlc1",
@@ -75458,13 +75311,6 @@
       "Path": "/msg/spaes/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/spaes",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/spaes/menu.msgbnd.dcx",
-      "Folder": "/msg/spaes",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75490,13 +75336,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/zhocn/item.msgbnd.dcx",
-      "Folder": "/msg/zhocn",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/zhocn/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/zhocn",
       "Filename": "item_dlc1",
@@ -75507,13 +75346,6 @@
       "Path": "/msg/zhocn/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/zhocn",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/zhocn/menu.msgbnd.dcx",
-      "Folder": "/msg/zhocn",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {
@@ -75539,13 +75371,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/zhotw/item.msgbnd.dcx",
-      "Folder": "/msg/zhotw",
-      "Filename": "item",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/msg/zhotw/item_dlc1.msgbnd.dcx",
       "Folder": "/msg/zhotw",
       "Filename": "item_dlc1",
@@ -75556,13 +75381,6 @@
       "Path": "/msg/zhotw/item_dlc2.msgbnd.dcx",
       "Folder": "/msg/zhotw",
       "Filename": "item_dlc2",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/zhotw/menu.msgbnd.dcx",
-      "Folder": "/msg/zhotw",
-      "Filename": "menu",
       "Extension": "msgbnd"
     },
     {

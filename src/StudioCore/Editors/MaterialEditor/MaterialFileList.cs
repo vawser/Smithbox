@@ -56,7 +56,7 @@ public class MaterialFileList
 
                     var displayName = $"{key}";
 
-                    if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
+                    if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}{i}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                     {
                         Editor.Selection.SelectedFileKey = key;
                         Editor.Selection.SelectedMTD = curFile;

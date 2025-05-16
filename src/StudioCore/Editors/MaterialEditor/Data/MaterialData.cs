@@ -34,8 +34,15 @@ public class MaterialData
         MTD_Files.Entries = 
             Project.FileDictionary.Entries.Where(e => e.Extension == "mtdbnd").ToList();
 
-        MATBIN_Files.Entries = 
-            Project.FileDictionary.Entries.Where(e => e.Extension == "matbinbnd").ToList();
+        // DS2 has it as a single .bnd file
+        if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2)
+        {
+            MTD_Files.Entries =
+            Project.FileDictionary.Entries.Where(e => e.Filename == "allmaterialbnd").ToList();
+        }
+
+        MATBIN_Files.Entries =
+        Project.FileDictionary.Entries.Where(e => e.Extension == "matbinbnd").ToList();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
         VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);

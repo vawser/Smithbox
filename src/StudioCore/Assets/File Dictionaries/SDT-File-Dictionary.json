@@ -62701,20 +62701,6 @@
     },
     {
       "Archive": "",
-      "Path": "/msg/engus/menu.msgbnd.dcx",
-      "Folder": "/msg/engus",
-      "Filename": "menu",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
-      "Path": "/msg/jpnjp/menu.msgbnd.dcx",
-      "Folder": "/msg/jpnjp",
-      "Filename": "menu",
-      "Extension": "msgbnd"
-    },
-    {
-      "Archive": "",
       "Path": "/param/gameparam/gameparam.parambnd.dcx",
       "Folder": "/param/gameparam",
       "Filename": "gameparam",
