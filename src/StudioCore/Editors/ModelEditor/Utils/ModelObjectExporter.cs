@@ -1,21 +1,14 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿#nullable enable
 using Microsoft.Extensions.Logging;
-using Org.BouncyCastle.Utilities;
-using Pfim;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextureViewer.Utils;
-using StudioCore.Resource.Locators;
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Utils;
 
@@ -110,7 +103,7 @@ public static class ModelObjectExporter
                 {
                     diffuse = material.Textures.Find(i => i.Type.Contains("AlbedoMap"));
 
-                    MATBIN.Sampler diffuseTexSampler = GetMatchingSampler(editor, material, "allmaterial");
+                    MATBIN.Sampler? diffuseTexSampler = GetMatchingSampler(editor, material, "allmaterial");
 
                     // Look in the dlc ones for ER if no match is found
                     if(editor.Project.ProjectType is ProjectType.ER)
@@ -188,9 +181,9 @@ public static class ModelObjectExporter
         return true;
     }
 
-    public static MATBIN.Sampler GetMatchingSampler(ModelEditorScreen editor, FLVER2.Material material, string file)
+    public static MATBIN.Sampler? GetMatchingSampler(ModelEditorScreen editor, FLVER2.Material material, string file)
     {
-        MATBIN.Sampler diffuseTexSampler = null;
+        MATBIN.Sampler? diffuseTexSampler = null;
 
         string matbinBndFilePath = $"{editor.Project.DataPath}\\material\\{file}.matbinbnd.dcx";
 
@@ -199,10 +192,12 @@ public static class ModelObjectExporter
 
         if (matbinFile?.Bytes == null || !MATBIN.IsRead(matbinFile.Bytes.ToArray(), out MATBIN matbin))
         {
-            return diffuseTexSampler;
+            return null;
         }
 
-        return matbin.Samplers.Find(i => i.Path.Contains("_a"));
+        diffuseTexSampler = matbin.Samplers.Find(i => i.Path.Contains("_a"));
+
+        return diffuseTexSampler;
     }
 
     public static string GetTPFFilePath(ModelEditorScreen editor, string tpfFileName, FlverContainerType modelType, string mapId)

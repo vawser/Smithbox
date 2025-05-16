@@ -10,8 +10,6 @@ public class GparamActionHandler
     private GparamEditorScreen Screen;
     private ActionManager EditorActionManager;
 
-    private string _copyFileNewName = "";
-
     public GparamActionHandler(GparamEditorScreen screen)
     {
         Screen = screen;

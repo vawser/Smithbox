@@ -41,23 +41,23 @@ public class DbgPrimGizmoRotateRing : DbgPrimGizmo
         }
         else
         {
-            Vector3 GetPoint(Gizmos.Axis axis, int segmentIndex, float radius, float depth)
-            {
-                var horizontalAngle = 1.0f * segmentIndex / Segments * Utils.Pi * 2.0f;
-                var x = (float)Math.Cos(horizontalAngle);
-                var y = (float)Math.Sin(horizontalAngle);
-                if (axis == Gizmos.Axis.PosZ)
-                {
-                    return new Vector3(x * radius, y * radius, depth);
-                }
+            //Vector3 GetPoint(Gizmos.Axis axis, int segmentIndex, float radius, float depth)
+            //{
+            //    var horizontalAngle = 1.0f * segmentIndex / Segments * Utils.Pi * 2.0f;
+            //    var x = (float)Math.Cos(horizontalAngle);
+            //    var y = (float)Math.Sin(horizontalAngle);
+            //    if (axis == Gizmos.Axis.PosZ)
+            //    {
+            //        return new Vector3(x * radius, y * radius, depth);
+            //    }
 
-                if (axis == Gizmos.Axis.PosX)
-                {
-                    return new Vector3(depth, x * radius, y * radius);
-                }
+            //    if (axis == Gizmos.Axis.PosX)
+            //    {
+            //        return new Vector3(depth, x * radius, y * radius);
+            //    }
 
-                return new Vector3(x * radius, depth, y * radius);
-            }
+            //    return new Vector3(x * radius, depth, y * radius);
+            //}
 
             // Algorithm from
             // http://apparat-engine.blogspot.com/2013/04/procedural-meshes-torus.html

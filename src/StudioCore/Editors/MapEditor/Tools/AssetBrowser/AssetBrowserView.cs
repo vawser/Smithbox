@@ -23,7 +23,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
     {
         private string _searchInput = "";
         private string _selectedEntry = "";
-        private FileSelectionType _selectedEntryType = FileSelectionType.None;
 
         private MapEditorScreen Editor;
 
@@ -32,21 +31,9 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
             Editor = screen;
         }
 
-        public void OnProjectChanged()
-        {
-            if (Editor.Project.ProjectType != ProjectType.Undefined)
-            {
-                _selectedEntry = "";
-                _selectedEntryType = FileSelectionType.None;
-            }
-        }
-
         public void OnGui()
         {
             var scale = DPI.GetUIScale();
-
-            if (Editor.Project.ProjectType == ProjectType.Undefined)
-                return;
 
             if (!CFG.Current.Interface_MapEditor_AssetBrowser)
                 return;
@@ -131,7 +118,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                         if (ImGui.Selectable(entry.ID, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry.ID;
-                            _selectedEntryType = FileSelectionType.Character;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
@@ -173,7 +159,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                         if (ImGui.Selectable(entry.ID, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry.ID;
-                            _selectedEntryType = FileSelectionType.Asset;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
@@ -208,7 +193,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                         if (ImGui.Selectable(entry.ID, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                         {
                             _selectedEntry = entry.ID;
-                            _selectedEntryType = FileSelectionType.Part;
 
                             if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                             {
@@ -260,7 +244,6 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
                             if (ImGui.Selectable(mapPieceName, entry.ID == _selectedEntry, ImGuiSelectableFlags.AllowDoubleClick))
                             {
                                 _selectedEntry = entry.ID;
-                                _selectedEntryType = FileSelectionType.MapPiece;
 
                                 if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                                 {

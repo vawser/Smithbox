@@ -133,12 +133,8 @@ public class TimeActSelectionManager
         // Auto-Select first TimeAct if not empty
         if(ContainerInfo.InternalFiles.Count > 0)
         {
-            for(int i = 0; i < ContainerInfo.InternalFiles.Count; i++)
-            {
-                var timeAct = ContainerInfo.InternalFiles[i].TAE;
-                TimeActChange(timeAct, i);
-                break;
-            }
+            var timeAct = ContainerInfo.InternalFiles[0].TAE;
+            TimeActChange(timeAct, 0);
         }
     }
 
@@ -184,12 +180,8 @@ public class TimeActSelectionManager
         // Auto-Select first Animation if not empty
         if (CurrentTimeAct.Animations.Count > 0)
         {
-            for (int i = 0; i < CurrentTimeAct.Animations.Count; i++)
-            {
-                var anim = CurrentTimeAct.Animations[i];
-                TimeActAnimationChange(anim, i);
-                break;
-            }
+            var anim = CurrentTimeAct.Animations[0];
+            TimeActAnimationChange(anim, 0);
         }
     }
 
@@ -233,12 +225,8 @@ public class TimeActSelectionManager
         // Auto-Select first Event if not empty
         if (CurrentTimeActAnimation.Events.Count > 0)
         {
-            for (int i = 0; i < CurrentTimeActAnimation.Events.Count; i++)
-            {
-                var evt = CurrentTimeActAnimation.Events[i];
-                TimeActEventChange(evt, i);
-                break;
-            }
+            var evt = CurrentTimeActAnimation.Events[0];
+            TimeActEventChange(evt, 0);
         }
     }
 

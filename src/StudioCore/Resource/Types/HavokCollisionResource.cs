@@ -11,6 +11,8 @@ using System.IO;
 using HKLib.Serialization.hk2018.Binary;
 using HKLib.Reflection.hk2018;
 using StudioCore.Core;
+using Microsoft.Extensions.Logging;
+using Octokit;
 
 namespace StudioCore.Resource.Types;
 
@@ -831,7 +833,7 @@ public class HavokCollisionResource : IResource, IDisposable
                         }
                         catch (Exception e)
                         {
-                            // Debug failing cases later
+                            TaskLogs.AddLog($"[Smithbox] Failed to load HKX.", LogLevel.Error, Tasks.LogPriority.High, e);
                         }
                     }
                 }
@@ -890,7 +892,7 @@ public class HavokCollisionResource : IResource, IDisposable
                 }
                 catch (Exception e)
                 {
-                    // Debug failing cases later
+                    TaskLogs.AddLog($"[Smithbox] Failed to load HKX2.", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
 
@@ -964,6 +966,7 @@ public class HavokCollisionResource : IResource, IDisposable
                     }
                     catch (Exception e)
                     {
+                        TaskLogs.AddLog($"[Smithbox] Failed to load HKLIB.", LogLevel.Error, Tasks.LogPriority.High, e);
                         // Debug failing cases later
                     }
                 }

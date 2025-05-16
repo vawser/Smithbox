@@ -1,11 +1,7 @@
-#nullable enable
 using Andre.Formats;
-using HKX2;
-using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
-using StudioCore.Editors.ParamEditor.MassEdit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -383,6 +379,7 @@ public class MassParamEditRegex
         Func<List<EditorAction>, MassEditResult> innerFunc)
     {
         List<EditorAction> partialActions = new();
+
         try
         {
             return (innerFunc(partialActions), partialActions);
@@ -391,9 +388,6 @@ public class MassParamEditRegex
         {
             return (new MassEditResult(MassEditResultType.OPERATIONERROR, @$"Error on line {currentLine}" + '\n' + e.ToString()), null);
         }
-
-        return (new MassEditResult(MassEditResultType.SUCCESS, $@"{partialActions.Count} cells affected"),
-            partialActions);
     }
 
     private MassEditResult ExecGlobalOp(int currentLine)
@@ -512,7 +506,8 @@ public class MassParamEditRegex
         Param.Row row, List<EditorAction> partialActions)
     {
         var rowArgValues = rowArgFunc.Select((argV, i) => argV(-1, (PseudoColumn.None, null))).ToArray();
-        (Param? p2, Param.Row? rs) = rowFunc((paramname, row), rowArgValues);
+        (Param p2, Param.Row rs) = rowFunc((paramname, row), rowArgValues);
+
         if (p2 == null)
         {
             return new MassEditResult(MassEditResultType.OPERATIONERROR, $@"Could not perform operation {rowOperation} {String.Join(' ', rowArgValues)} on row (line {currentLine})");
@@ -557,15 +552,15 @@ public class MassParamEditRegex
         }
         catch (FormatException e)
         {
-            errHelper = "Type is not correct";
+            errHelper = $"Type is not correct: {e}";
         }
         catch (InvalidCastException e)
         {
-            errHelper = "Cannot cast to correct type";
+            errHelper = $"Cannot cast to correct type: {e}";
         }
         catch (Exception e)
         {
-            errHelper = "Unknown error";
+            errHelper = $"Unknown error: {e}";
         }
 
         if (res == null && col.Item1 == PseudoColumn.ID)
@@ -1007,7 +1002,7 @@ public class MEOperationArgument
                 var vBank = Project.ParamData.VanillaBank;
 
                 var paramName = pBank.GetKeyForParam(param);
-                Param? vParam = vBank.GetParamFromName(paramName);
+                Param vParam = vBank.GetParamFromName(paramName);
                 if (vParam == null)
                 {
                     throw new Exception($@"Could not locate vanilla param for {param.ParamType}");
@@ -1108,11 +1103,15 @@ public class MEOperationArgument
                     throw new Exception($@"Cannot average field {field[0]}");
                 }
 
-                List<Param.Row>? rows =
+                List<Param.Row> rows =
                     Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
+
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
+
                 var avg = vals.Average(val => Convert.ToDouble(val));
+
                 return (j, row) => (k, c) => avg.ToString();
+
             }, () => CFG.Current.Param_AdvancedMassedit));
         argumentGetters.Add("median", newGetter(new[] { "field internalName", "row selector" },
             "Gives the median value of the cells/fields found using the given selector, for the currently selected param",
@@ -1126,10 +1125,13 @@ public class MEOperationArgument
                     throw new Exception($@"Could not locate field {field[0]}");
                 }
 
-                List<Param.Row>? rows =
+                List<Param.Row> rows =
                     Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
+
                 IEnumerable<object> vals = rows.Select((row, i) => row.Get(col));
+
                 var avg = vals.OrderBy(val => Convert.ToDouble(val)).ElementAt(vals.Count() / 2);
+
                 return (j, row) => (k, c) => avg.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
         argumentGetters.Add("mode", newGetter(new[] { "field internalName", "row selector" },
@@ -1144,10 +1146,12 @@ public class MEOperationArgument
                     throw new Exception($@"Could not locate field {field[0]}");
                 }
 
-                List<Param.Row>? rows =
+                List<Param.Row> rows =
                     Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
+
                 var avg = ParamUtils.GetParamValueDistribution(rows, col).OrderByDescending(g => g.Item2)
                     .First().Item1;
+
                 return (j, row) => (k, c) => avg.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
         argumentGetters.Add("min", newGetter(new[] { "field internalName", "row selector" },
@@ -1162,9 +1166,11 @@ public class MEOperationArgument
                     throw new Exception($@"Could not locate field {field[0]}");
                 }
 
-                List<Param.Row>? rows =
+                List<Param.Row> rows =
                     Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
+
                 var min = rows.Min(r => r[field[0]].Value.Value);
+
                 return (j, row) => (k, c) => min.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
         argumentGetters.Add("max", newGetter(new[] { "field internalName", "row selector" },
@@ -1179,9 +1185,11 @@ public class MEOperationArgument
                     throw new Exception($@"Could not locate field {field[0]}");
                 }
 
-                List<Param.Row>? rows =
+                List<Param.Row> rows =
                     Project.ParamEditor.MassEditHandler.rse.Search((pBank, param), field[1], false, false);
+
                 var max = rows.Max(r => r[field[0]].Value.Value);
+
                 return (j, row) => (k, c) => max.ToParamEditorString();
             }, () => CFG.Current.Param_AdvancedMassedit));
         argumentGetters.Add("random", newGetter(

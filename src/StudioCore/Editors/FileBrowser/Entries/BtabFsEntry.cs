@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -44,26 +45,30 @@ public class BtabFsEntry : SoulsFileFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BTAB File {name}");
-        PropertyTable("BTAB Data", (row) =>
+
+        if (btab != null)
         {
-            row("Compression", btab.Compression.ToString());
-            row("BigEndian", btab.BigEndian.ToString());
-            row("LongFormat", btab.LongFormat.ToString());
-        });
-        foreach (var (i, e) in btab.Entries.Select((e, i) => (i, e)))
-        {
-            if (ImGui.CollapsingHeader($"({i}): \"{e.PartName}\":\"{e.MaterialName}\""))
+            PropertyTable("BTAB Data", (row) =>
             {
-                ImGui.TreePush($"({i}): \"{e.PartName}\":\"{e.MaterialName}\"");
-                PropertyTable($"BTAB Entry Properties##\"{e.PartName}\":\"{e.MaterialName}\"", (row) =>
+                row("Compression", btab.Compression.ToString());
+                row("BigEndian", btab.BigEndian.ToString());
+                row("LongFormat", btab.LongFormat.ToString());
+            });
+            foreach (var (i, e) in btab.Entries.Select((e, i) => (i, e)))
+            {
+                if (ImGui.CollapsingHeader($"({i}): \"{e.PartName}\":\"{e.MaterialName}\""))
                 {
-                    row("PartName", e.PartName);
-                    row("MaterialName", e.MaterialName);
-                    row("AtlasID", e.AtlasID.ToString());
-                    row("UVOffset", e.UVOffset.ToString());
-                    row("UVScale", e.UVScale.ToString());
-                });
-                ImGui.TreePop();
+                    ImGui.TreePush($"({i}): \"{e.PartName}\":\"{e.MaterialName}\"");
+                    PropertyTable($"BTAB Entry Properties##\"{e.PartName}\":\"{e.MaterialName}\"", (row) =>
+                    {
+                        row("PartName", e.PartName);
+                        row("MaterialName", e.MaterialName);
+                        row("AtlasID", e.AtlasID.ToString());
+                        row("UVOffset", e.UVOffset.ToString());
+                        row("UVScale", e.UVScale.ToString());
+                    });
+                    ImGui.TreePop();
+                }
             }
         }
     }

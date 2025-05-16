@@ -115,7 +115,6 @@ public class FlverDummyPropertyView
 
         ImGui.NextColumn();
 
-        ViewportAction vpAction = null;
         ImGui.AlignTextToFramePadding();
         ImGui.InputFloat3("##Position", ref position);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())

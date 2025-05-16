@@ -16,8 +16,6 @@ public class ViewportMenu
     public Viewport Parent;
     public Smithbox BaseEditor;
 
-    public bool DisplayControls = false;
-
     public ViewportMenu(Smithbox baseEditor, Viewport parent)
     {
         this.BaseEditor = baseEditor;
@@ -66,7 +64,7 @@ public class ViewportMenu
             {
                 CFG.Current.Viewport_DisplayControls = !CFG.Current.Viewport_DisplayControls;
             }
-            UIHelper.ShowActiveStatus(DisplayControls);
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
 
             if (Parent.ViewportType is ViewportType.MapEditor)
             {

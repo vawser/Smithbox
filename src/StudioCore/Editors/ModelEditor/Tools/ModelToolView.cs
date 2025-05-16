@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
-using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.ModelEditor.Tools;
 using StudioCore.Editors.ModelEditor.Utils;
@@ -8,13 +7,7 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore.Editors.ModelEditor.Actions;
 
@@ -24,18 +17,11 @@ public class ModelToolView
     private ModelSelectionManager Selection;
     public GlobalModelSearch ModelUsageSearch;
 
-    private bool ObjIncludeTextures = true;
-
     public ModelToolView(ModelEditorScreen screen)
     {
         Editor = screen;
         Selection = screen.Selection;
         ModelUsageSearch = new GlobalModelSearch(screen);
-    }
-
-    public void OnProjectChanged()
-    {
-        ModelUsageSearch.OnProjectChanged();
     }
 
     public void OnGui()

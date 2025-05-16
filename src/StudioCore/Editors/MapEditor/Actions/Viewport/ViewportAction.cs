@@ -1149,6 +1149,8 @@ public class ChangeEntityHierarchyAction : ViewportAction
     public ChangeEntityHierarchyAction(MapEditorScreen editor, List<Entity> src, List<Entity> targetEnts, List<int> targets,
         bool setSelection)
     {
+        Editor = editor;
+
         SourceObjects.AddRange(src);
         TargetObjects.AddRange(targetEnts);
         TargetIndices.AddRange(targets);

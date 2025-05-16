@@ -105,7 +105,7 @@ public class WorldMapView : IResourceEventListener
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
         {
-            AdjustScrollNextFrame = true;
+            
         }
 
         if (InputTracker.GetKey(Key.Escape))
@@ -185,17 +185,6 @@ public class WorldMapView : IResourceEventListener
             UIHelper.Tooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
         }
     }
-
-    private float WorldMapScrollX = 0;
-    private float WorldMapScrollY = 0;
-    private float WorldMapScrollXMax = 0;
-    private float WorldMapScrollYMax = 0;
-
-    private bool AdjustScrollNextFrame = false;
-    private float NextFrameAdjustmentX = 0;
-    private float NextFrameAdjustmentY = 0;
-
-    private Vector2 MouseDelta = new Vector2(0, 0);
 
     public void DisplayWorldMap()
     {

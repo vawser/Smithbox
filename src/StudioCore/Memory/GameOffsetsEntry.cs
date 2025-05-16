@@ -107,7 +107,7 @@ public class GameOffsetsEntry
         }
 
         Is64Bit = type != ProjectType.DS1;
-        this.type = type;
+        type = project.ProjectType;
     }
 
     internal GameOffsetsEntry()

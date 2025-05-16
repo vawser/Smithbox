@@ -18,7 +18,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     private MapEditorScreen Editor;
     private IViewport Viewport;
 
-    private string ImguiID;
+    private string ImguiID = "MapListView";
 
     public List<string> MapIDs = new();
     public Dictionary<string, MapContentView> ContentViews = new();
@@ -35,6 +35,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         Editor = screen;
         Viewport = screen.MapViewportView.Viewport;
     }
+
 
     /// <summary>
     /// Handles the update for each frame

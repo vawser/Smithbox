@@ -2,20 +2,16 @@
 using Hexa.NET.ImGuizmo;
 using Hexa.NET.ImNodes;
 using Hexa.NET.ImPlot;
-using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Scene;
 using StudioCore.Scene.Framework;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.IO;
 using System.Numerics;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using Veldrid;
 using Vortice.Vulkan;
 
@@ -416,7 +412,7 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         using (Stream s = _assembly.GetManifestResourceStream(resourceName))
         {
             var ret = new byte[s.Length];
-            s.Read(ret, 0, (int)s.Length);
+            s.ReadExactly(ret, 0, (int)s.Length);
             return ret;
         }
     }

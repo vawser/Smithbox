@@ -388,9 +388,8 @@ public class SoulsMemoryHandler
         // ItemGib - ER
         if (Editor.Project.ProjectType is ProjectType.ER)
         {
-            var MapItemMan = "48 8B 0D ?? ?? ?? ?? C7 44 24 50 FF FF FF FF";
-
-            var addr = "41 0F B6 F9 41 8B E8"; // Find offset, then minus 0x31
+            //var MapItemMan = "48 8B 0D ?? ?? ?? ?? C7 44 24 50 FF FF FF FF";
+            //var addr = "41 0F B6 F9 41 8B E8"; // Find offset, then minus 0x31
         }
     }
 }

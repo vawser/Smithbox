@@ -28,7 +28,7 @@ public class VulkanGraphicsContext : IGraphicsContext
     // Window framebuffer
     private Texture MainWindowColorTexture;
     private Framebuffer MainWindowFramebuffer;
-    private ResourceSet MainWindowResourceSet;
+    //private ResourceSet MainWindowResourceSet;
 
     public IImguiRenderer ImguiRenderer => _imGuiRenderer;
     public Sdl2Window Window => _window;
@@ -36,11 +36,11 @@ public class VulkanGraphicsContext : IGraphicsContext
 
     public void Initialize()
     {
-        if (UseRenderdoc)
-        {
-            RenderDoc.Load(out RenderDocManager);
-            RenderDocManager.OverlayEnabled = false;
-        }
+        //if (UseRenderdoc)
+        //{
+        //    RenderDoc.Load(out RenderDocManager);
+        //    RenderDocManager.OverlayEnabled = false;
+        //}
 
         WindowCreateInfo windowCI = new()
         {
@@ -131,7 +131,7 @@ public class VulkanGraphicsContext : IGraphicsContext
         _imGuiRenderer?.Dispose();
         MainWindowColorTexture?.Dispose();
         MainWindowFramebuffer?.Dispose();
-        MainWindowResourceSet?.Dispose();
+        //MainWindowResourceSet?.Dispose();
         _gd?.Dispose();
     }
 
@@ -139,7 +139,7 @@ public class VulkanGraphicsContext : IGraphicsContext
     {
         MainWindowColorTexture?.Dispose();
         MainWindowFramebuffer?.Dispose();
-        MainWindowResourceSet?.Dispose();
+        //MainWindowResourceSet?.Dispose();
 
         ResourceFactory factory = _gd.ResourceFactory;
         TextureDescription mainColorDesc = TextureDescription.Texture2D(

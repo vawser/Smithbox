@@ -1,11 +1,5 @@
 ﻿using SoulsFormats;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
-using StudioCore.Editors.ModelEditor.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using static SoulsFormats.FLVER2;
 
 namespace StudioCore.Editors.ModelEditor.Actions.VertexBuffer;
 
@@ -23,6 +17,8 @@ public class RemoveVertexBuffer : ViewportAction
     public RemoveVertexBuffer(ModelEditorScreen screen, FLVER2 flver, FLVER2.VertexBuffer curItem)
     {
         Screen = screen;
+        Selection = screen.Selection;
+
         CurrentFLVER = flver;
         CurrentMesh = flver.Meshes[Selection._selectedMesh];
 

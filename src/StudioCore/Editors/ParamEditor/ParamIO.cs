@@ -15,9 +15,15 @@ public class ParamIO
     {
         var str = "";
         str += $@"ID{separator}Name{separator}";
-        foreach (PARAMDEF.Field? f in param.AppliedParamdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.ParamData.PrimaryBank.ParamVersion)))
+
+        var paramdef = param.AppliedParamdef;
+
+        if (paramdef != null)
         {
-            str += $@"{f.InternalName}{separator}";
+            foreach (PARAMDEF.Field? f in paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(project.ParamData.PrimaryBank.ParamVersion)))
+            {
+                str += $@"{f.InternalName}{separator}";
+            }
         }
 
         return str + "\n";
@@ -57,7 +63,9 @@ public class ParamIO
             }
             else
             {
-                rowgen = $@"{row.ID}{separator}{row[field].Value.Value.ToParamEditorString()}";
+                var fieldValue = ParamUtils.GetFieldExportString(row, field);
+
+                rowgen = $@"{row.ID}{separator}{fieldValue}";
             }
 
             gen += rowgen + "\n";
@@ -69,101 +77,95 @@ public class ParamIO
     public static (string, CompoundAction?) ApplyCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
         bool appendOnly, bool replaceParams, char separator)
     {
-#if !DEBUG
-            try
-            {
-#endif
         Param p = bank.Params[param];
         if (p == null)
         {
             return ("No Param selected", null);
         }
 
-        var csvLength = p.AppliedParamdef.Fields.FindAll(f => f.IsValidForRegulationVersion(bank.ParamVersion)).Count + 2; // Include ID and name
-        var csvLines = csvString.Split("\n");
-        if (csvLines[0].StartsWith($@"ID{separator}Name"))
-            csvLines[0] = ""; //skip column label row
+        var paramdef = p.AppliedParamdef;
 
-        var changeCount = 0;
-        var addedCount = 0;
-        List<EditorAction> actions = new();
-        List<Param.Row> addedParams = new();
-        foreach (var csvLine in csvLines)
+        if (paramdef != null)
         {
-            if (csvLine.Trim().Equals(""))
+            var csvLength = paramdef.Fields.FindAll(f => f.IsValidForRegulationVersion(bank.ParamVersion)).Count + 2; // Include ID and name
+            var csvLines = csvString.Split("\n");
+            if (csvLines[0].StartsWith($@"ID{separator}Name"))
+                csvLines[0] = ""; //skip column label row
+
+            var changeCount = 0;
+            var addedCount = 0;
+            List<EditorAction> actions = new();
+            List<Param.Row> addedParams = new();
+            foreach (var csvLine in csvLines)
             {
-                continue;
-            }
-
-            var csvs = csvLine.Trim().Split(separator);
-            if (csvs.Length != csvLength && !(csvs.Length == csvLength + 1 && csvs[csvLength].Trim().Equals("")))
-            {
-                return ("CSV has wrong number of values", null);
-            }
-
-            var id = int.Parse(csvs[0]);
-            var name = csvs[1];
-            Param.Row? row = p[id];
-            if (row == null || replaceParams)
-            {
-                row = new Param.Row(id, name, p);
-                addedParams.Add(row);
-            }
-
-            if (!name.Equals(row.Name))
-            {
-                actions.Add(new PropertiesChangedAction(row.GetType().GetProperty("Name"), -1, row, name));
-            }
-
-            var index = 2;
-
-            foreach (Param.Column col in row.Columns)
-            {
-                var v = csvs[index];
-                index++;
-
-                if (col.ValueType.IsArray)
+                if (csvLine.Trim().Equals(""))
                 {
-                    var newval = ParamUtils.Dummy8Read(v, col.Def.ArrayLength);
-
-                    if (newval == null)
-                    {
-                        return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
-                    }
-
-                    actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                    continue;
                 }
-                else
+
+                var csvs = csvLine.Trim().Split(separator);
+                if (csvs.Length != csvLength && !(csvs.Length == csvLength + 1 && csvs[csvLength].Trim().Equals("")))
                 {
-                    var newval = Convert.ChangeType(v, row.Get((PseudoColumn.None, col)).GetType());
+                    return ("CSV has wrong number of values", null);
+                }
 
-                    if (newval == null)
+                var id = int.Parse(csvs[0]);
+                var name = csvs[1];
+                Param.Row? row = p[id];
+                if (row == null || replaceParams)
+                {
+                    row = new Param.Row(id, name, p);
+                    addedParams.Add(row);
+                }
+
+                if (!name.Equals(row.Name))
+                {
+                    actions.Add(new PropertiesChangedAction(row.GetType().GetProperty("Name"), -1, row, name));
+                }
+
+                var index = 2;
+
+                foreach (Param.Column col in row.Columns)
+                {
+                    var v = csvs[index];
+                    index++;
+
+                    if (col.ValueType.IsArray)
                     {
-                        return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
-                    }
+                        var newval = ParamUtils.Dummy8Read(v, col.Def.ArrayLength);
 
-                    actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                        if (newval == null)
+                        {
+                            return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
+                        }
+
+                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                    }
+                    else
+                    {
+                        var newval = Convert.ChangeType(v, row.Get((PseudoColumn.None, col)).GetType());
+
+                        if (newval == null)
+                        {
+                            return ($@"Could not assign {v} to field {col.Def.InternalName}", null);
+                        }
+
+                        actions.AppendParamEditAction(row, (PseudoColumn.None, col), newval);
+                    }
                 }
             }
+
+            changeCount = actions.Count;
+            addedCount = addedParams.Count;
+            if (addedCount != 0)
+            {
+                actions.Add(new AddParamsAction(project.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
+            }
+
+            return ($@"{changeCount} cells affected, {addedCount} rows added", new CompoundAction(actions));
         }
 
-        changeCount = actions.Count;
-        addedCount = addedParams.Count;
-        if (addedCount != 0)
-        {
-            actions.Add(new AddParamsAction(project.ParamEditor, p, "legacystring", addedParams, appendOnly, replaceParams));
-        }
-
-        return ($@"{changeCount} cells affected, {addedCount} rows added", new CompoundAction(actions));
-#if !DEBUG
-            }
-            catch
-            {
-                return ("Unable to parse CSV into correct data types", null);
-            }
-#else
         return ("Unable to parse CSV into correct data types", null);
-#endif
     }
 
     public static (string, CompoundAction?) ApplySingleCSV(ProjectEntry project, ParamBank bank, string csvString, string param,
@@ -254,7 +256,10 @@ public class ParamIO
                 Param.Row? row_vanilla = null;
                 if (getVanillaRow)
                 {
-                    row_vanilla = FindRow(p_vanilla, id, idCount, out var idIteration_Vanilla);
+                    if (p_vanilla != null)
+                    {
+                        row_vanilla = FindRow(p_vanilla, id, idCount, out var idIteration_Vanilla);
+                    }
                 }
 
                 if (row == null)

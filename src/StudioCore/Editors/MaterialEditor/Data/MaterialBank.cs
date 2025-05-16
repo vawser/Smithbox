@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,8 +21,11 @@ public class MaterialBank
 
     public string Name;
 
-    public Dictionary<FileDictionaryEntry, MTDWrapper> MTDs = new();
-    public Dictionary<FileDictionaryEntry, MATBINWrapper> MATBINs = new();
+    public ConcurrentDictionary<FileDictionaryEntry, MTDWrapper> MTDs = new();
+    public ConcurrentDictionary<FileDictionaryEntry, MATBINWrapper> MATBINs = new();
+
+    private ConcurrentDictionary<string, MTD> MTDLookup = new();
+    private ConcurrentDictionary<string, MATBIN> MATBINLookup = new();
 
     public MaterialBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
@@ -33,55 +37,44 @@ public class MaterialBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
-
-        foreach (var entry in Project.MaterialData.MTD_Files.Entries)
+        var mtdTasks = Project.MaterialData.MTD_Files.Entries.Select(async entry =>
         {
-            var newMtdEntry = new MTDWrapper(BaseEditor, Project, entry, TargetFS);
-            await newMtdEntry.Load();
-            MTDs.Add(entry, newMtdEntry);
-        }
+            var wrapper = new MTDWrapper(BaseEditor, Project, entry, TargetFS);
+            if (await wrapper.Load())
+            {
+                MTDs[entry] = wrapper;
+                foreach (var kv in wrapper.Entries)
+                {
+                    var shortName = Path.GetFileNameWithoutExtension(kv.Key);
+                    MTDLookup[shortName] = kv.Value;
+                }
+            }
+        });
 
-        foreach (var entry in Project.MaterialData.MATBIN_Files.Entries)
+        var matbinTasks = Project.MaterialData.MATBIN_Files.Entries.Select(async entry =>
         {
-            var newMatbinEntry = new MATBINWrapper(BaseEditor, Project, entry, TargetFS);
-            await newMatbinEntry.Load();
-            MATBINs.Add(entry, newMatbinEntry);
-        }
+            var wrapper = new MATBINWrapper(BaseEditor, Project, entry, TargetFS);
+            if (await wrapper.Load())
+            {
+                MATBINs[entry] = wrapper;
+                foreach (var kv in wrapper.Entries)
+                {
+                    var shortName = Path.GetFileNameWithoutExtension(kv.Key);
+                    MATBINLookup[shortName] = kv.Value;
+                }
+            }
+        });
+
+        await Task.WhenAll(mtdTasks.Concat(matbinTasks));
 
         return true;
     }
 
-    public MTD GetMaterial(string name)
-    {
-        MTD temp = null;
+    public MTD GetMaterial(string name) =>
+        MTDLookup.TryGetValue(name, out var mtd) ? mtd : null;
 
-        foreach (var entry in MTDs)
-        {
-            var targetEntry = entry.Value.Entries.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Key) == name);
-            if(targetEntry.Value != null)
-            {
-                temp = targetEntry.Value;
-            }
-        }
-
-        return temp;
-    }
-    public MATBIN GetMatbin(string name)
-    {
-        MATBIN temp = null;
-
-        foreach (var entry in MATBINs)
-        {
-            var targetEntry = entry.Value.Entries.FirstOrDefault(e => Path.GetFileNameWithoutExtension(e.Key) == name);
-            if (targetEntry.Value != null)
-            {
-                temp = targetEntry.Value;
-            }
-        }
-
-        return temp;
-    }
+    public MATBIN GetMatbin(string name) =>
+        MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
 }
 
 public class MTDWrapper
@@ -104,48 +97,37 @@ public class MTDWrapper
 
     public async Task<bool> Load(bool msbOnly = false)
     {
-        await Task.Delay(1);
+        await Task.Yield(); // Better alternative to Task.Delay(1)
 
-        var successfulLoad = false;
-
-        var editor = Project.MapEditor;
         try
         {
             var binderData = TargetFS.ReadFileOrThrow(Path);
+            var binder = BND4.Read(binderData);
 
-            try
+            foreach (var entry in binder.Files)
             {
-                var binder = BND4.Read(binderData);
-                foreach (var entry in binder.Files)
+                if (entry.Name.Contains(".mtd"))
                 {
-                    if (entry.Name.Contains(".mtd"))
+                    try
                     {
-                        try
-                        {
-                            var mtd = MTD.Read(entry.Bytes);
-                            Entries.Add(entry.Name, mtd);
-                        }
-                        catch (Exception e)
-                        {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
-                            return false;
-                        }
+                        var mtd = MTD.Read(entry.Bytes);
+                        Entries.Add(entry.Name, mtd);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
                     }
                 }
             }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
-                return false;
-            }
+
+            return true;
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
             return false;
         }
-
-        return successfulLoad;
     }
 }
 
@@ -169,48 +151,36 @@ public class MATBINWrapper
 
     public async Task<bool> Load(bool msbOnly = false)
     {
-        await Task.Delay(1);
-
-        var successfulLoad = false;
-
-        var editor = Project.MapEditor;
+        await Task.Yield();
 
         try
         {
             var binderData = TargetFS.ReadFileOrThrow(Path);
+            var binder = BND4.Read(binderData);
 
-            try
+            foreach (var entry in binder.Files)
             {
-                var binder = BND4.Read(binderData);
-                foreach (var entry in binder.Files)
+                if (entry.Name.Contains(".matbin"))
                 {
-                    if (entry.Name.Contains(".matbin"))
+                    try
                     {
-                        try
-                        {
-                            var matbin = MATBIN.Read(entry.Bytes);
-                            Entries.Add(entry.Name, matbin);
-                        }
-                        catch (Exception e)
-                        {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MATBIN", LogLevel.Error, Tasks.LogPriority.High, e);
-                            return false;
-                        }
+                        var matbin = MATBIN.Read(entry.Bytes);
+                        Entries.Add(entry.Name, matbin);
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {entry.Name} as MATBIN", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
                     }
                 }
             }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
-                return false;
-            }
+
+            return true;
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path} from VFS", LogLevel.Error, Tasks.LogPriority.High, e);
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to read {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
             return false;
         }
-
-        return successfulLoad;
     }
 }

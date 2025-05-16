@@ -374,34 +374,29 @@ public static class MapEditorDecorations
         ref object newVal)
     {
         bool display = false;
-        string enumName = "";
         List<AliasEntry> options = null;
 
         if (meta != null && meta.ShowParticleList)
         {
             options = editor.Project.Aliases.Particles;
-            enumName = "PARTICLES";
             display = true;
         }
 
         if (meta != null && meta.ShowEventFlagList)
         {
             options = editor.Project.Aliases.EventFlags;
-            enumName = "FLAGS";
             display = true;
         }
 
         if (meta != null && meta.ShowSoundList)
         {
             options = editor.Project.Aliases.Sounds;
-            enumName = "SOUNDS";
             display = true;
         }
 
         if (meta != null && meta.ShowTalkList)
         {
             options = editor.Project.Aliases.TalkScripts;
-            enumName = "ESD";
             display = true;
         }
 
@@ -652,26 +647,20 @@ public static class MapEditorDecorations
 
                 bool hasSectionOne = false;
                 bool hasSectionTwo = false;
-                bool hasSectionThree = false;
 
                 if (mask.Length == 1)
                 {
                     mask = $"0{mask}";
 
-                    hasSectionThree = true;
-
                     sectionThree = mask.Substring(0, 2);
                 }
                 else if (mask.Length == 2)
                 {
-                    hasSectionThree = true;
-
                     sectionThree = mask.Substring(0, 2);
                 }
                 else if (mask.Length == 4)
                 {
                     hasSectionTwo = true;
-                    hasSectionThree = true;
 
                     sectionTwo = mask.Substring(0, 2);
                     sectionThree = mask.Substring(2, 2);
@@ -680,7 +669,6 @@ public static class MapEditorDecorations
                 {
                     hasSectionOne = true;
                     hasSectionTwo = true;
-                    hasSectionThree = true;
 
                     sectionOne = mask.Substring(0, 2);
                     sectionTwo = mask.Substring(2, 2);

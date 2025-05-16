@@ -1,4 +1,5 @@
-﻿using Andre.IO.VFS;
+﻿#nullable enable
+using Andre.IO.VFS;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -10,7 +11,7 @@ namespace StudioCore.FileBrowserNS;
 
 public abstract class SoulsFileFsEntry : FsEntry
 {
-    public static SoulsFileFsEntry? TryGetFor(ProjectEntry ownerProject, string fileName, Func<Memory<byte>> getDataFunc, VirtualFileSystem? vfs = null, string? path = null)
+    public static SoulsFileFsEntry? TryGetForEntry(ProjectEntry ownerProject, string fileName, Func<Memory<byte>> getDataFunc, VirtualFileSystem? vfs = null, string? path = null)
     {
         if (fileName.EndsWith("bnd") || fileName.EndsWith("bnd.dcx"))
         {
@@ -33,6 +34,9 @@ public abstract class SoulsFileFsEntry : FsEntry
                 //TaskLogs.AddLog($"[File Browser] Bdt file {fileName} can't construct an FsEntry without a vfs!", LogLevel.Warning);
                 return null;
             }
+
+            if (path == null)
+                return null;
 
             //check if this bdt file is a dvdbnd (top-level binder)
             var vfile = vfs.GetFile(path);
@@ -67,10 +71,15 @@ public abstract class SoulsFileFsEntry : FsEntry
                         return null;
                     }
 
+                    var bhdBytes = vfs.ReadFile(bhdPath);
+
+                    if (bhdBytes == null)
+                        return null;
+
                     return new DvdBndFsEntry(
                         fileName,
                         () => vf.GetFileStream(),
-                        () => vfs.ReadFile(bhdPath).Value);
+                        () => bhdBytes.Value);
                 }
             }
 
@@ -156,7 +165,12 @@ public abstract class SoulsFileFsEntry : FsEntry
 
         if (vfs.FileExists(bhdPath))
         {
-            getDataFuncBhd = () => vfs.ReadFile(bhdPath).Value;
+            var bhdBytes = vfs.ReadFile(bhdPath);
+
+            if (bhdBytes != null)
+            {
+                getDataFuncBhd = () => bhdBytes.Value;
+            }
         }
         else
         {
@@ -186,7 +200,12 @@ public abstract class SoulsFileFsEntry : FsEntry
                     {
                         getDataFuncBhd = () =>
                         {
-                            using var bnd = new BND3Reader(vfs.ReadFile(chrbndPath).Value);
+                            var chrbndBytes = vfs.ReadFile(chrbndPath);
+
+                            if (chrbndBytes == null)
+                                return null;
+
+                            using var bnd = new BND3Reader(chrbndBytes.Value);
                             BinderFileHeader? bhd = null;
                             foreach (var f in bnd.Files)
                             {

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿#nullable enable
+using SoulsFormats;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -24,7 +25,7 @@ public partial class GXDescriptorListContext
 
 public class GXDescriptorList
 {
-    public List<GX00ItemDescriptor> List { get; set; }
+    public List<GX00ItemDescriptor>? List { get; set; }
 }
 
 public class GX00ItemDescriptor

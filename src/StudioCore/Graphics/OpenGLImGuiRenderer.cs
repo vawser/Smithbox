@@ -28,15 +28,15 @@ public unsafe class OpenGLImGuiRenderer : IImguiRenderer
 
     private bool _controlDown;
 
-    private int _firstFrame = 0;
+    //private int _firstFrame = 0;
     private uint _fontTexture;
 
     private bool _frameBegun;
-    private uint _indexBufferSize;
+    //private uint _indexBufferSize;
     private bool _shiftDown;
 
     private uint _vertexArray;
-    private uint _vertexBufferSize;
+    //private uint _vertexBufferSize;
     private int _windowHeight;
 
     private int _windowWidth;
@@ -86,8 +86,8 @@ public unsafe class OpenGLImGuiRenderer : IImguiRenderer
 
         SetPerFrameImGuiData(1f / 60f);
 
-        _vertexBufferSize = 10000;
-        _indexBufferSize = 3000;
+        //_vertexBufferSize = 10000;
+        //_indexBufferSize = 3000;
 
         _vertexBuffer = GL.GenBuffer();
         _indexBuffer = GL.GenBuffer();

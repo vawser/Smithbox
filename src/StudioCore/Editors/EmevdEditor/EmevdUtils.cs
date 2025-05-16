@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.EventScriptEditorNS;
 using System;
 using System.Collections.Generic;
@@ -102,12 +103,12 @@ public static class EmevdUtils
                 argList.Add(obj);
             }
         }
-        catch(Exception ex)
+        catch(Exception e)
         {
             // Clear the input so we don't lag out
             editor.Filters.EventFilterInput = "";
 
-            TaskLogs.AddLog($"ArgDoc is incorrect for: {ins.Bank}[{ins.ID}] - ArgData Size: {ins.ArgData.Length}");
+            TaskLogs.AddLog($"ArgDoc is incorrect for: {ins.Bank}[{ins.ID}] - ArgData Size: {ins.ArgData.Length}", LogLevel.Error, Tasks.LogPriority.High, e);
         }
 
         return (argDocList, argList);

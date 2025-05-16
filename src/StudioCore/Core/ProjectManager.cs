@@ -342,7 +342,7 @@ public class ProjectManager
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to load project: {entry}", LogLevel.Warning);
+                    TaskLogs.AddLog($"[Smithbox] Failed to load project: {entry}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
         }
@@ -383,18 +383,21 @@ public class ProjectManager
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
-                ProjectDisplayOrder = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectDisplayOrder);
 
-                if (ProjectDisplayOrder == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read Project Display Order.json");
+                    var options = new JsonSerializerOptions();
+                    ProjectDisplayOrder = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectDisplayOrder);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog("[Smithbox] Failed to deserialize Project Display Order", LogLevel.Error, Tasks.LogPriority.High, e);
+                    ProjectDisplayOrder = new ProjectDisplayOrder();
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load Project Display Order.json");
-
+                TaskLogs.AddLog("[Smithbox] Failed to read Project Display Order", LogLevel.Error, Tasks.LogPriority.High, e);
                 ProjectDisplayOrder = new ProjectDisplayOrder();
             }
         }
@@ -433,6 +436,8 @@ public class ProjectManager
         newProject.EnableEsdEditor = ProjectCreation.EnableEsdEditor;
         newProject.EnableTextureViewer = ProjectCreation.EnableTextureViewer;
         newProject.EnableFileBrowser = ProjectCreation.EnableFileBrowser;
+
+        newProject.EnableExternalMaterialData = ProjectCreation.EnableExternalMaterialData;
 
         ProjectCreation.Reset();
 

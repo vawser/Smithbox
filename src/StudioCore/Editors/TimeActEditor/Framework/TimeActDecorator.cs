@@ -203,13 +203,13 @@ public class TimeActDecorator
         if (entry.Parameters == null)
             return;
 
-        if (Editor.Project.ProjectParamEnums == null)
+        if (Editor.Project.ProjectEnums == null)
             return;
 
-        if (Editor.Project.ProjectParamEnums.List == null)
+        if (Editor.Project.ProjectEnums.List == null)
             return;
 
-        if (Editor.Project.ProjectParamEnums.List.Count == 0)
+        if (Editor.Project.ProjectEnums.List.Count == 0)
             return;
 
         Vector4 displayColor = UI.Current.ImGui_TimeAct_InfoText_4_Color;
@@ -226,7 +226,7 @@ public class TimeActDecorator
             if (template.ProjectEnum != null && propertyValue.ToString() != "0" && propertyValue.ToString() != "-1")
             {
                 var projectEnumType = template.ProjectEnum;
-                var enumEntry = Editor.Project.ProjectParamEnums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
+                var enumEntry = Editor.Project.ProjectEnums.List.Where(e => e.Name == projectEnumType).FirstOrDefault();
 
                 var option = enumEntry.Options.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
                 if (option != null)
@@ -431,7 +431,7 @@ public class TimeActDecorator
         if (template.ProjectEnum != null)
         {
             var enumType = template.ProjectEnum;
-            ProjectEnumEntry enumEntries = Editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            ProjectEnumEntry enumEntries = Editor.Project.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
             ProjectEnumOption targetOption = enumEntries.Options.Where(e => e.ID == propertyValue.ToString()).FirstOrDefault();
 
             if (enumEntries != null)

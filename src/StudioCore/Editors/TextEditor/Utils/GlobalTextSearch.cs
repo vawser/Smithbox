@@ -130,8 +130,6 @@ public static class GlobalTextSearch
 
         if (SearchResults.Count > 0)
         {
-            var index = 0;
-
             foreach (var result in SearchResults)
             {
                 // Ignore results from unused containers if in Simple mode

@@ -179,7 +179,7 @@ public class ModelAssetCopyManager
             }
             catch(Exception e)
             {
-                TaskLogs.AddLog("Failed to convert NewAssetCategoryID string to int.", LogLevel.Error);
+                TaskLogs.AddLog("Failed to convert NewAssetCategoryID string to int.", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

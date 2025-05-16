@@ -1689,7 +1689,7 @@ public class ParamBank
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Error, Tasks.LogPriority.High);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Error, Tasks.LogPriority.High, e);
                 successfulLoad = false;
             }
         }
@@ -2062,17 +2062,20 @@ public class ParamBank
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
-                store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
 
-                if (store == null)
+                try
                 {
-                    throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null during RowNameRestore.");
+                    var options = new JsonSerializerOptions();
+                    store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to deserialize {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name restore.", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

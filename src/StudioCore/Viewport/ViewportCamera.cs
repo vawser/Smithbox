@@ -70,11 +70,12 @@ public class ViewportCamera
 
     private bool oldMouseClickR;
 
+
     //軌道カムトグルキー押下
     private bool oldOrbitCamToggleKeyPressed;
 
     private bool oldResetKeyPressed;
-    private int oldWheel = 0;
+    //private int oldWheel = 0;
     public Vector3 OrbitCamCenter = new(0, 0.5f, 0);
     public float OrbitCamDistance = 2;
 

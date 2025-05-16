@@ -53,12 +53,13 @@ public static class ResourceManager
 
     private static readonly BufferBlock<UnloadResourceRequest> _unloadRequests = new();
 
-    private static int Pending = 0;
-    private static int Finished = 0;
+
+    //private static int Pending = 0;
+    //private static int Finished = 0;
     private static int _prevCount;
 
-    private static object AddResourceLock = new();
-    private static bool AddingResource = false;
+    //private static object AddResourceLock = new();
+    //private static bool AddingResource = false;
 
     private static bool _scheduleUDSFMLoad;
     private static bool _scheduleUnloadedTexturesLoad;
@@ -1130,7 +1131,7 @@ public static class ResourceManager
             AccessLevel = al;
         }
 
-        public IResourceHandle? Handle { get; set; } = null;
+        public IResourceHandle Handle { get; set; } = null;
         public AccessLevel AccessLevel { get; set; }
 
         public List<AddResourceLoadNotificationRequest> NotificationRequests { get; set; } = new();

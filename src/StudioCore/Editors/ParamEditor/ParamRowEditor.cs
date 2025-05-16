@@ -83,7 +83,7 @@ public class ParamRowEditor
         return (string)matchVal;
     }
 
-    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMeta? meta, Param.Row vrow,
+    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMeta meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, 
         string activeParam)
     {
@@ -98,7 +98,7 @@ public class ParamRowEditor
         ImGui.Spacing();
     }
 
-    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMeta? meta,
+    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMeta meta,
         Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow, 
         List<(PseudoColumn, Param.Column)> cols, List<(PseudoColumn, Param.Column)> vcols, 
         List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId, string activeParam, 
@@ -131,7 +131,7 @@ public class ParamRowEditor
         }
     }
 
-    private void PropEditorParamRow_MainFields(ParamMeta? meta, ParamBank bank, Param.Row row, Param.Row vrow,
+    private void PropEditorParamRow_MainFields(ParamMeta meta, ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
         List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
         string activeParam, ParamEditorSelectionState selection, List<string> pinnedFields)
@@ -333,7 +333,7 @@ public class ParamRowEditor
     }
 
     // Many parameter options, which may be simplified.
-    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMeta? meta, Param.Row vrow,
+    private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMeta meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId,
         ParamEditorSelectionState selection, string activeParam)
     {
@@ -358,7 +358,7 @@ public class ParamRowEditor
             selection);
     }
 
-    private void PropEditorPropCellRow(ParamBank bank, ParamMeta? meta, Param.Row row, Param.Row crow,
+    private void PropEditorPropCellRow(ParamBank bank, ParamMeta meta, Param.Row row, Param.Row crow,
         (PseudoColumn, Param.Column) col, Param.Row vrow, (PseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(PseudoColumn, Param.Column)> auxCols, string fieldOffset,
         ref int imguiId, string activeParam, bool isPinned, ParamEditorSelectionState selection)
@@ -386,7 +386,7 @@ public class ParamRowEditor
 
     private void PropEditorPropRow(ParamBank bank, object oldval, object compareval, object vanillaval,
         List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta,
-        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta? meta, string activeParam,
+        Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta meta, string activeParam,
         bool isPinned, Param.Column col, ParamEditorSelectionState selection)
     {
         var Wiki = cellMeta?.Wiki;
@@ -1117,7 +1117,7 @@ public class ParamRowEditor
     }
 
     private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, ParamFieldMeta cellMeta,
-        ParamMeta? meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
+        ParamMeta meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
         var scale = DPI.GetUIScale();

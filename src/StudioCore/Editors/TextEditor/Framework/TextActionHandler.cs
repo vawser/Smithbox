@@ -226,6 +226,9 @@ public class TextActionHandler
         if (Screen.Selection._selectedFmgEntryIndex == -1)
             return;
 
+        if (Screen.Selection.FmgEntryMultiselect.StoredEntries.Count <= 0)
+            return;
+
         SortedDictionary<int, FMG.Entry> storedEntries = Screen.Selection.FmgEntryMultiselect.StoredEntries;
 
         List<EditorAction> actions = new List<EditorAction>();
@@ -247,6 +250,8 @@ public class TextActionHandler
 
         var groupAction = new FmgGroupedAction(actions);
         Screen.EditorActionManager.ExecuteAction(groupAction);
+
+        Screen.Selection.FmgEntryMultiselect.StoredEntries.Clear();
     }
 
     private List<EditorAction> ProcessDelete(FMG.Entry curEntry)

@@ -16,36 +16,36 @@ namespace StudioCore.Scene.Helpers;
 
 public static class RenderableHelper
 {
-    private static DbgPrimWireBox? _regionBox;
-    private static DbgPrimSolidBox? _regionSolidBox;
+    private static DbgPrimWireBox _regionBox;
+    private static DbgPrimSolidBox _regionSolidBox;
 
-    private static DbgPrimWireCylinder? _regionCylinder;
-    private static DbgPrimSolidCylinder? _regionSolidCylinder;
+    private static DbgPrimWireCylinder _regionCylinder;
+    private static DbgPrimSolidCylinder _regionSolidCylinder;
 
-    private static DbgPrimWireSphere? _regionSphere;
-    private static DbgPrimSolidSphere? _regionSolidSphere;
+    private static DbgPrimWireSphere _regionSphere;
+    private static DbgPrimSolidSphere _regionSolidSphere;
 
-    private static DbgPrimWirePoint? _regionPoint;
-    private static DbgPrimSolidPoint? _regionSolidPoint;
+    private static DbgPrimWirePoint _regionPoint;
+    private static DbgPrimSolidPoint _regionSolidPoint;
 
-    private static DbgPrimBulb? _pointLight;
-    private static DbgPrimSolidSphere? _pointLightSolid;
+    private static DbgPrimBulb _pointLight;
+    private static DbgPrimSolidSphere _pointLightSolid;
 
-    private static DbgPrimWireSpotLight? _spotLight;
+    private static DbgPrimWireSpotLight _spotLight;
 
-    private static DbgPrimWireSpheroidWithArrow? _directionalLight;
+    private static DbgPrimWireSpheroidWithArrow _directionalLight;
 
-    private static DbgPrimWireSpheroidWithArrow? _modelMarkerChr;
-    private static DbgPrimWireWallBox? _modelMarkerObj;
-    private static DbgPrimWireSpheroidWithArrow? _modelMarkerPlayer;
-    private static DbgPrimWireWallBox? _modelMarkerOther;
+    private static DbgPrimWireSpheroidWithArrow _modelMarkerChr;
+    private static DbgPrimWireWallBox _modelMarkerObj;
+    private static DbgPrimWireSpheroidWithArrow _modelMarkerPlayer;
+    private static DbgPrimWireWallBox _modelMarkerOther;
 
-    private static DbgPrimWireSphere? _dmyPoint;
-    private static DbgPrimWireSphereForwardUp? _dmySphereFwdUp;
-    private static DbgPrimWireSphere? _jointSphere;
+    private static DbgPrimWireSphere _dmyPoint;
+    private static DbgPrimWireSphereForwardUp _dmySphereFwdUp;
+    private static DbgPrimWireSphere _jointSphere;
 
-    private static DbgPrimTree? _modelMarkerTree;
-    private static DbgPrimTree? _modelMarkerBush;
+    private static DbgPrimTree _modelMarkerTree;
+    private static DbgPrimTree _modelMarkerBush;
 
     public static readonly HashSet<string> SpeedTree_Bushes = new()
     {
@@ -471,7 +471,7 @@ public static class RenderableHelper
         ModelMarkerType type)
     {
         // Model markers are used as placeholders for meshes that would not otherwise render in the editor
-        IDbgPrim? prim;
+        IDbgPrim prim;
         Color baseColor;
         Color selectColor;
 

@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -472,6 +473,8 @@ public static class MapLocator
         }
         catch (DirectoryNotFoundException e)
         {
+            TaskLogs.AddLog($"[Smithbox] Failed to find map files.", LogLevel.Error, Tasks.LogPriority.High, e);
+
             // Game is likely not UXM unpacked
             return new List<string>();
         }

@@ -292,6 +292,42 @@ public static class ParamUtils
 
         return (values, values[values.Length - 1]);
     }
+
+    public static string GetFieldValue(Param.Row context, string fieldName)
+    {
+        var value = "";
+
+        var field = context[fieldName];
+        if (field != null)
+        {
+            var cell = field.Value;
+
+            if(cell.Value != null)
+            {
+                value = cell.Value.ToString();
+            }
+        }
+
+        return value;
+    }
+
+    public static string GetFieldExportString(Param.Row context, string fieldName)
+    {
+        var value = "";
+
+        var field = context[fieldName];
+        if (field != null)
+        {
+            var cell = field.Value;
+
+            if (cell.Value != null)
+            {
+                value = cell.Value.ToParamEditorString();
+            }
+        }
+
+        return value;
+    }
 }
 
 public enum PseudoColumn

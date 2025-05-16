@@ -13,7 +13,6 @@ namespace StudioCore.Graphics;
 
 public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
 {
-    private bool _colorSrgb = false;
     private SdlContext _context;
     private OpenGLImGuiRenderer _imGuiRenderer;
 

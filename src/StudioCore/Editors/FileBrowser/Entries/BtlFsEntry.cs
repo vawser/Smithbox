@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -44,6 +45,10 @@ public class BtlFsEntry : SoulsFileFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BTL File {name}");
+
+        if (btl == null)
+            return;
+
         PropertyTable("BTL Data", (row) =>
         {
             row("Compression", btl.Compression.ToString());

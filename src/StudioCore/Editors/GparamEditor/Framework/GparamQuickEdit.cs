@@ -1058,10 +1058,6 @@ public class GparamQuickEdit
                     {
                         int commandValue = 0;
                         var valid = int.TryParse(valueCommandString, out commandValue);
-                        var boolean = false;
-
-                        if (commandValue == 1)
-                            boolean = true;
 
                         if (valid)
                         {

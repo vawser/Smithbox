@@ -252,17 +252,20 @@ public class ParamUpgrader
         try
         {
             var filestring = File.ReadAllText(oldRegInfoPath);
-            var options = new JsonSerializerOptions();
-            UpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
 
-            if (UpgraderInfo == null)
+            try
             {
-                throw new Exception($"[{TargetProject.ProjectName}:Param Editor] Failed to read Upgrader Information.json");
+                var options = new JsonSerializerOptions();
+                UpgraderInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamUpgraderInfo);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{TargetProject.ProjectName}:Param Editor] Failed to deserialize Upgrader Information.", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{TargetProject.ProjectName}:Param Editor] Failed to load Upgrader Information.json");
+            TaskLogs.AddLog($"[{TargetProject.ProjectName}:Param Editor] Failed to load Upgrader Information.", LogLevel.Error, Tasks.LogPriority.High, e);
         }
     }
 

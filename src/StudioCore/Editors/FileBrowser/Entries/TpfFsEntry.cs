@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -54,6 +55,10 @@ public class TpfFsEntry : SoulsFileFsEntry
     public override void OnGui()
     {
         ImGui.Text($"TPF File {name}");
+
+        if (tpf == null)
+            return;
+
         PropertyTable("TPF Data", (row) =>
         {
             row("Compression", tpf.Compression.ToString());
@@ -102,6 +107,9 @@ public class TextureFsEntry : FsEntry
 
     public static void TextureDataTable(TPF.Texture texture)
     {
+        if (texture == null)
+            return;
+
         PropertyTable("TPF Texture Data", (row) =>
         {
             row("Name", texture.Name);
@@ -116,12 +124,15 @@ public class TextureFsEntry : FsEntry
             }
             else
             {
-                row("Header.TextureCount", texture.Header?.TextureCount.ToString());
-                row("Header.DXGIFormat", $"{(DDS.DXGI_FORMAT)texture.Header.DXGIFormat} ({texture.Header.DXGIFormat})");
-                row("Header.Height", texture.Header.Height.ToString());
-                row("Header.Width", texture.Header.Width.ToString());
-                row("Header.Unk1", texture.Header.Unk1.ToString());
-                row("Header.Unk2", texture.Header.Unk2.ToString());
+                if (texture.Header != null)
+                {
+                    row("Header.TextureCount", texture.Header.TextureCount.ToString());
+                    row("Header.DXGIFormat", $"{(DDS.DXGI_FORMAT)texture.Header.DXGIFormat} ({texture.Header.DXGIFormat})");
+                    row("Header.Height", texture.Header.Height.ToString());
+                    row("Header.Width", texture.Header.Width.ToString());
+                    row("Header.Unk1", texture.Header.Unk1.ToString());
+                    row("Header.Unk2", texture.Header.Unk2.ToString());
+                }
             }
 
             if (texture.FloatStruct == null)

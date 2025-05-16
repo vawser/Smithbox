@@ -10,6 +10,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
     <UseWindowsForms>true</UseWindowsForms>
+    <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -18,6 +19,7 @@
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <UseWindowsForms>true</UseWindowsForms>
+    <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

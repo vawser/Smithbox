@@ -1,12 +1,10 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.Decorators;
-using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using System;
@@ -725,7 +723,7 @@ public class ParamEditorView
     private void ParamView_RowList_Entry_Row(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
-        bool doFocus, bool isPinned, ParamMeta? meta)
+        bool doFocus, bool isPinned, ParamMeta meta)
     {
         var diffVanilla = vanillaDiffCache.Contains(r.ID);
         var auxDiffVanilla = auxDiffCaches.Where(cache => cache.Item1.Contains(r.ID)).Count() > 0;
@@ -860,7 +858,7 @@ public class ParamEditorView
     private bool ParamView_RowList_Entry(bool[] selectionCache, int selectionCacheIndex, string activeParam,
         List<Param.Row> p, Param.Row r, HashSet<int> vanillaDiffCache,
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
-        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta? meta)
+        bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta meta)
     {
         var scale = DPI.GetUIScale();
 

@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Core;
 using System;
@@ -38,7 +39,8 @@ public class TextFsEntry : FsEntry
 
     private void DecodeText(Encoding e)
     {
-        contents = e.GetString(data.Value.Span);
+        if(data != null)
+            contents = e.GetString(data.Value.Span);
     }
 
     internal override void Load(ProjectEntry ownerProject)
@@ -124,7 +126,7 @@ public class TextFsEntry : FsEntry
                 }
                 catch (Exception ex)
                 {
-                    //TaskLogs.AddLog($"[File Browser] Failed to decode text of file {name} with selected encoding {e.EncodingName}", LogLevel.Warning, ex: ex);
+                    TaskLogs.AddLog($"[File Browser] Failed to decode text of file {name} with selected encoding {e.EncodingName}", LogLevel.Error, Tasks.LogPriority.High, ex);
                 }
             }
         }
@@ -137,8 +139,11 @@ public class TextFsEntry : FsEntry
         if (size.Y < 50) 
             size.Y = 50;
 
-        int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
+        if (contents != null)
+        {
+            int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
 
-        ImGui.InputTextMultiline("Text File Contents", ref contents, (nuint)byteCount, size, ImGuiInputTextFlags.ReadOnly);
+            ImGui.InputTextMultiline("Text File Contents", ref contents, (nuint)byteCount, size, ImGuiInputTextFlags.ReadOnly);
+        }
     }
 }

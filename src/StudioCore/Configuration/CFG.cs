@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Editors.ModelEditor.Enums;
 using StudioCore.Editors.TextEditor;
 using StudioCore.Formats.JSON;
@@ -1191,7 +1192,7 @@ public class CFG
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Configuration failed to load, default configuration has been restored.");
+                TaskLogs.AddLog("[Smithbox] Configuration failed to load, default configuration has been restored.", LogLevel.Error, Tasks.LogPriority.High, e);
 
                 Current = new CFG();
                 Save();

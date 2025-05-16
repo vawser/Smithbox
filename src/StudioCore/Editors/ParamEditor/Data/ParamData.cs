@@ -213,20 +213,22 @@ public class ParamData
             try
             {
                 var filestring = File.ReadAllText(paramTypeInfoPath);
-                var options = new JsonSerializerOptions();
 
-                paramTypeInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamTypeInfo);
-
-                if (paramTypeInfo == null)
+                try
                 {
-                    throw new Exception($"[{Project.ProjectName}:Param Editor] Failed to read Param Type Info.json");
-                }
+                    var options = new JsonSerializerOptions();
 
-                ParamTypeInfo = paramTypeInfo;
+                    paramTypeInfo = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamTypeInfo);
+                    ParamTypeInfo = paramTypeInfo;
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Param Type Info: {paramTypeInfoPath}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to load Param Type Info.json");
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Param Type Info: {paramTypeInfoPath}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -322,17 +324,20 @@ public class ParamData
             try
             {
                 var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
-                GraphLegends = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GraphLegends);
 
-                if (GraphLegends == null)
+                try
                 {
-                    throw new Exception("JsonConvert returned null");
+                    var options = new JsonSerializerOptions();
+                    GraphLegends = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GraphLegends);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to deserialize Graph Legends: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Graph Legends JSON failed to load.");
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Failed to read Graph Legends: {file}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using Andre.IO.VFS;
+﻿#nullable enable
+using Andre.IO.VFS;
 using Hexa.NET.ImGui;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -94,6 +95,6 @@ public abstract class FsEntry
             return new TextFsEntry(ownerProject, fileName, getDataFunc);
         }
 
-        return SoulsFileFsEntry.TryGetFor(ownerProject, fileName, getDataFunc, vfs, path);
+        return SoulsFileFsEntry.TryGetForEntry(ownerProject, fileName, getDataFunc, vfs, path);
     }
 }

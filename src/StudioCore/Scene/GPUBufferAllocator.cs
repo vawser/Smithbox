@@ -262,11 +262,11 @@ public class VertexIndexBufferAllocator
     private readonly uint _maxVertsSize;
 
     private VertexIndexBuffer _currentStaging;
-    private bool _pendingFlush = false;
+    //private bool _pendingFlush = false;
 
     private ConcurrentQueue<VertexIndexBuffer> _pendingUpload = new();
 
-    private bool _stagingLocked = false;
+    //private bool _stagingLocked = false;
 
     public VertexIndexBufferAllocator(GraphicsDevice gd, uint maxVertsSize, uint maxIndicesSize)
     {
@@ -505,7 +505,7 @@ public class VertexIndexBufferAllocator
 
         internal int _handleCount;
         internal int _ifillCount;
-        internal FreeListAllocator _indexAllocator;
+        //internal FreeListAllocator _indexAllocator;
         public MappedResource _mappedStagingBufferIndices;
         public MappedResource _mappedStagingBufferVerts;
         internal bool _pendingUpload = false;
@@ -515,7 +515,7 @@ public class VertexIndexBufferAllocator
         public long _stagingIndicesSize;
         public long _stagingVertsSize;
 
-        internal FreeListAllocator _vertAllocator;
+        //internal FreeListAllocator _vertAllocator;
         internal int _vfillCount;
 
         public VertexIndexBuffer(GraphicsDevice device)
@@ -605,12 +605,12 @@ public class VertexIndexBufferAllocator
     {
         private VertexIndexBufferAllocator _allocator;
         internal VertexIndexBuffer _buffer;
-        internal int _ialign;
+        //internal int _ialign;
         private bool _ifilled;
 
         internal Action<VertexIndexBufferHandle> _onStagedAction = null;
 
-        internal int _valign;
+        //internal int _valign;
 
         private bool _vfilled;
 

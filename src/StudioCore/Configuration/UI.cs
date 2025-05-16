@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Platform;
 using StudioCore.Utilities;
@@ -201,7 +202,7 @@ public class UI
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.");
+                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogLevel.Error, Tasks.LogPriority.High, e);
 
                 Current = new UI();
                 Save();
@@ -234,7 +235,7 @@ public class UI
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.");
+                TaskLogs.AddLog("[Smithbox] Interface Configuration failed to load, default configuration has been restored.", LogLevel.Error, Tasks.LogPriority.High, e);
 
                 Current = new UI();
                 Save();

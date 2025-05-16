@@ -58,6 +58,8 @@ public class ProjectEntry
     public bool EnableTextureViewer;
     public bool EnableFileBrowser;
 
+    public bool EnableExternalMaterialData;
+
     // Legacy
     public List<string> PinnedParams { get; set; } = new();
     public Dictionary<string, List<int>> PinnedRows { get; set; } = new();
@@ -139,7 +141,7 @@ public class ProjectEntry
     public AliasStore Aliases;
 
     [JsonIgnore]
-    public ProjectEnumResource ProjectParamEnums;
+    public ProjectEnumResource ProjectEnums;
 
     [JsonIgnore]
     public FormatResource MsbInformation;
@@ -294,7 +296,7 @@ public class ProjectEntry
         }
 
         // Project Enums (per project)
-        Task<bool> projectParamEnumTask = SetupProjectParamEnums();
+        Task<bool> projectParamEnumTask = SetupProjectEnums();
         bool projectParamEnumResult = await projectParamEnumTask;
 
         if (!silent)
@@ -414,7 +416,7 @@ public class ProjectEntry
             }
 
             // Only do this once, as 3 editors may invoke this.
-            if (MaterialData == null)
+            if (MaterialData == null && EnableExternalMaterialData)
             {
                 MaterialData = new(BaseEditor, this);
 
@@ -457,7 +459,7 @@ public class ProjectEntry
             }
 
             // Only do this once, as 3 editors may invoke this.
-            if (MaterialData == null)
+            if (MaterialData == null && EnableExternalMaterialData)
             {
                 MaterialData = new(BaseEditor, this);
 
@@ -1075,17 +1077,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(filepath);
-                var options = new JsonSerializerOptions();
-                FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
 
-                if (FileDictionary == null)
+                try
                 {
-                    throw new Exception("JsonConvert returned null");
+                    var options = new JsonSerializerOptions();
+                    FileDictionary = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FileDictionary);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the file dictionary: {filepath}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load file dictionary.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the file dictionary: {filepath}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1127,17 +1132,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                Aliases = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.AliasStore);
 
-                if (Aliases == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read Aliases.json");
+                    var options = new JsonSerializerOptions();
+                    Aliases = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.AliasStore);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the aliases: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load Aliases.json");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the aliases: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1177,17 +1185,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                MsbInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
 
-                if (MsbInformation == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read MSB information.");
+                    var options = new JsonSerializerOptions();
+                    MsbInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load MSB information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1208,17 +1219,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                MsbEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
 
-                if (MsbEnums == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read MSB enum information.");
+                    var options = new JsonSerializerOptions();
+                    MsbEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load MSB enum information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1239,17 +1253,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                MsbMasks = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatMask);
 
-                if (MsbMasks == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read MSB Mask information.");
+                    var options = new JsonSerializerOptions();
+                    MsbMasks = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatMask);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the MSB masks: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load MSB Mask information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the MSB masks: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1288,17 +1305,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                FlverInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
 
-                if (FlverInformation == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read FLVER information.");
+                    var options = new JsonSerializerOptions();
+                    FlverInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load FLVER information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1319,17 +1339,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                FlverEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
 
-                if (FlverEnums == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read FLVER enum information.");
+                    var options = new JsonSerializerOptions();
+                    FlverEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the FLVER enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load FLVER enum information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the FLVER enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1368,17 +1391,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                GparamInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
 
-                if (GparamInformation == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read GPARAM information.");
+                    var options = new JsonSerializerOptions();
+                    GparamInformation = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load GPARAM information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM information: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1399,17 +1425,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                GparamEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
 
-                if (GparamEnums == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read GPARAM enum information.");
+                    var options = new JsonSerializerOptions();
+                    GparamEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.FormatEnum);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the GPARAM enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load GPARAM enum information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the GPARAM enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1439,17 +1468,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GameOffsetResource);
 
-                if (ParamMemoryOffsets == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read PARAM memory offsets.");
+                    var options = new JsonSerializerOptions();
+                    ParamMemoryOffsets = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.GameOffsetResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Reload offsets: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to load PARAM memory offsets.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Reload offsets: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1462,11 +1494,11 @@ public class ProjectEntry
     /// Setup the project-specific PARAM enums for this project
     /// </summary>
     /// <returns></returns>
-    public async Task<bool> SetupProjectParamEnums()
+    public async Task<bool> SetupProjectEnums()
     {
         await Task.Delay(1);
 
-        ProjectParamEnums = new();
+        ProjectEnums = new();
 
         // Information
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
@@ -1487,17 +1519,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                ProjectParamEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEnumResource);
 
-                if (ProjectParamEnums == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read project param enums.");
+                    var options = new JsonSerializerOptions();
+                    ProjectEnums = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEnumResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Project Enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read project param enums.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Project Enums: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1535,17 +1570,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
 
-                if (ParamCategories == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read param categories.");
+                    var options = new JsonSerializerOptions();
+                    ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Param Categories: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read param categories.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Param Categories: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1584,17 +1622,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                CommutativeParamGroups = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCommutativeResource);
 
-                if (CommutativeParamGroups == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read commutative param groups.");
+                    var options = new JsonSerializerOptions();
+                    CommutativeParamGroups = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCommutativeResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Commutative Param Groups: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read commutative param groups.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Commutative Param Groups: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1632,17 +1673,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(targetFile);
-                var options = new JsonSerializerOptions();
-                MapSpawnStates = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.SpawnStateResource);
 
-                if (MapSpawnStates == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read map spawn state information.");
+                    var options = new JsonSerializerOptions();
+                    MapSpawnStates = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.SpawnStateResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Spawn States: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read map spawn state information.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Spawn States: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 
@@ -1670,17 +1714,20 @@ public class ProjectEntry
             try
             {
                 var filestring = File.ReadAllText(projectFile);
-                var options = new JsonSerializerOptions();
-                MapEntitySelections = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.EntitySelectionGroupList);
 
-                if (MapEntitySelections == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read map entity selections.");
+                    var options = new JsonSerializerOptions();
+                    MapEntitySelections = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.EntitySelectionGroupList);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read map entity selections.");
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

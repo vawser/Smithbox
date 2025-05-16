@@ -48,7 +48,6 @@ public class ParamEditorScreen : EditorScreen
 
     // MassEdit Popup vars
     private string _currentMEditRegexInput = "";
-    private string _currentMEditSingleCSVField = "";
 
     private IEnumerable<(object, int)> _distributionOutput;
     public bool _isMEditPopupOpen;
@@ -835,7 +834,7 @@ public class ParamEditorScreen : EditorScreen
 
                     if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
                     {
-                        Project.ParamData.SetupAuxBank(proj, true);
+                        LoadComparisonParams(proj);
                     }
                 }
 
@@ -861,6 +860,11 @@ public class ParamEditorScreen : EditorScreen
 
             ImGui.EndMenu();
         }
+    }
+
+    public async void LoadComparisonParams(ProjectEntry proj)
+    {
+        await Project.ParamData.SetupAuxBank(proj, true);
     }
 
     public void OverviewMenu()
@@ -969,11 +973,11 @@ public class ParamEditorScreen : EditorScreen
         BaseEditor.SaveConfiguration();
     }
 
-    public void SaveAll()
+    public async void SaveAll()
     {
         try
         {
-            Project.ParamData.PrimaryBank.Save();
+            await Project.ParamData.PrimaryBank.Save();
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] Params saved.");
         }
         catch (SavingFailedException e)
@@ -1206,6 +1210,7 @@ public class ParamEditorScreen : EditorScreen
             catch (Exception e)
             {
                 // Happily ignore exceptions. This is non-mutating code with no critical use.
+                TaskLogs.AddLog($"[Smithbox:Param Editor] StatisticPopups buttons failed.", LogLevel.Error, Tasks.LogPriority.High, e);
             }
 
             ImGui.Separator();
@@ -1431,6 +1436,8 @@ public class ParamEditorScreen : EditorScreen
         }
         catch (Exception e)
         {
+            TaskLogs.AddLog($"[Smithbox:Param Editor] Failed to write file: {path}.", LogLevel.Error, Tasks.LogPriority.High, e);
+
             PlatformUtils.Instance.MessageBox("Unable to write to " + path, "Write Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
@@ -1444,8 +1451,11 @@ public class ParamEditorScreen : EditorScreen
         }
         catch (Exception e)
         {
+            TaskLogs.AddLog($"[Smithbox:Param Editor] Failed to read file: {path}.", LogLevel.Error, Tasks.LogPriority.High, e);
+
             PlatformUtils.Instance.MessageBox("Unable to read from " + path, "Read Error", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
+
             return null;
         }
     }

@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using System;
@@ -44,6 +45,10 @@ public class FlverFsEntry : SoulsFileFsEntry
     public override void OnGui()
     {
         ImGui.Text($"FLVER File {name}");
+
+        if (flver == null)
+            return;
+
         PropertyTable("FLVER Data", (row) =>
         {
             row("Compression", flver.Compression.ToString());

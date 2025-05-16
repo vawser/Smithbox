@@ -1,4 +1,5 @@
-﻿using Andre.Core.Util;
+﻿#nullable enable
+using Andre.Core.Util;
 using Andre.Formats;
 using Andre.IO.VFS;
 using Hexa.NET.ImGui;
@@ -45,6 +46,9 @@ public class DvdBndFsEntry : SoulsFileFsEntry
         bhdData = getBhdFunc();
         wasEncrypted = false;
 
+        var andreGame = ownerProject.ProjectType.AsAndreGame();
+        var bhdGame = ownerProject.ProjectType.AsBhdGame();
+
         if (BinderArchive.IsBhdEncrypted(bhdData.Value))
         {
             wasEncrypted = true;
@@ -58,23 +62,29 @@ public class DvdBndFsEntry : SoulsFileFsEntry
                 path = $"sd\\{name}";
             }
 
-            decryptedBhdData = BinderArchive.Decrypt(bhdData.Value, path, ownerProject.ProjectType.AsAndreGame().Value);
-
-            bhdData = new(decryptedBhdData);
+            if (andreGame != null)
+            {
+                decryptedBhdData = BinderArchive.Decrypt(bhdData.Value, path, andreGame.Value);
+                bhdData = new(decryptedBhdData);
+            }
         }
 
-        dictionary = ArchiveBinderVirtualFileSystem.GetDictionaryForGame(ownerProject.ProjectType.AsAndreGame().Value);
-
-        bhd = BHD5.Read(bhdData.Value, ownerProject.ProjectType.AsBhdGame().Value);
-
-        if (getBdtStream != null)
+        if (andreGame != null && bhdGame != null)
         {
-            bdtStream = getBdtStream();
-            archive = new(bhd, bdtStream, wasEncrypted);
-            innerFs = new ArchiveBinderVirtualFileSystem([archive], dictionary);
-            innerFsEntry = new(ownerProject, innerFs, name);
-            innerFsEntry.Load(ownerProject);
+            dictionary = ArchiveBinderVirtualFileSystem.GetDictionaryForGame(andreGame.Value);
+
+            bhd = BHD5.Read(bhdData.Value, bhdGame.Value);
+
+            if (getBdtStream != null)
+            {
+                bdtStream = getBdtStream();
+                archive = new(bhd, bdtStream, wasEncrypted);
+                innerFs = new ArchiveBinderVirtualFileSystem([archive], dictionary);
+                innerFsEntry = new(ownerProject, innerFs, name);
+                innerFsEntry.Load(ownerProject);
+            }
         }
+
         isInitialized = true;
     }
 
@@ -117,64 +127,70 @@ public class DvdBndFsEntry : SoulsFileFsEntry
     public override void OnGui()
     {
         ImGui.Text($"DVDBND File {name}");
+
         if (getBdtStream == null)
             ImGui.Text($"Note: This is the bhd file. For more information, see the bdt file that should be at {name.Replace(".bhd", ".bdt")}");
-        PropertyTable("DVDBND Properties", (row) =>
-        {
-            row("Encrypted", wasEncrypted.ToString());
-            row("BigEndian", bhd.BigEndian.ToString());
-            row("Salt", bhd.Salt ?? "");
-            row("Unk05", bhd.Unk05.ToString());
-        });
-        if (innerFs != null)
-        {
-            if (ImGui.CollapsingHeader("Files##DVDBND_Files"))
-            {
-                ImGui.TreePush("Files##DVDBND_Files");
-                foreach (var (fpath, file) in innerFs.FileHeaders)
-                {
-                    if (ImGui.CollapsingHeader(fpath))
-                    {
-                        ImGui.TreePush(fpath);
-                        FileHeaderGui(fpath, file);
-                        ImGui.TreePop();
-                    }
-                }
-                ImGui.TreePop();
-            }
-        }
 
-        if (ImGui.CollapsingHeader("Buckets##DVDBND_Buckets"))
+        if (bhd != null)
         {
-            ImGui.TreePush("Buckets##DVDBND_Buckets");
-            foreach (var (i, bucket) in bhd.Buckets.Select((b, i) => (i, b)))
+            PropertyTable("DVDBND Properties", (row) =>
             {
-                if (ImGui.CollapsingHeader($"Bucket {i}##{name}"))
+                row("Encrypted", wasEncrypted.ToString());
+                row("BigEndian", bhd.BigEndian.ToString());
+                row("Salt", bhd.Salt ?? "");
+                row("Unk05", bhd.Unk05.ToString());
+            });
+            if (innerFs != null)
+            {
+                if (ImGui.CollapsingHeader("Files##DVDBND_Files"))
                 {
-                    ImGui.TreePush($"Bucket {i}##{name}");
-                    foreach (var f in bucket)
+                    ImGui.TreePush("Files##DVDBND_Files");
+                    foreach (var (fpath, file) in innerFs.FileHeaders)
                     {
-                        string headerStr;
-                        if (dictionary.GetPath(f.FileNameHash, out var path))
+                        if (ImGui.CollapsingHeader(fpath))
                         {
-                            headerStr = $"File hash {f.FileNameHash} ({path})";
-                        }
-                        else
-                        {
-                            headerStr = $"File hash {f.FileNameHash}";
-                        }
-
-                        if (ImGui.CollapsingHeader(headerStr))
-                        {
-                            ImGui.TreePush(headerStr);
-                            FileHeaderGui(headerStr, f);
+                            ImGui.TreePush(fpath);
+                            FileHeaderGui(fpath, file);
                             ImGui.TreePop();
                         }
                     }
                     ImGui.TreePop();
                 }
             }
-            ImGui.TreePop();
+
+            if (ImGui.CollapsingHeader("Buckets##DVDBND_Buckets"))
+            {
+                ImGui.TreePush("Buckets##DVDBND_Buckets");
+                foreach (var (i, bucket) in bhd.Buckets.Select((b, i) => (i, b)))
+                {
+                    if (ImGui.CollapsingHeader($"Bucket {i}##{name}"))
+                    {
+                        ImGui.TreePush($"Bucket {i}##{name}");
+                        foreach (var f in bucket)
+                        {
+                            string headerStr;
+
+                            if (dictionary != null && dictionary.GetPath(f.FileNameHash, out var path))
+                            {
+                                headerStr = $"File hash {f.FileNameHash} ({path})";
+                            }
+                            else
+                            {
+                                headerStr = $"File hash {f.FileNameHash}";
+                            }
+
+                            if (ImGui.CollapsingHeader(headerStr))
+                            {
+                                ImGui.TreePush(headerStr);
+                                FileHeaderGui(headerStr, f);
+                                ImGui.TreePop();
+                            }
+                        }
+                        ImGui.TreePop();
+                    }
+                }
+                ImGui.TreePop();
+            }
         }
     }
 }

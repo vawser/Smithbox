@@ -52,8 +52,6 @@ public class MapEditorScreen : EditorScreen
     private bool GCNeedsCollection;
     private bool _PauseUpdate;
 
-    private IModal _activeModal;
-
     public ViewportActionManager EditorActionManager = new();
     public MapActionHandler ActionHandler;
     public ViewportSelection Selection = new();
@@ -272,20 +270,6 @@ public class MapEditorScreen : EditorScreen
         if (CFG.Current.Interface_MapEditor_ToolWindow)
         {
             ToolWindow.OnGui();
-        }
-
-        if (_activeModal != null)
-        {
-            if (_activeModal.IsClosed)
-            {
-                _activeModal.OpenModal();
-            }
-
-            _activeModal.OnGui();
-            if (_activeModal.IsClosed)
-            {
-                _activeModal = null;
-            }
         }
 
         ImGui.PopStyleColor(1);

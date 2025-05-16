@@ -15,7 +15,7 @@ public class ViewportOverlay
 
     public void Draw()
     {
-        if(Parent.ViewportMenu.DisplayControls)
+        if(CFG.Current.Viewport_DisplayControls)
         {
             ImGui.Text("Holding click on the viewport will enable camera controls.");
             ImGui.Text("Use WASD to navigate.");

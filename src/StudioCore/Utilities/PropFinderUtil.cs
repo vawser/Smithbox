@@ -24,7 +24,7 @@ public static class PropFinderUtil
     /// <param name="onlyCheckPropName">If true, search only checks property name. Otherwise, it checks unique MetadataToken.</param>
     /// <returns>PropData that has the property if found, otherwise null.</returns>
     /// <summary>
-    private static PropData? GetPropData(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
+    private static PropData GetPropData(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
         foreach (PropertyInfo p in obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))
         {
@@ -87,7 +87,7 @@ public static class PropFinderUtil
     ///     Finds property within provided object that matches given name.
     /// </summary>
     /// <returns>PropertyInfo if found, otherwise null.</returns>
-    public static PropertyInfo? FindProperty(string prop, object obj, int classIndex = -1)
+    public static PropertyInfo FindProperty(string prop, object obj, int classIndex = -1)
     {
         if(obj == null) 
             return null;
@@ -139,7 +139,7 @@ public static class PropFinderUtil
     ///     Searches an object to find exactly which object contains the property.
     /// </summary>
     /// <returns>Object containing property if found, otherwise null.</returns>
-    public static object? FindPropertyObject(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
+    public static object FindPropertyObject(PropertyInfo prop, object obj, int arrayIndex = -1, int classIndex = -1, bool onlyCheckPropName = false)
     {
         var result = GetPropData(prop, obj, arrayIndex, classIndex, onlyCheckPropName);
 
@@ -153,7 +153,7 @@ public static class PropFinderUtil
     ///     Searches an object to find a property, then obtains the value.
     /// </summary>
     /// <returns>Value of the property within given object if found, otherwise null.</returns>
-    public static object? FindPropertyValue(PropertyInfo prop, object obj, bool onlyCheckPropName = false)
+    public static object FindPropertyValue(PropertyInfo prop, object obj, bool onlyCheckPropName = false)
     {
         var propData = GetPropData(prop, obj, -1, -1, onlyCheckPropName);
 
@@ -163,7 +163,7 @@ public static class PropFinderUtil
         return propData.PropInfo.GetValue(propData.Obj);
     }
 
-    public static object? FindPropertyValue(string propName, object obj, bool onlyCheckPropName = false)
+    public static object FindPropertyValue(string propName, object obj, bool onlyCheckPropName = false)
     {
         var prop = FindProperty(propName, obj);
         if (prop == null)

@@ -284,7 +284,7 @@ public class TimeActEditorScreen : EditorScreen
         BaseEditor.SaveConfiguration();
     }
 
-    public void SaveAll()
+    public async void SaveAll()
     {
         if (Project.ProjectType is ProjectType.AC6)
         {
@@ -292,7 +292,7 @@ public class TimeActEditorScreen : EditorScreen
             return;
         }
 
-        Project.TimeActData.PrimaryCharacterBank.SaveTimeActsTask();
+        await Project.TimeActData.PrimaryCharacterBank.SaveTimeActsTask();
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

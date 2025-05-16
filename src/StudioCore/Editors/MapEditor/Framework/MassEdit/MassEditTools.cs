@@ -18,8 +18,6 @@ public class MassEditTools
     private string BackupDir = "";
     private string TemplateDir = "";
 
-    private string NewTemplateName = "";
-
     public bool ShowToolView = true;
 
     public MassEditTools(MapEditorScreen screen, MassEditHandler handler)

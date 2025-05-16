@@ -6,6 +6,8 @@
 //
 //--------------------------------------------------------------------------
 
+using Microsoft.Extensions.Logging;
+using Octokit;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -232,16 +234,20 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
                             }
                         }
                     }
-                    catch (ThreadAbortException)
+                    catch (Exception ex)
                     {
-                        // If we received a thread abort, and that thread abort was due to shutting down
-                        // or unloading, let it pass through.  Otherwise, reset the abort so we can
-                        // continue processing work items.
-                        if (!Environment.HasShutdownStarted && !AppDomain.CurrentDomain.IsFinalizingForUnload())
-                        {
-                            Thread.ResetAbort();
-                        }
+                        TaskLogs.AddLog($"[Smithbox] Task failed.", LogLevel.Error, Tasks.LogPriority.High, ex);
                     }
+                    //catch (ThreadAbortException)
+                    //{
+                    //    // If we received a thread abort, and that thread abort was due to shutting down
+                    //    // or unloading, let it pass through.  Otherwise, reset the abort so we can
+                    //    // continue processing work items.
+                    //    if (!Environment.HasShutdownStarted && !AppDomain.CurrentDomain.IsFinalizingForUnload())
+                    //    {
+                    //        Thread.ResetAbort();
+                    //    }
+                    //}
                 }
             }
             catch (OperationCanceledException) { }

@@ -45,9 +45,9 @@ public abstract class RenderableProxy : Renderer.IRendererUpdatable, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    public abstract void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp);
+    public abstract void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp);
     public abstract void DestroyRenderables();
-    public abstract void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp);
+    public abstract void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp);
 
     public abstract void SetSelectable(ISelectable sel);
 

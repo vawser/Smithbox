@@ -38,15 +38,15 @@ public class FileData
     {
         await Task.Delay(1000);
 
-        Roots.Clear();
-        bool anyFs = false;
-        bool vanillaFs = false;
+        //Roots.Clear();
+        //bool anyFs = false;
+        //bool vanillaFs = false;
 
         if (Project.VanillaRealFS is not EmptyVirtualFileSystem)
         {
             Roots.Add(new VirtualFileSystemFsEntry(Project, Project.VanillaRealFS, "Game Directory"));
-            anyFs = true;
-            vanillaFs = true;
+            //anyFs = true;
+            //vanillaFs = true;
         }
 
         //if (Project.VanillaBinderFS is not EmptyVirtualFileSystem)
@@ -64,7 +64,7 @@ public class FileData
         if (Project.ProjectFS is not EmptyVirtualFileSystem)
         {
             Roots.Add(new VirtualFileSystemFsEntry(Project, Project.ProjectFS, "Project Directory"));
-            anyFs = true;
+            //anyFs = true;
         }
 
         //if (anyFs && Project.FS is not EmptyVirtualFileSystem)

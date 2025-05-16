@@ -37,16 +37,17 @@ public class FlverResource : IResource, IDisposable
     public static Dictionary<string, FLVER2.BufferLayout> MaterialLayouts = new();
 
     public static object _matLayoutLock = new();
-    public FLVER2 Flver;
+    public FLVER2? Flver;
 
     /// <summary>
     ///     Low level access to the flver struct. Use only in modification mode.
     /// </summary>
-    public FLVER0 FlverDeS;
+    public FLVER0? FlverDeS;
 
-    public FlverMaterial[] GPUMaterials;
+    public FlverMaterial[]? GPUMaterials;
 
-    public FlverSubmesh[] GPUMeshes;
+    public FlverSubmesh[]? GPUMeshes;
+
     //public static int CacheCount { get; private set; }
 
     /*
@@ -70,13 +71,13 @@ public class FlverResource : IResource, IDisposable
 
     public BoundingBox Bounds { get; set; }
 
-    public List<FLVER.Node> Bones { get; private set; }
-    private List<FlverBone> FBones { get; set; }
-    private List<Matrix4x4> BoneTransforms { get; set; }
+    public List<FLVER.Node>? Bones { get; private set; }
+    private List<FlverBone>? FBones { get; set; }
+    private List<Matrix4x4>? BoneTransforms { get; set; }
 
     public bool IsSpeedtree = false;
 
-    public GPUBufferAllocator.GPUBufferHandle StaticBoneBuffer { get; private set; }
+    public GPUBufferAllocator.GPUBufferHandle? StaticBoneBuffer { get; private set; }
 
     /// <summary>
     /// Bytes
@@ -205,7 +206,7 @@ public class FlverResource : IResource, IDisposable
         return false;
     }
 
-    private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string type, string mpath,
+    private void LookupTexture(FlverMaterial.TextureType textureType, FlverMaterial dest, string? type, string mpath,
         string mtd)
     {
         if (ResourceManager.BaseEditor.ProjectManager.SelectedProject == null)
@@ -265,6 +266,9 @@ public class FlverResource : IResource, IDisposable
                     {
                         foreach (var t in matbin.Samplers)
                         {
+                            if (type == null)
+                                continue;
+
                             // Hack to allow some differing paths between sampler and source to work correctly in ER
                             // Namely for these aspects of the paths:
                             // Mb<x> where <x> is a number, but differs between sampler and source 
@@ -1259,6 +1263,12 @@ public class FlverResource : IResource, IDisposable
 
         ResourceFactory? factory = Renderer.Factory;
 
+        if (FlverDeS == null)
+            return;
+
+        if (GPUMaterials == null)
+            return;
+
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
         if (dest.Material.GetHasIndexNoWeightTransform())
@@ -1268,13 +1278,17 @@ public class FlverResource : IResource, IDisposable
             {
                 FLVER.Vertex vert = mesh.Vertices[v];
                 var boneTransformationIndex = mesh.BoneIndices[vert.BoneIndices[0]];
-                if (boneTransformationIndex > -1 && BoneTransforms.Count > boneTransformationIndex)
-                {
-                    Matrix4x4 boneTfm = BoneTransforms[boneTransformationIndex];
 
-                    vert.Position = Vector3.Transform(vert.Position, boneTfm);
-                    vert.Normal = Vector3.TransformNormal(vert.Normal, boneTfm);
-                    mesh.Vertices[v] = vert;
+                if (BoneTransforms != null)
+                {
+                    if (boneTransformationIndex > -1 && BoneTransforms.Count > boneTransformationIndex)
+                    {
+                        Matrix4x4 boneTfm = BoneTransforms[boneTransformationIndex];
+
+                        vert.Position = Vector3.Transform(vert.Position, boneTfm);
+                        vert.Normal = Vector3.TransformNormal(vert.Normal, boneTfm);
+                        mesh.Vertices[v] = vert;
+                    }
                 }
             }
         }
@@ -1386,16 +1400,17 @@ public class FlverResource : IResource, IDisposable
 
         dest.Bounds = BoundingBox.CreateFromPoints((Vector3*)dest.PickingVertices.ToPointer(), dest.VertexCount, 12,
             Quaternion.Identity, Vector3.Zero, Vector3.One);
-        if (CaptureMaterialLayouts)
-        {
-            lock (_matLayoutLock)
-            {
-                if (!MaterialLayouts.ContainsKey(dest.Material.MaterialName))
-                {
-                    MaterialLayouts.Add(dest.Material.MaterialName, Flver.BufferLayouts[mesh.LayoutIndex]);
-                }
-            }
-        }
+
+        //if (CaptureMaterialLayouts)
+        //{
+        //    lock (_matLayoutLock)
+        //    {
+        //        if (!MaterialLayouts.ContainsKey(dest.Material.MaterialName))
+        //        {
+        //            MaterialLayouts.Add(dest.Material.MaterialName, Flver.BufferLayouts[mesh.LayoutIndex]);
+        //        }
+        //    }
+        //}
     }
 
     private unsafe void ProcessMesh(FLVER2.Mesh mesh, FlverSubmesh dest)
@@ -1417,6 +1432,12 @@ public class FlverResource : IResource, IDisposable
                 }
             }
         }
+
+        if (Flver == null)
+            return;
+
+        if (GPUMaterials == null)
+            return;
 
         dest.Material = GPUMaterials[mesh.MaterialIndex];
 
@@ -1552,30 +1573,32 @@ public class FlverResource : IResource, IDisposable
         dest.Bounds = BoundingBox.CreateFromPoints((Vector3*)dest.PickingVertices.ToPointer(), dest.VertexCount, 12,
             Quaternion.Identity, Vector3.Zero, Vector3.One);
 
-        if (CaptureMaterialLayouts)
-        {
-            lock (_matLayoutLock)
-            {
-                if (!MaterialLayouts.ContainsKey(dest.Material.MaterialName))
-                {
-                    MaterialLayouts.Add(dest.Material.MaterialName,
-                        Flver.BufferLayouts[mesh.VertexBuffers[0].LayoutIndex]);
-                }
-            }
-        }
+        //if (CaptureMaterialLayouts)
+        //{
+        //    lock (_matLayoutLock)
+        //    {
+        //        if (!MaterialLayouts.ContainsKey(dest.Material.MaterialName))
+        //        {
+        //            MaterialLayouts.Add(dest.Material.MaterialName,
+        //                Flver.BufferLayouts[mesh.VertexBuffers[0].LayoutIndex]);
+        //        }
+        //    }
+        //}
 
         if (mesh.Dynamic == 0)
         {
             IEnumerable<FLVER.LayoutMember> elements =
                 mesh.VertexBuffers.SelectMany(b => Flver.BufferLayouts[b.LayoutIndex]);
+
             dest.UseNormalWBoneTransform = elements.Any(e =>
                 e.Semantic == FLVER.LayoutSemantic.Normal &&
                 (e.Type == FLVER.LayoutType.Byte4B || e.Type == FLVER.LayoutType.Byte4E));
+
             if (dest.UseNormalWBoneTransform)
             {
                 dest.Material.SetNormalWBoneTransform();
             }
-            else if (mesh.NodeIndex != -1 && mesh.NodeIndex < Bones.Count)
+            else if (Bones != null && mesh.NodeIndex != -1 && mesh.NodeIndex < Bones.Count)
             {
                 dest.LocalTransform = Utils.GetBoneWorldMatrix(Bones[mesh.NodeIndex], Bones);
             }
@@ -1600,6 +1623,9 @@ public class FlverResource : IResource, IDisposable
         Span<FlverVertexBuffer> buffers, Span<FlverBufferLayout> layouts,
         Span<FlverFaceset> facesets, FlverSubmesh dest)
     {
+        if (GPUMaterials == null)
+            return;
+
         dest.Material = GPUMaterials[mesh.materialIndex];
 
         Span<int> facesetIndices = stackalloc int[mesh.facesetCount];
@@ -1658,11 +1684,22 @@ public class FlverResource : IResource, IDisposable
 
         var meshBoneIndices = mesh.GetMeshBoneIndices(br);
         bool posfilled = false;
+
+        int maxLayoutMemberCount = 0;
+        foreach (var vbi in vertexBufferIndices)
+        {
+            int layoutIndex = buffers[vbi].layoutIndex;
+            maxLayoutMemberCount = Math.Max(maxLayoutMemberCount, layouts[layoutIndex].memberCount);
+        }
+
+        Span<FlverBufferLayoutMember> layoutmembersBuffer = stackalloc FlverBufferLayoutMember[maxLayoutMemberCount];
+
         foreach (var vbi in vertexBufferIndices)
         {
             FlverVertexBuffer vb = buffers[vbi];
             FlverBufferLayout layout = layouts[vb.layoutIndex];
-            Span<FlverBufferLayoutMember> layoutmembers = stackalloc FlverBufferLayoutMember[layout.memberCount];
+            var layoutmembers = layoutmembersBuffer.Slice(0, layout.memberCount);
+
             br.StepIn(layout.membersOffset);
             for (var i = 0; i < layout.memberCount; i++)
             {
@@ -1835,7 +1872,7 @@ public class FlverResource : IResource, IDisposable
             {
                 dest.Material.SetNormalWBoneTransform();
             }
-            else if (mesh.defaultBoneIndex != -1 && mesh.defaultBoneIndex < FBones.Count)
+            else if (FBones != null && mesh.defaultBoneIndex != -1 && mesh.defaultBoneIndex < FBones.Count)
             {
                 dest.LocalTransform = GetBoneWorldMatrix(FBones, FBones[mesh.defaultBoneIndex]);
             }
@@ -1902,10 +1939,12 @@ public class FlverResource : IResource, IDisposable
             var edgeMember = edgeMembers[i];
             br.Position = start + edgeMember.edgeIndexesOffset;
             ushort[] memberIndexes = FLVER2.EdgeMemberInfo.DecompressIndexes(br, edgeMember.spuConfigInfo.numIndexes);
+
             for (int j = 0; j < edgeMember.spuConfigInfo.numIndexes; j++)
             {
                 indexes[indexesOffset + j] = memberIndexes[j] + edgeMember.baseIndex;
             }
+
             indexesOffset += memberIndexes.Length;
             indexCount += edgeMember.spuConfigInfo.numIndexes;
         }
@@ -1919,6 +1958,12 @@ public class FlverResource : IResource, IDisposable
         {
             return true;
         }
+
+        if (FlverDeS == null)
+            return false;
+
+        if (GPUMaterials == null)
+            return false;
 
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -1960,17 +2005,20 @@ public class FlverResource : IResource, IDisposable
 
         if (GPUMaterials.Any(e => e.GetNormalWBoneTransform()))
         {
-            StaticBoneBuffer = Renderer.BoneBufferAllocator.Allocate(64 * (uint)Bones.Count, 64);
-            var tbones = new Matrix4x4[Bones.Count];
-            for (var i = 0; i < Bones.Count; i++)
+            if (Bones != null)
             {
-                tbones[i] = Utils.GetBoneWorldMatrix(Bones[i], Bones);
-            }
+                StaticBoneBuffer = Renderer.BoneBufferAllocator.Allocate(64 * (uint)Bones.Count, 64);
+                var tbones = new Matrix4x4[Bones.Count];
+                for (var i = 0; i < Bones.Count; i++)
+                {
+                    tbones[i] = Utils.GetBoneWorldMatrix(Bones[i], Bones);
+                }
 
-            Renderer.AddBackgroundUploadTask((d, cl) =>
-            {
-                StaticBoneBuffer.FillBuffer(cl, tbones);
-            });
+                Renderer.AddBackgroundUploadTask((d, cl) =>
+                {
+                    StaticBoneBuffer.FillBuffer(cl, tbones);
+                });
+            }
         }
 
         if (al == AccessLevel.AccessGPUOptimizedOnly)
@@ -1987,6 +2035,9 @@ public class FlverResource : IResource, IDisposable
         {
             return true;
         }
+
+        if (Flver == null)
+            return false;
 
         if (al == AccessLevel.AccessFull || al == AccessLevel.AccessGPUOptimizedOnly)
         {
@@ -2227,13 +2278,13 @@ public class FlverResource : IResource, IDisposable
 
         private bool disposedValue;
         public MeshLayoutType LayoutType;
-        public GPUBufferAllocator.GPUBufferHandle MaterialBuffer;
+        public GPUBufferAllocator.GPUBufferHandle? MaterialBuffer;
         public Material MaterialData;
-        public string MaterialName;
+        public string? MaterialName;
         public int MaterialMask = -1;
 
-        public string ShaderName;
-        public List<SpecializationConstant> SpecializationConstants;
+        public string? ShaderName;
+        public List<SpecializationConstant>? SpecializationConstants;
         public VertexLayoutDescription VertexLayout;
         public uint VertexSize;
 
@@ -2282,7 +2333,10 @@ public class FlverResource : IResource, IDisposable
         {
             if (!_setNormalWBoneTransform)
             {
-                SpecializationConstants.Add(new SpecializationConstant(50, true));
+                if (SpecializationConstants != null)
+                {
+                    SpecializationConstants.Add(new SpecializationConstant(50, true));
+                }
                 _setNormalWBoneTransform = true;
             }
         }
@@ -2332,7 +2386,10 @@ public class FlverResource : IResource, IDisposable
             Renderer.AddBackgroundUploadTask((d, cl) =>
             {
                 Tracy.___tracy_c_zone_context ctx = Tracy.TracyCZoneN(1, @"Material upload");
-                MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
+                if (MaterialBuffer != null)
+                {
+                    MaterialBuffer.FillBuffer(d, cl, ref MaterialData);
+                }
                 Tracy.TracyCZoneEnd(ctx);
             });
         }
@@ -2369,7 +2426,7 @@ public class FlverResource : IResource, IDisposable
 
         public List<FlverSubmeshFaceSet> MeshFacesets { get; set; } = new();
 
-        public VertexIndexBufferAllocator.VertexIndexBufferHandle GeomBuffer { get; set; }
+        public VertexIndexBufferAllocator.VertexIndexBufferHandle? GeomBuffer { get; set; }
 
         public int VertexCount { get; set; }
 
@@ -2380,7 +2437,7 @@ public class FlverResource : IResource, IDisposable
 
         public int DefaultBoneIndex { get; set; } = -1;
 
-        public FlverMaterial Material { get; set; }
+        public FlverMaterial? Material { get; set; }
 
         public struct FlverSubmeshFaceSet
         {

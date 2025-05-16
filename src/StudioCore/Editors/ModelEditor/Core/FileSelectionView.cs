@@ -21,7 +21,6 @@ public class FileSelectionView
     private ModelAssetCopyManager AssetCopyManager;
 
     public string _searchInput = "";
-    private string _selectedMapId = "";
 
     public FileSelectionView(ModelEditorScreen screen)
     {
@@ -140,8 +139,6 @@ public class FileSelectionView
                 break;
         }
     }
-
-    private string loosePath = "";
 
     private void DisplayLooseSection()
     {

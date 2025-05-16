@@ -178,7 +178,7 @@ public class ProjectUtils
         return combined;
     }
 
-    private static string? NormalizePath(string? path)
+    private static string NormalizePath(string path)
     {
         return string.IsNullOrWhiteSpace(path)
             ? null

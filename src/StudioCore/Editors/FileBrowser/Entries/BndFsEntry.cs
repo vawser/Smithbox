@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿#nullable enable
+using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Interface;
@@ -56,19 +57,22 @@ public abstract class BndFsEntry : SoulsFileFsEntry
         }
     }
 
-    internal void ReaderRows(BinderReader reader, Action<string, string> row)
+    internal void ReaderRows(BinderReader? reader, Action<string, string> row)
     {
-        row("Version", reader.Version);
-        row("Format", reader.Format.ToString());
-        row("BigEndian", reader.BigEndian.ToString());
-        row("BitBigEndian", reader.BitBigEndian.ToString());
+        if (reader != null)
+        {
+            row("Version", reader.Version);
+            row("Format", reader.Format.ToString());
+            row("BigEndian", reader.BigEndian.ToString());
+            row("BitBigEndian", reader.BitBigEndian.ToString());
+        }
     }
 
 }
 
 public class Bnd3FsEntry : BndFsEntry
 {
-    private BND3Reader reader = null;
+    private BND3Reader? reader = null;
 
     public Bnd3FsEntry(string name, Func<Memory<byte>> getDataFunc) : base(name, getDataFunc)
     {
@@ -96,19 +100,23 @@ public class Bnd3FsEntry : BndFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BND3: {Name}");
-        PropertyTable("BND", (row) =>
+        if (reader != null)
         {
-            ReaderRows(reader, row);
-            row("Compression", reader.Compression.ToString());
-            row("Unk18", reader.Unk18.ToString());
-        });
-        ChildrenGui(reader);
+            PropertyTable("BND", (row) =>
+            {
+                ReaderRows(reader, row);
+                row("Compression", reader.Compression.ToString());
+                row("Unk18", reader.Unk18.ToString());
+            });
+
+            ChildrenGui(reader);
+        }
     }
 }
 
 public class Bnd4FsEntry : BndFsEntry
 {
-    private BND4Reader reader = null;
+    private BND4Reader? reader = null;
 
     public Bnd4FsEntry(string name, Func<Memory<byte>> getDataFunc) : base(name, getDataFunc)
     {
@@ -136,22 +144,27 @@ public class Bnd4FsEntry : BndFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BND4: {Name}");
-        PropertyTable("BND", (row) =>
+
+        if (reader != null)
         {
-            ReaderRows(reader, row);
-            row("Compression", reader.Compression.ToString());
-            row("Extended", reader.Extended.ToString());
-            row("Unicode", reader.Unicode.ToString());
-            row("Unk04", reader.Unk04.ToString());
-            row("Unk05", reader.Unk05.ToString());
-        });
-        ChildrenGui(reader);
+            PropertyTable("BND", (row) =>
+            {
+                ReaderRows(reader, row);
+                row("Compression", reader.Compression.ToString());
+                row("Extended", reader.Extended.ToString());
+                row("Unicode", reader.Unicode.ToString());
+                row("Unk04", reader.Unk04.ToString());
+                row("Unk05", reader.Unk05.ToString());
+            });
+
+            ChildrenGui(reader);
+        }
     }
 }
 
 public class Bxf3FsEntry : BndFsEntry
 {
-    private BXF3Reader reader = null;
+    private BXF3Reader? reader = null;
     private Func<Memory<byte>> getBhdFunc;
     private Memory<byte>? bhdData = null;
 
@@ -184,16 +197,21 @@ public class Bxf3FsEntry : BndFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BXF3: {Name}");
-        PropertyTable("BXF", (row) =>
+
+        if (reader != null)
         {
-            ReaderRows(reader, row);
-        });
-        ChildrenGui(reader);
+            PropertyTable("BXF", (row) =>
+            {
+                ReaderRows(reader, row);
+            });
+
+            ChildrenGui(reader);
+        }
     }
 }
 public class Bxf4FsEntry : BndFsEntry
 {
-    private BXF4Reader reader = null;
+    private BXF4Reader? reader = null;
     private Func<Memory<byte>> getBhdFunc;
     private Memory<byte>? bhdData = null;
 
@@ -226,15 +244,20 @@ public class Bxf4FsEntry : BndFsEntry
     public override void OnGui()
     {
         ImGui.Text($"BXF4: {Name}");
-        PropertyTable("BXF", (row) =>
+
+        if (reader != null)
         {
-            ReaderRows(reader, row);
-            row("Extended", reader.Extended.ToString());
-            row("Unicode", reader.Unicode.ToString());
-            row("Unk04", reader.Unk04.ToString());
-            row("Unk05", reader.Unk05.ToString());
-        });
-        ChildrenGui(reader);
+            PropertyTable("BXF", (row) =>
+            {
+                ReaderRows(reader, row);
+                row("Extended", reader.Extended.ToString());
+                row("Unicode", reader.Unicode.ToString());
+                row("Unk04", reader.Unk04.ToString());
+                row("Unk05", reader.Unk05.ToString());
+            });
+
+            ChildrenGui(reader);
+        }
     }
 }
 

@@ -1,6 +1,8 @@
-﻿using Octokit;
+﻿using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Editors.ParamEditor;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -197,6 +199,8 @@ public static class ResourceListLocator
         }
         catch (DirectoryNotFoundException e)
         {
+            TaskLogs.AddLog($"[Smithbox] Failed to find characer models.", LogLevel.Error, Tasks.LogPriority.High, e);
+
             // Game likely isn't UXM unpacked
             return new List<string>();
         }
@@ -373,6 +377,8 @@ public static class ResourceListLocator
         }
         catch (DirectoryNotFoundException e)
         {
+            TaskLogs.AddLog($"[Smithbox] Failed to find part models.", LogLevel.Error, Tasks.LogPriority.High, e);
+
             // Game likely isn't UXM unpacked
             return new List<string>();
         }

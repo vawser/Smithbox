@@ -40,7 +40,7 @@ public class SkeletonBoneRenderableProxy : RenderableProxy
 
     private bool _renderOutline;
 
-    private WeakReference<ISelectable> _selectable;
+    private WeakReference<ISelectable>? _selectable;
     private bool _visible = true;
 
     private Matrix4x4 _world = Matrix4x4.Identity;
@@ -138,7 +138,7 @@ public class SkeletonBoneRenderableProxy : RenderableProxy
         }
     }
 
-    public override void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         _bonePointRenderable.ScheduleRenderableConstruction();
         foreach (DebugPrimitiveRenderableProxy c in _boneRenderables)
@@ -185,7 +185,7 @@ public class SkeletonBoneRenderableProxy : RenderableProxy
         }
     }
 
-    public override void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
     }
 }

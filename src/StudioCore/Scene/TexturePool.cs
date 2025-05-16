@@ -499,8 +499,8 @@ public class TexturePool
 
             _staging = d.ResourceFactory.CreateTexture(desc);
 
-            var paddedWidth = 0;
-            var paddedHeight = 0;
+            //var paddedWidth = 0;
+            //var paddedHeight = 0;
             var paddedSize = 0;
             var copyOffset = dds.DataOffset;
 

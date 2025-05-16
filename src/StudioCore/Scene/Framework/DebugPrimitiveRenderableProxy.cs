@@ -33,24 +33,24 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
     public bool _hasColorVariance;
     public Color _highlightedColor = Color.Gray;
     public Color _initialColor = Color.Empty;
-    protected GPUBufferAllocator.GPUBufferHandle _materialBuffer;
+    protected GPUBufferAllocator.GPUBufferHandle? _materialBuffer;
 
     private bool _overdraw;
-    protected ResourceSet _perObjectResourceSet;
-    protected Pipeline _pickingPipeline;
+    protected ResourceSet? _perObjectResourceSet;
+    protected Pipeline? _pickingPipeline;
 
-    protected Pipeline _pipeline;
+    protected Pipeline? _pipeline;
 
     private int _renderable = -1;
 
     private bool _renderOutline;
-    private WeakReference<ISelectable> _selectable;
-    protected Shader[] _shaders;
+    private WeakReference<ISelectable>? _selectable;
+    protected Shader[]? _shaders;
 
     private bool _visible = true;
 
     private Matrix4x4 _world = Matrix4x4.Identity;
-    protected GPUBufferAllocator.GPUBufferHandle _worldBuffer;
+    protected GPUBufferAllocator.GPUBufferHandle? _worldBuffer;
 
     public DebugPrimitiveRenderableProxy(MeshRenderables renderables, IDbgPrim? prim, bool autoregister = true)
     {
@@ -223,7 +223,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         }
     }
 
-    public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         // If we were unregistered before construction time, don't construct now
         if (!_registered)
@@ -401,7 +401,7 @@ public class DebugPrimitiveRenderableProxy : RenderableProxy
         }
     }
 
-    public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         if (_materialBuffer == null)
         {

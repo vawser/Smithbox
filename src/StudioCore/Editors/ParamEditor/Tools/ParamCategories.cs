@@ -268,17 +268,20 @@ public static class ParamCategories
             try
             {
                 var filestring = File.ReadAllText(sourceFile);
-                var options = new JsonSerializerOptions();
-                editor.Project.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
 
-                if (editor.Project.ParamCategories == null)
+                try
                 {
-                    throw new Exception("[Smithbox] Failed to read param categories.");
+                    var options = new JsonSerializerOptions();
+                    editor.Project.ParamCategories = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ParamCategoryResource);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog("[Smithbox] Failed to deserialize param categories", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Failed to read param categories.");
+                TaskLogs.AddLog("[Smithbox] Failed to read param categories", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
     }

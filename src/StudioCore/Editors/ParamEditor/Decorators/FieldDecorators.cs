@@ -1,4 +1,5 @@
-﻿using Andre.Formats;
+﻿#nullable enable
+using Andre.Formats;
 using Hexa.NET.ImGui;
 using Hexa.NET.ImPlot;
 using Microsoft.Extensions.Logging;
@@ -6,7 +7,6 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
-using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Formats.JSON;
@@ -20,8 +20,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Editors.ParamEditor.Decorators;
@@ -89,7 +87,7 @@ public class FieldDecorators
 
             if (cellMeta.ShowProjectEnumList)
             {
-                var optionList = editor.Project.ProjectParamEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
+                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -187,7 +185,7 @@ public class FieldDecorators
             return;
         }
 
-        var enumEntry = editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+        var enumEntry = editor.Project.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
         if (enumEntry != null)
         {
@@ -212,7 +210,7 @@ public class FieldDecorators
     {
         if (CFG.Current.Param_HideEnums == false) //Move preference
         {
-            var enumEntry = editor.Project.ProjectParamEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
+            var enumEntry = editor.Project.ProjectEnums.List.Where(e => e.Name == enumType).FirstOrDefault();
 
             if (enumEntry != null)
             {
@@ -803,7 +801,12 @@ public class FieldDecorators
             {
                 var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
-                foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
+                var paramdef = param.Value.AppliedParamdef;
+
+                if (paramdef == null)
+                    continue;
+
+                foreach (PARAMDEF.Field f in paramdef.Fields)
                 {
                     var curFieldMeta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
 
@@ -1163,9 +1166,9 @@ public class FieldDecorators
             (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight)))
         {
             
-            if (textureRefs != null)
+            if (textureRefs != null && textureRefs.Count > 0)
             {
-                TexRef primaryRef = textureRefs.FirstOrDefault();
+                TexRef primaryRef = textureRefs.First();
                 if (primaryRef?.TextureContainer != null && primaryRef?.TextureFile != null)
                 {
                     EditorCommandQueue.AddCommand($@"texture/view/{primaryRef?.TextureContainer}/{primaryRef?.TextureFile}");
@@ -1251,29 +1254,16 @@ public class FieldDecorators
         // This feature is purely for AC6 MenuPropertySpecParam.
         if (activeParam == "MenuPropertySpecParam")
         {
-            string target = "";
-            string primitiveType = "";
-            string operationType = "";
-            string fieldOffset = "";
-
-            if (index == "0")
-            {
-                target = context["extract0_Target"].Value.Value.ToString();
-                primitiveType = context["extract0_MemberType"].Value.Value.ToString();
-                operationType = context["extract0_Operation"].Value.Value.ToString();
-                fieldOffset = context["extract0_MemberTailOffset"].Value.Value.ToString();
-            }
-            else if (index == "1")
-            {
-                target = context["extract1_Target"].Value.Value.ToString();
-                primitiveType = context["extract1_MemberType"].Value.Value.ToString();
-                operationType = context["extract1_Operation"].Value.Value.ToString();
-                fieldOffset = context["extract1_MemberTailOffset"].Value.Value.ToString();
-            }
-            else
+            if (index != "0" && index != "1")
             {
                 return;
             }
+
+
+            string target = ParamUtils.GetFieldValue(context, $"extract{index}_Target");
+            string primitiveType = ParamUtils.GetFieldValue(context, $"extract{index}_MemberType");
+            string operationType = ParamUtils.GetFieldValue(context, $"extract{index}_Operation");
+            string fieldOffset = ParamUtils.GetFieldValue(context, $"extract{index}_MemberTailOffset");
 
             var decimalOffset = int.Parse($"{fieldOffset}");
 
@@ -1441,6 +1431,9 @@ public class FieldDecorators
 
             var curMeta = editor.Project.ParamData.GetParamMeta(param.Value.AppliedParamdef);
 
+            if (param.Value.AppliedParamdef == null)
+                continue;
+
             //get field
             foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
             {
@@ -1503,9 +1496,11 @@ public class FieldDecorators
                 }
             }
 
+            var fcsRow = row["inheritanceFcsParamId"];
+
             // Prevent draw for rows with inheritance
-            if (row["inheritanceFcsParamId"] != null &&
-                row["inheritanceFcsParamId"].Value.Value.ToString() != "-1")
+            if (fcsRow != null &&
+                fcsRow.Value.Value.ToString() != "-1")
             {
                 draw = false;
             }
@@ -1517,7 +1512,7 @@ public class FieldDecorators
             CalcCorrectDefinition ccd = meta.CalcCorrectDef;
             SoulCostDefinition scd = meta.SoulCostDef;
 
-            double[] values = null;
+            double[]? values = null;
             int xOffset = 0;
             double minY = 0;
             double maxY = 0;

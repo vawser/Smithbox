@@ -15,18 +15,18 @@ internal unsafe class Tracy
 
     public static void Startup()
     {
-        if (EnableTracy)
-        {
-            ___tracy_startup_profiler();
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_startup_profiler();
+        //}
     }
 
     public static void Shutdown()
     {
-        if (EnableTracy)
-        {
-            ___tracy_shutdown_profiler();
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_shutdown_profiler();
+        //}
     }
 
     [DllImport("tracy.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -73,12 +73,12 @@ internal unsafe class Tracy
         [CallerLineNumber] int sourceLineNumber = 0)
     {
         ___tracy_c_zone_context result = new();
-        if (EnableTracy)
-        {
-            var id = ___tracy_alloc_srcloc((uint)sourceLineNumber, sourceFilePath, (ulong)sourceFilePath.Length,
-                memberName, (ulong)memberName.Length);
-            result = ___tracy_emit_zone_begin_alloc(id, active);
-        }
+        //if (EnableTracy)
+        //{
+        //    var id = ___tracy_alloc_srcloc((uint)sourceLineNumber, sourceFilePath, (ulong)sourceFilePath.Length,
+        //        memberName, (ulong)memberName.Length);
+        //    result = ___tracy_emit_zone_begin_alloc(id, active);
+        //}
 
         return result;
     }
@@ -90,12 +90,12 @@ internal unsafe class Tracy
         [CallerLineNumber] int sourceLineNumber = 0)
     {
         ___tracy_c_zone_context result = new();
-        if (EnableTracy)
-        {
-            var id = ___tracy_alloc_srcloc_name((uint)sourceLineNumber, sourceFilePath,
-                (ulong)sourceFilePath.Length, memberName, (ulong)memberName.Length, name, (ulong)name.Length);
-            result = ___tracy_emit_zone_begin_alloc(id, active);
-        }
+        //if (EnableTracy)
+        //{
+        //    var id = ___tracy_alloc_srcloc_name((uint)sourceLineNumber, sourceFilePath,
+        //        (ulong)sourceFilePath.Length, memberName, (ulong)memberName.Length, name, (ulong)name.Length);
+        //    result = ___tracy_emit_zone_begin_alloc(id, active);
+        //}
 
         return result;
     }
@@ -107,12 +107,12 @@ internal unsafe class Tracy
         [CallerLineNumber] int sourceLineNumber = 0)
     {
         ___tracy_c_zone_context result = new();
-        if (EnableTracy)
-        {
-            var id = ___tracy_alloc_srcloc((uint)sourceLineNumber, sourceFilePath, (ulong)sourceFilePath.Length,
-                memberName, (ulong)memberName.Length);
-            result = ___tracy_emit_zone_begin_alloc(id, active);
-        }
+        //if (EnableTracy)
+        //{
+        //    var id = ___tracy_alloc_srcloc((uint)sourceLineNumber, sourceFilePath, (ulong)sourceFilePath.Length,
+        //        memberName, (ulong)memberName.Length);
+        //    result = ___tracy_emit_zone_begin_alloc(id, active);
+        //}
 
         ___tracy_emit_zone_color(result, color);
         return result;
@@ -126,23 +126,23 @@ internal unsafe class Tracy
         [CallerLineNumber] int sourceLineNumber = 0)
     {
         ___tracy_c_zone_context result = new();
-        if (EnableTracy)
-        {
-            var id = ___tracy_alloc_srcloc_name((uint)sourceLineNumber, sourceFilePath,
-                (ulong)sourceFilePath.Length, memberName, (ulong)memberName.Length, name, (ulong)name.Length);
-            result = ___tracy_emit_zone_begin_alloc(id, active);
-            ___tracy_emit_zone_color(result, color);
-        }
+        //if (EnableTracy)
+        //{
+        //    var id = ___tracy_alloc_srcloc_name((uint)sourceLineNumber, sourceFilePath,
+        //        (ulong)sourceFilePath.Length, memberName, (ulong)memberName.Length, name, (ulong)name.Length);
+        //    result = ___tracy_emit_zone_begin_alloc(id, active);
+        //    ___tracy_emit_zone_color(result, color);
+        //}
 
         return result;
     }
 
     public static void TracyCZoneEnd(___tracy_c_zone_context ctx)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_zone_end(ctx);
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_emit_zone_end(ctx);
+        //}
     }
 
     [DllImport("tracy.dll", CallingConvention = CallingConvention.Cdecl)]
@@ -156,34 +156,34 @@ internal unsafe class Tracy
 
     public static void TracyCFrameMark()
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark(null);
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_emit_frame_mark(null);
+        //}
     }
 
     public static void TracyCFrameMarkNamed(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark(name);
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_emit_frame_mark(name);
+        //}
     }
 
     public static void TracyCFrameMarkStart(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark_start(name);
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_emit_frame_mark_start(name);
+        //}
     }
 
     public static void TracyCFrameMarkEnd(string name)
     {
-        if (EnableTracy)
-        {
-            ___tracy_emit_frame_mark_end(name);
-        }
+        //if (EnableTracy)
+        //{
+        //    ___tracy_emit_frame_mark_end(name);
+        //}
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]

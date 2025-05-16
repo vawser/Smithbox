@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Microsoft.Extensions.Logging;
+using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
@@ -132,7 +133,7 @@ public class KeyBindings
             }
             catch (Exception e)
             {
-                TaskLogs.AddLog("[Smithbox] Key Bindings failed to load, default key binding has been restored.");
+                TaskLogs.AddLog("[Smithbox] Key Bindings failed to load, default key binding has been restored.", LogLevel.Error, Tasks.LogPriority.High, e);
 
                 Current = new Bindings();
                 Save();

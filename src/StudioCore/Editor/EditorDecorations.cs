@@ -7,8 +7,6 @@ namespace StudioCore.Editor;
 
 public class EditorDecorations
 {
-    private static string _refContextCurrentAutoComplete = "";
-
     public static bool HelpIcon(string id, ref string hint, bool canEdit)
     {
         if (hint == null)

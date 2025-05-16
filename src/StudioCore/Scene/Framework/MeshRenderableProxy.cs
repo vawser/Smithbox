@@ -36,20 +36,20 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
     public RenderFilter _drawfilter = RenderFilter.All;
 
     public DrawGroup _drawgroups = new();
-    public ResourceSet _perObjectResourceSet;
-    public Pipeline _pickingPipeline;
+    public ResourceSet? _perObjectResourceSet;
+    public Pipeline? _pickingPipeline;
 
-    public Pipeline _pipeline;
+    public Pipeline? _pipeline;
     public RenderableProxy? _placeholderProxy;
 
     public int _renderable = -1;
 
     public bool _renderOutline;
 
-    public WeakReference<ISelectable> _selectable;
-    public Pipeline _selectedPipeline;
+    public WeakReference<ISelectable>? _selectable;
+    public Pipeline? _selectedPipeline;
     public int _selectionOutlineRenderable = -1;
-    public Shader[] _shaders;
+    public Shader[]? _shaders;
 
     public bool _visible = true;
 
@@ -226,7 +226,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
             child.DrawFilter = _drawfilter;
             child.DrawGroups = _drawgroups;
             _submeshes.Add(child);
-            ISelectable sel = null;
+            ISelectable? sel = null;
             if (_selectable != null)
             {
                 _selectable.TryGetTarget(out sel);
@@ -412,7 +412,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
     }
 
-    public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override unsafe void ConstructRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         // If we were unregistered before construction time, don't construct now
         if (!_registered)
@@ -635,7 +635,7 @@ public class MeshRenderableProxy : RenderableProxy, IMeshProviderEventListener
         }
     }
 
-    public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline sp)
+    public override unsafe void UpdateRenderables(GraphicsDevice gd, CommandList cl, SceneRenderPipeline? sp)
     {
         if (!_meshProvider.IsAvailable() || !_meshProvider.HasMeshData())
         {
