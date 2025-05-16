@@ -91,7 +91,7 @@ public class ParamBank
     /// </summary>
     public async Task<bool> Load()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         _params = new Dictionary<string, Param>();
 
@@ -124,7 +124,7 @@ public class ParamBank
     /// </summary>
     public async Task<bool> Save()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         if (_params == null)
         {
@@ -2142,7 +2142,7 @@ public class ParamBank
 
     public async Task<bool> ImportRowNamesTask(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         var sourceFilepath = filepath;
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
@@ -2270,7 +2270,7 @@ public class ParamBank
 
     public async Task<bool> ExportRowNamesTask(ExportRowNameType exportType, string filepath, string paramName = "")
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         var store = new RowNameStore();
         store.Params = new();

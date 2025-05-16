@@ -32,7 +32,7 @@ public class MapBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
         
         foreach(var entry in Project.MapData.MapFiles.Entries)
         {
@@ -125,7 +125,7 @@ public class MapWrapper
 
     public async Task<bool> Load(bool msbOnly = false)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var successfulLoad = false;
 
@@ -268,7 +268,7 @@ public class MapWrapper
 
     public async Task<bool> Save()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var successfulSave = false;
 

@@ -499,9 +499,9 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Field: Vanilla Comparison Column"))
             {
-                CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
+                CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowVanillaParams);
+            UIHelper.ShowActiveStatus(CFG.Current.Param_ShowVanillaColumn);
 
             if (ImGui.MenuItem("Field: Source Names"))
             {
@@ -789,7 +789,7 @@ public class ParamEditorScreen : EditorScreen
 
             if (ImGui.MenuItem("Toggle vanilla param column"))
             {
-                CFG.Current.Param_ShowVanillaParams = !CFG.Current.Param_ShowVanillaParams;
+                CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
             }
 
             if (ImGui.MenuItem("Clear current row comparison"))

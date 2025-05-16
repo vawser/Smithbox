@@ -250,7 +250,7 @@ public class ProjectEntry
 
         ActionManager = new();
 
-        await Task.Delay(1);
+        await Task.Yield();
 
         FocusedEditor = null;
 
@@ -933,7 +933,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupDLLs()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (ProjectType is ProjectType.SDT or ProjectType.ER)
         {
@@ -978,7 +978,7 @@ public class ProjectEntry
     #region Setup VFS
     public async Task<bool> SetupVFS()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         List<VirtualFileSystem> fileSystems = [];
 
@@ -1110,7 +1110,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupAliases()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Aliases = new();
 
@@ -1160,7 +1160,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMsbInfo()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         MsbInformation = new();
         MsbEnums = new();
@@ -1281,7 +1281,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupFlverInfo()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         FlverInformation = new();
         FlverEnums = new();
@@ -1367,7 +1367,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupGparamInfo()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         GparamInformation = new();
         GparamEnums = new();
@@ -1453,7 +1453,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupParamMemoryOffsets()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         ParamMemoryOffsets = new();
 
@@ -1496,7 +1496,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupProjectEnums()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         ProjectEnums = new();
 
@@ -1547,7 +1547,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupParamCategories()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         ParamCategories = new();
 
@@ -1599,7 +1599,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupCommutativeParamGroups()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         CommutativeParamGroups = new();
 
@@ -1650,7 +1650,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMapSpawnStates()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         MapSpawnStates = new();
 
@@ -1701,7 +1701,7 @@ public class ProjectEntry
     /// <returns></returns>
     public async Task<bool> SetupMapEntitySelections()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         MapEntitySelections = new();
 

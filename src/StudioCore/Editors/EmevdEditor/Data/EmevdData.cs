@@ -31,7 +31,7 @@ public class EmevdData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         EmevdFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "emevd").ToList();
 

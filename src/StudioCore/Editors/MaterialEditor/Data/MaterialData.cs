@@ -29,7 +29,7 @@ public class MaterialData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         MTD_Files.Entries = 
             Project.FileDictionary.Entries.Where(e => e.Extension == "mtdbnd").ToList();

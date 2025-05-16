@@ -272,6 +272,12 @@
     },
     {
       "Param": "CalcCorrectGraph",
+      "RowID": "200",
+      "X": "Level",
+      "Y": "Soul Cost"
+    },
+    {
+      "Param": "CalcCorrectGraph",
       "RowID": "210",
       "X": "Distance (metres)",
       "Y": "Damage % Addition"

@@ -427,7 +427,7 @@ public class MassEditHandler
     /// </summary>
     private async Task<bool> ProcessMassEdit()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var selection = Editor.Selection;
         var listView = Editor.MapListView;

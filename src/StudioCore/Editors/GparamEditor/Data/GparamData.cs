@@ -26,7 +26,7 @@ public class GparamData
     }
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         GparamFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "gparam").ToList();
 

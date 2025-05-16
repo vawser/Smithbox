@@ -49,7 +49,7 @@ public class ParamData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
         VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);
@@ -130,7 +130,7 @@ public class ParamData
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (reloadProject)
         {
@@ -172,7 +172,7 @@ public class ParamData
 
     public async Task<bool> SetupParamDefs()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         ParamDefs = new Dictionary<string, PARAMDEF>();
         ParamDefsByFilename = new Dictionary<string, PARAMDEF>();
@@ -253,7 +253,7 @@ public class ParamData
 
     public async Task<bool> SetupParamMeta()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var rootMetaDir = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
 
@@ -314,7 +314,7 @@ public class ParamData
 
     public async Task<bool> SetupGraphLegends()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var folder = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}";
         var file = Path.Combine(folder, "Graph Legends.json");

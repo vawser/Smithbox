@@ -30,7 +30,7 @@ public class EsdMeta
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         TalkEsdBank = new EsdMeta_Root();
         TalkEsdBank.commands = new List<EsdMeta_Command>();

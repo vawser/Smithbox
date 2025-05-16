@@ -32,7 +32,7 @@ public class TextData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         var msgbndDictionary = new FileDictionary();
         msgbndDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msgbnd").ToList();
@@ -68,7 +68,7 @@ public class TextData
 
     public async Task<bool> LoadAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (reloadProject)
         {

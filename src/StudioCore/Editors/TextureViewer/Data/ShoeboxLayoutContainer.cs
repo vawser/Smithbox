@@ -35,7 +35,7 @@ public class ShoeboxLayoutContainer
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {

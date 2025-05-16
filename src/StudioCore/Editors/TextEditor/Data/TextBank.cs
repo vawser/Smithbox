@@ -260,7 +260,7 @@ public class TextBank
     /// </summary>
     public async Task<bool> SaveFmgContainer(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (entry == null || containerWrapper == null)
             return false;
@@ -347,7 +347,7 @@ public class TextBank
     /// </summary>
     public async Task<bool> SaveLooseFmg(FileDictionaryEntry entry, TextContainerWrapper containerWrapper)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (entry == null || containerWrapper == null)
             return false;

@@ -304,7 +304,7 @@ public class ParamUpgrader
 
     public async Task<bool> UpgradeParamsTask()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         // Backup original
         var data = TargetProject.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
@@ -375,7 +375,7 @@ public class ParamUpgrader
 
     public async Task<bool> ConflictCheckTask()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         var primaryBank = TargetProject.ParamData.PrimaryBank;
         var vanillaBank = TargetProject.ParamData.VanillaBank;
@@ -405,7 +405,7 @@ public class ParamUpgrader
 
     public async Task<bool> LoadOldRegulation()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         var oldRegPath = GetOldRegulationPath();
 

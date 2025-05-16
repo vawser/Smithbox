@@ -40,7 +40,7 @@ public class EmevdBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         // EMEDF
         Task<bool> emedfTask = LoadEMEDF();
@@ -55,7 +55,7 @@ public class EmevdBank
 
     public async Task<bool> LoadEMEDF()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         IsSupported = false;
 
@@ -120,7 +120,7 @@ public class EmevdBank
 
     public async Task<bool> SetupEMEVD()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Scripts = new();
 
@@ -134,7 +134,7 @@ public class EmevdBank
 
     public async Task<bool> LoadScript(FileDictionaryEntry fileEntry)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         // If already loaded, just ignore
         if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
@@ -240,9 +240,9 @@ public class EmevdBank
 
     public async Task<bool> SaveAllScripts()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
-        foreach(var entry in Scripts)
+        foreach (var entry in Scripts)
         {
             await SaveScript(entry.Key, entry.Value);
         }
@@ -252,7 +252,7 @@ public class EmevdBank
 
     public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, EMEVD curScript)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {

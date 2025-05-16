@@ -2,6 +2,7 @@
 using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Editor;
@@ -64,6 +65,98 @@ public class ParamRowEditor
             if (ImGui.IsItemEdited())
             {
                 UICache.ClearCaches();
+            }
+
+            // Toggle Community Field Names
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Book}"))
+            {
+                CFG.Current.Param_MakeMetaNamesPrimary = !CFG.Current.Param_MakeMetaNamesPrimary;
+            }
+
+            var communityFieldNameMode = "Internal";
+            if (CFG.Current.Param_MakeMetaNamesPrimary)
+                communityFieldNameMode = "Community";
+
+            UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+
+            // Toggle Vanilla Columns
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.AddressBook}"))
+            {
+                CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
+            }
+
+            var vanillaColumnMode = "Hidden";
+            if (CFG.Current.Param_ShowVanillaColumn)
+                vanillaColumnMode = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of the vanilla columns.\nCurrent Mode: {vanillaColumnMode}");
+
+            // Toggle Auxiliary Columns
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.AddressBookO}"))
+            {
+                CFG.Current.Param_ShowAuxColumn = !CFG.Current.Param_ShowAuxColumn;
+            }
+
+            var auxColumnMode = "Hidden";
+            if (CFG.Current.Param_ShowAuxColumn)
+                auxColumnMode = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of the auxiliary columns.\nCurrent Mode: {auxColumnMode}");
+
+            // Toggle Field Offset Column
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.MapSigns}"))
+            {
+                CFG.Current.Param_ShowFieldOffsets = !CFG.Current.Param_ShowFieldOffsets;
+            }
+
+            var fieldOffsetColumnMode = "Hidden";
+            if (CFG.Current.Param_ShowFieldOffsets)
+                fieldOffsetColumnMode = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of the field offset column.\nCurrent Mode: {fieldOffsetColumnMode}");
+
+            // Toggle Field Padding
+            ImGui.SameLine();
+
+            if (ImGui.Button($"{Icons.Hubzilla}"))
+            {
+                CFG.Current.Param_HidePaddingFields = !CFG.Current.Param_HidePaddingFields;
+            }
+
+            var fieldPaddingMode = "Hidden";
+            if (!CFG.Current.Param_HidePaddingFields)
+                fieldPaddingMode = "Visible";
+
+            UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+        }
+    }
+
+    private static void PropEditorParamRow_GraphView(ParamEditorScreen editor, bool isActiveView, Param.Row row)
+    {
+        if (CFG.Current.Param_ShowGraphVisualisation)
+        {
+            var columnWidth = ImGui.GetColumnWidth();
+
+            var graphSectionSize = new Vector2(columnWidth, 400);
+            var graphSize = new Vector2(columnWidth * 0.9f, 400 * 0.8f);
+
+            var meta = editor.Project.ParamData.GetParamMeta(row.Def);
+
+            if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
+            {
+                ImGui.BeginChild("graphView", graphSectionSize);
+
+                FieldDecorators.DrawCalcCorrectGraph(editor, meta, row, graphSize);
+
+                ImGui.EndChild();
             }
         }
     }
@@ -238,10 +331,12 @@ public class ParamRowEditor
 
         PropEditorParamRow_Header(Editor, isActiveView, ref propSearchString);
 
+        PropEditorParamRow_GraphView(Editor, isActiveView, row);
+
         //ImGui.BeginChild("Param Fields");
         var columnCount = 2;
 
-        if (CFG.Current.Param_ShowVanillaParams)
+        if (CFG.Current.Param_ShowVanillaColumn)
         {
             columnCount++;
         }
@@ -251,7 +346,7 @@ public class ParamRowEditor
             columnCount++;
         }
 
-        if (showParamCompare)
+        if (CFG.Current.Param_ShowAuxColumn && showParamCompare)
         {
             columnCount += auxRows.Count;
         }
@@ -274,7 +369,7 @@ public class ParamRowEditor
                     ImGui.Text("Current");
                 }
 
-                if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
+                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
                 {
                     ImGui.Text("Vanilla");
                 }
@@ -317,14 +412,6 @@ public class ParamRowEditor
             {
                 PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
                     activeParam, selection, pinnedFields);
-            }
-
-            if (CFG.Current.Param_ShowGraphVisualisation)
-            {
-                if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
-                {
-                    FieldDecorators.DrawCalcCorrectGraph(Editor, meta, row);
-                }
             }
 
             ImGui.EndTable();
@@ -845,21 +932,25 @@ public class ParamRowEditor
             ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_Conflict_Background);
         }
 
-        if (CFG.Current.Param_ShowVanillaParams && ImGui.TableNextColumn())
+        if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
         {
             AdditionalColumnValue(activeParam, vanillaval, propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, "vanilla", cellMeta);
         }
 
-        for (var i = 0; i < auxVals.Count; i++)
+        if (CFG.Current.Param_ShowAuxColumn)
         {
-            if (ImGui.TableNextColumn())
+            for (var i = 0; i < auxVals.Count; i++)
             {
-                if (!conflict && diffAuxVanilla[i])
-                    ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_AuxVanilla_Background);
+                if (ImGui.TableNextColumn())
+                {
+                    if (!conflict && diffAuxVanilla[i])
+                        ImGui.PushStyleColor(ImGuiCol.FrameBg, UI.Current.ImGui_Input_AuxVanilla_Background);
 
-                AdditionalColumnValue(activeParam, auxVals[i], propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
-                if (!conflict && diffAuxVanilla[i])
-                    ImGui.PopStyleColor();
+                    AdditionalColumnValue(activeParam, auxVals[i], propType, bank, RefTypes, FmgRef, MapFmgRef, row, Enum, TextureRef, i.ToString(), cellMeta);
+
+                    if (!conflict && diffAuxVanilla[i])
+                        ImGui.PopStyleColor();
+                }
             }
         }
 

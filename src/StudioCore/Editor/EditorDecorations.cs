@@ -45,6 +45,7 @@ public class EditorDecorations
         var v = ImGui.BeginTable(id, cols,
             ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.SizingStretchSame |
             ImGuiTableFlags.ScrollY);
+
         if (fixVerticalPadding)
         {
             ImGui.GetStyle().CellPadding = oldPad;

@@ -31,7 +31,7 @@ public class EsdBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Task<bool> esdTask = SetupESD();
         bool esdTaskResult = await esdTask;
@@ -41,7 +41,7 @@ public class EsdBank
 
     public async Task<bool> SetupESD()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Scripts = new();
 
@@ -60,7 +60,7 @@ public class EsdBank
     /// <returns></returns>
     public async Task<bool> LoadScriptBinder(FileDictionaryEntry fileEntry)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         // Standard talk binders
         if (fileEntry.Extension == "talkesdbnd")
@@ -203,7 +203,7 @@ public class EsdBank
 
     public async Task<bool> SaveAllScripts()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         foreach (var entry in Scripts)
         {
@@ -215,7 +215,7 @@ public class EsdBank
 
     public async Task<bool> SaveScript(FileDictionaryEntry fileEntry, BinderContents curContents)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (Scripts.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
         {

@@ -32,7 +32,7 @@ public class GparamBank
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Task<bool> gparamTask = SetupGraphicsParams();
         bool gparamTaskResult = await gparamTask;
@@ -42,7 +42,7 @@ public class GparamBank
 
     public async Task<bool> SetupGraphicsParams()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Entries = new();
 
@@ -56,7 +56,7 @@ public class GparamBank
 
     public async Task<bool> LoadGraphicsParam(FileDictionaryEntry fileEntry)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         // If already loaded, just ignore
         if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
@@ -105,7 +105,7 @@ public class GparamBank
 
     public async Task<bool> SaveAllGraphicsParams()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         foreach (var entry in Entries)
         {
@@ -117,7 +117,7 @@ public class GparamBank
 
     public async Task<bool> SaveGraphicsParam(FileDictionaryEntry fileEntry, GPARAM gparamEntry)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         try
         {

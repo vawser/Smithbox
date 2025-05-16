@@ -26,7 +26,7 @@ public class FileData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         // VFS Roots
         Task<bool> vfsRootsTask = LoadVfsRoots();
@@ -36,7 +36,7 @@ public class FileData
     }
     private async Task<bool> LoadVfsRoots()
     {
-        await Task.Delay(1000);
+        await Task.Yield();
 
         //Roots.Clear();
         //bool anyFs = false;

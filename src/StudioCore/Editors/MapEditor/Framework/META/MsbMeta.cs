@@ -29,7 +29,7 @@ public class MsbMeta
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         _MsbMetas = new();
 

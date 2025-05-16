@@ -30,7 +30,7 @@ public class EsdData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         Meta = new(BaseEditor, Project);
 

@@ -744,6 +744,8 @@ public class CFG
 
     public bool Param_AlphabeticalParams = true;
     public bool Param_ShowParamCommunityName = false;
+    public bool Param_ShowSecondaryNames = true;
+
     public bool Param_DisplayParamCategories = true;
 
     public bool Param_AdvancedMassedit = false;
@@ -760,8 +762,10 @@ public class CFG
     public bool Param_ShowFieldParamLabels = true;
     public bool Param_ShowFieldFmgLabels = true;
     public bool Param_ShowFieldTextureLabels = true;
-    public bool Param_ShowSecondaryNames = true;
-    public bool Param_ShowVanillaParams = true;
+
+    public bool Param_ShowVanillaColumn = true;
+    public bool Param_ShowAuxColumn = true;
+
     public bool Param_HidePaddingFields = true;
     public bool Param_HideObsoleteFields = true;
     public bool Param_ShowColorPreview = true;

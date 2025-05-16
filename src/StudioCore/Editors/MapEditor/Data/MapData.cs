@@ -35,7 +35,7 @@ public class MapData
 
     public async Task<bool> Setup()
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         MapFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msb").ToList();
 
@@ -79,7 +79,7 @@ public class MapData
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)
     {
-        await Task.Delay(1);
+        await Task.Yield();
 
         if (reloadProject)
         {
