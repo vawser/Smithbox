@@ -1250,7 +1250,7 @@ public static class ParamMetaReferences
 
     private static void DisplayColorPicker(ParamEditorScreen editor, Param.Row row, string name, string redField, string greenField, string blueField)
     {
-        var param = editor.Project.ParamData.PrimaryBank.Params[editor._activeView._selection.GetActiveParam()];
+        var param = editor.Project.ParamData.PrimaryBank.Params[editor._activeView.Selection.GetActiveParam()];
 
         if (param == null)
             return;

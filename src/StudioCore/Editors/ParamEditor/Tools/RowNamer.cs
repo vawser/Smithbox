@@ -18,7 +18,7 @@ public class RowNamer
 
     public bool MayUseRowNamer()
     {
-        var selectedParam = Editor._activeView._selection;
+        var selectedParam = Editor._activeView.Selection;
         var activeParam = selectedParam.GetActiveParam();
 
         if (Editor.Project.ProjectType is ProjectType.ER)
@@ -63,7 +63,7 @@ public class RowNamer
 
     public void ApplyRowNamer()
     {
-        var selectedParam = Editor._activeView._selection;
+        var selectedParam = Editor._activeView.Selection;
 
         if (selectedParam.ActiveParamExists())
         {

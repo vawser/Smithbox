@@ -191,7 +191,7 @@ public class AutoFill
     public ProjectEntry Project;
 
     // Type hell. Can't omit the type.
-    private readonly AutoFillSearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)>
+    private readonly AutoFillSearchEngine<ParamSelection, (MassEditRowSource, Param.Row)>
         autoFillParse;
 
     private readonly AutoFillSearchEngine<bool, string> autoFillVse;

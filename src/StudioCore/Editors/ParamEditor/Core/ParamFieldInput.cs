@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamEditorCommon
+public class ParamFieldInput
 {
     private static object _editedPropCache;
     private static object _editedTypeCache;
@@ -17,7 +17,7 @@ public class ParamEditorCommon
     private static bool _changedCache;
     private static bool _committedCache;
 
-    public static unsafe void PropertyField(Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
+    public static unsafe void DisplayFieldInput(Type typ, object oldval, ref object newval, bool isBool, bool isInvertedPercentage)
     {
         _changedCache = false;
         _committedCache = false;

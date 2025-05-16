@@ -236,7 +236,7 @@ public class MultiStageSearchEngine<A, B, C, D> : SearchEngine<A, B>
     }
 }
 
-public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamEditorSelectionState, (MassEditRowSource,
+public class ParamAndRowSearchEngine : MultiStageSearchEngine<ParamSelection, (MassEditRowSource,
     Param.Row), (ParamBank, Param), Param.Row>
 {
     public ProjectEntry Project;

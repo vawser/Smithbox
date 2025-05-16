@@ -42,7 +42,7 @@ public class MassEditHandler
     public MassEditScript Current_ME_Script;
 
     // These are created here so the Mass Edit systems are local to the current project
-    public SearchEngine<ParamEditorSelectionState, (MassEditRowSource, Param.Row)> parse;
+    public SearchEngine<ParamSelection, (MassEditRowSource, Param.Row)> parse;
     public ParamSearchEngine pse;
     public RowSearchEngine rse;
     public CellSearchEngine cse;
@@ -86,7 +86,7 @@ public class MassEditHandler
     /// <param name="commandString"></param>
     public void ApplyMassEdit(string commandString)
     {
-        ExecuteMassEdit(commandString, Project.ParamData.PrimaryBank, Editor._activeView._selection);
+        ExecuteMassEdit(commandString, Project.ParamData.PrimaryBank, Editor._activeView.Selection);
     }
 
     /// <summary>
@@ -95,9 +95,9 @@ public class MassEditHandler
     /// <param name="commandString"></param>
     /// <param name="targetBank"></param>
     /// <param name="context"></param>
-    public void ExecuteMassEdit(string commandString, ParamBank targetBank, ParamEditorSelectionState context)
+    public void ExecuteMassEdit(string commandString, ParamBank targetBank, ParamSelection context)
     {
-        Editor._activeView._selection.SortSelection();
+        Editor._activeView.Selection.SortSelection();
 
         MassParamEditRegex = new MassParamEditRegex(Project);
         (MassEditResult r, ActionManager child) = MassParamEditRegex.PerformMassEdit(targetBank, commandString, context);
@@ -138,7 +138,7 @@ public class MassEditHandler
 
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
-                Editor._activeView._selection.SortSelection();
+                Editor._activeView.Selection.SortSelection();
 
                 ApplyMassEdit(CurrentInput);
             }
@@ -194,7 +194,7 @@ public class MassEditHandler
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
                 (var result, CompoundAction action) = ParamIO.ApplyCSV(Project, Project.ParamData.PrimaryBank,
-                    ME_CSV_Input, Editor._activeView._selection.GetActiveParam(), _mEditCSVAppendOnly,
+                    ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), _mEditCSVAppendOnly,
                     _mEditCSVAppendOnly && _mEditCSVReplaceRows, CFG.Current.Param_Export_Delimiter[0]);
 
                 if (action != null)
@@ -224,7 +224,7 @@ public class MassEditHandler
             if (ImGui.Selectable("Submit", false, ImGuiSelectableFlags.NoAutoClosePopups))
             {
                 (var result, CompoundAction action) = ParamIO.ApplySingleCSV(Project, Project.ParamData.PrimaryBank,
-                    ME_CSV_Input, Editor._activeView._selection.GetActiveParam(), ME_Single_CSV_Field,
+                    ME_CSV_Input, Editor._activeView.Selection.GetActiveParam(), ME_Single_CSV_Field,
                     CFG.Current.Param_Export_Delimiter[0], false);
 
                 if (action != null)
@@ -301,7 +301,7 @@ public class MassEditHandler
 
             if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
             {
-                ExecuteMassEdit(CurrentInput, Project.ParamData.PrimaryBank, Editor._activeView._selection);
+                ExecuteMassEdit(CurrentInput, Project.ParamData.PrimaryBank, Editor._activeView.Selection);
             }
             UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
 

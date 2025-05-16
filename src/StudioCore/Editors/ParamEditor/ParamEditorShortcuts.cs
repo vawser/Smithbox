@@ -61,56 +61,56 @@ public class ParamEditorShortcuts
             }
 
             // Select All
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.ActiveParamExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SelectAll))
             {
-                Editor.Project.ParamData.PrimaryBank.ClipboardParam = Editor._activeView._selection.GetActiveParam();
+                Editor.Project.ParamData.PrimaryBank.ClipboardParam = Editor._activeView.Selection.GetActiveParam();
 
-                foreach (Param.Row row in UICache.GetCached(Editor, (Editor._activeView._viewIndex, Editor._activeView._selection.GetActiveParam()),
-                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView._selection.GetActiveParam()]),
-                    Editor._activeView._selection.GetCurrentRowSearchString(), true, true)))
+                foreach (Param.Row row in UICache.GetCached(Editor, (Editor._activeView.ViewIndex, Editor._activeView.Selection.GetActiveParam()),
+                    () => Editor.MassEditHandler.rse.Search((Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params[Editor._activeView.Selection.GetActiveParam()]),
+                    Editor._activeView.Selection.GetCurrentRowSearchString(), true, true)))
                 {
-                    Editor._activeView._selection.AddRowToSelection(row);
+                    Editor._activeView.Selection.AddRowToSelection(row);
                 }
             }
 
             // Copy
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyToClipboard))
             {
                 Editor.CopySelectionToClipboard();
             }
 
             // Paste
-            if (Editor.Project.ParamData.PrimaryBank.ClipboardRows.Count > 00 && Editor.Project.ParamData.PrimaryBank.ClipboardParam == Editor._activeView._selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
+            if (Editor.Project.ParamData.PrimaryBank.ClipboardRows.Count > 00 && Editor.Project.ParamData.PrimaryBank.ClipboardParam == Editor._activeView.Selection.GetActiveParam() && !ImGui.IsAnyItemActive() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_PasteClipboard))
             {
                 ImGui.OpenPopup("ctrlVPopup");
             }
 
             // Duplicate
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
             {
                 Editor.ParamTools.DuplicateRow();
             }
 
             // Delete
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
             {
                 Editor.DeleteSelection();
             }
 
             // Go to Row
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToSelectedRow))
             {
                 Editor.GotoSelectedRow = true;
             }
 
             // Copy Row ID
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyId))
             {
                 Editor.ParamTools.CopyRowDetails();
             }
 
             // Copy Row ID and Name
-            if (!ImGui.IsAnyItemActive() && Editor._activeView._selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
+            if (!ImGui.IsAnyItemActive() && Editor._activeView.Selection.RowSelectionExists() && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_CopyIdAndName))
             {
                 Editor.ParamTools.CopyRowDetails(true);
             }
@@ -211,7 +211,7 @@ public class ParamEditorShortcuts
 
         // Export CSV: Names
         if (!ImGui.IsAnyItemActive() && 
-            Editor._activeView._selection.RowSelectionExists() && 
+            Editor._activeView.Selection.RowSelectionExists() && 
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV_Names))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditSingleCSVExport/Name/2");
@@ -219,7 +219,7 @@ public class ParamEditorShortcuts
 
         // Export CSV: Param
         if (!ImGui.IsAnyItemActive() &&
-            Editor._activeView._selection.RowSelectionExists() &&
+            Editor._activeView.Selection.RowSelectionExists() &&
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV_Param))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditCSVExport/0");
@@ -227,7 +227,7 @@ public class ParamEditorShortcuts
 
         // Export CSV: All Rows
         if (!ImGui.IsAnyItemActive() &&
-            Editor._activeView._selection.RowSelectionExists() &&
+            Editor._activeView.Selection.RowSelectionExists() &&
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV_AllRows))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/AllRows");
@@ -235,7 +235,7 @@ public class ParamEditorShortcuts
 
         // Export CSV: Modified Rows
         if (!ImGui.IsAnyItemActive() &&
-            Editor._activeView._selection.RowSelectionExists() &&
+            Editor._activeView.Selection.RowSelectionExists() &&
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV_ModifiedRows))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/ModifiedRows");
@@ -243,7 +243,7 @@ public class ParamEditorShortcuts
 
         // Export CSV: Selected Rows
         if (!ImGui.IsAnyItemActive() &&
-            Editor._activeView._selection.RowSelectionExists() &&
+            Editor._activeView.Selection.RowSelectionExists() &&
             InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV_SelectedRows))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/SelectedRows");
@@ -258,9 +258,9 @@ public class ParamEditorShortcuts
                 Editor.ParamReloader.ReloadMemoryParams(Editor.Project.ParamData.PrimaryBank, Editor.Project.ParamData.PrimaryBank.Params.Keys.ToArray());
             }
             // Reload Current Param
-            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && Editor._activeView._selection.GetActiveParam() != null)
+            else if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ReloadParam) && Editor._activeView.Selection.GetActiveParam() != null)
             {
-                Editor.ParamReloader.ReloadMemoryParam(Editor.Project.ParamData.PrimaryBank, Editor._activeView._selection.GetActiveParam());
+                Editor.ParamReloader.ReloadMemoryParam(Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam());
             }
         }
     }

@@ -92,10 +92,10 @@ public class MassParamEditRegex
     private ParamBank bank;
     private string cellOperation;
     private string cellSelector;
-    private ParamEditorSelectionState context;
+    private ParamSelection context;
     private Func<object, string[], object> genericFunc;
 
-    private Func<ParamEditorSelectionState, string[], bool> globalFunc;
+    private Func<ParamSelection, string[], bool> globalFunc;
 
     private string globalOperation;
     private Func<int, Param, Func<int, Param.Row, Func<int, (PseudoColumn, Param.Column), string>>>[] paramArgFuncs;
@@ -124,7 +124,7 @@ public class MassParamEditRegex
     }
 
     public (MassEditResult, ActionManager child) PerformMassEdit(ParamBank bank, string commandsString,
-        ParamEditorSelectionState context)
+        ParamSelection context)
     {
         int currentLine = 0;
         try
@@ -628,7 +628,7 @@ public class MEOperation<T, O>
     }
 }
 
-public class MEGlobalOperation : MEOperation<ParamEditorSelectionState, bool>
+public class MEGlobalOperation : MEOperation<ParamSelection, bool>
 {
     public ProjectEntry Project;
 

@@ -145,7 +145,7 @@ public class ParamReloader
                 UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
                 UIHelper.WrappedText("");
 
-                var activeParam = Editor._activeView._selection.GetActiveParam();
+                var activeParam = Editor._activeView.Selection.GetActiveParam();
 
                 if (activeParam == "EquipParamGoods")
                 {
@@ -182,7 +182,7 @@ public class ParamReloader
         {
             if (ImGui.BeginMenu("Item Gib"))
             {
-                var activeParam = Editor._activeView._selection.GetActiveParam();
+                var activeParam = Editor._activeView.Selection.GetActiveParam();
 
                 if (activeParam == "EquipParamGoods")
                 {
@@ -689,9 +689,9 @@ public class ParamReloader
 
         if (canHotReload)
         {
-            if (editor._activeView._selection.GetActiveParam() != null)
+            if (editor._activeView.Selection.GetActiveParam() != null)
             {
-                ReloadMemoryParam(editor.Project.ParamData.PrimaryBank, editor._activeView._selection.GetActiveParam());
+                ReloadMemoryParam(editor.Project.ParamData.PrimaryBank, editor._activeView.Selection.GetActiveParam());
             }
             else
             {
@@ -723,13 +723,13 @@ public class ParamReloader
 
     public void GiveItem(ParamEditorScreen editor)
     {
-        var activeParam = editor._activeView._selection.GetActiveParam();
+        var activeParam = editor._activeView.Selection.GetActiveParam();
         if (activeParam != null)
         {
             GameOffsetsEntry offsets = GetGameOffsets();
 
-            var rowsToGib = editor._activeView._selection.GetSelectedRows();
-            var param = editor._activeView._selection.GetActiveParam();
+            var rowsToGib = editor._activeView.Selection.GetSelectedRows();
+            var param = editor._activeView.Selection.GetActiveParam();
 
             if (activeParam is "EquipParamGoods" or "EquipParamProtector" or "EquipParamAccessory")
             {

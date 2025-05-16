@@ -31,7 +31,7 @@ public partial class ParamTools
             UIHelper.WrappedText("Trim Carriage Return (\\r) characters from row names\nfor the currently selected param, or for all params.");
             UIHelper.WrappedText("");
 
-            if (!Editor._activeView._selection.ActiveParamExists())
+            if (!Editor._activeView.Selection.ActiveParamExists())
             {
                 UIHelper.WrappedText("You must select a param before you can use this action.");
                 UIHelper.WrappedText("");
@@ -50,7 +50,7 @@ public partial class ParamTools
 
     public void TrimRowNames()
     {
-        var selectedParam = Editor._activeView._selection;
+        var selectedParam = Editor._activeView.Selection;
         var curParamKey = selectedParam.GetActiveParam();
 
         if (curParamKey == null)
@@ -147,10 +147,10 @@ public partial class ParamTools
 
     public void SortRows()
     {
-        if (Editor._activeView._selection.ActiveParamExists())
+        if (Editor._activeView.Selection.ActiveParamExists())
         {
-            TaskLogs.AddLog($"Param rows sorted for {Editor._activeView._selection.GetActiveParam()}");
-            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView._selection.GetActiveParam()));
+            TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
+            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
         }
     }
     #endregion
@@ -158,7 +158,7 @@ public partial class ParamTools
     #region Set Row to Default
     public void SetRowToDefault()
     {
-        var curParamKey = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
@@ -172,7 +172,7 @@ public partial class ParamTools
         if (vanillaParam == null)
             return;
 
-        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
         List<Param.Row> rowsToInsert = new();
 
@@ -202,13 +202,13 @@ public partial class ParamTools
     #region Copy Row Details
     public void CopyRowDetails(bool includeName = false)
     {
-        var curParamKey = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
         Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
-        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
         if (rows.Count == 0)
         {

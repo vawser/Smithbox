@@ -73,7 +73,7 @@ public static class ParamValidator
         }
         else
         {
-            var selectedParamName = project.ParamEditor._activeView._selection.GetActiveParam();
+            var selectedParamName = project.ParamEditor._activeView.Selection.GetActiveParam();
             if (selectedParamName != null)
             {
                 ValidatePaddingForParam(baseEditor, project, selectedParamName);

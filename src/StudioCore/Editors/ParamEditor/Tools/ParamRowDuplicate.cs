@@ -33,7 +33,7 @@ public partial class ParamTools
             UIHelper.WrappedText("Duplicate the selected rows.");
             UIHelper.WrappedText("");
 
-            if (!Editor._activeView._selection.RowSelectionExists())
+            if (!Editor._activeView.Selection.RowSelectionExists())
             {
                 UIHelper.WrappedText("You must select a row before you can use this action.");
                 UIHelper.WrappedText("");
@@ -87,13 +87,13 @@ public partial class ParamTools
     /// </summary>
     public void DuplicateRow()
     {
-        var curParamKey = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
 
         Param param = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
-        List<Param.Row> rows = Editor._activeView._selection.GetSelectedRows();
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
 
         if (rows.Count == 0)
         {
@@ -140,7 +140,7 @@ public partial class ParamTools
             UIHelper.WrappedText("Duplicate the selected rows to another param that shares the same underlying structure.");
             UIHelper.WrappedText("");
 
-            if (!Editor._activeView._selection.RowSelectionExists())
+            if (!Editor._activeView.Selection.RowSelectionExists())
             {
                 UIHelper.WrappedText("You must select a row before you can use this action.");
                 UIHelper.WrappedText("");
@@ -157,7 +157,7 @@ public partial class ParamTools
                 ImGui.Checkbox("Replace Rows in Target Param", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows);
                 UIHelper.Tooltip("If enabled, rows in the target will be overwritten when duplicating into a commutative param.");
 
-                var curParamKey = Editor._activeView._selection.GetActiveParam();
+                var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
                 if (curParamKey == null)
                     return;
@@ -201,7 +201,7 @@ public partial class ParamTools
     {
         var isValid = false;
 
-        var paramName = Editor._activeView._selection.GetActiveParam();
+        var paramName = Editor._activeView.Selection.GetActiveParam();
 
         if (paramName == null)
             return false;
@@ -224,7 +224,7 @@ public partial class ParamTools
     /// </summary>
     public void DisplayCommutativeDropDownMenu()
     {
-        var curParamKey = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
@@ -260,7 +260,7 @@ public partial class ParamTools
     /// </summary>
     public void DuplicateCommutativeRow()
     {
-        var curParamKey = Editor._activeView._selection.GetActiveParam();
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
             return;
@@ -286,7 +286,7 @@ public partial class ParamTools
         if (targetParam == null)
             return;
 
-        List<Param.Row> selectedRows = Editor._activeView._selection.GetSelectedRows();
+        List<Param.Row> selectedRows = Editor._activeView.Selection.GetSelectedRows();
 
         if (selectedRows.Count == 0)
         {

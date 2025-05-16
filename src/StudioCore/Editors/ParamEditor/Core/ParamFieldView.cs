@@ -1,14 +1,11 @@
 ﻿using Andre.Formats;
-using Google.Protobuf.Reflection;
 using Hexa.NET.ImGui;
-using Microsoft.AspNetCore.Components.Forms;
-using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.Decorators;
-using StudioCore.Editors.ParamEditor.MassEdit;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
 using System;
@@ -20,20 +17,197 @@ using System.Text.RegularExpressions;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamRowEditor
+/// <summary>
+/// The field column within a Param Editor view
+/// </summary>
+public class ParamFieldView
 {
     public ParamEditorScreen Editor;
+    public ProjectEntry Project;
+    public ParamEditorView View;
 
     private Dictionary<string, PropertyInfo[]> _propCache = new();
     public ActionManager ContextActionManager;
 
-    public ParamRowEditor(ActionManager manager, ParamEditorScreen paramEditorScreen)
+    public ParamFieldView(ParamEditorScreen editor, ProjectEntry project, ParamEditorView view)
     {
-        ContextActionManager = manager;
-        Editor = paramEditorScreen;
+        Editor = editor;
+        Project = project;
+        View = view;
+
+        ContextActionManager = editor.EditorActionManager;
     }
 
-    private static void PropEditorParamRow_Header(ParamEditorScreen editor, bool isActiveView, ref string propSearchString)
+    /// <summary>
+    /// Entry point
+    /// </summary>
+    /// <param name="isActiveView"></param>
+    /// <param name="activeParam"></param>
+    /// <param name="activeRow"></param>
+    public void Display(bool isActiveView, string activeParam, Param.Row activeRow)
+    {
+        ImGui.Text("Fields");
+        ImGui.Separator();
+
+        if (activeRow == null)
+        {
+            ImGui.BeginChild("columnsNONE");
+            ImGui.Text("Select a row to see properties");
+            ImGui.EndChild();
+        }
+        else
+        {
+            ImGui.BeginChild("columns" + activeParam);
+            Param vanillaParam = Editor.Project.ParamData.VanillaBank.Params?.GetValueOrDefault(activeParam);
+
+            var bank = Editor.Project.ParamData.PrimaryBank;
+            var curRow = activeRow;
+            var vanillaRow = vanillaParam?[activeRow.ID];
+            var auxRows = Editor.Project.ParamData.AuxBanks
+                .Select((bank, i) => (bank.Key, bank.Value.Params?
+                .GetValueOrDefault(activeParam)?[activeRow.ID]))
+                .ToList();
+            var compareRow = View.Selection.GetCompareRow();
+
+            DisplayColumn(bank, activeRow, vanillaRow, auxRows, compareRow, ref View.Selection.GetCurrentPropSearchString(),
+                activeParam, isActiveView, View.Selection);
+
+            ImGui.EndChild();
+        }
+    }
+
+    /// <summary>
+    /// Handling of the field column.
+    /// </summary>
+    /// <param name="bank"></param>
+    /// <param name="curRow"></param>
+    /// <param name="vanillaRow"></param>
+    /// <param name="auxRows"></param>
+    /// <param name="compareRow"></param>
+    /// <param name="propSearchString"></param>
+    /// <param name="activeParam"></param>
+    /// <param name="isActiveView"></param>
+    /// <param name="selection"></param>
+    public void DisplayColumn(ParamBank bank, Param.Row curRow, Param.Row vanillaRow, List<(string, Param.Row)> auxRows,
+        Param.Row compareRow, ref string propSearchString, string activeParam, bool isActiveView,
+        ParamSelection selection)
+    {
+        var meta = Editor.Project.ParamData.GetParamMeta(curRow.Def);
+
+        var imguiId = 0;
+        var showParamCompare = auxRows.Count > 0;
+        var showRowCompare = compareRow != null;
+
+        DisplayHeader(Editor, isActiveView, ref propSearchString);
+        DisplayGraph(Editor, isActiveView, curRow, meta);
+
+        // Determine column count
+        var columnCount = 2;
+
+        if (CFG.Current.Param_ShowVanillaColumn)
+        {
+            columnCount++;
+        }
+
+        if (showRowCompare)
+        {
+            columnCount++;
+        }
+
+        if (CFG.Current.Param_ShowAuxColumn && showParamCompare)
+        {
+            columnCount += auxRows.Count;
+        }
+
+        // Field Table
+        if (EditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
+        {
+            List<string> pinnedFields =
+                Editor.Project.PinnedFields.GetValueOrDefault(activeParam, null);
+
+            if (CFG.Current.Param_PinnedRowsStayVisible)
+            {
+                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
+            }
+
+            if (showParamCompare)
+            {
+                ImGui.TableNextColumn();
+
+                // Main
+                if (ImGui.TableNextColumn())
+                {
+                    ImGui.Text("Current");
+                }
+
+                // Vanilla
+                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
+                {
+                    ImGui.Text("Vanilla");
+                }
+
+                // Aux
+                if (CFG.Current.Param_ShowAuxColumn)
+                {
+                    foreach ((var name, Param.Row r) in auxRows)
+                    {
+                        if (ImGui.TableNextColumn())
+                        {
+                            ImGui.Text(name);
+                        }
+                    }
+                }
+            }
+
+            EditorDecorations.ImguiTableSeparator();
+
+            // ID and Name
+            DisplayRowFields(bank, curRow, meta, vanillaRow, auxRows, compareRow, ref imguiId, selection, activeParam);
+
+            var search = propSearchString;
+            List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, curRow, "fieldFilter",
+                () => Editor.MassEditHandler.cse.Search((activeParam, curRow), search, true, true));
+
+            List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vanillaRow, "vFieldFilter",
+                () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
+
+            List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
+                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
+
+            // Pinned Fields
+            if (CFG.Current.Param_PinnedRowsStayVisible)
+            {
+                if (pinnedFields?.Count > 0)
+                {
+                    int i = 0;
+
+                    DisplayPinnedFields(pinnedFields, bank, meta, curRow, vanillaRow, auxRows, compareRow, cols, vcols,
+                        auxCols, ref imguiId, activeParam, selection, ref i);
+
+                    EditorDecorations.ImguiTableSeparator();
+                }
+            }
+
+            // Main Fields
+            if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedFields)
+            {
+                DisplayFields(meta, bank, curRow, vanillaRow, auxRows, compareRow, cols, vcols, auxCols, ref imguiId,
+                    activeParam, selection, pinnedFields);
+            }
+
+            ImGui.EndTable();
+        }
+
+    }
+
+
+    /// <summary>
+    /// Display the header for the field view
+    /// </summary>
+    /// <param name="editor"></param>
+    /// <param name="isActiveView"></param>
+    /// <param name="propSearchString"></param>
+    private static void DisplayHeader(ParamEditorScreen editor, bool isActiveView, ref string propSearchString)
     {
         if (propSearchString != null)
         {
@@ -139,7 +313,13 @@ public class ParamRowEditor
         }
     }
 
-    private static void PropEditorParamRow_GraphView(ParamEditorScreen editor, bool isActiveView, Param.Row row)
+    /// <summary>
+    /// Display a graph for param rows that support it
+    /// </summary>
+    /// <param name="editor"></param>
+    /// <param name="isActiveView"></param>
+    /// <param name="row"></param>
+    private static void DisplayGraph(ParamEditorScreen editor, bool isActiveView, Param.Row row, ParamMeta meta)
     {
         if (CFG.Current.Param_ShowGraphVisualisation)
         {
@@ -147,8 +327,6 @@ public class ParamRowEditor
 
             var graphSectionSize = new Vector2(columnWidth, 400);
             var graphSize = new Vector2(columnWidth * 0.9f, 400 * 0.8f);
-
-            var meta = editor.Project.ParamData.GetParamMeta(row.Def);
 
             if (meta.CalcCorrectDef != null || meta.SoulCostDef != null)
             {
@@ -161,73 +339,109 @@ public class ParamRowEditor
         }
     }
 
-    private static string GetColorValue(Param.Row row, List<(PseudoColumn, Param.Column)> cols, string fieldName)
-    {
-        var matchVal = "";
-
-        var matches = cols?.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == fieldName).ToList();
-        var match = matches.FirstOrDefault();
-        matchVal = "";
-        if (match.Item2 != null)
-        {
-            matchVal = row.Get(match).ToString();
-        }
-
-        return (string)matchVal;
-    }
-
-    private void PropEditorParamRow_RowFields(ParamBank bank, Param.Row row, ParamMeta meta, Param.Row vrow,
-        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamEditorSelectionState selection, 
+    /// <summary>
+    /// The ID / Name fields from the Param.Row
+    /// </summary>
+    /// <param name="bank"></param>
+    /// <param name="row"></param>
+    /// <param name="meta"></param>
+    /// <param name="vrow"></param>
+    /// <param name="auxRows"></param>
+    /// <param name="crow"></param>
+    /// <param name="imguiId"></param>
+    /// <param name="selection"></param>
+    /// <param name="activeParam"></param>
+    private void DisplayRowFields(ParamBank bank, Param.Row row, ParamMeta meta, Param.Row vrow,
+        List<(string, Param.Row)> auxRows, Param.Row crow, ref int imguiId, ParamSelection selection, 
         string activeParam)
     {
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+
         PropertyInfo nameProp = row.GetType().GetProperty("Name");
         PropertyInfo idProp = row.GetType().GetProperty("ID");
+
         PropEditorPropInfoRow(bank, row, meta, vrow, auxRows, crow, nameProp, "Name", ref imguiId, selection,
             activeParam);
         PropEditorPropInfoRow(bank, row, meta, vrow, auxRows, crow, idProp, "ID", ref imguiId, selection, 
             activeParam);
+
         ImGui.PopStyleColor();
         ImGui.Spacing();
     }
 
-    private void PropEditorParamRow_PinnedFields(List<string> pinList, ParamBank bank, ParamMeta meta,
+    /// <summary>
+    /// The pinned fields
+    /// </summary>
+    /// <param name="pinList"></param>
+    /// <param name="bank"></param>
+    /// <param name="meta"></param>
+    /// <param name="row"></param>
+    /// <param name="vrow"></param>
+    /// <param name="auxRows"></param>
+    /// <param name="crow"></param>
+    /// <param name="cols"></param>
+    /// <param name="vcols"></param>
+    /// <param name="auxCols"></param>
+    /// <param name="imguiId"></param>
+    /// <param name="activeParam"></param>
+    /// <param name="selection"></param>
+    /// <param name="index"></param>
+    private void DisplayPinnedFields(List<string> pinList, ParamBank bank, ParamMeta meta,
         Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows, Param.Row crow, 
         List<(PseudoColumn, Param.Column)> cols, List<(PseudoColumn, Param.Column)> vcols, 
         List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId, string activeParam, 
-        ParamEditorSelectionState selection, ref int index)
+        ParamSelection selection, ref int index)
     {
         var pinnedFields = new List<string>(pinList);
         foreach (var field in pinnedFields)
         {
-            var matches =
+            var primaryMatches =
                 cols.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == field).ToList();
-            var vmatches =
+
+            var vanillaMatches =
                 vcols.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == field).ToList();
+
             var auxMatches = auxCols.Select((aux, i) =>
                 aux.Where((x, i) => x.Item2 != null && x.Item2.Def.InternalName == field).ToList()).ToList();
-            for (var i = 0; i < matches.Count; i++)
+
+            for (var i = 0; i < primaryMatches.Count; i++)
             {
                 PropEditorPropCellRow(bank,
                     meta,
                     row,
                     crow,
-                    matches[i],
+                    primaryMatches[i],
                     vrow,
-                    vmatches.Count > i ? vmatches[i] : (PseudoColumn.None, null),
+                    vanillaMatches.Count > i ? vanillaMatches[i] : (PseudoColumn.None, null),
                     auxRows,
                     auxMatches.Select((x, j) => x.Count > i ? x[i] : (PseudoColumn.None, null)).ToList(),
-                    OffsetTextOfColumn(matches[i].Item2),
+                    OffsetTextOfColumn(primaryMatches[i].Item2),
                     ref imguiId, activeParam, true, selection);
                 index++;
             }
         }
     }
 
-    private void PropEditorParamRow_MainFields(ParamMeta meta, ParamBank bank, Param.Row row, Param.Row vrow,
+    /// <summary>
+    /// The main fields
+    /// </summary>
+    /// <param name="meta"></param>
+    /// <param name="bank"></param>
+    /// <param name="row"></param>
+    /// <param name="vrow"></param>
+    /// <param name="auxRows"></param>
+    /// <param name="crow"></param>
+    /// <param name="cols"></param>
+    /// <param name="vcols"></param>
+    /// <param name="auxCols"></param>
+    /// <param name="imguiId"></param>
+    /// <param name="activeParam"></param>
+    /// <param name="selection"></param>
+    /// <param name="pinnedFields"></param>
+    private void DisplayFields(ParamMeta meta, ParamBank bank, Param.Row row, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, List<(PseudoColumn, Param.Column)> cols,
         List<(PseudoColumn, Param.Column)> vcols, List<List<(PseudoColumn, Param.Column)>> auxCols, ref int imguiId,
-        string activeParam, ParamEditorSelectionState selection, List<string> pinnedFields)
+        string activeParam, ParamSelection selection, List<string> pinnedFields)
     {
         List<string> fieldOrder = meta is { AlternateOrder: not null } && CFG.Current.Param_AllowFieldReorder
             ? [..meta.AlternateOrder]
@@ -260,7 +474,7 @@ public class ParamRowEditor
                 {
                     if (pinnedFields?.Count > 0)
                     {
-                        PropEditorParamRow_PinnedFields(pinnedFields, bank, meta, row, vrow, auxRows, crow, cols, vcols, 
+                        DisplayPinnedFields(pinnedFields, bank, meta, row, vrow, auxRows, crow, cols, vcols, 
                             auxCols, ref imguiId, activeParam, selection, ref index);
                         EditorDecorations.ImguiTableSeparator();
                     }
@@ -320,109 +534,10 @@ public class ParamRowEditor
         }
     }
 
-    public void PropEditorParamRow(ParamBank bank, Param.Row row, Param.Row vrow, List<(string, Param.Row)> auxRows,
-        Param.Row crow, ref string propSearchString, string activeParam, bool isActiveView,
-        ParamEditorSelectionState selection)
-    {
-        var meta = Editor.Project.ParamData.GetParamMeta(row.Def);
-        var imguiId = 0;
-        var showParamCompare = auxRows.Count > 0;
-        var showRowCompare = crow != null;
-
-        PropEditorParamRow_Header(Editor, isActiveView, ref propSearchString);
-
-        PropEditorParamRow_GraphView(Editor, isActiveView, row);
-
-        //ImGui.BeginChild("Param Fields");
-        var columnCount = 2;
-
-        if (CFG.Current.Param_ShowVanillaColumn)
-        {
-            columnCount++;
-        }
-
-        if (showRowCompare)
-        {
-            columnCount++;
-        }
-
-        if (CFG.Current.Param_ShowAuxColumn && showParamCompare)
-        {
-            columnCount += auxRows.Count;
-        }
-
-        if (EditorDecorations.ImGuiTableStdColumns("ParamFieldsT", columnCount, false))
-        {
-            List<string> pinnedFields =
-                Editor.Project.PinnedFields.GetValueOrDefault(activeParam, null);
-
-            if (CFG.Current.Param_PinnedRowsStayVisible)
-            {
-                ImGui.TableSetupScrollFreeze(columnCount, (showParamCompare ? 3 : 2) + (1 + pinnedFields?.Count ?? 0));
-            }
-
-            if (showParamCompare)
-            {
-                ImGui.TableNextColumn();
-                if (ImGui.TableNextColumn())
-                {
-                    ImGui.Text("Current");
-                }
-
-                if (CFG.Current.Param_ShowVanillaColumn && ImGui.TableNextColumn())
-                {
-                    ImGui.Text("Vanilla");
-                }
-
-                foreach ((var name, Param.Row r) in auxRows)
-                {
-                    if (ImGui.TableNextColumn())
-                    {
-                        ImGui.Text(name);
-                    }
-                }
-            }
-
-            EditorDecorations.ImguiTableSeparator();
-
-            PropEditorParamRow_RowFields(bank, row, meta, vrow, auxRows, crow, ref imguiId, selection, activeParam);
-
-            var search = propSearchString;
-            List<(PseudoColumn, Param.Column)> cols = UICache.GetCached(Editor, row, "fieldFilter",
-                () => Editor.MassEditHandler.cse.Search((activeParam, row), search, true, true));
-
-            List<(PseudoColumn, Param.Column)> vcols = UICache.GetCached(Editor, vrow, "vFieldFilter",
-                () => cols.Select((x, i) => x.GetAs(Editor.Project.ParamData.VanillaBank.GetParamFromName(activeParam))).ToList());
-
-            List<List<(PseudoColumn, Param.Column)>> auxCols = UICache.GetCached(Editor, auxRows,
-                "auxFieldFilter", () => auxRows.Select((r, i) => cols.Select((c, j) => c.GetAs(Editor.Project.ParamData.AuxBanks[r.Item1].GetParamFromName(activeParam))).ToList()).ToList());
-
-            if (CFG.Current.Param_PinnedRowsStayVisible)
-            {
-                if (pinnedFields?.Count > 0)
-                {
-                    int i = 0;
-                    PropEditorParamRow_PinnedFields(pinnedFields, bank, meta, row, vrow, auxRows, crow, cols, vcols, 
-                        auxCols, ref imguiId, activeParam, selection, ref i);
-                    EditorDecorations.ImguiTableSeparator();
-                }
-            }
-
-            if (!CFG.Current.Param_PinGroups_ShowOnlyPinnedFields)
-            {
-                PropEditorParamRow_MainFields(meta, bank, row, vrow, auxRows, crow, cols, vcols, auxCols, ref imguiId,
-                    activeParam, selection, pinnedFields);
-            }
-
-            ImGui.EndTable();
-        }
-
-    }
-
     // Many parameter options, which may be simplified.
     private void PropEditorPropInfoRow(ParamBank bank, Param.Row row, ParamMeta meta, Param.Row vrow,
         List<(string, Param.Row)> auxRows, Param.Row crow, PropertyInfo prop, string visualName, ref int imguiId,
-        ParamEditorSelectionState selection, string activeParam)
+        ParamSelection selection, string activeParam)
     {
         PropEditorPropRow(
             bank,
@@ -448,7 +563,7 @@ public class ParamRowEditor
     private void PropEditorPropCellRow(ParamBank bank, ParamMeta meta, Param.Row row, Param.Row crow,
         (PseudoColumn, Param.Column) col, Param.Row vrow, (PseudoColumn, Param.Column) vcol,
         List<(string, Param.Row)> auxRows, List<(PseudoColumn, Param.Column)> auxCols, string fieldOffset,
-        ref int imguiId, string activeParam, bool isPinned, ParamEditorSelectionState selection)
+        ref int imguiId, string activeParam, bool isPinned, ParamSelection selection)
     {
         PropEditorPropRow(
             bank,
@@ -474,7 +589,7 @@ public class ParamRowEditor
     private void PropEditorPropRow(ParamBank bank, object oldval, object compareval, object vanillaval,
         List<object> auxVals, ref int imguiId, string fieldOffset, string internalName, ParamFieldMeta cellMeta,
         Type propType, PropertyInfo proprow, Param.Cell? nullableCell, Param.Row row, ParamMeta meta, string activeParam,
-        bool isPinned, Param.Column col, ParamEditorSelectionState selection)
+        bool isPinned, Param.Column col, ParamSelection selection)
     {
         var Wiki = cellMeta?.Wiki;
 
@@ -773,7 +888,7 @@ public class ParamRowEditor
             }
 
             // Property Editor UI
-            ParamEditorCommon.PropertyField(propType, oldval, ref newval, IsBool, IsInvertedPercentage);
+            ParamFieldInput.DisplayFieldInput(propType, oldval, ref newval, IsBool, IsInvertedPercentage);
 
             if (isRef || matchDefault) //if diffVanilla, remove styling later
             {
@@ -1007,10 +1122,10 @@ public class ParamRowEditor
         // Context Menu Shortcuts
         if (FieldDecorators.ParamReference_ShortcutItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
         {
-            ParamEditorCommon.SetLastPropertyManual(newval);
+            ParamFieldInput.SetLastPropertyManual(newval);
         }
 
-        var committed = ParamEditorCommon.UpdateProperty(ContextActionManager,
+        var committed = ParamFieldInput.UpdateProperty(ContextActionManager,
             nullableCell != null ? nullableCell : row, proprow, oldval);
 
         if (committed)
@@ -1209,7 +1324,7 @@ public class ParamRowEditor
 
     private void PropertyRowNameContextMenuItems(ParamBank bank, string internalName, ParamFieldMeta cellMeta,
         ParamMeta meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
-        ParamEditorSelectionState selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
+        ParamSelection selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
         var scale = DPI.GetUIScale();
         var altName = cellMeta?.AltName;
@@ -1358,7 +1473,7 @@ public class ParamRowEditor
 
                 if (FieldDecorators.Decorator_ContextMenuItems(Editor, bank, cellMeta, oldval, ref newval, RefTypes, row, FmgRef, MapFmgRef, TextureRef, Enum, ContextActionManager))
                 {
-                    ParamEditorCommon.SetLastPropertyManual(newval);
+                    ParamFieldInput.SetLastPropertyManual(newval);
                 }
 
                 ImGui.PopStyleColor();

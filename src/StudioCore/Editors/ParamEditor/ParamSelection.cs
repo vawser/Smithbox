@@ -1,25 +1,29 @@
 ﻿using Andre.Formats;
+using Octokit;
+using StudioCore.Core;
 using StudioCore.Editor;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace StudioCore.Editors.ParamEditor;
 
-public class ParamEditorSelectionState
+public class ParamSelection
 {
-    private readonly ParamEditorScreen Editor;
+    public ParamEditorScreen Editor;
+    public ProjectEntry Project;
 
     private static string _globalRowSearchString = "";
     private static string _globalPropSearchString = "";
-    private readonly Dictionary<string, ParamEditorParamSelectionState> _paramStates = new();
+    private readonly Dictionary<string, ParamSelectionState> _paramStates = new();
 
     private readonly List<(string, Param.Row)> pastStack = new();
     private string _activeParam;
     internal string currentParamSearchString = "";
 
-    public ParamEditorSelectionState(ParamEditorScreen editor)
+    public ParamSelection(ParamEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
+        Project = project;
     }
 
     private void PushHistory(string newParam, Param.Row newRow)
@@ -96,7 +100,7 @@ public class ParamEditorSelectionState
 
         if (!_paramStates.ContainsKey(_activeParam))
         {
-            _paramStates.Add(_activeParam, new ParamEditorParamSelectionState());
+            _paramStates.Add(_activeParam, new ParamSelectionState());
         }
     }
 
@@ -190,7 +194,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
 
             if (s.activeRow != null)
             {
@@ -216,7 +220,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
             s.compareRow = row;
         }
     }
@@ -225,7 +229,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
             s.compareCol = col;
         }
     }
@@ -234,7 +238,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
 
             if (s.selectionRows.Contains(row))
             {
@@ -254,7 +258,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
 
             if (!s.selectionRows.Contains(row))
             {
@@ -276,7 +280,7 @@ public class ParamEditorSelectionState
 
     public void RemoveRowFromAllSelections(Param.Row row)
     {
-        foreach (ParamEditorParamSelectionState state in _paramStates.Values)
+        foreach (ParamSelectionState state in _paramStates.Values)
         {
             state.selectionRows.Remove(row);
 
@@ -306,7 +310,7 @@ public class ParamEditorSelectionState
             return null;
         }
 
-        ParamEditorParamSelectionState s = _paramStates[_activeParam];
+        ParamSelectionState s = _paramStates[_activeParam];
         // We maintain this flag as clearing the cache properly is slow for the number of times we modify selection
         if (s.selectionCacheDirty)
         {
@@ -324,7 +328,7 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
             s.selectionRows.Clear();
             if (s.activeRow != null)
             {
@@ -337,7 +341,7 @@ public class ParamEditorSelectionState
 
     public void CleanAllSelectionState()
     {
-        foreach (ParamEditorParamSelectionState s in _paramStates.Values)
+        foreach (ParamSelectionState s in _paramStates.Values)
         {
             s.selectionCacheDirty = true;
         }
@@ -350,14 +354,14 @@ public class ParamEditorSelectionState
     {
         if (_activeParam != null)
         {
-            ParamEditorParamSelectionState s = _paramStates[_activeParam];
+            ParamSelectionState s = _paramStates[_activeParam];
             Param p = Editor.Project.ParamData.PrimaryBank.Params[_activeParam];
             s.selectionRows.Sort((a, b) => { return p.IndexOfRow(a) - p.IndexOfRow(b); });
         }
     }
 }
 
-internal class ParamEditorParamSelectionState
+internal class ParamSelectionState
 {
     internal Param.Row activeRow;
     internal Param.Column compareCol;
