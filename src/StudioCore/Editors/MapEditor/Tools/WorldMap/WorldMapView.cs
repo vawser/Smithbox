@@ -49,6 +49,8 @@ public class WorldMapView : IResourceEventListener
     List<string> currentHoverMaps = new List<string>();
     public List<string> WorldMap_ClickedMapZone = new List<string>();
 
+    private bool SetupWorldMap = false;
+
     public WorldMapView(MapEditorScreen screen)
     {
         Editor = screen;
@@ -61,17 +63,6 @@ public class WorldMapView : IResourceEventListener
             MapZoomFactor = GetDefaultZoomLevel();
         };
     }
-
-    public void OnProjectChanged()
-    {
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-            LoadWorldMapTexture();
-            GenerateWorldMapLayout_Vanilla();
-            GenerateWorldMapLayout_SOTE();
-        }
-    }
-
     public void Shortcuts()
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapVanilla))
@@ -152,6 +143,15 @@ public class WorldMapView : IResourceEventListener
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
         var widthUnit = windowWidth / 100;
+
+        if (!SetupWorldMap)
+        {
+            LoadWorldMapTexture();
+            GenerateWorldMapLayout_Vanilla();
+            GenerateWorldMapLayout_SOTE();
+
+            SetupWorldMap = true;
+        }
 
         if (IsMapTextureLoaded && CFG.Current.MapEditor_ShowWorldMapButtons)
         {

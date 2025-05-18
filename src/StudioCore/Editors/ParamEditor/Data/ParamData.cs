@@ -114,7 +114,7 @@ public class ParamData
 
         if(!Project.ImportedParamRowNames)
         {
-            PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+            PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
 
             Project.ImportedParamRowNames = true;
             BaseEditor.ProjectManager.SaveProject(Project);
