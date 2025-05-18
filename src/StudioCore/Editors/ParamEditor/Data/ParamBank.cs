@@ -2127,7 +2127,7 @@ public class ParamBank
     /// <param name="filepath"></param>
     public async void ImportRowNames(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
     {
-        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath);
+        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath, "");
         bool rowNamesImported = await importRowNameTask;
 
         if (rowNamesImported)
@@ -2140,7 +2140,22 @@ public class ParamBank
         }
     }
 
-    public async Task<bool> ImportRowNamesTask(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
+    public async void ImportRowNamesForParam(ImportRowNameType importType, ImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
+    {
+        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath, targetParam);
+        bool rowNamesImported = await importRowNameTask;
+
+        if (rowNamesImported)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Imported row names for {targetParam}");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to import row names for {targetParam}");
+        }
+    }
+
+    public async Task<bool> ImportRowNamesTask(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
     {
         await Task.Yield();
 
@@ -2190,6 +2205,12 @@ public class ParamBank
         {
             if (!storeDict.ContainsKey(p.Key))
                 continue;
+
+            if(targetParam != "")
+            {
+                if (p.Key != targetParam)
+                    continue;
+            }
 
             var rowNames = storeDict[p.Key];
             var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);

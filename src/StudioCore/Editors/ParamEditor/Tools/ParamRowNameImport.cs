@@ -19,15 +19,33 @@ public partial class ParamTools
         {
             if (ImGui.BeginMenu("Community Names"))
             {
-                if (ImGui.MenuItem($"By Index"))
+                if (ImGui.BeginMenu($"By Index"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                    if (ImGui.MenuItem($"Current Param"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.Index, ImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
+                    }
+                    if (ImGui.MenuItem($"Every Param"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                    }
+
+                    ImGui.EndMenu();
                 }
                 UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
 
-                if (ImGui.MenuItem($"By ID"))
+                if (ImGui.BeginMenu($"By ID"))
                 {
-                    Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                    if (ImGui.MenuItem($"Current Param"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
+                    }
+                    if (ImGui.MenuItem($"Every Param"))
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                    }
+
+                    ImGui.EndMenu();
                 }
                 UIHelper.Tooltip("This will import the developer names, matching via row ID.");
 
@@ -39,15 +57,33 @@ public partial class ParamTools
             {
                 if (ImGui.BeginMenu("Developer Names"))
                 {
-                    if (ImGui.MenuItem($"By Index"))
+                    if (ImGui.BeginMenu($"By Index"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Developer);
+                        if (ImGui.MenuItem($"Current Param"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.Index, ImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
+                        }
+                        if (ImGui.MenuItem($"Every Param"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Developer);
+                        }
+
+                        ImGui.EndMenu();
                     }
                     UIHelper.Tooltip("This will import the community names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
 
-                    if (ImGui.MenuItem($"By ID"))
+                    if (ImGui.BeginMenu($"By ID"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Developer);
+                        if (ImGui.MenuItem($"Current Param"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
+                        }
+                        if (ImGui.MenuItem($"Every Param"))
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Developer);
+                        }
+
+                        ImGui.EndMenu();
                     }
                     UIHelper.Tooltip("This will import the developer names, matching via row ID.");
 
@@ -57,26 +93,56 @@ public partial class ParamTools
 
             if (ImGui.BeginMenu("From File"))
             {
-                if (ImGui.MenuItem($"By Index"))
+                if (ImGui.BeginMenu($"By Index"))
                 {
-                    var filePath = "";
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
-
-                    if (result)
+                    if (ImGui.MenuItem($"Current Param"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.External, filePath);
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.Index, ImportRowNameSourceType.External, filePath, Editor._activeView.Selection.GetActiveParam());
+                        }
                     }
+
+                    if (ImGui.MenuItem($"Every Param"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.External, filePath);
+                        }
+                    }
+
+                    ImGui.EndMenu();
                 }
                 UIHelper.Tooltip("This will import the external names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
 
                 if (ImGui.MenuItem($"By ID"))
                 {
-                    var filePath = "";
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select row Name file", ["json"], out filePath);
-
-                    if (result)
+                    if (ImGui.MenuItem($"Current Param"))
                     {
-                        Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath);
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath, Editor._activeView.Selection.GetActiveParam());
+                        }
+                    }
+
+                    if (ImGui.MenuItem($"Every Param"))
+                    {
+                        var filePath = "";
+                        var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+
+                        if (result)
+                        {
+                            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath);
+                        }
                     }
                 }
                 UIHelper.Tooltip("This will import the external names, matching via row ID.");
