@@ -71,7 +71,7 @@ public class ParamEditorScreen : EditorScreen
     public FieldValueFinder FieldValueFinder;
     public RowNameFinder RowNameFinder;
     public RowIDFinder RowIDFinder;
-    public RowNamer RowNamer;
+    public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
     public ParamUpgrader ParamUpgrader;
@@ -945,6 +945,7 @@ public class ParamEditorScreen : EditorScreen
             }
             UIHelper.Tooltip("This will sort the rows by ID. WARNING: this is not recommended as row index can be important.");
 
+            RowNamer.RowNamerMenu();
 
             ImGui.EndMenu();
         }

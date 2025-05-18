@@ -1090,6 +1090,12 @@ public static class ParamMetaReferences
             if (AA == "" || BB == "" || CC == "")
                 return;
 
+            if (AA == "10")
+                AA = "60";
+
+            if (AA == "20")
+                AA = "61";
+
             var rowMapId = $"m{AA}_{BB}_{CC}_00";
 
             var mapList = MapLocator.GetFullMapList(editor.Project);

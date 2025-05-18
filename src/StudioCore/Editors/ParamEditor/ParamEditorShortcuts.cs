@@ -173,12 +173,6 @@ public class ParamEditorShortcuts
             CFG.Current.Param_PinGroups_ShowOnlyPinnedFields = !CFG.Current.Param_PinGroups_ShowOnlyPinnedFields;
         }
 
-        // Apply Row Namer
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ApplyRowNamer))
-        {
-            Editor.RowNamer.ApplyRowNamer();
-        }
-
         // Sort Rows
         if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_SortRows))
         {

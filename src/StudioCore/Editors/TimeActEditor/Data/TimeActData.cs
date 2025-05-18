@@ -43,11 +43,11 @@ public class TimeActData
 
         if (templateTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Time Act templates.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Setup Time Act templates.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Time Act templates.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to setup Time Act templates.");
         }
 
         // Primary Bank (Chr)
@@ -56,11 +56,11 @@ public class TimeActData
 
         if (primaryChrBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Primary Character Time Act bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Setup Primary Character Time Act bank.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Primary Character Time Act bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to setup Primary Character Time Act bank.");
         }
 
         // Vanilla Bank (Chr)
@@ -69,11 +69,11 @@ public class TimeActData
 
         if (vanillaChrBankTaskResult)
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Setup Vanilla Character Time Act bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Setup Vanilla Character Time Act bank.");
         }
         else
         {
-            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Vanilla Character Time Act bank.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to setup Vanilla Character Time Act bank.");
         }
 
         //// Primary Bank (Obj)
