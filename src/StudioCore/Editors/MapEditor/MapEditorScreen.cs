@@ -205,7 +205,6 @@ public class MapEditorScreen : EditorScreen
         ImGui.DockSpace(dsid, new Vector2(0, 0));
 
         Shortcuts.Monitor();
-        WorldMapView.Shortcuts();
         ToolSubMenu.Shortcuts();
         CommandQueue.Parse(initcmd);
         ActionHandler.HandleDuplicateToMapMenuPopup();
@@ -227,6 +226,9 @@ public class MapEditorScreen : EditorScreen
 
             ImGui.EndMenuBar();
         }
+
+        WorldMapView.InitializeWorldMap();
+        WorldMapView.DisplayWorldMap();
 
         MapViewportView.OnGui();
         MapListView.OnGui();

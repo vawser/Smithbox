@@ -716,7 +716,7 @@ public class KeyBindings
             true);
 
         // World Map
-        public KeyBind MAP_ToggleERMapVanilla = new(
+        public KeyBind MAP_ToggleWorldMap = new(
             "Toggle Lands Between Map", 
             "Toggles the visibility of the Lands Between map.",
             Key.M, 
@@ -724,7 +724,7 @@ public class KeyBindings
             false, 
             false);
 
-        public KeyBind MAP_ToggleERMapSOTE = new(
+        public KeyBind MAP_ToggleShadowOfTheErdtreeMap = new(
             "Toggle Land of Shadow Map", 
             "Toggles the visibility of the Land of Shadow map",
             Key.M, 

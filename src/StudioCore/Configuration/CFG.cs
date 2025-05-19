@@ -680,8 +680,12 @@ public class CFG
     public bool Prefab_ApplyOverrideName = false;
     public string Prefab_OverrideName = "";
 
-    public bool WorldMap_EnableFilterOnClick = true;
-    public bool WorldMap_EnableLoadOnClick = false;
+    public float WorldMapHeight = 1200f;
+    public float WorldMapWidth = 1200f;
+    public bool WorldMapDisplayTiles = true;
+    public bool WorldMapDisplaySmallTiles = true;
+    public bool WorldMapDisplayMediumTiles = false;
+    public bool WorldMapDisplayLargeTiles = false;
 
     //****************************
     // Settings: Model Editor

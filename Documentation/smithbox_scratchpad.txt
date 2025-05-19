@@ -12,3 +12,4 @@
 
 # FIX
 - Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)
+

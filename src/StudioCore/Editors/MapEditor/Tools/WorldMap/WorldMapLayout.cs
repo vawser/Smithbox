@@ -37,7 +37,7 @@ public class WorldMapLayout
         return num.ToString(); ;
     }
 
-    public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment)
+    public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment, MapTileType type)
     {
         var mapList = MapLocator.GetFullMapList(Editor.Project);
 
@@ -63,7 +63,7 @@ public class WorldMapLayout
                 // Only include if the map id is an actual map
                 if (mapList.Contains(id))
                 {
-                    var newTile = new WorldMapTile(id, CurX, CurY, increment, increment);
+                    var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
                     Tiles.Add(newTile);
                 }
 
@@ -83,12 +83,23 @@ public class WorldMapTile
     public float Y { get; set; }
     public float Width { get; set; }
     public float Height { get; set; }
-    public WorldMapTile(string name, float curX, float curY, float width, float height)
+
+    public MapTileType TileType { get; set; }
+
+    public WorldMapTile(string name, float curX, float curY, float width, float height, MapTileType type)
     {
         Name = name;
         X = curX;
         Y = curY;
         Width = width;
         Height = height;
+        TileType = type;
     }
+}
+
+public enum MapTileType
+{
+    Small,
+    Medium,
+    Large
 }

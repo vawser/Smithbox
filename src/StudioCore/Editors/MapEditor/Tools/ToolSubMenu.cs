@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.PatrolRouteDraw;
+using StudioCore.Editors.MapEditor.Tools.WorldMap;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -66,6 +67,12 @@ public class ToolSubMenu
     {
         if (ImGui.BeginMenu("Tools"))
         {
+            if (ImGui.MenuItem("World Map", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
+            {
+                Editor.WorldMapView.DisplayMenuOption();
+            }
+            UIHelper.Tooltip($"Open the world map for Elden Ring.\nAllows you to easily select open-world tiles.");
+
             ///--------------------
             /// Color Picker
             ///--------------------

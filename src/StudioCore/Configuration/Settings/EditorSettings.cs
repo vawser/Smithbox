@@ -354,16 +354,6 @@ public class MapEditorTab
             ImGui.Checkbox("Show tags in selection group name", ref CFG.Current.MapEditor_SelectionGroup_ShowTags);
             UIHelper.Tooltip("Append the tags to the selection group name.");
         }
-
-        // World Map
-        if (ImGui.CollapsingHeader("World Map", ImGuiTreeNodeFlags.DefaultOpen))
-        {
-            ImGui.Checkbox("Enable automatic map filtering on click", ref CFG.Current.WorldMap_EnableFilterOnClick);
-            UIHelper.Tooltip("Left-clicking on the world map will automatically filter the map list to the specific tiles you clicked.");
-
-            ImGui.Checkbox("Enable automatic map loading on click", ref CFG.Current.WorldMap_EnableLoadOnClick);
-            UIHelper.Tooltip("Right-clicking on the world map will automatically load the maps you clicked.");
-        }
     }
 }
 

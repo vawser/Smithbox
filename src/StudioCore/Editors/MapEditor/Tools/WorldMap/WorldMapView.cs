@@ -1,7 +1,9 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Formats;
@@ -32,8 +34,9 @@ public class WorldMapView : IResourceEventListener
     private WorldMapLayout SoteLayout = null;
 
     private bool IsMapTextureLoaded { get; set; }
-    private bool IsMapOpen { get; set; }
-    private bool IsSoteMapOpen { get; set; }
+    private bool IsMapWindowOpen { get; set; }
+
+    public MapSource CurrentMapSource = MapSource.LandsBetween;
 
     private Vector2 MapZoomFactor;
     private float MapZoomFactorStep = 0.1f;
@@ -46,16 +49,19 @@ public class WorldMapView : IResourceEventListener
     private Vector2 MapCurseRelativePosition = new Vector2();
     private Vector2 MapCurseRelativePositionInWindow = new Vector2();
 
-    List<string> currentHoverMaps = new List<string>();
-    public List<string> WorldMap_ClickedMapZone = new List<string>();
+    private List<string> HoveredMapTiles = new List<string>();
+    private List<string> SelectedMapTiles = new List<string>();
 
-    private bool SetupWorldMap = false;
+    private bool HasSetupMaps = false;
+
+    private bool _isDraggingMap = false;
+    private Vector2 _lastMousePos = Vector2.Zero;
 
     public WorldMapView(MapEditorScreen screen)
     {
         Editor = screen;
 
-        IsMapOpen = false;
+        IsMapWindowOpen = false;
         IsMapTextureLoaded = false;
         MapZoomFactor = GetDefaultZoomLevel();
         DPI.UIScaleChanged += (_, _) =>
@@ -63,158 +69,179 @@ public class WorldMapView : IResourceEventListener
             MapZoomFactor = GetDefaultZoomLevel();
         };
     }
-    public void Shortcuts()
-    {
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapVanilla))
-        {
-            IsMapOpen = !IsMapOpen;
-            if (IsSoteMapOpen)
-            {
-                IsSoteMapOpen = false;
-                IsMapOpen = true;
-            };
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleERMapSOTE))
-        {
-            IsMapOpen = !IsMapOpen;
-            if (!IsSoteMapOpen)
-            {
-                IsSoteMapOpen = true;
-                IsMapOpen = true;
-            };
-        }
-
-        if (InputTracker.GetKey(Key.LControl))
-        {
-            HandleZoom();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
-        {
-            MapZoomFactor = GetDefaultZoomLevel();
-        }
-
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_DragWorldMap))
-        {
-            
-        }
-
-        if (InputTracker.GetKey(Key.Escape))
-        {
-            IsSoteMapOpen = false;
-            IsMapOpen = false;
-        }
-    }
 
     /// <summary>
-    /// Load the maps via the ContentViews when appropriate
+    /// Load the map textures and generate the layouts.
     /// </summary>
-    public void LoadMapsOnClick(List<string> mapIDs)
+    public void InitializeWorldMap()
     {
-        if (Editor.MapListView.SetupContentViews)
-        {
-            foreach (var entry in Editor.MapListView.MapIDs)
-            {
-                MapContentView curView = null;
-
-                if (Editor.MapListView.ContentViews.ContainsKey(entry))
-                {
-                    curView = Editor.MapListView.ContentViews[entry];
-                }
-
-                if (curView != null)
-                {
-                    if(mapIDs.Contains(curView.MapID))
-                    {
-                        curView.Load(true);
-                    }
-                }
-            }
-        }
-    }
-
-    public void DisplayWorldMapButton()
-    {
-        if (Editor.Project.ProjectType != ProjectType.ER)
-            return;
-
-        var scale = DPI.GetUIScale();
-
-        var windowHeight = ImGui.GetWindowHeight();
-        var windowWidth = ImGui.GetWindowWidth();
-        var widthUnit = windowWidth / 100;
-
-        if (!SetupWorldMap)
+        if (!HasSetupMaps)
         {
             LoadWorldMapTexture();
             GenerateWorldMapLayout_Vanilla();
             GenerateWorldMapLayout_SOTE();
 
-            SetupWorldMap = true;
+            HasSetupMaps = true;
         }
+    }
 
-        if (IsMapTextureLoaded && CFG.Current.MapEditor_ShowWorldMapButtons)
-        {
-            if (ImGui.Button("Lands Between", new Vector2(widthUnit * 48, 20 * scale)))
-            {
-                if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
-                    LoadWorldMapTexture();
+    /// <summary>
+    /// The Lands Between menu option
+    /// </summary>
+    public void DisplayMenuOption()
+    {
+        if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
+            LoadWorldMapTexture();
 
-                IsMapOpen = !IsMapOpen;
-                if (IsSoteMapOpen)
-                {
-                    IsSoteMapOpen = false;
-                    IsMapOpen = true;
-                };
-            }
-            UIHelper.Tooltip($"Open the Lands Between world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapVanilla.HintText}");
+        if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
+            LoadWorldMapTexture();
 
-            ImGui.SameLine();
-            if (ImGui.Button("Shadow of the Erdtree", new Vector2(widthUnit * 48, 20 * scale)))
-            {
-                if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
-                    LoadWorldMapTexture();
-
-                IsMapOpen = !IsMapOpen;
-                if (!IsSoteMapOpen)
-                {
-                    IsSoteMapOpen = true;
-                    IsMapOpen = true;
-                };
-            }
-            UIHelper.Tooltip($"Open the Shadow of the Erdtree world map for Elden Ring.\nAllows you to easily select open-world tiles.\nShortcut: {KeyBindings.Current.MAP_ToggleERMapSOTE.HintText}");
-        }
+        IsMapWindowOpen = !IsMapWindowOpen;
     }
 
     public void DisplayWorldMap()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_ToggleWorldMap))
+        {
+            IsMapWindowOpen = !IsMapWindowOpen;
+        }
+
         if (Editor.Project.ProjectType != ProjectType.ER)
             return;
 
-        if (!IsMapOpen)
+        if (!IsMapWindowOpen)
             return;
 
-        ImGui.Begin("World Map##WorldMapImage", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
+        DisplayMap();
+    }
+
+    public void ControlsMenu()
+    {
+        if (ImGui.MenuItem("Controls"))
+        {
+            ImGui.OpenPopup("controlHint");
+        }
+
+        if (ImGui.BeginPopup("controlHint"))
+        {
+            ImGui.Text($"Left click to navigate the map.");
+            ImGui.Text($"Right click on the map to filter the map list to the map tiles underneath your click.");
+            ImGui.Text($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
+            ImGui.Text($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
+
+            ImGui.EndPopup();
+        }
+    }
+
+    public void MapSourceMenu()
+    {
+        if (ImGui.BeginMenu("Map Source"))
+        {
+            if (ImGui.MenuItem("Lands Between", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
+            {
+                CurrentMapSource = MapSource.LandsBetween;
+            }
+            UIHelper.Tooltip($"Switch the map image to this.");
+
+            if (ImGui.MenuItem("Shadow of the Erdtree", KeyBindings.Current.MAP_ToggleWorldMap.HintText))
+            {
+                CurrentMapSource = MapSource.ShadowOfTheErdtree;
+            }
+            UIHelper.Tooltip($"Switch the map image to this.");
+
+            ImGui.EndMenu();
+        }
+    }
+    public void SettingsMenu()
+    {
+        if (ImGui.BeginMenu("Settings"))
+        {
+            ImGui.Checkbox("Display Tiles", ref CFG.Current.WorldMapDisplayTiles);
+            UIHelper.Tooltip($"If enabled, the tile shapes will overlay the map.");
+
+            ImGui.Checkbox("Display Small Tiles", ref CFG.Current.WorldMapDisplaySmallTiles);
+            UIHelper.Tooltip($"If enabled, the small tile shapes will overlay the map.");
+
+            ImGui.Checkbox("Display Medium Tiles", ref CFG.Current.WorldMapDisplayMediumTiles);
+            UIHelper.Tooltip($"If enabled, the medium tile shapes will overlay the map.");
+
+            ImGui.Checkbox("Display Large Tiles", ref CFG.Current.WorldMapDisplayLargeTiles);
+            UIHelper.Tooltip($"If enabled, the large tile shapes will overlay the map.");
+
+            var viewport = ImGui.GetMainViewport();
+            float width = viewport.Size.X;
+            float height = viewport.Size.Y;
+
+            ImGui.DragFloat("Window Width", ref CFG.Current.WorldMapWidth, 1.0f, 100.0f, width);
+            ImGui.DragFloat("Window Height", ref CFG.Current.WorldMapHeight, 1.0f, 100.0f, height);
+
+            ImGui.EndMenu();
+        }
+    }
+
+    public void DisplayMap()
+    {
+        var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar | ImGuiWindowFlags.NoCollapse | ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoScrollWithMouse;
+
+        var viewport = ImGui.GetMainViewport();
+        Vector2 center = viewport.Pos + viewport.Size / 2;
+
+        ImGui.SetNextWindowSize(new Vector2(CFG.Current.WorldMapWidth, CFG.Current.WorldMapHeight));
+        ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
+
+        ImGui.Begin("World Map##WorldMapImage", flags);
+
+
+        if (ImGui.BeginMenuBar())
+        {
+            ControlsMenu();
+            MapSourceMenu();
+            SettingsMenu();
+
+            ImGui.EndMenuBar();
+        }
+
         Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMap);
 
         var windowHeight = ImGui.GetWindowHeight();
         var windowWidth = ImGui.GetWindowWidth();
         var mousePos = ImGui.GetMousePos();
 
-        // Map Drag
-        /*
-        WorldMapScrollX = ImGui.GetScrollX();
-        WorldMapScrollXMax = ImGui.GetScrollMaxX();
-        WorldMapScrollY = ImGui.GetScrollY();
-        WorldMapScrollYMax = ImGui.GetScrollMaxY();
-        MouseDelta = InputTracker.MouseDelta;
+        // Store scroll position for potential modification
+        float currentScrollX = ImGui.GetScrollX();
+        float currentScrollY = ImGui.GetScrollY();
 
-        if (AdjustScrollNextFrame)
+        Vector2 currentMousePos = ImGui.GetMousePos();
+        Vector2 windowPos = ImGui.GetWindowPos();
+        Vector2 windowSize = ImGui.GetWindowSize();
+        bool isMouseInMapWindow = currentMousePos.X >= windowPos.X &&
+                                  currentMousePos.Y >= windowPos.Y &&
+                                  currentMousePos.X < windowPos.X + windowSize.X &&
+                                  currentMousePos.Y < windowPos.Y + windowSize.Y;
+
+        // Start drag on left click in window
+        if (ImGui.IsWindowHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
         {
-            AdjustScrollNextFrame = false;
-            ImGui.SetScrollFromPosX(NextFrameAdjustmentX);
+            _isDraggingMap = true;
+            _lastMousePos = currentMousePos;
         }
-        */
+
+        // Stop drag on release
+        if (ImGui.IsMouseReleased(ImGuiMouseButton.Left))
+        {
+            _isDraggingMap = false;
+        }
+
+        if (_isDraggingMap && isMouseInMapWindow)
+        {
+            Vector2 mouseDelta = currentMousePos - _lastMousePos;
+
+            // Reverse scroll direction: drag down → texture up
+            ImGui.SetScrollX(currentScrollX - mouseDelta.X);
+            ImGui.SetScrollY(currentScrollY - mouseDelta.Y);
+
+            _lastMousePos = currentMousePos;
+        }
 
         // Map
         TextureViewWindowPosition = ImGui.GetWindowPos();
@@ -222,7 +249,7 @@ public class WorldMapView : IResourceEventListener
 
         ResourceHandle<TextureResource> resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_vanilla");
 
-        if (IsSoteMapOpen)
+        if (CurrentMapSource is MapSource.ShadowOfTheErdtree)
         {
             resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_sote");
         }
@@ -243,116 +270,100 @@ public class WorldMapView : IResourceEventListener
             }
         }
 
-        ImGui.End();
-
-        // Properties
-        ImGui.Begin("Properties##WorldMapProperties");
-        Editor.FocusManager.SwitchWindowContext(MapEditorContext.WorldMapProperties);
-
-        UIHelper.WrappedText($"Press Left Mouse button to select an area of the map to filter the map object list by.");
-        UIHelper.WrappedText($"");
-        UIHelper.WrappedText($"Hold Left-Control and scroll the mouse wheel to zoom in and out.");
-        UIHelper.WrappedText($"Press {KeyBindings.Current.TEXTURE_ResetZoomLevel.HintText} to reset zoom level to 100%.");
-        UIHelper.WrappedText($"");
-
-        //ImGui.Text($"Relative Position: {relativePos}");
-        //ImGui.Text($"Relative (Sans Scroll) Position: {relativePosWindowPosition}");
-        //ImGui.Text($"mousePos: {mousePos}");
-        //ImGui.Text($"windowHeight: {windowHeight}");
-        //ImGui.Text($"windowWidth: {windowWidth}");
-        /*
-        ImGui.Text($"MouseDelta: {InputTracker.MouseDelta}");
-        ImGui.Text($"scrollPosX: {WorldMapScrollX}");
-        ImGui.Text($"scrollPosXMax: {WorldMapScrollXMax}");
-        ImGui.Text($"scrollPosY: {WorldMapScrollY}");
-        ImGui.Text($"scrollPosYMax: {WorldMapScrollYMax}");
-
-        ImGui.InputInt("X Offset", ref SOTE_xOffset);
-        ImGui.InputInt("Y Offset", ref SOTE_yOffset);
-
-        if (ImGui.Button("Update SOTE Layout"))
+        // Tile Overlay
+        if (CFG.Current.WorldMapDisplayTiles)
         {
-            GenerateWorldMapLayout_SOTE();
-        }
-        */
+            var drawList = ImGui.GetWindowDrawList();
+            var tileList = CurrentMapSource == MapSource.LandsBetween ? VanillaLayout.Tiles : SoteLayout.Tiles;
 
-        currentHoverMaps = GetMatchingMaps(MapCurseRelativePosition);
-
-        ImGui.Separator();
-        ImGui.Text($"Selection:");
-        UIHelper.Tooltip("These are the maps that the map object list will be filtered to.");
-        ImGui.Separator();
-
-        // Stored Click Maps
-        if (SelectedMapTiles.Count > 0)
-        {
-            foreach (var match in SelectedMapTiles)
+            foreach (var tile in tileList)
             {
-                if (ImGui.Button($"Load##load{match}"))
-                {
-                    Editor.Universe.LoadMap(match, false);
-                    Editor.MapListView.SignalLoad(match);
-                }
-                ImGui.SameLine();
-                UIHelper.WrappedText($"{match}");
-                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(Editor.Project, match));
-            }
-        }
+                if (tile.TileType is MapTileType.Small && !CFG.Current.WorldMapDisplaySmallTiles)
+                    continue;
 
-        ImGui.Separator();
-        ImGui.Text($"Maps in Tile:");
-        UIHelper.Tooltip("These are the maps that are within the tile you are currently hovering over within the world map.");
-        ImGui.Separator();
+                if (tile.TileType is MapTileType.Medium && !CFG.Current.WorldMapDisplayMediumTiles)
+                    continue;
 
-        // Hover Maps
-        if (currentHoverMaps != null && currentHoverMaps.Count > 0)
-        {
-            foreach (var match in currentHoverMaps)
-            {
-                UIHelper.WrappedText($"{match}");
-                UIHelper.DisplayAlias(AliasUtils.GetMapNameAlias(Editor.Project, match));
+                if (tile.TileType is MapTileType.Large && !CFG.Current.WorldMapDisplayLargeTiles)
+                    continue;
+
+                var tileSize = new Vector2(tile.Width, tile.Height);
+
+                // Image-space coordinates of tile (unscaled, unscrolled)
+                Vector2 tileTopLeft = new Vector2(tile.X, tile.Y);
+                Vector2 tileBottomRight = tileTopLeft + new Vector2(tile.Width, tile.Height);
+
+                // Apply zoom
+                tileTopLeft *= MapZoomFactor;
+                tileBottomRight *= MapZoomFactor;
+
+                // Apply scroll and window offsets (convert to screen space)
+                Vector2 imageTopLeftScreen = TextureViewWindowPosition - TextureViewScrollPosition + new Vector2(3 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+
+                Vector2 drawStart = imageTopLeftScreen + tileTopLeft;
+                Vector2 drawEnd = imageTopLeftScreen + tileBottomRight;
+
+                // Highlight hovered or selected
+                uint color = ImGui.GetColorU32(new Vector4(1, 1, 0, 0.5f)); // Yellow default
+                if (HoveredMapTiles.Contains(tile.Name))
+                    color = ImGui.GetColorU32(new Vector4(0, 1, 0, 0.5f)); // Green for hover
+                else if (SelectedMapTiles.Contains(tile.Name))
+                    color = ImGui.GetColorU32(new Vector4(1, 0, 0, 0.5f)); // Red for selected
+
+                // Draw filled semi-transparent rect (optional)
+                drawList.AddRectFilled(drawStart, drawEnd, ImGui.GetColorU32(new Vector4(1, 1, 0, 0.05f)));
+
+                // Draw outline
+                drawList.AddRect(drawStart, drawEnd, color, 0, ImDrawFlags.None, 2.0f);
             }
         }
 
         ImGui.End();
 
-        if (InputTracker.GetMouseButtonDown(MouseButton.Left))
-        {
-            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
-            {
-                if (currentHoverMaps != null && currentHoverMaps.Count > 0)
-                {
-                    SelectedMapTiles = currentHoverMaps;
+        HoveredMapTiles = GetMatchingMaps(MapCurseRelativePosition);
 
-                    if (CFG.Current.WorldMap_EnableFilterOnClick)
-                    {
-                        Editor.MapListView.SearchBarText = string.Join("|", currentHoverMaps);
-                    }
+        if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
+        {
+            if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < MapTextureSize.X &&
+                MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < MapTextureSize.Y)
+            {
+                ImGui.BeginTooltip();
+
+                foreach (var tile in HoveredMapTiles)
+                {
+                    ImGui.Text($"{tile} ({AliasUtils.GetMapNameAlias(Editor.Project, tile)})");
                 }
+
+                ImGui.EndTooltip();
             }
         }
+
+        HandleZoom();
+
+        // Select Maps under Point
         if (InputTracker.GetMouseButtonDown(MouseButton.Right))
         {
             if (MapCurseRelativePositionInWindow.X > 0 && MapCurseRelativePositionInWindow.X < windowWidth && MapCurseRelativePositionInWindow.Y > 0 && MapCurseRelativePositionInWindow.Y < windowHeight)
             {
-                if (currentHoverMaps != null && currentHoverMaps.Count > 0)
+                if (HoveredMapTiles != null && HoveredMapTiles.Count > 0)
                 {
-                    SelectedMapTiles = currentHoverMaps;
+                    SelectedMapTiles = HoveredMapTiles;
 
-                    if (CFG.Current.WorldMap_EnableLoadOnClick)
-                    {
-                        foreach (var mapId in currentHoverMaps)
-                        {
-                            LoadMapsOnClick(new List<string>() { mapId });
-                        }
-                    }
+                    Editor.MapListView.UpdateMapList(HoveredMapTiles);
                 }
             }
         }
+
+        if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
+        {
+            MapZoomFactor = GetDefaultZoomLevel();
+        }
+
+        if (InputTracker.GetKey(Key.Escape))
+        {
+            IsMapWindowOpen = false;
+        }
     }
-
-    private List<string> SelectedMapTiles = new List<string>();
-
 
     private void LoadWorldMapTexture()
     {
@@ -390,9 +401,9 @@ public class WorldMapView : IResourceEventListener
 
 
         VanillaLayout = new WorldMapLayout(Editor, "60", 480, 55);
-        VanillaLayout.GenerateTiles(smallRows, smallCols, "00", 124);
-        VanillaLayout.GenerateTiles(mediumRows, mediumCols, "01", 248);
-        VanillaLayout.GenerateTiles(largeRows, largeCols, "02", 496);
+        VanillaLayout.GenerateTiles(smallRows, smallCols, "00", 124, MapTileType.Small);
+        VanillaLayout.GenerateTiles(mediumRows, mediumCols, "01", 248, MapTileType.Medium);
+        VanillaLayout.GenerateTiles(largeRows, largeCols, "02", 496, MapTileType.Large);
     }
 
     private int SOTE_xOffset = 540;
@@ -408,9 +419,9 @@ public class WorldMapView : IResourceEventListener
         var largeCols = new List<int>() { 13, 12, 11, 10, 9, 8 };
 
         SoteLayout = new WorldMapLayout(Editor, "61", SOTE_xOffset, SOTE_yOffset);
-        SoteLayout.GenerateTiles(smallRows, smallCols, "00", 256);
-        SoteLayout.GenerateTiles(mediumRows, mediumCols, "01", 528);
-        SoteLayout.GenerateTiles(largeRows, largeCols, "02", 1056);
+        SoteLayout.GenerateTiles(smallRows, smallCols, "00", 256, MapTileType.Small);
+        SoteLayout.GenerateTiles(mediumRows, mediumCols, "01", 528, MapTileType.Medium);
+        SoteLayout.GenerateTiles(largeRows, largeCols, "02", 1056, MapTileType.Large);
     }
 
     private List<string> GetMatchingMaps(Vector2 pos)
@@ -419,7 +430,7 @@ public class WorldMapView : IResourceEventListener
 
         var tiles = VanillaLayout.Tiles;
 
-        if (IsSoteMapOpen)
+        if (CurrentMapSource is MapSource.ShadowOfTheErdtree)
         {
             tiles = SoteLayout.Tiles;
         }
@@ -594,4 +605,10 @@ public class WorldMapView : IResourceEventListener
 
         return relativePos;
     }
+}
+
+public enum MapSource
+{
+    LandsBetween,
+    ShadowOfTheErdtree
 }

@@ -71,13 +71,12 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                     }
                 }
 
-                // World Map
-                Editor.WorldMapView.DisplayWorldMapButton();
-                Editor.WorldMapView.DisplayWorldMap();
-
                 DisplaySearchbar();
+
                 ImGui.SameLine();
+
                 DisplayUnloadAllButton();
+
                 if (Editor.Project.ProjectType is ProjectType.BB)
                 {
                     ImGui.SameLine();
@@ -89,9 +88,8 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 // Display List of Maps
                 if (SetupContentViews)
                 {
-                    DisplayMapList(MapContentLoadState.Loaded);
-
                     ImGui.BeginChild($"mapListSection");
+                    DisplayMapList(MapContentLoadState.Loaded);
                     DisplayMapList(MapContentLoadState.Unloaded);
                     ImGui.EndChild();
                 }
@@ -135,6 +133,13 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     private Dictionary<string, string> _cachedMapNameAliases = new Dictionary<string, string>();
     private Dictionary<string, List<string>> _cachedMapTags = new Dictionary<string, List<string>>();
     private bool _updateMapList = true;
+
+    public void UpdateMapList(List<string> mapList)
+    {
+        SearchBarText = string.Join("|", mapList);
+        _lastSearchText = SearchBarText;
+        _updateMapList = true;
+    }
 
     /// <summary>
     /// Handles the display of the searchbar

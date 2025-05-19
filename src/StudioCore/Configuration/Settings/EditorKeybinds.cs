@@ -425,17 +425,9 @@ public class MapEditorKeybindTab
 
         if (ImGui.CollapsingHeader("World Map", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            KeyBindings.Current.MAP_ToggleERMapVanilla = InputTracker.KeybindLine(46,
-                KeyBindings.Current.MAP_ToggleERMapVanilla,
-                KeyBindings.Default.MAP_ToggleERMapVanilla);
-
-            KeyBindings.Current.MAP_ToggleERMapSOTE = InputTracker.KeybindLine(47,
-                KeyBindings.Current.MAP_ToggleERMapSOTE,
-                KeyBindings.Default.MAP_ToggleERMapSOTE);
-
-            KeyBindings.Current.MAP_DragWorldMap = InputTracker.KeybindLine(48,
-                KeyBindings.Current.MAP_DragWorldMap,
-                KeyBindings.Default.MAP_DragWorldMap);
+            KeyBindings.Current.MAP_ToggleWorldMap = InputTracker.KeybindLine(46,
+                KeyBindings.Current.MAP_ToggleWorldMap,
+                KeyBindings.Default.MAP_ToggleWorldMap);
         }
     }
 }
