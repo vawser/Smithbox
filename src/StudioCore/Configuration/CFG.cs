@@ -687,6 +687,9 @@ public class CFG
     public bool WorldMapDisplayMediumTiles = false;
     public bool WorldMapDisplayLargeTiles = false;
 
+    public bool QuickView_DisplayTooltip = false;
+    public List<string> QuickView_TargetProperties = new List<string>() { "Name" };
+
     //****************************
     // Settings: Model Editor
     //****************************

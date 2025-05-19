@@ -27,6 +27,7 @@ using StudioCore.Scene;
 using StudioCore.Scene.Interfaces;
 using StudioCore.Settings;
 using StudioCore.Tasks;
+using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -1039,6 +1040,115 @@ public class MapEditorScreen : EditorScreen
         {
             TaskLogs.AddLog(e.Message,
                 LogLevel.Error, LogPriority.High, e.Wrapped);
+        }
+    }
+
+    /// <summary>
+    /// The tooltip handling for Quick View
+    /// </summary>
+    public void HandleQuickViewTooltip()
+    {
+        if (FocusManager.CurrentWindowContext is not MapEditorContext.MapViewport)
+            return;
+
+        var curSel = Selection.GetSelection();
+
+        if (curSel.Count > 0)
+        {
+            var firstEnt = (Entity)curSel.First();
+
+            ImGui.BeginTooltip();
+
+            var properties = CFG.Current.QuickView_TargetProperties;
+
+            foreach(var property in properties)
+            {
+                var propValue = firstEnt.GetPropertyValue(property);
+
+                if (propValue != null)
+                {
+                    ImGui.Text($"{property}: {propValue}");
+                }
+            }
+
+            ImGui.EndTooltip();
+        }
+    }
+
+    private bool InitTargetProperties = false;
+    private List<string> curTargetProperties = new();
+
+    /// <summary>
+    /// The property settings for Quick View
+    /// </summary>
+    public void HandleQuickViewProperties()
+    {
+        if (!InitTargetProperties)
+        {
+            curTargetProperties = CFG.Current.QuickView_TargetProperties;
+            InitTargetProperties = true;
+        }
+
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##quickViewPropAdd"))
+        {
+            curTargetProperties.Add("");
+            CFG.Current.QuickView_TargetProperties = curTargetProperties;
+        }
+
+        ImGui.SameLine();
+
+        // Remove
+        if (curTargetProperties.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove"))
+            {
+                curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
+                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            }
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove"))
+            {
+                curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
+                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##quickViewPropReset"))
+        {
+            curTargetProperties = new List<string>() { "" };
+            CFG.Current.QuickView_TargetProperties = curTargetProperties;
+        }
+
+        for (int i = 0; i < curTargetProperties.Count; i++)
+        {
+            var curProperty = curTargetProperties[i];
+
+            ImGui.SetNextItemWidth(400f);
+            ImGui.InputText($"##propInput{i}", ref curProperty, 255);
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                curTargetProperties[i] = curProperty;
+                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            }
+        }
+
+        if(curTargetProperties.Count == 0)
+        {
+            if(ImGui.Button("Add Property"))
+            {
+                curTargetProperties.Add("");
+                CFG.Current.QuickView_TargetProperties = curTargetProperties;
+            }
         }
     }
 }

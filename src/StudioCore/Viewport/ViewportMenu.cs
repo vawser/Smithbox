@@ -79,6 +79,12 @@ public class ViewportMenu
                     CFG.Current.Viewport_DisplayRotationIncrement = !CFG.Current.Viewport_DisplayRotationIncrement;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayRotationIncrement);
+
+                if (ImGui.MenuItem("Quick View Tooltip"))
+                {
+                    CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
             }
 
             if (ImGui.MenuItem("Profiling"))
@@ -309,6 +315,18 @@ public class ViewportMenu
                 CFG.Current.Viewport_Enable_Culling = !CFG.Current.Viewport_Enable_Culling;
             }
             UIHelper.Tooltip($"Whether to cull objects in the viewport outside of the camera frustum.");
+
+            if (Parent.ViewportType is ViewportType.MapEditor)
+            {
+                ImGui.Separator();
+
+                if (ImGui.BeginMenu("Quick View"))
+                {
+                    Parent.MapEditor.HandleQuickViewProperties();
+
+                    ImGui.EndMenu();
+                }
+            }
 
             ImGui.EndMenu();
         }

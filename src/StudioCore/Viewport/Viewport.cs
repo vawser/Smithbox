@@ -257,6 +257,14 @@ public class Viewport : IViewport
                 Matrix4x4 proj = Matrix4x4.Transpose(ProjectionMatrix);
                 Matrix4x4 view = Matrix4x4.Transpose(ViewportCamera.CameraTransform.CameraViewMatrixLH);
                 Matrix4x4 identity = Matrix4x4.Identity;
+
+                if (ViewportType is ViewportType.MapEditor)
+                {
+                    if (CFG.Current.QuickView_DisplayTooltip)
+                    {
+                        MapEditor.HandleQuickViewTooltip();
+                    }
+                }
             }
             ImGui.End();
             ImGui.PopStyleColor();
