@@ -690,6 +690,9 @@ public class CFG
     public bool QuickView_DisplayTooltip = false;
     public List<string> QuickView_TargetProperties = new List<string>() { "Name" };
 
+    public bool DisplayPlacementOrb = false;
+    public float PlacementOrb_Distance = 5.0f;
+
     //****************************
     // Settings: Model Editor
     //****************************

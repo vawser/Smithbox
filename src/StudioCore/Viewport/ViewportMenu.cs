@@ -2,8 +2,11 @@
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Interface;
 using StudioCore.Scene;
+using StudioCore.Scene.DebugPrimitives;
+using StudioCore.Scene.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -66,6 +69,12 @@ public class ViewportMenu
             }
             UIHelper.ShowActiveStatus(CFG.Current.Viewport_DisplayControls);
 
+            if (ImGui.MenuItem("Profiling"))
+            {
+                CFG.Current.Viewport_Profiling = !CFG.Current.Viewport_Profiling;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Profiling);
+
             if (Parent.ViewportType is ViewportType.MapEditor)
             {
                 if (ImGui.MenuItem("Movement Increment"))
@@ -85,13 +94,13 @@ public class ViewportMenu
                     CFG.Current.QuickView_DisplayTooltip = !CFG.Current.QuickView_DisplayTooltip;
                 }
                 UIHelper.ShowActiveStatus(CFG.Current.QuickView_DisplayTooltip);
-            }
 
-            if (ImGui.MenuItem("Profiling"))
-            {
-                CFG.Current.Viewport_Profiling = !CFG.Current.Viewport_Profiling;
+                if (ImGui.MenuItem("Placement Orb"))
+                {
+                    CFG.Current.DisplayPlacementOrb = !CFG.Current.DisplayPlacementOrb;
+                }
+                UIHelper.ShowActiveStatus(CFG.Current.DisplayPlacementOrb);
             }
-            UIHelper.ShowActiveStatus(CFG.Current.Viewport_Profiling);
 
             ImGui.EndMenu();
         }
@@ -322,7 +331,15 @@ public class ViewportMenu
 
                 if (ImGui.BeginMenu("Quick View"))
                 {
-                    Parent.MapEditor.HandleQuickViewProperties();
+                    Parent.MapEditor.QuickView.HandleQuickViewProperties();
+
+                    ImGui.EndMenu();
+                }
+
+                if (ImGui.BeginMenu("Placement Orb"))
+                {
+                    ImGui.DragFloat("Orb Distance", ref CFG.Current.PlacementOrb_Distance, 0.1f, 1f, 100f);
+                    UIHelper.Tooltip($"Determines the distance in front of the camera the placement orb is.");
 
                     ImGui.EndMenu();
                 }

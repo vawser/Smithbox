@@ -47,6 +47,8 @@ public static class RenderableHelper
     private static DbgPrimTree _modelMarkerTree;
     private static DbgPrimTree _modelMarkerBush;
 
+    public static DbgPrimSolidSphere _placementOrb;
+
     public static readonly HashSet<string> SpeedTree_Bushes = new()
     {
         "AEG801_006",
@@ -232,6 +234,12 @@ public static class RenderableHelper
             2,
             false,
             true);
+
+        // PLACEMENT
+        _placementOrb = new DbgPrimSolidSphere(
+            Transform.Default,
+            0.1f,
+            Color.Blue);
     }
 
     // BOX REGION
@@ -313,6 +321,7 @@ public static class RenderableHelper
 
         return r;
     }
+
     public static DebugPrimitiveRenderableProxy GetSolidSphereRegionProxy(RenderScene scene)
     {
         var baseColor = CFG.Current.GFX_Renderable_Sphere_BaseColor;
@@ -578,6 +587,23 @@ public static class RenderableHelper
 
         DebugPrimitiveRenderableProxy r = new(renderables, _modelMarkerBush, false);
 
+        r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
+        r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
+        //ColorHelper.ApplyColorVariance(r);
+
+        return r;
+    }
+    public static DebugPrimitiveRenderableProxy GetPlacementOrbProxy(RenderScene scene)
+    {
+        var baseColor = Utils.GetDecimalColor(Color.Purple);
+        var highlightColor = Utils.GetDecimalColor(Color.Purple);
+        var transparency = 25.0f;
+
+
+
+        DebugPrimitiveRenderableProxy r = new(scene.OpaqueRenderables, _placementOrb);
+
+        r.RenderOverlay = true;
         r.BaseColor = ColorHelper.GetTransparencyColor(baseColor, transparency);
         r.HighlightedColor = ColorHelper.GetTransparencyColor(highlightColor, transparency);
         //ColorHelper.ApplyColorVariance(r);

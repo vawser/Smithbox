@@ -433,6 +433,18 @@ public static class DrawableHelper
     }
 
     /// <summary>
+    /// The drawable proxies for a Region map object
+    /// </summary>
+    public static RenderableProxy GetPlacementOrbDrawable(RenderScene scene, Entity obj)
+    {
+        var mesh = RenderableHelper.GetPlacementOrbProxy(scene);
+        mesh.World = obj.GetWorldMatrix();
+        obj.RenderSceneMesh = mesh;
+
+        return mesh;
+    }
+
+    /// <summary>
     /// Get the model marker type from a string
     /// </summary>
     private static ModelMarkerType GetModelMarkerType(string type)

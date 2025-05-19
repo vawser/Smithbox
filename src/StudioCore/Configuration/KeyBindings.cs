@@ -724,22 +724,6 @@ public class KeyBindings
             false, 
             false);
 
-        public KeyBind MAP_ToggleShadowOfTheErdtreeMap = new(
-            "Toggle Land of Shadow Map", 
-            "Toggles the visibility of the Land of Shadow map",
-            Key.M, 
-            true, 
-            true, 
-            false);
-
-        public KeyBind MAP_DragWorldMap = new(
-            "Drag World Map", 
-            "Held to drag around the world map.", 
-            Key.C, 
-            false, 
-            false, 
-            false);
-
         // Lightmap Atlas
         public KeyBind MAP_LightmapAtlas_Multiselect = new(
             "Multi-Select Row",

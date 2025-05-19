@@ -2121,3 +2121,71 @@ public class MsbEntity : Entity
         return e;
     }
 }
+
+/// <summary>
+/// Special entity for the placement orb
+/// </summary>
+public class PlacementEntity : Entity
+{
+    protected EditorScreen Editor;
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    public PlacementEntity(EditorScreen editor) : base(editor)
+    {
+        Editor = editor;
+
+        if (editor is MapEditorScreen)
+        {
+            var curEditor = (MapEditorScreen)editor;
+            var universe = curEditor.Universe;
+            _renderSceneMesh = DrawableHelper.GetPlacementOrbDrawable(universe.RenderScene, this);
+        }
+    }
+
+    /// <summary>
+    /// Update the render model of this entity.
+    /// </summary>
+    public override void UpdateRenderModel(EditorScreen editor)
+    {
+        if (!CFG.Current.Viewport_Enable_Rendering)
+        {
+            return;
+        }
+
+        // Map Editor
+        if (editor is MapEditorScreen)
+        {
+            var curEditor = (MapEditorScreen)editor;
+            var universe = curEditor.Universe;
+
+            if (_renderSceneMesh != null)
+            {
+                if (CFG.Current.DisplayPlacementOrb)
+                {
+                    _renderSceneMesh.Visible = true;
+                }
+                else
+                {
+                    _renderSceneMesh.Visible = false;
+                }
+
+                // Update position of the placement orb
+                _renderSceneMesh.World = curEditor.MapViewportView.GetPlacementTransform();
+            }
+        }
+
+        base.UpdateRenderModel(editor);
+    }
+
+    /// <summary>
+    /// Return local transform for this entity.
+    /// </summary>
+    public override Transform GetLocalTransform()
+    {
+        Transform t = base.GetLocalTransform();
+
+        return t;
+    }
+}

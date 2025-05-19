@@ -1042,6 +1042,17 @@ public class ToolWindow
             {
                 Editor.MassEditHandler.Display();
             }
+
+            ///--------------------
+            /// Simple Treasure Maker
+            ///--------------------
+            if (Editor.TreasureMaker.IsSupported())
+            {
+                if (ImGui.CollapsingHeader("Simple Treasure Maker"))
+                {
+                    Editor.TreasureMaker.Display();
+                }
+            }
         }
 
         ImGui.End();

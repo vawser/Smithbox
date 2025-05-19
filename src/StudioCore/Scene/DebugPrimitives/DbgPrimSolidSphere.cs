@@ -11,12 +11,24 @@ namespace StudioCore.Scene.DebugPrimitives;
 
 public class DbgPrimSolidSphere : DbgPrimSolid
 {
-    private readonly DbgPrimGeometryData GeometryData;
+    private DbgPrimGeometryData GeometryData;
 
     public override BoundingBox Bounds => new BoundingBox(new Vector3(-1, -1, -1), new Vector3(1, 1, 1));
 
+    private Transform Transform;
+    private float Radius;
+    private Color Color;
+    private int VerticalSegments;
+    private int SidesPerSegment;
+
     public DbgPrimSolidSphere(Transform location, float radius, Color color, int numVerticalSegments = 11, int numSidesPerSegment = 12)
     {
+        Transform = location;
+        Radius = radius;
+        Color = color;
+        VerticalSegments = numVerticalSegments;
+        SidesPerSegment = numSidesPerSegment;
+
         if (GeometryData != null)
         {
             SetBuffers(GeometryData.GeomBuffer);

@@ -21,11 +21,11 @@ public partial class ParamTools
             {
                 if (ImGui.BeginMenu($"By Index"))
                 {
-                    if (ImGui.MenuItem($"Current Param"))
+                    if (ImGui.MenuItem($"Selected Param"))
                     {
                         Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.Index, ImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
                     }
-                    if (ImGui.MenuItem($"Every Param"))
+                    if (ImGui.MenuItem($"All"))
                     {
                         Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
                     }
@@ -36,11 +36,11 @@ public partial class ParamTools
 
                 if (ImGui.BeginMenu($"By ID"))
                 {
-                    if (ImGui.MenuItem($"Current Param"))
+                    if (ImGui.MenuItem($"Selected Param"))
                     {
                         Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.Community, Editor._activeView.Selection.GetActiveParam());
                     }
-                    if (ImGui.MenuItem($"Every Param"))
+                    if (ImGui.MenuItem($"All"))
                     {
                         Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
                     }
@@ -59,11 +59,11 @@ public partial class ParamTools
                 {
                     if (ImGui.BeginMenu($"By Index"))
                     {
-                        if (ImGui.MenuItem($"Current Param"))
+                        if (ImGui.MenuItem($"Selected Param"))
                         {
                             Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.Index, ImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
                         }
-                        if (ImGui.MenuItem($"Every Param"))
+                        if (ImGui.MenuItem($"All"))
                         {
                             Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Developer);
                         }
@@ -74,11 +74,11 @@ public partial class ParamTools
 
                     if (ImGui.BeginMenu($"By ID"))
                     {
-                        if (ImGui.MenuItem($"Current Param"))
+                        if (ImGui.MenuItem($"Selected Param"))
                         {
                             Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.Developer, Editor._activeView.Selection.GetActiveParam());
                         }
-                        if (ImGui.MenuItem($"Every Param"))
+                        if (ImGui.MenuItem($"All"))
                         {
                             Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Developer);
                         }
@@ -95,7 +95,7 @@ public partial class ParamTools
             {
                 if (ImGui.BeginMenu($"By Index"))
                 {
-                    if (ImGui.MenuItem($"Current Param"))
+                    if (ImGui.MenuItem($"Selected Param"))
                     {
                         var filePath = "";
                         var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
@@ -106,7 +106,7 @@ public partial class ParamTools
                         }
                     }
 
-                    if (ImGui.MenuItem($"Every Param"))
+                    if (ImGui.MenuItem($"All"))
                     {
                         var filePath = "";
                         var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
@@ -123,7 +123,7 @@ public partial class ParamTools
 
                 if (ImGui.MenuItem($"By ID"))
                 {
-                    if (ImGui.MenuItem($"Current Param"))
+                    if (ImGui.MenuItem($"Selected Param"))
                     {
                         var filePath = "";
                         var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
@@ -134,7 +134,7 @@ public partial class ParamTools
                         }
                     }
 
-                    if (ImGui.MenuItem($"Every Param"))
+                    if (ImGui.MenuItem($"All"))
                     {
                         var filePath = "";
                         var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);

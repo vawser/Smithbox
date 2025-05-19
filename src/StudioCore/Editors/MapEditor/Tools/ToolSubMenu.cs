@@ -58,11 +58,6 @@ public class ToolSubMenu
         Editor.SelectionGroupView.SelectionGroupShortcuts();
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
     public void DisplayMenu()
     {
         if (ImGui.BeginMenu("Tools"))
