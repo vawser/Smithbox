@@ -398,7 +398,8 @@ public class Viewport : IViewport
         Vector3 camdir = Vector3.Transform(Vector3.UnitZ, ViewportCamera.CameraTransform.RotationMatrix);
         Vector3 pos = box.GetCenter();
         float radius = Vector3.Distance(box.Max, box.Min);
-        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + 5);
+        ViewportCamera.CameraTransform.Position = pos - camdir * (radius + 5); 
+        // 5 here is a offset so entities with 0 radius have a decent framing
     }
 
     /// <summary>

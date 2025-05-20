@@ -1,15 +1,23 @@
-﻿using Hexa.NET.ImGui;
+﻿using CsvHelper.Configuration.Attributes;
+using Hexa.NET.ImGui;
 using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor.Actions.Viewport;
+using StudioCore.Editors.MapEditor.Defaults;
+using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static HKLib.hk2018.hkSerialize.CompatTypeParentInfo;
 
 namespace StudioCore.Editors.MapEditor.Tools;
 
@@ -19,7 +27,7 @@ public class SimpleTreasureMaker
     public ProjectEntry Project;
 
     public string SelectedMap = "";
-    public (string, MapContainer) TargetMap = ("None", null);
+    public (string, ObjectContainer) TargetMap = ("None", null);
 
     public SimpleTreasureMaker(MapEditorScreen editor, ProjectEntry project)
     {
@@ -27,18 +35,21 @@ public class SimpleTreasureMaker
         Project = project;
     }
 
-    // Support ER only for now
+    // Disable for now
     public bool IsSupported()
     {
         bool isSupported = false;
 
         if(Project.ProjectType is ProjectType.ER)
         {
-            isSupported = true;
+            //isSupported = true;
         }
 
         return isSupported;
     }
+
+    private TreasureCreationType CreationType;
+    private string CurCreationType = "Corpse";
 
     public void Display()
     {
@@ -47,6 +58,11 @@ public class SimpleTreasureMaker
         UIHelper.WrappedText("");
 
         UIHelper.WrappedText("Target Map:");
+        if(Editor.Universe.LoadedObjectContainers.Count == 0)
+        {
+            UIHelper.WrappedText("No maps loaded yet.");
+        }
+
         foreach (var obj in Editor.Universe.LoadedObjectContainers)
         {
             var mapID = obj.Key;
@@ -57,7 +73,7 @@ public class SimpleTreasureMaker
                 if (ImGui.Selectable(mapID, SelectedMap == mapID))
                 {
                     SelectedMap = mapID;
-                    TargetMap = (mapID, (MapContainer)map);
+                    TargetMap = (mapID, map);
                 }
 
                 var mapName = AliasUtils.GetMapNameAlias(Editor.Project, mapID);
@@ -66,6 +82,67 @@ public class SimpleTreasureMaker
         }
         UIHelper.WrappedText("");
 
+        UIHelper.WrappedText("Creation Type:");
+        ImGui.SetNextItemWidth(400f);
+        if (ImGui.BeginCombo("##TreasureCreationType", CurCreationType))
+        {
+            // Treasure Type
+            foreach (var entry in Enum.GetValues<TreasureCreationType>())
+            {
+                if (ImGui.Selectable($"{entry.GetDisplayName()}", CreationType == entry))
+                {
+                    CurCreationType = $"{entry}";
+                    CreationType = entry;
+                }
+            }
+
+            ImGui.EndCombo();
+        }
+
+        UIHelper.WrappedText("");
+
+        // Corpse
+        if (CreationType is TreasureCreationType.Corpse)
+        {
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.Button("Create##createCorpseEntry"))
+            {
+                var objContainer = TargetMap.Item2;
+
+                if (objContainer != null)
+                {
+                    var mapContainer = (MapContainer)objContainer;
+
+                    var newTreasure = MapObjectDefaults.CreateBlankTreasure_ER();
+                    var newAsset = MapObjectDefaults.CreateBlankAsset_ER();
+
+                    var newTreasureEntity = new MsbEntity(Editor, objContainer, newTreasure);
+                    var newAssetEntity = new MsbEntity(Editor, objContainer, newAsset);
+
+                    var newEntities = new List<MsbEntity> 
+                    {
+                        newTreasureEntity,
+                        newAssetEntity
+                    };
+
+                    Entity parent = objContainer.RootObject;
+
+                    AddMapObjectsAction act = new(Editor, mapContainer, newEntities, true, parent);
+
+                    Editor.EditorActionManager.ExecuteAction(act);
+                }
+            }
+        }
+
+        // Chest
+        if (CreationType is TreasureCreationType.Chest)
+        {
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.Button("Create##createChestEntry"))
+            {
+
+            }
+        }
     }
 
     public void GenerateCorpseTreasure(MapContainer map)
@@ -96,4 +173,12 @@ public class SimpleTreasureMaker
     {
 
     }
+}
+
+public enum TreasureCreationType
+{
+    [Display(Name = "Corpse")]
+    Corpse,
+    [Display(Name = "Chest")]
+    Chest
 }

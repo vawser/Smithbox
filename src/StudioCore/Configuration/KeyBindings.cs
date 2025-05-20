@@ -717,27 +717,12 @@ public class KeyBindings
 
         // World Map
         public KeyBind MAP_ToggleWorldMap = new(
-            "Toggle Lands Between Map", 
-            "Toggles the visibility of the Lands Between map.",
+            "Toggle World Map", 
+            "Toggles the visibility of the world map.",
             Key.M, 
             true, 
             false, 
             false);
-
-        // Lightmap Atlas
-        public KeyBind MAP_LightmapAtlas_Multiselect = new(
-            "Multi-Select Row",
-            "When held, multiple rows may be selected.",
-            Key.Z);
-
-        public KeyBind MAP_LightmapAtlas_MultiselectRange = new(
-            "Multi-Select Row Range",
-            "When held, the next row selected will be considered the 'start', and the next row after that the 'end'. All rows between them will be selected.",
-            Key.LShift,
-            false,
-            false,
-            false,
-            true);
 
         //-----------------------------
         // Model Editor
