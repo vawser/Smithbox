@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Enums;
 using System;
@@ -12,15 +13,13 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActEventGraphView
 {
-    private TimeActEditorScreen Editor;
-    private ActionManager EditorActionManager;
-    private TimeActSelectionManager Selection;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActEventGraphView(TimeActEditorScreen screen)
+    public TimeActEventGraphView(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        EditorActionManager = screen.EditorActionManager;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     private Dictionary<TAE.EventGroup, List<TAE.Event>> eventDict = null;
@@ -33,14 +32,14 @@ public class TimeActEventGraphView
     public void Display()
     {
         ImGui.Begin("Event Graph##TimeActAnimEventGraph");
-        Selection.SwitchWindowContext(TimeActEditorContext.EventGraph);
+        Editor.Selection.SwitchWindowContext(TimeActEditorContext.EventGraph);
 
-        if (!Selection.HasSelectedTimeActAnimation())
+        if (!Editor.Selection.HasSelectedTimeActAnimation())
         {
             ImGui.End();
             return;
         }
-        var events = Selection.CurrentTimeActAnimation.Events;
+        var events = Editor.Selection.CurrentTimeActAnimation.Events;
         var height = ImGui.GetWindowHeight();
         var width = ImGui.GetWindowWidth();
 

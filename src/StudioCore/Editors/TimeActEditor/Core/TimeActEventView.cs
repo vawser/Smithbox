@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
@@ -14,53 +15,49 @@ namespace StudioCore.Editors.TimeActEditor.Core;
 
 public class TimeActEventView
 {
-    private TimeActEditorScreen Editor;
-    private ActionManager EditorActionManager;
-    private TimeActSelectionManager Selection;
-    private TimeActDecorator Decorator;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActEventView(TimeActEditorScreen screen)
+    public TimeActEventView(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        EditorActionManager = screen.EditorActionManager;
-        Selection = screen.Selection;
-        Decorator = screen.Decorator;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
     {
         ImGui.Begin("Events##TimeActAnimEventList");
-        Selection.SwitchWindowContext(TimeActEditorContext.Event);
+        Editor.Selection.SwitchWindowContext(TimeActEditorContext.Event);
 
-        if (!Selection.HasSelectedTimeActAnimation())
+        if (!Editor.Selection.HasSelectedTimeActAnimation())
         {
             ImGui.End();
             return;
         }
 
-        ImGui.InputText($"Search##timeActEventFilter", ref TimeActFilters._timeActEventFilterString, 255);
+        ImGui.InputText($"Search##timeActEventFilter", ref Editor.Filters._timeActEventFilterString, 255);
         UIHelper.Tooltip("Separate terms are split via the + character.");
 
         ImGui.BeginChild("EventList");
-        Selection.SwitchWindowContext(TimeActEditorContext.Event);
+        Editor.Selection.SwitchWindowContext(TimeActEditorContext.Event);
 
-        for (int i = 0; i < Selection.CurrentTimeActAnimation.Events.Count; i++)
+        for (int i = 0; i < Editor.Selection.CurrentTimeActAnimation.Events.Count; i++)
         {
-            TAE.Event evt = Selection.CurrentTimeActAnimation.Events[i];
+            TAE.Event evt = Editor.Selection.CurrentTimeActAnimation.Events[i];
 
-            if (TimeActFilters.TimeActEventFilter(Selection.ContainerInfo, evt))
+            if (Editor.Filters.TimeActEventFilter(evt))
             {
                 var isSelected = false;
-                if (i == Selection.CurrentTimeActEventIndex ||
-                    Selection.IsEventSelected(i))
+                if (i == Editor.Selection.CurrentTimeActEventIndex ||
+                    Editor.Selection.IsEventSelected(i))
                 {
                     isSelected = true;
                 }
 
-                if (Selection.SelectFirstEvent)
+                if (Editor.Selection.SelectFirstEvent)
                 {
-                    Selection.SelectFirstEvent = false;
-                    Selection.TimeActEventChange(evt, i);
+                    Editor.Selection.SelectFirstEvent = false;
+                    Editor.Selection.TimeActEventChange(evt, i);
                 }
 
                 var displayName = $"{evt.TypeName}";
@@ -70,47 +67,47 @@ public class TimeActEventView
                 }
                 if (CFG.Current.TimeActEditor_DisplayEventBank)
                 {
-                    displayName = $"<{Selection.CurrentTimeAct.EventBank}> {displayName}";
+                    displayName = $"<{Editor.Selection.CurrentTimeAct.EventBank}> {displayName}";
                 }
                 displayName = $" {displayName}";
 
                 // Event row
                 if (ImGui.Selectable($@"{displayName}##taeEvent{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
                 {
-                    Selection.TimeActEventChange(evt, i);
+                    Editor.Selection.TimeActEventChange(evt, i);
                 }
 
                 // Arrow Selection
-                if (ImGui.IsItemHovered() && Selection.SelectEvent)
+                if (ImGui.IsItemHovered() && Editor.Selection.SelectEvent)
                 {
-                    Selection.SelectEvent = false;
-                    Selection.TimeActEventChange(evt, i);
+                    Editor.Selection.SelectEvent = false;
+                    Editor.Selection.TimeActEventChange(evt, i);
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
-                    Selection.SelectEvent = true;
+                    Editor.Selection.SelectEvent = true;
                 }
 
                 if (ImGui.IsItemVisible())
                 {
                     if (CFG.Current.TimeActEditor_DisplayEventRow_EnumInfo)
-                        Decorator.DisplayEnumInfo(evt);
+                        Editor.Decorator.DisplayEnumInfo(evt);
 
                     if (CFG.Current.TimeActEditor_DisplayEventRow_ParamRefInfo)
-                        Decorator.DisplayParamRefInfo(evt);
+                        Editor.Decorator.DisplayParamRefInfo(evt);
 
                     if (CFG.Current.TimeActEditor_DisplayEventRow_DataAliasInfo)
-                        Decorator.DisplayAliasEnumInfo(evt);
+                        Editor.Decorator.DisplayAliasEnumInfo(evt);
 
                     if (CFG.Current.TimeActEditor_DisplayEventRow_ProjectEnumInfo)
-                        Decorator.DisplayProjectEnumInfo(evt);
+                        Editor.Decorator.DisplayProjectEnumInfo(evt);
                 }
 
-                Selection.ContextMenu.TimeActEventMenu(isSelected, i.ToString());
+                Editor.ContextMenu.TimeActEventMenu(isSelected, i.ToString());
 
-                if (Selection.FocusEvent)
+                if (Editor.Selection.FocusEvent)
                 {
-                    Selection.FocusEvent = false;
+                    Editor.Selection.FocusEvent = false;
 
                     ImGui.SetScrollHereY();
                 }

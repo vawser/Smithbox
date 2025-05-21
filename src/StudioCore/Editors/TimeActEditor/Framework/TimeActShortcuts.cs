@@ -1,26 +1,18 @@
 ﻿using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.TimeActEditor.Actions;
-using StudioCore.Editors.TimeActEditor.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActShortcuts
 {
-    private ActionManager ActionManager;
-    private TimeActEditorScreen Editor;
-    private TimeActActionHandler ActionHandler;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActShortcuts(TimeActEditorScreen screen)
+    public TimeActShortcuts(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        ActionManager = screen.EditorActionManager;
-        ActionHandler = screen.ActionHandler;
+        Editor = editor;
+        Project = project;
     }
 
     public void Monitor()
@@ -35,24 +27,24 @@ public class TimeActShortcuts
             Editor.SaveAll();
         }
 
-        if (ActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
-            ActionManager.UndoAction();
+            Editor.EditorActionManager.UndoAction();
         }
 
-        if (ActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        if (Editor.EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
         {
-            ActionManager.UndoAction();
+            Editor.EditorActionManager.UndoAction();
         }
 
-        if (ActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
         {
-            ActionManager.RedoAction();
+            Editor.EditorActionManager.RedoAction();
         }
 
-        if (ActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        if (Editor.EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
         {
-            ActionManager.RedoAction();
+            Editor.EditorActionManager.RedoAction();
         }
 
         /*
@@ -90,12 +82,12 @@ public class TimeActShortcuts
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DeleteSelectedEntry))
         {
-            ActionHandler.DetermineDeleteTarget();
+            Editor.ActionHandler.DetermineDeleteTarget();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_DuplicateSelectedEntry))
         {
-            ActionHandler.DetermineDuplicateTarget();
+            Editor.ActionHandler.DetermineDuplicateTarget();
         }
     }
 }

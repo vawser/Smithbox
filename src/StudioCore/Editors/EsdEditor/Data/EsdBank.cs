@@ -371,7 +371,7 @@ public class EsdBank
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
                         return false;
                     }
                 }
@@ -388,13 +388,13 @@ public class EsdBank
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
                             return false;
                         }
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Event Script Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        TaskLogs.AddLog($"[{Project.ProjectName}:EzState Script Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
                         return false;
                     }
                 }

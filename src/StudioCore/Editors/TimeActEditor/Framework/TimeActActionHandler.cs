@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
@@ -17,16 +18,16 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public class TimeActActionHandler
 {
-    private ActionManager EditorActionManager;
-    private TimeActEditorScreen Editor;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
     public bool ShowCreateEventModal = false;
     private TAE.Template.EventTemplate CurrentEvent;
 
-    public TimeActActionHandler(TimeActEditorScreen screen)
+    public TimeActActionHandler(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        EditorActionManager = screen.EditorActionManager;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -163,7 +164,7 @@ public class TimeActActionHandler
                     TAE.Animation animation = Editor.Selection.CurrentTimeActAnimation;
                     int insertIdx = animation.Events.IndexOf(curEvent) + 1;
 
-                    EditorActionManager.ExecuteAction(new TaeEventCreate(newEvent, animation.Events, insertIdx));
+                    Editor.EditorActionManager.ExecuteAction(new TaeEventCreate(newEvent, animation.Events, insertIdx));
 
                     ShowCreateEventModal = false;
                 }
@@ -189,41 +190,34 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeAct == null)
             return;
 
-        if (Editor.Selection.CurrentTimeActKey == -1)
+        if (Editor.Selection.CurrentTimeActKey == "")
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
+        var curBinder = Editor.Selection.SelectedBinder;
 
-        InternalTimeActWrapper curInternalFile = Editor.Selection.ContainerInfo.InternalFiles[Editor.Selection.CurrentTimeActKey];
-        InternalTimeActWrapper newInternalFile = new InternalTimeActWrapper(curInternalFile.Filepath, curInternalFile.TAE.Clone());
+        var curTimeActKey = Editor.Selection.CurrentTimeActKey;
+        var curTimeAct = Editor.Selection.CurrentTimeAct;
 
-        int id = int.Parse(newInternalFile.Name.Substring(1));
+        int id = int.Parse(curTimeActKey.Substring(1));
         int newId = id;
         string newName = "";
-        (newId, newName) = GetNewFileName(id);
+        (newId, newName) = GetNewFileName(curBinder, id);
 
-        string newFilePath = newInternalFile.Filepath.Replace(newInternalFile.Name, newName);
-        int newTaeID = GetNewTAEID(newInternalFile.TAE.ID);
+        int newTaeID = GetNewTAEID(curBinder, curTimeAct.ID);
 
-        newInternalFile.Name = newName;
-        newInternalFile.Filepath = newFilePath;
-        newInternalFile.TAE.ID = newTaeID;
-        newInternalFile.MarkForAddition = true;
+        var newTimeAct = curTimeAct.Clone();
+        newTimeAct.ID = newTaeID;
 
-        // Inserts the new internal file at the right position in the list
-        for (int i = 0; i < Editor.Selection.ContainerInfo.InternalFiles.Count; i++)
+        if (Editor.Selection.SelectedBinder.Files.Count > 0)
         {
-            InternalTimeActWrapper curFile = Editor.Selection.ContainerInfo.InternalFiles[i];
-            int curId = int.Parse(curFile.Name.Substring(1));
+            var entry = Editor.Selection.SelectedBinder.Files.Last();
 
-            if (curId == newId)
-            {
-                EditorActionManager.ExecuteAction(new TimeActDuplicate(newInternalFile, Editor.Selection.ContainerInfo.InternalFiles, i + 1));
-                break;
-            }
+            var newBinderFile = entry.Key.Clone();
+            newBinderFile.ID = newBinderFile.ID + 1;
+            newBinderFile.Name = newName;
+
+            Editor.Selection.SelectedBinder.Files.Add(newBinderFile, newTimeAct);
         }
-
-        Editor.Selection.ContainerInfo.InternalFiles.Sort();
 
         Editor.Selection.ResetOnTimeActChange();
     }
@@ -239,14 +233,20 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeAct == null)
             return;
 
-        if (Editor.Selection.CurrentTimeActKey == -1)
+        if (Editor.Selection.CurrentTimeActKey == "")
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
+        var curBinder = Editor.Selection.SelectedBinder;
 
-        InternalTimeActWrapper curInternalFile = Editor.Selection.ContainerInfo.InternalFiles[Editor.Selection.CurrentTimeActKey];
+        var curTimeActKey = Editor.Selection.CurrentTimeActKey;
+        var curTimeAct = Editor.Selection.CurrentTimeAct;
 
-        EditorActionManager.ExecuteAction(new TimeActDelete(curInternalFile));
+        var curBinderFile = curBinder.Files.FirstOrDefault(e => e.Key.Name == curTimeActKey);
+
+        if (curBinderFile.Key != null)
+        {
+            Editor.Selection.SelectedBinder.Files.Remove(curBinderFile.Key);
+        }
 
         Editor.Selection.ResetOnTimeActChange();
     }
@@ -265,8 +265,6 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
-
         TAE timeact = Editor.Selection.CurrentTimeAct;
         SortedDictionary<int, TAE.Animation> storedAnims = Editor.Selection.StoredAnimations;
         int lastAnimIdx = -1;
@@ -277,7 +275,7 @@ public class TimeActActionHandler
             int insertIdx = timeact.Animations.IndexOf(curAnim);
             TAE.Animation dupeAnim = TimeActUtils.CloneAnimation(curAnim);
 
-            EditorActionManager.ExecuteAction(new TaeAnimDuplicate(dupeAnim, timeact.Animations, insertIdx));
+            Editor.EditorActionManager.ExecuteAction(new TaeAnimDuplicate(dupeAnim, timeact.Animations, insertIdx));
 
             timeact.Animations.Sort();
         }
@@ -305,7 +303,7 @@ public class TimeActActionHandler
                 }
             }
 
-            EditorActionManager.ExecuteAction(new TaeAnimMultiDuplicate(newAnims, timeact.Animations, insertIndices));
+            Editor.EditorActionManager.ExecuteAction(new TaeAnimMultiDuplicate(newAnims, timeact.Animations, insertIndices));
 
             // Select last newly duplicated event
             if (lastAnimIdx != -1)
@@ -331,8 +329,6 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
-
         SortedDictionary<int, TAE.Animation> storedAnims = Editor.Selection.StoredAnimations;
         TAE timeact = Editor.Selection.CurrentTimeAct;
 
@@ -343,7 +339,7 @@ public class TimeActActionHandler
             int removeIdx = timeact.Animations.IndexOf(curAnim);
             TAE.Animation storedAnim = TimeActUtils.CloneAnimation(curAnim);
 
-            EditorActionManager.ExecuteAction(new TaeAnimDelete(storedAnim, timeact.Animations, removeIdx));
+            Editor.EditorActionManager.ExecuteAction(new TaeAnimDelete(storedAnim, timeact.Animations, removeIdx));
         }
         // Multi-Select
         else
@@ -364,7 +360,7 @@ public class TimeActActionHandler
                 }
             }
 
-            EditorActionManager.ExecuteAction(new TaeAnimMultiDelete(removedAnims, timeact.Animations, removeIndices));
+            Editor.EditorActionManager.ExecuteAction(new TaeAnimMultiDelete(removedAnims, timeact.Animations, removeIndices));
         }
 
         Editor.Selection.Reset(false, true, true);
@@ -383,8 +379,6 @@ public class TimeActActionHandler
 
         if (Editor.Selection.CurrentTimeActEventIndex == -1)
             return;
-
-        Editor.Selection.ContainerInfo.IsModified = true;
 
         ShowCreateEventModal = true;
 
@@ -405,8 +399,6 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
-
         SortedDictionary<int, TAE.Event> storedEvents = Editor.Selection.StoredEvents;
         TAE.Animation animations = Editor.Selection.CurrentTimeActAnimation;
 
@@ -419,7 +411,7 @@ public class TimeActActionHandler
             int insertIdx = animations.Events.IndexOf(curEvent);
             TAE.Event dupeEvent = curEvent.GetClone(false);
 
-            EditorActionManager.ExecuteAction(new TaeEventDuplicate(dupeEvent, animations.Events, insertIdx));
+            Editor.EditorActionManager.ExecuteAction(new TaeEventDuplicate(dupeEvent, animations.Events, insertIdx));
         }
         // Multi-Select
         else
@@ -441,7 +433,7 @@ public class TimeActActionHandler
                 }
             }
 
-            EditorActionManager.ExecuteAction(new TaeEventMultiDuplicate(newEvents, animations.Events, insertIndices));
+            Editor.EditorActionManager.ExecuteAction(new TaeEventMultiDuplicate(newEvents, animations.Events, insertIndices));
 
             // Select last newly duplicated event
             if (lastEventIdx != -1)
@@ -465,8 +457,6 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
-
         SortedDictionary<int, TAE.Event> storedEvents = Editor.Selection.StoredEvents;
         TAE.Animation animations = Editor.Selection.CurrentTimeActAnimation;
 
@@ -478,7 +468,7 @@ public class TimeActActionHandler
             int removeIdx = animations.Events.IndexOf(curEvent);
             TAE.Event storedEvent = curEvent.GetClone(false);
 
-            EditorActionManager.ExecuteAction(new TaeEventDelete(storedEvent, animations.Events, removeIdx));
+            Editor.EditorActionManager.ExecuteAction(new TaeEventDelete(storedEvent, animations.Events, removeIdx));
         }
         // Multi-Select
         else
@@ -499,7 +489,7 @@ public class TimeActActionHandler
                 }
             }
 
-            EditorActionManager.ExecuteAction(new TaeEventMultiDelete(removedEvents, animations.Events, removeIndices));
+            Editor.EditorActionManager.ExecuteAction(new TaeEventMultiDelete(removedEvents, animations.Events, removeIndices));
         }
 
         Editor.Selection.Reset(false, false, true);
@@ -516,7 +506,6 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActAnimationIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
@@ -530,21 +519,20 @@ public class TimeActActionHandler
         if (Editor.Selection.CurrentTimeActEventIndex == -1)
             return;
 
-        Editor.Selection.ContainerInfo.IsModified = true;
     }
 
     /// <summary>
     /// Return new Time Act filename based on current Time Acts.
     /// </summary>
-    public (int, string) GetNewFileName(int id)
+    public (int, string) GetNewFileName(BinderContents binder, int id)
     {
         var trackedId = id;
         string newName = $"a{PadFileName(trackedId)}";
 
         // If there are matches, keep incrementing
-        foreach (var file in Editor.Selection.ContainerInfo.InternalFiles)
+        foreach (var file in binder.Files)
         {
-            if (file.Name == newName)
+            if (file.Key.Name == newName)
             {
                 trackedId = trackedId + 1;
                 newName = $"a{PadFileName(trackedId)}";
@@ -572,14 +560,14 @@ public class TimeActActionHandler
     /// <summary>
     /// Return new TAE ID based on the IDs within the current container.
     /// </summary>
-    public int GetNewTAEID(int id)
+    public int GetNewTAEID(BinderContents binder, int id)
     {
         int newID = id + 1;
 
         // If there are matches, keep incrementing
-        foreach (InternalTimeActWrapper file in Editor.Selection.ContainerInfo.InternalFiles)
+        foreach (var file in binder.Files)
         {
-            if (file.TAE.ID == newID)
+            if (file.Value.ID == newID)
             {
                 newID = newID + 1;
             }

@@ -1,24 +1,29 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Formats.JSON;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public class TimeActSelectionManager
+public class TimeActSelection
 {
-    private TimeActEditorScreen Editor;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActContainerWrapper ContainerInfo;
-    public TimeActBinderWrapper ContainerBinder;
-    public string ContainerKey;
-    public int ContainerIndex = -1;
+    public FileDictionaryEntry SelectedFileEntry;
+    public BinderContents SelectedBinder;
+    public string SelectedFileKey;
 
+    public string CurrentTimeActKey;
     public TAE CurrentTimeAct;
-    public int CurrentTimeActKey;
+    public int CurrentTimeActIndex = -1;
 
     public TAE.Animation CurrentTimeActAnimation;
     public TransientAnimHeader CurrentTemporaryAnimHeader;
@@ -30,10 +35,7 @@ public class TimeActSelectionManager
     public string CurrentTimeActEventProperty;
     public int CurrentTimeActEventPropertyIndex = -1;
 
-    public TimeActContextMenu ContextMenu;
-
     public TimeActTemplateType CurrentTimeActType = TimeActTemplateType.Character;
-    public FileContainerType CurrentFileContainerType = FileContainerType.None;
 
     public TimeActEditorContext CurrentWindowContext = TimeActEditorContext.None;
 
@@ -46,33 +48,26 @@ public class TimeActSelectionManager
     public SortedDictionary<int, TAE.Animation> StoredAnimations = new();
     public SortedDictionary<int, TAE.Event> StoredEvents = new();
 
-    public bool SelectChrContainer = false;
+    public bool SelectFile = false;
     public bool SelectObjContainer = false;
     public bool SelectTimeAct = false;
     public bool SelectAnimation = false;
     public bool SelectEvent = false;
     public bool SelectFirstEvent = false;
 
-    public TimeActSelectionManager(TimeActEditorScreen screen)
+    public TimeActSelection(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-
-        ContextMenu = new(screen, this);
-    }
-
-    public void OnProjectChanged()
-    {
-        ResetSelection();
+        Editor = editor;
+        Project = project;
     }
 
     public void ResetSelection()
     {
-        ContainerIndex = -1;
-        ContainerKey = null;
-        ContainerInfo = null;
-        ContainerBinder = null;
+        SelectedFileEntry = null;
+        SelectedFileKey = "";
+        SelectedBinder = null;
 
-        CurrentTimeActKey = -1;
+        CurrentTimeActKey = "";
         CurrentTimeAct = null;
 
         CurrentTimeActAnimation = null;
@@ -106,16 +101,13 @@ public class TimeActSelectionManager
         }
     }
 
-    public void FileContainerChange(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, int index, FileContainerType containerType)
+    public void FileContainerChange(FileDictionaryEntry entry, BinderContents binder)
     {
-        CurrentFileContainerType = containerType;
+        SelectedFileEntry = entry;
+        SelectedFileKey = entry.Filename;
+        SelectedBinder = binder;
 
-        ContainerIndex = index;
-        ContainerKey = info.Name;
-        ContainerInfo = info;
-        ContainerBinder = binderInfo;
-
-        CurrentTimeActKey = -1;
+        CurrentTimeActKey = "";
         CurrentTimeAct = null;
 
         CurrentTimeActAnimation = null;
@@ -130,17 +122,17 @@ public class TimeActSelectionManager
 
         Reset(true, true, true);
 
-        // Auto-Select first TimeAct if not empty
-        if(ContainerInfo.InternalFiles.Count > 0)
+        if(SelectedBinder.Files.Count > 0)
         {
-            var timeAct = ContainerInfo.InternalFiles[0].TAE;
-            TimeActChange(timeAct, 0);
+            var firstEntry = SelectedBinder.Files.First();
+
+            TimeActChange(firstEntry.Key.Name, firstEntry.Value, 0);
         }
     }
 
     public void ResetOnTimeActChange()
     {
-        CurrentTimeActKey = -1;
+        CurrentTimeActKey = "";
         CurrentTimeAct = null;
 
         CurrentTimeActAnimation = null;
@@ -156,12 +148,11 @@ public class TimeActSelectionManager
         Reset(true, true, true);
     }
 
-    public void TimeActChange(TAE entry, int index)
+    public void TimeActChange(string filename, TAE entry, int index)
     {
-        TimeActSelection(CurrentTimeActKey, index);
-
-        CurrentTimeActKey = index;
+        CurrentTimeActKey = filename;
         CurrentTimeAct = entry;
+        CurrentTimeActIndex = index;
 
         CurrentTimeActAnimation = null;
         CurrentTemporaryAnimHeader = null;
@@ -215,7 +206,7 @@ public class TimeActSelectionManager
         CurrentTimeActEventPropertyIndex = -1;
 
         // If a filter is active, auto-select first result (if any), since this is more user-friendly
-        if(TimeActFilters._timeActEventFilterString != "")
+        if(Editor.Filters._timeActEventFilterString != "")
         {
             SelectFirstEvent = true;
         }
@@ -258,9 +249,9 @@ public class TimeActSelectionManager
         CurrentTimeActEventPropertyIndex = index;
     }
 
-    public bool HasSelectedFileContainer()
+    public bool HasSelectedBinder()
     {
-        return ContainerInfo != null;
+        return SelectedBinder != null;
     }
 
     public bool HasSelectedTimeAct()
@@ -298,49 +289,6 @@ public class TimeActSelectionManager
             return true;
 
         return false;
-    }
-
-    public void TimeActSelection(int currentSelectionIndex, int currentIndex)
-    {
-        var timeAct = Editor.Selection.ContainerInfo.InternalFiles[currentIndex].TAE;
-
-        // Multi-Select: Range Select
-        if (InputTracker.GetKey(Veldrid.Key.LShift))
-        {
-            var start = currentSelectionIndex;
-            var end = currentIndex;
-
-            if (end < start)
-            {
-                start = currentIndex;
-                end = currentSelectionIndex;
-            }
-
-            for (int k = start; k <= end; k++)
-            {
-                if (!StoredTimeActs.ContainsKey(k))
-                    StoredTimeActs.Add(k, timeAct);
-            }
-        }
-        // Multi-Select Mode
-        else if (InputTracker.GetKey(KeyBindings.Current.TIMEACT_Multiselect))
-        {
-            if (StoredTimeActs.ContainsKey(currentIndex) && StoredTimeActs.Count > 1)
-            {
-                StoredTimeActs.Remove(currentIndex);
-            }
-            else
-            {
-                if (!StoredTimeActs.ContainsKey(currentIndex))
-                    StoredTimeActs.Add(currentIndex, timeAct);
-            }
-        }
-        // Reset Multi-Selection if normal selection occurs
-        else
-        {
-            StoredTimeActs.Clear();
-            StoredTimeActs.Add(currentIndex, timeAct);
-        }
     }
 
     public void AnimationSelection(int currentSelectionIndex, int currentIndex)

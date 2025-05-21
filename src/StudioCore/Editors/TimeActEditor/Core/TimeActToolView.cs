@@ -11,17 +11,13 @@ namespace StudioCore.Editors.TimeActEditor.Tools;
 
 public class TimeActToolView
 {
-    private TimeActEditorScreen Editor;
-    private TimeActSelectionManager Selection;
-    private TimeActActionHandler ActionHandler;
-    private TimeActSearch TimeActSearch;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActToolView(TimeActEditorScreen screen)
+    public TimeActToolView(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        ActionHandler = screen.ActionHandler;
-        TimeActSearch = new TimeActSearch(screen);
+        Editor = editor;
+        Project = project;
     }
 
     public void OnGui()
@@ -31,13 +27,13 @@ public class TimeActToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor"))
         {
-            Selection.SwitchWindowContext(TimeActEditorContext.ToolWindow);
+            Editor.Selection.SwitchWindowContext(TimeActEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
 
             if(ImGui.CollapsingHeader("Time Act Search"))
             {
-                TimeActSearch.Display();
+                Editor.TimeActSearch.Display();
             }
         }
 

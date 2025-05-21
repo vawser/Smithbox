@@ -14,8 +14,9 @@ public class TimeActSearchResult
     public TAE.Animation ResultAnim;
     public TAE.Event ResultEvent;
 
-    public int ContainerIndex = -1;
-    public int TimeActIndex = -1;
+    public string FileKey = "";
+    public string TimeActKey = "";
+
     public int AnimationIndex = -1;
     public int EventIndex = -1;
     public string EventPropertyValue = "";

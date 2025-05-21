@@ -65,6 +65,11 @@ namespace SoulsFormats
             CompressionType = DCX.Type.Zlib;
         }
 
+        public BinderFile Clone()
+        {
+            return (BinderFile)this.MemberwiseClone();
+        }
+
         /// <summary>
         /// Returns the file flags, ID, name, and byte length as a string.
         /// </summary>

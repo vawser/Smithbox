@@ -1,4 +1,6 @@
-﻿using StudioCore.Editors.TimeActEditor.Bank;
+﻿using Octokit;
+using StudioCore.Core;
+using StudioCore.Editors.TimeActEditor.Bank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +14,13 @@ namespace StudioCore.Editors.TimeActEditor;
 /// </summary>
 public class TimeActCommandQueue
 {
-    private TimeActEditorScreen Editor;
-    private TimeActSelectionManager Selection;
-    private TimeActDecorator Decorator;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActCommandQueue(TimeActEditorScreen screen)
+    public TimeActCommandQueue(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        Decorator = screen.Decorator;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -32,69 +32,47 @@ public class TimeActCommandQueue
         {       
             if (initcmd[0] == "select")
             {
-                Selection.ResetSelection();
+                Editor.Selection.ResetSelection();
 
-                var containerType = initcmd[1];
-                var containerIndex = initcmd[2];
+                var binderType = initcmd[1];
+                var binderName = initcmd[2];
 
-                if (containerType == "chr")
+                if (binderType == "chr")
                 {
-                    for (int i = 0; i < Editor.Project.TimeActData.PrimaryCharacterBank.Entries.Count; i++)
+                    foreach (var entry in Project.TimeActData.PrimaryBank.Entries)
                     {
-                        var container = Editor.Project.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i);
-                        var index = int.Parse(containerIndex);
+                        var file = entry.Key;
+                        var binder = entry.Value;
 
-                        if (i == index)
+                        if (file.Filename == binderName)
                         {
-                            Selection.ContainerIndex = index;
-                            Selection.ContainerKey = container.Key.Name;
-                            Selection.ContainerInfo = container.Key;
-                            Selection.ContainerBinder = container.Value;
-                            Selection.FocusContainer = true;
-                        }
-                    }
-                }
-
-                if (containerType == "obj")
-                {
-                    for (int i = 0; i < Editor.Project.TimeActData.PrimaryObjectBank.Entries.Count; i++)
-                    {
-                        var container = Editor.Project.TimeActData.PrimaryObjectBank.Entries.ElementAt(i);
-                        var index = int.Parse(containerIndex);
-
-                        if (i == index)
-                        {
-                            Selection.ContainerIndex = index;
-                            Selection.ContainerKey = container.Key.Name;
-                            Selection.ContainerInfo = container.Key;
-                            Selection.ContainerBinder = container.Value;
-                            Selection.FocusContainer = true;
+                            Editor.Selection.SelectedFileKey = file.Filename;
+                            Editor.Selection.SelectedFileEntry = file;
+                            Editor.Selection.SelectedBinder = binder;
+                            Editor.Selection.FocusContainer = true;
                         }
                     }
                 }
 
                 if (initcmd.Length > 3)
                 {
-                    var timeActIndex = initcmd[3];
-                    var index = int.Parse(timeActIndex);
+                    var timeActName = initcmd[3];
+                    var index = int.Parse(timeActName);
 
-                    for (int i = 0; i < Selection.ContainerInfo.InternalFiles.Count; i++)
+                    for (int i = 0; i < Editor.Selection.SelectedBinder.Files.Count; i++)
                     {
-                        if (i == index)
+                        var curTimeAct = Editor.Selection.SelectedBinder.Files.ElementAt(i);
+
+                        if(curTimeAct.Key != null)
                         {
-                            Selection.CurrentTimeActKey = i;
-                            Selection.CurrentTimeAct = Selection.ContainerInfo.InternalFiles[i].TAE;
-
-                            if (!Selection.StoredTimeActs.ContainsKey(i))
+                            if(curTimeAct.Key.Name == timeActName)
                             {
-                                Selection.StoredTimeActs.Add(i, Selection.ContainerInfo.InternalFiles[i].TAE);
-                            }
-                            else
-                            {
-                                Selection.StoredTimeActs[i] = Selection.ContainerInfo.InternalFiles[i].TAE;
-                            }
+                                Editor.Selection.CurrentTimeActKey = curTimeAct.Key.Name;
+                                Editor.Selection.CurrentTimeActIndex = i;
+                                Editor.Selection.CurrentTimeAct = curTimeAct.Value;
 
-                            Selection.FocusTimeAct = true;
+                                Editor.Selection.FocusTimeAct = true;
+                            }
                         }
                     }
                 }
@@ -104,23 +82,23 @@ public class TimeActCommandQueue
                     var animationIndex = initcmd[4];
                     var index = int.Parse(animationIndex);
 
-                    for (int i = 0; i < Selection.CurrentTimeAct.Animations.Count; i++)
+                    for (int i = 0; i < Editor.Selection.CurrentTimeAct.Animations.Count; i++)
                     {
                         if (i == index)
                         {
-                            Selection.CurrentTimeActAnimationIndex = i;
-                            Selection.CurrentTimeActAnimation = Selection.CurrentTimeAct.Animations[i];
+                            Editor.Selection.CurrentTimeActAnimationIndex = i;
+                            Editor.Selection.CurrentTimeActAnimation = Editor.Selection.CurrentTimeAct.Animations[i];
 
-                            if (!Selection.StoredAnimations.ContainsKey(i))
+                            if (!Editor.Selection.StoredAnimations.ContainsKey(i))
                             {
-                                Selection.StoredAnimations.Add(i, Selection.CurrentTimeAct.Animations[i]);
+                                Editor.Selection.StoredAnimations.Add(i, Editor.Selection.CurrentTimeAct.Animations[i]);
                             }
                             else
                             {
-                                Selection.StoredAnimations[i] = Selection.CurrentTimeAct.Animations[i];
+                                Editor.Selection.StoredAnimations[i] = Editor.Selection.CurrentTimeAct.Animations[i];
                             }
 
-                            Selection.FocusAnimation = true;
+                            Editor.Selection.FocusAnimation = true;
                         }
                     }
                 }
@@ -130,23 +108,23 @@ public class TimeActCommandQueue
                     var eventIndex = initcmd[5];
                     var index = int.Parse(eventIndex);
 
-                    for (int i = 0; i < Selection.CurrentTimeActAnimation.Events.Count; i++)
+                    for (int i = 0; i < Editor.Selection.CurrentTimeActAnimation.Events.Count; i++)
                     {
                         if (i == index)
                         {
-                            Selection.CurrentTimeActEventIndex = i;
-                            Selection.CurrentTimeActEvent = Selection.CurrentTimeActAnimation.Events[i];
+                            Editor.Selection.CurrentTimeActEventIndex = i;
+                            Editor.Selection.CurrentTimeActEvent = Editor.Selection.CurrentTimeActAnimation.Events[i];
 
-                            if (!Selection.StoredEvents.ContainsKey(i))
+                            if (!Editor.Selection.StoredEvents.ContainsKey(i))
                             {
-                                Selection.StoredEvents.Add(i, Selection.CurrentTimeActAnimation.Events[i]);
+                                Editor.Selection.StoredEvents.Add(i, Editor.Selection.CurrentTimeActAnimation.Events[i]);
                             }
                             else
                             {
-                                Selection.StoredEvents[i] = Selection.CurrentTimeActAnimation.Events[i];
+                                Editor.Selection.StoredEvents[i] = Editor.Selection.CurrentTimeActAnimation.Events[i];
                             }
 
-                            Selection.FocusEvent = true;
+                            Editor.Selection.FocusEvent = true;
                         }
                     }
                 }

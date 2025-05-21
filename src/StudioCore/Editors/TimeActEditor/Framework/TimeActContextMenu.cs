@@ -1,28 +1,31 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
+using StudioCore.Formats.JSON;
 
 namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActContextMenu
 {
-    private TimeActEditorScreen Editor;
-    private TimeActSelectionManager Handler;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActContextMenu(TimeActEditorScreen screen, TimeActSelectionManager handler)
+    public TimeActContextMenu(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Handler = handler;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
     /// Context menu for the Files list
     /// </summary>
-    public void ContainerMenu(bool isSelected, string key)
+    public void ContainerMenu(bool isSelected, FileDictionaryEntry entry, BinderContents binder)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"ContainerContextMenu##ContainerContextMenu{key}"))
+        if (ImGui.BeginPopupContextItem($"ContainerContextMenu##ContainerContextMenu{entry.Filename}"))
         {
             ImGui.EndPopup();
         }
@@ -31,18 +34,18 @@ public class TimeActContextMenu
     /// <summary>
     /// Context menu for the Time Act list
     /// </summary>
-    public void TimeActMenu(bool isSelected, string key)
+    public void TimeActMenu(bool isSelected, TAE curTae)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActContextMenu##TimeActContextMenu{key}"))
+        if (ImGui.BeginPopupContextItem($"TimeActContextMenu##TimeActContextMenu{curTae.ID}"))
         {
-            if(ImGui.Selectable($"Duplicate##duplicateAction{key}"))
+            if(ImGui.Selectable($"Duplicate##duplicateAction{curTae.ID}"))
             {
                 Editor.ActionHandler.DetermineDuplicateTarget();
             }
-            if (ImGui.Selectable($"Delete##deleteAction{key}"))
+            if (ImGui.Selectable($"Delete##deleteAction{curTae.ID}"))
             {
                 Editor.ActionHandler.DetermineDeleteTarget();
             }
@@ -54,18 +57,18 @@ public class TimeActContextMenu
     /// <summary>
     /// Context menu for the Animations list
     /// </summary>
-    public void TimeActAnimationMenu(bool isSelected, string key)
+    public void TimeActAnimationMenu(bool isSelected, TAE.Animation curAnimation)
     {
         if (!isSelected)
             return;
 
-        if (ImGui.BeginPopupContextItem($"TimeActAnimationContextMenu##TimeActAnimationContextMenu{key}"))
+        if (ImGui.BeginPopupContextItem($"TimeActAnimationContextMenu##TimeActAnimationContextMenu{curAnimation.ID}"))
         {
-            if (ImGui.Selectable($"Duplicate##duplicateAction{key}"))
+            if (ImGui.Selectable($"Duplicate##duplicateAction{curAnimation.ID}"))
             {
                 Editor.ActionHandler.DetermineDuplicateTarget();
             }
-            if (ImGui.Selectable($"Delete##deleteAction{key}"))
+            if (ImGui.Selectable($"Delete##deleteAction{curAnimation.ID}"))
             {
                 Editor.ActionHandler.DetermineDeleteTarget();
             }

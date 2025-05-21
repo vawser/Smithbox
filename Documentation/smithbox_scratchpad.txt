@@ -1,14 +1,15 @@
 # TODO
+- Map Editor: implement VFS + data bank overhaul
+- Model Editor: implement VFS + data bank overhaul
+
 - Map Editor: implement orthographic view
 
 - Project: add Param Enum Editor back
 - Add Behavior Editor
 
-- Map Editor: implement VFS + data bank overhaul
-- Model Editor: implement VFS + data bank overhaul
 - Texture Viewer: implement VFS + data bank overhaul
 - Time Act Editor: implement VFS + data bank overhaul
 
 # FIX
-- Map Editor: Visibility icon is displayed with a bad visual offset (compared to old version)
+- Map Editor: visibility icon cannot be clicked
 

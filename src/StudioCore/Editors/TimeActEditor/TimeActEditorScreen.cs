@@ -4,8 +4,10 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Core;
 using StudioCore.Editors.TimeActEditor.Tools;
+using StudioCore.Editors.TimeActEditor.Utils;
 using StudioCore.Interface;
 using System.Numerics;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TimeActEditor;
 
@@ -19,18 +21,20 @@ public class TimeActEditorScreen : EditorScreen
 
     public ActionManager EditorActionManager = new();
 
-    public TimeActSelectionManager Selection;
+    public TimeActSelection Selection;
     public TimeActCommandQueue CommandQueue;
     public TimeActActionHandler ActionHandler;
     public TimeActPropertyEditor PropertyEditor;
     public TimeActDecorator Decorator;
     public TimeActShortcuts EditorShortcuts;
+    public TimeActContextMenu ContextMenu;
+    public TimeActFilters Filters;
 
     public TimeActToolView ToolView;
-    public TimeActToolMenubar ToolMenubar;
+    public TimeActSearch TimeActSearch;
 
-    public TimeActContainerFileView ContainerFileView;
-    public TimeActInternalFileView InternalFileView;
+    public TimeActBinderView ContainerFileView;
+    public TimeActView InternalFileView;
     public TimeActEventGraphView EventGraphView;
     public TimeActAnimationView AnimationView;
     public TimeActAnimationPropertyView AnimationPropertyView;
@@ -42,24 +46,27 @@ public class TimeActEditorScreen : EditorScreen
         BaseEditor = baseEditor;
         Project = project;
 
-        ActionHandler = new TimeActActionHandler(this);
+        ActionHandler = new TimeActActionHandler(this, Project);
 
-        Selection = new TimeActSelectionManager(this);
-        Decorator = new TimeActDecorator(this);
-        PropertyEditor = new TimeActPropertyEditor(this);
-        EditorShortcuts = new TimeActShortcuts(this);
-        CommandQueue = new TimeActCommandQueue(this);
+        Selection = new TimeActSelection(this, Project);
+        Decorator = new TimeActDecorator(this, Project);
+        PropertyEditor = new TimeActPropertyEditor(this, Project);
+        EditorShortcuts = new TimeActShortcuts(this, Project);
+        CommandQueue = new TimeActCommandQueue(this, Project);
+        Filters = new TimeActFilters(this, Project);
+        ContextMenu = new TimeActContextMenu(this, Project);
 
-        ContainerFileView = new TimeActContainerFileView(this);
-        InternalFileView = new TimeActInternalFileView(this);
-        EventGraphView = new TimeActEventGraphView(this);
-        AnimationView = new TimeActAnimationView(this);
-        AnimationPropertyView = new TimeActAnimationPropertyView(this);
-        EventView = new TimeActEventView(this);
-        EventPropertyView = new TimeActEventPropertyView(this);
+        ContainerFileView = new TimeActBinderView(this, Project);
+        InternalFileView = new TimeActView(this, Project);
 
-        ToolView = new TimeActToolView(this);
-        ToolMenubar = new TimeActToolMenubar(this);
+        EventGraphView = new TimeActEventGraphView(this, Project);
+        AnimationView = new TimeActAnimationView(this, Project);
+        AnimationPropertyView = new TimeActAnimationPropertyView(this, Project);
+        EventView = new TimeActEventView(this, Project);
+        EventPropertyView = new TimeActEventPropertyView(this, Project);
+
+        ToolView = new TimeActToolView(this, Project);
+        TimeActSearch = new TimeActSearch(this, Project);
     }
 
     public string EditorName => "Time Act Editor##TimeActEditor";
@@ -105,6 +112,7 @@ public class TimeActEditorScreen : EditorScreen
         if (CFG.Current.Interface_TimeActEditor_ContainerFileList)
         {
             ContainerFileView.Display();
+            ContainerFileView.Update();
         }
 
         if (CFG.Current.Interface_TimeActEditor_TimeActList)
@@ -267,18 +275,35 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void ToolMenu()
     {
-        // ToolMenubar.DisplayMenu();
+
     }
 
-    public void Save()
+    private bool IsSaving = false;
+
+    public async void Save()
     {
+        await Task.Yield();
+
         if (Project.ProjectType is ProjectType.AC6)
         {
-            TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Saving is not supported for AC6 projects currently.");
             return;
         }
 
-        Project.TimeActData.PrimaryCharacterBank.SaveTimeActTask(Selection.ContainerInfo, Selection.ContainerBinder);
+        if(!IsSaving)
+        {
+            IsSaving = true;
+
+            Task<bool> saveTask = Project.TimeActData.PrimaryBank.SaveTimeAct(Selection.SelectedFileEntry, Selection.SelectedBinder);
+
+            Task.WaitAll(saveTask);
+
+            IsSaving = false;
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] A save operation is already in progress.");
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
@@ -286,15 +311,30 @@ public class TimeActEditorScreen : EditorScreen
 
     public async void SaveAll()
     {
+        await Task.Yield();
+
         if (Project.ProjectType is ProjectType.AC6)
         {
-            TaskLogs.AddLog("Saving is not supported for AC6 projects currently.");
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Saving is not supported for AC6 projects currently.");
             return;
         }
 
-        await Project.TimeActData.PrimaryCharacterBank.SaveTimeActsTask();
+        if (!IsSaving)
+        {
+            IsSaving = true;
+
+            Task<bool> saveTask = Project.TimeActData.PrimaryBank.SaveAllTimeActs();
+
+            Task.WaitAll(saveTask);
+
+            IsSaving = false;
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] A save operation is already in progress.");
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();
-    }
+}
 }

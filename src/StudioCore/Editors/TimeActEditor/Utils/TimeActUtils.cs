@@ -50,14 +50,14 @@ public static class TimeActUtils
         }
     }
 
-    public static void DisplayTimeActAlias(TimeActEditorScreen editor, TimeActContainerWrapper info, int id)
+    public static void DisplayTimeActAlias(TimeActEditorScreen editor, string filename, int id)
     {
         var idStr = id.ToString();
         if (idStr.Length > 3)
         {
             var idSection = idStr.Substring(idStr.Length - 3);
 
-            var searchStr = $"{info.Name}_{idSection}";
+            var searchStr = $"{filename}_{idSection}";
             var alias = editor.Project.Aliases.TimeActs.Where(e => e.ID == searchStr)
                 .FirstOrDefault();
 

@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Interface;
 using System;
@@ -12,58 +13,54 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActAnimationPropertyView
 {
-    private TimeActEditorScreen Editor;
-    private TimeActSelectionManager Selection;
-    private TimeActDecorator Decorator;
-    private TimeActPropertyEditor PropertyEditor;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public TimeActAnimationPropertyView(TimeActEditorScreen screen)
+    public TimeActAnimationPropertyView(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        Decorator = screen.Decorator;
-        PropertyEditor = screen.PropertyEditor;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
     {
         ImGui.Begin("Animation Properties##TimeActAnimationProperties");
-        Selection.SwitchWindowContext(TimeActEditorContext.AnimationProperty);
+        Editor.Selection.SwitchWindowContext(TimeActEditorContext.AnimationProperty);
 
-        if (!Selection.HasSelectedTimeActAnimation())
+        if (!Editor.Selection.HasSelectedTimeActAnimation())
         {
             ImGui.End();
             return;
         }
 
-        var anim = Selection.CurrentTimeActAnimation;
+        var anim = Editor.Selection.CurrentTimeActAnimation;
 
-        if (Selection.CurrentTemporaryAnimHeader == null)
+        if (Editor.Selection.CurrentTemporaryAnimHeader == null)
         {
-            Selection.CurrentTemporaryAnimHeader = new TransientAnimHeader();
-            Selection.CurrentTemporaryAnimHeader.CurrentType = anim.MiniHeader.Type;
+            Editor.Selection.CurrentTemporaryAnimHeader = new TransientAnimHeader();
+            Editor.Selection.CurrentTemporaryAnimHeader.CurrentType = anim.MiniHeader.Type;
 
             if (anim.MiniHeader.Type is MiniHeaderType.Standard)
             {
-                Selection.CurrentTemporaryAnimHeader.IsLoopByDefault = anim.MiniHeader.IsLoopByDefault;
-                Selection.CurrentTemporaryAnimHeader.ImportsHKX = anim.MiniHeader.ImportsHKX;
-                Selection.CurrentTemporaryAnimHeader.AllowDelayLoad = anim.MiniHeader.AllowDelayLoad;
-                Selection.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = anim.MiniHeader.ImportHKXSourceAnimID;
-                Selection.CurrentTemporaryAnimHeader.ImportFromAnimID = 0;
-                Selection.CurrentTemporaryAnimHeader.Unknown = -1;
+                Editor.Selection.CurrentTemporaryAnimHeader.IsLoopByDefault = anim.MiniHeader.IsLoopByDefault;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportsHKX = anim.MiniHeader.ImportsHKX;
+                Editor.Selection.CurrentTemporaryAnimHeader.AllowDelayLoad = anim.MiniHeader.AllowDelayLoad;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = anim.MiniHeader.ImportHKXSourceAnimID;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportFromAnimID = 0;
+                Editor.Selection.CurrentTemporaryAnimHeader.Unknown = -1;
             }
             if (anim.MiniHeader.Type is MiniHeaderType.ImportOtherAnim)
             {
-                Selection.CurrentTemporaryAnimHeader.IsLoopByDefault = false;
-                Selection.CurrentTemporaryAnimHeader.ImportsHKX = false;
-                Selection.CurrentTemporaryAnimHeader.AllowDelayLoad = false;
-                Selection.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = 0;
-                Selection.CurrentTemporaryAnimHeader.ImportFromAnimID = anim.MiniHeader.ImportFromAnimID;
-                Selection.CurrentTemporaryAnimHeader.Unknown = anim.MiniHeader.Unknown;
+                Editor.Selection.CurrentTemporaryAnimHeader.IsLoopByDefault = false;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportsHKX = false;
+                Editor.Selection.CurrentTemporaryAnimHeader.AllowDelayLoad = false;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportHKXSourceAnimID = 0;
+                Editor.Selection.CurrentTemporaryAnimHeader.ImportFromAnimID = anim.MiniHeader.ImportFromAnimID;
+                Editor.Selection.CurrentTemporaryAnimHeader.Unknown = anim.MiniHeader.Unknown;
             }
         }
 
-        PropertyEditor.AnimationHeaderSection(Selection);
+        Editor.PropertyEditor.AnimationHeaderSection(Editor.Selection);
 
         if (CFG.Current.TimeActEditor_DisplayPropertyType)
         {
@@ -83,7 +80,7 @@ public class TimeActAnimationPropertyView
         ImGui.Text("Name");
         UIHelper.Tooltip("The name of this animation entry.");
 
-        if (Selection.CurrentTemporaryAnimHeader != null)
+        if (Editor.Selection.CurrentTemporaryAnimHeader != null)
         {
             if (anim.MiniHeader.Type == MiniHeaderType.Standard)
             {
@@ -115,7 +112,7 @@ public class TimeActAnimationPropertyView
         ImGui.NextColumn();
 
         // Value Column
-        PropertyEditor.AnimationValueSection(Selection);
+        Editor.PropertyEditor.AnimationValueSection(Editor.Selection);
 
         // Type Column
 
@@ -130,7 +127,7 @@ public class TimeActAnimationPropertyView
             ImGui.AlignTextToFramePadding();
             ImGui.Text("string");
 
-            if (Selection.CurrentTemporaryAnimHeader != null)
+            if (Editor.Selection.CurrentTemporaryAnimHeader != null)
             {
                 if (anim.MiniHeader.Type == MiniHeaderType.Standard)
                 {

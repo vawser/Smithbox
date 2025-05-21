@@ -1,28 +1,29 @@
-﻿using HKLib.hk2018.hk;
-using HKLib.hk2018.hkAsyncThreadPool;
-using Microsoft.AspNetCore.Components.Forms;
-using SoulsFormats;
+﻿using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
-using StudioCore.Interface;
-using System;
 using System.Collections.Generic;
-using System.Formats.Tar;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static StudioCore.Editors.TimeActEditor.Bank.TimeActBank;
 
 namespace StudioCore.Editors.TimeActEditor;
 
-public static class TimeActFilters
+public class TimeActFilters
 {
-    public static string _fileContainerFilterString = "";
-    public static string _timeActFilterString = "";
-    public static string _timeActAnimationFilterString = "";
-    public static string _timeActEventFilterString = "";
-    public static string _timeActEventPropertyFilterString = "";
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-    public static bool FileContainerFilter(TimeActEditorScreen editor, TimeActContainerWrapper info)
+    public string _fileContainerFilterString = "";
+    public string _timeActFilterString = "";
+    public string _timeActAnimationFilterString = "";
+    public string _timeActEventFilterString = "";
+    public string _timeActEventPropertyFilterString = "";
+
+    public TimeActFilters(TimeActEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
+
+    public bool FileContainerFilter(string filename)
     {
         bool isValid = true;
         var input = _fileContainerFilterString.ToLower();
@@ -32,9 +33,9 @@ public static class TimeActFilters
             string[] inputParts = input.Split("+");
             bool[] partTruth = new bool[inputParts.Length];
 
-            var id = info.Name.ToLower();
+            var id = filename.ToLower();
 
-            var aliasEntry = editor.Project.Aliases.Characters.Where(e => e.ID == id).FirstOrDefault();
+            var aliasEntry = Editor.Project.Aliases.Characters.Where(e => e.ID == id).FirstOrDefault();
             var alias = "";
             var tags = new List<string>();
 
@@ -80,7 +81,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActFilter(TimeActEditorScreen editor, TimeActContainerWrapper info, TAE taeEntry)
+    public bool TimeActFilter(string filename, TAE taeEntry)
     {
         bool isValid = true;
         var input = _timeActFilterString.ToLower();
@@ -97,8 +98,8 @@ public static class TimeActFilters
             var idStr = id.ToString();
             var idSection = idStr.Substring(idStr.Length - 3);
 
-            var searchStr = $"{info.Name}_{idSection}";
-            var aliasEntry = editor.Project.Aliases.TimeActs.Where(e => e.ID == searchStr).FirstOrDefault();
+            var searchStr = $"{filename}_{idSection}";
+            var aliasEntry = Editor.Project.Aliases.TimeActs.Where(e => e.ID == searchStr).FirstOrDefault();
 
             if (aliasEntry != null)
             {
@@ -142,7 +143,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActAnimationFilter(TimeActContainerWrapper info, TAE.Animation animEntry)
+    public bool TimeActAnimationFilter(TAE.Animation animEntry)
     {
         bool isValid = true;
         var input = _timeActAnimationFilterString.ToLower();
@@ -176,7 +177,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventFilter(TimeActContainerWrapper info, TAE.Event evtEntry)
+    public bool TimeActEventFilter(TAE.Event evtEntry)
     {
         bool isValid = true;
         var input = _timeActEventFilterString.ToLower();
@@ -229,7 +230,7 @@ public static class TimeActFilters
         return isValid;
     }
 
-    public static bool TimeActEventPropertyFilter(TimeActContainerWrapper info, string propertyName)
+    public bool TimeActEventPropertyFilter(string propertyName)
     {
         bool isValid = true;
         var input = _timeActEventPropertyFilterString.ToLower();

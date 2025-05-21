@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Andre.IO.VFS;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -16,682 +18,407 @@ public class TimeActBank
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public string SourcePath;
-    public string FallbackPath;
+    public VirtualFileSystem TargetFS = EmptyVirtualFileSystem.Instance;
 
-    public TimeActType TimeActType;
+    public string Name;
 
-    public Dictionary<TimeActContainerWrapper, TimeActBinderWrapper> Entries;
+    public Dictionary<FileDictionaryEntry, BinderContents> Entries = new();
 
-    public TimeActBank(Smithbox baseEditor, ProjectEntry project, TimeActType taeType, string sourcePath, string fallbackPath)
+    public TimeActBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
         Project = project;
-
-        SourcePath = sourcePath;
-        FallbackPath = fallbackPath;
-
-        TimeActType = taeType;
-
-        Entries = new();
+        Name = name;
+        TargetFS = targetFs;
     }
 
     public async Task<bool> Setup()
     {
         await Task.Yield();
 
-        if(TimeActType is TimeActType.Character)
+        Task<bool> taeTask = SetupTimeActs();
+        bool taeTaskResult = await taeTask;
+
+        return true;
+    }
+
+    public async Task<bool> SetupTimeActs()
+    {
+        await Task.Yield();
+
+        Entries = new();
+
+        foreach (var entry in Project.TimeActData.TimeActFiles.Entries)
         {
-            string fileDir = @"\chr";
-            string fileExt = @".anibnd.dcx";
-
-            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-            {
-                fileDir = @"\timeact\chr";
-                fileExt = @".tae";
-            }
-
-            List<string> fileNames = MiscLocator.GetCharacterTimeActBinders(Project);
-
-            foreach (string name in fileNames)
-            {
-                string filePath = $"{fileDir}\\{name}{fileExt}";
-
-                if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
-                {
-                    LoadChrTimeAct($"{Project.ProjectPath}\\{filePath}");
-                }
-                else
-                {
-                    LoadChrTimeAct($"{Project.DataPath}\\{filePath}");
-                }
-            }
-
-            // AC6 - Load behbnd ones too
-            if(Project.ProjectType is ProjectType.AC6)
-            {
-                fileDir = @"\chr";
-                fileExt = @".behbnd.dcx";
-                fileNames = MiscLocator.GetCharacterBehaviorTimeActBinders(Project);
-
-                foreach (string name in fileNames)
-                {
-                    string filePath = $"{fileDir}\\{name}{fileExt}";
-
-                    if (File.Exists($"{Project.ProjectPath}\\{filePath}"))
-                    {
-                        LoadChrTimeAct($"{Project.ProjectPath}\\{filePath}");
-                    }
-                    else
-                    {
-                        LoadChrTimeAct($"{Project.DataPath}\\{filePath}");
-                    }
-                }
-            }
+            Entries.Add(entry, null);
         }
 
-        if (TimeActType is TimeActType.Object)
+        return true;
+    }
+
+    public async Task<bool> LoadTimeActBinder(FileDictionaryEntry fileEntry)
+    {
+        await Task.Yield();
+
+        if (fileEntry.Extension == "anibnd")
         {
-            string fileDir = @"\obj";
-            string fileExt = @".objbnd.dcx";
-
-            if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            // If already loaded, just ignore
+            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
             {
-                fileDir = @"\timeact\obj";
-                fileExt = @".tae";
+                return true;
             }
 
-            if (Project.ProjectType is ProjectType.AC6)
+            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename))
             {
-                fileDir = @"\asset\environment\geometry\";
-                fileExt = @".geombnd.dcx";
-            }
+                var binderEntry = Entries.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
 
-            // ER handling for AEG folders
-            if (Project.ProjectType is ProjectType.ER)
-            {
-                fileDir = @"\asset\aeg\";
-                fileExt = @".geombnd.dcx";
-
-                Dictionary<string, List<string>> assetDict = new();
-
-                if (Project.ProjectType is ProjectType.ER)
+                if (binderEntry.Key != null)
                 {
-                    assetDict = MiscLocator.GetAssetTimeActBinders_ER(Project);
-                }
+                    var key = binderEntry.Key;
 
-                foreach (var entry in assetDict)
-                {
-                    string folder = entry.Key;
-                    List<string> files = entry.Value;
-
-                    foreach (string name in files)
+                    try
                     {
-                        string filePath = $"{fileDir}\\{folder}\\{name}{fileExt}";
-                        if (File.Exists($"{SourcePath}\\{filePath}"))
+                        var taeBinderData = TargetFS.ReadFileOrThrow(key.Path);
+
+                        if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
                         {
-                            LoadObjTimeAct($"{SourcePath}\\{filePath}", folder);
+                            try
+                            {
+                                var taeBinder = BND3.Read(taeBinderData);
+
+                                var files = new Dictionary<BinderFile, TAE>();
+
+                                foreach (var file in taeBinder.Files)
+                                {
+                                    if (!file.Name.EndsWith("tae"))
+                                        continue;
+
+                                    var data = file.Bytes;
+
+                                    try
+                                    {
+                                        var taeData = TAE.Read(data);
+
+                                        files.Add(file, taeData);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {file.Name} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                        return false;
+                                    }
+                                }
+
+                                var newBinderContents = new BinderContents();
+                                newBinderContents.Name = fileEntry.Filename;
+                                newBinderContents.Binder = taeBinder;
+                                newBinderContents.Files = files;
+
+                                Entries[key] = newBinderContents;
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                                return false;
+                            }
                         }
                         else
                         {
-                            LoadObjTimeAct($"{FallbackPath}\\{filePath}", folder);
+                            try
+                            {
+                                var taeBinder = BND4.Read(taeBinderData);
+
+                                var files = new Dictionary<BinderFile, TAE>();
+
+                                foreach (var file in taeBinder.Files)
+                                {
+                                    if (!file.Name.EndsWith("tae"))
+                                        continue;
+
+                                    var data = file.Bytes;
+
+                                    try
+                                    {
+                                        var taeData = TAE.Read(data);
+
+                                        files.Add(file, taeData);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {file.Name} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                        return false;
+                                    }
+                                }
+
+                                var newBinderContents = new BinderContents();
+                                newBinderContents.Name = fileEntry.Filename;
+                                newBinderContents.Binder = taeBinder;
+                                newBinderContents.Files = files;
+
+                                Entries[key] = newBinderContents;
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                                return false;
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        // Loose tae files
+        else if (fileEntry.Extension == "tae")
+        {
+            // If already loaded, just ignore
+            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
+            {
+                return true;
+            }
+
+            // Basically creates a fake binder to store the loose ESD in so it fits the standard system.
+            if (Entries.Any(e => e.Key.Filename == fileEntry.Filename))
+            {
+                var scriptEntry = Entries.FirstOrDefault(e => e.Key.Filename == fileEntry.Filename);
+
+                if (scriptEntry.Key != null)
+                {
+                    var key = scriptEntry.Key;
+
+                    if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                    {
+                        var fakeBinder = new BND3();
+
+                        try
+                        {
+                            var taeFileData = TargetFS.ReadFileOrThrow(key.Path);
+
+                            // Create binder file
+                            var binderFile = new BinderFile();
+                            binderFile.ID = 0;
+                            binderFile.Name = fileEntry.Filename;
+                            binderFile.Bytes = taeFileData;
+                            fakeBinder.Files.Add(binderFile);
+
+                            // Load actual tae file
+                            var files = new Dictionary<BinderFile, TAE>();
+                            var data = binderFile.Bytes;
+
+                            try
+                            {
+                                var taeData = TAE.Read(data);
+                                files.Add(binderFile, taeData);
+
+                                var newBinderContents = new BinderContents();
+                                newBinderContents.Name = fileEntry.Filename;
+                                newBinderContents.Binder = fakeBinder;
+                                newBinderContents.Files = files;
+                                newBinderContents.Loose = true;
+
+                                Entries[key] = newBinderContents;
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                return false;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        var fakeBinder = new BND4();
+
+                        try
+                        {
+                            var taeFileData = TargetFS.ReadFileOrThrow(key.Path);
+
+                            // Create binder file
+                            var binderFile = new BinderFile();
+                            binderFile.ID = 0;
+                            binderFile.Name = fileEntry.Filename;
+                            binderFile.Bytes = taeFileData;
+                            fakeBinder.Files.Add(binderFile);
+
+                            // Load actual ESD file
+                            var files = new Dictionary<BinderFile, TAE>();
+                            var data = binderFile.Bytes;
+
+                            try
+                            {
+                                var taeData = TAE.Read(data);
+                                files.Add(binderFile, taeData);
+
+                                var newBinderContents = new BinderContents();
+                                newBinderContents.Name = fileEntry.Filename;
+                                newBinderContents.Binder = fakeBinder;
+                                newBinderContents.Files = files;
+                                newBinderContents.Loose = true;
+
+                                Entries[key] = newBinderContents;
+                            }
+                            catch (Exception e)
+                            {
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                return false;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
                         }
                     }
                 }
             }
             else
             {
-                List<string> fileNames = MiscLocator.GetObjectTimeActBinders(Project);
-
-                if (Project.ProjectType is ProjectType.AC6)
-                {
-                    fileNames = MiscLocator.GetAssetTimeActBinders_AC6(Project);
-                }
-
-                foreach (string name in fileNames)
-                {
-                    string filePath = $"{fileDir}\\{name}{fileExt}";
-
-                    if (File.Exists($"{SourcePath}\\{filePath}"))
-                    {
-                        LoadObjTimeAct($"{SourcePath}\\{filePath}");
-                    }
-                    else
-                    {
-                        LoadObjTimeAct($"{FallbackPath}\\{filePath}");
-                    }
-                }
+                return false;
             }
         }
 
         return true;
     }
 
-    /// <summary>
-    /// Loads passed Character TAE file (via path string)
-    /// </summary>
-    public void LoadChrTimeAct(string path)
-    {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        TimeActContainerWrapper fileStruct = new TimeActContainerWrapper(name, path);
-        bool validFile = false;
-
-        IBinder binder = null;
-
-        // Loose .tae
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fileStruct.IsContainerFile = false;
-
-            try
-            {
-                byte[] fileBytes = File.ReadAllBytes(path);
-                TAE taeFile = TAE.Read(fileBytes);
-                InternalTimeActWrapper tInfo = new(path, taeFile);
-                fileStruct.InternalFiles.Add(tInfo);
-                validFile = true;
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to read TAE file: {name} at {path}\n{ex}", LogLevel.Error);
-            }
-        }
-        // Within .anibnd.dcx
-        else
-        {
-            fileStruct.IsContainerFile = true;
-
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-            {
-                Memory<byte> bytes = DCX.Decompress(path);
-                if (bytes.Length > 0)
-                    binder = BND3.Read(bytes);
-            }
-            else
-            {
-                Memory<byte> bytes = DCX.Decompress(path);
-                if (bytes.Length > 0)
-                    binder = BND4.Read(bytes);
-            }
-
-            if (binder != null)
-            {
-                foreach (BinderFile file in binder.Files)
-                {
-                    if (file.Name.Contains(".tae"))
-                    {
-                        if (file.Bytes.Length > 0)
-                        {
-                            try
-                            {
-                                TAE taeFile = TAE.Read(file.Bytes);
-                                InternalTimeActWrapper tInfo = new(file.Name, taeFile);
-                                fileStruct.InternalFiles.Add(tInfo);
-                                validFile = true;
-                            }
-                            catch (Exception ex)
-                            {
-                                TaskLogs.AddLog($"Failed to read TAE file: {file.ID}\n{ex}", LogLevel.Error);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // Only add if the file contains at least one TAE entry
-        if (validFile)
-        {
-            fileStruct.InternalFiles.Sort();
-            var binderInfo = new TimeActBinderWrapper(binder, null, "");
-            Entries.Add(fileStruct, binderInfo);
-        }
-    }
-
-    /// <summary>
-    /// Loads passed Object TAE file (via path string)
-    /// </summary>
-    public void LoadObjTimeAct(string path, string aegFolder = "")
-    {
-        if (path == null)
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
-                    LogLevel.Warning);
-            return;
-        }
-        if (path == "")
-        {
-            TaskLogs.AddLog($"Could not locate {path} when loading TAE file.",
-                    LogLevel.Warning);
-            return;
-        }
-
-        string name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(path));
-        TimeActContainerWrapper fileStruct = new TimeActContainerWrapper(name, path);
-        bool validFile = false;
-
-        IBinder binder = null;
-        IBinder aniBinder = null;
-        string aniBinderName = "";
-
-        if (aegFolder != "")
-        {
-            fileStruct.AegFolder = aegFolder;
-        }
-
-        // Loose .tae
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            fileStruct.IsContainerFile = false;
-
-            try
-            {
-                byte[] fileBytes = File.ReadAllBytes(path);
-                TAE taeFile = TAE.Read(fileBytes);
-                InternalTimeActWrapper tInfo = new(path, taeFile);
-                fileStruct.InternalFiles.Add(tInfo);
-                validFile = true;
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to read TAE file: {name} at {path}\n{ex}", LogLevel.Error);
-            }
-        }
-        // Within .anibnd.dcx
-        else
-        {
-            fileStruct.IsContainerFile = true;
-
-            if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-            {
-                Memory<byte> bytes = DCX.Decompress(path);
-                if (bytes.Length > 0)
-                    binder = BND3.Read(bytes);
-            }
-            else
-            {
-                Memory<byte> bytes = DCX.Decompress(path);
-                if (bytes.Length > 0)
-                    binder = BND4.Read(bytes);
-            }
-
-            if (binder != null)
-            {
-                foreach (BinderFile file in binder.Files)
-                {
-                    if (file.Name.Contains(".anibnd"))
-                    {
-                        aniBinderName = file.Name;
-
-                        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-                        {
-                            aniBinder = BND3.Read(file.Bytes);
-                        }
-                        else
-                        {
-                            aniBinder = BND4.Read(file.Bytes);
-                        }
-
-                        if (aniBinder != null)
-                        {
-                            foreach (BinderFile aniFile in aniBinder.Files)
-                            {
-                                if (aniFile.Name.Contains(".tae"))
-                                {
-                                    if (aniFile.Bytes.Length > 0)
-                                    {
-                                        try
-                                        {
-                                            TAE taeFile = TAE.Read(aniFile.Bytes);
-                                            InternalTimeActWrapper tInfo = new(aniFile.Name, taeFile);
-                                            fileStruct.InternalFiles.Add(tInfo);
-                                            validFile = true;
-
-                                            //TaskLogs.AddLog($"Added to bank: {file.Name}");
-                                        }
-                                        catch (Exception ex)
-                                        {
-                                            TaskLogs.AddLog($"Failed to read TAE file: {aniFile.ID}\n{ex}", LogLevel.Error);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // Only add if the file contains at least one TAE entry
-        if (validFile)
-        {
-            fileStruct.InternalFiles.Sort();
-            TimeActBinderWrapper binderInfo = new TimeActBinderWrapper(binder, aniBinder, aniBinderName);
-            Entries.Add(fileStruct, binderInfo);
-        }
-    }
-
-    /// <summary>
-    /// Async task for saving all modified TAE files in Time Act Editor
-    /// </summary>
-    public async Task<bool> SaveTimeActsTask()
-    {
-        // Load the maps async so the main thread isn't blocked
-        Task<bool> saveTimeActs = SaveTimeActs();
-        bool result = await saveTimeActs;
-
-        return result;
-    }
-
-    /// <summary>
-    /// Save modified TAE files (e.g. ChrBND/ObjBND containers with TAE files within).
-    /// </summary>
-    public async Task<bool> SaveTimeActs()
-    {
-        foreach (var (info, binder) in Entries)
-        {
-            if (info.IsModified)
-            {
-                await SaveTimeAct(info, binder);
-            }
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Save DS2 TAE files (e.g. loose compared to containered)
-    /// </summary>
-    public void HandleDS2TimeActSave(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
-    {
-        string fileDir = @"\timeact\chr";
-        string fileExt = @".tae";
-
-        if (info.Path.Contains("obj"))
-        {
-            fileDir = @"\timeact\obj";
-        }
-
-        // Direct file with DS2
-        byte[] fileBytes = info.InternalFiles.First().TAE.Write();
-
-        string assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
-        string assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
-        string assetModDir = $@"{Project.ProjectPath}\{fileDir}\";
-
-        if (!Directory.Exists(assetModDir))
-        {
-            Directory.CreateDirectory(assetModDir);
-        }
-
-        // Make a backup of the original file if a mod path doesn't exist
-        if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-        {
-            File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-        }
-        else if (File.Exists(assetMod))
-        {
-            File.Copy(assetMod, $@"{assetMod}.bak", true);
-        }
-
-        if (fileBytes != null)
-        {
-            File.WriteAllBytes(assetMod, fileBytes);
-
-            var filename = Path.GetFileNameWithoutExtension(assetMod);
-            TaskLogs.AddLog($"Time Act Editor: saved TAE file: {filename} at {assetMod}");
-        }
-    }
-
-    /// <summary>
-    /// Save containered TAE files
-    /// </summary>
-    public void HandleBinderContents(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo, IBinder binder)
-    {
-        // Write existing TAE, and discover files that need to be added
-        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
-        {
-            foreach (BinderFile file in binder.Files)
-            {
-                if (file.Name == tInfo.Filepath)
-                {
-                    file.Bytes = tInfo.TAE.Write();
-                }
-            }
-        }
-
-        // TAE files within anibnd.dcx container
-        string internalFilepath = "";
-
-        // Grab correct path for a TAE binderFile
-        foreach (BinderFile file in binder.Files)
-        {
-            if (internalFilepath == "" && file.Name.Contains(".tae"))
-                internalFilepath = file.Name;
-        }
-
-        // Get internal path without the tae file part
-        string filename = Path.GetFileName(internalFilepath);
-        string internalPath = internalFilepath.Replace(filename, "");
-
-        // Create new binder files for the newly added internal files
-        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
-        {
-            if (tInfo.MarkForAddition)
-            {
-                BinderFile newBinderfile = new BinderFile();
-                int id = int.Parse(tInfo.Name.Substring(1));
-
-                newBinderfile.ID = id;
-                newBinderfile.Name = $"{internalPath}\\{tInfo.Name}.tae";
-                newBinderfile.Bytes = tInfo.TAE.Write();
-
-                binder.Files.Add(newBinderfile);
-            }
-        }
-
-        // Remove internal files marked for removal
-        foreach (InternalTimeActWrapper tInfo in info.InternalFiles)
-        {
-            if (tInfo.MarkForRemoval)
-            {
-                BinderFile fileToRemove = null;
-
-                foreach (BinderFile file in binder.Files)
-                {
-                    if (file.Name == tInfo.Filepath)
-                    {
-                        fileToRemove = file;
-                    }
-                }
-
-                if (fileToRemove != null)
-                {
-                    binder.Files.Remove(fileToRemove);
-                }
-            }
-        }
-    }
-
-    /// <summary>
-    /// Async task for saving single modified TAE file in Time Act Editor
-    /// </summary>
-    public async void SaveTimeActTask(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
-    {
-        // Load the maps async so the main thread isn't blocked
-        Task<bool> saveTimeAct = SaveTimeAct(info, binderInfo);
-        bool result = await saveTimeAct;
-    }
-
-    /// <summary>
-    /// Save modified TAE file (e.g. ChrBND/ObjBND containers with TAE files within).
-    /// </summary>
-    public async Task<bool> SaveTimeAct(TimeActContainerWrapper info, TimeActBinderWrapper binderInfo)
+    public async Task<bool> SaveAllTimeActs()
     {
         await Task.Yield();
 
-        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        foreach (var entry in Entries)
         {
-            HandleDS2TimeActSave(info, binderInfo);
+            await SaveTimeAct(entry.Key, entry.Value);
         }
-        else
+
+        return true;
+    }
+
+    public async Task<bool> SaveTimeAct(FileDictionaryEntry fileEntry, BinderContents curContents)
+    {
+        await Task.Yield();
+
+        if (Entries.Any(e => e.Key.Filename == fileEntry.Filename && e.Value != null))
         {
-            if (binderInfo.ContainerBinder == null)
-                return false;
-
-            var fileDir = @"\chr";
-            var fileExt = @".anibnd.dcx";
-
-            // Dealing with objbnd
-            if (binderInfo.InternalBinder != null)
+            if (curContents.Loose)
             {
-                fileDir = @"\obj";
-                fileExt = @".objbnd.dcx";
-
-                if (Project.ProjectType is ProjectType.ER)
+                // Should only ever be one file in a 'fake' binder
+                var looseFile = curContents.Files.First().Value;
+                if (looseFile != null)
                 {
-                    fileDir = @$"\asset\aeg\{info.AegFolder}";
-                    fileExt = @".geombnd.dcx";
-                }
-
-                if (Project.ProjectType is ProjectType.AC6)
-                {
-                    fileDir = @"\asset\environment\geometry\";
-                    fileExt = @".geombnd.dcx";
-                }
-            }
-
-            // TAE files within the direct container
-            HandleBinderContents(info, binderInfo, binderInfo.ContainerBinder);
-
-            // TAE files within internal anibnd container
-            if (binderInfo.InternalBinder != null)
-            {
-                foreach (BinderFile file in binderInfo.ContainerBinder.Files)
-                {
-                    if (file.Name == binderInfo.InternalBinderName)
+                    try
                     {
-                        HandleBinderContents(info, binderInfo, binderInfo.InternalBinder);
+                        var taeData = looseFile.Write();
 
-                        byte[] tempBytes = GetBinderBytes(binderInfo.InternalBinder);
-                        file.Bytes = tempBytes;
+                        try
+                        {
+                            Project.ProjectFS.WriteFile(fileEntry.Path, taeData);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as TAE", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
                     }
                 }
             }
-
-            byte[] fileBytes = GetBinderBytes(binderInfo.ContainerBinder);
-
-            string assetRoot = $@"{Project.DataPath}\{fileDir}\{info.Name}{fileExt}";
-            string assetMod = $@"{Project.ProjectPath}\{fileDir}\{info.Name}{fileExt}";
-
-            if (fileBytes != null)
-            {
-                // Add folder if it does not exist in GameModDirectory
-                if (!Directory.Exists($"{Project.ProjectPath}\\{fileDir}\\"))
-                {
-                    Directory.CreateDirectory($"{Project.ProjectPath}\\{fileDir}\\");
-                }
-
-                // Make a backup of the original file if a mod path doesn't exist
-                if (Project.ProjectPath == null && !File.Exists($@"{assetRoot}.bak") && File.Exists(assetRoot))
-                {
-                    File.Copy(assetRoot, $@"{assetRoot}.bak", true);
-                }
-                else if (File.Exists(assetMod))
-                {
-                    File.Copy(assetMod, $@"{assetMod}.bak", true);
-                }
-
-                File.WriteAllBytes(assetMod, fileBytes);
-
-                TaskLogs.AddLog($"Time Act Editor: saved TAE container: {info.Name} at {assetMod}");
-            }
             else
             {
-                TaskLogs.AddLog($"Time Act Editor: failed to save TAE container: {info.Name} at {assetMod}.");
-            }
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Return the byte array for the passed binder.
-    /// </summary>
-    public byte[] GetBinderBytes(IBinder targetBinder)
-    {
-        // Allow older compression types for these two since KRAK is slow
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
-        {
-            BND4 writeBinder = targetBinder as BND4;
-            TimeactCompressionType currentCompressionType = CFG.Current.CurrentTimeActCompressionType;
-
-            if (currentCompressionType != TimeactCompressionType.Default)
-            {
-                switch (currentCompressionType)
+                foreach (var file in curContents.Files)
                 {
-                    case TimeactCompressionType.DFLT:
-                        return writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                    case TimeactCompressionType.KRAK:
-                        return writeBinder.Write(DCX.Type.DCX_KRAK);
-                    case TimeactCompressionType.KRAK_MAX:
-                        return writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
+                    var binderFile = file.Key;
+                    var taeFile = file.Value;
+
+                    try
+                    {
+                        binderFile.Bytes = taeFile.Write();
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {binderFile.Name} as TAE", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+
+                if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+                {
+                    try
+                    {
+                        var binder = (BND3)curContents.Binder;
+                        var binderData = binder.Write();
+
+                        try
+                        {
+                            Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        var binder = (BND4)curContents.Binder;
+                        var binderData = binder.Write();
+
+                        try
+                        {
+                            Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as file.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to write {fileEntry.Filename} as BND4.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        return false;
+                    }
                 }
             }
         }
 
-        // Otherwise use the normal compression types
-        if (Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-            BND3 writeBinder = targetBinder as BND3;
+        TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Saved {fileEntry.Path}.");
 
-            switch (Project.ProjectType)
-            {
-                case ProjectType.DS1:
-                case ProjectType.DS1R:
-                    return writeBinder.Write(DCX.Type.DCX_DFLT_10000_24_9);
-            }
-        }
-        else
-        {
-            BND4 writeBinder = targetBinder as BND4;
-
-            switch (Project.ProjectType)
-            {
-                case ProjectType.BB:
-                case ProjectType.DS3:
-                    return writeBinder.Write(DCX.Type.DCX_DFLT_10000_44_9);
-                case ProjectType.SDT:
-                    return writeBinder.Write(DCX.Type.DCX_KRAK);
-                case ProjectType.ER:
-                    return writeBinder.Write(DCX.Type.DCX_KRAK);
-                case ProjectType.AC6:
-                    return writeBinder.Write(DCX.Type.DCX_KRAK_MAX);
-                default:
-                    break;
-            }
-        }
-
-        return null;
+        return true;
     }
-
 }
 
-public enum TimeActType
+
+public class BinderContents
 {
-    Character,
-    Object
+    public string Name { get; set; }
+    public IBinder Binder { get; set; }
+    public Dictionary<BinderFile, TAE> Files { get; set; }
+
+    /// <summary>
+    /// This is to mark a 'fake' binder used for the loose tAE files
+    /// </summary>
+    public bool Loose { get; set; } = false;
 }

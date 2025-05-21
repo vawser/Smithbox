@@ -15,19 +15,20 @@ using static StudioCore.Editors.TimeActEditor.Utils.TimeActUtils;
 using StudioCore.Interface;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Configuration;
+using StudioCore.Core;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace StudioCore.Editors.TimeActEditor.Utils;
 
 public class TimeActSearch
 {
-    private TimeActEditorScreen Editor;
-    public TimeActActionHandler ActionHandler;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
 
-
-    public TimeActSearch(TimeActEditorScreen screen)
+    public TimeActSearch(TimeActEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        ActionHandler = screen.ActionHandler;
+        Editor = editor;
+        Project = project;
     }
 
     private TimeActSearchType CurrentSearchType = TimeActSearchType.AnimationID;
@@ -37,7 +38,7 @@ public class TimeActSearch
 
     public void Display()
     {
-        if (Editor.Selection.ContainerInfo == null)
+        if (Editor.Selection.SelectedBinder == null)
         {
             UIHelper.WrappedText("You must select a File first.");
             return;
@@ -67,7 +68,7 @@ public class TimeActSearch
         {
             UIHelper.WrappedText("");
             UIHelper.WrappedText($"Event Value will only match within the currently selected Time Act container:");
-            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{Editor.Selection.ContainerInfo.Name}");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{Editor.Selection.SelectedFileKey}");
         }
         UIHelper.WrappedText("");
 
@@ -79,7 +80,7 @@ public class TimeActSearch
 
         if (ImGui.Button("Search##searchButton", defaultButtonSize))
         {
-            if (Editor.Selection.ContainerIndex != -1 && Editor.Selection.CurrentTimeActKey != -1)
+            if (Editor.Selection.CurrentTimeAct != null)
             {
                 if (SearchInput != "")
                 {
@@ -118,18 +119,7 @@ public class TimeActSearch
 
                 if (ImGui.Selectable($"{displayName}##{displayName}_{i}"))
                 {
-                    var containerType = Editor.Selection.CurrentFileContainerType;
-
-                    var command = $"timeact/select/none/{res.ContainerIndex}/{res.TimeActIndex}";
-
-                    if (containerType is FileContainerType.Character)
-                    {
-                        command = $"timeact/select/chr/{res.ContainerIndex}/{res.TimeActIndex}";
-                    }
-                    if (containerType is FileContainerType.Object)
-                    {
-                        command = $"timeact/select/obj/{res.ContainerIndex}/{res.TimeActIndex}";
-                    }
+                    var command = $"timeact/select/chr/{res.FileKey}/{res.TimeActKey}";
 
                     if (res.ResultAnim != null)
                     {
@@ -155,16 +145,15 @@ public class TimeActSearch
     {
         searchResults = new();
 
-        var containerIndex = Editor.Selection.ContainerIndex;
-
-        for (int j = 0; j < Editor.Selection.ContainerInfo.InternalFiles.Count; j++)
+        for (int j = 0; j < Editor.Selection.SelectedBinder.Files.Count; j++)
         {
-            var timeActFile = Editor.Selection.ContainerInfo.InternalFiles[j].TAE;
-            var timeActName = Editor.Selection.ContainerInfo.InternalFiles[j].Name;
+            var curFile = Editor.Selection.SelectedBinder.Files.ElementAt(j);
+            var binderFile = curFile.Key;
+            var taeEntry = curFile.Value;
 
-            for (int i = 0; i < timeActFile.Animations.Count; i++)
+            for (int i = 0; i < taeEntry.Animations.Count; i++)
             {
-                var anim = timeActFile.Animations[i];
+                var anim = taeEntry.Animations[i];
 
                 if (CurrentSearchType is TimeActSearchType.AnimationID)
                 {
@@ -172,9 +161,9 @@ public class TimeActSearch
                     {
                         if (anim.ID.ToString().Contains(SearchInput))
                         {
-                            var result = new TimeActSearchResult(timeActName, timeActFile, anim);
-                            result.ContainerIndex = containerIndex;
-                            result.TimeActIndex = j;
+                            var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim);
+                            result.FileKey = Editor.Selection.SelectedFileKey;
+                            result.TimeActKey = binderFile.Name;
                             result.AnimationIndex = i;
                             searchResults.Add(result);
                         }
@@ -183,9 +172,9 @@ public class TimeActSearch
                     {
                         if (anim.ID.ToString() == SearchInput)
                         {
-                            var result = new TimeActSearchResult(timeActName, timeActFile, anim);
-                            result.ContainerIndex = containerIndex;
-                            result.TimeActIndex = j;
+                            var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim);
+                            result.FileKey = Editor.Selection.SelectedFileKey;
+                            result.TimeActKey = binderFile.Name;
                             result.AnimationIndex = i;
                             searchResults.Add(result);
                         }
@@ -203,11 +192,11 @@ public class TimeActSearch
                             {
                                 if (evt.Type.ToString().Contains(SearchInput))
                                 {
-                                    TimeActUtils.ApplyTemplate(Editor, timeActFile, Editor.Selection.CurrentTimeActType);
+                                    TimeActUtils.ApplyTemplate(Editor, taeEntry, Editor.Selection.CurrentTimeActType);
 
-                                    var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                    result.ContainerIndex = containerIndex;
-                                    result.TimeActIndex = j;
+                                    var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim, evt);
+                                    result.FileKey = Editor.Selection.SelectedFileKey;
+                                    result.TimeActKey = binderFile.Name;
                                     result.AnimationIndex = i;
                                     result.EventIndex = k;
                                     searchResults.Add(result);
@@ -217,11 +206,11 @@ public class TimeActSearch
                             {
                                 if (evt.Type.ToString() == SearchInput)
                                 {
-                                    TimeActUtils.ApplyTemplate(Editor, timeActFile, Editor.Selection.CurrentTimeActType);
+                                    TimeActUtils.ApplyTemplate(Editor, taeEntry, Editor.Selection.CurrentTimeActType);
 
-                                    var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                    result.ContainerIndex = containerIndex;
-                                    result.TimeActIndex = j;
+                                    var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim, evt);
+                                    result.FileKey = Editor.Selection.SelectedFileKey;
+                                    result.TimeActKey = binderFile.Name;
                                     result.AnimationIndex = i;
                                     result.EventIndex = k;
                                     searchResults.Add(result);
@@ -241,9 +230,9 @@ public class TimeActSearch
 
                                         if (valueStr.Contains(SearchInput))
                                         {
-                                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                            result.ContainerIndex = containerIndex;
-                                            result.TimeActIndex = j;
+                                            var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim, evt);
+                                            result.FileKey = Editor.Selection.SelectedFileKey;
+                                            result.TimeActKey = binderFile.Name;
                                             result.AnimationIndex = i;
                                             result.EventIndex = k;
                                             result.EventPropertyValue = valueStr;
@@ -259,9 +248,9 @@ public class TimeActSearch
 
                                         if (valueStr == SearchInput)
                                         {
-                                            var result = new TimeActSearchResult(timeActName, timeActFile, anim, evt);
-                                            result.ContainerIndex = containerIndex;
-                                            result.TimeActIndex = j;
+                                            var result = new TimeActSearchResult(binderFile.Name, taeEntry, anim, evt);
+                                            result.FileKey = Editor.Selection.SelectedFileKey;
+                                            result.TimeActKey = binderFile.Name;
                                             result.AnimationIndex = i;
                                             result.EventIndex = k;
                                             result.EventPropertyValue = valueStr;

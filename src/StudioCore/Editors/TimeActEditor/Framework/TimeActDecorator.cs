@@ -2,6 +2,7 @@
 using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
@@ -18,16 +19,16 @@ namespace StudioCore.Editors.TimeActEditor;
 
 public class TimeActDecorator
 {
-    private ActionManager EditorActionManager;
-    private TimeActEditorScreen Editor;
+    public TimeActEditorScreen Editor;
+    public ProjectEntry Project;
+
+    public TimeActDecorator(TimeActEditorScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
 
     private string _enumSearchInput = "";
-
-    public TimeActDecorator(TimeActEditorScreen screen)
-    {
-        Editor = screen;
-        EditorActionManager = screen.EditorActionManager;
-    }
 
     public void HandleTypeColumn(string propertyName)
     {
@@ -355,7 +356,7 @@ public class TimeActDecorator
                             if (ImGui.Selectable($"{entry}: {result}"))
                             {
                                 var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry, propertyValue.GetType());
-                                EditorActionManager.ExecuteAction(action);
+                                Editor.EditorActionManager.ExecuteAction(action);
                             }
                         }
                     }
@@ -415,7 +416,7 @@ public class TimeActDecorator
                                 if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
                                 {
                                     var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.ID, propertyValue.GetType());
-                                    EditorActionManager.ExecuteAction(action);
+                                    Editor.EditorActionManager.ExecuteAction(action);
                                 }
                             }
                         }
@@ -464,7 +465,7 @@ public class TimeActDecorator
                                 if (ImGui.Selectable($"{entry.ID}: {entry.Name}"))
                                 {
                                     var action = new TaeEventParametersChange(paramValues, propertyName, propertyValue, entry.ID, propertyValue.GetType());
-                                    EditorActionManager.ExecuteAction(action);
+                                    Editor.EditorActionManager.ExecuteAction(action);
                                 }
                             }
                         }

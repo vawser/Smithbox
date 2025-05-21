@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.TimeActEditor.Bank;
@@ -50,20 +51,24 @@ public static class TimeActValidator
     {
         SortedDictionary<int, string> errors = new();
 
-        for (int i = 0; i < curProject.TimeActData.PrimaryCharacterBank.Entries.Count; i++)
+        var timeActEditor = curProject.TimeActEditor;
+
+        foreach (var entry in curProject.TimeActData.PrimaryBank.Entries)
         {
-            var info = curProject.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Key;
-            var binder = curProject.TimeActData.PrimaryCharacterBank.Entries.ElementAt(i).Value;
+            var file = entry.Key;
+            var binder = entry.Value;
 
-            for (int k = 0; k < info.InternalFiles.Count; k++)
+            for (int k = 0; k < binder.Files.Count; k++)
             {
-                TAE entry = info.InternalFiles[k].TAE;
+                var curFile = timeActEditor.Selection.SelectedBinder.Files.ElementAt(k);
+                var binderFile = curFile.Key;
+                var taeEntry = curFile.Value;
 
-                ApplyTemplate(curProject.TimeActEditor, entry, TimeActTemplateType.Character);
+                ApplyTemplate(curProject.TimeActEditor, taeEntry, TimeActTemplateType.Character);
 
-                for (int j = 0; j < entry.Animations.Count; j++)
+                for (int j = 0; j < taeEntry.Animations.Count; j++)
                 {
-                    TAE.Animation animEntry = entry.Animations[j];
+                    TAE.Animation animEntry = taeEntry.Animations[j];
 
                     for (int l = 0; l < animEntry.Events.Count; l++)
                     {
@@ -73,39 +78,7 @@ public static class TimeActValidator
                         {
                             if (!errors.ContainsKey(evt.Type))
                             {
-                                var error = $"Bank: {entry.EventBank} - Event Size: {evt.GetParameterBytes(false).Length}";
-                                errors.Add(evt.Type, error);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        for (int i = 0; i < curProject.TimeActData.PrimaryObjectBank.Entries.Count; i++)
-        {
-            var info = curProject.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Key;
-            var binder = curProject.TimeActData.PrimaryObjectBank.Entries.ElementAt(i).Value;
-
-            for (int k = 0; k < info.InternalFiles.Count; k++)
-            {
-                TAE entry = info.InternalFiles[k].TAE;
-
-                ApplyTemplate(curProject.TimeActEditor, entry, TimeActTemplateType.Character);
-
-                for (int j = 0; j < entry.Animations.Count; j++)
-                {
-                    TAE.Animation animEntry = entry.Animations[j];
-
-                    for (int l = 0; l < animEntry.Events.Count; l++)
-                    {
-                        TAE.Event evt = animEntry.Events[l];
-
-                        if (evt.Parameters == null)
-                        {
-                            if (!errors.ContainsKey(evt.Type))
-                            {
-                                var error = $"Bank: {entry.EventBank} - Event Size: {evt.GetParameterBytes(false).Length}";
+                                var error = $"Bank: {taeEntry.EventBank} - Event Size: {evt.GetParameterBytes(false).Length}";
                                 errors.Add(evt.Type, error);
                             }
                         }

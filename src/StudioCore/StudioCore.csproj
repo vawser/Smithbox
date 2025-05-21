@@ -90,4 +90,8 @@
     <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Editors\TimeActEditor\Tools\" />
+  </ItemGroup>
+
 </Project>
