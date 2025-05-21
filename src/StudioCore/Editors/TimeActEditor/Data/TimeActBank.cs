@@ -95,6 +95,10 @@ public class TimeActBank
 
                                     var data = file.Bytes;
 
+                                    // Some TAE files are empty, ignore them
+                                    if (data.Length == 0)
+                                        continue;
+
                                     try
                                     {
                                         var taeData = TAE.Read(data);
@@ -135,6 +139,10 @@ public class TimeActBank
                                         continue;
 
                                     var data = file.Bytes;
+
+                                    // Some TAE files are empty, ignore them
+                                    if (data.Length == 0)
+                                        continue;
 
                                     try
                                     {
@@ -212,23 +220,27 @@ public class TimeActBank
                             var files = new Dictionary<BinderFile, TAE>();
                             var data = binderFile.Bytes;
 
-                            try
+                            // Some TAE files are empty, ignore them
+                            if (data.Length != 0)
                             {
-                                var taeData = TAE.Read(data);
-                                files.Add(binderFile, taeData);
+                                try
+                                {
+                                    var taeData = TAE.Read(data);
+                                    files.Add(binderFile, taeData);
 
-                                var newBinderContents = new BinderContents();
-                                newBinderContents.Name = fileEntry.Filename;
-                                newBinderContents.Binder = fakeBinder;
-                                newBinderContents.Files = files;
-                                newBinderContents.Loose = true;
+                                    var newBinderContents = new BinderContents();
+                                    newBinderContents.Name = fileEntry.Filename;
+                                    newBinderContents.Binder = fakeBinder;
+                                    newBinderContents.Files = files;
+                                    newBinderContents.Loose = true;
 
-                                Entries[key] = newBinderContents;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
-                                return false;
+                                    Entries[key] = newBinderContents;
+                                }
+                                catch (Exception e)
+                                {
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    return false;
+                                }
                             }
                         }
                         catch (Exception e)
@@ -256,23 +268,27 @@ public class TimeActBank
                             var files = new Dictionary<BinderFile, TAE>();
                             var data = binderFile.Bytes;
 
-                            try
+                            // Some TAE files are empty, ignore them
+                            if (data.Length != 0)
                             {
-                                var taeData = TAE.Read(data);
-                                files.Add(binderFile, taeData);
+                                try
+                                {
+                                    var taeData = TAE.Read(data);
+                                    files.Add(binderFile, taeData);
 
-                                var newBinderContents = new BinderContents();
-                                newBinderContents.Name = fileEntry.Filename;
-                                newBinderContents.Binder = fakeBinder;
-                                newBinderContents.Files = files;
-                                newBinderContents.Loose = true;
+                                    var newBinderContents = new BinderContents();
+                                    newBinderContents.Name = fileEntry.Filename;
+                                    newBinderContents.Binder = fakeBinder;
+                                    newBinderContents.Files = files;
+                                    newBinderContents.Loose = true;
 
-                                Entries[key] = newBinderContents;
-                            }
-                            catch (Exception e)
-                            {
-                                TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
-                                return false;
+                                    Entries[key] = newBinderContents;
+                                }
+                                catch (Exception e)
+                                {
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    return false;
+                                }
                             }
                         }
                         catch (Exception e)
