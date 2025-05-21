@@ -34,7 +34,7 @@ public class QuickView
         if (Editor.FocusManager.CurrentWindowContext is not MapEditorContext.MapViewport)
             return;
 
-        var curSel = Editor.Selection.GetSelection();
+        var curSel = Editor.ViewportSelection.GetSelection();
 
         if (curSel.Count > 0)
         {

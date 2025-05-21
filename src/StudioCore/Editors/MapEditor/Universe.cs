@@ -74,7 +74,7 @@ public class Universe
         Project = project;
 
         RenderScene = editor.MapViewportView.RenderScene;
-        Selection = editor.Selection;
+        Selection = editor.ViewportSelection;
 
         if (RenderScene == null)
         {

@@ -171,9 +171,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyDuplicate()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            CloneMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            CloneMapObjectsAction action = new(Editor, Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
             Editor.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -207,7 +207,7 @@ public class MapActionHandler
     /// </summary>
     public void DisplayDuplicateToMapMenu(MapDuplicateToMapType displayType)
     {
-        if (!Editor.Selection.IsSelection())
+        if (!Editor.ViewportSelection.IsSelection())
             return;
 
         if (Editor.Universe.LoadedObjectContainers == null)
@@ -249,7 +249,7 @@ public class MapActionHandler
 
         MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
 
-        var sel = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
+        var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
         if (sel.Any(e => e.WrappedObject is BTL.Light))
         {
@@ -288,10 +288,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyDelete()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             DeleteMapObjectsAction action = new(Editor,
-            Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), true);
+            Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), true);
             Editor.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -305,9 +305,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyFrameInViewport()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
             var first = false;
             BoundingBox box = new();
 
@@ -361,9 +361,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyGoToInObjectList()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            Editor.Selection.GotoTreeTarget = Editor.Selection.GetSingleSelection();
+            Editor.ViewportSelection.GotoTreeTarget = Editor.ViewportSelection.GetSingleSelection();
         }
         else
         {
@@ -376,10 +376,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMoveToCamera()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+            HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
             Vector3 camDir = Vector3.Transform(Vector3.UnitZ, Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.RotationMatrix);
             Vector3 camPos = Editor.MapViewportView.Viewport.ViewportCamera.CameraTransform.Position;
@@ -441,7 +441,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyRotation()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             if (CFG.Current.Toolbar_Rotate_X)
             {
@@ -469,7 +469,7 @@ public class MapActionHandler
     public void ArbitraryRotation_Selection(Vector3 axis, bool pivot)
     {
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         // Get the center position of the selections
         Vector3 accumPos = Vector3.Zero;
@@ -532,7 +532,7 @@ public class MapActionHandler
     {
         List<ViewportAction> actlist = new();
 
-        HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
         foreach (Entity s in selected)
         {
             Vector3 pos = s.GetLocalTransform().Position;
@@ -553,9 +553,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMapObjectOrderChange(OrderMoveDir direction)
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            OrderMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList(), direction);
+            OrderMapObjectsAction action = new(Editor, Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList(), direction);
             Editor.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -569,10 +569,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyScramble()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(Editor, false);
                 actlist.Add(sel.GetUpdateTransformAction(GetScrambledTransform(sel), true));
@@ -690,9 +690,9 @@ public class MapActionHandler
     /// </summary>
     public void ApplyReplicate()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
-            ReplicateMapObjectsAction action = new(Editor, Editor.Selection.GetFilteredSelection<MsbEntity>().ToList());
+            ReplicateMapObjectsAction action = new(Editor, Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList());
             Editor.EditorActionManager.ExecuteAction(action);
         }
         else
@@ -706,10 +706,10 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMovetoGrid()
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             List<ViewportAction> actlist = new();
-            foreach (Entity sel in Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform))
+            foreach (Entity sel in Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform))
             {
                 sel.ClearTemporaryTransform(Editor, false);
                 actlist.Add(sel.GetUpdateTransformAction(GetGridTransform(sel)));
@@ -782,7 +782,7 @@ public class MapActionHandler
     {
         if (targetType == EditorVisibilityType.Selected)
         {
-            HashSet<Entity> selected = Editor.Selection.GetFilteredSelection<Entity>();
+            HashSet<Entity> selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
 
             foreach (Entity s in selected)
             {
@@ -837,13 +837,13 @@ public class MapActionHandler
 
     public void ApplyGameVisibilityChange(GameVisibilityType targetType, GameVisibilityState targetState)
     {
-        if (Editor.Selection.IsSelection())
+        if (Editor.ViewportSelection.IsSelection())
         {
             if (targetType == GameVisibilityType.GameEditionDisable)
             {
                 if (targetState == GameVisibilityState.Disable)
                 {
-                    List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
                         if (Editor.Project.ProjectType == ProjectType.ER)
@@ -854,7 +854,7 @@ public class MapActionHandler
                 }
                 if (targetState == GameVisibilityState.Enable)
                 {
-                    List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
+                    List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
                     foreach (MsbEntity s in sourceList)
                     {
                         if (Editor.Project.ProjectType == ProjectType.ER)
@@ -931,7 +931,7 @@ public class MapActionHandler
             default:
                 throw new ArgumentException("type must be valid");
         }
-        List<MsbEntity> sourceList = Editor.Selection.GetFilteredSelection<MsbEntity>().ToList();
+        List<MsbEntity> sourceList = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
 
         ChangeMapObjectType action = new(Editor, msbclass, sourceList, sourceTypes, targetTypes, "Part", true);
         Editor.EditorActionManager.ExecuteAction(action);

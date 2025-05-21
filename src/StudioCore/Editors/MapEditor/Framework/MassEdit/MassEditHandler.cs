@@ -429,7 +429,7 @@ public class MassEditHandler
     {
         await Task.Yield();
 
-        var selection = Editor.Selection;
+        var selection = Editor.ViewportSelection;
         var listView = Editor.MapListView;
         var universe = Editor.Universe;
 

@@ -25,7 +25,7 @@ public class MapShortcuts
         Editor = screen;
         ViewportView = screen.MapViewportView;
         EditorActionManager = screen.EditorActionManager;
-        Selection = screen.Selection;
+        Selection = screen.ViewportSelection;
         ActionHandler = screen.ActionHandler;
     }
 

@@ -4,8 +4,7 @@
 - Project: add Param Enum Editor back
 - Add Behavior Editor
 
-- Map Editor: re-jig the map load process to use new MapBank approach (e.g. load MSB, build MapContainer from it)
- - This is necessary for release: currently map list isn't properly refreshed on project change
+- Map Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
 - Texture Viewer: implement VFS + data bank overhaul
 - Time Act Editor: implement VFS + data bank overhaul

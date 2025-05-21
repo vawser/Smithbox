@@ -290,7 +290,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
         {
             var actlist = new List<ViewportAction>();
 
-            var selected = Editor.Selection.GetFilteredSelection<Entity>();
+            var selected = Editor.ViewportSelection.GetFilteredSelection<Entity>();
 
             foreach (var s in selected)
             {

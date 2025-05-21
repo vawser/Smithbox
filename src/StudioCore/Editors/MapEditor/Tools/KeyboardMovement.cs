@@ -92,7 +92,7 @@ public class KeyboardMovement
         }
 
         List<ViewportAction> actlist = new();
-        HashSet<Entity> sels = Editor.Selection.GetFilteredSelection<Entity>(o => o.HasTransform);
+        HashSet<Entity> sels = Editor.ViewportSelection.GetFilteredSelection<Entity>(o => o.HasTransform);
 
         foreach (Entity sel in sels)
         {

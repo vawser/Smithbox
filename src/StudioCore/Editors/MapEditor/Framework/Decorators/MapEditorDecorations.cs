@@ -45,7 +45,7 @@ public static class MapEditorDecorations
                     foreach (var param in DS2_ObjectInstanceParams)
                     {
                         var paramName = param;
-                        var selection = editor.Selection;
+                        var selection = editor.ViewportSelection;
 
                         if (selection.IsSelection())
                         {
@@ -62,7 +62,7 @@ public static class MapEditorDecorations
                 // DS1 Bank Params
                 else if (meta.SpecialHandling == "BankParam")
                 {
-                    var selection = editor.Selection;
+                    var selection = editor.ViewportSelection;
 
                     if (selection.IsSelection())
                     {
@@ -84,7 +84,7 @@ public static class MapEditorDecorations
                 // DS2 Map Params
                 else if (meta.SpecialHandling == "MapParam")
                 {
-                    var selection = editor.Selection;
+                    var selection = editor.ViewportSelection;
 
                     if (selection.IsSelection())
                     {

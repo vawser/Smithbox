@@ -97,7 +97,7 @@ public class EntityIdentifierOverview
 
             ImGui.BeginChild($"EIO_Overview");
 
-            if (Editor.MapListView.SelectedMap == "")
+            if (Editor.Selection.SelectedMapID == "")
                 ImGui.Text("No map has been loaded and selected yet.");
 
             DisplayEIOList();
@@ -124,7 +124,7 @@ public class EntityIdentifierOverview
         if (oldKey == newKey)
             return;
 
-        var mapID = Editor.MapListView.SelectedMap;
+        var mapID = Editor.Selection.SelectedMapID;
 
         if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
@@ -149,7 +149,7 @@ public class EntityIdentifierOverview
 
     public void SetupEntityCache()
     {
-        var mapID = Editor.MapListView.SelectedMap;
+        var mapID = Editor.Selection.SelectedMapID;
 
         if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
@@ -173,7 +173,7 @@ public class EntityIdentifierOverview
 
     public void DisplayEIOList()
     {
-        var mapID = Editor.MapListView.SelectedMap;
+        var mapID = Editor.Selection.SelectedMapID;
 
         if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
@@ -227,8 +227,8 @@ public class EntityIdentifierOverview
 
                         if (entity != null)
                         {
-                            Editor.Selection.ClearSelection(Editor);
-                            Editor.Selection.AddSelection(Editor, entity);
+                            Editor.ViewportSelection.ClearSelection(Editor);
+                            Editor.ViewportSelection.AddSelection(Editor, entity);
                             Editor.ActionHandler.ApplyFrameInViewport();
                         }
                     }

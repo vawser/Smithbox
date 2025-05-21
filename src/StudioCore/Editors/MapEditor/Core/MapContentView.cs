@@ -49,7 +49,7 @@ public class MapContentView
     {
         Editor = screen;
         EditorActionManager = screen.EditorActionManager;
-        Selection = screen.Selection;
+        Selection = screen.ViewportSelection;
         Viewport = screen.MapViewportView.Viewport;
         FocusManager = screen.FocusManager;
 
@@ -457,11 +457,11 @@ public class MapContentView
 
             if (ImGui.Selectable("Copy Name"))
             {
-                if (Editor.Selection.IsMultiSelection())
+                if (Editor.ViewportSelection.IsMultiSelection())
                 {
                     var fullStr = "";
 
-                    foreach (var entry in Editor.Selection.GetSelection())
+                    foreach (var entry in Editor.ViewportSelection.GetSelection())
                     {
                         var curEnt = (MsbEntity)entry;
 
@@ -697,6 +697,33 @@ public class MapContentView
 
         }
 
+        // Visibility icon
+        if (visicon)
+        {
+            ImGui.SameLine();
+
+            float iconWidth = ImGui.CalcTextSize(Icons.Eye).X;
+            float iconPadding = 2.0f * DPI.GetUIScale(); // optional small gap
+            float rightAlignPos = ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - iconWidth - iconPadding;
+
+            ImGui.SetCursorPosX(rightAlignPos);
+            ImGui.SetNextItemAllowOverlap();
+
+            bool visible = e.EditorVisible;
+            ImGui.PushStyleColor(ImGuiCol.Text, visible
+                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
+                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
+
+            ImGui.Text(visible ? Icons.Eye : Icons.EyeSlash);
+            ImGui.PopStyleColor();
+
+            if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
+            {
+                e.EditorVisible = !e.EditorVisible;
+                doSelect = false;
+            }
+        }
+
         if (ImGui.IsItemClicked(ImGuiMouseButton.Left))
         {
             _pendingClick = e;
@@ -736,25 +763,6 @@ public class MapContentView
             // By default, this places the item at 50% in the frame. Use 0 to place it on top.
             ImGui.SetScrollHereY();
             Selection.ClearGotoTarget();
-        }
-
-        // Visibility icon
-        if (visicon)
-        {
-            ImGui.SetNextItemAllowOverlap();
-            var visible = e.EditorVisible;
-            ImGui.SameLine();
-            ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X - 18.0f * DPI.GetUIScale());
-            ImGui.PushStyleColor(ImGuiCol.Text, visible
-                ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
-                : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
-            ImGui.TextWrapped(visible ? Icons.Eye : Icons.EyeSlash);
-            ImGui.PopStyleColor();
-            if (ImGui.IsItemClicked(0))
-            {
-                e.EditorVisible = !e.EditorVisible;
-                doSelect = false;
-            }
         }
 
         // If the visibility icon wasn't clicked, perform the selection

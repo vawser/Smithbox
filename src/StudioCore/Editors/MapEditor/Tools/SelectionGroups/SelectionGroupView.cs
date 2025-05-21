@@ -30,7 +30,7 @@ public class SelectionGroupView
     {
         Editor = editor;
 
-        _selection = editor.Selection;
+        _selection = editor.ViewportSelection;
         _viewport = editor.MapViewportView.Viewport;
 
         CreateSelectionGroups();

@@ -42,7 +42,7 @@ public class NavmeshBuilderView
     public NavmeshBuilderView(MapEditorScreen screen)
     {
         Editor = screen;
-        _selection = screen.Selection;
+        _selection = screen.ViewportSelection;
     }
 
     public void OnGui()

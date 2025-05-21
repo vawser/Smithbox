@@ -55,7 +55,8 @@ public class MapEditorScreen : EditorScreen
 
     public ViewportActionManager EditorActionManager = new();
     public MapActionHandler ActionHandler;
-    public ViewportSelection Selection = new();
+    public ViewportSelection ViewportSelection = new();
+    public MapSelection Selection;
     public Universe Universe;
     public MapEntityTypeCache EntityTypeCache;
     public EditorFocusManager FocusManager;
@@ -108,6 +109,8 @@ public class MapEditorScreen : EditorScreen
         Universe = new Universe(this, project);
         FocusManager = new EditorFocusManager(this);
         EntityTypeCache = new(this);
+
+        Selection = new(this, project);
 
         // Core Views
         MapListView = new MapListView(this);
@@ -249,7 +252,7 @@ public class MapEditorScreen : EditorScreen
             ImGui.SetNextWindowFocus();
         }
 
-        MapPropertyView.OnGui(Selection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
+        MapPropertyView.OnGui(ViewportSelection, "mapeditprop", MapViewportView.Viewport.Width, MapViewportView.Viewport.Height);
 
         LocalSearchView.OnGui();
 
@@ -568,7 +571,7 @@ public class MapEditorScreen : EditorScreen
             ///--------------------
             if (ImGui.MenuItem("Toggle Render Type", KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText))
             {
-                VisualizationHelper.ToggleRenderType(this, Selection);
+                VisualizationHelper.ToggleRenderType(this, ViewportSelection);
             }
             UIHelper.Tooltip("Toggle the render type of the current selection.");
 
@@ -1028,8 +1031,8 @@ public class MapEditorScreen : EditorScreen
                     {
                         if (obj.WrappedObject == eRef.Referrer)
                         {
-                            Selection.ClearSelection(this);
-                            Selection.AddSelection(this, obj);
+                            ViewportSelection.ClearSelection(this);
+                            ViewportSelection.AddSelection(this, obj);
                             ActionHandler.ApplyFrameInViewport();
                             return;
                         }

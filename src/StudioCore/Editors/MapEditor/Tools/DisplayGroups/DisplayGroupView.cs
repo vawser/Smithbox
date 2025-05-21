@@ -32,7 +32,7 @@ public class DisplayGroupView
         Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         RenderScene = screen.MapViewportView.RenderScene;
-        Selection = screen.Selection;
+        Selection = screen.ViewportSelection;
     }
 
     public void SetupDrawgroupCount()

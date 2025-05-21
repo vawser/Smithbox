@@ -147,7 +147,7 @@ public class Viewport : IViewport
         if (viewportType is ViewportType.MapEditor)
         {
             RenderScene = mapEditor.MapViewportView.RenderScene;
-            ViewportSelection = mapEditor.Selection;
+            ViewportSelection = mapEditor.ViewportSelection;
             ActionManager = mapEditor.EditorActionManager;
         }
 
