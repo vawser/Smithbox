@@ -78,6 +78,17 @@ namespace Andre.Formats
             @"sd\sd",
         ];
 
+        public static readonly string[] NightreignArchiveNames =
+        [
+            "Data0",
+            "Data1",
+            "Data2",
+            "Data3",
+            "DLC",
+            @"sd\sd",
+            @"sd\sd_dlc02",
+        ];
+
         public static string[] GetArchiveNames(Game game)
             => game switch
             {
@@ -91,7 +102,7 @@ namespace Andre.Formats
                 Game.ER => EldenRingArchiveNames,
                 Game.AC6 => ArmoredCore6ArchiveNames,
                 Game.DS2 => DarkSouls2ArchiveNames,
-                Game.ERN => throw new NotImplementedException(),
+                Game.ERN => NightreignArchiveNames,
                 _ => throw new ArgumentOutOfRangeException(nameof(game), game, null)
             };
 

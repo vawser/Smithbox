@@ -122,7 +122,7 @@ public class TimeActSelection
 
         Reset(true, true, true);
 
-        if(SelectedBinder.Files.Count > 0)
+        if(SelectedBinder != null && SelectedBinder.Files.Count > 0)
         {
             var firstEntry = SelectedBinder.Files.First();
 

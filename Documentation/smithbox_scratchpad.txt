@@ -1,3 +1,8 @@
+# FIX
+- Map Editor: visibility icon cannot be clicked
+- Time Act Editor: DS2 TAE entries not being presented
+- Time Act Editor: DS3 a76.tae in c0000 fails assert for TAE in header.
+
 # TODO
 - Map Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
@@ -8,8 +13,3 @@
 - Add Behavior Editor
 
 - Texture Viewer: implement VFS + data bank overhaul
-- Time Act Editor: implement VFS + data bank overhaul
-
-# FIX
-- Map Editor: visibility icon cannot be clicked
-

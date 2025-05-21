@@ -625,7 +625,8 @@ public class Universe
         LoadedObjectContainers.Clear();
         foreach (var m in MapLocator.GetFullMapList(Project))
         {
-            LoadedObjectContainers.Add(m, null);
+            if(!LoadedObjectContainers.ContainsKey(m))
+                LoadedObjectContainers.Add(m, null);
         }
     }
 
