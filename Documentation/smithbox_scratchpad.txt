@@ -13,5 +13,3 @@
 - Add Behavior Editor
 - Add basic functionality to Material Editor
 
-- Texture Viewer: implement VFS + data bank overhaul
-

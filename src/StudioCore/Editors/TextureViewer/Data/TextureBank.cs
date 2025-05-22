@@ -154,7 +154,7 @@ public class TextureBank
                                     }
                                     catch (Exception e)
                                     {
-                                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {file.Name} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {file.Name} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
                                         return false;
                                     }
                                 }
@@ -168,7 +168,7 @@ public class TextureBank
                             }
                             catch (Exception e)
                             {
-                                TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
                                 return false;
                             }
                         }
@@ -199,7 +199,7 @@ public class TextureBank
                                     }
                                     catch (Exception e)
                                     {
-                                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {file.Name} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {file.Name} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
                                         return false;
                                     }
                                 }
@@ -213,14 +213,14 @@ public class TextureBank
                             }
                             catch (Exception e)
                             {
-                                TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
+                                TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {key.Filename} as BND4", LogLevel.Error, Tasks.LogPriority.High, e);
                                 return false;
                             }
                         }
                     }
                     catch (Exception e)
                     {
-                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
                         return false;
                     }
                 }
@@ -285,14 +285,14 @@ public class TextureBank
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {fileEntry.Filename} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {fileEntry.Filename} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
                                     return false;
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
                             return false;
                         }
                     }
@@ -333,14 +333,14 @@ public class TextureBank
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {fileEntry.Filename} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {fileEntry.Filename} as TPF.", LogLevel.Error, Tasks.LogPriority.High, e);
                                     return false;
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to read {key.Filename} from VFS.", LogLevel.Error, Tasks.LogPriority.High, e);
                             return false;
                         }
                     }

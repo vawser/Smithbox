@@ -190,27 +190,27 @@ public static class AliasUtils
 
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Characters)
         {
-            if(curCategory == TextureViewCategory.Character)
+            if(curCategory == TextureViewCategory.Characters)
             {
                 return aliasName;
             }
         }
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Assets)
         {
-            if (curCategory == TextureViewCategory.Asset || curCategory == TextureViewCategory.Object)
+            if (curCategory == TextureViewCategory.Assets || curCategory == TextureViewCategory.Objects)
             {
                 return aliasName;
             }
         }
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Parts)
         {
-            if (curCategory == TextureViewCategory.Part)
+            if (curCategory == TextureViewCategory.Parts)
             {
                 return aliasName;
             }
         }
 
-        if (curCategory == TextureViewCategory.Character)
+        if (curCategory == TextureViewCategory.Characters)
         {
             if (usedName.Contains("_h"))
             {
@@ -224,14 +224,14 @@ public static class AliasUtils
             aliasName = GetCharacterAlias(project, usedName);
         }
 
-        if (curCategory == TextureViewCategory.Asset || curCategory == TextureViewCategory.Object)
+        if (curCategory == TextureViewCategory.Assets || curCategory == TextureViewCategory.Objects)
         {
             if (usedName.Contains("_l"))
             {
                 usedName = rawName.Replace("_l", "");
             }
 
-            if (curCategory == TextureViewCategory.Asset)
+            if (curCategory == TextureViewCategory.Assets)
             {
                 // Convert aet to aeg to match alias list)
                 usedName = usedName.Replace("aet", "aeg");
@@ -240,7 +240,7 @@ public static class AliasUtils
             aliasName = GetAssetAlias(project, usedName);
         }
 
-        if (curCategory == TextureViewCategory.Part)
+        if (curCategory == TextureViewCategory.Parts)
         {
             if (usedName.Contains("_l"))
             {

@@ -55,37 +55,58 @@ public class TextureData
 
         // TPF
         var baseDict = new FileDictionary();
-        baseDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "tpf").ToList();
+        baseDict.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "tpf")
+            .ToList();
 
         // Object Textures
         var objDict = new FileDictionary();
-        objDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "objbnd").ToList();
+        objDict.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "objbnd")
+            .ToList();
 
         if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
         {
-            objDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "bnd" && e.Folder == "/model/obj").ToList();
+            objDict.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Extension == "bnd" && e.Folder == "/model/obj")
+                .ToList();
         }
 
         secondaryDicts.Add(objDict);
 
         // Chr Textures
         var chrDict = new FileDictionary();
-        chrDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "texbnd").ToList();
+        chrDict.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "texbnd")
+            .ToList();
 
         secondaryDicts.Add(chrDict);
 
         // Part Textures
         var partDict = new FileDictionary();
-        partDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "partsbnd").ToList();
+        partDict.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "partsbnd")
+            .ToList();
 
         if (Project.ProjectType == ProjectType.DS2S || Project.ProjectType == ProjectType.DS2)
         {
             var commonPartDict = new FileDictionary();
-            commonPartDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "commonbnd").ToList();
+            commonPartDict.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Extension == "commonbnd")
+                .ToList();
 
             secondaryDicts.Add(commonPartDict);
 
-            partDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "bnd" && e.Folder.Contains("/model/parts")).ToList();
+            partDict.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Extension == "bnd" && e.Folder.Contains("/model/parts"))
+                .ToList();
 
             secondaryDicts.Add(partDict);
         }
@@ -96,7 +117,10 @@ public class TextureData
 
         // SFX Textures
         var sfxDict = new FileDictionary();
-        sfxDict.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "ffxbnd").ToList();
+        sfxDict.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "ffxbnd")
+            .ToList();
 
         secondaryDicts.Add(sfxDict);
 
@@ -106,12 +130,18 @@ public class TextureData
 
     public void SetupPackedTextureDictionaries()
     {
-        TexturePackedFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "tpfbhd").ToList();
+        TexturePackedFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "tpfbhd")
+            .ToList();
     }
 
     public void SetupShoeboxDictionaries()
     {
-        ShoeboxFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "sblytbnd").ToList();
+        ShoeboxFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "sblytbnd")
+            .ToList();
     }
 }
 
