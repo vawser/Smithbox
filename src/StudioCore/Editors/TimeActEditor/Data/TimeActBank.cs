@@ -286,7 +286,7 @@ public class TimeActBank
                                 }
                                 catch (Exception e)
                                 {
-                                    TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as ESD.", LogLevel.Error, Tasks.LogPriority.High, e);
+                                    TaskLogs.AddLog($"[{Project.ProjectName}:Time Act Editor] Failed to {fileEntry.Filename} as TAE.", LogLevel.Error, Tasks.LogPriority.High, e);
                                     return false;
                                 }
                             }

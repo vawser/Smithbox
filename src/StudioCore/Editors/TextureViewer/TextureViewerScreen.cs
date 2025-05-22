@@ -3,14 +3,12 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Editors.TextureViewer.Core;
 using StudioCore.Editors.TextureViewer.Tools;
-using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Interface;
 using StudioCore.Resource;
-using StudioCore.Utilities;
 using System.Numerics;
 using Veldrid;
-using Veldrid.Sdl2;
 
 namespace StudioCore.TextureViewer;
 
@@ -34,33 +32,35 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
     public TexImagePreview ImagePreview;
 
-    public TexFileContainerView FileContainerView;
-    public TexTextureListView TextureListView;
-    public TexTextureViewport TextureViewport;
-    public TexTexturePropertyView TexturePropertyView;
+    public TexBinderView BinderView;
+    public TexTpfView TpfView;
+    public TexTextureView TextureView;
+    public TexDisplayView DisplayView;
+    public TexPropertyView PropertyView;
 
     public TextureViewerScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
         Project = project;
 
-        Selection = new TexViewSelection(this);
-        Tools = new TexTools(this);
-        Filters = new TexFilters(this);
-        CommandQueue = new TexCommandQueue(this);
+        Selection = new TexViewSelection(this, Project);
+        Tools = new TexTools(this, Project);
+        Filters = new TexFilters(this, Project);
+        CommandQueue = new TexCommandQueue(this, Project);
 
-        ImagePreview = new TexImagePreview(this);
+        ImagePreview = new TexImagePreview(this, Project);
 
-        ViewerZoom = new TexViewerZoom(this);
-        EditorShortcuts = new TexShortcuts(this);
+        ViewerZoom = new TexViewerZoom(this, Project);
+        EditorShortcuts = new TexShortcuts(this, Project);
 
-        ToolWindow = new TexToolView(this);
-        ToolMenubar = new TexToolMenubar(this);
+        ToolWindow = new TexToolView(this, Project);
+        ToolMenubar = new TexToolMenubar(this, Project);
 
-        FileContainerView = new TexFileContainerView(this);
-        TextureListView = new TexTextureListView(this);
-        TextureViewport = new TexTextureViewport(this);
-        TexturePropertyView = new TexTexturePropertyView(this);
+        BinderView = new TexBinderView(this, Project);
+        TpfView = new TexTpfView(this, Project);
+        TextureView = new TexTextureView(this, Project);
+        DisplayView = new TexDisplayView(this, Project);
+        PropertyView = new TexPropertyView(this, Project);
     }
 
     public string EditorName => "Texture Viewer##TextureViewerEditor";
@@ -118,19 +118,22 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
         if (CFG.Current.Interface_TextureViewer_Files)
         {
-            FileContainerView.Display();
+            BinderView.Display();
         }
         if (CFG.Current.Interface_TextureViewer_Textures)
         {
-            TextureListView.Display();
+            TpfView.Display();
+
+            TextureView.Display();
         }
+
         if (CFG.Current.Interface_TextureViewer_Viewer)
         {
-            TextureViewport.Display();
+            DisplayView.Display();
         }
         if (CFG.Current.Interface_TextureViewer_Properties)
         {
-            TexturePropertyView.Display();
+            PropertyView.Display();
         }
 
         if (CFG.Current.Interface_TextureViewer_ToolWindow)
@@ -138,10 +141,8 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
             ToolWindow.Display();
         }
 
-        if (CFG.Current.Interface_TextureViewer_ResourceList)
-        {
-            ResourceListWindow.DisplayWindow("textureViewerResourceList");
-        }
+        BinderView.Update();
+        TextureView.Update();
 
         ImGui.PopStyleVar();
         ImGui.PopStyleColor(1);
@@ -163,8 +164,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void EditMenu()
@@ -200,8 +199,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     public void ViewMenu()
@@ -246,8 +243,6 @@ public class TextureViewerScreen : EditorScreen, IResourceEventListener
 
             ImGui.EndMenu();
         }
-
-        ImGui.Separator();
     }
 
     /// <summary>

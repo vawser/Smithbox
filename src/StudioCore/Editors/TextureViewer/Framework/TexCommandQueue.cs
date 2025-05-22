@@ -1,23 +1,21 @@
-﻿using CommunityToolkit.HighPerformance.Buffers;
+﻿using StudioCore.Core;
+using StudioCore.Resource.Types;
+using StudioCore.Resource;
 using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Editors.TextureViewer;
 
 public class TexCommandQueue
 {
-    private TextureViewerScreen Editor;
-    private TexViewSelection Selection;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
-    public TexCommandQueue(TextureViewerScreen screen)
+    public TexCommandQueue(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -31,53 +29,62 @@ public class TexCommandQueue
             // e.g. "texture/view/01_common/SB_GarageTop_04"
             if (initcmd[0] == "view" && initcmd.Length >= 3)
             {
-                LoadTextureContainer(initcmd[1]);
-                LoadTextureFile(initcmd[2]);
+                var fileName = initcmd[1];
+                var textureName = initcmd[2];
+
+                HandleView(fileName, textureName);
             }
         }
     }
 
-    /// <summary>
-    /// Load a texture container by the passed container key
-    /// </summary>
-    public void LoadTextureContainer(string container)
+    public void HandleView(string filename, string textureName)
     {
-        if (Selection._selectedTextureContainerKey != container)
+        var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == filename);
+
+        if (targetFile == null)
+            return;
+
+        Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
+
+        Task.WaitAll(loadTask);
+
+        var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+
+        if (targetBinder.Key != null)
         {
-            foreach (var (name, info) in Editor.Project.TextureData.PrimaryBank.Entries)
+            Editor.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
+        }
+
+        // TPF
+        foreach (var entry in targetBinder.Value.Files)
+        {
+            var binderFile = entry.Key;
+            var tpfEntry = entry.Value;
+
+            if (binderFile.Name == filename)
             {
-                if (name == container)
-                {
-                    Selection._selectedTextureContainerKey = name;
-                    Selection.SelectTextureContainer(info);
-                }
+                Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
+                break;
             }
         }
-    }
 
-    /// <summary>
-    /// Load a texture by the passed file key
-    /// </summary>
-    public void LoadTextureFile(string filename)
-    {
-        if (Selection._selectedTextureContainerKey != filename)
+        // Texture
+        int index = 0;
+        int targetIndex = 0;
+
+        foreach (var entry in Editor.Selection.SelectedTpf.Textures)
         {
-            if (Selection._selectedTextureContainer != null && Selection._selectedTextureContainerKey != "")
+            if (entry.Name == textureName)
             {
-                TextureViewInfo data = Selection._selectedTextureContainer;
+                targetIndex = index;
+                Editor.Selection.SelectTextureEntry(entry.Name, entry);
 
-                if (data.Textures != null)
-                {
-                    foreach (var tex in data.Textures)
-                    {
-                        if (tex.Name == filename)
-                        {
-                            Selection._selectedTextureKey = tex.Name;
-                            Selection._selectedTexture = tex;
-                        }
-                    }
-                }
+                // TODO: fix this not properly working: the texture entry needs to be pressed again for the texture to appear after the editor switch
+                Editor.TextureView.LoadTexture = true;
+                break;
             }
+
+            index++;
         }
     }
 }

@@ -1,24 +1,15 @@
 ﻿using Andre.Formats;
-using Assimp;
 using Hexa.NET.ImGui;
-using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor.META;
-using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.MsbEditor;
 using StudioCore.Resource;
-using StudioCore.Resource.Locators;
 using StudioCore.Resource.Types;
 using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Editors.TextureViewer;
 
@@ -27,23 +18,15 @@ namespace StudioCore.Editors.TextureViewer;
 /// </summary>
 public class TexImagePreview : IResourceEventListener
 {
-    private TextureViewerScreen Editor;
-    private TexViewSelection Selection;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
     private Task LoadingTask;
 
-    public TexImagePreview(TextureViewerScreen screen)
+    public TexImagePreview(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-    }
-
-    // <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -54,51 +37,103 @@ public class TexImagePreview : IResourceEventListener
         if(textureRef == null) 
             return false;
 
-        if (Selection == null)
+        var targetFile = Project.TextureData.TextureFiles.Entries.FirstOrDefault(e => e.Filename == textureRef.TextureContainer);
+
+        if(targetFile == null)
             return false;
 
-        // Display the texture
-        LoadTextureContainer(textureRef.TextureContainer);
-        LoadTextureFile(textureRef.TextureFile);
+        Task<bool> loadTask = Project.TextureData.PrimaryBank.LoadTextureBinder(targetFile);
 
-        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(Selection.SelectedPreviewTextureKey, Selection.SelectedPreviewTexture, Selection.SelectedPreviewTextureDescriptor);
+        Task.WaitAll(loadTask);
 
-        if (resHandle == null)
+        var targetBinder = Project.TextureData.PrimaryBank.Entries.FirstOrDefault(e => e.Key.Filename == targetFile.Filename);
+
+        if (targetBinder.Key != null)
+        {
+            Editor.Selection.SelectTextureFile(targetBinder.Key, targetBinder.Value);
+        }
+
+        // TPF
+        foreach(var entry in targetBinder.Value.Files)
+        {
+            var binderFile = entry.Key;
+            var tpfEntry = entry.Value;
+
+            if (binderFile.Name == textureRef.TextureContainer)
+            {
+                Editor.Selection.SelectTpfFile(entry.Key, entry.Value);
+                break;
+            }
+        }
+
+        if (Editor.Selection.SelectedTpf == null)
             return false;
 
-        TextureResource texRes = resHandle.Get();
+        // Texture
+        int index = 0;
 
-        if (texRes == null)
+        foreach (var entry in Editor.Selection.SelectedTpf.Textures)
+        {
+            if(entry.Name == textureRef.TextureFile)
+            {
+                TargetIndex = index;
+                Editor.Selection.SelectTextureEntry(entry.Name, entry);
+                LoadTexture = true;
+                break;
+            }
+
+            index++;
+        }
+
+        if (Editor.Selection.PreviewTextureResource == null)
             return false;
 
-        if (texRes.GPUTexture == null)
+        if (Editor.Selection.PreviewTextureResource.GPUTexture == null)
             return false;
 
-        Selection.CurrentPreviewTexture = texRes;
-        Selection.CurrentPreviewTextureName = Selection.SelectedPreviewTextureKey;
+        Editor.Selection.PreviewSubTexture = GetPreviewSubTexture(context, textureRef);
 
-        Selection.CurrentPreviewSubTexture = GetPreviewSubTexture(context, textureRef);
-
-        if (Selection.CurrentPreviewSubTexture == null)
+        if (Editor.Selection.PreviewSubTexture == null)
             return false;
 
+        DisplayImage(displayImage);
+
+        return true;
+    }
+
+    private int TargetIndex = -1;
+    private bool LoadTexture = false;
+
+    public void Update()
+    {
+        if (LoadTexture)
+        {
+            Editor.Selection.PreviewTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
+            Editor.Selection.PreviewTextureResource._LoadTexture(AccessLevel.AccessFull);
+
+            LoadTexture = false;
+        }
+    }
+
+    public void DisplayImage(bool displayImage)
+    {
         // Get scaled image size vector
         var scale = CFG.Current.Param_FieldContextMenu_ImagePreviewScale;
 
         // Get crop bounds
-        float Xmin = float.Parse(Selection.CurrentPreviewSubTexture.X);
-        float Xmax = Xmin + float.Parse(Selection.CurrentPreviewSubTexture.Width);
-        float Ymin = float.Parse(Selection.CurrentPreviewSubTexture.Y);
-        float Ymax = Ymin + float.Parse(Selection.CurrentPreviewSubTexture.Height);
+        float Xmin = float.Parse(Editor.Selection.PreviewSubTexture.X);
+        float Xmax = Xmin + float.Parse(Editor.Selection.PreviewSubTexture.Width);
+        float Ymin = float.Parse(Editor.Selection.PreviewSubTexture.Y);
+        float Ymax = Ymin + float.Parse(Editor.Selection.PreviewSubTexture.Height);
 
         // Image size should be based on cropped image
         Vector2 size = new Vector2(Xmax - Xmin, Ymax - Ymin) * scale;
 
         // Get UV coordinates based on full image
-        float left = (Xmin) / texRes.GPUTexture.Width;
-        float top = (Ymin) / texRes.GPUTexture.Height;
-        float right = (Xmax) / texRes.GPUTexture.Width;
-        float bottom = (Ymax) / texRes.GPUTexture.Height;
+        float left = (Xmin) / Editor.Selection.PreviewTextureResource.GPUTexture.Width;
+        float top = (Ymin) / Editor.Selection.PreviewTextureResource.GPUTexture.Height;
+        float right = (Xmax) / Editor.Selection.PreviewTextureResource.GPUTexture.Width;
+        float bottom = (Ymax) / Editor.Selection.PreviewTextureResource.GPUTexture.Height;
 
         // Build UV coordinates
         var UV0 = new Vector2(left, top);
@@ -112,11 +147,9 @@ public class TexImagePreview : IResourceEventListener
         // Display image
         if (displayImage)
         {
-            var textureId = new ImTextureID(texRes.GPUTexture.TexHandle);
+            var textureId = new ImTextureID(Editor.Selection.PreviewTextureResource.GPUTexture.TexHandle);
             ImGui.Image(textureId, size, UV0, UV1);
         }
-
-        return true;
     }
 
     /// <summary>
@@ -124,9 +157,6 @@ public class TexImagePreview : IResourceEventListener
     /// </summary>
     private SubTexture GetPreviewSubTexture(Param.Row context, TexRef textureRef)
     {
-        if (Selection == null)
-            return null;
-
         // Guard clauses checking the validity of the TextureRef
         if (context[textureRef.TargetField] == null)
         {
@@ -140,7 +170,7 @@ public class TexImagePreview : IResourceEventListener
         // Dynamic lookup based on meta information
         if (textureRef.LookupType == "Direct")
         {
-            subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, textureRef.SubTexturePrefix);
+            subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, textureRef.SubTexturePrefix);
         }
 
         // Hardcoded logic for AC6
@@ -148,23 +178,23 @@ public class TexImagePreview : IResourceEventListener
         {
             if (textureRef.LookupType == "Booster")
             {
-                subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, "BS_A_");
+                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "BS_A_");
             }
             if (textureRef.LookupType == "Weapon")
             {
                 // Check for WP_A_ match
-                subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, "WP_A_");
+                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_A_");
 
                 // If failed, check for WP_R_ match
                 if (subTex == null)
                 {
-                    subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, "WP_R_");
+                    subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_R_");
                 }
 
                 // If failed, check for WP_L_ match
                 if (subTex == null)
                 {
-                    subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, "WP_L_");
+                    subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, "WP_L_");
                 }
             }
             if (textureRef.LookupType == "Armor")
@@ -194,241 +224,29 @@ public class TexImagePreview : IResourceEventListener
                 }
 
                 // Check for match
-                subTex = GetMatchingSubTexture(Selection.CurrentPreviewTextureName, imageIdx, prefix);
+                subTex = GetMatchingSubTexture(Editor.Selection.SelectedTextureKey, imageIdx, prefix);
             }
         }
 
         return subTex;
     }
 
-    /// <summary>
-    /// Select the texture container for the Image Preview
-    /// </summary>
-    private void SelectTextureContainer(TextureViewInfo info)
-    {
-        if (Selection == null)
-            return;
-
-        // Ignore this if it is already loaded (e.g. same entry is double clicked)
-        if (Selection.SelectedPreviewTextureContainer == info)
-            return;
-
-        Selection.SelectedPreviewTextureContainerKey = info.Name;
-        Selection.SelectedPreviewTextureContainer = info;
-        Selection.CurrentPreviewTextureContainerName = Selection.SelectedPreviewTextureContainerKey;
-
-        ResourceManager.UnloadPersistentTextures();
-
-        ResourceManager.ResourceJobBuilder job = ResourceManager.CreateNewJob($@"Loading {info.Name} textures");
-
-        ResourceDescriptor ad = null;
-
-        if (info.Category == TextureViewCategory.Menu)
-        {
-            ad = TextureLocator.GetMenuTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
-        }
-
-        if (info.Category == TextureViewCategory.Asset)
-        {
-            ad = TextureLocator.GetAssetTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
-        }
-
-        if (info.Category == TextureViewCategory.Object)
-        {
-            ad = TextureLocator.GetObjTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
-        }
-
-        if (info.Category == TextureViewCategory.Part)
-        {
-            var isLowDetail = false;
-            var name = info.Path;
-            if (name.Contains("_l."))
-            {
-                isLowDetail = true;
-            }
-
-            ad = TextureLocator.GetPartTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey, isLowDetail);
-        }
-
-        if (info.Category == TextureViewCategory.Other)
-        {
-            ad = TextureLocator.GetOtherTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
-        }
-
-        if (info.Category == TextureViewCategory.Particle)
-        {
-            ad = TextureLocator.GetParticleTextureContainer(Editor.Project, Selection.SelectedPreviewTextureContainerKey);
-        }
-
-        if (info.Category == TextureViewCategory.Character)
-        {
-            var chrId = Selection.SelectedPreviewTextureContainerKey;
-
-            var isLowDetail = false;
-            if (chrId.Substring(chrId.Length - 2, 2) == "_l")
-            {
-                isLowDetail = true;
-            }
-
-            if (Editor.Project.ProjectType is ProjectType.ER)
-            {
-                chrId = chrId.Substring(0, chrId.Length - 2); // remove the _h
-            }
-
-            ad = TextureLocator.GetChrTextures(Editor.Project, chrId, isLowDetail);
-        }
-
-        if (ad != null)
-        {
-            Selection.SelectedPreviewTextureDescriptor = ad;
-
-            // Load direct file
-            if (ad.AssetVirtualPath != null)
-            {
-                if (!ResourceManager.IsResourceLoaded(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-                {
-                    if (ad.AssetVirtualPath != null)
-                    {
-                        job.AddLoadFileTask(ad.AssetVirtualPath, AccessLevel.AccessGPUOptimizedOnly, true);
-                    }
-
-                    LoadingTask = job.Complete();
-                }
-
-                ResourceManager.AddResourceListener<TextureResource>(ad.AssetVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
-
-                Selection.SelectedPreviewTextureContainer.Textures = TPF.Read(info.Path).Textures;
-            }
-
-            // Load bnd archive
-            if (ad.AssetArchiveVirtualPath != null)
-            {
-                if (!ResourceManager.IsResourceLoaded(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly))
-                {
-                    if (ad.AssetArchiveVirtualPath != null)
-                    {
-                        job.AddLoadArchiveTask(ad.AssetArchiveVirtualPath, AccessLevel.AccessGPUOptimizedOnly, false, ResourceManager.ResourceType.Texture, null, true);
-                    }
-
-                    LoadingTask = job.Complete();
-                }
-
-                ResourceManager.AddResourceListener<TextureResource>(ad.AssetArchiveVirtualPath, this, AccessLevel.AccessGPUOptimizedOnly);
-
-
-                Selection.SelectedPreviewTextureContainer.Textures = GetTexturesFromBinder(info.Path);
-            }
-        }
-    }
-
-    private List<TPF.Texture> GetTexturesFromBinder(string path)
-    {
-        List<TPF.Texture> textures = new List<TPF.Texture>();
-
-        if (path == null || !File.Exists(path))
-        {
-            return textures;
-        }
-
-        var reader = ResourceManager.InstantiateBinderReaderForFile(path, Editor.Project.ProjectType);
-        if (reader != null)
-        {
-            foreach (var file in reader.Files)
-            {
-                Memory<byte> bytes = reader.ReadFile(file);
-
-                if (file.Name.Contains(".tpf"))
-                {
-                    var tpf = TPF.Read(bytes);
-                    foreach (var tex in tpf.Textures)
-                    {
-                        textures.Add(tex);
-                    }
-                }
-            }
-        }
-
-        return textures;
-    }
-
-    public void LoadTextureContainer(string container)
-    {
-        if (Selection == null)
-            return;
-
-        if (Editor.Project.TextureData.PrimaryBank.Entries == null)
-            return;
-
-        if (Selection.SelectedPreviewTextureContainerKey != container)
-        {
-            foreach (var (name, info) in Editor.Project.TextureData.PrimaryBank.Entries)
-            {
-                if (name == container)
-                {
-                    Selection.SelectedPreviewTextureContainerKey = name;
-                    SelectTextureContainer(info);
-                }
-            }
-        }
-    }
-
-    public void LoadTextureFile(string filename)
-    {
-        if (Selection == null)
-            return;
-
-        if (Selection.SelectedPreviewTextureContainerKey != filename)
-        {
-            if (Selection.SelectedPreviewTextureContainer != null && Selection.SelectedPreviewTextureContainerKey != "")
-            {
-                TextureViewInfo data = Selection.SelectedPreviewTextureContainer;
-
-                if (data.Textures != null)
-                {
-                    foreach (var tex in data.Textures)
-                    {
-                        if (tex.Name == filename)
-                        {
-                            Selection.SelectedPreviewTextureKey = tex.Name;
-                            Selection.SelectedPreviewTexture = tex;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public ResourceHandle<TextureResource> GetImageTextureHandle(string key, TPF.Texture texture, ResourceDescriptor desc)
-    {
-        if (texture != null)
-        {
-            var path = desc.AssetVirtualPath;
-
-            if (desc.AssetArchiveVirtualPath != null)
-            {
-                path = desc.AssetArchiveVirtualPath;
-            }
-            var virtName = $@"{path}/{key}".ToLower();
-
-            var resources = ResourceManager.GetResourceDatabase();
-
-            if (resources.ContainsKey(virtName))
-            {
-                return (ResourceHandle<TextureResource>)resources[virtName];
-            }
-        }
-
-        return null;
-    }
-
     public SubTexture GetMatchingSubTexture(string currentTextureName, string imageIndex, string namePrepend)
     {
-        if (Editor.Project.TextureData.Shoebox == null)
+        if (Editor.Project.TextureData.ShoeboxFiles == null)
             return null;
 
-        if (Editor.Project.TextureData.Shoebox.Textures.ContainsKey(currentTextureName))
+        if (Editor.Project.TextureData.ShoeboxFiles.Entries == null)
+            return null;
+
+        var shoeboxEntry = Editor.Project.TextureData.PrimaryBank.ShoeboxEntries.FirstOrDefault();
+
+        if(shoeboxEntry.Value == null)
+            return null;
+
+        if (shoeboxEntry.Value.Textures.ContainsKey(currentTextureName))
         {
-            var subTexs = Editor.Project.TextureData.Shoebox.Textures[currentTextureName];
+            var subTexs = shoeboxEntry.Value.Textures[currentTextureName];
 
             int matchId;
             var successMatch = int.TryParse(imageIndex, out matchId);

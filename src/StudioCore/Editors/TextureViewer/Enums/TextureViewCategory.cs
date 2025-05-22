@@ -16,5 +16,7 @@ public enum TextureViewCategory
     [Display(Name = "Object")] Object,
     [Display(Name = "Other")] Other,
     [Display(Name = "Part")] Part,
-    [Display(Name = "Particle")] Particle
+    [Display(Name = "Particle")] Particle,
+    [Display(Name = "HD Icons")] HDIcons,
+    [Display(Name = "Map Tiles")] MapTiles,
 }

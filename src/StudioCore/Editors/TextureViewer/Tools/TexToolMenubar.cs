@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Interface;
 using StudioCore.TextureViewer;
 using StudioCore.Utilities;
@@ -13,18 +14,13 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexToolMenubar
 {
-    private TextureViewerScreen Editor;
-    public TexTools Tools;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
-    public TexToolMenubar(TextureViewerScreen screen)
+    public TexToolMenubar(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Tools = screen.Tools;
-    }
-
-    public void Shortcuts()
-    {
-        
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
@@ -33,7 +29,7 @@ public class TexToolMenubar
         {
             if (ImGui.MenuItem("Export Texture", KeyBindings.Current.TEXTURE_ExportTexture.HintText))
             {
-                Tools.ExportTextureHandler();
+                Editor.Tools.ExportTextureHandler();
             }
             UIHelper.Tooltip($"Export currently selected texture.");
 

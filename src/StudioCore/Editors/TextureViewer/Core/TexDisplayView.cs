@@ -11,20 +11,19 @@ using System.Threading.Tasks;
 using StudioCore.Resource.Locators;
 using SoulsFormats;
 using StudioCore.Editors.TextureViewer.Enums;
+using StudioCore.Core;
 
 namespace StudioCore.Editors.TextureViewer;
 
-public class TexTextureViewport
+public class TexDisplayView
 {
-    private TextureViewerScreen Editor;
-    private TexViewSelection Selection;
-    private TexViewerZoom ViewerZoom;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
-    public TexTextureViewport(TextureViewerScreen screen)
+    public TexDisplayView(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        ViewerZoom = screen.ViewerZoom;
+        Editor = editor;
+        Project = project;
     }
 
     /// <summary>
@@ -33,19 +32,15 @@ public class TexTextureViewport
     public void Display()
     {
         ImGui.Begin("Viewer##TextureViewer", ImGuiWindowFlags.AlwaysHorizontalScrollbar | ImGuiWindowFlags.AlwaysVerticalScrollbar);
-        Selection.SwitchWindowContext(TextureViewerContext.TextureViewport);
 
-        Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
-        Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
+        Editor.Selection.SwitchWindowContext(TextureViewerContext.TextureDisplay);
 
-        ResourceHandle<TextureResource> resHandle = GetImageTextureHandle(Selection._selectedTextureKey, Selection._selectedTexture, Selection._selectedAssetDescription);
+        Editor.Selection.TextureViewWindowPosition = ImGui.GetWindowPos();
+        Editor.Selection.TextureViewScrollPosition = new Vector2(ImGui.GetScrollX(), ImGui.GetScrollY());
 
-        if (resHandle != null)
+        if (Editor.Selection.ViewerTextureResource != null)
         {
-            TextureResource texRes = resHandle.Get();
-
-            Selection.CurrentTextureInView = texRes;
-            Selection.CurrentTextureName = Selection._selectedTextureKey;
+            TextureResource texRes = Editor.Selection.ViewerTextureResource;
 
             if (texRes != null)
             {
@@ -57,32 +52,6 @@ public class TexTextureViewport
         }
 
         ImGui.End();
-    }
-
-    /// <summary>
-    /// Get the resource manager handle for the passed texture key
-    /// </summary>
-    public ResourceHandle<TextureResource> GetImageTextureHandle(string key, TPF.Texture texture, ResourceDescriptor desc)
-    {
-        if (texture != null)
-        {
-            var path = desc.AssetVirtualPath;
-
-            if (desc.AssetArchiveVirtualPath != null)
-            {
-                path = desc.AssetArchiveVirtualPath;
-            }
-            var virtName = $@"{path}/{key}".ToLower();
-
-            var resources = ResourceManager.GetResourceDatabase();
-
-            if (resources.ContainsKey(virtName))
-            {
-                return (ResourceHandle<TextureResource>)resources[virtName];
-            }
-        }
-
-        return null;
     }
 
     /// <summary>
@@ -101,7 +70,9 @@ public class TexTextureViewport
             {
                 if (includeZoomFactor)
                 {
-                    size = new Vector2((Width * ViewerZoom.GetZoomFactorWidth()), (Height * ViewerZoom.GetZoomFactorHeight()));
+                    size = new Vector2(
+                        (Width * Editor.ViewerZoom.GetZoomFactorWidth()), 
+                        (Height * Editor.ViewerZoom.GetZoomFactorHeight()));
                 }
                 else
                 {
@@ -153,8 +124,8 @@ public class TexTextureViewport
         relativePos.Y = cursorPos.Y - ((windowPos.Y + fixedY) - scrollPos.Y);
 
         // Account for zoom
-        relativePos.X = relativePos.X / ViewerZoom.GetZoomFactorWidth();
-        relativePos.Y = relativePos.Y / ViewerZoom.GetZoomFactorHeight();
+        relativePos.X = relativePos.X / Editor.ViewerZoom.GetZoomFactorWidth();
+        relativePos.Y = relativePos.Y / Editor.ViewerZoom.GetZoomFactorHeight();
 
         return relativePos;
     }

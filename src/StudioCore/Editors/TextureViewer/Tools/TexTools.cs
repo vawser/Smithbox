@@ -1,4 +1,5 @@
 ﻿using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TextureViewer.Utils;
 using StudioCore.Platform;
@@ -15,21 +16,21 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexTools
 {
-    private TextureViewerScreen Editor;
-    private TexViewSelection Selection;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
+
+    public TexTools(TextureViewerScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
 
     public string[] exportTypes = new[] { "DDS", "PNG", "BMP", "TGA", "TIFF", "JPEG", "WEBP" };
 
-    public TexTools(TextureViewerScreen screen)
-    {
-        Editor = screen;
-        Selection = screen.Selection;
-    }
-
     public void ExportTextureHandler()
     {
-        var currentTexture = Selection.CurrentTextureInView;
-        var currentTextureName = Selection.CurrentTextureName;
+        var currentTexture = Editor.Selection.PreviewTextureResource;
+        var currentTextureName = Editor.Selection.SelectedTextureKey;
 
         if (currentTexture != null)
         {

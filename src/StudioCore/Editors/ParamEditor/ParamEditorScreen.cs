@@ -349,6 +349,12 @@ public class ParamEditorScreen : EditorScreen
         }
 
         ParamUpgrader.Draw();
+
+        // To update the Image Preview texture
+        if(Project.TextureViewer != null)
+        {
+            Project.TextureViewer.ImagePreview.Update();
+        }
     }
     public void FileMenu()
     {

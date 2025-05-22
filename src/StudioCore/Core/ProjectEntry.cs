@@ -9,6 +9,7 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer;
+using StudioCore.Editors.TextureViewer.Data;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
 using StudioCore.EzStateEditorNS;
@@ -109,6 +110,8 @@ public class ProjectEntry
 
     // Data Banks
     [JsonIgnore]
+    public FileData FileData;
+    [JsonIgnore]
     public MapData MapData;
     [JsonIgnore]
     public ParamData ParamData;
@@ -120,15 +123,12 @@ public class ProjectEntry
     public EsdData EsdData;
     [JsonIgnore]
     public GparamData GparamData; 
-
     [JsonIgnore]
-    public TextData TextData; // TODO: utilise file dictionary, change this to lazy load style
+    public TextData TextData;
     [JsonIgnore]
-    public TextureData TextureData; // TODO: utilise file dictionary
+    public TimeActData TimeActData;
     [JsonIgnore]
-    public TimeActData TimeActData; // TODO: utilise file dictionary, change this to lazy load style
-    [JsonIgnore]
-    public FileData FileData;
+    public TextureData TextureData;
 
     /// <summary>
     /// Action manager for project-level changes (e.g. aliases)
@@ -347,7 +347,9 @@ public class ProjectEntry
         FileData = null;
 
         // ---- Map Editor ----
-        if (EnableMapEditor && initType is InitType.ProjectDefined or InitType.MapEditorOnly)
+        if (EnableMapEditor 
+            && initType is InitType.ProjectDefined or InitType.MapEditorOnly
+            && ProjectUtils.SupportsMapEditor(ProjectType))
         {
             // MSB Information
             Task<bool> msbInfoTask = SetupMsbInfo();
@@ -440,7 +442,9 @@ public class ProjectEntry
         }
 
         // ---- Model Editor ----
-        if (EnableModelEditor && initType is InitType.ProjectDefined)
+        if (EnableModelEditor 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsModelEditor(ProjectType))
         {
             // FLVER Information
             Task<bool> flverInfoTask = SetupFlverInfo();
@@ -483,7 +487,9 @@ public class ProjectEntry
         }
 
         // ---- Text Editor ----
-        if (EnableTextEditor && initType is InitType.ProjectDefined or InitType.TextEditorOnly)
+        if (EnableTextEditor 
+            && initType is InitType.ProjectDefined or InitType.TextEditorOnly
+            && ProjectUtils.SupportsTextEditor(ProjectType))
         {
             TextData = new(BaseEditor, this);
 
@@ -507,7 +513,9 @@ public class ProjectEntry
         }
 
         // ---- Param Editor ----
-        if (EnableParamEditor && initType is InitType.ProjectDefined or InitType.ParamEditorOnly)
+        if (EnableParamEditor 
+            && initType is InitType.ProjectDefined or InitType.ParamEditorOnly
+            && ProjectUtils.SupportsParamEditor(ProjectType))
         {
             // Game Offsets (per project)
             Task<bool> gameOffsetTask = SetupParamMemoryOffsets();
@@ -585,7 +593,9 @@ public class ProjectEntry
         }
 
         // ---- Time Act Editor ----
-        if (EnableTimeActEditor && initType is InitType.ProjectDefined)
+        if (EnableTimeActEditor 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsTimeActEditor(ProjectType))
         {
             TimeActData = new(BaseEditor, this);
 
@@ -608,15 +618,10 @@ public class ProjectEntry
             TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
         }
 
-        // Don't init editor for these projects as they don't support GPARAM
-        var supportsGparam = true;
-        if(ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R or ProjectType.DS2 or ProjectType.DS2S)
-        {
-            supportsGparam = false;
-        }
-
         // ---- Graphics Param Editor ----
-        if (EnableGparamEditor && initType is InitType.ProjectDefined && supportsGparam)
+        if (EnableGparamEditor 
+            && initType is InitType.ProjectDefined 
+            && ProjectUtils.SupportsGraphicsParamEditor(ProjectType))
         {
             // GPARAM Information
             Task<bool> gparamInfoTask = SetupGparamInfo();
@@ -656,7 +661,9 @@ public class ProjectEntry
         }
 
         // ---- Material Editor ----
-        if (EnableMaterialEditor && initType is InitType.ProjectDefined)
+        if (EnableMaterialEditor 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsMaterialEditor(ProjectType))
         {
             // Only do this once, as 3 editors may invoke this.
             if (MaterialData == null)
@@ -683,7 +690,9 @@ public class ProjectEntry
         }
 
         // ---- Event Script Editor ----
-        if (EnableEmevdEditor && initType is InitType.ProjectDefined)
+        if (EnableEmevdEditor 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsEventScriptEditor(ProjectType))
         {
             EmevdData = new(BaseEditor, this);
 
@@ -707,7 +716,9 @@ public class ProjectEntry
         }
 
         // ---- EzState Script Editor ----
-        if (EnableEsdEditor && initType is InitType.ProjectDefined)
+        if (EnableEsdEditor 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsEzStateScriptEditor(ProjectType))
         {
             EsdData = new(BaseEditor, this);
 
@@ -731,7 +742,9 @@ public class ProjectEntry
         }
 
         // ---- Texture Viewer ----
-        if (EnableTextureViewer && initType is InitType.ProjectDefined)
+        if (EnableTextureViewer 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsTextureViewer(ProjectType))
         {
             TextureData = new(BaseEditor, this);
 
@@ -755,7 +768,9 @@ public class ProjectEntry
         }
 
         // ---- File Browser ----
-        if (EnableFileBrowser && initType is InitType.ProjectDefined)
+        if (EnableFileBrowser 
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsFileBrowser(ProjectType))
         {
             FileData = new(BaseEditor, this);
 

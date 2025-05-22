@@ -1,4 +1,5 @@
 ﻿using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.TextureViewer;
 using System;
 using System.Collections.Generic;
@@ -11,15 +12,18 @@ namespace StudioCore.Editors.TextureViewer;
 
 public class TexViewerZoom
 {
-    private TextureViewerScreen Editor;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
+
+    public TexViewerZoom(TextureViewerScreen editor, ProjectEntry project)
+    {
+        Editor = editor;
+        Project = project;
+    }
 
     private Vector2 zoomFactor = new Vector2(1.0f, 1.0f);
     private float zoomFactorStep = 0.1f;
 
-    public TexViewerZoom(TextureViewerScreen screen)
-    {
-        Editor = screen;
-    }
     public void HandleZoom()
     {
         var delta = InputTracker.GetMouseWheelDelta();

@@ -17,15 +17,13 @@ namespace StudioCore.Editors.TextureViewer.Tools;
 
 public class TexToolView
 {
-    private TextureViewerScreen Editor;
-    private TexViewSelection Selection;
-    public TexTools Tools;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
-    public TexToolView(TextureViewerScreen screen)
+    public TexToolView(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Selection = screen.Selection;
-        Tools = screen.Tools;
+        Editor = editor;
+        Project = project;
     }
 
     public void Display()
@@ -35,7 +33,7 @@ public class TexToolView
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer"))
         {
-            Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
+            Editor.Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
@@ -51,7 +49,7 @@ public class TexToolView
 
                 UIHelper.WrappedText("Export File Type:");
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
-                if (ImGui.Combo("##ExportType", ref index, Tools.exportTypes, Tools.exportTypes.Length))
+                if (ImGui.Combo("##ExportType", ref index, Editor.Tools.exportTypes, Editor.Tools.exportTypes.Length))
                 {
                     CFG.Current.TextureViewerToolbar_ExportTextureType = index;
                 }
@@ -87,7 +85,7 @@ public class TexToolView
 
                 if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))
                 {
-                    Tools.ExportTextureHandler();
+                    Editor.Tools.ExportTextureHandler();
                 }
             }
         }

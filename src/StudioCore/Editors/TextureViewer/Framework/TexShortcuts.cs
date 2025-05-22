@@ -1,43 +1,36 @@
 ﻿using StudioCore.Configuration;
-using StudioCore.Editors.TextureViewer.Tools;
+using StudioCore.Core;
 using StudioCore.TextureViewer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Veldrid;
 
 namespace StudioCore.Editors.TextureViewer;
 
 public class TexShortcuts
 {
-    private TextureViewerScreen Editor;
-    public TexTools Tools;
-    public TexViewerZoom ViewerZoom;
+    public TextureViewerScreen Editor;
+    public ProjectEntry Project;
 
-    public TexShortcuts(TextureViewerScreen screen)
+    public TexShortcuts(TextureViewerScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Tools = screen.Tools;
-        ViewerZoom = screen.ViewerZoom;
+        Editor = editor;
+        Project = project;
     }
 
     public void Monitor()
     {
         if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ExportTexture))
         {
-            Tools.ExportTextureHandler();
+            Editor.Tools.ExportTextureHandler();
         }
 
         if (InputTracker.GetKey(Key.LControl))
         {
-            ViewerZoom.HandleZoom();
+            Editor.ViewerZoom.HandleZoom();
         }
 
         if (InputTracker.GetKeyDown(KeyBindings.Current.TEXTURE_ResetZoomLevel))
         {
-            ViewerZoom.ZoomReset();
+            Editor.ViewerZoom.ZoomReset();
         }
     }
 }

@@ -178,6 +178,36 @@ public class ProjectUtils
         return combined;
     }
 
+    public static FileDictionary MergeFileDictionaries(FileDictionary first, List<FileDictionary> secondaries)
+    {
+        var combined = new FileDictionary();
+        combined.Entries = new();
+
+        // Normalize and track unique paths
+        var seenPaths = new HashSet<string>(
+            first.Entries
+                 .Select(e => NormalizePath(e.Path))
+                 .Where(p => p != null),
+            StringComparer.OrdinalIgnoreCase);
+
+        combined.Entries.AddRange(first.Entries);
+
+        foreach (var dict in secondaries)
+        {
+            foreach (var entry in dict.Entries)
+            {
+                var normalizedPath = NormalizePath(entry.Path);
+                if (normalizedPath != null && !seenPaths.Contains(normalizedPath))
+                {
+                    combined.Entries.Add(entry);
+                    seenPaths.Add(normalizedPath);
+                }
+            }
+        }
+
+        return combined;
+    }
+
     private static string NormalizePath(string path)
     {
         return string.IsNullOrWhiteSpace(path)
@@ -286,5 +316,80 @@ public class ProjectUtils
         {
             TaskLogs.AddLog($"[{curProject.ProjectName}] Failed to save: {Path.GetFileName(assetPath)} - {e}");
         }
+    }
+
+    /// <summary>
+    /// These are checks for the editor initializations so they don't appear for project types that don't support them.
+    /// </summary>
+
+    public static bool SupportsMapEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsModelEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsTextEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsParamEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsTimeActEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsGraphicsParamEditor(ProjectType curType)
+    {
+        if (curType 
+            is ProjectType.DES 
+            or ProjectType.DS1 
+            or ProjectType.DS1R 
+            or ProjectType.DS2 
+            or ProjectType.DS2S)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static bool SupportsMaterialEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsEventScriptEditor(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsEzStateScriptEditor(ProjectType curType)
+    {
+        // DES uses DLSE-ESD
+        if (curType is ProjectType.DES)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static bool SupportsTextureViewer(ProjectType curType)
+    {
+        return true;
+    }
+
+    public static bool SupportsFileBrowser(ProjectType curType)
+    {
+        return true;
     }
 }

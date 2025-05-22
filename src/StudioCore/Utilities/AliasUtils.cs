@@ -10,7 +10,6 @@ using StudioCore.Editors.TextureViewer.Enums;
 using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;
-using static StudioCore.Editors.TextureViewer.TextureFolderBank;
 
 namespace StudioCore.Utilities;
 
@@ -183,81 +182,72 @@ public static class AliasUtils
     }
 
     // Texture Viewer
-    public static string GetTextureContainerAliasName(ProjectEntry project, TextureViewInfo info)
+    public static string GetTextureContainerAliasName(ProjectEntry project, string filename, TextureViewCategory curCategory)
     {
-        var rawName = info.Name;
+        var rawName = filename;
         var usedName = rawName;
         var aliasName = "";
 
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Characters)
         {
-            if (info.Category == TextureViewCategory.Character)
+            if(curCategory == TextureViewCategory.Character)
             {
                 return aliasName;
             }
         }
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Assets)
         {
-            if (info.Category == TextureViewCategory.Asset || info.Category == TextureViewCategory.Object)
+            if (curCategory == TextureViewCategory.Asset || curCategory == TextureViewCategory.Object)
             {
                 return aliasName;
             }
         }
         if (!CFG.Current.TextureViewer_FileList_ShowAliasName_Parts)
         {
-            if (info.Category == TextureViewCategory.Part)
+            if (curCategory == TextureViewCategory.Part)
             {
                 return aliasName;
             }
         }
 
-        if (info.CachedName == null)
+        if (curCategory == TextureViewCategory.Character)
         {
-            if (info.Category == TextureViewCategory.Character)
+            if (usedName.Contains("_h"))
             {
-                if (usedName.Contains("_h"))
-                {
-                    usedName = rawName.Replace("_h", "");
-                }
-                if (usedName.Contains("_l"))
-                {
-                    usedName = rawName.Replace("_l", "");
-                }
-
-                aliasName = GetCharacterAlias(project, usedName);
+                usedName = rawName.Replace("_h", "");
+            }
+            if (usedName.Contains("_l"))
+            {
+                usedName = rawName.Replace("_l", "");
             }
 
-            if (info.Category == TextureViewCategory.Asset || info.Category == TextureViewCategory.Object)
-            {
-                if (usedName.Contains("_l"))
-                {
-                    usedName = rawName.Replace("_l", "");
-                }
-
-                if (info.Category == TextureViewCategory.Asset)
-                {
-                    // Convert aet to aeg to match alias list)
-                    usedName = usedName.Replace("aet", "aeg");
-                }
-
-                aliasName = GetAssetAlias(project, usedName);
-            }
-
-            if (info.Category == TextureViewCategory.Part)
-            {
-                if (usedName.Contains("_l"))
-                {
-                    usedName = rawName.Replace("_l", "");
-                }
-
-                aliasName = GetPartAlias(project, usedName);
-            }
-
-            info.CachedName = aliasName;
+            aliasName = GetCharacterAlias(project, usedName);
         }
-        else
+
+        if (curCategory == TextureViewCategory.Asset || curCategory == TextureViewCategory.Object)
         {
-            aliasName = info.CachedName;
+            if (usedName.Contains("_l"))
+            {
+                usedName = rawName.Replace("_l", "");
+            }
+
+            if (curCategory == TextureViewCategory.Asset)
+            {
+                // Convert aet to aeg to match alias list)
+                usedName = usedName.Replace("aet", "aeg");
+            }
+
+            aliasName = GetAssetAlias(project, usedName);
+        }
+
+        if (curCategory == TextureViewCategory.Part)
+        {
+            if (usedName.Contains("_l"))
+            {
+                usedName = rawName.Replace("_l", "");
+            }
+
+            aliasName = GetPartAlias(project, usedName);
         }
 
         return aliasName;

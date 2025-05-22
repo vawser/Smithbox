@@ -190,7 +190,7 @@ public static class ProjectCreation
 
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text("Project Directory");
-                    UIHelper.Tooltip("The location of the project.");
+                    UIHelper.Tooltip("The location of the project.\nHint: for most mods, this is the folder in which the mod's regulation.bin is stored.");
 
                     ImGui.TableSetColumnIndex(1);
 
@@ -229,7 +229,7 @@ public static class ProjectCreation
 
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text("Data Directory");
-                    UIHelper.Tooltip("The location of the game data.\nSelect the game executable directory.");
+                    UIHelper.Tooltip("The location of the game data.\nHint: select the directory that the game executable resides in.");
 
                     ImGui.TableSetColumnIndex(1);
 

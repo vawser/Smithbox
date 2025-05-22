@@ -1,15 +1,17 @@
 # FIX
 - Map Editor: visibility icon cannot be clicked
 - Time Act Editor: DS2 TAE entries not being presented
-- Time Act Editor: DS3 a76.tae in c0000 fails assert for TAE in header.
 
 # TODO
 - Map Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
 
 - Map Editor: implement orthographic view
+- Param Editor: add value preview for NpcParam HP, etc based on Area scaling SpEffects assigned
 
 - Project: add Param Enum Editor back
 - Add Behavior Editor
+- Add basic functionality to Material Editor
 
 - Texture Viewer: implement VFS + data bank overhaul
+

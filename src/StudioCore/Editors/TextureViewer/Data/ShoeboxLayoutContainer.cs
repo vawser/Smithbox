@@ -1,12 +1,10 @@
-﻿using SoulsFormats;
+﻿using Microsoft.Extensions.Logging;
+using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.TextureViewer.Enums;
-using StudioCore.TextureViewer;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.Editors.TextureViewer;
@@ -16,21 +14,18 @@ public class ShoeboxLayoutContainer
     public Smithbox BaseEditor;
     public ProjectEntry Project;
 
-    public string SourcePath;
-    public string FallbackPath;
-
-    public string ContainerName = "";
+    public FileDictionaryEntry FileEntry;
 
     public Dictionary<string, ShoeboxLayout> Layouts = new Dictionary<string, ShoeboxLayout>();
 
     public Dictionary<string, List<SubTexture>> Textures = new Dictionary<string, List<SubTexture>>();
 
-    public ShoeboxLayoutContainer(Smithbox baseEditor, ProjectEntry project, string sourcePath, string fallbackPath)
+    public ShoeboxLayoutContainer(Smithbox baseEditor, ProjectEntry project, FileDictionaryEntry fileEntry)
     {
         BaseEditor = baseEditor;
         Project = project;
-        SourcePath = sourcePath;
-        FallbackPath = fallbackPath;
+
+        FileEntry = fileEntry;
     }
 
     public async Task<bool> Setup()
@@ -39,38 +34,27 @@ public class ShoeboxLayoutContainer
 
         if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
         {
-            string sourcePath = $@"menu\hi\01_common.sblytbnd.dcx";
-            if (File.Exists($@"{SourcePath}\{sourcePath}"))
+            try
             {
-                sourcePath = $@"{SourcePath}\{sourcePath}";
-            }
-            else
-            {
-                sourcePath = $@"{FallbackPath}\{sourcePath}";
-            }
+                var shoeboxData = Project.FS.ReadFile(FileEntry.Path);
 
-            if (File.Exists(sourcePath))
-            {
-                LoadLayouts(sourcePath);
+                LoadLayouts(FileEntry, (Memory<byte>)shoeboxData);
                 BuildTextureDictionary();
             }
-            else
+            catch (Exception ex)
             {
-                var filename = Path.GetFileNameWithoutExtension(sourcePath);
-                TaskLogs.AddLog($"Failed to load Shoebox Layout: {filename} at {sourcePath}");
+                TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, Tasks.LogPriority.High, ex);
             }
         }
 
         return true;
     }
 
-    public void LoadLayouts(string filepath)
+    public void LoadLayouts(FileDictionaryEntry fileEntry, Memory<byte> data)
     {
         try
         {
-            var binder = BND4.Read(filepath);
-
-            ContainerName = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(filepath));
+            var binder = BND4.Read(data);
 
             foreach (var file in binder.Files)
             {
@@ -87,9 +71,7 @@ public class ShoeboxLayoutContainer
         }
         catch (Exception e)
         {
-            var filename = Path.GetFileNameWithoutExtension(filepath);
-
-            TaskLogs.AddLog($"Failed to load Shoebox Layout Container: {filename} at {filepath}\n{e.Message}");
+            TaskLogs.AddLog($"Failed to load Shoebox Layout: {FileEntry.Filename}", LogLevel.Error, Tasks.LogPriority.High, e);
         }
     }
 
