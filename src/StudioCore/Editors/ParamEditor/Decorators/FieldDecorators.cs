@@ -86,7 +86,7 @@ public class FieldDecorators
                 result |= AliasEnum_ContextMenuItems(editor.Project.Aliases.Movies, oldval, ref newval);
             }
 
-            if (cellMeta.ShowProjectEnumList)
+            if (cellMeta.ShowProjectEnumList && cellMeta.EnumType != null)
             {
                 var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
 
@@ -701,14 +701,17 @@ public class FieldDecorators
         // Add Goto statements
         List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(editor, bank, reftypes, context, oldval);
         var ctrlDown = InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight);
+
+        int index = 0;
+
         foreach ((string, Param.Row, string) rf in refs)
         {
-            if (ImGui.Selectable($@"Go to {rf.Item3}"))
+            if (ImGui.Selectable($@"Go to {rf.Item3}##GoToElement{index}"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/-1/{rf.Item1}/{rf.Item2.ID}");
             }
 
-            if (ImGui.Selectable($@"Go to {rf.Item3} in new view"))
+            if (ImGui.Selectable($@"Go to {rf.Item3} in new view##GoToElementInView{index}"))
             {
                 EditorCommandQueue.AddCommand($@"param/select/new/{rf.Item1}/{rf.Item2.ID}");
             }
@@ -720,18 +723,20 @@ public class FieldDecorators
 
             if (!string.IsNullOrWhiteSpace(rf.Item2.Name) &&
                 (ctrlDown || string.IsNullOrWhiteSpace(context.Name)) &&
-                ImGui.Selectable($@"Inherit referenced row's name ({rf.Item2.Name})"))
+                ImGui.Selectable($@"Inherit referenced row's name ({rf.Item2.Name})##InheritName{index}"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(context.GetType().GetProperty("Name"), context,
                     rf.Item2.Name));
             }
             else if ((ctrlDown || string.IsNullOrWhiteSpace(rf.Item2.Name)) &&
                      !string.IsNullOrWhiteSpace(context.Name) &&
-                     ImGui.Selectable($@"Proliferate name to referenced row ({rf.Item1})"))
+                     ImGui.Selectable($@"Proliferate name to referenced row ({rf.Item1})##ProliferateName{index}"))
             {
                 executor.ExecuteAction(new PropertiesChangedAction(rf.Item2.GetType().GetProperty("Name"), rf.Item2,
                     context.Name));
             }
+
+            index++;
         }
 
         // Add searchbar for named editing

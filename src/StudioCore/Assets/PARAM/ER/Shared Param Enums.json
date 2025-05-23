@@ -689,7 +689,7 @@
                 { "ID": "464", "Name": "Trigger Fall Immunity (Spiritspring)", "Description": "" },
                 { "ID": "465", "Name": "Unknown", "Description": "" },
                 { "ID": "466", "Name": "Trigger on Crouch", "Description": "" },
-                { "ID": "467", "Name": "Hemorrhage Behavior", "Description": "" },
+                { "ID": "467", "Name": "Apply Behavior Effect", "Description": "" },
                 { "ID": "468", "Name": "Unknown", "Description": "" },
                 { "ID": "469", "Name": "Unknown", "Description": "" },
                 { "ID": "470", "Name": "Unknown", "Description": "" },
