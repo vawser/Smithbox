@@ -19,6 +19,7 @@ using StudioCore.Utilities;
 using StudioCore.Formats.JSON;
 using System.Text.Json;
 using Octokit;
+using StudioCore.Editors.TextEditor.Enums;
 
 namespace StudioCore.Editors.ParamEditor.Data;
 
@@ -2437,5 +2438,86 @@ public class ParamBank
         "maptargetdirparam",
         "npctalkparam",
         "treasureboxparam"
-    };
+    }; 
+    
+    // Legacy CSV import
+    public async void ImportRowNamesForParam_CSV(string filepath = "", string targetParam = "")
+    {
+        Task<bool> importRowNameTask = ImportRowNamesTask_CSV(filepath, targetParam);
+        bool rowNamesImported = await importRowNameTask;
+
+        if (rowNamesImported)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Imported row names for {targetParam}");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to import row names for {targetParam}");
+        }
+    }
+
+    public async Task<bool> ImportRowNamesTask_CSV(string filepath = "", string targetParam = "")
+    {
+        await Task.Yield();
+
+        var sourceFilepath = filepath;
+
+        if (!File.Exists(sourceFilepath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceFilepath}");
+            return false;
+        }
+
+        try
+        {
+            var filestring = File.ReadAllText(sourceFilepath);
+
+            var entries = filestring.Split("\n");
+            var mapping = new Dictionary<int, string>();
+            foreach(var entry in entries)
+            {
+                // TODO: add CFG option for the delimiter
+                var parts = entry.Split(";");
+                if(parts.Length > 1)
+                {
+                    var id = parts[0];
+                    var name = parts[1];
+
+                    try
+                    {
+                        var realID = int.Parse(id);
+
+                        mapping.Add(realID, name);
+                    }
+                    catch { }
+                }
+            }
+
+            foreach (KeyValuePair<string, Param> p in Params)
+            {
+                if (targetParam != "")
+                {
+                    if (p.Key != targetParam)
+                        continue;
+                }
+
+                for (var i = 0; i < p.Value.Rows.Count; i++)
+                {
+                    foreach (var entry in mapping)
+                    {
+                        if (entry.Key == p.Value.Rows[i].ID)
+                        {
+                            p.Value.Rows[i].Name = entry.Value;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFilepath} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+        }
+
+        return true;
+    }
 }

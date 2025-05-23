@@ -91,7 +91,7 @@ public partial class ParamTools
                 }
             }
 
-            if (ImGui.BeginMenu("From File"))
+            if (ImGui.BeginMenu("From JSON File"))
             {
                 if (ImGui.BeginMenu($"By Index"))
                 {
@@ -121,7 +121,7 @@ public partial class ParamTools
                 }
                 UIHelper.Tooltip("This will import the external names, matching via row index. Warning: this will not function as desired if you have edited the row order.");
 
-                if (ImGui.MenuItem($"By ID"))
+                if (ImGui.BeginMenu($"By ID"))
                 {
                     if (ImGui.MenuItem($"Selected Param"))
                     {
@@ -130,7 +130,7 @@ public partial class ParamTools
 
                         if (result)
                         {
-                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath, Editor._activeView.Selection.GetActiveParam());
+                            Project.ParamData.PrimaryBank.ImportRowNamesForParam(ImportRowNameType.ID, ImportRowNameSourceType.External, Editor._activeView.Selection.GetActiveParam(), filePath);
                         }
                     }
 
@@ -144,8 +144,28 @@ public partial class ParamTools
                             Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.External, filePath);
                         }
                     }
+
+                    ImGui.EndMenu();
                 }
                 UIHelper.Tooltip("This will import the external names, matching via row ID.");
+
+                ImGui.EndMenu();
+            }
+
+
+            if (ImGui.BeginMenu("From CSV File"))
+            {
+                if (ImGui.MenuItem($"Selected Param"))
+                {
+                    var filePath = "";
+                    var result = PlatformUtils.Instance.OpenFileDialog("Select row name CSV text file", ["csv"], out filePath);
+
+                    if (result)
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_CSV(filePath, Editor._activeView.Selection.GetActiveParam());
+                    }
+                }
+                UIHelper.Tooltip("This will import the external names from a CSV file, matching via row ID.");
 
                 ImGui.EndMenu();
             }
