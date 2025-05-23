@@ -33,7 +33,10 @@ public class EmevdData
     {
         await Task.Yield();
 
-        EmevdFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "emevd").ToList();
+        EmevdFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "emevd")
+            .ToList();
 
         if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {

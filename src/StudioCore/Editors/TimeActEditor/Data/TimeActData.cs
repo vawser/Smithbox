@@ -35,10 +35,16 @@ public class TimeActData
         await Task.Yield();
 
         var chrBndDictionary = new FileDictionary();
-        chrBndDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "anibnd").ToList();
+        chrBndDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "anibnd")
+            .ToList();
 
         var looseDictionary = new FileDictionary();
-        looseDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "tae").ToList();
+        looseDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "tae")
+            .ToList();
 
         TimeActFiles = ProjectUtils.MergeFileDictionaries(chrBndDictionary, looseDictionary);
 

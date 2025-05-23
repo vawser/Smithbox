@@ -35,10 +35,16 @@ public class EsdData
         Meta = new(BaseEditor, Project);
 
         var talkDictionary = new FileDictionary();
-        talkDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "talkesdbnd").ToList();
+        talkDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "talkesdbnd")
+            .ToList();
 
         var looseDictionary = new FileDictionary();
-        looseDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "esd").ToList();
+        looseDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "esd")
+            .ToList();
 
         EsdFiles = ProjectUtils.MergeFileDictionaries(talkDictionary, looseDictionary);
 

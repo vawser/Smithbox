@@ -28,7 +28,10 @@ public class GparamData
     {
         await Task.Yield();
 
-        GparamFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "gparam").ToList();
+        GparamFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "gparam")
+            .ToList();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);
         VanillaBank = new("Vanilla", BaseEditor, Project, Project.VanillaFS);

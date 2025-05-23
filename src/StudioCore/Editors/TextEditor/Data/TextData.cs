@@ -35,10 +35,15 @@ public class TextData
         await Task.Yield();
 
         var msgbndDictionary = new FileDictionary();
-        msgbndDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msgbnd").ToList();
+        msgbndDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "msgbnd")
+            .ToList();
 
         var fmgDictionary = new FileDictionary();
-        fmgDictionary.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "fmg").ToList();
+        fmgDictionary.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "fmg").ToList();
 
         FmgFiles = ProjectUtils.MergeFileDictionaries(msgbndDictionary, fmgDictionary);
 
