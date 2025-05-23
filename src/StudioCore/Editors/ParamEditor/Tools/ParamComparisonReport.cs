@@ -343,9 +343,7 @@ public class ParamComparisonReport
 
             var buttonSize = new Vector2(800 / 3, 32);
 
-            int byteCount = Encoding.UTF8.GetByteCount(ReportText) + 1;
-
-            ImGui.InputTextMultiline("##reportText", ref ReportText, (nuint)byteCount, textPaneSize, ImGuiInputTextFlags.ReadOnly);
+            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), textPaneSize, ImGuiInputTextFlags.ReadOnly);
 
             if (ImGui.Button("Re-generate", buttonSize))
             {

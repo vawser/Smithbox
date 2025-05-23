@@ -220,4 +220,10 @@ public static class UIHelper
             ImGui.EndTable();
         }
     }
+
+    public static nuint GetTextInputBuffer(string contents)
+    {
+        int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
+        return (nuint)byteCount;
+    }
 }

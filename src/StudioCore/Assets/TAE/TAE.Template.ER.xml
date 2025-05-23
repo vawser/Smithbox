@@ -707,7 +707,7 @@
 			<entry value="0" name="Simple Lerp"/>
 			<entry value="1" name="Ease-out Quadratic"/>
 		</u8>
-		<b/ name="Check Collisions">
+		<b name="Check Collisions" />
 		<s16 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
@@ -1252,7 +1252,7 @@
 		<s32 assert="0"/>
 	</event>
 	<event id="342" name="Set Poise Durability Multiplier">
-		<f32/ name="Poise Durability Multiplier" >
+		<f32 name="Poise Durability Multiplier" />
 		<s32 assert="0"/>
 	</event>
 	<event id="343" name="Do Something and Debug Display [343]">
@@ -1320,7 +1320,7 @@
 		<s32 assert="0"/>
 	</event>
 	<event id="511" name="Set SpEffect Wet Condition">
-		<u8 name="Wet Condition Depth" />
+		<u8 name="Wet Condition Depth" >
             <entry value="0" name="None"/>
 			<entry value="1" name="Lower Body"/>
 			<entry value="2" name="Full Body"/>
