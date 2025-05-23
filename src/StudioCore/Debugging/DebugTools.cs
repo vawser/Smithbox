@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
 using StudioCore.Interface;
@@ -45,6 +46,12 @@ public class DebugTools
 #if DEBUG
         if (ImGui.BeginMenu("Debugging"))
         {
+            // Quick action for testing stuff
+            if (ImGui.MenuItem($"Quick Test"))
+            {
+                QuickTest();
+            }
+
             if (ImGui.MenuItem($"Tasks"))
             {
                 ShowTaskWindow = !ShowTaskWindow;
@@ -324,5 +331,14 @@ public class DebugTools
                 ImGui.End();
             }
         }
+    }
+
+    public void QuickTest()
+    {
+        var path = @$"G:\Downloads\wp_a_0310.partsbnd.dcx";
+
+        var file = BND4.Read(path);
+
+        TaskLogs.AddLog("");
     }
 }

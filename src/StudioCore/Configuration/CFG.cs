@@ -454,6 +454,7 @@ public class CFG
     public float System_Frame_Rate = 60.0f;
     public bool System_Enable_Soapstone_Server = true;
     public bool System_IgnoreAsserts = false;
+    public bool System_UseDCXHeuristicOnReadFailure = false;
 
     public bool System_EnableAutoSave = true;
     public int System_AutoSaveIntervalSeconds = 300;

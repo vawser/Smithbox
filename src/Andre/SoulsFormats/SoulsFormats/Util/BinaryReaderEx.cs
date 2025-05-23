@@ -16,7 +16,10 @@ namespace SoulsFormats
     /// </summary>
     public sealed class BinaryReaderEx
     {
+        /// Silly wau hold holding Smithbox parameters for usage in SoulsFormats without editing the passed parameters
+        public static string CurrentProjectType { get; set; }
         public static bool IgnoreAsserts { get; set; }
+        public static bool UseDCXHeuristicOnReadFailure { get; set; }
 
         private Stack<long> _steps;
         public Memory<byte> _memory;
@@ -134,6 +137,8 @@ namespace SoulsFormats
         /// </summary>
         private T AssertValue<T>(T value, string typeName, string valueFormat, ReadOnlySpan<T> options) where T : IEquatable<T>
         {
+            if (IgnoreAsserts) return value;
+
             foreach (T option in options)
                 if (value.Equals(option))
                     return value;

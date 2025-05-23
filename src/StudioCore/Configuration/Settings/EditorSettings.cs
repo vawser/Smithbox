@@ -47,10 +47,19 @@ public class SystemTab
 
             UIHelper.WrappedText("This option will remove that strictness, and will cause Smithbox to ignore the invalid data when reading a file.");
 
-            ImGui.Checkbox("Ignore asserts", ref CFG.Current.System_IgnoreAsserts);
+            ImGui.Checkbox("Ignore Read asserts", ref CFG.Current.System_IgnoreAsserts);
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+            }
             UIHelper.Tooltip("If enabled, when attempting to read files, asserts will be ignored.");
 
-            BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+            ImGui.Checkbox("Use DCX Heuristic", ref CFG.Current.System_UseDCXHeuristicOnReadFailure);
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
+            }
+            UIHelper.Tooltip("If enabled, if a DCX fails to read its compression type, use a heuristic to guess which it should be instead.");
         }
 
         if (ImGui.CollapsingHeader("Project"))

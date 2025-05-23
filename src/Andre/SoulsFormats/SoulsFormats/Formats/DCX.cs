@@ -172,7 +172,41 @@ namespace SoulsFormats
             else if (type == Type.DCX_KRAK_MAX)
                 return DecompressDCXKRAK(br, 9);
             else
-                throw new FormatException("Unknown DCX format.");
+            {
+                var projectType = BinaryReaderEx.CurrentProjectType;
+
+                if (BinaryReaderEx.UseDCXHeuristicOnReadFailure)
+                {
+                    if (projectType == "DS1" || projectType == "DS1R" || projectType == "DS2" || projectType == "DS2S")
+                    {
+                        type = Type.DCX_DFLT_10000_24_9;
+                        return DecompressDCXDFLT(br, type);
+                    }
+                    else if (projectType == "BB" || projectType == "DS3")
+                    {
+                        type = Type.DCX_DFLT_10000_44_9;
+                        return DecompressDCXDFLT(br, type);
+                    }
+                    else if (projectType == "SDT")
+                    {
+                        type = Type.DCX_DFLT_11000_44_9;
+                        return DecompressDCXDFLT(br, type);
+                    }
+                    else if (projectType == "ER")
+                    {
+                        type = Type.DCX_DFLT_11000_44_9_15;
+                        return DecompressDCXDFLT(br, type);
+                    }
+                    else
+                    {
+                        throw new FormatException("Unknown DCX format.");
+                    }
+                }
+                else
+                {
+                    throw new FormatException("Unknown DCX format.");
+                }
+            }
         }
 
         private static byte[] DecompressDCXZSTD(BinaryReaderEx br)

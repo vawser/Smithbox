@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Octokit;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
@@ -477,6 +478,9 @@ public class ProjectManager
         curProject.IsSelected = true;
 
         SelectedProject = curProject;
+
+        // Used for the DCX heuristic
+        BinaryReaderEx.CurrentProjectType = $"{curProject.ProjectType}";
 
         IsProjectLoading = false;
 
