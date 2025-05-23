@@ -98,7 +98,7 @@
         <Option Value="7" Name="Unknown" />
         <Option Value="8" Name="Unknown" />
         <Option Value="9" Name="Unknown" />
-        <Option Value="10" Name="Unknown" />
+        <Option Value="10" Name="Backstab" />
         <Option Value="11" Name="Unknown" />
         <Option Value="12" Name="Unknown" />
         <Option Value="13" Name="Unknown" />
@@ -160,9 +160,9 @@
         <Option Value="10" Name="Type 10" />
     </Enum>
     <Enum Name="SP_EFFECT_WET_CONDITION_DEPTH" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-        <Option Value="2" Name="Type 2" />
+        <Option Value="0" Name="None" />
+        <Option Value="1" Name="Full Body" />
+        <Option Value="2" Name="Lower Body" />
     </Enum>
     <Enum Name="SP_EFFECT_APPLY_PARTS_GROUP" type="u8">
         <Option Value="0" Name="Type 0" />
