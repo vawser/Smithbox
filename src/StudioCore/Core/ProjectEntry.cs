@@ -14,6 +14,7 @@ using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
 using StudioCore.EzStateEditorNS;
 using StudioCore.FileBrowserNS;
+using StudioCore.Formats;
 using StudioCore.Formats.JSON;
 using StudioCore.GraphicsParamEditorNS;
 using StudioCore.MaterialEditorNS;
@@ -174,6 +175,9 @@ public class ProjectEntry
 
     [JsonIgnore]
     public EntitySelectionGroupList MapEntitySelections;
+
+    [JsonIgnore]
+    public MaterialDisplayConfiguration MaterialDisplayConfiguration;
 
     [JsonIgnore]
     public bool Initialized = false;
@@ -665,6 +669,22 @@ public class ProjectEntry
             && initType is InitType.ProjectDefined
             && ProjectUtils.SupportsMaterialEditor(ProjectType))
         {
+            // Material Display Configuration
+            Task<bool> matDispTask = SetupMaterialDisplayConfiguration();
+            bool matDispTaskResult = await matDispTask;
+
+            if (!silent)
+            {
+                if (matDispTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Material Editor] Setup Material Display Configuration.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Material Editor] Failed to setup Material Display Configuration.");
+                }
+            }
+
             // Only do this once, as 3 editors may invoke this.
             if (MaterialData == null)
             {
@@ -1750,6 +1770,57 @@ public class ProjectEntry
             catch (Exception e)
             {
                 TaskLogs.AddLog($"[Smithbox] Failed to read the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+
+        return true;
+    }
+    #endregion
+
+    #region Setup Material Display Configuration
+    /// <summary>
+    /// Setup the material display configuration for this project
+    /// </summary>
+    /// <returns></returns>
+    public async Task<bool> SetupMaterialDisplayConfiguration()
+    {
+        await Task.Yield();
+
+        MaterialDisplayConfiguration = new();
+
+        // Information
+        var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\MATERIAL\{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
+
+        var projectFolder = $@"{ProjectPath}\.smithbox\Assets\MATERIAL\{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFile = Path.Combine(projectFolder, "Display Configuration.json");
+
+        var targetFile = sourceFile;
+
+        if (File.Exists(projectFile))
+        {
+            targetFile = projectFile;
+        }
+
+        if (File.Exists(targetFile))
+        {
+            try
+            {
+                var filestring = File.ReadAllText(targetFile);
+
+                try
+                {
+                    var options = new JsonSerializerOptions();
+                    MaterialDisplayConfiguration = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.MaterialDisplayConfiguration);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to deserialize the Material Display Configuration: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to read the Material Display Configuration: {targetFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
 

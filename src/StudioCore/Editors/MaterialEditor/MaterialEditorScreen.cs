@@ -3,7 +3,9 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Interface;
+using System.IO;
 using System.Numerics;
+using System.Threading.Tasks;
 
 namespace StudioCore.MaterialEditorNS;
 
@@ -23,6 +25,8 @@ public class MaterialEditorScreen : EditorScreen
     public MaterialMTDView MTDView;
     public MaterialMATBINView MATBINView;
 
+    public MaterialFieldInput FieldInput;
+
 
     public MaterialEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
@@ -37,6 +41,8 @@ public class MaterialEditorScreen : EditorScreen
 
         MTDView = new(this, project);
         MATBINView = new(this, project);
+
+        FieldInput = new(this, project);
     }
 
     public string EditorName => "Material Editor##MaterialEditor";
@@ -61,6 +67,8 @@ public class MaterialEditorScreen : EditorScreen
 
         var dsid = ImGui.GetID("DockSpace_MaterialEditor");
         ImGui.DockSpace(dsid, new Vector2(0, 0), ImGuiDockNodeFlags.None);
+
+        Shortucts();
 
         if (ImGui.BeginMenuBar())
         {
@@ -116,11 +124,6 @@ public class MaterialEditorScreen : EditorScreen
                 Save();
             }
 
-            if (ImGui.MenuItem($"Save All", $"{KeyBindings.Current.CORE_SaveAll.HintText}"))
-            {
-                SaveAll();
-            }
-
             ImGui.EndMenu();
         }
     }
@@ -174,17 +177,73 @@ public class MaterialEditorScreen : EditorScreen
 
     }
 
-    public void Save()
+    public void Shortucts()
     {
-        // Project.MaterialBank.SaveMaterial(_selectedFileInfo, _selectedBinder);
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Save();
+        }
 
-        // Save the configuration JSONs
-        BaseEditor.SaveConfiguration();
+        if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanUndo() && InputTracker.GetKey(KeyBindings.Current.CORE_UndoContinuousAction))
+        {
+            EditorActionManager.UndoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_RedoAction))
+        {
+            EditorActionManager.RedoAction();
+        }
+
+        if (EditorActionManager.CanRedo() && InputTracker.GetKey(KeyBindings.Current.CORE_RedoContinuousAction))
+        {
+            EditorActionManager.RedoAction();
+        }
     }
 
-    public void SaveAll()
+    public async void Save()
     {
-        // Project.MaterialBank.SaveMaterials();
+        if (Selection.SelectedBinderEntry == null)
+            return;
+
+        if (Selection.SelectedFileKey == "")
+            return;
+
+        if(Selection.SourceType is SourceType.MTD)
+        {
+            if (Selection.MTDWrapper == null)
+                return;
+
+            if (Selection.SelectedMTD == null)
+                return;
+        }
+
+        if (Selection.SourceType is SourceType.MATBIN)
+        {
+            if (Selection.MATBINWrapper == null)
+                return;
+
+            if (Selection.SelectedMATBIN == null)
+                return;
+        }
+
+        Task<bool> saveTask = Project.MaterialData.PrimaryBank.Save(this);
+        bool saveTaskResult = await saveTask;
+
+        var displayName = Path.GetFileName(Selection.SelectedFileKey);
+
+        if (saveTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Saved {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to save {displayName} in {Selection.SelectedBinderEntry.Filename}.");
+        }
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

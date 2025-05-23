@@ -84,6 +84,10 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(GraphLegends))]
 [JsonSerializable(typeof(GraphLegendEntry))]
 
+// Material Display Configuration
+[JsonSerializable(typeof(MaterialDisplayConfiguration))]
+[JsonSerializable(typeof(MaterialFileListConfiguration))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }

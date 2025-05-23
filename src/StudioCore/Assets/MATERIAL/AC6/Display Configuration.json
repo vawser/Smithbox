@@ -1,0 +1,9 @@
+{
+  "FileListConfigurations": [
+    {
+        "SourceType": "MATBIN",
+        "Binder": "allmaterial",
+        "CommonPath": "N:\\FNR\\data\\Target\\INTERROOT_win64\\material\\matbin\\"
+    }
+  ]
+}

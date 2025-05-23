@@ -77,9 +77,19 @@ public class MaterialBank
     public MATBIN GetMatbin(string name) =>
         MATBINLookup.TryGetValue(name, out var matbin) ? matbin : null;
 
-    public async Task<bool> Save()
+    public async Task<bool> Save(MaterialEditorScreen editor)
     {
         await Task.Yield();
+
+        if(editor.Selection.SourceType is SourceType.MTD)
+        {
+            await editor.Selection.MTDWrapper.Save(editor);
+        }
+
+        if (editor.Selection.SourceType is SourceType.MATBIN)
+        {
+            await editor.Selection.MATBINWrapper.Save(editor);
+        }
 
         return true;
     }
@@ -179,9 +189,72 @@ public class MTDWrapper
         }
     }
 
-    public async Task<bool> Save()
+    public async Task<bool> Save(MaterialEditorScreen editor)
     {
         await Task.Yield();
+
+        if (Project.ProjectType is ProjectType.DES or ProjectType.DS1 or ProjectType.DS1R)
+        {
+            try
+            {
+                var binderData = TargetFS.ReadFileOrThrow(Path);
+                var binder = BND4.Read(binderData);
+
+                foreach (var entry in binder.Files)
+                {
+                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    {
+                        try
+                        {
+                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                        }
+                    }
+                }
+
+                var newBinderData = binder.Write();
+                Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+        else
+        {
+            try
+            {
+                var binderData = TargetFS.ReadFileOrThrow(Path);
+                var binder = BND4.Read(binderData);
+
+                foreach (var entry in binder.Files)
+                {
+                    if (entry.Name == editor.Selection.SelectedFileKey)
+                    {
+                        try
+                        {
+                            entry.Bytes = editor.Selection.SelectedMTD.Write();
+                        }
+                        catch (Exception e)
+                        {
+                            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MTD", LogLevel.Error, Tasks.LogPriority.High, e);
+                        }
+                    }
+                }
+
+                var newBinderData = binder.Write();
+                Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
 
         return true;
     }
@@ -246,9 +319,39 @@ public class MATBINWrapper
             return false;
         }
     }
-    public async Task<bool> Save()
+
+    public async Task<bool> Save(MaterialEditorScreen editor)
     {
         await Task.Yield();
+
+        try
+        {
+            var binderData = TargetFS.ReadFileOrThrow(Path);
+            var binder = BND4.Read(binderData);
+
+            foreach (var entry in binder.Files)
+            {
+                if(entry.Name == editor.Selection.SelectedFileKey)
+                {
+                    try
+                    {
+                        entry.Bytes = editor.Selection.SelectedMATBIN.Write();
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {entry.Name} as MATBIN", LogLevel.Error, Tasks.LogPriority.High, e);
+                    }
+                }
+            }
+
+            var newBinderData = binder.Write();
+            Project.ProjectFS.WriteFile(editor.Selection.SelectedBinderEntry.Path, newBinderData);
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Material Editor] Failed to write {Path}", LogLevel.Error, Tasks.LogPriority.High, e);
+            return false;
+        }
 
         return true;
     }

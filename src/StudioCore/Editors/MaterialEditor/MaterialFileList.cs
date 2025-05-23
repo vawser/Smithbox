@@ -54,7 +54,7 @@ public class MaterialFileList
                     var key = filteredEntries[i];
                     var curFile = Editor.Selection.MTDWrapper.Entries[key];
 
-                    var displayName = $"{key}";
+                    var displayName = GetPrettyName($"{key}");
 
                     if (ImGui.Selectable($"{displayName}##mtdFileEntry_{key}{i}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                     {
@@ -95,7 +95,7 @@ public class MaterialFileList
                         var key = filteredEntries[i];
                         var curFile = Editor.Selection.MATBINWrapper.Entries[key];
 
-                        var displayName = $"{key}";
+                        var displayName = GetPrettyName($"{key}");
 
                         if (ImGui.Selectable($"{displayName}##matbinFileEntry_{key}", key == Editor.Selection.SelectedFileKey, ImGuiSelectableFlags.AllowDoubleClick))
                         {
@@ -112,5 +112,25 @@ public class MaterialFileList
         }
 
         ImGui.EndChild();
+    }
+
+    public string GetPrettyName(string path)
+    {
+        var newName = path;
+
+        if(Project.MaterialDisplayConfiguration != null && Project.MaterialDisplayConfiguration.FileListConfigurations != null)
+        {
+            var curConfig = Project.MaterialDisplayConfiguration.FileListConfigurations
+                .Where(e => e.SourceType == $"{Editor.Selection.SourceType}")
+                .Where(e => e.Binder == Editor.Selection.SelectedBinderEntry.Filename)
+                .FirstOrDefault();
+
+            if (curConfig != null)
+            {
+                newName = path.Replace(curConfig.CommonPath, "");
+            }
+        }
+
+        return newName;
     }
 }

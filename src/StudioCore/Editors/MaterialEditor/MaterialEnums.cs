@@ -14,3 +14,18 @@ public enum SourceType
     [Display(Name = "MATBIN")]
     MATBIN
 }
+
+
+public enum ListCategory
+{
+    [Display(Name = "Character")]
+    Character,
+    [Display(Name = "Part")]
+    Part,
+    [Display(Name = "Map")]
+    Map,
+    [Display(Name = "Particles")]
+    SFX,
+    [Display(Name = "Miscellaneous")]
+    Misc,
+}
