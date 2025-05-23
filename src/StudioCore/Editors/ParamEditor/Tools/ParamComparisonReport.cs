@@ -320,7 +320,7 @@ public class ParamComparisonReport
         {
             TargetedParams = new List<string>();
         }
-        UIHelper.Tooltip("Reset map selection input rows.");
+        UIHelper.Tooltip("Reset param target input rows.");
 
         for (int i = 0; i < TargetedParams.Count; i++)
         {

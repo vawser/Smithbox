@@ -348,9 +348,12 @@ public static class MapLocator
     {
         List<string> mapList = new();
 
-        foreach (var entry in project.MapData.MapFiles.Entries)
+        if (project.MapEditor != null)
         {
-            mapList.Add(entry.Filename);
+            foreach (var entry in project.MapData.MapFiles.Entries)
+            {
+                mapList.Add(entry.Filename);
+            }
         }
 
         return mapList;

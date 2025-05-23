@@ -1,9 +1,12 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
 using SoulsFormats;
+using StudioCore.Configuration;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +30,8 @@ public class FieldNameFinder
     public bool MatchTextExactly = false;
     public bool DisplayCommunityNameInResult = false;
 
+    public List<string> TargetedParams = new();
+
     public List<DataSearchResult> Results = new();
 
     public FieldNameFinder(ParamEditorScreen editor) 
@@ -42,7 +47,7 @@ public class FieldNameFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -50,12 +55,66 @@ public class FieldNameFinder
         UIHelper.WrappedText("Display all fields and the respective params they appear in based on the search text.");
         UIHelper.WrappedText("");
 
-        // Search Text
-        UIHelper.WrappedText("Search Text:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
-        ImGui.InputText("##searchString", ref SearchText, 255);
+        /// Targeted Param
+        UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
-        UIHelper.Tooltip("The text to search for. Matches loosely by default.");
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldIdFinder"))
+        {
+            TargetedParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (TargetedParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset_fieldIdFinder"))
+        {
+            TargetedParams = new List<string>();
+        }
+        UIHelper.Tooltip("Reset param target input rows.");
+
+        for (int i = 0; i < TargetedParams.Count; i++)
+        {
+            var curCommand = TargetedParams[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.InputText($"##paramTargetInput{i}_fieldIdFinder", ref curText, 255))
+            {
+                TargetedParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param target to include.");
+        }
+
+        UIHelper.WrappedText("");
+
+        /// Search Configuration
+        UIHelper.SimpleHeader("searchConfiguration", "Search Configuration", "The configuration parameters for the search.", UI.Current.ImGui_AliasName_Text);
 
         // Checkbox: Include Community Name in Search
         ImGui.Checkbox($"Include Community Name in Search##includeCommunityName_{imguiID}",
@@ -79,14 +138,35 @@ public class FieldNameFinder
         // Checkbox: Display Community Name in Results
         ImGui.Checkbox($"Display Community Name in Results##useCommunityNames_{imguiID}", 
             ref DisplayCommunityNameInResult);
-
         UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
+
+        UIHelper.WrappedText("");
+
+        // Search Text
+        UIHelper.WrappedText("Search Text:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        ImGui.InputText("##searchString", ref SearchText, 255);
+        UIHelper.Tooltip("The text to search for. Matches loosely by default.");
+
+        // Search Button
+        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        {
+            if (Editor.Project.ParamData.PrimaryBank.Params != null)
+            {
+                CachedSearchText = SearchText;
+
+                Results = ConstructResults();
+                Results.Sort();
+            }
+        }
 
         UIHelper.WrappedText("");
 
         // Results List
         if (Results.Count > 0)
         {
+            UIHelper.SimpleHeader("searchResults", "Search Results", "The results of the last search performed.", UI.Current.ImGui_AliasName_Text);
+
             UIHelper.WrappedText($"Search Term:");
             UIHelper.DisplayAlias(CachedSearchText);
 
@@ -122,18 +202,6 @@ public class FieldNameFinder
         }
 
         UIHelper.WrappedText("");
-
-        // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
-        {
-            if (Editor.Project.ParamData.PrimaryBank.Params != null)
-            {
-                CachedSearchText = SearchText;
-
-                Results = ConstructResults();
-                Results.Sort();
-            }
-        }
     }
 
     /// <summary>
@@ -147,6 +215,14 @@ public class FieldNameFinder
 
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
+            if (TargetedParams.Count > 0)
+            {
+                if (!TargetedParams.Contains(p.Key))
+                {
+                    continue;
+                }
+            }
+
             var def = p.Value.AppliedParamdef;
             var meta = Editor.Project.ParamData.GetParamMeta(def);
 
@@ -266,6 +342,8 @@ public class FieldValueFinder
     public bool DisplayFirstMatchOnlyInResult = false;
     public bool DisplayCommunityNameInResult = false;
 
+    public List<string> TargetedParams = new();
+
     public List<DataSearchResult> Results = new();
 
     public FieldValueFinder(ParamEditorScreen editor)
@@ -280,7 +358,7 @@ public class FieldValueFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -288,31 +366,66 @@ public class FieldValueFinder
         UIHelper.WrappedText("Display all instances of a specified field value.");
         UIHelper.WrappedText("");
 
-        if (UseRangeMatchMode)
+        /// Targeted Param
+        UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
+
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldValueFinder"))
         {
-            // Start Value
-            UIHelper.WrappedText("Start Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
-            ImGui.InputText($"##startSearchValue_{imguiID}", ref RangeSearchText_Start, 255);
+            TargetedParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
 
-            UIHelper.Tooltip("The start value in the search range.");
+        ImGui.SameLine();
 
-            // End Value
-            UIHelper.WrappedText("End Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
-            ImGui.InputText($"##endSearchValue_{imguiID}", ref RangeSearchText_End, 255);
+        // Remove
+        if (TargetedParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
 
-            UIHelper.Tooltip("The end value in the search range.");
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
         }
 
-        if (!UseRangeMatchMode)
-        {
-            UIHelper.WrappedText("Search Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
-            ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
+        ImGui.SameLine();
 
-            UIHelper.Tooltip("The value to search for.");
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset_fieldValueFinder"))
+        {
+            TargetedParams = new List<string>();
         }
+        UIHelper.Tooltip("Reset param target input rows.");
+
+        for (int i = 0; i < TargetedParams.Count; i++)
+        {
+            var curCommand = TargetedParams[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.InputText($"##paramTargetInput{i}_fieldValueFinder", ref curText, 255))
+            {
+                TargetedParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param target to include.");
+        }
+
+        UIHelper.WrappedText("");
+
+        /// Search Configuration
+        UIHelper.SimpleHeader("searchConfiguration", "Search Configuration", "The configuration parameters for the search.", UI.Current.ImGui_AliasName_Text);
 
         // Checkbox: Enable Range Search
         ImGui.Checkbox($"Enable Range Search##rangeMode_{imguiID}", ref UseRangeMatchMode);
@@ -325,16 +438,53 @@ public class FieldValueFinder
         UIHelper.Tooltip("Only display the first match within a param, instead of all matches.");
 
         // Checkbox: Display Community Name in Result
-        ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}", 
+        ImGui.Checkbox($"Display Community Names in Result##displayCommunityNames_{imguiID}",
             ref DisplayCommunityNameInResult);
-
         UIHelper.Tooltip("Display the community name for the field instead of the internal name.");
 
         UIHelper.WrappedText("");
 
+        if (UseRangeMatchMode)
+        {
+            // Start Value
+            UIHelper.WrappedText("Start Value:");
+            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            ImGui.InputText($"##startSearchValue_{imguiID}", ref RangeSearchText_Start, 255);
+            UIHelper.Tooltip("The start value in the search range.");
+
+            // End Value
+            UIHelper.WrappedText("End Value:");
+            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            ImGui.InputText($"##endSearchValue_{imguiID}", ref RangeSearchText_End, 255);
+            UIHelper.Tooltip("The end value in the search range.");
+        }
+
+        if (!UseRangeMatchMode)
+        {
+            UIHelper.WrappedText("Search Value:");
+            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
+            UIHelper.Tooltip("The value to search for.");
+        }
+
+        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        {
+            CachedSearchText = SearchText;
+
+            if (UseRangeMatchMode)
+            {
+                CachedSearchText = $"{RangeSearchText_Start} -> {RangeSearchText_End}";
+            }
+
+            Results = ConstructResults();
+            Results.Sort();
+        }
+
         // Result List
         if (Results.Count > 0)
         {
+            UIHelper.SimpleHeader("searchResults", "Search Results", "The results of the last search performed.", UI.Current.ImGui_AliasName_Text);
+
             UIHelper.WrappedText($"Search Term:");
             UIHelper.DisplayAlias(CachedSearchText);
 
@@ -355,9 +505,27 @@ public class FieldValueFinder
                 {
                     name = result.FieldDisplayName;
                 }
-                if (ImGui.Selectable($"{result.ParamName}: {result.RowID}: {name}: {result.FieldValue}##resultEntry_{imguiID}"))
+
+                if (ImGui.Selectable($"{result.ParamName}: {result.RowID} {result.RowName}: {name}: {result.FieldValue}##resultEntry_{imguiID}"))
                 {
                     EditorCommandQueue.AddCommand($@"param/select/-1/{result.ParamName}/{result.RowID}/{result.FieldInternalName}");
+                }
+                if (ImGui.BeginPopupContextItem($"#resultPopup{result.ParamName}{result.RowID}"))
+                {
+                    if (ImGui.Selectable("Copy Row ID"))
+                    {
+                        PlatformUtils.Instance.SetClipboardText($"{result.RowID}");
+                    }
+
+                    if (ImGui.Selectable("Copy Row Name"))
+                    {
+                        if (result.RowName != null)
+                        {
+                            PlatformUtils.Instance.SetClipboardText(result.RowName);
+                        }
+                    }
+
+                    ImGui.EndPopup();
                 }
             }
             ImGui.EndChild();
@@ -369,18 +537,6 @@ public class FieldValueFinder
 
         UIHelper.WrappedText("");
 
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
-        {
-            CachedSearchText = SearchText;
-
-            if(UseRangeMatchMode)
-            {
-                CachedSearchText = $"{RangeSearchText_Start} -> {RangeSearchText_End}";
-            }
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
     }
 
     /// <summary>
@@ -396,6 +552,14 @@ public class FieldValueFinder
 
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
+            if (TargetedParams.Count > 0)
+            {
+                if (!TargetedParams.Contains(p.Key))
+                {
+                    continue;
+                }
+            }
+
             var meta = Editor.Project.ParamData.GetParamMeta(p.Value.AppliedParamdef);
 
             for (var i = 0; i < p.Value.Rows.Count; i++)
@@ -422,6 +586,7 @@ public class FieldValueFinder
                     {
                         var result = new DataSearchResult();
                         result.RowID = id;
+                        result.RowName = r.Name;
                         result.ParamName = p.Key;
                         result.FieldInternalName = fieldName;
                         result.FieldDisplayName = fieldDisplayName;
@@ -455,6 +620,8 @@ public class RowIDFinder
     public bool IncludeDescriptionInSearch = true;
     public bool DisplayCommunityNameInResult = false;
 
+    public List<string> TargetedParams = new();
+
     public List<DataSearchResult> Results = new();
 
     public RowIDFinder(ParamEditorScreen editor) 
@@ -470,7 +637,7 @@ public class RowIDFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -478,12 +645,66 @@ public class RowIDFinder
         UIHelper.WrappedText("Display all instances of a specificed row ID.");
         UIHelper.WrappedText("");
 
-        // Row ID
-        UIHelper.WrappedText("Row ID:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
-        ImGui.InputInt($"##searchId_{imguiID}", ref SearchID);
+        /// Targeted Param
+        UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
-        UIHelper.Tooltip("The row ID to search for.");
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowIdFinder"))
+        {
+            TargetedParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (TargetedParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset_rowIdFinder"))
+        {
+            TargetedParams = new List<string>();
+        }
+        UIHelper.Tooltip("Reset param target input rows.");
+
+        for (int i = 0; i < TargetedParams.Count; i++)
+        {
+            var curCommand = TargetedParams[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.InputText($"##paramTargetInput{i}_rowIdFinder", ref curText, 255))
+            {
+                TargetedParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param target to include.");
+        }
+
+        UIHelper.WrappedText("");
+
+        /// Search Configuration
+        UIHelper.SimpleHeader("searchConfiguration", "Search Configuration", "The configuration parameters for the search.", UI.Current.ImGui_AliasName_Text);
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
@@ -492,11 +713,28 @@ public class RowIDFinder
 
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
+        // Row ID
+        UIHelper.WrappedText("Row ID:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        ImGui.InputInt($"##searchId_{imguiID}", ref SearchID);
+        UIHelper.Tooltip("The row ID to search for.");
+
+        // Search Button
+        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        {
+            CachedSearchID = SearchID;
+
+            Results = ConstructResults();
+            Results.Sort();
+        }
+
         UIHelper.WrappedText("");
 
         // Result List
         if (Results.Count > 0)
         {
+            UIHelper.SimpleHeader("searchResults", "Search Results", "The results of the last search performed.", UI.Current.ImGui_AliasName_Text);
+
             UIHelper.WrappedText($"Search Term:");
             UIHelper.DisplayAlias($"{CachedSearchID}");
 
@@ -525,15 +763,6 @@ public class RowIDFinder
         }
 
         UIHelper.WrappedText("");
-
-        // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
-        {
-            CachedSearchID = SearchID;
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
     }
 
     /// <summary>
@@ -545,6 +774,14 @@ public class RowIDFinder
 
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
+            if (TargetedParams.Count > 0)
+            {
+                if (!TargetedParams.Contains(p.Key))
+                {
+                    continue;
+                }
+            }
+
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
                 var r = p.Value.Rows[i];
@@ -577,6 +814,8 @@ public class RowNameFinder
     public string CachedSearchText = "";
     public int SearchIndex = -1;
 
+    public List<string> TargetedParams = new();
+
     public List<DataSearchResult> Results = new();
     public RowNameFinder(ParamEditorScreen editor) 
     {
@@ -591,7 +830,7 @@ public class RowNameFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -599,12 +838,66 @@ public class RowNameFinder
         UIHelper.WrappedText("Display all instances of a specificed row name.");
         UIHelper.WrappedText("");
 
-        // Search Text
-        UIHelper.WrappedText("Search Text:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
-        ImGui.InputText($"##searchText_{imguiID}", ref SearchText, 255);
+        /// Targeted Param
+        UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
-        UIHelper.Tooltip("The row name to search for. Matches loosely.");
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowNameFinder"))
+        {
+            TargetedParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (TargetedParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset_rowNameFinder"))
+        {
+            TargetedParams = new List<string>();
+        }
+        UIHelper.Tooltip("Reset param target input rows.");
+
+        for (int i = 0; i < TargetedParams.Count; i++)
+        {
+            var curCommand = TargetedParams[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.InputText($"##paramTargetInput{i}_rowNameFinder", ref curText, 255))
+            {
+                TargetedParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param target to include.");
+        }
+
+        UIHelper.WrappedText("");
+
+        /// Search Configuration
+        UIHelper.SimpleHeader("searchConfiguration", "Search Configuration", "The configuration parameters for the search.", UI.Current.ImGui_AliasName_Text);
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
@@ -613,11 +906,28 @@ public class RowNameFinder
 
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
+        // Search Text
+        UIHelper.WrappedText("Search Text:");
+        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        ImGui.InputText($"##searchText_{imguiID}", ref SearchText, 255);
+        UIHelper.Tooltip("The row name to search for. Matches loosely.");
+
+        // Search Button
+        if (ImGui.Button("Search##action_SearchForRowNames", defaultButtonSize))
+        {
+            CachedSearchText = SearchText;
+
+            Results = ConstructResults();
+            Results.Sort();
+        }
+
         UIHelper.WrappedText("");
 
         // Result List
         if (Results.Count > 0)
         {
+            UIHelper.SimpleHeader("searchResults", "Search Results", "The results of the last search performed.", UI.Current.ImGui_AliasName_Text);
+
             UIHelper.WrappedText($"Search Term:");
             UIHelper.DisplayAlias(CachedSearchText);
 
@@ -646,15 +956,6 @@ public class RowNameFinder
         }
 
         UIHelper.WrappedText("");
-
-        // Search Button
-        if (ImGui.Button("Search##action_SearchForRowNames", defaultButtonSize))
-        {
-            CachedSearchText = SearchText;
-
-            Results = ConstructResults();
-            Results.Sort();
-        }
     }
 
     /// <summary>
@@ -668,6 +969,14 @@ public class RowNameFinder
 
         foreach (var p in Editor.Project.ParamData.PrimaryBank.Params)
         {
+            if (TargetedParams.Count > 0)
+            {
+                if (!TargetedParams.Contains(p.Key))
+                {
+                    continue;
+                }
+            }
+
             for (var i = 0; i < p.Value.Rows.Count; i++)
             {
                 var r = p.Value.Rows[i];

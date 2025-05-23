@@ -120,7 +120,9 @@ public class Smithbox
         Environment.SetEnvironmentVariable("PATH",
             Environment.GetEnvironmentVariable("PATH") + Path.PathSeparator + "bin");
 
+        BinaryReaderEx.CurrentProjectType = "";
         BinaryReaderEx.IgnoreAsserts = CFG.Current.System_IgnoreAsserts;
+        BinaryReaderEx.UseDCXHeuristicOnReadFailure = CFG.Current.System_UseDCXHeuristicOnReadFailure;
     }
 
     public void SaveConfiguration()
