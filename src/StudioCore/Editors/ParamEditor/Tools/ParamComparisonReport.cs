@@ -8,6 +8,7 @@ using StudioCore.Platform;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
@@ -28,6 +29,8 @@ public class ParamComparisonReport
 
     public bool ImportNamesOnGeneration_Primary = false;
     public bool ImportNamesOnGeneration_Compare = false;
+
+    public List<string> TargetedParams = new();
 
     public ParamComparisonReport(ParamEditorScreen editor, ProjectEntry project)
     {
@@ -57,19 +60,19 @@ public class ParamComparisonReport
 
         if (ImportNamesOnGeneration_Primary)
         {
-            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+            Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
         }
 
         if (ImportNamesOnGeneration_Compare)
         {
             if(TargetProjectName == "Vanilla")
             {
-                Project.ParamData.VanillaBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                Project.ParamData.VanillaBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
             }
             else
             {
                 var auxBank = Project.ParamData.AuxBanks.Where(e => e.Key == TargetProjectName).FirstOrDefault();
-                Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                Project.ParamData.PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
             }
         }
 
@@ -80,6 +83,15 @@ public class ParamComparisonReport
             CurrentParamProcessing = param.Key;
 
             var primaryParam = param.Value;
+
+            if(TargetedParams.Count > 0)
+            {
+                if(!TargetedParams.Contains(param.Key))
+                {
+                    continue;
+                }
+            }
+
             if (compareBank.Params.ContainsKey(param.Key))
             {
                 var compareParam = compareBank.Params[param.Key];
@@ -268,13 +280,72 @@ public class ParamComparisonReport
         ImGui.Checkbox("Import Row Names on Report Generation for Primary Bank", ref ImportNamesOnGeneration_Primary);
         ImGui.Checkbox("Import Row Names on Report Generation for Comparison Bank", ref ImportNamesOnGeneration_Compare);
 
+        UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
+
+        // Add
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd"))
+        {
+            TargetedParams.Add("");
+        }
+        UIHelper.Tooltip("Add new param target input row.");
+
+        ImGui.SameLine();
+
+        // Remove
+        if (TargetedParams.Count < 2)
+        {
+            ImGui.BeginDisabled();
+
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+            }
+            UIHelper.Tooltip("Remove last added param target input row.");
+
+            ImGui.EndDisabled();
+        }
+        else
+        {
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove"))
+            {
+                TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                UIHelper.Tooltip("Remove last added param target input row.");
+            }
+        }
+
+        ImGui.SameLine();
+
+        // Reset
+        if (ImGui.Button("Reset##paramTargetReset"))
+        {
+            TargetedParams = new List<string>();
+        }
+        UIHelper.Tooltip("Reset map selection input rows.");
+
+        for (int i = 0; i < TargetedParams.Count; i++)
+        {
+            var curCommand = TargetedParams[i];
+            var curText = curCommand;
+
+            ImGui.SetNextItemWidth(400f);
+            if (ImGui.InputText($"##paramTargetInput{i}", ref curText, 255))
+            {
+                TargetedParams[i] = curText;
+            }
+            UIHelper.Tooltip("The param target to include.");
+        }
+
         ImGui.Separator();
 
         if (IsReportGenerated)
         {
+            UIHelper.SimpleHeader("paramReport", "Report", "", UI.Current.ImGui_AliasName_Text);
+
             var buttonSize = new Vector2(800 / 3, 32);
 
-            ImGui.InputTextMultiline("##reportText", ref ReportText, uint.MaxValue, textPaneSize, ImGuiInputTextFlags.ReadOnly);
+            int byteCount = Encoding.UTF8.GetByteCount(ReportText) + 1;
+
+            ImGui.InputTextMultiline("##reportText", ref ReportText, (nuint)byteCount, textPaneSize, ImGuiInputTextFlags.ReadOnly);
 
             if (ImGui.Button("Re-generate", buttonSize))
             {
