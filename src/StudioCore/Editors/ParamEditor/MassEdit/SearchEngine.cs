@@ -1,4 +1,6 @@
 using Andre.Formats;
+using Google.Protobuf.WellKnownTypes;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Octokit;
 using SoulsFormats;
@@ -925,13 +927,13 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                 {
                     if (row.Item1 == null)
                     {
-                        throw new Exception("Can't check if cell is modified - not part of a param");
+                        throw new Exception("Can't check if cell - not part of a param");
                     }
 
                     Param curParam = bank.Params?[row.Item1];
                     if (curParam == null)
                     {
-                        throw new Exception("Can't check if cell is modified - no param");
+                        throw new Exception("Can't check if cell - no param");
                     }
 
                     Param.Row r = curParam[row.Item2.ID];
@@ -973,13 +975,13 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                 {
                     if (row.Item1 == null)
                     {
-                        throw new Exception("Can't check if cell is modified - not part of a param");
+                        throw new Exception("Can't check if cell - not part of a param");
                     }
 
                     Param curParam = bank.Params?[row.Item1];
                     if (curParam == null)
                     {
-                        throw new Exception("Can't check if cell is modified - no param");
+                        throw new Exception("Can't check if cell - no param");
                     }
 
                     Param.Row r = curParam[row.Item2.ID];
@@ -1093,6 +1095,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                     };
                 };
             }, () => Project.ParamData.AuxBanks.Count > 0));
+
         filterList.Add("sftype", newCmd(new[] { "paramdef type" },
             "Selects cells/fields where the field's data type, as enumerated by soulsformats, matches the given regex",
             (args, lenient) =>
@@ -1101,6 +1104,64 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                     lenient ? RegexOptions.IgnoreCase : RegexOptions.None); //Leniency rules break from the norm
                 return row => col => r.IsMatch(col.GetColumnSfType());
             }, () => CFG.Current.Param_AdvancedMassedit));
+
+        filterList.Add("defaultvalue", newCmd(new string[0],
+            "Selects cells/fields where the cell value is the same as the 'default' for the field.",
+            (args, lenient) =>
+            {
+                ParamBank bank = Project.ParamData.PrimaryBank;
+
+                return row =>
+                {
+                    if (row.Item1 == null)
+                    {
+                        throw new Exception("Can't check if cell - not part of a param");
+                    }
+
+                    Param curParam = bank.Params?[row.Item1];
+                    if (curParam == null)
+                    {
+                        throw new Exception("Can't check if cell - no param");
+                    }
+
+                    Param.Row r = curParam[row.Item2.ID];
+
+                    if (r == null)
+                    {
+                        return col => false;
+                    }
+
+                    return col =>
+                    {
+                        (PseudoColumn, Param.Column) curCol = col.GetAs(curParam);
+                        var curValue = $"{r.Get(curCol)}" as object;
+
+                        if (curCol.Item2 == null)
+                            return false;
+
+
+                        var meta = lenient ? pMeta.GetField(curCol.Item2.Def) : null;
+                        if (meta.DefaultValue != null)
+                        {
+                            var defaultValue = meta.DefaultValue as object;
+
+                            if (!ParamUtils.IsValueDiff(ref curValue, ref defaultValue, col.GetColumnType()))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            // Default to true if DefaultValue isn't present
+                            return true;
+                        }
+                    };
+                };
+            }));
     }
 
     private bool IsValueMatch(string fieldValue, string startValue, string endValue, string internalType)

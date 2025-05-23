@@ -31,6 +31,12 @@ public class ParamFieldMeta
     {
         MetaParent = parent;
 
+        XmlAttribute tDefaultValue = fieldMeta.Attributes["DefaultValue"];
+        if (tDefaultValue != null)
+        {
+            DefaultValue = tDefaultValue.InnerText;
+        }
+
         XmlAttribute Ref = fieldMeta.Attributes["Refs"];
         if (Ref != null)
         {
@@ -214,6 +220,11 @@ public class ParamFieldMeta
             }
         }
     }
+
+    /// <summary>
+    /// The default value for this field.
+    /// </summary>
+    public string DefaultValue { get; set; }
 
     /// <summary>
     ///     Name of another Param that a Field may refer to.

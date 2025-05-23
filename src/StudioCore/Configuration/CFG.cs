@@ -443,7 +443,6 @@ public class CFG
     //**************
     // Project
     //**************
-    public bool Project_LoadRecentProjectImmediately = false;
     public string PTDE_Collision_Root = "";
     public bool PTDE_Collision_Root_Warning = true;
 
