@@ -740,6 +740,8 @@ public class ParamRowView
                 FieldDecorators.ParamReverseLookup_Value(Editor, Editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
             }
 
+            FieldDecorators.ParamQuickSearch(Editor, Editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
+
             ImGui.EndPopup();
         }
     }

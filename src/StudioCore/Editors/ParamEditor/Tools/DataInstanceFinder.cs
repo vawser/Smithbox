@@ -542,7 +542,7 @@ public class FieldValueFinder
     /// <summary>
     /// Construct the results list when the search button is used.
     /// </summary>
-    private List<DataSearchResult> ConstructResults()
+    public List<DataSearchResult> ConstructResults()
     {
         List<DataSearchResult> output = new();
 

@@ -1603,4 +1603,21 @@ public class FieldDecorators
         }
     }
     #endregion
+
+
+    #region Param Quick Search
+    public static void ParamQuickSearch(ParamEditorScreen editor, ParamBank bank, string currentParam,
+        int currentID)
+    {
+        if (ImGui.MenuItem("Search for references in tool"))
+        {
+            editor.FieldValueFinder.SearchText = $"{currentID}";
+            editor.FieldValueFinder.CachedSearchText = editor.FieldValueFinder.SearchText;
+
+            editor.FieldValueFinder.Results = editor.FieldValueFinder.ConstructResults();
+            editor.FieldValueFinder.Results.Sort();
+        }
+        UIHelper.Tooltip("Quick use action for searching in 'Find Field Value Instances' tool with this row ID.");
+    }
+    #endregion
 }
