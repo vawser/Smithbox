@@ -80,6 +80,23 @@ public class Universe
             CFG.Current.Viewport_Enable_Rendering = true;
         }
     }
+    public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
+    {
+        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
+        {
+            if (Project.ParamEditor == null)
+            {
+                // ParamBank must be loaded for DS2 maps
+                TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
+                    LogLevel.Warning, StudioCore.Tasks.LogPriority.High);
+                return false;
+            }
+        }
+
+        LoadMapAsync(mapid, selectOnLoad, fastLoad);
+
+        return true;
+    }
 
     /// <summary>
     /// Load a map asynchronously based on the passed map ID
@@ -552,24 +569,6 @@ public class Universe
         {
             Editor.MapListView.TriggerMapLoad(map.Key);
         }
-    }
-
-    public bool LoadMap(string mapid, bool selectOnLoad = false, bool fastLoad = false)
-    {
-        if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
-        {
-            if (Project.ParamEditor == null)
-            {
-                // ParamBank must be loaded for DS2 maps
-                TaskLogs.AddLog("Cannot load DS2 maps when params are not loaded.",
-                    LogLevel.Warning, StudioCore.Tasks.LogPriority.High);
-                return false;
-            }
-        }
-
-        LoadMapAsync(mapid, selectOnLoad, fastLoad);
-
-        return true;
     }
 
     public BTL ReturnBTL(ResourceDescriptor ad)

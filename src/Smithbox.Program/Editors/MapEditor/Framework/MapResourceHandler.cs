@@ -39,8 +39,6 @@ public class MapResourceHandler
     private HashSet<ResourceDescriptor> LoadList_Map_Texture = new();
     private HashSet<ResourceDescriptor> LoadList_Other_Texture = new();
 
-    private ResourceDescriptor MapResource = null;
-
     public string MapID;
     public string AdjustedMapID;
     public IMsb Msb;

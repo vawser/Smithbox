@@ -39,8 +39,6 @@ public class MapContentView
     private ISelectable _pendingClick;
     private HashSet<Entity> _treeOpenEntities = new();
 
-    private int LoadCount = 0;
-
     public MapContentView(MapEditorScreen editor, ProjectEntry project, FileDictionaryEntry fileEntry)
     {
         Editor = editor;

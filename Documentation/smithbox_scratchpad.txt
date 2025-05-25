@@ -1,7 +1,6 @@
 # FIX
 - Map Editor: visibility icon cannot be clicked
 - Time Act Editor: DS2 TAE entries not being presented
-- Map Editor: map contents points to old disposed map container rather than new map container on reload
 
 # TODO
 - Add Behavior Editor

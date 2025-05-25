@@ -63,31 +63,27 @@ public class MapBank
         return true;
     }
 
-    public async Task<bool> SaveMap(string mapID, bool seralizeContainer = true)
-    {
-        if (Maps.Any(e => e.Key.Filename == mapID))
-        {
-            var fileDictEntry = Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+    // Save still handled in Universe for now
 
-            // Seralize container back to MSB here
-            if (seralizeContainer)
-            {
+    //public async Task<bool> SaveMap(string mapID, bool seralizeContainer = true)
+    //{
+    //    if (Maps.Any(e => e.Key.Filename == mapID))
+    //    {
+    //        var fileDictEntry = Maps.FirstOrDefault(e => e.Key.Filename == mapID);
 
-            }
+    //        if (fileDictEntry.Value != null)
+    //        {
+    //            var key = fileDictEntry.Key;
+    //            await Maps[key].Save();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
 
-            if (fileDictEntry.Value != null)
-            {
-                var key = fileDictEntry.Key;
-                await Maps[key].Save();
-            }
-        }
-        else
-        {
-            return false;
-        }
-
-        return true;
-    }
+    //    return true;
+    //}
 }
 
 public class MapWrapper
@@ -260,28 +256,30 @@ public class MapWrapper
         return successfulLoad;
     }
 
-    public async Task<bool> Save()
-    {
-        await Task.Yield();
+    // Save still handled in Universe for now
 
-        var successfulSave = false;
+    //public async Task<bool> Save()
+    //{
+    //    await Task.Yield();
 
-        switch (Project.ProjectType)
-        {
-            case ProjectType.DES:
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-            case ProjectType.DS2:
-            case ProjectType.DS2S:
-            case ProjectType.DS3:
-            case ProjectType.BB:
-            case ProjectType.SDT:
-            case ProjectType.ER:
-            case ProjectType.AC6:
-            case ProjectType.ERN:
-            default: break;
-        }
+    //    var successfulSave = false;
 
-        return successfulSave;
-    }
+    //    switch (Project.ProjectType)
+    //    {
+    //        case ProjectType.DES:
+    //        case ProjectType.DS1:
+    //        case ProjectType.DS1R:
+    //        case ProjectType.DS2:
+    //        case ProjectType.DS2S:
+    //        case ProjectType.DS3:
+    //        case ProjectType.BB:
+    //        case ProjectType.SDT:
+    //        case ProjectType.ER:
+    //        case ProjectType.AC6:
+    //        case ProjectType.ERN:
+    //        default: break;
+    //    }
+
+    //    return successfulSave;
+    //}
 }
