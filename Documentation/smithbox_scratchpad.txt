@@ -1,15 +1,23 @@
 # FIX
 - Map Editor: visibility icon cannot be clicked
 - Time Act Editor: DS2 TAE entries not being presented
+- Map Editor: map contents points to old disposed map container rather than new map container on reload
 
 # TODO
-- Map Editor: implement VFS + data bank overhaul
-- Model Editor: implement VFS + data bank overhaul
-
-- Map Editor: implement orthographic view
-- Param Editor: add value preview for NpcParam HP, etc based on Area scaling SpEffects assigned
-
-- Project: add Param Enum Editor back
 - Add Behavior Editor
 - Add basic functionality to Material Editor
+- Param Editor: add default values to all ER param metas.
+- Map Editor: implement orthographic view
+- Project: add Param Enum Editor back
+- Param Editor: add defaultvalues to ER paramdex + re-format it
+
+# FOCUS TODO
+- Map Editor: implement VFS + data bank overhaul
+- Model Editor: implement VFS + data bank overhaul
+- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
+
+- Fix LowRequirement Build:
+ - Need to include the changes made in the VulkanImplementation to the OpenGL one
+ 
+
 

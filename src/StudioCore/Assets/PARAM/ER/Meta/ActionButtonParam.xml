@@ -7,68 +7,82 @@
     <regionType 
     AltName="Region Type" 
     Wiki="Range shape (cylinder, prism, capsule)" 
-    Enum="ACTION_BUTTON_REGION_TYPE" />
+    Enum="ACTION_BUTTON_REGION_TYPE" 
+    DefaultValue="0" />
     
     <category 
     AltName="Category" 
     Wiki="category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)." 
-    Enum="ACTION_BUTTON_CATEGORY" />
+    Enum="ACTION_BUTTON_CATEGORY" 
+    DefaultValue="0" />
     
     <padding1 
     Padding=""/>
     
     <dummyPoly1 
     AltName="Dummy Poly [1]" 
-    Wiki="Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygon or -1 is entered, the center coordinates will be the reference." />
+    Wiki="Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygon or -1 is entered, the center coordinates will be the reference." 
+    DefaultValue="-1" />
     
     <dummyPoly2 
     AltName="Dummy Poly [2]" 
-    Wiki="Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons" />
+    Wiki="Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons" 
+    DefaultValue="-1" />
     
     <radius 
     AltName="Radius" 
-    Wiki="Radius (cylinder / capsule)" />
+    Wiki="Radius (cylinder / capsule)" 
+    DefaultValue="0" />
     
     <angle 
     AltName="Angle" 
-    Wiki="Angle (cylinder)" />
+    Wiki="Angle (cylinder)"
+    DefaultValue="180" />
     
     <depth 
     AltName="Depth" 
-    Wiki="Depth (prism)" />
+    Wiki="Depth (prism)"
+    DefaultValue="0" />
     
     <width 
     AltName="Width" 
-    Wiki="Width (prism)" />
+    Wiki="Width (prism)" 
+    DefaultValue="0" />
     
     <height 
     AltName="Height" 
-    Wiki="Height (cylinder / prism)" />
+    Wiki="Height (cylinder / prism)" 
+    DefaultValue="0" />
     
     <baseHeightOffset 
     AltName="Bottom Height Offset" 
-    Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" />
+    Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" 
+    DefaultValue="0" />
     
     <angleCheckType 
     AltName="Angle Difference Check Type" 
     Wiki="Angle difference judgment type (cylinder / prism)" 
-    Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" />
+    Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" 
+    DefaultValue="0" />
     
     <padding2 
     Padding=""/>
     
     <allowAngle 
     AltName="Allowable Angle Difference" 
-    Wiki="Allowable angle difference (cylinder / prism)" />
+    Wiki="Allowable angle difference (cylinder / prism)" 
+    DefaultValue="180" />
     
     <spotDummyPoly 
     AltName="Action Spot Dummy Polygon" 
-    Wiki="If there is no dummy polygon that specifies the dummy polygon ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference." />
+    Wiki="If there is no dummy polygon that specifies the dummy polygon ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference." 
+    DefaultValue="-1" />
     
     <textBoxType 
     AltName="Textbox Type" 
     Wiki="Text box type" 
-    Enum="ACTION_BUTTON_TEXT_BOX_TYPE" />
+    Enum="ACTION_BUTTON_TEXT_BOX_TYPE" 
+    DefaultValue="0" />
     
     <padding3 
     Padding=""/>
@@ -79,22 +93,26 @@
     <isInvalidForRide 
     AltName="Is Invalid when Riding" 
     Wiki="If enabled, this action will not appear whilst in the 'riding' state." 
-    IsBool="" />
+    IsBool="" 
+    DefaultValue="0" />
     
 	<isGrayoutForRide 
     AltName="Is Grayed Out when Riding" 
     Wiki="If enabled, this action will be grayed out whilst in the 'riding' state." 
-    IsBool="" />
+    IsBool="" 
+    DefaultValue="0" />
     
     <isInvalidForCrouching 
     AltName="Invalid for Crouching" 
     Wiki="If enabled, this action will not appear whilst in the 'crouching' state." 
-    IsBool="" />
+    IsBool="" 
+    DefaultValue="0" />
     
     <isGrayoutForCrouching 
     AltName="Greyout for Crouching" 
     Wiki="If enabled, this action will be grayed out whilst in the 'crouching' state." 
-    IsBool="" />
+    IsBool="" 
+    DefaultValue="0" />
     
     <padding4 
     Padding=""/>
@@ -102,26 +120,31 @@
 	<textId 
     AltName="Text ID" 
     Wiki="The FMG Entry ID to display." 
-    FmgRef="Action_Button_Text" />
+    FmgRef="Action_Button_Text" 
+    DefaultValue="-1" />
     
 	<invalidFlag 
     AltName="Invalid Event Flag" 
     Wiki="If the event flag is ON, then this action will not appear." 
-    FlagAlias="" />
+    FlagAlias="" 
+    DefaultValue="0" />
     
 	<grayoutFlag 
     AltName="Grayout Event Flag" 
     Wiki="If the event flag is ON, then this action will be grayed out." 
-    FlagAlias="" />
+    FlagAlias="" 
+    DefaultValue="0" />
     
     <overrideActionButtonIdForRide 
     AltName="Override Button ID for Ride" 
     Wiki="Replace with this action button ID parameter while riding (-1: No replacement)" 
-    Refs="ActionButtonParam" />
+    Refs="ActionButtonParam" 
+    DefaultValue="-1" />
     
     <execInvalidTime 
     AltName="Execution Invalid Time" 
-    Wiki="Invalid time after execution (-infinite by value)" />
+    Wiki="Invalid time after execution (-infinite by value)" 
+    DefaultValue="0" />
     
     <padding6 
     Padding=""/>
