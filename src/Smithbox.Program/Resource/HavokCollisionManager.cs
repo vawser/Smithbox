@@ -4,6 +4,7 @@ using HKLib.Serialization.hk2018.Binary;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
 using System;
@@ -67,66 +68,42 @@ public class HavokCollisionManager
 
     private void LoadMapCollision(string mapId, string type)
     {
-        // Mark as invalid by default
-        bool isValid = false;
         byte[] CompendiumBytes = null;
 
-        var bdtPath = $"{Project.DataPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
-        var bhdPath = $"{Project.DataPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
+        var bdtPath = $"\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
+        var bhdPath = $"\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
-        // If game root version exists, mark as valid
-        if (File.Exists(bdtPath) && File.Exists(bhdPath))
-        {
-            isValid = true;
-        }
+        var bdtData = Project.FS.ReadFile(bdtPath);
+        var bhdData = Project.FS.ReadFile(bhdPath);
 
-        // If project version exists, point path to that instead, and mark as valid
-        var projectBdtPath = $"{Project.ProjectPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
-        var projectBhdPath = $"{Project.ProjectPath}\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
-
-        if (File.Exists(projectBdtPath) && File.Exists(projectBhdPath))
-        {
-            bdtPath = projectBdtPath;
-            bhdPath = projectBhdPath;
-            isValid = true; // Load project if they are custom hkxbhd/hkxbdt
-        }
-
-        // If not marked as valid, return early to avoid bad read
-        if (!isValid)
-        {
+        if (bdtData == null || bhdData == null)
             return;
-        }
 
-        BXF4Reader reader = new BXF4Reader(bhdPath, bdtPath);
+        var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
 
         // Get compendium
-        foreach (var file in reader.Files)
+        foreach (var file in packedBinder.Files)
         {
-            BinderFileHeader f = file;
-
             if (file.Name.Contains(".compendium.dcx"))
             {
-                Memory<byte> bytes = reader.ReadFile(f);
-                CompendiumBytes = DCX.Decompress(bytes).ToArray();
+                CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
             }
         }
 
         if (CompendiumBytes != null)
         {
             // Read collisions
-            foreach (var file in reader.Files)
+            foreach (var file in packedBinder.Files)
             {
-                BinderFileHeader f = file;
+                var parts = file.Name.Split('\\');
 
-                var parts = f.Name.Split('\\');
                 if (parts.Length == 2)
                 {
                     var name = parts[1];
 
                     if (file.Name.Contains(".hkx.dcx"))
                     {
-                        Memory<byte> bytes = reader.ReadFile(f);
-                        var FileBytes = DCX.Decompress(bytes).ToArray();
+                        var FileBytes = DCX.Decompress(file.Bytes).ToArray();
 
                         try
                         {

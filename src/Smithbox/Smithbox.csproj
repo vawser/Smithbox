@@ -13,20 +13,8 @@
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>full</TrimMode>
   </PropertyGroup>
 
-  <ItemGroup>
-    <TrimmerRootAssembly Include="Andre.SoulsFormats" />
-    <TrimmerRootAssembly Include="Smithbox.Program" />
-    <TrimmerRootAssembly Include="HKX2" />
-    <TrimmerRootAssembly Include="Octokit" />
-    <TrimmerRootAssembly Include="HKLib" />
-    <TrimmerRootAssembly Include="HKLib.Reflection" />
-    <TrimmerRootAssembly Include="HKLib.Serialization" />
-  </ItemGroup>
-  
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
