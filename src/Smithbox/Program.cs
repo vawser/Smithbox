@@ -12,6 +12,7 @@ using Microsoft.DotNet.PlatformAbstractions;
 using StudioCore.Graphics;
 using StudioCore.Platform;
 using Veldrid.Sdl2;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace Smithbox
 {
@@ -19,37 +20,75 @@ namespace Smithbox
     {
         private static string _version = "undefined";
 
+        private static bool IsLowRequirements = false;
+
+        private static StudioCore.Smithbox Instance;
+
+        private static bool IsDebug = false;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main(string[] args)
         {
+            #if DEBUG
+            IsDebug = true;
+            #endif
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                switch (args[i])
+                {
+                    case "-low-requirements":
+                        IsLowRequirements = true;
+                        break;
+                }
+            }
+
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += CrashHandler;
+
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
+
             _version = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "undefined";
-            var mapStudio = new StudioCore.Smithbox(new VulkanGraphicsContext(), _version);
-#if !DEBUG
-            try
+
+            if(IsLowRequirements)
             {
-                mapStudio.Run();
+                Instance = new StudioCore.Smithbox(new OpenGLCompatGraphicsContext(), _version, IsLowRequirements);
             }
-            catch
+            else
             {
-                mapStudio.AttemptSaveOnCrash();
-                mapStudio.CrashShutdown();
-                // Throw to trigger CrashHandler
-                throw;
+                Instance = new StudioCore.Smithbox(new VulkanGraphicsContext(), _version, IsLowRequirements);
             }
-#else
-            mapStudio.Run();
-#endif
+
+            if (Instance != null)
+            {
+                if (IsDebug)
+                {
+                    try
+                    {
+                        Instance.Run();
+                    }
+                    catch
+                    {
+                        Instance.AttemptSaveOnCrash();
+                        Instance.CrashShutdown();
+
+                        throw;
+                    }
+                }
+                else
+                {
+                    Instance.Run();
+                }
+            }
         }
 
         static List<string> LogExceptions(Exception ex)
         {
             List<string> log = new();
+
             do
             {
                 if (ex is AggregateException ae)
@@ -65,12 +104,14 @@ namespace Smithbox
                 log.Add("----------------------\n");
             }
             while (ex != null);
+
             log.RemoveAt(log.Count - 1);
+
             return log;
         }
 
 
-        static readonly string CrashLogPath = $"{Directory.GetCurrentDirectory()}\\Crash Logs";
+        private static readonly string CrashLogPath = $"{Directory.GetCurrentDirectory()}\\Crash Logs";
         static void ExportCrashLog(List<string> exceptionInfo)
         {
             var time = $"{DateTime.Now:yyyy-M-dd--HH-mm-ss}";

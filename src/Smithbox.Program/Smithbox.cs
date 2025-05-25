@@ -59,8 +59,10 @@ public class Smithbox
     public KeybindWindow Keybinds;
     public DebugTools DebugTools;
 
-    public unsafe Smithbox(IGraphicsContext context, string version)
+    public unsafe Smithbox(IGraphicsContext context, string version, bool isLowRequirements)
     {
+        LowRequirementsMode = isLowRequirements;
+
         _version = version;
         _programTitle = $"Smithbox - {_version}";
 

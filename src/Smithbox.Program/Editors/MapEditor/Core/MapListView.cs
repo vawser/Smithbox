@@ -53,7 +53,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapIdList);
 
                 // Setup the Content Views
-                if (Editor.Universe.GetMapContainerCount() > 0 && !SetupContentViews)
+                if (!SetupContentViews)
                 {
                     SetupContentViews = true;
 

@@ -82,15 +82,18 @@ public class TexTextureView
 
     public void Update()
     {
-        if (LoadTexture)
+        if (!Smithbox.LowRequirementsMode)
         {
-            if (TargetIndex != -1)
+            if (LoadTexture)
             {
-                Editor.Selection.ViewerTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
-                Editor.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
-            }
+                if (TargetIndex != -1)
+                {
+                    Editor.Selection.ViewerTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
+                    Editor.Selection.ViewerTextureResource._LoadTexture(AccessLevel.AccessFull);
+                }
 
-            LoadTexture = false;
+                LoadTexture = false;
+            }
         }
     }
 }

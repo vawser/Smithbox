@@ -106,12 +106,15 @@ public class TexImagePreview : IResourceEventListener
 
     public void Update()
     {
-        if (LoadTexture)
+        if (!Smithbox.LowRequirementsMode)
         {
-            Editor.Selection.PreviewTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
-            Editor.Selection.PreviewTextureResource._LoadTexture(AccessLevel.AccessFull);
+            if (LoadTexture)
+            {
+                Editor.Selection.PreviewTextureResource = new TextureResource(Editor.Selection.SelectedTpf, TargetIndex);
+                Editor.Selection.PreviewTextureResource._LoadTexture(AccessLevel.AccessFull);
 
-            LoadTexture = false;
+                LoadTexture = false;
+            }
         }
     }
 

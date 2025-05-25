@@ -47,7 +47,7 @@ public class MapViewportView
 
     public void Setup()
     {
-        if (Device != null)
+        if (Device != null && !Smithbox.LowRequirementsMode)
         {
             Viewport = new ViewportNS.Viewport(BaseEditor, Editor, null, ViewportType.MapEditor, "Mapeditvp", Rect.Width, Rect.Height);
 
@@ -140,14 +140,17 @@ public class MapViewportView
     {
         Viewport.OnGui();
 
-        if(Editor.Universe != null && PlacementOrb == null)
+        if (!Smithbox.LowRequirementsMode)
         {
-            PlacementOrb = new PlacementEntity(Editor);
-        }
+            if (Editor.Universe != null && PlacementOrb == null)
+            {
+                PlacementOrb = new PlacementEntity(Editor);
+            }
 
-        if(PlacementOrb != null)
-        {
-            PlacementOrb.UpdateRenderModel(Editor);
+            if (PlacementOrb != null)
+            {
+                PlacementOrb.UpdateRenderModel(Editor);
+            }
         }
     }
 
