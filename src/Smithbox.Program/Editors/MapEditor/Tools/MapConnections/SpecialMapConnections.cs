@@ -29,8 +29,7 @@ internal class SpecialMapConnections
 
     public static Transform? GetEldenMapTransform(
         MapEditorScreen editor,
-        string mapid,
-        IReadOnlyDictionary<string, ObjectContainer> loadedMaps)
+        string mapid)
     {
         if (!TryInitializeEldenOffsets(editor))
         {
@@ -53,11 +52,17 @@ internal class SpecialMapConnections
         var closestDistSq = float.PositiveInfinity;
         Vector3 closestOriginGlobal = Vector3.Zero;
         ObjectContainer closestMap = null;
-        foreach (KeyValuePair<string, ObjectContainer> entry in loadedMaps)
+
+        foreach (var entry in editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (entry.Value == null
-                || !entry.Value.RootObject.HasTransform
-                || !TryParseMap(entry.Key, out var origin)
+            var mapID = entry.Key.Filename;
+            var container = entry.Value.MapContainer;
+
+            if (container == null)
+                continue;
+
+            if (!container.RootObject.HasTransform
+                || !TryParseMap(mapID, out var origin)
                 || !ToEldenGlobalCoords(origin, Vector3.Zero, originX, originZ, out Vector3 originGlobal))
             {
                 continue;
@@ -68,7 +73,7 @@ internal class SpecialMapConnections
             {
                 closestDistSq = distSq;
                 closestOriginGlobal = originGlobal;
-                closestMap = entry.Value;
+                closestMap = container;
             }
         }
 
@@ -84,9 +89,10 @@ internal class SpecialMapConnections
     public static IReadOnlyDictionary<string, RelationType> GetRelatedMaps(
         MapEditorScreen editor,
         string mapid,
-        IReadOnlyCollection<string> allMapIds,
         List<byte[]> connectColMaps = null)
     {
+        var allMapIds = editor.Project.MapData.MapFiles.Entries.Select(e => e.Filename).ToList();
+
         connectColMaps ??= new List<byte[]>();
         SortedDictionary<string, RelationType> relations = new();
         if (!TryParseMap(mapid, out var parts))

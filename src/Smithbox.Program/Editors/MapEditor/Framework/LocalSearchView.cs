@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using SoulsFormats.Util;
 using StudioCore.Editor;
@@ -132,14 +133,14 @@ public class LocalSearchView
             // Find the first property that matches the given name.
             // Definitely replace this (along with everything else, really).
             HashSet<Type> typeCache = new();
-            foreach (KeyValuePair<string, ObjectContainer> m in Editor.Universe.LoadedObjectContainers)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (m.Value == null)
+                if (entry.Value.MapContainer == null)
                 {
                     continue;
                 }
 
-                foreach (Entity o in m.Value.Objects)
+                foreach (Entity o in entry.Value.MapContainer.Objects)
                 {
                     Type typ = o.WrappedObject.GetType();
                     if (typeCache.Contains(typ))
@@ -177,14 +178,14 @@ public class LocalSearchView
             if (SearchValue(newSearch))
             {
                 FoundObjects.Clear();
-                foreach (ObjectContainer o in Editor.Universe.LoadedObjectContainers.Values)
+                foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
                 {
-                    if (o == null)
+                    if (entry.Value.MapContainer == null)
                     {
                         continue;
                     }
 
-                    if (o is MapContainer m)
+                    if (entry.Value.MapContainer is MapContainer m)
                     {
                         foreach (Entity ob in m.Objects)
                         {

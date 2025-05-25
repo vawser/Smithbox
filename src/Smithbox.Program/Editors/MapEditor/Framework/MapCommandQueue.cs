@@ -1,4 +1,5 @@
-﻿using StudioCore.Editor;
+﻿using Silk.NET.OpenGL;
+using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.MsbEditor;
@@ -39,14 +40,16 @@ public class MapCommandQueue
             if (initcmd[0] == "load")
             {
                 var mapid = initcmd[1];
-                if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+
+                var container = Editor.GetMapContainerFromMapID(mapid);
+
+                if (container != null)
                 {
-                    target = m.RootObject;
+                    target = container.RootObject;
                 }
                 else
                 {
-                    Editor.Universe.LoadMap(mapid, true);
-                    Editor.MapListView.SignalLoad(mapid);
+                    Editor.MapListView.TriggerMapLoad(mapid);
                 }
             }
 
@@ -55,7 +58,7 @@ public class MapCommandQueue
                 var mapid = initcmd[1];
                 if (initcmd.Length > 2)
                 {
-                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         var name = initcmd[2];
                         if (initcmd.Length > 3 && Enum.TryParse(initcmd[3], out MsbEntityType entityType))
@@ -84,7 +87,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 3)
                 {
-                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         if (type == "enemy")
                         {
@@ -109,7 +112,7 @@ public class MapCommandQueue
 
                 if (initcmd.Length > 2)
                 {
-                    if (Editor.Universe.GetLoadedMapContainer(mapid) is MapContainer m)
+                    if (Editor.GetMapContainerFromMapID(mapid) is MapContainer m)
                     {
                         if (target == null)
                             target = m.GetEnemyByID(entityID, true);

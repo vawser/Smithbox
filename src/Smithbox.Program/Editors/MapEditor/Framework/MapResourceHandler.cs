@@ -52,62 +52,18 @@ public class MapResourceHandler
         AdjustedMapID = MapLocator.GetAssetMapID(Editor.Project, MapID);
     }
 
-    public bool GetMapMSB()
+    public async Task<bool> ReadMap(string mapid)
     {
-        MapResource = MapLocator.GetMapMSB(Editor.Project, MapID);
+        await Editor.Project.MapData.PrimaryBank.LoadMap(mapid);
 
-        if (MapResource.AssetPath == null)
+        var entry = Editor.Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
+
+        if (entry.Value == null)
             return false;
 
-        return true;
-    }
+        Msb = entry.Value.MSB;
 
-    public void ReadMap()
-    {
-        if (Editor.Project.ProjectType == ProjectType.DS3)
-        {
-            Msb = MSB3.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.SDT)
-        {
-            Msb = MSBS.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.ER)
-        {
-            Msb = MSBE.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.AC6)
-        {
-            Msb = MSB_AC6.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-        {
-            Msb = MSB2.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.BB)
-        {
-            Msb = MSBB.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.DES)
-        {
-            Msb = MSBD.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.ACFA)
-        {
-            Msb = MSBFA.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.ACV)
-        {
-            Msb = MSBV.Read(MapResource.AssetPath);
-        }
-        else if (Editor.Project.ProjectType == ProjectType.ACVD)
-        {
-            Msb = MSBVD.Read(MapResource.AssetPath);
-        }
-        else
-        {
-            Msb = MSB1.Read(MapResource.AssetPath);
-        }
+        return true;
     }
 
     public void SetupHumanEnemySubstitute()
@@ -281,6 +237,7 @@ public class MapResourceHandler
 
     public void LoadLights(MapContainer map)
     {
+        // TODO: change this to use the VFS
         List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(Editor.Project, MapID);
         foreach (ResourceDescriptor btl_ad in BTLs)
         {

@@ -19,6 +19,7 @@ using StudioCore.Editors.MapEditor.Tools.MapQuery;
 using StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 using StudioCore.Editors.MapEditor.Tools.SelectionGroups;
 using StudioCore.Editors.MapEditor.Tools.WorldMap;
+using StudioCore.Editors.ModelEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.MsbEditor;
 using StudioCore.Platform;
@@ -113,7 +114,7 @@ public class MapEditorScreen : EditorScreen
         Selection = new(this, project);
 
         // Core Views
-        MapListView = new MapListView(this);
+        MapListView = new MapListView(this, Project);
         MapPropertyView = new MapPropertyView(this);
 
         // Optional Views
@@ -153,7 +154,6 @@ public class MapEditorScreen : EditorScreen
         FocusManager.SetDefaultFocusElement("Properties##mapeditprop");
         EditorActionManager.AddEventHandler(MapListView);
 
-        Universe.PopulateMapList();
         ActionHandler.PopulateClassNames();
     }
 
@@ -429,17 +429,20 @@ public class MapEditorScreen : EditorScreen
             {
                 if (ImGui.BeginCombo("##Targeted Map", ActionHandler._targetMap.Item1))
                 {
-                    foreach (var obj in Universe.LoadedObjectContainers)
+                    foreach (var entry in Project.MapData.MapFiles.Entries)
                     {
-                        if (obj.Value != null)
+                        var currentContainer = GetMapContainerFromMapID(entry.Filename);
+
+                        if (currentContainer != null)
                         {
-                            if (ImGui.Selectable(obj.Key))
+                            if (ImGui.Selectable(entry.Filename))
                             {
-                                ActionHandler._targetMap = (obj.Key, obj.Value);
+                                ActionHandler._targetMap = (entry.Filename, currentContainer);
                                 break;
                             }
                         }
                     }
+
                     ImGui.EndCombo();
                 }
 
@@ -853,7 +856,7 @@ public class MapEditorScreen : EditorScreen
 
     public void ToolMenu()
     {
-        var validViewportState = MapViewportView.RenderScene != null && 
+        var validViewportState = MapViewportView.RenderScene != null &&
             MapViewportView.Viewport != null;
 
         // Tools
@@ -1000,10 +1003,10 @@ public class MapEditorScreen : EditorScreen
     public void ReloadUniverse()
     {
         Universe.UnloadAllMaps();
+
         GC.Collect();
         GC.WaitForPendingFinalizers();
         GC.Collect();
-        Universe.PopulateMapList();
 
         if (Project.ProjectType != ProjectType.Undefined)
         {
@@ -1024,17 +1027,21 @@ public class MapEditorScreen : EditorScreen
                 MessageBoxIcon.Error);
             if (result == DialogResult.Yes)
             {
-                foreach (KeyValuePair<string, ObjectContainer> map in Universe.LoadedObjectContainers.Where(e =>
-                             e.Value != null))
+                foreach (var entry in Project.MapData.MapFiles.Entries)
                 {
-                    foreach (Entity obj in map.Value.Objects)
+                    var currentContainer = GetMapContainerFromMapID(entry.Filename);
+
+                    if (currentContainer != null)
                     {
-                        if (obj.WrappedObject == eRef.Referrer)
+                        foreach (Entity obj in currentContainer.Objects)
                         {
-                            ViewportSelection.ClearSelection(this);
-                            ViewportSelection.AddSelection(this, obj);
-                            ActionHandler.ApplyFrameInViewport();
-                            return;
+                            if (obj.WrappedObject == eRef.Referrer)
+                            {
+                                ViewportSelection.ClearSelection(this);
+                                ViewportSelection.AddSelection(this, obj);
+                                ActionHandler.ApplyFrameInViewport();
+                                return;
+                            }
                         }
                     }
                 }
@@ -1048,5 +1055,32 @@ public class MapEditorScreen : EditorScreen
             TaskLogs.AddLog(e.Message,
                 LogLevel.Error, LogPriority.High, e.Wrapped);
         }
+    }
+
+    public MapContainer GetMapContainerFromMapID(string mapID)
+    {
+        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
+
+        if (targetMap.Value.MapContainer != null)
+        {
+            return targetMap.Value.MapContainer;
+        }
+
+        return null;
+    }
+
+    public bool IsAnyMapLoaded()
+    {
+        var check = false;
+
+        foreach(var entry in Project.MapData.PrimaryBank.Maps)
+        {
+            if(entry.Value.MapContainer != null)
+            {
+                check = true;
+            }
+        }
+
+        return check;
     }
 }

@@ -43,7 +43,7 @@ public class MapBank
         return true;
     }
 
-    public async Task<bool> LoadMap(string mapID, bool msbOnly = false)
+    public async Task<bool> LoadMap(string mapID)
     {
         if(Maps.Any(e => e.Key.Filename == mapID))
         {
@@ -52,7 +52,7 @@ public class MapBank
             if (mapEntry.Value != null)
             {
                 var key = mapEntry.Key;
-                await Maps[key].Load(msbOnly);
+                await Maps[key].Load();
             }
         }
         else
@@ -62,6 +62,7 @@ public class MapBank
 
         return true;
     }
+
     public async Task<bool> SaveMap(string mapID, bool seralizeContainer = true)
     {
         if (Maps.Any(e => e.Key.Filename == mapID))
@@ -123,7 +124,7 @@ public class MapWrapper
         Path = dictEntry.Path;
     }
 
-    public async Task<bool> Load(bool msbOnly = false)
+    public async Task<bool> Load()
     {
         await Task.Yield();
 
@@ -248,13 +249,6 @@ public class MapWrapper
                     //}
                     break;
                 default: break;
-            }
-
-            // Map Container setup
-            if (!msbOnly)
-            {
-                MapContainer = new(editor, Name);
-                MapContainer.LoadMSB(MSB);
             }
         }
         catch (Exception e)

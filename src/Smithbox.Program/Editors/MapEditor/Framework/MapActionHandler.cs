@@ -50,7 +50,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyObjectCreation()
     {
-        if (!Editor.Universe.LoadedObjectContainers.Any())
+        if (!Editor.IsAnyMapLoaded())
             return;
 
         if (_targetMap != (null, null))
@@ -210,10 +210,7 @@ public class MapActionHandler
         if (!Editor.ViewportSelection.IsSelection())
             return;
 
-        if (Editor.Universe.LoadedObjectContainers == null)
-            return;
-
-        if (!Editor.Universe.LoadedObjectContainers.Any())
+        if (!Editor.IsAnyMapLoaded())
             return;
 
         if (displayType is MapDuplicateToMapType.ToolWindow)
@@ -226,10 +223,10 @@ public class MapActionHandler
             ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 1.0f), "Duplicate selection to specific map");
         }
 
-        foreach (var obj in Editor.Universe.LoadedObjectContainers)
+        foreach (var entry in Project.MapData.PrimaryBank.Maps)
         {
-            var mapID = obj.Key;
-            var map = obj.Value;
+            var mapID = entry.Key.Filename;
+            var map = entry.Value.MapContainer;
 
             if (map != null)
             {
@@ -799,14 +796,14 @@ public class MapActionHandler
 
         if (targetType == EditorVisibilityType.All)
         {
-            foreach (ObjectContainer m in Editor.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Project.MapData.PrimaryBank.Maps)
             {
-                if (m == null)
+                if (entry.Value.MapContainer == null)
                 {
                     continue;
                 }
 
-                foreach (Entity obj in m.Objects)
+                foreach (Entity obj in entry.Value.MapContainer.Objects)
                 {
                     if (targetState is EditorVisibilityState.Enable)
                         obj.EditorVisible = true;
@@ -942,28 +939,28 @@ public class MapActionHandler
     /// </summary>
     public void ApplyEditorVisibilityChangeByTag()
     {
-        foreach (ObjectContainer m in Editor.Universe.LoadedObjectContainers.Values)
+        foreach (var entry in Project.MapData.PrimaryBank.Maps)
         {
-            if (m == null)
+            if (entry.Value.MapContainer == null)
             {
                 continue;
             }
 
-            foreach (Entity obj in m.Objects)
+            foreach (Entity obj in entry.Value.MapContainer.Objects)
             {
                 if (obj.IsPart())
                 {
                     if (Project.Aliases.Assets != null)
                     {
-                        foreach (var entry in Project.Aliases.Assets)
+                        foreach (var assetEntry in Project.Aliases.Assets)
                         {
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
-                            if (entry.ID == modelName)
+                            if (assetEntry.ID == modelName)
                             {
                                 bool change = false;
 
-                                foreach (var tag in entry.Tags)
+                                foreach (var tag in assetEntry.Tags)
                                 {
                                     if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
                                         change = true;
@@ -986,16 +983,16 @@ public class MapActionHandler
 
                     if (Project.Aliases.MapPieces != null)
                     {
-                        foreach (var entry in Project.Aliases.MapPieces)
+                        foreach (var mapPieceEntry in Project.Aliases.MapPieces)
                         {
-                            var entryName = $"m{entry.ID.Split("_").Last()}";
+                            var entryName = $"m{mapPieceEntry.ID.Split("_").Last()}";
                             var modelName = obj.GetPropertyValue<string>("ModelName");
 
                             if (entryName == modelName)
                             {
                                 bool change = false;
 
-                                foreach (var tag in entry.Tags)
+                                foreach (var tag in mapPieceEntry.Tags)
                                 {
                                     if (tag == CFG.Current.Toolbar_Tag_Visibility_Target)
                                         change = true;
@@ -1027,12 +1024,11 @@ public class MapActionHandler
     /// </summary>
     public void GenerateNavigationData()
     {
-        Dictionary<string, ObjectContainer> orderedMaps = Editor.Universe.LoadedObjectContainers;
-
         HashSet<string> idCache = new();
-        foreach (var map in orderedMaps)
+
+        foreach (var entry in Project.MapData.PrimaryBank.Maps)
         {
-            string mapid = map.Key;
+            string mapid = entry.Key.Filename;
 
             if (Editor.Project.ProjectType is ProjectType.DES)
             {
@@ -1044,11 +1040,11 @@ public class MapActionHandler
                     idCache.Add(areaId);
 
                     var areaDirectories = new List<string>();
-                    foreach (var orderMap in orderedMaps)
+                    foreach (var tEntry in Project.MapData.PrimaryBank.Maps)
                     {
-                        if (orderMap.Key.StartsWith(areaId) && orderMap.Key != "m03_01_00_99")
+                        if (tEntry.Key.Filename.StartsWith(areaId) && tEntry.Key.Filename != "m03_01_00_99")
                         {
-                            areaDirectories.Add(Path.Combine(Editor.Project.DataPath, "map", orderMap.Key));
+                            areaDirectories.Add(Path.Combine(Editor.Project.DataPath, "map", tEntry.Key.Filename));
                         }
                     }
                     SoulsMapMetadataGenerator.GenerateMCGMCP(Editor, areaDirectories, toBigEndian: true);
@@ -1075,10 +1071,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyEntityChecker()
     {
-        if (Editor.Universe.LoadedObjectContainers == null)
-            return;
-
-        if (!Editor.Universe.LoadedObjectContainers.Any())
+        if (!Editor.IsAnyMapLoaded())
             return;
 
         HashSet<uint> vals = new();
@@ -1266,11 +1259,9 @@ public class MapActionHandler
 
         if (SelectedMapFilter == "All")
         {
-            IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> orderedMaps = Editor.Universe.LoadedObjectContainers.OrderBy(k => k.Key);
-
-            foreach (KeyValuePair<string, ObjectContainer> lm in orderedMaps)
+            foreach (var entry in Project.MapData.PrimaryBank.Maps)
             {
-                ApplyEntityGroupIdChange(lm.Key);
+                ApplyEntityGroupIdChange(entry.Key.Filename);
             }
         }
         else
@@ -1529,10 +1520,7 @@ public class MapActionHandler
     /// </summary>
     public void ApplyMapObjectNames(bool useJapaneseNames)
     {
-        if (Editor.Universe.LoadedObjectContainers == null)
-            return;
-
-        if (!Editor.Universe.LoadedObjectContainers.Any())
+        if (!Editor.IsAnyMapLoaded())
             return;
 
         if (_targetMap != (null, null))

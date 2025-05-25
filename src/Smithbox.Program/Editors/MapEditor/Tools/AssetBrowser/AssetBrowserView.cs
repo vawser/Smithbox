@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
@@ -522,7 +523,7 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
         private ViewportAction UpdateInstanceID(string modelName, MsbEntity ent)
         {
             MapContainer m;
-            m = Editor.Universe.GetLoadedMapContainer(ent.MapID);
+            m = Editor.GetMapContainerFromMapID(ent.MapID);
 
             Dictionary<MapContainer, HashSet<MsbEntity>> mapPartEntities = new();
 
@@ -591,21 +592,18 @@ namespace StudioCore.Editors.MapEditor.Tools.AssetBrowser
             var names = new List<string>();
 
             // Collect names
-            foreach (var o in Editor.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (o == null)
+                if (entry.Value.MapContainer == null)
                 {
                     continue;
                 }
 
-                if (o is MapContainer m)
+                foreach (var ob in entry.Value.MapContainer.Objects)
                 {
-                    foreach (var ob in m.Objects)
+                    if (ob is MsbEntity e)
                     {
-                        if (ob is MsbEntity e)
-                        {
-                            names.Add(ob.Name);
-                        }
+                        names.Add(ob.Name);
                     }
                 }
             }

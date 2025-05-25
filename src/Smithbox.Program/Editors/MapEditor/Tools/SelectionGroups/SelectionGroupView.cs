@@ -550,14 +550,17 @@ public class SelectionGroupView
         List<Entity> entities = new List<Entity>();
 
         // TODO: add something to prevent confusion if multiple maps are loaded with the same names within
-        foreach (var entry in Editor.Universe.GetLoadedMapContainerList())
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            foreach (var mapObj in entry.Objects)
+            if (entry.Value.MapContainer != null)
             {
-                if (selectedResourceContents.Contains(mapObj.Name))
+                foreach (var mapObj in entry.Value.MapContainer.Objects)
                 {
-                    //TaskLogs.AddLog(mapObj.Name);
-                    entities.Add(mapObj);
+                    if (selectedResourceContents.Contains(mapObj.Name))
+                    {
+                        //TaskLogs.AddLog(mapObj.Name);
+                        entities.Add(mapObj);
+                    }
                 }
             }
         }

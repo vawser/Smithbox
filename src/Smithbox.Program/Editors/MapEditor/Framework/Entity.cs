@@ -1975,9 +1975,9 @@ public class MsbEntity : Entity
                 }
 
                 // For now, the map relationship type is not given here (dictionary values), just all related maps.
-                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(curEditor, Name, universe.LoadedObjectContainers.Keys, connects).Keys)
+                foreach (var mapRef in SpecialMapConnections.GetRelatedMaps(curEditor, Name))
                 {
-                    References[mapRef] = new[] { new ObjectContainerReference(mapRef) };
+                    References[mapRef.Key] = new[] { new ObjectContainerReference(mapRef.Key) };
                 }
             }
             else

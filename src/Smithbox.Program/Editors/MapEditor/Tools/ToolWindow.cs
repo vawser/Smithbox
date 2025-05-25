@@ -54,13 +54,7 @@ public class ToolWindow
                 UIHelper.WrappedText("Create a new object within the target map.");
                 UIHelper.WrappedText("");
 
-                if (Editor.Universe.LoadedObjectContainers == null)
-                {
-                    UIHelper.WrappedText("No maps have been loaded yet.");
-                    UIHelper.WrappedText("");
-                }
-                else if (Editor.Universe.LoadedObjectContainers != null &&
-                    !Editor.Universe.LoadedObjectContainers.Any())
+                if (Editor.IsAnyMapLoaded())
                 {
                     UIHelper.WrappedText("No maps have been loaded yet.");
                     UIHelper.WrappedText("");
@@ -71,13 +65,16 @@ public class ToolWindow
                     ImGui.PushItemWidth(defaultButtonSize.X);
                     if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                     {
-                        foreach (var obj in Editor.Universe.LoadedObjectContainers)
+                        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
                         {
-                            if (obj.Value != null)
+                            var mapID = entry.Key.Filename;
+                            var container = entry.Value.MapContainer;
+
+                            if (container != null)
                             {
-                                if (ImGui.Selectable(obj.Key))
+                                if (ImGui.Selectable(mapID))
                                 {
-                                    Handler._targetMap = (obj.Key, obj.Value);
+                                    Handler._targetMap = (mapID, container);
                                     break;
                                 }
                             }

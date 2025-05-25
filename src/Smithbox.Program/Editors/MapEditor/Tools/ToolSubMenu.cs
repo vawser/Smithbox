@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -147,17 +148,20 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Entity ID Checker"))
                 {
-                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
+                    if (Editor.IsAnyMapLoaded())
                     {
                         if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                         {
-                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
+                            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
                             {
-                                if (obj.Value != null)
+                                var mapID = entry.Key.Filename;
+                                var container = entry.Value.MapContainer;
+
+                                if (container != null)
                                 {
-                                    if (ImGui.Selectable(obj.Key))
+                                    if (ImGui.Selectable(mapID))
                                     {
-                                        Handler._targetMap = (obj.Key, obj.Value);
+                                        Handler._targetMap = (mapID, container);
                                         break;
                                     }
                                 }
@@ -183,17 +187,20 @@ public class ToolSubMenu
             {
                 if (ImGui.BeginMenu("Rename Map Objects"))
                 {
-                    if (Editor.Universe.LoadedObjectContainers != null && Editor.Universe.LoadedObjectContainers.Any())
+                    if (Editor.IsAnyMapLoaded())
                     {
                         if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                         {
-                            foreach (var obj in Editor.Universe.LoadedObjectContainers)
+                            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
                             {
-                                if (obj.Value != null)
+                                var mapID = entry.Key.Filename;
+                                var container = entry.Value.MapContainer;
+
+                                if (container != null)
                                 {
-                                    if (ImGui.Selectable(obj.Key))
+                                    if (ImGui.Selectable(mapID))
                                     {
-                                        Handler._targetMap = (obj.Key, obj.Value);
+                                        Handler._targetMap = (mapID, container);
                                         break;
                                     }
                                 }

@@ -284,21 +284,26 @@ public class EntityIdentifierOverview
             cacheEntry.Add($"{entry}", null);
         }
 
-        for (int i = 0; i < view.Container.Objects.Count; i++)
+        var container = Editor.GetMapContainerFromMapID(view.MapID);
+
+        if (container != null)
         {
-            var obj = view.Container.Objects[i];
-
-            var val = PropFinderUtil.FindPropertyValue("EntityID", obj.WrappedObject);
-
-            if (val == null)
-                continue;
-
-            foreach(var entry in identifiers)
+            for (int i = 0; i < container.Objects.Count; i++)
             {
-                if (cacheEntry.ContainsKey($"{val}"))
+                var obj = container.Objects[i];
+
+                var val = PropFinderUtil.FindPropertyValue("EntityID", obj.WrappedObject);
+
+                if (val == null)
+                    continue;
+
+                foreach (var entry in identifiers)
                 {
-                    cacheEntry[$"{val}"] = obj;
-                    break;
+                    if (cacheEntry.ContainsKey($"{val}"))
+                    {
+                        cacheEntry[$"{val}"] = obj;
+                        break;
+                    }
                 }
             }
         }

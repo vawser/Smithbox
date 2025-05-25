@@ -58,15 +58,16 @@ public class SimpleTreasureMaker
         UIHelper.WrappedText("");
 
         UIHelper.WrappedText("Target Map:");
-        if(Editor.Universe.LoadedObjectContainers.Count == 0)
+
+        if(!Editor.IsAnyMapLoaded())
         {
             UIHelper.WrappedText("No maps loaded yet.");
         }
 
-        foreach (var obj in Editor.Universe.LoadedObjectContainers)
+        foreach (var entry in Project.MapData.PrimaryBank.Maps)
         {
-            var mapID = obj.Key;
-            var map = obj.Value;
+            var mapID = entry.Key.Filename;
+            var map = entry.Value.MapContainer;
 
             if (map != null)
             {

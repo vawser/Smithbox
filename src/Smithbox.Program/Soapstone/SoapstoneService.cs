@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Grpc.Core;
+using Octokit;
 using SoapstoneLib;
 using SoapstoneLib.Proto;
 using SoulsFormats;
@@ -90,18 +91,18 @@ public class SoapstoneService : SoapstoneServiceV1
 
                 if (curProject.MapEditor != null)
                 {
-                    if (curProject.MapEditor.Universe.LoadedObjectContainers.Count > 0)
+                    if (curProject.MapEditor.IsAnyMapLoaded())
                     {
-                        foreach (KeyValuePair<string, ObjectContainer> entry in curProject.MapEditor.Universe.LoadedObjectContainers)
+                        foreach(var entry in curProject.MapData.PrimaryBank.Maps)
                         {
-                            if (entry.Value != null)
+                            if (entry.Value.MapContainer != null)
                             {
                                 EditorResource mapResource = new()
                                 {
                                     Type = EditorResourceType.Map,
                                     ProjectJsonPath = projectResource.ProjectJsonPath,
                                     Game = projectResource.Game,
-                                    Name = entry.Key
+                                    Name = entry.Key.Filename
                                 };
                                 response.Resources.Add(mapResource);
                             }
@@ -386,13 +387,13 @@ public class SoapstoneService : SoapstoneServiceV1
             {
                 foreach (SoulsKey getKey in keys)
                 {
-                    if (getKey.File is not SoulsKey.MsbKey fileKey
-                        || !curProject.MapEditor.Universe.LoadedObjectContainers.TryGetValue(fileKey.Map,
-                            out ObjectContainer container)
-                        || !MatchesResource(resource, fileKey.Map))
+                    if (getKey.File is not SoulsKey.MsbKey fileKey ||
+                        curProject.MapEditor.GetMapContainerFromMapID(fileKey.Map) == null || !MatchesResource(resource, fileKey.Map))
                     {
                         continue;
                     }
+
+                    var targetContainer = curProject.MapEditor.GetMapContainerFromMapID(fileKey.Map);
 
                     if (getKey is SoulsKey.MsbKey msbKey)
                     {
@@ -400,9 +401,9 @@ public class SoapstoneService : SoapstoneServiceV1
                         obj.AddRequestedProperties(properties, key => AccessMapFile(fileKey, key));
                         results.Add(obj);
                     }
-                    else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && container is MapContainer m)
+                    else if (getKey is SoulsKey.MsbEntryKey msbEntryKey && targetContainer != null)
                     {
-                        foreach (Entity ob in m.GetObjectsByName(msbEntryKey.Name))
+                        foreach (Entity ob in targetContainer.GetObjectsByName(msbEntryKey.Name))
                         {
                             if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns) ||
                                 ns != msbEntryKey.Namespace)
@@ -565,14 +566,14 @@ public class SoapstoneService : SoapstoneServiceV1
             {
                 Predicate<object> fileFilter = search.GetKeyFilter("Map");
                 // LoadedObjectContainers is never null, starts out an empty dictionary
-                foreach (KeyValuePair<string, ObjectContainer> entry in curProject.MapEditor.Universe.LoadedObjectContainers)
+                foreach (var entry in curProject.MapData.PrimaryBank.Maps)
                 {
-                    if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key))
+                    if (!fileFilter(entry.Key) || !MatchesResource(resource, entry.Key.Filename))
                     {
                         continue;
                     }
 
-                    SoulsKey.MsbKey fileKey = new(entry.Key);
+                    SoulsKey.MsbKey fileKey = new(entry.Key.Filename);
                     // For MsbKey, we don't care about the container actually being loaded or not.
                     // Just include it if it's not been filtered.
                     if (resultType.Matches(typeof(SoulsKey.MsbKey)))
@@ -588,10 +589,10 @@ public class SoapstoneService : SoapstoneServiceV1
                         }
                     }
 
-                    if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value is MapContainer m)
+                    if (resultType.Matches(typeof(SoulsKey.MsbEntryKey)) && entry.Value.MapContainer != null)
                     {
                         // Use similar enumeration as SearchProperties
-                        foreach (Entity ob in m.Objects)
+                        foreach (Entity ob in entry.Value.MapContainer.Objects)
                         {
                             if (ob is not MsbEntity e || !mapNamespaces.TryGetValue(e.Type, out KeyNamespace ns))
                             {

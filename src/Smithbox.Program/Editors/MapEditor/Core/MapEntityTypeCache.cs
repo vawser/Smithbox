@@ -30,8 +30,10 @@ public class MapEntityTypeCache
 
     public void RemoveMapFromCache(MapContentView curView)
     {
-        if (_cachedTypeView != null && 
-            curView.Container == null && 
+        var container = Editor.GetMapContainerFromMapID(curView.MapID);
+
+        if (_cachedTypeView != null &&
+            container == null && 
             _cachedTypeView.ContainsKey(curView.MapID))
         {
             _cachedTypeView.Remove(curView.MapID);

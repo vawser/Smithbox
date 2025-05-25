@@ -54,11 +54,6 @@ public class Universe
     public bool HasProcessedMapLoad;
 
     /// <summary>
-    /// The map entity containers, sorted by map ID
-    /// </summary>
-    public Dictionary<string, ObjectContainer> LoadedObjectContainers { get; } = new();
-
-    /// <summary>
     /// The entity selection context
     /// </summary>
     public ViewportSelection Selection { get; }
@@ -80,71 +75,10 @@ public class Universe
         {
             CFG.Current.Viewport_Enable_Rendering = false;
         }
-    }
-
-    /// <summary>
-    /// Get the list of map containers available.
-    /// </summary>
-    public IOrderedEnumerable<KeyValuePair<string, ObjectContainer>> GetMapContainerList()
-    {
-        return LoadedObjectContainers
-            .Where(k => k.Key is not null)
-            .OrderBy(k => k.Key);
-    }
-
-    /// <summary>
-    /// Get the count of map containers available.
-    /// </summary>
-    public int GetMapContainerCount()
-    {
-        return LoadedObjectContainers.Count;
-    }
-
-    /// <summary>
-    /// Get the object container for the passed Map ID if possible, or return null.
-    /// </summary>
-    public ObjectContainer GetObjectContainerForMap(string mapId)
-    {
-        if (LoadedObjectContainers.ContainsKey(mapId))
+        else
         {
-            return LoadedObjectContainers[mapId];
+            CFG.Current.Viewport_Enable_Rendering = true;
         }
-
-        return null;
-    }
-
-    /// <summary>
-    /// Get the list of map containers available that are loaded.
-    /// </summary>
-    public List<MapContainer> GetLoadedMapContainerList()
-    {
-        List<MapContainer> maps = new List<MapContainer>();
-
-        foreach(var entry in LoadedObjectContainers)
-        {
-            if(entry.Value is MapContainer m)
-            {
-                maps.Add(m);
-            }
-        }
-
-        return maps;
-    }
-
-    /// <summary>
-    /// Get the loaded map container for the passed Map ID if possible, or return null.
-    /// </summary>
-    public MapContainer GetLoadedMapContainer(string id)
-    {
-        if (id != null)
-        {
-            if (LoadedObjectContainers.ContainsKey(id) && LoadedObjectContainers[id] is MapContainer m)
-            {
-                return m;
-            }
-        }
-
-        return null;
     }
 
     /// <summary>
@@ -152,12 +86,19 @@ public class Universe
     /// </summary>
     public async void LoadMapAsync(string mapid, bool selectOnLoad = false, bool fastLoad = false)
     {
-        if (LoadedObjectContainers.TryGetValue(mapid, out var m) && m != null)
+        var map = Editor.GetMapContainerFromMapID(mapid);
+
+        if (map != null)
         {
             TaskLogs.AddLog($"Map \"{mapid}\" is already loaded",
                 LogLevel.Information, StudioCore.Tasks.LogPriority.Normal);
             return;
         }
+
+        var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapid);
+        targetMap.Value.MapContainer = new MapContainer(Editor, mapid);
+
+        map = targetMap.Value.MapContainer;
 
         if (!fastLoad)
         {
@@ -170,19 +111,10 @@ public class Universe
 
             Editor.DisplayGroupView.SetupDrawgroupCount();
 
-            MapContainer map = new(Editor, mapid);
-
             MapResourceHandler resourceHandler = new MapResourceHandler(Editor, mapid);
 
-            // Get the Map MSB resource
-            bool exists = resourceHandler.GetMapMSB();
-
-            // If MSB resource doesn't exist, quit
-            if (!exists)
-                return;
-
             // Read the MSB
-            resourceHandler.ReadMap();
+            await resourceHandler.ReadMap(mapid);
 
             // Load the map into the MapContainer
             map.LoadMSB(resourceHandler.Msb);
@@ -206,21 +138,12 @@ public class Universe
             {
                 if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                 {
-                    if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid, LoadedObjectContainers) is Transform
+                    if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid) is Transform
                         loadTransform)
                     {
                         map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
                     }
                 }
-            }
-
-            if (!LoadedObjectContainers.ContainsKey(mapid))
-            {
-                LoadedObjectContainers.Add(mapid, map);
-            }
-            else
-            {
-                LoadedObjectContainers[mapid] = map;
             }
 
             if (CFG.Current.Viewport_Enable_Rendering)
@@ -620,25 +543,14 @@ public class Universe
         job.Complete();
     }
 
-    public void PopulateMapList()
-    {
-        LoadedObjectContainers.Clear();
-        foreach (var m in MapLocator.GetFullMapList(Project))
-        {
-            if(!LoadedObjectContainers.ContainsKey(m))
-                LoadedObjectContainers.Add(m, null);
-        }
-    }
-
     public void LoadRelatedMapsER(string mapid)
     {
         IReadOnlyDictionary<string, SpecialMapConnections.RelationType> relatedMaps =
-            SpecialMapConnections.GetRelatedMaps(Editor, mapid, LoadedObjectContainers.Keys);
+            SpecialMapConnections.GetRelatedMaps(Editor, mapid);
 
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
-            LoadMap(map.Key);
-            Editor.MapListView.SignalLoad(map.Key);
+            Editor.MapListView.TriggerMapLoad(map.Key);
         }
     }
 
@@ -655,13 +567,8 @@ public class Universe
             }
         }
 
-        ResourceDescriptor ad = MapLocator.GetMapMSB(Project, mapid);
-        if (ad.AssetPath == null)
-        {
-            return false;
-        }
-
         LoadMapAsync(mapid, selectOnLoad, fastLoad);
+
         return true;
     }
 
@@ -1042,25 +949,25 @@ public class Universe
 
     public void SaveAllMaps()
     {
-        foreach (KeyValuePair<string, ObjectContainer> m in LoadedObjectContainers)
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (m.Value != null)
+            if (entry.Value.MapContainer != null)
             {
-                if (m.Value is MapContainer ma)
-                {
-                    SaveMap(ma);
-                }
+                SaveMap(entry.Value.MapContainer);
             }
         }
     }
 
-    public void UnloadContainer(ObjectContainer container, bool clearFromList = false)
+    public void UnloadMapContainer(string mapID, bool clearFromList = false)
     {
-        Editor.CollisionManager.OnUnloadMap(container.Name);
-
-        if (LoadedObjectContainers.ContainsKey(container.Name))
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            foreach (Entity obj in container.Objects)
+            if (entry.Key.Filename != mapID)
+                continue;
+
+            Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
+
+            foreach (Entity obj in entry.Value.MapContainer.Objects)
             {
                 if (obj != null)
                 {
@@ -1068,49 +975,30 @@ public class Universe
                 }
             }
 
-            container.Clear();
-            LoadedObjectContainers[container.Name] = null;
-            if (clearFromList)
-            {
-                LoadedObjectContainers.Remove(container.Name);
-            }
+            entry.Value.MapContainer.Clear();
+            entry.Value.MapContainer = null;
         }
     }
 
     public void UnloadAllMaps()
     {
-        List<ObjectContainer> toUnload = new();
-        foreach (var key in LoadedObjectContainers.Keys)
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (LoadedObjectContainers[key] != null)
+            if (entry.Value.MapContainer != null)
             {
-                toUnload.Add(LoadedObjectContainers[key]);
-            }
-        }
-
-        foreach (ObjectContainer un in toUnload)
-        {
-            if (un is MapContainer ma)
-            {
-                UnloadContainer(ma);
+                UnloadMapContainer(entry.Key.Filename);
             }
         }
     }
 
     public void UnloadAll(bool clearFromList = false)
     {
-        List<ObjectContainer> toUnload = new();
-        foreach (var key in LoadedObjectContainers.Keys)
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (LoadedObjectContainers[key] != null)
+            if (entry.Value.MapContainer != null)
             {
-                toUnload.Add(LoadedObjectContainers[key]);
+                UnloadMapContainer(entry.Key.Filename);
             }
-        }
-
-        foreach (ObjectContainer un in toUnload)
-        {
-            UnloadContainer(un, clearFromList);
         }
     }
 

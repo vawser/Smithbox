@@ -1,6 +1,7 @@
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Octokit;
 using StudioCore;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -223,18 +224,22 @@ public class PrefabView
         ImGui.Text("Map:");
         ImGui.SameLine();
 
-        if (comboMap.name != null && Editor.Universe.LoadedObjectContainers[comboMap.name] == null)
+        var container = Editor.GetMapContainerFromMapID(comboMap.name);
+
+        if (comboMap.name != null && container == null)
             comboMap = (null, null);
 
         ImGui.PushItemWidth(-1);
         if (ImGui.BeginCombo("##PrefabMapCombo", comboMap.name))
         {
-            foreach (var (name, container) in Editor.Universe.LoadedObjectContainers)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (container is null) continue;
-                if (ImGui.Selectable(name))
+                if (entry.Value.MapContainer == null)
+                    continue;
+
+                if (ImGui.Selectable(entry.Key.Filename))
                 {
-                    comboMap = (name, container);
+                    comboMap = (entry.Key.Filename, entry.Value.MapContainer);
                 }
             }
             ImGui.EndCombo();

@@ -7,6 +7,7 @@ using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Helpers;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
@@ -24,14 +25,9 @@ namespace StudioCore.Editors.MapEditor.Core;
 public class MapContentView
 {
     public MapEditorScreen Editor;
-    private IViewport Viewport;
-
-    private ViewportActionManager EditorActionManager;
-    private ViewportSelection Selection;
-    private EditorFocusManager FocusManager;
+    public ProjectEntry Project;
 
     public string MapID;
-    public ObjectContainer Container;
 
     public string ImguiID = "";
     private int treeImGuiId = 0;
@@ -45,78 +41,38 @@ public class MapContentView
 
     private int LoadCount = 0;
 
-    public MapContentView(MapEditorScreen screen, string mapID, ObjectContainer container)
+    public MapContentView(MapEditorScreen editor, ProjectEntry project, FileDictionaryEntry fileEntry)
     {
-        Editor = screen;
-        EditorActionManager = screen.EditorActionManager;
-        Selection = screen.ViewportSelection;
-        Viewport = screen.MapViewportView.Viewport;
-        FocusManager = screen.FocusManager;
+        Editor = editor;
+        Project = project;
 
-        MapID = mapID;
-        Container = container;
-
-        ImguiID = mapID;
+        ImguiID = fileEntry.Filename;
+        MapID = fileEntry.Filename;
     }
 
     public void Load(bool selected)
     {
         ContentLoadState = MapContentLoadState.Loaded;
 
-        Selection.ClearSelection(Editor);
+        Editor.ViewportSelection.ClearSelection(Editor);
+
         Editor.Universe.LoadMap(MapID, selected);
-        Container = Editor.Universe.GetObjectContainerForMap(MapID);
-
-        // Reveal hidden entities if "Allow map unload" is false 
-        if (!CFG.Current.MapEditor_EnableMapUnload)
-        {
-            foreach (var entry in Container.Objects)
-            {
-                entry.EditorVisible = true;
-            }
-        }
-
-        LoadCount++;
-
-        if (CFG.Current.MapEditor_EnableMapUnload)
-        {
-            if (LoadCount > 1)
-            {
-                PlatformUtils.Instance.MessageBox("Warning: The map object list and the viewport will be desynchronized if you proceed.\nThis is an unresolved bug. Proceed with caution.\n\nIt is recommended that you restart Smithbox to avoid issues.\nAlternatively, you can disable the 'Allow map unload' setting in the Map Editor settings menu.\nThis will circumvent the issue, but you are likely to hit the map rendering limit if you load several maps.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
     }
 
     public void Unload()
     {
         ContentLoadState = MapContentLoadState.Unloaded;
 
-        // Unload
-        if (CFG.Current.MapEditor_EnableMapUnload)
-        {
-            Editor.EntityTypeCache.RemoveMapFromCache(this);
+        Editor.EntityTypeCache.RemoveMapFromCache(this);
 
-            Selection.ClearSelection(Editor);
-            EditorActionManager.Clear();
+        Editor.ViewportSelection.ClearSelection(Editor);
+        Editor.EditorActionManager.Clear();
 
-            if (Container != null)
-            {
-                Editor.Universe.UnloadContainer(Container, true);
-            }
+        Editor.Universe.UnloadMapContainer(MapID, true);
 
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            GC.Collect();
-        }
-        // Option to ignore unloading and just keep map in memory
-        else
-        {
-            // Hide entities if "Allow map unload" is false
-            foreach (var entry in Container.Objects)
-            {
-                entry.EditorVisible = false;
-            }
-        }
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        GC.Collect();
     }
 
     /// <summary>
@@ -144,10 +100,12 @@ public class MapContentView
     {
         ImGui.SameLine();
 
+        var targetContainer = Editor.GetMapContainerFromMapID(MapID);
+
         // Show All
         if (ImGui.Button($"{Icons.Eye}"))
         {
-            foreach (var entry in Container.Objects)
+            foreach (var entry in targetContainer.Objects)
             {
                 entry.EditorVisible = true;
             }
@@ -158,7 +116,7 @@ public class MapContentView
         ImGui.SameLine();
         if (ImGui.Button($"{Icons.EyeSlash}"))
         {
-            foreach (var entry in Container.Objects)
+            foreach (var entry in targetContainer.Objects)
             {
                 entry.EditorVisible = false;
             }
@@ -188,27 +146,29 @@ public class MapContentView
     {
         ImGui.BeginChild($"mapContentsTree_{ImguiID}");
 
-        Entity mapRoot = Container?.RootObject;
+        var targetContainer = Editor.GetMapContainerFromMapID(MapID);
+
+        Entity mapRoot = targetContainer?.RootObject;
         ObjectContainerReference mapRef = new(MapID);
         ISelectable selectTarget = (ISelectable)mapRoot ?? mapRef;
 
         ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
 
-        var selected = Selection.GetSelection().Contains(mapRoot) || Selection.GetSelection().Contains(mapRef);
+        var selected = Editor.ViewportSelection.GetSelection().Contains(mapRoot) || Editor.ViewportSelection.GetSelection().Contains(mapRef);
         if (selected)
         {
             treeflags |= ImGuiTreeNodeFlags.Selected;
         }
 
         var nodeopen = false;
-        var unsaved = Container != null && Container.HasUnsavedChanges ? "*" : "";
+        var unsaved = targetContainer != null && targetContainer.HasUnsavedChanges ? "*" : "";
 
         ImGui.BeginGroup();
 
         string treeNodeName = $@"{Icons.Cube} {MapID}";
         string treeNodeNameFormat = $@"{Icons.Cube} {MapID}{unsaved}";
 
-        if (Container != null && ContentLoadState is MapContentLoadState.Loaded)
+        if (targetContainer != null && ContentLoadState is MapContentLoadState.Loaded)
         {
             nodeopen = ImGui.TreeNodeEx(treeNodeName, treeflags, treeNodeNameFormat);
 
@@ -218,10 +178,10 @@ public class MapContentView
 
         ImGui.EndGroup();
 
-        if (Selection.ShouldGoto(mapRoot) || Selection.ShouldGoto(mapRef))
+        if (Editor.ViewportSelection.ShouldGoto(mapRoot) || Editor.ViewportSelection.ShouldGoto(mapRef))
         {
             ImGui.SetScrollHereY();
-            Selection.ClearGotoTarget();
+            Editor.ViewportSelection.ClearGotoTarget();
         }
 
         if (nodeopen)
@@ -239,11 +199,11 @@ public class MapContentView
 
             if (ContentViewType is MapContentViewType.ObjectType)
             {
-                TypeView((MapContainer)Container);
+                TypeView(targetContainer);
             }
             else if (ContentViewType is MapContentViewType.Flat)
             {
-                FlatView((MapContainer)Container);
+                FlatView(targetContainer);
             }
 
             ImGui.PopStyleVar();
@@ -265,7 +225,7 @@ public class MapContentView
 
         if (ImGui.IsMouseDoubleClicked(0) && _pendingClick != null && mapRoot == _pendingClick)
         {
-            Viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
+            Editor.MapViewportView.Viewport.FramePosition(mapRoot.GetLocalTransform().Position, 10f);
         }
 
         if ((_pendingClick == mapRoot || mapRef.Equals(_pendingClick)) && ImGui.IsMouseReleased(ImGuiMouseButton.Left))
@@ -278,19 +238,19 @@ public class MapContentView
                     if (InputTracker.GetKey(Key.ControlLeft) || InputTracker.GetKey(Key.ControlRight))
                     {
                         // Toggle Selection
-                        if (Selection.GetSelection().Contains(selectTarget))
+                        if (Editor.ViewportSelection.GetSelection().Contains(selectTarget))
                         {
-                            Selection.RemoveSelection(Editor, selectTarget);
+                            Editor.ViewportSelection.RemoveSelection(Editor, selectTarget);
                         }
                         else
                         {
-                            Selection.AddSelection(Editor, selectTarget);
+                            Editor.ViewportSelection.AddSelection(Editor, selectTarget);
                         }
                     }
                     else
                     {
-                        Selection.ClearSelection(Editor);
-                        Selection.AddSelection(Editor, selectTarget);
+                        Editor.ViewportSelection.ClearSelection(Editor);
+                        Editor.ViewportSelection.AddSelection(Editor, selectTarget);
                     }
                 }
 
@@ -447,7 +407,7 @@ public class MapContentView
                 {
                     if (ImGui.Selectable("Toggle Render Type"))
                     {
-                        VisualizationHelper.ToggleRenderType(Editor, Selection);
+                        VisualizationHelper.ToggleRenderType(Editor, Editor.ViewportSelection);
                     }
                     UIHelper.Tooltip($"Toggles the rendering style for the current selection.\n\nShortcut: {KeyBindings.Current.VIEWPORT_ToggleRenderType.HintText}");
                 }
@@ -644,7 +604,7 @@ public class MapContentView
         if (hierarchial && e.Children.Count > 0)
         {
             ImGuiTreeNodeFlags treeflags = ImGuiTreeNodeFlags.OpenOnArrow | ImGuiTreeNodeFlags.SpanAvailWidth;
-            if (Selection.GetSelection().Contains(e))
+            if (Editor.ViewportSelection.GetSelection().Contains(e))
             {
                 treeflags |= ImGuiTreeNodeFlags.Selected;
             }
@@ -654,7 +614,7 @@ public class MapContentView
             {
                 if (e.RenderSceneMesh != null)
                 {
-                    Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                    Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
                 }
             }
             if (ImGui.IsItemFocused() && (InputTracker.GetKey(Key.Up) || InputTracker.GetKey(Key.Down)))
@@ -668,7 +628,7 @@ public class MapContentView
             treeImGuiId++;
             var selectableFlags = ImGuiSelectableFlags.AllowDoubleClick | ImGuiSelectableFlags.AllowOverlap;
 
-            if (ImGui.Selectable($"{padding}{e.PrettyName}##{treeImGuiId}", Selection.GetSelection().Contains(e), selectableFlags))
+            if (ImGui.Selectable($"{padding}{e.PrettyName}##{treeImGuiId}", Editor.ViewportSelection.GetSelection().Contains(e), selectableFlags))
             {
                 doSelect = true;
 
@@ -677,7 +637,7 @@ public class MapContentView
                 {
                     if (e.RenderSceneMesh != null)
                     {
-                        Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
+                        Editor.MapViewportView.Viewport.FrameBox(e.RenderSceneMesh.GetBounds());
                     }
                 }
             }
@@ -758,15 +718,15 @@ public class MapContentView
             }
         }
 
-        if (Selection.ShouldGoto(e))
+        if (Editor.ViewportSelection.ShouldGoto(e))
         {
             // By default, this places the item at 50% in the frame. Use 0 to place it on top.
             ImGui.SetScrollHereY();
-            Selection.ClearGotoTarget();
+            Editor.ViewportSelection.ClearGotoTarget();
         }
 
         // If the visibility icon wasn't clicked, perform the selection
-        Utils.EntitySelectionHandler(Editor, Selection, e, doSelect, arrowKeySelect);
+        Utils.EntitySelectionHandler(Editor, Editor.ViewportSelection, e, doSelect, arrowKeySelect);
 
         // If there's children then draw them
         if (nodeopen)

@@ -1,4 +1,5 @@
-﻿using SoulsFormats;
+﻿using Octokit;
+using SoulsFormats;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.Helpers;
@@ -57,16 +58,18 @@ public static class PatrolDrawManager
 
         Clear();
 
-        var loadedMaps = universe.LoadedObjectContainers.Values.Where(x => x != null);
-        foreach (var map in loadedMaps)
+        foreach (var map in editor.Project.MapData.PrimaryBank.Maps)
         {
-            foreach (var patrolEntity in map.Objects.ToList())
+            if (map.Value.MapContainer == null)
+                continue;
+
+            foreach (var patrolEntity in map.Value.MapContainer.Objects.ToList())
             {
                 if (patrolEntity.WrappedObject is MSBD.Part.EnemyBase MSBD_Enemy)
                 {
-                    if (GetPoints(MSBD_Enemy.MovePointNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBD_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
 
                         bool endAtStart = MSBD_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSBD_Enemy.PointMoveType == 2;
@@ -78,9 +81,9 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSB1.Part.EnemyBase MSB1_Enemy)
                 {
-                    if (GetPoints(MSB1_Enemy.MovePointNames, map, out List<Vector3> points))
+                    if (GetPoints(MSB1_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
 
                         bool endAtStart = MSB1_Enemy.PointMoveType == 0;
                         bool moveRandomly = MSB1_Enemy.PointMoveType == 2;
@@ -93,9 +96,9 @@ public static class PatrolDrawManager
                 // DS2 stores walk routes in ESD AI
                 else if (patrolEntity.WrappedObject is MSBB.Part.EnemyBase MSBB_Enemy)
                 {
-                    if (GetPoints(MSBB_Enemy.MovePointNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBB_Enemy.MovePointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
 
                         // BB move type is probably in an unk somewhere.
                         bool endAtStart = false;
@@ -108,11 +111,11 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSB3.Event.PatrolInfo MSB3_Patrol)
                 {
-                    if (GetPoints(MSB3_Patrol.WalkPointNames, map, out List<Vector3> points))
+                    if (GetPoints(MSB3_Patrol.WalkPointNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
                         List<Vector3> enemies = new();
-                        foreach (var ent in map.Objects)
+                        foreach (var ent in map.Value.MapContainer.Objects)
                         {
                             if (ent.WrappedObject is MSB3.Part.EnemyBase ene)
                             {
@@ -135,11 +138,11 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSBS.Event.PatrolInfo MSBS_Patrol)
                 {
-                    if (GetPoints(MSBS_Patrol.WalkRegionNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBS_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
                         List<Vector3> enemies = new();
-                        foreach (var ent in map.Objects)
+                        foreach (var ent in map.Value.MapContainer.Objects)
                         {
                             if (ent.WrappedObject is MSBS.Part.EnemyBase ene)
                             {
@@ -162,11 +165,11 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSBE.Event.PatrolInfo MSBE_Patrol)
                 {
-                    if (GetPoints(MSBE_Patrol.WalkRegionNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBE_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
                         List<Vector3> enemies = new();
-                        foreach (var ent in map.Objects)
+                        foreach (var ent in map.Value.MapContainer.Objects)
                         {
                             if (ent.WrappedObject is MSBE.Part.EnemyBase ene)
                             {
@@ -189,11 +192,11 @@ public static class PatrolDrawManager
                 }
                 else if (patrolEntity.WrappedObject is MSB_AC6.Event.PatrolRoute MSBAC6_Patrol)
                 {
-                    if (GetPoints(MSBAC6_Patrol.WalkRegionNames, map, out List<Vector3> points))
+                    if (GetPoints(MSBAC6_Patrol.WalkRegionNames, map.Value.MapContainer, out List<Vector3> points))
                     {
-                        Entity drawEntity = GetDrawEntity(editor, map);
+                        Entity drawEntity = GetDrawEntity(editor, map.Value.MapContainer);
                         List<Vector3> enemies = new();
-                        foreach (var ent in map.Objects)
+                        foreach (var ent in map.Value.MapContainer.Objects)
                         {
                             if (ent.WrappedObject is MSB_AC6.Part.EnemyBase ene)
                             {

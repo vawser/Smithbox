@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using StudioCore.Editors.MapEditor.Actions.Viewport;
 using StudioCore.Editors.MapEditor.Core;
 using StudioCore.Editors.MapEditor.Framework;
@@ -452,24 +453,20 @@ public class MassEditHandler
         // Local
         if (MapTarget is MapListType.Local)
         {
-            if (universe.LoadedObjectContainers.Count > 0)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                var maps = universe.LoadedObjectContainers
-                        .Where(k => k.Key is not null)
-                        .OrderBy(k => k.Key);
-
-                foreach (var entry in maps)
+                if (entry.Value.MapContainer != null)
                 {
-                    if (availableList.Contains(entry.Key))
+                    if (availableList.Contains(entry.Key.Filename))
                     {
-                        if (listView.ContentViews.ContainsKey(entry.Key))
+                        if (listView.ContentViews.ContainsKey(entry.Key.Filename))
                         {
-                            var curView = listView.ContentViews[entry.Key];
+                            var curView = listView.ContentViews[entry.Key.Filename];
 
                             var actionList = ProcessSelectionCriteria(curView);
 
                             if (actionList.Count > 0)
-                                actionGroups.Add(new MapActionGroup(entry.Key, actionList));
+                                actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
                         }
                     }
                 }
@@ -503,27 +500,22 @@ public class MassEditHandler
             // Load all maps
             foreach (var entry in availableList)
             {
-                universe.LoadMap(entry, false, true);
-                Editor.MapListView.SignalLoad(entry);
+                Editor.MapListView.TriggerMapLoad(entry);
             }
 
             // Process each map
-            if (universe.LoadedObjectContainers.Count > 0)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                var maps = universe.LoadedObjectContainers
-                        .Where(k => k.Key is not null)
-                        .OrderBy(k => k.Key);
-
-                foreach (var entry in maps)
+                if (entry.Value.MapContainer != null)
                 {
-                    if (listView.ContentViews.ContainsKey(entry.Key))
+                    if (listView.ContentViews.ContainsKey(entry.Key.Filename))
                     {
-                        var curView = listView.ContentViews[entry.Key];
+                        var curView = listView.ContentViews[entry.Key.Filename];
 
                         var actionList = ProcessSelectionCriteria(curView);
 
                         if (actionList.Count > 0)
-                            actionGroups.Add(new MapActionGroup(entry.Key, actionList));
+                            actionGroups.Add(new MapActionGroup(entry.Key.Filename, actionList));
                     }
                 }
             }
@@ -544,7 +536,7 @@ public class MassEditHandler
             //universe.UnloadAllMaps();
             foreach (var entry in availableList)
             {
-                Editor.MapListView.SignalUnload(entry);
+                Editor.MapListView.TriggerMapUnload(entry);
             }
 
             if(restoreRendering)
@@ -624,9 +616,11 @@ public class MassEditHandler
     {
         List<ViewportAction> actions = new List<ViewportAction>();
 
-        if (curView.Container != null)
+        var container = Editor.GetMapContainerFromMapID(curView.MapID);
+
+        if (container != null)
         {
-            foreach (var entry in curView.Container.Objects)
+            foreach (var entry in container.Objects)
             {
                 if (entry is MsbEntity mEnt)
                 {

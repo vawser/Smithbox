@@ -113,20 +113,19 @@ public static class PropInfo_ReferencesTo
                     if (ImGui.BeginPopupContextItem())
                     {
                         var universe = editor.Universe;
-                        MapContainer map = universe.GetLoadedMapContainer(mapid);
+                        MapContainer map = editor.GetMapContainerFromMapID(mapid);
                         if (map == null)
                         {
                             if (ImGui.Selectable("Load Map"))
                             {
-                                universe.LoadMap(mapid);
-                                editor.MapListView.SignalLoad(mapid);
+                                editor.MapListView.TriggerMapLoad(mapid);
                             }
                         }
                         else
                         {
                             if (ImGui.Selectable("Unload Map"))
                             {
-                                universe.UnloadContainer(map);
+                                editor.MapListView.TriggerMapUnload(mapid);
                             }
                         }
 

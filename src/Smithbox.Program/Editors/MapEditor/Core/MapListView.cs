@@ -15,12 +15,11 @@ namespace StudioCore.Editors.MapEditor.Core;
 
 public class MapListView : Actions.Viewport.IActionEventHandler
 {
-    private MapEditorScreen Editor;
-    private IViewport Viewport;
+    public MapEditorScreen Editor;
+    public ProjectEntry Project;
 
     private string ImguiID = "MapListView";
 
-    public List<string> MapIDs = new();
     public Dictionary<string, MapContentView> ContentViews = new();
     public bool SetupContentViews = false;
 
@@ -28,10 +27,10 @@ public class MapListView : Actions.Viewport.IActionEventHandler
 
     private bool DisplayChaliceDungeons = true;
 
-    public MapListView(MapEditorScreen screen)
+    public MapListView(MapEditorScreen editor, ProjectEntry project)
     {
-        Editor = screen;
-        Viewport = screen.MapViewportView.Viewport;
+        Editor = editor;
+        Project = project;
     }
 
 
@@ -57,13 +56,12 @@ public class MapListView : Actions.Viewport.IActionEventHandler
                 {
                     SetupContentViews = true;
 
-                    foreach (var entry in Editor.Universe.GetMapContainerList())
+                    foreach (var entry in Project.MapData.MapFiles.Entries)
                     {
-                        var newView = new MapContentView(Editor, entry.Key, entry.Value);
+                        var newView = new MapContentView(Editor, Project, entry);
 
                         if (!ContentViews.ContainsKey(newView.MapID))
                         {
-                            MapIDs.Add(newView.MapID);
                             ContentViews.Add(newView.MapID, newView);
                         }
                     }
@@ -163,19 +161,21 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             _cachedMapNameAliases.Clear();
             _cachedMapTags.Clear();
 
-            foreach (var entry in MapIDs)
+            foreach (var entry in Project.MapData.MapFiles.Entries)
             {
-                var nameAlias = AliasUtils.GetMapNameAlias(Editor.Project, entry);
-                var tags = AliasUtils.GetMapTags(Editor.Project, entry);
+                var mapID = entry.Filename;
 
-                _cachedMapNameAliases[entry] = nameAlias;
-                _cachedMapTags[entry] = tags;
+                var nameAlias = AliasUtils.GetMapNameAlias(Editor.Project, mapID);
+                var tags = AliasUtils.GetMapTags(Editor.Project, mapID);
 
-                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, entry, nameAlias, tags);
+                _cachedMapNameAliases[mapID] = nameAlias;
+                _cachedMapTags[mapID] = tags;
+
+                bool isMatch = SearchFilters.IsMapSearchMatch(_lastSearchText, mapID, nameAlias, tags);
 
                 if (isMatch || _lastSearchText == "")
                 {
-                    _cachedSearchMatches.Add(entry);
+                    _cachedSearchMatches.Add(mapID);
                 }
             }
         }
@@ -330,14 +330,16 @@ public class MapListView : Actions.Viewport.IActionEventHandler
             // Loaded Map
             if (curView.ContentLoadState is MapContentLoadState.Loaded)
             {
-                if (curView.Container is MapContainer m)
+                var targetContainer = Editor.GetMapContainerFromMapID(curView.MapID);
+
+                if (targetContainer != null)
                 {
                     // Save Map
                     if (ImGui.Selectable("Save Map"))
                     {
                         try
                         {
-                            Editor.Universe.SaveMap(m);
+                            Editor.Universe.SaveMap(targetContainer);
                         }
                         catch (SavingFailedException e)
                         {
@@ -400,7 +402,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         }
     }
 
-    public void SignalLoad(string mapId)
+    public void TriggerMapLoad(string mapId)
     {
         if(ContentViews.ContainsKey(mapId))
         {
@@ -410,7 +412,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
         }
     }
 
-    public void SignalUnload(string mapId)
+    public void TriggerMapUnload(string mapId)
     {
         if (ContentViews.ContainsKey(mapId))
         {

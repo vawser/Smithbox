@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -225,11 +226,11 @@ public class RegionFilters
     {
         if (ImGui.MenuItem("Toggle Region Visibility: OFF"))
         {
-            foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (entry is MapContainer)
+                if (entry.Value.MapContainer != null)
                 {
-                    foreach (var child in entry.RootObject.Children)
+                    foreach (var child in entry.Value.MapContainer.RootObject.Children)
                     {
                         if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region)
                         {
@@ -244,11 +245,11 @@ public class RegionFilters
 
         if (ImGui.MenuItem("Toggle Region Visibility: ON"))
         {
-            foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
+            foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
             {
-                if (entry is MapContainer)
+                if (entry.Value.MapContainer != null)
                 {
-                    foreach (var child in entry.RootObject.Children)
+                    foreach (var child in entry.Value.MapContainer.RootObject.Children)
                     {
                         if (child.WrappedObject is MSB_AC6.Region or MSBE.Region or MSBS.Region or MSB3.Region or MSB2.Region)
                         {
@@ -269,11 +270,11 @@ public class RegionFilters
         var show = false;
 
         // Only show if region type is present
-        foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
+        foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
         {
-            if (entry is MapContainer)
+            if (entry.Value.MapContainer != null)
             {
-                foreach (var child in entry.RootObject.Children)
+                foreach (var child in entry.Value.MapContainer.RootObject.Children)
                 {
                     if (child.WrappedObject.GetType() == regionType)
                     {
@@ -288,11 +289,11 @@ public class RegionFilters
         {
             if (ImGui.MenuItem($"Toggle: {name}"))
             {
-                foreach (var entry in Editor.Universe.LoadedObjectContainers.Values)
+                foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
                 {
-                    if (entry is MapContainer)
+                    if (entry.Value.MapContainer != null)
                     {
-                        foreach (var child in entry.RootObject.Children)
+                        foreach (var child in entry.Value.MapContainer.RootObject.Children)
                         {
                             if (child.WrappedObject.GetType() == regionType)
                             {
