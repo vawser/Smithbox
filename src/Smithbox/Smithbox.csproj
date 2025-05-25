@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <Authors>Katalash, Vawser</Authors>
+    <Version>2.0.0</Version>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PackageVersion>1.0.27</PackageVersion>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>12</LangVersion>
+    <IsPackable>false</IsPackable>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimMode>full</TrimMode>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Andre.SoulsFormats" />
+    <TrimmerRootAssembly Include="Smithbox.Program" />
+    <TrimmerRootAssembly Include="HKX2" />
+    <TrimmerRootAssembly Include="Octokit" />
+    <TrimmerRootAssembly Include="HKLib" />
+    <TrimmerRootAssembly Include="HKLib.Reflection" />
+    <TrimmerRootAssembly Include="HKLib.Serialization" />
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj" />
+    <ProjectReference Include="..\Smithbox.Program\Smithbox.Program.csproj" />
+    <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
+  </ItemGroup>
+ 
+  <Target Name="CopyDataProjectOutput" AfterTargets="Build">
+  <ItemGroup>
+    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\net9.0-windows7.0\**\*" />
+  </ItemGroup>
+
+  <Copy
+    SourceFiles="@(DataProjectFiles)"
+    DestinationFolder="$(OutputPath)%(RecursiveDir)"
+    SkipUnchangedFiles="true" />
+</Target>
+</Project>

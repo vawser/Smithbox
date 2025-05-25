@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Platforms>AnyCPU;x64</Platforms>
+        <LangVersion>11</LangVersion>
+        <TargetFramework>net9.0-windows</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HKLib.Reflection\Havok.HKLib.Reflection.csproj" />
+      <ProjectReference Include="..\HKLib\Havok.HKLib.csproj" />
+    </ItemGroup>
+
+</Project>

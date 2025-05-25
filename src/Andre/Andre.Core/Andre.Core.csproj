@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SoulsFormats\SoulsFormats\SoulsFormats.csproj" />
+      <ProjectReference Include="..\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
     </ItemGroup>
 
 

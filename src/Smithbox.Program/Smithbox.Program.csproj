@@ -1,0 +1,70 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseWindowsForms>true</UseWindowsForms>
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <UseWindowsForms>true</UseWindowsForms>
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AssimpNet" Version="4.1.0" />
+    <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="DirectXTexNet" Version="1.0.7" />
+    <PackageReference Include="DotNext.IO" Version="4.15.0" />
+    <PackageReference Include="NativeFileDialogSharp" Version="0.6.0-alpha" />
+    <PackageReference Include="NativeLibraryLoader" Version="1.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Octokit" Version="13.0.0" />
+    <PackageReference Include="Pfim" Version="0.11.2" />
+    <PackageReference Include="ProcessMemoryUtilities.Net" Version="1.3.4" />
+    <PackageReference Include="Silk.NET.OpenGL" Version="2.21.0" />
+    <PackageReference Include="Silk.NET.SDL" Version="2.22.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.7" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.6" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="8.0.0" />
+    <PackageReference Include="Veldrid.ImageSharp" Version="4.9.0" />
+    <PackageReference Include="Vortice.Vulkan" Version="1.8.12" />
+    <PackageReference Include="Vortice.VulkanMemoryAllocator" Version="1.4.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Andre\Andre.IO\Andre.IO.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGuiNodeEditor\Hexa.NET.ImGuiNodeEditor.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGuizmo\Hexa.NET.ImGuizmo.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImGui\Hexa.NET.ImGui.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImNodes\Hexa.NET.ImNodes.csproj" />
+    <ProjectReference Include="..\Hexa.NET.ImPlot\Hexa.NET.ImPlot.csproj" />
+    <ProjectReference Include="..\Havok\HKLib.Reflection\Havok.HKLib.Reflection.csproj" />
+    <ProjectReference Include="..\Havok\HKLib.Serialization\Havok.HKLib.Serialization.csproj" />
+    <ProjectReference Include="..\Havok\HKLib\Havok.HKLib.csproj" />
+    <ProjectReference Include="..\Havok\HKX2\Havok.HKX2.csproj" />
+    <ProjectReference Include="..\Andre\SoapstoneLib\SoapstoneLib\Andre.SoapstoneLib.csproj" />
+    <ProjectReference Include="..\Andre\Andre.Formats\Andre.Formats.csproj" />
+    <ProjectReference Include="..\Andre\SoulsFormats\SoulsFormats\Andre.SoulsFormats.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.RenderDoc\Veldrid.RenderDoc.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.SPIRV\Veldrid.SPIRV.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.StartupUtilities\Veldrid.StartupUtilities.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid.Utilities\Veldrid.Utilities.csproj" />
+    <ProjectReference Include="..\Veldrid\Veldrid\Veldrid.csproj" />
+  </ItemGroup>
+  
+</Project>

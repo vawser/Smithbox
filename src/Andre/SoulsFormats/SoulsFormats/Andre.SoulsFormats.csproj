@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Copyright>Copyright © Joseph Anderson 2019</Copyright>
+    <Description>A .NET library for reading and writing FromSoftware file formats.</Description>
+    <Company>JKAnderson</Company>
+    <Authors>Joseph Anderson</Authors>
+    <PackageProjectUrl>https://github.com/JKAnderson/SoulsFormats</PackageProjectUrl>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <LangVersion>12</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>embedded</DebugType>
+    <DocumentationFile />
+  </PropertyGroup>
+
+  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard'))">
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.4.0" />
+    <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.2.2" />
+    <PackageReference Include="DotNext.IO" Version="4.15.0" />
+    <PackageReference Include="DotNext.Unsafe" Version="4.14.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="ZstdNet" Version="1.4.5" />
+  </ItemGroup>
+</Project>
