@@ -14,6 +14,3 @@
 - Map Editor: implement VFS + data bank overhaul
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
-
-
-

@@ -84,46 +84,63 @@
 			<entry value="83"   name="Mimicry Force Cancel Flag"/>
 			<entry value="84"   name="Special Transition: HKS 298"/>
 			<entry value="85"   name="Light Lantern Weapon [State Info 147]"/>
-			<entry value="86"   name="AI Attack Anim Cancel"/>
+			<entry value="86"   name="Anim Cancel - AI Attack"/>
 			<entry value="87"   name="Common Key Input"/>
 			<entry value="88"   name="Disable Precision Shooting"/>
-			<entry value="89"   name="Completely Disable Movement"/>
+			<entry value="89"   name="Disable All Movement"/>
 			<entry value="90"   name="No Dash / Run"/>
 			<entry value="91"   name="No Dash"/>
 			<entry value="92"   name="Warp Anim Root to Master After Death"/>
 			<entry value="94"   name="Perfect Invincibility"/>
-			<entry value="95"   name="Disable Shadow Displaying"/>
+			<entry value="95"   name="Disable Shadow Display"/>
 			<entry value="96"   name="Set Immortality"/>
-			<entry value="97"   name="Disable Magic / Item Use Anim Cancel Flag"/>
+			<entry value="97"   name="Disable Input: Magic / Item"/>
 			<entry value="98"   name="Set: HKS 313"/>
 			<entry value="99"   name="Is Cult Ritual Progressing"/>
-			<entry value="100"  name="Set: Startbit17"/>
-			<entry value="101"  name="Set: Startbit18"/>
-			<entry value="102"  name="Set: Startbit21"/>
-			<entry value="103"  name="Anim Cancel End: L2"/>
-			<entry value="104"  name="Anim Cancel End: L2 - Weapon Cancel Type: HKS Set 2011"/>
-			<entry value="105"  name="Anim Cancel Start: L2"/>
-			<entry value="106"  name="Anim Cancel End: L2 - Weapon Cancel Type: HKS Set 2011"/>
-			<entry value="107"  name="Anim Cancel End: Use Item - By Goods Param"/>
-			<entry value="108"  name="Anim Cancel Start: Use Item - By Goods Param"/>
-			<entry value="109"  name="Can Double Cast - HKS 331"/>
+			<entry value="100"  name="During Cult/Ceremony"/>
+			<entry value="101"  name="Corpse Carrying Keyframe"/>
+			<entry value="102"  name="Poise Forced Break"/>
+			<entry value="103"  name="Anim Cancel: Quick Weapon Skill"/>
+			<entry value="104"  name="Anim Cancel: Weapon Skill"/>
+			<entry value="105"  name="Anim Input: Quick Weapon Skill"/>
+			<entry value="106"  name="Anim Input: Weapon Skill"/>
+			<entry value="107"  name="Anim Cancel: Quick Use Item"/>
+			<entry value="108"  name="Anim Input: Quick Use Item"/>
+			<entry value="109"  name="Can Double Cast - HKS env 331"/>
 			<entry value="110"  name="Disable Direction Change"/>
 			<entry value="111"  name="Anim Cancel Start: Emergency Step"/>
 			<entry value="112"  name="Anim Cancel End: Emergency Step"/>
 			<entry value="113"  name="Height Correction"/>
 			<entry value="114"  name="Change Lock-on Marker Position"/>
-			<entry value="115"  name="Anim Cancel End: R1 / LightKick"/>
-			<entry value="116"  name="Anim Cancel End: R2 / HeavyKick"/>
-			<entry value="117"  name="Anim Cancel End: L1"/>
-			<entry value="118"  name="Anim Cancel End: L2"/>
+			<entry value="115"  name="Anim Cancel: R1 / Light Kick"/>
+			<entry value="116"  name="Anim Cancel: R2 / Heavy Kick"/>
+			<entry value="117"  name="Anim Cancel: L1"/>
+			<entry value="118"  name="Anim Cancel: L2"/>
 			<entry value="119"  name="Try to force Parry Mode"/>
-			<entry value="120"  name="Anim Cancel Start: L1 / L2 - By Weapon Param"/>
-			<entry value="121"  name="Anim Cancel End: L1 / L2 - By Weapon Param"/>
+			<entry value="120"  name="Anim Input: L1 / L2 - For Dual Weapon"/>
+			<entry value="121"  name="Anim Cancel: L1 / L2 - For Dual Weapon"/>
 			<entry value="122"  name="Set: Bool32_0x1E0"/>
 			<entry value="123"  name="Set: Bool32_0x1E0"/>
-			<entry value="124"  name="Lock-on Auto Search"/>
-			<entry value="134"  name="Unknown"/>
-			<entry value="143"  name="PVP I-frames"/>
+			<entry value="124"  name="Enable Rotation Interpolation Multiplier"/>
+			<entry value="125"  name="Snap to Target Rotation"/>
+			<entry value="126"  name="Unknown"/>
+			<entry value="127"  name="Disable Flight State for Flight Biped"/>
+			<entry value="128"  name="Unknown"/>
+			<entry value="129"  name="Unknown"/>
+			<entry value="130"  name="Enable Flight State for Flight Biped"/>
+			<entry value="131"  name="Unknown"/>
+			<entry value="132"  name="Jump Frames - Lower Body IFrames"/>
+			<entry value="133"  name="Unknown"/>
+			<entry value="134"  name="Falling Jump Frames - Used with 51"/>
+			<entry value="135"  name="Unknown"/>
+			<entry value="136"  name="Disable Flight State for Hover Biped"/>
+			<entry value="137"  name="Enable Flight State for Hover Biped"/>
+			<entry value="138"  name="Unknown"/>
+			<entry value="139"  name="Unknown"/>
+			<entry value="140"  name="Unknown"/>
+			<entry value="141"  name="Unknown"/>
+			<entry value="142"  name="Unknown"/>
+			<entry value="143"  name="PvE-only I-frames"/>
 		</s32>
 		<f32 name="Arg A"/>
 		<s32 name="Arg B"/>
@@ -134,10 +151,14 @@
 	<event id="1" name="Attack Behavior">
 		<s32 name="Attack Type">
 			<entry value="0" name="Standard"/>
-			<entry value="1" name="Unknown - Infested Ghoul Jump Slash DS1"/>
-			<entry value="2" name="Forward R1"/>
-			<entry value="62" name="Plunging Attack"/>
+			<entry value="1" name="Strike"/>
+			<entry value="2" name="Push"/>
+			<entry value="3" name="Thrust"/>
+			<entry value="62" name="Plunging Attack Throw"/>
+			<entry value="63" name="Backstab"/>
 			<entry value="64" name="Parry"/>
+			<entry value="65" name="Normal Attack Throw"/>
+			<entry value="66" name="Flow"/>
 		</s32>
 		<s32 name="Attack Index">
 			<entry value="0" name="0"/>
@@ -178,7 +199,11 @@
 		<s16 name="State Info" projectEnum="SP_EFFECT_TYPE"/>
 		<s16 name="Offset"/>
 		<u8/>
-		<u8/>
+		<u8 name="Source">
+          <entry value="0" name="0: Default" />
+          <entry value="1" name="1: Force Right Hand" />
+          <entry value="2" name="2: Force Left Hand" />
+        </u8>
 		<s32 assert="0"/>
 	</event>
 	<event id="5" name="Common Behavior">
@@ -352,6 +377,10 @@
 		<s32/>
 		<s32 assert="0"/>
 	</event>
+    <event id="113" name="Event 113">
+        <s32 assert="0" />
+        <s32 assert="0" />
+    </event>
 	<event id="114" name="Spawn FFX [Goods and Magic]">
 		<s32 name="FFX ID (Deprecated)" aliasEnum="Particle"/>
 		<s16 name="Dummy Poly Source">
@@ -753,11 +782,7 @@
 	<event id="193" name="Set Opacity Keyframe">
 		<f32 name="Opacity at Event Start"/>
 		<f32 name="Opacity at Event End"/>
-		<u8/>
-		<u8 assert="0"/>
-		<u8 assert="0"/>
-		<u8 assert="0"/>
-		<s32 assert="0"/>
+		<b name="Force Apply" />
 	</event>
 	<event id="194" name="Event 194">
 		<s32/>
@@ -780,8 +805,8 @@
 		<s32 assert="0"/>
 	</event>
 	<event id="197" name="Fade Out">
-		<f32 name="Ghost Main"/>
-		<f32 name="Ghost Sub"/>
+		<f32 name="Opacity at Event Start"/>
+		<f32 name="Opacity at Event End"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
@@ -821,7 +846,7 @@
 	<event id="224" name="Set Turn Speed">
 		<f32 name="Turn Speed"/>
 		<b name="Lock-on Check"/>
-		<u8 name="Unknown Argument"/>
+		<u8 name="Priority"/>
 		<u8 assert="0"/>
 		<u8 assert="0"/>
 	</event>
@@ -866,7 +891,7 @@
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="231" name="Send EZ State Request">
+	<event id="231" name="Request Msg Map List">
 		<s32 name="EZ State Request ID">
 			<entry value="0" name="OnEvent4004"/>
 			<entry value="1" name="OnEvent4005"/>
@@ -976,11 +1001,15 @@
 		<s32 name="AI Sound ID" ref="AiSoundParam"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="238" name="Action Flag - Lock-on Anims [238]">
-		<f32/>
-		<s32 />
-		<s32 />
-		<s32 />
+	<event id="238" name="Set Bullet Aim Angle">
+        <s16 name="Up Limit Angle" />
+        <s16 name="Down Limit Angle" />
+        <s16 name="Right Limit Angle" />
+        <s16 name="Left Limit Angle" />
+        <s16 name="Up Deadzone Angle" />
+        <s16 name="Down Deadzone Angle" />
+        <s16 name="Right Deadzone Angle" />
+        <s16 name="Left Deadzone Angle" />
 	</event>
 	<event id="300" name="Activate Jump Table Early">
 		<s16 name="Jump Table ID - Early Activation">
@@ -1137,10 +1166,9 @@
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="304" name="Throw Damage Behavior">
+	<event id="304" name="Throw Attack Behavior">
 		<u16/>
-		<u8/>
-		<u8/>
+        <s16 name="Index" />
 		<s32 name="Behavior Judge ID"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
@@ -1202,7 +1230,7 @@
 		<b name="Mask 31"/>
 		<b name="Mask 32"/>
 	</event>
-	<event id="320" name="Player Input Check">
+	<event id="320" name="Allowed Player Input">
 		<b name="Enable Act: R1 / R2 / Light Kick / Heavy Kick"/>
 		<b name="Enable Act: L1 / L2"/>
 		<b name="Enable Act: Guard"/>
@@ -1214,19 +1242,19 @@
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="330" name="Weapon Art FP Consumption">
+	<event id="330" name="Weapon Skill FP Consumption">
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="331" name="Add SpEffect - Weapon Art">
+	<event id="331" name="Add SpEffect - Weapon Skill">
 		<s32 name="SpEffect ID - Sufficient FP" ref="SpEffectParam"/>
 		<s32 name="SpEffect ID - Insufficient FP" ref="SpEffectParam"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 	</event>
-	<event id="332" name="Weapon Art - Weapon Style Check">
+	<event id="332" name="Weapon Skill - Weapon Style Check">
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
@@ -1236,11 +1264,15 @@
 		<s32/>
 		<s32/>
 	</event>
-	<event id="340" name="Unknown - Related to Loot [340]">
+	<event id="340" name="SpawnNpcItemLot">
 		<s32/>
 		<u8/>
 		<u8 name="Function Type"/>
-		<u8/>
+		<u8 name="DropType" >
+          <entry name="0: From Params" value="0" />
+          <entry name="1: Corpse Emission" value="1" />
+          <entry name="2: Item Display" value="2" />
+        </u8>
 		<u8 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
@@ -1387,14 +1419,14 @@
 		<s32/>
 		<s32 assert="0"/>
 	</event>
-	<event id="605" name="Blend to Idle or Movement Animation">
+	<event id="605" name="Set TimeAct Editor Havok Variable">
 		<b name="Is Female Animation"/>
 		<u8 assert="0"/>
 		<u8 assert="0"/>
 		<u8 assert="0"/>
-		<s32 name="Animation ID"/>
-		<f32 name="Animation Weight at Event Start"/>
-		<f32 name="Animation Weight at Event End"/>
+		<s32 name="Variable ID"/>
+		<f32 name="Variable Value at Event Start"/>
+		<f32 name="Variable Value at Event End"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
 		<s32 assert="0"/>
@@ -1691,10 +1723,10 @@
 		<s32 />
 		<s32 />
 	</event>
-	<event id="717" name="Action Flag [717]">
-		<f32/>
+	<event id="717" name="Set Joint Turn Speed">
+        <f32 name="Turn Speed" />
 		<b name="State"/>
-		<u8/>
+		<u8 name="Priority" />
 		<u8 assert="0"/>
 		<u8 assert="0"/>
 		<s32 assert="0"/>

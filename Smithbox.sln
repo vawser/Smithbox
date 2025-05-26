@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.SoulsFormats", "src\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.SoapstoneLib", "src\Andre\SoapstoneLib\SoapstoneLib\Andre.SoapstoneLib.csproj", "{A75D395E-6097-BBD1-A21E-96B3297BD78B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Tests", "src\Smithbox.Tests\Smithbox.Tests.csproj", "{C438DB12-F15F-4D20-8A69-BBF09A663AD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -280,6 +282,14 @@ Global
 		{A75D395E-6097-BBD1-A21E-96B3297BD78B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A75D395E-6097-BBD1-A21E-96B3297BD78B}.Release|x64.ActiveCfg = Release|Any CPU
 		{A75D395E-6097-BBD1-A21E-96B3297BD78B}.Release|x64.Build.0 = Release|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Debug|x64.Build.0 = Debug|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|x64.ActiveCfg = Release|Any CPU
+		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

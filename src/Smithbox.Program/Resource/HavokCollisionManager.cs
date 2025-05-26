@@ -1,12 +1,14 @@
 ﻿using HKLib.hk2018;
 using HKLib.hk2018.hkcdStaticMeshTree;
 using HKLib.Serialization.hk2018.Binary;
+using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ModelEditor.Enums;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -73,62 +75,68 @@ public class HavokCollisionManager
         var bdtPath = $"\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbdt";
         var bhdPath = $"\\map\\{mapId.Substring(0, 3)}\\{mapId}\\{type}{mapId.Substring(1)}.hkxbhd";
 
-        var bdtData = Project.FS.ReadFile(bdtPath);
-        var bhdData = Project.FS.ReadFile(bhdPath);
-
-        if (bdtData == null || bhdData == null)
-            return;
-
-        var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
-
-        // Get compendium
-        foreach (var file in packedBinder.Files)
+        try
         {
-            if (file.Name.Contains(".compendium.dcx"))
+            var bdtData = Project.FS.ReadFile(bdtPath);
+            var bhdData = Project.FS.ReadFile(bhdPath);
+
+            if (bdtData == null || bhdData == null)
+                return;
+
+            var packedBinder = BXF4.Read((Memory<byte>)bhdData, (Memory<byte>)bdtData);
+
+            // Get compendium
+            foreach (var file in packedBinder.Files)
             {
-                CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
+                if (file.Name.Contains(".compendium.dcx"))
+                {
+                    CompendiumBytes = DCX.Decompress(file.Bytes).ToArray();
+                }
             }
-        }
 
-        if (CompendiumBytes != null)
-        {
-            // Read collisions
+            if (CompendiumBytes == null)
+                return;
+
             foreach (var file in packedBinder.Files)
             {
                 var parts = file.Name.Split('\\');
 
-                if (parts.Length == 2)
+                if (parts.Length != 2)
+                    continue;
+
+                var name = parts[1];
+
+                if (!file.Name.Contains(".hkx.dcx"))
+                    continue;
+
+                var FileBytes = DCX.Decompress(file.Bytes).ToArray();
+
+                try
                 {
-                    var name = parts[1];
-
-                    if (file.Name.Contains(".hkx.dcx"))
+                    HavokBinarySerializer serializer = new HavokBinarySerializer();
+                    using (MemoryStream memoryStream = new MemoryStream(CompendiumBytes))
                     {
-                        var FileBytes = DCX.Decompress(file.Bytes).ToArray();
+                        serializer.LoadCompendium(memoryStream);
+                    }
+                    using (MemoryStream memoryStream = new MemoryStream(FileBytes))
+                    {
+                        var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
 
-                        try
+                        if (!HavokContainers.ContainsKey(name))
                         {
-                            HavokBinarySerializer serializer = new HavokBinarySerializer();
-                            using (MemoryStream memoryStream = new MemoryStream(CompendiumBytes))
-                            {
-                                serializer.LoadCompendium(memoryStream);
-                            }
-                            using (MemoryStream memoryStream = new MemoryStream(FileBytes))
-                            {
-                                var fileHkx = (hkRootLevelContainer)serializer.Read(memoryStream);
-
-                                if (!HavokContainers.ContainsKey(name))
-                                {
-                                    HavokContainers.Add(name, fileHkx);
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            TaskLogs.AddLog($"Failed to serialize havok file: {name} - {ex}");
+                            HavokContainers.Add(name, fileHkx);
                         }
                     }
                 }
+                catch (Exception ex)
+                {
+                    TaskLogs.AddLog($"[{Project}:Map Editor] Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
+                }
             }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load map collision: {bdtPath}", LogLevel.Error, LogPriority.High, e);
         }
     }
 
@@ -165,47 +173,25 @@ public class HavokCollisionManager
             return;
         }
 
-        // Mark as invalid by default
-        bool isValid = false;
+        var bndPath = $"\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
 
-        var bndPath = $"{Project.DataPath}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
-
-        // If game root version exists, mark as valid
-        if (File.Exists(bndPath))
+        try
         {
-            isValid = true;
-        }
+            var bndData = Project.FS.ReadFile(bndPath);
 
-        // If project version exists, point path to that instead, and mark as valid
-        var projectBndPath = $"{Project.ProjectPath}\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
+            var binder = BND4.Read(bndPath);
 
-        if (File.Exists(projectBndPath))
-        {
-            bndPath = projectBndPath;
-            isValid = true; // Load project if they are custom hkxbhd/hkxbdt
-        }
-
-        // If not marked as valid, return early to avoid bad read
-        if (!isValid)
-        {
-            return;
-        }
-
-        BND4Reader reader = new BND4Reader(bndPath);
-
-        // Read collisions
-        foreach (var file in reader.Files)
-        {
-            BinderFileHeader f = file;
-
-            var name = Path.GetFileName(f.Name).ToLower();
-
-            if (name.Contains(".hkx"))
+            // Read collisions
+            foreach (var file in binder.Files)
             {
-                var storedName = Path.GetFileNameWithoutExtension(f.Name).ToLower();
+                var name = Path.GetFileName(file.Name).ToLower();
 
-                Memory<byte> bytes = reader.ReadFile(f);
-                var FileBytes = bytes.ToArray();
+                if (!name.Contains(".hkx"))
+                    continue;
+
+                var storedName = Path.GetFileNameWithoutExtension(file.Name).ToLower();
+
+                var FileBytes = file.Bytes.ToArray();
 
                 try
                 {
@@ -222,9 +208,13 @@ public class HavokCollisionManager
                 }
                 catch (Exception ex)
                 {
-                    TaskLogs.AddLog($"Failed to serialize havok file: {name} - {ex}");
+                    TaskLogs.AddLog($"Failed to serialize havok file: {name}", LogLevel.Error, LogPriority.High, ex);
                 }
             }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load model collision: {bndPath}", LogLevel.Error, LogPriority.High, e);
         }
     }
 
