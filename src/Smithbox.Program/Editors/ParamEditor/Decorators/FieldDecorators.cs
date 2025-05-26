@@ -480,12 +480,9 @@ public class FieldDecorators
         var first = true;
         foreach (ParamRef r in paramRefs)
         {
-            if (context == null)
-                continue;
-
             var inactiveRef = false;
 
-            if (r.ConditionField != null)
+            if (context != null && r.ConditionField != null)
             {
                 Param.Cell? c = context?[r.ConditionField];
 

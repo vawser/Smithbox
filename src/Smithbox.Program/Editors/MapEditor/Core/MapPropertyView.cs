@@ -73,10 +73,38 @@ public class MapPropertyView
         Editor.FocusManager.SwitchWindowContext(MapEditorContext.MapObjectProperties);
 
         // Header
-        ImGui.SetNextItemWidth(ImGui.GetColumnWidth() * 0.75f);
         ImGui.AlignTextToFramePadding();
         ImGui.InputText("##msbFieldSearch", ref msbFieldSearch, 255);
         UIHelper.Tooltip("Filter the properties by field names that exactly or partially match your input.");
+
+        // Toggle Community Field Names
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Book}"))
+        {
+            CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
+        }
+
+        var communityFieldNameMode = "Internal";
+        if (CFG.Current.MapEditor_Enable_Commmunity_Names)
+            communityFieldNameMode = "Community";
+
+        UIHelper.Tooltip($"Toggle field name display type between Internal and Community.\nCurrent Mode: {communityFieldNameMode}");
+
+        // Toggle Field Padding
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Hubzilla}"))
+        {
+            CFG.Current.MapEditor_Enable_Padding_Fields = !CFG.Current.MapEditor_Enable_Padding_Fields;
+        }
+
+        var fieldPaddingMode = "Hidden";
+        if (!CFG.Current.MapEditor_Enable_Padding_Fields)
+            fieldPaddingMode = "Visible";
+
+        UIHelper.Tooltip($"Toggle the display of padding field.\nCurrent Mode: {fieldPaddingMode}");
+
         ImGui.Separator();
 
         // Properties
