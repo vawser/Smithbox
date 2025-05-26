@@ -666,6 +666,9 @@ public class ParamEditorTab
 
             if (ImGui.CollapsingHeader("Regulation Data", ImGuiTreeNodeFlags.DefaultOpen))
             {
+                ImGui.Checkbox("Use index matching for row name restore", ref CFG.Current.UseIndexMatchForRowNameRestore);
+                UIHelper.Tooltip("If enabled, when row names are restored, they will be matched based on the row index, rather than ID. If disabled, row ID will be used.");
+
                 switch (curProject.ProjectType)
                 {
                     case ProjectType.DES:
@@ -700,6 +703,10 @@ public class ParamEditorTab
 
                     case ProjectType.AC6:
                         ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
+                        break;
+
+                    case ProjectType.ERN:
+                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_ERN);
                         break;
                 }
                 UIHelper.Tooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
@@ -739,6 +746,10 @@ public class ParamEditorTab
 
                     case ProjectType.AC6:
                         ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6);
+                        break;
+
+                    case ProjectType.ERN:
+                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ERN);
                         break;
                 }
                 UIHelper.Tooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");

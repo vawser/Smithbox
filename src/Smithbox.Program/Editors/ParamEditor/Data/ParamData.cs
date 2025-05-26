@@ -120,9 +120,67 @@ public class ParamData
             BaseEditor.ProjectManager.SaveProject(Project);
         }
 
-        if (Project.EnableParamRowStrip)
+        switch(Project.ProjectType)
         {
-            PrimaryBank.RowNameRestore();
+            case ProjectType.DES:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DES)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.DS1:
+            case ProjectType.DS1R:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS1)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.DS2:
+            case ProjectType.DS2S:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS2)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.BB:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_BB)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.DS3:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_DS3)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.ER:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ER)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.AC6:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            case ProjectType.ERN:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ERN)
+                {
+                    PrimaryBank.RowNameRestore();
+                }
+                break;
+
+            default: break;
         }
 
         return true;

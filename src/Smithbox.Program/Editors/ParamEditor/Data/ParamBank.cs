@@ -383,6 +383,11 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(fs.GetFile(paramPath).GetData());
 
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        {
+            RowNameStrip();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -437,6 +442,11 @@ public class ParamBank
 
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\drawparam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DES)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -548,6 +558,11 @@ public class ParamBank
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
 
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RowNameStrip();
+        }
+
         foreach (BinderFile p in paramBnd.Files)
         {
             if (Params.ContainsKey(Path.GetFileNameWithoutExtension(p.Name)))
@@ -555,6 +570,7 @@ public class ParamBank
                 p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
             }
         }
+
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\GameParam\GameParam.parambnd", paramBnd);
 
         if (fs.DirectoryExists($@"param\DrawParam"))
@@ -572,6 +588,11 @@ public class ParamBank
 
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -660,6 +681,12 @@ public class ParamBank
         }
 
         using var paramBnd = BND3.Read(fs.GetFile(param).GetData());
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RowNameStrip();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -686,6 +713,11 @@ public class ParamBank
 
                 ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param\DrawParam\{Path.GetFileName(bnd)}", drawParamBnd);
             }
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS1)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -970,7 +1002,7 @@ public class ParamBank
             paramBnd = BND4.Read(data);
         }
 
-        if (!CFG.Current.UseLooseParams)
+        if (!CFG.Current.UseLooseParams && CFG.Current.Param_StripRowNamesOnSave_DS2)
         {
             // Save params non-loosely: Replace params regulation and write remaining params loosely.
             if (paramBnd.Files.Find(e => e.Name.EndsWith(".param")) == null)
@@ -1027,7 +1059,7 @@ public class ParamBank
 
             RowNameRestore();
         }
-        else
+        else if (CFG.Current.Param_StripRowNamesOnSave_DS2)
         {
             // Save params loosely: Strip params from regulation and write all params loosely.
 
@@ -1136,7 +1168,13 @@ public class ParamBank
         }
 
         var data = fs.GetFile(param).GetData().ToArray();
+
         BND4 paramBnd = SFUtil.DecryptDS3Regulation(data);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        {
+            RowNameStrip();
+        }
 
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
@@ -1169,6 +1207,11 @@ public class ParamBank
             };
 
             ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam_dlc2.parambnd.dcx", paramBND);
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_DS3)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -1224,6 +1267,11 @@ public class ParamBank
 
         var paramBnd = BND4.Read(data);
 
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
+        {
+            RowNameStrip();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -1234,6 +1282,11 @@ public class ParamBank
         }
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_BB)
+        {
+            RowNameRestore();
+        }
 
         return successfulSave;
     }
@@ -1288,6 +1341,11 @@ public class ParamBank
 
         var paramBnd = BND4.Read(data);
 
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        {
+            RowNameStrip();
+        }
+
         // Replace params with edited ones
         foreach (BinderFile p in paramBnd.Files)
         {
@@ -1315,6 +1373,11 @@ public class ParamBank
         }
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\gameparam\gameparam.parambnd.dcx", paramBnd);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_SDT)
+        {
+            RowNameRestore();
+        }
 
         return successfulSave;
     }
@@ -1414,6 +1477,11 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptERRegulation(data);
 
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        {
+            RowNameStrip();
+        }
+
         OverwriteParamsER(regParams);
 
         ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.ER);
@@ -1432,6 +1500,11 @@ public class ParamBank
             using var sysParams = BND4.Read(sysParamF.GetData());
             OverwriteParamsER(sysParams);
             ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_ER)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -1592,6 +1665,12 @@ public class ParamBank
         }
 
         BND4 regParams = SFUtil.DecryptAC6Regulation(data);
+
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        {
+            RowNameStrip();
+        }
+
         OverwriteParamsAC6(regParams);
         ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.AC6);
 
@@ -1641,6 +1720,11 @@ public class ParamBank
             using var eventParams = BND4.Read(eventParamF.GetData());
             OverwriteParamsAC6(eventParams);
             ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_AC6)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;
@@ -1702,7 +1786,7 @@ public class ParamBank
     {
         var successfulSave = true;
 
-        void OverwriteParamsER(BND4 paramBnd)
+        void OverwriteParamsERN(BND4 paramBnd)
         {
             // Replace params with edited ones
             foreach (BinderFile p in paramBnd.Files)
@@ -1733,7 +1817,12 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        OverwriteParamsER(regParams);
+        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        {
+            RowNameStrip();
+        }
+
+        OverwriteParamsERN(regParams);
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.ERN);
 
@@ -1749,8 +1838,13 @@ public class ParamBank
         if (fs.TryGetFile(sysParam, out var sysParamF))
         {
             using var sysParams = BND4.Read(sysParamF.GetData());
-            OverwriteParamsER(sysParams);
+            OverwriteParamsERN(sysParams);
             ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        {
+            RowNameRestore();
         }
 
         return successfulSave;

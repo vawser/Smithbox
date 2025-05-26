@@ -197,7 +197,6 @@ public class ProjectEntry
         DataPath = dataPath;
         ProjectType = projectType;
         ImportedParamRowNames = false;
-        EnableParamRowStrip = false;
 
         // Defaults
         EnableMapEditor = true;
