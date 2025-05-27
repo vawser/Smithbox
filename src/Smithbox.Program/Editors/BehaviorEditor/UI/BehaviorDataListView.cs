@@ -1,7 +1,10 @@
 ﻿using Hexa.NET.ImGui;
+using Microsoft.VisualBasic.Devices;
+using StudioCore;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Interface;
+using System.Net.Sockets;
 
 namespace BehaviorEditorNS;
 
@@ -13,6 +16,10 @@ public class BehaviorDataListView
     public BehaviorEditorScreen Editor;
     public ProjectEntry Project;
 
+    public bool DetectShortcuts = false;
+
+    private BehaviorRowSelectMode CurrentSelectionMode;
+
     public BehaviorDataListView(BehaviorEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -21,6 +28,8 @@ public class BehaviorDataListView
 
     public void OnGui()
     {
+        DetectShortcuts = InterfaceUtils.UpdateShortcutDetection();
+
         DisplayHeader();
         DisplayCategories();
     }
@@ -41,14 +50,20 @@ public class BehaviorDataListView
 
     public void DisplayCategories()
     {
-        if (Editor.Selection.SelectedFieldObjects == null)
+        CurrentSelectionMode = BehaviorRowSelectMode.ClearAndSelect;
+
+        Shortcuts();
+
+        if (Editor.Selection.SelectedCategoryObjects == null)
             return;
 
         ImGui.BeginChild("BehaviorDataListSection");
 
-        for (int i = 0; i < Editor.Selection.SelectedFieldObjects.Count; i++)
+        // TODO: might want to use ListClipper here
+
+        for (int i = 0; i < Editor.Selection.SelectedCategoryObjects.Count; i++)
         {
-            var curObj = Editor.Selection.SelectedFieldObjects[i];
+            var curObj = Editor.Selection.SelectedCategoryObjects[i];
 
             var displayName = BehaviorUtils.GetObjectFieldValue(curObj, "m_name");
 
@@ -61,31 +76,31 @@ public class BehaviorDataListView
                 }
             }
 
-            var isSelected = Editor.Selection.IsHavokObjectSelected(i);
-
             if (Editor.Filters.IsBasicMatch(
                 ref Editor.Filters.DataEntriesInput, Editor.Filters.DataEntriesInput_IgnoreCase,
                 displayName, ""))
             {
+                var isSelected = Editor.Selection.IsObjectSelected(i);
+
                 if (ImGui.Selectable($"[{i}] {displayName}", isSelected))
                 {
-                    Editor.Selection.SelectHavokObject(i, curObj);
+                    Editor.Selection.SelectHavokObjectRow(i, curObj, CurrentSelectionMode);
+                }
+
+                if (CurrentSelectionMode is BehaviorRowSelectMode.SelectAll)
+                {
+                    Editor.Selection.SelectHavokObjectRow(i, curObj, CurrentSelectionMode);
                 }
 
                 // Arrow Selection
                 if (ImGui.IsItemHovered() && Editor.Selection.ForceSelectObject)
                 {
                     Editor.Selection.ForceSelectObject = false;
-                    Editor.Selection.SelectHavokObject(i, curObj);
+                    Editor.Selection.SelectHavokObjectRow(i, curObj, CurrentSelectionMode);
                 }
                 if (ImGui.IsItemFocused() && (InputTracker.GetKey(Veldrid.Key.Up) || InputTracker.GetKey(Veldrid.Key.Down)))
                 {
                     Editor.Selection.ForceSelectObject = true;
-                }
-                // Only apply to selection
-                if (isSelected)
-                {
-                    DisplayContextMenu(curObj, i);
                 }
             }
         }
@@ -93,12 +108,27 @@ public class BehaviorDataListView
         ImGui.EndChild();
     }
 
-    private void DisplayContextMenu(object curObj, int index)
+    public void Shortcuts()
     {
-        if (ImGui.BeginPopupContextItem($"##HavokObjectContextMenu{index}"))
+        if (DetectShortcuts)
         {
+            // Append
+            if (ImGui.IsKeyDown(ImGuiKey.LeftCtrl))
+            {
+                CurrentSelectionMode = BehaviorRowSelectMode.SelectAppend;
+            }
 
-            ImGui.EndPopup();
+            // Range Append
+            if (ImGui.IsKeyDown(ImGuiKey.LeftShift))
+            {
+                CurrentSelectionMode = BehaviorRowSelectMode.SelectRangeAppend;
+            }
+
+            // Select All
+            if(InputTracker.GetKeyDown(KeyBindings.Current.BEHAVIOR_SelectAll))
+            {
+                CurrentSelectionMode = BehaviorRowSelectMode.SelectAll;
+            }
         }
     }
 }

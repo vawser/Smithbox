@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,11 +46,11 @@ public class BehaviorSelection
 
     public Dictionary<string, List<object>> DisplayCategories = new();
     public string SelectedFieldCategory = "";
-    public List<object> SelectedFieldObjects = null;
+    public List<object> SelectedCategoryObjects = null;
     public bool ForceSelectObjectCategory = false;
 
-    public int SelectedFieldObjectIndex = -1;
-    public object SelectedFieldObject = null;
+    public List<BehaviorObjectSelect> SelectedObjects = new();
+
     public bool ForceSelectObject = false;
 
     public bool IsBinderSelected(FileDictionaryEntry curEntry)
@@ -79,13 +80,11 @@ public class BehaviorSelection
 
         SelectedGraphRoot = null;
         SelectedGraphNode = null;
-        SelectedFieldObject = null;
 
         SelectedFieldCategory = "";
-        SelectedFieldObjects = null;
+        SelectedCategoryObjects = null;
 
-        SelectedFieldObjectIndex = -1;
-        SelectedFieldObject = null;
+        SelectedObjects = new();
 
         // Undo/Redo is reset on file switch
         Editor.ActionManager.Clear();
@@ -117,13 +116,11 @@ public class BehaviorSelection
 
         SelectedGraphRoot = null;
         SelectedGraphNode = null;
-        SelectedFieldObject = null;
 
         SelectedFieldCategory = "";
-        SelectedFieldObjects = null;
+        SelectedCategoryObjects = null;
 
-        SelectedFieldObjectIndex = -1;
-        SelectedFieldObject = null;
+        SelectedObjects = new();
 
         if (Project.ProjectType is ProjectType.ER)
         {
@@ -142,25 +139,118 @@ public class BehaviorSelection
     public void SelectCategory(string categoryName, List<object> objects)
     {
         SelectedFieldCategory = categoryName;
-        SelectedFieldObjects = objects;
+        SelectedCategoryObjects = objects;
 
-        SelectedFieldObjectIndex = -1;
-        SelectedFieldObject = null;
+        SelectedObjects = new();
     }
 
-    public bool IsHavokObjectSelected(int index)
+    public bool IsMultipleObjectsSelected()
     {
-        if (SelectedFieldObjectIndex == index)
+        if (SelectedObjects.Count > 1)
             return true;
 
         return false;
     }
 
-    public void SelectHavokObject(int index, object curObj)
+    public bool IsObjectSelected(int index)
     {
-        SelectedFieldObjectIndex = index;
-        SelectedFieldObject = curObj;
-        SelectedGraphRoot = curObj;
+        foreach (var entry in SelectedObjects)
+        {
+            if (entry.Index == index)
+                return true;
+        }
+
+        return false;
+    }
+
+    public void SelectHavokObjectRow(int index, object curObj, BehaviorRowSelectMode selectMode = BehaviorRowSelectMode.ClearAndSelect)
+    {
+        var newRowSelect = new BehaviorObjectSelect(index, curObj);
+
+        // Clear and Add
+        if (selectMode is BehaviorRowSelectMode.ClearAndSelect)
+        {
+            SelectedObjects.Clear();
+            SelectedObjects.Add(newRowSelect);
+        }
+        // Append
+        else if (selectMode is BehaviorRowSelectMode.SelectAppend)
+        {
+            // Only add if not already present
+            if (!SelectedObjects.Any(e => e.Index == index))
+            {
+                SelectedObjects.Add(newRowSelect);
+            }
+            // Allow deselect for this action
+            else if (SelectedObjects.Any(e => e.Index == index))
+            {
+                var curRowSelect = SelectedObjects.Where(e => e.Index == index).FirstOrDefault();
+                if (curRowSelect != null)
+                {
+                    SelectedObjects.Remove(curRowSelect);
+                }
+            }
+        }
+        // Range Append
+        else if (selectMode is BehaviorRowSelectMode.SelectRangeAppend)
+        {
+            if (SelectedObjects.Count <= 0)
+                return;
+
+            var lastObject = SelectedObjects.Last();
+            var lastObjectIdx = lastObject.Index;
+            var curIdx = index;
+
+            if (curIdx < lastObjectIdx)
+            {
+                for (int i = 0; i < SelectedCategoryObjects.Count; i++)
+                {
+                    var tObj = SelectedCategoryObjects[i];
+
+                    if (i >= curIdx && i <= lastObjectIdx)
+                    {
+                        if (!SelectedObjects.Any(e => e.Index == i))
+                        {
+                            var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                            SelectedObjects.Add(tRowSelect);
+                        }
+                    }
+                }
+            }
+            else if (curIdx > lastObjectIdx)
+            {
+                for (int i = 0; i < SelectedCategoryObjects.Count; i++)
+                {
+                    var tObj = SelectedCategoryObjects[i];
+
+                    if (i <= curIdx && i >= lastObjectIdx)
+                    {
+                        if (!SelectedObjects.Any(e => e.Index == i))
+                        {
+                            var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                            SelectedObjects.Add(tRowSelect);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Ignore if the curRow is the lastRow
+            }
+        }
+        // All
+        else if (selectMode is BehaviorRowSelectMode.SelectAll)
+        {
+            SelectedObjects.Clear();
+
+            for (int i = 0; i < SelectedCategoryObjects.Count; i++)
+            {
+                var tObj = SelectedCategoryObjects[i];
+
+                var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                SelectedObjects.Add(tRowSelect);
+            }
+        }
     }
 
     #region HKX3
@@ -238,7 +328,7 @@ public class BehaviorSelection
                 TraverseObjectTree(list[i], entries, targetType, visited);
             }
         }
-        else
+        else if (!isLeaf)
         {
             foreach (var prop in type.GetFields(BindingFlags.Public | BindingFlags.Instance))
             {
@@ -247,7 +337,27 @@ public class BehaviorSelection
             }
         }
 
-        visited.Remove(obj);
+        //visited.Remove(obj);
     }
     #endregion
+}
+
+public enum BehaviorRowSelectMode
+{
+    ClearAndSelect,
+    SelectAppend,
+    SelectRangeAppend,
+    SelectAll
+}
+
+public class BehaviorObjectSelect
+{
+    public int Index { get; set; }
+    public object HavokObject { get; set; }
+
+    public BehaviorObjectSelect(int index, object havokObject)
+    {
+        Index = index;
+        HavokObject = havokObject;
+    }
 }

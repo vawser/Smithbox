@@ -129,7 +129,7 @@ public class BehaviorGraphNodeView
 
             if (Project.ProjectType is ProjectType.ER)
             {
-                Editor.Selection.SelectedFieldObject = node.Instance;
+                //Editor.Selection.SelectedFieldObject = node.Instance;
             }
         }
 

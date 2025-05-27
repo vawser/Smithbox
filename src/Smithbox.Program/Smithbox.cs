@@ -570,6 +570,12 @@ public class Smithbox
                 }
                 UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
 
+                if (ImGui.MenuItem("Behavior Editor"))
+                {
+                    Settings.ToggleWindow(SelectedSettingTab.BehaviorEditor);
+                }
+                UIHelper.Tooltip("Open the settings related to Behavior Editor in Smithbox.");
+
                 ImGui.EndMenu();
             }
 
@@ -629,6 +635,12 @@ public class Smithbox
                     Keybinds.ToggleWindow(SelectedKeybindTab.TextureViewer);
                 }
                 UIHelper.Tooltip("View the keybinds that apply when in the Texture Viewer.");
+
+                if (ImGui.MenuItem("Behavior Editor"))
+                {
+                    Keybinds.ToggleWindow(SelectedKeybindTab.BehaviorEditor);
+                }
+                UIHelper.Tooltip("View the keybinds that apply when in the Behavior Editor.");
 
                 ImGui.EndMenu();
             }

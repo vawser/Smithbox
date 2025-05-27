@@ -25,6 +25,9 @@ public class BehaviorBank
 
     public Dictionary<FileDictionaryEntry, BinderContents> Binders = new();
 
+    // eventnameid, statenameid, variablenameid
+    public Dictionary<FileDictionaryEntry, IdentifierList> IdentifierLists = new();
+
     public BehaviorBank(string name, Smithbox baseEditor, ProjectEntry project, VirtualFileSystem targetFs)
     {
         BaseEditor = baseEditor;
@@ -39,8 +42,12 @@ public class BehaviorBank
         Task<bool> behaviorTask = SetupBehavior();
         bool behaviorTaskResult = await behaviorTask;
 
+        Task<bool> idListTask = SetupIdentifierLists();
+        bool idListTaskResult = await idListTask;
+
         return true;
     }
+
     public async Task<bool> SetupBehavior()
     {
         await Task.Yield();
@@ -50,6 +57,23 @@ public class BehaviorBank
         foreach (var entry in Project.BehaviorData.BehaviorFiles.Entries)
         {
             Binders.Add(entry, null);
+        }
+
+        return true;
+    }
+    public async Task<bool> SetupIdentifierLists()
+    {
+        await Task.Yield();
+
+        IdentifierLists = new();
+
+        foreach (var entry in Project.BehaviorData.TextFiles.Entries)
+        {
+            var file = (Memory<byte>)TargetFS.ReadFile(entry.Path);
+
+            var newIdentifierList = new IdentifierList(file);
+
+            IdentifierLists.Add(entry, newIdentifierList);
         }
 
         return true;
@@ -121,6 +145,28 @@ public class BehaviorBank
             {
                 var binderData = targetBinder.Binder.Write();
                 Project.ProjectFS.WriteFile(fileEntry.Path, binderData);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Behavior Editor] Failed to write {fileEntry.Filename}", LogLevel.Error, StudioCore.Tasks.LogPriority.High, e);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SaveIdentifierList(FileDictionaryEntry fileEntry)
+    {
+        await Task.Yield();
+
+        if (IdentifierLists.Any(e => e.Key.Filename == fileEntry.Filename))
+        {
+            var targetFile = IdentifierLists[fileEntry];
+
+            try
+            {
+                Project.ProjectFS.WriteFile(fileEntry.Path, targetFile.GetData());
             }
             catch (Exception e)
             {

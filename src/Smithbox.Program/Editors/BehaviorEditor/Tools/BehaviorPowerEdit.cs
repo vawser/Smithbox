@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,13 @@ public class BehaviorPowerEdit
     {
         Editor = editor;
         Project = project;
+    }
+
+    public void Display()
+    {
+        if(ImGui.CollapsingHeader("Power Edit"))
+        {
+
+        }
     }
 }

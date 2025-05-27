@@ -20,6 +20,6 @@ public class BehaviorToolView
 
     public void OnGui()
     {
-
+        Editor.PowerEdit.Display();
     }
 }

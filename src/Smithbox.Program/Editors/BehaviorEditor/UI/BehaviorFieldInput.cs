@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore;
 using StudioCore.Core;
+using StudioCore.Editor;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -351,8 +352,22 @@ public class BehaviorFieldInput
         // Apply action
         if (commitChange && wasChanged)
         {
-            var changeAction = new BehaviorFieldChange(field, data, curValue, newValue);
-            Editor.ActionManager.ExecuteAction(changeAction);
+            if (Editor.Selection.SelectedObjects.Count == 1)
+            {
+                var changeAction = new BehaviorFieldChange(field, data, curValue, newValue);
+                Editor.ActionManager.ExecuteAction(changeAction);
+            }
+            else if(Editor.Selection.SelectedObjects.Count > 1)
+            {
+                List<EditorAction> actions = new List<EditorAction>();
+
+                foreach(var entry in Editor.Selection.SelectedObjects)
+                {
+                    actions.Add(new BehaviorFieldChange(field, entry.HavokObject, curValue, newValue));
+                }
+
+                Editor.ActionManager.ExecuteAction(new CompoundAction(actions));
+            }
         }
     }
 

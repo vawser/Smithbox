@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hexa.NET.ImGui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -94,5 +95,14 @@ public static class InterfaceUtils
         }
 
         return string.Join(" | ", has);
+    }
+    public static bool UpdateShortcutDetection()
+    {
+        if (ImGui.IsWindowFocused(ImGuiFocusedFlags.RootWindow | ImGuiFocusedFlags.ChildWindows))
+        {
+            return true;
+        }
+
+        return false;
     }
 }

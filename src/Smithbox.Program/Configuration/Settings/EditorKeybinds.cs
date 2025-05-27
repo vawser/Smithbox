@@ -756,3 +756,23 @@ public class TextureViewerKeybindTab
     }
 }
 #endregion
+
+//------------------------------------------
+// Behavior Editor
+//------------------------------------------
+#region Behavior Editor
+public class BehaviorEditorKeybindTab
+{
+    public BehaviorEditorKeybindTab() { }
+
+    public void Display()
+    {
+        if (ImGui.CollapsingHeader("Core", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            KeyBindings.Current.BEHAVIOR_SelectAll = InputTracker.KeybindLine(0,
+                KeyBindings.Current.BEHAVIOR_SelectAll,
+                KeyBindings.Default.BEHAVIOR_SelectAll);
+        }
+    }
+}
+#endregion

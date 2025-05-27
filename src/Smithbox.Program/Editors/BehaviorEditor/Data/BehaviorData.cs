@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
+using StudioCore.Editors.TextEditor;
 
 namespace BehaviorEditorNS;
 
@@ -17,6 +18,7 @@ public class BehaviorData
     public ProjectEntry Project;
 
     public FileDictionary BehaviorFiles = new();
+    public FileDictionary TextFiles = new();
 
     public BehaviorBank PrimaryBank;
     public BehaviorBank VanillaBank;
@@ -34,6 +36,11 @@ public class BehaviorData
         BehaviorFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
             .Where(e => e.Extension == "behbnd")
+            .ToList();
+
+        TextFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Folder == "/action")
+            .Where(e => e.Extension == "txt")
             .ToList();
 
         PrimaryBank = new("Primary", BaseEditor, Project, Project.FS);

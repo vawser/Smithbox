@@ -1067,6 +1067,16 @@ public class KeyBindings
             Key.R);
 
         //-----------------------------
+        // Behavior Editor
+        //-----------------------------
+        // Core
+        public KeyBind BEHAVIOR_SelectAll = new(
+            "Select All",
+            "Select all havok objects.",
+            Key.A,
+            true);
+
+        //-----------------------------
         // Misc
         //-----------------------------
 #pragma warning disable IDE0051

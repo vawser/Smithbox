@@ -1,5 +1,6 @@
 ﻿using BehaviorEditorNS;
 using Hexa.NET.ImGui;
+using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Interface;
 using System;
@@ -24,9 +25,9 @@ public class BehaviorFieldView
 
     public void OnGui()
     {
-        if (Editor.Selection.SelectedFieldObject == null)
+        if (Editor.Selection.SelectedObjects.Count < 1)
         {
-            ImGui.Text("No haovk object has been selected.");
+            ImGui.Text("No havok objects have been selected.");
             return;
         }
 
@@ -36,6 +37,11 @@ public class BehaviorFieldView
         // Handle each havok object discretely, creating a unique display that suits it contents
         // i.e. hkbClipGenerator should just be the standard property editor
         // whilst CustomManualSelectorGenerator should display the list of generators associated with it and flatten some objects 
+
+        if (Editor.Selection.SelectedObjects.Count > 1)
+        {
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Multiple havok objects have been selected.\nThe fields below represent only the first havok object, but any edits will apply to all selected objects.");
+        }
 
         DisplayFields();
     }
@@ -57,6 +63,8 @@ public class BehaviorFieldView
     // Generic display
     public void DisplayFields()
     {
+        var operatingObject = Editor.Selection.SelectedObjects.First().HavokObject;
+
         ImGui.BeginChild("fieldTableArea");
 
         var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
@@ -66,7 +74,7 @@ public class BehaviorFieldView
             ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn("Value", ImGuiTableColumnFlags.WidthFixed);
 
-            var nodeType = Editor.Selection.SelectedFieldObject.GetType();
+            var nodeType = operatingObject.GetType();
 
             FieldInfo[] array = nodeType.GetFields(BindingFlags.Public | BindingFlags.Instance);
             for (int i = 0; i < array.Length; i++)
@@ -83,7 +91,7 @@ public class BehaviorFieldView
                     ImGui.Text($"{field.Name}");
 
                     ImGui.TableSetColumnIndex(1);
-                    Editor.FieldInput.DisplayFieldInput(Editor.Selection.SelectedFieldObject, i, field);
+                    Editor.FieldInput.DisplayFieldInput(operatingObject, i, field);
                 }
             }
 
