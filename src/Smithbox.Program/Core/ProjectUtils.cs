@@ -392,4 +392,14 @@ public class ProjectUtils
     {
         return true;
     }
+
+    public static bool SupportsBehaviorEditor(ProjectType curType)
+    {
+        if (curType is ProjectType.ER)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }

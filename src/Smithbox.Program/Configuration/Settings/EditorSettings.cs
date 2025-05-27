@@ -1440,6 +1440,27 @@ public class TimeActEditorTab
 #endregion
 
 //------------------------------------------
+// Behavior Editor
+//------------------------------------------
+#region Behavior Editor
+public class BehaviorEditorTab
+{
+    public Smithbox BaseEditor;
+
+    public BehaviorEditorTab(Smithbox baseEditor)
+    {
+        BaseEditor = baseEditor;
+    }
+
+    public void Display()
+    {
+
+    }
+}
+
+#endregion
+
+//------------------------------------------
 // Interface
 //------------------------------------------
 #region Interface

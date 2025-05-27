@@ -42,6 +42,7 @@ public static class ProjectCreation
     public static bool EnableEsdEditor = false;
     public static bool EnableTextureViewer = true;
     public static bool EnableFileBrowser = false;
+    public static bool EnableBehaviorEditor = false;
 
     public static bool EnableExternalMaterialData = true;
 
@@ -484,15 +485,15 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(4);
 
-                //ImGui.SetNextItemWidth(inputWidth);
+                ImGui.SetNextItemWidth(inputWidth);
 
-                //ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
+                ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
 
                 ImGui.TableSetColumnIndex(5);
 
-                //ImGui.AlignTextToFramePadding();
-                //ImGui.Text("Enable EzState Script Editor");
-                //UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Behavior Editor");
+                UIHelper.Tooltip("If true, the Behavior Editor and associated data will be initialized for this project.");
 
                 ImGui.EndTable();
             }

@@ -245,6 +245,49 @@ public class CFG
     /// </summary>
     public bool Interface_TextEditor_ToolWindow = true;
 
+    ///------------------------------------------------------------
+    /// Behavior Editor
+    ///------------------------------------------------------------
+    /// <summary>
+    /// If true, the binder list window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_BinderList = true;
+
+    /// <summary>
+    /// If true, the file list window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_FileList = true;
+
+    /// <summary>
+    /// If true, the graph node window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_GraphNodeView = true;
+
+    /// <summary>
+    /// If true, the data categories window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_DataCategoriesView = true;
+
+    /// <summary>
+    /// If true, the data list window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_DataListView = true;
+
+    /// <summary>
+    /// If true, the field window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_FieldView = true;
+
+    /// <summary>
+    /// If true, the tool window is visible in the Text Editor.
+    /// </summary>
+    public bool Interface_BehaviorEditor_ToolView = true;
+
+    /// <summary>
+    /// The depth limit for the breadth-first traversal search used by the graph
+    /// </summary>
+    public int Behavior_GraphDepthLimit = 1;
+
 
     ///------------------------------------------------------------
     /// Param Editor

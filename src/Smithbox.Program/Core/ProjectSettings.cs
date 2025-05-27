@@ -35,6 +35,7 @@ public static class ProjectSettings
     public static bool EnableEsdEditor = true;
     public static bool EnableTextureViewer = true;
     public static bool EnableFileBrowser = true;
+    public static bool EnableBehaviorEditor = true;
 
     public static bool EnableExternalMaterialData = true;
 
@@ -62,6 +63,7 @@ public static class ProjectSettings
         EnableEsdEditor = curProject.EnableEsdEditor;
         EnableTextureViewer = curProject.EnableTextureViewer;
         EnableFileBrowser = curProject.EnableFileBrowser;
+        EnableBehaviorEditor = curProject.EnableBehaviorEditor;
 
         EditorStateChanged = false;
         Display = true;
@@ -133,6 +135,7 @@ public static class ProjectSettings
                 TargetProject.EnableEsdEditor = EnableEsdEditor;
                 TargetProject.EnableTextureViewer = EnableTextureViewer;
                 TargetProject.EnableFileBrowser = EnableFileBrowser;
+                TargetProject.EnableBehaviorEditor = EnableBehaviorEditor;
 
                 TargetProject.EnableExternalMaterialData = EnableExternalMaterialData;
 
@@ -533,15 +536,15 @@ public static class ProjectSettings
 
                 ImGui.TableSetColumnIndex(4);
 
-                //ImGui.SetNextItemWidth(inputWidth);
+                ImGui.SetNextItemWidth(inputWidth);
 
-                //ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
+                ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
 
                 ImGui.TableSetColumnIndex(5);
 
-                //ImGui.AlignTextToFramePadding();
-                //ImGui.Text("Enable EzState Script Editor");
-                //UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
+                ImGui.AlignTextToFramePadding();
+                ImGui.Text("Behavior Editor");
+                UIHelper.Tooltip("If true, the Behavior Editor and associated data will be initialized for this project.");
 
                 ImGui.EndTable();
             }

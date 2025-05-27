@@ -1,4 +1,5 @@
 ﻿using Andre.IO.VFS;
+using BehaviorEditorNS;
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
@@ -8,7 +9,6 @@ using StudioCore.Editors.ModelEditor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Data;
-using StudioCore.Editors.TextureViewer;
 using StudioCore.Editors.TextureViewer.Data;
 using StudioCore.Editors.TimeActEditor;
 using StudioCore.EventScriptEditorNS;
@@ -45,7 +45,6 @@ public class ProjectEntry
     public ProjectType ProjectType;
 
     public bool ImportedParamRowNames;
-    public bool EnableParamRowStrip;
     public bool AutoSelect;
 
     public bool EnableMapEditor;
@@ -59,6 +58,7 @@ public class ProjectEntry
     public bool EnableEsdEditor;
     public bool EnableTextureViewer;
     public bool EnableFileBrowser;
+    public bool EnableBehaviorEditor;
 
     public bool EnableExternalMaterialData;
 
@@ -108,6 +108,8 @@ public class ProjectEntry
     public TextureViewerScreen TextureViewer;
     [JsonIgnore]
     public FileBrowserScreen FileBrowser;
+    [JsonIgnore]
+    public BehaviorEditorScreen BehaviorEditor;
 
     // Data Banks
     [JsonIgnore]
@@ -130,6 +132,8 @@ public class ProjectEntry
     public TimeActData TimeActData;
     [JsonIgnore]
     public TextureData TextureData;
+    [JsonIgnore]
+    public BehaviorData BehaviorData;
 
     /// <summary>
     /// Action manager for project-level changes (e.g. aliases)
@@ -211,6 +215,7 @@ public class ProjectEntry
         EnableEmevdEditor = false;
         EnableEsdEditor = false;
         EnableFileBrowser = false;
+        EnableBehaviorEditor = false;
 
         ActionManager = new ActionManager();
     }
@@ -337,6 +342,7 @@ public class ProjectEntry
         TextureViewer = null;
         MapEditor = null;
         FileBrowser = null;
+        BehaviorEditor = null;
 
         MapData = null;
         ParamData = null;
@@ -348,6 +354,7 @@ public class ProjectEntry
         TextureData = null;
         TimeActData = null;
         FileData = null;
+        BehaviorData = null;
 
         // ---- Map Editor ----
         if (EnableMapEditor 
@@ -811,6 +818,32 @@ public class ProjectEntry
 
             FileBrowser = new FileBrowserScreen(BaseEditor, this);
         }
+
+        // ---- Behavior Editor ----
+        if (EnableBehaviorEditor
+            && initType is InitType.ProjectDefined
+            && ProjectUtils.SupportsBehaviorEditor(ProjectType))
+        {
+            BehaviorData = new(BaseEditor, this);
+
+            // Text Banks
+            Task<bool> behaviorDataTask = BehaviorData.Setup();
+            bool behaviorDataTaskResult = await behaviorDataTask;
+
+            if (!silent)
+            {
+                if (behaviorDataTaskResult)
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Behavior Editor] Setup behavior banks.");
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[{ProjectName}:Behavior Editor] Setup behavior banks.");
+                }
+            }
+
+            BehaviorEditor = new BehaviorEditorScreen(BaseEditor, this);
+        }
     }
 
     /// <summary>
@@ -881,6 +914,10 @@ public class ProjectEntry
         if (EnableFileBrowser && FileBrowser != null)
         {
             HandleEditor(commands, FileBrowser, dt);
+        }
+        if (EnableBehaviorEditor && BehaviorEditor != null)
+        {
+            HandleEditor(commands, BehaviorEditor, dt);
         }
     }
 
