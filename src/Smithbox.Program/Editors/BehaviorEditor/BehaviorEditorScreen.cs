@@ -37,6 +37,8 @@ public class BehaviorEditorScreen : EditorScreen
     public BehaviorToolView ToolView;
 
     public BehaviorPowerEdit PowerEdit;
+    public BehaviorVariableAssist VariableAssist;
+    public BehaviorClipAssist ClipAssist;
 
     public BehaviorEditorScreen(Smithbox editor, ProjectEntry project)
     {
@@ -60,6 +62,8 @@ public class BehaviorEditorScreen : EditorScreen
         ToolView = new(this, Project);
 
         PowerEdit = new(this, Project);
+        VariableAssist = new(this, Project);
+        ClipAssist = new(this, Project);
     }
 
     public string EditorName => "Behavior Editor##BehaviorEditor";

@@ -1,4 +1,5 @@
-﻿using StudioCore.Core;
+﻿using Hexa.NET.ImGui;
+using StudioCore.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace BehaviorEditorNS;
 
-public class BehaviorToolView
+public class BehaviorClipAssist
 {
     public BehaviorEditorScreen Editor;
     public ProjectEntry Project;
 
-    public BehaviorToolView(BehaviorEditorScreen editor, ProjectEntry project)
+    public BehaviorClipAssist(BehaviorEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
     }
 
-    public void OnGui()
+    public void Display()
     {
-        Editor.PowerEdit.Display();
-        Editor.VariableAssist.Display();
-        Editor.ClipAssist.Display();
+        if (ImGui.CollapsingHeader("Clip Assist"))
+        {
+
+        }
     }
 }
+

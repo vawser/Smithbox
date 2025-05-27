@@ -3,7 +3,6 @@
 - Time Act Editor: DS2 TAE entries not being presented
 
 # TODO
-- Add Behavior Editor
 - Add basic functionality to Material Editor
 - Param Editor: add default values to all ER param metas.
 - Map Editor: implement orthographic view
@@ -11,6 +10,6 @@
 - Param Editor: add defaultvalues to ER paramdex + re-format it
 
 # FOCUS TODO
-- Map Editor: implement VFS + data bank overhaul
+- Map Editor: implement VFS + data bank overhaul (BTLs + texture/model stuff)
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager

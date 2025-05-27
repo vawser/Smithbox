@@ -772,6 +772,10 @@ public class BehaviorEditorKeybindTab
             KeyBindings.Current.BEHAVIOR_SelectAll = InputTracker.KeybindLine(0,
                 KeyBindings.Current.BEHAVIOR_SelectAll,
                 KeyBindings.Default.BEHAVIOR_SelectAll);
+
+            KeyBindings.Current.BEHAVIOR_FocusSelection = InputTracker.KeybindLine(1,
+                KeyBindings.Current.BEHAVIOR_FocusSelection,
+                KeyBindings.Default.BEHAVIOR_FocusSelection);
         }
     }
 }

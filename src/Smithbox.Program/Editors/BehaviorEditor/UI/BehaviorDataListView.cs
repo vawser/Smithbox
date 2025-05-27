@@ -65,16 +65,7 @@ public class BehaviorDataListView
         {
             var curObj = Editor.Selection.SelectedCategoryObjects[i];
 
-            var displayName = BehaviorUtils.GetObjectFieldValue(curObj, "m_name");
-
-            if (Project.ProjectType is ProjectType.ER)
-            {
-                // Special cases
-                if (curObj.GetType() == typeof(HKLib.hk2018.hkbClipGenerator))
-                {
-                    displayName = BehaviorUtils.GetObjectFieldValue(curObj, "m_animationName");
-                }
-            }
+            var displayName = GetDataEntryName(curObj);
 
             if (Editor.Filters.IsBasicMatch(
                 ref Editor.Filters.DataEntriesInput, Editor.Filters.DataEntriesInput_IgnoreCase,
@@ -102,10 +93,32 @@ public class BehaviorDataListView
                 {
                     Editor.Selection.ForceSelectObject = true;
                 }
+
+                if (Editor.Selection.FocusObjectSelection && isSelected)
+                {
+                    Editor.Selection.FocusObjectSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
 
         ImGui.EndChild();
+    }
+
+    public string GetDataEntryName(object curObj)
+    {
+        var displayName = BehaviorUtils.GetObjectFieldValue(curObj, "m_name");
+
+        if (Project.ProjectType is ProjectType.ER)
+        {
+            // Special cases
+            if (curObj.GetType() == typeof(HKLib.hk2018.hkbClipGenerator))
+            {
+                displayName = BehaviorUtils.GetObjectFieldValue(curObj, "m_animationName");
+            }
+        }
+
+        return displayName;
     }
 
     public void Shortcuts()
@@ -128,6 +141,12 @@ public class BehaviorDataListView
             if(InputTracker.GetKeyDown(KeyBindings.Current.BEHAVIOR_SelectAll))
             {
                 CurrentSelectionMode = BehaviorRowSelectMode.SelectAll;
+            }
+
+            // Focus Selection
+            if (InputTracker.GetKeyDown(KeyBindings.Current.BEHAVIOR_FocusSelection))
+            {
+                Editor.Selection.FocusObjectSelection = true;
             }
         }
     }

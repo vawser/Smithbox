@@ -53,6 +53,8 @@ public class BehaviorSelection
 
     public bool ForceSelectObject = false;
 
+    public bool FocusObjectSelection = false;
+
     public bool IsBinderSelected(FileDictionaryEntry curEntry)
     {
         if (SelectedFileEntry == null)
@@ -207,12 +209,20 @@ public class BehaviorSelection
                 {
                     var tObj = SelectedCategoryObjects[i];
 
-                    if (i >= curIdx && i <= lastObjectIdx)
+                    var displayName = Editor.DataListView.GetDataEntryName(curObj);
+
+                    // Apply filter so we don't select everything
+                    if (Editor.Filters.IsBasicMatch(
+                        ref Editor.Filters.DataEntriesInput, Editor.Filters.DataEntriesInput_IgnoreCase,
+                        displayName, ""))
                     {
-                        if (!SelectedObjects.Any(e => e.Index == i))
+                        if (i >= curIdx && i <= lastObjectIdx)
                         {
-                            var tRowSelect = new BehaviorObjectSelect(i, tObj);
-                            SelectedObjects.Add(tRowSelect);
+                            if (!SelectedObjects.Any(e => e.Index == i))
+                            {
+                                var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                                SelectedObjects.Add(tRowSelect);
+                            }
                         }
                     }
                 }
@@ -223,12 +233,20 @@ public class BehaviorSelection
                 {
                     var tObj = SelectedCategoryObjects[i];
 
-                    if (i <= curIdx && i >= lastObjectIdx)
+                    var displayName = Editor.DataListView.GetDataEntryName(curObj);
+
+                    // Apply filter so we don't select everything
+                    if (Editor.Filters.IsBasicMatch(
+                        ref Editor.Filters.DataEntriesInput, Editor.Filters.DataEntriesInput_IgnoreCase,
+                        displayName, ""))
                     {
-                        if (!SelectedObjects.Any(e => e.Index == i))
+                        if (i <= curIdx && i >= lastObjectIdx)
                         {
-                            var tRowSelect = new BehaviorObjectSelect(i, tObj);
-                            SelectedObjects.Add(tRowSelect);
+                            if (!SelectedObjects.Any(e => e.Index == i))
+                            {
+                                var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                                SelectedObjects.Add(tRowSelect);
+                            }
                         }
                     }
                 }
@@ -247,8 +265,16 @@ public class BehaviorSelection
             {
                 var tObj = SelectedCategoryObjects[i];
 
-                var tRowSelect = new BehaviorObjectSelect(i, tObj);
-                SelectedObjects.Add(tRowSelect);
+                var displayName = Editor.DataListView.GetDataEntryName(curObj);
+
+                // Apply filter so we don't select everything
+                if (Editor.Filters.IsBasicMatch(
+                    ref Editor.Filters.DataEntriesInput, Editor.Filters.DataEntriesInput_IgnoreCase,
+                    displayName, ""))
+                {
+                    var tRowSelect = new BehaviorObjectSelect(i, tObj);
+                    SelectedObjects.Add(tRowSelect);
+                }
             }
         }
     }

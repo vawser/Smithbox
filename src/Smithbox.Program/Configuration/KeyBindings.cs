@@ -1076,6 +1076,12 @@ public class KeyBindings
             Key.A,
             true);
 
+        public KeyBind BEHAVIOR_FocusSelection = new(
+            "Focus Selection",
+            "Focus the first selected entry in your selection.",
+            Key.F,
+            true);
+
         //-----------------------------
         // Misc
         //-----------------------------
