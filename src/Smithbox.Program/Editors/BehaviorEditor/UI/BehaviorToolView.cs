@@ -20,8 +20,8 @@ public class BehaviorToolView
 
     public void OnGui()
     {
-        Editor.PowerEdit.Display();
-        Editor.VariableAssist.Display();
-        Editor.ClipAssist.Display();
+        //Editor.PowerEdit.Display();
+        //Editor.VariableAssist.Display();
+        //Editor.ClipAssist.Display();
     }
 }

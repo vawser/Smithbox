@@ -55,6 +55,8 @@ public class BehaviorSelection
 
     public bool FocusObjectSelection = false;
 
+    public Queue<string> JumpBackCommands = new();
+
     public bool IsBinderSelected(FileDictionaryEntry curEntry)
     {
         if (SelectedFileEntry == null)
@@ -123,6 +125,8 @@ public class BehaviorSelection
         SelectedCategoryObjects = null;
 
         SelectedObjects = new();
+
+        JumpBackCommands = new();
 
         if (Project.ProjectType is ProjectType.ER)
         {

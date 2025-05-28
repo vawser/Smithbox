@@ -3,11 +3,18 @@
 - Time Act Editor: DS2 TAE entries not being presented
 
 # TODO
-- Add basic functionality to Material Editor
-- Param Editor: add default values to all ER param metas.
-- Map Editor: implement orthographic view
 - Project: add Param Enum Editor back
+
+- Behavior Editor: implement the assist tools
+- Behavior Editor: add field meta
+- Behavior Editor: add data entry aliases (namely clip generator)
+
+- Param Editor: add default values to all ER param metas.
 - Param Editor: add defaultvalues to ER paramdex + re-format it
+
+- Map Editor: implement orthographic view
+
+- Material Editor: add basic editing for MTD/MATBIN
 
 # FOCUS TODO
 - Map Editor: implement VFS + data bank overhaul (BTLs + texture/model stuff)

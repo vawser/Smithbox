@@ -1105,7 +1105,7 @@ public class CellSearchEngine : SearchEngine<(string, Param.Row), (PseudoColumn,
                 return row => col => r.IsMatch(col.GetColumnSfType());
             }, () => CFG.Current.Param_AdvancedMassedit));
 
-        filterList.Add("defaultvalue", newCmd(new string[0],
+        filterList.Add("default_value", newCmd(new string[0],
             "Selects cells/fields where the cell value is the same as the 'default' for the field.",
             (args, lenient) =>
             {

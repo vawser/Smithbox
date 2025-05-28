@@ -1,25 +1,17 @@
 ﻿using Andre.Formats;
+using Andre.IO.VFS;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Platform;
-using StudioCore.TextEditor;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
-using StudioCore.Editors.TextEditor;
-using System.ComponentModel.DataAnnotations;
-using StudioCore.Resource.Locators;
-using StudioCore.Tasks;
-using StudioCore.Core;
-using System.Threading.Tasks;
-using Andre.IO.VFS;
-using StudioCore.Utilities;
-using StudioCore.Formats.JSON;
 using System.Text.Json;
-using Octokit;
-using StudioCore.Editors.TextEditor.Enums;
+using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ParamEditor.Data;
 

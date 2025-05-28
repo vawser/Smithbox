@@ -30,39 +30,35 @@ public class EldenRingBehaviorConsts
         {  "hkbClipGenerator", typeof(hkbClipGenerator) },
         {  "hkbManualSelectorGenerator", typeof(hkbManualSelectorGenerator) },
         {  "hkbManualSelectorTransitionEffect", typeof(hkbManualSelectorTransitionEffect) },
-        {  "hkbGeneratorTransitionEffect", typeof(hkbGeneratorTransitionEffect) }
+        {  "hkbGeneratorTransitionEffect", typeof(hkbGeneratorTransitionEffect) },
 
-        // Handled via 'Variables' window
-        // {  "hkbVariableBindingSet", typeof(hkbVariableBindingSet) },
-        // {  "hkbVariableInfo", typeof(hkbVariableInfo) },
-        // {  "hkbVariableBounds", typeof(hkbVariableBounds) },
-        // {  "hkbVariableValue", typeof(hkbVariableValue) },
-        // {  "hkbVariableValueSet", typeof(hkbVariableValueSet) }
+         {  "hkbVariableBindingSet", typeof(hkbVariableBindingSet) },
+         {  "hkbVariableInfo", typeof(hkbVariableInfo) },
+         {  "hkbVariableBounds", typeof(hkbVariableBounds) },
+         {  "hkbVariableValue", typeof(hkbVariableValue) },
+         {  "hkbVariableValueSet", typeof(hkbVariableValueSet) },
 
-        // Handled via 'Behavior Graph Properties' window
-        // {  "hkbBehaviorGraph", typeof(hkbBehaviorGraph) },
-        // {  "hkbBehaviorGraphData", typeof(hkbBehaviorGraphData) },
-        // {  "hkbBehaviorGraphStringData", typeof(hkbBehaviorGraphStringData) }
-        
-        // Blocked for now as node editor can't handle the massive graph it produces
-        // {  "hkRootLevelContainer", typeof(hkRootLevelContainer) },
+         {  "hkbBehaviorGraph", typeof(hkbBehaviorGraph) },
+         {  "hkbBehaviorGraphData", typeof(hkbBehaviorGraphData) },
+         {  "hkbBehaviorGraphStringData", typeof(hkbBehaviorGraphStringData) },
 
-        // Misc
-        // {  "hkbBoneWeightArray", typeof(hkbBoneWeightArray) },
-        // {  "hkbEvent", typeof(hkbEvent) },
-        // {  "hkbRoleAttribute", typeof(hkbRoleAttribute) },
-        // {  "hkbEventInfo", typeof(hkbEventInfo) },
-        // {  "hkbHandIkControlData", typeof(hkbHandIkControlData) },
-        // {  "hkbFootIkControlData", typeof(hkbFootIkControlData) },
-        // {  "hkbFootIkGains", typeof(hkbFootIkGains) },
-        // {  "hkbEventProperty", typeof(hkbEventProperty) },
-        // {  "hkbBlenderGeneratorChild", typeof(hkbBlenderGeneratorChild) },
-        // {  "hkbLayer", typeof(hkbLayer) },
-        // {  "hkbEventDrivenBlendingObject", typeof(hkbEventDrivenBlendingObject) },
-        // {  "hkbBlendingTransitionEffect", typeof(hkbBlendingTransitionEffect) },
-        // {  "CustomTransitionEffect", typeof(CustomTransitionEffect) },
-        // {  "hkbHoldFromBlendingTransitionEffect", typeof(hkbHoldFromBlendingTransitionEffect) },
-        // {  "hkPropertyBag", typeof(hkPropertyBag) },
+         {  "hkRootLevelContainer", typeof(hkRootLevelContainer) },
+
+         {  "hkbBoneWeightArray", typeof(hkbBoneWeightArray) },
+         {  "hkbEvent", typeof(hkbEvent) },
+         {  "hkbRoleAttribute", typeof(hkbRoleAttribute) },
+         {  "hkbEventInfo", typeof(hkbEventInfo) },
+         {  "hkbHandIkControlData", typeof(hkbHandIkControlData) },
+         {  "hkbFootIkControlData", typeof(hkbFootIkControlData) },
+         {  "hkbFootIkGains", typeof(hkbFootIkGains) },
+         {  "hkbEventProperty", typeof(hkbEventProperty) },
+         {  "hkbBlenderGeneratorChild", typeof(hkbBlenderGeneratorChild) },
+         {  "hkbLayer", typeof(hkbLayer) },
+         {  "hkbEventDrivenBlendingObject", typeof(hkbEventDrivenBlendingObject) },
+         {  "hkbBlendingTransitionEffect", typeof(hkbBlendingTransitionEffect) },
+         {  "CustomTransitionEffect", typeof(CustomTransitionEffect) },
+         {  "hkbHoldFromBlendingTransitionEffect", typeof(hkbHoldFromBlendingTransitionEffect) },
+         {  "hkPropertyBag", typeof(hkPropertyBag) }
     };
 
     /// <summary>
@@ -86,14 +82,14 @@ public class EldenRingBehaviorConsts
         {  "hkbAssetBundleStringData", typeof(hkbAssetBundleStringData) },
         {  "hkbFootIkDriverInfo", typeof(hkbFootIkDriverInfo) },
         {  "hkbHandIkDriverInfo", typeof(hkbHandIkDriverInfo) },
-        {  "hkbMirroredSkeletonInfo", typeof(hkbMirroredSkeletonInfo) }
+        {  "hkbMirroredSkeletonInfo", typeof(hkbMirroredSkeletonInfo) },
 
-        // {  "hkbRoleAttribute", typeof(hkbRoleAttribute) },
-        // {  "hkbVariableBindingSet", typeof(hkbVariableBindingSet) },
-        // {  "hkbVariableInfo", typeof(hkbVariableInfo) },
-        // {  "hkbVariableBounds", typeof(hkbVariableBounds) },
-        // {  "hkbVariableValue", typeof(hkbVariableValue) },
-        // {  "hkbVariableValueSet", typeof(hkbVariableValueSet) }
+         {  "hkbRoleAttribute", typeof(hkbRoleAttribute) },
+         {  "hkbVariableBindingSet", typeof(hkbVariableBindingSet) },
+         {  "hkbVariableInfo", typeof(hkbVariableInfo) },
+         {  "hkbVariableBounds", typeof(hkbVariableBounds) },
+         {  "hkbVariableValue", typeof(hkbVariableValue) },
+         {  "hkbVariableValueSet", typeof(hkbVariableValueSet) }
     };
 }
 /// <summary>

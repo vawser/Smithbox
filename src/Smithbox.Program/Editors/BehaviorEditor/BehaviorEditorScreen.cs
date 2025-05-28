@@ -40,6 +40,8 @@ public class BehaviorEditorScreen : EditorScreen
     public BehaviorVariableAssist VariableAssist;
     public BehaviorClipAssist ClipAssist;
 
+    public BehaviorCommandQueue CommandQueue;
+        
     public BehaviorEditorScreen(Smithbox editor, ProjectEntry project)
     {
         BaseEditor = editor;
@@ -60,6 +62,8 @@ public class BehaviorEditorScreen : EditorScreen
         FieldInput = new(this, Project);
 
         ToolView = new(this, Project);
+
+        CommandQueue = new(this, Project);
 
         PowerEdit = new(this, Project);
         VariableAssist = new(this, Project);
@@ -100,6 +104,8 @@ public class BehaviorEditorScreen : EditorScreen
 
             ImGui.EndMenuBar();
         }
+
+        CommandQueue.Parse(initcmd);
 
         if (CFG.Current.Interface_BehaviorEditor_BinderList)
         {

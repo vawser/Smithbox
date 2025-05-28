@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext.Collections.Generic;
+using Hexa.NET.ImGui;
 using StudioCore;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -258,7 +259,6 @@ public class BehaviorFieldInput
             }
         }
 
-        // TODO: change this to select the target object, rather than displaying its fields in a tree view
         if (!field.FieldType.IsPrimitive &&
             field.FieldType != typeof(string) &&
             !field.FieldType.IsEnum &&
@@ -267,20 +267,21 @@ public class BehaviorFieldInput
         {
             if (curValue != null)
             {
-                if (ImGui.TreeNode($"{fieldName}##class_{imguiID}"))
+                if(ImGui.Button($"Go to {field.FieldType.Name}"))
                 {
-                    var nestedFields = field.FieldType.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-
-                    int subIndex = 0;
-                    foreach (var nestedField in nestedFields)
+                    if(Editor.Selection.DisplayCategories.ContainsKey($"{field.FieldType.Name}"))
                     {
-                        if (nestedField.IsPublic)
+                        var checkedCategory = Editor.Selection.DisplayCategories[$"{field.FieldType.Name}"];
+                        for (int i = 0; i < checkedCategory.Count; i++)
                         {
-                            DisplayFieldInput(curValue, subIndex++, nestedField);
+                            var curEntry = checkedCategory[i];
+
+                            if (curEntry.Equals(curValue))
+                            {
+                                // TODO: construct quick jump command
+                            }
                         }
                     }
-
-                    ImGui.TreePop();
                 }
             }
             else

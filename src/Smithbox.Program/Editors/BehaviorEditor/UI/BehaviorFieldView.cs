@@ -1,5 +1,6 @@
 ﻿using BehaviorEditorNS;
 using Hexa.NET.ImGui;
+using HKLib.hk2018;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Interface;
@@ -31,6 +32,8 @@ public class BehaviorFieldView
             return;
         }
 
+        var operatingObject = Editor.Selection.SelectedObjects.First().HavokObject;
+
         DisplayHeader();
 
         // TODO:
@@ -43,7 +46,17 @@ public class BehaviorFieldView
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Multiple havok objects have been selected.\nThe fields below represent only the first havok object, but any edits will apply to all selected objects.");
         }
 
-        DisplayFields();
+        if (Project.ProjectType is ProjectType.ER)
+        {
+            if (operatingObject is CustomManualSelectorGenerator)
+            {
+                CustomManualSelectorGeneratorDisplay();
+            }
+            else
+            {
+                GenericFieldDisplay();
+            }
+        }
     }
 
     public void DisplayHeader()
@@ -58,10 +71,14 @@ public class BehaviorFieldView
         ImGui.SameLine();
         ImGui.Checkbox($"##searchIgnoreCase_FieldList", ref Editor.Filters.FieldListInput_IgnoreCase);
         UIHelper.Tooltip("If enabled, the search will ignore case.");
+
+        // Jump Back
+        // TODO: send editor command to select previous selection
     }
 
     // Generic display
-    public void DisplayFields()
+    #region Generic
+    public void GenericFieldDisplay()
     {
         var operatingObject = Editor.Selection.SelectedObjects.First().HavokObject;
 
@@ -100,4 +117,18 @@ public class BehaviorFieldView
 
         ImGui.EndChild();
     }
+    #endregion
+
+    #region CustomManualSelectorGenerator
+    public void CustomManualSelectorGeneratorDisplay()
+    {
+        GenericFieldDisplay();
+
+        // Display primitives/enums with reflection as before
+
+        // Display class instances as a quick link: (i.e. hkbTransitionEffect)
+
+        // Display generator list entries: a collapisble header for each entry
+    }
+    #endregion
 }

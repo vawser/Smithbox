@@ -5,120 +5,219 @@
     <soundBankId 
     AltName="Sound Bank ID" 
     Wiki="Sound bank ID (-1: no bank, other: bank with specified ID)" 
-    ExtRefs="bnk,sound\aeg{0:000'_'000}.bnk" />
+    ExtRefs="bnk,sound\aeg{0:000'_'000}.bnk" 
+    DefaultValue="-1" />
     
     <soundBreakSEId 
     AltName="Sound Break SE ID" 
     SoundAlias=""  
-    Wiki="Destruction sound SEID (9 digits) -1: Generated from assetId" />
+    Wiki="Destruction sound SEID (9 digits) -1: Generated from assetId" 
+    DefaultValue="-1" />
     
     <refDrawParamId 
     AltName="Draw Param Reference ID" 
     Wiki="Drawing parameter reference ID. The reference ID for the part drawing parameter .xlsm." 
-    Refs="PartsDrawParam" />
+    Refs="PartsDrawParam" 
+    DefaultValue="-1" />
     
     <hitCreateType 
     AltName="Hit Create Type" 
     Wiki="Sets the hit build type for static assets. Ignored for dynamic assets." 
-    Enum="ASSET_HIT_CREATE_TYPE_ENUM" />
+    Enum="ASSET_HIT_CREATE_TYPE_ENUM" 
+    DefaultValue="0" />
     
     <behaviorType 
     AltName="Asset Behavior Type" 
     Wiki="Dynamic (all asset features available), static (light assets with limited functionality treated as old maps), partially static (partially destroyed assets)" 
-    Enum="ASSET_BEHAVIOR_TYPE" />
+    Enum="ASSET_BEHAVIOR_TYPE" 
+    DefaultValue="1" />
     
     <collisionType 
     AltName="Collision Detection Type" 
     Wiki="Collision detection type. You can set what the asset will hit." 
-    Enum="ASSET_COLLISION_TYPE" />
+    Enum="ASSET_COLLISION_TYPE" 
+    DefaultValue="0" />
     
     <rainBlockingType 
     AltName="Rain Blocking Type" 
     Wiki="It is a type of rain blocking. You can set the blocking of SFX and wet expression." 
-    Enum="RAIN_BLOCKING_TYPE" />
+    Enum="RAIN_BLOCKING_TYPE" 
+    DefaultValue="0"/>
     
     <hp 
     AltName="HP" 
-    Wiki="Durability until destruction (-1: Indestructible)" />
+    Wiki="Durability until destruction (-1: Indestructible)" 
+    DefaultValue="-1"/>
     
     <defense 
     AltName="Defence" 
-    Wiki="Attack power below this value is no damage" />
+    Wiki="Attack power below this value is no damage" 
+    DefaultValue="0"/>
     
     <breakStopTime 
     AltName="Destruction Stop Time" 
-    Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" />
+    Wiki="Time from destruction to forced stop of rigid body (do not force stop at 0)" 
+    DefaultValue="0" />
     
     <breakSfxId 
     AltName="Destruction SFX ID" 
     Wiki="SFX ID on destruction (-1: default (810030))" 
     ParticleAlias="" 
-    ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" 
+    DefaultValue="-1" />
     
     <breakSfxCpId 
     AltName="Destruction SFX Dummy Poly ID" 
-    Wiki="SFX generation position at the time of destruction Damipoly ID (-1: placement position)" />
+    Wiki="SFX generation position at the time of destruction Damipoly ID (-1: placement position)" 
+    DefaultValue="-1" />
     
     <breakLandingSfxId 
     AltName="Destruction Landing SFX ID" 
     ParticleAlias="" 
     Wiki="Object material-dependent SFX identifier that regenerates when first landing after being destroyed (-1: does not occur)" 
-    ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
+    ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" 
+    DefaultValue="-1" />
     
     <breakBulletBehaviorId
     AltName="Destruction Bullet Behavior ID" 
-    Wiki="Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps. ([GR] SEQ35556)" />
+    Wiki="Action parameter of [bullet] at the time of destruction (-1: does not occur). Please note that there is an offset specification due to laps. ([GR] SEQ35556)" 
+    DefaultValue="-1" />
     
     <breakBulletCpId 
     AltName="Destruction Bullet Dummy Poly ID" 
-    Wiki="Location of [bullet] at the time of destruction Damipoli ID (-1: placement position)" />
+    Wiki="Location of [bullet] at the time of destruction Damipoli ID (-1: placement position)" 
+    DefaultValue="-1" />
     
     <FragmentInvisibleWaitTime 
     AltName="Hidden Debris - Wait Time" 
-    Wiki="Hidden debris Waiting time (seconds)" />
+    Wiki="Hidden debris Waiting time (seconds)" 
+    DefaultValue="0" />
     
     <FragmentInvisibleTime 
     AltName="Hidden Debris - Time to Hide" 
-    Wiki="Time to hide debris (seconds)" />
+    Wiki="Time to hide debris (seconds)" 
+    DefaultValue="0" />
     
     <BreakAiSoundID 
     AltName="Destruction AI Sound ID" 
     Wiki="AI sound ID generated at the time of destruction" 
-    Refs="AiSoundParam" />
+    Refs="AiSoundParam" 
+    DefaultValue="0" />
     
     <breakItemLotType 
     AltName="Destruction Item Lot Type" 
     Wiki="A type that decides how to obtain items drawn at the time of destruction" 
-    Enum="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" />
+    Enum="ASSET_BREAK_ITEM_LOT_TYPE_ENUM" 
+    DefaultValue="0" />
     
     <animBreakIdMax 
     AltName="Anim Break ID Max" 
-    Wiki="What is the animation destruction ID from 0 to what?" />
+    Wiki="What is the animation destruction ID from 0 to what?" 
+    DefaultValue="0" />
     
     <breakBulletAttributeDamageType 
     AltName="Destruction Bullet Attribute Damage Type" 
     Wiki="Generates a bullet if the last damage received when destroying an asset meets the conditions of this setting." 
-    Enum="ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE" />
+    Enum="ASSET_BREAK_ATTRIBUTE_DAMAGE_TYPE" 
+    DefaultValue="0" />
     
-    <isBreakByPlayerCollide AltName="Is Destroyed on Player Collision" Wiki="Broken when the player touches (0: no, 1:)" />
-    <isBreakByEnemyCollide AltName="Is Destroyed on Enemy Collision" Wiki="Broken when an enemy character touches (0: No, 1: Ru)" />
-    <isBreak_ByChrRide AltName="Is Destroyed by Riding" Wiki="Will it break if the character gets on (0: it won't break 1: it will break)" />
-    <isDisableBreakForFirstAppear AltName="Is Destroyed by Default" Wiki="Broken at the initial appearance of the player (0: ru, 1: no)" />
-    <isAnimBreak AltName="Is Animated Destruction" Wiki="Is it animation destruction (0: physical destruction, 1: animation destruction)" />
-    <isDamageCover AltName="Is Damage Transferred" Wiki="Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)" />
-    <isAttackBacklash AltName="Is Attack Backlash" Wiki="Do you play the attack (0: do not play, 1: play)" />
-    <Reserve_2 AltName="" Padding=""/>
-    <isLadder AltName="Is Ladder" Wiki="Is it a ladder (0: different, 1: yes)" />
-    <isMoveObj AltName="Is Moving Object" Wiki="Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)" />
-    <isSkydomeFlag AltName="Is Celestial Sphere" Wiki="Processing that treats the celestial sphere (player tracking, etc.) is performed (0: different, 1: yes)" />
-    <isAnimPauseOnRemoPlay AltName="Is Paused during Cutscene" Wiki="Do you want to stop the animation during the poly play (0: not, 1: do)" />
-    <isBurn AltName="Is Flammable" Wiki="Will it burn (0: not, 1:)" />
-    <isEnableRepick AltName="Is Repicked" Wiki="If this flag is , the parameter At the time of recollection _ *** will be used for the assets to be collected again in units of placement." IsBool="" />
-    <isBreakOnPickUp AltName="Is Destroyed on Pickup" Wiki="If , play the animation at the time of collection, if , destroy at the time of collection (destroy in all cases including replacement)" IsBool="" />
-    <isBreakByHugeenemyCollide AltName="Is Destroyed by Giant Collision" Wiki="Broken when a giant enemy touches (0: No, 1:)" />
-    <navimeshFlag AltName="Pre-destruction Navmesh Flag" Wiki="Navigation mesh flag set from assets before destruction" Enum="ASSET_NAVIMESH_FLAG" />
-    <burnBulletInterval AltName="Burn Bullet Interval" Wiki="Interval (frame) to generate bullets for spreading fire" />
-    <clothUpdateDist AltName="Camera Distance to Update Cloth" Wiki="Distance from the camera to update havokCloth (0: always update)" />
+    <isBreakByPlayerCollide 
+    AltName="Is Destroyed on Player Collision" 
+    Wiki="Broken when the player touches (0: no, 1:)" 
+    DefaultValue="0" />
+    
+    <isBreakByEnemyCollide 
+    AltName="Is Destroyed on Enemy Collision" 
+    Wiki="Broken when an enemy character touches (0: No, 1: Ru)" 
+    DefaultValue="0" />
+    
+    <isBreak_ByChrRide 
+    AltName="Is Destroyed by Riding" 
+    Wiki="Will it break if the character gets on (0: it won't break 1: it will break)" 
+    DefaultValue="0" />
+    
+    <isDisableBreakForFirstAppear 
+    AltName="Is Destroyed by Default" 
+    Wiki="Broken at the initial appearance of the player (0: ru, 1: no)" 
+    DefaultValue="0" />
+    
+    <isAnimBreak 
+    AltName="Is Animated Destruction" 
+    Wiki="Is it animation destruction (0: physical destruction, 1: animation destruction)" 
+    DefaultValue="0" />
+    
+    <isDamageCover 
+    AltName="Is Damage Transferred" 
+    Wiki="Whether to pass the damage to the other side when receiving damage (0: pass, 1: do not pass)" 
+    DefaultValue="0" />
+    
+    <isAttackBacklash 
+    AltName="Is Attack Backlash" 
+    Wiki="Do you play the attack (0: do not play, 1: play)" 
+    DefaultValue="1" />
+    
+    <unknown_0x3b_7
+    AltName="Unknown: 0x3b_7"
+    Wiki=""
+    DefaultValue="0" />
+    
+    <isLadder 
+    AltName="Is Ladder" 
+    Wiki="Is it a ladder (0: different, 1: yes)" 
+    DefaultValue="0" />
+    
+    <isMoveObj 
+    AltName="Is Moving Object" 
+    Wiki="Is it a moving object? It is a flag used for branching of movement processing at the time of multi (0: different, 1: yes)" 
+    DefaultValue="0" />
+    
+    <isSkydomeFlag 
+    AltName="Is Celestial Sphere" 
+    Wiki="Processing that treats the celestial sphere (player tracking, etc.) is performed (0: different, 1: yes)" 
+    DefaultValue="0" />
+    
+    <isAnimPauseOnRemoPlay 
+    AltName="Is Paused during Cutscene" 
+    Wiki="Do you want to stop the animation during the poly play (0: not, 1: do)" 
+    DefaultValue="0" />
+    
+    <isBurn
+    AltName="Is Flammable" 
+    Wiki="Will it burn (0: not, 1:)" 
+    DefaultValue="0" />
+    
+    <isEnableRepick 
+    AltName="Is Repicked" 
+    Wiki="If this flag is , the parameter At the time of recollection _ *** will be used for the assets to be collected again in units of placement." IsBool="" 
+    DefaultValue="0" />
+    
+    <isBreakOnPickUp 
+    AltName="Is Destroyed on Pickup" 
+    Wiki="If , play the animation at the time of collection, if , destroy at the time of collection (destroy in all cases including replacement)" 
+    IsBool="" 
+    DefaultValue="0" />
+    
+    <isBreakByHugeenemyCollide 
+    AltName="Is Destroyed by Giant Collision" 
+    Wiki="Broken when a giant enemy touches (0: No, 1:)" 
+    DefaultValue="0" />
+    
+    <navimeshFlag 
+    AltName="Pre-destruction Navmesh Flag" 
+    Wiki="Navigation mesh flag set from assets before destruction" 
+    Enum="ASSET_NAVIMESH_FLAG" 
+    DefaultValue="0" />
+    
+    <burnBulletInterval 
+    AltName="Burn Bullet Interval" 
+    Wiki="Interval (frame) to generate bullets for spreading fire" 
+    DefaultValue="30" />
+    
+    <clothUpdateDist 
+    AltName="Camera Distance to Update Cloth" 
+    Wiki="Distance from the camera to update havokCloth (0: always update)" 
+    DefaultValue="30" />
+    
     <lifeTime_forRuntimeCreate AltName="Duration after Creation until Disappearance" Wiki="Runtime-generated time after creation until disappearance (0: does not disappear)" />
     <contactSeId AltName="Contact SE ID" Wiki="SE ID to play when touched by a local player operated by you (-1: Do not play)" />
     <repickAnimIdOffset AltName="Repick Anim ID Offset" Wiki="When recollecting assets with Is there a change at the time of recollection? In units of placement, play the uncollected / collected animation with the anime ID offset by this value." />
