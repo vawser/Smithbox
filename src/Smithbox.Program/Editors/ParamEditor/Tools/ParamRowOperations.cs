@@ -147,10 +147,26 @@ public partial class ParamTools
 
     public void SortRows()
     {
-        if (Editor._activeView.Selection.ActiveParamExists())
+        if (Project.ProjectType is Core.ProjectType.AC6)
         {
-            TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
-            Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
+            var dialog = PlatformUtils.Instance.MessageBox("This action will delete rows if there are multiple rows with the same ID within this param. Do you want to proceed?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (dialog == DialogResult.OK)
+            {
+                if (Editor._activeView.Selection.ActiveParamExists())
+                {
+                    TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
+                    Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
+                }
+            }
+        }
+        else
+        {
+            if (Editor._activeView.Selection.ActiveParamExists())
+            {
+                TaskLogs.AddLog($"Param rows sorted for {Editor._activeView.Selection.GetActiveParam()}");
+                Editor.EditorActionManager.ExecuteAction(MassParamEditOther.SortRows(Editor.Project, Editor.Project.ParamData.PrimaryBank, Editor._activeView.Selection.GetActiveParam()));
+            }
         }
     }
     #endregion
