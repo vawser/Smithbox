@@ -26,6 +26,7 @@ public class MapData
 
     public FileDictionary MapFiles = new();
     public FileDictionary LightFiles = new();
+    public FileDictionary DS2_LightFiles = new();
     public FileDictionary NavmeshFiles = new();
     public FileDictionary LightAtlasFiles = new();
     public FileDictionary CollisionFiles = new();
@@ -80,21 +81,33 @@ public class MapData
     public void SetupFileDictionaries()
     {
         // MSB
-        MapFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "msb").ToList();
+        MapFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "msb")
+            .ToList();
 
         // BTL
-        LightFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "btl").ToList();
+        LightFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "btl")
+            .ToList();
 
-        // TODO: need to grab the containers for DS2 btls, which are in a .gibhd
+        DS2_LightFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "gibhd")
+            .ToList();
 
         // NVA
-        NavmeshFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "nva").ToList();
+        NavmeshFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "nva")
+            .ToList();
 
         // BTAB
-        LightAtlasFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "btab").ToList();
+        LightAtlasFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "btab")
+            .ToList();
 
         // Collision
-        CollisionFiles.Entries = Project.FileDictionary.Entries.Where(e => e.Extension == "hkxbhd").ToList();
+        CollisionFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Extension == "hkxbhd")
+            .ToList();
     }
 
     public async Task<bool> SetupAuxBank(ProjectEntry targetProject, bool reloadProject)

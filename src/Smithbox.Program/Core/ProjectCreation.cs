@@ -230,7 +230,21 @@ public static class ProjectCreation
 
                     ImGui.AlignTextToFramePadding();
                     ImGui.Text("Data Directory");
-                    UIHelper.Tooltip("The location of the game data.\nHint: select the directory that the game executable resides in.");
+
+                    var tooltip = "The location of the game data.";
+                    if (ProjectType is ProjectType.DES)
+                    {
+                        tooltip = $"{tooltip}\nSelect the USRDIR folder.";
+                    }
+                    else if (ProjectType is ProjectType.BB)
+                    {
+                        tooltip = $"{tooltip}\nSelect the dvdroot_ps4 folder.";
+                    }
+                    else
+                    {
+                        tooltip = $"{tooltip}\nSelect the folder that contains the game executable.";
+                    }
+                    UIHelper.Tooltip(tooltip);
 
                     ImGui.TableSetColumnIndex(1);
 
