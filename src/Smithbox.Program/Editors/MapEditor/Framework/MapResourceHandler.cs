@@ -1,10 +1,12 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Microsoft.Extensions.Logging;
+using Octokit;
 using SoulsFormats;
 using SoulsFormats.KF4;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.MapEditor.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene.Enums;
@@ -230,52 +232,6 @@ public class MapResourceHandler
 
                 DrawableHelper.GetModelDrawable(Editor, renderScene, map, obj, mp.ModelName, false, masks);
             }
-        }
-    }
-
-    public void LoadLights(MapContainer map)
-    {
-        // TODO: change this to use the VFS
-        List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(Editor.Project, MapID);
-        foreach (ResourceDescriptor btl_ad in BTLs)
-        {
-            BTL btl = LoadBTL(btl_ad);
-            if (btl != null)
-            {
-                map.LoadBTL(btl_ad, btl);
-            }
-        }
-    }
-
-    private BTL LoadBTL(ResourceDescriptor ad)
-    {
-        try
-        {
-            BTL btl;
-
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-            {
-                using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
-                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-                if (file == null)
-                {
-                    return null;
-                }
-
-                btl = BTL.Read(file.Bytes);
-            }
-            else
-            {
-                btl = BTL.Read(ad.AssetPath);
-            }
-
-            return btl;
-        }
-        catch (InvalidDataException e)
-        {
-            TaskLogs.AddLog($"Failed to load {ad.AssetName}",
-                LogLevel.Error, LogPriority.Normal, e);
-            return null;
         }
     }
 

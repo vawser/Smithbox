@@ -5,15 +5,18 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
+using StudioCore.Editors.MapEditor.Data;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.MapEditor.Tools.MapConnections;
+using StudioCore.Formats.JSON;
 using StudioCore.Resource;
 using StudioCore.Resource.Locators;
 using StudioCore.Scene;
 using StudioCore.Scene.Enums;
 using StudioCore.Scene.Framework;
 using StudioCore.Scene.Helpers;
+using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -146,7 +149,7 @@ public class Universe
                 resourceHandler.SetupModelMasks(map);
             }
 
-            resourceHandler.LoadLights(map);
+            LoadLights(map);
 
             if (CFG.Current.Viewport_Enable_Rendering)
             {
@@ -220,6 +223,77 @@ public class Universe
         }
     }
 
+    public void LoadLights(MapContainer map)
+    {
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            foreach (var entry in Editor.Project.MapData.DS2_LightFiles.Entries)
+            {
+                if (entry.Filename.Contains(map.Name))
+                {
+                    BTL btl = LoadBTL(entry);
+                    if (btl != null)
+                    {
+                        map.LoadBTL(entry, btl);
+                    }
+                }
+            }
+        }
+        else
+        {
+            foreach (var entry in Editor.Project.MapData.LightFiles.Entries)
+            {
+                if (entry.Filename.Contains(map.Name))
+                {
+                    BTL btl = LoadBTL(entry);
+
+                    if (btl != null)
+                    {
+                        map.LoadBTL(entry, btl);
+                    }
+                }
+            }
+        }
+    }
+
+    private BTL LoadBTL(FileDictionaryEntry curEntry)
+    {
+        BTL btl = null;
+
+        if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+        {
+            var bhdPath = curEntry.Path;
+            var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+
+            try
+            {
+                var bdtFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                var bhdFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
+
+                using var bdt = BXF4.Read(bhdFile, bdtFile);
+                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
+
+                if (file == null)
+                {
+                    return null;
+                }
+
+                btl = BTL.Read(file.Bytes);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Editor.Project.ProjectName}:Map Editor] Failed to load BTL file.", LogLevel.Error, LogPriority.High, e);
+            }
+        }
+        else
+        {
+            var btlFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+
+            btl = BTL.Read(btlFile);
+        }
+
+        return btl;
+    }
 
     public void SaveMap(MapContainer map)
     {
@@ -227,13 +301,14 @@ public class Universe
 
         try
         {
-            ResourceDescriptor ad = MapLocator.GetMapMSB(Project, map.Name);
-            ResourceDescriptor adw = MapLocator.GetMapMSB(Project, map.Name, true);
+            var curEntry = Project.MapData.MapFiles.Entries.FirstOrDefault(e => e.Filename == map.Name);
+            var mapData = (Memory<byte>)Project.MapData.PrimaryBank.TargetFS.ReadFile(curEntry.Path);
+
             IMsb msb;
             DCX.Type compressionType = GetCompressionType();
             if (Editor.Project.ProjectType == ProjectType.DS3)
             {
-                var prev = MSB3.Read(ad.AssetPath);
+                var prev = MSB3.Read(mapData);
                 MSB3 n = new();
                 n.PartsPoses = prev.PartsPoses;
                 n.Layers = prev.Layers;
@@ -242,7 +317,7 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.ER)
             {
-                var prev = MSBE.Read(ad.AssetPath);
+                var prev = MSBE.Read(mapData);
                 MSBE n = new();
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
@@ -250,7 +325,7 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.AC6)
             {
-                var prev = MSB_AC6.Read(ad.AssetPath);
+                var prev = MSB_AC6.Read(mapData);
                 MSB_AC6 n = new();
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
@@ -258,14 +333,14 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
-                var prev = MSB2.Read(ad.AssetPath);
+                var prev = MSB2.Read(mapData);
                 MSB2 n = new();
                 n.PartPoses = prev.PartPoses;
                 msb = n;
             }
             else if (Editor.Project.ProjectType == ProjectType.SDT)
             {
-                var prev = MSBS.Read(ad.AssetPath);
+                var prev = MSBS.Read(mapData);
                 MSBS n = new();
                 n.PartsPoses = prev.PartsPoses;
                 n.Layers = prev.Layers;
@@ -278,7 +353,7 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.DES)
             {
-                var prev = MSBD.Read(ad.AssetPath);
+                var prev = MSBD.Read(mapData);
                 MSBD n = new();
                 n.Trees = prev.Trees;
                 msb = n;
@@ -286,7 +361,7 @@ public class Universe
             //TODO ACFA
             else if (Editor.Project.ProjectType == ProjectType.ACFA)
             {
-                MSBFA prev = MSBFA.Read(ad.AssetPath);
+                MSBFA prev = MSBFA.Read(mapData);
                 MSBFA n = new();
                 n.Models.Version = prev.Models.Version;
                 n.Events.Version = prev.Events.Version;
@@ -299,7 +374,7 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.ACV)
             {
-                MSBV prev = MSBV.Read(ad.AssetPath);
+                MSBV prev = MSBV.Read(mapData);
                 MSBV n = new();
                 n.Models.Version = prev.Models.Version;
                 n.Events.Version = prev.Events.Version;
@@ -312,7 +387,7 @@ public class Universe
             }
             else if (Editor.Project.ProjectType == ProjectType.ACVD)
             {
-                MSBVD prev = MSBVD.Read(ad.AssetPath);
+                MSBVD prev = MSBVD.Read(mapData);
                 MSBVD n = new();
                 n.Models.Version = prev.Models.Version;
                 n.Events.Version = prev.Events.Version;
@@ -332,54 +407,30 @@ public class Universe
 
             map.SerializeToMSB(msb, Editor.Project.ProjectType);
 
-            // Create the map directory if it doesn't exist
-            if (!Directory.Exists(Path.GetDirectoryName(adw.AssetPath)))
+            try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(adw.AssetPath));
+                var newMapData = msb.Write();
+                Project.ProjectFS.WriteFile(curEntry.Path, newMapData);
+
+                if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+                {
+                    SaveDS2Generators(map);
+                }
+
+                CheckDupeEntityIDs(map);
+
+                map.HasUnsavedChanges = false;
+                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Saved map: {curEntry.Filename}");
             }
-
-            // Write as a temporary file to make sure there are no errors before overwriting current file 
-            var mapPath = adw.AssetPath;
-            //if (GetModProjectPathForFile(mapPath) != null)
-            //{
-            //    mapPath = GetModProjectPathForFile(mapPath);
-            //}
-
-            // If a backup file doesn't exist of the original file create it
-            if (!File.Exists(mapPath + ".bak") && File.Exists(mapPath))
+            catch (Exception e)
             {
-                File.Copy(mapPath, mapPath + ".bak", true);
+                TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to save map: {curEntry.Filename}", LogLevel.Error, StudioCore.Tasks.LogPriority.High, e);
+
+                if (!CFG.Current.MapEditor_IgnoreSaveExceptions)
+                {
+                    throw new SavingFailedException(Path.GetFileName(map.Name), e);
+                }
             }
-
-            if (File.Exists(mapPath + ".temp"))
-            {
-                File.Delete(mapPath + ".temp");
-            }
-
-            msb.Write(mapPath + ".temp", compressionType);
-
-            // Make a copy of the previous map
-            if (File.Exists(mapPath))
-            {
-                File.Copy(mapPath, mapPath + ".prev", true);
-            }
-
-            // Move temp file as new map file
-            if (File.Exists(mapPath))
-            {
-                File.Delete(mapPath);
-            }
-
-            File.Move(mapPath + ".temp", mapPath);
-
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-            {
-                SaveDS2Generators(map);
-            }
-
-            CheckDupeEntityIDs(map);
-            map.HasUnsavedChanges = false;
-            TaskLogs.AddLog($"Saved map {map.Name}");
         }
         catch (Exception e)
         {
@@ -565,38 +616,6 @@ public class Universe
         foreach (KeyValuePair<string, SpecialMapConnections.RelationType> map in relatedMaps)
         {
             Editor.MapListView.TriggerMapLoad(map.Key);
-        }
-    }
-
-    public BTL ReturnBTL(ResourceDescriptor ad)
-    {
-        try
-        {
-            BTL btl;
-
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-            {
-                using var bdt = BXF4.Read(ad.AssetPath, ad.AssetPath[..^3] + "bdt");
-                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-                if (file == null)
-                {
-                    return null;
-                }
-
-                btl = BTL.Read(file.Bytes);
-            }
-            else
-            {
-                btl = BTL.Read(ad.AssetPath);
-            }
-
-            return btl;
-        }
-        catch (InvalidDataException e)
-        {
-            TaskLogs.AddLog($"Failed to load {ad.AssetName}",
-                LogLevel.Error, StudioCore.Tasks.LogPriority.Normal, e);
-            return null;
         }
     }
 
@@ -893,55 +912,79 @@ public class Universe
     /// </summary>
     public void SaveBTL(MapEditorScreen editor, MapContainer map)
     {
-        List<ResourceDescriptor> BTLs = MapLocator.GetMapBTLs(Project, map.Name);
-        List<ResourceDescriptor> BTLs_w = MapLocator.GetMapBTLs(Project, map.Name, true);
-        DCX.Type compressionType = GetCompressionType();
-        if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
+        var fileEntries = Editor.Project.MapData.LightFiles.Entries;
+
+        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+            fileEntries = Editor.Project.MapData.DS2_LightFiles.Entries;
+                
+        foreach (var entry in fileEntries)
         {
-            for (var i = 0; i < BTLs.Count; i++)
+            if (!entry.Filename.Contains(map.Name))
+                continue;
+
+            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
             {
-                using var bdt = BXF4.Read(BTLs[i].AssetPath, BTLs[i].AssetPath[..^3] + "bdt");
-                BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
-                var btl = BTL.Read(file.Bytes);
-                if (btl != null)
+                var bhdPath = entry.Path;
+                var bdtPath = $"{bhdPath}".Replace(".gibhd", ".gibdt");
+
+                try
                 {
-                    List<BTL.Light> newLights = map.SerializeBtlLights(BTLs_w[i].AssetName);
+                    var bdtFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(bdtPath);
+                    var bhdFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(bhdPath);
 
-                    // Only save BTL if it has been modified
-                    if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
-                        JsonSerializer.Serialize(newLights, BtlLightSerializerContext.Default.ListLight))
+                    using var bdt = BXF4.Read(bhdFile, bdtFile);
+                    BinderFile file = bdt.Files.Find(f => f.Name.EndsWith("light.btl.dcx"));
+
+                    if (file != null)
                     {
-                        btl.Lights = newLights;
-                        file.Bytes = btl.Write(DCX.Type.DCX_DFLT_10000_24_9);
-                        var bdtPath = BTLs_w[i].AssetPath[..^3] + "bdt";
+                        var btl = BTL.Read(file.Bytes);
 
-                        Utils.WriteWithBackup(editor.Project, Utils.GetLocalAssetPath(editor.Project, bdtPath), bdt,
-                            Utils.GetLocalAssetPath(editor.Project, BTLs_w[i].AssetPath));
+                        if (btl != null)
+                        {
+                            List<BTL.Light> newLights = map.SerializeBtlLights(file.Name);
+
+                            // Only save BTL if it has been modified
+                            if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
+                                JsonSerializer.Serialize(newLights, BtlLightSerializerContext.Default.ListLight))
+                            {
+                                btl.Lights = newLights;
+                                file.Bytes = btl.Write();
+                            }
+
+                            Project.ProjectFS.WriteFile(bhdPath, bhdFile.ToArray());
+                            Project.ProjectFS.WriteFile(bdtPath, bdtFile.ToArray());
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Editor.Project.ProjectName}:Map Editor] Failed to load BTL file.", LogLevel.Error, LogPriority.High, e);
                 }
             }
-        }
-        else
-        {
-            for (var i = 0; i < BTLs.Count; i++)
+            else
             {
-                BTL btl = ReturnBTL(BTLs[i]);
+                var btlFile = (Memory<byte>)Editor.Project.MapData.PrimaryBank.TargetFS.ReadFile(entry.Path);
+
+                var btl = BTL.Read(btlFile);
+
                 if (btl != null)
                 {
-                    List<BTL.Light> newLights = map.SerializeBtlLights(BTLs_w[i].AssetName);
+                    List<BTL.Light> newLights = map.SerializeBtlLights(entry.Filename);
 
                     // Only save BTL if it has been modified
                     if (JsonSerializer.Serialize(btl.Lights, BtlLightSerializerContext.Default.ListLight) !=
                         JsonSerializer.Serialize(newLights, BtlLightSerializerContext.Default.ListLight))
                     {
                         btl.Lights = newLights;
-
-                        Utils.WriteWithBackup(editor.Project, Utils.GetLocalAssetPath(editor.Project, BTLs_w[i].AssetPath), btl);
+                        btlFile = btl.Write();
                     }
                 }
+
+                Project.ProjectFS.WriteFile(entry.Path, btlFile.ToArray());
             }
         }
     }
+
 
     public void SaveAllMaps()
     {

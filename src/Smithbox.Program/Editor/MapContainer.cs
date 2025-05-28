@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Enums;
 using StudioCore.Editors.MapEditor.Framework;
+using StudioCore.Formats.JSON;
 using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
@@ -178,9 +179,9 @@ public class MapContainer : ObjectContainer
         RootObject.BuildReferenceMap();
     }
 
-    public void LoadBTL(ResourceDescriptor ad, BTL btl)
+    public void LoadBTL(FileDictionaryEntry curEntry, BTL btl)
     {
-        var btlParent = new MsbEntity(Editor, this, ad, MsbEntityType.Editor);
+        var btlParent = new MsbEntity(Editor, this, curEntry.Filename, MsbEntityType.Editor);
         MapOffsetNode.AddChild(btlParent);
         foreach (BTL.Light l in btl.Lights)
         {
@@ -967,8 +968,8 @@ public class MapContainer : ObjectContainer
         List<BTL.Light> lights = new();
         foreach (Entity p in BTLParents)
         {
-            var ad = (ResourceDescriptor)p.WrappedObject;
-            if (ad.AssetName == btlName)
+            var name = (string)p.WrappedObject;
+            if (name == btlName)
             {
                 foreach (Entity e in p.Children)
                 {

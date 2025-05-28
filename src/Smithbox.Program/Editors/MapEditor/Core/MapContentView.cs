@@ -484,8 +484,9 @@ public class MapContentView
                             {
                                 foreach (Entity parent in map.BTLParents)
                                 {
-                                    var parentAD = (ResourceDescriptor)parent.WrappedObject;
-                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentAD.AssetName}",
+                                    var parentName = parent.WrappedObject;
+
+                                    if (ImGui.TreeNodeEx($"{typ.Key.Name} {parentName}",
                                             treeflags))
                                     {
                                         ImGui.SetNextItemAllowOverlap();

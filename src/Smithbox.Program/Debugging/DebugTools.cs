@@ -1,4 +1,5 @@
 ﻿using Hexa.NET.ImGui;
+using Octokit;
 using SoulsFormats;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
@@ -335,10 +336,6 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var path = @$"G:\Downloads\wp_a_0310.partsbnd.dcx";
 
-        var file = BND4.Read(path);
-
-        TaskLogs.AddLog("");
     }
 }
