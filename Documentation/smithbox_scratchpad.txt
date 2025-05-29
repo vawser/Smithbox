@@ -17,6 +17,6 @@
 - Material Editor: add basic editing for MTD/MATBIN
 
 # FOCUS TODO
-- Map Editor: implement VFS + data bank overhaul (BTLs + texture/model stuff)
+- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager

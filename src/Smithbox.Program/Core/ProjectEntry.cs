@@ -29,6 +29,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Veldrid;
 using Veldrid.Sdl2;
+using VisualDataNS;
 
 namespace StudioCore.Core;
 
@@ -134,6 +135,8 @@ public class ProjectEntry
     public TextureData TextureData;
     [JsonIgnore]
     public BehaviorData BehaviorData;
+    [JsonIgnore]
+    public VisualData VisualData;
 
     /// <summary>
     /// Action manager for project-level changes (e.g. aliases)
@@ -316,6 +319,24 @@ public class ProjectEntry
             else
             {
                 TaskLogs.AddLog($"[{ProjectName}] Failed to setup Project Param Enums.");
+            }
+        }
+
+        // Visual Data
+        VisualData = new VisualData(BaseEditor, this);
+
+        Task<bool> visualDataTask = VisualData.Setup();
+        bool visualDataTaskResult = await visualDataTask;
+
+        if (!silent)
+        {
+            if (visualDataTaskResult)
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Setup Visual Data.");
+            }
+            else
+            {
+                TaskLogs.AddLog($"[{ProjectName}] Failed to setup Visual Data.");
             }
         }
 
