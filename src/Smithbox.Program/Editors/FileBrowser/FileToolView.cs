@@ -1,6 +1,5 @@
 ﻿using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
-using Silk.NET.SDL;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
@@ -10,7 +9,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -32,13 +30,19 @@ public class FileToolView
     private const int MaxConcurrentUnpacks = 6;
 
     private FileDictionary BaseFileDictionary = new FileDictionary();
+    private Dictionary<string, bool> SelectiveFolderDict = new();
+    public List<string> TopFolderList = new();
+
+    public bool IsDeleting = false;
+    public int TotalToDelete = 0;
+    public int CurrentDeleted = 0;
 
     public FileToolView(FileBrowserScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
 
-        BaseFileDictionary = GetBaseFileDictionary();
+        UpdateBaseFileDictionary();
     }
 
     public void Display()
@@ -48,6 +52,11 @@ public class FileToolView
         if(ImGui.CollapsingHeader("Unpack Game Data"))
         {
             DisplayUnpacker();
+        }
+
+        if (ImGui.CollapsingHeader("Individual Unpack"))
+        {
+            DisplayIndividualUnpacker();
         }
 
         ImGui.End();
@@ -60,34 +69,66 @@ public class FileToolView
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
         UIHelper.WrappedText("");
 
-        if (HasUnpackedGame())
+        if(!HasUnpackedGame())
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project has already been unpacked.");
-            UIHelper.WrappedText("");
+            UIHelper.SimpleHeader("selectiveUnpack", "Selective Unpack", "Select which folders to include in the unpack.", UI.Current.ImGui_AliasName_Text);
 
-            if (ImGui.Button("Clear Unpacked Data", new Vector2(width, 24)))
+            if(ImGui.Button($"{Icons.Bars} Toggle All"))
             {
-                ClearUnpackedData();
+                foreach (var entry in SelectiveFolderDict)
+                {
+                    SelectiveFolderDict[entry.Key] = !SelectiveFolderDict[entry.Key];
+                }
+            }
+
+            foreach(var entry in SelectiveFolderDict)
+            {
+                var curToggle = entry.Value;
+                ImGui.Checkbox($"{entry.Key}##toggleFolder_{entry.Key}", ref curToggle);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    SelectiveFolderDict[entry.Key] = curToggle;
+                }
             }
         }
         else
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Logger_Warning_Color, "The base game for this project has not been unpacked.");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project has already been unpacked.");
             UIHelper.WrappedText("");
         }
 
-        // TODO: build list of top-level folders using File Dictionary
-
-        // TODO: add selective unpacking options
-
-        if(!IsUnpacking)
+        if (!IsUnpacking && !HasUnpackedGame())
         {
             if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
             {
                 IsUnpacking = true;
 
-                _ = UnpackGameAsync(BaseFileDictionary);
+                FailedUnpackEntries.Clear();
+
+                bool IsFolderSelected(string folder)
+                {
+                    foreach(var entry in SelectiveFolderDict)
+                    {
+                        if (!entry.Value)
+                            continue;
+
+                        if (folder.StartsWith(entry.Key))
+                        {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                }
+
+                var newFileDictionary = new FileDictionary();
+                newFileDictionary.Entries = BaseFileDictionary.Entries
+                    .Where(e => IsFolderSelected(e.Folder)).ToList();
+
+                _ = UnpackGameAsync(newFileDictionary);
             }
+            UIHelper.Tooltip("This will unpack the data data based on your selective filters.");
+
         }
         else if (IsUnpacking)
         {
@@ -99,35 +140,264 @@ public class FileToolView
             {
                 unpackCts?.Cancel();
             }
+            UIHelper.Tooltip("This will cancel the game data unpack.");
+        }
+
+        if (ImGui.Button("Rebuild File Dictionary##rebuildFileDict_main", new Vector2(width, 24)))
+        {
+            UpdateBaseFileDictionary();
+        }
+        UIHelper.Tooltip("This will rebuild the file dictionary from the JSON file.");
+
+        if (!IsDeleting && HasUnpackedGame())
+        {
+            if (ImGui.Button("Delete Unpacked Data", new Vector2(width, 24)))
+            {
+                IsDeleting = true;
+
+                _ = DeleteUnpackedDataAsync();
+
+                // Delete the empty folders
+                foreach (var entry in TopFolderList)
+                {
+                    var absFolder = $@"{Project.DataPath}{entry}";
+
+                    if (Directory.Exists(absFolder))
+                    {
+                        try
+                        {
+                            Directory.Delete(absFolder, true);
+                        }
+                        catch(Exception e)
+                        {
+                            TaskLogs.AddLog($"[Smithbox] Failed to delete folder: {absFolder}", LogLevel.Error, Tasks.LogPriority.High, e);
+                        }
+                    }
+                }
+            }
+            UIHelper.Tooltip("This will clear all the unpacked folders and files.");
+        }
+        else if(IsDeleting)
+        {
+            float progress = TotalToDelete > 0 ? (float)CurrentDeleted / TotalToDelete : 0f;
+            string label = $"Deleting... {CurrentDeleted} / {TotalToDelete} files";
+            ImGui.ProgressBar(progress, new Vector2(width, 24), label);
+
+            if (ImGui.Button("Cancel", new Vector2(width, 24)))
+            {
+                unpackCts?.Cancel();
+            }
+            UIHelper.Tooltip("This will cancel the delete.");
         }
 
         if (!IsUnpacking && FailedUnpackEntries.Count > 0)
         {
-            if (ImGui.CollapsingHeader("Failed Files", ImGuiTreeNodeFlags.DefaultOpen))
+            ImGui.BeginChild("FailedFilesChild", new Vector2(0, 600));
+
+            foreach (var (path, error) in FailedUnpackEntries)
             {
-                ImGui.BeginChild("FailedFilesChild", new Vector2(0, 600));
-
-                foreach (var (path, error) in FailedUnpackEntries)
-                {
-                    ImGui.TextColored(new Vector4(1f, 0.3f, 0.3f, 1f), path);
-                    ImGui.PushTextWrapPos();
-                    ImGui.TextWrapped($"  - {error}");
-                    ImGui.PopTextWrapPos();
-                }
-
-                ImGui.EndChild();
+                ImGui.TextColored(new Vector4(1f, 0.3f, 0.3f, 1f), path);
+                ImGui.PushTextWrapPos();
+                ImGui.TextWrapped($"  - {error}");
+                ImGui.PopTextWrapPos();
             }
+
+            ImGui.EndChild();
         }
     }
 
     public bool HasUnpackedGame()
     {
-        // TODO: check for some of the folders to detect if the game is unpacked
+        bool anyExist = false;
 
-        return false;
+        foreach (var folderName in TopFolderList)
+        {
+            string fullPath = $@"{Project.DataPath}/{folderName}";
+
+            if (Directory.Exists(fullPath))
+            {
+                anyExist = true;
+                break;
+            }
+        }
+
+        return anyExist;
     }
 
-    public FileDictionary GetBaseFileDictionary()
+    private string IndividualFolder = "";
+    private string IndividualFilename = "";
+
+    public void DisplayIndividualUnpacker()
+    {
+        var width = ImGui.GetWindowWidth() * 0.95f;
+
+        UIHelper.WrappedText("This is a tool to unpack the an individual file from the game data.");
+        UIHelper.WrappedText("");
+
+        UIHelper.WrappedText("Target Folder");
+        ImGui.SetNextItemWidth(width);
+        ImGui.InputText("##individualFolder", ref IndividualFolder, 255);
+        UIHelper.WrappedText("");
+
+        UIHelper.WrappedText("Target Filename");
+        ImGui.SetNextItemWidth(width);
+        ImGui.InputText("##individualFilename", ref IndividualFilename, 255);
+        UIHelper.WrappedText("");
+
+        if (ImGui.Button("Unpack File", new Vector2(width, 24)))
+        {
+            var filePath = $@"{IndividualFolder}\{IndividualFilename}";
+
+            try
+            {
+                var data = Project.VanillaFS.ReadFile(filePath);
+                var rawData = (Memory<byte>)data;
+                var absFolder = $@"{Project.DataPath}/{IndividualFolder}";
+                var absPath = $@"{Project.DataPath}/{IndividualFolder}/{IndividualFilename}";
+
+                if (!Directory.Exists(absFolder))
+                {
+                    Directory.CreateDirectory(absFolder);
+                }
+
+                if (!File.Exists(absPath))
+                {
+                    File.WriteAllBytes(absPath, rawData.ToArray());
+
+                    TaskLogs.AddLog($"[Smithbox] Extracted {absPath}");
+
+                    data = null;
+                    rawData = null;
+                }
+            }
+            catch(Exception e)
+            {
+                TaskLogs.AddLog($"[Smithbox] Failed to write file: {filePath}", LogLevel.Error, Tasks.LogPriority.High, e);
+            }
+        }
+    }
+
+    public async Task UnpackGameAsync(FileDictionary targetFileDictionary)
+    {
+        IsUnpacking = true;
+        unpackCts = new CancellationTokenSource();
+        var token = unpackCts.Token;
+
+        FailedUnpackEntries.Clear();
+
+        TotalToUnpack = targetFileDictionary.Entries.Count;
+        CurrentUnpacked = 0;
+
+        var semaphore = new SemaphoreSlim(MaxConcurrentUnpacks);
+        var tasks = new List<Task>();
+
+        foreach (var entry in targetFileDictionary.Entries)
+        {
+            tasks.Add(Task.Run(async () =>
+            {
+                await semaphore.WaitAsync(token);
+
+                if (token.IsCancellationRequested)
+                    return;
+
+                var data = Project.VanillaFS.ReadFile(entry.Path);
+                if (data != null)
+                {
+                    var rawData = (Memory<byte>)data;
+                    var absFolder = $@"{Project.DataPath}/{entry.Folder}";
+                    var absPath = $@"{Project.DataPath}/{entry.Path}";
+
+                    if (!Directory.Exists(absFolder))
+                    {
+                        Directory.CreateDirectory(absFolder);
+                    }
+
+                    if (!File.Exists(absPath))
+                    {
+                        File.WriteAllBytes(absPath, rawData.ToArray());
+                        data = null;
+                        rawData = null;
+                    }
+
+                    Interlocked.Increment(ref CurrentUnpacked);
+                }
+                else
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to write file: {entry.Path}", LogLevel.Error, Tasks.LogPriority.High);
+
+                    lock (FailedUnpackEntries)
+                    {
+                        FailedUnpackEntries.Add((entry.Path, "Failed to add."));
+                    }
+
+                    Interlocked.Increment(ref CurrentUnpacked);
+                }
+
+                semaphore.Release();
+            }));
+        }
+
+        try
+        {
+            await Task.WhenAll(tasks);
+        }
+        catch (OperationCanceledException)
+        {
+            TaskLogs.AddLog("[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
+        }
+
+        IsUnpacking = false;
+        unpackCts = null;
+    }
+
+    public async Task DeleteUnpackedDataAsync()
+    {
+        IsDeleting = true;
+        unpackCts = new CancellationTokenSource();
+        var token = unpackCts.Token;
+
+        TotalToDelete = BaseFileDictionary.Entries.Count;
+        CurrentDeleted = 0;
+
+        var semaphore = new SemaphoreSlim(MaxConcurrentUnpacks);
+        var tasks = new List<Task>();
+
+        foreach (var entry in BaseFileDictionary.Entries)
+        {
+            tasks.Add(Task.Run(async () =>
+            {
+                await semaphore.WaitAsync(token);
+
+                if (token.IsCancellationRequested)
+                    return;
+
+                var absPath = $@"{Project.DataPath}/{entry.Path}";
+
+                if (File.Exists(absPath))
+                {
+                    File.Delete(absPath);
+                }
+
+                Interlocked.Increment(ref CurrentDeleted);
+
+                semaphore.Release();
+            }));
+        }
+
+        try
+        {
+            await Task.WhenAll(tasks);
+        }
+        catch (OperationCanceledException)
+        {
+            TaskLogs.AddLog("[Smithbox] Deleting was cancelled.", LogLevel.Warning);
+        }
+
+        IsDeleting = false;
+        unpackCts = null;
+    }
+
+    public void UpdateBaseFileDictionary()
     {
         // Get the unmerged base file dictionary
         var folder = @$"{AppContext.BaseDirectory}\Assets\File Dictionaries\";
@@ -185,84 +455,32 @@ public class FileToolView
             }
         }
 
-        return baseFileDictionary;
-    }
+        BaseFileDictionary = baseFileDictionary;
 
-    public async Task UnpackGameAsync(FileDictionary curFileDictionary)
-    {
-        IsUnpacking = true;
-        unpackCts = new CancellationTokenSource();
-        var token = unpackCts.Token;
+        SelectiveFolderDict.Clear();
+        TopFolderList = new();
 
-        FailedUnpackEntries.Clear();
-
-        TotalToUnpack = Project.FileDictionary.Entries.Count;
-        CurrentUnpacked = 0;
-
-        var semaphore = new SemaphoreSlim(MaxConcurrentUnpacks);
-        var tasks = new List<Task>();
-
-        foreach (var entry in Project.FileDictionary.Entries)
+        foreach (var entry in baseFileDictionary.Entries)
         {
-            tasks.Add(Task.Run(async () =>
+            var parts = entry.Folder.Split("/");
+
+            if(parts.Length > 1)
             {
-                await semaphore.WaitAsync(token);
+                var topFolder = $"/{parts[1]}";
 
-                if (token.IsCancellationRequested) 
-                    return;
-
-                var data = Project.VanillaFS.ReadFile(entry.Path);
-                if (data != null)
+                if (topFolder != "/")
                 {
-                    var rawData = (Memory<byte>)data;
-                    var absFolder = $@"{Project.DataPath}/{entry.Folder}";
-                    var absPath = $@"{Project.DataPath}/{entry.Path}";
-
-                    if (!Directory.Exists(absFolder))
+                    if (!TopFolderList.Contains(topFolder))
                     {
-                        Directory.CreateDirectory(absFolder);
-                    }
+                        TopFolderList.Add(topFolder);
 
-                    if (!File.Exists(absPath))
-                    {
-                        File.WriteAllBytes(absPath, rawData.ToArray());
-                        data = null;
-                        rawData = null;
+                        if (!SelectiveFolderDict.ContainsKey(topFolder))
+                        {
+                            SelectiveFolderDict.Add(topFolder, true);
+                        }
                     }
-
-                    Interlocked.Increment(ref CurrentUnpacked);
                 }
-                else
-                {
-                    TaskLogs.AddLog($"[Smithbox] Failed to write file: {entry.Path}", LogLevel.Error, Tasks.LogPriority.High);
-
-                    lock (FailedUnpackEntries)
-                    {
-                        FailedUnpackEntries.Add((entry.Path, "Failed to add."));
-                    }
-
-                    Interlocked.Increment(ref CurrentUnpacked);
-                }
-
-                semaphore.Release();
-            }));
+            }
         }
-
-        try
-        {
-            await Task.WhenAll(tasks);
-        }
-        catch (OperationCanceledException)
-        {
-            TaskLogs.AddLog("[Smithbox] Unpacking was cancelled.", LogLevel.Warning);
-        }
-
-        IsUnpacking = false;
-        unpackCts = null;
-    }
-
-    public async void ClearUnpackedData()
-    {
-
     }
 }

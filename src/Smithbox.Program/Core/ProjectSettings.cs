@@ -539,6 +539,13 @@ public static class ProjectSettings
                 ImGui.SetNextItemWidth(inputWidth);
 
                 ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
+                if (ImGui.IsItemDeactivatedAfterEdit())
+                {
+                    if (TargetProject.EnableFileBrowser != EnableFileBrowser)
+                    {
+                        EditorStateChanged = true;
+                    }
+                }
 
                 ImGui.TableSetColumnIndex(5);
 
