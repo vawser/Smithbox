@@ -31,17 +31,24 @@ public class FileToolView
 
     private const int MaxConcurrentUnpacks = 6;
 
+    private FileDictionary BaseFileDictionary = new FileDictionary();
+
     public FileToolView(FileBrowserScreen editor, ProjectEntry project)
     {
         Editor = editor;
         Project = project;
+
+        BaseFileDictionary = GetBaseFileDictionary();
     }
 
     public void Display()
     {
         ImGui.Begin($"Tools##FileBrowserToolView");
 
-        DisplayUnpacker();
+        if(ImGui.CollapsingHeader("Unpack Game Data"))
+        {
+            DisplayUnpacker();
+        }
 
         ImGui.End();
     }
@@ -69,15 +76,17 @@ public class FileToolView
             UIHelper.WrappedText("");
         }
 
+        // TODO: build list of top-level folders using File Dictionary
+
+        // TODO: add selective unpacking options
+
         if(!IsUnpacking)
         {
             if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
             {
                 IsUnpacking = true;
 
-                var curFileDictionary = GetBaseFileDictionary();
-                
-                _ = UnpackGameAsync(curFileDictionary);
+                _ = UnpackGameAsync(BaseFileDictionary);
             }
         }
         else if (IsUnpacking)

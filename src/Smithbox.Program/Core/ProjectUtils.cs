@@ -45,6 +45,8 @@ public class ProjectUtils
                 return "ER";
             case ProjectType.AC6:
                 return "AC6";
+            case ProjectType.ERN:
+                return "ERN";
             default:
                 throw new Exception("Game type not set");
         }

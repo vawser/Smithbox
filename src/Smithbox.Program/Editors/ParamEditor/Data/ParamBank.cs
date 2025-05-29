@@ -2286,6 +2286,9 @@ public class ParamBank
         if (store == null)
             return false;
 
+        if (store.Params == null)
+            return false;
+
         var storeDict = store.Params.ToDictionary(e => e.Name);
 
         foreach (KeyValuePair<string, Param> p in Params)

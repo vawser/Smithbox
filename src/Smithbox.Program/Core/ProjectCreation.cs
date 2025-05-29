@@ -58,6 +58,7 @@ public static class ProjectCreation
         ProjectType.DS3,
         ProjectType.SDT,
         ProjectType.ER,
+        ProjectType.ERN,
         ProjectType.AC6,
     };
 

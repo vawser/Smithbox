@@ -142,6 +142,9 @@ public class MapActionHandler
             case ProjectType.ACVD:
                 msbclass = typeof(MSBVD);
                 break;
+            case ProjectType.ERN:
+                msbclass = typeof(MSBE);
+                break;
             default:
                 throw new ArgumentException("type must be valid");
         }
