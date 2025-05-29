@@ -153,7 +153,7 @@ namespace SoulsFormats
             /// <summary>
             /// Elden Ring on PC.
             /// </summary>
-            EldenRing,
+            EldenRing
         }
 
         /// <summary>

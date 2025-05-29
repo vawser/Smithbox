@@ -1163,6 +1163,8 @@ public class ProjectEntry
                 file = "ER-File-Dictionary.json"; break;
             case ProjectType.AC6:
                 file = "AC6-File-Dictionary.json"; break;
+            case ProjectType.ERN:
+                file = "ERN-File-Dictionary.json"; break;
             default: break;
         }
 
@@ -1603,7 +1605,7 @@ public class ProjectEntry
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
-        var projectFolder = $@"{ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = $@"{ProjectPath}\.smithbox\Project\";
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var targetFile = sourceFile;

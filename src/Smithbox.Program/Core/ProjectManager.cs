@@ -175,6 +175,10 @@ public class ProjectManager
                     ProjectAliasEditor.Show(BaseEditor, SelectedProject);
                 }
 
+                if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
+                {
+                    ProjectEnumEditor.Show(BaseEditor, SelectedProject);
+                }
 
                 if (CFG.Current.ModEngineInstall != "")
                 {

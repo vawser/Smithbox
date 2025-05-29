@@ -425,6 +425,8 @@ public class FileToolView
                 file = "ER-File-Dictionary.json"; break;
             case ProjectType.AC6:
                 file = "AC6-File-Dictionary.json"; break;
+            case ProjectType.ERN:
+                file = "ERN-File-Dictionary.json"; break;
             default: break;
         }
 
