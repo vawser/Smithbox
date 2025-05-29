@@ -475,6 +475,7 @@ public class CFG
     ///------------------------------------------------------------
     public bool Interface_FileBrowser_FileList = true;
     public bool Interface_FileBrowser_ItemViewer = true;
+    public bool Interface_FileBrowser_ToolView = true;
 
     //**************
     // Actions

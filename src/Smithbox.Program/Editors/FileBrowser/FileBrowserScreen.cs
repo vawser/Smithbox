@@ -25,6 +25,7 @@ public class FileBrowserScreen : EditorScreen
 
     public FileListView FileList;
     public FileItemView ItemViewer;
+    public FileToolView ToolView;
 
     public string EditorName => "File Browser##fileBrowserEditor";
     public string CommandEndpoint => "file";
@@ -41,6 +42,7 @@ public class FileBrowserScreen : EditorScreen
 
         FileList = new(this, project);
         ItemViewer = new(this, project);
+        ToolView = new(this, project);
     }
 
     public void OnGUI(string[] initcmd)
@@ -79,6 +81,11 @@ public class FileBrowserScreen : EditorScreen
         if (CFG.Current.Interface_FileBrowser_ItemViewer)
         {
             ItemViewer.Display();
+        }
+
+        if (CFG.Current.Interface_FileBrowser_ToolView)
+        {
+            ToolView.Display();
         }
 
         ImGui.PopStyleVar();
@@ -154,6 +161,12 @@ public class FileBrowserScreen : EditorScreen
                 CFG.Current.Interface_FileBrowser_ItemViewer = !CFG.Current.Interface_FileBrowser_ItemViewer;
             }
             UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ItemViewer);
+
+            if (ImGui.MenuItem("Tools"))
+            {
+                CFG.Current.Interface_FileBrowser_ToolView = !CFG.Current.Interface_FileBrowser_ToolView;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_ToolView);
 
             ImGui.EndMenu();
         }
