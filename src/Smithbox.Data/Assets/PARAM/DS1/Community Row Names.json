@@ -108756,22 +108756,22 @@
         {
           "Index": 17,
           "ID": 30,
-          "Name": "4th Edition Warrior_Male"
+          "Name": "April 2011 Version Warrior_Male"
         },
         {
           "Index": 18,
           "ID": 31,
-          "Name": "Knights_Male"
+          "Name": "April 2011 Version Knight_Male"
         },
         {
           "Index": 19,
           "ID": 32,
-          "Name": "4th Edition Wizard _ Woman"
+          "Name": "April 2011 Version Sorcerer_Female"
         },
         {
           "Index": 20,
           "ID": 33,
-          "Name": "4th Edition Sorcerer_Male"
+          "Name": "April 2011 Version Pyromancer_Male"
         },
         {
           "Index": 21,
@@ -108896,7 +108896,7 @@
         {
           "Index": 45,
           "ID": 123,
-          "Name": "default face test_24"
+          "Name": "Default face test_24"
         },
         {
           "Index": 46,
@@ -109036,367 +109036,367 @@
         {
           "Index": 73,
           "ID": 1000,
-          "Name": "Common Face"
+          "Name": "[Male] Commoner"
         },
         {
           "Index": 74,
           "ID": 1001,
-          "Name": "Wuhe River Farmer\u0027s Face"
+          "Name": "[Male] Delta Farmer"
         },
         {
           "Index": 75,
           "ID": 1002,
-          "Name": "Noble Face of Astra"
+          "Name": "[Male] Astora Noble"
         },
         {
           "Index": 76,
           "ID": 1003,
-          "Name": "Ryu Gakuin Student Face"
+          "Name": "[Male] Dragon Scholar"
         },
         {
           "Index": 77,
           "ID": 1004,
-          "Name": "Solrondo Saint Face"
+          "Name": "[Male] Thorolund Cleric"
         },
         {
           "Index": 78,
           "ID": 1005,
-          "Name": "Catalina\u0027s cheerful face"
+          "Name": "[Male] Jubilant Catarina"
         },
         {
           "Index": 79,
           "ID": 1006,
-          "Name": "Kalim\u0027s dismal face"
+          "Name": "[Male] Dubious Carim"
         },
         {
           "Index": 80,
           "ID": 1007,
-          "Name": "Zena\u0027s old face"
+          "Name": "[Male] Classic Zena"
         },
         {
           "Index": 81,
           "ID": 1008,
-          "Name": "Onuma"
+          "Name": "[Male] Eerie Great Swamp"
         },
         {
           "Index": 82,
           "ID": 1009,
-          "Name": "Eastern alien face"
+          "Name": "[Male] Far East Traveler"
         },
         {
           "Index": 83,
           "ID": 2000,
-          "Name": "commoner face"
+          "Name": "[Female] Commoner"
         },
         {
           "Index": 84,
           "ID": 2001,
-          "Name": "Five finger river farmer\u0027s face"
+          "Name": "[Female] Delta Farmer"
         },
         {
           "Index": 85,
           "ID": 2002,
-          "Name": "Astra noble face"
+          "Name": "[Female] Astora Noble"
         },
         {
           "Index": 86,
           "ID": 2003,
-          "Name": "Ryu Gakuin Student Face"
+          "Name": "[Female] Dragon Scholar"
         },
         {
           "Index": 87,
           "ID": 2004,
-          "Name": "Sollond\u0027s Saint Face"
+          "Name": "[Female] Thorolund Cleric"
         },
         {
           "Index": 88,
           "ID": 2005,
-          "Name": "Cheerful face of Catalina"
+          "Name": "[Female] Jubilant Catarina"
         },
         {
           "Index": 89,
           "ID": 2006,
-          "Name": "Kalim\u0027s gloomy face"
+          "Name": "[Female] Dubious Carim"
         },
         {
           "Index": 90,
           "ID": 2007,
-          "Name": "Zena\u0027s old face"
+          "Name": "[Female] Classic Zena"
         },
         {
           "Index": 91,
           "ID": 2008,
-          "Name": "Anomaly of Onuma"
+          "Name": "[Female] Eerie Great Swamp"
         },
         {
           "Index": 92,
           "ID": 2009,
-          "Name": "Eastern strange face"
+          "Name": "[Female] Far East Traveler"
         },
         {
           "Index": 93,
           "ID": 6000,
-          "Name": "Sun Knight"
+          "Name": "Solaire of Astora"
         },
         {
           "Index": 94,
           "ID": 6001,
-          "Name": "Knight of the Sun (Solar Bug Ver.)"
+          "Name": "Solaire of Astora (Sunlight Maggot Ver.)"
         },
         {
           "Index": 95,
           "ID": 6002,
-          "Name": "Knight of the Sun (dead)"
+          "Name": "[Unused] Solaire of Astora (Hollow)"
         },
         {
           "Index": 96,
           "ID": 6010,
-          "Name": "Dark Moon Knight"
+          "Name": "Darkmoon Knightess"
         },
         {
           "Index": 97,
           "ID": 6020,
-          "Name": "Knight Ostra"
+          "Name": "Oscar of Astora"
         },
         {
           "Index": 98,
           "ID": 6021,
-          "Name": "Knight Ostra, hostile"
+          "Name": "Oscar of Astora (Hostile)"
         },
         {
           "Index": 99,
           "ID": 6030,
-          "Name": "\u0022Big Hat\u0022 Logan"
+          "Name": "Big Hat Logan"
         },
         {
           "Index": 100,
           "ID": 6031,
-          "Name": "\u0022Big hat\u0022 Logan (dead)"
+          "Name": "[Unused] Big Hat Logan (Hollow)"
         },
         {
           "Index": 101,
           "ID": 6040,
-          "Name": "Logan Disciple"
+          "Name": "Griggs of Vinheim"
         },
         {
           "Index": 102,
           "ID": 6041,
-          "Name": "Logan\u0027s apprentice (deceased)"
+          "Name": "Griggs of Vinheim (Hollow)"
         },
         {
           "Index": 103,
           "ID": 6050,
-          "Name": "Princess of the Exiled"
+          "Name": "Dusk of Oolacile"
         },
         {
           "Index": 104,
           "ID": 6060,
-          "Name": "Gray Saint"
+          "Name": "[Unused] Gray Saint"
         },
         {
           "Index": 105,
           "ID": 6070,
-          "Name": "White Saint"
+          "Name": "Rhea of Thorolund"
         },
         {
           "Index": 106,
           "ID": 6071,
-          "Name": "White saint (dead)"
+          "Name": "Rhea of Thorolund (Hollow)"
         },
         {
           "Index": 107,
           "ID": 6080,
-          "Name": "Saint Knight A"
+          "Name": "Petrus of Thorolund"
         },
         {
           "Index": 108,
           "ID": 6090,
-          "Name": "Saint Knight B"
+          "Name": "Vince of Thorolund"
         },
         {
           "Index": 109,
           "ID": 6091,
-          "Name": "Saint Knight B (dead)"
+          "Name": "Vince of Thorolund (Hollow)"
         },
         {
           "Index": 110,
           "ID": 6100,
-          "Name": "Saint Knight C"
+          "Name": "Nico of Thorolund"
         },
         {
           "Index": 111,
           "ID": 6101,
-          "Name": "Saint Knight C (dead)"
+          "Name": "Nico of Thorolund (Hollow)"
         },
         {
           "Index": 112,
           "ID": 6130,
-          "Name": "Vase Sorcerer"
+          "Name": "Laurentius of the Great Swamp"
         },
         {
           "Index": 113,
           "ID": 6131,
-          "Name": "Vase Sorcerer (dead)"
+          "Name": "Laurentius of the Great Swamp (Hollow)"
         },
         {
           "Index": 114,
           "ID": 6170,
-          "Name": "Wandering chaos"
+          "Name": "Quelana of Izalith"
         },
         {
           "Index": 115,
           "ID": 6180,
-          "Name": "Healer"
+          "Name": "Ingward"
         },
         {
           "Index": 116,
           "ID": 6220,
-          "Name": "Blacksmith Rickert"
+          "Name": "Rickert of Vinheim"
         },
         {
           "Index": 117,
           "ID": 6250,
-          "Name": "A Broken Merchant"
+          "Name": "Crestfallen Merchant"
         },
         {
           "Index": 118,
           "ID": 6260,
-          "Name": "trickster"
+          "Name": "Domhnall of Zena"
         },
         {
           "Index": 119,
           "ID": 6270,
-          "Name": "A Broken Warrior"
+          "Name": "Crestfallen Warrior"
         },
         {
           "Index": 120,
           "ID": 6271,
-          "Name": "Broken warrior (dead)"
+          "Name": "Crestfallen Warrior (Hollow)"
         },
         {
           "Index": 121,
           "ID": 6280,
-          "Name": "Onion Knight"
+          "Name": "Siegmeyer of Catarina"
         },
         {
           "Index": 122,
           "ID": 6290,
-          "Name": "Onion Knight\u0027s Daughter"
+          "Name": "Sieglinde of Catarina"
         },
         {
           "Index": 123,
           "ID": 6300,
-          "Name": "Hugged Knight Lautrek"
+          "Name": "Knight Lautrec of Carim"
         },
         {
           "Index": 124,
           "ID": 6310,
-          "Name": "Field Takeshi"
+          "Name": "Shiva of the East"
         },
         {
           "Index": 125,
           "ID": 6320,
-          "Name": "Cemetery Coward Patch"
+          "Name": "Trusty Patches"
         },
         {
           "Index": 126,
           "ID": 6370,
-          "Name": "Dragon Priest"
+          "Name": "Oswald of Carim"
         },
         {
           "Index": 127,
           "ID": 6390,
-          "Name": "Black Knight Tarcus"
+          "Name": "Black Iron Tarkus"
         },
         {
           "Index": 128,
           "ID": 6400,
-          "Name": "Belka Knight"
+          "Name": "[Unused] Velka Knight"
         },
         {
           "Index": 129,
           "ID": 6410,
-          "Name": "Witch Mallows"
+          "Name": "Witch Beatrice"
         },
         {
           "Index": 130,
           "ID": 6420,
-          "Name": "Ninja"
+          "Name": "Shiva\u0027s Bodyguard"
         },
         {
           "Index": 131,
           "ID": 6490,
-          "Name": "Lautrek companion 1"
+          "Name": "Lautrec Bodyguard 1"
         },
         {
           "Index": 132,
           "ID": 6500,
-          "Name": "Lautrek companion 2"
+          "Name": "Lautrec Bodyguard 2"
         },
         {
           "Index": 133,
           "ID": 6530,
-          "Name": "Numa Woman (NPC Multi)"
+          "Name": "Maneater Mildred"
         },
         {
           "Index": 134,
           "ID": 6550,
-          "Name": "Temple Knight (NPC Multi)"
+          "Name": "Paladin Leeroy"
         },
         {
           "Index": 135,
           "ID": 6560,
-          "Name": "Barb Knight (NPC Multi)"
+          "Name": "Kirk, Knight of Thorns"
         },
         {
           "Index": 136,
           "ID": 6570,
-          "Name": "Yellow clothing (NPC multi)"
+          "Name": "Xanthous King Jeremiah"
         },
         {
           "Index": 137,
           "ID": 6580,
-          "Name": "Castle tower NPC (Havel)"
+          "Name": "Havel the Rock"
         },
         {
           "Index": 138,
           "ID": 6600,
-          "Name": "Royal Castle 1 Tower NPC (Ricard)"
+          "Name": "Undead Prince Ricard"
         },
         {
           "Index": 139,
           "ID": 6610,
-          "Name": "Crystal Knight"
+          "Name": "Hollow Crystal Knight"
         },
         {
           "Index": 140,
           "ID": 6801,
-          "Name": "Bandit A Gatekeeper"
+          "Name": "Forest Hunter - Bandit"
         },
         {
           "Index": 141,
           "ID": 6802,
-          "Name": "Bandit B Warrior"
+          "Name": "Forest Hunter - Knight"
         },
         {
           "Index": 142,
           "ID": 6803,
-          "Name": "Bandit C Bow Master"
+          "Name": "Forest Hunter - Hunter"
         },
         {
           "Index": 143,
           "ID": 6804,
-          "Name": "Bandit D Magic (Attack)"
+          "Name": "Forest Hunter - Cleric"
         },
         {
           "Index": 144,
           "ID": 6805,
-          "Name": "Bandit E Magic (Recovery)"
+          "Name": "Forest Hunter - Sorcerer"
         },
         {
           "Index": 145,
           "ID": 6806,
-          "Name": "Bandit F Stealth"
+          "Name": "Forest Hunter - Thief"
         }
       ]
     },
