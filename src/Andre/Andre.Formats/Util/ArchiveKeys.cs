@@ -308,19 +308,11 @@ viCKV6AQNxb8J1CHev0OJv9r+bMSy+1kxwIEILt78w==
 
             ["Data3"] =
 @"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
-
-            ["DLC"] =
-@"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
+-----END RSA PUBLIC KEY-----"
 
             ["sd\\sd"] =
 @"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
-
-            ["sd\\sd_dlc02"] =
-@"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
+-----END RSA PUBLIC KEY-----"
 
         };
     }
