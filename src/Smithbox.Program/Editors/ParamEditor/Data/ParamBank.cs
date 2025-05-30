@@ -1733,6 +1733,7 @@ public class ParamBank
 
         var gameParamPath = $@"regulation.bin";
         var systemParamPath = $@"param\systemparam\systemparam.parambnd.dcx";
+        var eventParamPath = $@"param\eventparam\eventparam.parambnd.dcx";
 
         if (!TargetFS.FileExists(gameParamPath))
         {
@@ -1754,6 +1755,7 @@ public class ParamBank
             }
         }
 
+        // System Param
         if (!TargetFS.FileExists(systemParamPath))
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {systemParamPath}", LogLevel.Error, Tasks.LogPriority.High);
@@ -1770,6 +1772,27 @@ public class ParamBank
             catch (Exception e)
             {
                 TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {systemParamPath}", LogLevel.Error, Tasks.LogPriority.High, e);
+                successfulLoad = false;
+            }
+        }
+
+        // Event Param
+        if (!TargetFS.FileExists(eventParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(eventParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High, e);
                 successfulLoad = false;
             }
         }
@@ -1821,6 +1844,7 @@ public class ParamBank
 
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
 
+        // System Param
         var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
 
         if (!fs.FileExists(sysParam))
@@ -1835,6 +1859,23 @@ public class ParamBank
             using var sysParams = BND4.Read(sysParamF.GetData());
             OverwriteParamsNR(sysParams);
             ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+        }
+
+        // Event Param
+        var eventParam = @"param\eventparam\eventparam.parambnd.dcx";
+
+        if (!Project.FS.FileExists(eventParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error, Tasks.LogPriority.High);
+
+            return false;
+        }
+
+        if (fs.TryGetFile(eventParam, out var eventParamF))
+        {
+            using var eventParams = BND4.Read(eventParamF.GetData());
+            OverwriteParamsNR(eventParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, eventParam, eventParams);
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_NR)

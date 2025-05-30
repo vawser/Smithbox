@@ -659,7 +659,7 @@ namespace SoulsFormats
                 bytes = bnd.Write();
             }
 
-            bytes = EncryptByteArray(Keys.ER_REGULATION_KEY, bytes);
+            bytes = EncryptByteArray(Keys.NR_REGULATION_KEY, bytes);
             return bytes;
         }
 
