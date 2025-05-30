@@ -5,6 +5,8 @@ using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
+using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Text.Json;
@@ -339,24 +341,20 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var project = BaseEditor.ProjectManager.SelectedProject;
+        var readPath = @"F:\SteamLibrary\steamapps\common\ELDEN RING NIGHTREIGN\Game\chr";
 
-        var newParamTypeInfo = new ParamTypeInfo();
-        newParamTypeInfo.Mapping = new();
-        newParamTypeInfo.Exceptions = new();
+        var fileList = new List<string>();
 
-        foreach (var entry in project.ParamData.PrimaryBank.Params)
+        foreach(var file in Directory.EnumerateFiles(readPath))
         {
-            var filename = entry.Key;
-            var type = entry.Value.ParamType;
-
-            newParamTypeInfo.Mapping.Add(filename, type);
+            var filename = Path.GetFileName(file);
+            if(!fileList.Contains(filename) && filename.Contains("anibnd") && !file.Contains("_div"))
+            {
+                fileList.Add(filename);
+            }
         }
 
-        var json = JsonSerializer.Serialize(newParamTypeInfo, SmithboxSerializerContext.Default.ParamTypeInfo);
-
-        var writePath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Param Type Info.json";
-
-        File.WriteAllText(writePath, json);
+        var output = string.Join("\n", fileList);
+        PlatformUtils.Instance.SetClipboardText(output);
     }
 }

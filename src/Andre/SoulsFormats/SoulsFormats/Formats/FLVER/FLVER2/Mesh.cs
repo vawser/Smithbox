@@ -88,7 +88,7 @@ namespace SoulsFormats
                 int boneOffset = br.ReadInt32();
                 int faceSetCount = br.ReadInt32();
                 int faceSetOffset = br.ReadInt32();
-                int vertexBufferCount = br.AssertInt32([0, 1, 2, 3]);
+                int vertexBufferCount = br.ReadInt32();
                 int vertexBufferOffset = br.ReadInt32();
                 
                 if (boundingBoxOffset != 0)
@@ -154,9 +154,10 @@ namespace SoulsFormats
                 for (int i = 0; i < VertexBuffers.Count; i++)
                 {
                     VertexBuffer buffer = VertexBuffers[i];
+
                     // This appears to be some kind of flag on edge-compressed vertex buffers
-                    if ((buffer.BufferIndex & ~0x60000000) != i)
-                        throw new FormatException("Unexpected vertex buffer index.");
+                    //if ((buffer.BufferIndex & ~0x60000000) != i)
+                    //    throw new FormatException("Unexpected vertex buffer index.");
                 }
             }
 

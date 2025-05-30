@@ -189,7 +189,7 @@ public static class VirtualPathLocator
                     if (curProject.ProjectType == ProjectType.BB || curProject.ProjectType == ProjectType.DES)
                         return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\{pathElements[i]}.flver.dcx");
 
-                    if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
+                    if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN)
                         return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid.Substring(0, 3)}\{mapid}\{pathElements[i]}.mapbnd.dcx");
 
                     if (curProject.ProjectType is ProjectType.ACFA)
@@ -247,7 +247,7 @@ public static class VirtualPathLocator
                         return LocatorUtils.GetAssetPath(curProject, $@"map\{mapid}\h{mapid.Substring(1)}.hkxbhd");
                     }
 
-                    if (curProject.ProjectType == ProjectType.ER)
+                    if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
                     {
                         bndpath = "";
                         if (hittype == "lo")
@@ -366,7 +366,7 @@ public static class VirtualPathLocator
                     else if (pathElements[i].Equals("tex"))
                         return LocatorUtils.GetOverridenFilePath(curProject, $@"model\obj\{objid}\{objid}.tpf.dcx");
 
-                if (curProject.ProjectType == ProjectType.ER)
+                if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
@@ -394,7 +394,7 @@ public static class VirtualPathLocator
 
                 bndpath = "";
 
-                if (curProject.ProjectType == ProjectType.ER)
+                if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
                 {
                     // Derive subfolder path from model name (all vanilla AEG are within subfolders)
                     if (objid.Length >= 6)
@@ -497,7 +497,7 @@ public static class VirtualPathLocator
                     return LocatorUtils.GetOverridenFilePath(curProject, $@"model\parts\{partType}\{partsId}.bnd");
                 }
 
-                if (curProject.ProjectType is ProjectType.ER)
+                if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
                 {
                     if (pathElements.Length == 4)
                     {

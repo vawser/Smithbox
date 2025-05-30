@@ -66,7 +66,7 @@ public static class TextureLocator
             // Clean this up. Even if it's common code having something like "!=Sekiro" can lead to future issues
             var mid = mapid.Substring(0, 3);
 
-            if (!(project.ProjectType is ProjectType.ER or ProjectType.AC6))
+            if (!(project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN))
             {
                 ResourceDescriptor t0000 = new();
                 t0000.AssetPath = LocatorUtils.GetAssetPath(project, $@"map\{mid}\{mid}_0000.tpfbhd");
@@ -166,7 +166,7 @@ public static class TextureLocator
             overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrid}.texbnd.dcx");
         }
 
-        if (project.ProjectType is ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrid}_h.texbnd.dcx");
 
@@ -270,7 +270,7 @@ public static class TextureLocator
                 ad.AssetArchiveVirtualPath = $@"chr/{chrid}/tex";
             }
         }
-        else if (project.ProjectType is ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             path = GetChrTexturePath(project, chrid);
 
@@ -377,7 +377,7 @@ public static class TextureLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
 
-        if (project.ProjectType == ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             path = LocatorUtils.GetOverridenFilePath(project, $@"asset\aet\{aetid.Substring(0, 6)}\{aetid}.tpf.dcx");
         }
@@ -406,7 +406,7 @@ public static class TextureLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
 
-        if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN)
             path = LocatorUtils.GetOverridenFilePath(project, $@"parts\common_body.tpf.dcx");
         else
             throw new NotSupportedException();
@@ -427,7 +427,7 @@ public static class TextureLocator
         ad.AssetArchiveVirtualPath = null;
         string path;
 
-        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB)
+        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.ERN)
         {
             path = LocatorUtils.GetOverridenFilePath(project, $@"other\systex.tpf.dcx");
         }
@@ -466,7 +466,7 @@ public static class TextureLocator
                 }
             }
         }
-        else if (project.ProjectType == ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER  or ProjectType.ERN)
         {
             var path = LocatorUtils.GetOverridenFilePath(project, $@"parts\{partsId}.partsbnd.dcx");
 
@@ -647,7 +647,7 @@ public static class TextureLocator
 
         string path = null;
 
-        if (project.ProjectType == ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             path = LocatorUtils.GetOverridenFilePath(project, $@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
         }
@@ -675,7 +675,7 @@ public static class TextureLocator
             overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"asset\environment\texture\{resourceName}.tpf.dcx");
         }
 
-        if (project.ProjectType is ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"asset\aet\{resourceName.Substring(0, 6)}\{resourceName}.tpf.dcx");
         }
@@ -719,7 +719,7 @@ public static class TextureLocator
         var overrideFilePath = "";
 
         // TPF
-        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+        if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.ERN)
         {
             overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"menu\hi\{resourceName}.tpf.dcx");
         }
@@ -741,7 +741,7 @@ public static class TextureLocator
         // TPFBHD
         else
         {
-            if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT)
+            if (project.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.ERN)
             {
                 overrideFilePath = LocatorUtils.GetOverridenFilePath(project, $@"menu\hi\{resourceName}.tpfbhd");
             }

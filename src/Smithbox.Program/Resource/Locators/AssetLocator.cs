@@ -80,7 +80,7 @@ public static class AssetLocator
     {
         ResourceDescriptor ret = new();
 
-        if (project.ProjectType == ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             if (asset.Length >= 6)
             {
@@ -102,7 +102,7 @@ public static class AssetLocator
 
         ret.AssetVirtualPath = $"obj/{asset}/collision/{asset}_{postfix}.hkx";
 
-        if (project.ProjectType == ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             if (asset.Length >= 6)
             {

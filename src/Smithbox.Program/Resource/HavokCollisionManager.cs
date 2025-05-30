@@ -43,7 +43,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             LoadMapCollision(mapId, "h");
             LoadMapCollision(mapId, "l");
@@ -55,7 +55,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             // HACK: clear all viewport collisions on load
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
@@ -145,7 +145,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             LoadModelCollision(modelName, "h", modelType);
             LoadModelCollision(modelName, "l", modelType);
@@ -157,7 +157,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             //UnloadModelCollision(mapId, "h");
             //UnloadModelCollision(mapId, "l");

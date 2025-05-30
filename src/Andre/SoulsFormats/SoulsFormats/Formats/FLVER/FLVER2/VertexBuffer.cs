@@ -76,7 +76,7 @@ namespace SoulsFormats
                     }
                     else
                     {
-                        throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes.");
+                        throw new InvalidDataException($"Mismatched vertex buffer and buffer layout sizes: {VertexSize} != {layout.Size}");
                     }
                 }
 
