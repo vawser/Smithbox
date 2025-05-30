@@ -378,7 +378,7 @@ public class Param : SoulsFile<Param>
     ///     For version aware paramdefs, the regulation version of the param the
     ///     paramdef is being applied to
     /// </param>
-    public void ApplyParamdef(PARAMDEF def, ulong regulationVersion = ulong.MaxValue)
+    public void ApplyParamdef(PARAMDEF def, ulong regulationVersion = ulong.MaxValue, string fileName = "")
     {
         if (AppliedParamdef != null)
             throw new ArgumentException("Param already has a paramdef applied.");
@@ -488,10 +488,54 @@ public class Param : SoulsFile<Param>
         // If a row size is already read it must match our computed row size
         else if (byteOffset != RowSize)
         {
+            //GenerateFilledParamDefFile(def, RowSize, fileName);
+
             throw new Exception($@"Row size paramdef mismatch for {ParamType} - byteOffset:{byteOffset} - rowSize:{RowSize}");
         }
 
         Columns = columns;
+    }
+
+    // Stuff for generating the param def layouts for new games
+    private List<string> WrittenParamTypes = new();
+
+    public void GenerateFilledParamDefFile(PARAMDEF def, int rowSize, string fileName)
+    {
+        if (fileName != "")
+        {
+            var paramType = $"{def.ParamType}";
+            if (!WrittenParamTypes.Contains(paramType))
+            {
+                var fields = GetFieldLayout(RowSize);
+
+                var xmlTemplate = $"<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PARAMDEF XmlVersion=\"1\">\r\n  <ParamType>{paramType}</ParamType>\r\n  <DataVersion>1</DataVersion>\r\n  <BigEndian>False</BigEndian>\r\n  <Unicode>True</Unicode>\r\n  <FormatVersion>203</FormatVersion>\r\n  <Fields>\r\n    {fields}\r\n  </Fields>\r\n</PARAMDEF>";
+
+                var writePath = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Defs\{fileName}.xml";
+
+                File.WriteAllText(writePath, xmlTemplate);
+
+                WrittenParamTypes.Add(paramType);
+            }
+        }
+    }
+    private string GetFieldLayout(int rowSize)
+    {
+        var layout = "";
+
+        int fullFields = rowSize / 4;
+        int remainingBytes = rowSize % 4;
+
+        for (int i = 0; i < fullFields; i++)
+        {
+            layout += $"\n    <Field Def=\"s32 tempName_{i}\"/>";
+        }
+
+        for (int i = 0; i < remainingBytes; i++)
+        {
+            layout += $"\n    <Field Def=\"u8 tempByte_{i}\"/>";
+        }
+
+        return layout;
     }
 
     /// <summary>

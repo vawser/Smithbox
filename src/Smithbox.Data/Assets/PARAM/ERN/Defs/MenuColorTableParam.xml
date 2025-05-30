@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>MENU_PARAM_COLOR_TABLE_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 tempName_0"/>
+    <Field Def="s32 tempName_1"/>
+    <Field Def="s32 tempName_2"/>
+    <Field Def="s32 tempName_3"/>
+    <Field Def="s32 tempName_4"/>
+    <Field Def="s32 tempName_5"/>
+    <Field Def="s32 tempName_6"/>
+    <Field Def="s32 tempName_7"/>
+  </Fields>
+</PARAMDEF>

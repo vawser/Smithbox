@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>GRASS_TYPE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 tempName_0"/>
+    <Field Def="s32 tempName_1"/>
+    <Field Def="s32 tempName_2"/>
+    <Field Def="s32 tempName_3"/>
+    <Field Def="s32 tempName_4"/>
+    <Field Def="s32 tempName_5"/>
+    <Field Def="s32 tempName_6"/>
+    <Field Def="s32 tempName_7"/>
+    <Field Def="s32 tempName_8"/>
+    <Field Def="s32 tempName_9"/>
+    <Field Def="s32 tempName_10"/>
+    <Field Def="s32 tempName_11"/>
+    <Field Def="s32 tempName_12"/>
+    <Field Def="s32 tempName_13"/>
+    <Field Def="s32 tempName_14"/>
+    <Field Def="s32 tempName_15"/>
+    <Field Def="s32 tempName_16"/>
+    <Field Def="s32 tempName_17"/>
+    <Field Def="s32 tempName_18"/>
+    <Field Def="s32 tempName_19"/>
+    <Field Def="s32 tempName_20"/>
+    <Field Def="s32 tempName_21"/>
+    <Field Def="s32 tempName_22"/>
+    <Field Def="s32 tempName_23"/>
+    <Field Def="s32 tempName_24"/>
+    <Field Def="s32 tempName_25"/>
+    <Field Def="s32 tempName_26"/>
+    <Field Def="s32 tempName_27"/>
+    <Field Def="s32 tempName_28"/>
+    <Field Def="s32 tempName_29"/>
+    <Field Def="s32 tempName_30"/>
+    <Field Def="s32 tempName_31"/>
+    <Field Def="s32 tempName_32"/>
+    <Field Def="s32 tempName_33"/>
+    <Field Def="s32 tempName_34"/>
+    <Field Def="s32 tempName_35"/>
+    <Field Def="s32 tempName_36"/>
+    <Field Def="s32 tempName_37"/>
+    <Field Def="s32 tempName_38"/>
+    <Field Def="s32 tempName_39"/>
+    <Field Def="s32 tempName_40"/>
+    <Field Def="s32 tempName_41"/>
+    <Field Def="s32 tempName_42"/>
+    <Field Def="s32 tempName_43"/>
+    <Field Def="s32 tempName_44"/>
+    <Field Def="s32 tempName_45"/>
+    <Field Def="s32 tempName_46"/>
+    <Field Def="s32 tempName_47"/>
+    <Field Def="s32 tempName_48"/>
+    <Field Def="s32 tempName_49"/>
+    <Field Def="s32 tempName_50"/>
+    <Field Def="s32 tempName_51"/>
+    <Field Def="s32 tempName_52"/>
+    <Field Def="s32 tempName_53"/>
+    <Field Def="s32 tempName_54"/>
+    <Field Def="s32 tempName_55"/>
+    <Field Def="s32 tempName_56"/>
+    <Field Def="s32 tempName_57"/>
+    <Field Def="s32 tempName_58"/>
+    <Field Def="s32 tempName_59"/>
+    <Field Def="s32 tempName_60"/>
+    <Field Def="s32 tempName_61"/>
+    <Field Def="s32 tempName_62"/>
+    <Field Def="s32 tempName_63"/>
+    <Field Def="s32 tempName_64"/>
+    <Field Def="s32 tempName_65"/>
+    <Field Def="s32 tempName_66"/>
+    <Field Def="s32 tempName_67"/>
+    <Field Def="s32 tempName_68"/>
+  </Fields>
+</PARAMDEF>

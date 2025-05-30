@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
@@ -233,6 +234,8 @@ public class ParamBank
                 {
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".", LogLevel.Error, Tasks.LogPriority.High);
 
+                    //ParamDefHelper.GenerateBaseParamDefFile(paramName, $"{curParam.ParamType}");
+
                     continue;
                 }
             }
@@ -258,7 +261,7 @@ public class ParamBank
 
             try
             {
-                curParam.ApplyParamdef(def, version);
+                curParam.ApplyParamdef(def, version, paramName);
                 paramBank.Add(paramName, curParam);
             }
             catch (Exception e)

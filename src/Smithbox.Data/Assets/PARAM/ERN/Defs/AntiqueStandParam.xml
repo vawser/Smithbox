@@ -1,11 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<PARAMDEF XmlVersion="2">
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
   <ParamType>ANTIQUE_STAND_PARAM_ST</ParamType>
-  <DataVersion>2</DataVersion>
+  <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 XXXXX" />
+    
+    <Field Def="s32 tempName_0"/>
+    <Field Def="s32 tempName_1"/>
+    <Field Def="s32 tempName_2"/>
+    <Field Def="s32 tempName_3"/>
+    <Field Def="s32 tempName_4"/>
   </Fields>
 </PARAMDEF>

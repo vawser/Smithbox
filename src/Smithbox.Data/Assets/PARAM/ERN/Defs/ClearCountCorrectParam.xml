@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CLEAR_COUNT_CORRECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>203</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 tempName_0"/>
+    <Field Def="s32 tempName_1"/>
+    <Field Def="s32 tempName_2"/>
+    <Field Def="s32 tempName_3"/>
+    <Field Def="s32 tempName_4"/>
+    <Field Def="s32 tempName_5"/>
+    <Field Def="s32 tempName_6"/>
+    <Field Def="s32 tempName_7"/>
+    <Field Def="s32 tempName_8"/>
+    <Field Def="s32 tempName_9"/>
+    <Field Def="s32 tempName_10"/>
+    <Field Def="s32 tempName_11"/>
+    <Field Def="s32 tempName_12"/>
+    <Field Def="s32 tempName_13"/>
+    <Field Def="s32 tempName_14"/>
+    <Field Def="s32 tempName_15"/>
+    <Field Def="s32 tempName_16"/>
+    <Field Def="s32 tempName_17"/>
+    <Field Def="s32 tempName_18"/>
+    <Field Def="s32 tempName_19"/>
+    <Field Def="s32 tempName_20"/>
+    <Field Def="s32 tempName_21"/>
+    <Field Def="s32 tempName_22"/>
+    <Field Def="s32 tempName_23"/>
+    <Field Def="s32 tempName_24"/>
+    <Field Def="s32 tempName_25"/>
+    <Field Def="s32 tempName_26"/>
+    <Field Def="s32 tempName_27"/>
+    <Field Def="s32 tempName_28"/>
+    <Field Def="s32 tempName_29"/>
+    <Field Def="s32 tempName_30"/>
+    <Field Def="s32 tempName_31"/>
+  </Fields>
+</PARAMDEF>
