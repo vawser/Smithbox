@@ -13,6 +13,7 @@ public class Oodle
 
     static bool Oodle6Exists = false;
     static bool Oodle8Exists = false;
+    static bool Oodle9Exists = false;
 
     private static bool CanUseOodle6()
     {
@@ -37,6 +38,20 @@ public class Oodle
         if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_8_win64.dll"))
         {
             Oodle8Exists = true;
+            return true;
+        }
+        return false;
+    }
+
+    private static bool CanUseOodle9()
+    {
+        if (Oodle9Exists)
+        {
+            return true;
+        }
+        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_9_win64.dll"))
+        {
+            Oodle9Exists = true;
             return true;
         }
         return false;
@@ -75,7 +90,7 @@ public class Oodle
         }
 
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy oo2core_6_win64.dll or oo2core_8_win64.dll into the program directory");
+            + $"Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the program directory");
     }
 
     [StructLayout(LayoutKind.Sequential)]

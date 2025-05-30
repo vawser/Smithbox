@@ -137,6 +137,25 @@ public static class CategoryGroupings
         TextContainerCategory.Arabic,
     };
 
+    public static List<TextContainerCategory> ERN_Languages = new()
+    {
+        TextContainerCategory.English,
+        TextContainerCategory.French,
+        TextContainerCategory.German,
+        TextContainerCategory.Italian,
+        TextContainerCategory.Japanese,
+        TextContainerCategory.Korean,
+        TextContainerCategory.Polish,
+        TextContainerCategory.Russian,
+        TextContainerCategory.Spanish,
+        TextContainerCategory.SpanishLatin,
+        TextContainerCategory.TraditionalChinese,
+        TextContainerCategory.SimplifiedChinese,
+        TextContainerCategory.Thai,
+        TextContainerCategory.Portuguese,
+        TextContainerCategory.Arabic,
+    };
+
     public static List<TextContainerCategory> AC6_Languages = new()
     {
         TextContainerCategory.English,

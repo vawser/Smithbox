@@ -206,6 +206,10 @@ public class TimeActPropertyEditor
     public void ValueSection(TimeActSelection handler)
     {
         var parameters = handler.CurrentTimeActEvent.Parameters;
+
+        if (parameters == null)
+            return;
+
         var paramValues = handler.CurrentTimeActEvent.Parameters.ParameterValues;
 
         object newValue;

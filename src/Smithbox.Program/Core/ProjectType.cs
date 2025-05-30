@@ -67,6 +67,7 @@ public static class ProjectTypeMethods
             ProjectType.DS3 => BHD5.Game.DarkSouls3,
             ProjectType.SDT => BHD5.Game.DarkSouls3,
             ProjectType.ER => BHD5.Game.EldenRing,
+            ProjectType.ERN => BHD5.Game.EldenRing,
             _ => null
         };
 
@@ -81,6 +82,7 @@ public static class ProjectTypeMethods
             ProjectType.BB => Game.BB,
             ProjectType.SDT => Game.SDT,
             ProjectType.ER => Game.ER,
+            ProjectType.ERN => Game.ERN,
             ProjectType.AC6 => Game.AC6,
             ProjectType.DS2 => Game.DS2,
             _ => null

@@ -1741,7 +1741,7 @@ public class ParamBank
             try
             {
                 var data = TargetFS.GetFile(gameParamPath).GetData().ToArray();
-                using BND4 bnd = SFUtil.DecryptERRegulation(data);
+                using BND4 bnd = SFUtil.DecryptNightreignRegulation(data);
                 LoadParamFromBinder(bnd, ref _params, out _paramVersion);
             }
             catch (Exception e)

@@ -541,7 +541,7 @@ public static class ProjectSettings
                 ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    if (TargetProject.EnableFileBrowser != EnableFileBrowser)
+                    if (TargetProject.EnableBehaviorEditor != EnableBehaviorEditor)
                     {
                         EditorStateChanged = true;
                     }

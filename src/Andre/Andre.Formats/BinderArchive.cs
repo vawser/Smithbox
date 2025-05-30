@@ -80,13 +80,11 @@ namespace Andre.Formats
 
         public static readonly string[] NightreignArchiveNames =
         [
-            "Data0",
-            "Data1",
-            "Data2",
-            "Data3",
-            "DLC",
+            "data0",
+            "data1",
+            "data2",
+            "data3",
             @"sd\sd",
-            @"sd\sd_dlc02",
         ];
 
         public static string[] GetArchiveNames(Game game)

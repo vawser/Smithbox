@@ -1070,6 +1070,25 @@ public class ProjectEntry
             }
         }
 
+
+        if (ProjectType is ProjectType.ERN)
+        {
+            var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
+
+            if (!File.Exists(rootDllPath))
+            {
+                return false;
+            }
+            else
+            {
+                if (!File.Exists(projectDllPath))
+                {
+                    File.Copy(rootDllPath, projectDllPath);
+                }
+            }
+        }
+
         return true;
     }
     #endregion

@@ -397,7 +397,7 @@ public class ProjectUtils
 
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {
-        if (curType is ProjectType.ER)
+        if (curType is ProjectType.ER or ProjectType.ERN)
         {
             return true;
         }

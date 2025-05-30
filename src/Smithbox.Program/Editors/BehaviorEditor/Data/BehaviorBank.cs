@@ -42,8 +42,8 @@ public class BehaviorBank
         Task<bool> behaviorTask = SetupBehavior();
         bool behaviorTaskResult = await behaviorTask;
 
-        Task<bool> idListTask = SetupIdentifierLists();
-        bool idListTaskResult = await idListTask;
+        //Task<bool> idListTask = SetupIdentifierLists();
+        //bool idListTaskResult = await idListTask;
 
         return true;
     }
