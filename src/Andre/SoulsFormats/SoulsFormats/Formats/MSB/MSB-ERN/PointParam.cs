@@ -9,11 +9,11 @@ namespace SoulsFormats
 {
     public partial class MSB_ERN
     {
-        internal enum RegionType : uint
+        public enum RegionType : uint
         {
             InvasionPoint = 1,
             EnvironmentMapPoint = 2,
-            WarpPoint = 0x3,
+            WarpPoint = 3,
             Sound = 4,
             SFX = 5,
             WindSFX = 6,
@@ -50,10 +50,10 @@ namespace SoulsFormats
             HorseRideOverride = 53,
             LockedMountJump = 54,
             LockedMountJumpFall = 55,
-            InformationPoint = 0x38,
-            SuddenDeathArea = 0x39,
-            UserInnerEdgeRemoval = 0x3A,
-            UserOuterEdgeRemoval = 0x3B,
+            InformationPoint = 56,
+            SuddenDeathArea = 57,
+            UserInnerEdgeRemoval = 58,
+            UserOuterEdgeRemoval = 59,
             Other = 0xFFFFFFFF,
         }
 
@@ -613,7 +613,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int UnkE12 { get; set; }
+            public int unkE0C { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -734,7 +734,7 @@ namespace SoulsFormats
                 br.AssertByte(0);
                 br.AssertByte(0);
                 br.AssertByte(0);
-                UnkE12 = br.ReadInt32();
+                unkE0C = br.ReadInt32();
 
                 if (HasTypeData)
                 {
@@ -807,7 +807,7 @@ namespace SoulsFormats
                 bw.WriteByte(0);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
-                bw.WriteInt32(UnkE12);
+                bw.WriteInt32(unkE0C);
 
                 if (Type > RegionType.BuddySummonPoint && Type != RegionType.Other)
                 {

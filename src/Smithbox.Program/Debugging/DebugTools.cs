@@ -40,6 +40,7 @@ public class DebugTools
     public bool ShowTest_MSB_ACV;
     public bool ShowTest_MSB_ACVD;
     public bool ShowTest_MSB_ER;
+    public bool ShowTest_MSB_ERN;
 
     public DebugTools(Smithbox baseEditor)
     {
@@ -168,6 +169,11 @@ public class DebugTools
                 if (ImGui.MenuItem($"MSB_ER"))
                 {
                     ShowTest_MSB_ER = !ShowTest_MSB_ER;
+                }
+
+                if (ImGui.MenuItem($"MSB_ERN"))
+                {
+                    ShowTest_MSB_ERN = !ShowTest_MSB_ERN;
                 }
 
                 ImGui.EndMenu();
@@ -334,6 +340,15 @@ public class DebugTools
             if (ImGui.Begin("MSB_ER", ImGuiWindowFlags.AlwaysAutoResize))
             {
                 Test_MSB_ER.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
+                ImGui.End();
+            }
+        }
+
+        if (ShowTest_MSB_ERN)
+        {
+            if (ImGui.Begin("MSB_ERN", ImGuiWindowFlags.AlwaysAutoResize))
+            {
+                Test_MSB_ERN.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
         }

@@ -22,7 +22,8 @@
 - Time Act Editor: DS2 TAE entries not being presented
 - Map Editor: some japanese names on map objects cause a crash (likely due to ImGui handling).
 
-# FOCUS TODO
+# PRIO TODO
+- ERN MSB: need to make it byte-perfect on save (load is fine)
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Model Editor: implement VFS + data bank overhaul
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager

@@ -13,8 +13,8 @@ namespace SoulsFormats
             Enemy = 2,
             Player = 4,
             Collision = 5,
-            UniqueCharacter = 8, // Has some unknown uniqueness, but resembles a character
-            UniqueAsset = 9, // Has some unknown uniqueness, but resembles an asset
+            DummyEnemy = 8,
+            DummyAsset = 9,
             Asset = 10,
         }
 
@@ -124,10 +124,10 @@ namespace SoulsFormats
                     case ModelType.Asset:
                         return Assets.EchoAdd(new Model.Asset(br));
 
-                    case ModelType.UniqueCharacter:
+                    case ModelType.DummyEnemy:
                         return UniqueCharacters.EchoAdd(new Model.UniqueCharacter(br));
 
-                    case ModelType.UniqueAsset:
+                    case ModelType.DummyAsset:
                         return UniqueAssets.EchoAdd(new Model.UniqueAsset(br));
 
                     default:
@@ -334,7 +334,7 @@ namespace SoulsFormats
             /// </summary>
             public class UniqueCharacter : Model
             {
-                private protected override ModelType Type => ModelType.UniqueCharacter;
+                private protected override ModelType Type => ModelType.DummyEnemy;
                 private protected override bool HasTypeData => false;
 
                 /// <summary>
@@ -350,7 +350,7 @@ namespace SoulsFormats
             /// </summary>
             public class UniqueAsset : Model
             {
-                private protected override ModelType Type => ModelType.UniqueAsset;
+                private protected override ModelType Type => ModelType.DummyAsset;
                 private protected override bool HasTypeData => false;
 
                 /// <summary>

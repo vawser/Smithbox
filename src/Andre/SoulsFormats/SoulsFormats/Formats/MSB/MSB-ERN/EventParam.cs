@@ -21,8 +21,8 @@ namespace SoulsFormats
             SignPool = 23,
             RetryPoint = 24,
             AreaTeam = 25,
-            ConversationInformation = 0x1A,
-            GroupBattleInfo = 0x1B,
+            ConversationInformation = 26,
+            GroupBattleInfo = 27,
             Other = 0xFFFFFFFF,
         }
 
@@ -397,10 +397,15 @@ namespace SoulsFormats
                     bw.FillInt64("TypeDataOffset", 0);
                 }
 
-                if (Type == EventType.PseudoMultiplayer)
-                    bw.Pad(4);
-                else
-                    bw.Pad(8);
+                switch(Type)
+                {
+                    case EventType.PseudoMultiplayer:
+                        bw.Pad(4);
+                        break;
+                    default:
+                        bw.Pad(8);
+                        break;
+                }
 
                 bw.FillInt64("Unk3Offset", bw.Position - start);
                 bw.WriteInt32(MapID);
@@ -411,7 +416,6 @@ namespace SoulsFormats
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
-                bw.Pad(8);
             }
 
             private protected virtual void WriteTypeData(BinaryWriterEx bw)

@@ -1635,15 +1635,15 @@ namespace SoulsFormats
 
                 private protected EnemyBase(BinaryReaderEx br) : base(br) { }
 
-                private int tUnk00 { get; set; }
-                private int tUnk04 { get; set; }
-                private short tUnk1E { get; set; }
-                private int tUnk30 { get; set; }
+                private int UnkT00 { get; set; }
+                private int UnkT04 { get; set; }
+                private short UnkT1E { get; set; }
+                private int UnkT30 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    tUnk00 = br.ReadInt32();
-                    tUnk04 = br.ReadInt32();
+                    UnkT00 = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
                     ThinkParamID = br.ReadInt32();
                     NPCParamID = br.ReadInt32();
                     TalkID = br.ReadInt32();
@@ -1653,11 +1653,11 @@ namespace SoulsFormats
                     CharaInitID = br.ReadInt32();
                     CollisionPartIndex = br.ReadInt32();
                     WalkRouteIndex = br.ReadInt16();
-                    tUnk1E = br.ReadInt16();
+                    UnkT1E = br.ReadInt16();
                     UnkT24 = br.ReadInt32();
                     UnkT28 = br.ReadInt32();
                     ChrActivateCondParamID = br.ReadInt32();
-                    tUnk30 = br.ReadInt32();
+                    UnkT30 = br.ReadInt32();
                     UnkT34 = br.ReadInt32();
                     BackupEventAnimID = br.ReadInt32();
                     UnkT3C = br.ReadInt32();
@@ -1685,8 +1685,8 @@ namespace SoulsFormats
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(tUnk00);
-                    bw.WriteInt32(tUnk04);
+                    bw.WriteInt32(UnkT00);
+                    bw.WriteInt32(UnkT04);
                     bw.WriteInt32(ThinkParamID);
                     bw.WriteInt32(NPCParamID);
                     bw.WriteInt32(TalkID);
@@ -1696,11 +1696,11 @@ namespace SoulsFormats
                     bw.WriteInt32(CharaInitID);
                     bw.WriteInt32(CollisionPartIndex);
                     bw.WriteInt16(WalkRouteIndex);
-                    bw.WriteInt16(tUnk1E);
+                    bw.WriteInt16(UnkT1E);
                     bw.WriteInt32(UnkT24);
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(ChrActivateCondParamID);
-                    bw.WriteInt32(tUnk30);
+                    bw.WriteInt32(UnkT30);
                     bw.WriteInt32(UnkT34);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(UnkT3C);
@@ -3039,21 +3039,21 @@ namespace SoulsFormats
 
                 internal Asset(BinaryReaderEx br) : base(br) { }
 
-                private int tUnk04 { get; set; }
-                private int tUnk14 { get; set; }
+                private int UnkT04 { get; set; }
+                private int UnkT14 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     UnkT00 = br.ReadInt16();
                     UnkT02 = br.AssertInt16([0, 1]);
-                    tUnk04 = br.ReadInt32();
+                    UnkT04 = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                     UnkT10 = br.ReadByte();
                     UnkT11 = br.ReadBoolean();
                     UnkT12 = br.ReadByte();
                     br.AssertByte(0);
-                    tUnk14 = br.ReadInt32();
+                    UnkT14 = br.ReadInt32();
                     br.AssertInt32(0);
                     AssetSfxParamRelativeID = br.ReadInt16();
                     UnkT1E = br.ReadInt16();
@@ -3099,14 +3099,14 @@ namespace SoulsFormats
                 {
                     bw.WriteInt16(UnkT00);
                     bw.WriteInt16(UnkT02);
-                    bw.WriteInt32(tUnk04);
+                    bw.WriteInt32(UnkT04);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                     bw.WriteByte(UnkT10);
                     bw.WriteBoolean(UnkT11);
                     bw.WriteByte(UnkT12);
                     bw.WriteByte(0);
-                    bw.WriteInt32(tUnk14);
+                    bw.WriteInt32(UnkT14);
                     bw.WriteInt32(0);
                     bw.WriteInt16(AssetSfxParamRelativeID);
                     bw.WriteInt16(UnkT1E);
