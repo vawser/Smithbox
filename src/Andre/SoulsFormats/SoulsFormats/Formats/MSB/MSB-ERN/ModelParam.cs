@@ -100,7 +100,7 @@ namespace SoulsFormats
             public override List<Model> GetEntries()
             {
                 return SFUtil.ConcatAll<Model>(
-                    MapPieces, Enemies, Players, Collisions, Assets);
+                    MapPieces, Enemies, Players, Collisions, Assets, UniqueCharacters, UniqueAssets);
             }
             IReadOnlyList<IMsbModel> IMsbParam<IMsbModel>.GetEntries() => GetEntries();
 

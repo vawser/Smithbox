@@ -107,8 +107,10 @@ public abstract class MeshProvider
 
     protected void NotifyAvailable()
     {
-        foreach (WeakReference<IMeshProviderEventListener> listener in _listeners)
+        for(int i = 0; i < _listeners.Count; i++)
         {
+            var listener = _listeners[i];
+
             IMeshProviderEventListener l;
             var succ = listener.TryGetTarget(out l);
             if (succ)
@@ -120,8 +122,10 @@ public abstract class MeshProvider
 
     protected void NotifyUnavailable()
     {
-        foreach (WeakReference<IMeshProviderEventListener> listener in _listeners)
+        for (int i = 0; i < _listeners.Count; i++)
         {
+            var listener = _listeners[i];
+
             IMeshProviderEventListener l;
             var succ = listener.TryGetTarget(out l);
             if (succ)

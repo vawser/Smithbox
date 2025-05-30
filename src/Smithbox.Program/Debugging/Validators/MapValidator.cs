@@ -194,28 +194,8 @@ public static class MapValidator
             {
                 try
                 {
+                    var fileData = File.ReadAllBytes(res.AssetPath);
                     var msb = MSB_ERN.Read(res.AssetPath);
-
-                    if(msb.Regions.Unknown_0x3s.Count > 0)
-                    {
-                        TaskLogs.AddLog(res.AssetPath);
-                    }
-                    if (msb.Regions.Unknown_0x38s.Count > 0)
-                    {
-                        TaskLogs.AddLog(res.AssetPath);
-                    }
-                    if (msb.Regions.Unknown_0x39s.Count > 0)
-                    {
-                        TaskLogs.AddLog(res.AssetPath);
-                    }
-                    if (msb.Regions.Unknown_0x3As.Count > 0)
-                    {
-                        TaskLogs.AddLog(res.AssetPath);
-                    }
-                    if (msb.Regions.Unknown_0x3Bs.Count > 0)
-                    {
-                        TaskLogs.AddLog(res.AssetPath);
-                    }
                 }
                 catch (Exception e)
                 {

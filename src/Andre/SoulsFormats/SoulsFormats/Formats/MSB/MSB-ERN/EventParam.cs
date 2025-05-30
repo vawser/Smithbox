@@ -21,8 +21,8 @@ namespace SoulsFormats
             SignPool = 23,
             RetryPoint = 24,
             AreaTeam = 25,
-            Unknown_0x1A = 0x1A,
-            Unknown_0x1B = 0x1B,
+            ConversationInformation = 0x1A,
+            GroupBattleInfo = 0x1B,
             Other = 0xFFFFFFFF,
         }
 
@@ -89,12 +89,12 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Event.Unknown_0x1A> Unknown_0x1As { get; set; }
+            public List<Event.ConversationInformation> ConversationInfos { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Event.Unknown_0x1B> Unknown_0x1Bs { get; set; }
+            public List<Event.GroupBattleInfo> GroupBattleInfos { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -117,8 +117,8 @@ namespace SoulsFormats
                 SignPools = new List<Event.SignPool>();
                 RetryPoints = new List<Event.RetryPoint>();
                 AreaTeams = new List<Event.AreaTeam>();
-                Unknown_0x1As = new List<Event.Unknown_0x1A>();
-                Unknown_0x1Bs = new List<Event.Unknown_0x1B>();
+                ConversationInfos = new List<Event.ConversationInformation>();
+                GroupBattleInfos = new List<Event.GroupBattleInfo>();
                 Others = new List<Event.Other>();
             }
 
@@ -140,8 +140,8 @@ namespace SoulsFormats
                     case Event.SignPool e: SignPools.Add(e); break;
                     case Event.RetryPoint e: RetryPoints.Add(e); break;
                     case Event.AreaTeam e: AreaTeams.Add(e); break;
-                    case Event.Unknown_0x1A e: Unknown_0x1As.Add(e); break;
-                    case Event.Unknown_0x1B e: Unknown_0x1Bs.Add(e); break;
+                    case Event.ConversationInformation e: ConversationInfos.Add(e); break;
+                    case Event.GroupBattleInfo e: GroupBattleInfos.Add(e); break;
                     case Event.Other e: Others.Add(e); break;
 
                     default:
@@ -159,7 +159,7 @@ namespace SoulsFormats
                 return SFUtil.ConcatAll<Event>(
                     Treasures, Generators, ObjActs, Navmeshes, PseudoMultiplayers, PlatoonInfo,
                     PatrolInfo, Mounts, SignPools, RetryPoints, AreaTeams,
-                    Unknown_0x1As, Unknown_0x1Bs, 
+                    ConversationInfos, GroupBattleInfos, 
                     Others);
             }
             IReadOnlyList<IMsbEvent> IMsbParam<IMsbEvent>.GetEntries() => GetEntries();
@@ -202,11 +202,11 @@ namespace SoulsFormats
                     case EventType.AreaTeam:
                         return AreaTeams.EchoAdd(new Event.AreaTeam(br));
 
-                    case EventType.Unknown_0x1A:
-                        return Unknown_0x1As.EchoAdd(new Event.Unknown_0x1A(br));
+                    case EventType.ConversationInformation:
+                        return ConversationInfos.EchoAdd(new Event.ConversationInformation(br));
 
-                    case EventType.Unknown_0x1B:
-                        return Unknown_0x1Bs.EchoAdd(new Event.Unknown_0x1B(br));
+                    case EventType.GroupBattleInfo:
+                        return GroupBattleInfos.EchoAdd(new Event.GroupBattleInfo(br));
 
                     case EventType.Other:
                         return Others.EchoAdd(new Event.Other(br));
@@ -257,7 +257,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public int Unk14 { get; set; }
+            public int UnkT14 { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -312,7 +312,7 @@ namespace SoulsFormats
                 EventID = br.ReadInt32();
                 br.AssertUInt32((uint)Type);
                 OtherID = br.ReadInt32(); // ID
-                Unk14 = br.AssertInt32([0, 1]);
+                UnkT14 = br.AssertInt32([0, 1]);
                 long baseDataOffset = br.ReadInt64();
                 long typeDataOffset = br.ReadInt64();
                 long unk3Offset = br.ReadInt64();
@@ -369,7 +369,7 @@ namespace SoulsFormats
                     bw.WriteInt32(OtherID);
                 else
                     bw.WriteInt32(id);
-                bw.WriteInt32(Unk14);
+                bw.WriteInt32(UnkT14);
                 bw.ReserveInt64("BaseDataOffset");
                 bw.ReserveInt64("TypeDataOffset");
                 bw.ReserveInt64("Unk3Offset");
@@ -1327,52 +1327,163 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x1A : Event
+            public class ConversationInformation : Event
             {
-                private protected override EventType Type => EventType.Unknown_0x1A;
+                private protected override EventType Type => EventType.ConversationInformation;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x1A with default values.
                 /// </summary>
-                public Unknown_0x1A() : base($"{nameof(Event)}: {nameof(Unknown_0x1A)}") { }
+                public ConversationInformation() : base($"{nameof(Event)}: {nameof(ConversationInformation)}") { }
 
-                internal Unknown_0x1A(BinaryReaderEx br) : base(br) { }
+                internal ConversationInformation(BinaryReaderEx br) : base(br) { }
+
+                public int Unk00 { get; set; }
+                public int Unk04 { get; set; }
+                public int Unk08 { get; set; }
+                public int Unk0C { get; set; }
+                public int Unk10 { get; set; }
+                public int Unk14 { get; set; }
+                public int Unk18 { get; set; }
+                public int Unk1C { get; set; }
+                public int Unk20 { get; set; }
+                public int Unk24 { get; set; }
+                public int Unk28 { get; set; }
+                public int Unk2C { get; set; }
+                public int Unk30 { get; set; }
+                public int Unk34 { get; set; }
+                public int Unk38 { get; set; }
+                public int Unk3C { get; set; }
+                public int Unk40 { get; set; }
+                public int Unk44 { get; set; }
+                public int Unk48 { get; set; }
+                public int Unk4C { get; set; }
+                public int Unk50 { get; set; }
+                public int Unk54 { get; set; }
+                public int Unk58 { get; set; }
+                public int Unk5C { get; set; }
+                public int Unk60 { get; set; }
+                public int Unk64 { get; set; }
+                public int Unk68 { get; set; }
+                public int Unk6C { get; set; }
+                public int Unk70 { get; set; }
+                public int Unk74 { get; set; }
+                public int Unk78 { get; set; }
+                public int Unk7C { get; set; }
+                public int Unk80 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    // br.ReadInt32();
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    Unk0C = br.ReadInt32();
+                    Unk10 = br.ReadInt32();
+                    Unk14 = br.ReadInt32();
+                    Unk18 = br.ReadInt32();
+                    Unk1C = br.ReadInt32();
+                    Unk20 = br.ReadInt32();
+                    Unk24 = br.ReadInt32();
+                    Unk28 = br.ReadInt32();
+                    Unk2C = br.ReadInt32();
+                    Unk30 = br.ReadInt32();
+                    Unk34 = br.ReadInt32();
+                    Unk38 = br.ReadInt32();
+                    Unk3C = br.ReadInt32();
+                    Unk40 = br.ReadInt32();
+                    Unk44 = br.ReadInt32();
+                    Unk48 = br.ReadInt32();
+                    Unk4C = br.ReadInt32();
+                    Unk50 = br.ReadInt32();
+                    Unk54 = br.ReadInt32();
+                    Unk58 = br.ReadInt32();
+                    Unk5C = br.ReadInt32();
+                    Unk60 = br.ReadInt32();
+                    Unk64 = br.ReadInt32();
+                    Unk68 = br.ReadInt32();
+                    Unk6C = br.ReadInt32();
+                    Unk70 = br.ReadInt32();
+                    Unk74 = br.ReadInt32();
+                    Unk78 = br.ReadInt32();
+                    Unk7C = br.ReadInt32();
+                    Unk80 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(RetryPartIndex);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(Unk0C);
+                    bw.WriteInt32(Unk10);
+                    bw.WriteInt32(Unk14);
+                    bw.WriteInt32(Unk18);
+                    bw.WriteInt32(Unk1C);
+                    bw.WriteInt32(Unk20);
+                    bw.WriteInt32(Unk24);
+                    bw.WriteInt32(Unk28);
+                    bw.WriteInt32(Unk2C);
+                    bw.WriteInt32(Unk30);
+                    bw.WriteInt32(Unk34);
+                    bw.WriteInt32(Unk38);
+                    bw.WriteInt32(Unk3C);
+                    bw.WriteInt32(Unk40);
+                    bw.WriteInt32(Unk44);
+                    bw.WriteInt32(Unk48);
+                    bw.WriteInt32(Unk4C);
+                    bw.WriteInt32(Unk50);
+                    bw.WriteInt32(Unk54);
+                    bw.WriteInt32(Unk58);
+                    bw.WriteInt32(Unk5C);
+                    bw.WriteInt32(Unk60);
+                    bw.WriteInt32(Unk64);
+                    bw.WriteInt32(Unk68);
+                    bw.WriteInt32(Unk6C);
+                    bw.WriteInt32(Unk70);
+                    bw.WriteInt32(Unk74);
+                    bw.WriteInt32(Unk78);
+                    bw.WriteInt32(Unk7C);
+                    bw.WriteInt32(Unk80);
                 }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x1B : Event
+            public class GroupBattleInfo : Event
             {
-                private protected override EventType Type => EventType.Unknown_0x1B;
+                private protected override EventType Type => EventType.GroupBattleInfo;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x1B with default values.
                 /// </summary>
-                public Unknown_0x1B() : base($"{nameof(Event)}: {nameof(Unknown_0x1B)}") { }
+                public GroupBattleInfo() : base($"{nameof(Event)}: {nameof(GroupBattleInfo)}") { }
 
-                internal Unknown_0x1B(BinaryReaderEx br) : base(br) { }
+                internal GroupBattleInfo(BinaryReaderEx br) : base(br) { }
+
+                public int TargetEntityGroupID { get; set; }
+
+                // LUA goal?
+                public int Unk04 { get; set; }
+                public int Unk08 { get; set; }
+                public int LeaderEntityID { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    // br.ReadInt32();
+                    TargetEntityGroupID = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
+                    Unk08 = br.ReadInt32();
+                    LeaderEntityID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(RetryPartIndex);
+                    bw.WriteInt32(TargetEntityGroupID);
+                    bw.WriteInt32(Unk04);
+                    bw.WriteInt32(Unk08);
+                    bw.WriteInt32(LeaderEntityID);
                 }
             }
 

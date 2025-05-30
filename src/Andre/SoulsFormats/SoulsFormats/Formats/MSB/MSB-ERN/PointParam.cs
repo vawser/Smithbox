@@ -13,7 +13,7 @@ namespace SoulsFormats
         {
             InvasionPoint = 1,
             EnvironmentMapPoint = 2,
-            Unknown_0x3 = 0x3,
+            WarpPoint = 0x3,
             Sound = 4,
             SFX = 5,
             WindSFX = 6,
@@ -50,10 +50,10 @@ namespace SoulsFormats
             HorseRideOverride = 53,
             LockedMountJump = 54,
             LockedMountJumpFall = 55,
-            Unknown_0x38 = 0x38,
-            Unknown_0x39 = 0x39,
-            Unknown_0x3A = 0x3A,
-            Unknown_0x3B = 0x3B,
+            InformationPoint = 0x38,
+            SuddenDeathArea = 0x39,
+            UserInnerEdgeRemoval = 0x3A,
+            UserOuterEdgeRemoval = 0x3B,
             Other = 0xFFFFFFFF,
         }
 
@@ -256,27 +256,27 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x3> Unknown_0x3s { get; set; }
+            public List<Region.WarpPoint> WarpPoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x38> Unknown_0x38s { get; set; }
+            public List<Region.InformationPoint> InformationPoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x39> Unknown_0x39s { get; set; }
+            public List<Region.SuddenDeathArea> SuddenDeathAreas { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x3A> Unknown_0x3As { get; set; }
+            public List<Region.UserInnerEdgeRemoval> UserInnerEdgeRemovals { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x3B> Unknown_0x3Bs { get; set; }
+            public List<Region.UserOuterEdgeRemoval> UserOuterEdgeRemovals { get; set; }
 
             /// <summary>
             /// Most likely a dumping ground for unused regions.
@@ -326,11 +326,11 @@ namespace SoulsFormats
                 HorseRideOverrides = new List<Region.HorseRideOverride>();
                 LockedMountJumps = new List<Region.LockedMountJump>();
                 LockedMountJumpFalls = new List<Region.LockedMountJumpFall>();
-                Unknown_0x3s = new List<Region.Unknown_0x3>();
-                Unknown_0x38s = new List<Region.Unknown_0x38>();
-                Unknown_0x39s = new List<Region.Unknown_0x39>();
-                Unknown_0x3As = new List<Region.Unknown_0x3A>();
-                Unknown_0x3Bs = new List<Region.Unknown_0x3B>();
+                WarpPoints = new List<Region.WarpPoint>();
+                InformationPoints = new List<Region.InformationPoint>();
+                SuddenDeathAreas = new List<Region.SuddenDeathArea>();
+                UserInnerEdgeRemovals = new List<Region.UserInnerEdgeRemoval>();
+                UserOuterEdgeRemovals = new List<Region.UserOuterEdgeRemoval>();
 
                 Others = new List<Region.Other>();
             }
@@ -380,11 +380,11 @@ namespace SoulsFormats
                     case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
                     case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
                     case Region.DisableTumbleweed r: DisableTumbleweeds.Add(r); break;
-                    case Region.Unknown_0x3 r: Unknown_0x3s.Add(r); break;
-                    case Region.Unknown_0x38 r: Unknown_0x38s.Add(r); break;
-                    case Region.Unknown_0x39 r: Unknown_0x39s.Add(r); break;
-                    case Region.Unknown_0x3A r: Unknown_0x3As.Add(r); break;
-                    case Region.Unknown_0x3B r: Unknown_0x3Bs.Add(r); break;
+                    case Region.WarpPoint r: WarpPoints.Add(r); break;
+                    case Region.InformationPoint r: InformationPoints.Add(r); break;
+                    case Region.SuddenDeathArea r: SuddenDeathAreas.Add(r); break;
+                    case Region.UserInnerEdgeRemoval r: UserInnerEdgeRemovals.Add(r); break;
+                    case Region.UserOuterEdgeRemoval r: UserOuterEdgeRemovals.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -409,7 +409,7 @@ namespace SoulsFormats
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
                     MountJumpFalls, HorseRideOverrides, LockedMountJumps, LockedMountJumpFalls,
-                    Unknown_0x3s, Unknown_0x38s, Unknown_0x39s, Unknown_0x3As, Unknown_0x3Bs,
+                    WarpPoints, InformationPoints, SuddenDeathAreas, UserInnerEdgeRemovals, UserOuterEdgeRemovals,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -533,20 +533,20 @@ namespace SoulsFormats
                     case RegionType.LockedMountJumpFall:
                         return LockedMountJumpFalls.EchoAdd(new Region.LockedMountJumpFall(br));
 
-                    case RegionType.Unknown_0x3:
-                        return Unknown_0x3s.EchoAdd(new Region.Unknown_0x3(br));
+                    case RegionType.WarpPoint:
+                        return WarpPoints.EchoAdd(new Region.WarpPoint(br));
 
-                    case RegionType.Unknown_0x38:
-                        return Unknown_0x38s.EchoAdd(new Region.Unknown_0x38(br));
+                    case RegionType.InformationPoint:
+                        return InformationPoints.EchoAdd(new Region.InformationPoint(br));
 
-                    case RegionType.Unknown_0x39:
-                        return Unknown_0x39s.EchoAdd(new Region.Unknown_0x39(br));
+                    case RegionType.SuddenDeathArea:
+                        return SuddenDeathAreas.EchoAdd(new Region.SuddenDeathArea(br));
 
-                    case RegionType.Unknown_0x3A:
-                        return Unknown_0x3As.EchoAdd(new Region.Unknown_0x3A(br));
+                    case RegionType.UserInnerEdgeRemoval:
+                        return UserInnerEdgeRemovals.EchoAdd(new Region.UserInnerEdgeRemoval(br));
 
-                    case RegionType.Unknown_0x3B:
-                        return Unknown_0x3Bs.EchoAdd(new Region.Unknown_0x3B(br));
+                    case RegionType.UserOuterEdgeRemoval:
+                        return UserOuterEdgeRemovals.EchoAdd(new Region.UserOuterEdgeRemoval(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -708,6 +708,7 @@ namespace SoulsFormats
                     throw new InvalidDataException($"Unexpected {nameof(typeDataOffset)} 0x{typeDataOffset:X} in type {GetType()}.");
                 if (unkOffset4 == 0)
                     throw new InvalidDataException($"{nameof(unkOffset4)} must not be 0 in type {GetType()}.");
+
 
                 br.Position = start + nameOffset;
                 Name = br.ReadUTF16();
@@ -2686,131 +2687,136 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x3 : Region
+            public class WarpPoint : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x3;
+                private protected override RegionType Type => RegionType.WarpPoint;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x38 with default values.
                 /// </summary>
-                public Unknown_0x3() : base($"{nameof(Region)}: {nameof(Unknown_0x3)}") { }
+                public WarpPoint() : base($"{nameof(Region)}: {nameof(WarpPoint)}") { }
 
-                internal Unknown_0x3(BinaryReaderEx br) : base(br) { }
+                internal WarpPoint(BinaryReaderEx br) : base(br) { }
+                public int Unk00 { get; set; }
+                public int Unk04 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    //br.ReadInt32();
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
                 }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x38 : Region
+            public class InformationPoint : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x38;
+                private protected override RegionType Type => RegionType.InformationPoint;
                 private protected override bool HasTypeData => false;
 
                 /// <summary>
                 /// Creates a Unknown_0x38 with default values.
                 /// </summary>
-                public Unknown_0x38() : base($"{nameof(Region)}: {nameof(Unknown_0x38)}") { }
+                public InformationPoint() : base($"{nameof(Region)}: {nameof(InformationPoint)}") { }
 
-                internal Unknown_0x38(BinaryReaderEx br) : base(br) { }
-
-                private protected override void ReadTypeData(BinaryReaderEx br)
-                {
-                    //br.ReadInt32();
-                }
-
-                private protected override void WriteTypeData(BinaryWriterEx bw)
-                {
-                    // bw.WriteInt32(-1);
-                }
-
+                internal InformationPoint(BinaryReaderEx br) : base(br) { }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x39 : Region
+            public class SuddenDeathArea : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x39;
+                private protected override RegionType Type => RegionType.SuddenDeathArea;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x39 with default values.
                 /// </summary>
-                public Unknown_0x39() : base($"{nameof(Region)}: {nameof(Unknown_0x39)}") { }
+                public SuddenDeathArea() : base($"{nameof(Region)}: {nameof(SuddenDeathArea)}") { }
 
-                internal Unknown_0x39(BinaryReaderEx br) : base(br) { }
+                internal SuddenDeathArea(BinaryReaderEx br) : base(br) { }
+
+                public int EntityID { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    //br.ReadInt32();
+                    EntityID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(-1);
+                    bw.WriteInt32(EntityID);
                 }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x3A : Region
+            public class UserInnerEdgeRemoval : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x3A;
+                private protected override RegionType Type => RegionType.UserInnerEdgeRemoval;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x38 with default values.
                 /// </summary>
-                public Unknown_0x3A() : base($"{nameof(Region)}: {nameof(Unknown_0x3A)}") { }
+                public UserInnerEdgeRemoval() : base($"{nameof(Region)}: {nameof(UserInnerEdgeRemoval)}") { }
 
-                internal Unknown_0x3A(BinaryReaderEx br) : base(br) { }
+                internal UserInnerEdgeRemoval(BinaryReaderEx br) : base(br) { }
+
+                public int Unk00 { get; set; }
+                public int Unk04 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    //br.ReadInt32();
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
                 }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x3B : Region
+            public class UserOuterEdgeRemoval : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x3B;
+                private protected override RegionType Type => RegionType.UserOuterEdgeRemoval;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
                 /// Creates a Unknown_0x38 with default values.
                 /// </summary>
-                public Unknown_0x3B() : base($"{nameof(Region)}: {nameof(Unknown_0x3B)}") { }
+                public UserOuterEdgeRemoval() : base($"{nameof(Region)}: {nameof(UserOuterEdgeRemoval)}") { }
 
-                internal Unknown_0x3B(BinaryReaderEx br) : base(br) { }
+                internal UserOuterEdgeRemoval(BinaryReaderEx br) : base(br) { }
+
+                public int Unk00 { get; set; }
+                public int Unk04 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    //br.ReadInt32();
+                    Unk00 = br.ReadInt32();
+                    Unk04 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    // bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk00);
+                    bw.WriteInt32(Unk04);
                 }
             }
 
