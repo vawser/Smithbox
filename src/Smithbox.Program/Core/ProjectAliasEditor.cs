@@ -2,6 +2,7 @@
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text.Json;
+using static SoulsFormats.MQB;
 
 namespace StudioCore.Core;
 
@@ -137,6 +139,30 @@ public static class ProjectAliasEditor
             {
                 CurrentAliasEditor = entry;
                 CurrentAliasEntry = null;
+            }
+
+            if(entry == CurrentAliasEditor)
+            {
+                if (ImGui.BeginPopupContextItem($"AliasTypeContextMenu"))
+                {
+                    if (ImGui.Selectable($"Copy Entries as Text"))
+                    {
+                        var entries = new List<string>();
+
+                        var source = GetAliasList();
+
+                        foreach(var aliasEntry in source)
+                        {
+                            var line = $"{aliasEntry.ID}:{aliasEntry.Name}";
+                            entries.Add(line);
+                        }
+
+                        var output = string.Join("\n", entries.ToArray());
+                        PlatformUtils.Instance.SetClipboardText(output);
+                    }
+
+                    ImGui.EndPopup();
+                }
             }
         }
     }

@@ -987,7 +987,7 @@ public class RowNameFinder
 
                 foreach (var element in searchElements)
                 {
-                    if (r.Name != "" || r.Name != null)
+                    if (r.Name != "" && r.Name != null)
                     {
                         var nameElements = r.Name.Split(" ");
 

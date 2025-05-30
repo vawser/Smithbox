@@ -1,0 +1,34 @@
+{
+  "FileListConfigurations": [
+    {
+        "SourceType": "MTD",
+        "Binder": "speedtree",
+        "CommonPath": "N:\\GR\\data\\INTERROOT_win64\\speedtree\\material\\out\\material_mtd\\"
+    },
+    {
+        "SourceType": "MTD",
+        "Binder": "allmaterialbnd",
+        "CommonPath": "N:\\GR\\data\\Material\\mtd\\"
+    },
+    {
+        "SourceType": "MATBIN",
+        "Binder": "allmaterial",
+        "CommonPath": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin\\"
+    },
+    {
+        "SourceType": "MATBIN",
+        "Binder": "allmaterial_dlc02",
+        "CommonPath": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin_DLC02\\"
+    },
+    {
+        "SourceType": "MATBIN",
+        "Binder": "allmaterial_dlc01",
+        "CommonPath": "N:\\GR\\data\\INTERROOT_win64\\material\\matbin_DLC01\\"
+    },
+    {
+        "SourceType": "MATBIN",
+        "Binder": "speedtree",
+        "CommonPath": "N:\\GR\\data\\INTERROOT_win64\\speedtree\\material\\out\\material_matbin\\"
+    }
+  ]
+}

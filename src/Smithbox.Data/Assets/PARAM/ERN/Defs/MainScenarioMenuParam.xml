@@ -7,8 +7,8 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     
-    <Field Def="s32 tempName_0"/>
-    <Field Def="s32 tempName_1"/>
-    <Field Def="s32 tempName_2"/>
+    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 unknown_2"/>
   </Fields>
 </PARAMDEF>

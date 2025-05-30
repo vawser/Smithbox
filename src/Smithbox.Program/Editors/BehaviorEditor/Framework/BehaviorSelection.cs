@@ -128,7 +128,7 @@ public class BehaviorSelection
 
         JumpBackCommands = new();
 
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             SelectedRoot_HKX3(curFile);
         }

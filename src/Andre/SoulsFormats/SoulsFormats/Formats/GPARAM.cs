@@ -199,14 +199,19 @@ namespace SoulsFormats
             Sbyte = 1,
             Short = 2,
             Int = 3,
+            Unk_4 = 4, // Treated as int for now
             Byte = 5,
+            Unk_6 = 6, // Treated as int for now
             Uint = 7,
+            Unk_8 = 8, // Treated as int for now
             Float = 9,
+            Unk_10 = 10, // Treated as int for now
             Bool = 11, // 0x0B
             Vec2 = 12, // 0x0C
             Vec3 = 13, // 0x0D
             Vec4 = 14, // 0x0E
             Color = 15, // 0x0F
+            Unk_20 = 20, // Treated as int for now
         }
 
         public interface IField
@@ -247,6 +252,16 @@ namespace SoulsFormats
                         return (GPARAM.IField)new GPARAM.Vector4Field(br, version, baseOffsets);
                     case GPARAM.FieldType.Color:
                         return (GPARAM.IField)new GPARAM.ColorField(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_4:
+                        return (GPARAM.IField)new GPARAM.Unk_4Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_6:
+                        return (GPARAM.IField)new GPARAM.Unk_6Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_8:
+                        return (GPARAM.IField)new GPARAM.Unk_8Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_10:
+                        return (GPARAM.IField)new GPARAM.Unk_10Field(br, version, baseOffsets);
+                    case GPARAM.FieldType.Unk_20:
+                        return (GPARAM.IField)new GPARAM.Unk_20Field(br, version, baseOffsets);
                     default:
                         DefaultInterpolatedStringHandler interpolatedStringHandler = new DefaultInterpolatedStringHandler(20, 1);
                         interpolatedStringHandler.AppendLiteral("Unknown field type: ");
@@ -315,7 +330,7 @@ namespace SoulsFormats
                 int num2 = br.ReadInt32();
                 int num3 = (int)br.AssertByte((byte)this.Type);
                 byte capacity = br.ReadByte();
-                int num4 = (int)br.AssertInt16(new short[1]);
+                int num4 = br.ReadInt16();
                 this.Key = br.ReadUTF16();
                 this.Name = br.ReadUTF16();
                 br.Position = (long)(baseOffsets.Values + num1);
@@ -676,6 +691,123 @@ namespace SoulsFormats
                 bw.WriteRGBA(value);
             }
         }
+        public class Unk_4Field : GPARAM.Field<int>
+        {
+            public Unk_4Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_4;
+
+            internal Unk_4Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_6Field : GPARAM.Field<int>
+        {
+            public Unk_6Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_6;
+
+            internal Unk_6Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+
+        public class Unk_8Field : GPARAM.Field<int>
+        {
+            public Unk_8Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_8;
+
+            internal Unk_8Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_20Field : GPARAM.Field<int>
+        {
+            public Unk_20Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_20;
+
+            internal Unk_20Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
+        public class Unk_10Field : GPARAM.Field<int>
+        {
+            public Unk_10Field()
+            {
+            }
+
+            private protected override GPARAM.FieldType Type => GPARAM.FieldType.Unk_10;
+
+            internal Unk_10Field(
+              BinaryReaderEx br,
+              GPARAM.GparamVersion version,
+              GPARAM.BaseOffsets baseOffsets)
+              : base(br, version, baseOffsets)
+            {
+            }
+
+            private protected override int ReadValue(BinaryReaderEx br) => br.ReadInt32();
+
+            private protected override void WriteValue(BinaryWriterEx bw, int value)
+            {
+                bw.WriteInt32(value);
+            }
+        }
 
         public interface IFieldValue
         {
@@ -740,6 +872,7 @@ namespace SoulsFormats
         {
             V3 = 3,
             V5 = 5,
+            V6 = 6
         }
 
         internal struct BaseOffsets

@@ -187,7 +187,7 @@ public class BehaviorEditorScreen : EditorScreen
         if (IsSaving)
             return;
 
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.ERN)
         {
             IsSaving = true;
 

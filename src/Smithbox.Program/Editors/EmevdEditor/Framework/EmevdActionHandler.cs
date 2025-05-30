@@ -3,6 +3,7 @@ using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using static SoulsFormats.EMEVD;
 namespace StudioCore.EventScriptEditorNS;
 
@@ -23,6 +24,17 @@ public class EmevdActionHandler
     public void LogUnknownInstructions()
     {
         List<string> loggedInstructions = new List<string>();
+
+        List<Task> tasks = new();
+
+        // Load all scripts
+        foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
+        {
+            var newTask = Project.EmevdData.PrimaryBank.LoadScript(entry.Key);
+            tasks.Add(newTask);
+        }
+
+        Task.WaitAll(tasks);
 
         foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {
