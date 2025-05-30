@@ -4,6 +4,7 @@ using SoulsFormats;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
 using StudioCore.Interface;
+using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
 
@@ -336,6 +337,17 @@ public class DebugTools
 
     public void QuickTest()
     {
+        var readPath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Defs";
 
+        foreach(var file in Directory.EnumerateFiles(readPath))
+        {
+            var fileName = Path.GetFileName(file);
+
+            var xmlTemplate = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PARAMMETA XmlVersion=\"0\">\r\n  <Self \r\n  Wiki=\"\" />\r\n  \r\n  <Field>\r\n    \r\n  </Field>\r\n  \r\n  <Enums>\r\n  </Enums>\r\n</PARAMMETA>\r\n";
+
+            var writePath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Meta";
+
+            File.WriteAllText($"{writePath}/{fileName}", xmlTemplate);
+        }
     }
 }
