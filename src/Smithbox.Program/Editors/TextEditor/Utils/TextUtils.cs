@@ -47,8 +47,8 @@ public static class TextUtils
                 return CategoryGroupings.SDT_Languages.Contains(category);
             case ProjectType.ER:
                 return CategoryGroupings.ER_Languages.Contains(category);
-            case ProjectType.ERN:
-                return CategoryGroupings.ERN_Languages.Contains(category);
+            case ProjectType.NR:
+                return CategoryGroupings.NR_Languages.Contains(category);
             case ProjectType.AC6:
                 return CategoryGroupings.AC6_Languages.Contains(category);
             case ProjectType.AC4:
@@ -371,41 +371,41 @@ public static class TextUtils
                     }
                 }
                 break;
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 if (IsItemContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
                     {
-                        var enumObj = (Item_MsgBndID_ERN)id;
+                        var enumObj = (Item_MsgBndID_NR)id;
                         name = enumObj.GetDisplayName();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Item_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
                     {
-                        var enumObj = (Menu_MsgBndID_ERN)id;
+                        var enumObj = (Menu_MsgBndID_NR)id;
                         name = enumObj.GetDisplayName();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Menu_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
                     {
-                        var enumObj = (NgWord_MsgBndID_ERN)id;
+                        var enumObj = (NgWord_MsgBndID_NR)id;
                         name = enumObj.GetDisplayName();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"NgWord_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -696,41 +696,41 @@ public static class TextUtils
                 }
                 break;
 
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 if (IsItemContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
                     {
-                        var enumObj = (Item_MsgBndID_ERN)id;
+                        var enumObj = (Item_MsgBndID_NR)id;
                         name = enumObj.ToString();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Item_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
                     {
-                        var enumObj = (Menu_MsgBndID_ERN)id;
+                        var enumObj = (Menu_MsgBndID_NR)id;
                         name = enumObj.ToString();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Menu_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
                     {
-                        var enumObj = (NgWord_MsgBndID_ERN)id;
+                        var enumObj = (NgWord_MsgBndID_NR)id;
                         name = enumObj.ToString();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"NgWord_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
@@ -1046,12 +1046,12 @@ public static class TextUtils
                     }
                 }
                 break;
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 if (IsItemContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
                     {
-                        var enumObj = (Item_MsgBndID_ERN)id;
+                        var enumObj = (Item_MsgBndID_NR)id;
                         name = enumObj.GetShortName();
                     }
                     else
@@ -1061,9 +1061,9 @@ public static class TextUtils
                 }
                 else if (IsMenuContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
                     {
-                        var enumObj = (Menu_MsgBndID_ERN)id;
+                        var enumObj = (Menu_MsgBndID_NR)id;
                         name = enumObj.GetShortName();
                     }
                     else
@@ -1073,9 +1073,9 @@ public static class TextUtils
                 }
                 else if (IsNgWordContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
                     {
-                        var enumObj = (NgWord_MsgBndID_ERN)id;
+                        var enumObj = (NgWord_MsgBndID_NR)id;
                         name = enumObj.GetShortName();
                     }
                     else
@@ -1396,41 +1396,41 @@ public static class TextUtils
                     }
                 }
                 break;
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 if (IsItemContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Item_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Item_MsgBndID_NR), id))
                     {
-                        var enumObj = (Item_MsgBndID_ERN)id;
+                        var enumObj = (Item_MsgBndID_NR)id;
                         name = enumObj.GetDescription();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Item_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(Menu_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(Menu_MsgBndID_NR), id))
                     {
-                        var enumObj = (Menu_MsgBndID_ERN)id;
+                        var enumObj = (Menu_MsgBndID_NR)id;
                         name = enumObj.GetDescription();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Menu_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
                 {
-                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_ERN), id))
+                    if (Enum.IsDefined(typeof(NgWord_MsgBndID_NR), id))
                     {
-                        var enumObj = (NgWord_MsgBndID_ERN)id;
+                        var enumObj = (NgWord_MsgBndID_NR)id;
                         name = enumObj.GetDescription();
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"NgWord_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;

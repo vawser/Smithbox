@@ -137,7 +137,7 @@ public static class CategoryGroupings
         TextContainerCategory.Arabic,
     };
 
-    public static List<TextContainerCategory> ERN_Languages = new()
+    public static List<TextContainerCategory> NR_Languages = new()
     {
         TextContainerCategory.English,
         TextContainerCategory.French,

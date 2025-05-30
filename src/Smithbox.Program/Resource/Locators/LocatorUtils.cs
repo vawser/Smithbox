@@ -143,7 +143,7 @@ public static class LocatorUtils
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
     {
-        if (game is ProjectType.ER or ProjectType.ERN or ProjectType.AC6)
+        if (game is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
             if (!Directory.Exists($@"{gamepath}\map"))
                 return false;

@@ -188,14 +188,14 @@ public static class MapValidator
                 }
             }
         }
-        if (curProject.ProjectType == ProjectType.ERN)
+        if (curProject.ProjectType == ProjectType.NR)
         {
             foreach (var res in resMaps)
             {
                 try
                 {
                     var fileData = File.ReadAllBytes(res.AssetPath);
-                    var msb = MSB_ERN.Read(res.AssetPath);
+                    var msb = MSB_NR.Read(res.AssetPath);
                 }
                 catch (Exception e)
                 {

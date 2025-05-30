@@ -19,7 +19,7 @@ namespace Andre.Formats.Util
                 Game.SDT => SekiroKeys[name],
                 Game.ER => EldenRingKeys[name],
                 Game.AC6 => ArmoredCore6Keys[name],
-                Game.ERN => NightreignKeys[name],
+                Game.NR => NightreignKeys[name],
                 _ => throw new ArgumentException($"No keys for {game}")
             };
         }

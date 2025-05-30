@@ -504,7 +504,7 @@ public static class AliasUtils
         {
             var paramName = "ItemLotParam";
 
-            if (project.ProjectType is ProjectType.ER or ProjectType.ERN)
+            if (project.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 paramName = "ItemLotParam_map";
             }

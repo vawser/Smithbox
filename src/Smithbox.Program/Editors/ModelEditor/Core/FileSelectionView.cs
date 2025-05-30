@@ -212,7 +212,7 @@ public class FileSelectionView
     {
         var assetLabel = "Objects";
 
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             assetLabel = "Assets";
         }

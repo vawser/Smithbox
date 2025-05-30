@@ -49,7 +49,7 @@ public class TexBinderView
         DisplayFileCategories_SDT();
         DisplayFileCategories_ER();
         DisplayFileCategories_AC6();
-        DisplayFileCategories_ERN();
+        DisplayFileCategories_NR();
 
         ImGui.EndChild();
 
@@ -770,9 +770,9 @@ public class TexBinderView
         }
     }
 
-    public void DisplayFileCategories_ERN()
+    public void DisplayFileCategories_NR()
     {
-        if (Project.ProjectType is ProjectType.ERN)
+        if (Project.ProjectType is ProjectType.NR)
         {
             // Chr
             DisplayFileSection(

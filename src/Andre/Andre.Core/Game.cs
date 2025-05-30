@@ -15,7 +15,7 @@ namespace Andre.Core
         ER, // Elden Ring
         AC6, // Armored Core VI: Fires of Rubicon
         DS2, // Dark Souls II
-        ERN // Elden Ring: Nightreign
+        NR // Elden Ring: Nightreign
     }
 
     public static class GameMethods
@@ -34,7 +34,7 @@ namespace Andre.Core
                 Game.AC6 => BHD5.Game.EldenRing,
                 Game.BB => null,
                 Game.DES => null,
-                Game.ERN => BHD5.Game.EldenRing,
+                Game.NR => BHD5.Game.EldenRing,
                 _ => null
             };
         }

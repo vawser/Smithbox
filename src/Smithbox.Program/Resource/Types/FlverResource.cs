@@ -244,7 +244,7 @@ public class FlverResource : IResource, IDisposable
                 //TaskLogs.AddLog($"MTD: {path}");
             }
 
-            if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN)
+            if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 var matbin = bank.GetMatbin(mtdstring);
 

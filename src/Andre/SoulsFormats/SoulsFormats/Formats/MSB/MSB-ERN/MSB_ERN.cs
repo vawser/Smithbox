@@ -8,7 +8,7 @@ namespace SoulsFormats
     /// <summary>
     /// A map layout file used in Sekiro. Extension: .msb
     /// </summary>
-    public partial class MSB_ERN : SoulsFile<MSB_ERN>, IMsb
+    public partial class MSB_NR : SoulsFile<MSB_NR>, IMsb
     {
         /// <summary>
         /// Model files that are available for parts to use.
@@ -47,7 +47,7 @@ namespace SoulsFormats
         /// <summary>
         /// Creates an MSBS with nothing in it.
         /// </summary>
-        public MSB_ERN()
+        public MSB_NR()
         {
             Models = new ModelParam();
             Events = new EventParam();

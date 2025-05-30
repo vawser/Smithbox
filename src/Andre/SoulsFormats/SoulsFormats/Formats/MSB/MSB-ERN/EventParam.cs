@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using static SoulsFormats.MSB_ERN.Event;
+using static SoulsFormats.MSB_NR.Event;
 
 namespace SoulsFormats
 {
-    public partial class MSB_ERN
+    public partial class MSB_NR
     {
         internal enum EventType : uint
         {
@@ -421,13 +421,13 @@ namespace SoulsFormats
             private protected virtual void WriteTypeData(BinaryWriterEx bw)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(ReadTypeData)}.");
 
-            internal virtual void GetNames(MSB_ERN msb, Entries entries)
+            internal virtual void GetNames(MSB_NR msb, Entries entries)
             {
                 PartName = MSB.FindName(entries.Parts, PartIndex);
                 RegionName = MSB.FindName(entries.Regions, RegionIndex);
             }
 
-            internal virtual void GetIndices(MSB_ERN msb, Entries entries)
+            internal virtual void GetIndices(MSB_NR msb, Entries entries)
             {
                 PartIndex = MSB.FindIndex(this, entries.Parts, PartName);
                 RegionIndex = MSB.FindIndex(this, entries.Regions, RegionName);
@@ -531,13 +531,13 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     TreasurePartName = MSB.FindName(entries.Parts, TreasurePartIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     TreasurePartIndex = MSB.FindIndex(this, entries.Parts, TreasurePartName);
@@ -680,14 +680,14 @@ namespace SoulsFormats
                     bw.WritePattern(0x20, 0x00);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     SpawnRegionNames = MSB.FindNames(entries.Regions, SpawnRegionIndices);
                     SpawnPartNames = MSB.FindNames(entries.Parts, SpawnPartIndices);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     SpawnRegionIndices = MSB.FindIndices(this, entries.Regions, SpawnRegionNames);
@@ -770,13 +770,13 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     ObjActPartName = MSB.FindName(entries.Parts, ObjActPartIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     ObjActPartIndex = MSB.FindIndex(this, entries.Parts, ObjActPartName);
@@ -821,13 +821,13 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     NavmeshRegionName = MSB.FindName(entries.Regions, NavmeshRegionIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     NavmeshRegionIndex = MSB.FindIndex(this, entries.Regions, NavmeshRegionName);
@@ -984,13 +984,13 @@ namespace SoulsFormats
                     bw.WriteInt32s(GroupPartsIndices);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     GroupPartsNames = MSB.FindNames(entries.Parts, GroupPartsIndices);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     GroupPartsIndices = MSB.FindIndices(this, entries.Parts, GroupPartsNames);
@@ -1059,7 +1059,7 @@ namespace SoulsFormats
                     bw.WriteInt16s(WalkRegionIndices);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     WalkRegionNames = new string[WalkRegionIndices.Length];
@@ -1067,7 +1067,7 @@ namespace SoulsFormats
                         WalkRegionNames[i] = MSB.FindName(entries.Regions, WalkRegionIndices[i]);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     WalkRegionIndices = new short[WalkRegionNames.Length];
@@ -1121,14 +1121,14 @@ namespace SoulsFormats
                     bw.WriteInt32(MountPartIndex);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     RiderPartName = MSB.FindName(entries.Parts, RiderPartIndex);
                     MountPartName = MSB.FindName(entries.Parts, MountPartIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     RiderPartIndex = MSB.FindIndex(this, entries.Parts, RiderPartName);
@@ -1182,13 +1182,13 @@ namespace SoulsFormats
                     bw.WriteInt32(0);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     SignPartName = MSB.FindName(entries.Parts, SignPartIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     SignPartIndex = MSB.FindIndex(this, entries.Parts, SignPartName);
@@ -1312,14 +1312,14 @@ namespace SoulsFormats
                     bw.WriteInt16(0);
                 }
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     RetryPartName = MSB.FindName(entries.Parts, RetryPartIndex);
                     RetryRegionName = MSB.FindName(entries.Regions, RetryRegionIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     RetryPartIndex = MSB.FindIndex(this, entries.Parts, RetryPartName);

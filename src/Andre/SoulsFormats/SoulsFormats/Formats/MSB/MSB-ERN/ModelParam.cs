@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SoulsFormats
 {
-    public partial class MSB_ERN
+    public partial class MSB_NR
     {
         internal enum ModelType : uint
         {

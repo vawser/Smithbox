@@ -232,10 +232,10 @@ public class MapWrapper
                         return false;
                     }
                     break;
-                case ProjectType.ERN:
+                case ProjectType.NR:
                     try
                     {
-                        MSB = MSB_ERN.Read(mapData);
+                        MSB = MSB_NR.Read(mapData);
                         successfulLoad = true;
                     }
                     catch (Exception e)

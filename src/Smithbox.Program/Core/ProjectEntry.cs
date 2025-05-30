@@ -1071,7 +1071,7 @@ public class ProjectEntry
         }
 
 
-        if (ProjectType is ProjectType.ERN)
+        if (ProjectType is ProjectType.NR)
         {
             var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
@@ -1182,8 +1182,8 @@ public class ProjectEntry
                 file = "ER-File-Dictionary.json"; break;
             case ProjectType.AC6:
                 file = "AC6-File-Dictionary.json"; break;
-            case ProjectType.ERN:
-                file = "ERN-File-Dictionary.json"; break;
+            case ProjectType.NR:
+                file = "NR-File-Dictionary.json"; break;
             default: break;
         }
 

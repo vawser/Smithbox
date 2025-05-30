@@ -95,7 +95,7 @@ public class EmevdBank
                 IsSupported = true;
                 path = $"{AppDomain.CurrentDomain.BaseDirectory}//Assets//EMEVD//ac6-common.emedf.json";
                 break;
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 IsSupported = true;
                 path = $"{AppDomain.CurrentDomain.BaseDirectory}//Assets//EMEVD//ern-common.emedf.json";
                 break;

@@ -173,8 +173,8 @@ public class ParamData
                 }
                 break;
 
-            case ProjectType.ERN:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ERN)
+            case ProjectType.NR:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR)
                 {
                     PrimaryBank.RowNameRestore();
                 }

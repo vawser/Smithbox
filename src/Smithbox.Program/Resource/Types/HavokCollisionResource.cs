@@ -35,7 +35,7 @@ public class HavokCollisionResource : IResource, IDisposable
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
         // HKLib - ER
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if (curProject.MapEditor != null)
             {
@@ -81,7 +81,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(bytes);
         }
 
-        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -90,7 +90,7 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             return LoadInternal_ER(al);
         }
@@ -112,7 +112,7 @@ public class HavokCollisionResource : IResource, IDisposable
         var curProject = ResourceManager.BaseEditor.ProjectManager.SelectedProject;
 
         // HKLib - ER
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if (curProject.MapEditor != null)
             {
@@ -174,7 +174,7 @@ public class HavokCollisionResource : IResource, IDisposable
             Hkx = HKX.Read(file);
         }
 
-        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.DS3 or ProjectType.BB or ProjectType.ER or ProjectType.NR)
         {
             FrontFace = VkFrontFace.Clockwise;
         }
@@ -183,7 +183,7 @@ public class HavokCollisionResource : IResource, IDisposable
             FrontFace = VkFrontFace.CounterClockwise;
         }
 
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.ERN)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             return LoadInternal_ER(al);
         }

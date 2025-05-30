@@ -631,85 +631,85 @@ public class TextEntryGroupManager
                 break;
 
 
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 // Vanilla
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Goods,
-                    Item_MsgBndID_ERN.Summary_Goods,
-                    Item_MsgBndID_ERN.Description_Goods,
-                    Item_MsgBndID_ERN.Effect_Goods));
+                    Item_MsgBndID_NR.Title_Goods,
+                    Item_MsgBndID_NR.Summary_Goods,
+                    Item_MsgBndID_NR.Description_Goods,
+                    Item_MsgBndID_NR.Effect_Goods));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Weapons,
-                    Item_MsgBndID_ERN.Summary_Weapons,
-                    Item_MsgBndID_ERN.Description_Weapons,
+                    Item_MsgBndID_NR.Title_Weapons,
+                    Item_MsgBndID_NR.Summary_Weapons,
+                    Item_MsgBndID_NR.Description_Weapons,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Armor,
-                    Item_MsgBndID_ERN.Summary_Armor,
-                    Item_MsgBndID_ERN.Description_Armor,
+                    Item_MsgBndID_NR.Title_Armor,
+                    Item_MsgBndID_NR.Summary_Armor,
+                    Item_MsgBndID_NR.Description_Armor,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Accessories,
-                    Item_MsgBndID_ERN.Summary_Accessories,
-                    Item_MsgBndID_ERN.Description_Accessories,
+                    Item_MsgBndID_NR.Title_Accessories,
+                    Item_MsgBndID_NR.Summary_Accessories,
+                    Item_MsgBndID_NR.Description_Accessories,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Magic,
-                    Item_MsgBndID_ERN.Summary_Magic,
-                    Item_MsgBndID_ERN.Description_Magic,
+                    Item_MsgBndID_NR.Title_Magic,
+                    Item_MsgBndID_NR.Summary_Magic,
+                    Item_MsgBndID_NR.Description_Magic,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Skill,
+                    Item_MsgBndID_NR.Title_Skill,
                     null,
-                    Item_MsgBndID_ERN.Description_Skill,
-                    Item_MsgBndID_ERN.Effect_Skill));
+                    Item_MsgBndID_NR.Description_Skill,
+                    Item_MsgBndID_NR.Effect_Skill));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_Antique,
-                    Item_MsgBndID_ERN.Summary_Antique,
-                    Item_MsgBndID_ERN.Description_Antique,
+                    Item_MsgBndID_NR.Title_Antique,
+                    Item_MsgBndID_NR.Summary_Antique,
+                    Item_MsgBndID_NR.Description_Antique,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_PermanentBuff,
-                    Item_MsgBndID_ERN.Summary_PermanentBuff,
-                    Item_MsgBndID_ERN.Description_PermanentBuff,
+                    Item_MsgBndID_NR.Title_PermanentBuff,
+                    Item_MsgBndID_NR.Summary_PermanentBuff,
+                    Item_MsgBndID_NR.Description_PermanentBuff,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Item_MsgBndID_ERN.Title_AttachEffect,
-                    Item_MsgBndID_ERN.Summary_AttachEffect,
+                    Item_MsgBndID_NR.Title_AttachEffect,
+                    Item_MsgBndID_NR.Summary_AttachEffect,
                     null,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ERN.Loading_Title,
+                    Menu_MsgBndID_NR.Loading_Title,
                     null,
-                    Menu_MsgBndID_ERN.Loading_Text,
+                    Menu_MsgBndID_NR.Loading_Text,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ERN.Tutorial_Title,
+                    Menu_MsgBndID_NR.Tutorial_Title,
                     null,
-                    Menu_MsgBndID_ERN.Tutorial_Text,
+                    Menu_MsgBndID_NR.Tutorial_Text,
                     null));
 
                 groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ERN.Personal_Scenario_Title,
-                    Menu_MsgBndID_ERN.Personal_Scenario_Objective,
-                    Menu_MsgBndID_ERN.Personal_Scenario_Body,
+                    Menu_MsgBndID_NR.Personal_Scenario_Title,
+                    Menu_MsgBndID_NR.Personal_Scenario_Objective,
+                    Menu_MsgBndID_NR.Personal_Scenario_Body,
                     null));
 
 
                 groupings.Add(new EntryGroupAssociation(
-                    Menu_MsgBndID_ERN.SpEffect_Name,
-                    Menu_MsgBndID_ERN.SpEffect_Info,
-                    Menu_MsgBndID_ERN.SpEffect_Caption,
+                    Menu_MsgBndID_NR.SpEffect_Name,
+                    Menu_MsgBndID_NR.SpEffect_Info,
+                    Menu_MsgBndID_NR.SpEffect_Caption,
                     null));
 
                 break;

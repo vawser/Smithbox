@@ -1045,7 +1045,7 @@ public static class ResourceManager
 
                     if (curProject != null)
                     {
-                        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.ERN)
+                        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
                         {
                             if (texpath.StartsWith("aet/"))
                             {
@@ -1086,7 +1086,7 @@ public static class ResourceManager
                             }
                         }
 
-                        if (curProject.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.ERN)
+                        if (curProject.ProjectType is ProjectType.AC6 or ProjectType.ER or ProjectType.SDT or ProjectType.DS3 or ProjectType.BB or ProjectType.NR)
                         {
                             // Systex
                             if (texpath.Contains("systex"))

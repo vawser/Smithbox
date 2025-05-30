@@ -100,7 +100,7 @@ namespace Andre.Formats
                 Game.ER => EldenRingArchiveNames,
                 Game.AC6 => ArmoredCore6ArchiveNames,
                 Game.DS2 => DarkSouls2ArchiveNames,
-                Game.ERN => NightreignArchiveNames,
+                Game.NR => NightreignArchiveNames,
                 _ => throw new ArgumentOutOfRangeException(nameof(game), game, null)
             };
 

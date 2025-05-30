@@ -6,10 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
-using static SoulsFormats.MSB_ERN;
+using static SoulsFormats.MSB_NR;
 
 namespace StudioCore.DebugNS;
-public static class Test_MSB_ERN
+public static class Test_MSB_NR
 {
     public static List<MismatchData> mismatches = new List<MismatchData>();
 
@@ -88,7 +88,7 @@ public static class Test_MSB_ERN
             File.WriteAllBytes($@"{basepath}\decompressed\{Path.GetFileNameWithoutExtension(res.AssetPath)}",
                 decompressed.ToArray());
 
-            MSB_ERN m = MSB_ERN.Read(decompressed);
+            MSB_NR m = MSB_NR.Read(decompressed);
 
             // Write test version
             var written = m.Write(DCX.Type.None);

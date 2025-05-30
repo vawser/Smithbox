@@ -28,7 +28,7 @@ public static class ProjectCreation
     private static string SteamExecutable_SDT = "";
     private static string SteamExecutable_ER = "";
     private static string SteamExecutable_AC6 = "";
-    private static string SteamExecutable_ERN = "";
+    private static string SteamExecutable_NR = "";
 
     public static bool AutoSelect = false;
 
@@ -59,7 +59,7 @@ public static class ProjectCreation
         ProjectType.DS3,
         ProjectType.SDT,
         ProjectType.ER,
-        ProjectType.ERN,
+        ProjectType.NR,
         ProjectType.AC6,
     };
 
@@ -81,7 +81,7 @@ public static class ProjectCreation
         SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
         SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
         SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
-        SteamExecutable_ERN = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
+        SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
 
         Display = true;
     }
@@ -181,9 +181,9 @@ public static class ProjectCreation
                                 {
                                     DataPath = SteamExecutable_AC6;
                                 }
-                                if (ProjectType is ProjectType.ERN && SteamExecutable_ERN != "" && SteamExecutable_ERN != null)
+                                if (ProjectType is ProjectType.NR && SteamExecutable_NR != "" && SteamExecutable_NR != null)
                                 {
-                                    DataPath = SteamExecutable_ERN;
+                                    DataPath = SteamExecutable_NR;
                                 }
                             }
                         }

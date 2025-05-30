@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 
 namespace SoulsFormats
 {
-    public partial class MSB_ERN
+    public partial class MSB_NR
     {
         internal enum PartType : uint
         {
@@ -711,12 +711,12 @@ namespace SoulsFormats
             private protected virtual void WriteUnk11(BinaryWriterEx bw)
                 => throw new NotImplementedException($"Type {GetType()} missing valid {nameof(WriteUnk11)}.");
 
-            internal virtual void GetNames(MSB_ERN msb, Entries entries)
+            internal virtual void GetNames(MSB_NR msb, Entries entries)
             {
                 ModelName = MSB.FindName(entries.Models, ModelIndex);
             }
 
-            internal virtual void GetIndices(MSB_ERN msb, Entries entries)
+            internal virtual void GetIndices(MSB_NR msb, Entries entries)
             {
                 ModelIndex = MSB.FindIndex(this, entries.Models, ModelName);
             }
@@ -1726,14 +1726,14 @@ namespace SoulsFormats
 
                 private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     CollisionPartName = MSB.FindName(entries.Parts, CollisionPartIndex);
                     WalkRouteName = MSB.FindName(msb.Events.PatrolInfo, WalkRouteIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     CollisionPartIndex = MSB.FindIndex(this, entries.Parts, CollisionPartName);
@@ -2356,13 +2356,13 @@ namespace SoulsFormats
                 private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
                 private protected override void WriteUnk11(BinaryWriterEx bw) => UnkStruct11.Write(bw);
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     CollisionName = MSB.FindName(msb.Parts.Collisions, CollisionIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     CollisionIndex = MSB.FindIndex(this, msb.Parts.Collisions, CollisionName);
@@ -3147,14 +3147,14 @@ namespace SoulsFormats
                 private protected override void WriteTileLoad(BinaryWriterEx bw) => TileLoadConfig.Write(bw);
                 private protected override void WriteUnk11(BinaryWriterEx bw) => UnkStruct11.Write(bw);
 
-                internal override void GetNames(MSB_ERN msb, Entries entries)
+                internal override void GetNames(MSB_NR msb, Entries entries)
                 {
                     base.GetNames(msb, entries);
                     PartNames = MSB.FindNames(entries.Parts, PartIndices);
                     UnkT54PartName = MSB.FindName(entries.Parts, UnkT54PartIndex);
                 }
 
-                internal override void GetIndices(MSB_ERN msb, Entries entries)
+                internal override void GetIndices(MSB_NR msb, Entries entries)
                 {
                     base.GetIndices(msb, entries);
                     PartIndices = MSB.FindIndices(this, entries.Parts, PartNames);

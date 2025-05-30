@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Xml.Serialization;
-using static SoulsFormats.MSB_ERN.Event;
+using static SoulsFormats.MSB_NR.Event;
 
 namespace SoulsFormats
 {
-    public partial class MSB_ERN
+    public partial class MSB_NR
     {
         public enum RegionType : uint
         {

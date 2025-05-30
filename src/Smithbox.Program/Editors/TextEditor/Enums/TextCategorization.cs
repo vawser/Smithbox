@@ -1629,9 +1629,9 @@ public enum ContainerSubCategory
 }
 
 /// <summary>
-/// FMG IDs for ERN
+/// FMG IDs for NR
 /// </summary>
-public enum Item_MsgBndID_ERN
+public enum Item_MsgBndID_NR
 {
     [Display(Name = "Goods", ShortName = "Title", Description = "")]
     Title_Goods = 10,
@@ -1724,7 +1724,7 @@ public enum Item_MsgBndID_ERN
     Description_PermanentBuff = 53,
 }
 
-public enum Menu_MsgBndID_ERN
+public enum Menu_MsgBndID_NR
 {
     [Display(Name = "Talk Messages", ShortName = "Common", Description = "")]
     Talk_Messages = 1,
@@ -1799,7 +1799,7 @@ public enum Menu_MsgBndID_ERN
     SpEffect_Caption = 216
 }
 
-public enum NgWord_MsgBndID_ERN
+public enum NgWord_MsgBndID_NR
 {
     [Display(Name = "Blocked Words", ShortName = "Common", Description = "")]
     NgWord = 1

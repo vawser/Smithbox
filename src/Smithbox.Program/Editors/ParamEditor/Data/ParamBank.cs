@@ -105,7 +105,7 @@ public class ParamBank
             case ProjectType.SDT: successfulLoad = LoadParameters_SDT(); break;
             case ProjectType.ER: successfulLoad = LoadParameters_ER(); break;
             case ProjectType.AC6: successfulLoad = LoadParameters_AC6(); break;
-            case ProjectType.ERN: successfulLoad = LoadParameters_ERN(); break;
+            case ProjectType.NR: successfulLoad = LoadParameters_NR(); break;
         }
 
         ClearParamDiffCaches();
@@ -149,8 +149,8 @@ public class ParamBank
                 successfulSave = SaveParameters_ER(); break;
             case ProjectType.AC6:
                 successfulSave = SaveParameters_AC6(); break;
-            case ProjectType.ERN:
-                successfulSave = SaveParameters_ERN(); break;
+            case ProjectType.NR:
+                successfulSave = SaveParameters_NR(); break;
             default: break;
         }
 
@@ -1727,7 +1727,7 @@ public class ParamBank
     #endregion
 
     #region Elden Ring: Nightreign
-    private bool LoadParameters_ERN()
+    private bool LoadParameters_NR()
     {
         var successfulLoad = true;
 
@@ -1777,11 +1777,11 @@ public class ParamBank
         return successfulLoad;
     }
 
-    private bool SaveParameters_ERN()
+    private bool SaveParameters_NR()
     {
         var successfulSave = true;
 
-        void OverwriteParamsERN(BND4 paramBnd)
+        void OverwriteParamsNR(BND4 paramBnd)
         {
             // Replace params with edited ones
             foreach (BinderFile p in paramBnd.Files)
@@ -1812,14 +1812,14 @@ public class ParamBank
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        if (CFG.Current.Param_StripRowNamesOnSave_NR)
         {
             RowNameStrip();
         }
 
-        OverwriteParamsERN(regParams);
+        OverwriteParamsNR(regParams);
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.ERN);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
 
         var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
 
@@ -1833,11 +1833,11 @@ public class ParamBank
         if (fs.TryGetFile(sysParam, out var sysParamF))
         {
             using var sysParams = BND4.Read(sysParamF.GetData());
-            OverwriteParamsERN(sysParams);
+            OverwriteParamsNR(sysParams);
             ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        if (CFG.Current.Param_StripRowNamesOnSave_NR)
         {
             RowNameRestore();
         }

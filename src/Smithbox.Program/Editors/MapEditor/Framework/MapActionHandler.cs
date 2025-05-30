@@ -142,7 +142,7 @@ public class MapActionHandler
             case ProjectType.ACVD:
                 msbclass = typeof(MSBVD);
                 break;
-            case ProjectType.ERN:
+            case ProjectType.NR:
                 msbclass = typeof(MSBE);
                 break;
             default:

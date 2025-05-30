@@ -45,8 +45,8 @@ public class ProjectUtils
                 return "ER";
             case ProjectType.AC6:
                 return "AC6";
-            case ProjectType.ERN:
-                return "ERN";
+            case ProjectType.NR:
+                return "NR";
             default:
                 throw new Exception("Game type not set");
         }
@@ -54,23 +54,32 @@ public class ProjectUtils
 
     public static string GetBaseFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox";
     }
 
     public static string GetConfigurationFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox\Configuration";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox\Configuration";
     }
     public static string GetThemeFolder()
     {
-        return @$"{AppContext.BaseDirectory}\Assets\Themes";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox\Themes";
     }
 
 
     public static string GetProjectsFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox\Projects";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox\Projects";
     }
+
     public static string GetLocalProjectFolder(ProjectEntry project)
     {
         return @$"{project.ProjectPath}\.smithbox\Project";
@@ -259,9 +268,9 @@ public class ProjectUtils
             {
                 toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER));
             }
-            else if (gameType == ProjectType.ERN && item is BND4 bndERN)
+            else if (gameType == ProjectType.NR && item is BND4 bndNR)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndERN));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR));
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {
@@ -397,7 +406,7 @@ public class ProjectUtils
 
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {
-        if (curType is ProjectType.ER or ProjectType.ERN)
+        if (curType is ProjectType.ER or ProjectType.NR)
         {
             return true;
         }
