@@ -3,9 +3,11 @@ using Octokit;
 using SoulsFormats;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System.IO;
 using System.Numerics;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace StudioCore.DebugNS;
@@ -337,17 +339,24 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var readPath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Defs";
+        var project = BaseEditor.ProjectManager.SelectedProject;
 
-        foreach(var file in Directory.EnumerateFiles(readPath))
+        var newParamTypeInfo = new ParamTypeInfo();
+        newParamTypeInfo.Mapping = new();
+        newParamTypeInfo.Exceptions = new();
+
+        foreach (var entry in project.ParamData.PrimaryBank.Params)
         {
-            var fileName = Path.GetFileName(file);
+            var filename = entry.Key;
+            var type = entry.Value.ParamType;
 
-            var xmlTemplate = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PARAMMETA XmlVersion=\"0\">\r\n  <Self \r\n  Wiki=\"\" />\r\n  \r\n  <Field>\r\n    \r\n  </Field>\r\n  \r\n  <Enums>\r\n  </Enums>\r\n</PARAMMETA>\r\n";
-
-            var writePath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Meta";
-
-            File.WriteAllText($"{writePath}/{fileName}", xmlTemplate);
+            newParamTypeInfo.Mapping.Add(filename, type);
         }
+
+        var json = JsonSerializer.Serialize(newParamTypeInfo, SmithboxSerializerContext.Default.ParamTypeInfo);
+
+        var writePath = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\ERN\Param Type Info.json";
+
+        File.WriteAllText(writePath, json);
     }
 }

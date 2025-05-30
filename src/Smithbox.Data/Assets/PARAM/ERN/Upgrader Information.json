@@ -1,2 +1,11 @@
 {
+  "MaxVersion": "1_01_1_0019L",
+  "RegulationEntries": [
+    {
+      "Version": "1.01.1.0019",
+      "Folder": "1.01.1 (10110019)"
+    }
+  ],
+  "UpgradeCommands": [
+  ]
 }
