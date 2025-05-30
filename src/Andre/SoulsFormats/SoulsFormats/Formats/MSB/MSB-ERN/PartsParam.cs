@@ -1638,6 +1638,7 @@ namespace SoulsFormats
                 private int tUnk00 { get; set; }
                 private int tUnk04 { get; set; }
                 private short tUnk1E { get; set; }
+                private int tUnk30 { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -1656,7 +1657,7 @@ namespace SoulsFormats
                     UnkT24 = br.ReadInt32();
                     UnkT28 = br.ReadInt32();
                     ChrActivateCondParamID = br.ReadInt32();
-                    br.AssertInt32(0);
+                    tUnk30 = br.ReadInt32();
                     UnkT34 = br.ReadInt32();
                     BackupEventAnimID = br.ReadInt32();
                     UnkT3C = br.ReadInt32();
@@ -1699,7 +1700,7 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT24);
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(ChrActivateCondParamID);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(tUnk30);
                     bw.WriteInt32(UnkT34);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(UnkT3C);
@@ -2040,7 +2041,7 @@ namespace SoulsFormats
                     UnkT1C = br.ReadInt32();
                     PlayRegionID = br.ReadInt32();
                     UnkT24 = br.ReadInt16();
-                    UnkT26 = br.AssertInt16([0, 1]);
+                    UnkT26 = br.ReadInt16();
                     br.AssertInt32(0);
                     br.AssertInt32(-1);
                     UnkT30 = br.ReadInt32();

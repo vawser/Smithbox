@@ -22,6 +22,7 @@ namespace SoulsFormats
             RetryPoint = 24,
             AreaTeam = 25,
             Unknown_0x1A = 0x1A,
+            Unknown_0x1B = 0x1B,
             Other = 0xFFFFFFFF,
         }
 
@@ -93,6 +94,11 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public List<Event.Unknown_0x1B> Unknown_0x1Bs { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public List<Event.Other> Others { get; set; }
 
             /// <summary>
@@ -112,6 +118,7 @@ namespace SoulsFormats
                 RetryPoints = new List<Event.RetryPoint>();
                 AreaTeams = new List<Event.AreaTeam>();
                 Unknown_0x1As = new List<Event.Unknown_0x1A>();
+                Unknown_0x1Bs = new List<Event.Unknown_0x1B>();
                 Others = new List<Event.Other>();
             }
 
@@ -134,6 +141,7 @@ namespace SoulsFormats
                     case Event.RetryPoint e: RetryPoints.Add(e); break;
                     case Event.AreaTeam e: AreaTeams.Add(e); break;
                     case Event.Unknown_0x1A e: Unknown_0x1As.Add(e); break;
+                    case Event.Unknown_0x1B e: Unknown_0x1Bs.Add(e); break;
                     case Event.Other e: Others.Add(e); break;
 
                     default:
@@ -150,7 +158,9 @@ namespace SoulsFormats
             {
                 return SFUtil.ConcatAll<Event>(
                     Treasures, Generators, ObjActs, Navmeshes, PseudoMultiplayers, PlatoonInfo,
-                    PatrolInfo, Mounts, SignPools, RetryPoints, AreaTeams, Others);
+                    PatrolInfo, Mounts, SignPools, RetryPoints, AreaTeams,
+                    Unknown_0x1As, Unknown_0x1Bs, 
+                    Others);
             }
             IReadOnlyList<IMsbEvent> IMsbParam<IMsbEvent>.GetEntries() => GetEntries();
 
@@ -194,6 +204,9 @@ namespace SoulsFormats
 
                     case EventType.Unknown_0x1A:
                         return Unknown_0x1As.EchoAdd(new Event.Unknown_0x1A(br));
+
+                    case EventType.Unknown_0x1B:
+                        return Unknown_0x1Bs.EchoAdd(new Event.Unknown_0x1B(br));
 
                     case EventType.Other:
                         return Others.EchoAdd(new Event.Other(br));
@@ -476,6 +489,8 @@ namespace SoulsFormats
 
                 internal Treasure(BinaryReaderEx br) : base(br) { }
 
+                public int Unk00 { get; set; }
+
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     br.AssertInt32(0);
@@ -489,7 +504,7 @@ namespace SoulsFormats
                     InChest = br.ReadByte();
                     StartDisabled = br.ReadByte();
                     br.AssertInt16(0);
-                    br.AssertInt32(0);
+                    Unk00 = br.ReadInt32();
                     br.AssertInt32(0);
                     br.AssertInt32(0);
                 }
@@ -507,7 +522,7 @@ namespace SoulsFormats
                     bw.WriteByte(InChest);
                     bw.WriteByte(StartDisabled);
                     bw.WriteInt16(0);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(Unk00);
                     bw.WriteInt32(0);
                     bw.WriteInt32(0);
                 }
@@ -1318,15 +1333,41 @@ namespace SoulsFormats
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Creates a RetryPoint with default values.
+                /// Creates a Unknown_0x1A with default values.
                 /// </summary>
-                public Unknown_0x1A() : base($"{nameof(Event)}: {nameof(RetryPoint)}") { }
+                public Unknown_0x1A() : base($"{nameof(Event)}: {nameof(Unknown_0x1A)}") { }
 
                 internal Unknown_0x1A(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.ReadInt32();
+                    // br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    // bw.WriteInt32(RetryPartIndex);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class Unknown_0x1B : Event
+            {
+                private protected override EventType Type => EventType.Unknown_0x1B;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Creates a Unknown_0x1B with default values.
+                /// </summary>
+                public Unknown_0x1B() : base($"{nameof(Event)}: {nameof(Unknown_0x1B)}") { }
+
+                internal Unknown_0x1B(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    // br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)

@@ -51,7 +51,9 @@ namespace SoulsFormats
             LockedMountJump = 54,
             LockedMountJumpFall = 55,
             Unknown_0x38 = 0x38,
+            Unknown_0x39 = 0x39,
             Unknown_0x3A = 0x3A,
+            Unknown_0x3B = 0x3B,
             Other = 0xFFFFFFFF,
         }
 
@@ -254,17 +256,27 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.Unknown_0x38> Unknown_0x38s { get; set; }
-
-            /// <summary>
-            /// Unknown.
-            /// </summary>
             public List<Region.Unknown_0x3> Unknown_0x3s { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
+            public List<Region.Unknown_0x38> Unknown_0x38s { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.Unknown_0x39> Unknown_0x39s { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public List<Region.Unknown_0x3A> Unknown_0x3As { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public List<Region.Unknown_0x3B> Unknown_0x3Bs { get; set; }
 
             /// <summary>
             /// Most likely a dumping ground for unused regions.
@@ -314,9 +326,11 @@ namespace SoulsFormats
                 HorseRideOverrides = new List<Region.HorseRideOverride>();
                 LockedMountJumps = new List<Region.LockedMountJump>();
                 LockedMountJumpFalls = new List<Region.LockedMountJumpFall>();
-                Unknown_0x38s = new List<Region.Unknown_0x38>();
                 Unknown_0x3s = new List<Region.Unknown_0x3>();
+                Unknown_0x38s = new List<Region.Unknown_0x38>();
+                Unknown_0x39s = new List<Region.Unknown_0x39>();
                 Unknown_0x3As = new List<Region.Unknown_0x3A>();
+                Unknown_0x3Bs = new List<Region.Unknown_0x3B>();
 
                 Others = new List<Region.Other>();
             }
@@ -366,9 +380,11 @@ namespace SoulsFormats
                     case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
                     case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
                     case Region.DisableTumbleweed r: DisableTumbleweeds.Add(r); break;
-                    case Region.Unknown_0x38 r: Unknown_0x38s.Add(r); break;
                     case Region.Unknown_0x3 r: Unknown_0x3s.Add(r); break;
+                    case Region.Unknown_0x38 r: Unknown_0x38s.Add(r); break;
+                    case Region.Unknown_0x39 r: Unknown_0x39s.Add(r); break;
                     case Region.Unknown_0x3A r: Unknown_0x3As.Add(r); break;
+                    case Region.Unknown_0x3B r: Unknown_0x3Bs.Add(r); break;
                     case Region.Other r: Others.Add(r); break;
 
                     default:
@@ -393,7 +409,7 @@ namespace SoulsFormats
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
                     MountJumpFalls, HorseRideOverrides, LockedMountJumps, LockedMountJumpFalls,
-                    Unknown_0x38s, Unknown_0x3s, Unknown_0x3As,
+                    Unknown_0x3s, Unknown_0x38s, Unknown_0x39s, Unknown_0x3As, Unknown_0x3Bs,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -517,14 +533,20 @@ namespace SoulsFormats
                     case RegionType.LockedMountJumpFall:
                         return LockedMountJumpFalls.EchoAdd(new Region.LockedMountJumpFall(br));
 
-                    case RegionType.Unknown_0x38:
-                        return Unknown_0x38s.EchoAdd(new Region.Unknown_0x38(br));
-
                     case RegionType.Unknown_0x3:
                         return Unknown_0x3s.EchoAdd(new Region.Unknown_0x3(br));
 
+                    case RegionType.Unknown_0x38:
+                        return Unknown_0x38s.EchoAdd(new Region.Unknown_0x38(br));
+
+                    case RegionType.Unknown_0x39:
+                        return Unknown_0x39s.EchoAdd(new Region.Unknown_0x39(br));
+
                     case RegionType.Unknown_0x3A:
                         return Unknown_0x3As.EchoAdd(new Region.Unknown_0x3A(br));
+
+                    case RegionType.Unknown_0x3B:
+                        return Unknown_0x3Bs.EchoAdd(new Region.Unknown_0x3B(br));
 
                     case RegionType.Other:
                         return Others.EchoAdd(new Region.Other(br));
@@ -591,6 +613,11 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public int UnkE12 { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public int MapID { get; set; }
 
             /// <summary>
@@ -602,6 +629,11 @@ namespace SoulsFormats
             /// Unknown.
             /// </summary>
             public int UnkS0C { get; set; }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public int UnkS10 { get; set; }
 
             /// <summary>
             /// If specified, the region is only active when the part is loaded.
@@ -701,7 +733,7 @@ namespace SoulsFormats
                 br.AssertByte(0);
                 br.AssertByte(0);
                 br.AssertByte(0);
-                br.AssertInt32(0);
+                UnkE12 = br.ReadInt32();
 
                 if (HasTypeData)
                 {
@@ -715,7 +747,7 @@ namespace SoulsFormats
                 UnkS04 = br.ReadInt32();
                 br.AssertInt32(0);
                 UnkS0C = br.ReadInt32();
-                br.AssertInt32([0, -1]);
+                UnkS10 = br.ReadInt32();
                 br.AssertInt32(0);
                 br.AssertInt32(0);
                 br.AssertInt32(0);
@@ -774,7 +806,7 @@ namespace SoulsFormats
                 bw.WriteByte(0);
                 bw.WriteByte(0);
                 bw.WriteByte(0);
-                bw.WriteInt32(0);
+                bw.WriteInt32(UnkE12);
 
                 if (Type > RegionType.BuddySummonPoint && Type != RegionType.Other)
                 {
@@ -801,7 +833,7 @@ namespace SoulsFormats
                 bw.WriteInt32(UnkS04);
                 bw.WriteInt32(0);
                 bw.WriteInt32(UnkS0C);
-                bw.WriteInt32(0);
+                bw.WriteInt32(UnkS10);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
                 bw.WriteInt32(0);
@@ -2075,6 +2107,8 @@ namespace SoulsFormats
 
                 internal GroupDefeatReward(BinaryReaderEx br) : base(br) { }
 
+                public int tUnk { get; set; }
+
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     UnkT00 = br.ReadInt32();
@@ -2093,7 +2127,7 @@ namespace SoulsFormats
                     br.AssertInt32(-1);
                     br.AssertInt32(-1);
                     EstusFlaskRecoveryID = br.ReadInt32();
-                    br.AssertInt32(0);
+                    tUnk = br.ReadInt32();
                     br.AssertInt32(0);
                 }
 
@@ -2115,7 +2149,7 @@ namespace SoulsFormats
                     bw.WriteInt32(-1);
                     bw.WriteInt32(-1);
                     bw.WriteInt32(EstusFlaskRecoveryID);
-                    bw.WriteInt32(0);
+                    bw.WriteInt32(tUnk);
                     bw.WriteInt32(0);
                 }
 
@@ -2562,12 +2596,14 @@ namespace SoulsFormats
 
                 internal LockedMountJump(BinaryReaderEx br) : base(br) { }
 
+                public int Unk12 { get; set; }
+
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
                     JumpHeight = br.ReadSingle();
                     UnkT04 = br.ReadInt32();
                     EnableEventFlagID = br.ReadInt32();
-                    br.AssertInt32(-1);
+                    Unk12 = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
@@ -2575,7 +2611,7 @@ namespace SoulsFormats
                     bw.WriteSingle(JumpHeight);
                     bw.WriteInt32(UnkT04);
                     bw.WriteInt32(EnableEventFlagID);
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk12);
                 }
             }
 
@@ -2599,16 +2635,18 @@ namespace SoulsFormats
 
                 internal LockedMountJumpFall(BinaryReaderEx br) : base(br) { }
 
+                public int Unk00 { get; set; }
+
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    br.AssertInt32(-1);
+                    Unk00 = br.ReadInt32();
                     br.AssertInt32(0);
                     EnableEventFlagID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(-1);
+                    bw.WriteInt32(Unk00);
                     bw.WriteInt32(0);
                     bw.WriteInt32(EnableEventFlagID);
                 }
@@ -2648,6 +2686,32 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
+            public class Unknown_0x3 : Region
+            {
+                private protected override RegionType Type => RegionType.Unknown_0x3;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Creates a Unknown_0x38 with default values.
+                /// </summary>
+                public Unknown_0x3() : base($"{nameof(Region)}: {nameof(Unknown_0x3)}") { }
+
+                internal Unknown_0x3(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    //br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    // bw.WriteInt32(-1);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
             public class Unknown_0x38 : Region
             {
                 private protected override RegionType Type => RegionType.Unknown_0x38;
@@ -2675,17 +2739,17 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class Unknown_0x3 : Region
+            public class Unknown_0x39 : Region
             {
-                private protected override RegionType Type => RegionType.Unknown_0x3;
+                private protected override RegionType Type => RegionType.Unknown_0x39;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
-                /// Creates a Unknown_0x38 with default values.
+                /// Creates a Unknown_0x39 with default values.
                 /// </summary>
-                public Unknown_0x3() : base($"{nameof(Region)}: {nameof(Unknown_0x3)}") { }
+                public Unknown_0x39() : base($"{nameof(Region)}: {nameof(Unknown_0x39)}") { }
 
-                internal Unknown_0x3(BinaryReaderEx br) : base(br) { }
+                internal Unknown_0x39(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
@@ -2712,6 +2776,32 @@ namespace SoulsFormats
                 public Unknown_0x3A() : base($"{nameof(Region)}: {nameof(Unknown_0x3A)}") { }
 
                 internal Unknown_0x3A(BinaryReaderEx br) : base(br) { }
+
+                private protected override void ReadTypeData(BinaryReaderEx br)
+                {
+                    //br.ReadInt32();
+                }
+
+                private protected override void WriteTypeData(BinaryWriterEx bw)
+                {
+                    // bw.WriteInt32(-1);
+                }
+            }
+
+            /// <summary>
+            /// Unknown.
+            /// </summary>
+            public class Unknown_0x3B : Region
+            {
+                private protected override RegionType Type => RegionType.Unknown_0x3B;
+                private protected override bool HasTypeData => true;
+
+                /// <summary>
+                /// Creates a Unknown_0x38 with default values.
+                /// </summary>
+                public Unknown_0x3B() : base($"{nameof(Region)}: {nameof(Unknown_0x3B)}") { }
+
+                internal Unknown_0x3B(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {

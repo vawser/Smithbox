@@ -13,6 +13,8 @@ namespace SoulsFormats
             Enemy = 2,
             Player = 4,
             Collision = 5,
+            UniqueCharacter = 8, // Has some unknown uniqueness, but resembles a character
+            UniqueAsset = 9, // Has some unknown uniqueness, but resembles an asset
             Asset = 10,
         }
 
@@ -47,6 +49,16 @@ namespace SoulsFormats
             public List<Model.Asset> Assets { get; set; }
 
             /// <summary>
+            /// Models for assets.
+            /// </summary>
+            public List<Model.UniqueCharacter> UniqueCharacters { get; set; }
+
+            /// <summary>
+            /// Models for assets.
+            /// </summary>
+            public List<Model.UniqueAsset> UniqueAssets { get; set; }
+
+            /// <summary>
             /// Creates an empty ModelParam with the default version.
             /// </summary>
             public ModelParam() : base(73, "MODEL_PARAM_ST")
@@ -56,6 +68,8 @@ namespace SoulsFormats
                 Players = new List<Model.Player>();
                 Collisions = new List<Model.Collision>();
                 Assets = new List<Model.Asset>();
+                UniqueCharacters = new List<Model.UniqueCharacter>();
+                UniqueAssets = new List<Model.UniqueAsset>();
             }
 
             /// <summary>
@@ -70,6 +84,8 @@ namespace SoulsFormats
                     case Model.Player m: Players.Add(m); break;
                     case Model.Collision m: Collisions.Add(m); break;
                     case Model.Asset m: Assets.Add(m); break;
+                    case Model.UniqueCharacter m: UniqueCharacters.Add(m); break;
+                    case Model.UniqueAsset m: UniqueAssets.Add(m); break;
 
                     default:
                         throw new ArgumentException($"Unrecognized type {model.GetType()}.", nameof(model));
@@ -107,6 +123,12 @@ namespace SoulsFormats
 
                     case ModelType.Asset:
                         return Assets.EchoAdd(new Model.Asset(br));
+
+                    case ModelType.UniqueCharacter:
+                        return UniqueCharacters.EchoAdd(new Model.UniqueCharacter(br));
+
+                    case ModelType.UniqueAsset:
+                        return UniqueAssets.EchoAdd(new Model.UniqueAsset(br));
 
                     default:
                         throw new NotImplementedException($"Unimplemented model type: {type}");
@@ -305,6 +327,38 @@ namespace SoulsFormats
                 public Collision() : base("hXXXXXX") { }
 
                 internal Collision(BinaryReaderEx br) : base(br) { }
+            }
+
+            /// <summary>
+            /// An character model with an unknown unique element
+            /// </summary>
+            public class UniqueCharacter : Model
+            {
+                private protected override ModelType Type => ModelType.UniqueCharacter;
+                private protected override bool HasTypeData => false;
+
+                /// <summary>
+                /// Creates an Object with default values.
+                /// </summary>
+                public UniqueCharacter() : base("cXXXX") { }
+
+                internal UniqueCharacter(BinaryReaderEx br) : base(br) { }
+            }
+
+            /// <summary>
+            /// An asset model with an unknown unique element
+            /// </summary>
+            public class UniqueAsset : Model
+            {
+                private protected override ModelType Type => ModelType.UniqueAsset;
+                private protected override bool HasTypeData => false;
+
+                /// <summary>
+                /// Creates an Object with default values.
+                /// </summary>
+                public UniqueAsset() : base("AEGxxx_xxx") { }
+
+                internal UniqueAsset(BinaryReaderEx br) : base(br) { }
             }
         }
     }

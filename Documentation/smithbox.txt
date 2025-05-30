@@ -27,3 +27,14 @@
 - Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 
 - Add ERN support 
+
+Region:
+0x3
+
+0x38
+
+0x39
+
+0x3A
+
+0x3B
