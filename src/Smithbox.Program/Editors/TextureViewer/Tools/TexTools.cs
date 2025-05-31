@@ -29,7 +29,7 @@ public class TexTools
 
     public void ExportTextureHandler()
     {
-        var currentTexture = Editor.Selection.PreviewTextureResource;
+        var currentTexture = Editor.Selection.ViewerTextureResource;
         var currentTextureName = Editor.Selection.SelectedTextureKey;
 
         if (currentTexture != null)
