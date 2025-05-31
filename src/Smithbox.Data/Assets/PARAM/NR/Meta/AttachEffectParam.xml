@@ -4,7 +4,30 @@
   Wiki="" />
   
   <Field>
+    <spEffectId_1 
+    AltName="SpEffect ID: 1" 
+    Wiki="The SpEffect to apply." 
+    Refs="SpEffectParam" />
     
+    <spEffectId_2 
+    AltName="SpEffect ID: 2" 
+    Wiki="The SpEffect to apply." 
+    Refs="SpEffectParam" />
+    
+    <spEffectId_3 
+    AltName="SpEffect ID: 3" 
+    Wiki="The SpEffect to apply." 
+    Refs="SpEffectParam" />
+    
+    <spEffectId_4 
+    AltName="SpEffect ID: 4" 
+    Wiki="The SpEffect to apply." 
+    Refs="SpEffectParam" />
+    
+    <spEffectId_5
+    AltName="SpEffect ID: 5" 
+    Wiki="The SpEffect to apply." 
+    Refs="SpEffectParam" />
   </Field>
   
   <Enums>

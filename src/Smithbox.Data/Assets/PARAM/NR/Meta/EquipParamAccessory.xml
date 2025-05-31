@@ -4,6 +4,23 @@
   Wiki="" />
   
   <Field>
+    <spEffectId_1 
+    AltName="SpEffect: 1" 
+    Wiki="The SpEffect to apply when this talisman is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId_2 
+    AltName="SpEffect: 2" 
+    Wiki="The SpEffect to apply when this talisman is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
+    
+    <spEffectId_3 
+    AltName="SpEffect: 3" 
+    Wiki="The SpEffect to apply when this talisman is equipped." 
+    Refs="SpEffectParam" 
+    DeepCopyTarget="SpEffect" />
     
   </Field>
   

@@ -4,6 +4,10 @@
   Wiki="" />
   
   <Field>
+    <attachEffectId 
+    AltName="Attached Effect" 
+    Wiki="The attached effect to use." 
+    Refs="AttachEffectParam" />
     
   </Field>
   

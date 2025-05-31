@@ -4,6 +4,20 @@
   Wiki="" />
   
   <Field>
+    <attachEffectTableId_1 
+    AltName="Attached Effect Table: 1" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_2
+    AltName="Attached Effect Table: 2" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_3 
+    AltName="Attached Effect Table: 3" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
     
   </Field>
   

@@ -1441,7 +1441,7 @@ public class FieldDecorators
             foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
             {
                 var meta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
-                if (meta.RefTypes == null)
+                if (meta == null || meta.RefTypes == null)
                 {
                     continue;
                 }
@@ -1489,7 +1489,7 @@ public class FieldDecorators
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if (editor.Project.ParamData.GraphLegends != null)
+            if (editor.Project.ParamData.GraphLegends != null && editor.Project.ParamData.GraphLegends.Entries != null)
             {
                 var entry = editor.Project.ParamData.GraphLegends.Entries
                     .FirstOrDefault(e => e.RowID == $"{row.ID}");

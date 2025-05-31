@@ -4,6 +4,55 @@
   Wiki="" />
   
   <Field>
+    <equippedWeapon_1 
+    AltName="Equipped Weapon: 1" 
+    Wiki="" 
+    Refs="EquipParamWeapon" />
+    
+    <equippedWeapon_2
+    AltName="Equipped Weapon: 2" 
+    Wiki="" 
+    Refs="EquipParamWeapon" />
+    
+    <equippedWeapon_3 
+    AltName="Equipped Weapon: 3" 
+    Wiki="" 
+    Refs="EquipParamWeapon" />
+    
+    <equippedWeapon_4 
+    AltName="Equipped Weapon: 4" 
+    Wiki="" 
+    Refs="EquipParamWeapon" />
+    
+    <equippedWeapon_5 
+    AltName="Equipped Weapon: 5" 
+    Wiki="" 
+    Refs="EquipParamWeapon"  />
+    
+    <equippedWeapon_6 
+    AltName="Equipped Weapon: 6" 
+    Wiki="" 
+    Refs="EquipParamWeapon"  />
+    
+    <equippedProtector_1 
+    AltName="Equipped Armor: Head" 
+    Wiki="" 
+    Refs="EquipParamProtector" />
+    
+    <equippedProtector_2 
+    AltName="Equipped Armor: Body" 
+    Wiki="" 
+    Refs="EquipParamProtector" />
+    
+    <equippedProtector_3 
+    AltName="Equipped Armor: Arms" 
+    Wiki="" 
+    Refs="EquipParamProtector" />
+    
+    <equippedProtector_4
+    AltName="Equipped Armor: Legs" 
+    Wiki="" 
+    Refs="EquipParamProtector" />
     
   </Field>
   
