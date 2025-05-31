@@ -19,6 +19,7 @@ using StudioCore.ViewportNS;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -599,16 +600,21 @@ public class MapPropertyView
         ImGui.Text("Name");
         ImGui.NextColumn();
         var first = entities.First();
-        if (first != editName.entity) editName = (first.Name, first);
+
+        if (first != editName.entity) 
+            editName = (first.Name, first);
 
         ImGui.PushItemWidth(-1);
-        if (ImGui.InputText("##EntityName", ref editName.name, 64))
+
+        var input = new InputTextHandler(editName.name);
+
+        if (input.Draw("##value", out string newValue))
         {
             if (entities.Count() == 1)
             {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
-                    new List<string> { editName.name },
+                    new List<string> { newValue },
                     false
                 ));
             }
@@ -616,7 +622,7 @@ public class MapPropertyView
             {
                 ContextActionManager.ExecuteAction(new RenameObjectsAction(
                     entities.ToList(),
-                    entities.Select((ent, i) => $"{editName.name}_{i}").ToList(),
+                    entities.Select((ent, i) => $"{newValue}_{i}").ToList(),
                     false
                 ));
             }
@@ -1147,7 +1153,6 @@ public class MapPropertyView
         UIHelper.Tooltip(text);
     }
 
-
     private (bool, bool) PropertyRow(MapEntityPropertyFieldMeta meta, Type typ, object oldval, out object newval, PropertyInfo prop, IEnumerable<Entity> entSelection)
     {
         ImGui.SetNextItemWidth(-1);
@@ -1159,9 +1164,11 @@ public class MapPropertyView
             var val = (long)oldval;
             var strval = $@"{val}";
 
-            if (ImGui.InputText("##value", ref strval, 99))
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                var res = long.TryParse(strval, out val);
+                var res = long.TryParse(newValue, out val);
                 if (res)
                 {
                     newval = val;
@@ -1225,9 +1232,11 @@ public class MapPropertyView
             }
             else
             {
-                if (ImGui.InputText("##value", ref strval, 16))
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
                 {
-                    var res = uint.TryParse(strval, out val);
+                    var res = uint.TryParse(newValue, out val);
                     if (res)
                     {
                         newval = val;
@@ -1292,9 +1301,11 @@ public class MapPropertyView
             }
             else
             {
-                if (ImGui.InputText("##value", ref strval, 5))
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
                 {
-                    var res = ushort.TryParse(strval, out val);
+                    var res = ushort.TryParse(newValue, out val);
                     if (res)
                     {
                         newval = val;
@@ -1359,9 +1370,11 @@ public class MapPropertyView
             }
             else
             {
-                if (ImGui.InputText("##value", ref strval, 3))
+                var input = new InputTextHandler(strval);
+
+                if (input.Draw("##value", out string newValue))
                 {
-                    var res = byte.TryParse(strval, out val);
+                    var res = byte.TryParse(newValue, out val);
                     if (res)
                     {
                         newval = val;
@@ -1397,9 +1410,11 @@ public class MapPropertyView
                 val = "";
             }
 
-            if (ImGui.InputText("##value", ref val, 99))
+            var input = new InputTextHandler(val);
+
+            if (input.Draw("##value", out string newValue))
             {
-                newval = val;
+                newval = newValue;
                 isChanged = true;
             }
         }

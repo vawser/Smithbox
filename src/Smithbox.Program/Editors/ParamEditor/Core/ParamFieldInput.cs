@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
 using StudioCore.Interface;
 using System;
+using System.IO;
 using System.Numerics;
 using System.Reflection;
 
@@ -49,9 +50,12 @@ public class ParamFieldInput
         {
             var val = (long)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 128))
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                var res = long.TryParse(strval, out val);
+                var res = long.TryParse(newValue, out val);
                 if (res)
                 {
                     newval = val;
@@ -74,9 +78,12 @@ public class ParamFieldInput
         {
             var val = (uint)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 16))
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                var res = uint.TryParse(strval, out val);
+                var res = uint.TryParse(newValue, out val);
                 if (res)
                 {
                     newval = val;
@@ -99,9 +106,12 @@ public class ParamFieldInput
         {
             var val = (ushort)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 5))
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                var res = ushort.TryParse(strval, out val);
+                var res = ushort.TryParse(newValue, out val);
                 if (res)
                 {
                     newval = val;
@@ -124,9 +134,12 @@ public class ParamFieldInput
         {
             var val = (byte)oldval;
             var strval = $@"{val}";
-            if (ImGui.InputText("##value", ref strval, 3))
+
+            var input = new InputTextHandler(strval);
+
+            if (input.Draw("##value", out string newValue))
             {
-                var res = byte.TryParse(strval, out val);
+                var res = byte.TryParse(newValue, out val);
                 if (res)
                 {
                     newval = val;
@@ -193,9 +206,11 @@ public class ParamFieldInput
             if (val == null)
                 val = "";
 
-            if (ImGui.InputText("##value", ref val, 128))
+            var input = new InputTextHandler(val);
+
+            if (input.Draw("##value", out string newValue))
             {
-                newval = val;
+                newval = newValue;
                 _editedPropCache = newval;
                 _changedCache = true;
             }

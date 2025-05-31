@@ -227,3 +227,42 @@ public static class UIHelper
         return (nuint)byteCount;
     }
 }
+
+public class InputTextHandler
+{
+    private byte[] _buffer;
+
+    public InputTextHandler(string initialValue, int size = 512)
+    {
+        _buffer = new byte[size];
+        Update(initialValue);
+    }
+
+    public void Update(string value)
+    {
+        Array.Clear(_buffer, 0, _buffer.Length);
+        Encoding.UTF8.GetBytes(value ?? "", 0, value?.Length ?? 0, _buffer, 0);
+    }
+
+    public bool Draw(string label, out string result)
+    {
+        bool changed = false;
+        unsafe
+        {
+            fixed (byte* bufPtr = _buffer)
+            {
+                if (ImGui.InputText(label, bufPtr, (uint)_buffer.Length))
+                {
+                    int len = Array.IndexOf(_buffer, (byte)0);
+                    result = Encoding.UTF8.GetString(_buffer, 0, len >= 0 ? len : _buffer.Length);
+                    changed = true;
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+        }
+        return changed;
+    }
+}

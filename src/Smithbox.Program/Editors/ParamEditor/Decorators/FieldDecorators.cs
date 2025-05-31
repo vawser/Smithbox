@@ -813,14 +813,17 @@ public class FieldDecorators
                 {
                     var curFieldMeta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
 
-                    if (curFieldMeta.VirtualRef != null &&
-                        curFieldMeta.VirtualRef.Equals(virtualRefName))
+                    if (curFieldMeta != null)
                     {
-                        if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                        if (curFieldMeta.VirtualRef != null &&
+                            curFieldMeta.VirtualRef.Equals(virtualRefName))
                         {
-                            EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
-                            EditorCommandQueue.AddCommand(
-                                $@"param/search/prop {f.InternalName} ^{searchValue.ToParamEditorString()}$");
+                            if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                            {
+                                EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
+                                EditorCommandQueue.AddCommand(
+                                    $@"param/search/prop {f.InternalName} ^{searchValue.ToParamEditorString()}$");
+                            }
                         }
                     }
                 }
