@@ -25,11 +25,10 @@
         "EquipParamProtector",
         "EquipParamWeapon",
         "GameAreaParam",
-        "ItemLotParam_enemy",
-        "ItemLotParam_map",
-        "ItemTableParam",
         "LockCamParam",
         "Magic",
+        "MagicTableParam",
+        "MixcraftMagicParam",
         "NpcParam",
         "NpcThinkParam",
         "ReinforceParamProtector",
@@ -42,12 +41,45 @@
         "SpEffectVfxParam",
         "SwordArtsParam",
         "SwordArtsTableParam",
-        "default_EnemyBehaviorBank",
-        "default_EnemyBehaviorBank",
-        "default_EnemyBehaviorBank",
-        "default_EnemyBehaviorBank",
-        "default_EnemyBehaviorBank",
-        "default_EnemyBehaviorBank"
+        "PermanentBuffParam",
+        "WepAbsorpPosParam",
+        "ToughnessParam",
+        "ThrowParam",
+        "ThrowCounterParam",
+        "ItemLotParam_enemy",
+        "ItemLotParam_map",
+        "ItemTableParam"
+      ]
+    },
+    {
+      "DisplayName": "Hero",
+      "Params": [
+        "HeroParam",
+        "HeroMenuCameraParam",
+        "HeroMenuParam",
+        "HeroOperationExplanationParam",
+        "HeroStatusParam",
+        "PersonalScenarioParam"
+      ]
+    },
+    {
+      "DisplayName": "Map",
+      "Params": [
+        "MapPatternCommon",
+        "MapPatternMapLotCondition",
+        "MapPatternSet",
+        "SmallBaseAndSpotAttachPoint",
+        "SmallBaseAndSpotDefine",
+        "SmallBaseEnemyLotMapCombinationParam",
+        "SmallbaseInvationNpcParam",
+        "LotResultSmallBaseAndSpot",
+        "LotBaseMapPatternFlag",
+        "LotBaseSmallBaseAndSpot",
+        "LotResultMapPatternFlag",
+        "LotResultPlayAreaParam",
+        "SmallBaseMapVariationParam",
+        "SmallBaseSfxLodExclusionList",
+        "SortieStartingPoint"
       ]
     },
     {
@@ -333,6 +365,12 @@
         "SoundCommonSystemParam",
         "SoundCutsceneParam",
         "AutoCreateEnvSoundParam",
+        "AiSoundParam",
+        "WwiseValueToStrParam_BgmEnemyType",
+        "WwiseValueToStrParam_Switch_ChrId",
+        "WwiseValueToStrParam_Switch_HeroId",
+        "WwiseValueToStrParam_Switch_HeroSkin",
+        "WwiseValueToStrParam_Switch_HeroState",
         "AiSoundParam"
       ]
     }

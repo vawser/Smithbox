@@ -152,13 +152,26 @@ public class ParamRowNamer
 
             if (activeParam == "NpcParam")
             {
-                if (ImGui.MenuItem("NPCs"))
+                if (ImGui.MenuItem("Non-Player Characters"))
                 {
                     if (Editor.Project.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
                         HandleNpcParam(activeParam, "NpcParam", rows);
+                    }
+                }
+            }
+
+            if (activeParam == "NpcThinkParam")
+            {
+                if (ImGui.MenuItem("Non-Player Character Thinks"))
+                {
+                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    {
+                        var rows = selectedParam.GetSelectedRows();
+
+                        HandleNpcParam(activeParam, "NpcThinkParam", rows);
                     }
                 }
             }

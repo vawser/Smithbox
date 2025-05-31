@@ -4,6 +4,10 @@
   Wiki="" />
   
   <Field>
+    <sortId
+    AltName="Sort ID"
+    Wiki="" />
+  
     <attachEffectTableId_1 
     AltName="Attached Effect Table: 1" 
     Wiki="The attached effect table to use." 
@@ -18,6 +22,10 @@
     AltName="Attached Effect Table: 3" 
     Wiki="The attached effect table to use." 
     Refs="AttachEffectTableParam" />
+    
+    <iconId
+    AltName="Icon ID"
+    Wiki="" />
     
   </Field>
   

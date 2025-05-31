@@ -4,6 +4,10 @@
   Wiki="" />
   
   <Field>
+    <attachEffectFilterCategory
+    AltName="Filter Category"
+    Wiki=""
+    Refs="AttachEffectFilterCategoryParam" />
     
   </Field>
   
