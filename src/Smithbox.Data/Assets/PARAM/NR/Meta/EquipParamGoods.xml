@@ -196,7 +196,13 @@
     <syncNumVaryId AltName="Synchronized Item Usage ID" Wiki="When the number of items is changed, the items with the same ID will be changed at the same time. 0 Not synchronized" />
     <refId_1 AltName="Reference ID - Left Hand" Wiki="ID1 called from the item" Refs="Bullet(refCategory=1),SpEffectParam(refCategory=2)" />
     <refVirtualWepId AltName="Weapon Reference ID" Wiki="Weapon ID to refer to when using the tool" Refs="EquipParamWeapon" />
-    <vagrantItemLotId AltName="Vagrant Item Lot ID" Wiki="-1 No vagrant 0 No lottery 1  With lottery" />
+    
+    <vagrantItemLotId 
+    AltName="Permanent Buff ID" 
+    Wiki="The permanent buff associated with this item." 
+    Refs="PermanentBuffParam" />
+    
+    
     <vagrantBonusEneDropItemLotId AltName="Vagrant Enemy Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
     <vagrantItemEneDropItemLotId AltName="Vagrant Bonus Item Lot ID" Wiki="-1 No drop 0 No lottery 1  With lottery" />
     <castSfxId AltName="Usage VFX - Cast" Wiki="SFXID until the effect is activated when you try to use the item" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,GR\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />

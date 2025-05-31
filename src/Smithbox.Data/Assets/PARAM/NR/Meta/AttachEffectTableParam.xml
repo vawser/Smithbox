@@ -9,6 +9,10 @@
     Wiki="The attached effect to use." 
     Refs="AttachEffectParam" />
     
+    <chanceWeight
+    AltName="Roll Weight"
+    Wiki="The weighting to apply during the roll." />
+    
   </Field>
   
   <Enums>

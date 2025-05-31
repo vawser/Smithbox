@@ -8,6 +8,7 @@ using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -1330,6 +1331,12 @@ public class ParamFieldView
         var altName = cellMeta?.AltName;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);
+
+        // Copy Name
+        if (ImGui.MenuItem("Copy Internal Name"))
+        {
+            PlatformUtils.Instance.SetClipboardText(internalName);
+        }
 
         // Field Information
         if (col != null)

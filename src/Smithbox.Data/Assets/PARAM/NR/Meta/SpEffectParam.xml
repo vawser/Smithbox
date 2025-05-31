@@ -1988,6 +1988,16 @@
     Refs="SpEffectParam"
     DefaultValue="0" />
     
+    
+    <triggerOnStateInfo
+    AltName="Trigger on State Info"
+    Wiki="Triggers this SpEffect when the specified state info is present." 
+    ProjectEnum="SP_EFFECT_TYPE" />
+    
+    <skillGaugeRestore
+    AltName="Skill Gauge Restore"
+    Wiki="The amount of the skill gauge to restore." />
+    
   </Field>
   <Enums>
     <Enum Name="SP_EFFECT_SPCATEGORY" type="u16">
@@ -2025,6 +2035,7 @@
         <Option Value="174" Name="Remove Previous" />
         <Option Value="200" Name="Remove Previous w/ Matching Priority" />
         <Option Value="201" Name="Remove Previous" />
+        <Option Value="202" Name="Remove Previous" />
         <Option Value="1000" Name="Apply Highest (Category Priority)" />
         <Option Value="1001" Name="Apply Highest (Category Priority)" />
         <Option Value="1002" Name="Apply Highest (Category Priority)" />

@@ -19,15 +19,15 @@
     Wiki="The SpEffect to apply." 
     Refs="SpEffectParam" />
     
-    <spEffectId_4 
-    AltName="SpEffect ID: 4" 
+    <spEffectId_unk
+    AltName="SpEffect ID: Unknown" 
     Wiki="The SpEffect to apply." 
     Refs="SpEffectParam" />
     
-    <spEffectId_5
-    AltName="SpEffect ID: 5" 
-    Wiki="The SpEffect to apply." 
-    Refs="SpEffectParam" />
+    <baseAttachId 
+    AltName="Base Attach Effect ID" 
+    Wiki="The base attach effect for this chain." 
+    Refs="AttachEffectParam" />
   </Field>
   
   <Enums>

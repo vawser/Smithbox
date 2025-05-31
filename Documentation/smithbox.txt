@@ -3,8 +3,12 @@
 
 - Param Editor: add default values to all ER param metas.
 - Param Editor: add defaultvalues to ER paramdex + re-format it
+- Param Editor: adjust the difference checker to account for row index
 
 - Map Editor: implement orthographic view
+- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
+- Model Editor: implement VFS + data bank overhaul
+- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
 
 - Behavior Editor: implement the command parsing for load and view
 - Behavior Editor: add quick link pins (save specific havok objects)
@@ -20,19 +24,6 @@
 # FIX
 - Map Editor: visibility icon cannot be clicked
 - Time Act Editor: DS2 TAE entries not being presented
-- Map Editor: some japanese names on map objects cause a crash (likely due to ImGui handling).
 
-# PRIO TODO
-- Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
-- Model Editor: implement VFS + data bank overhaul
-- Model Editor: use the direct method for the MeshResources/Texture resources, break the link to the ResourceManager
-
+# NR
 - ERN MSB: need to make it byte-perfect on save (load is fine)
-
-Params to properly uncover:
- AcrossDayCorrectParam
- AntiqueStandParam
- AttachEffectFilterCategoryParam
- AttachEffectFilterParam
- AttachEffectParam
- AttachEffectTableParam

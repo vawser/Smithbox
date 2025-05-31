@@ -31,6 +31,9 @@ public class ReferenceResolver
             return rows;
         }
 
+        if (paramRefs == null)
+            return rows;
+
         var originalValue =
             (int)oldval; //make sure to explicitly cast from dynamic or C# complains. Object or Convert.ToInt32 fail.
 

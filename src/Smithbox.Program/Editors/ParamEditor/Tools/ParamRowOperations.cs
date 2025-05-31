@@ -1,14 +1,20 @@
 ﻿using Andre.Formats;
 using Hexa.NET.ImGui;
+using Microsoft.AspNetCore.Components.Forms;
+using Octokit;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.Decorators;
+using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Numerics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace StudioCore.Editors.ParamEditor.Tools;
 
@@ -48,7 +54,13 @@ public partial class ParamTools
         }
     }
 
-    public void TrimRowNames()
+    public enum RowTrimType
+    {
+        Whitespace,
+        NewLines
+    }
+
+    public void TrimRowNames(RowTrimType trimType = RowTrimType.Whitespace)
     {
         var selectedParam = Editor._activeView.Selection;
         var curParamKey = selectedParam.GetActiveParam();
@@ -56,33 +68,48 @@ public partial class ParamTools
         if (curParamKey == null)
             return;
 
-        if (selectedParam.ActiveParamExists())
+        if (trimType is RowTrimType.Whitespace)
         {
-            if (Editor.Project.ParamData.PrimaryBank.Params != null)
+            if (selectedParam.ActiveParamExists())
             {
-                var activeParam = selectedParam.GetActiveParam();
-                var rows = selectedParam.GetSelectedRows();
-                switch (CurrentTargetCategory)
+                if (Editor.Project.ParamData.PrimaryBank.Params != null)
                 {
-                    case TargetType.SelectedRows:
-                        if (!rows.Any()) return;
-                        TrimRowNameHelper(rows);
-                        PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case TargetType.SelectedParam:
-                        TrimRowNameHelper(activeParam);
-                        PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case TargetType.AllParams:
-                        foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
-                        {
-                            TrimRowNameHelper(param.Key);
-                        }
-                        PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+                    var activeParam = selectedParam.GetActiveParam();
+                    var rows = selectedParam.GetSelectedRows();
+                    switch (CurrentTargetCategory)
+                    {
+                        case TargetType.SelectedRows:
+                            if (!rows.Any()) return;
+                            TrimRowNameHelper(rows);
+                            PlatformUtils.Instance.MessageBox($"Row names for {rows.Count} selected rows have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case TargetType.SelectedParam:
+                            TrimRowNameHelper(activeParam);
+                            PlatformUtils.Instance.MessageBox($"Row names for {activeParam} have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case TargetType.AllParams:
+                            foreach (var param in Editor.Project.ParamData.PrimaryBank.Params)
+                            {
+                                TrimRowNameHelper(param.Key);
+                            }
+                            PlatformUtils.Instance.MessageBox($"Row names for all params have been trimmed.", $"Smithbox", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
                 }
+            }
+        }
+
+        if (trimType is RowTrimType.NewLines)
+        {
+            var activeParam = selectedParam.GetActiveParam();
+            var rows = selectedParam.GetSelectedRows();
+
+            foreach (Param.Row row in rows)
+            {
+                var newName = row.Name.Replace("\n", " ").Replace("\r", "");
+                row.Name = newName;
             }
         }
     }
@@ -258,6 +285,166 @@ public partial class ParamTools
         PlatformUtils.Instance.SetClipboardText(output);
     }
     #endregion
+
+    #region Proliferate Name
+    public void ProliferateRowName(string targetField)
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+
+        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+
+        var actions = new List<EditorAction>();
+
+        foreach (Param.Row row in rows)
+        {
+            var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+            var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
+            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
+                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+
+            foreach ((string, Param.Row, string) rf in refs)
+            {
+                if (row == null || Editor.EditorActionManager == null)
+                {
+                    continue;
+                }
+
+                rf.Item2.Name = row.Name;
+            }
+        }
+    }
+    #endregion
+
+    #region Inherit Row Name
+    public void InheritRowName(string targetField)
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+
+        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+
+        var actions = new List<EditorAction>();
+
+        foreach (Param.Row row in rows)
+        {
+            var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+            var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
+            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            List<(string, Param.Row, string)> refs = ReferenceResolver.ResolveParamReferences(
+                Editor, Editor.Project.ParamData.PrimaryBank, fieldMeta.RefTypes, row, targetCell.Value);
+
+            foreach ((string, Param.Row, string) rf in refs)
+            {
+                if (row == null || Editor.EditorActionManager == null)
+                {
+                    continue;
+                }
+
+                row.Name = rf.Item2.Name;
+            }
+        }
+    }
+    #endregion
+
+    #region Inherit Row Name from FMG
+    public void InheritRowNameFromFMG(string targetField)
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+
+        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+
+        var actions = new List<EditorAction>();
+
+        foreach (Param.Row row in rows)
+        {
+            var fieldDef = row.Def.Fields.FirstOrDefault(e => e.InternalName == targetField);
+            var targetCell = row.Cells.Where(e => e.Def == fieldDef).FirstOrDefault();
+            var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(paramMeta, fieldDef);
+
+            List<TextResult> refs = ReferenceResolver.ResolveTextReferences(
+                Editor, fieldMeta.FmgRef, row, targetCell.Value);
+
+            foreach (var result in refs)
+            {
+                if (row == null || Editor.EditorActionManager == null)
+                {
+                    continue;
+                }
+
+                row.Name = result.Entry.Text;
+            }
+        }
+    }
+    #endregion
+
+    #region Adjust Row Name
+    public void AdjustRowName(string adjustment, RowNameAdjustType type)
+    {
+        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+
+        if (curParamKey == null)
+            return;
+
+        Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
+
+        if (baseParam == null)
+            return;
+
+        List<Param.Row> rows = Editor._activeView.Selection.GetSelectedRows();
+
+        var paramMeta = Editor.Project.ParamData.GetParamMeta(baseParam.AppliedParamdef);
+
+        var actions = new List<EditorAction>();
+
+        foreach (Param.Row row in rows)
+        {
+            if(type is RowNameAdjustType.Prepend)
+            {
+                row.Name = $"{adjustment}{row.Name}";
+            }
+            if (type is RowNameAdjustType.Postpend)
+            {
+                row.Name = $"{row.Name}{adjustment}";
+            }
+            if (type is RowNameAdjustType.Remove)
+            {
+                row.Name = row.Name.Replace(adjustment, "");
+            }
+        }
+    }
+    #endregion
 }
 
 public enum TargetType
@@ -267,3 +454,9 @@ public enum TargetType
     [Display(Name = "All Params")] AllParams
 }
 
+public enum RowNameAdjustType
+{
+    Prepend,
+    Postpend,
+    Remove
+}

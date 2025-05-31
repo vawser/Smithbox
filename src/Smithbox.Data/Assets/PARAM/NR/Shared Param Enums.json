@@ -736,8 +736,48 @@
                 
                 { "ID": "512", "Name": "Unknown", "Description": "" },
                 
+                { "ID": "601", "Name": "Unknown", "Description": "" },
+                
                 { "ID": "1000", "Name": "SkipSpCategoryCheck1", "Description": "" },
                 { "ID": "1001", "Name": "SkipSpCategoryCheck2", "Description": "" },
+                
+                { "ID": "2011", "Name": "Restore Skill Gauge on Critical Hit", "Description": "" },
+                { "ID": "2101", "Name": "Applying Starting Weapon Modifiers", "Description": "" },
+                { "ID": "2113", "Name": "Extend Duration of Ultimate Skill", "Description": "" },
+                
+                { "ID": "2211", "Name": "Ice Storm upon Charged Slash", "Description": "" },
+                { "ID": "2212", "Name": "Ring of Light upon Charged Slash", "Description": "" },
+                { "ID": "2213", "Name": "Black Flames upon Charged Slash", "Description": "" },
+                { "ID": "2214", "Name": "Phantom Attack upon Charged Slash", "Description": "" },
+                { "ID": "2215", "Name": "Roaring Flames upon Charged Slash", "Description": "" },
+                { "ID": "2216", "Name": "Holy Shockwave upon Charged Strike", "Description": "" },
+                { "ID": "2217", "Name": "Projectiles upon Charged Strike", "Description": "" },
+                { "ID": "2218", "Name": "Luring Enemies upon Charged Strike", "Description": "" },
+                { "ID": "2219", "Name": "Shockwave upon Charged Strike", "Description": "" },
+                { "ID": "2220", "Name": "Phantom Attack upon Charged Strike", "Description": "" },
+                { "ID": "2221", "Name": "Magma upon Charged Strike", "Description": "" },
+                { "ID": "2222", "Name": "Magic Bubbles upon Charged Strike", "Description": "" },
+                { "ID": "2223", "Name": "Phantom Attack upon Charged Thrust", "Description": "" },
+                { "ID": "2224", "Name": "Lightning upon Charged Thrust", "Description": "" },
+                { "ID": "2225", "Name": "Acid Mist upon Charged Thrust", "Description": "" },
+                { "ID": "2226", "Name": "Pest Threads upon Charged Thrust", "Description": "" },
+                { "ID": "2227", "Name": "Poison Mist upon Charged Thrust", "Description": "" },
+                { "ID": "2228", "Name": "Charged Thrust Invokes Sleep Mist", "Description": "" },
+                { "ID": "2229", "Name": "Projectiles Launched upon Attacks", "Description": "" },
+                { "ID": "2230", "Name": "Lightning upon Precision Aiming", "Description": "" },
+                { "ID": "2231", "Name": "Poison Mist upon Precision Aiming", "Description": "" },
+                { "ID": "2232", "Name": "Rot Mist upon Precision Aiming", "Description": "" },
+                { "ID": "2233", "Name": "Bloodflies upon Precision Aiming", "Description": "" },
+                { "ID": "2234", "Name": "Shielding Improves Damage Negation", "Description": "" },
+                { "ID": "2235", "Name": "Shielding Invokes Indomitable Vow", "Description": "" },
+                { "ID": "2236", "Name": "Shielding Creates Holy Ground", "Description": "" },
+                { "ID": "2237", "Name": "Broken Stance Activates Endure", "Description": "" },
+                { "ID": "2238", "Name": "Flask Healing Also Restores FP", "Description": "" },
+                { "ID": "2239", "Name": "Failing to Cast Sorcery Restores FP", "Description": "" },
+                { "ID": "2240", "Name": "Guarding Ups Attack & Casting Speeds", "Description": "" },
+                
+                { "ID": "2271", "Name": "Improve Character Skill Attack Power", "Description": "" },
+                { "ID": "2277", "Name": "Increase Stamina Recovery on Critical Hit", "Description": "" },
                 
                 { "ID": "59999", "Name": "Unknown", "Description": "" }
             ]

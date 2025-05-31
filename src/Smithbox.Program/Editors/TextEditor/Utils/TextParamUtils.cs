@@ -96,6 +96,14 @@ public static class TextParamUtils
         {
             return "Archive_Name";
         }
+        if (paramName == "EquipParamAntique")
+        {
+            return "Title_Antique";
+        }
+        if (paramName == "AttachEffectParam")
+        {
+            return "Title_AttachEffect";
+        }
 
         return "";
     }

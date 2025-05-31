@@ -818,6 +818,7 @@ public class CFG
     public bool Param_ShowFieldParamLabels = true;
     public bool Param_ShowFieldFmgLabels = true;
     public bool Param_ShowFieldTextureLabels = true;
+    public bool Param_ShowFmgDecorator = true;
 
     public bool Param_ShowVanillaColumn = true;
     public bool Param_ShowAuxColumn = true;
@@ -847,7 +848,9 @@ public class CFG
     public bool Param_RowContextMenu_PinOptions = true;
     public bool Param_RowContextMenu_CompareOptions = true;
     public bool Param_RowContextMenu_ReverseLoopup = true;
-    public bool Param_RowContextMenu_CopyID = true;
+    public bool Param_RowContextMenu_ProliferateName = true;
+    public bool Param_RowContextMenu_InheritName = true;
+    public bool Param_RowContextMenu_RowNameAdjustments = true;
 
     public float Param_FieldContextMenu_Width = 300f;
     public bool Param_FieldContextMenu_Split = false;

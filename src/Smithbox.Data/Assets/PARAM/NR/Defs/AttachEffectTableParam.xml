@@ -9,6 +9,6 @@
     
     <Field Def="s32 unknown_0"/>
     <Field Def="s32 attachEffectId"/>
-    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 chanceWeight"/>
   </Fields>
 </PARAMDEF>

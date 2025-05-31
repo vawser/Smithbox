@@ -297,7 +297,7 @@
     <Field Def="s32 unknown_171"/>
     <Field Def="s32 unknown_172"/>
     <Field Def="f32 unknown_173"/>
-    <Field Def="s32 unknown_174"/>
+    <Field Def="s32 triggerOnStateInfo"/>
     
     <Field Def="u8 unknown_175a"/>
     <Field Def="u8 unknown_175b"/>
@@ -343,8 +343,8 @@
     <Field Def="s32 unknown_207"/>
     <Field Def="f32 unknown_208"/>
     <Field Def="f32 unknown_209"/>
-    <Field Def="s32 unknown_210"/>
-    <Field Def="s32 unknown_211"/>
+    <Field Def="s32 changeSleepResistPoint"/>
+    <Field Def="s32 changeMadnessResistPoint"/>
     
     <Field Def="s32 unknown_212"/>
     
@@ -364,7 +364,7 @@
     <Field Def="f32 unknown_226"/>
     <Field Def="f32 unknown_227"/>
     <Field Def="f32 unknown_228"/>
-    <Field Def="s32 unknown_229"/>
+    <Field Def="f32 skillGaugeRestore"/>
     
     <Field Def="u8 unknown_230a"/>
     <Field Def="u8 unknown_230b"/>
@@ -380,8 +380,8 @@
     <Field Def="u8 unknown_233d"/>
     
     <Field Def="s32 unknown_234"/>
-    <Field Def="s32 unknown_235"/>
-    <Field Def="f32 unknown_236"/>
+    <Field Def="f32 ultimateSkillDuration"/>
+    <Field Def="f32 characterSkillAttackRate"/>
     <Field Def="s32 unknown_237"/>
     <Field Def="s32 unknown_238"/>
     <Field Def="s32 unknown_239"/>

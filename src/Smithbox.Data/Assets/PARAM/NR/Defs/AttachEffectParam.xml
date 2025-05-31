@@ -13,8 +13,8 @@
     <Field Def="s32 spEffectId_1"/>
     <Field Def="s32 spEffectId_2"/>
     <Field Def="s32 spEffectId_3"/>
-    <Field Def="s32 spEffectId_4"/>
-    <Field Def="s32 spEffectId_5"/>
+    <Field Def="s32 spEffectId_unk"/>
+    <Field Def="s32 baseAttachId"/>
     <Field Def="s32 unknown_8"/>
     <Field Def="s32 unknown_9"/>
     <Field Def="s32 unknown_10"/>

@@ -6,6 +6,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Decorators;
 using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,9 @@ public class ParamRowView
     public bool _arrowKeyPressed;
     public bool _focusRows;
     public int _gotoParamRow = -1;
+
+    public string TargetField = "";
+    public string NameAdjustment = "";
 
     public ParamRowView(ParamEditorScreen editor, ProjectEntry project, ParamEditorView view)
     {
@@ -316,6 +320,20 @@ public class ParamRowView
             ImGui.EndPopup();
         }
 
+        // Toggle FMG Decorator
+        ImGui.SameLine();
+
+        if (ImGui.Button($"{Icons.Hubzilla}"))
+        {
+            CFG.Current.Param_ShowFmgDecorator = !CFG.Current.Param_ShowFmgDecorator;
+        }
+
+        var fmgDecoratorDisplayStatus = "Hidden";
+        if (!CFG.Current.Param_ShowFmgDecorator)
+            fmgDecoratorDisplayStatus = "Visible";
+
+        UIHelper.Tooltip($"Toggle the display of FMG references.\nCurrent Mode: {fmgDecoratorDisplayStatus}");
+
         ImGui.Separator();
     }
 
@@ -454,9 +472,12 @@ public class ParamRowView
 
         DisplayContextMenu(r, selectionCacheIndex, isPinned, activeParam, fmgDecorator);
 
-        if (fmgDecorator != null)
+        if (CFG.Current.Param_ShowFmgDecorator)
         {
-            fmgDecorator.DecorateParam(r);
+            if (fmgDecorator != null)
+            {
+                fmgDecorator.DecorateParam(r);
+            }
         }
 
         if (doFocus && View.Selection.GetActiveRow() == r)
@@ -723,7 +744,6 @@ public class ParamRowView
                 fmgDecorator.DecorateContextMenuItems(r);
             }
 
-
             // Comparison Options
             if (CFG.Current.Param_RowContextMenu_CompareOptions)
             {
@@ -741,6 +761,84 @@ public class ParamRowView
             }
 
             FieldDecorators.ParamQuickSearch(Editor, Editor.Project.ParamData.PrimaryBank, activeParam, r.ID);
+
+            if (CFG.Current.Param_RowContextMenu_ProliferateName || CFG.Current.Param_RowContextMenu_InheritName)
+            {
+                ImGui.Separator();
+
+                // Proliferate name
+                if (CFG.Current.Param_RowContextMenu_ProliferateName)
+                {
+                    if (ImGui.Selectable(@$"Proliferate name", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        Editor.ParamTools.ProliferateRowName(TargetField);
+                    }
+                    UIHelper.Tooltip($"Proliferate the name of this row to the references pointed to by the named field within this row.");
+                }
+
+                // Inherit Name
+                if (CFG.Current.Param_RowContextMenu_InheritName)
+                {
+                    if (ImGui.Selectable(@$"Inherit name", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        Editor.ParamTools.InheritRowName(TargetField);
+                    }
+                    UIHelper.Tooltip($"Inherit the name of the referenced row connected to via the target field.");
+
+                    if (ImGui.Selectable(@$"Inherit name from FMG", false,
+                            View.Selection.RowSelectionExists()
+                                ? ImGuiSelectableFlags.None
+                                : ImGuiSelectableFlags.Disabled))
+                    {
+                        Editor.ParamTools.InheritRowNameFromFMG(TargetField);
+                    }
+                    UIHelper.Tooltip($"Inherit the name of the referenced FMG connected to via the target field.");
+                }
+
+                ImGui.InputText("##targetField", ref TargetField, 255);
+                UIHelper.Tooltip("The internal name of the field to target.");
+            }
+
+            if (CFG.Current.Param_RowContextMenu_RowNameAdjustments)
+            {
+                ImGui.Separator();
+
+                if (ImGui.Selectable(@$"Prepend text to name", false,
+                        View.Selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    Editor.ParamTools.AdjustRowName(NameAdjustment, RowNameAdjustType.Prepend);
+                }
+                UIHelper.Tooltip($"Prepend text to the names of all currently selected rows.");
+
+                if (ImGui.Selectable(@$"Postpend text to name", false,
+                        View.Selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    Editor.ParamTools.AdjustRowName(NameAdjustment, RowNameAdjustType.Postpend);
+                }
+                UIHelper.Tooltip($"Postpend text to the names of all currently selected rows.");
+
+                if (ImGui.Selectable(@$"Remove text from name", false,
+                        View.Selection.RowSelectionExists()
+                            ? ImGuiSelectableFlags.None
+                            : ImGuiSelectableFlags.Disabled))
+                {
+                    Editor.ParamTools.AdjustRowName(NameAdjustment, RowNameAdjustType.Remove);
+                }
+                UIHelper.Tooltip($"Remove text from the names of all currently selected rows.");
+
+                ImGui.InputText("##nameAdjustment", ref NameAdjustment, 255);
+                UIHelper.Tooltip("The string to pre or post pend to the existing name.");
+            }
 
             ImGui.EndPopup();
         }

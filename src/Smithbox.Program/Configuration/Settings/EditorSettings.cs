@@ -896,6 +896,15 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display row reverse lookup option", ref CFG.Current.Param_RowContextMenu_ReverseLoopup);
                 UIHelper.Tooltip("Show the reverse lookup option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display proliferate name option", ref CFG.Current.Param_RowContextMenu_ProliferateName);
+                UIHelper.Tooltip("Show the proliferate name option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display inherit name option", ref CFG.Current.Param_RowContextMenu_InheritName);
+                UIHelper.Tooltip("Show the inherit name option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row name adjustment options", ref CFG.Current.Param_RowContextMenu_RowNameAdjustments);
+                UIHelper.Tooltip("Show the row name adjustment options in the right-click row context menu.");
             }
 
             // Field Context Menu
