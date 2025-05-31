@@ -1876,24 +1876,10 @@
       <Maximum>99999999</Maximum>
       <SortID>8600</SortID>
     </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Sleep = 1">
-      <DisplayName>対プレイヤー 睡眠ダメージ補正倍率</DisplayName>
-      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
-      <DisplayFormat>%0.3f</DisplayFormat>
-      <Minimum>0</Minimum>
-      <Maximum>10</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>7850</SortID>
-    </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Madness = 1">
-      <DisplayName>対プレイヤー 発狂ダメージ補正倍率</DisplayName>
-      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
-      <DisplayFormat>%0.3f</DisplayFormat>
-      <Minimum>0</Minimum>
-      <Maximum>10</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>7860</SortID>
-    </Field>
+    
+    <Field Def="s32 vsPlayerDmgCorrectRate_Sleep" />
+    <Field Def="s32 vsPlayerDmgCorrectRate_Madness" />
+    
     <Field Def="f32 saGuardCutRate">
       <DisplayName>ガード時SA攻撃カット率</DisplayName>
       <Description>ガード成功時のSAダメージのカット率</Description>

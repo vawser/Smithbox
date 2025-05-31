@@ -4,6 +4,29 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID" />
+    
     <spEffectId_1 
     AltName="SpEffect: 1" 
     Wiki="The SpEffect to apply when this talisman is equipped." 
@@ -22,6 +45,8 @@
     Refs="SpEffectParam" 
     DeepCopyTarget="SpEffect" />
     
+    <endPadding
+    Padding="" />
   </Field>
   
   <Enums>
