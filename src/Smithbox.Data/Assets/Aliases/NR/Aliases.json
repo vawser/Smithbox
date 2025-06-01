@@ -1518,6 +1518,5651 @@
   "Cutscenes": [
   ],
   "EventFlags": [
+    {
+      "ID": "20",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "21",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "22",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "23",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "24",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "50",
+      "Name": "Event completed at the beginning of the game",
+      "Tags": []
+    },
+    {
+      "ID": "90",
+      "Name": "Test layer entry flag",
+      "Tags": []
+    },
+    {
+      "ID": "100",
+      "Name": "ClF: Story progress event slot",
+      "Tags": []
+    },
+    {
+      "ID": "100",
+      "Name": "Game start",
+      "Tags": []
+    },
+    {
+      "ID": "101",
+      "Name": "Tutorial cleared",
+      "Tags": []
+    },
+    {
+      "ID": "102",
+      "Name": "First sortie completed",
+      "Tags": []
+    },
+    {
+      "ID": "105",
+      "Name": "1st wipeout",
+      "Tags": []
+    },
+    {
+      "ID": "106",
+      "Name": "2nd wipeout",
+      "Tags": []
+    },
+    {
+      "ID": "110",
+      "Name": "First cleared",
+      "Tags": []
+    },
+    {
+      "ID": "111",
+      "Name": "2nd night boss defeats on the 3rd day",
+      "Tags": []
+    },
+    {
+      "ID": "112",
+      "Name": "3rd night boss defeats on the 3rd day",
+      "Tags": []
+    },
+    {
+      "ID": "113",
+      "Name": "4th night boss defeats on the 3rd day",
+      "Tags": []
+    },
+    {
+      "ID": "115",
+      "Name": "Nameless unlock flag",
+      "Tags": []
+    },
+    {
+      "ID": "120",
+      "Name": "Ending seen",
+      "Tags": []
+    },
+    {
+      "ID": "130",
+      "Name": "Chaos match unlock flag",
+      "Tags": []
+    },
+    {
+      "ID": "140",
+      "Name": "Rare Terrain Unlocked: Volcano",
+      "Tags": []
+    },
+    {
+      "ID": "141",
+      "Name": "Rare Terrain Unlocked: Snowy Mountain",
+      "Tags": []
+    },
+    {
+      "ID": "142",
+      "Name": "Rare Terrain Unlocked: Corruption",
+      "Tags": []
+    },
+    {
+      "ID": "143",
+      "Name": "Rare Terrain Unlocked: Noclone",
+      "Tags": []
+    },
+    {
+      "ID": "150",
+      "Name": "3-Day Table Mode: Defeat Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "151",
+      "Name": "3-Day Table Mode: Defeat Dragon Tyranno",
+      "Tags": []
+    },
+    {
+      "ID": "152",
+      "Name": "3-Day Table Mode: Defeat Intelligent Bug",
+      "Tags": []
+    },
+    {
+      "ID": "153",
+      "Name": "3-Day Table Mode: Defeat Abstract Enemy",
+      "Tags": []
+    },
+    {
+      "ID": "154",
+      "Name": "3-Day Table Mode: Defeat Baphomet",
+      "Tags": []
+    },
+    {
+      "ID": "155",
+      "Name": "3-Day Table Mode: Defeat Centaur",
+      "Tags": []
+    },
+    {
+      "ID": "156",
+      "Name": "3-Day Table Mode: Defeat Mist Dragon",
+      "Tags": []
+    },
+    {
+      "ID": "157",
+      "Name": "Night Boss: Reserve",
+      "Tags": []
+    },
+    {
+      "ID": "158",
+      "Name": "Night Boss: Reserve",
+      "Tags": []
+    },
+    {
+      "ID": "159",
+      "Name": "Night Boss: Reserve",
+      "Tags": []
+    },
+    {
+      "ID": "160",
+      "Name": "3-Day Table Mode: Defeat Nameless",
+      "Tags": []
+    },
+    {
+      "ID": "170",
+      "Name": "Campaign: Defeat Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "171",
+      "Name": "Campaign: Defeat Dragon Tyranno",
+      "Tags": []
+    },
+    {
+      "ID": "172",
+      "Name": "Campaign: Defeat Intelligent Bug",
+      "Tags": []
+    },
+    {
+      "ID": "173",
+      "Name": "Campaign: Defeat Abstract Enemy",
+      "Tags": []
+    },
+    {
+      "ID": "174",
+      "Name": "Campaign: Defeat Baphomet",
+      "Tags": []
+    },
+    {
+      "ID": "175",
+      "Name": "Campaign: Defeat Centaur",
+      "Tags": []
+    },
+    {
+      "ID": "176",
+      "Name": "Campaign: Defeat Mist Dragon",
+      "Tags": []
+    },
+    {
+      "ID": "200",
+      "Name": "ClF: Administrative Flag",
+      "Tags": []
+    },
+    {
+      "ID": "200",
+      "Name": "Host Flag",
+      "Tags": []
+    },
+    {
+      "ID": "201",
+      "Name": "Guest Flag",
+      "Tags": []
+    },
+    {
+      "ID": "202",
+      "Name": "Multiplayer",
+      "Tags": []
+    },
+    {
+      "ID": "203",
+      "Name": "Singleplayer",
+      "Tags": []
+    },
+    {
+      "ID": "210",
+      "Name": "The host is on a legacy map",
+      "Tags": []
+    },
+    {
+      "ID": "211",
+      "Name": "A flag to set when the player is on a legacy map",
+      "Tags": []
+    },
+    {
+      "ID": "220",
+      "Name": "A flag to set when the host is on a legacy map",
+      "Tags": []
+    },
+    {
+      "ID": "221",
+      "Name": "A flag to set when the player is on a legacy map",
+      "Tags": []
+    },
+    {
+      "ID": "900",
+      "Name": "ClF: End flow management flag",
+      "Tags": []
+    },
+    {
+      "ID": "910",
+      "Name": "Allow display of the hidden mode unlock tutorial flag",
+      "Tags": []
+    },
+    {
+      "ID": "916",
+      "Name": "Allow hidden mode unlock tutorial confirmed flag",
+      "Tags": []
+    },
+    {
+      "ID": "950",
+      "Name": "Saw CS on first clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "951",
+      "Name": "Saw ending flag",
+      "Tags": []
+    },
+    {
+      "ID": "952",
+      "Name": "Saw hidden match unlock CS flag",
+      "Tags": []
+    },
+    {
+      "ID": "960",
+      "Name": "Saw normal ending flag",
+      "Tags": []
+    },
+    {
+      "ID": "961",
+      "Name": "Saw pursuer ending flag",
+      "Tags": []
+    },
+    {
+      "ID": "962",
+      "Name": "Saw wise ending flag",
+      "Tags": []
+    },
+    {
+      "ID": "963",
+      "Name": "Saw iron eye ending flag",
+      "Tags": []
+    },
+    {
+      "ID": "1000",
+      "Name": "ClF: Common event ID",
+      "Tags": []
+    },
+    {
+      "ID": "2000",
+      "Name": "Title start",
+      "Tags": []
+    },
+    {
+      "ID": "2001",
+      "Name": "Title start (test version)",
+      "Tags": []
+    },
+    {
+      "ID": "2002",
+      "Name": "Move map test start",
+      "Tags": []
+    },
+    {
+      "ID": "2030",
+      "Name": "PlayGo flag",
+      "Tags": []
+    },
+    {
+      "ID": "2200",
+      "Name": "Time progress stop: Shrink",
+      "Tags": []
+    },
+    {
+      "ID": "2201",
+      "Name": "Time progress stop: Appearance",
+      "Tags": []
+    },
+    {
+      "ID": "2300",
+      "Name": "Hero animation switch during CS 00",
+      "Tags": []
+    },
+    {
+      "ID": "2301",
+      "Name": "Hero animation switch during CS 01",
+      "Tags": []
+    },
+    {
+      "ID": "2302",
+      "Name": "Hero animation switch during CS 02",
+      "Tags": []
+    },
+    {
+      "ID": "2303",
+      "Name": "Hero animation switch during CS 03",
+      "Tags": []
+    },
+    {
+      "ID": "2304",
+      "Name": "Hero animation switch during CS 04",
+      "Tags": []
+    },
+    {
+      "ID": "2305",
+      "Name": " Switching hero animations during CS 05",
+      "Tags": []
+    },
+    {
+      "ID": "2306",
+      "Name": " Switching hero animations during CS 06",
+      "Tags": []
+    },
+    {
+      "ID": "2307",
+      "Name": " Switching hero animations during CS 07",
+      "Tags": []
+    },
+    {
+      "ID": "2308",
+      "Name": " Switching hero animations during CS 08",
+      "Tags": []
+    },
+    {
+      "ID": "2309",
+      "Name": " Switching hero animations during CS 09",
+      "Tags": []
+    },
+    {
+      "ID": "2310",
+      "Name": " Switching hero animations during CS 10",
+      "Tags": []
+    },
+    {
+      "ID": "2311",
+      "Name": " Switching hero animations during CS 11",
+      "Tags": []
+    },
+    {
+      "ID": "2312",
+      "Name": " Switching hero animations during CS 12",
+      "Tags": []
+    },
+    {
+      "ID": "2313",
+      "Name": " Switching hero animations during CS 13",
+      "Tags": []
+    },
+    {
+      "ID": "2314",
+      "Name": " Switching hero animations during CS 14",
+      "Tags": []
+    },
+    {
+      "ID": "2315",
+      "Name": " Switching hero animations during CS 15",
+      "Tags": []
+    },
+    {
+      "ID": "2316",
+      "Name": " Switching hero animations during CS 16",
+      "Tags": []
+    },
+    {
+      "ID": "2317",
+      "Name": " Switching hero animations during CS 17",
+      "Tags": []
+    },
+    {
+      "ID": "2318",
+      "Name": " Switching hero animations during CS 18",
+      "Tags": []
+    },
+    {
+      "ID": "2319",
+      "Name": " Switching hero animations during CS 19",
+      "Tags": []
+    },
+    {
+      "ID": "2320",
+      "Name": " Switching hero animations during CS 20",
+      "Tags": []
+    },
+    {
+      "ID": "2321",
+      "Name": " Switching hero animations during CS 21",
+      "Tags": []
+    },
+    {
+      "ID": "2322",
+      "Name": " Switching hero animations during CS 22",
+      "Tags": []
+    },
+    {
+      "ID": "2323",
+      "Name": " Switching hero animations during CS 23",
+      "Tags": []
+    },
+    {
+      "ID": "2324",
+      "Name": " Switching hero animations during CS 24",
+      "Tags": []
+    },
+    {
+      "ID": "2325",
+      "Name": " Switching hero animations during CS 25",
+      "Tags": []
+    },
+    {
+      "ID": "2326",
+      "Name": " Switching hero animations during CS 26",
+      "Tags": []
+    },
+    {
+      "ID": "2327",
+      "Name": " Switching hero animations during CS 27",
+      "Tags": []
+    },
+    {
+      "ID": "2328",
+      "Name": " Switching hero animations during CS 28",
+      "Tags": []
+    },
+    {
+      "ID": "2329",
+      "Name": " Switching hero animations during CS 29",
+      "Tags": []
+    },
+    {
+      "ID": "5000",
+      "Name": "Boss HP gauge 0 in use",
+      "Tags": []
+    },
+    {
+      "ID": "5001",
+      "Name": "Boss HP gauge 1 in use",
+      "Tags": []
+    },
+    {
+      "ID": "5900",
+      "Name": "[TUT] First battle with Margit",
+      "Tags": []
+    },
+    {
+      "ID": "5901",
+      "Name": "[TUT] Defeated Margit",
+      "Tags": []
+    },
+    {
+      "ID": "6000",
+      "Name": "Flag to always be OFF",
+      "Tags": []
+    },
+    {
+      "ID": "6001",
+      "Name": "Flag to always be ON",
+      "Tags": []
+    },
+    {
+      "ID": "6010",
+      "Name": "Replaying tutorial",
+      "Tags": []
+    },
+    {
+      "ID": "6011",
+      "Name": "During tutorial",
+      "Tags": []
+    },
+    {
+      "ID": "6012",
+      "Name": "Tutorial victory flag",
+      "Tags": []
+    },
+    {
+      "ID": "6013",
+      "Name": "Tutorial_Avenger mode",
+      "Tags": []
+    },
+    {
+      "ID": "6014",
+      "Name": "Tutorial_Lobby explanation displayed",
+      "Tags": []
+    },
+    {
+      "ID": "6015",
+      "Name": "First time entering lobby",
+      "Tags": []
+    },
+    {
+      "ID": "6020",
+      "Name": "Ending",
+      "Tags": []
+    },
+    {
+      "ID": "6030",
+      "Name": "Hero unlock flag_Tracker",
+      "Tags": []
+    },
+    {
+      "ID": "6031",
+      "Name": "Hero Unlock Flag_Lady",
+      "Tags": []
+    },
+    {
+      "ID": "6032",
+      "Name": "Hero Unlock Flag_Destroyer",
+      "Tags": []
+    },
+    {
+      "ID": "6033",
+      "Name": "Hero Unlock Flag_Enforcer",
+      "Tags": []
+    },
+    {
+      "ID": "6034",
+      "Name": "Hero Unlock Flag_Wise",
+      "Tags": []
+    },
+    {
+      "ID": "6035",
+      "Name": "Hero Unlock Flag_Iron Eye",
+      "Tags": []
+    },
+    {
+      "ID": "6036",
+      "Name": "Hero Unlock Flag_Guardian",
+      "Tags": []
+    },
+    {
+      "ID": "6037",
+      "Name": "Hero Unlock Flag_Avenger",
+      "Tags": []
+    },
+    {
+      "ID": "6040",
+      "Name": "Hero Unlock Trophy Control Flag_Avenger",
+      "Tags": []
+    },
+    {
+      "ID": "6041",
+      "Name": "Hero Unlock Trophy Control Flag_Iron Eye",
+      "Tags": []
+    },
+    {
+      "ID": "6042",
+      "Name": "Hero Unlock Trophy Control Flag_Tracker",
+      "Tags": []
+    },
+    {
+      "ID": "6045",
+      "Name": "Hero Unlock Pedestal Control Flag_Lady",
+      "Tags": []
+    },
+    {
+      "ID": "6046",
+      "Name": "Hero Unlock Pedestal Control Flag_Avenger",
+      "Tags": []
+    },
+    {
+      "ID": "6048",
+      "Name": "Shop Unlock Flag_Special Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "6050",
+      "Name": " Skin release",
+      "Tags": []
+    },
+    {
+      "ID": "6051",
+      "Name": " Skin release control flag_Lady skins in general",
+      "Tags": []
+    },
+    {
+      "ID": "6052",
+      "Name": " Skin release control flag_Necro skins in general",
+      "Tags": []
+    },
+    {
+      "ID": "6055",
+      "Name": " Skin release control flag_Lady past skins",
+      "Tags": []
+    },
+    {
+      "ID": "6056",
+      "Name": " Skin release control flag_Necro past skins",
+      "Tags": []
+    },
+    {
+      "ID": "6057",
+      "Name": " Skin release control flag_Other character past skins",
+      "Tags": []
+    },
+    {
+      "ID": "6060",
+      "Name": " Special currency related function release",
+      "Tags": []
+    },
+    {
+      "ID": "6070",
+      "Name": " During Fever: Volcano",
+      "Tags": []
+    },
+    {
+      "ID": "6071",
+      "Name": " During Fever: Snowy mountain",
+      "Tags": []
+    },
+    {
+      "ID": "6072",
+      "Name": " During Fever: Corruption",
+      "Tags": []
+    },
+    {
+      "ID": "6073",
+      "Name": " During Fever: Noclone",
+      "Tags": []
+    },
+    {
+      "ID": "6080",
+      "Name": "Number of fever counts",
+      "Tags": []
+    },
+    {
+      "ID": "6085",
+      "Name": "Number of cooldowns used",
+      "Tags": []
+    },
+    {
+      "ID": "6090",
+      "Name": "Last session: Volcano",
+      "Tags": []
+    },
+    {
+      "ID": "6091",
+      "Name": "Last session: Snowy mountain",
+      "Tags": []
+    },
+    {
+      "ID": "6092",
+      "Name": "Last session: Decay",
+      "Tags": []
+    },
+    {
+      "ID": "6093",
+      "Name": "Last session: Noclone",
+      "Tags": []
+    },
+    {
+      "ID": "6095",
+      "Name": "Last session: Normal terrain",
+      "Tags": []
+    },
+    {
+      "ID": "6098",
+      "Name": "Last session: Rare terrain generated by lottery",
+      "Tags": []
+    },
+    {
+      "ID": "6099",
+      "Name": "Last session: Rare terrain generated by propagation",
+      "Tags": []
+    },
+    {
+      "ID": "6100",
+      "Name": "Trophy 00",
+      "Tags": []
+    },
+    {
+      "ID": "6101",
+      "Name": "Trophy 01",
+      "Tags": []
+    },
+    {
+      "ID": "6102",
+      "Name": "Trophy 02",
+      "Tags": []
+    },
+    {
+      "ID": "6103",
+      "Name": "Trophy 03",
+      "Tags": []
+    },
+    {
+      "ID": "6104",
+      "Name": "Trophy 04",
+      "Tags": []
+    },
+    {
+      "ID": "6105",
+      "Name": "Trophy 05",
+      "Tags": []
+    },
+    {
+      "ID": "6106",
+      "Name": "Trophy 06",
+      "Tags": []
+    },
+    {
+      "ID": "6107",
+      "Name": "Trophy 07",
+      "Tags": []
+    },
+    {
+      "ID": "6108",
+      "Name": "Trophy 08",
+      "Tags": []
+    },
+    {
+      "ID": "6109",
+      "Name": "Trophy 09",
+      "Tags": []
+    },
+    {
+      "ID": "6110",
+      "Name": "Trophy 10",
+      "Tags": []
+    },
+    {
+      "ID": "6111",
+      "Name": "Trophy 11",
+      "Tags": []
+    },
+    {
+      "ID": "6112",
+      "Name": "Trophy 12",
+      "Tags": []
+    },
+    {
+      "ID": "6113",
+      "Name": "Trophy 13",
+      "Tags": []
+    },
+    {
+      "ID": "6114",
+      "Name": "Trophy 14",
+      "Tags": []
+    },
+    {
+      "ID": "6115",
+      "Name": "Trophy 15",
+      "Tags": []
+    },
+    {
+      "ID": "6116",
+      "Name": "Trophy 16",
+      "Tags": []
+    },
+    {
+      "ID": "6117",
+      "Name": "Trophy 17",
+      "Tags": []
+    },
+    {
+      "ID": "6118",
+      "Name": "Trophy 18",
+      "Tags": []
+    },
+    {
+      "ID": "6119",
+      "Name": "Trophy 19",
+      "Tags": []
+    },
+    {
+      "ID": "6120",
+      "Name": "Trophy 20",
+      "Tags": []
+    },
+    {
+      "ID": "6121",
+      "Name": "Trophy 21",
+      "Tags": []
+    },
+    {
+      "ID": "6122",
+      "Name": "Trophy 22",
+      "Tags": []
+    },
+    {
+      "ID": "6123",
+      "Name": "Trophy 23",
+      "Tags": []
+    },
+    {
+      "ID": "6124",
+      "Name": "Trophy 24",
+      "Tags": []
+    },
+    {
+      "ID": "6125",
+      "Name": "Trophy 25",
+      "Tags": []
+    },
+    {
+      "ID": "6126",
+      "Name": "Trophy 26",
+      "Tags": []
+    },
+    {
+      "ID": "6127",
+      "Name": "Trophy 27",
+      "Tags": []
+    },
+    {
+      "ID": "6128",
+      "Name": "Trophy 28",
+      "Tags": []
+    },
+    {
+      "ID": "6129",
+      "Name": "Trophy 29",
+      "Tags": []
+    },
+    {
+      "ID": "6130",
+      "Name": "Trophy 30",
+      "Tags": []
+    },
+    {
+      "ID": "6131",
+      "Name": "Trophy 31",
+      "Tags": []
+    },
+    {
+      "ID": "6132",
+      "Name": "Trophy 32",
+      "Tags": []
+    },
+    {
+      "ID": "6133",
+      "Name": "Trophy 33",
+      "Tags": []
+    },
+    {
+      "ID": "6134",
+      "Name": "Trophy 34",
+      "Tags": []
+    },
+    {
+      "ID": "6135",
+      "Name": "Trophy 35",
+      "Tags": []
+    },
+    {
+      "ID": "6136",
+      "Name": "Trophy 36",
+      "Tags": []
+    },
+    {
+      "ID": "6137",
+      "Name": "Trophy 37",
+      "Tags": []
+    },
+    {
+      "ID": "6138",
+      "Name": "Trophy 38",
+      "Tags": []
+    },
+    {
+      "ID": "6139",
+      "Name": "Trophy 39",
+      "Tags": []
+    },
+    {
+      "ID": "6140",
+      "Name": "Trophy 40",
+      "Tags": []
+    },
+    {
+      "ID": "6141",
+      "Name": "Trophy 41",
+      "Tags": []
+    },
+    {
+      "ID": "6142",
+      "Name": "Trophy 42",
+      "Tags": []
+    },
+    {
+      "ID": "6143",
+      "Name": "Trophy 43",
+      "Tags": []
+    },
+    {
+      "ID": "6144",
+      "Name": "Trophy 44",
+      "Tags": []
+    },
+    {
+      "ID": "6145",
+      "Name": "Trophy 45",
+      "Tags": []
+    },
+    {
+      "ID": "6180",
+      "Name": "Activity00_Start",
+      "Tags": []
+    },
+    {
+      "ID": "6181",
+      "Name": "Activity01_Start",
+      "Tags": []
+    },
+    {
+      "ID": "6182",
+      "Name": "Activity02_Start",
+      "Tags": []
+    },
+    {
+      "ID": "6183",
+      "Name": "Activity03_Start",
+      "Tags": []
+    },
+    {
+      "ID": "6190",
+      "Name": "Activity00_Finish",
+      "Tags": []
+    },
+    {
+      "ID": "6191",
+      "Name": "Activity01_Finish",
+      "Tags": []
+    },
+    {
+      "ID": "6192",
+      "Name": "Activity02_Finish",
+      "Tags": []
+    },
+    {
+      "ID": "6193",
+      "Name": "Activity03_Finish",
+      "Tags": []
+    },
+    {
+      "ID": "6200",
+      "Name": "Trophy_Hero_Cleared_01",
+      "Tags": []
+    },
+    {
+      "ID": "6201",
+      "Name": "Trophy_Hero_Cleared_02",
+      "Tags": []
+    },
+    {
+      "ID": "6202",
+      "Name": "Trophy_Hero_Cleared_03",
+      "Tags": []
+    },
+    {
+      "ID": "6203",
+      "Name": "Trophy_Hero_Cleared_04",
+      "Tags": []
+    },
+    {
+      "ID": "6204",
+      "Name": "Trophy_Hero_Cleared_05",
+      "Tags": []
+    },
+    {
+      "ID": "6205",
+      "Name": "Trophy_Hero_Cleared_06",
+      "Tags": []
+    },
+    {
+      "ID": "6206",
+      "Name": "Trophy_Hero_Cleared_07",
+      "Tags": []
+    },
+    {
+      "ID": "6207",
+      "Name": "Trophy_Hero_Cleared_08",
+      "Tags": []
+    },
+    {
+      "ID": "6210",
+      "Name": "Trophy_Rare_Terrain_Cleared_Snowy_Mountain",
+      "Tags": []
+    },
+    {
+      "ID": "6211",
+      "Name": "Trophy_Rare_Terrain_Cleared_Volcano",
+      "Tags": []
+    },
+    {
+      "ID": "6212",
+      "Name": "Trophy_Rare_Terrain_Cleared_Corrupted",
+      "Tags": []
+    },
+    {
+      "ID": "6213",
+      "Name": "Trophy_Rare_Terrain_Cleared_Noclone",
+      "Tags": []
+    },
+    {
+      "ID": "6300",
+      "Name": "For displaying the Thread End Encyclopedia",
+      "Tags": []
+    },
+    {
+      "ID": "6950",
+      "Name": "ClF: DLC event flag",
+      "Tags": []
+    },
+    {
+      "ID": "6950",
+      "Name": "DLC0 unlock flag",
+      "Tags": []
+    },
+    {
+      "ID": "6951",
+      "Name": "Reservation: DLC1 unlock flag",
+      "Tags": []
+    },
+    {
+      "ID": "6952",
+      "Name": "Reservation: DLC2 unlock flag",
+      "Tags": []
+    },
+    {
+      "ID": "6960",
+      "Name": "PC multiplayer clear: DLC0 propagation",
+      "Tags": []
+    },
+    {
+      "ID": "7000",
+      "Name": "Game clear flag",
+      "Tags": []
+    },
+    {
+      "ID": "7001",
+      "Name": "Game over flag",
+      "Tags": []
+    },
+    {
+      "ID": "7005",
+      "Name": "I am alive flag_PL1",
+      "Tags": []
+    },
+    {
+      "ID": "7006",
+      "Name": "I am alive flag_PL2",
+      "Tags": []
+    },
+    {
+      "ID": "7007",
+      "Name": "I am alive flag_PL3",
+      "Tags": []
+    },
+    {
+      "ID": "7010",
+      "Name": "Owns 1 revival ticket_PL1",
+      "Tags": []
+    },
+    {
+      "ID": "7011",
+      "Name": "Owns 1 revival ticket_PL2",
+      "Tags": []
+    },
+    {
+      "ID": "7012",
+      "Name": "Owns 1 revival ticket_PL3",
+      "Tags": []
+    },
+    {
+      "ID": "7015",
+      "Name": "Mission player_PL1",
+      "Tags": []
+    },
+    {
+      "ID": "7016",
+      "Name": "Mission player_PL2",
+      "Tags": []
+    },
+    {
+      "ID": "7017",
+      "Name": "Mission player_PL3",
+      "Tags": []
+    },
+    {
+      "ID": "7500",
+      "Name": "Day 1 started flag",
+      "Tags": []
+    },
+    {
+      "ID": "7501",
+      "Name": "Day 1 preliminary battle started flag",
+      "Tags": []
+    },
+    {
+      "ID": "7502",
+      "Name": "Day 1 night boss defeated flag",
+      "Tags": []
+    },
+    {
+      "ID": "7503",
+      "Name": "Day 1 interval started flag",
+      "Tags": []
+    },
+    {
+      "ID": "7504",
+      "Name": "Day 1 night boss battle started flag",
+      "Tags": []
+    },
+    {
+      "ID": "7505",
+      "Name": " Day 2 Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7506",
+      "Name": " Day 2 Preliminary Battle Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7507",
+      "Name": " Day 2 Night Boss Defeated Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7508",
+      "Name": " Day 2 Interval Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7509",
+      "Name": " Day 2 Night Boss Battle Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7510",
+      "Name": " Day 3 Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7511",
+      "Name": " Day 3 Night Boss Battle Started Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7512",
+      "Name": " Day 3 Night Boss Defeated Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7513",
+      "Name": " Day 3 Night Boss HP 0 Flag",
+      "Tags": []
+    },
+    {
+      "ID": "7514",
+      "Name": "Unused",
+      "Tags": []
+    },
+    {
+      "ID": "7515",
+      "Name": "Flag that only appears at night",
+      "Tags": []
+    },
+    {
+      "ID": "7516",
+      "Name": "Game over confirmed flag",
+      "Tags": []
+    },
+    {
+      "ID": "7517",
+      "Name": "2nd day high level F boss map revealed",
+      "Tags": []
+    },
+    {
+      "ID": "7518",
+      "Name": "Night bosses appearing continuously",
+      "Tags": []
+    },
+    {
+      "ID": "7519",
+      "Name": "All annihilation effect displayed flag",
+      "Tags": []
+    },
+    {
+      "ID": "7520",
+      "Name": "1st day interval SFX played flag",
+      "Tags": []
+    },
+    {
+      "ID": "7522",
+      "Name": "Last boss area manual warp enabled flag",
+      "Tags": []
+    },
+    {
+      "ID": "7523",
+      "Name": "Last boss area manual warp completed flag",
+      "Tags": []
+    },
+    {
+      "ID": "7525",
+      "Name": "All bonfires disabled flag",
+      "Tags": []
+    },
+    {
+      "ID": "7530",
+      "Name": "No multi-doping weakening",
+      "Tags": []
+    },
+    {
+      "ID": "7535",
+      "Name": "Day 3 night boss_Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "7600",
+      "Name": "Natural disaster flag: Start",
+      "Tags": []
+    },
+    {
+      "ID": "7601",
+      "Name": "Snowy mountain rare terrain flag",
+      "Tags": []
+    },
+    {
+      "ID": "7602",
+      "Name": "Volcano rare terrain flag",
+      "Tags": []
+    },
+    {
+      "ID": "7603",
+      "Name": "Corrupted rare terrain flag",
+      "Tags": []
+    },
+    {
+      "ID": "7604",
+      "Name": "Missing number",
+      "Tags": []
+    },
+    {
+      "ID": "7605",
+      "Name": "Noclone rare terrain flag",
+      "Tags": []
+    },
+    {
+      "ID": "7649",
+      "Name": "Natural disaster flag: Finished",
+      "Tags": []
+    },
+    {
+      "ID": "7650",
+      "Name": "Final reduction day1 4236",
+      "Tags": []
+    },
+    {
+      "ID": "7651",
+      "Name": "Final reduction day1 4238",
+      "Tags": []
+    },
+    {
+      "ID": "7652",
+      "Name": "Final reduction day1 4239: Reservation",
+      "Tags": []
+    },
+    {
+      "ID": "7653",
+      "Name": "Final reduction day1 4336\u2460",
+      "Tags": []
+    },
+    {
+      "ID": "7654",
+      "Name": "Final reduction day1 4336\u2461",
+      "Tags": []
+    },
+    {
+      "ID": "7655",
+      "Name": "Final reduction day1 4337",
+      "Tags": []
+    },
+    {
+      "ID": "7656",
+      "Name": "Final reduction day1 4338",
+      "Tags": []
+    },
+    {
+      "ID": "7657",
+      "Name": "Final reduction day1 4437",
+      "Tags": []
+    },
+    {
+      "ID": "7658",
+      "Name": "Final reduction day1 4439",
+      "Tags": []
+    },
+    {
+      "ID": "7659",
+      "Name": "Final reduction day1 4536",
+      "Tags": []
+    },
+    {
+      "ID": "7660",
+      "Name": "Final reduction day1 4537",
+      "Tags": []
+    },
+    {
+      "ID": "7661",
+      "Name": "Final reduction day1 4539",
+      "Tags": []
+    },
+    {
+      "ID": "7662",
+      "Name": "Final reduction day1: m60_43_39_20",
+      "Tags": []
+    },
+    {
+      "ID": "7663",
+      "Name": "Final reduction day1: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7664",
+      "Name": "Final reduction day1: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7665",
+      "Name": "Final reduction day1: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7666",
+      "Name": "Final reduction day1: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7667",
+      "Name": "Final reduction day1: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7668",
+      "Name": "Final reduction day1: m60_44_36_30",
+      "Tags": []
+    },
+    {
+      "ID": "7669",
+      "Name": "Final reduction day1: m60_45_37_30",
+      "Tags": []
+    },
+    {
+      "ID": "7670",
+      "Name": "Final reduction day1: m60_43_38_10",
+      "Tags": []
+    },
+    {
+      "ID": "7671",
+      "Name": "Final reduction day1: m60_44_37_50",
+      "Tags": []
+    },
+    {
+      "ID": "7672",
+      "Name": "Final reduction day1: m60_43_37_50",
+      "Tags": []
+    },
+    {
+      "ID": "7673",
+      "Name": "Final reduction day1: Reservation",
+      "Tags": []
+    },
+    {
+      "ID": "7674",
+      "Name": "Final reduction day1: Reservation",
+      "Tags": []
+    },
+    {
+      "ID": "7675",
+      "Name": "Final reduction day2 4236",
+      "Tags": []
+    },
+    {
+      "ID": "7676",
+      "Name": "Final reduction day2 4238",
+      "Tags": []
+    },
+    {
+      "ID": "7677",
+      "Name": "Final reduction day2 4239: Reservation",
+      "Tags": []
+    },
+    {
+      "ID": "7678",
+      "Name": "Final reduction day2 4336\u2460",
+      "Tags": []
+    },
+    {
+      "ID": "7679",
+      "Name": "Final reduction day2 4336\u2461",
+      "Tags": []
+    },
+    {
+      "ID": "7680",
+      "Name": "Final reduction day2 4337",
+      "Tags": []
+    },
+    {
+      "ID": "7681",
+      "Name": "Final reduction day2 4338",
+      "Tags": []
+    },
+    {
+      "ID": "7682",
+      "Name": "Final reduction day2 4437",
+      "Tags": []
+    },
+    {
+      "ID": "7683",
+      "Name": "Final reduction day2 4439",
+      "Tags": []
+    },
+    {
+      "ID": "7684",
+      "Name": "Final reduction day2 4536",
+      "Tags": []
+    },
+    {
+      "ID": "7685",
+      "Name": "Final reduction day2 4537",
+      "Tags": []
+    },
+    {
+      "ID": "7686",
+      "Name": "Final reduction day2 4539",
+      "Tags": []
+    },
+    {
+      "ID": "7687",
+      "Name": "Final reduction day2: m60_43_39_20",
+      "Tags": []
+    },
+    {
+      "ID": "7688",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7689",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7690",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7691",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7692",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7693",
+      "Name": "Final reduction day2: m60_44_36_30",
+      "Tags": []
+    },
+    {
+      "ID": "7694",
+      "Name": "Final reduction day2: m60_45_37_30",
+      "Tags": []
+    },
+    {
+      "ID": "7695",
+      "Name": "Final reduction day2: m60_43_38_10",
+      "Tags": []
+    },
+    {
+      "ID": "7696",
+      "Name": "Final reduction day2: m60_44_37_50",
+      "Tags": []
+    },
+    {
+      "ID": "7697",
+      "Name": "Final reduction day2: m60_43_37_50",
+      "Tags": []
+    },
+    {
+      "ID": "7698",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7699",
+      "Name": "Final reduction day2: reserved",
+      "Tags": []
+    },
+    {
+      "ID": "7700",
+      "Name": " Day 1 Sudden Event_Night Boss Appears Continuously",
+      "Tags": []
+    },
+    {
+      "ID": "7701",
+      "Name": " Day 1 Sudden Event_Meteorite Event",
+      "Tags": []
+    },
+    {
+      "ID": "7702",
+      "Name": " Day 1 Sudden Event_Walking Mausoleum",
+      "Tags": []
+    },
+    {
+      "ID": "7703",
+      "Name": " Day 1 Sudden Event_Weakened Prison",
+      "Tags": []
+    },
+    {
+      "ID": "7704",
+      "Name": " Day 1 Sudden Event_Mass Enemy Spawn",
+      "Tags": []
+    },
+    {
+      "ID": "7705",
+      "Name": " Day 1 Sudden Event_Night Boss Interference",
+      "Tags": []
+    },
+    {
+      "ID": "7706",
+      "Name": " Day 1 Sudden Event_Difficult Magician\u0027s Tower",
+      "Tags": []
+    },
+    {
+      "ID": "7707",
+      "Name": " Day 1 Sudden Event_Mad Zone",
+      "Tags": []
+    },
+    {
+      "ID": "7708",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7709",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7710",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7711",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7712",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7713",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7714",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7715",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7716",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7717",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7718",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7719",
+      "Name": "Sudden event on the first day_",
+      "Tags": []
+    },
+    {
+      "ID": "7720",
+      "Name": " Day 2 Sudden Event_Night Boss Appears Continuously",
+      "Tags": []
+    },
+    {
+      "ID": "7721",
+      "Name": " Day 2 Sudden Event_Meteorite Event",
+      "Tags": []
+    },
+    {
+      "ID": "7722",
+      "Name": " Day 2 Sudden Event_Walking Mausoleum",
+      "Tags": []
+    },
+    {
+      "ID": "7723",
+      "Name": " Day 2 Sudden Event_Weakened Prison",
+      "Tags": []
+    },
+    {
+      "ID": "7724",
+      "Name": " Day 2 Sudden Event_Mass Enemy Spawn",
+      "Tags": []
+    },
+    {
+      "ID": "7725",
+      "Name": " Day 2 Sudden Event_Night Boss Interference",
+      "Tags": []
+    },
+    {
+      "ID": "7726",
+      "Name": " Day 2 Sudden Event_Difficult Magician\u0027s Tower",
+      "Tags": []
+    },
+    {
+      "ID": "7727",
+      "Name": " Day 2 Sudden Event_Mad Zone",
+      "Tags": []
+    },
+    {
+      "ID": "7728",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7729",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7730",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7731",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7732",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7733",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7734",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7735",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7736",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7737",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7738",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "7739",
+      "Name": "Sudden event on the second day_",
+      "Tags": []
+    },
+    {
+      "ID": "8000",
+      "Name": " Buried Treasure Chest Group 00_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8001",
+      "Name": " Buried Treasure Chest Group 01_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8002",
+      "Name": " Buried Treasure Chest Group 02_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8003",
+      "Name": " Buried Treasure Chest Group 03_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8004",
+      "Name": " Buried Treasure Chest Group 04_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8005",
+      "Name": " Buried Treasure Chest Group 05_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8006",
+      "Name": " Buried Treasure Chest Group 06_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8007",
+      "Name": " Buried Treasure Chest Group 07_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8008",
+      "Name": " Buried Treasure Chest Group 08_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8009",
+      "Name": " Buried Treasure Chest Group 09_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8010",
+      "Name": " Buried Treasure Chest Group 10_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8011",
+      "Name": " Buried Treasure Chest Group 11_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8012",
+      "Name": " Buried Treasure Chest Group 12_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8013",
+      "Name": " Buried Treasure Chest Group 13_Appearance Flag",
+      "Tags": []
+    },
+    {
+      "ID": "8014",
+      "Name": " Antiques Flag_Magician Tower Clearance 01",
+      "Tags": []
+    },
+    {
+      "ID": "8015",
+      "Name": " Antiques Flag_Magician Tower Clearance 02",
+      "Tags": []
+    },
+    {
+      "ID": "8016",
+      "Name": " Antiques Flag_Magician Tower Clearance 03",
+      "Tags": []
+    },
+    {
+      "ID": "8017",
+      "Name": " Antiques Flag_Magician Tower Clearance 04",
+      "Tags": []
+    },
+    {
+      "ID": "8018",
+      "Name": " Unused Antiques Flag_Defeat the Prison",
+      "Tags": []
+    },
+    {
+      "ID": "8019",
+      "Name": " Unused Antiques Flag_Defeat the Dark Spirit",
+      "Tags": []
+    },
+    {
+      "ID": "8020",
+      "Name": " Sudden Event Clearance 00_Consecutive Night Boss Appearances",
+      "Tags": []
+    },
+    {
+      "ID": "8021",
+      "Name": "Clear the sudden event 01_Meteorite event",
+      "Tags": []
+    },
+    {
+      "ID": "8022",
+      "Name": "Clear the sudden event 02_Walking mausoleum",
+      "Tags": []
+    },
+    {
+      "ID": "8023",
+      "Name": "Clear the sudden event 03_Weakened imprisonment",
+      "Tags": []
+    },
+    {
+      "ID": "8024",
+      "Name": "Clear the sudden event 04_Mass enemy spawn",
+      "Tags": []
+    },
+    {
+      "ID": "8025",
+      "Name": "Clear the sudden event 05_Night boss interference",
+      "Tags": []
+    },
+    {
+      "ID": "8026",
+      "Name": "Clear the sudden event 06_Difficult magician tower",
+      "Tags": []
+    },
+    {
+      "ID": "8027",
+      "Name": "Clear the sudden event 07_Mad zone",
+      "Tags": []
+    },
+    {
+      "ID": "8028",
+      "Name": "Clear the sudden event 08_",
+      "Tags": []
+    },
+    {
+      "ID": "8029",
+      "Name": "Clear the sudden event 09_",
+      "Tags": []
+    },
+    {
+      "ID": "8030",
+      "Name": "Clear the sudden event 10_",
+      "Tags": []
+    },
+    {
+      "ID": "8031",
+      "Name": "Clear the sudden event 11_",
+      "Tags": []
+    },
+    {
+      "ID": "8032",
+      "Name": "Clear the sudden event 12_",
+      "Tags": []
+    },
+    {
+      "ID": "8033",
+      "Name": "Clear the sudden event 13_",
+      "Tags": []
+    },
+    {
+      "ID": "8034",
+      "Name": "Clear the sudden event 14_",
+      "Tags": []
+    },
+    {
+      "ID": "8035",
+      "Name": "Night bosses appear consecutively",
+      "Tags": []
+    },
+    {
+      "ID": "8040",
+      "Name": "Meteorite event allowed",
+      "Tags": []
+    },
+    {
+      "ID": "8041",
+      "Name": "1st meteorite event drop location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8042",
+      "Name": "Meteorite event drop location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8043",
+      "Name": "Meteorite event has fallen",
+      "Tags": []
+    },
+    {
+      "ID": "8044",
+      "Name": "Meteorite event boss has appeared",
+      "Tags": []
+    },
+    {
+      "ID": "8045",
+      "Name": "Walking mausoleum allowed",
+      "Tags": []
+    },
+    {
+      "ID": "8046",
+      "Name": "1st walking mausoleum drop location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8047",
+      "Name": "Walking mausoleum drop location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8050",
+      "Name": "Weakened imprisonment discovered",
+      "Tags": []
+    },
+    {
+      "ID": "8055",
+      "Name": "Enemy mass spawn allowed",
+      "Tags": []
+    },
+    {
+      "ID": "8056",
+      "Name": "Enemy mass spawn reservation completed",
+      "Tags": []
+    },
+    {
+      "ID": "8057",
+      "Name": "Enemy mass spawn has occurred",
+      "Tags": []
+    },
+    {
+      "ID": "8058",
+      "Name": "Enemy mass spawn_network sharing lottery_win",
+      "Tags": []
+    },
+    {
+      "ID": "8059",
+      "Name": "Enemy mass spawn_network sharing lottery_loss",
+      "Tags": []
+    },
+    {
+      "ID": "8060",
+      "Name": "Night boss interference allowed",
+      "Tags": []
+    },
+    {
+      "ID": "8061",
+      "Name": "Night boss interference already occurred",
+      "Tags": []
+    },
+    {
+      "ID": "8062",
+      "Name": "Night boss interference finished",
+      "Tags": []
+    },
+    {
+      "ID": "8065",
+      "Name": "Difficult magician tower_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8069",
+      "Name": "Madness zone_drops already performed",
+      "Tags": []
+    },
+    {
+      "ID": "8070",
+      "Name": "Madness zone_Madness sun appears *unused",
+      "Tags": []
+    },
+    {
+      "ID": "8071",
+      "Name": "Madness zone_started",
+      "Tags": []
+    },
+    {
+      "ID": "8072",
+      "Name": "Madness zone_enemies destroyed",
+      "Tags": []
+    },
+    {
+      "ID": "8073",
+      "Name": "Madness zone_outside shrinking circle",
+      "Tags": []
+    },
+    {
+      "ID": "8074",
+      "Name": "Madness zone_drops allowed",
+      "Tags": []
+    },
+    {
+      "ID": "8075",
+      "Name": "Night boss interference_Margit",
+      "Tags": []
+    },
+    {
+      "ID": "8076",
+      "Name": "Night boss interference_abstract enemy",
+      "Tags": []
+    },
+    {
+      "ID": "8077",
+      "Name": "Night boss interference_Night Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "8078",
+      "Name": "Night boss interference_Intellectual bug",
+      "Tags": []
+    },
+    {
+      "ID": "8079",
+      "Name": "Night boss interference_Baphomet",
+      "Tags": []
+    },
+    {
+      "ID": "8080",
+      "Name": "Night boss interference_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8081",
+      "Name": "Night boss interference_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8082",
+      "Name": "Night boss interference_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8083",
+      "Name": "Night boss interference_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8084",
+      "Name": "Night boss interference_reservation",
+      "Tags": []
+    },
+    {
+      "ID": "8085",
+      "Name": "Night boss interference Margit_target PC1",
+      "Tags": []
+    },
+    {
+      "ID": "8086",
+      "Name": "Night boss interference Margit_target PC2",
+      "Tags": []
+    },
+    {
+      "ID": "8087",
+      "Name": "Night boss interference Margit_target PC3",
+      "Tags": []
+    },
+    {
+      "ID": "8088",
+      "Name": "Night boss interference Margit_location lottery completed 1st time",
+      "Tags": []
+    },
+    {
+      "ID": "8089",
+      "Name": "Night boss interference Margit_location lottery completed 2nd time",
+      "Tags": []
+    },
+    {
+      "ID": "8090",
+      "Name": "Night boss interference abstract enemy_timer ON",
+      "Tags": []
+    },
+    {
+      "ID": "8091",
+      "Name": "Night boss interference abstract enemy_time expired",
+      "Tags": []
+    },
+    {
+      "ID": "8092",
+      "Name": "Night boss interference abstract enemy_1st location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8093",
+      "Name": "Night boss interference abstract enemy_2nd location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8094",
+      "Name": "Night boss interference abstract enemy_3rd location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8095",
+      "Name": "Night boss interference Margit_Target dead",
+      "Tags": []
+    },
+    {
+      "ID": "8096",
+      "Name": "Night boss interference Margit_Start conversation played",
+      "Tags": []
+    },
+    {
+      "ID": "8097",
+      "Name": "Night boss interference Margit_Warp appearance suppressed",
+      "Tags": []
+    },
+    {
+      "ID": "8100",
+      "Name": "Night boss interference intelligent bug_1st location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8105",
+      "Name": "Night boss interference Baphomet_Already hostile",
+      "Tags": []
+    },
+    {
+      "ID": "8106",
+      "Name": "Night boss interference Baphomet_All curses removed",
+      "Tags": []
+    },
+    {
+      "ID": "8107",
+      "Name": "Night boss interference Baphomet_Boss gauge hidden flag",
+      "Tags": []
+    },
+    {
+      "ID": "8108",
+      "Name": "Night boss interference Baphomet_1st location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8109",
+      "Name": "Night boss interference Baphomet_2nd location lottery completed",
+      "Tags": []
+    },
+    {
+      "ID": "8110",
+      "Name": "Night boss interference Baphomet_Disappeared after clearing",
+      "Tags": []
+    },
+    {
+      "ID": "8120",
+      "Name": " Buried Treasure Chest 00_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8121",
+      "Name": " Buried Treasure Chest 01_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8122",
+      "Name": " Buried Treasure Chest 02_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8123",
+      "Name": " Buried Treasure Chest 03_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8124",
+      "Name": " Buried Treasure Chest 04_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8125",
+      "Name": " Buried Treasure Chest 05_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8126",
+      "Name": " Buried Treasure Chest 06_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8127",
+      "Name": " Buried Treasure Chest 07_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8128",
+      "Name": " Buried Treasure Chest 08_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8129",
+      "Name": " Buried Treasure Chest 09_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8130",
+      "Name": " Buried Treasure Chest 10_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8131",
+      "Name": " Buried Treasure Chest 11_Map Point Open",
+      "Tags": []
+    },
+    {
+      "ID": "8140",
+      "Name": "Magician Tower Opening Count",
+      "Tags": []
+    },
+    {
+      "ID": "8145",
+      "Name": "Prison Sealing Count",
+      "Tags": []
+    },
+    {
+      "ID": "8150",
+      "Name": "*Unused Boss Defeat Count",
+      "Tags": []
+    },
+    {
+      "ID": "8155",
+      "Name": "Dark Spirit Defeat Count",
+      "Tags": []
+    },
+    {
+      "ID": "8185",
+      "Name": "Snow Mountain Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8190",
+      "Name": "Volcano Eruption Authorized",
+      "Tags": []
+    },
+    {
+      "ID": "8191",
+      "Name": "Volcano Eruption Executed",
+      "Tags": []
+    },
+    {
+      "ID": "8192",
+      "Name": "Volcano Eruption Day 1 Second Half",
+      "Tags": []
+    },
+    {
+      "ID": "8193",
+      "Name": "Volcano Eruption Day 2 First Half",
+      "Tags": []
+    },
+    {
+      "ID": "8194",
+      "Name": "Volcano Eruption Day 2 Second Half",
+      "Tags": []
+    },
+    {
+      "ID": "8200",
+      "Name": "Weak Prison Sealing Body_Shrine00_m60_42_39_00",
+      "Tags": []
+    },
+    {
+      "ID": "8201",
+      "Name": "Weakened Prison_Shrine01_m60_42_37_00",
+      "Tags": []
+    },
+    {
+      "ID": "8202",
+      "Name": "Weakened Prison_Shrine02_m60_42_37_00",
+      "Tags": []
+    },
+    {
+      "ID": "8203",
+      "Name": "Weakened Prison_Shrine03_m60_44_38_00",
+      "Tags": []
+    },
+    {
+      "ID": "8204",
+      "Name": "Weakened Prison_Shrine04_m60_44_36_00",
+      "Tags": []
+    },
+    {
+      "ID": "8205",
+      "Name": "Weakened Prison_Shrine05_m60_45_38_00",
+      "Tags": []
+    },
+    {
+      "ID": "8206",
+      "Name": "Weakened Prison Sealing_Shrine 06_Unused",
+      "Tags": []
+    },
+    {
+      "ID": "8207",
+      "Name": "Weakened Prison Sealing_Shrine 07_Unused",
+      "Tags": []
+    },
+    {
+      "ID": "8208",
+      "Name": "Weakened Prison Sealing_Shrine 08_Unused",
+      "Tags": []
+    },
+    {
+      "ID": "8209",
+      "Name": "Weakened Prison Sealing_Shrine 09_Unused",
+      "Tags": []
+    },
+    {
+      "ID": "8300",
+      "Name": "00Common Mission 1_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8305",
+      "Name": "00Common Mission 2_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8310",
+      "Name": "00Common Mission 3_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8315",
+      "Name": "00Common Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8320",
+      "Name": "00Common Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8325",
+      "Name": "01 Pursuer Mission 1_Grindstone Collection_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8326",
+      "Name": "01 Pursuer Mission 1_Grindstone Collection_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8327",
+      "Name": "01 Pursuer Mission 1_Grindstone Collection_Defeated",
+      "Tags": []
+    },
+    {
+      "ID": "8330",
+      "Name": "01 Pursuer Mission 2_Silver Droplet_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8331",
+      "Name": "01 Pursuer Mission 2_Silver Droplet_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8332",
+      "Name": "01 Pursuer Mission 2_Silver Droplet_Defeated",
+      "Tags": []
+    },
+    {
+      "ID": "8335",
+      "Name": "01 Tracker Mission 3_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8340",
+      "Name": "01 Tracker Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8345",
+      "Name": "01 Tracker Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8350",
+      "Name": "02 Guardian Mission 1_Corrupted Pilgrim_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8351",
+      "Name": "02 Guardian Mission 1_Corrupted Pilgrim_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8355",
+      "Name": "02 Guardian Mission 2_Defeat Golem_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8356",
+      "Name": "02 Guardian Mission 2_Defeat Golem_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8357",
+      "Name": "02 Guardian Mission 2_Defeat Golem_Defeat",
+      "Tags": []
+    },
+    {
+      "ID": "8360",
+      "Name": "02 Guardian Mission 3_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8361",
+      "Name": "02 Guardian Mission 3_Baphomet Trade_Defeat",
+      "Tags": []
+    },
+    {
+      "ID": "8365",
+      "Name": "02 Guardian Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8370",
+      "Name": "02 Guardian Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8375",
+      "Name": "03 Iron Eye Mission 1_Eliminate the sick_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8380",
+      "Name": "03 Iron Eye Mission 2_Defeat the sinners_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8385",
+      "Name": "03 Iron Eye Mission 3_Defeat the centaur_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8390",
+      "Name": "03 Iron Eye Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8395",
+      "Name": "03 Iron Eye Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8400",
+      "Name": "04 Lady Mission 1_Collect flowers_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8401",
+      "Name": "04 Lady Mission 1_Collect flowers_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8405",
+      "Name": "04 Lady Mission 2_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8410",
+      "Name": "04 Lady Mission 3_Find news_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8411",
+      "Name": "04 Lady Mission 3_Find news_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8412",
+      "Name": "04 Lady Mission 3_Find news_Defeat",
+      "Tags": []
+    },
+    {
+      "ID": "8415",
+      "Name": "04 Lady Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8420",
+      "Name": "04 Lady Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8425",
+      "Name": "05 Rogue Mission 1_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8430",
+      "Name": "05 Rogue Mission 2_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8435",
+      "Name": "05 Rogue Mission 3_Before the Hazama Cup Final_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8440",
+      "Name": "05 Rogue Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8445",
+      "Name": "05 Rogue Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8450",
+      "Name": "06 Avenger Mission 1_Defeat the Night Servant_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8455",
+      "Name": "\u203BUnused 06 Avenger Mission 2_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8460",
+      "Name": "06 Avenger Mission 3_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8465",
+      "Name": "06 Avenger Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8470",
+      "Name": "06 Avenger Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8475",
+      "Name": "07 Hermit Mission 1_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8476",
+      "Name": "07 Hermit Mission 1_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8477",
+      "Name": "07 Hermit Mission 1_Defeated",
+      "Tags": []
+    },
+    {
+      "ID": "8480",
+      "Name": "*Unused 07 Hermit Mission 2_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8485",
+      "Name": "07 Hermit Mission 3_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8490",
+      "Name": "07 Hermit Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8495",
+      "Name": "07 Hermit Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8500",
+      "Name": "*Unused 08 Enforcer Mission 1_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8505",
+      "Name": "08 Enforcer Mission 2_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8506",
+      "Name": "08 Enforcer Mission 2_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8507",
+      "Name": "08 Enforcer Mission 2_Defeated",
+      "Tags": []
+    },
+    {
+      "ID": "8510",
+      "Name": "08 Enforcer Mission 3_All Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8511",
+      "Name": "08 Enforcer Mission 3_Started",
+      "Tags": []
+    },
+    {
+      "ID": "8512",
+      "Name": "08 Enforcer Mission 3_Defeated",
+      "Tags": []
+    },
+    {
+      "ID": "8515",
+      "Name": "08 Enforcer Mission 4_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8520",
+      "Name": "08 Enforcer Mission 5_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8800",
+      "Name": "Event ID: Map point management_Bird movement icon",
+      "Tags": []
+    },
+    {
+      "ID": "8810",
+      "Name": "Event ID: Map point management_Bird movement icon exception",
+      "Tags": []
+    },
+    {
+      "ID": "8900",
+      "Name": "[1 day try] Night boss interference Margit_Allow occurrence",
+      "Tags": []
+    },
+    {
+      "ID": "8901",
+      "Name": "[1 day try] Night boss interference Margit_Already occurred",
+      "Tags": []
+    },
+    {
+      "ID": "8902",
+      "Name": "[1 day try] Night boss interference Margit_Finished",
+      "Tags": []
+    },
+    {
+      "ID": "8903",
+      "Name": "[1 day try] Night boss interference Margit_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8904",
+      "Name": "[1 day try] Night boss interference Margit_Allow occurrence",
+      "Tags": []
+    },
+    {
+      "ID": "8910",
+      "Name": "[1 day try] Night boss interference abstract enemy_Allow occurrence",
+      "Tags": []
+    },
+    {
+      "ID": "8911",
+      "Name": "[1 day try] Night boss interference abstract enemy_Already occurred",
+      "Tags": []
+    },
+    {
+      "ID": "8912",
+      "Name": "[1 day try] Night boss interference abstract enemy_Finished",
+      "Tags": []
+    },
+    {
+      "ID": "8913",
+      "Name": "[1 day try] Night boss interference abstract enemy_Cleared",
+      "Tags": []
+    },
+    {
+      "ID": "8914",
+      "Name": "[1 day try] Night boss interference abstract enemy_Allow occurrence",
+      "Tags": []
+    },
+    {
+      "ID": "9010",
+      "Name": "Saw the cut scene of a deployment",
+      "Tags": []
+    },
+    {
+      "ID": "9011",
+      "Name": "80",
+      "Tags": []
+    },
+    {
+      "ID": "9012",
+      "Name": "Deployment phase, bird moving",
+      "Tags": []
+    },
+    {
+      "ID": "9013",
+      "Name": "Sudden event timer_Own timer completed",
+      "Tags": []
+    },
+    {
+      "ID": "9015",
+      "Name": "Boss battle death prohibition flag",
+      "Tags": []
+    },
+    {
+      "ID": "9016",
+      "Name": "Rejoin near death entry flag",
+      "Tags": []
+    },
+    {
+      "ID": "9017",
+      "Name": "Death text performance stop flag",
+      "Tags": []
+    },
+    {
+      "ID": "9021",
+      "Name": "BGM control flag: For cut scenes",
+      "Tags": []
+    },
+    {
+      "ID": "9025",
+      "Name": "Inside hotspot area",
+      "Tags": []
+    },
+    {
+      "ID": "9030",
+      "Name": "Mausoleum weapon duplication menu used",
+      "Tags": []
+    },
+    {
+      "ID": "9035",
+      "Name": "Inside madness zone area",
+      "Tags": []
+    },
+    {
+      "ID": "9036",
+      "Name": "Madness zone own PC attacking",
+      "Tags": []
+    },
+    {
+      "ID": "9037",
+      "Name": "Inside madness zone Gparam area",
+      "Tags": []
+    },
+    {
+      "ID": "9038",
+      "Name": "Madness zone rune acquired",
+      "Tags": []
+    },
+    {
+      "ID": "9040",
+      "Name": "Request to determine number of estuaries",
+      "Tags": []
+    },
+    {
+      "ID": "9041",
+      "Name": "Count number of estuaries",
+      "Tags": []
+    },
+    {
+      "ID": "9050",
+      "Name": "Est increase by defeating night boss, day 1",
+      "Tags": []
+    },
+    {
+      "ID": "9051",
+      "Name": "Est increase by defeating night boss, day 2",
+      "Tags": []
+    },
+    {
+      "ID": "9052",
+      "Name": "Warped to Tower of God",
+      "Tags": []
+    },
+    {
+      "ID": "9055",
+      "Name": "Night boss obstruction, abstract enemy, within area",
+      "Tags": []
+    },
+    {
+      "ID": "9056",
+      "Name": "Night boss obstruction, permanent debuff confirmed",
+      "Tags": []
+    },
+    {
+      "ID": "9060",
+      "Name": "Night boss obstruction, Margite, with BGM, gauge start",
+      "Tags": []
+    },
+    {
+      "ID": "9061",
+      "Name": "Night boss obstruction, Margite, with BGM, gauge end",
+      "Tags": []
+    },
+    {
+      "ID": "9062",
+      "Name": "Night boss obstruction, Margite, without BGM, gauge start",
+      "Tags": []
+    },
+    {
+      "ID": "9063",
+      "Name": "Night boss obstruction, Margite, without BGM, gauge end",
+      "Tags": []
+    },
+    {
+      "ID": "9070",
+      "Name": "Boss antiques confirmed lottery, Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "9071",
+      "Name": "Boss Antiques Confirmed Draw_Dragon Tyranno",
+      "Tags": []
+    },
+    {
+      "ID": "9072",
+      "Name": "Boss Antiques Confirmed Draw_Intelligent Bug",
+      "Tags": []
+    },
+    {
+      "ID": "9073",
+      "Name": "Boss Antiques Confirmed Draw_Abstract Enemy",
+      "Tags": []
+    },
+    {
+      "ID": "9074",
+      "Name": "Boss Antiques Confirmed Draw_Baphomet",
+      "Tags": []
+    },
+    {
+      "ID": "9075",
+      "Name": "Boss Antiques Confirmed Draw_Centaur",
+      "Tags": []
+    },
+    {
+      "ID": "9076",
+      "Name": "Boss Antiques Confirmed Draw_Mist Dragon",
+      "Tags": []
+    },
+    {
+      "ID": "9080",
+      "Name": "Boss Antiques Confirmed Draw_Nameless",
+      "Tags": []
+    },
+    {
+      "ID": "9089",
+      "Name": "Antiques Draw_Campaign Session",
+      "Tags": []
+    },
+    {
+      "ID": "9090",
+      "Name": "Cerberus session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9091",
+      "Name": "Tyrannosaurus session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9092",
+      "Name": "Intelligent insect session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9093",
+      "Name": "Abstract enemy session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9094",
+      "Name": "Baphomet session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9095",
+      "Name": "Centaur session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9096",
+      "Name": "Mist dragon session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9097",
+      "Name": "Nameless session for antique lottery",
+      "Tags": []
+    },
+    {
+      "ID": "9100",
+      "Name": "GrF:Boss defeat flag",
+      "Tags": []
+    },
+    {
+      "ID": "9100",
+      "Name": "Buried Treasure Chest 00",
+      "Tags": []
+    },
+    {
+      "ID": "9101",
+      "Name": "Buried Treasure Chest 01",
+      "Tags": []
+    },
+    {
+      "ID": "9102",
+      "Name": "Buried Treasure Chest 02",
+      "Tags": []
+    },
+    {
+      "ID": "9103",
+      "Name": "Buried Treasure Chest 03",
+      "Tags": []
+    },
+    {
+      "ID": "9104",
+      "Name": "Buried Treasure Chest 04",
+      "Tags": []
+    },
+    {
+      "ID": "9105",
+      "Name": "Buried Treasure Chest 05",
+      "Tags": []
+    },
+    {
+      "ID": "9106",
+      "Name": "Buried Treasure Chest 06",
+      "Tags": []
+    },
+    {
+      "ID": "9107",
+      "Name": "Buried Treasure Chest 07",
+      "Tags": []
+    },
+    {
+      "ID": "9108",
+      "Name": "Buried Treasure Chest 08",
+      "Tags": []
+    },
+    {
+      "ID": "9109",
+      "Name": "Buried Treasure Chest 09",
+      "Tags": []
+    },
+    {
+      "ID": "9110",
+      "Name": "Buried Treasure Chest 10",
+      "Tags": []
+    },
+    {
+      "ID": "9111",
+      "Name": "Buried Treasure Chest 11",
+      "Tags": []
+    },
+    {
+      "ID": "9120",
+      "Name": " Special effect count for magician tower",
+      "Tags": []
+    },
+    {
+      "ID": "9125",
+      "Name": " Special effect count for prison destruction",
+      "Tags": []
+    },
+    {
+      "ID": "9130",
+      "Name": " Special effect count for night boss interference Margit destruction",
+      "Tags": []
+    },
+    {
+      "ID": "9135",
+      "Name": " Special effect count for dark spirit destruction",
+      "Tags": []
+    },
+    {
+      "ID": "9140",
+      "Name": " Guardian 0201 Spot 300 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9141",
+      "Name": " Guardian 0201 Spot 301 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9142",
+      "Name": " Guardian 0201 Spot 302 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9143",
+      "Name": " Guardian 0201 Spot 303 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9144",
+      "Name": " Guardian 0201 Spot 304 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9145",
+      "Name": " Guardian 0201 Spot 305 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9146",
+      "Name": " Guardian 0201 Spot 306 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9147",
+      "Name": " Guardian 0201 Spot 307 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9148",
+      "Name": " Guardian 0201 Spot 308 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9149",
+      "Name": " Guardian 0201 Spot 309 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9150",
+      "Name": " Guardian 0201 Spot 310 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9151",
+      "Name": " Guardian 0201 Spot 311 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9152",
+      "Name": " Guardian 0201 Spot 312 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9153",
+      "Name": " Guardian 0201 Spot 313 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9154",
+      "Name": " Guardian 0201 Spot 314 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9155",
+      "Name": " Guardian 0201 Spot 315 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9156",
+      "Name": " Guardian 0201 Spot 316 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9157",
+      "Name": " Guardian 0201 Spot 317 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9158",
+      "Name": " Guardian 0201 Spot 318 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9159",
+      "Name": " Guardian 0201 Spot 319 Occurrence location",
+      "Tags": []
+    },
+    {
+      "ID": "9160",
+      "Name": "Guardian 0201 Spot 300 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9161",
+      "Name": "Guardian 0201 Spot 301 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9162",
+      "Name": "Guardian 0201 Spot 302 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9163",
+      "Name": "Guardian 0201 Spot 303 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9164",
+      "Name": "Guardian 0201 Spot 304 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9165",
+      "Name": "Guardian 0201 Spot 305 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9166",
+      "Name": "Guardian 0201 Spot 306 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9167",
+      "Name": "Guardian 0201 Spot 307 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9168",
+      "Name": "Guardian 0201 Spot 308 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9169",
+      "Name": "Guardian 0201 Spot 309 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9170",
+      "Name": "Guardian 0201 Spot 310 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9171",
+      "Name": "Guardian 0201 Spot 311 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9172",
+      "Name": "Guardian 0201 Spot 312 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9173",
+      "Name": "Guardian 0201 Spot 313 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9174",
+      "Name": "Guardian 0201 Spot 314 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9175",
+      "Name": "Guardian 0201 Spot 315 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9176",
+      "Name": "Guardian 0201 Spot 316 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9177",
+      "Name": "Guardian 0201 Spot 317 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9178",
+      "Name": "Guardian 0201 Spot 318 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9179",
+      "Name": "Guardian 0201 Spot 319 Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9191",
+      "Name": "Permanent buff acquisition permission: Noclone area",
+      "Tags": []
+    },
+    {
+      "ID": "9192",
+      "Name": "Permanent buff acquisition permission: Rotten area",
+      "Tags": []
+    },
+    {
+      "ID": "9193",
+      "Name": "Permanent buff acquisition permission: Snowy mountain area",
+      "Tags": []
+    },
+    {
+      "ID": "9194",
+      "Name": "Legendary smithing table: Used flag",
+      "Tags": []
+    },
+    {
+      "ID": "9200",
+      "Name": "02 Guardian Mission 3_Baphomet trade_Personally completed",
+      "Tags": []
+    },
+    {
+      "ID": "9201",
+      "Name": "02 Guardian Mission 3_Baphomet trade_Tradeable",
+      "Tags": []
+    },
+    {
+      "ID": "9202",
+      "Name": "02 Guardian Mission 3_Baphomet trade_Trade completed",
+      "Tags": []
+    },
+    {
+      "ID": "9204",
+      "Name": "101_Grindstone collection_PC mine",
+      "Tags": []
+    },
+    {
+      "ID": "9205",
+      "Name": "\u203BUnused 06 Avenger Mission 2_Puddle purification_Personally completed",
+      "Tags": []
+    },
+    {
+      "ID": "9206",
+      "Name": "101_Grindstone collection_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9207",
+      "Name": "102_Silver drops_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9208",
+      "Name": "202_Golem_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9209",
+      "Name": "302_Defeat the sinner_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9210",
+      "Name": "*Unused 07 Hermit Mission 2_Night boss interference strategy_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9211",
+      "Name": "303_Defeat the centaur_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9212",
+      "Name": "401_Flower collection_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9213",
+      "Name": "403_Weather vane grave_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9214",
+      "Name": "601_Steal boss weapon_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9215",
+      "Name": "*Unused 08 Enforcer Mission 1_Golden Seed_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9216",
+      "Name": "701_Defeat night enemies_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9217",
+      "Name": "802_Collect golden buds_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9218",
+      "Name": "803_Collect flowers_Completed",
+      "Tags": []
+    },
+    {
+      "ID": "9219",
+      "Name": "401_Collect flowers_Collecting prohibited",
+      "Tags": []
+    },
+    {
+      "ID": "9220",
+      "Name": "803_Collect flowers_Collecting prohibited",
+      "Tags": []
+    },
+    {
+      "ID": "9221",
+      "Name": "06Avenger Mission 2_4437 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9222",
+      "Name": "06Avenger Mission 2_4336 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9223",
+      "Name": "06Avenger Mission 2_4237 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9224",
+      "Name": "06Avenger Mission 2_4338 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9225",
+      "Name": "06Avenger Mission 2_4439 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9226",
+      "Name": "06Avenger Mission 2_4539 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9227",
+      "Name": "06Avenger Mission 2_4537 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9228",
+      "Name": "06Avenger Mission 2_4536 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9229",
+      "Name": "06Avenger Mission 2_4437\u2461 locations started",
+      "Tags": []
+    },
+    {
+      "ID": "9231",
+      "Name": "06Avenger Mission 2_4437 locations cleared",
+      "Tags": []
+    },
+    {
+      "ID": "9232",
+      "Name": "06Avenger Mission 2_4336 locations cleared",
+      "Tags": []
+    },
+    {
+      "ID": "9233",
+      "Name": "06 Avenger Mission 2_Clear 4237 places",
+      "Tags": []
+    },
+    {
+      "ID": "9234",
+      "Name": "06 Avenger Mission 2_Clear 4338 places",
+      "Tags": []
+    },
+    {
+      "ID": "9235",
+      "Name": "06 Avenger Mission 2_Clear 4439 places",
+      "Tags": []
+    },
+    {
+      "ID": "9236",
+      "Name": "06 Avenger Mission 2_Clear 4539 places",
+      "Tags": []
+    },
+    {
+      "ID": "9237",
+      "Name": "06 Avenger Mission 2_Clear 4537 places",
+      "Tags": []
+    },
+    {
+      "ID": "9238",
+      "Name": "06 Avenger Mission 2_Clear 4536 places",
+      "Tags": []
+    },
+    {
+      "ID": "9239",
+      "Name": "06 Avenger Mission 2_Clear 4437\u2461 places",
+      "Tags": []
+    },
+    {
+      "ID": "9241",
+      "Name": "06 Avenger Mission 2_Ultimate",
+      "Tags": []
+    },
+    {
+      "ID": "9242",
+      "Name": "06 Avenger Mission 2_Ultimate",
+      "Tags": []
+    },
+    {
+      "ID": "9243",
+      "Name": "06 Avenger Mission 2_Ultimate",
+      "Tags": []
+    },
+    {
+      "ID": "9244",
+      "Name": "06 Avenger Mission 2_4338 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9245",
+      "Name": "06 Avenger Mission 2_4439 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9246",
+      "Name": "06 Avenger Mission 2_4539 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9247",
+      "Name": "06 Avenger Mission 2_4537 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9248",
+      "Name": "06 Avenger Mission 2_4536 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9249",
+      "Name": "06 Avenger Mission 2_4437\u2461 Locations Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9251",
+      "Name": "0801 Executioner_Start Location 01",
+      "Tags": []
+    },
+    {
+      "ID": "9252",
+      "Name": "0801 Executioner_Start Location 02",
+      "Tags": []
+    },
+    {
+      "ID": "9253",
+      "Name": "0801 Executioner_Start Location 03",
+      "Tags": []
+    },
+    {
+      "ID": "9254",
+      "Name": "0801 Executioner_Start Location 04",
+      "Tags": []
+    },
+    {
+      "ID": "9255",
+      "Name": "0801 Executioner_Start Location 05",
+      "Tags": []
+    },
+    {
+      "ID": "9256",
+      "Name": "0801Executor_Startup_Location06",
+      "Tags": []
+    },
+    {
+      "ID": "9257",
+      "Name": "0801Executor_Backup_Startup_Location01",
+      "Tags": []
+    },
+    {
+      "ID": "9258",
+      "Name": "0801Executor_Backup_Startup_Location02",
+      "Tags": []
+    },
+    {
+      "ID": "9259",
+      "Name": "0801Executor_Backup_Startup_Location03",
+      "Tags": []
+    },
+    {
+      "ID": "9261",
+      "Name": "0801Executor_Startup_Location01_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9262",
+      "Name": "0801Executor_Startup_Location02_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9263",
+      "Name": "0801Executor_Startup_Location03_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9264",
+      "Name": "0801Executor_Startup_Location04_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9265",
+      "Name": "0801Executor_Startup_Location05_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9266",
+      "Name": "0801Executor_Startup_Location06_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9267",
+      "Name": "0801Executor_Backup_Startup_Location01_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9268",
+      "Name": "0801Executor_Backup_Startup_Location02_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9269",
+      "Name": "0801Executor_Backup_Startup_Location03_Clear",
+      "Tags": []
+    },
+    {
+      "ID": "9271",
+      "Name": "Guardian 0203_Spot 710",
+      "Tags": []
+    },
+    {
+      "ID": "9272",
+      "Name": "Guardian 0203_Spot 711",
+      "Tags": []
+    },
+    {
+      "ID": "9273",
+      "Name": "Guardian 0203_Spot 712",
+      "Tags": []
+    },
+    {
+      "ID": "9274",
+      "Name": "Guardian 0203_Spot 713",
+      "Tags": []
+    },
+    {
+      "ID": "9275",
+      "Name": "Guardian 0203_Spot 714",
+      "Tags": []
+    },
+    {
+      "ID": "9276",
+      "Name": "Guardian 0203_Spot 715",
+      "Tags": []
+    },
+    {
+      "ID": "9277",
+      "Name": "Guardian 0203_Spot 716",
+      "Tags": []
+    },
+    {
+      "ID": "9278",
+      "Name": "Guardian 0203_Spot 717",
+      "Tags": []
+    },
+    {
+      "ID": "9279",
+      "Name": "Guardian 0203_Spot 718",
+      "Tags": []
+    },
+    {
+      "ID": "9300",
+      "Name": "Trophy 00: NIGHTREIGN",
+      "Tags": []
+    },
+    {
+      "ID": "9301",
+      "Name": "Trophy 01: The Hidden Table",
+      "Tags": []
+    },
+    {
+      "ID": "9302",
+      "Name": "Trophy 02: The Night Kings",
+      "Tags": []
+    },
+    {
+      "ID": "9303",
+      "Name": "Trophy 03: The Night Begins",
+      "Tags": []
+    },
+    {
+      "ID": "9304",
+      "Name": "Trophy 04: The Lady, Joins the Battle",
+      "Tags": []
+    },
+    {
+      "ID": "9305",
+      "Name": "Trophy 05: The Avenger, Joins the Battle",
+      "Tags": []
+    },
+    {
+      "ID": "9306",
+      "Name": "Trophy 06: Dawn",
+      "Tags": []
+    },
+    {
+      "ID": "9307",
+      "Name": "Trophy 07: The Three-Headed Beast",
+      "Tags": []
+    },
+    {
+      "ID": "9308",
+      "Name": "Trophy 08: The Devouring Jaws",
+      "Tags": []
+    },
+    {
+      "ID": "9309",
+      "Name": "Trophy 09: The Intellect Bug",
+      "Tags": []
+    },
+    {
+      "ID": "9310",
+      "Name": "Trophy 10: Signs",
+      "Tags": []
+    },
+    {
+      "ID": "9311",
+      "Name": "Trophy 11: The Tuning Demon",
+      "Tags": []
+    },
+    {
+      "ID": "9312",
+      "Name": "Trophy 12: The Dark Hunter",
+      "Tags": []
+    },
+    {
+      "ID": "9313",
+      "Name": "Trophy 13: The Mist Rift",
+      "Tags": []
+    },
+    {
+      "ID": "9314",
+      "Name": "Trophy 14: The Night Shapers",
+      "Tags": []
+    },
+    {
+      "ID": "9315",
+      "Name": "Trophy 15: All About the Night Kings",
+      "Tags": []
+    },
+    {
+      "ID": "9316",
+      "Name": "Trophy 16: Relics",
+      "Tags": []
+    },
+    {
+      "ID": "9317",
+      "Name": "Trophy 17: Dressing Table",
+      "Tags": []
+    },
+    {
+      "ID": "9318",
+      "Name": "Trophy 18: Offering Vessel",
+      "Tags": []
+    },
+    {
+      "ID": "9319",
+      "Name": "Trophy 19: Legendary Weapon",
+      "Tags": []
+    },
+    {
+      "ID": "9320",
+      "Name": "Trophy 20: Mountain Range",
+      "Tags": []
+    },
+    {
+      "ID": "9321",
+      "Name": "Trophy 21: Crater",
+      "Tags": []
+    },
+    {
+      "ID": "9322",
+      "Name": "Trophy 22: Rotten Forest",
+      "Tags": []
+    },
+    {
+      "ID": "9323",
+      "Name": "Trophy 23: Nokrateo, Hidden City",
+      "Tags": []
+    },
+    {
+      "ID": "9324",
+      "Name": "Trophy 24: Cataclysm",
+      "Tags": []
+    },
+    {
+      "ID": "9325",
+      "Name": "Trophy 25: Collected Offering Vessels",
+      "Tags": []
+    },
+    {
+      "ID": "9326",
+      "Name": "Trophy 26: Hero\u0027s Path",
+      "Tags": []
+    },
+    {
+      "ID": "9327",
+      "Name": "Trophy 27: Highest Level",
+      "Tags": []
+    },
+    {
+      "ID": "9328",
+      "Name": "Trophy 28: Filled Chalice Flask",
+      "Tags": []
+    },
+    {
+      "ID": "9329",
+      "Name": "Trophy 29: Latent Power",
+      "Tags": []
+    },
+    {
+      "ID": "9330",
+      "Name": "Trophy 30: Ancient Prison",
+      "Tags": []
+    },
+    {
+      "ID": "9331",
+      "Name": "Trophy 31: Ready",
+      "Tags": []
+    },
+    {
+      "ID": "9332",
+      "Name": "Trophy 32: Cursed Demon",
+      "Tags": []
+    },
+    {
+      "ID": "9333",
+      "Name": "Trophy 33: Locust Plague",
+      "Tags": []
+    },
+    {
+      "ID": "9334",
+      "Name": "Trophy 34: Typhoon",
+      "Tags": []
+    },
+    {
+      "ID": "9335",
+      "Name": "Trophy 35: Judgment",
+      "Tags": []
+    },
+    {
+      "ID": "9336",
+      "Name": "Trophy 36: Hunter of the Night King",
+      "Tags": []
+    },
+    {
+      "ID": "9500",
+      "Name": "GrF: Recipe Unlock Flag",
+      "Tags": []
+    },
+    {
+      "ID": "9800",
+      "Name": "Tutorial Global Flag 00",
+      "Tags": []
+    },
+    {
+      "ID": "9801",
+      "Name": "Tutorial Global Flag 01",
+      "Tags": []
+    },
+    {
+      "ID": "9802",
+      "Name": "Tutorial Global Flag 02",
+      "Tags": []
+    },
+    {
+      "ID": "9803",
+      "Name": "Tutorial Global Flag 03",
+      "Tags": []
+    },
+    {
+      "ID": "9810",
+      "Name": "[TUT]Event:Movement/Camera",
+      "Tags": []
+    },
+    {
+      "ID": "9815",
+      "Name": "[TUT]Event:Using the Holy Grail Flask",
+      "Tags": []
+    },
+    {
+      "ID": "9820",
+      "Name": "[TUT]Event:Attack",
+      "Tags": []
+    },
+    {
+      "ID": "9825",
+      "Name": "[TUT]Event:Toggle Lock",
+      "Tags": []
+    },
+    {
+      "ID": "9830",
+      "Name": "[TUT]Event:Jump/Wall Climb",
+      "Tags": []
+    },
+    {
+      "ID": "9835",
+      "Name": "[TUT]Event:Guard",
+      "Tags": []
+    },
+    {
+      "ID": "9840",
+      "Name": "[TUT]Event:Evade",
+      "Tags": []
+    },
+    {
+      "ID": "9845",
+      "Name": " [TUT] Event: Dash",
+      "Tags": []
+    },
+    {
+      "ID": "9850",
+      "Name": " [TUT] Event: Sprint",
+      "Tags": []
+    },
+    {
+      "ID": "9855",
+      "Name": " [TUT] Event: Wall Jump (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9856",
+      "Name": " [TUT] Event: Wall Jump",
+      "Tags": []
+    },
+    {
+      "ID": "9860",
+      "Name": " [TUT] Event: Use Item",
+      "Tags": []
+    },
+    {
+      "ID": "9865",
+      "Name": " [TUT] Event: Weapon Switch",
+      "Tags": []
+    },
+    {
+      "ID": "9870",
+      "Name": " [TUT] Event: Arts",
+      "Tags": []
+    },
+    {
+      "ID": "9875",
+      "Name": " [TUT] Event: Weapon Switch \u0026 Arts (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9880",
+      "Name": " [TUT] Event: Skill",
+      "Tags": []
+    },
+    {
+      "ID": "9885",
+      "Name": "[TUT] Event: Skills (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9890",
+      "Name": "[TUT] Event: Near Death/Rescue",
+      "Tags": []
+    },
+    {
+      "ID": "9895",
+      "Name": "[TUT] Event: Near Death/Rescue (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9900",
+      "Name": "[TUT] Event: Respawn",
+      "Tags": []
+    },
+    {
+      "ID": "9905",
+      "Name": "[TUT] Event: Ult",
+      "Tags": []
+    },
+    {
+      "ID": "9910",
+      "Name": "[TUT] Event: Ult (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9915",
+      "Name": "[TUT] Event: Near Death",
+      "Tags": []
+    },
+    {
+      "ID": "9920",
+      "Name": "[TUT] Event: Blessing",
+      "Tags": []
+    },
+    {
+      "ID": "9925",
+      "Name": "[TUT] Event: Map",
+      "Tags": []
+    },
+    {
+      "ID": "9930",
+      "Name": "[TUT] Event: Map (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9935",
+      "Name": "[TUT] Event: Shrinking Circle Damage",
+      "Tags": []
+    },
+    {
+      "ID": "9940",
+      "Name": "[TUT] Event: Additional Effects and Rarity",
+      "Tags": []
+    },
+    {
+      "ID": "9945",
+      "Name": "[TUT] Event: Additional Effects and Rarity (Follow Notification)",
+      "Tags": []
+    },
+    {
+      "ID": "9990",
+      "Name": "Parasite poison 00",
+      "Tags": []
+    },
+    {
+      "ID": "9991",
+      "Name": "Parasite poison 01",
+      "Tags": []
+    },
+    {
+      "ID": "9992",
+      "Name": "Parasite poison 02",
+      "Tags": []
+    },
+    {
+      "ID": "9993",
+      "Name": "Debug flag 03",
+      "Tags": []
+    },
+    {
+      "ID": "9994",
+      "Name": "Debug flag 04",
+      "Tags": []
+    },
+    {
+      "ID": "9995",
+      "Name": "Debug flag 05",
+      "Tags": []
+    },
+    {
+      "ID": "9996",
+      "Name": "Debug flag 06",
+      "Tags": []
+    },
+    {
+      "ID": "9997",
+      "Name": "Debug flag 07",
+      "Tags": []
+    },
+    {
+      "ID": "9998",
+      "Name": "Debug flag 08",
+      "Tags": []
+    },
+    {
+      "ID": "9999",
+      "Name": "Debug flag 09",
+      "Tags": []
+    },
+    {
+      "ID": "60010",
+      "Name": "Antique Pedestal Unlocked: Balanced Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60020",
+      "Name": "Antique Pedestal Unlocked: Balanced Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60030",
+      "Name": "Antique Pedestal Unlocked: Balanced Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60040",
+      "Name": "Antique Pedestal Unlocked: Balanced Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60060",
+      "Name": "Antique Pedestal Unlocked: Tank Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60070",
+      "Name": "Antique Pedestal Unlocked: Tank Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60080",
+      "Name": "Antique Pedestal Unlocked: Tank Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60090",
+      "Name": "Antique Pedestal Unlocked : Tank Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60110",
+      "Name": "Antique Pedestal Unlocked: Shooter Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60120",
+      "Name": "Antique Pedestal Unlocked: Shooter Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60130",
+      "Name": "Antique Pedestal Unlocked: Shooter Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60140",
+      "Name": "Antique Pedestal Unlocked: Shooter Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60160",
+      "Name": "Antique Pedestal Unlocked: Speed \u200B\u200BPedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60170",
+      "Name": "Antique Pedestal Unlocked: Speed \u200B\u200BPedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60180",
+      "Name": "Antique Pedestal Unlocked: Speed \u200B\u200BPedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60190",
+      "Name": "Antique Pedestal Unlocked: Speed \u200B\u200BPedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60210",
+      "Name": "Antique Pedestal Unlocked: Power Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60220",
+      "Name": "Antique Pedestal Unlocked: Power Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60230",
+      "Name": "Antique Pedestal Unlocked: Power Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60240",
+      "Name": "Antique Pedestal Unlocked: Power Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60260",
+      "Name": "Antique Pedestal Unlocked: Necromancer Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60270",
+      "Name": "Antique Pedestal Unlocked: Necromancer Pedestal Cromancer Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60280",
+      "Name": "Antique Pedestal Unlocked: Necromancer Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60290",
+      "Name": "Antique Pedestal Unlocked: Necromancer Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60310",
+      "Name": "Antique Pedestal Unlocked: Magic Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60320",
+      "Name": "Antique Pedestal Unlocked: Magic Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60330",
+      "Name": "Antique Pedestal Unlocked: Magic Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60340",
+      "Name": "Antique Pedestal Unlocked: Magic Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60360",
+      "Name": "Antique Pedestal Unlocked: Technical Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60370",
+      "Name": "Antique Pedestal Unlocked: Technical Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "60380",
+      "Name": "Antique Pedestal Unlocked: Technical Pedestal 4",
+      "Tags": []
+    },
+    {
+      "ID": "60390",
+      "Name": "Antique Pedestal Unlocked: Technical Pedestal 5",
+      "Tags": []
+    },
+    {
+      "ID": "60400",
+      "Name": "Antique Pedestal Unlocked: Special Pedestal 1",
+      "Tags": []
+    },
+    {
+      "ID": "60410",
+      "Name": "Antique Pedestal Unlocked: Special Pedestal 2",
+      "Tags": []
+    },
+    {
+      "ID": "60420",
+      "Name": "Antique Pedestal Unlocked: Special Pedestal 3",
+      "Tags": []
+    },
+    {
+      "ID": "61000",
+      "Name": "DLC0_Pre-order bonus main body gesture acquired",
+      "Tags": []
+    },
+    {
+      "ID": "61001",
+      "Name": "DLC0_Pre-order bonus propagation gesture acquired",
+      "Tags": []
+    },
+    {
+      "ID": "66000",
+      "Name": "ClF: Lobby inventory management",
+      "Tags": []
+    },
+    {
+      "ID": "66000",
+      "Name": "Inventory management_Fixed antiques_Lineup 01",
+      "Tags": []
+    },
+    {
+      "ID": "66010",
+      "Name": "Inventory management_Fixed antiques_Lineup 02",
+      "Tags": []
+    },
+    {
+      "ID": "66020",
+      "Name": "Inventory management_Fixed antiques_Lineup 03",
+      "Tags": []
+    },
+    {
+      "ID": "66030",
+      "Name": "Inventory management_Fixed antiques_Lineup 04",
+      "Tags": []
+    },
+    {
+      "ID": "66040",
+      "Name": "Inventory management_Fixed antiques_Lineup 05",
+      "Tags": []
+    },
+    {
+      "ID": "66050",
+      "Name": "Inventory management_Fixed antiques_Lineup 06",
+      "Tags": []
+    },
+    {
+      "ID": "66060",
+      "Name": "Inventory management_Fixed antiques_Lineup 07",
+      "Tags": []
+    },
+    {
+      "ID": "66070",
+      "Name": "Inventory management_Fixed antiques_Lineup 08",
+      "Tags": []
+    },
+    {
+      "ID": "66080",
+      "Name": "Inventory management_Fixed antiques_Lineup 09",
+      "Tags": []
+    },
+    {
+      "ID": "66090",
+      "Name": "Inventory management_Fixed antiques_Lineup 10",
+      "Tags": []
+    },
+    {
+      "ID": "66100",
+      "Name": "Inventory management_Fixed antiques_Lineup 11",
+      "Tags": []
+    },
+    {
+      "ID": "66110",
+      "Name": "Inventory management_Fixed antiques_Lineup 12",
+      "Tags": []
+    },
+    {
+      "ID": "66120",
+      "Name": "Inventory management_Fixed antiques_Lineup 13",
+      "Tags": []
+    },
+    {
+      "ID": "66130",
+      "Name": "Inventory management_Fixed antiques_Lineup 14",
+      "Tags": []
+    },
+    {
+      "ID": "66140",
+      "Name": "Inventory management_Fixed antiques_Lineup 15",
+      "Tags": []
+    },
+    {
+      "ID": "66150",
+      "Name": "Inventory management_Fixed antiques_Lineup 16",
+      "Tags": []
+    },
+    {
+      "ID": "66160",
+      "Name": "Inventory management_Fixed antiques_Lineup 17",
+      "Tags": []
+    },
+    {
+      "ID": "66170",
+      "Name": "Inventory management_Fixed antiques_Lineup 18",
+      "Tags": []
+    },
+    {
+      "ID": "66180",
+      "Name": "Inventory management_Fixed antiques_Lineup 19",
+      "Tags": []
+    },
+    {
+      "ID": "66190",
+      "Name": "Inventory management_Fixed antiques_Lineup 20",
+      "Tags": []
+    },
+    {
+      "ID": "66300",
+      "Name": "Boss Antique \u03B2: Cerberus",
+      "Tags": []
+    },
+    {
+      "ID": "66310",
+      "Name": "Boss Antique \u03B2: Dragon Tyranno",
+      "Tags": []
+    },
+    {
+      "ID": "66320",
+      "Name": "Boss Antique \u03B2: Intelligent Bug",
+      "Tags": []
+    },
+    {
+      "ID": "66330",
+      "Name": "Boss Antique \u03B2: Abstract Enemy",
+      "Tags": []
+    },
+    {
+      "ID": "66340",
+      "Name": "Boss Antique \u03B2: Baphomet",
+      "Tags": []
+    },
+    {
+      "ID": "66350",
+      "Name": "Boss Antique \u03B2: Centaur",
+      "Tags": []
+    },
+    {
+      "ID": "66360",
+      "Name": "Boss Antique \u03B2: Mist Dragon",
+      "Tags": []
+    },
+    {
+      "ID": "66370",
+      "Name": "Boss Antique \u03B2: Nameless",
+      "Tags": []
+    },
+    {
+      "ID": "67000",
+      "Name": "Inventory management_Appraised antiques_Lineup 01",
+      "Tags": []
+    },
+    {
+      "ID": "67010",
+      "Name": "Inventory management_Appraised antiques_Lineup 02",
+      "Tags": []
+    },
+    {
+      "ID": "67020",
+      "Name": "Inventory management_Appraised antiques_Lineup 03",
+      "Tags": []
+    },
+    {
+      "ID": "67030",
+      "Name": "Inventory management_Appraised antiques_Lineup 04",
+      "Tags": []
+    },
+    {
+      "ID": "67040",
+      "Name": "Inventory management_Appraised antiques_Lineup 05",
+      "Tags": []
+    },
+    {
+      "ID": "67050",
+      "Name": "Inventory management_Appraised antiques_Lineup 06",
+      "Tags": []
+    },
+    {
+      "ID": "67060",
+      "Name": "Inventory management_Appraised antiques_Lineup 07",
+      "Tags": []
+    },
+    {
+      "ID": "67070",
+      "Name": "Inventory management_Appraised antiques_Lineup 08",
+      "Tags": []
+    },
+    {
+      "ID": "67080",
+      "Name": "Inventory management_Appraised antiques_Lineup 09",
+      "Tags": []
+    },
+    {
+      "ID": "67090",
+      "Name": "Inventory management_Appraised antiques_Lineup 10",
+      "Tags": []
+    },
+    {
+      "ID": "67100",
+      "Name": "Inventory management_Appraised antiques_Lineup 11",
+      "Tags": []
+    },
+    {
+      "ID": "67110",
+      "Name": "Inventory management_Appraised antiques_Lineup 12",
+      "Tags": []
+    },
+    {
+      "ID": "67120",
+      "Name": "Inventory management_Appraised antiques_Lineup 13",
+      "Tags": []
+    },
+    {
+      "ID": "67130",
+      "Name": "Inventory management_Appraised antiques_Lineup 14",
+      "Tags": []
+    },
+    {
+      "ID": "67140",
+      "Name": "Inventory management_Appraised antiques_Lineup 15",
+      "Tags": []
+    },
+    {
+      "ID": "67150",
+      "Name": "Inventory management_Appraised antiques_Lineup 16",
+      "Tags": []
+    },
+    {
+      "ID": "67160",
+      "Name": "Inventory management_Appraised antiques_Lineup 17",
+      "Tags": []
+    },
+    {
+      "ID": "67170",
+      "Name": "Inventory management_Appraised antiques_Lineup 18",
+      "Tags": []
+    },
+    {
+      "ID": "67180",
+      "Name": "Inventory management_Appraised antiques_Lineup 19",
+      "Tags": []
+    },
+    {
+      "ID": "67190",
+      "Name": "Inventory management_Appraised antiques_Lineup 20",
+      "Tags": []
+    },
+    {
+      "ID": "67200",
+      "Name": "Inventory management_Appraised antiques_Lineup 21",
+      "Tags": []
+    },
+    {
+      "ID": "67210",
+      "Name": "Inventory management_Appraised antiques_Lineup 22",
+      "Tags": []
+    },
+    {
+      "ID": "67220",
+      "Name": "Inventory management_Appraised antiques_Lineup 23",
+      "Tags": []
+    },
+    {
+      "ID": "67230",
+      "Name": "Inventory management_Appraised antiques_Lineup 24",
+      "Tags": []
+    },
+    {
+      "ID": "67240",
+      "Name": "Inventory management_Appraised antiques_Lineup 25",
+      "Tags": []
+    },
+    {
+      "ID": "67250",
+      "Name": "Inventory management_Appraised antiques_Lineup 26",
+      "Tags": []
+    },
+    {
+      "ID": "67260",
+      "Name": "Inventory management_Appraised antiques_Lineup 27",
+      "Tags": []
+    },
+    {
+      "ID": "67270",
+      "Name": "Inventory management_Appraised antiques_Lineup 28",
+      "Tags": []
+    },
+    {
+      "ID": "67600",
+      "Name": "Inventory_Gesture: Polite/Noble Bow",
+      "Tags": []
+    },
+    {
+      "ID": "67610",
+      "Name": "Inventory_Gesture: Woman\u0027s Bow",
+      "Tags": []
+    },
+    {
+      "ID": "67620",
+      "Name": "Inventory_Gesture: War Bow",
+      "Tags": []
+    },
+    {
+      "ID": "67630",
+      "Name": "Inventory_Gesture: Kneeling Bow",
+      "Tags": []
+    },
+    {
+      "ID": "67640",
+      "Name": "Inventory_Gesture: Welcome",
+      "Tags": []
+    },
+    {
+      "ID": "67650",
+      "Name": "Inventory_Gesture: Ugh!",
+      "Tags": []
+    },
+    {
+      "ID": "67660",
+      "Name": "Inventory_Gesture: Woman\u0027s Polite Bow",
+      "Tags": []
+    },
+    {
+      "ID": "67670",
+      "Name": "Inventory_Gesture: It\u0027s Not Time to Panic Yet",
+      "Tags": []
+    },
+    {
+      "ID": "67680",
+      "Name": "Inventory_Gesture: Prostration",
+      "Tags": []
+    },
+    {
+      "ID": "67690",
+      "Name": "Inventory_Gesture: Pleading for Life",
+      "Tags": []
+    },
+    {
+      "ID": "67700",
+      "Name": "Inventory_Gesture: Oh",
+      "Tags": []
+    },
+    {
+      "ID": "67710",
+      "Name": "Inventory_Gesture: Swear by the Sword 2",
+      "Tags": []
+    },
+    {
+      "ID": "67720",
+      "Name": "Inventory_Gesture: Beating Chest",
+      "Tags": []
+    },
+    {
+      "ID": "67730",
+      "Name": "Inventory_Gesture: Spinning Around in Joy (Female)",
+      "Tags": []
+    },
+    {
+      "ID": "67740",
+      "Name": "Inventory_Gesture: I\u0027ve Got an Idea!",
+      "Tags": []
+    },
+    {
+      "ID": "67750",
+      "Name": "Inventory_Gesture: Slumping",
+      "Tags": []
+    },
+    {
+      "ID": "67760",
+      "Name": "Inventory_Gesture: Patch Sitting",
+      "Tags": []
+    },
+    {
+      "ID": "67770",
+      "Name": "Inventory_Gesture: Cross-legged",
+      "Tags": []
+    },
+    {
+      "ID": "67780",
+      "Name": "Inventory_Gesture: Sitting on One Knee",
+      "Tags": []
+    },
+    {
+      "ID": "67790",
+      "Name": "Inventory_Gesture: Sitting Woman",
+      "Tags": []
+    },
+    {
+      "ID": "67800",
+      "Name": "Inventory_Gesture: Cross-legged sleep",
+      "Tags": []
+    },
+    {
+      "ID": "67810",
+      "Name": "Inventory_Gesture: Sleep",
+      "Tags": []
+    },
+    {
+      "ID": "67820",
+      "Name": "Inventory_Gesture: Play dead",
+      "Tags": []
+    },
+    {
+      "ID": "67830",
+      "Name": "Inventory_Gesture: Yurt standing",
+      "Tags": []
+    },
+    {
+      "ID": "67840",
+      "Name": "Inventory_Gesture: Pray",
+      "Tags": []
+    },
+    {
+      "ID": "67850",
+      "Name": "Inventory_Gesture: Pray 2",
+      "Tags": []
+    },
+    {
+      "ID": "67860",
+      "Name": "Inventory_Gesture: Special religion 1",
+      "Tags": []
+    },
+    {
+      "ID": "67870",
+      "Name": "Inventory_Gesture: Raise both hands and hold",
+      "Tags": []
+    },
+    {
+      "ID": "67880",
+      "Name": "Inventory_Gesture: Golden Rule T pose",
+      "Tags": []
+    },
+    {
+      "ID": "67890",
+      "Name": "Inventory_Gesture: Golden Rule reverse T pose",
+      "Tags": []
+    },
+    {
+      "ID": "67900",
+      "Name": "Inventory_Gesture: Golden Rule T-pose",
+      "Tags": []
+    },
+    {
+      "ID": "67910",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022Hello\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67920",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022Thank you\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67930",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022I\u0027m sorry\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67940",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022Amazing\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67950",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022Help me\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67960",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022I love you. You are my sunshine\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67970",
+      "Name": "Inventory_Gesture: Farewell Voice \u0022Now, let\u0027s get started\u0022",
+      "Tags": []
+    },
+    {
+      "ID": "67980",
+      "Name": "Inventory_Gesture: Farewell Voice_Mother\u0027s Voice Item",
+      "Tags": []
+    },
+    {
+      "ID": "68000",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68010",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68020",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68030",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68040",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68050",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68060",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68070",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68080",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68090",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68100",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68110",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68120",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68130",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68140",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68150",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68160",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68170",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68180",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68190",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68200",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68210",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68220",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68230",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68240",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68250",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68260",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68270",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68280",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68290",
+      "Name": "Inventory_management_skin",
+      "Tags": []
+    },
+    {
+      "ID": "68300",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68310",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68320",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68330",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68340",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68350",
+      "Name": "Inventory_Skin",
+      "Tags": []
+    },
+    {
+      "ID": "68500",
+      "Name": "Inventory_Avenger_Unlocked_Antiques",
+      "Tags": []
+    },
+    {
+      "ID": "68510",
+      "Name": "Inventory_Ghost_Shop_Lineup_00",
+      "Tags": []
+    },
+    {
+      "ID": "68520",
+      "Name": "Inventory_Ghost_Shop_Lineup_01",
+      "Tags": []
+    },
+    {
+      "ID": "68530",
+      "Name": "Inventory_Ghost_Shop_Lineup_02",
+      "Tags": []
+    },
+    {
+      "ID": "69000",
+      "Name": "[TUT]Event: Camera",
+      "Tags": []
+    },
+    {
+      "ID": "69010",
+      "Name": "[TUT]Event: Item Use",
+      "Tags": []
+    },
+    {
+      "ID": "69020",
+      "Name": "[TUT]Event: Bonfire",
+      "Tags": []
+    },
+    {
+      "ID": "69030",
+      "Name": "[TUT]Event: Lock",
+      "Tags": []
+    },
+    {
+      "ID": "69040",
+      "Name": "[TUT]Event: Basic Attack (Weak)",
+      "Tags": []
+    },
+    {
+      "ID": "69050",
+      "Name": "[TUT]Event: Basic Attack (Strong)",
+      "Tags": []
+    },
+    {
+      "ID": "69060",
+      "Name": "[TUT]Event: Magic",
+      "Tags": []
+    },
+    {
+      "ID": "69070",
+      "Name": "[TUT]Event: Rolling",
+      "Tags": []
+    },
+    {
+      "ID": "69080",
+      "Name": "[TUT]Event: Jump",
+      "Tags": []
+    },
+    {
+      "ID": "69090",
+      "Name": "[TUT]Event: Dash",
+      "Tags": []
+    },
+    {
+      "ID": "69100",
+      "Name": "[TUT]Event: Weapon Switch",
+      "Tags": []
+    },
+    {
+      "ID": "69110",
+      "Name": "[TUT]Event: Lock Switch",
+      "Tags": []
+    },
+    {
+      "ID": "69120",
+      "Name": "[TUT]Event: Guard",
+      "Tags": []
+    },
+    {
+      "ID": "69130",
+      "Name": "[TUT]Event: How to use a bow",
+      "Tags": []
+    },
+    {
+      "ID": "69140",
+      "Name": "[TUT]Event: Crouching",
+      "Tags": []
+    },
+    {
+      "ID": "69150",
+      "Name": "[TUT]Event: Fatal blow",
+      "Tags": []
+    },
+    {
+      "ID": "69160",
+      "Name": "[TUT]Event: Jump attack/charge/guard counter",
+      "Tags": []
+    },
+    {
+      "ID": "69200",
+      "Name": "[TUT]Event: Night rain",
+      "Tags": []
+    },
+    {
+      "ID": "69210",
+      "Name": "[TUT]Event: Additional effects and rarity",
+      "Tags": []
+    },
+    {
+      "ID": "69990",
+      "Name": "This flag is set when you enter the lobby from MOVEMAP_TEST or the title. If you play multiplayer with this flag set, the game start event will run.",
+      "Tags": []
+    },
+    {
+      "ID": "69991",
+      "Name": "When set in debug mode, this flag will automatically set the game start event.",
+      "Tags": []
+    },
+    {
+      "ID": "69992",
+      "Name": "Missing number",
+      "Tags": []
+    },
+    {
+      "ID": "69993",
+      "Name": "Missing number",
+      "Tags": []
+    },
+    {
+      "ID": "69994",
+      "Name": "Missing number",
+      "Tags": []
+    },
+    {
+      "ID": "69995",
+      "Name": "When the game start event or interval event stops the game time, this flag will skip it.",
+      "Tags": []
+    },
+    {
+      "ID": "72000",
+      "Name": "Map point parameter flag",
+      "Tags": []
+    },
+    {
+      "ID": "72100",
+      "Name": "Flag for retiring from battle on scenario-only maps",
+      "Tags": []
+    },
+    {
+      "ID": "72110",
+      "Name": "Flag for forced cutscene termination",
+      "Tags": []
+    },
+    {
+      "ID": "72200",
+      "Name": "Map icon operation flag for TUT",
+      "Tags": []
+    },
+    {
+      "ID": "72201",
+      "Name": "Map icon operation flag for TUT",
+      "Tags": []
+    },
+    {
+      "ID": "72250",
+      "Name": "Bird movement map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72251",
+      "Name": "Bird movement map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72252",
+      "Name": "Bird movement map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72253",
+      "Name": "Bird movement map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72255",
+      "Name": "Bird movement map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72560",
+      "Name": "Tunnel map icon operation flag",
+      "Tags": []
+    },
+    {
+      "ID": "72561",
+      "Name": "Tunnel map icon operation flag_corruption",
+      "Tags": []
+    },
+    {
+      "ID": "77000",
+      "Name": "In-game_sync for conversation",
+      "Tags": []
+    },
+    {
+      "ID": "90000",
+      "Name": "Shop lineup management flag 00",
+      "Tags": []
+    },
+    {
+      "ID": "90001",
+      "Name": "Shop lineup management flag 01",
+      "Tags": []
+    },
+    {
+      "ID": "90002",
+      "Name": "Shop lineup management flag 02",
+      "Tags": []
+    },
+    {
+      "ID": "90003",
+      "Name": "Shop lineup management flag 03",
+      "Tags": []
+    },
+    {
+      "ID": "90004",
+      "Name": "Shop lineup management flag 04",
+      "Tags": []
+    },
+    {
+      "ID": "90005",
+      "Name": "Shop lineup management flag 05",
+      "Tags": []
+    },
+    {
+      "ID": "90006",
+      "Name": "Shop lineup management flag 06",
+      "Tags": []
+    },
+    {
+      "ID": "90007",
+      "Name": "Shop lineup management flag 07",
+      "Tags": []
+    },
+    {
+      "ID": "90008",
+      "Name": "Shop lineup management flag 08",
+      "Tags": []
+    },
+    {
+      "ID": "90009",
+      "Name": "Shop lineup management flag 09",
+      "Tags": []
+    },
+    {
+      "ID": "90010",
+      "Name": "Shop lineup management flag 10",
+      "Tags": []
+    },
+    {
+      "ID": "90011",
+      "Name": "Shop lineup management flag 11",
+      "Tags": []
+    },
+    {
+      "ID": "90012",
+      "Name": "Shop lineup management flag 12",
+      "Tags": []
+    },
+    {
+      "ID": "90013",
+      "Name": "Shop lineup management flag 13",
+      "Tags": []
+    },
+    {
+      "ID": "90014",
+      "Name": "Shop lineup management flag 14",
+      "Tags": []
+    },
+    {
+      "ID": "90015",
+      "Name": "Shop lineup management flag 15",
+      "Tags": []
+    },
+    {
+      "ID": "90016",
+      "Name": "Shop lineup management flag 16",
+      "Tags": []
+    },
+    {
+      "ID": "90017",
+      "Name": "Shop lineup management flag 17",
+      "Tags": []
+    },
+    {
+      "ID": "90018",
+      "Name": "Shop lineup management flag 18",
+      "Tags": []
+    },
+    {
+      "ID": "90019",
+      "Name": "Shop lineup management flag 19",
+      "Tags": []
+    },
+    {
+      "ID": "90020",
+      "Name": "Shop lineup management flag 20",
+      "Tags": []
+    },
+    {
+      "ID": "90021",
+      "Name": "Shop lineup management flag 21",
+      "Tags": []
+    },
+    {
+      "ID": "90022",
+      "Name": "Shop lineup management flag 22",
+      "Tags": []
+    },
+    {
+      "ID": "90023",
+      "Name": "Shop lineup management flag 23",
+      "Tags": []
+    },
+    {
+      "ID": "90024",
+      "Name": "Shop lineup management flag 24",
+      "Tags": []
+    },
+    {
+      "ID": "90025",
+      "Name": "Shop lineup management flag 25",
+      "Tags": []
+    },
+    {
+      "ID": "90026",
+      "Name": "Shop lineup management flag 26",
+      "Tags": []
+    },
+    {
+      "ID": "90027",
+      "Name": "Shop lineup management flag 27",
+      "Tags": []
+    },
+    {
+      "ID": "90028",
+      "Name": "Shop lineup management flag 28",
+      "Tags": []
+    },
+    {
+      "ID": "90029",
+      "Name": "Shop lineup management flag 29",
+      "Tags": []
+    },
+    {
+      "ID": "90030",
+      "Name": "Shop lineup management flag 30",
+      "Tags": []
+    },
+    {
+      "ID": "90031",
+      "Name": "Shop lineup management flag 31",
+      "Tags": []
+    },
+    {
+      "ID": "90032",
+      "Name": "Shop lineup management flag 32",
+      "Tags": []
+    },
+    {
+      "ID": "90033",
+      "Name": "Shop lineup management flag 33",
+      "Tags": []
+    },
+    {
+      "ID": "90034",
+      "Name": "Shop lineup management flag 34",
+      "Tags": []
+    },
+    {
+      "ID": "90035",
+      "Name": "Shop lineup management flag 35",
+      "Tags": []
+    },
+    {
+      "ID": "90036",
+      "Name": "Shop lineup management flag 36",
+      "Tags": []
+    },
+    {
+      "ID": "90037",
+      "Name": "Shop lineup management flag 37",
+      "Tags": []
+    },
+    {
+      "ID": "90038",
+      "Name": "Shop lineup management flag 38",
+      "Tags": []
+    },
+    {
+      "ID": "90039",
+      "Name": "Shop lineup management flag 39",
+      "Tags": []
+    },
+    {
+      "ID": "90040",
+      "Name": "Shop lineup management flag 40",
+      "Tags": []
+    },
+    {
+      "ID": "90041",
+      "Name": "Shop lineup management flag 41",
+      "Tags": []
+    },
+    {
+      "ID": "90042",
+      "Name": "Shop lineup management flag 42",
+      "Tags": []
+    },
+    {
+      "ID": "90043",
+      "Name": "Shop lineup management flag 43",
+      "Tags": []
+    },
+    {
+      "ID": "90044",
+      "Name": "Shop lineup management flag 44",
+      "Tags": []
+    },
+    {
+      "ID": "90045",
+      "Name": "Shop lineup management flag 45",
+      "Tags": []
+    },
+    {
+      "ID": "90046",
+      "Name": "Shop lineup management flag 46",
+      "Tags": []
+    },
+    {
+      "ID": "90047",
+      "Name": "Shop lineup management flag 47",
+      "Tags": []
+    },
+    {
+      "ID": "90048",
+      "Name": "Shop lineup management flag 48",
+      "Tags": []
+    },
+    {
+      "ID": "90049",
+      "Name": "Shop lineup management flag 49",
+      "Tags": []
+    },
+    {
+      "ID": "90050",
+      "Name": "Shop lineup management flag 50",
+      "Tags": []
+    },
+    {
+      "ID": "90051",
+      "Name": "Shop lineup management flag 51",
+      "Tags": []
+    },
+    {
+      "ID": "90052",
+      "Name": "Shop lineup management flag 52",
+      "Tags": []
+    },
+    {
+      "ID": "90053",
+      "Name": "Shop lineup management flag 53",
+      "Tags": []
+    },
+    {
+      "ID": "90054",
+      "Name": "Shop lineup management flag 54",
+      "Tags": []
+    },
+    {
+      "ID": "90055",
+      "Name": "Shop lineup management flag 55",
+      "Tags": []
+    },
+    {
+      "ID": "90056",
+      "Name": "Shop lineup management flag 56",
+      "Tags": []
+    },
+    {
+      "ID": "90057",
+      "Name": "Shop lineup management flag 57",
+      "Tags": []
+    },
+    {
+      "ID": "90058",
+      "Name": "Shop lineup management flag 58",
+      "Tags": []
+    },
+    {
+      "ID": "90059",
+      "Name": "Shop lineup management flag 59",
+      "Tags": []
+    },
+    {
+      "ID": "90060",
+      "Name": "Shop lineup management flag 60",
+      "Tags": []
+    },
+    {
+      "ID": "90061",
+      "Name": "Shop lineup management flag 61",
+      "Tags": []
+    },
+    {
+      "ID": "90062",
+      "Name": "Shop lineup management flag 62",
+      "Tags": []
+    },
+    {
+      "ID": "90063",
+      "Name": "Shop lineup management flag 63",
+      "Tags": []
+    },
+    {
+      "ID": "90064",
+      "Name": "Shop lineup management flag 64",
+      "Tags": []
+    },
+    {
+      "ID": "90065",
+      "Name": "Shop lineup management flag 65",
+      "Tags": []
+    },
+    {
+      "ID": "90066",
+      "Name": "Shop lineup management flag 66",
+      "Tags": []
+    },
+    {
+      "ID": "90067",
+      "Name": "Shop lineup management flag 67",
+      "Tags": []
+    },
+    {
+      "ID": "90068",
+      "Name": "Shop lineup management flag 68",
+      "Tags": []
+    },
+    {
+      "ID": "90069",
+      "Name": "Shop lineup management flag 69",
+      "Tags": []
+    },
+    {
+      "ID": "90070",
+      "Name": "Shop lineup management flag 70",
+      "Tags": []
+    },
+    {
+      "ID": "90071",
+      "Name": "Shop lineup management flag 71",
+      "Tags": []
+    },
+    {
+      "ID": "90072",
+      "Name": "Shop lineup management flag 72",
+      "Tags": []
+    },
+    {
+      "ID": "90073",
+      "Name": "Shop lineup management flag 73",
+      "Tags": []
+    },
+    {
+      "ID": "90074",
+      "Name": "Shop lineup management flag 74",
+      "Tags": []
+    },
+    {
+      "ID": "90075",
+      "Name": "Shop lineup management flag 75",
+      "Tags": []
+    },
+    {
+      "ID": "90076",
+      "Name": "Shop lineup management flag 76",
+      "Tags": []
+    },
+    {
+      "ID": "90077",
+      "Name": "Shop lineup management flag 77",
+      "Tags": []
+    },
+    {
+      "ID": "90078",
+      "Name": "Shop lineup management flag 78",
+      "Tags": []
+    },
+    {
+      "ID": "90079",
+      "Name": "Shop lineup management flag 79",
+      "Tags": []
+    },
+    {
+      "ID": "90080",
+      "Name": "Shop lineup management flag 80",
+      "Tags": []
+    },
+    {
+      "ID": "90081",
+      "Name": "Shop lineup management flag 81",
+      "Tags": []
+    },
+    {
+      "ID": "90082",
+      "Name": "Shop lineup management flag 82",
+      "Tags": []
+    },
+    {
+      "ID": "90083",
+      "Name": "Shop lineup management flag 83",
+      "Tags": []
+    },
+    {
+      "ID": "90084",
+      "Name": "Shop lineup management flag 84",
+      "Tags": []
+    },
+    {
+      "ID": "90085",
+      "Name": "Shop lineup management flag 85",
+      "Tags": []
+    },
+    {
+      "ID": "90086",
+      "Name": "Shop lineup management flag 86",
+      "Tags": []
+    },
+    {
+      "ID": "90087",
+      "Name": "Shop lineup management flag 87",
+      "Tags": []
+    },
+    {
+      "ID": "90088",
+      "Name": "Shop lineup management flag 88",
+      "Tags": []
+    },
+    {
+      "ID": "90089",
+      "Name": "Shop lineup management flag 89",
+      "Tags": []
+    },
+    {
+      "ID": "90090",
+      "Name": "Shop lineup management flag 90",
+      "Tags": []
+    },
+    {
+      "ID": "90091",
+      "Name": "Shop lineup management flag 91",
+      "Tags": []
+    },
+    {
+      "ID": "90092",
+      "Name": "Shop lineup management flag 92",
+      "Tags": []
+    },
+    {
+      "ID": "90093",
+      "Name": "Shop lineup management flag 93",
+      "Tags": []
+    },
+    {
+      "ID": "90094",
+      "Name": "Shop lineup management flag 94",
+      "Tags": []
+    },
+    {
+      "ID": "90095",
+      "Name": "Shop lineup management flag 95",
+      "Tags": []
+    },
+    {
+      "ID": "90096",
+      "Name": "Shop lineup management flag 96",
+      "Tags": []
+    },
+    {
+      "ID": "90097",
+      "Name": "Shop lineup management flag 97",
+      "Tags": []
+    },
+    {
+      "ID": "90098",
+      "Name": "Shop lineup management flag 98",
+      "Tags": []
+    },
+    {
+      "ID": "90099",
+      "Name": "Shop lineup management flag 99",
+      "Tags": []
+    },
+    {
+      "ID": "90100",
+      "Name": "Shop lineup inventory management flag",
+      "Tags": []
+    },
+    {
+      "ID": "96000",
+      "Name": "Map point parameter flag_asynchronous",
+      "Tags": []
+    },
+    {
+      "ID": "97000",
+      "Name": "Ingame_async_for_conversations",
+      "Tags": []
+    },
+    {
+      "ID": "99970",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99971",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99972",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99973",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99974",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99975",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99976",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99977",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99978",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    },
+    {
+      "ID": "99979",
+      "Name": "Ice_wyvern",
+      "Tags": []
+    }
   ],
   "Gparams": [
   ],
