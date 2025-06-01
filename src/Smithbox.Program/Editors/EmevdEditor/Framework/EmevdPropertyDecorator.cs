@@ -6,6 +6,7 @@ using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Utils;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Utilities;
 using System;
@@ -37,14 +38,6 @@ public class EmevdPropertyDecorator
         Project = project;
     }
 
-    public void OnProjectChanged()
-    {
-
-    }
-
-    /// <summary>
-    /// Stores the instruction, argument docs and arguments for the current instruction for use in the other functions.
-    /// </summary>
     public void StoreInstructionInfo(Instruction instruction, List<ArgDoc> argDocs, List<object> arguments)
     {
         Instruction = instruction;
@@ -53,262 +46,29 @@ public class EmevdPropertyDecorator
     }
 
     #region Param Reference
-    /// <summary>
-    /// Does the current property row have an Param reference?
-    /// </summary>
-    public bool HasParamReference(string parameterName)
+    public bool HasParamReference(ArgDoc curDoc)
     {
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if(curDoc.ParamRef != null)
         {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            if (parameterName == "Bullet ID" ||
-                parameterName == "DamageParam ID" ||
-                parameterName == "ChrFullBodySFXParam ID" ||
-                parameterName == "Head Armor ID" ||
-                parameterName == "Chest Armor ID" ||
-                parameterName == "Arm Armor ID" ||
-                parameterName == "Leg Armor ID")
-            {
-                return true;
-            }
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "SpEffect ID")
-            {
-                return true;
-            }
-
-            if (parameterName == "Action Button Parameter ID")
-            {
-                return true;
-            }
-
-            if (parameterName == "Item ID" )
-            {
-                return true;
-            }
+            return true;
         }
 
         return false;
     }
 
-    /// <summary>
-    /// Add spacing in the UI so elements line up if Param reference is present
-    /// </summary>
-    public void DetermineParamReferenceSpacing(string parameterName, string value, int i)
+    public void DetermineParamReference(ArgDoc curDoc, string value, int i)
     {
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (curDoc.ParamRef != null)
         {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            if (parameterName == "Bullet ID")
+            var parts = new List<string>() { curDoc.ParamRef };
+            if (parts.Contains(";"))
             {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
+                parts = curDoc.ParamRef.Split(";").ToList();
             }
 
-            if (parameterName == "DamageParam ID")
+            foreach(var param in parts)
             {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-
-            if (parameterName == "ChrFullBodySFXParam ID")
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-
-            if (parameterName == "Head Armor ID" || parameterName == "Chest Armor ID" || parameterName == "Arm Armor ID" || parameterName == "Leg Armor ID")
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER   
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "SpEffect ID")
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-
-            if (parameterName == "Action Button Parameter ID")
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-
-            if (parameterName == "Item ID")
-            {
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("");
-            }
-        }
-    }
-
-    /// <summary>
-    /// Find Param reference value and display it
-    /// </summary>
-    public void DetermineParamReference(string parameterName, string value, int i)
-    {
-        // For cross-ESD SpEffect stuff that AC6 does, which aligns with EventID
-        var currentEventID = Selection.SelectedEvent.ID.ToString(); 
-
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            if (parameterName == "Bullet ID")
-            {
-                ConstructParamReference("BulletParam", value, i);
-                ConstructParamReference("EnemyBulletParam", value, i);
-            }
-
-            if (parameterName == "DamageParam ID")
-            {
-                ConstructParamReference("PlayerDamageParam", value, i);
-                ConstructParamReference("EnemyDamageParam", value, i);
-            }
-
-            if (parameterName == "ChrFullBodySFXParam ID")
-            {
-                ConstructParamReference("ChrFullBodySfxParam", value, i);
-            }
-
-            if (parameterName == "Head Armor ID" || 
-                parameterName == "Chest Armor ID" || 
-                parameterName == "Arm Armor ID" || 
-                parameterName == "Leg Armor ID")
-            {
-                ConstructParamReference("ItemParam", value, i);
-            }
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "SpEffect ID")
-            {
-                // TODO: AC6 seems to get the actual SpEffect via ESD shenanigans when this is set to 0
-
-                if (value == "0")
-                {
-                    ImGui.AlignTextToFramePadding();
-                    UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"ESD");
-                }
-                else
-                {
-                    ConstructParamReference("SpEffectParam", value, i);
-                }
-            }
-
-            if (parameterName == "Action Button Parameter ID")
-            {
-                ConstructParamReference("ActionButtonParam", value, i);
-            }
-
-            if (parameterName == "Item ID")
-            {
-                for(int k = 0; k < Arguments.Count; k++)
-                {
-                    var arg = Arguments[k];
-                    var argDoc = ArgumentDocs[k];
-
-                    if (argDoc.DisplayName == "Item Type")
-                    {
-                        string typeValue = arg as string;
-                        switch (typeValue)
-                        {
-                            case "0": ConstructParamReference("EquipParamWeapon", value, i); break;
-                            case "1": ConstructParamReference("EquipParamProtector", value, i); break;
-                            case "2": ConstructParamReference("EquipParamAccessory", value, i); break;
-                            case "3": ConstructParamReference("EquipParamGoods", value, i); break;
-                        }
-                    }
-                }
+                ConstructParamReference(param, value, i);
             }
         }
     }
@@ -316,140 +76,29 @@ public class EmevdPropertyDecorator
 
     #region Text Reference
 
-    /// <summary>
-    /// Does the current property row have an FMG/Text reference?
-    /// </summary>
-    public bool HasTextReference(string parameterName)
+    public bool HasTextReference(ArgDoc curDoc)
     {
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (curDoc.FmgRef != null)
         {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "Name ID")
-            {
-                return true;
-            }
+            return true;
         }
 
         return false;
     }
 
-    /// <summary>
-    /// Add spacing in the UI so elements line up if FMG/Text reference is present
-    /// </summary>
-    public void DetermineTextReferenceSpacing(string parameterName, string value, int i)
+    public void DetermineTextReference(ArgDoc curDoc, string value, int i)
     {
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
+        if (curDoc.FmgRef != null)
         {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "Name ID")
+            var parts = new List<string>() { curDoc.FmgRef };
+            if (parts.Contains(";"))
             {
-                ImGui.Text("");
+                parts = curDoc.FmgRef.Split(";").ToList();
             }
-        }
-    }
 
-    /// <summary>
-    /// Find FMG/Text reference value and display it
-    /// </summary>
-    public void DetermineTextReference(string parameterName, string value, int i)
-    {
-        // DS1
-        if (Editor.Project.ProjectType is ProjectType.DS1 or ProjectType.DS1R)
-        {
-        }
-
-        // DS2
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-        }
-
-        // DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
-        {
-        }
-
-        // BB
-        if (Editor.Project.ProjectType is ProjectType.BB)
-        {
-        }
-
-        // SDT
-        if (Editor.Project.ProjectType is ProjectType.SDT)
-        {
-        }
-
-        // ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
-        {
-        }
-
-        // AC6
-        if (Editor.Project.ProjectType is ProjectType.AC6)
-        {
-            if (parameterName == "Name ID")
+            foreach (var fmgName in parts)
             {
-                ConstructTextReference("Title_Characters", value, i);
+                ConstructTextReference(fmgName, value, i);
             }
         }
     }
@@ -457,20 +106,9 @@ public class EmevdPropertyDecorator
 
     #region Alias Reference
 
-    /// <summary>
-    /// Does the current property row have an Editor Alias reference?
-    /// </summary>
-    public bool HasAliasReference(string parameterName)
+    public bool HasAliasReference(ArgDoc curDoc)
     {
-        if (IsFlagParameter(parameterName))
-        {
-            return true;
-        }
-        if (IsParticleParameter(parameterName))
-        {
-            return true;
-        }
-        if (IsSoundParameter(parameterName))
+        if (curDoc.AliasRef != null)
         {
             return true;
         }
@@ -478,54 +116,31 @@ public class EmevdPropertyDecorator
         return false;
     }
 
-    /// <summary>
-    /// Add spacing in the UI so elements line up if Editor Alias reference is present
-    /// </summary>
-    public void DetermineAliasReferenceSpacing(string parameterName, string value, int i)
+    public void DetermineAliasReference(ArgDoc curDoc, string value, int i)
     {
-        if (IsFlagParameter(parameterName))
+        if (curDoc.AliasRef != null)
         {
-            ImGui.Text("");
-        }
-        if (IsParticleParameter(parameterName))
-        {
-            ImGui.Text("");
-        }
-        if (IsSoundParameter(parameterName))
-        {
-            ImGui.Text("");
-        }
-    }
+            List<AliasEntry> entries = new List<AliasEntry>();
 
-    /// <summary>
-    /// Find Editor Alias reference value and display it
-    /// </summary>
-    public void DetermineAliasReference(string parameterName, string value, int i)
-    {
-        if (IsFlagParameter(parameterName))
-        {
-            var entries = Editor.Project.Aliases.EventFlags;
-            if (entries != null)
+            // Event Flags
+            if(curDoc.AliasRef == "EventFlag")
             {
-                foreach(var entry in entries)
-                {
-                    if(entry.ID == value)
-                    {
-                        ImGui.AlignTextToFramePadding();
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
-                    }
-                    else
-                    {
-                        //ImguiUtils.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"---");
-                    }
-                }
+                entries = Editor.Project.Aliases.EventFlags;
             }
-        }
 
-        if (IsParticleParameter(parameterName))
-        {
-            var entries = Editor.Project.Aliases.Particles;
-            if (entries != null)
+            // Particles
+            if (curDoc.AliasRef == "SFX")
+            {
+                entries = Editor.Project.Aliases.Particles;
+            }
+
+            // Sound
+            if (curDoc.AliasRef == "Sound")
+            {
+                entries = Editor.Project.Aliases.Sounds;
+            }
+
+            if (entries.Count > 0)
             {
                 foreach (var entry in entries)
                 {
@@ -534,44 +149,16 @@ public class EmevdPropertyDecorator
                         ImGui.AlignTextToFramePadding();
                         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
                     }
-                    else
-                    {
-                        //ImguiUtils.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"---");
-                    }
                 }
             }
         }
-
-        if (IsSoundParameter(parameterName))
-        {
-            var entries = Editor.Project.Aliases.Sounds;
-            if (entries != null)
-            {
-                foreach (var entry in entries)
-                {
-                    if (entry.ID == value)
-                    {
-                        ImGui.AlignTextToFramePadding();
-                        UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"{entry.Name}");
-                    }
-                    else
-                    {
-                        //ImguiUtils.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"---");
-                    }
-                }
-            }
-        }
-
     }
     #endregion
 
     #region Entity Reference
-    /// <summary>
-    /// Does the current property row have an Map Entity reference?
-    /// </summary>
-    public bool HasMapEntityReference(string parameterName)
+    public bool HasMapEntityReference(ArgDoc curDoc)
     {
-        if (IsEntityParameter(parameterName))
+        if (curDoc.EntityRef != null)
         {
             return true;
         }
@@ -579,22 +166,33 @@ public class EmevdPropertyDecorator
         return false;
     }
 
-    /// <summary>
-    /// Add spacing in the UI so elements line up if Map Entity reference is present
-    /// </summary>
-    public void DetermineMapEntityReferenceSpacing(string parameterName, string value, int i)
+    public void DisplayDefaultEntityReferences(ArgDoc curDoc, string value, int i)
     {
-        if (IsEntityParameter(parameterName))
+        if (value == "10000" || value == "10010" || value == "0")
         {
             ImGui.AlignTextToFramePadding();
-            ImGui.Text("");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Self");
+        }
+        else if (value == "10002" || value == "10012")
+        {
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Host Player");
+        }
+        else if (value == "10003" || value == "10013" ||
+                    value == "10004" || value == "10014" ||
+                    value == "10005" || value == "10015")
+        {
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Client Player");
+        }
+        else if (value == "20000")
+        {
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Any Player");
         }
     }
 
-    /// <summary>
-    /// Find Map Entity reference value and display it, and unclude quick-link if applicable.
-    /// </summary>
-    public void DetermineMapEntityReference(string parameterName, string value, int i)
+    public void DetermineMapEntityReference(ArgDoc curDoc, string value, int i)
     {
         var mapID = Editor.Selection.SelectedFileEntry.Filename; // To determine map ID
 
@@ -621,46 +219,21 @@ public class EmevdPropertyDecorator
             }
         }
 
-        if (IsEntityParameter(parameterName))
+        if (!IsSpecialEntityID(value))
         {
-            if (!IsSpecialEntityID(value))
-            {
-                ImGui.AlignTextToFramePadding();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "View in Map");
+            ImGui.AlignTextToFramePadding();
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "View in Map");
 
-                // Context Menu for param ref
-                if (ImGui.BeginPopupContextItem($"EntityContextMenu_{parameterName}_{i}"))
+            // Context Menu for param ref
+            if (ImGui.BeginPopupContextItem($"EntityContextMenu_{i}"))
+            {
+                if (ImGui.Selectable($"View"))
                 {
-                    if (ImGui.Selectable($"View"))
-                    {
-                        EditorCommandQueue.AddCommand($"map/load/{mapID}");
-                        EditorCommandQueue.AddCommand($"map/emevd_select/{mapID}/{value}");
-                    }
-
-                    ImGui.EndPopup();
+                    EditorCommandQueue.AddCommand($"map/load/{mapID}");
+                    EditorCommandQueue.AddCommand($"map/emevd_select/{mapID}/{value}");
                 }
-            }
-            else if(value == "10000" || value == "10010" || value == "0")
-            {
-                ImGui.AlignTextToFramePadding();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Self");
-            }
-            else if (value == "10002" || value == "10012")
-            {
-                ImGui.AlignTextToFramePadding();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Host Player");
-            }
-            else if (value == "10003" || value == "10013" ||
-                     value == "10004" || value == "10014" ||
-                     value == "10005" || value == "10015")
-            {
-                ImGui.AlignTextToFramePadding();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Client Player");
-            }
-            else if (value == "20000")
-            {
-                ImGui.AlignTextToFramePadding();
-                UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Target Any Player");
+
+                ImGui.EndPopup();
             }
         }
     }
@@ -738,72 +311,6 @@ public class EmevdPropertyDecorator
     }
 
     /// <summary>
-    /// Is value a sound parameter ID?
-    /// </summary>
-    private bool IsSoundParameter(string parameterName)
-    {
-        if (parameterName == "Sound ID")
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Is value a SFX parameter ID?
-    /// </summary>
-    private bool IsParticleParameter(string parameterName)
-    {
-        if (parameterName == "SFX ID")
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Is value a Event Flag ID?
-    /// </summary>
-    private bool IsFlagParameter(string parameterName)
-    {
-        if (parameterName == "Target Event Flag ID" ||
-            parameterName == "Starting Target Event Flag ID" ||
-            parameterName == "Ending Target Event Flag ID" ||
-            parameterName == "Base Event Flag ID" ||
-            parameterName == "Right-side Base Event Flag ID" ||
-            parameterName == "Left-side Base Event Flag ID")
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
-    /// Is value a Map Object Entity ID?
-    /// </summary>
-    private bool IsEntityParameter(string parameterName)
-    {
-        if (parameterName == "Entity ID" ||
-            parameterName == "Character Entity ID" ||
-            parameterName == "Target Asset Entity ID" ||
-            parameterName == "Hit Entity ID" ||
-            parameterName == "Target Entity ID" ||
-            parameterName == "Area Entity ID" ||
-            parameterName == "Target Entity ID A" ||
-            parameterName == "Target Entity ID B" ||
-            parameterName == "Attacker Entity ID" ||
-            parameterName == "Warp Destination Entity ID")
-        {
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
     /// Find Param reference and display quick-link if possible.
     /// </summary>
     private void ConstructParamReference(string paramName, string value, int i)
@@ -814,18 +321,21 @@ public class EmevdPropertyDecorator
 
             (string, Param.Row, string) match = ResolveParamRef(Editor.BaseEditor.ProjectManager.SelectedProject.ParamEditor, Editor.Project.ParamData.PrimaryBank, paramName, refValue);
 
-            ImGui.AlignTextToFramePadding();
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
-
-            // Context Menu for param ref
-            if (ImGui.BeginPopupContextItem($"ParamContextMenu_{paramName}_{i}"))
+            if (match.Item1 != null && match.Item2 != null && match.Item3 != null)
             {
-                if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
-                {
-                    EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
-                }
+                ImGui.AlignTextToFramePadding();
+                UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, $"{match.Item3}");
 
-                ImGui.EndPopup();
+                // Context Menu for param ref
+                if (ImGui.BeginPopupContextItem($"ParamContextMenu_{paramName}_{i}"))
+                {
+                    if (ImGui.Selectable($"Go to {match.Item2.ID} ({match.Item3})"))
+                    {
+                        EditorCommandQueue.AddCommand($@"param/select/-1/{match.Item1}/{match.Item2.ID}");
+                    }
+
+                    ImGui.EndPopup();
+                }
             }
         }
     }
@@ -866,7 +376,7 @@ public class EmevdPropertyDecorator
     /// </summary>
     private (string, Param.Row, string) ResolveParamRef(ParamEditorScreen editor, ParamBank bank, string paramRef, dynamic oldval)
     {
-        (string, Param.Row, string) row = new();
+        (string, Param.Row, string) row = new(null, null, null);
         if (bank.Params == null)
         {
             return row;

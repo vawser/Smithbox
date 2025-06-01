@@ -120,6 +120,18 @@ public class EMEDF
         [JsonProperty(PropertyName = "unk4", Order = 12)]
         private long UNK4;
 
+        [JsonProperty(PropertyName = "param_ref", Order = 13)]
+        public string ParamRef;
+
+        [JsonProperty(PropertyName = "fmg_ref", Order = 14)]
+        public string FmgRef;
+
+        [JsonProperty(PropertyName = "alias_ref", Order = 15)]
+        public string AliasRef;
+
+        [JsonProperty(PropertyName = "entity_ref", Order = 15)]
+        public string EntityRef;
+
         // These fields are not present in the original EMEDF
 
         // If an argument may be repeated zero or multiple times. Only used for display/documentation for the moment.

@@ -37,6 +37,11 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEventCreationModal EventCreationModal;
     public EmevdInstructionCreationModal InstructionCreationModal;
 
+    public EventInstanceFinder EventInstanceFinder;
+    public InstructionInstanceFinder InstructionInstanceFinder;
+    public UnknownInstructionFinder UnknownInstructionFinder;
+    public ValueInstanceFinder ValueInstanceFinder;
+
     public EmevdEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -61,6 +66,11 @@ public class EmevdEditorScreen : EditorScreen
 
         EventCreationModal = new EmevdEventCreationModal(this, Project);
         InstructionCreationModal = new EmevdInstructionCreationModal(this, Project);
+
+        EventInstanceFinder = new EventInstanceFinder(this, Project);
+        InstructionInstanceFinder = new InstructionInstanceFinder(this, Project);
+        UnknownInstructionFinder = new UnknownInstructionFinder(this, Project);
+        ValueInstanceFinder = new ValueInstanceFinder(this, Project);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";

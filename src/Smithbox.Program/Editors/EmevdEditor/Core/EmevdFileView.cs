@@ -71,6 +71,12 @@ public class EmevdFileView
                 UIHelper.DisplayAlias(aliasName);
             }
 
+            if (Editor.Selection.FocusScriptSelection)
+            {
+                Editor.Selection.FocusScriptSelection = false;
+                ImGui.SetScrollHereY();
+            }
+
             index++;
         }
 

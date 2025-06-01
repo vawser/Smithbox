@@ -2,9 +2,12 @@
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.EventScriptEditorNS;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System.Collections.Generic;
+using System.IO;
 using System.Numerics;
+using System.Text.Json;
 
 namespace StudioCore.Editors.EmevdEditor.Core;
 
@@ -31,21 +34,27 @@ public class EmevdToolView
         {
             Editor.Selection.SwitchWindowContext(EmevdEditorContext.ToolWindow);
 
-            var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
+            Editor.EventInstanceFinder.Display();
+            Editor.InstructionInstanceFinder.Display();
+            Editor.ValueInstanceFinder.Display();
 
-            List<string> loggedInstructions = new List<string>();
+#if DEBUG
+            Editor.UnknownInstructionFinder.Display();
 
-            if (ImGui.CollapsingHeader("Debug Tool"))
+            if (ImGui.CollapsingHeader("Template Reload"))
             {
-                if (ImGui.Button("Log Unknown Instructions", defaultButtonSize))
+                if (ImGui.Button("Reload"))
                 {
-                    Editor.ActionHandler.LogUnknownInstructions();
+                    Editor.Project.EmevdData.PrimaryBank.LoadEMEDF();
                 }
             }
+#endif
+
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
     }
+
+
 }

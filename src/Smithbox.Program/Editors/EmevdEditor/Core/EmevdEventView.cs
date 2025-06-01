@@ -76,6 +76,12 @@ public class EmevdEventView
 
                     UIHelper.DisplayColoredAlias(eventName, UI.Current.ImGui_AliasName_Text);
                 }
+
+                if (Editor.Selection.FocusEventSelection)
+                {
+                    Editor.Selection.FocusEventSelection = false;
+                    ImGui.SetScrollHereY();
+                }
             }
         }
 

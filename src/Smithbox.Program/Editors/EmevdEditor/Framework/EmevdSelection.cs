@@ -27,6 +27,10 @@ public class EmevdSelection
     public bool SelectNextEvent { get; set; }
     public bool SelectNextInstruction { get; set; }
 
+    public bool FocusScriptSelection { get; set; }
+    public bool FocusEventSelection { get; set; }
+    public bool FocusInstructionSelection { get; set; }
+
     public EmevdSelection(EmevdEditorScreen editor, ProjectEntry project)
     {
         Editor = editor;
@@ -66,6 +70,24 @@ public class EmevdSelection
         SelectedScript = targetScript.Value;
     }
 
+    public void SelectLoadedFile(FileDictionaryEntry newFileEntry)
+    {
+        SelectedEvent = null;
+        SelectedEventIndex = -1;
+
+        SelectedInstruction = null;
+        SelectedInstructionIndex = -1;
+
+        SelectedFileEntry = newFileEntry;
+
+        var targetScript = Project.EmevdData.PrimaryBank.Scripts
+                .Where(e => e.Key.Filename == newFileEntry.Filename).FirstOrDefault();
+
+        SelectedScript = targetScript.Value;
+
+        FocusScriptSelection = true;
+    }
+
     public void SelectEvent(EMEVD.Event newEvent, int newIndex)
     {
         Editor.Selection.SelectedEvent = newEvent;
@@ -73,11 +95,15 @@ public class EmevdSelection
 
         Editor.Selection.SelectedInstruction = null;
         Editor.Selection.SelectedInstructionIndex = -1;
+
+        FocusEventSelection = true;
     }
 
     public void SelectInstruction(EMEVD.Instruction newInstruction, int newIndex)
     {
         Editor.Selection.SelectedInstruction = newInstruction;
         Editor.Selection.SelectedInstructionIndex = newIndex;
+
+        FocusInstructionSelection = true;
     }
 }

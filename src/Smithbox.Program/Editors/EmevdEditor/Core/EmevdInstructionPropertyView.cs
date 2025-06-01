@@ -40,116 +40,100 @@ public class EmevdInstructionPropertyView
                 (ArgumentDocs, Arguments) = EmevdUtils.BuildArgumentList(Editor, instruction);
                 Editor.Decorator.StoreInstructionInfo(instruction, ArgumentDocs, Arguments);
 
-                ImGui.Columns(2);
-
-                // Names
-                for (int i = 0; i < Arguments.Count; i++)
+                if (ImGui.BeginTable("InstructionArgsTable", 2, ImGuiTableFlags.RowBg | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.BordersOuter))
                 {
-                    var arg = Arguments[i];
-                    var argDoc = ArgumentDocs[i];
-
-                    // Property Name
-                    ImGui.AlignTextToFramePadding();
-                    ImGui.Text($"{argDoc.Name}");
-
-                    // Enum Reference
-                    if (argDoc.EnumName != null)
+                    for (int i = 0; i < Arguments.Count; i++)
                     {
+                        var arg = Arguments[i];
+                        var argDoc = ArgumentDocs[i];
+
+                        ImGui.TableNextRow();
+
+                        // Left column: Property label and decorators
+                        ImGui.TableSetColumnIndex(0);
                         ImGui.AlignTextToFramePadding();
-                        ImGui.Text("");
+                        ImGui.Text($"{argDoc.Name}");
+
+                        // Show decorator spacing references under the label if needed
+                        if (argDoc.EnumName != null)
+                            ImGui.Text("");
+
+                        // Right column: Editable property input and decorator UIs
+                        ImGui.TableSetColumnIndex(1);
+                        object newValue;
+                        (bool changed, bool committed) = Editor.PropertyInput.InstructionArgumentPropertyRow(i, argDoc, arg, out newValue);
+
+                        if (changed && committed)
+                        {
+                            Arguments[i] = newValue;
+
+                            var oldArguments = (byte[])instruction.ArgData.Clone();
+                            var newArguments = instruction.UpdateArgs(Arguments);
+
+                            var action = new InstructionArgumentChange(instruction, oldArguments, newArguments);
+                            Editor.EditorActionManager.ExecuteAction(action);
+                        }
+
+                        // Show relevant decorators for value
+                        if (argDoc.EnumName != null)
+                            Editor.Decorator.DisplayEnumReference(argDoc, Arguments[i], i);
+
+                        // Param Ref
+                        if (Editor.Project.ParamEditor != null)
+                        {
+                            if (Editor.Decorator.HasParamReference(argDoc))
+                            {
+                                ImGui.TableNextRow();
+                                ImGui.TableSetColumnIndex(0);
+                                ImGui.TableSetColumnIndex(1);
+                                Editor.Decorator.DetermineParamReference(argDoc, $"{Arguments[i]}", i);
+                            }
+                        }
+
+                        // Fmg Ref
+                        if (Editor.Project.TextEditor != null)
+                        {
+                            if (Editor.Decorator.HasTextReference(argDoc))
+                            {
+                                ImGui.TableNextRow();
+                                ImGui.TableSetColumnIndex(0);
+                                ImGui.TableSetColumnIndex(1);
+                                Editor.Decorator.DetermineTextReference(argDoc, $"{Arguments[i]}", i);
+                            }
+                        }
+
+                        // Alias Ref
+                        if (Editor.Decorator.HasAliasReference(argDoc))
+                        {
+                            ImGui.TableNextRow();
+                            ImGui.TableSetColumnIndex(0);
+                            ImGui.TableSetColumnIndex(1);
+                            Editor.Decorator.DetermineAliasReference(argDoc, $"{Arguments[i]}", i);
+                        }
+
+                        // Map Ref
+                        if (Editor.Decorator.HasMapEntityReference(argDoc))
+                        {
+                            if (Editor.Project.MapEditor != null)
+                            {
+                                ImGui.TableNextRow();
+                                ImGui.TableSetColumnIndex(0);
+                                ImGui.TableSetColumnIndex(1);
+
+                                Editor.Decorator.DisplayDefaultEntityReferences(argDoc, $"{Arguments[i]}", i);
+                                Editor.Decorator.DetermineMapEntityReference(argDoc, $"{Arguments[i]}", i);
+                            }
+                        }
                     }
 
-                    // Param Reference
-                    if (Editor.Decorator.HasParamReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineParamReferenceSpacing(argDoc.Name, $"{arg}", i);
-                    }
-
-                    // Text Reference
-                    if (Editor.Decorator.HasTextReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineTextReferenceSpacing(argDoc.Name, $"{arg}", i);
-                    }
-
-                    // Alias Reference
-                    if (Editor.Decorator.HasAliasReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineAliasReferenceSpacing(argDoc.Name, $"{arg}", i);
-                    }
-
-                    // Entity Reference
-                    if (Editor.Decorator.HasMapEntityReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineMapEntityReferenceSpacing(argDoc.Name, $"{arg}", i);
-                    }
+                    ImGui.EndTable();
                 }
-
-                ImGui.NextColumn();
-
-                // Properties
-                for (int i = 0; i < Arguments.Count; i++)
-                {
-                    var argDoc = ArgumentDocs[i];
-
-                    object newValue;
-                    (bool, bool) propEditResults = Editor.PropertyInput.InstructionArgumentPropertyRow(argDoc, Arguments[i], out newValue);
-
-                    var changed = propEditResults.Item1;
-                    var committed = propEditResults.Item2;
-
-                    if (changed && committed)
-                    {
-                        // Update the argument value
-                        Arguments[i] = newValue;
-
-                        // Then prepare action that updates all arguments
-                        var oldArguments = (byte[])instruction.ArgData.Clone();
-                        var newArguments = instruction.UpdateArgs(Arguments);
-
-                        var action = new InstructionArgumentChange(instruction, oldArguments, newArguments);
-                        Editor.EditorActionManager.ExecuteAction(action);
-                    }
-
-                    //ImGui.Text($"{arg.ArgObject}");
-
-                    // Enum Reference
-                    if (argDoc.EnumName != null)
-                    {
-                        Editor.Decorator.DisplayEnumReference(argDoc, Arguments[i], i);
-                    }
-
-                    // Param Reference
-                    if (Editor.Decorator.HasParamReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineParamReference(argDoc.Name, $"{Arguments[i]}", i);
-                    }
-
-                    // Text Reference
-                    if (Editor.Decorator.HasTextReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineTextReference(argDoc.Name, $"{Arguments[i]}", i);
-                    }
-
-                    // Alias Reference
-                    if (Editor.Decorator.HasAliasReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineAliasReference(argDoc.Name, $"{Arguments[i]}", i);
-                    }
-
-                    // Entity Reference
-                    if (Editor.Decorator.HasMapEntityReference(argDoc.Name))
-                    {
-                        Editor.Decorator.DetermineMapEntityReference(argDoc.Name, $"{Arguments[i]}", i);
-                    }
-                }
-
-                ImGui.Columns(1);
             }
         }
 
         ImGui.End();
     }
 
-   
+
 }
 
