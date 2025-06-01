@@ -2,11 +2,9 @@
 <PARAMMETA XmlVersion="0">
   <Self 
   Wiki="" />
-  
   <Field>
-    
+    <weatherOverrideGparamId AltName="Weather Override GPARAM ID" Wiki="The ID of the ?? part of s00_00_0000_WeatherOverride_ ??. Gparam" />
   </Field>
-  
   <Enums>
   </Enums>
 </PARAMMETA>

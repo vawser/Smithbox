@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self />
+  <Self 
+  Wiki="" />
   <Field>
     <soundBankId 
     AltName="Sound Bank ID" 

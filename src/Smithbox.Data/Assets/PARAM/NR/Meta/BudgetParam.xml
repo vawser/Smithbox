@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <vram_all AltName="VRAM: ALL" Wiki="VRAM: ALL (unit is MB)" />
     <vram_mapobj_tex AltName="VRAM: Map / Object Texture" Wiki="VRAM: Map / Object Texture (Unit: MB)" />
@@ -32,5 +32,6 @@
     <havok_navimesh AltName="HAVOK: Navimesh" Wiki="HAVOK: Navimesh (unit is MB)" />
     <reserve_1 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

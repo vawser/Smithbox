@@ -26,4 +26,5 @@
 - Time Act Editor: DS2 TAE entries not being presented
 
 # NR
-- ERN MSB: need to make it byte-perfect on save (load is fine)
+- NR MSB: need to make it byte-perfect on save (load is fine)
+

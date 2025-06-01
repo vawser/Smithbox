@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <MaxHpRate AltName="Max HP %" Wiki="Maximum HP magnification [%]" />
     <MaxMpRate AltName="Max FP %" Wiki="Maximum MP magnification [%]" />
@@ -36,5 +36,6 @@
     <MadnessDamageRate AltName="Damage %: Madness" Wiki="Mad damage correction factor" />
     <pad1 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

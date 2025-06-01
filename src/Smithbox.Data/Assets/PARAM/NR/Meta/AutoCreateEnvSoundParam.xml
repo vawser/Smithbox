@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <RangeMin AltName="Appearance Distance - Min" Wiki="Appearance distance Min [m]" />
     <RangeMax AltName="Appearance Distance - Max" Wiki="Appearance distance Max [" />
@@ -12,5 +12,6 @@
     <LimiteRotateMin AltName="Generation Angle Limit - Min" Wiki="Angle limit Min [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)" />
     <LimiteRotateMax AltName="Generation Angle Limit - Max" Wiki="Angle limit Max [degree] (Specify the Y-axis angle +-in front of the camera. 180 is omnidirectional)" />
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

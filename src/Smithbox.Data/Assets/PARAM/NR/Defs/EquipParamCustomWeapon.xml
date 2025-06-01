@@ -6,8 +6,10 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
     
-    <Field Def="s32 unknown_0"/>
     <Field Def="s32 targetWeaponId"/>
     <Field Def="s32 swordArtsTableId"/>
     <Field Def="s32 attachEffectTableId_1"/>

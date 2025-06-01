@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <sfxId_00 AltName="SFX ID [00]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,CL\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <sfxId_01 AltName="SFX ID [01]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,CL\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
@@ -36,5 +36,6 @@
     <sfxId_30 AltName="SFX ID [30]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,CL\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <sfxId_31 AltName="SFX ID [31]" Wiki="SFX identifier corresponding to the asset parameter SFX identifier after destruction" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,CL\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

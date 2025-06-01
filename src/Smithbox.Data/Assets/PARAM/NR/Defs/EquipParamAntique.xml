@@ -6,13 +6,17 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="u16 unknown_1a"/>
+    <Field Def="u8 relicColor"/>
+    <Field Def="u8 unknown_1b"/>
     <Field Def="u8 unknown_1c"/>
     <Field Def="u8 unknown_1d"/>
-    <Field Def="u16 unknown_2a"/>
-    <Field Def="u16 unknown_2c"/>
+    <Field Def="u16 lotResultId"/>
+    
+    <Field Def="dummy8 padding[2]"/>
     
     <Field Def="s32 sortId"/>
     <Field Def="s32 attachEffectTableId_1"/>

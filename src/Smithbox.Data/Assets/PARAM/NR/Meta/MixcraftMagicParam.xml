@@ -4,9 +4,33 @@
   Wiki="" />
   
   <Field>
+    <element1
+    AltName="Element: 1"
+    Wiki="The first element required for this spell." 
+    Enum="ELEMENTAL_TYPE" />
     
+    <element2
+    AltName="Element: 2"
+    Wiki="The second element required for this spell." 
+    Enum="ELEMENTAL_TYPE" />
+    
+    <element3
+    AltName="Element: 3"
+    Wiki="The third element required for this spell." 
+    Enum="ELEMENTAL_TYPE" />
+  
+    <magicId
+    AltName="Magic ID"
+    Wiki=""
+    Refs="Magic" />
   </Field>
   
   <Enums>
+    <Enum Name="ELEMENTAL_TYPE" type="u8">
+        <Option Value="1" Name="Magic" />
+        <Option Value="2" Name="Fire" />
+        <Option Value="3" Name="Lightning" />
+        <Option Value="4" Name="Holy" />
+    </Enum>
   </Enums>
 </PARAMMETA>

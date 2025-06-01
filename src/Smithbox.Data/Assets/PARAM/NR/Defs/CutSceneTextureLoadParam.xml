@@ -1,76 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PARAMDEF XmlVersion="1">
+<PARAMDEF XmlVersion="2">
   <ParamType>CUTSCENE_TEXTURE_LOAD_PARAM_ST</ParamType>
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
-    <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
-    <Field Def="s32 unknown_18"/>
-    <Field Def="s32 unknown_19"/>
-    <Field Def="s32 unknown_20"/>
-    <Field Def="s32 unknown_21"/>
-    <Field Def="s32 unknown_22"/>
-    <Field Def="s32 unknown_23"/>
-    <Field Def="s32 unknown_24"/>
-    <Field Def="s32 unknown_25"/>
-    <Field Def="s32 unknown_26"/>
-    <Field Def="s32 unknown_27"/>
-    <Field Def="s32 unknown_28"/>
-    <Field Def="s32 unknown_29"/>
-    <Field Def="s32 unknown_30"/>
-    <Field Def="s32 unknown_31"/>
-    <Field Def="s32 unknown_32"/>
-    <Field Def="s32 unknown_33"/>
-    <Field Def="s32 unknown_34"/>
-    <Field Def="s32 unknown_35"/>
-    <Field Def="s32 unknown_36"/>
-    <Field Def="s32 unknown_37"/>
-    <Field Def="s32 unknown_38"/>
-    <Field Def="s32 unknown_39"/>
-    <Field Def="s32 unknown_40"/>
-    <Field Def="s32 unknown_41"/>
-    <Field Def="s32 unknown_42"/>
-    <Field Def="s32 unknown_43"/>
-    <Field Def="s32 unknown_44"/>
-    <Field Def="s32 unknown_45"/>
-    <Field Def="s32 unknown_46"/>
-    <Field Def="s32 unknown_47"/>
-    <Field Def="s32 unknown_48"/>
-    <Field Def="s32 unknown_49"/>
-    <Field Def="s32 unknown_50"/>
-    <Field Def="s32 unknown_51"/>
-    <Field Def="s32 unknown_52"/>
-    <Field Def="s32 unknown_53"/>
-    <Field Def="s32 unknown_54"/>
-    <Field Def="s32 unknown_55"/>
-    <Field Def="s32 unknown_56"/>
-    <Field Def="s32 unknown_57"/>
-    <Field Def="s32 unknown_58"/>
-    <Field Def="s32 unknown_59"/>
-    <Field Def="s32 unknown_60"/>
-    <Field Def="s32 unknown_61"/>
-    <Field Def="s32 unknown_62"/>
-    <Field Def="s32 unknown_63"/>
-    <Field Def="s32 unknown_64"/>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="u8 disableParam_Debug:1">
+      <DisplayName>デバッグパラメータか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータは全パッケージから除外します（デバッグ用なので）</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>0</Maximum>
+      <SortID>1</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:6">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>9999</SortID>
+    </Field>
+    <Field Def="fixstr texName_00[16]">
+      <DisplayName>テクスチャ名 00</DisplayName>
+      <Description>テクスチャ名 00</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_01[16]">
+      <DisplayName>テクスチャ名 01</DisplayName>
+      <Description>テクスチャ名 01</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_02[16]">
+      <DisplayName>テクスチャ名 02</DisplayName>
+      <Description>テクスチャ名 02</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_03[16]">
+      <DisplayName>テクスチャ名 03</DisplayName>
+      <Description>テクスチャ名 03</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_04[16]">
+      <DisplayName>テクスチャ名 04</DisplayName>
+      <Description>テクスチャ名 04</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_05[16]">
+      <DisplayName>テクスチャ名 05</DisplayName>
+      <Description>テクスチャ名 05</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_06[16]">
+      <DisplayName>テクスチャ名 06</DisplayName>
+      <Description>テクスチャ名 06</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_07[16]">
+      <DisplayName>テクスチャ名 07</DisplayName>
+      <Description>テクスチャ名 07</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_08[16]">
+      <DisplayName>テクスチャ名 08</DisplayName>
+      <Description>テクスチャ名 08</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_09[16]">
+      <DisplayName>テクスチャ名 09</DisplayName>
+      <Description>テクスチャ名 09</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_10[16]">
+      <DisplayName>テクスチャ名 10</DisplayName>
+      <Description>テクスチャ名 10</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_11[16]">
+      <DisplayName>テクスチャ名 11</DisplayName>
+      <Description>テクスチャ名 11</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_12[16]">
+      <DisplayName>テクスチャ名 12</DisplayName>
+      <Description>テクスチャ名 12</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_13[16]">
+      <DisplayName>テクスチャ名 13</DisplayName>
+      <Description>テクスチャ名 13</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_14[16]">
+      <DisplayName>テクスチャ名 14</DisplayName>
+      <Description>テクスチャ名 14</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="fixstr texName_15[16]">
+      <DisplayName>テクスチャ名 15</DisplayName>
+      <Description>テクスチャ名 15</Description>
+      <DisplayFormat />
+      <EditFlags>None</EditFlags>
+      <SortID>100</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

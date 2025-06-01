@@ -189,7 +189,8 @@
     
     <normalSpotChangeRate 
     AltName="Normal Hit Change %" 
-    Wiki="Replaces normal hit damage calculation with the specified number -Invalid at 1.0" DefaultValue="-1" />
+    Wiki="Replaces normal hit damage calculation with the specified number -Invalid at 1.0" 
+    DefaultValue="-1" />
     
     <lookAtTargetPosOffset 
     AltName="Look-At Target Position Offset" 
@@ -1146,7 +1147,8 @@
     <AppearAiSoundId 
     AltName="Generated AI Sound ID" 
     Wiki="Generates AI sound parameters with set values" 
-    Refs="AiSoundParam" DefaultValue="0" />
+    Refs="AiSoundParam" 
+    DefaultValue="0" />
     
     <addFootEffectSfxId 
     AltName="Automatic Foot Effect - SFX ID Offset" 
@@ -1956,59 +1958,72 @@
     
     <ultimateArtGauge
     AltName="Ultimate Art Gauge"
-    Wiki="The amount of ultimate art gauge to recover." />
+    Wiki="The amount of ultimate art gauge to recover." 
+    DefaultValue="1"/>
     
     <characterSkillCooldownReduction
     AltName="Character Skill Cooldown Reduction"
-    Wiki="The amount of cooldown reduction to apply to character skills." />
+    Wiki="The amount of cooldown reduction to apply to character skills." 
+    DefaultValue="1"/>
     
     <characterSkillGauge
     AltName="Character Skill Gauge"
-    Wiki="The amount of character skill gauge to recover." />
+    Wiki="The amount of character skill gauge to recover." 
+    DefaultValue="0"/>
     
     <ultimateArtDuration
     AltName="Ultimate Art Duration"
-    Wiki="The amount of duration increase to apply to the character's ultimate art." />
+    Wiki="The amount of duration increase to apply to the character's ultimate art." 
+    DefaultValue="0"/>
     
     <guardCounterAttackRate
     AltName="Guard Counter Attack %"
-    Wiki="The multiplier to attack during a guard counter." />
+    Wiki="The multiplier to attack during a guard counter." 
+    DefaultValue="0"/>
     
     <triggerOnWepType
     AltName="Trigger on Held Weapon Type" 
     Wiki="Trigger this SpEffect only if the specified held weapon type is present." 
-    Enum="WEP_TYPE" />
+    Enum="WEP_TYPE" 
+    DefaultValue="0"/>
     
     <additionalCharacterSkillUse
     AltName="Additional Character Skill Use"
-    Wiki="Increase to the number of uses a character skill has." />
+    Wiki="Increase to the number of uses a character skill has." 
+    DefaultValue="0"/>
     
     <triggerEffectOnKnockback_unk
     AltName="triggerEffectOnKnockback_unk"
-    Wiki="Appears related to the effects that trigger a boost on knockback" />
+    Wiki="Appears related to the effects that trigger a boost on knockback" 
+    DefaultValue="-1"/>
     
     <characterSkillAttackRate
     AltName="Character Skill Attack %"
-    Wiki="Increases the character skill attack power." />
+    Wiki="Increases the character skill attack power." 
+    DefaultValue="-1"/>
     
     <improvedDodging_unk
     AltName="improvedDodging_unk"
-    Wiki="Related to the improved dodging effect" />
+    Wiki="Related to the improved dodging effect" 
+    DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_1
     AltName="revenantFamily_spEffectId_1"
     Wiki="Related to the revenant family buff" 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_2
     AltName="revenantFamily_spEffectId_2"
     Wiki="Related to the revenant family buff" 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_3
     AltName="revenantFamily_spEffectId_3"
     Wiki="Related to the revenant family buff" 
-    Refs="SpEffectParam" />
+    Refs="SpEffectParam" 
+    DefaultValue="-1"/>
     
   </Field>
   <Enums>

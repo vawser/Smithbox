@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
@@ -20,5 +20,6 @@
     <warnRegionEntityId AltName="Warn Region Entity ID" Wiki="Warning area entity ID" />
     <pad3 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

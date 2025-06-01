@@ -4,9 +4,26 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test"
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <magicId
+    AltName="Magic ID"
+    Wiki="The item this table references." 
+    Refs="Magic"/>
+    
+    <chanceWeight
+    AltName="Roll Weight"
+    Wiki="The weighting to apply during the roll." />
   </Field>
-  
   <Enums>
   </Enums>
 </PARAMMETA>

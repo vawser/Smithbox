@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <sfxId_0 AltName="SFX ID [0]" Wiki="0: SfxID" ParticleAlias="" ExtRefs="common sfxbnd,sfx\sfxbnd_commoneffects.ffxbnd.dcx,CL\data\INTERROOT_win64\sfx\effect\f{0:D9}.fxr" />
     <dmypolyId_0 AltName="Dummy Poly ID [0]" Wiki="0: Damipoli ID" />
@@ -29,5 +29,6 @@
     <isDisableIV AltName="Is Irradiance Volume Disabled" Wiki="When enabled, the effect on irradiance volume shooting is disabled." />
     <reserve_7 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+  </Enums>
 </PARAMMETA>

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="BUDDY_PC_FOLLOW_TYPE" type="u8">
-        <Option Value="0" Name="Follow/Warp to Player (Needs spEffect 297000)" />
-        <Option Value="1" Name="Wander" />
-        <Option Value="2" Name="Stay Still" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
@@ -38,5 +33,11 @@
     <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
     <Reserve2 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="BUDDY_PC_FOLLOW_TYPE" type="u8">
+        <Option Value="0" Name="Follow/Warp to Player (Needs spEffect 297000)" />
+        <Option Value="1" Name="Wander" />
+        <Option Value="2" Name="Stay Still" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

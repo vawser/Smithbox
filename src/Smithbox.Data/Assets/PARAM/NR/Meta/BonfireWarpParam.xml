@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Enums>
-    <Enum Name="WORLD_MAP_POINT_TEXT_TYPE" type="u8">
-        <Option Value="0" Name="Type 0" />
-        <Option Value="1" Name="Type 1" />
-    </Enum>
-  </Enums>
+  <Self 
+  Wiki="" />
   <Field>
     <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
     <disableParamReserve1 AltName="" Padding=""/>
@@ -90,5 +86,10 @@
     <altForbiddenIconId AltName="Alternate Warp Prohibition Icon ID" Wiki="Icon ID when warp is prohibited, when certain conditions are met" ProjectEnum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common/SB_MapCursor_02/iconId/MENU_MAP_"  />
     <pad5 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Enums>
+    <Enum Name="WORLD_MAP_POINT_TEXT_TYPE" type="u8">
+        <Option Value="0" Name="Type 0" />
+        <Option Value="1" Name="Type 1" />
+    </Enum>
+  </Enums>
 </PARAMMETA>

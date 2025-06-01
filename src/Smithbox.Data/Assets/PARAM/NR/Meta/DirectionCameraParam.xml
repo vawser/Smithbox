@@ -2,11 +2,11 @@
 <PARAMMETA XmlVersion="0">
   <Self 
   Wiki="" />
-  
   <Field>
-    
+    <isUseOption AltName="Is Use Option" Wiki="Is it affected by the production camera ON / OFF option?" IsBool="" />
+    <pad2 AltName="" Padding=""/>
+    <pad1 AltName="" Padding=""/>
   </Field>
-  
   <Enums>
   </Enums>
 </PARAMMETA>

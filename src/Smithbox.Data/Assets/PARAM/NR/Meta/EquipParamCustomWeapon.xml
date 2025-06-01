@@ -4,6 +4,17 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test"
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
     <targetWeaponId 
     AltName="Target Weapon" 
     Wiki="" 
