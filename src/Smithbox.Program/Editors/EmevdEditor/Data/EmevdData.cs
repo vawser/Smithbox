@@ -19,6 +19,7 @@ public class EmevdData
     public ProjectEntry Project;
 
     public FileDictionary EmevdFiles = new();
+    public FileDictionary EmeldFiles = new();
 
     public EmevdBank PrimaryBank;
     public EmevdBank VanillaBank;
@@ -38,7 +39,12 @@ public class EmevdData
             .Where(e => e.Extension == "emevd")
             .ToList();
 
-        if(Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        EmeldFiles.Entries = Project.FileDictionary.Entries
+            .Where(e => e.Archive != "sd")
+            .Where(e => e.Extension == "emeld")
+            .ToList();
+
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
             try
             {

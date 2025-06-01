@@ -32,21 +32,6 @@ public class EmevdContextMenu
         }
     }
 
-    /// <summary>
-    /// Context menu for the selection in the Event list
-    /// </summary>
-    public void EventContextMenu(EMEVD.Event evt)
-    {
-        if (ImGui.BeginPopupContextItem($"EventContext##EventContext{evt.ID}"))
-        {
-            if (ImGui.Selectable($"Create##createActionEvent{evt.ID}"))
-            {
-                Editor.EventCreationModal.ShowModal = true;
-            }
-
-            ImGui.EndPopup();
-        }
-    }
 
     /// <summary>
     /// Context menu for the selection in the Instruction list

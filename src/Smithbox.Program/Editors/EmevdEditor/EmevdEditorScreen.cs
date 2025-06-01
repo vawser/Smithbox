@@ -249,6 +249,7 @@ public class EmevdEditorScreen : EditorScreen
         if (targetScript.Key != null)
         {
             await Project.EmevdData.PrimaryBank.SaveScript(targetScript.Key, targetScript.Value);
+            await Project.EmevdData.PrimaryBank.SaveEMELD(targetScript.Key);
 
             if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
@@ -270,6 +271,7 @@ public class EmevdEditorScreen : EditorScreen
     public async void SaveAll()
     {
         await Project.EmevdData.PrimaryBank.SaveAllScripts();
+        await Project.EmevdData.PrimaryBank.SaveAllEMELD();
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

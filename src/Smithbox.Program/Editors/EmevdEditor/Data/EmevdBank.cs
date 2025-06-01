@@ -26,6 +26,8 @@ public class EmevdBank
 
     public Dictionary<FileDictionaryEntry, EMEVD> Scripts = new();
 
+    public Dictionary<FileDictionaryEntry, EMELD> EventNames = new();
+
     public EMEDF InfoBank { get; private set; } = new();
 
     public bool IsSupported = false;
@@ -49,6 +51,10 @@ public class EmevdBank
         // EMEVD
         Task<bool> emevdTask = SetupEMEVD();
         bool emevdTaskResult = await emevdTask;
+
+        // EMELD
+        Task<bool> emeldTask = LoadEMELD();
+        bool emeldTaskResult = await emeldTask;
 
         return true;
     }
@@ -117,6 +123,81 @@ public class EmevdBank
         else
         {
             return false;
+        }
+
+        return true;
+    }
+
+    public async Task<bool> LoadEMELD()
+    {
+        await Task.Yield();
+
+        EventNames = new();
+
+        // For each emevd file, make a blank emeld
+        foreach (var entry in Project.EmevdData.EmevdFiles.Entries)
+        {
+            var emeldEntry = Project.EmevdData.EmeldFiles.Entries.FirstOrDefault(e => e.Filename == entry.Filename);
+
+            // Make blank emeld if one doesn't exist for the emevd yet
+            if (emeldEntry == null)
+            {
+                var newEmeldPath = entry.Path.Replace("emevd", "emeld");
+
+                var emeldFileEntry = new FileDictionaryEntry();
+                emeldFileEntry.Archive = entry.Archive;
+                emeldFileEntry.Path = newEmeldPath;
+                emeldFileEntry.Folder = entry.Folder;
+                emeldFileEntry.Filename = entry.Filename;
+                emeldFileEntry.Extension = "emeld";
+
+                var blankEmeld = new EMELD();
+                EventNames.Add(emeldFileEntry, blankEmeld);
+            }
+            // Otherwise, load the existing emeld
+            else
+            {
+                if (!EventNames.ContainsKey(emeldEntry))
+                {
+                    var emeldData = Project.FS.ReadFile(emeldEntry.Path);
+                    var emeld = EMELD.Read((Memory<byte>)emeldData);
+
+                    if (emeld != null)
+                    {
+                        EventNames.Add(entry, emeld);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public async Task<bool> SaveAllEMELD()
+    {
+        await Task.Yield();
+
+        foreach (var entry in Project.EmevdData.EmevdFiles.Entries)
+        {
+            await SaveEMELD(entry);
+        }
+        return true;
+    }
+
+    public async Task<bool> SaveEMELD(FileDictionaryEntry curEntry)
+    {
+        await Task.Yield();
+
+        if(EventNames.Any(e => e.Key.Filename == curEntry.Filename))
+        {
+            var entry = EventNames.FirstOrDefault(e => e.Key.Filename == curEntry.Filename);
+
+            if (entry.Value != null)
+            {
+                var newEmeldData = entry.Value.Write();
+
+                Project.ProjectFS.WriteFile(entry.Key.Path, newEmeldData);
+            }
         }
 
         return true;
