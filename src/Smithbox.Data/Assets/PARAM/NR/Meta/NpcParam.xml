@@ -555,8 +555,15 @@
     <lockScoreOffset AltName="Lock Score Offset" Wiki="Lock score correction value" />
     <pad12 AltName="" Padding=""/>
     
-    <isConsideredUndead AltName="Is Considered Undead" IsBool="" Wiki="Appears to determine whether an NPC is affected by anti-Undead effects." />
-    <dlcGameClearSpEffectID AltName="DLC Completion SpEffect ID" Refs="SpEffectParam" Wiki="Game Clear SpEffect applied after completing the DLC. Only applies once, does not ramp up per NG+ cycle." />
+    <newItemLotEnemyId
+    AltName="Enemy Itemlot ID"
+    Wiki=""
+    Refs="ItemLotParam_enemy" />
+    
+    <lotResultId
+    AltName="Lot Result ID"
+    Wiki=""
+    Refs="LotResultSmallBaseAndSpot" />
     
   </Field>
   <Self Wiki="Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects." AlternativeOrder="behaviorVariationId,AiThinkId,-,

@@ -144,6 +144,7 @@
       <SortID>450100</SortID>
     </Field>
     
+    <!-- Related to bosses -->
     <Field Def="f32 unknown_0" />
     
     <Field Def="f32 footIkErrorHeightLimit">
@@ -2193,7 +2194,7 @@
     </Field>
     
     <Field Def="s32 newItemLotEnemyId" />
-    <Field Def="s32 unknown_2" />
+    <Field Def="s32 lotResultId" />
     <Field Def="f32 unknown_3" />
     <Field Def="f32 unknown_4" />
     <Field Def="f32 unknown_5" />
