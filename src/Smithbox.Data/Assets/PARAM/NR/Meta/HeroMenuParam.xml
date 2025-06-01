@@ -4,7 +4,23 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
     
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <heroMenuCameraId
+    AltName="Hero Menu Camera ID"
+    Wiki="The menu camera to use for this character."
+    Refs="HeroMenuCameraParam" />
   </Field>
   
   <Enums>

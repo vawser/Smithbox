@@ -32,7 +32,7 @@ public class ShoeboxLayoutContainer
     {
         await Task.Yield();
 
-        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             try
             {

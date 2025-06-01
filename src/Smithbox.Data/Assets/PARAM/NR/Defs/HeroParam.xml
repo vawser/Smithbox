@@ -6,45 +6,40 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
     
-    <Field Def="s32 unknown_0"/>
     <Field Def="s32 unknown_1"/>
     <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
-    <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
-    <Field Def="s32 unknown_18"/>
-    <Field Def="s32 unknown_19"/>
-    <Field Def="s32 unknown_20"/>
-    <Field Def="s32 unknown_21"/>
-    <Field Def="s32 unknown_22"/>
-    <Field Def="s32 unknown_23"/>
+    <Field Def="s32 properPortraitId"/>
+    <Field Def="s32 simplePortraitId"/>
+    <Field Def="s32 characterUnlockFlag"/>
+    <Field Def="s32 characterNameId"/>
+    <Field Def="s32 characterSkillTitleId"/>
+    <Field Def="s32 characterSkillSummaryId"/>
+    <Field Def="s32 characterSkillIconId"/>
+    <Field Def="s32 ultimateArtTitleId"/>
+    <Field Def="s32 ultimateArtSummaryId"/>
+    <Field Def="s32 ultimateArtIconId"/>
+    <Field Def="s32 backgroundDescriptionId"/>
+    
+    <Field Def="dummy8 midPadding[40]"/>
+    
     <Field Def="s32 unknown_24"/>
     <Field Def="s32 unknown_25"/>
     <Field Def="s32 unknown_26"/>
     <Field Def="s32 unknown_27"/>
     <Field Def="s32 unknown_28"/>
-    <Field Def="s32 unknown_29"/>
+    <Field Def="f32 unknown_29"/>
     <Field Def="s32 unknown_30"/>
-    <Field Def="s32 unknown_31"/>
-    <Field Def="s32 unknown_32"/>
-    <Field Def="s32 unknown_33"/>
-    <Field Def="s32 unknown_34"/>
-    <Field Def="s32 unknown_35"/>
-    <Field Def="s32 unknown_36"/>
-    <Field Def="s32 unknown_37"/>
+    <Field Def="s32 passiveAbilityTitleId"/>
+    <Field Def="s32 passiveAbilitySummaryId"/>
+    <Field Def="s32 passiveAbilityIconId"/>
+    <Field Def="s32 smallHudIconId"/>
+    <Field Def="s32 characterSkillDescriptionId"/>
+    <Field Def="s32 ultimateArtDescriptionId"/>
+    <Field Def="s32 passiveAbilityDescriptionId"/>
     <Field Def="s32 unknown_38"/>
     <Field Def="s32 unknown_39"/>
   </Fields>

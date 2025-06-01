@@ -1682,6 +1682,7 @@ public class InterfaceTab
             ImGui.Text("Current Theme");
 
             var folder = ProjectUtils.GetThemeFolder();
+
             var files = Directory.EnumerateFiles(folder);
 
             var themeFiles = new List<string>();

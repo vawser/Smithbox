@@ -4,7 +4,15 @@
   Wiki="" />
   
   <Field>
+    <objectiveFlagId
+    AltName="Objective Flag"
+    Wiki="The event flag for this objective."
+    FlagAlias="" />
     
+    <personalScenarioTextId
+    AltName="Scenario Text ID"
+    Wiki="The personal scenario text to use." 
+    FmgRef="Personal_Scenario_Title" />
   </Field>
   
   <Enums>

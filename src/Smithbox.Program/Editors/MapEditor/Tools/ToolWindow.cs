@@ -1050,9 +1050,23 @@ public class ToolWindow
                     Editor.TreasureMaker.Display();
                 }
             }
+
+            // Temp
+            if (ImGui.CollapsingHeader("World Map Layout"))
+            {
+                ImGui.InputInt("SmallTile", ref SmallTile);
+                ImGui.InputInt("MediumTile", ref MediumTile);
+                ImGui.InputInt("LargeTile", ref LargeTile);
+
+                Editor.WorldMapView.GenerateWorldMapLayout_Limveld(SmallTile, MediumTile, LargeTile);
+            }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
     }
+
+    private int SmallTile = 256;
+    private int MediumTile = 512;
+    private int LargeTile = 1024;
 }

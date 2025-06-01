@@ -67,11 +67,8 @@ public class ProjectUtils
     }
     public static string GetThemeFolder()
     {
-        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-        return @$"{localAppDataPath}\Smithbox\Themes";
+        return @$"{AppContext.BaseDirectory}\Assets\Themes";
     }
-
 
     public static string GetProjectsFolder()
     {

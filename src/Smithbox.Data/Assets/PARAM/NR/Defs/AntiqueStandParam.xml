@@ -9,8 +9,14 @@
     
     <Field Def="s32 unknown_0"/>
     <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
+    
+    <Field Def="u8 heroType"/>
+    <Field Def="u8 relicSlot1"/>
+    <Field Def="u8 relicSlot2"/>
+    <Field Def="u8 relicSlot3"/>
+    
+    <Field Def="s32 unlockFlag"/>
+    <Field Def="s32 goodsId"/>
   </Fields>
+  
 </PARAMDEF>

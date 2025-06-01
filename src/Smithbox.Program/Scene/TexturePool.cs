@@ -461,7 +461,8 @@ public class TexturePool
             var exlusions = new List<string>()
             {
                 "world_map_vanilla",
-                "world_map_sote"
+                "world_map_sote",
+                "world_map_limveld"
             };
 
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)

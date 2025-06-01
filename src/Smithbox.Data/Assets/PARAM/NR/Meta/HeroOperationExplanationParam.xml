@@ -4,9 +4,54 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <heroId
+    AltName="Hero ID"
+    Wiki="Which hero this explaination appears for." 
+    Refs="HeroParam" />
+    
+    <displaySlot
+    AltName="Display Slot"
+    Wiki="The slot in which this explaination is displayed." 
+    Enum="DISPLAY_SLOT" />
+  
+    <midPadding
+    Padding="" />
+    
+    <hintTextId
+    AltName="Hint Text ID"
+    Wiki="The text to use for this hint."
+    FmgRef="Modern_Menu_Text" />
+    
+    <spEffectId
+    AltName="SpEffect ID"
+    Wiki=""
+    Refs="SpEffectParam" />
+    
+    <shortcutTextId
+    AltName="Shortcut Text ID"
+    Wiki="The shortcut text to display."
+    FmgRef="Modern_Menu_Text" />
     
   </Field>
   
   <Enums>
+    <Enum Name="DISPLAY_SLOT" type="u8">
+      <Option Value="0" Name="Passive Ability" />
+      <Option Value="1" Name="Character Skill" />
+      <Option Value="2" Name="Ultimate Art" />
+    </Enum>
   </Enums>
 </PARAMMETA>

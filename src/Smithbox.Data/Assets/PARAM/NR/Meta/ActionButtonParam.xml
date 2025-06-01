@@ -1,12 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
+  Wiki="Determines the parameters used for interactable prompts." />
   
   <Field>
+    <regionType 
+    AltName="Region Type" 
+    Wiki="Range shape (cylinder, prism, capsule)" 
+    Enum="ACTION_BUTTON_REGION_TYPE" 
+    DefaultValue="0" />
     
+    <category 
+    AltName="Category" 
+    Wiki="category. The number on the left side of the name is the priority when multiple action buttons overlap (the closer it is to 0, the higher the priority is displayed)." 
+    Enum="ACTION_BUTTON_CATEGORY" 
+    DefaultValue="0" />
+    
+    <padding1 
+    Padding=""/>
+    
+    <dummyPoly1 
+    AltName="Dummy Poly [1]" 
+    Wiki="Specify the dummy polygon ID that is the center of the bottom of the range. If there is no dummy polygon or -1 is entered, the center coordinates will be the reference." 
+    DefaultValue="-1" />
+    
+    <dummyPoly2 
+    AltName="Dummy Poly [2]" 
+    Wiki="Used only when the range type is a capsule. Additional dummy polygon (capsule) that creates a line segment with two dummy polygons" 
+    DefaultValue="-1" />
+    
+    <radius 
+    AltName="Radius" 
+    Wiki="Radius (cylinder / capsule)" 
+    DefaultValue="0" />
+    
+    <angle 
+    AltName="Angle" 
+    Wiki="Angle (cylinder)"
+    DefaultValue="180" />
+    
+    <depth 
+    AltName="Depth" 
+    Wiki="Depth (prism)"
+    DefaultValue="0" />
+    
+    <width 
+    AltName="Width" 
+    Wiki="Width (prism)" 
+    DefaultValue="0" />
+    
+    <height 
+    AltName="Height" 
+    Wiki="Height (cylinder / prism)" 
+    DefaultValue="0" />
+    
+    <baseHeightOffset 
+    AltName="Bottom Height Offset" 
+    Wiki="How much to raise or lower the Y coordinate of the bottom (cylinder / prism)" 
+    DefaultValue="0" />
+    
+    <angleCheckType 
+    AltName="Angle Difference Check Type" 
+    Wiki="Angle difference judgment type (cylinder / prism)" 
+    Enum="ACTION_BUTTON_ANGLE_CHECK_TYPE" 
+    DefaultValue="0" />
+    
+    <padding2 
+    Padding=""/>
+    
+    <allowAngle 
+    AltName="Allowable Angle Difference" 
+    Wiki="Allowable angle difference (cylinder / prism)" 
+    DefaultValue="180" />
+    
+    <spotDummyPoly 
+    AltName="Action Spot Dummy Polygon" 
+    Wiki="If there is no dummy polygon that specifies the dummy polygon ID that will be the position of the action spot, or if -1 is entered, the center coordinates will be the reference." 
+    DefaultValue="-1" />
+    
+    <textBoxType 
+    AltName="Textbox Type" 
+    Wiki="Text box type" 
+    Enum="ACTION_BUTTON_TEXT_BOX_TYPE" 
+    DefaultValue="0" />
+    
+    <padding3 
+    Padding=""/>
+    
+    <padding5 
+    Padding=""/>
+    
+    <isInvalidForRide 
+    AltName="Is Invalid when Riding" 
+    Wiki="If enabled, this action will not appear whilst in the 'riding' state." 
+    IsBool="" 
+    DefaultValue="0" />
+    
+	<isGrayoutForRide 
+    AltName="Is Grayed Out when Riding" 
+    Wiki="If enabled, this action will be grayed out whilst in the 'riding' state." 
+    IsBool="" 
+    DefaultValue="0" />
+    
+    <isInvalidForCrouching 
+    AltName="Invalid for Crouching" 
+    Wiki="If enabled, this action will not appear whilst in the 'crouching' state." 
+    IsBool="" 
+    DefaultValue="0" />
+    
+    <isGrayoutForCrouching 
+    AltName="Greyout for Crouching" 
+    Wiki="If enabled, this action will be grayed out whilst in the 'crouching' state." 
+    IsBool="" 
+    DefaultValue="0" />
+    
+    <padding4 
+    Padding=""/>
+    
+	<textId 
+    AltName="Text ID" 
+    Wiki="The FMG Entry ID to display." 
+    FmgRef="Action_Button_Text" 
+    DefaultValue="-1" />
+    
+	<invalidFlag 
+    AltName="Invalid Event Flag" 
+    Wiki="If the event flag is ON, then this action will not appear." 
+    FlagAlias="" 
+    DefaultValue="0" />
+    
+	<grayoutFlag 
+    AltName="Grayout Event Flag" 
+    Wiki="If the event flag is ON, then this action will be grayed out." 
+    FlagAlias="" 
+    DefaultValue="0" />
+    
+    <overrideActionButtonIdForRide 
+    AltName="Override Button ID for Ride" 
+    Wiki="Replace with this action button ID parameter while riding (-1: No replacement)" 
+    Refs="ActionButtonParam" 
+    DefaultValue="-1" />
+    
+    <execInvalidTime 
+    AltName="Execution Invalid Time" 
+    Wiki="Invalid time after execution (-infinite by value)" 
+    DefaultValue="0" />
+    
+    <padding6 
+    Padding=""/>
   </Field>
   
   <Enums>
+    <Enum Name="ACTION_BUTTON_REGION_TYPE" type="u8">
+        <Option Value="0" Name="Cylinder" />
+        <Option Value="1" Name="Prism" />
+        <Option Value="2" Name="Capsule" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_CATEGORY" type="u8">
+        <Option Value="0" Name="Category 0" />
+        <Option Value="1" Name="Category 1" />
+        <Option Value="2" Name="Category 2" />
+        <Option Value="3" Name="Category 3" />
+        <Option Value="4" Name="Category 4" />
+        <Option Value="5" Name="Category 5" />
+        <Option Value="6" Name="Category 6" />
+        <Option Value="7" Name="Category 7" />
+        <Option Value="8" Name="Category 8" />
+        <Option Value="9" Name="Category 9" />
+        <Option Value="10" Name="Category 10" />
+        <Option Value="11" Name="Category 11" />
+        <Option Value="12" Name="Category 12" />
+        <Option Value="14" Name="Category 14" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_ANGLE_CHECK_TYPE" type="u8">
+        <Option Value="0" Name="Point" />
+        <Option Value="1" Name="Line" />
+    </Enum>
+    <Enum Name="ACTION_BUTTON_TEXT_BOX_TYPE" type="u8">
+        <Option Value="0" Name="Action Button" />
+    </Enum>
   </Enums>
 </PARAMMETA>

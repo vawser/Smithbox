@@ -32,6 +32,7 @@ public class WorldMapView : IResourceEventListener
 
     private WorldMapLayout VanillaLayout = null;
     private WorldMapLayout SoteLayout = null;
+    private WorldMapLayout LimveldLayout = null;
 
     private bool IsMapTextureLoaded { get; set; }
     private bool IsMapWindowOpen { get; set; }
@@ -68,6 +69,11 @@ public class WorldMapView : IResourceEventListener
         {
             MapZoomFactor = GetDefaultZoomLevel();
         };
+
+        if(Editor.Project.ProjectType is ProjectType.NR)
+        {
+            CurrentMapSource = MapSource.Limveld;
+        }
     }
 
     /// <summary>
@@ -78,8 +84,17 @@ public class WorldMapView : IResourceEventListener
         if (!HasSetupMaps)
         {
             LoadWorldMapTexture();
-            GenerateWorldMapLayout_Vanilla();
-            GenerateWorldMapLayout_SOTE();
+
+            if (Editor.Project.ProjectType is ProjectType.ER)
+            {
+                GenerateWorldMapLayout_Vanilla();
+                GenerateWorldMapLayout_SOTE();
+            }
+
+            if (Editor.Project.ProjectType is ProjectType.NR)
+            {
+                GenerateWorldMapLayout_Limveld();
+            }
 
             HasSetupMaps = true;
         }
@@ -90,11 +105,20 @@ public class WorldMapView : IResourceEventListener
     /// </summary>
     public void DisplayMenuOption()
     {
-        if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
-            LoadWorldMapTexture();
+        if (Editor.Project.ProjectType is ProjectType.ER)
+        {
+            if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_vanilla", AccessLevel.AccessGPUOptimizedOnly))
+                LoadWorldMapTexture();
 
-        if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
-            LoadWorldMapTexture();
+            if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_sote", AccessLevel.AccessGPUOptimizedOnly))
+                LoadWorldMapTexture();
+        }
+
+        if (Editor.Project.ProjectType is ProjectType.NR)
+        {
+            if (!ResourceManager.IsResourceLoaded("smithbox/worldmap/world_map_limveld", AccessLevel.AccessGPUOptimizedOnly))
+                LoadWorldMapTexture();
+        }
 
         IsMapWindowOpen = !IsMapWindowOpen;
     }
@@ -106,13 +130,13 @@ public class WorldMapView : IResourceEventListener
             IsMapWindowOpen = !IsMapWindowOpen;
         }
 
-        if (Editor.Project.ProjectType != ProjectType.ER)
-            return;
-
         if (!IsMapWindowOpen)
             return;
 
-        DisplayMap();
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
+        {
+            DisplayMap();
+        }
     }
 
     public void ControlsMenu()
@@ -254,6 +278,11 @@ public class WorldMapView : IResourceEventListener
             resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_sote");
         }
 
+        if (CurrentMapSource is MapSource.Limveld)
+        {
+            resHandle = GetImageTextureHandle("smithbox/worldmap/world_map_limveld");
+        }
+
         if (resHandle != null)
         {
             TextureResource texRes = resHandle.Get();
@@ -274,7 +303,23 @@ public class WorldMapView : IResourceEventListener
         if (CFG.Current.WorldMapDisplayTiles)
         {
             var drawList = ImGui.GetWindowDrawList();
-            var tileList = CurrentMapSource == MapSource.LandsBetween ? VanillaLayout.Tiles : SoteLayout.Tiles;
+
+            List<WorldMapTile> tileList = new List<WorldMapTile>();
+
+            if (CurrentMapSource is MapSource.LandsBetween)
+            {
+                tileList = VanillaLayout.Tiles;
+            }
+
+            if (CurrentMapSource is MapSource.ShadowOfTheErdtree)
+            {
+                tileList = SoteLayout.Tiles;
+            }
+
+            if (CurrentMapSource is MapSource.Limveld)
+            {
+                tileList = LimveldLayout.Tiles;
+            }
 
             foreach (var tile in tileList)
             {
@@ -424,18 +469,44 @@ public class WorldMapView : IResourceEventListener
         SoteLayout.GenerateTiles(largeRows, largeCols, "02", 1056, MapTileType.Large);
     }
 
+    public void GenerateWorldMapLayout_Limveld(int smallTile = 256, int mediumTile = 512, int largeTile = 1024)
+    {
+        var smallRows = new List<int>() { 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 };
+        var smallCols = new List<int>() { 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30 };
+        var mediumRows = new List<int>() { 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 };
+        var mediumCols = new List<int>() { 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15 };
+        var largeRows = new List<int>() { 8, 9, 10, 11, 12, 13, 14 };
+        var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
+
+
+        LimveldLayout = new WorldMapLayout(Editor, "60", 0, 0);
+        LimveldLayout.GenerateTiles(smallRows, smallCols, "00", smallTile, MapTileType.Small);
+        LimveldLayout.GenerateTiles(mediumRows, mediumCols, "01", mediumTile, MapTileType.Medium);
+        LimveldLayout.GenerateTiles(largeRows, largeCols, "02", largeTile, MapTileType.Large);
+    }
+
     private List<string> GetMatchingMaps(Vector2 pos)
     {
         List<string> matches = new List<string>();
 
-        var tiles = VanillaLayout.Tiles;
+        List<WorldMapTile> tileList = new List<WorldMapTile>();
+
+        if (CurrentMapSource is MapSource.LandsBetween)
+        {
+            tileList = VanillaLayout.Tiles;
+        }
 
         if (CurrentMapSource is MapSource.ShadowOfTheErdtree)
         {
-            tiles = SoteLayout.Tiles;
+            tileList = SoteLayout.Tiles;
         }
 
-        foreach (var tile in tiles)
+        if (CurrentMapSource is MapSource.Limveld)
+        {
+            tileList = LimveldLayout.Tiles;
+        }
+
+        foreach (var tile in tileList)
         {
             var tileName = "";
             var match = false;
@@ -610,5 +681,6 @@ public class WorldMapView : IResourceEventListener
 public enum MapSource
 {
     LandsBetween,
-    ShadowOfTheErdtree
+    ShadowOfTheErdtree,
+    Limveld
 }

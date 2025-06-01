@@ -611,9 +611,20 @@ public static class VirtualPathLocator
 
             i++;
 
-            if (pathElements[i].Equals("worldmap"))
+            if (curProject.ProjectType is ProjectType.ER)
             {
-                return $"{AppContext.BaseDirectory}//Assets//MSB//ER//Maps//world_map.tpf.dcx";
+                if (pathElements[i].Equals("worldmap"))
+                {
+                    return $"{AppContext.BaseDirectory}//Assets//MSB//ER//Maps//world_map.tpf.dcx";
+                }
+            }
+
+            if (curProject.ProjectType is ProjectType.NR)
+            {
+                if (pathElements[i].Equals("worldmap"))
+                {
+                    return $"{AppContext.BaseDirectory}//Assets//MSB//NR//Maps//world_map.tpf.dcx";
+                }
             }
         }
         // ASSET
