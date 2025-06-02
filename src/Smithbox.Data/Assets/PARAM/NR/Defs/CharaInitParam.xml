@@ -415,10 +415,7 @@
     <Field Def="u8 unknown_18c" />
     <Field Def="u8 unknown_18d" />
     
-    <Field Def="u8 unknown_19a" />
-    <Field Def="u8 unknown_19b" />
-    <Field Def="u8 unknown_19c" />
-    <Field Def="u8 unknown_19d" />
+    <Field Def="f32 unknown_19a" />
     
     <Field Def="u8 unknown_20a" />
     <Field Def="u8 unknown_20b" />
@@ -440,15 +437,9 @@
     <Field Def="u8 unknown_23c" />
     <Field Def="u8 unknown_23d" />
     
-    <Field Def="u8 unknown_24a" />
-    <Field Def="u8 unknown_24b" />
-    <Field Def="u8 unknown_24c" />
-    <Field Def="u8 unknown_24d" />
+    <Field Def="s32 unknown_24a" />
     
-    <Field Def="u8 unknown_25a" />
-    <Field Def="u8 unknown_25b" />
-    <Field Def="u8 unknown_25c" />
-    <Field Def="u8 unknown_25d" />
+    <Field Def="s32 unknown_25a" />
     
     <Field Def="dummy8 reserve[24]">
       <DisplayName>予約領域</DisplayName>

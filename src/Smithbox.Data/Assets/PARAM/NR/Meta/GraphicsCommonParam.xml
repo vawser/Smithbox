@@ -8,5 +8,5 @@
     <charaWetDecalFadeRange AltName="Character Wet Decal Fade Range" Wiki="Fade range that erases decals when the character gets wet [m]" />
     <reserved04 AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Self Wiki="" />
 </PARAMMETA>
