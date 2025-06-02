@@ -5,6 +5,7 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
@@ -191,7 +192,17 @@ public class ProjectManager
                     ProjectEnumEditor.Show(BaseEditor, SelectedProject);
                 }
 
-                if (CFG.Current.ModEngineInstall != "")
+                if (ImGui.MenuItem($"Delete Project##deleteProject_{imGuiID}"))
+                {
+                    var dialog = PlatformUtils.Instance.MessageBox("Are you sure you want to delete this project?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if(dialog == DialogResult.Yes)
+                    {
+                        ProjectUtils.DeleteProject(BaseEditor, project);
+                    }
+                }
+
+                if (CFG.Current.ModEngineInstall != "" && SelectedProject != null)
                 {
                     if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
                     {

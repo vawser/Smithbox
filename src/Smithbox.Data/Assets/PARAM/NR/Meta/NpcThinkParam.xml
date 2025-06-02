@@ -144,7 +144,7 @@
     <weaponOnAnimId AltName="Weapon Switch In - Animation ID" Wiki="Sword animation ID" />
     <surpriseAnimId AltName="Stealth Attack - Animation ID" Wiki="Amazing anime ID" />
   </Field>
-  <Self AlternativeOrder="logicId,battleGoalID,TeamAttackEffectivity,-,
+  <Self Wiki="" AlternativeOrder="logicId,battleGoalID,TeamAttackEffectivity,-,
   
 BattleStartDist,nonBattleActLife,-,
 

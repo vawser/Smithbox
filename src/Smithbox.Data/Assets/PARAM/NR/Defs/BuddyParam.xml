@@ -223,10 +223,11 @@
       <SortID>750</SortID>
     </Field>
     
-    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 usageShortcutTextId"/>
     <Field Def="s32 unknown_2"/>
     <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
+    
+    <Field Def="s32 summonBehaviorId"/>
     
     <Field Def="dummy8 padding[4]"  />
     

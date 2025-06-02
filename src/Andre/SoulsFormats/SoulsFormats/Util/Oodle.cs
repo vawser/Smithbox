@@ -68,25 +68,37 @@ public class Oodle
             // Try to get preferred oodle using compressionLevel.
             if (compressionLevel == 9)
             {
-                if (CanUseOodle8())
-                    return new Oodle28();
                 if (CanUseOodle6())
                     return new Oodle26();
+
+                if (CanUseOodle8())
+                    return new Oodle28();
+
+                if (CanUseOodle9())
+                    return new Oodle29();
             }
             else if (compressionLevel == 6)
             {
                 if (CanUseOodle6())
                     return new Oodle26();
+
                 if (CanUseOodle8())
                     return new Oodle28();
+
+                if (CanUseOodle9())
+                    return new Oodle29();
             }
         }
         else
         {
             if (CanUseOodle6())
                 return new Oodle26();
+
             if (CanUseOodle8())
                 return new Oodle28();
+
+            if (CanUseOodle9())
+                return new Oodle29();
         }
 
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "

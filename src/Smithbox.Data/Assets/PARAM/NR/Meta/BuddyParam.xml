@@ -32,6 +32,16 @@
     <npcPlayerInitParamId AltName="Character Init ID" Wiki="CharaInitParam ID this c0000 summon will use." Refs="CharaInitParam" />
     <generateAnimId AltName="Generate Anim ID" Wiki="Generate Anime ID" />
     <Reserve2 AltName="" Padding=""/>
+    
+    <usageShortcutTextId
+    AltName="Shortcut Text ID"
+    Wiki="The shortcut key text for this summon."
+    FmgRef="Modern_Menu_Text" />
+    
+    <summonBehaviorId
+    AltName="Summon Behavior ID"
+    Wiki="The behavior to execute when this summon is spawned."
+    Refs="BehaviorParam" />
   </Field>
   <Enums>
     <Enum Name="BUDDY_PC_FOLLOW_TYPE" type="u8">

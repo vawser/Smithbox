@@ -86,9 +86,9 @@ public class FieldDecorators
                 result |= AliasEnum_ContextMenuItems(editor.Project.Aliases.Movies, oldval, ref newval);
             }
 
-            if (cellMeta.ShowProjectEnumList && cellMeta.EnumType != null)
+            if (cellMeta.ShowProjectEnumList && cellMeta.ProjectEnumType != null)
             {
-                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
+                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
