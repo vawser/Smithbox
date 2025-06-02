@@ -114,7 +114,16 @@ public class ParamData
 
         if(!Project.ImportedParamRowNames)
         {
-            PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+            // These two rely on row index significantly, so we should always import the default names via that for them.
+            if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
+            {
+                PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+            }
+            // Where other games either never or very rarely use it, so use the more flexible ID import
+            else
+            {
+                PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+            }
 
             Project.ImportedParamRowNames = true;
             BaseEditor.ProjectManager.SaveProject(Project);
