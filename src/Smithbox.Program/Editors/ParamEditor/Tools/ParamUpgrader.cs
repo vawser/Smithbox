@@ -422,6 +422,10 @@ public class ParamUpgrader
         {
             OldRegulationBinder = SFUtil.DecryptAC6Regulation(oldRegPath);
         }
+        else if (TargetProject.ProjectType == ProjectType.NR)
+        {
+            OldRegulationBinder = SFUtil.DecryptNightreignRegulation(oldRegPath);
+        }
 
         OldRegulationParams = new();
         ulong version;
