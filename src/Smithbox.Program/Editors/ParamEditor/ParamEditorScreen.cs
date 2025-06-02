@@ -104,6 +104,8 @@ public class ParamEditorScreen : EditorScreen
         ParamUpgrader = new(this, Project);
 
         MassEditHandler = new(this, Project);
+
+        Project.ParamData.RefreshParamDifferenceCacheTask();
     }
 
     public void OnGUI(string[] initcmd)
