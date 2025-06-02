@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PARAMDEF XmlVersion="1">
+<PARAMDEF XmlVersion="2">
   <ParamType>CS_RAYTRACING_QUALITY_DETAIL</ParamType>
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
+    <Field Def="u8 enableRaytraceAO"></Field>
+    <Field Def="u8 enableRaytraceShadows"></Field>
+    <Field Def="u8 Unk0x02"></Field>
+    <Field Def="u8 Unk0x03"></Field>
+    <Field Def="f32 UnkFloat0x04"></Field>
+    <Field Def="s32 Unk0x08"></Field>
+    <Field Def="f32 UnkFloat0x0C"></Field>
+    <Field Def="s32 Unk0x10"></Field>
+    <Field Def="f32 penumbraSize"></Field>
+    <Field Def="f32 renderDistance"></Field>
   </Fields>
 </PARAMDEF>

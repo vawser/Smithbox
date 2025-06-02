@@ -38,7 +38,7 @@ public class ParamUpgrader
 
     public bool SupportsParamUpgrading(ProjectEntry curProject)
     {
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             return true;
 
         return false;
