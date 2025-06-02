@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Veldrid;
@@ -121,6 +122,16 @@ public class ProjectManager
 
         int dragSourceIndex = -1;
         int dragTargetIndex = -1;
+
+        // Help new users since the File -> New Project action isn't obvious
+        if(orderedProjects.Count == 0)
+        {
+            var width = ImGui.GetWindowWidth();
+            if(ImGui.Button("Create New Project", new Vector2(width, 32)))
+            {
+                ProjectCreation.Show();
+            }
+        }
 
         for (int i = 0; i < orderedProjects.Count; i++)
         {

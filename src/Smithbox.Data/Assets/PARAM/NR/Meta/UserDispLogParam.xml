@@ -4,7 +4,15 @@
   Wiki="" />
   
   <Field>
+    <textId_1
+    AltName="Text ID: 1"
+    Wiki=""
+    FmgRef="Modern_Menu_Text" />
     
+    <textId_2
+    AltName="Text ID: 2"
+    Wiki=""
+    FmgRef="Modern_Menu_Text" />
   </Field>
   
   <Enums>

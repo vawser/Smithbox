@@ -39,6 +39,7 @@ public class ParamReloader
         ProjectType.SDT,
         ProjectType.DS3,
         ProjectType.ER,
+        ProjectType.NR,
         ProjectType.AC6
     };
 

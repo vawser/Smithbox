@@ -160,22 +160,22 @@
     <physicsDiffence 
     AltName="Defence +: Physical" 
     Wiki="Add or subtract the value set for physical defense" 
-    DefaultValue="0" />
+    DefaultValue="1" />
     
     <magicDiffence 
     AltName="Defence +: Magic" 
     Wiki="Add or subtract the value set for magic defense" 
-    DefaultValue="0" />
+    DefaultValue="1" />
     
     <fireDiffence 
     AltName="Defence +: Fire" 
     Wiki="Add or subtract the value set for the fire defense" 
-    DefaultValue="0" />
+    DefaultValue="1" />
     
     <thunderDiffence 
     AltName="Defence +: Lightning" 
     Wiki="Add or subtract the value set for the electric shock defense" 
-    DefaultValue="0" />
+    DefaultValue="1" />
     
     <NoGuardDamageRate 
     AltName="No Guard Damage %" 
@@ -185,7 +185,7 @@
     <vitalSpotChangeRate 
     AltName="Vital Spot Change %" 
     Wiki="Replaces the damage calculation of the sweet spot with the specified value (key point damage correction) -Invalid at 1.0" 
-    DefaultValue="-1" />
+    DefaultValue="1" />
     
     <normalSpotChangeRate 
     AltName="Normal Hit Change %" 
@@ -361,7 +361,7 @@
     <soulStealRate 
     AltName="Soul Steal %" 
     Wiki="Defense against HP robbed by NPCs in Soul Steel" 
-    DefaultValue="1" />
+    DefaultValue="-1" />
     
     <lifeReductionRate 
     AltName="Effect Duration %" 
@@ -1214,7 +1214,7 @@
     <darkDiffence 
     AltName="Defence +: Holy" 
     Wiki="Add or subtract the value set for darkness defense" 
-    DefaultValue="0" />
+    DefaultValue="-1" />
     
     <darkAttackRate 
     AltName="Attack %: Holy" 

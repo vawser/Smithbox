@@ -471,7 +471,7 @@ public class ParamData
 
     public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
     {
-        if (curMeta.Fields.ContainsKey(def))
+        if (curMeta != null && curMeta.Fields != null && curMeta.Fields.ContainsKey(def))
         {
             return curMeta.Fields[def];
         }

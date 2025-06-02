@@ -14,15 +14,27 @@
     <Field Def="s32 spEffectId_2"/>
     <Field Def="s32 spEffectId_3"/>
     <Field Def="s32 spEffectId_unk"/>
-    <Field Def="s32 baseAttachId"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
+    <Field Def="s32 attachTextId"/>
+    <Field Def="u8 unknown_8a"/>
+    <Field Def="u8 unknown_8b"/>
+    <Field Def="u8 unknown_8c"/>
+    <Field Def="u8 unknown_8d"/>
+    <Field Def="u8 unknown_9a"/>
+    <Field Def="u8 unknown_9b"/>
+    <Field Def="u8 unknown_9c"/>
+    <Field Def="u8 unknown_9d"/>
+    <Field Def="s32 statusIconId"/>
     <Field Def="s32 unknown_11"/>
-    <Field Def="s32 unknown_12"/>
+    <Field Def="s8 unknown_12a"/>
+    <Field Def="s8 unknown_12b"/>
+    <Field Def="s8 unknown_12c"/>
+    <Field Def="s8 unknown_12d"/>
     <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
+    <Field Def="s8 attachFilterParamId"/>
+    <Field Def="s8 unknown_14b"/>
+    <Field Def="s8 unknown_14c"/>
+    <Field Def="s8 unknown_14d"/>
     <Field Def="s32 unknown_15"/>
-    <Field Def="s32 unknown_16"/>
+    <Field Def="s32 permanentSpEffectId"/>
   </Fields>
 </PARAMDEF>

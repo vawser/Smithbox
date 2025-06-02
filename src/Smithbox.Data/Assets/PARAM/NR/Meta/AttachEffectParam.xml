@@ -24,10 +24,25 @@
     Wiki="The SpEffect to apply." 
     Refs="SpEffectParam" />
     
-    <baseAttachId 
-    AltName="Base Attach Effect ID" 
-    Wiki="The base attach effect for this chain." 
-    Refs="AttachEffectParam" />
+    <attachTextId
+    AltName="Text ID"
+    Wiki="The text to use for the title and description for this effect."
+    FmgRef="Title_AttachEffect" />
+    
+    <statusIconId
+    AltName="Icon ID"
+    Wiki="The icon ID to use to display this effect under the top HUD bar." 
+    TextureRef="Direct/01_common_h/SB_StatusIcon_0/statusIconId/MENU_StatusIcon_"/>
+    
+    <attachFilterParamId
+    AltName="Filter Category"
+    Wiki="The attach filter to apply to this effect." 
+    Refs="AttachEffectFilterParam" />
+    
+    <permanentSpEffectId 
+    AltName="Permanent SpEffect ID" 
+    Wiki="The SpEffect to apply for a permanent buff." 
+    Refs="SpEffectParam" />
   </Field>
   
   <Enums>

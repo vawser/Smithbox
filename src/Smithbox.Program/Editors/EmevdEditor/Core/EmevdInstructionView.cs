@@ -2,7 +2,9 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
+using static SoulsFormats.EMEVD;
 
 namespace StudioCore.EventScriptEditorNS;
 

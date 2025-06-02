@@ -164,7 +164,7 @@ public class EmevdBank
 
                     if (emeld != null)
                     {
-                        EventNames.Add(entry, emeld);
+                        EventNames.Add(emeldEntry, emeld);
                     }
                 }
             }

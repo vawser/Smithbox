@@ -8,9 +8,14 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
+    <Field Def="u8 unknown_1a"/>
+    <Field Def="u8 unknown_1b"/>
+    <Field Def="u16 unknown_1c"/>
     <Field Def="s32 attachEffectFilterCategory"/>
     <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
+    <Field Def="u8 unknown_4a"/>
+    <Field Def="u8 unknown_4b"/>
+    <Field Def="u8 unknown_4c"/>
+    <Field Def="u8 unknown_4d"/>
   </Fields>
 </PARAMDEF>

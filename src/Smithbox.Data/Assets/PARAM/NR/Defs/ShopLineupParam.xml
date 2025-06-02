@@ -151,8 +151,8 @@
       <UnkC8>ショップ設定（上書き）</UnkC8>
     </Field>
     
-    <Field Def="f32 unknown_2" />
-    <Field Def="f32 unknown_3" />
+    <Field Def="s32 unknown_2" />
+    <Field Def="s32 unknown_3" />
     
     <Field Def="dummy8 pad2[2]">
       <DisplayName>パディング</DisplayName>

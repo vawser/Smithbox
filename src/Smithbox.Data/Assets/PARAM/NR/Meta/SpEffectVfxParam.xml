@@ -121,5 +121,5 @@
     <footDecalMaterialOffsetOverwriteId AltName="Foot Decal Material Offset Overwrite ID" Wiki="Forcibly rewrite the floor material ID offset of the foot decal (-1 unused)" />
     <pad AltName="" Padding=""/>
   </Field>
-  <Self />
+  <Self Wiki="" />
 </PARAMMETA>

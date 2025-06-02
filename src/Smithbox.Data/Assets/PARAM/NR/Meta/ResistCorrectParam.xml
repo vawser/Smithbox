@@ -14,5 +14,5 @@
     <addRate4 AltName="Resistance Multiplier - Fourth Activation" Wiki="Magnification applied to the resistance value after the abnormal condition is activated 4 times" />
     <addRate5 AltName="Resistance Multiplier - Fifth Activation" Wiki="Magnification applied to the resistance value after the abnormal condition is activated 5 times" />
   </Field>
-  <Self />
+  <Self Wiki=""/>
 </PARAMMETA>

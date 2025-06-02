@@ -114,13 +114,14 @@ public class EmevdInstructionPropertyView
                         // Map Ref
                         if (Editor.Decorator.HasMapEntityReference(argDoc))
                         {
+                            ImGui.TableNextRow();
+                            ImGui.TableSetColumnIndex(0);
+                            ImGui.TableSetColumnIndex(1);
+                            Editor.Decorator.DisplayDefaultEntityReferences(argDoc, $"{Arguments[i]}", i);
+
                             if (Editor.Project.MapEditor != null)
                             {
-                                ImGui.TableNextRow();
-                                ImGui.TableSetColumnIndex(0);
-                                ImGui.TableSetColumnIndex(1);
 
-                                Editor.Decorator.DisplayDefaultEntityReferences(argDoc, $"{Arguments[i]}", i);
                                 Editor.Decorator.DetermineMapEntityReference(argDoc, $"{Arguments[i]}", i);
                             }
                         }

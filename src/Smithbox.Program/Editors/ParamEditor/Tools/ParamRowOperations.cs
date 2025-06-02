@@ -289,6 +289,9 @@ public partial class ParamTools
     #region Proliferate Name
     public void ProliferateRowName(string targetField)
     {
+        if (targetField == null)
+            return;
+
         var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
@@ -330,6 +333,9 @@ public partial class ParamTools
     #region Inherit Row Name
     public void InheritRowName(string targetField)
     {
+        if (targetField == null)
+            return;
+
         var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
@@ -371,6 +377,9 @@ public partial class ParamTools
     #region Inherit Row Name from FMG
     public void InheritRowNameFromFMG(string targetField)
     {
+        if (targetField == null)
+            return;
+
         var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)
@@ -412,6 +421,9 @@ public partial class ParamTools
     #region Adjust Row Name
     public void AdjustRowName(string adjustment, RowNameAdjustType type)
     {
+        if (adjustment == null)
+            return;
+
         var curParamKey = Editor._activeView.Selection.GetActiveParam();
 
         if (curParamKey == null)

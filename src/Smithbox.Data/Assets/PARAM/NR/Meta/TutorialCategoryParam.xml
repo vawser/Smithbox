@@ -4,7 +4,10 @@
   Wiki="" />
   
   <Field>
-    
+    <categoryTextId
+    AltName="Category Text ID"
+    Wiki="" 
+    FmgRef="Modern_Menu_Text" />
   </Field>
   
   <Enums>

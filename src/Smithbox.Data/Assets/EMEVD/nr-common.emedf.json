@@ -1805,7 +1805,8 @@
               "unk1": 0,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "ActionButtonParam"
             },
             {
               "name": "Target Entity ID",
@@ -2436,20 +2437,6 @@
               "increment": 0,
               "format_string": "%d",
               "unk1": 0,
-              "unk2": 0,
-              "unk3": 0,
-              "unk4": 0
-            },
-            {
-              "name": "Target Score",
-              "type": 5,
-              "enum_name": null,
-              "default": 1,
-              "min": 0,
-              "max": 9999,
-              "increment": 1,
-              "format_string": "%d",
-              "unk1": 1,
               "unk2": 0,
               "unk3": 0,
               "unk4": 0
@@ -9344,7 +9331,8 @@
               "unk1": 0,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "SpEffectParam"
             },
             {
               "name": "Should Have",
@@ -9435,7 +9423,8 @@
               "unk1": 0,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "SpEffectParam"
             },
             {
               "name": "Should Have",
@@ -9526,7 +9515,8 @@
               "unk1": 0,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "SpEffectParam"
             },
             {
               "name": "Should Have",
@@ -14257,11 +14247,11 @@
           ]
         },
         {
-          "name": "Unknown 2003[100]",
+          "name": "Display Log - 2003[100]",
           "index": 100,
           "args": [
             {
-              "name": "Unknown",
+              "name": "Display Log ID",
               "type": 5,
               "enum_name": null,
               "default": 0,
@@ -14272,7 +14262,8 @@
               "unk1": 1,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "UserDispLogParam"
             },
             {
               "name": "Entity ID",
@@ -19628,7 +19619,8 @@
               "unk1": 1,
               "unk2": 0,
               "unk3": 0,
-              "unk4": 0
+              "unk4": 0,
+              "param_ref": "TutorialParam"
             },
             {
               "name": "Unknown",
