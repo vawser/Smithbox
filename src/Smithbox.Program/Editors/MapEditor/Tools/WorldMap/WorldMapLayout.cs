@@ -38,12 +38,51 @@ public class WorldMapLayout
         return num.ToString();
     }
 
-    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, MapTileType type, List<int> tileIdVariants = null)
+    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, MapTileType type, List<int> tileIdVariants = null,
+        int xLargeOffset = -1, int yLargeOffset = -1, 
+        int xMediumOffset = -1, int yMediumOffset = -1, 
+        int xSmallOffset = -1, int ySmallOffset = -1)
     {
         var mapList = MapLocator.GetFullMapList(Editor.Project);
 
         float CurX = XOffset;
         float CurY = YOffset;
+
+        if(type is MapTileType.Large)
+        {
+            if(xLargeOffset != -1)
+            {
+                CurX = xLargeOffset;
+            }
+            if (yLargeOffset != -1)
+            {
+                CurY = yLargeOffset;
+            }
+        }
+
+        if (type is MapTileType.Medium)
+        {
+            if (xMediumOffset != -1)
+            {
+                CurX = xMediumOffset;
+            }
+            if (yMediumOffset != -1)
+            {
+                CurY = yMediumOffset;
+            }
+        }
+
+        if (type is MapTileType.Small)
+        {
+            if (xSmallOffset != -1)
+            {
+                CurX = xSmallOffset;
+            }
+            if (ySmallOffset != -1)
+            {
+                CurY = ySmallOffset;
+            }
+        }
 
         foreach (var row in rows)
         {
@@ -115,7 +154,30 @@ public class WorldMapLayout
             }
 
             CurX = CurX + increment;
-            CurY = YOffset;
+
+            if (type is MapTileType.Large)
+            {
+                if (yLargeOffset != -1)
+                {
+                    CurY = yLargeOffset;
+                }
+            }
+
+            if (type is MapTileType.Medium)
+            {
+                if (yMediumOffset != -1)
+                {
+                    CurY = yMediumOffset;
+                }
+            }
+
+            if (type is MapTileType.Small)
+            {
+                if (ySmallOffset != -1)
+                {
+                    CurY = ySmallOffset;
+                }
+            }
         }
     }
 }

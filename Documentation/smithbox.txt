@@ -28,3 +28,4 @@
 # NR
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
+Large tile for Limveld world map needs to be centred

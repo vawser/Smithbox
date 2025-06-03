@@ -1054,8 +1054,14 @@ public class ToolWindow
             // Temp
             if (ImGui.CollapsingHeader("World Map Layout"))
             {
-                ImGui.InputInt("xOffset", ref XOffset);
-                ImGui.InputInt("yOffset", ref YOffset);
+                ImGui.InputInt("xLargeOffset", ref xLargeOffset);
+                ImGui.InputInt("yLargeOffset", ref yLargeOffset);
+
+                ImGui.InputInt("xMediumOffset", ref xMediumOffset);
+                ImGui.InputInt("yMediumOffset", ref yMediumOffset);
+
+                ImGui.InputInt("xSmallOffset", ref xSmallOffset);
+                ImGui.InputInt("ySmallOffset", ref ySmallOffset);
 
                 ImGui.InputInt("SmallTile", ref SmallTile);
                 ImGui.InputInt("MediumTile", ref MediumTile);
@@ -1064,7 +1070,10 @@ public class ToolWindow
                 if (ImGui.Button("Regenerate"))
                 {
                     Editor.WorldMapView.GenerateWorldMapLayout_Limveld(
-                        XOffset, YOffset, SmallTile, MediumTile, LargeTile);
+                        SmallTile, MediumTile, LargeTile,
+                        xLargeOffset, yLargeOffset,
+                        xMediumOffset, yMediumOffset,
+                        xSmallOffset, ySmallOffset);
                 }
             }
         }
@@ -1073,8 +1082,15 @@ public class ToolWindow
         ImGui.PopStyleColor(1);
     }
 
-    private int XOffset = 0;
-    private int YOffset = 0;
+    private int xLargeOffset = 0;
+    private int yLargeOffset = 0;
+
+    private int xMediumOffset = 0;
+    private int yMediumOffset = 0;
+
+    private int xSmallOffset = 0;
+    private int ySmallOffset = 0;
+
     private int SmallTile = 256;
     private int MediumTile = 512;
     private int LargeTile = 1024;

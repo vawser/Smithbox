@@ -94,9 +94,19 @@ public class WorldMapView : IResourceEventListener
     {
         LoadWorldMapTexture();
 
-        GenerateWorldMapLayout_Limveld();
         GenerateWorldMapLayout_Vanilla();
         GenerateWorldMapLayout_SOTE();
+
+        GenerateWorldMapLayout_Limveld(
+            smallTile: 256,
+            mediumTile: 512,
+            largeTile: 1024,
+            xLargeOffset: -256,
+            yLargeOffset: 256,
+            xMediumOffset: 256,
+            yMediumOffset: 256,
+            xSmallOffset: 256,
+            ySmallOffset: 256);
 
         IsMapWindowOpen = !IsMapWindowOpen;
     }
@@ -508,7 +518,11 @@ public class WorldMapView : IResourceEventListener
         SoteLayout.GenerateTiles(largeRows, largeCols, 2, 1056, MapTileType.Large);
     }
 
-    public void GenerateWorldMapLayout_Limveld(int xOffset = 0, int yOffset = 0, int smallTile = 256, int mediumTile = 512, int largeTile = 1024)
+    public void GenerateWorldMapLayout_Limveld(
+        int smallTile = 256, int mediumTile = 512, int largeTile = 1024,
+        int xLargeOffset = 0, int yLargeOffset = 0,
+        int xMediumOffset = 0, int yMediumOffset = 0,
+        int xSmallOffset = 0, int ySmallOffset = 0)
     {
         var smallRows = new List<int>() { 42, 43, 44, 45 };
         var smallCols = new List<int>() { 39, 38, 37, 36 };
@@ -521,10 +535,22 @@ public class WorldMapView : IResourceEventListener
 
         var variantTileIds = new List<int>() { 0, 10, 20, 30, 50 };
 
-        LimveldLayout = new WorldMapLayout(Editor, "60", xOffset, yOffset);
-        LimveldLayout.GenerateTiles(smallRows, smallCols, 0, smallTile, MapTileType.Small, variantTileIds);
-        LimveldLayout.GenerateTiles(mediumRows, mediumCols, 1, mediumTile, MapTileType.Medium, variantTileIds);
-        LimveldLayout.GenerateTiles(largeRows, largeCols, 2, largeTile, MapTileType.Large, variantTileIds);
+        LimveldLayout = new WorldMapLayout(Editor, "60", 0, 0);
+
+        LimveldLayout.GenerateTiles(smallRows, smallCols, 0, smallTile, MapTileType.Small, variantTileIds,
+            xLargeOffset, yLargeOffset,
+            xMediumOffset, yMediumOffset,
+            xSmallOffset, ySmallOffset);
+
+        LimveldLayout.GenerateTiles(mediumRows, mediumCols, 1, mediumTile, MapTileType.Medium, variantTileIds,
+            xLargeOffset, yLargeOffset,
+            xMediumOffset, yMediumOffset,
+            xSmallOffset, ySmallOffset);
+
+        LimveldLayout.GenerateTiles(largeRows, largeCols, 2, largeTile, MapTileType.Large, variantTileIds,
+            xLargeOffset, yLargeOffset,
+            xMediumOffset, yMediumOffset,
+            xSmallOffset, ySmallOffset);
     }
 
     private List<string> GetMatchingMaps(Vector2 pos)
