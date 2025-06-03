@@ -356,20 +356,21 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var readPath = @"F:\SteamLibrary\steamapps\common\ELDEN RING NIGHTREIGN\Game\chr";
+        var output = "";
 
-        var fileList = new List<string>();
-
-        foreach(var file in Directory.EnumerateFiles(readPath))
+        foreach(var entry in BaseEditor.ProjectManager.SelectedProject.MapData.PrimaryBank.Maps)
         {
-            var filename = Path.GetFileName(file);
-            if(!fileList.Contains(filename) && filename.Contains("anibnd") && !file.Contains("_div"))
-            {
-                fileList.Add(filename);
-            }
+            var mapName = entry.Key.Filename;
+            var line1 = "\t,";
+            var line2 = "\n\t{";
+            var line3 = $"\n\t\t\"ID\": \"{mapName}\",";
+            var line4 = "\n\t\t\"Name\": \"\",";
+            var line5 = "\n\t\t\"Tags\": [ ]";
+            var line6 = "\n\t}";
+
+            output = $"{output}{line1}{line2}{line3}{line4}{line5}{line6}\n";
         }
 
-        var output = string.Join("\n", fileList);
         PlatformUtils.Instance.SetClipboardText(output);
     }
 }

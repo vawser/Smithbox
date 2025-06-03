@@ -356,7 +356,12 @@
     <reinforceTypeId AltName="Reinforce Type ID" Wiki="Enhanced type ID" Refs="ReinforceParamWeapon" />
     <trophySGradeId AltName="Achievement ID [1]" Wiki="Is it related to the trophy system?" />
     <trophySeqId AltName="Achievement ID [2]" Wiki="Trophy SEQ number (13-29)" />
-    <throwAtkRate AltName="Critical Multiplier" Wiki="Throw attack power multiplier" />
+    
+    <throwAtkRate 
+    AltName="Required Level" 
+    Wiki="The minimum level to use this weapon properly." 
+    />
+    
     <bowDistRate AltName="Bow Distance %" Wiki="Up% to extend the flight distance" />
     <equipModelCategory AltName="Equip Model Category" Wiki="Equipment model type." Enum="EQUIP_MODEL_CATEGORY" />
     <equipModelGender AltName="Equip Model Gender" Wiki="Gender of equipment model." Enum="EQUIP_MODEL_GENDER" />

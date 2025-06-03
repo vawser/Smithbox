@@ -48,8 +48,8 @@ namespace SoulsFormats
             MapNameOverride = 51,
             MountJumpFall = 52,
             HorseRideOverride = 53,
-            LockedMountJump = 54,
-            LockedMountJumpFall = 55,
+            SmallBaseAttachPoint = 54,
+            BirdMovePoint = 55,
             InformationPoint = 56,
             SuddenDeathArea = 57,
             UserInnerEdgeRemoval = 58,
@@ -246,17 +246,17 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJump> LockedMountJumps { get; set; }
+            public List<Region.SmallBaseAttachPoint> SmallBaseAttachPoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.LockedMountJumpFall> LockedMountJumpFalls { get; set; }
+            public List<Region.BirdMovePoint> BirdMovePoints { get; set; }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public List<Region.WarpPoint> WarpPoints { get; set; }
+            public List<Region.RespawnPoints> RespawnPoints { get; set; }
 
             /// <summary>
             /// Unknown.
@@ -324,9 +324,9 @@ namespace SoulsFormats
                 MapNameOverrides = new List<Region.MapNameOverride>();
                 MountJumpFalls = new List<Region.MountJumpFall>();
                 HorseRideOverrides = new List<Region.HorseRideOverride>();
-                LockedMountJumps = new List<Region.LockedMountJump>();
-                LockedMountJumpFalls = new List<Region.LockedMountJumpFall>();
-                WarpPoints = new List<Region.WarpPoint>();
+                SmallBaseAttachPoints = new List<Region.SmallBaseAttachPoint>();
+                BirdMovePoints = new List<Region.BirdMovePoint>();
+                RespawnPoints = new List<Region.RespawnPoints>();
                 InformationPoints = new List<Region.InformationPoint>();
                 SuddenDeathAreas = new List<Region.SuddenDeathArea>();
                 UserInnerEdgeRemovals = new List<Region.UserInnerEdgeRemoval>();
@@ -377,10 +377,10 @@ namespace SoulsFormats
                     case Region.MapNameOverride r: MapNameOverrides.Add(r); break;
                     case Region.MountJumpFall r: MountJumpFalls.Add(r); break;
                     case Region.HorseRideOverride r: HorseRideOverrides.Add(r); break;
-                    case Region.LockedMountJump r: LockedMountJumps.Add(r); break;
-                    case Region.LockedMountJumpFall r: LockedMountJumpFalls.Add(r); break;
+                    case Region.SmallBaseAttachPoint r: SmallBaseAttachPoints.Add(r); break;
+                    case Region.BirdMovePoint r: BirdMovePoints.Add(r); break;
                     case Region.DisableTumbleweed r: DisableTumbleweeds.Add(r); break;
-                    case Region.WarpPoint r: WarpPoints.Add(r); break;
+                    case Region.RespawnPoints r: RespawnPoints.Add(r); break;
                     case Region.InformationPoint r: InformationPoints.Add(r); break;
                     case Region.SuddenDeathArea r: SuddenDeathAreas.Add(r); break;
                     case Region.UserInnerEdgeRemoval r: UserInnerEdgeRemovals.Add(r); break;
@@ -408,8 +408,8 @@ namespace SoulsFormats
                     MapPointDiscoveryOverrides, MapPointParticipationOverrides, Hitsets,
                     FastTravelRestriction, WeatherCreateAssetPoints, PlayAreas, EnvironmentMapOutputs,
                     MountJumps, Dummies, FallPreventionRemovals, NavmeshCuttings, MapNameOverrides,
-                    MountJumpFalls, HorseRideOverrides, LockedMountJumps, LockedMountJumpFalls,
-                    WarpPoints, InformationPoints, SuddenDeathAreas, UserInnerEdgeRemovals, UserOuterEdgeRemovals,
+                    MountJumpFalls, HorseRideOverrides, SmallBaseAttachPoints, BirdMovePoints,
+                    RespawnPoints, InformationPoints, SuddenDeathAreas, UserInnerEdgeRemovals, UserOuterEdgeRemovals,
                     Others);
             }
             IReadOnlyList<IMsbRegion> IMsbParam<IMsbRegion>.GetEntries() => GetEntries();
@@ -527,14 +527,14 @@ namespace SoulsFormats
                     case RegionType.HorseRideOverride:
                         return HorseRideOverrides.EchoAdd(new Region.HorseRideOverride(br));
 
-                    case RegionType.LockedMountJump:
-                        return LockedMountJumps.EchoAdd(new Region.LockedMountJump(br));
+                    case RegionType.SmallBaseAttachPoint:
+                        return SmallBaseAttachPoints.EchoAdd(new Region.SmallBaseAttachPoint(br));
 
-                    case RegionType.LockedMountJumpFall:
-                        return LockedMountJumpFalls.EchoAdd(new Region.LockedMountJumpFall(br));
+                    case RegionType.BirdMovePoint:
+                        return BirdMovePoints.EchoAdd(new Region.BirdMovePoint(br));
 
                     case RegionType.WarpPoint:
-                        return WarpPoints.EchoAdd(new Region.WarpPoint(br));
+                        return RespawnPoints.EchoAdd(new Region.RespawnPoints(br));
 
                     case RegionType.InformationPoint:
                         return InformationPoints.EchoAdd(new Region.InformationPoint(br));
@@ -2570,58 +2570,49 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class LockedMountJump : Region
+            public class SmallBaseAttachPoint : Region
             {
-                private protected override RegionType Type => RegionType.LockedMountJump;
+                private protected override RegionType Type => RegionType.SmallBaseAttachPoint;
                 private protected override bool HasTypeData => true;
 
-                /// <summary>
-                /// Height the player will move upwards when activating a MountJump.
-                /// </summary>
-                public float JumpHeight { get; set; }
+                public int TUnk00 { get; set; }
 
-                /// <summary>
-                /// Unknown.
-                /// </summary>
-                public int UnkT04 { get; set; }
+                public int TUnk04 { get; set; }
 
-                /// <summary>
-                /// Probably event flag to enable.
-                /// </summary>
-                public int EnableEventFlagID { get; set; }
+                public int TUnk08 { get; set; }
+
+                public int TUnk0C { get; set; }
 
                 /// <summary>
                 /// Creates a LockedMountJump with default values.
                 /// </summary>
-                public LockedMountJump() : base($"{nameof(Region)}: {nameof(LockedMountJump)}") { }
+                public SmallBaseAttachPoint() : base($"{nameof(Region)}: {nameof(SmallBaseAttachPoint)}") { }
 
-                internal LockedMountJump(BinaryReaderEx br) : base(br) { }
-
-                public int Unk12 { get; set; }
+                internal SmallBaseAttachPoint(BinaryReaderEx br) : base(br) { }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    JumpHeight = br.ReadSingle();
-                    UnkT04 = br.ReadInt32();
-                    EnableEventFlagID = br.ReadInt32();
-                    Unk12 = br.ReadInt32();
+                    TUnk00 = br.ReadInt32();
+                    TUnk04 = br.ReadInt32();
+                    TUnk08 = br.ReadInt32();
+                    TUnk0C = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteSingle(JumpHeight);
-                    bw.WriteInt32(UnkT04);
-                    bw.WriteInt32(EnableEventFlagID);
-                    bw.WriteInt32(Unk12);
+                    bw.WriteSingle(TUnk00);
+                    bw.WriteInt32(TUnk04);
+                    bw.WriteInt32(TUnk08);
+                    bw.WriteInt32(TUnk0C);
                 }
             }
 
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class LockedMountJumpFall : Region
+            public class BirdMovePoint : Region
             {
-                private protected override RegionType Type => RegionType.LockedMountJumpFall;
+                private protected override RegionType Type => RegionType.BirdMovePoint;
                 private protected override bool HasTypeData => true;
 
                 /// <summary>
@@ -2630,11 +2621,11 @@ namespace SoulsFormats
                 public int EnableEventFlagID { get; set; }
 
                 /// <summary>
-                /// Creates a LockedMountJumpFall with default values.
+                /// Creates a BirdMovePoint with default values.
                 /// </summary>
-                public LockedMountJumpFall() : base($"{nameof(Region)}: {nameof(LockedMountJumpFall)}") { }
+                public BirdMovePoint() : base($"{nameof(Region)}: {nameof(BirdMovePoint)}") { }
 
-                internal LockedMountJumpFall(BinaryReaderEx br) : base(br) { }
+                internal BirdMovePoint(BinaryReaderEx br) : base(br) { }
 
                 public int Unk00 { get; set; }
 
@@ -2687,7 +2678,7 @@ namespace SoulsFormats
             /// <summary>
             /// Unknown.
             /// </summary>
-            public class WarpPoint : Region
+            public class RespawnPoints : Region
             {
                 private protected override RegionType Type => RegionType.WarpPoint;
                 private protected override bool HasTypeData => true;
@@ -2695,9 +2686,9 @@ namespace SoulsFormats
                 /// <summary>
                 /// Creates a Unknown_0x38 with default values.
                 /// </summary>
-                public WarpPoint() : base($"{nameof(Region)}: {nameof(WarpPoint)}") { }
+                public RespawnPoints() : base($"{nameof(Region)}: {nameof(RespawnPoints)}") { }
 
-                internal WarpPoint(BinaryReaderEx br) : base(br) { }
+                internal RespawnPoints(BinaryReaderEx br) : base(br) { }
                 public int Unk00 { get; set; }
                 public int Unk04 { get; set; }
 
@@ -2745,16 +2736,16 @@ namespace SoulsFormats
 
                 internal SuddenDeathArea(BinaryReaderEx br) : base(br) { }
 
-                public int EntityID { get; set; }
+                public int TargetEntityID { get; set; }
 
                 private protected override void ReadTypeData(BinaryReaderEx br)
                 {
-                    EntityID = br.ReadInt32();
+                    TargetEntityID = br.ReadInt32();
                 }
 
                 private protected override void WriteTypeData(BinaryWriterEx bw)
                 {
-                    bw.WriteInt32(EntityID);
+                    bw.WriteInt32(TargetEntityID);
                 }
             }
 
