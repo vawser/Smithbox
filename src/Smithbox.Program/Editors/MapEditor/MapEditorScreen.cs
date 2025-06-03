@@ -129,7 +129,7 @@ public class MapEditorScreen : EditorScreen
         // Framework
         ActionHandler = new MapActionHandler(this, Project);
         MapQueryView = new MapQueryView(this);
-        WorldMapView = new WorldMapView(this);
+        WorldMapView = new WorldMapView(this, Project);
         CommandQueue = new MapCommandQueue(this);
         Shortcuts = new MapShortcuts(this);
 
@@ -230,7 +230,6 @@ public class MapEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        WorldMapView.InitializeWorldMap();
         WorldMapView.DisplayWorldMap();
 
         MapViewportView.OnGui();

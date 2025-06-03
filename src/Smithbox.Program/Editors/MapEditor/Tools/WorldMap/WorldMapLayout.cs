@@ -1,6 +1,7 @@
 ﻿using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -34,10 +35,10 @@ public class WorldMapLayout
             return $"0{num}";
         }
 
-        return num.ToString(); ;
+        return num.ToString();
     }
 
-    public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment, MapTileType type)
+    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, MapTileType type, List<int> tileIdVariants = null)
     {
         var mapList = MapLocator.GetFullMapList(Editor.Project);
 
@@ -58,16 +59,59 @@ public class WorldMapLayout
                 if (col < 10)
                     padCol = PadNumber(col);
 
-                var id = $"m{Prefix}_{padRow}_{padCol}_{tileID}";
+                var baseTileID = 0;
+                baseTileID += tileOffset;
 
-                // Only include if the map id is an actual map
-                if (mapList.Contains(id))
+                var strTileID = "00";
+                if(baseTileID < 10)
                 {
-                    var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
-                    Tiles.Add(newTile);
+                    strTileID = $"0{baseTileID}";
+                }
+                else
+                {
+                    strTileID = $"{baseTileID}";
                 }
 
-                CurY = CurY + increment;
+                var id = $"m{Prefix}_{padRow}_{padCol}_{strTileID}";
+
+                if (tileIdVariants == null)
+                {
+                    // Only include if the map id is an actual map
+                    if (mapList.Contains(id))
+                    {
+                        var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
+                        Tiles.Add(newTile);
+                    }
+                }
+                else
+                {
+                    foreach(var variant in tileIdVariants)
+                    {
+                        baseTileID = variant;
+                        baseTileID += tileOffset;
+
+                        strTileID = "00";
+                        if (baseTileID < 10)
+                        {
+                            strTileID = $"0{baseTileID}";
+                        }
+                        else
+                        {
+                            strTileID = $"{baseTileID}";
+                        }
+
+                        id = $"m{Prefix}_{padRow}_{padCol}_{strTileID}";
+
+                        // Only include if the map id is an actual map
+                        if (mapList.Contains(id))
+                        {
+                            var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
+                            Tiles.Add(newTile);
+                        }
+                    }
+                }
+
+                    CurY = CurY + increment;
             }
 
             CurX = CurX + increment;

@@ -462,7 +462,11 @@ public class TexturePool
             {
                 "world_map_vanilla",
                 "world_map_sote",
-                "world_map_limveld"
+                "world_map_limveld",
+                "world_map_limveld_mountaintops",
+                "world_map_limveld_crater",
+                "world_map_limveld_rotted_woods",
+                "world_map_limveld_noklateo"
             };
 
             if (ResourceManager.BaseEditor.ProjectManager.SelectedProject != null)

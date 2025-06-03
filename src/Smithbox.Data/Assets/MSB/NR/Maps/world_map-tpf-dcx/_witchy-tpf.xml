@@ -2,12 +2,33 @@
 <tpf>
   <filename>world_map.tpf.dcx</filename>
   <compression>DCX_KRAK</compression>
+  <compressionLevel>6</compressionLevel>
   <encoding>0x01</encoding>
   <flag2>0x03</flag2>
   <platform>PC</platform>
   <textures>
     <texture>
       <name>world_map_limveld.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+    <texture>
+      <name>world_map_limveld_mountaintops.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+    <texture>
+      <name>world_map_limveld_crater.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+    <texture>
+      <name>world_map_limveld_rotted_woods.dds</name>
+      <format>0</format>
+      <flags1>0x00</flags1>
+    </texture>
+    <texture>
+      <name>world_map_limveld_noklateo.dds</name>
       <format>0</format>
       <flags1>0x00</flags1>
     </texture>
