@@ -17,6 +17,11 @@
     AltName="" 
     Padding=""/>
     
+    <charaInitParamId
+    AltName="Character ID"
+    Wiki="Doesn't seem to actually change the character data"
+    Refs="CharaInitParam" />
+    
     <heroMenuCameraId
     AltName="Hero Menu Camera ID"
     Wiki="The menu camera to use for this character."

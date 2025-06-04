@@ -380,7 +380,7 @@
     
     <Field Def="u8 tUnknown_16a" />
     <Field Def="u8 tUnknown_16b" />
-    <Field Def="u8 tUnknown_16c" />
+    <Field Def="u8 heroId" />
     <Field Def="u8 tUnknown_16d" />
     
     <Field Def="s32 tUnknown_17" />

@@ -1,3 +1,7 @@
+# FIX
+- Map Editor: visibility icon cannot be clicked
+- Time Act Editor: DS2 TAE entries not being presented
+
 # TODO
 - Param Editor: add default values to all ER param metas.
 - Param Editor: add defaultvalues to ER paramdex + re-format it
@@ -19,9 +23,7 @@
 
 - Material Editor: add basic editing for MTD/MATBIN
 
-# FIX
-- Map Editor: visibility icon cannot be clicked
-- Time Act Editor: DS2 TAE entries not being presented
+- Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 
 # NR
 - NR MSB: need to make it byte-perfect on save (load is fine)

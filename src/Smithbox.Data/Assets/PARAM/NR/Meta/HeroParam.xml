@@ -68,6 +68,11 @@
     Wiki="The background description for this character." 
     FmgRef="Modern_Menu_Text" />
     
+    <heroStatusParamId
+    AltName="Hero Status ID"
+    Wiki=""
+    Refs="HeroStatusParam" />
+    
     <passiveAbilityTitleId
     AltName="Passive Ability Title ID"
     Wiki="The title of the passive ability for this character." 

@@ -326,6 +326,14 @@ public class Universe
                 n.Routes = prev.Routes;
                 msb = n;
             }
+            else if (Editor.Project.ProjectType == ProjectType.NR)
+            {
+                var prev = MSB_NR.Read(mapData);
+                MSB_NR n = new();
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
             else if (Editor.Project.ProjectType == ProjectType.AC6)
             {
                 var prev = MSB_AC6.Read(mapData);

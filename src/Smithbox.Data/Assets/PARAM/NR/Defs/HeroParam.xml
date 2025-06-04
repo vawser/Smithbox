@@ -29,7 +29,7 @@
     <Field Def="s32 unknown_24"/>
     <Field Def="s32 unknown_25"/>
     <Field Def="s32 unknown_26"/>
-    <Field Def="s32 unknown_27"/>
+    <Field Def="s32 heroStatusParamId"/>
     <Field Def="s32 unknown_28"/>
     <Field Def="f32 unknown_29"/>
     <Field Def="s32 unknown_30"/>

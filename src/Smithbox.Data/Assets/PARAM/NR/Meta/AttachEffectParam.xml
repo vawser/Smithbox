@@ -4,30 +4,89 @@
   Wiki="" />
   
   <Field>
-    <spEffectId_1 
-    AltName="SpEffect ID: 1" 
-    Wiki="The SpEffect to apply." 
+    <onHitSpEffect
+    AltName="On-Hit SpEffect ID"
+    Wiki="The on-hit SpEffect to apply to enemies when this attach effect is present." 
+    Refs="SpEffectParam" />
+  
+    <passiveSpEffectId_1 
+    AltName="Passive SpEffect ID: 1" 
+    Wiki="The passive SpEffec to apply when this attach effect is present." 
     Refs="SpEffectParam" />
     
-    <spEffectId_2 
-    AltName="SpEffect ID: 2" 
-    Wiki="The SpEffect to apply." 
+    <passiveSpEffectId_2
+    AltName="Passive SpEffect ID: 2" 
+    Wiki="The passive SpEffec to apply when this attach effect is present." 
     Refs="SpEffectParam" />
     
-    <spEffectId_3 
-    AltName="SpEffect ID: 3" 
-    Wiki="The SpEffect to apply." 
-    Refs="SpEffectParam" />
-    
-    <spEffectId_unk
-    AltName="SpEffect ID: Unknown" 
-    Wiki="The SpEffect to apply." 
+    <passiveSpEffectId_3 
+    AltName="Passive SpEffect ID: 3" 
+    Wiki="The passive SpEffec to apply when this attach effect is present." 
     Refs="SpEffectParam" />
     
     <attachTextId
     AltName="Text ID"
     Wiki="The text to use for the title and description for this effect."
     FmgRef="Title_AttachEffect" />
+    
+    <displayPercentageSymbol
+    AltName="Display Percentage Symbol"
+    Wiki="If enabled, the displayed modifier will use a % symbol."
+    IsBool="" />
+    
+    <allowWylder
+    AltName="Is for Wylder"
+    Wiki="If enabled, this attach effect is usable with Wylder."
+    IsBool="" />
+    
+    <allowGuardian
+    AltName="Is for Guardian"
+    Wiki="If enabled, this attach effect is usable with Guardian."
+    IsBool="" />
+    
+    <allowIroneye
+    AltName="Is for Ironeye"
+    Wiki="If enabled, this attach effect is usable with Ironeye."
+    IsBool="" />
+    
+    <allowDuchess
+    AltName="Is for Duchess"
+    Wiki="If enabled, this attach effect is usable with Duchess."
+    IsBool="" />
+    
+    <allowRaider
+    AltName="Is for Raider"
+    Wiki="If enabled, this attach effect is usable with Raider."
+    IsBool="" />
+    
+    <allowRevenant
+    AltName="Is for Revenant"
+    Wiki="If enabled, this attach effect is usable with Revenant."
+    IsBool="" />
+    
+    <allowRecluse
+    AltName="Is for Recluse"
+    Wiki="If enabled, this attach effect is usable with Recluse."
+    IsBool="" />
+    
+    <allowExecutor
+    AltName="Is for Executor"
+    Wiki="If enabled, this attach effect is usable with Executor."
+    IsBool="" />
+    
+    <overrideBaseEffectId
+    AltName="Base SpEffect ID"
+    Wiki="The base SpEffect for attach effects with multiple levels." 
+    Refs="SpEffectParam" />
+    
+    <displayedModifierValue
+    AltName="Displayed Value"
+    Wiki="The value displayed in the UI for this effect." />
+    
+    <overrideEffectId
+    AltName="Override SpEffect ID"
+    Wiki="The override SpEffect for attach effects with multiple levels." 
+    Refs="SpEffectParam" />
     
     <statusIconId
     AltName="Icon ID"
@@ -38,6 +97,10 @@
     AltName="Filter Category"
     Wiki="The attach filter to apply to this effect." 
     Refs="AttachEffectFilterParam" />
+    
+    <exclusivityId
+    AltName="Exclusivity ID"
+    Wiki="If two equipped relics share an effect, the relic selection screen will display a red exclamation mark over the shared effect." />
     
     <permanentSpEffectId 
     AltName="Permanent SpEffect ID" 
