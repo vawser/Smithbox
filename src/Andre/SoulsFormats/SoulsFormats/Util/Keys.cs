@@ -17,6 +17,8 @@ public class Keys
 
     public static readonly byte[] DS3_SAVE_KEY = ParseHexString("FD 46 4D 69 5E 69 A3 9A 10 E3 19 A7 AC E8 B7 FA");
 
+    public static readonly byte[] NR_SAVE_KEY = ParseHexString("18 F6 32 66 05 BD 17 8A 55 24 52 3A C0 A0 C6 09");
+
     /// <summary>
     /// Regulation Keys
     /// </summary>

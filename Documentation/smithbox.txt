@@ -1,6 +1,4 @@
 # TODO
-- General: add the window NoMove toggle so moving is disabled by default and only enabled via settings (helps prevent imgui docking bug)
-
 - Param Editor: add default values to all ER param metas.
 - Param Editor: add defaultvalues to ER paramdex + re-format it
 - Param Editor: adjust the difference checker to account for row index
@@ -28,4 +26,3 @@
 # NR
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
-Large tile for Limveld world map needs to be centred
