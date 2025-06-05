@@ -301,11 +301,11 @@ public class Universe
     public void SaveMap(MapContainer map)
     {
         // Remove once BP MSB is obtained
-        if (Editor.Project.ProjectType is ProjectType.NR)
-        {
-            TaskLogs.AddLog($"[{Editor.Project.ProjectName}:Map Editor] Saving maps is not supported for NR projects yet.");
-            return;
-        }
+        //if (Editor.Project.ProjectType is ProjectType.NR)
+        //{
+        //    TaskLogs.AddLog($"[{Editor.Project.ProjectName}:Map Editor] Saving maps is not supported for NR projects yet.");
+        //    return;
+        //}
 
         SaveBTL(Editor, map);
 
@@ -427,7 +427,7 @@ public class Universe
 
             try
             {
-                var newMapData = msb.Write();
+                var newMapData = msb.Write(compressionType);
                 Project.ProjectFS.WriteFile(curEntry.Path, newMapData);
 
                 if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
@@ -899,6 +899,11 @@ public class Universe
         if (Editor.Project.ProjectType == ProjectType.ER)
         {
             return DCX.Type.DCX_DFLT_10000_44_9;
+        }
+
+        if (Editor.Project.ProjectType == ProjectType.NR)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9_15;
         }
 
         if (Editor.Project.ProjectType == ProjectType.AC6)
