@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
-  <Field>
-    
-  </Field>
-  
   <Enums>
   </Enums>
+  <Field>
+    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
+    <disableParamReserve1 AltName="" Padding=""/>
+    <disableParamReserve2 AltName="" Padding=""/>
+    <matchAreaId AltName="Match Area ID" Wiki="ID of the simple match area to which it belongs" />
+    <pad1 AltName="" Padding=""/>
+    
+  </Field>
+  <Self Wiki="" />
 </PARAMMETA>

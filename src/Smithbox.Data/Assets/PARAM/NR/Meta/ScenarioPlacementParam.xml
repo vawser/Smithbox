@@ -4,7 +4,16 @@
   Wiki="" />
   
   <Field>
+    <eventFlag_unk1
+    FlagAlias="" />
     
+    <eventFlag_unk2
+    FlagAlias="" />
+    
+    <charaInitParamId
+    AltName="Character ID"
+    Wiki=""
+    Refs="CharaInitParam" />
   </Field>
   
   <Enums>

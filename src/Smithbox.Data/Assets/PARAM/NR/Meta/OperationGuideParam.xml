@@ -4,7 +4,10 @@
   Wiki="" />
   
   <Field>
-    
+    <guideTextId
+    AltName="Text ID"
+    Wiki="The text to display for this guide."
+    FmgRef="Modern_Menu_Text" />
   </Field>
   
   <Enums>

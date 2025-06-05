@@ -8,7 +8,7 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 nameId"/>
+    <Field Def="s32 mapFlag"/>
   </Fields>
 </PARAMDEF>

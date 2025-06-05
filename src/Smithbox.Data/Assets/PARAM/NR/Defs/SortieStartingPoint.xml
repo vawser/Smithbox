@@ -12,7 +12,7 @@
     <Field Def="u8 unknown_1b"/>
     <Field Def="u8 unknown_1c"/>
     <Field Def="u8 unknown_1d"/>
-    <Field Def="f32 unknown_2"/>
+    <Field Def="s32 unknown_2"/>
     <Field Def="s32 unknown_3"/>
     <Field Def="s32 unknown_4"/>
     <Field Def="s32 unknown_5"/>

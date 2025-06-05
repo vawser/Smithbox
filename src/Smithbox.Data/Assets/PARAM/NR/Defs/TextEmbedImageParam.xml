@@ -7,9 +7,10 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
+    <Field Def="f32 unknown_0"/>
+    <Field Def="s16 unknown_1a"/>
+    <Field Def="s16 unknown_1b"/>
+    
+    <Field Def="dummy8 endPadding[8]"/>
   </Fields>
 </PARAMDEF>

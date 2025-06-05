@@ -4,7 +4,10 @@
   Wiki="" />
   
   <Field>
-    
+    <characterId
+    AltName="Character ID"
+    Wiki="The character this affects."
+    CharacterAlias="" />
   </Field>
   
   <Enums>

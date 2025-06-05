@@ -151,12 +151,10 @@
       <UnkC8>ショップ設定（上書き）</UnkC8>
     </Field>
     
-    <Field Def="s32 unknown_2" />
-    <Field Def="s32 unknown_3" />
-    
-    <Field Def="dummy8 pad2[2]">
-      <DisplayName>パディング</DisplayName>
-      <SortID>1013</SortID>
-    </Field>
+    <Field Def="s16 unknown_2a" />
+    <Field Def="s16 unknown_2c" />
+    <Field Def="s16 unknown_3a" />
+    <Field Def="s16 unknown_3c" />
+    <Field Def="s16 unknown_4a" />
   </Fields>
 </PARAMDEF>

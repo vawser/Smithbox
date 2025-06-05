@@ -23,8 +23,8 @@
 
 - Material Editor: add basic editing for MTD/MATBIN
 
-- Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
-
-# NR
 - NR MSB: need to make it byte-perfect on save (load is fine)
+
+- Param Editor: add method to duplicate indexed rows in place (currently it forces ID increment)
+- Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 

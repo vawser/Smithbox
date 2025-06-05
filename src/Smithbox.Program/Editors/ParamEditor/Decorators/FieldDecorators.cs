@@ -86,7 +86,12 @@ public class FieldDecorators
                 result |= AliasEnum_ContextMenuItems(editor.Project.Aliases.Movies, oldval, ref newval);
             }
 
-            if(cellMeta.TileRef != null)
+            if (cellMeta.ShowCharacterEnumList)
+            {
+                result |= CharacterAliasEnum_ContextMenuItems(editor.Project.Aliases.Characters, oldval, ref newval);
+            }
+
+            if (cellMeta.TileRef != null)
             {
                 result |= TileRef_ContextMenuItems(editor.Project.Aliases.MapNames, oldval, ref newval);
             }
@@ -302,7 +307,7 @@ public class FieldDecorators
     /// </summary>
     /// <param name="entries"></param>
     /// <param name="value"></param>
-    public static void AliasEnum_Value(List<AliasEntry> entries, string value)
+    public static void AliasEnum_Value(List<AliasEntry> entries, string value, bool isCharacterAlias = false)
     {
         var inactiveEnum = false;
 
@@ -314,6 +319,12 @@ public class FieldDecorators
                 if (value == "0" || value == "-1")
                 {
                     var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                    if(isCharacterAlias)
+                    {
+                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                    }
+
                     if (entry != null)
                     {
                         ImGui.TextUnformatted(entry.Name);
@@ -326,6 +337,12 @@ public class FieldDecorators
                 else
                 {
                     var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                    if (isCharacterAlias)
+                    {
+                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                    }
+
                     if (entry != null)
                     {
                         ImGui.TextUnformatted(entry.Name);
@@ -338,6 +355,40 @@ public class FieldDecorators
                 ImGui.PopStyleColor();
             }
         }
+    }
+
+    public static bool CharacterAliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count))))
+        {
+            try
+            {
+                foreach (var entry in entries)
+                {
+                    var id = entry.ID.Replace("c", "");
+
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, id, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{id}: {entry.Name}"))
+                        {
+                            newval = Convert.ChangeType(id, oldval.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
     }
 
     public static bool AliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)

@@ -20,6 +20,7 @@ public class ParamFieldMeta
         ShowCutsceneEnumList = false;
         ShowMovieEnumList = false;
         ShowProjectEnumList = false;
+        ShowCharacterEnumList = false;
 
         FlagAliasEnum_ConditionalField = "";
         FlagAliasEnum_ConditionalValue = "";
@@ -225,6 +226,12 @@ public class ParamFieldMeta
                 DeepCopyTargetType.Add(DeepCopyTarget.InnerText);
             }
         }
+
+        XmlAttribute CharacterAlias = fieldMeta.Attributes["CharacterAlias"];
+        if (CharacterAlias != null)
+        {
+            ShowCharacterEnumList = true;
+        }
     }
 
     /// <summary>
@@ -343,5 +350,6 @@ public class ParamFieldMeta
     ///     Path (and subpath) filters for files linked by this field.
     /// </summary>
     public List<ExtRef> ExtRefs { get; set; }
+    public bool ShowCharacterEnumList { get; set; }
 
 }

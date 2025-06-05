@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PARAMDEF XmlVersion="1">
+<PARAMDEF XmlVersion="2">
   <ParamType>REVERB_AUX_SEND_BUS_PARAM_ST</ParamType>
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>202</FormatVersion>
   <Fields>
-    
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="fixstr ReverbAuxSendBusName[32]">
+      <DisplayName>ReverbAuxSendBus名</DisplayName>
+      <Description>ReverbAuxSendBus名</Description>
+      <DisplayFormat>%f</DisplayFormat>
+      <Minimum>0</Minimum>
+      <Maximum>9999</Maximum>
+      <SortID>1</SortID>
+    </Field>
   </Fields>
 </PARAMDEF>

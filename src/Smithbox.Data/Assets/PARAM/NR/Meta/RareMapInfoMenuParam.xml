@@ -4,7 +4,15 @@
   Wiki="" />
   
   <Field>
+    <nameId
+    AltName="Map Name"
+    Wiki="The name of this map variant."
+    FmgRef="Modern_Menu_Text" />
     
+    <mapFlag
+    AltName="Map Flag"
+    Wiki="The event flag associated with this map variant." 
+    FlagAlias="" />
   </Field>
   
   <Enums>

@@ -620,6 +620,7 @@ public class ParamFieldView
         bool showFlagEnum = false;
         bool showCutsceneEnum = false;
         bool showMovieEnum = false;
+        bool showCharacterEnum = false;
         bool showProjectEnum = false;
         bool showTileRef = false;
 
@@ -639,6 +640,7 @@ public class ParamFieldView
             showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
             showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
             showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
+            showCharacterEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCharacterEnumList;
             showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
 
             showParamFieldOffset = cellMeta.ShowParamFieldOffset;
@@ -764,7 +766,7 @@ public class ParamFieldView
             // Name column
             PropertyRowName(Editor, fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -825,6 +827,12 @@ public class ParamFieldView
                 if (showMovieEnum)
                 {
                     FieldDecorators.ConditionalAliasEnum_Title("MOVIES", row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                }
+
+                // Character list
+                if (showCharacterEnum)
+                {
+                    FieldDecorators.AliasEnum_Title("CHARACTERS");
                 }
 
                 // Project Enum
@@ -920,7 +928,7 @@ public class ParamFieldView
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showCharacterEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -982,6 +990,12 @@ public class ParamFieldView
                 if (showMovieEnum)
                 {
                     FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, oldval.ToString(), row, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+                }
+
+                // CharacterAlias
+                if (showCharacterEnum)
+                {
+                    FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Characters, oldval.ToString(), true);
                 }
 
                 // ProjectEnum
@@ -1170,6 +1184,7 @@ public class ParamFieldView
             bool showFlagEnum = false;
             bool showCutsceneEnum = false;
             bool showMovieEnum = false;
+            bool showCharacterEnum = false;
             bool showProjectEnum = false;
             bool showTileRef = false;
 
@@ -1189,6 +1204,7 @@ public class ParamFieldView
                 showFlagEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowFlagEnumList;
                 showCutsceneEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCutsceneEnumList;
                 showMovieEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowMovieEnumList;
+                showCharacterEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowCharacterEnumList;
                 showProjectEnum = !CFG.Current.Param_HideEnums && cellMeta.ShowProjectEnumList;
 
                 showParamFieldOffset = cellMeta.ShowParamFieldOffset;
@@ -1264,6 +1280,12 @@ public class ParamFieldView
             if (showMovieEnum)
             {
                 FieldDecorators.ConditionalAliasEnum_Value(Editor.Project.Aliases.Movies, colVal.ToString(), context, MovieAliasEnum_ConditionalField, MovieAliasEnum_ConditionalValue);
+            }
+
+            // CharacterAlias
+            if (showCharacterEnum)
+            {
+                FieldDecorators.AliasEnum_Value(Editor.Project.Aliases.Characters, colVal.ToString(), true);
             }
 
             // ProjectEnum

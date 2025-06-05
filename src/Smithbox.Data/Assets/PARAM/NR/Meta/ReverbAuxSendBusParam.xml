@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
-  <Field>
-    
-  </Field>
-  
   <Enums>
   </Enums>
+  <Field>
+    <ReverbAuxSendBusName AltName="Reverb Aux Send Bus Name" Wiki="ReverbAuxSendBus name" />
+  </Field>
+  <Self Wiki=""/>
 </PARAMMETA>

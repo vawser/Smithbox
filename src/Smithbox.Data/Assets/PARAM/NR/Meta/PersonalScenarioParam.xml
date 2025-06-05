@@ -13,6 +13,15 @@
     AltName="Scenario Text ID"
     Wiki="The personal scenario text to use." 
     FmgRef="Personal_Scenario_Title" />
+    
+    <flashbackFlagId
+    AltName="Flashback Flag"
+    Wiki="The event flag for flashback."
+    FlagAlias="" />
+    
+    <spawnpointEntityId
+    AltName="Spawn Point Entity ID"
+    Wiki="The entity ID of the region to spawn at." />
   </Field>
   
   <Enums>

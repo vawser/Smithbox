@@ -1,59 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PARAMDEF XmlVersion="1">
+<PARAMDEF XmlVersion="2">
   <ParamType>POSTURE_CONTROL_PARAM_WEP_RIGHT_ST</ParamType>
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
+    <Field Def="s16 a000_rightArmFB" />
+    <Field Def="s16 a000_rightWristFB" />
+    <Field Def="s16 a000_rightWristIO" />
+    <Field Def="s16 a000_rightWeaponRotation" />
+
+    <Field Def="s16 a000_leftArmFB" />
+    <Field Def="s16 a000_leftWristFB" />
+    <Field Def="s16 a000_leftWristIO" />
+    <Field Def="s16 a000_lefttWeaponRotation" />
+
+    <Field Def="s16 a002_rightArmFB" />
+    <Field Def="s16 a002_rightWristFB" />
+    <Field Def="s16 a002_rightWristIO" />
+    <Field Def="s16 a002_rightWeaponRotation" />
+
+    <Field Def="s16 a002_leftArmFB" />
+    <Field Def="s16 a002_leftWristFB" />
+    <Field Def="s16 a002_leftWristIO" />
+    <Field Def="s16 a002_lefttWeaponRotation" />
+
+    <Field Def="s16 a003_rightArmFB" />
+    <Field Def="s16 a003_rightWristFB" />
+    <Field Def="s16 a003_rightWristIO" />
+    <Field Def="s16 a003_rightWeaponRotation" />
+
+    <Field Def="s16 a003_leftArmFB" />
+    <Field Def="s16 a003_leftWristFB" />
+    <Field Def="s16 a003_leftWristIO" />
+    <Field Def="s16 a003_lefttWeaponRotation" />
+
+    <Field Def="s16 a010_rightArmFB" />
+    <Field Def="s16 a010_rightWristFB" />
+    <Field Def="s16 a010_rightWristIO" />
+    <Field Def="s16 a010_rightWeaponRotation" />
+
+    <Field Def="s16 a010_leftArmFB" />
+    <Field Def="s16 a010_leftWristFB" />
+    <Field Def="s16 a010_leftWristIO" />
+    <Field Def="s16 a010_lefttWeaponRotation" />
+
+    <Field Def="s16 a012_rightArmFB" />
+    <Field Def="s16 a012_rightWristFB" />
+    <Field Def="s16 a012_rightWristIO" />
+    <Field Def="s16 a012_rightWeaponRotation" />
+
+    <Field Def="s16 a012_leftArmFB" />
+    <Field Def="s16 a012_leftWristFB" />
+    <Field Def="s16 a012_leftWristIO" />
+    <Field Def="s16 a012_lefttWeaponRotation" />
+
+    <Field Def="s16 a013_rightArmFB" />
+    <Field Def="s16 a013_rightWristFB" />
+    <Field Def="s16 a013_rightWristIO" />
+    <Field Def="s16 a013_rightWeaponRotation" />
+
+    <Field Def="s16 a013_leftArmFB" />
+    <Field Def="s16 a013_leftWristFB" />
+    <Field Def="s16 a013_leftWristIO" />
+    <Field Def="s16 a013_lefttWeaponRotation" />
+
+    <Field Def="s16 a014_rightArmFB" />
+    <Field Def="s16 a014_rightWristFB" />
+    <Field Def="s16 a014_rightWristIO" />
+    <Field Def="s16 a014_rightWeaponRotation" />
+
+    <Field Def="s16 a014_leftArmFB" />
+    <Field Def="s16 a014_leftWristFB" />
+    <Field Def="s16 a014_leftWristIO" />
+    <Field Def="s16 a014_lefttWeaponRotation" />
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
-    <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
-    <Field Def="s32 unknown_18"/>
-    <Field Def="s32 unknown_19"/>
-    <Field Def="s32 unknown_20"/>
-    <Field Def="s32 unknown_21"/>
-    <Field Def="s32 unknown_22"/>
-    <Field Def="s32 unknown_23"/>
-    <Field Def="s32 unknown_24"/>
-    <Field Def="s32 unknown_25"/>
-    <Field Def="s32 unknown_26"/>
-    <Field Def="s32 unknown_27"/>
-    <Field Def="s32 unknown_28"/>
-    <Field Def="s32 unknown_29"/>
-    <Field Def="s32 unknown_30"/>
-    <Field Def="s32 unknown_31"/>
-    <Field Def="s32 unknown_32"/>
-    <Field Def="s32 unknown_33"/>
-    <Field Def="s32 unknown_34"/>
-    <Field Def="s32 unknown_35"/>
-    <Field Def="s32 unknown_36"/>
-    <Field Def="s32 unknown_37"/>
-    <Field Def="s32 unknown_38"/>
-    <Field Def="s32 unknown_39"/>
-    <Field Def="s32 unknown_40"/>
-    <Field Def="s32 unknown_41"/>
-    <Field Def="s32 unknown_42"/>
-    <Field Def="s32 unknown_43"/>
-    <Field Def="s32 unknown_44"/>
-    <Field Def="s32 unknown_45"/>
-    <Field Def="s32 unknown_46"/>
-    <Field Def="s32 unknown_47"/>
+    <Field Def="dummy8 pad[80]" />
   </Fields>
 </PARAMDEF>

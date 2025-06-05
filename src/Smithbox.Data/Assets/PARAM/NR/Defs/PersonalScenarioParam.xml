@@ -13,10 +13,13 @@
     <Field Def="s32 personalScenarioTextId"/>
     <Field Def="s32 unknown_4"/>
     <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="u8 unknown_6a"/>
+    <Field Def="u8 unknown_6b"/>
+    <Field Def="u8 unknown_6c"/>
+    <Field Def="u8 unknown_6d"/>
+    <Field Def="s32 flashbackFlagId"/>
     <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
+    <Field Def="s32 spawnpointEntityId"/>
     <Field Def="s32 unknown_10"/>
     <Field Def="s32 unknown_11"/>
   </Fields>

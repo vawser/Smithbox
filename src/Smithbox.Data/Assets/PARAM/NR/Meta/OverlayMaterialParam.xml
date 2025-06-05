@@ -4,7 +4,21 @@
   Wiki="" />
   
   <Field>
+    <paramName 
+    AltName="Material Param Name" 
+    Wiki="Set the parameter name of the material. Up to 31 characters" />
     
+    <materialId 
+    AltName="Material ID" 
+    Wiki="" />
+    
+    <materialParamValue0 
+    AltName="Material Param Value" 
+    Wiki="" />
+    
+    <materialParamValue1 
+    AltName="Material Param Value" 
+    Wiki="" />
   </Field>
   
   <Enums>
