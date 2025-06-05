@@ -901,6 +901,11 @@ public class Universe
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
+        if (Editor.Project.ProjectType == ProjectType.NR)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9_15;
+        }
+
         if (Editor.Project.ProjectType == ProjectType.AC6)
         {
             return DCX.Type.DCX_KRAK_MAX;
