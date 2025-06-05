@@ -225,6 +225,11 @@ internal class SpecialMapConnections
                 //TODO AC6
             }
 
+            if (editor.Project.ProjectType == ProjectType.NR)
+            {
+                //TODO NR
+            }
+
             colPatterns[connectMapId] =
                 "^m" + string.Join("_", connectParts.Select(p => p == 0xFF ? @"\d\d" : $"{p:d2}")) + "$";
         }

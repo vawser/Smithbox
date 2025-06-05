@@ -1,0 +1,114 @@
+1000 Grace
+
+100401000 Priestess
+102001000 Duchess
+105001000
+105101000
+105201000
+105301000
+
+110401000 Duchess
+110701000 Recluse
+111001000 Iron Menial
+115001000 Tool Table
+115101000
+115301000
+115401000
+115501000
+115601000
+115701000
+115801000 Crypt Altar
+115901000 Crypt Coffin
+116001000
+
+120501000 Raider
+120701000 Recluse
+121001000 Iron Menial
+121201000 Wandering Noble
+125001000
+125101000
+
+130401000 Priestess
+131401000 Ironeye
+135001000
+
+140101000 Wylder
+140501000 Raider
+140601000 Revenant
+141001000 Iron Menial
+
+145001000
+145101000
+145201000
+145301000
+145401000
+145501000
+
+150301000 Ironeye
+151001000 Iron Menial
+155001000 Big Stone Tablet
+155101000
+
+160101000 Wylder
+160201000 Guardian
+160401000 Duchess
+160701000 Recluse
+161001000 Iron Menial
+165001000
+167006000 Gatehouse entity?
+167101500 Revenant (Library)
+167301500 Painting? (Library)
+
+171001000 Iron Menial
+171101000 Witch of the Wheel
+175101000
+175201000
+
+181001000 Iron Menial
+181301000 ?
+181301300 Executor?
+180201000 Guardian
+180401000 Priestess
+185001000 Executor
+
+200101000 Wylder
+200201000 Guardian
+200301000 Ironeye
+200501000 Raider
+200601000 Revenant
+200701000 Recluse
+200801000 Executor
+201001000 Iron Menial
+
+210003590 Morgott / Margit
+211003590 
+
+600001000 Expedition Menu
+601001000 Character Selection Menu
+602001200 Smithing Anvil
+602046000 ?
+604001000 Relic Rites Menu
+603001000 Visual Codex Menu
+606001000 Journel Menu
+607001000 Sparring Equipment Menu
+608006000 Weapon Duplication Menu
+609001000 Sparring Settings Menu
+
+610001000 
+615001000 Garb Mirror
+616001100 Long-limbed Man
+617001000 Bed
+618001000 Collector Signboard
+
+650001000
+
+660001000 Revenant
+
+703004555 Libra: Shrouded Figure (Encounter)
+703006000 Libra: Shrouded Figure (Tile)
+703001900 Libra: Shrouded Figure (Boss)
+
+800001200 Final Day Merchant
+800006000 Nomadic Merchant
+
+903003790 Nomadic Merchant (Village)

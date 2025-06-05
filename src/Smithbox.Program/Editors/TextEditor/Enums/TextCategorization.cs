@@ -2,9 +2,6 @@
 
 namespace StudioCore.Editors.TextEditor;
 
-// TODO: really these should now be objects but I don't want to re-work everything again so they'll remain enums for now
-// TODO: ACFA, ACV, ACVD
-
 /// ----------------------------------
 /// Keep the enum names consistent between each game as the ParamMETA 
 /// uses them to link the FmgRef to the actual FMG.

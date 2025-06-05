@@ -18,8 +18,6 @@ public class MapQueryBank
 
     public bool MapBankInitialized = false;
 
-    private List<ResourceDescriptor> MapResources = new List<ResourceDescriptor>();
-
     public Dictionary<string, IMsb> MapList = new Dictionary<string, IMsb>();
 
     public MapQueryBank(MapEditorScreen editor, IMapQueryEngine engine)
@@ -55,8 +53,6 @@ public class MapQueryBank
         if (!CFG.Current.MapEditor_LoadMapQueryData)
             return;
 
-        ReadMapResources();
-
         // Load the maps async so the main thread isn't blocked
         Task<bool> loadMapsTask = ReadMaps();
 
@@ -64,131 +60,59 @@ public class MapQueryBank
         MapBankInitialized = result;
     }
 
-    public void ReadMapResources()
-    {
-        MapResources = new List<ResourceDescriptor>();
-
-        if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
-        {
-            var mapDir = $"{Editor.Project.DataPath}/map/";
-
-            if (Engine.GetProjectFileUsage())
-            {
-                mapDir = $"{Editor.Project.ProjectPath}/map/";
-            }
-
-            if (Directory.Exists(mapDir))
-            {
-                foreach (var entry in Directory.EnumerateDirectories(mapDir))
-                {
-                    foreach (var fileEntry in Directory.EnumerateFiles(entry))
-                    {
-                        if (fileEntry.Contains(".msb"))
-                        {
-                            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(fileEntry));
-                            ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
-                            if (ad.AssetPath != null)
-                            {
-                                MapResources.Add(ad);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            var innerDir = "mapstudio";
-            var ext = ".msb.dcx";
-
-            if (Editor.Project.ProjectType is ProjectType.DS1)
-            {
-                innerDir = "MapStudio";
-                ext = ".msb";
-            }
-
-            if (Editor.Project.ProjectType is ProjectType.DS1R)
-            {
-                innerDir = "MapStudioNew";
-                ext = ".msb";
-            }
-
-            var mapDir = $"{Editor.Project.DataPath}/map/{innerDir}/ ";
-
-            if (Engine.GetProjectFileUsage())
-            {
-                mapDir = $"{Editor.Project.ProjectPath}/map/{innerDir}/";
-            }
-
-            if (Directory.Exists(mapDir))
-            {
-                foreach (var entry in Directory.EnumerateFiles(mapDir))
-                {
-                    if (entry.Contains($"{ext}"))
-                    {
-                        var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(entry));
-                        ResourceDescriptor ad = MapLocator.GetMapMSB(Editor.Project, name);
-                        if (ad.AssetPath != null)
-                        {
-                            MapResources.Add(ad);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     public async Task<bool> ReadMaps()
     {
         await Task.Yield();
 
-        foreach (var resource in MapResources)
+        foreach (var map in Editor.Project.MapData.MapFiles.Entries)
         {
-            if (resource == null)
-                continue;
-
-            if (resource.AssetPath == null || resource.AssetPath == "")
-                continue;
-
-            var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(resource.AssetPath));
             IMsb msb = null;
+
+            var msbData = Editor.Project.FS.ReadFile(map.Path);
+
+            if (msbData == null)
+                continue;
 
             if (Editor.Project.ProjectType == ProjectType.DES)
             {
-                msb = MSBD.Read(resource.AssetPath);
+                msb = MSBD.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
             {
-                msb = MSB1.Read(resource.AssetPath);
+                msb = MSB1.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.DS2 || Editor.Project.ProjectType == ProjectType.DS2S)
             {
-                msb = MSB2.Read(resource.AssetPath);
+                msb = MSB2.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.DS3)
             {
-                msb = MSB3.Read(resource.AssetPath);
+                msb = MSB3.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.BB)
             {
-                msb = MSBB.Read(resource.AssetPath);
+                msb = MSBB.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.SDT)
             {
-                msb = MSBS.Read(resource.AssetPath);
+                msb = MSBS.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.ER)
             {
-                msb = MSBE.Read(resource.AssetPath);
+                msb = MSBE.Read((Memory<byte>)msbData);
             }
             if (Editor.Project.ProjectType == ProjectType.AC6)
             {
-                msb = MSB_AC6.Read(resource.AssetPath);
+                msb = MSB_AC6.Read((Memory<byte>)msbData);
+            }
+            if (Editor.Project.ProjectType == ProjectType.NR)
+            {
+                msb = MSB_NR.Read((Memory<byte>)msbData);
             }
 
-            if (msb != null && !MapList.ContainsKey(name))
+            if (msb != null && !MapList.ContainsKey(map.Filename))
             {
-                MapList.Add(name, msb);
+                MapList.Add(map.Filename, msb);
             }
         }
 
