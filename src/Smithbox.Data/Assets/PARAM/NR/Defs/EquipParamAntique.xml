@@ -14,7 +14,7 @@
     <Field Def="u8 unknown_1b"/>
     <Field Def="u8 unknown_1c"/>
     <Field Def="u8 unknown_1d"/>
-    <Field Def="u16 lotResultId"/>
+    <Field Def="u16 unknown_2"/>
     
     <Field Def="dummy8 padding[2]"/>
     

@@ -834,7 +834,7 @@ public class ParamFieldView
                 }
 
                 // TileRef
-                if (cellMeta.TileRef != null)
+                if (showTileRef)
                 {
                     FieldDecorators.TileRef_Title(Editor, cellMeta.TileRef);
                 }
@@ -991,7 +991,7 @@ public class ParamFieldView
                 }
 
                 // TileRef
-                if(cellMeta.TileRef != null)
+                if(showTileRef)
                 {
                     FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, oldval.ToString());
                 }
@@ -1171,6 +1171,7 @@ public class ParamFieldView
             bool showCutsceneEnum = false;
             bool showMovieEnum = false;
             bool showProjectEnum = false;
+            bool showTileRef = false;
 
             var FlagAliasEnum_ConditionalField = cellMeta?.FlagAliasEnum_ConditionalField;
             var FlagAliasEnum_ConditionalValue = cellMeta?.FlagAliasEnum_ConditionalValue;
@@ -1192,6 +1193,11 @@ public class ParamFieldView
 
                 showParamFieldOffset = cellMeta.ShowParamFieldOffset;
                 paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
+
+                if(cellMeta.TileRef != null)
+                {
+                    showTileRef = true;
+                }
             }
 
             if (propType == typeof(byte[]))
@@ -1267,7 +1273,7 @@ public class ParamFieldView
             }
 
             // TileRef
-            if (cellMeta.TileRef != null)
+            if (showTileRef)
             {
                 FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, colVal.ToString());
             }

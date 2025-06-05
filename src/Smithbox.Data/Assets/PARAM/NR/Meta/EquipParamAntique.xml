@@ -20,11 +20,6 @@
     Wiki="The color this relic slots into."
     Enum="SLOT_COLOR" />
     
-    <lotResultId
-    AltName="Lot Result ID"
-    Wiki=""
-    Refs="LotResultSmallBaseAndSpot" />
-    
     <sortId
     AltName="Sort ID"
     Wiki="" />
@@ -56,7 +51,7 @@
         <Option Value="1" Name="Blue" />
         <Option Value="2" Name="Orange" />
         <Option Value="3" Name="Green" />
-        <Option Value="4" Name="Grey" />
+        <Option Value="4" Name="White" />
     </Enum>
   </Enums>
 </PARAMMETA>

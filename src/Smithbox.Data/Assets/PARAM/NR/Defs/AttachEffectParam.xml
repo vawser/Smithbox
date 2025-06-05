@@ -9,7 +9,8 @@
     
     <Field Def="s32 onHitSpEffect"/>
     
-    <Field Def="dummy8 padding1[8]"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 unknown_2"/>
     
     <Field Def="s32 passiveSpEffectId_1"/>
     <Field Def="s32 passiveSpEffectId_2"/>

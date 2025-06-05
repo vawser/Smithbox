@@ -67,7 +67,7 @@
         <Option Value="1" Name="Blue" />
         <Option Value="2" Name="Orange" />
         <Option Value="3" Name="Green" />
-        <Option Value="4" Name="Grey" />
+        <Option Value="4" Name="White" />
     </Enum>
   </Enums>
 </PARAMMETA>

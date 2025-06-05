@@ -9,9 +9,6 @@
     Wiki="The on-hit SpEffect to apply to enemies when this attach effect is present." 
     Refs="SpEffectParam" />
     
-    <padding1
-    Padding="" />
-  
     <passiveSpEffectId_1 
     AltName="Passive SpEffect ID: 1" 
     Wiki="The passive SpEffec to apply when this attach effect is present." 
