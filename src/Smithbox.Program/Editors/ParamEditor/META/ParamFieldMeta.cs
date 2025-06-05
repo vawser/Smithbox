@@ -37,6 +37,12 @@ public class ParamFieldMeta
             DefaultValue = tDefaultValue.InnerText;
         }
 
+        XmlAttribute tTileRef = fieldMeta.Attributes["TileRef"];
+        if (tTileRef != null)
+        {
+            TileRef = tTileRef.InnerText;
+        }
+
         XmlAttribute Ref = fieldMeta.Attributes["Refs"];
         if (Ref != null)
         {
@@ -220,6 +226,11 @@ public class ParamFieldMeta
             }
         }
     }
+
+    /// <summary>
+    /// Determines whether this field points to a NR tile MSB
+    /// </summary>
+    public string TileRef { get; set; }
 
     /// <summary>
     /// The default value for this field.

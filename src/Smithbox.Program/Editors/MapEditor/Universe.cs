@@ -300,6 +300,13 @@ public class Universe
 
     public void SaveMap(MapContainer map)
     {
+        // Remove once BP MSB is obtained
+        if (Editor.Project.ProjectType is ProjectType.NR)
+        {
+            TaskLogs.AddLog($"[{Editor.Project.ProjectName}:Map Editor] Saving maps is not supported for NR projects yet.");
+            return;
+        }
+
         SaveBTL(Editor, map);
 
         try

@@ -127,6 +127,8 @@
   </Field>
   <Enums>
     <Enum Name="DefaultKeyAssignPrioritySuppression" type="u8">
+        <Option Value="0" Name="False" />
+        <Option Value="1" Name="True" />
     </Enum>
     <Enum Name="DefaultKeyAssignPadKey" type="s32">
     </Enum>

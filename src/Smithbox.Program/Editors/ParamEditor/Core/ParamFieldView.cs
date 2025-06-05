@@ -621,6 +621,7 @@ public class ParamFieldView
         bool showCutsceneEnum = false;
         bool showMovieEnum = false;
         bool showProjectEnum = false;
+        bool showTileRef = false;
 
         var FlagAliasEnum_ConditionalField = cellMeta?.FlagAliasEnum_ConditionalField;
         var FlagAliasEnum_ConditionalValue = cellMeta?.FlagAliasEnum_ConditionalValue;
@@ -642,6 +643,11 @@ public class ParamFieldView
 
             showParamFieldOffset = cellMeta.ShowParamFieldOffset;
             paramFieldIndex = cellMeta.ParamFieldOffsetIndex;
+
+            if(cellMeta.TileRef != null)
+            {
+                showTileRef = true;
+            }
         }
 
         object newval = null;
@@ -758,7 +764,7 @@ public class ParamFieldView
             // Name column
             PropertyRowName(Editor, fieldOffset, ref internalName, cellMeta);
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -827,8 +833,14 @@ public class ParamFieldView
                     FieldDecorators.ProjectEnum_Title(Editor, cellMeta.ProjectEnumType);
                 }
 
+                // TileRef
+                if (cellMeta.TileRef != null)
+                {
+                    FieldDecorators.TileRef_Title(Editor, cellMeta.TileRef);
+                }
+
                 // Param Field Offset
-                if(showParamFieldOffset)
+                if (showParamFieldOffset)
                 {
                     FieldDecorators.ParamFieldOffset_Title(activeParam, row, paramFieldIndex);
                 }
@@ -908,7 +920,7 @@ public class ParamFieldView
                 }
             }
 
-            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef)
+            if (displayRefTypes || displayFmgRef || displayTextureRef || displayEnum || showParticleEnum || showSoundEnum || showFlagEnum || showCutsceneEnum || showMovieEnum || showProjectEnum || showParamFieldOffset || displayMapFmgRef || showTileRef)
             {
                 ImGui.BeginGroup();
 
@@ -976,6 +988,12 @@ public class ParamFieldView
                 if (showProjectEnum)
                 {
                     FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, oldval.ToString());
+                }
+
+                // TileRef
+                if(cellMeta.TileRef != null)
+                {
+                    FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, oldval.ToString());
                 }
 
                 // Param Field Offset
@@ -1246,6 +1264,12 @@ public class ParamFieldView
             if (showProjectEnum)
             {
                 FieldDecorators.ProjectEnum_Value(Editor, cellMeta.ProjectEnumType, colVal.ToString());
+            }
+
+            // TileRef
+            if (cellMeta.TileRef != null)
+            {
+                FieldDecorators.TileRef_Value(Editor, cellMeta.TileRef, colVal.ToString());
             }
 
             // Param Field Offset

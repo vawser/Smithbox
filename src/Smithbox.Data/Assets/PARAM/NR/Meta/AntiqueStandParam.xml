@@ -4,6 +4,21 @@
   Wiki="Defines the parameters for relic vessels." />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test"
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <iconId
+    AltName="Icon ID"
+    Wiki="The icon to display for this relic vessel in the menu." />
+    
     <heroType
     AltName="Hero Type"
     Wiki="Which heros can use this relic vessel."

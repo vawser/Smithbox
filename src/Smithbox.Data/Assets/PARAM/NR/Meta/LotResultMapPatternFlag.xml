@@ -4,6 +4,10 @@
   Wiki="" />
   
   <Field>
+    <eventFlag
+    AltName="Event Flag"
+    Wiki=""
+    FlagAlias="" />
     
   </Field>
   

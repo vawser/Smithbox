@@ -4,7 +4,10 @@
   Wiki="" />
   
   <Field>
-    
+    <playAreaCreateId
+    AltName="Play Area Create ID"
+    Wiki=""
+    Refs="PlayAreaCreateParam" />
   </Field>
   
   <Enums>

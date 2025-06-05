@@ -4,6 +4,15 @@
   Wiki="" />
   
   <Field>
+    <lotResult1
+    AltName="Lot Result 1"
+    Wiki=""
+    Refs="LotResultSmallBaseAndSpot" />
+    
+    <lotResult2
+    AltName="Lot Result 2"
+    Wiki=""
+    Refs="LotResultSmallBaseAndSpot" />
     
   </Field>
   

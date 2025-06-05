@@ -14,7 +14,7 @@
     <Field Def="s32 unknown_4"/>
     <Field Def="s32 unknown_5"/>
     <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="s32 eventFlag"/>
     <Field Def="s32 unknown_8"/>
   </Fields>
 </PARAMDEF>

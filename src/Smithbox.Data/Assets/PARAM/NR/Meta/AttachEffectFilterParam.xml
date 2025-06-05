@@ -4,10 +4,37 @@
   Wiki="" />
   
   <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <filterTextId
+    AltName="Filter Name ID"
+    Wiki="The text ID to use for the name of this filter." 
+    FmgRef="Modern_Menu_Text" />
+    
+    <filterValue
+    AltName="Filter Value" 
+    Wiki="The value to pass to the conditional filter." />
+  
     <attachEffectFilterCategory
     AltName="Filter Category"
-    Wiki=""
+    Wiki="The filter category this filter belongs to."
     Refs="AttachEffectFilterCategoryParam" />
+    
+    <eventFlagForDisplay
+    AltName="Display Event Flag"
+    Wiki="If the specified event flag is ON, this filter is displayed." 
+    FlagAlias="" />
     
   </Field>
   

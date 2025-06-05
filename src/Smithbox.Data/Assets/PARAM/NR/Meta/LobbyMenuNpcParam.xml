@@ -4,7 +4,20 @@
   Wiki="" />
   
   <Field>
+    <arrivalEventFlag
+    AltName="Arrival Flag"
+    Wiki="The event flag that marks the arrival of the NPC." 
+    FlagAlias="" />
     
+    <showMapIconEventFlag
+    AltName="Display Map Icon Flag"
+    Wiki="The event flag that triggers the display of the map icon." 
+    FlagAlias="" />
+    
+    <hideMapIconEventFlag
+    AltName="Hide Map Icon Flag"
+    Wiki="The event flag that hides the display of the map icon." 
+    FlagAlias="" />
   </Field>
   
   <Enums>

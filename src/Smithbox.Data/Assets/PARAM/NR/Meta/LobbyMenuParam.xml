@@ -4,7 +4,30 @@
   Wiki="" />
   
   <Field>
+    <nameId
+    AltName="Name ID"
+    Wiki="The text to use for the name of this menu." 
+    FmgRef="Modern_Menu_Text" />
     
+    <unknownEventFlag_1
+    AltName="Unknown Event Flag"
+    Wiki="If this event flag is on, ?" 
+    FlagAlias="" />
+    
+    <unknownEventFlag_2
+    AltName="Unknown Event Flag"
+    Wiki="If this event flag is on, ?" 
+    FlagAlias="" />
+    
+    <unknownEventFlag_3
+    AltName="Unknown Event Flag"
+    Wiki="If this event flag is on, ?" 
+    FlagAlias="" />
+    
+    <unknownEventFlag_4
+    AltName="Unknown Event Flag"
+    Wiki="If this event flag is on, ?" 
+    FlagAlias="" />
   </Field>
   
   <Enums>

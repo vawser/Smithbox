@@ -8,12 +8,13 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 nameId"/>
+    <Field Def="s32 unknownEventFlag_1"/>
+    <Field Def="s32 unknownEventFlag_2"/>
+    <Field Def="s32 unknownEventFlag_3"/>
+    <Field Def="u16 unknown_5a"/>
+    <Field Def="u16 unknown_5b"/>
+    <Field Def="s32 unknownEventFlag_4"/>
     <Field Def="s32 unknown_7"/>
   </Fields>
 </PARAMDEF>

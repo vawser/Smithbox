@@ -4,7 +4,33 @@
   Wiki="" />
   
   <Field>
+    <mapId_AA
+    AltName="Map ID: AA"
+    Wiki="The AA part of the MSB that this targets." />
     
+    <mapId_BB
+    AltName="Map ID: BB"
+    Wiki="The BB part of the MSB that this targets." />
+    
+    <mapId_CC
+    AltName="Map ID: CC"
+    Wiki="The CC part of the MSB that this targets." />
+    
+    <mapId_DD
+    AltName="Map ID: DD"
+    Wiki="The DD part of the MSB that this targets." />
+    
+    <placementOrigin_x
+    AltName="Placement Location: X"
+    Wiki="The x coordinate in the MSB to place this attach point." />
+    
+    <placementOrigin_y
+    AltName="Placement Location: Y"
+    Wiki="The y coordinate in the MSB to place this attach point." />
+    
+    <placementOrigin_z
+    AltName="Placement Location: Z"
+    Wiki="The Z coordinate in the MSB to place this attach point." />
   </Field>
   
   <Enums>

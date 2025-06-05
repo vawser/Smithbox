@@ -4,7 +4,20 @@
   Wiki="" />
   
   <Field>
+    <lotResultPlayArea
+    AltName="Lot Result Play Area"
+    Wiki=""
+    Refs="LotResultPlayAreaParam" />
     
+    <tileAttachPoint
+    AltName="Tile Attach Point"
+    Wiki="The attach point for the tile."
+    Refs="SmallBaseAndSpotAttachPoint" />
+    
+    <tileTargetMsb
+    AltName="Target Tile ID"
+    Wiki="The target tile MSB to use for this lot. Value matches the mXX_XX part of the MSB ID." 
+    TileRef="" />
   </Field>
   
   <Enums>
