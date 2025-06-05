@@ -34,6 +34,11 @@ public class ModelShortcuts
 
     public void Monitor()
     {
+        if (InputTracker.GetKeyDown(KeyBindings.Current.CORE_Save))
+        {
+            Editor.Save();
+        }
+
         if (EditorActionManager.CanUndo() && InputTracker.GetKeyDown(KeyBindings.Current.CORE_UndoAction))
         {
             EditorActionManager.UndoAction();
