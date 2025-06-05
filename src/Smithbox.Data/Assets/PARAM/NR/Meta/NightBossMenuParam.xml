@@ -4,7 +4,50 @@
   Wiki="" />
   
   <Field>
+    <expeditionNameId
+    AltName="Expedition Name ID"
+    Wiki="The expedition name for this night boss."
+    FmgRef="Modern_Menu_Text" />
     
+    <unlockEventFlag
+    AltName="Unlock Flag"
+    Wiki="The event flag sthat unlocks this night boss as an expedition."
+    FlagAlias="" />
+    
+    <defeatEventFlag
+    AltName="Defeat Flag"
+    Wiki="The event flag set upon defeating this night boss."
+    FlagAlias="" />
+    
+    <bossNameId
+    AltName="Boss Name ID"
+    Wiki="The boss name for this night boss."
+    FmgRef="Modern_Menu_Text" />
+    
+    <descriptionId
+    AltName="Boss Description ID"
+    Wiki="The boss description for this night boss."
+    FmgRef="Modern_Menu_Text" />
+    
+    <bossIconId
+    AltName="Expedition Boss Icon ID"
+    Wiki="The icon to display for this night boss in the Expedition menu."
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/bossIconId/MENU_MenuIcon_"/>
+    
+    <defeatedBossIconId
+    AltName="Expedition Defeated Boss Icon ID"
+    Wiki="The icon to display for this night boss in the Expedition menu when defeated."
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/defeatedBossIconId/MENU_MenuIcon_"/>
+    
+    <expeditionBackgroundId
+    AltName="Expedition Background ID"
+    Wiki="The background to display for this night boss in the Expedition menu."
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/expeditionBackgroundId/MENU_MenuIcon_"/>
+    
+    <largeBossIconId
+    AltName="Expedition Large Boss Icon ID"
+    Wiki="The icon to display for this night boss in the Expedition menu."
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/largeBossIconId/MENU_MenuIcon_"/>
   </Field>
   
   <Enums>

@@ -4,7 +4,20 @@
   Wiki="" />
   
   <Field>
+    <npcParamId
+    AltName="NPC Param ID"
+    Wiki="The NPC Param to use for this bot."
+    Refs="NpcParam" />
     
+    <npcThinkId
+    AltName="NPC Think ID"
+    Wiki="The NPC think to use for this bot."
+    Refs="NpcThinkParam" />
+    
+    <charaInitParamId
+    AltName="Character ID"
+    Wiki="The character setup ID to use for this bot." 
+    Refs="CharaInitParam" /> 
   </Field>
   
   <Enums>

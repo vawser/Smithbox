@@ -1,0 +1,207 @@
+c0000:Player
+c2040:Juvenile Scholar
+c2041:Larva of Rot
+c2100:Black Knife Assassin
+c2130:Morgott
+c2140:Omen
+c2150:Lightning Ball
+c2270:Giant Crab
+c2271:Crab
+c2276:Giant Death Crab
+c2500:Crucible Knight
+c3000:Exile Soldier
+c3010:Banished Knight
+c3020:Exile Soldier (Large)
+c3050:Commander Niall/O'Neill
+c3060:Giant Skeleton
+c3080:Imp
+c3100:Bell Bearing Hunter / Elemer of the Briar
+c3150:Night's Cavalry
+c3160:Funeral Steed
+c3170:Albinauric Archer
+c3180:Albinauric Archer's Wolf
+c3181:Red Wolf of Radagon
+c3200:Nomadic Merchant
+c3250:Draconic Tree Sentinel
+c3251:Tree Sentinel
+c3252:Loretta
+c3300:Nox Swordstress/Monk/Nightmaiden
+c3320:Silver Tear
+c3350:Crystalian
+c3360:Ancestral Follower
+c3361:Putrid Ancestral Follower
+c3370:Ancestral Follower Shaman
+c3371:Putrid Ancestral Follower Shaman
+c3400:Grave Warden Duelist
+c3450:Misbegotten
+c3451:Scaly Misbegotten
+c3460:Leonine Misbegotten
+c3470:Albinauric
+c3471:Large Albinauric
+c3500:Skeletal Militiaman/Bandit/Knight/Grave Warden
+c3550:Sanguine Noble
+c3560:Godskin Apostle
+c3570:Godskin Noble
+c3600:Alabaster Lord
+c3610:Oracle Envoy
+c3620:Oracle Envoy (Large)
+c3650:Erdtree Guardian
+c3660:Commoner
+c3661:Putrid Corpse
+c3662:Putrid Corpse (Large)
+c3664:Cemetery Shade
+c3700:Depraved Perfumer
+c3701:Perfumer
+c3702:Glintstone Sorcerer
+c3703:Page
+c3704:Battlemage
+c3800:Cleanrot Knight
+c3810:Kindred of Rot
+c3850:Marionette Soldier
+c3900:Fire Monk
+c3901:Blackflame Monk
+c3910:Fire Prelate
+c3950:Man-Serpent
+c3970:Azula Beastman
+c4000:Revenant Follower
+c4020:Royal Revenant
+c4021:Royal Revenant
+c4040:Slug
+c4050:Kaiden Sellsword
+c4060:Kaiden Sellsword's Horse
+c4070:Wolf
+c4071:White Wolf
+c4080:Rat
+c4090:Giant Rat
+c4100:Demi-Human
+c4101:Demi-Human (Large)
+c4110:Demi-Human Shaman
+c4120:Demi-Human Chief
+c4130:Demi-Human Queen
+c4150:Basilisk
+c4160:Stray (Large)
+c4161:Stray
+c4164:Bloodbane Stray (Large)
+c4165:Bloodbane Stray
+c4166:Rotten Stray (Large)
+c4170:Putrid Flesh
+c4171:Putrid Flesh (Large)
+c4180:Spirit Jellyfish
+c4181:Spirit Jellyfish
+c4190:Large Scarab
+c4191:Scarab
+c4200:Man-Bat
+c4201:Operatic Bat
+c4230:Land Octopus (Small)
+c4240:Fingercreeper
+c4241:Fingercreeper (Large)
+c4250:Fingercreeper (Small)
+c4260:Erdtree Burial Watchdog
+c4270:Elder Lion
+c4280:Giant Ant
+c4281:Giant Ant (Skull Plate)
+c4290:Bloodhound Knight
+c4300:Wandering Noble
+c4310:Lordsworn Soldier
+c4311:Godrick Soldier
+c4312:Raya Lucaria Soldier
+c4313:Leyndell Soldier
+c4314:Radahn Soldier
+c4315:Mausoleum Soldier
+c4320:Vulgar Militia
+c4321:Vulgar Militia
+c4340:Mad Pumpkin Head
+c4350:Lordsworn Knight
+c4351:Godrick Knight
+c4352:Cuckoo Knight
+c4353:Leyndell Knight
+c4354:Redmane Knight
+c4355:Mausoleum Knight
+c4360:Lordsworn Knight's Horse
+c4363:Lordsworn Knight's Horse
+c4370:Foot Soldier
+c4371:Godrick Foot Soldier
+c4372:Raya Lucaria Foot Soldier
+c4373:Leyndell Foot Soldier
+c4374:Radahn Foot Soldier
+c4375:Mausoleum Foot Soldier
+c4377:Highwayman
+c4380:Starcaller
+c4381:Guilty
+c4382:Stonedigger
+c4383:Glintstone Digger
+c4384:Glintstone Digger (Small Sack)
+c4440:Land Squirt
+c4450:Walking Mausoleum
+c4460:Flame Chariot
+c4470:Abductor Virgin
+c4480:Miranda Blossom
+c4481:Miranda Sprout
+c4490:Living Jar Warrior
+c4491:Living Jar
+c4500:Flying Dragon
+c4501:Decaying Ekzykes
+c4503:Borealis the Freezing Fog
+c4505:Flying Dragon (Small)
+c4510:Ancient Dragon
+c4550:Giant Dog
+c4560:Giant Crow
+c4570:Wormface
+c4580:Large Wormface
+c4600:Troll
+c4602:Snowfield Troll
+c4620:Astel, Naturalborn of the Void
+c4630:Runebear
+c4640:Ulcerated Tree Spirit
+c4650:Dragonkin Soldier
+c4660:Guardian Golem
+c4670:Ancestor Spirit
+c4680:Falling-star Beast
+c4690:Grafted Scion
+c4750:Godrick the Grafted
+c4770:Valiant Gargoyle
+c4810:Erdtree Avatar
+c4900:Unknown
+c4901:Unknown
+c4910:Magma Wyrm
+c4911:Great Wyrm Theodorix
+c4950:Tibia Mariner
+c4960:Giant Skeleton Torso
+c4961:Giant Skeleton Torso
+c4980:Death Rite Bird
+c5010:Golden Hippopotamus
+c5011:Golden Hippopotamus (Golden Wings)
+c5110:Spirit Eel
+c5810:Demi-Human Swordmaster
+c6000:Unknown
+c6001:Eagle
+c7000:Fallen Hawks Soldier
+c7100:Ancient Hero
+c7500:Gladius - Beast of Night
+c7510:Adel - Baron of Night
+c7511:Adel - Baron of Night (Lightning Fang)
+c7520:Gnoster - Wisdom of Night (Moth)
+c7521:Gnoster - Wisdom of Night (Moth)
+c7530:Gnoster - Wisdom of Night (Pest)
+c7540:Maris - Fathom of Night
+c7560:Libra - Creature of Night
+c7561:Libra - Creature of Night
+c7570:Libra - Creature of Night (Shrouded)
+c7580:Heolstor the Nightlord
+c7600:Fulghor - Champion of Nightglow
+c7700:Gaping Dragon
+c7710:Centipede Demon
+c7711:Centipede Grub
+c7712:Centipede Grub
+c7800:Duke's Dear Freja
+c7810:Freja Spiderling
+c7820:Smelter Demon
+c7900:Nameless King
+c7910:Nameless King (Mount)
+c7920:Dancer of the Boreal Valley
+c8000:Torrent
+c8130:Unknown
+c8131:Unknown
+c8132:Unknown
+c8910:Human Man
+c8911:Long-limbed Man

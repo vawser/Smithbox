@@ -1,0 +1,1129 @@
+20;Game clear flag
+21;Game clear flag
+22;Game clear flag
+23;Game clear flag
+24;Game clear flag
+50;Event completed at the beginning of the game
+90;Test layer entry flag
+100;ClF: Story progress event slot
+100;Game start
+101;Tutorial cleared
+102;First sortie completed
+105;1st wipeout
+106;2nd wipeout
+110;First cleared
+111;2nd night boss defeats on the 3rd day
+112;3rd night boss defeats on the 3rd day
+113;4th night boss defeats on the 3rd day
+115;Nameless unlock flag
+120;Ending seen
+130;Chaos match unlock flag
+140;Rare Terrain Unlocked: Volcano
+141;Rare Terrain Unlocked: Snowy Mountain
+142;Rare Terrain Unlocked: Corruption
+143;Rare Terrain Unlocked: Noclone
+150;3-Day Table Mode: Defeat Cerberus
+151;3-Day Table Mode: Defeat Dragon Tyranno
+152;3-Day Table Mode: Defeat Intelligent Bug
+153;3-Day Table Mode: Defeat Abstract Enemy
+154;3-Day Table Mode: Defeat Baphomet
+155;3-Day Table Mode: Defeat Centaur
+156;3-Day Table Mode: Defeat Mist Dragon
+157;Night Boss: Reserve
+158;Night Boss: Reserve
+159;Night Boss: Reserve
+160;3-Day Table Mode: Defeat Nameless
+170;Campaign: Defeat Cerberus
+171;Campaign: Defeat Dragon Tyranno
+172;Campaign: Defeat Intelligent Bug
+173;Campaign: Defeat Abstract Enemy
+174;Campaign: Defeat Baphomet
+175;Campaign: Defeat Centaur
+176;Campaign: Defeat Mist Dragon
+200;ClF: Administrative Flag
+200;Host Flag
+201;Guest Flag
+202;Multiplayer
+203;Singleplayer
+210;The host is on a legacy map
+211;A flag to set when the player is on a legacy map
+220;A flag to set when the host is on a legacy map
+221;A flag to set when the player is on a legacy map
+900;ClF: End flow management flag
+910;Allow display of the hidden mode unlock tutorial flag
+916;Allow hidden mode unlock tutorial confirmed flag
+950;Saw CS on first clear flag
+951;Saw ending flag
+952;Saw hidden match unlock CS flag
+960;Saw normal ending flag
+961;Saw pursuer ending flag
+962;Saw wise ending flag
+963;Saw iron eye ending flag
+1000;ClF: Common event ID
+2000;Title start
+2001;Title start (test version)
+2002;Move map test start
+2030;PlayGo flag
+2200;Time progress stop: Shrink
+2201;Time progress stop: Appearance
+2300;Hero animation switch during CS 00
+2301;Hero animation switch during CS 01
+2302;Hero animation switch during CS 02
+2303;Hero animation switch during CS 03
+2304;Hero animation switch during CS 04
+2305; Switching hero animations during CS 05
+2306; Switching hero animations during CS 06
+2307; Switching hero animations during CS 07
+2308; Switching hero animations during CS 08
+2309; Switching hero animations during CS 09
+2310; Switching hero animations during CS 10
+2311; Switching hero animations during CS 11
+2312; Switching hero animations during CS 12
+2313; Switching hero animations during CS 13
+2314; Switching hero animations during CS 14
+2315; Switching hero animations during CS 15
+2316; Switching hero animations during CS 16
+2317; Switching hero animations during CS 17
+2318; Switching hero animations during CS 18
+2319; Switching hero animations during CS 19
+2320; Switching hero animations during CS 20
+2321; Switching hero animations during CS 21
+2322; Switching hero animations during CS 22
+2323; Switching hero animations during CS 23
+2324; Switching hero animations during CS 24
+2325; Switching hero animations during CS 25
+2326; Switching hero animations during CS 26
+2327; Switching hero animations during CS 27
+2328; Switching hero animations during CS 28
+2329; Switching hero animations during CS 29
+5000;Boss HP gauge 0 in use
+5001;Boss HP gauge 1 in use
+5900;[TUT] First battle with Margit
+5901;[TUT] Defeated Margit
+6000;Flag to always be OFF
+6001;Flag to always be ON
+6010;Replaying tutorial
+6011;During tutorial
+6012;Tutorial victory flag
+6013;Tutorial_Avenger mode
+6014;Tutorial_Lobby explanation displayed
+6015;First time entering lobby
+6020;Ending
+6030;Hero unlock flag_Tracker
+6031;Hero Unlock Flag_Lady
+6032;Hero Unlock Flag_Destroyer
+6033;Hero Unlock Flag_Enforcer
+6034;Hero Unlock Flag_Wise
+6035;Hero Unlock Flag_Iron Eye
+6036;Hero Unlock Flag_Guardian
+6037;Hero Unlock Flag_Avenger
+6040;Hero Unlock Trophy Control Flag_Avenger
+6041;Hero Unlock Trophy Control Flag_Iron Eye
+6042;Hero Unlock Trophy Control Flag_Tracker
+6045;Hero Unlock Pedestal Control Flag_Lady
+6046;Hero Unlock Pedestal Control Flag_Avenger
+6048;Shop Unlock Flag_Special Pedestal 3
+6050; Skin release
+6051; Skin release control flag_Lady skins in general
+6052; Skin release control flag_Necro skins in general
+6055; Skin release control flag_Lady past skins
+6056; Skin release control flag_Necro past skins
+6057; Skin release control flag_Other character past skins
+6060; Special currency related function release
+6070; During Fever: Volcano
+6071; During Fever: Snowy mountain
+6072; During Fever: Corruption
+6073; During Fever: Noclone
+6080;Number of fever counts
+6085;Number of cooldowns used
+6090;Last session: Volcano
+6091;Last session: Snowy mountain
+6092;Last session: Decay
+6093;Last session: Noclone
+6095;Last session: Normal terrain
+6098;Last session: Rare terrain generated by lottery
+6099;Last session: Rare terrain generated by propagation
+6100;Trophy 00
+6101;Trophy 01
+6102;Trophy 02
+6103;Trophy 03
+6104;Trophy 04
+6105;Trophy 05
+6106;Trophy 06
+6107;Trophy 07
+6108;Trophy 08
+6109;Trophy 09
+6110;Trophy 10
+6111;Trophy 11
+6112;Trophy 12
+6113;Trophy 13
+6114;Trophy 14
+6115;Trophy 15
+6116;Trophy 16
+6117;Trophy 17
+6118;Trophy 18
+6119;Trophy 19
+6120;Trophy 20
+6121;Trophy 21
+6122;Trophy 22
+6123;Trophy 23
+6124;Trophy 24
+6125;Trophy 25
+6126;Trophy 26
+6127;Trophy 27
+6128;Trophy 28
+6129;Trophy 29
+6130;Trophy 30
+6131;Trophy 31
+6132;Trophy 32
+6133;Trophy 33
+6134;Trophy 34
+6135;Trophy 35
+6136;Trophy 36
+6137;Trophy 37
+6138;Trophy 38
+6139;Trophy 39
+6140;Trophy 40
+6141;Trophy 41
+6142;Trophy 42
+6143;Trophy 43
+6144;Trophy 44
+6145;Trophy 45
+6180;Activity00_Start
+6181;Activity01_Start
+6182;Activity02_Start
+6183;Activity03_Start
+6190;Activity00_Finish
+6191;Activity01_Finish
+6192;Activity02_Finish
+6193;Activity03_Finish
+6200;Trophy_Hero_Cleared_01
+6201;Trophy_Hero_Cleared_02
+6202;Trophy_Hero_Cleared_03
+6203;Trophy_Hero_Cleared_04
+6204;Trophy_Hero_Cleared_05
+6205;Trophy_Hero_Cleared_06
+6206;Trophy_Hero_Cleared_07
+6207;Trophy_Hero_Cleared_08
+6210;Trophy_Rare_Terrain_Cleared_Snowy_Mountain
+6211;Trophy_Rare_Terrain_Cleared_Volcano
+6212;Trophy_Rare_Terrain_Cleared_Corrupted
+6213;Trophy_Rare_Terrain_Cleared_Noclone
+6300;For displaying the Thread End Encyclopedia
+6950;ClF: DLC event flag
+6950;DLC0 unlock flag
+6951;Reservation: DLC1 unlock flag
+6952;Reservation: DLC2 unlock flag
+6960;PC multiplayer clear: DLC0 propagation
+7000;Game clear flag
+7001;Game over flag
+7005;I am alive flag_PL1
+7006;I am alive flag_PL2
+7007;I am alive flag_PL3
+7010;Owns 1 revival ticket_PL1
+7011;Owns 1 revival ticket_PL2
+7012;Owns 1 revival ticket_PL3
+7015;Mission player_PL1
+7016;Mission player_PL2
+7017;Mission player_PL3
+7500;Day 1 started flag
+7501;Day 1 preliminary battle started flag
+7502;Day 1 night boss defeated flag
+7503;Day 1 interval started flag
+7504;Day 1 night boss battle started flag
+7505; Day 2 Started Flag
+7506; Day 2 Preliminary Battle Started Flag
+7507; Day 2 Night Boss Defeated Flag
+7508; Day 2 Interval Started Flag
+7509; Day 2 Night Boss Battle Started Flag
+7510; Day 3 Started Flag
+7511; Day 3 Night Boss Battle Started Flag
+7512; Day 3 Night Boss Defeated Flag
+7513; Day 3 Night Boss HP 0 Flag
+7514;Unused
+7515;Flag that only appears at night
+7516;Game over confirmed flag
+7517;2nd day high level F boss map revealed
+7518;Night bosses appearing continuously
+7519;All annihilation effect displayed flag
+7520;1st day interval SFX played flag
+7522;Last boss area manual warp enabled flag
+7523;Last boss area manual warp completed flag
+7525;All bonfires disabled flag
+7530;No multi-doping weakening
+7535;Day 3 night boss_Cerberus
+7600;Natural disaster flag: Start
+7601;Snowy mountain rare terrain flag
+7602;Volcano rare terrain flag
+7603;Corrupted rare terrain flag
+7604;Missing number
+7605;Noclone rare terrain flag
+7649;Natural disaster flag: Finished
+7650;Final reduction day1 4236
+7651;Final reduction day1 4238
+7652;Final reduction day1 4239: Reservation
+7653;Final reduction day1 4336①
+7654;Final reduction day1 4336②
+7655;Final reduction day1 4337
+7656;Final reduction day1 4338
+7657;Final reduction day1 4437
+7658;Final reduction day1 4439
+7659;Final reduction day1 4536
+7660;Final reduction day1 4537
+7661;Final reduction day1 4539
+7662;Final reduction day1: m60_43_39_20
+7663;Final reduction day1: reserved
+7664;Final reduction day1: reserved
+7665;Final reduction day1: reserved
+7666;Final reduction day1: reserved
+7667;Final reduction day1: reserved
+7668;Final reduction day1: m60_44_36_30
+7669;Final reduction day1: m60_45_37_30
+7670;Final reduction day1: m60_43_38_10
+7671;Final reduction day1: m60_44_37_50
+7672;Final reduction day1: m60_43_37_50
+7673;Final reduction day1: Reservation
+7674;Final reduction day1: Reservation
+7675;Final reduction day2 4236
+7676;Final reduction day2 4238
+7677;Final reduction day2 4239: Reservation
+7678;Final reduction day2 4336①
+7679;Final reduction day2 4336②
+7680;Final reduction day2 4337
+7681;Final reduction day2 4338
+7682;Final reduction day2 4437
+7683;Final reduction day2 4439
+7684;Final reduction day2 4536
+7685;Final reduction day2 4537
+7686;Final reduction day2 4539
+7687;Final reduction day2: m60_43_39_20
+7688;Final reduction day2: reserved
+7689;Final reduction day2: reserved
+7690;Final reduction day2: reserved
+7691;Final reduction day2: reserved
+7692;Final reduction day2: reserved
+7693;Final reduction day2: m60_44_36_30
+7694;Final reduction day2: m60_45_37_30
+7695;Final reduction day2: m60_43_38_10
+7696;Final reduction day2: m60_44_37_50
+7697;Final reduction day2: m60_43_37_50
+7698;Final reduction day2: reserved
+7699;Final reduction day2: reserved
+7700; Day 1 Sudden Event_Night Boss Appears Continuously
+7701; Day 1 Sudden Event_Meteorite Event
+7702; Day 1 Sudden Event_Walking Mausoleum
+7703; Day 1 Sudden Event_Weakened Prison
+7704; Day 1 Sudden Event_Mass Enemy Spawn
+7705; Day 1 Sudden Event_Night Boss Interference
+7706; Day 1 Sudden Event_Difficult Magician's Tower
+7707; Day 1 Sudden Event_Mad Zone
+7708;Sudden event on the first day_
+7709;Sudden event on the first day_
+7710;Sudden event on the first day_
+7711;Sudden event on the first day_
+7712;Sudden event on the first day_
+7713;Sudden event on the first day_
+7714;Sudden event on the first day_
+7715;Sudden event on the first day_
+7716;Sudden event on the first day_
+7717;Sudden event on the first day_
+7718;Sudden event on the first day_
+7719;Sudden event on the first day_
+7720; Day 2 Sudden Event_Night Boss Appears Continuously
+7721; Day 2 Sudden Event_Meteorite Event
+7722; Day 2 Sudden Event_Walking Mausoleum
+7723; Day 2 Sudden Event_Weakened Prison
+7724; Day 2 Sudden Event_Mass Enemy Spawn
+7725; Day 2 Sudden Event_Night Boss Interference
+7726; Day 2 Sudden Event_Difficult Magician's Tower
+7727; Day 2 Sudden Event_Mad Zone
+7728;Sudden event on the second day_
+7729;Sudden event on the second day_
+7730;Sudden event on the second day_
+7731;Sudden event on the second day_
+7732;Sudden event on the second day_
+7733;Sudden event on the second day_
+7734;Sudden event on the second day_
+7735;Sudden event on the second day_
+7736;Sudden event on the second day_
+7737;Sudden event on the second day_
+7738;Sudden event on the second day_
+7739;Sudden event on the second day_
+8000; Buried Treasure Chest Group 00_Appearance Flag
+8001; Buried Treasure Chest Group 01_Appearance Flag
+8002; Buried Treasure Chest Group 02_Appearance Flag
+8003; Buried Treasure Chest Group 03_Appearance Flag
+8004; Buried Treasure Chest Group 04_Appearance Flag
+8005; Buried Treasure Chest Group 05_Appearance Flag
+8006; Buried Treasure Chest Group 06_Appearance Flag
+8007; Buried Treasure Chest Group 07_Appearance Flag
+8008; Buried Treasure Chest Group 08_Appearance Flag
+8009; Buried Treasure Chest Group 09_Appearance Flag
+8010; Buried Treasure Chest Group 10_Appearance Flag
+8011; Buried Treasure Chest Group 11_Appearance Flag
+8012; Buried Treasure Chest Group 12_Appearance Flag
+8013; Buried Treasure Chest Group 13_Appearance Flag
+8014; Antiques Flag_Magician Tower Clearance 01
+8015; Antiques Flag_Magician Tower Clearance 02
+8016; Antiques Flag_Magician Tower Clearance 03
+8017; Antiques Flag_Magician Tower Clearance 04
+8018; Unused Antiques Flag_Defeat the Prison
+8019; Unused Antiques Flag_Defeat the Dark Spirit
+8020; Sudden Event Clearance 00_Consecutive Night Boss Appearances
+8021;Clear the sudden event 01_Meteorite event
+8022;Clear the sudden event 02_Walking mausoleum
+8023;Clear the sudden event 03_Weakened imprisonment
+8024;Clear the sudden event 04_Mass enemy spawn
+8025;Clear the sudden event 05_Night boss interference
+8026;Clear the sudden event 06_Difficult magician tower
+8027;Clear the sudden event 07_Mad zone
+8028;Clear the sudden event 08_
+8029;Clear the sudden event 09_
+8030;Clear the sudden event 10_
+8031;Clear the sudden event 11_
+8032;Clear the sudden event 12_
+8033;Clear the sudden event 13_
+8034;Clear the sudden event 14_
+8035;Night bosses appear consecutively
+8040;Meteorite event allowed
+8041;1st meteorite event drop location lottery completed
+8042;Meteorite event drop location lottery completed
+8043;Meteorite event has fallen
+8044;Meteorite event boss has appeared
+8045;Walking mausoleum allowed
+8046;1st walking mausoleum drop location lottery completed
+8047;Walking mausoleum drop location lottery completed
+8050;Weakened imprisonment discovered
+8055;Enemy mass spawn allowed
+8056;Enemy mass spawn reservation completed
+8057;Enemy mass spawn has occurred
+8058;Enemy mass spawn_network sharing lottery_win
+8059;Enemy mass spawn_network sharing lottery_loss
+8060;Night boss interference allowed
+8061;Night boss interference already occurred
+8062;Night boss interference finished
+8065;Difficult magician tower_reservation
+8069;Madness zone_drops already performed
+8070;Madness zone_Madness sun appears *unused
+8071;Madness zone_started
+8072;Madness zone_enemies destroyed
+8073;Madness zone_outside shrinking circle
+8074;Madness zone_drops allowed
+8075;Night boss interference_Margit
+8076;Night boss interference_abstract enemy
+8077;Night boss interference_Night Cerberus
+8078;Night boss interference_Intellectual bug
+8079;Night boss interference_Baphomet
+8080;Night boss interference_reservation
+8081;Night boss interference_reservation
+8082;Night boss interference_reservation
+8083;Night boss interference_reservation
+8084;Night boss interference_reservation
+8085;Night boss interference Margit_target PC1
+8086;Night boss interference Margit_target PC2
+8087;Night boss interference Margit_target PC3
+8088;Night boss interference Margit_location lottery completed 1st time
+8089;Night boss interference Margit_location lottery completed 2nd time
+8090;Night boss interference abstract enemy_timer ON
+8091;Night boss interference abstract enemy_time expired
+8092;Night boss interference abstract enemy_1st location lottery completed
+8093;Night boss interference abstract enemy_2nd location lottery completed
+8094;Night boss interference abstract enemy_3rd location lottery completed
+8095;Night boss interference Margit_Target dead
+8096;Night boss interference Margit_Start conversation played
+8097;Night boss interference Margit_Warp appearance suppressed
+8100;Night boss interference intelligent bug_1st location lottery completed
+8105;Night boss interference Baphomet_Already hostile
+8106;Night boss interference Baphomet_All curses removed
+8107;Night boss interference Baphomet_Boss gauge hidden flag
+8108;Night boss interference Baphomet_1st location lottery completed
+8109;Night boss interference Baphomet_2nd location lottery completed
+8110;Night boss interference Baphomet_Disappeared after clearing
+8120; Buried Treasure Chest 00_Map Point Open
+8121; Buried Treasure Chest 01_Map Point Open
+8122; Buried Treasure Chest 02_Map Point Open
+8123; Buried Treasure Chest 03_Map Point Open
+8124; Buried Treasure Chest 04_Map Point Open
+8125; Buried Treasure Chest 05_Map Point Open
+8126; Buried Treasure Chest 06_Map Point Open
+8127; Buried Treasure Chest 07_Map Point Open
+8128; Buried Treasure Chest 08_Map Point Open
+8129; Buried Treasure Chest 09_Map Point Open
+8130; Buried Treasure Chest 10_Map Point Open
+8131; Buried Treasure Chest 11_Map Point Open
+8140;Magician Tower Opening Count
+8145;Prison Sealing Count
+8150;*Unused Boss Defeat Count
+8155;Dark Spirit Defeat Count
+8185;Snow Mountain Cleared
+8190;Volcano Eruption Authorized
+8191;Volcano Eruption Executed
+8192;Volcano Eruption Day 1 Second Half
+8193;Volcano Eruption Day 2 First Half
+8194;Volcano Eruption Day 2 Second Half
+8200;Weak Prison Sealing Body_Shrine00_m60_42_39_00
+8201;Weakened Prison_Shrine01_m60_42_37_00
+8202;Weakened Prison_Shrine02_m60_42_37_00
+8203;Weakened Prison_Shrine03_m60_44_38_00
+8204;Weakened Prison_Shrine04_m60_44_36_00
+8205;Weakened Prison_Shrine05_m60_45_38_00
+8206;Weakened Prison Sealing_Shrine 06_Unused
+8207;Weakened Prison Sealing_Shrine 07_Unused
+8208;Weakened Prison Sealing_Shrine 08_Unused
+8209;Weakened Prison Sealing_Shrine 09_Unused
+8300;00Common Mission 1_Cleared
+8305;00Common Mission 2_Cleared
+8310;00Common Mission 3_Cleared
+8315;00Common Mission 4_Cleared
+8320;00Common Mission 5_Cleared
+8325;01 Pursuer Mission 1_Grindstone Collection_All Cleared
+8326;01 Pursuer Mission 1_Grindstone Collection_Started
+8327;01 Pursuer Mission 1_Grindstone Collection_Defeated
+8330;01 Pursuer Mission 2_Silver Droplet_All Cleared
+8331;01 Pursuer Mission 2_Silver Droplet_Started
+8332;01 Pursuer Mission 2_Silver Droplet_Defeated
+8335;01 Tracker Mission 3_Cleared
+8340;01 Tracker Mission 4_Cleared
+8345;01 Tracker Mission 5_Cleared
+8350;02 Guardian Mission 1_Corrupted Pilgrim_Cleared
+8351;02 Guardian Mission 1_Corrupted Pilgrim_Started
+8355;02 Guardian Mission 2_Defeat Golem_Cleared
+8356;02 Guardian Mission 2_Defeat Golem_Started
+8357;02 Guardian Mission 2_Defeat Golem_Defeat
+8360;02 Guardian Mission 3_All Cleared
+8361;02 Guardian Mission 3_Baphomet Trade_Defeat
+8365;02 Guardian Mission 4_Cleared
+8370;02 Guardian Mission 5_Cleared
+8375;03 Iron Eye Mission 1_Eliminate the sick_Cleared
+8380;03 Iron Eye Mission 2_Defeat the sinners_Cleared
+8385;03 Iron Eye Mission 3_Defeat the centaur_Cleared
+8390;03 Iron Eye Mission 4_Cleared
+8395;03 Iron Eye Mission 5_Cleared
+8400;04 Lady Mission 1_Collect flowers_Cleared
+8401;04 Lady Mission 1_Collect flowers_Started
+8405;04 Lady Mission 2_Cleared
+8410;04 Lady Mission 3_Find news_Cleared
+8411;04 Lady Mission 3_Find news_Started
+8412;04 Lady Mission 3_Find news_Defeat
+8415;04 Lady Mission 4_Cleared
+8420;04 Lady Mission 5_Cleared
+8425;05 Rogue Mission 1_Cleared
+8430;05 Rogue Mission 2_Cleared
+8435;05 Rogue Mission 3_Before the Hazama Cup Final_Cleared
+8440;05 Rogue Mission 4_Cleared
+8445;05 Rogue Mission 5_Cleared
+8450;06 Avenger Mission 1_Defeat the Night Servant_Cleared
+8455;※Unused 06 Avenger Mission 2_Cleared
+8460;06 Avenger Mission 3_Cleared
+8465;06 Avenger Mission 4_Cleared
+8470;06 Avenger Mission 5_Cleared
+8475;07 Hermit Mission 1_All Cleared
+8476;07 Hermit Mission 1_Started
+8477;07 Hermit Mission 1_Defeated
+8480;*Unused 07 Hermit Mission 2_Cleared
+8485;07 Hermit Mission 3_Cleared
+8490;07 Hermit Mission 4_Cleared
+8495;07 Hermit Mission 5_Cleared
+8500;*Unused 08 Enforcer Mission 1_Cleared
+8505;08 Enforcer Mission 2_All Cleared
+8506;08 Enforcer Mission 2_Started
+8507;08 Enforcer Mission 2_Defeated
+8510;08 Enforcer Mission 3_All Cleared
+8511;08 Enforcer Mission 3_Started
+8512;08 Enforcer Mission 3_Defeated
+8515;08 Enforcer Mission 4_Cleared
+8520;08 Enforcer Mission 5_Cleared
+8800;Event ID: Map point management_Bird movement icon
+8810;Event ID: Map point management_Bird movement icon exception
+8900;[1 day try] Night boss interference Margit_Allow occurrence
+8901;[1 day try] Night boss interference Margit_Already occurred
+8902;[1 day try] Night boss interference Margit_Finished
+8903;[1 day try] Night boss interference Margit_Cleared
+8904;[1 day try] Night boss interference Margit_Allow occurrence
+8910;[1 day try] Night boss interference abstract enemy_Allow occurrence
+8911;[1 day try] Night boss interference abstract enemy_Already occurred
+8912;[1 day try] Night boss interference abstract enemy_Finished
+8913;[1 day try] Night boss interference abstract enemy_Cleared
+8914;[1 day try] Night boss interference abstract enemy_Allow occurrence
+9010;Saw the cut scene of a deployment
+9011;80
+9012;Deployment phase, bird moving
+9013;Sudden event timer_Own timer completed
+9015;Boss battle death prohibition flag
+9016;Rejoin near death entry flag
+9017;Death text performance stop flag
+9021;BGM control flag: For cut scenes
+9025;Inside hotspot area
+9030;Mausoleum weapon duplication menu used
+9035;Inside madness zone area
+9036;Madness zone own PC attacking
+9037;Inside madness zone Gparam area
+9038;Madness zone rune acquired
+9040;Request to determine number of estuaries
+9041;Count number of estuaries
+9050;Est increase by defeating night boss, day 1
+9051;Est increase by defeating night boss, day 2
+9052;Warped to Tower of God
+9055;Night boss obstruction, abstract enemy, within area
+9056;Night boss obstruction, permanent debuff confirmed
+9060;Night boss obstruction, Margite, with BGM, gauge start
+9061;Night boss obstruction, Margite, with BGM, gauge end
+9062;Night boss obstruction, Margite, without BGM, gauge start
+9063;Night boss obstruction, Margite, without BGM, gauge end
+9070;Boss antiques confirmed lottery, Cerberus
+9071;Boss Antiques Confirmed Draw_Dragon Tyranno
+9072;Boss Antiques Confirmed Draw_Intelligent Bug
+9073;Boss Antiques Confirmed Draw_Abstract Enemy
+9074;Boss Antiques Confirmed Draw_Baphomet
+9075;Boss Antiques Confirmed Draw_Centaur
+9076;Boss Antiques Confirmed Draw_Mist Dragon
+9080;Boss Antiques Confirmed Draw_Nameless
+9089;Antiques Draw_Campaign Session
+9090;Cerberus session for antique lottery
+9091;Tyrannosaurus session for antique lottery
+9092;Intelligent insect session for antique lottery
+9093;Abstract enemy session for antique lottery
+9094;Baphomet session for antique lottery
+9095;Centaur session for antique lottery
+9096;Mist dragon session for antique lottery
+9097;Nameless session for antique lottery
+9100;GrF:Boss defeat flag
+9100;Buried Treasure Chest 00
+9101;Buried Treasure Chest 01
+9102;Buried Treasure Chest 02
+9103;Buried Treasure Chest 03
+9104;Buried Treasure Chest 04
+9105;Buried Treasure Chest 05
+9106;Buried Treasure Chest 06
+9107;Buried Treasure Chest 07
+9108;Buried Treasure Chest 08
+9109;Buried Treasure Chest 09
+9110;Buried Treasure Chest 10
+9111;Buried Treasure Chest 11
+9120; Special effect count for magician tower
+9125; Special effect count for prison destruction
+9130; Special effect count for night boss interference Margit destruction
+9135; Special effect count for dark spirit destruction
+9140; Guardian 0201 Spot 300 Occurrence location
+9141; Guardian 0201 Spot 301 Occurrence location
+9142; Guardian 0201 Spot 302 Occurrence location
+9143; Guardian 0201 Spot 303 Occurrence location
+9144; Guardian 0201 Spot 304 Occurrence location
+9145; Guardian 0201 Spot 305 Occurrence location
+9146; Guardian 0201 Spot 306 Occurrence location
+9147; Guardian 0201 Spot 307 Occurrence location
+9148; Guardian 0201 Spot 308 Occurrence location
+9149; Guardian 0201 Spot 309 Occurrence location
+9150; Guardian 0201 Spot 310 Occurrence location
+9151; Guardian 0201 Spot 311 Occurrence location
+9152; Guardian 0201 Spot 312 Occurrence location
+9153; Guardian 0201 Spot 313 Occurrence location
+9154; Guardian 0201 Spot 314 Occurrence location
+9155; Guardian 0201 Spot 315 Occurrence location
+9156; Guardian 0201 Spot 316 Occurrence location
+9157; Guardian 0201 Spot 317 Occurrence location
+9158; Guardian 0201 Spot 318 Occurrence location
+9159; Guardian 0201 Spot 319 Occurrence location
+9160;Guardian 0201 Spot 300 Clear
+9161;Guardian 0201 Spot 301 Clear
+9162;Guardian 0201 Spot 302 Clear
+9163;Guardian 0201 Spot 303 Clear
+9164;Guardian 0201 Spot 304 Clear
+9165;Guardian 0201 Spot 305 Clear
+9166;Guardian 0201 Spot 306 Clear
+9167;Guardian 0201 Spot 307 Clear
+9168;Guardian 0201 Spot 308 Clear
+9169;Guardian 0201 Spot 309 Clear
+9170;Guardian 0201 Spot 310 Clear
+9171;Guardian 0201 Spot 311 Clear
+9172;Guardian 0201 Spot 312 Clear
+9173;Guardian 0201 Spot 313 Clear
+9174;Guardian 0201 Spot 314 Clear
+9175;Guardian 0201 Spot 315 Clear
+9176;Guardian 0201 Spot 316 Clear
+9177;Guardian 0201 Spot 317 Clear
+9178;Guardian 0201 Spot 318 Clear
+9179;Guardian 0201 Spot 319 Clear
+9191;Permanent buff acquisition permission: Noclone area
+9192;Permanent buff acquisition permission: Rotten area
+9193;Permanent buff acquisition permission: Snowy mountain area
+9194;Legendary smithing table: Used flag
+9200;02 Guardian Mission 3_Baphomet trade_Personally completed
+9201;02 Guardian Mission 3_Baphomet trade_Tradeable
+9202;02 Guardian Mission 3_Baphomet trade_Trade completed
+9204;101_Grindstone collection_PC mine
+9205;※Unused 06 Avenger Mission 2_Puddle purification_Personally completed
+9206;101_Grindstone collection_Completed
+9207;102_Silver drops_Completed
+9208;202_Golem_Completed
+9209;302_Defeat the sinner_Completed
+9210;*Unused 07 Hermit Mission 2_Night boss interference strategy_Completed
+9211;303_Defeat the centaur_Completed
+9212;401_Flower collection_Completed
+9213;403_Weather vane grave_Completed
+9214;601_Steal boss weapon_Completed
+9215;*Unused 08 Enforcer Mission 1_Golden Seed_Completed
+9216;701_Defeat night enemies_Completed
+9217;802_Collect golden buds_Completed
+9218;803_Collect flowers_Completed
+9219;401_Collect flowers_Collecting prohibited
+9220;803_Collect flowers_Collecting prohibited
+9221;06Avenger Mission 2_4437 locations started
+9222;06Avenger Mission 2_4336 locations started
+9223;06Avenger Mission 2_4237 locations started
+9224;06Avenger Mission 2_4338 locations started
+9225;06Avenger Mission 2_4439 locations started
+9226;06Avenger Mission 2_4539 locations started
+9227;06Avenger Mission 2_4537 locations started
+9228;06Avenger Mission 2_4536 locations started
+9229;06Avenger Mission 2_4437② locations started
+9231;06Avenger Mission 2_4437 locations cleared
+9232;06Avenger Mission 2_4336 locations cleared
+9233;06 Avenger Mission 2_Clear 4237 places
+9234;06 Avenger Mission 2_Clear 4338 places
+9235;06 Avenger Mission 2_Clear 4439 places
+9236;06 Avenger Mission 2_Clear 4539 places
+9237;06 Avenger Mission 2_Clear 4537 places
+9238;06 Avenger Mission 2_Clear 4536 places
+9239;06 Avenger Mission 2_Clear 4437② places
+9241;06 Avenger Mission 2_Ultimate
+9242;06 Avenger Mission 2_Ultimate
+9243;06 Avenger Mission 2_Ultimate
+9244;06 Avenger Mission 2_4338 Locations Ult
+9245;06 Avenger Mission 2_4439 Locations Ult
+9246;06 Avenger Mission 2_4539 Locations Ult
+9247;06 Avenger Mission 2_4537 Locations Ult
+9248;06 Avenger Mission 2_4536 Locations Ult
+9249;06 Avenger Mission 2_4437② Locations Ult
+9251;0801 Executioner_Start Location 01
+9252;0801 Executioner_Start Location 02
+9253;0801 Executioner_Start Location 03
+9254;0801 Executioner_Start Location 04
+9255;0801 Executioner_Start Location 05
+9256;0801Executor_Startup_Location06
+9257;0801Executor_Backup_Startup_Location01
+9258;0801Executor_Backup_Startup_Location02
+9259;0801Executor_Backup_Startup_Location03
+9261;0801Executor_Startup_Location01_Clear
+9262;0801Executor_Startup_Location02_Clear
+9263;0801Executor_Startup_Location03_Clear
+9264;0801Executor_Startup_Location04_Clear
+9265;0801Executor_Startup_Location05_Clear
+9266;0801Executor_Startup_Location06_Clear
+9267;0801Executor_Backup_Startup_Location01_Clear
+9268;0801Executor_Backup_Startup_Location02_Clear
+9269;0801Executor_Backup_Startup_Location03_Clear
+9271;Guardian 0203_Spot 710
+9272;Guardian 0203_Spot 711
+9273;Guardian 0203_Spot 712
+9274;Guardian 0203_Spot 713
+9275;Guardian 0203_Spot 714
+9276;Guardian 0203_Spot 715
+9277;Guardian 0203_Spot 716
+9278;Guardian 0203_Spot 717
+9279;Guardian 0203_Spot 718
+9300;Trophy 00: NIGHTREIGN
+9301;Trophy 01: The Hidden Table
+9302;Trophy 02: The Night Kings
+9303;Trophy 03: The Night Begins
+9304;Trophy 04: The Lady, Joins the Battle
+9305;Trophy 05: The Avenger, Joins the Battle
+9306;Trophy 06: Dawn
+9307;Trophy 07: The Three-Headed Beast
+9308;Trophy 08: The Devouring Jaws
+9309;Trophy 09: The Intellect Bug
+9310;Trophy 10: Signs
+9311;Trophy 11: The Tuning Demon
+9312;Trophy 12: The Dark Hunter
+9313;Trophy 13: The Mist Rift
+9314;Trophy 14: The Night Shapers
+9315;Trophy 15: All About the Night Kings
+9316;Trophy 16: Relics
+9317;Trophy 17: Dressing Table
+9318;Trophy 18: Offering Vessel
+9319;Trophy 19: Legendary Weapon
+9320;Trophy 20: Mountain Range
+9321;Trophy 21: Crater
+9322;Trophy 22: Rotten Forest
+9323;Trophy 23: Nokrateo, Hidden City
+9324;Trophy 24: Cataclysm
+9325;Trophy 25: Collected Offering Vessels
+9326;Trophy 26: Hero's Path
+9327;Trophy 27: Highest Level
+9328;Trophy 28: Filled Chalice Flask
+9329;Trophy 29: Latent Power
+9330;Trophy 30: Ancient Prison
+9331;Trophy 31: Ready
+9332;Trophy 32: Cursed Demon
+9333;Trophy 33: Locust Plague
+9334;Trophy 34: Typhoon
+9335;Trophy 35: Judgment
+9336;Trophy 36: Hunter of the Night King
+9500;GrF: Recipe Unlock Flag
+9800;Tutorial Global Flag 00
+9801;Tutorial Global Flag 01
+9802;Tutorial Global Flag 02
+9803;Tutorial Global Flag 03
+9810;[TUT]Event:Movement/Camera
+9815;[TUT]Event:Using the Holy Grail Flask
+9820;[TUT]Event:Attack
+9825;[TUT]Event:Toggle Lock
+9830;[TUT]Event:Jump/Wall Climb
+9835;[TUT]Event:Guard
+9840;[TUT]Event:Evade
+9845; [TUT] Event: Dash
+9850; [TUT] Event: Sprint
+9855; [TUT] Event: Wall Jump (Follow Notification)
+9856; [TUT] Event: Wall Jump
+9860; [TUT] Event: Use Item
+9865; [TUT] Event: Weapon Switch
+9870; [TUT] Event: Arts
+9875; [TUT] Event: Weapon Switch & Arts (Follow Notification)
+9880; [TUT] Event: Skill
+9885;[TUT] Event: Skills (Follow Notification)
+9890;[TUT] Event: Near Death/Rescue
+9895;[TUT] Event: Near Death/Rescue (Follow Notification)
+9900;[TUT] Event: Respawn
+9905;[TUT] Event: Ult
+9910;[TUT] Event: Ult (Follow Notification)
+9915;[TUT] Event: Near Death
+9920;[TUT] Event: Blessing
+9925;[TUT] Event: Map
+9930;[TUT] Event: Map (Follow Notification)
+9935;[TUT] Event: Shrinking Circle Damage
+9940;[TUT] Event: Additional Effects and Rarity
+9945;[TUT] Event: Additional Effects and Rarity (Follow Notification)
+9990;Parasite poison 00
+9991;Parasite poison 01
+9992;Parasite poison 02
+9993;Debug flag 03
+9994;Debug flag 04
+9995;Debug flag 05
+9996;Debug flag 06
+9997;Debug flag 07
+9998;Debug flag 08
+9999;Debug flag 09
+60010;Antique Pedestal Unlocked: Balanced Pedestal 2
+60020;Antique Pedestal Unlocked: Balanced Pedestal 3
+60030;Antique Pedestal Unlocked: Balanced Pedestal 4
+60040;Antique Pedestal Unlocked: Balanced Pedestal 5
+60060;Antique Pedestal Unlocked: Tank Pedestal 2
+60070;Antique Pedestal Unlocked: Tank Pedestal 3
+60080;Antique Pedestal Unlocked: Tank Pedestal 4
+60090;Antique Pedestal Unlocked : Tank Pedestal 5
+60110;Antique Pedestal Unlocked: Shooter Pedestal 2
+60120;Antique Pedestal Unlocked: Shooter Pedestal 3
+60130;Antique Pedestal Unlocked: Shooter Pedestal 4
+60140;Antique Pedestal Unlocked: Shooter Pedestal 5
+60160;Antique Pedestal Unlocked: Speed ​​Pedestal 2
+60170;Antique Pedestal Unlocked: Speed ​​Pedestal 3
+60180;Antique Pedestal Unlocked: Speed ​​Pedestal 4
+60190;Antique Pedestal Unlocked: Speed ​​Pedestal 5
+60210;Antique Pedestal Unlocked: Power Pedestal 2
+60220;Antique Pedestal Unlocked: Power Pedestal 3
+60230;Antique Pedestal Unlocked: Power Pedestal 4
+60240;Antique Pedestal Unlocked: Power Pedestal 5
+60260;Antique Pedestal Unlocked: Necromancer Pedestal 2
+60270;Antique Pedestal Unlocked: Necromancer Pedestal Cromancer Pedestal 3
+60280;Antique Pedestal Unlocked: Necromancer Pedestal 4
+60290;Antique Pedestal Unlocked: Necromancer Pedestal 5
+60310;Antique Pedestal Unlocked: Magic Pedestal 2
+60320;Antique Pedestal Unlocked: Magic Pedestal 3
+60330;Antique Pedestal Unlocked: Magic Pedestal 4
+60340;Antique Pedestal Unlocked: Magic Pedestal 5
+60360;Antique Pedestal Unlocked: Technical Pedestal 2
+60370;Antique Pedestal Unlocked: Technical Pedestal 3
+60380;Antique Pedestal Unlocked: Technical Pedestal 4
+60390;Antique Pedestal Unlocked: Technical Pedestal 5
+60400;Antique Pedestal Unlocked: Special Pedestal 1
+60410;Antique Pedestal Unlocked: Special Pedestal 2
+60420;Antique Pedestal Unlocked: Special Pedestal 3
+61000;DLC0_Pre-order bonus main body gesture acquired
+61001;DLC0_Pre-order bonus propagation gesture acquired
+66000;ClF: Lobby inventory management
+66000;Inventory management_Fixed antiques_Lineup 01
+66010;Inventory management_Fixed antiques_Lineup 02
+66020;Inventory management_Fixed antiques_Lineup 03
+66030;Inventory management_Fixed antiques_Lineup 04
+66040;Inventory management_Fixed antiques_Lineup 05
+66050;Inventory management_Fixed antiques_Lineup 06
+66060;Inventory management_Fixed antiques_Lineup 07
+66070;Inventory management_Fixed antiques_Lineup 08
+66080;Inventory management_Fixed antiques_Lineup 09
+66090;Inventory management_Fixed antiques_Lineup 10
+66100;Inventory management_Fixed antiques_Lineup 11
+66110;Inventory management_Fixed antiques_Lineup 12
+66120;Inventory management_Fixed antiques_Lineup 13
+66130;Inventory management_Fixed antiques_Lineup 14
+66140;Inventory management_Fixed antiques_Lineup 15
+66150;Inventory management_Fixed antiques_Lineup 16
+66160;Inventory management_Fixed antiques_Lineup 17
+66170;Inventory management_Fixed antiques_Lineup 18
+66180;Inventory management_Fixed antiques_Lineup 19
+66190;Inventory management_Fixed antiques_Lineup 20
+66300;Boss Antique β: Cerberus
+66310;Boss Antique β: Dragon Tyranno
+66320;Boss Antique β: Intelligent Bug
+66330;Boss Antique β: Abstract Enemy
+66340;Boss Antique β: Baphomet
+66350;Boss Antique β: Centaur
+66360;Boss Antique β: Mist Dragon
+66370;Boss Antique β: Nameless
+67000;Inventory management_Appraised antiques_Lineup 01
+67010;Inventory management_Appraised antiques_Lineup 02
+67020;Inventory management_Appraised antiques_Lineup 03
+67030;Inventory management_Appraised antiques_Lineup 04
+67040;Inventory management_Appraised antiques_Lineup 05
+67050;Inventory management_Appraised antiques_Lineup 06
+67060;Inventory management_Appraised antiques_Lineup 07
+67070;Inventory management_Appraised antiques_Lineup 08
+67080;Inventory management_Appraised antiques_Lineup 09
+67090;Inventory management_Appraised antiques_Lineup 10
+67100;Inventory management_Appraised antiques_Lineup 11
+67110;Inventory management_Appraised antiques_Lineup 12
+67120;Inventory management_Appraised antiques_Lineup 13
+67130;Inventory management_Appraised antiques_Lineup 14
+67140;Inventory management_Appraised antiques_Lineup 15
+67150;Inventory management_Appraised antiques_Lineup 16
+67160;Inventory management_Appraised antiques_Lineup 17
+67170;Inventory management_Appraised antiques_Lineup 18
+67180;Inventory management_Appraised antiques_Lineup 19
+67190;Inventory management_Appraised antiques_Lineup 20
+67200;Inventory management_Appraised antiques_Lineup 21
+67210;Inventory management_Appraised antiques_Lineup 22
+67220;Inventory management_Appraised antiques_Lineup 23
+67230;Inventory management_Appraised antiques_Lineup 24
+67240;Inventory management_Appraised antiques_Lineup 25
+67250;Inventory management_Appraised antiques_Lineup 26
+67260;Inventory management_Appraised antiques_Lineup 27
+67270;Inventory management_Appraised antiques_Lineup 28
+67600;Inventory_Gesture: Polite/Noble Bow
+67610;Inventory_Gesture: Woman's Bow
+67620;Inventory_Gesture: War Bow
+67630;Inventory_Gesture: Kneeling Bow
+67640;Inventory_Gesture: Welcome
+67650;Inventory_Gesture: Ugh!
+67660;Inventory_Gesture: Woman's Polite Bow
+67670;Inventory_Gesture: It's Not Time to Panic Yet
+67680;Inventory_Gesture: Prostration
+67690;Inventory_Gesture: Pleading for Life
+67700;Inventory_Gesture: Oh
+67710;Inventory_Gesture: Swear by the Sword 2
+67720;Inventory_Gesture: Beating Chest
+67730;Inventory_Gesture: Spinning Around in Joy (Female)
+67740;Inventory_Gesture: I've Got an Idea!
+67750;Inventory_Gesture: Slumping
+67760;Inventory_Gesture: Patch Sitting
+67770;Inventory_Gesture: Cross-legged
+67780;Inventory_Gesture: Sitting on One Knee
+67790;Inventory_Gesture: Sitting Woman
+67800;Inventory_Gesture: Cross-legged sleep
+67810;Inventory_Gesture: Sleep
+67820;Inventory_Gesture: Play dead
+67830;Inventory_Gesture: Yurt standing
+67840;Inventory_Gesture: Pray
+67850;Inventory_Gesture: Pray 2
+67860;Inventory_Gesture: Special religion 1
+67870;Inventory_Gesture: Raise both hands and hold
+67880;Inventory_Gesture: Golden Rule T pose
+67890;Inventory_Gesture: Golden Rule reverse T pose
+67900;Inventory_Gesture: Golden Rule T-pose
+67910;Inventory_Gesture: Farewell Voice "Hello"
+67920;Inventory_Gesture: Farewell Voice "Thank you"
+67930;Inventory_Gesture: Farewell Voice "I'm sorry"
+67940;Inventory_Gesture: Farewell Voice "Amazing"
+67950;Inventory_Gesture: Farewell Voice "Help me"
+67960;Inventory_Gesture: Farewell Voice "I love you. You are my sunshine"
+67970;Inventory_Gesture: Farewell Voice "Now, let's get started"
+67980;Inventory_Gesture: Farewell Voice_Mother's Voice Item
+68000;Inventory_management_skin
+68010;Inventory_management_skin
+68020;Inventory_management_skin
+68030;Inventory_management_skin
+68040;Inventory_management_skin
+68050;Inventory_management_skin
+68060;Inventory_management_skin
+68070;Inventory_management_skin
+68080;Inventory_management_skin
+68090;Inventory_management_skin
+68100;Inventory_management_skin
+68110;Inventory_management_skin
+68120;Inventory_management_skin
+68130;Inventory_management_skin
+68140;Inventory_management_skin
+68150;Inventory_management_skin
+68160;Inventory_management_skin
+68170;Inventory_management_skin
+68180;Inventory_management_skin
+68190;Inventory_management_skin
+68200;Inventory_management_skin
+68210;Inventory_management_skin
+68220;Inventory_management_skin
+68230;Inventory_management_skin
+68240;Inventory_management_skin
+68250;Inventory_management_skin
+68260;Inventory_management_skin
+68270;Inventory_management_skin
+68280;Inventory_management_skin
+68290;Inventory_management_skin
+68300;Inventory_Skin
+68310;Inventory_Skin
+68320;Inventory_Skin
+68330;Inventory_Skin
+68340;Inventory_Skin
+68350;Inventory_Skin
+68500;Inventory_Avenger_Unlocked_Antiques
+68510;Inventory_Ghost_Shop_Lineup_00
+68520;Inventory_Ghost_Shop_Lineup_01
+68530;Inventory_Ghost_Shop_Lineup_02
+69000;[TUT]Event: Camera
+69010;[TUT]Event: Item Use
+69020;[TUT]Event: Bonfire
+69030;[TUT]Event: Lock
+69040;[TUT]Event: Basic Attack (Weak)
+69050;[TUT]Event: Basic Attack (Strong)
+69060;[TUT]Event: Magic
+69070;[TUT]Event: Rolling
+69080;[TUT]Event: Jump
+69090;[TUT]Event: Dash
+69100;[TUT]Event: Weapon Switch
+69110;[TUT]Event: Lock Switch
+69120;[TUT]Event: Guard
+69130;[TUT]Event: How to use a bow
+69140;[TUT]Event: Crouching
+69150;[TUT]Event: Fatal blow
+69160;[TUT]Event: Jump attack/charge/guard counter
+69200;[TUT]Event: Night rain
+69210;[TUT]Event: Additional effects and rarity
+69990;This flag is set when you enter the lobby from MOVEMAP_TEST or the title. If you play multiplayer with this flag set, the game start event will run.
+69991;When set in debug mode, this flag will automatically set the game start event.
+69992;Missing number
+69993;Missing number
+69994;Missing number
+69995;When the game start event or interval event stops the game time, this flag will skip it.
+72000;Map point parameter flag
+72100;Flag for retiring from battle on scenario-only maps
+72110;Flag for forced cutscene termination
+72200;Map icon operation flag for TUT
+72201;Map icon operation flag for TUT
+72250;Bird movement map icon operation flag
+72251;Bird movement map icon operation flag
+72252;Bird movement map icon operation flag
+72253;Bird movement map icon operation flag
+72255;Bird movement map icon operation flag
+72560;Tunnel map icon operation flag
+72561;Tunnel map icon operation flag_corruption
+77000;In-game_sync for conversation
+90000;Shop lineup management flag 00
+90001;Shop lineup management flag 01
+90002;Shop lineup management flag 02
+90003;Shop lineup management flag 03
+90004;Shop lineup management flag 04
+90005;Shop lineup management flag 05
+90006;Shop lineup management flag 06
+90007;Shop lineup management flag 07
+90008;Shop lineup management flag 08
+90009;Shop lineup management flag 09
+90010;Shop lineup management flag 10
+90011;Shop lineup management flag 11
+90012;Shop lineup management flag 12
+90013;Shop lineup management flag 13
+90014;Shop lineup management flag 14
+90015;Shop lineup management flag 15
+90016;Shop lineup management flag 16
+90017;Shop lineup management flag 17
+90018;Shop lineup management flag 18
+90019;Shop lineup management flag 19
+90020;Shop lineup management flag 20
+90021;Shop lineup management flag 21
+90022;Shop lineup management flag 22
+90023;Shop lineup management flag 23
+90024;Shop lineup management flag 24
+90025;Shop lineup management flag 25
+90026;Shop lineup management flag 26
+90027;Shop lineup management flag 27
+90028;Shop lineup management flag 28
+90029;Shop lineup management flag 29
+90030;Shop lineup management flag 30
+90031;Shop lineup management flag 31
+90032;Shop lineup management flag 32
+90033;Shop lineup management flag 33
+90034;Shop lineup management flag 34
+90035;Shop lineup management flag 35
+90036;Shop lineup management flag 36
+90037;Shop lineup management flag 37
+90038;Shop lineup management flag 38
+90039;Shop lineup management flag 39
+90040;Shop lineup management flag 40
+90041;Shop lineup management flag 41
+90042;Shop lineup management flag 42
+90043;Shop lineup management flag 43
+90044;Shop lineup management flag 44
+90045;Shop lineup management flag 45
+90046;Shop lineup management flag 46
+90047;Shop lineup management flag 47
+90048;Shop lineup management flag 48
+90049;Shop lineup management flag 49
+90050;Shop lineup management flag 50
+90051;Shop lineup management flag 51
+90052;Shop lineup management flag 52
+90053;Shop lineup management flag 53
+90054;Shop lineup management flag 54
+90055;Shop lineup management flag 55
+90056;Shop lineup management flag 56
+90057;Shop lineup management flag 57
+90058;Shop lineup management flag 58
+90059;Shop lineup management flag 59
+90060;Shop lineup management flag 60
+90061;Shop lineup management flag 61
+90062;Shop lineup management flag 62
+90063;Shop lineup management flag 63
+90064;Shop lineup management flag 64
+90065;Shop lineup management flag 65
+90066;Shop lineup management flag 66
+90067;Shop lineup management flag 67
+90068;Shop lineup management flag 68
+90069;Shop lineup management flag 69
+90070;Shop lineup management flag 70
+90071;Shop lineup management flag 71
+90072;Shop lineup management flag 72
+90073;Shop lineup management flag 73
+90074;Shop lineup management flag 74
+90075;Shop lineup management flag 75
+90076;Shop lineup management flag 76
+90077;Shop lineup management flag 77
+90078;Shop lineup management flag 78
+90079;Shop lineup management flag 79
+90080;Shop lineup management flag 80
+90081;Shop lineup management flag 81
+90082;Shop lineup management flag 82
+90083;Shop lineup management flag 83
+90084;Shop lineup management flag 84
+90085;Shop lineup management flag 85
+90086;Shop lineup management flag 86
+90087;Shop lineup management flag 87
+90088;Shop lineup management flag 88
+90089;Shop lineup management flag 89
+90090;Shop lineup management flag 90
+90091;Shop lineup management flag 91
+90092;Shop lineup management flag 92
+90093;Shop lineup management flag 93
+90094;Shop lineup management flag 94
+90095;Shop lineup management flag 95
+90096;Shop lineup management flag 96
+90097;Shop lineup management flag 97
+90098;Shop lineup management flag 98
+90099;Shop lineup management flag 99
+90100;Shop lineup inventory management flag
+96000;Map point parameter flag_asynchronous
+97000;Ingame_async_for_conversations
+99970;Ice_wyvern
+99971;Ice_wyvern
+99972;Ice_wyvern
+99973;Ice_wyvern
+99974;Ice_wyvern
+99975;Ice_wyvern
+99976;Ice_wyvern
+99977;Ice_wyvern
+99978;Ice_wyvern
+99979;Ice_wyvern

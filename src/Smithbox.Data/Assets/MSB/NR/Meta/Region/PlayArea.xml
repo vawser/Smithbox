@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a play area in the map." />
+  
+  <Field>
+    <PlayRegionID
+    AltName="Play Region ID"
+    Wiki="The play region this are uses" 
+    ParamRef="PlayRegionParam" />
+    
+    <UnkT04
+    AltName="Unknown: 0x4"
+    Wiki="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

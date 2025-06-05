@@ -455,10 +455,12 @@
       <Maximum>180</Maximum>
       <SortID>11370</SortID>
     </Field>
-    <Field Def="dummy8 pad4[16]">
-      <DisplayName>パディング</DisplayName>
-      <SortID>15206</SortID>
-    </Field>
+    
+    <Field Def="s32 unknown_1" />
+    <Field Def="s32 unknown_2" />
+    <Field Def="s32 unknown_3" />
+    <Field Def="s32 unknown_4" />
+    
     <Field Def="u16 eye_BackOffsetDist">
       <DisplayName>視覚_発生距離[m]</DisplayName>
       <Description>キャラの中心からこの距離後ろが視角開始位置になる</Description>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an message in the map." />
+  
+  <Field>
+    <MessageID
+    AltName="Message ID"
+    Wiki="The ID of the message's text in the FMGs."
+    FmgRef="Blood_Messages" />
+    
+    <UnkT02
+    AltName="Unknown: 0x2"
+    Wiki="" />
+    
+    <Hidden
+    AltName="Is Hidden"
+    Wiki="Whether the message requires Seek Guidance to appear."
+    IsBool="" />
+    
+    <ItemLotParamID
+    AltName="Item Lot ID"
+    Wiki="The item lot to use when this message is triggered." 
+    ParamRef="ItemLotParam_map" />
+    
+    <MessageSfxID
+    AltName="Message Particle ID"
+    Wiki="The particle ID to use for this message."
+    ParticleAlias="" />
+    
+    <EnableEventFlagID
+    AltName="Visibility Event Flag ID"
+    Wiki="This event flag must be ON for the message to appear."
+    FlagAlias="" />
+    
+    <CharacterModelName
+    AltName="Model Name"
+    Wiki="The model name of the character to render when the message is triggered." />
+    
+    <NPCParamID
+    AltName="NPC Param ID"
+    Wiki="The property parameters for the character that is rendered when the message is triggered." 
+    ParamRef="NpcParam" />
+    
+    <AnimationID
+    AltName="Animation ID"
+    Wiki="The animation ID to use for the character that is rendered when the message is triggered." />
+    
+    <CharaInitParamID
+    AltName="Character Initialization ID"
+    Wiki="The ID in CharaInitParam determining equipment and stats for the character that is rendered when the message is triggered."
+    ParamRef="CharaInitParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

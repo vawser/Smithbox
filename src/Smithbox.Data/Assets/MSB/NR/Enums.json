@@ -1,0 +1,38 @@
+{
+    "list": [
+        {
+            "id": "PATROL_TYPE",
+            "name": "Patrol Type",
+            "members": [
+                {
+                    "id": "0",
+                    "name": "Return to First Point after Initial Route"
+                },
+                {
+                    "id": "1",
+                    "name": "Reverse Route after Initial Route"
+                },
+                {
+                    "id": "2",
+                    "name": "Random Point in Route"
+                },
+                {
+                    "id": "3",
+                    "name": "Unknown"
+                },
+                {
+                    "id": "4",
+                    "name": "Use Final Point Only, Idle, then Return to Start Point"
+                },
+                {
+                    "id": "5",
+                    "name": "Idle at Final Point, Look at Penultimate Point, then Return to Final Point"
+                },
+                {
+                    "id": "6",
+                    "name": "Randomly Wander Around"
+                }
+            ]
+        }
+   ]
+}

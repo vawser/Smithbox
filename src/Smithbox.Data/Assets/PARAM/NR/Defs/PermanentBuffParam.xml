@@ -7,11 +7,12 @@
   <FormatVersion>203</FormatVersion>
   <Fields>
     
-    <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
+    <Field Def="s32 spEffectId"/>
+    <Field Def="s32 iconId"/>
+    <Field Def="s32 secondaryIconId"/>
+    <Field Def="u16 displayNumericValue"/>
+    <Field Def="u16 displayPercentageSymbol"/>
+    <Field Def="s32 numericValue"/>
+    <Field Def="s32 graceSpEffectId"/>
   </Fields>
 </PARAMDEF>

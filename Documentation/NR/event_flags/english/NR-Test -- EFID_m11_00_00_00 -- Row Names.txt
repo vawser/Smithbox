@@ -1,0 +1,20 @@
+
+##EFID_m11_00_00_00
+11000000;Bonfire flag
+11000050;Initialization flag
+11000100;System flag
+11002100;System flag
+11000200;Character flag (do not reset)
+11001200;Character flag (do not reset)
+11002200;Character flag (reset)
+11000500;Object flag (do not reset)
+11001500;Object flag (do not reset)
+11002500;Object flag (reset)
+11008500;Object act flag
+11000700;Conversation flag
+11002700;Conversation flag
+11000800;Boss flag (do not reset)
+11002800; Boss flag (reset)
+11000900; For debugging/testing
+11002900; For debugging/testing
+0; Dummy to keep the "individual ID" display above. You can delete this dummy when adding an individual ID.

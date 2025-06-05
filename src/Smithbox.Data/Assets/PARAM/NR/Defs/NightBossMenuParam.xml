@@ -8,20 +8,20 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="s32 unknown_3"/>
-    <Field Def="s32 unknown_4"/>
+    <Field Def="s32 expeditionNameId"/>
+    <Field Def="s32 bossIconId"/>
+    <Field Def="s32 unlockEventFlag"/>
+    <Field Def="s32 defeatEventFlag"/>
     <Field Def="s32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
+    <Field Def="s32 bossNameId"/>
+    <Field Def="s32 defeatedBossIconId"/>
     <Field Def="s32 unknown_8"/>
-    <Field Def="s32 unknown_9"/>
-    <Field Def="s32 unknown_10"/>
+    <Field Def="s32 descriptionId"/>
+    <Field Def="s32 expeditionBackgroundId"/>
     <Field Def="s32 unknown_11"/>
     <Field Def="s32 unknown_12"/>
     <Field Def="s32 unknown_13"/>
     <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
+    <Field Def="s32 largeBossIconId"/>
   </Fields>
 </PARAMDEF>
