@@ -1976,6 +1976,11 @@
     Wiki="The amount of duration increase to apply to the character's ultimate art." 
     DefaultValue="0"/>
     
+    <permanentBuffTextId
+    AltName="Permanent Buff Text ID"
+    Wiki="The text to display on the status screen whilst this permanent buff is active." 
+    FmgRef="SpEffect_Name" />
+    
     <guardCounterAttackRate
     AltName="Guard Counter Attack %"
     Wiki="The multiplier to attack during a guard counter." 

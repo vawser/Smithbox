@@ -30,8 +30,15 @@ public partial class ParamTools
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor", ImGuiWindowFlags.MenuBar))
         {
+            if (ImGui.BeginMenuBar())
+            {
+                ViewMenu();
+
+                ImGui.EndMenuBar();
+            }
+
             var windowWidth = ImGui.GetWindowWidth();
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
             var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
@@ -39,78 +46,183 @@ public partial class ParamTools
             var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
             var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
-            // Duplicate Row
-            Editor.ParamTools.DisplayRowDuplicate();
-
-            // Duplicate Row to Commutative Param
-            Editor.ParamTools.DisplayCommutativeRowDuplicate();
-
-            // Trim Row Names
-            Editor.ParamTools.DisplayRowNameTrimmer();
-
-            // Sort Rows
-            Editor.ParamTools.DisplayRowSorter();
-
-            ImGui.Separator();
-
-            // Mass Edit Window
-            Editor.MassEditHandler.DisplayMassEditMenu();
-
-            // Mass Edit Scripts
-            Editor.MassEditHandler.DisplayMassEditScriptMenu();
-
-            ImGui.Separator();
-
-            // Param Merge
-            Editor.ParamTools.DisplayParamMerge();
-
-            // Param Reloader
-            Editor.ParamReloader.DisplayParamReloader();
-
-            // Item Gib
-            Editor.ParamReloader.DisplayItemGib();
-
-            ImGui.Separator();
-
-            // Find Field Instances
-            if (ImGui.CollapsingHeader("Find Field Name Instances"))
+            if (CFG.Current.Interface_ParamEditor_Tool_ParamCategories)
             {
-                Editor.FieldNameFinder.Display();
+                if (ImGui.CollapsingHeader("Param Categories"))
+                {
+                    ParamCategories.Display(Editor);
+                }
             }
 
-            // Find Field Value Instances
-            if (ImGui.CollapsingHeader("Find Field Value Instances"))
+            if (CFG.Current.Interface_ParamEditor_Tool_PinGroups)
             {
-                Editor.FieldValueFinder.Display();
+                if (ImGui.CollapsingHeader("Pin Groups"))
+                {
+                    Editor.PinGroupHandler.Display();
+                }
             }
 
-            // Find Row Name Instances
-            if (ImGui.CollapsingHeader("Find Row Name Instances"))
+            if (CFG.Current.Interface_ParamEditor_Tool_ParamMerge)
             {
-                Editor.RowNameFinder.Display();
+                Editor.ParamTools.DisplayParamMerge();
             }
 
-            // Find Row ID Instances
-            if (ImGui.CollapsingHeader("Find Row ID Instances"))
+            if (CFG.Current.Interface_ParamEditor_Tool_ParamReloader)
             {
-                Editor.RowIDFinder.Display();
+                Editor.ParamReloader.DisplayParamReloader();
             }
 
-            ImGui.Separator();
-
-            // Pin Groups
-            if (ImGui.CollapsingHeader("Pin Groups"))
+            if (CFG.Current.Interface_ParamEditor_Tool_ItemGib)
             {
-                Editor.PinGroupHandler.Display();
+                Editor.ParamReloader.DisplayItemGib();
             }
 
-            if (ImGui.CollapsingHeader("Param Categories"))
+            if (CFG.Current.Interface_ParamEditor_Tool_MassEdit)
             {
-                ParamCategories.Display(Editor);
+                Editor.MassEditHandler.DisplayMassEditMenu();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_MassEditScript)
+            {
+                Editor.MassEditHandler.DisplayMassEditScriptMenu();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_Duplicate)
+            {
+                Editor.ParamTools.DisplayRowDuplicate();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_CommutativeDuplicate)
+            {
+                Editor.ParamTools.DisplayCommutativeRowDuplicate();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_RowNameTrimmer)
+            {
+                Editor.ParamTools.DisplayRowNameTrimmer();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_RowNameSorter)
+            {
+                Editor.ParamTools.DisplayRowSorter();
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_FieldInstanceFinder)
+            {
+                if (ImGui.CollapsingHeader("Find Field Name Instances"))
+                {
+                    Editor.FieldNameFinder.Display();
+                }
+
+                if (ImGui.CollapsingHeader("Find Field Value Instances"))
+                {
+                    Editor.FieldValueFinder.Display();
+                }
+            }
+
+            if (CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder)
+            {
+                if (ImGui.CollapsingHeader("Find Row Name Instances"))
+                {
+                    Editor.RowNameFinder.Display();
+                }
+
+                // Find Row ID Instances
+                if (ImGui.CollapsingHeader("Find Row ID Instances"))
+                {
+                    Editor.RowIDFinder.Display();
+                }
             }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+
+    public void ViewMenu()
+    {
+
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Param Categories"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_ParamCategories = !CFG.Current.Interface_ParamEditor_Tool_ParamCategories;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamCategories);
+
+            if (ImGui.MenuItem("Pin Groups"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_PinGroups = !CFG.Current.Interface_ParamEditor_Tool_PinGroups;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_PinGroups);
+
+            if (ImGui.MenuItem("Param Merge"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_ParamMerge = !CFG.Current.Interface_ParamEditor_Tool_ParamMerge;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamMerge);
+
+            if (ImGui.MenuItem("Param Reloader"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_ParamReloader = !CFG.Current.Interface_ParamEditor_Tool_ParamReloader;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ParamReloader);
+
+            if (ImGui.MenuItem("Item Gib"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_ItemGib = !CFG.Current.Interface_ParamEditor_Tool_ItemGib;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_ItemGib);
+
+            if (ImGui.MenuItem("Mass Edit"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_MassEdit = !CFG.Current.Interface_ParamEditor_Tool_MassEdit;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_MassEdit);
+
+            if (ImGui.MenuItem("Mass Edit Scripts"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_MassEditScript = !CFG.Current.Interface_ParamEditor_Tool_MassEditScript;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_MassEditScript);
+
+            if (ImGui.MenuItem("Duplicate"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_Duplicate = !CFG.Current.Interface_ParamEditor_Tool_Duplicate;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_Duplicate);
+
+            if (ImGui.MenuItem("Duplicate to Commutative Param"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_CommutativeDuplicate = !CFG.Current.Interface_ParamEditor_Tool_CommutativeDuplicate;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_CommutativeDuplicate);
+
+            if (ImGui.MenuItem("Row Name Trimmer"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_RowNameTrimmer = !CFG.Current.Interface_ParamEditor_Tool_RowNameTrimmer;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_RowNameTrimmer);
+
+            if (ImGui.MenuItem("Row Name Sorter"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_RowNameSorter = !CFG.Current.Interface_ParamEditor_Tool_RowNameSorter;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_RowNameSorter);
+
+            if (ImGui.MenuItem("Field Instance Finder"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_FieldInstanceFinder = !CFG.Current.Interface_ParamEditor_Tool_FieldInstanceFinder;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_FieldInstanceFinder);
+
+            if (ImGui.MenuItem("Row Instance Finder"))
+            {
+                CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder = !CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_ParamEditor_Tool_RowInstanceFinder);
+
+            ImGui.EndMenu();
+        }
     }
 }

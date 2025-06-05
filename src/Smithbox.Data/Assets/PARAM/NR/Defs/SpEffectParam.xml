@@ -384,7 +384,7 @@
     
     <Field Def="u16 unknown_230a"/>
     <Field Def="u16 unknown_230b"/>
-    <Field Def="s32 unknown_231"/>
+    <Field Def="s32 permanentBuffTextId"/>
     
     <Field Def="f32 guardCounterAttackRate"/>
     
