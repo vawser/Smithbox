@@ -36,30 +36,71 @@ public class TextToolView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextEditor", ImGuiWindowFlags.MenuBar))
         {
             Selection.SwitchWindowContext(TextEditorContext.ToolWindow);
 
-            // Global Text Search
-            if (ImGui.CollapsingHeader("Text Search"))
+            if (ImGui.BeginMenuBar())
             {
-                GlobalTextSearch.Display(Editor);
+                ViewMenu();
+
+                ImGui.EndMenuBar();
+            }
+
+            // Global Text Search
+            if (CFG.Current.Interface_TextEditor_Tool_TextSearch)
+            {
+                if (ImGui.CollapsingHeader("Text Search"))
+                {
+                    GlobalTextSearch.Display(Editor);
+                }
             }
 
             // Global Text Replacement
-            if (ImGui.CollapsingHeader("Text Replacement"))
+            if (CFG.Current.Interface_TextEditor_Tool_TextReplacement)
             {
-                GlobalTextReplacement.Display(Editor);
+                if (ImGui.CollapsingHeader("Text Replacement"))
+                {
+                    GlobalTextReplacement.Display(Editor);
+                }
             }
 
             // Text Merge
-            if (ImGui.CollapsingHeader("Text Merge"))
+            if (CFG.Current.Interface_TextEditor_Tool_TextMerge)
             {
-                TextMerge.Display(Editor);
+                if (ImGui.CollapsingHeader("Text Merge"))
+                {
+                    TextMerge.Display(Editor);
+                }
             }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Text Search"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_TextSearch = !CFG.Current.Interface_TextEditor_Tool_TextSearch;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextSearch);
+
+            if (ImGui.MenuItem("Text Replacement"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_TextReplacement = !CFG.Current.Interface_TextEditor_Tool_TextReplacement;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextReplacement);
+
+            if (ImGui.MenuItem("Text Merge"))
+            {
+                CFG.Current.Interface_TextEditor_Tool_TextMerge = !CFG.Current.Interface_TextEditor_Tool_TextMerge;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextEditor_Tool_TextMerge);
+
+            ImGui.EndMenu();
+        }
     }
 }

@@ -47,19 +47,52 @@ public class FileToolView
 
     public void Display()
     {
-        ImGui.Begin($"Tools##FileBrowserToolView");
+        ImGui.Begin($"Tools##FileBrowserToolView", ImGuiWindowFlags.MenuBar);
 
-        if(ImGui.CollapsingHeader("Unpack Game Data"))
+        if (ImGui.BeginMenuBar())
         {
-            DisplayUnpacker();
+            ViewMenu();
+
+            ImGui.EndMenuBar();
         }
 
-        if (ImGui.CollapsingHeader("Individual Unpack"))
+        if (CFG.Current.Interface_FileBrowser_Tool_GameUnpacker)
         {
-            DisplayIndividualUnpacker();
+            if (ImGui.CollapsingHeader("Unpack Game Data"))
+            {
+                DisplayUnpacker();
+            }
+        }
+
+        if (CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker)
+        {
+            if (ImGui.CollapsingHeader("Individual Unpack"))
+            {
+                DisplayIndividualUnpacker();
+            }
         }
 
         ImGui.End();
+    }
+
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Game Unpacker"))
+            {
+                CFG.Current.Interface_FileBrowser_Tool_GameUnpacker = !CFG.Current.Interface_FileBrowser_Tool_GameUnpacker;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_GameUnpacker);
+
+            if (ImGui.MenuItem("Individual Unpacker"))
+            {
+                CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker = !CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_FileBrowser_Tool_IndividualUnpacker);
+
+            ImGui.EndMenu();
+        }
     }
 
     public void DisplayUnpacker()

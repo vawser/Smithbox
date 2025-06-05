@@ -184,6 +184,25 @@ public class CFG
     /// </summary>
     public bool Interface_MapEditor_EntityIdentifierOverview = false;
 
+
+    public bool Interface_MapEditor_Tool_Create = true;
+    public bool Interface_MapEditor_Tool_Duplicate = true;
+    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
+    public bool Interface_MapEditor_Tool_MoveToCamera = true;
+    public bool Interface_MapEditor_Tool_Rotate = true;
+    public bool Interface_MapEditor_Tool_Scramble = true;
+    public bool Interface_MapEditor_Tool_Replicate = true;
+    public bool Interface_MapEditor_Tool_Prefab = true;
+    public bool Interface_MapEditor_Tool_SelectionGroups = true;
+    public bool Interface_MapEditor_Tool_MovementIncrements = true;
+    public bool Interface_MapEditor_Tool_RotationIncrements = true;
+    public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
+    public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
+    public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
+
+    public bool Interface_MapEditor_Tool_TreasureMaker = false;
+    public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
+
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
@@ -217,6 +236,12 @@ public class CFG
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
+    public bool Interface_ModelEditor_Tool_ExportModel = true;
+    public bool Interface_ModelEditor_Tool_FlverTools = true;
+    public bool Interface_ModelEditor_Tool_FlverGroups = true;
+    public bool Interface_ModelEditor_Tool_GlobalModelSearch = true;
+    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
+
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
@@ -244,6 +269,10 @@ public class CFG
     /// If true, the tool window is visible in the Text Editor.
     /// </summary>
     public bool Interface_TextEditor_ToolWindow = true;
+
+    public bool Interface_TextEditor_Tool_TextSearch = true;
+    public bool Interface_TextEditor_Tool_TextReplacement = true;
+    public bool Interface_TextEditor_Tool_TextMerge = true;
 
     ///------------------------------------------------------------
     /// Behavior Editor
@@ -288,6 +317,9 @@ public class CFG
     /// </summary>
     public int Behavior_GraphDepthLimit = 1;
 
+    public bool Interface_BehaviorEditor_Tool_PowerEdit = true;
+    public bool Interface_BehaviorEditor_Tool_VariableAssist = true;
+    public bool Interface_BehaviorEditor_Tool_ClipAssist = true;
 
     ///------------------------------------------------------------
     /// Param Editor
@@ -346,6 +378,20 @@ public class CFG
     /// </summary>
     public bool Interface_ParamEditor_ToolWindow = true;
 
+    public bool Interface_ParamEditor_Tool_PinGroups = true;
+    public bool Interface_ParamEditor_Tool_ParamCategories = true;
+    public bool Interface_ParamEditor_Tool_ParamMerge = true;
+    public bool Interface_ParamEditor_Tool_ParamReloader = true;
+    public bool Interface_ParamEditor_Tool_ItemGib = true;
+    public bool Interface_ParamEditor_Tool_MassEdit = true;
+    public bool Interface_ParamEditor_Tool_MassEditScript = true;
+    public bool Interface_ParamEditor_Tool_Duplicate = true;
+    public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
+    public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
+    public bool Interface_ParamEditor_Tool_RowNameSorter = true;
+    public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
+    public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
+
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
@@ -374,6 +420,7 @@ public class CFG
     /// </summary>
     public bool Interface_GparamEditor_ToolWindow = true;
 
+    public bool Interface_GparamEditor_Tool_QuickEdit = true;
 
     ///------------------------------------------------------------
     /// Texture Viewer
@@ -407,6 +454,8 @@ public class CFG
     /// If true, the resource list window is visible in the Texture Viewer.
     /// </summary>
     public bool Interface_TextureViewer_ResourceList = true;
+
+    public bool Interface_TextureViewer_Tool_ExportTexture = true;
 
     ///------------------------------------------------------------
     /// Time Act Editor
@@ -446,6 +495,8 @@ public class CFG
     /// </summary>
     public bool Interface_TimeActEditor_ToolWindow = true;
 
+    public bool Interface_TimeActEditor_Tool_TimeActSearch = true;
+
     ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
@@ -459,6 +510,12 @@ public class CFG
     public bool Interface_EmevdEditor_EventProperties = true;
     public bool Interface_EmevdEditor_InstructionProperties = true;
     public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
+
+    public bool Interface_EmevdEditor_Tool_EventInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_InstructionInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_ValueInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_UnknownInstructionFinder = true;
+    public bool Interface_EmevdEditor_Tool_TemplateReloader = true;
 
     ///------------------------------------------------------------
     /// EzState Script Editor
@@ -476,6 +533,9 @@ public class CFG
     public bool Interface_FileBrowser_FileList = true;
     public bool Interface_FileBrowser_ItemViewer = true;
     public bool Interface_FileBrowser_ToolView = true;
+
+    public bool Interface_FileBrowser_Tool_GameUnpacker = true;
+    public bool Interface_FileBrowser_Tool_IndividualUnpacker = true;
 
     //**************
     // Actions

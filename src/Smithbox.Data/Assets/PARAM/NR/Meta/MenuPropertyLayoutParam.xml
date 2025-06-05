@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self 
-  Wiki="" />
-  
+  Wiki="Determines layout parameters relating to menu elements." />
   <Field>
+    <LayoutPath 
+    AltName="Layout Path" 
+    Wiki="The layout path for this element." />
+    
+    <PropertyID 
+    AltName="Menu Property ID" 
+    Wiki="The menu property to link to this element." 
+    Refs="MenuPropertySpecParam" />
+    
+    <CaptionTextID 
+    AltName="Caption Text ID" 
+    Wiki="If a valid text ID is set, this will be displayed in preference to the property name." 
+    FmgRef="Modern_Menu_Text"/>
+    
+    <HelpTextID
+    AltName="Help Text ID" 
+    Wiki="Only if this is a valid text ID will it be selectable in the field help." 
+    FmgRef="Modern_Menu_Text"/>
+    
+    <iconID
+    AltName="Icon ID"
+    Wiki="The icon to use." 
+    TextureRef="Direct/01_common_h/SB_PropertyIcon_0/iconID/MENU_PropertyIcon_"/>
     
   </Field>
-  
-  <Enums>
-  </Enums>
 </PARAMMETA>

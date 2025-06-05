@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
-  <Self 
-  Wiki="" />
-  
-  <Field>
-    
-  </Field>
-  
   <Enums>
   </Enums>
+  <Field>
+    <mimicryEstablishment0 AltName="Mimicry Weight [0]" Wiki="Mimicry weight 0" />
+    <mimicryEstablishment1 AltName="Mimicry Weight [1]" Wiki="Mimicry weight 1" />
+    <mimicryEstablishment2 AltName="Mimicry Weight [2]" Wiki="Mimicry weight 2" />
+    
+    <mimicryBeginSfxId0 
+    AltName="Mimicry - Init SFX ID [0]" 
+    Wiki="Mimicry 0 SFXID Forward swing" 
+    ParticleAlias="" />
+    
+    <mimicrySfxId0 
+    AltName="Mimicry - Midst SFX ID [0]" 
+    Wiki="Mimicry 0 SFXID body" 
+    ParticleAlias="" />
+    
+    <mimicryEndSfxId0 
+    AltName="Mimicry - End SFX ID [0]" 
+    Wiki="Mimicry 0 SFXID release" 
+    ParticleAlias="" />
+    
+    <mimicryBeginSfxId1 
+    AltName="Mimicry - Init SFX ID [1]" 
+    Wiki="Mimicry 1 SFXID Forward swing" 
+    ParticleAlias="" />
+    
+    <mimicrySfxId1 
+    AltName="Mimicry - Midst SFX ID [1]" 
+    Wiki="Mimicry 1 SFXID body" 
+    ParticleAlias="" />
+    
+    <mimicryEndSfxId1 
+    AltName="Mimicry - End SFX ID [1]" 
+    Wiki="Mimicry 1 SFXID release" 
+    ParticleAlias="" />
+    
+    <mimicryBeginSfxId2 
+    AltName="Mimicry - Init SFX ID [2]" 
+    Wiki="Mimicry 2 SFXID Forward swing" 
+    ParticleAlias="" />
+    
+    <mimicrySfxId2 
+    AltName="Mimicry - Midst SFX ID [2]" 
+    Wiki="Mimicry 2 SFXID body" 
+    ParticleAlias="" />
+    
+    <mimicryEndSfxId2 
+    AltName="Mimicry - End SFX ID [2]" 
+    Wiki="Mimicry 2 SFXID cancellation" 
+    ParticleAlias="" />
+    
+    <pad1 
+    Padding=""/>
+  </Field>
+  <Self Wiki=""/>
 </PARAMMETA>

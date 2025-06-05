@@ -29,6 +29,32 @@
     Wiki="The text to use for the title and description for this effect."
     FmgRef="Title_AttachEffect" />
     
+    <isPersistentEffect
+    AltName="Is Persistent Effect"
+    Wiki="If enabled, this effect persists even if the source isn't actively held. If disabled, this effect is only active is the source is actively held." 
+    IsBool="" />
+    
+    <isNumericEffect
+    AltName="Is Numeric Effect"
+    Wiki="If enabled, +/- symbols are displayed to the left of the modifier value." 
+    IsBool="" />
+    
+    <isStrongestEffect
+    AltName="Is Strongest Effect"
+    Wiki="If enabled, this effect is considered the strongest out of its set."
+    IsBool="" />
+    
+    <unknown_8a4
+    Padding="" />
+    
+    <isDebuff
+    AltName="Is Debuff"
+    Wiki="If enabled, this effect is displayed as a debuff." 
+    IsBool="" />
+    
+    <unknown_8d
+    Padding="" />
+    
     <displayPercentageSymbol
     AltName="Display Percentage Symbol"
     Wiki="If enabled, the displayed modifier will use a % symbol."
@@ -73,6 +99,12 @@
     AltName="Is for Executor"
     Wiki="If enabled, this attach effect is usable with Executor."
     IsBool="" />
+    
+    <unknown_9c3
+    Padding="" />
+    
+    <unknown_9d
+    Padding="" />
     
     <overrideBaseEffectId
     AltName="Base SpEffect ID"

@@ -25,19 +25,42 @@ public class TimeActToolView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TimeActEditor", ImGuiWindowFlags.MenuBar))
         {
             Editor.Selection.SwitchWindowContext(TimeActEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
 
-            if(ImGui.CollapsingHeader("Time Act Search"))
+            if (ImGui.BeginMenuBar())
             {
-                Editor.TimeActSearch.Display();
+                ViewMenu();
+
+                ImGui.EndMenuBar();
+            }
+
+            if (CFG.Current.Interface_TimeActEditor_Tool_TimeActSearch)
+            {
+                if (ImGui.CollapsingHeader("Time Act Search"))
+                {
+                    Editor.TimeActSearch.Display();
+                }
             }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Time Act Search"))
+            {
+                CFG.Current.Interface_TimeActEditor_Tool_TimeActSearch = !CFG.Current.Interface_TimeActEditor_Tool_TimeActSearch;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TimeActEditor_Tool_TimeActSearch);
+
+            ImGui.EndMenu();
+        }
     }
 }

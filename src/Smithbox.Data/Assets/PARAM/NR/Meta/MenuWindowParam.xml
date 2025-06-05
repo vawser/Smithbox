@@ -4,7 +4,8 @@
   Wiki="" />
   
   <Field>
-    
+    <textId
+    FmgRef="Modern_Menu_Text" />
   </Field>
   
   <Enums>
