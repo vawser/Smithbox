@@ -82,6 +82,11 @@ public unsafe class OpenGLImGuiRenderer : IImguiRenderer
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;
         io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
+        io.ConfigDebugHighlightIdConflicts = false;
+#if DEBUG
+        io.ConfigDebugHighlightIdConflicts = true;
+#endif
+
         ImGui.GetIO().Fonts.AddFontDefault();
 
         SetPerFrameImGuiData(1f / 60f);

@@ -128,6 +128,11 @@ public class VulkanImGuiRenderer : IImguiRenderer, IDisposable
         ImGuiIOPtr io = ImGui.GetIO();
         io.ConfigFlags |= ImGuiConfigFlags.DockingEnable;
 
+        io.ConfigDebugHighlightIdConflicts = false;
+#if DEBUG
+        io.ConfigDebugHighlightIdConflicts = true;
+#endif
+
         unsafe
         {
             ImGuiPlatformIOPtr platformIO = ImGui.GetPlatformIO();
