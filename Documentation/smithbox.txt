@@ -33,7 +33,6 @@
 - Viewport: add ability to change viewport background color
 - Viewport: Low-Reqs flickers until project is loaded
 
-- Param Editor: remove the ; from the autofill mass edit auto-command since it causes a failed command currently
 - Param Editor: add method to duplicate indexed rows in place (currently it forces ID increment)
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 

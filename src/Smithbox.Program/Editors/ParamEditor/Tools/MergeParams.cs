@@ -17,9 +17,11 @@ public partial class ParamTools
 {
     public ProjectEntry ParamMerge_TargetProject;
 
-    public bool ParamMerge_TargetUniqueOnly = true;
+    public bool ParamMerge_TargetUniqueOnly = false;
 
     public bool ParamMerge_InProgress = false;
+
+    public List<string> TargetedParams = new();
 
     public async void DisplayParamMerge()
     {
@@ -37,11 +39,8 @@ public partial class ParamTools
             UIHelper.WrappedText("");
             UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
-            UIHelper.WrappedText("");
 
             UIHelper.SimpleHeader("availableProjects", "Compatible Projects:", "List of projects you can merge into your current project", UI.Current.ImGui_AliasName_Text);
-            UIHelper.WrappedText("");
 
             foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
             {
@@ -68,7 +67,73 @@ public partial class ParamTools
                 }
             }
 
-            if(ParamMerge_TargetProject == null || ParamMerge_InProgress)
+            UIHelper.WrappedText("");
+
+            /// Targeted Param
+            UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
+
+            // Add
+            if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_paramMerge"))
+            {
+                TargetedParams.Add("");
+            }
+            UIHelper.Tooltip("Add new param target input row.");
+
+            ImGui.SameLine();
+
+            // Remove
+            if (TargetedParams.Count < 2)
+            {
+                ImGui.BeginDisabled();
+
+                if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_paramMerge"))
+                {
+                    TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                }
+                UIHelper.Tooltip("Remove last added param target input row.");
+
+                ImGui.EndDisabled();
+            }
+            else
+            {
+                if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_paramMerge"))
+                {
+                    TargetedParams.RemoveAt(TargetedParams.Count - 1);
+                    UIHelper.Tooltip("Remove last added param target input row.");
+                }
+            }
+
+            ImGui.SameLine();
+
+            // Reset
+            if (ImGui.Button("Reset##paramTargetReset_paramMerge"))
+            {
+                TargetedParams = new List<string>();
+            }
+            UIHelper.Tooltip("Reset param target input rows.");
+
+            for (int i = 0; i < TargetedParams.Count; i++)
+            {
+                var curCommand = TargetedParams[i];
+                var curText = curCommand;
+
+                ImGui.SetNextItemWidth(400f);
+                if (ImGui.InputText($"##paramTargetInput{i}_paramMerge", ref curText, 255))
+                {
+                    TargetedParams[i] = curText;
+                }
+                UIHelper.Tooltip("The param target to include.");
+            }
+
+            UIHelper.WrappedText("");
+
+            // Options
+            UIHelper.SimpleHeader("mergeOptions", "Options", "Options to apply when merging.", UI.Current.ImGui_AliasName_Text);
+            ImGui.Checkbox("Merge Unique Rows only", ref ParamMerge_TargetUniqueOnly);
+
+            UIHelper.WrappedText("");
+
+            if (ParamMerge_TargetProject == null || ParamMerge_InProgress)
             {
                 ImGui.BeginDisabled();
                 if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
@@ -95,6 +160,10 @@ public partial class ParamTools
     public void MergeParamHandler()
     {
         var auxBank = Editor.Project.ParamData.AuxBanks[ParamMerge_TargetProject.ProjectName];
+
+        // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
+        // RowSearchEngine: modified && unique ID:
+        // MERowOperation: paste
 
         // Apply the merge massedit script here
         var command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified && unique ID: paste;";
