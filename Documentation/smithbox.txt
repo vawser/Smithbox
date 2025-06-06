@@ -31,8 +31,9 @@
 - Gparam Editor: update GPARAM format for the NR changes
 
 - Viewport: add ability to change viewport background color
-- Viewport: Low-Reqs flickers until project is loaded
 
 - Param Editor: add method to duplicate indexed rows in place (currently it forces ID increment)
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 
+
+- Viewport: Low-Reqs flickers until project is loaded

@@ -50,8 +50,6 @@ public class Smithbox
 
     public SoapstoneService _soapstoneService;
 
-    public static ImGuiTextureLoader TextureLoader;
-
     public ProjectManager ProjectManager;
 
     public SettingsWindow Settings;
@@ -65,8 +63,6 @@ public class Smithbox
 
         _version = version;
         _programTitle = $"Smithbox - {_version}";
-
-        TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
 
         UIHelper.RestoreImguiIfMissing();
         // Hack to make sure dialogs work before the main window is created
@@ -360,10 +356,8 @@ public class Smithbox
             snapshot = _context.Window.PumpEvents();
 
             InputTracker.UpdateFrameInput(snapshot, _context.Window);
-
+            
             Update((float)deltaSeconds);
-
-            _context.Draw(ProjectManager);
 
             if (!_context.Window.Exists)
             {
@@ -372,6 +366,8 @@ public class Smithbox
 
                 break;
             }
+
+            _context.Draw(ProjectManager);
         }
 
         ProjectManager.Exit();
@@ -468,13 +464,23 @@ public class Smithbox
             ImGuiWindowFlags.NoNavFocus |
             ImGuiWindowFlags.MenuBar;
 
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
+        var dockFlags = ImGuiDockNodeFlags.PassthruCentralNode;
+
+        if (_context is OpenGLCompatGraphicsContext glContext)
+        {
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.1f, 0.1f, 0.1f, 0.1f));
+            dockFlags = ImGuiDockNodeFlags.None;
+        }
+        else
+        {
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
+        }
 
         ImGui.Begin("MainDockspace_W", windowFlags);
 
         uint dockspaceID = ImGui.GetID("MainDockspace");
 
-        ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
+        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags);
 
         ImGui.PopStyleVar(1);
         ImGui.End();
