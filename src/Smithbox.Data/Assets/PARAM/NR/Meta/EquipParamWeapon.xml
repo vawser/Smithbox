@@ -556,18 +556,19 @@
     <originEquipWep23 AltName="Origin Weapon +23" Wiki="This weapon's enhancement source weapon ID 23" Refs="EquipParamWeapon"/>
     <originEquipWep24 AltName="Origin Weapon +24" Wiki="This weapon's enhancement source weapon ID 24" Refs="EquipParamWeapon"/>
     <originEquipWep25 AltName="Origin Weapon +25" Wiki="This weapon's enhancement source weapon ID 25" Refs="EquipParamWeapon"/>
-    <vsPlayerDmgCorrectRate_Sleep AltName="Vs. Player - Sleep Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Madness AltName="Vs. Player - Madness Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <saGuardCutRate AltName="Poise Damage - Guard Absorption" Wiki="SA damage cut rate when guard is successful" />
-    <defMaterialVariationValue AltName="Defence Material - Variation Value" Wiki="It is a value used to divide the damage SFX and SE into variations in combination with the defense material used when guarding. SEQ16473" />
-    <spAttributeVariationValue AltName="Special Attribute - Variation Value" Wiki="It is a value used to give variation to abnormal state SFX, SE, etc. in combination with the special attribute of the weapon. SEQ16473" />
-    <stealthAtkRate AltName="Stealth Attack Multiplier" Wiki="Stealth attack power multiplier" />
-    <vsPlayerDmgCorrectRate_Disease AltName="Vs. Player - Scarlet Rot Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <vsPlayerDmgCorrectRate_Curse AltName="Vs. Player - Blight Damage %" Wiki="Only attacks on the player will correct the damage done." />
-    <pad AltName="" Padding=""/>
-    <restrictSpecialSwordArt AltName="Restrict Special Ashes of War" Wiki="If set to true, then ashes of war in EquipParamGem with isSpecialSwordArt set to 1 cannot be applied to this weapon." IsBool="" />
-    <quickMatchReplenish AltName="Replenish after quick match" Wiki="Should amount of this item be stored and replenished after quick match?" IsBool="" />
-    <isWeaponCatalyst AltName="Is Weapon Catalyst" Wiki="[DLC] Is on by default for Carian Sorcery Sword." IsBool="" />
+    
+    <equippedSpell_R1
+    AltName="Equipped Spell: Primary"
+    Wiki="The spell cast with this weapon on R1 usage." 
+    Refs="Magic" />
+    
+    <equippedSpell_R2
+    AltName="Equipped Spell: Secondary"
+    Wiki="The spell cast with this weapon on R2 usage." 
+    Refs="Magic" />
+    
+    <midPadding
+    Padding="" />
     
     <attachEffectId
     AltName="Attach Effect ID"

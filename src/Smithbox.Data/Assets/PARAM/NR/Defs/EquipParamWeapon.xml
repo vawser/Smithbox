@@ -1877,60 +1877,18 @@
       <SortID>8600</SortID>
     </Field>
     
-    <Field Def="s32 vsPlayerDmgCorrectRate_Sleep" />
-    <Field Def="s32 vsPlayerDmgCorrectRate_Madness" />
+    <Field Def="s32 equippedSpell_R1" />
+    <Field Def="s32 equippedSpell_R2" />
+    <Field Def="f32 unknown_3" />
+    <Field Def="s32 unknown_4" />
     
-    <Field Def="f32 saGuardCutRate">
-      <DisplayName>ガード時SA攻撃カット率</DisplayName>
-      <Description>ガード成功時のSAダメージのカット率</Description>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>7300</SortID>
-    </Field>
-    <Field Def="u8 defMaterialVariationValue">
-      <DisplayName>防御材質バリエーション値</DisplayName>
-      <Description>ガード時に使用される防御材質と組み合わせてダメージSFX,SEのバリエーション分けに使用する値です。SEQ16473</Description>
-      <Maximum>99</Maximum>
-      <SortID>2202</SortID>
-    </Field>
-    <Field Def="u8 spAttributeVariationValue">
-      <DisplayName>特殊属性バリエーション値</DisplayName>
-      <Description>武器の特殊属性と組み合わせて状態異常SFX,SEなどにバリエーションを持たせるために使用する値です。SEQ16473</Description>
-      <Maximum>99</Maximum>
-      <SortID>1946</SortID>
-    </Field>
-    <Field Def="s16 stealthAtkRate">
-      <DisplayName>ステルス攻撃力倍率</DisplayName>
-      <Description>ステルス攻撃力倍率</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>999</Maximum>
-      <SortID>9050</SortID>
-    </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Disease = 1">
-      <DisplayName>対プレイヤー 疫病ダメージ補正倍率</DisplayName>
-      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
-      <DisplayFormat>%0.3f</DisplayFormat>
-      <Minimum>0</Minimum>
-      <Maximum>10</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>7810</SortID>
-    </Field>
-    <Field Def="f32 vsPlayerDmgCorrectRate_Curse = 1">
-      <DisplayName>対プレイヤー 呪ダメージ補正倍率</DisplayName>
-      <Description>プレイヤーに対する攻撃のみ、与えるダメージを補正する。</Description>
-      <DisplayFormat>%0.3f</DisplayFormat>
-      <Minimum>0</Minimum>
-      <Maximum>10</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>7830</SortID>
-    </Field>
+    <Field Def="dummy8 midPadding[8]" />
     
-    <Field Def="s32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
+    <Field Def="s32 unknown_7"/>
+    <Field Def="s32 unknown_8"/>
+    <Field Def="f32 unknown_9"/>
     <Field Def="s32 attachEffectId"/>
-    <Field Def="f32 unknown_5"/>
-    <Field Def="s32 unknown_6"/>
+    <Field Def="f32 unknown_10"/>
+    <Field Def="s32 unknown_11"/>
   </Fields>
 </PARAMDEF>
