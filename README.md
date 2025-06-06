@@ -26,6 +26,8 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 * A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes
 
 ## Usage Instructions
+You no longer need to unpack your game unless you are using the Map or Model Editor:
+
 #### Dark Souls: Prepare to Die Edition
 * Game must be unpacked with [UDSFM](https://www.nexusmods.com/darksouls/mods/1304) before usage with Smithbox.
 
@@ -50,6 +52,27 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 ## Links
 Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
+# Support
+If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vawser).
+
+## Credits (Smithbox)
+* Vawser (Developer)
+* ivi (Contributor)
+* nex3 (Contributor)
+* gixxpunk (Contributor)
+* Strackeror (Contributor)
+* FireWolf700 (Contributor)
+* GoogleBen (Contributor)
+* LordExelot (Contributor)
+* Pear0533 (Contributor)
+* Metito (Contributor)
+* WarpZehpyr (Contributor)
+* twistedgwazi (Contributor)
+* FeeeeK (Contributor)
+* colaaaaaa123 (Contributor)
+* alson041 (Contributor)
+* gracenotes (Contributor)
+
 ## Credits (DSMapStudio)
 * Katalash
 * philiquaz
@@ -62,18 +85,10 @@ Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/
 * [PredatorCZ](https://github.com/PredatorCZ)
 * [Horkrux](https://github.com/horkrux)
 
-## Credits (Smithbox)
-* Vawser (Developer)
-* ivi (Contributor)
-* nex3 (Contributor)
-* gixxpunk (Contributor)
-* Strackeror (Contributor)
-* FireWolf700 (Contributor)
-* GoogleBen (Contributor)
-* Lord Exelot (Contributor)
-
-# Support
-If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vawser).
-
-
+# Libraries
+[SoulsFormats](https://github.com/JKAnderson/SoulsFormats) - Credit to TKGP
+[SoapstoneLib](https://github.com/soulsmods/SoapstoneLib) - Credit to gracenotes
+[HKLib](https://github.com/The12thAvenger/HKLib) - Credit to The12thAvenger
+[Hexa.NET.ImGui](https://github.com/HexaEngine/Hexa.NET.ImGui) - Credit to JunaMeinhold
+[Veldrid](https://github.com/veldrid/veldrid)
   
