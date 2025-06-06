@@ -28,7 +28,7 @@
 
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
-- Gparam Editor: block NR usage until GPARAM format is updated for the NR changes
+- Gparam Editor: update GPARAM format for the NR changes
 
 - Viewport: Low-Reqs flickers until project is loaded
 

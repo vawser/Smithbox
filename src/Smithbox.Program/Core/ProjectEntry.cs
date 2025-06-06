@@ -868,6 +868,44 @@ public class ProjectEntry
     }
 
     /// <summary>
+    /// Unload the project editors and data banks
+    /// </summary>
+    public void Unload()
+    {
+        Initialized = false;
+
+        VisualData = null;
+
+        MapEditor = null;
+        ModelEditor = null;
+        TextEditor = null;
+        ParamEditor = null;
+        TimeActEditor = null;
+        GparamEditor = null;
+        MaterialEditor = null;
+        EmevdEditor = null;
+        EsdEditor = null;
+        TextureViewer = null;
+        MapEditor = null;
+        FileBrowser = null;
+        BehaviorEditor = null;
+
+        MapData = null;
+        ParamData = null;
+        MaterialData = null;
+        EmevdData = null;
+        EsdData = null;
+        GparamData = null;
+        TextData = null;
+        TextureData = null;
+        TimeActData = null;
+        FileData = null;
+        BehaviorData = null;
+
+        GC.Collect();
+    }
+
+    /// <summary>
     /// Called when a new project is being selected.
     /// </summary>
     private bool SuspendUpdate = false;

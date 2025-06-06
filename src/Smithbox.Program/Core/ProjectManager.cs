@@ -172,6 +172,11 @@ public class ProjectManager
 
             if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
             {
+                if (ImGui.MenuItem($"Unload Project##unloadProject_{imGuiID}"))
+                {
+                    project.Unload();
+                }
+
                 if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
                 {
                     ProjectCreation.Show();
