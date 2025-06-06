@@ -13,7 +13,7 @@ The internal handling of projects has been overhauled. This means:
 - Each project can be configured to use any combination of editors. 
 
 # Virtual File System
-GoogleBen's work on a virtual file system (VFS) has been implemented. This means you no longer need to unpack your game.
+GoogleBen's work on a virtual file system (VFS) has been implemented. This means you no longer need to unpack your game (mostly).
 However, if you are using the Map or Model Editor, they have not been fully converted to use the VFS system yet (the models and textures).
 
 # Changelog
@@ -33,6 +33,7 @@ Implemented a new editor: the File Browser.
 - This editor lets you view the MTD and MATBIN file data.
 
 ## Map Editor
+- Added read-only support for Nightreign.
 - Fixed map load issue that was causing desync between map contents and the viewport.
 - Implemented box selection (credit to Pear).
 - Implemented render group multi-select (credit to Pear).
@@ -53,7 +54,7 @@ Implemented a new editor: the File Browser.
 - Fixed issue with the param refs not displaying the param name in the map editor properties view.
 
 ## Param Editor
-- Added basic support for ERN (Nightreign).
+- Added support for Nightreign.
 - Added support for latest AC6 patch to the Param Upgrader.
 - Added individual settings for each project type for the strip row names toggle.
 - Implemented a new format for storing row names: maintains the row index as well as ID and Name so they can be properly imported even if multiple rows share the same ID.
@@ -75,6 +76,10 @@ Implemented a new editor: the File Browser.
 # Text Editor
 - Fixed an issue with the FMG Difference Manager where it would throw if a vanilla entry with the same key had already been added within the TrackFmgDifferences function.
 - Redesigned Text Merge tool to select from project rather than path, and it is now asynchronous and much faster.
+
+## EMEVD Editor
+- Added support for Nightreign.
+- Added support for EMELD to store event names.
 
 ## ESD Editor
 - Added support for reading and writing loose ESD files.
@@ -110,7 +115,6 @@ Implemented a new editor: the File Browser.
 ## Internal
 - Changed the ImGui implementation to Hexa.NET: this adds support for ImPlot and ImNodes as well as updating the ImGui version.
 - Changed the Theme JSON to only include ImGui relevant elements. Anybody with custom themes will need to re-make them (sorry).
-- Project and Configuration files are now stored in .smithbox folder within the same directory the Smithbox.exe is in, rather than using AppData.
 - To use LowRequirements mode, you now need to add "-low-requirements" as a command-line argument. Basically, make a shortcut from the Smithbox.exe, and then in the Target input, add "-low-requirements" after the rest.
 
 ## Fixes
