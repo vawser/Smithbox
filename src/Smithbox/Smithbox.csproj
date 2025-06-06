@@ -4,10 +4,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.1.0</Version>
+    <Version>2.0.1</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageVersion>2.1.0</PackageVersion>
-    <AssemblyVersion>2.1.0</AssemblyVersion>
+    <PackageVersion>2.0.1</PackageVersion>
+    <AssemblyVersion>2.0.1</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>

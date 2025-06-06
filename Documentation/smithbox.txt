@@ -35,5 +35,3 @@
 - Param Editor: add method to duplicate indexed rows in place (currently it forces ID increment)
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 
-
-- Viewport: Low-Reqs flickers until project is loaded
