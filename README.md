@@ -16,16 +16,6 @@ Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3
 - Behavior Editor: a editor for behaviors (ER and NR projects only).
 - Material Editor: a editor for MTD and MATBIN files.
 
-## Requirements
-* Windows 7/8/8.1/10/11 (64-bit only)
-* [Visual C++ Redistributable x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-* For the error message "You must install or update .NET to run this application", use these exact download links. It is not enough to install the default .NET runtime.
-  * [Microsoft .NET Core 7.0 Desktop Runtime](https://aka.ms/dotnet/7.0/windowsdesktop-runtime-win-x64.exe)
-  * [Microsoft .NET Core 7.0 ASP.NET Core Runtime](https://aka.ms/dotnet/7.0/aspnetcore-runtime-win-x64.exe)
-* A Vulkan 1.3 compatible graphics card with up to date graphics drivers: NVIDIA Maxwell (900 series) and newer or AMD Polaris (Radeon 400 series) and newer
-* Intel GPUs currently don't seem to be working properly. At the moment you will need a dedicated NVIDIA or AMD GPU
-* A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes
-
 ## Links
 Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/DSMapStudio)
 
@@ -68,7 +58,17 @@ If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vaw
 * [HKLib](https://github.com/The12thAvenger/HKLib) - Credit to The12thAvenger
 * [Hexa.NET.ImGui](https://github.com/HexaEngine/Hexa.NET.ImGui) - Credit to JunaMeinhold
 * [Veldrid](https://github.com/veldrid/veldrid)
-  
+
+## Requirements
+* Windows 7/8/8.1/10/11 (64-bit only)
+* [Visual C++ Redistributable x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+* For the error message "You must install or update .NET to run this application", use these exact download links. It is not enough to install the default .NET runtime.
+  * [Microsoft .NET Core 7.0 Desktop Runtime](https://aka.ms/dotnet/7.0/windowsdesktop-runtime-win-x64.exe)
+  * [Microsoft .NET Core 7.0 ASP.NET Core Runtime](https://aka.ms/dotnet/7.0/aspnetcore-runtime-win-x64.exe)
+* A Vulkan 1.3 compatible graphics card with up to date graphics drivers: NVIDIA Maxwell (900 series) and newer or AMD Polaris (Radeon 400 series) and newer
+* Intel GPUs currently don't seem to be working properly. At the moment you will need a dedicated NVIDIA or AMD GPU
+* A 4GB (8GB recommended) of VRAM if modding DS3/BB/Sekiro/ER maps due to huge map sizes
+
 ## Usage Instructions
 You no longer need to unpack your game unless you are using the Map or Model Editor.
 
