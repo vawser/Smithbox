@@ -357,6 +357,8 @@ public class ParamView
             {
                 //_selection.setActiveParam(param.Key);
                 EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
+
+                Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
             }
 
             ImGui.PopStyleColor();
