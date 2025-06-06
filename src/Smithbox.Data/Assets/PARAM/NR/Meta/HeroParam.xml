@@ -73,6 +73,14 @@
     Wiki=""
     Refs="HeroStatusParam" />
     
+    <characterAbilityCooldown
+    AltName="Character Ability Cooldown"
+    Wiki="In seconds." />
+    
+    <characterAbilityUsageCount
+    AltName="Character Skill Usage Count"
+    Wiki="The maximum number of uses that can be stored for the character skill." />
+    
     <passiveAbilityTitleId
     AltName="Passive Ability Title ID"
     Wiki="The title of the passive ability for this character." 

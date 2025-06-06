@@ -31,8 +31,8 @@
     <Field Def="s32 unknown_26"/>
     <Field Def="s32 heroStatusParamId"/>
     <Field Def="s32 unknown_28"/>
-    <Field Def="f32 unknown_29"/>
-    <Field Def="s32 unknown_30"/>
+    <Field Def="f32 characterAbilityCooldown"/>
+    <Field Def="s32 characterAbilityUsageCount"/>
     <Field Def="s32 passiveAbilityTitleId"/>
     <Field Def="s32 passiveAbilitySummaryId"/>
     <Field Def="s32 passiveAbilityIconId"/>

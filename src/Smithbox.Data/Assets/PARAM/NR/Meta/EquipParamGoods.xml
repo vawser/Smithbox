@@ -267,10 +267,10 @@
     <itemGetTutorialFlagId AltName="Item Get Tutorial Flag ID" Wiki="Event flag ID for the tutorial when you first get the item. Flag ON when item is obtained." FlagAlias="" />
     <reserve3 AltName="" Padding=""/>
     
-    <protectorOverrideId
-    AltName="Protector Override ID"
-    Wiki=""
-    Refs="EquipParamProtector" />
+    <characterInitId
+    AltName="Skin: Character ID"
+    Wiki="Determines the character setup to use for this skin item."
+    Refs="CharaInitParam" />
     
     <bulletId
     AltName="Bullet ID"

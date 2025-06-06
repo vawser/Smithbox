@@ -810,7 +810,7 @@
       <SortID>21700</SortID>
     </Field>
     
-    <Field Def="s32 protectorOverrideId" />
+    <Field Def="s32 characterInitId" />
     <Field Def="s32 bulletId" />
     <Field Def="s32 unknown_3" />
     
