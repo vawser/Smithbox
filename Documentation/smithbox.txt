@@ -30,6 +30,7 @@
 
 - Gparam Editor: update GPARAM format for the NR changes
 
+- Viewport: add ability to change viewport background color
 - Viewport: Low-Reqs flickers until project is loaded
 
 - Param Editor: remove the ; from the autofill mass edit auto-command since it causes a failed command currently

@@ -172,15 +172,6 @@ public class ProjectManager
 
             if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
             {
-                if (ImGui.MenuItem($"Unload Project##unloadProject_{imGuiID}"))
-                {
-                    project.Unload();
-                }
-
-                if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
-                {
-                    ProjectCreation.Show();
-                }
 
                 if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
                 {
@@ -195,6 +186,16 @@ public class ProjectManager
                 if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
                 {
                     ProjectEnumEditor.Show(BaseEditor, SelectedProject);
+                }
+
+                if (ImGui.MenuItem($"Unload Project##unloadProject_{imGuiID}"))
+                {
+                    project.Unload();
+                }
+
+                if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
+                {
+                    ProjectCreation.Show();
                 }
 
                 if (ImGui.MenuItem($"Delete Project##deleteProject_{imGuiID}"))
