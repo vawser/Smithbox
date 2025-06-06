@@ -23,22 +23,22 @@ Smithbox is a fork of the [DSMapStudio repository](https://github.com/soulsmods/
 If you enjoy Smithbox, feel free to support me via [Ko-fi](https://ko-fi.com/vawser).
 
 ## Credits (Smithbox)
-* Vawser (Developer)
-* ivi (Contributor)
-* nex3 (Contributor)
-* gixxpunk (Contributor)
-* Strackeror (Contributor)
-* FireWolf700 (Contributor)
-* GoogleBen (Contributor)
-* LordExelot (Contributor)
-* Pear0533 (Contributor)
-* Metito (Contributor)
-* WarpZehpyr (Contributor)
-* twistedgwazi (Contributor)
-* FeeeeK (Contributor)
-* colaaaaaa123 (Contributor)
-* alson041 (Contributor)
-* gracenotes (Contributor)
+* Vawser 
+* ivi 
+* nex3 
+* gixxpunk 
+* Strackeror 
+* FireWolf700 
+* GoogleBen 
+* LordExelot 
+* Pear0533 
+* Metito 
+* WarpZehpyr 
+* twistedgwazi 
+* FeeeeK 
+* colaaaaaa123 
+* alson041 
+* gracenotes 
 
 ## Credits (DSMapStudio)
 * Katalash
