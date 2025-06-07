@@ -2227,7 +2227,10 @@ public class ParamBank
                 {
                     if (CFG.Current.UseIndexMatchForRowNameRestore)
                     {
-                        p.Value.Rows[i].Name = rowNameDict[i].Name;
+                        if (rowNameDict.ContainsKey(i))
+                        {
+                            p.Value.Rows[i].Name = rowNameDict[i].Name;
+                        }
                     }
                     else
                     {

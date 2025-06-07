@@ -31,6 +31,7 @@ public static class ProjectCreation
     private static string SteamExecutable_NR = "";
 
     public static bool AutoSelect = false;
+    public static bool RowNameImport = false;
 
     public static bool EnableMapEditor = true;
     public static bool EnableModelEditor = true;
@@ -297,6 +298,22 @@ public static class ProjectCreation
                     ImGui.SetNextItemWidth(inputWidth);
 
                     ImGui.Checkbox("##projectAutoLoad", ref AutoSelect);
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    // Automatic Load
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Row Name Import");
+                    UIHelper.Tooltip("If enabled, row names will be automatically imported in the Param Editor.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.SetNextItemWidth(inputWidth);
+
+                    ImGui.Checkbox("##projectParamRowNameImport", ref RowNameImport);
 
                     ImGui.TableSetColumnIndex(2);
 
