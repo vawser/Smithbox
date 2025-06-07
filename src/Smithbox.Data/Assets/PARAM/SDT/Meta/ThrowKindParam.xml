@@ -2,6 +2,7 @@
 <PARAMMETA XmlVersion="0">
   <Field>
     <isThrowBeginning IsBool="" />
+    <noThrowInputSpecialEffect_forDef Refs="SpEffectParam" />
     <throwSkillId Refs="EquipParamGoods" />
     <checkAction_ActionUnlock_2 Refs="ActionUnlockParam" />
   </Field>
