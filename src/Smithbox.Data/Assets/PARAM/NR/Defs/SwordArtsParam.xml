@@ -6,104 +6,14 @@
   <Unicode>True</Unicode>
   <FormatVersion>203</FormatVersion>
   <Fields>
-    <Field Def="u8 disableParam_NT:1">
-      <DisplayName>NT版出力から外すか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>1</Maximum>
-    </Field>
-    <Field Def="dummy8 disableParamReserve1:7">
-      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
-      <Description>パッケージ出力用リザーブ1</Description>
-      <DisplayFormat>%d</DisplayFormat>
-      <SortID>1101</SortID>
-    </Field>
-    <Field Def="dummy8 disableParamReserve2[3]">
-      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
-      <Description>パッケージ出力用リザーブ2</Description>
-      <DisplayFormat>%d</DisplayFormat>
-      <SortID>1102</SortID>
-    </Field>
-    <Field Def="u8 swordArtsType">
-      <DisplayName>剣戟ID</DisplayName>
-      <Description>ビヘイビアスクリプトに渡してどの剣戟か判定するためのもの</Description>
-      <SortID>100</SortID>
-    </Field>
-    <Field Def="u8 artsSpeedType">
-      <DisplayName>アーツ速度</DisplayName>
-      <Description>どのキャンセルタイミングを見るか。0：通常（左手攻撃）／1：早い／2：遅い</Description>
-      <Maximum>2</Maximum>
-      <SortID>200</SortID>
-    </Field>
-    <Field Def="s8 refStatus">
-      <DisplayName>関連ステータス</DisplayName>
-      <Enum>SWORD_ARTS_REF_STATUS_TYPE</Enum>
-      <Description>どの系統のアーツポイントを参照するか</Description>
-      <Minimum>0</Minimum>
-      <Maximum>128</Maximum>
-      <SortID>400</SortID>
-    </Field>
-    <Field Def="u8 isRefRightArts:1">
-      <DisplayName>左手（片手持ち）時に右手のアーツを表示するか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>左手武器のアーツに設定されている場合、右手武器のアーツをFEに表示します。「武器戦技」などに使われる想定</Description>
-      <Maximum>1</Maximum>
-      <SortID>900</SortID>
-    </Field>
-    <Field Def="u8 isGrayoutLeftHand:1">
-      <DisplayName>左手（片手持ち）時にグレーアウトするか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>左手（片手持ち）のアーツ名を表示するときにグレーアウトするか</Description>
-      <Maximum>1</Maximum>
-      <SortID>910</SortID>
-    </Field>
-    <Field Def="u8 isGrayoutRightHand:1">
-      <DisplayName>右手（片手持ち）時にグレーアウトするか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>右手（片手持ち）のアーツ名を表示するときにグレーアウトするか</Description>
-      <Maximum>1</Maximum>
-      <SortID>920</SortID>
-    </Field>
-    <Field Def="u8 isGrayoutBothHand:1">
-      <DisplayName>両手持ち時にグレーアウトするか</DisplayName>
-      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
-      <Description>両手持ちのアーツ名を表示するときにグレーアウトするか</Description>
-      <Maximum>1</Maximum>
-      <SortID>930</SortID>
-    </Field>
-    <Field Def="dummy8 reserve2:4">
-      <DisplayName>予約領域</DisplayName>
-      <SortID>1103</SortID>
-    </Field>
-    <Field Def="s8 usePoint_L1">
-      <DisplayName>消費ポイント L1</DisplayName>
-      <Description>L1によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>500</SortID>
-    </Field>
-    <Field Def="s8 usePoint_L2">
-      <DisplayName>消費ポイント L2</DisplayName>
-      <Description>L2によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>600</SortID>
-    </Field>
-    <Field Def="s8 usePoint_R1">
-      <DisplayName>消費ポイント R1</DisplayName>
-      <Description>R1によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>700</SortID>
-    </Field>
-    <Field Def="s8 usePoint_R2">
-      <DisplayName>消費ポイント R2</DisplayName>
-      <Description>R2によりアーツを出したときに消費するポイント</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>99</Maximum>
-      <SortID>800</SortID>
-    </Field>
+    
+    <Field Def="s32 unknown_1" />
+    <Field Def="s16 unknown_2" />
+    <Field Def="s16 unknown_3" />
+    
+    <Field Def="s16 swordArtsType" />
+    <Field Def="s16 unknown_4" />
+    
     <Field Def="s32 textId">
       <DisplayName>テキストID</DisplayName>
       <Description>アーツ説明用のテキストID</Description>
@@ -140,165 +50,17 @@
       <SortID>840</SortID>
     </Field>
     
-    <Field Def="s8 shieldIconType" >
-      <DisplayName>盾種別アイコン（上書き）</DisplayName>
-      <Enum>SWORD_ARTS_SHIELD_ICON_TYPE</Enum>
-      <Description>上書きしない場合は、武器パラの剣戟IDを元にアイコン表示されます。</Description>
-      <Minimum>0</Minimum>
-      <Maximum>128</Maximum>
-      <SortID>990</SortID>
-    </Field>
+    <Field Def="s16 unknown_5" />
     
-    <Field Def="u16 iconId">
-      <DisplayName>アイコンID</DisplayName>
-      <Description>FEなどで表示するアイコンのID</Description>
-      <SortID>310</SortID>
-    </Field>
+    <Field Def="u16 iconId" />
     
-    <Field Def="u8 unknown_0_1:1" />
-    <Field Def="u8 unknown_0_2:1" />
-    <Field Def="u8 unknown_0_3:1" />
-    <Field Def="u8 unknown_0_4:1" />
-    <Field Def="u8 unknown_0_5:1" />
-    <Field Def="u8 unknown_0_6:1" />
-    <Field Def="u8 unknown_0_7:1" />
-    <Field Def="u8 unknown_0_8:1" />
+    <!-- aiUsageId? -->?
+    <Field Def="s32 unknown_7" />
     
-    <Field Def="u8 unknown_1_1:1" />
-    <Field Def="u8 unknown_1_2:1" />
-    <Field Def="u8 unknown_1_3:1" />
-    <Field Def="u8 unknown_1_4:1" />
-    <Field Def="u8 unknown_1_5:1" />
-    <Field Def="u8 unknown_1_6:1" />
-    <Field Def="u8 unknown_1_7:1" />
-    <Field Def="u8 unknown_1_8:1" />
-    <Field Def="u8 unknown_2_1:1" />
-    <Field Def="u8 unknown_2_2:1" />
-    <Field Def="u8 unknown_2_3:1" />
-    <Field Def="u8 unknown_2_4:1" />
-    <Field Def="u8 unknown_2_5:1" />
-    <Field Def="u8 unknown_2_6:1" />
-    <Field Def="u8 unknown_2_7:1" />
-    <Field Def="u8 unknown_2_8:1" />
+    <Field Def="s32 usabilityTextId" />
+    <Field Def="s32 atkParamId" />
+    <Field Def="s32 weaponId" />
     
-    <Field Def="u8 unknown_3_1:1" />
-    <Field Def="u8 unknown_3_2:1" />
-    <Field Def="u8 unknown_3_3:1" />
-    <Field Def="u8 unknown_3_4:1" />
-    <Field Def="u8 unknown_3_5:1" />
-    <Field Def="u8 unknown_3_6:1" />
-    <Field Def="u8 unknown_3_7:1" />
-    <Field Def="u8 unknown_3_8:1" />
-    <Field Def="u8 unknown_4_1:1" />
-    <Field Def="u8 unknown_4_2:1" />
-    <Field Def="u8 unknown_4_3:1" />
-    <Field Def="u8 unknown_4_4:1" />
-    <Field Def="u8 unknown_4_5:1" />
-    <Field Def="u8 unknown_4_6:1" />
-    <Field Def="u8 unknown_4_7:1" />
-    <Field Def="u8 unknown_4_8:1" />
-    
-    <Field Def="u8 unknown_5_1:1" />
-    <Field Def="u8 unknown_5_2:1" />
-    <Field Def="u8 unknown_5_3:1" />
-    <Field Def="u8 unknown_5_4:1" />
-    <Field Def="u8 unknown_5_5:1" />
-    <Field Def="u8 unknown_5_6:1" />
-    <Field Def="u8 unknown_5_7:1" />
-    <Field Def="u8 unknown_5_8:1" />
-    <Field Def="u8 unknown_6_1:1" />
-    <Field Def="u8 unknown_6_2:1" />
-    <Field Def="u8 unknown_6_3:1" />
-    <Field Def="u8 unknown_6_4:1" />
-    <Field Def="u8 unknown_6_5:1" />
-    <Field Def="u8 unknown_6_6:1" />
-    <Field Def="u8 unknown_6_7:1" />
-    <Field Def="u8 unknown_6_8:1" />
-    
-    <Field Def="u8 unknown_7_1:1" />
-    <Field Def="u8 unknown_7_2:1" />
-    <Field Def="u8 unknown_7_3:1" />
-    <Field Def="u8 unknown_7_4:1" />
-    <Field Def="u8 unknown_7_5:1" />
-    <Field Def="u8 unknown_7_6:1" />
-    <Field Def="u8 unknown_7_7:1" />
-    <Field Def="u8 unknown_7_8:1" />
-    <Field Def="u8 unknown_8_1:1" />
-    <Field Def="u8 unknown_8_2:1" />
-    <Field Def="u8 unknown_8_3:1" />
-    <Field Def="u8 unknown_8_4:1" />
-    <Field Def="u8 unknown_8_5:1" />
-    <Field Def="u8 unknown_8_6:1" />
-    <Field Def="u8 unknown_8_7:1" />
-    <Field Def="u8 unknown_8_8:1" />
-    
-    <Field Def="u8 unknown_9_1:1" />
-    <Field Def="u8 unknown_9_2:1" />
-    <Field Def="u8 unknown_9_3:1" />
-    <Field Def="u8 unknown_9_4:1" />
-    <Field Def="u8 unknown_9_5:1" />
-    <Field Def="u8 unknown_9_6:1" />
-    <Field Def="u8 unknown_9_7:1" />
-    <Field Def="u8 unknown_9_8:1" />
-    <Field Def="u8 unknown_10_1:1" />
-    <Field Def="u8 unknown_10_2:1" />
-    <Field Def="u8 unknown_10_3:1" />
-    <Field Def="u8 unknown_10_4:1" />
-    <Field Def="u8 unknown_10_5:1" />
-    <Field Def="u8 unknown_10_6:1" />
-    <Field Def="u8 unknown_10_7:1" />
-    <Field Def="u8 unknown_10_8:1" />
-    
-    <Field Def="u8 unknown_11_1:1" />
-    <Field Def="u8 unknown_11_2:1" />
-    <Field Def="u8 unknown_11_3:1" />
-    <Field Def="u8 unknown_11_4:1" />
-    <Field Def="u8 unknown_11_5:1" />
-    <Field Def="u8 unknown_11_6:1" />
-    <Field Def="u8 unknown_11_7:1" />
-    <Field Def="u8 unknown_11_8:1" />
-    <Field Def="u8 unknown_12_1:1" />
-    <Field Def="u8 unknown_12_2:1" />
-    <Field Def="u8 unknown_12_3:1" />
-    <Field Def="u8 unknown_12_4:1" />
-    <Field Def="u8 unknown_12_5:1" />
-    <Field Def="u8 unknown_12_6:1" />
-    <Field Def="u8 unknown_12_7:1" />
-    <Field Def="u8 unknown_12_8:1" />
-    
-    <Field Def="u8 unknown_13_1:1" />
-    <Field Def="u8 unknown_13_2:1" />
-    <Field Def="u8 unknown_13_3:1" />
-    <Field Def="u8 unknown_13_4:1" />
-    <Field Def="u8 unknown_13_5:1" />
-    <Field Def="u8 unknown_13_6:1" />
-    <Field Def="u8 unknown_13_7:1" />
-    <Field Def="u8 unknown_13_8:1" />
-    <Field Def="u8 unknown_14_1:1" />
-    <Field Def="u8 unknown_14_2:1" />
-    <Field Def="u8 unknown_14_3:1" />
-    <Field Def="u8 unknown_14_4:1" />
-    <Field Def="u8 unknown_14_5:1" />
-    <Field Def="u8 unknown_14_6:1" />
-    <Field Def="u8 unknown_14_7:1" />
-    <Field Def="u8 unknown_14_8:1" />
-    
-    <Field Def="u8 unknown_15_1:1" />
-    <Field Def="u8 unknown_15_2:1" />
-    <Field Def="u8 unknown_15_3:1" />
-    <Field Def="u8 unknown_15_4:1" />
-    <Field Def="u8 unknown_15_5:1" />
-    <Field Def="u8 unknown_15_6:1" />
-    <Field Def="u8 unknown_15_7:1" />
-    <Field Def="u8 unknown_15_8:1" />
-    <Field Def="u8 unknown_16_1:1" />
-    <Field Def="u8 unknown_16_2:1" />
-    <Field Def="u8 unknown_16_3:1" />
-    <Field Def="u8 unknown_16_4:1" />
-    <Field Def="u8 unknown_16_5:1" />
-    <Field Def="u8 unknown_16_6:1" />
-    <Field Def="u8 unknown_16_7:1" />
-    <Field Def="u8 unknown_16_8:1" />
     
   </Fields>
 </PARAMDEF>

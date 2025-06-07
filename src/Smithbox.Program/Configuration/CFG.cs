@@ -184,23 +184,84 @@ public class CFG
     /// </summary>
     public bool Interface_MapEditor_EntityIdentifierOverview = false;
 
-
+    /// <summary>
+    /// If true, the Create tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Create = true;
+
+    /// <summary>
+    /// If true, the Duplicate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Duplicate = true;
+
+    /// <summary>
+    /// If true, the Duplicate to Map tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_DuplicateToMap = true;
+
+    /// <summary>
+    /// If true, the Move to Camera tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_MoveToCamera = true;
+
+    /// <summary>
+    /// If true, the Rotate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Rotate = true;
+
+    /// <summary>
+    /// If true, the Scramble tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Scramble = true;
+
+    /// <summary>
+    /// If true, the Replicate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Replicate = true;
+
+    /// <summary>
+    /// If true, the Import/Export Prefab tool collapsibles are visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_Prefab = true;
+
+    /// <summary>
+    /// If true, the Selection Groups tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_SelectionGroups = true;
+
+    /// <summary>
+    /// If true, the Movement Increments tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_MovementIncrements = true;
+
+    /// <summary>
+    /// If true, the Rotation Increments tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_RotationIncrements = true;
+
+    /// <summary>
+    /// If true, the Local Property Search tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
+
+    /// <summary>
+    /// If true, the Global Property Search tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
+
+    /// <summary>
+    /// If true, the Property Mass Edit tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
 
+    /// <summary>
+    /// If true, the Treasure Maker tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_TreasureMaker = false;
+
+    /// <summary>
+    /// If true, the World Map Layout Generator tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
 
     ///------------------------------------------------------------
@@ -236,10 +297,29 @@ public class CFG
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
+    /// <summary>
+    /// If true, the Export Model tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
     public bool Interface_ModelEditor_Tool_ExportModel = true;
+
+    /// <summary>
+    /// If true, the FLVER tool collapsibles are visible in the Model Editor Tool window.
+    /// </summary>
     public bool Interface_ModelEditor_Tool_FlverTools = true;
+
+    /// <summary>
+    /// If true, the FLVER Group tool collapsibles are visible in the Model Editor Tool window.
+    /// </summary>
     public bool Interface_ModelEditor_Tool_FlverGroups = true;
+
+    /// <summary>
+    /// If true, the Global Model Search tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
     public bool Interface_ModelEditor_Tool_GlobalModelSearch = true;
+
+    /// <summary>
+    /// If true, the Model Mask Toggler tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
     public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
 
     ///------------------------------------------------------------
@@ -270,8 +350,19 @@ public class CFG
     /// </summary>
     public bool Interface_TextEditor_ToolWindow = true;
 
+    /// <summary>
+    /// If true, the Text Search tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
     public bool Interface_TextEditor_Tool_TextSearch = true;
+
+    /// <summary>
+    /// If true, the Text Replacement tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
     public bool Interface_TextEditor_Tool_TextReplacement = true;
+
+    /// <summary>
+    /// If true, the Text Merge tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
     public bool Interface_TextEditor_Tool_TextMerge = true;
 
     ///------------------------------------------------------------
@@ -317,8 +408,19 @@ public class CFG
     /// </summary>
     public int Behavior_GraphDepthLimit = 1;
 
+    /// <summary>
+    /// If true, the Power Edit tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
     public bool Interface_BehaviorEditor_Tool_PowerEdit = true;
+
+    /// <summary>
+    /// If true, the Variable Assist tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
     public bool Interface_BehaviorEditor_Tool_VariableAssist = true;
+
+    /// <summary>
+    /// If true, the Clip Assist tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
     public bool Interface_BehaviorEditor_Tool_ClipAssist = true;
 
     ///------------------------------------------------------------
@@ -378,18 +480,69 @@ public class CFG
     /// </summary>
     public bool Interface_ParamEditor_ToolWindow = true;
 
+    /// <summary>
+    /// If true, the Pin Groups tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_PinGroups = true;
+
+    /// <summary>
+    /// If true, the Param Categories tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_ParamCategories = true;
+
+    /// <summary>
+    /// If true, the Param Merge tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_ParamMerge = true;
+
+    /// <summary>
+    /// If true, the Param Reloader tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_ParamReloader = true;
+
+    /// <summary>
+    /// If true, the Item Gib tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_ItemGib = true;
+
+    /// <summary>
+    /// If true, the Mass Edit tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_MassEdit = true;
+
+    /// <summary>
+    /// If true, the Mass Edit Script tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_MassEditScript = true;
+
+    /// <summary>
+    /// If true, the Duplicate tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_Duplicate = true;
+
+    /// <summary>
+    /// If true, the Commutative Duplicate tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
+
+    /// <summary>
+    /// If true, the Row Name Trimmer tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
+
+    /// <summary>
+    /// If true, the Row Name Sorter tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_RowNameSorter = true;
+
+    /// <summary>
+    /// If true, the Field Instance tool collapsibles are visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
+
+    /// <summary>
+    /// If true, the Row Instance tool collapsibles are visible in the Param Editor Tool window.
+    /// </summary>
     public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
 
     ///------------------------------------------------------------
@@ -420,6 +573,9 @@ public class CFG
     /// </summary>
     public bool Interface_GparamEditor_ToolWindow = true;
 
+    /// <summary>
+    /// If true, the Quick Edit tool collapsible is visible in the Graphics Param Editor Tool window.
+    /// </summary>
     public bool Interface_GparamEditor_Tool_QuickEdit = true;
 
     ///------------------------------------------------------------
