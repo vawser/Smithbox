@@ -457,6 +457,7 @@ public class ProjectManager
         var newProject = new ProjectEntry(BaseEditor, guid, projectName, projectPath, dataPath, projectType);
 
         newProject.AutoSelect = ProjectCreation.AutoSelect;
+        newProject.ImportedParamRowNames = !ProjectCreation.RowNameImport;
 
         newProject.EnableMapEditor = ProjectCreation.EnableMapEditor;
         newProject.EnableModelEditor = ProjectCreation.EnableModelEditor;
