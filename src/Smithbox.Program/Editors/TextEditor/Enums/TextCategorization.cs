@@ -1732,6 +1732,9 @@ public enum Menu_MsgBndID_NR
     [Display(Name = "Movie Subtitles", ShortName = "Common", Description = "")]
     Movie_Subtitles = 3,
 
+    [Display(Name = "Talk Messages FemalePC", ShortName = "Common", Description = "")]
+    Talk_Messages_FemalePC = 4,
+
     [Display(Name = "Network Messages", ShortName = "Common", Description = "")]
     Network_Messages = 31,
 

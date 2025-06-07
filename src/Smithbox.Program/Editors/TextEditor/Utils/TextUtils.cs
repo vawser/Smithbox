@@ -1056,7 +1056,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Item_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Item_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsMenuContainer(info))
@@ -1068,7 +1068,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"Menu_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"Menu_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 else if (IsNgWordContainer(info))
@@ -1080,7 +1080,7 @@ public static class TextUtils
                     }
                     else
                     {
-                        TaskLogs.AddLog($"NgWord_MsgBndID_ERN: {id} not defined", LogLevel.Warning);
+                        TaskLogs.AddLog($"NgWord_MsgBndID_NR: {id} not defined", LogLevel.Warning);
                     }
                 }
                 break;
