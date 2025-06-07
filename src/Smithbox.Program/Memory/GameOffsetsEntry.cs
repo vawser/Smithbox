@@ -40,17 +40,17 @@ public class GameOffsetsEntry
 
         exeName = project.ParamMemoryOffsets.exeName;
 
-        if (data.paramBase != "" || data.paramBase == null)
+        if (!string.IsNullOrEmpty(data.paramBase))
         {
             ParamBaseOffset = Utils.ParseHexFromString(data.paramBase);
         }
 
-        if (data.paramBaseAob != "" || data.paramBaseAob == null)
+        if (!string.IsNullOrEmpty(data.paramBaseAob))
         {
             ParamBaseAobPattern = data.paramBaseAob;
         }
 
-        if (data.paramBaseAobRelativeOffset != "" || data.paramBaseAobRelativeOffset == null)
+        if (!string.IsNullOrEmpty(data.paramBaseAobRelativeOffset))
         {
             foreach (var relativeOffset in data.paramBaseAobRelativeOffset.Split(','))
             {
@@ -59,7 +59,7 @@ public class GameOffsetsEntry
             }
         }
 
-        if (data.paramInnerPath != "" || data.paramInnerPath == null)
+        if (!string.IsNullOrEmpty(data.paramInnerPath))
         {
             var innerpath = data.paramInnerPath.Split("/");
             paramInnerPath = new int[innerpath.Length];
@@ -70,22 +70,22 @@ public class GameOffsetsEntry
             }
         }
 
-        if (data.paramCountOffset != "" || data.paramCountOffset == null)
+        if (!string.IsNullOrEmpty(data.paramCountOffset))
         {
             paramCountOffset = Utils.ParseHexFromString(data.paramCountOffset);
         }
 
-        if (data.paramDataOffset != "" || data.paramDataOffset == null)
+        if (!string.IsNullOrEmpty(data.paramDataOffset))
         {
             paramDataOffset = Utils.ParseHexFromString(data.paramDataOffset);
         }
 
-        if (data.rowPointerOffset != "" || data.rowPointerOffset == null)
+        if (!string.IsNullOrEmpty(data.rowPointerOffset))
         {
             rowPointerOffset = Utils.ParseHexFromString(data.rowPointerOffset);
         }
 
-        if (data.rowHeaderSize != "" || data.rowHeaderSize == null)
+        if (!string.IsNullOrEmpty(data.rowHeaderSize))
         {
             rowHeaderSize = Utils.ParseHexFromString(data.rowHeaderSize);
         }
