@@ -34,8 +34,6 @@
 
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
 
-- Project: add toggle for the auto-row name import for new projects, so it isn't forced for user's that are working on pre-existing projects
-
 - Add YourACasul's event flags to the FlagAlias
 
 - Export to window for CSV is causing CTD

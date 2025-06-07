@@ -21,7 +21,7 @@ public partial class ParamTools
 
     public bool ParamMerge_InProgress = false;
 
-    public async void DisplayParamMerge()
+    public void DisplayParamMerge()
     {
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth * 0.475f, 32);
@@ -58,7 +58,7 @@ public partial class ParamTools
                     isSelected = ParamMerge_TargetProject.ProjectName == proj.ProjectName;
                 }
 
-                    
+
                 if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
                 {
                     ParamMerge_TargetProject = proj;
@@ -134,11 +134,11 @@ public partial class ParamTools
         // MERowOperation: paste
 
         // Apply the merge massedit script here
-        var command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: auxmodified && unique ID: paste;";
+        var command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified && unique ID: paste;";
 
         if (!ParamMerge_TargetUniqueOnly)
         {
-            command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: auxmodified ID: paste;";
+            command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified ID: paste;";
         }
 
         Editor.MassEditHandler.ApplyMassEdit(command);
