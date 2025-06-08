@@ -268,7 +268,7 @@
           "paramBase": "",
           "paramInnerPath": "0x80/0x80",
           "paramCountOffset": "0xA",
-          "paramDataOffset": "0x0",
+          "paramDataOffset": "0x40",
           "rowPointerOffset": "0x8",
           "rowHeaderSize": "0x18",
           "paramOffsets": [
