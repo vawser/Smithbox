@@ -170,6 +170,35 @@ public partial class ParamTools
                 ImGui.EndMenu();
             }
 
+            if (ImGui.BeginMenu("From Legacy Name Folder"))
+            {
+                if (ImGui.MenuItem($"All"))
+                {
+                    var folderPath = "";
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select legacy row name folder", out folderPath);
+
+                    if (result)
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath);
+                    }
+                }
+                UIHelper.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
+
+                if (ImGui.MenuItem($"Selected Param"))
+                {
+                    var folderPath = "";
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select legacy row name folder", out folderPath);
+
+                    if (result)
+                    {
+                        Project.ParamData.PrimaryBank.ImportRowNamesForParam_Legacy(folderPath, Editor._activeView.Selection.GetActiveParam());
+                    }
+                }
+                UIHelper.Tooltip("This will import the external names from a legacy row name file (Stripped Row Name folder), matching via row index.");
+
+                ImGui.EndMenu();
+            }
+
             ImGui.EndMenu();
         }
 

@@ -33,8 +33,6 @@
 - Fix the text inputs for the OpenGL implementation
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
-- Add YourACasul's event flags to the FlagAlias
-
 - Export to window for CSV is causing CTD
 
 - Add support for multiple param repositories to the Param Reloader JSON

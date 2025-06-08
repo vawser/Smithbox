@@ -1,5 +1,6 @@
 ﻿using Andre.Formats;
 using Andre.IO.VFS;
+using DotNext.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -2652,6 +2653,81 @@ public class ParamBank
         catch (Exception e)
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFilepath} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Import all legacy stripped names from folder
+    /// </summary>
+    /// <param name="folderPath"></param>
+    /// <param name="targetParam"></param>
+    public async void ImportRowNamesForParam_Legacy(string folderPath = "", string targetParam = "")
+    {
+        Task<bool> importRowNameTask = ImportRowNamesTask_Legacy(folderPath, targetParam);
+        bool rowNamesImported = await importRowNameTask;
+
+        if (rowNamesImported)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Imported row names from legacy row name storage.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to import row names from legacy row name storage.");
+        }
+    }
+
+    public async Task<bool> ImportRowNamesTask_Legacy(string folderPath = "", string targetParam = "")
+    {
+        await Task.Yield();
+
+        var sourceFolderPath = folderPath;
+
+        if (!Directory.Exists(sourceFolderPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceFolderPath}");
+            return false;
+        }
+
+        try
+        {
+            foreach(var file in Directory.EnumerateFiles(sourceFolderPath))
+            {
+                var filename = Path.GetFileNameWithoutExtension(file);
+
+                if(targetParam != "")
+                {
+                    if (targetParam != filename)
+                        continue;
+                }
+
+                if(Project.ParamData.PrimaryBank.Params.ContainsKey(filename))
+                {
+                    var param = Project.ParamData.PrimaryBank.Params[filename];
+
+                    var lines = File.ReadLines(file);
+                    Dictionary<int, string> nameDict = lines
+                        .Select((value, index) => new { index, value })
+                        .ToDictionary(x => x.index, x => x.value);
+
+                    for(int i = 0; i < param.Rows.Count; i++)
+                    {
+                        var curRow = param.Rows[i];
+
+                        if(nameDict.ContainsKey(i))
+                        {
+                            var name = nameDict[i];
+
+                            curRow.Name = name;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFolderPath} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
         }
 
         return true;
