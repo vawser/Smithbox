@@ -1914,11 +1914,14 @@ public class ViewportTab
             }
             UIHelper.Tooltip("Resets all of the values within this section to their default values.");
         }
+
         //---------------------------------------
         // Visualization
         //---------------------------------------
         if (ImGui.CollapsingHeader("Visualization", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+
             ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);

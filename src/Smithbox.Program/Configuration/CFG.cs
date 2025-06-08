@@ -854,6 +854,8 @@ public class CFG
     public bool Viewport_Enable_BoxSelection = true;
     public float Viewport_BS_DistThresFactor = 1.2f;
 
+    public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
+
     //****************************
     // Settings: Map Editor
     //****************************

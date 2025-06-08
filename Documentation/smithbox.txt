@@ -30,6 +30,5 @@
 
 - Material Editor: add basic editing for MTD/MATBIN
 
-- Fix the text inputs for the OpenGL implementation
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
