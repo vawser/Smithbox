@@ -11,6 +11,14 @@
       ]
     },
     {
+      "ID": "c0010",
+      "Name": "Executor Beast",
+      "Tags": [
+        "player",
+        "human"
+      ]
+    },
+    {
       "ID": "c2040",
       "Name": "Juvenile Scholar",
       "Tags": [
@@ -971,6 +979,13 @@
       ]
     },
     {
+      "ID": "c4386",
+      "Name": "Flame Priestess",
+      "Tags": [
+        "creature"
+      ]
+    },
+    {
       "ID": "c4440",
       "Name": "Land Squirt",
       "Tags": [
@@ -1200,14 +1215,14 @@
     },
     {
       "ID": "c4900",
-      "Name": "Unknown",
+      "Name": "Dragon",
       "Tags": [
         "creature"
       ]
     },
     {
       "ID": "c4901",
-      "Name": "Unknown",
+      "Name": "Dragon (Caligo)",
       "Tags": [
         "creature"
       ]
