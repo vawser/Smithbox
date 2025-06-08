@@ -8,6 +8,7 @@ using StudioCore.Interface;
 using StudioCore.Platform;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -356,21 +357,32 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var output = "";
+        var project = BaseEditor.ProjectManager.SelectedProject;
 
-        foreach(var entry in BaseEditor.ProjectManager.SelectedProject.MapData.PrimaryBank.Maps)
+        var aliasStore = new AliasStore();
+        aliasStore.EventFlags = new();
+
+        foreach (var param in project.ParamData.PrimaryBank.Params)
         {
-            var mapName = entry.Key.Filename;
-            var line1 = "\t,";
-            var line2 = "\n\t{";
-            var line3 = $"\n\t\t\"ID\": \"{mapName}\",";
-            var line4 = "\n\t\t\"Name\": \"\",";
-            var line5 = "\n\t\t\"Tags\": [ ]";
-            var line6 = "\n\t}";
+            if(param.Key.Contains("EFID_") && param.Key != "EFID_Common")
+            {
+                foreach(var row in param.Value.Rows)
+                {
+                    if(!aliasStore.EventFlags.Any(e => e.ID == $"{row.ID}"))
+                    {
+                        var newAlias = new AliasEntry();
+                        newAlias.ID = $"{row.ID}";
+                        newAlias.Name = row.Name;
+                        newAlias.Tags = new();
 
-            output = $"{output}{line1}{line2}{line3}{line4}{line5}{line6}\n";
+                        aliasStore.EventFlags.Add(newAlias);
+                    }
+                }
+            }
         }
 
-        PlatformUtils.Instance.SetClipboardText(output);
+        var json = JsonSerializer.Serialize(aliasStore, SmithboxSerializerContext.Default.AliasStore);
+
+        PlatformUtils.Instance.SetClipboardText(json);
     }
 }

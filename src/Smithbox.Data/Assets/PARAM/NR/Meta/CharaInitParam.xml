@@ -93,48 +93,10 @@
     <itemNum_08 AltName="Equipped Item: Slot 8 Amount" Wiki="Initial possession number of items 08" />
     <itemNum_09 AltName="Equipped Item: Slot 9 Amount" Wiki="Initial possession number of items 09" />
     <itemNum_10 AltName="Equipped Item: Slot 10 Amount" Wiki="Initial possession number of items 10" />
-    <pad5 AltName="" Padding=""/>
-    <gestureId0 AltName="Equipped Gesture: Slot 0" Wiki="Gesture 0th (0 if you want to play EzState gesture 0)" />
-    <gestureId1 AltName="Equipped Gesture: Slot 1" Wiki="Gesture 1st (0 if you want to play EzState gesture 0)" />
-    <gestureId2 AltName="Equipped Gesture: Slot 2" Wiki="Gesture 2nd (0 if you want to play EzState's gesture 0)" />
-    <gestureId3 AltName="Equipped Gesture: Slot 3" Wiki="Gesture 3rd (0 if you want to play EzState gesture 0)" />
-    <gestureId4 AltName="Equipped Gesture: Slot 4" Wiki="Gesture 4th (0 if you want to play EzState's gesture 0)" />
-    <gestureId5 AltName="Equipped Gesture: Slot 5" Wiki="Gesture 5th (0 if you want to play EzState gesture 0)" />
-    <gestureId6 AltName="Equipped Gesture: Slot 6" Wiki="Gesture 6th (0 if you want to play EzState gesture 0)" />
-    <npcPlayerType AltName="NPC Player - Type" Wiki="NPC type used by NPC players. Not used by normal players." Enum="NPC_TYPE" />
-    <npcPlayerDrawType AltName="NPC Player - Draw Type" Wiki="Drawing type used by NPC players. Not used by normal players." Enum="NPC_DRAW_TYPE" />
-    <npcPlayerSex AltName="NPC Player - Sex" Wiki="The gender used by NPC players. It is not reflected to normal players." Enum="CHARACTER_INIT_SEX" />
-    <vowType AltName="Vow Type" Wiki="Pledge type (None: 0)" Enum="VOW_TYPE" />
-    <isSyncTarget AltName="Is Sync Target" Wiki="Is it a send / receive target (for copy NPCs)?" IsBool="" />
-    <pad AltName="" Padding=""/>
-    <pad6 AltName="" Padding=""/>
-    <wepParamType_Right1 AltName="Weapon Param Type - Right Primary" Wiki="Right-handed weapon slot 1 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
-    <wepParamType_Right2 AltName="Weapon Param Type - Right Secondary" Wiki="Right-handed weapon slot 2 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
-    <wepParamType_Right3 AltName="Weapon Param Type - Right Tertiary" Wiki="Right-handed weapon slot 3 parameter reference" Enum="CHARA_INIT_WEP_TYPE" />
-    <wepParamType_Left1 AltName="Weapon Param Type - Left Primary" Wiki="Parameter reference for left-handed weapon slot 1" Enum="CHARA_INIT_WEP_TYPE" />
-    <wepParamType_Left2 AltName="Weapon Param Type - Left Secondary" Wiki="Parameter reference for left-handed weapon slot 2" Enum="CHARA_INIT_WEP_TYPE" />
-    <wepParamType_Left3 AltName="Weapon Param Type - Left Tertiary" Wiki="Parameter reference for left-handed weapon slot 3" Enum="CHARA_INIT_WEP_TYPE" />
-    <pad2 AltName="" Padding=""/>
-    <equip_Subwep_Right3 AltName="Equipped Weapon: Right Tertiary" Wiki="Weapon ID of equipment parameter (right hand slot 3)" Refs="EquipParamWeapon(wepParamType_Right3=0),EquipParamCustomWeapon(wepParamType_Right3=1)"/>
-    <equip_Subwep_Left3 AltName="Equipped Weapon: Left Tertiary" Wiki="Weapon ID of equipment parameter (left hand slot 3)" Refs="EquipParamWeapon(wepParamType_Left3=0),EquipParamCustomWeapon(wepParamType_Left3=1)"/>
-    <pad3 AltName="" Padding=""/>
-    <secondaryItem_01 AltName="Stored Item: Slot 1" Wiki="Item ID 01 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItem_02 AltName="Stored Item: Slot 2" Wiki="Item ID 02 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItem_03 AltName="Stored Item: Slot 3" Wiki="Item ID 03 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItem_04 AltName="Stored Item: Slot 4" Wiki="Item ID 04 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItem_05 AltName="Stored Item: Slot 5" Wiki="Item ID 05 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItem_06 AltName="Stored Item: Slot 6" Wiki="Item ID 06 of the second shortcut initial possession" Refs="EquipParamGoods"/>
-    <secondaryItemNum_01 AltName="Stored Item: Slot 1 Count" Wiki="2nd Shortcut Initial possession number of items 01" />
-    <secondaryItemNum_02 AltName="Stored Item: Slot 2 Count" Wiki="2nd Shortcut Initial possession number of items 02" />
-    <secondaryItemNum_03 AltName="Stored Item: Slot 3 Count" Wiki="2nd Shortcut Initial possession number of items 03" />
-    <secondaryItemNum_04 AltName="Stored Item: Slot 4 Count" Wiki="2nd Shortcut Initial possession number of items 04" />
-    <secondaryItemNum_05 AltName="Stored Item: Slot 5 Count" Wiki="2nd Shortcut Initial possession number of items 05" />
-    <secondaryItemNum_06 AltName="Stored Item: Slot 6 Count" Wiki="2nd Shortcut Initial possession number of items 06" />
-    <HpEstMax AltName="HP Flask - Max Possession Limit" Wiki="HP Est Bottle Possession Limit" />
-    <MpEstMax AltName="FP Flask - Max Possession Limit" Wiki="MP Est Bottle Possession Limit" />
-    <pad7 AltName="" Padding=""/>
-    <voiceType AltName="Voice Type" Wiki="Voice type" />
-    <reserve AltName="" Padding=""/>
+    
+    <CharacterScale
+    AltName="Character Scale"
+    Wiki="The scale of the character model." />
     
     <heroId
     AltName="Hero ID"
