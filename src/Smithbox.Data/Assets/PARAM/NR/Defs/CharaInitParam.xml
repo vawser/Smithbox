@@ -415,7 +415,7 @@
     <Field Def="u8 unknown_18c" />
     <Field Def="u8 unknown_18d" />
     
-    <Field Def="f32 unknown_19a" />
+    <Field Def="f32 CharacterScale" />
     
     <Field Def="u8 unknown_20a" />
     <Field Def="u8 unknown_20b" />
