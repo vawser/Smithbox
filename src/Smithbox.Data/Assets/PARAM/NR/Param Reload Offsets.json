@@ -276,7 +276,7 @@
 			"CameraFadeParam:0x80",
 			"SoundCommonSystemParam:0x88",
 			"ReverbAuxSendBusParam:0x90",
-			"CommonSystemParam:0x98"
+            "CommonSystemParam:0x98"
           ],
           "itemGibOffsets": []
         }
