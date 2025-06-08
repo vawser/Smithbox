@@ -165,14 +165,14 @@ public class MassEditHandler
         }
         else if (ImGui.BeginPopup("massEditMenuCSVExport"))
         {
-            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, UIHelper.GetTextInputBuffer(ME_CSV_Output),
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
             ImGui.EndPopup();
         }
         else if (ImGui.BeginPopup("massEditMenuSingleCSVExport"))
         {
             ImGui.Text(ME_Single_CSV_Field);
-            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, UIHelper.GetTextInputBuffer(ME_CSV_Output),
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
             ImGui.EndPopup();
         }
