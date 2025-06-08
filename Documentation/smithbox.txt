@@ -35,4 +35,3 @@
 
 - Export to window for CSV is causing CTD
 
-- Add support for multiple param repositories to the Param Reloader JSON

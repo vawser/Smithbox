@@ -255,57 +255,61 @@ public class ParamReloader
         SoulsMemoryHandler handler)
     {
         nint soloParamRepositoryPtr;
-        if (offsets.ParamBaseAobPattern != null)
+
+        foreach (var entry in offsets.Bases)
         {
-            if (!handler.TryFindOffsetFromAOB("ParamBase", offsets.ParamBaseAobPattern, offsets.ParamBaseAobRelativeOffsets, out var paramBase))
+            if (entry.ParamBaseAobPattern != null)
             {
-                return;
-            }
+                if (!handler.TryFindOffsetFromAOB("ParamBase", entry.ParamBaseAobPattern, entry.ParamBaseAobRelativeOffsets, out var paramBase))
+                {
+                    return;
+                }
 
-            soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), paramBase);
-        }
-        else
-        {
-            soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), offsets.ParamBaseOffset);
-        }
-
-        List<Task> tasks = new();
-        foreach (var param in paramNames)
-        {
-            // Skip these for now: cause it to CTD due to type issue
-            if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
-            {
-                TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
-                continue;
-            }
-
-            if (!offsets.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
-            {
-                TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
-                continue;
-            }
-
-            if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
-            {
-                // DS1 ThrowParam requires an additional offset.
-                tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, nint.Add(soloParamRepositoryPtr, 0x10))));
+                soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), paramBase);
             }
             else
             {
-                tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
+                soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), entry.ParamBaseOffset);
             }
-        }
 
-        foreach (Task task in tasks)
-        {
-            task.Start();
-        }
+            List<Task> tasks = new();
+            foreach (var param in paramNames)
+            {
+                // Skip these for now: cause it to CTD due to type issue
+                if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
+                {
+                    TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                    continue;
+                }
 
-        foreach (Task task in tasks)
-        {
-            task.Wait();
+                if (!entry.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
+                {
+                    TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                    continue;
+                }
+
+                if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
+                {
+                    // DS1 ThrowParam requires an additional offset.
+                    tasks.Add(new Task(() =>
+                        WriteMemoryPARAM(offsets.type, offsets.Is64Bit, entry, bank.Params[param], pOffset, handler, nint.Add(soloParamRepositoryPtr, 0x10))));
+                }
+                else
+                {
+                    tasks.Add(new Task(() =>
+                        WriteMemoryPARAM(offsets.type, offsets.Is64Bit, entry, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
+                }
+            }
+
+            foreach (Task task in tasks)
+            {
+                task.Start();
+            }
+
+            foreach (Task task in tasks)
+            {
+                task.Wait();
+            }
         }
     }
 
@@ -321,26 +325,29 @@ public class ParamReloader
             {
                 SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
 
-                memoryHandler.PlayerItemGive(offsets, rowsToGib, studioParamType, itemQuantityReceived, -1,
-                    upgradeLevelItemToGive);
+                foreach (var entry in offsets.Bases)
+                {
+                    memoryHandler.PlayerItemGive(entry, rowsToGib, studioParamType, itemQuantityReceived, -1,
+                        upgradeLevelItemToGive);
+                }
 
                 memoryHandler.Terminate();
             }
         }
     }
 
-    private void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, int paramOffset,
+    private void WriteMemoryPARAM(ProjectType type, bool is64Bit, GameOffsetBaseEntry entry, Param param, int paramOffset,
         SoulsMemoryHandler memoryHandler, nint soloParamRepositoryPtr)
     {
-        var BasePtr = memoryHandler.GetParamPtr(soloParamRepositoryPtr, offsets, paramOffset);
-        WriteMemoryPARAM(offsets, param, BasePtr, memoryHandler);
+        var BasePtr = memoryHandler.GetParamPtr(is64Bit, soloParamRepositoryPtr, entry, paramOffset);
+        WriteMemoryPARAM(type, entry, param, BasePtr, memoryHandler);
     }
 
-    private void WriteMemoryPARAM(GameOffsetsEntry offsets, Param param, nint BasePtr,
+    private void WriteMemoryPARAM(ProjectType type, GameOffsetBaseEntry entry, Param param, nint BasePtr,
         SoulsMemoryHandler memoryHandler)
     {
-        var BaseDataPtr = memoryHandler.GetToRowPtr(offsets, BasePtr);
-        var RowCount = memoryHandler.GetRowCount(offsets, BasePtr);
+        var BaseDataPtr = memoryHandler.GetToRowPtr(entry, BasePtr);
+        var RowCount = memoryHandler.GetRowCount(type, entry, BasePtr);
 
         if (RowCount <= 0)
         {
@@ -359,16 +366,16 @@ public class ParamReloader
         for (var i = 0; i < RowCount; i++)
         {
             memoryHandler.ReadProcessMemory(BaseDataPtr, ref RowId);
-            memoryHandler.ReadProcessMemory(BaseDataPtr + offsets.rowPointerOffset, ref rowPtr);
+            memoryHandler.ReadProcessMemory(BaseDataPtr + entry.rowPointerOffset, ref rowPtr);
             if (RowId < 0 || rowPtr < 0)
             {
-                BaseDataPtr += offsets.rowHeaderSize;
+                BaseDataPtr += entry.rowHeaderSize;
                 continue;
             }
 
             DataSectionPtr = nint.Add(BasePtr, rowPtr);
 
-            BaseDataPtr += offsets.rowHeaderSize;
+            BaseDataPtr += entry.rowHeaderSize;
 
             if (rowDictionary.TryGetValue(RowId, out Queue<Param.Row> queue) && queue.TryDequeue(out Param.Row row))
             {
@@ -657,15 +664,26 @@ public class ParamReloader
         return GameOffsetsEntry.GameOffsetBank[game];
     }
 
-    public string[] GetReloadableParams()
+    public List<string> GetReloadableParams()
     {
         GameOffsetsEntry offs = GetGameOffsets();
         if (offs == null)
         {
-            return new string[0];
+            return new List<string>();
         }
 
-        return offs.paramOffsets.Keys.ToArray();
+        List<string> reloadableParams = new();
+
+        foreach(var entry in offs.Bases)
+        {
+            var curParamList = entry.paramOffsets.Keys.ToList();
+            foreach(var t in curParamList)
+            {
+                reloadableParams.Add(t);
+            }
+        }
+
+        return reloadableParams;
     }
 
     /// <summary>

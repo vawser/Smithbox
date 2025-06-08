@@ -161,23 +161,23 @@ public class SoulsMemoryHandler
         }
     }
 
-    internal nint GetParamPtr(nint paramRepoPtr, GameOffsetsEntry offsets, int pOffset)
+    internal nint GetParamPtr(bool is64Bit, nint paramRepoPtr, GameOffsetBaseEntry entry, int pOffset)
     {
-        if (offsets.Is64Bit)
+        if (is64Bit)
         {
-            return GetParamPtr64Bit(paramRepoPtr, offsets, pOffset);
+            return GetParamPtr64Bit(paramRepoPtr, entry, pOffset);
         }
 
-        return GetParamPtr32Bit(paramRepoPtr, offsets, pOffset);
+        return GetParamPtr32Bit(paramRepoPtr, entry, pOffset);
     }
 
-    private nint GetParamPtr64Bit(nint paramRepoPtr, GameOffsetsEntry offsets, int pOffset)
+    private nint GetParamPtr64Bit(nint paramRepoPtr, GameOffsetBaseEntry entry, int pOffset)
     {
         var paramPtr = paramRepoPtr;
         NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
         paramPtr = nint.Add(paramPtr, pOffset);
         NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
-        foreach (var innerPathPart in offsets.paramInnerPath)
+        foreach (var innerPathPart in entry.paramInnerPath)
         {
             paramPtr = nint.Add(paramPtr, innerPathPart);
             NativeWrapper.ReadProcessMemory(memoryHandle, paramPtr, ref paramPtr);
@@ -186,13 +186,13 @@ public class SoulsMemoryHandler
         return paramPtr;
     }
 
-    private nint GetParamPtr32Bit(nint paramRepoPtr, GameOffsetsEntry offsets, int pOffset)
+    private nint GetParamPtr32Bit(nint paramRepoPtr, GameOffsetBaseEntry entry, int pOffset)
     {
         var ParamPtr = (int)paramRepoPtr;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
         ParamPtr = ParamPtr + pOffset;
         NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
-        foreach (var innerPathPart in offsets.paramInnerPath)
+        foreach (var innerPathPart in entry.paramInnerPath)
         {
             ParamPtr = ParamPtr + innerPathPart;
             NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr, ref ParamPtr);
@@ -201,33 +201,33 @@ public class SoulsMemoryHandler
         return ParamPtr;
     }
 
-    internal int GetRowCount(GameOffsetsEntry gOffsets, nint paramPtr)
+    internal int GetRowCount(ProjectType type, GameOffsetBaseEntry entry, nint paramPtr)
     {
-        if (gOffsets.type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (type is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
         {
-            return GetRowCountInt(gOffsets, paramPtr);
+            return GetRowCountInt(entry, paramPtr);
         }
 
-        return GetRowCountShort(gOffsets, paramPtr);
+        return GetRowCountShort(entry, paramPtr);
     }
 
-    private int GetRowCountInt(GameOffsetsEntry gOffsets, nint ParamPtr)
+    private int GetRowCountInt(GameOffsetBaseEntry entry, nint ParamPtr)
     {
         var buffer = 0;
-        NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + gOffsets.paramCountOffset, ref buffer);
+        NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + entry.paramCountOffset, ref buffer);
         return buffer;
     }
 
-    private int GetRowCountShort(GameOffsetsEntry gOffsets, nint ParamPtr)
+    private int GetRowCountShort(GameOffsetBaseEntry entry, nint ParamPtr)
     {
         short buffer = 0;
-        NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + gOffsets.paramCountOffset, ref buffer);
+        NativeWrapper.ReadProcessMemory(memoryHandle, ParamPtr + entry.paramCountOffset, ref buffer);
         return buffer;
     }
 
-    internal nint GetToRowPtr(GameOffsetsEntry gOffsets, nint paramPtr)
+    internal nint GetToRowPtr(GameOffsetBaseEntry entry, nint paramPtr)
     {
-        paramPtr = nint.Add(paramPtr, gOffsets.paramDataOffset);
+        paramPtr = nint.Add(paramPtr, entry.paramDataOffset);
         return paramPtr;
     }
 
@@ -313,7 +313,7 @@ public class SoulsMemoryHandler
         ExecuteBufferFunction(buffer, chrNameBytes);
     }
 
-    internal void PlayerItemGive(GameOffsetsEntry offsets, List<Param.Row> rows, string paramDefParamType,
+    internal void PlayerItemGive(GameOffsetBaseEntry entry, List<Param.Row> rows, string paramDefParamType,
         int itemQuantityReceived = 1, int itemDurabilityReceived = -1, int upgradeLevelItemToGive = 0)
     {
         // ItemGib - DS3
@@ -321,9 +321,9 @@ public class SoulsMemoryHandler
         {
             //Thanks Church Guard for providing the foundation of this.
             //Only supports ds3 as of now
-            if (offsets.itemGibOffsets.ContainsKey(paramDefParamType) && rows.Any())
+            if (entry.itemGibOffsets.ContainsKey(paramDefParamType) && rows.Any())
             {
-                var paramOffset = offsets.itemGibOffsets[paramDefParamType];
+                var paramOffset = entry.itemGibOffsets[paramDefParamType];
 
                 List<int> intListProcessing = new();
 

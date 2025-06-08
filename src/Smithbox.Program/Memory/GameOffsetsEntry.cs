@@ -1,4 +1,5 @@
 ﻿using StudioCore.Core;
+using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,31 +15,54 @@ public class GameOffsetsEntry
 
     internal string exeName;
     internal bool Is64Bit;
-    internal Dictionary<string, int> itemGibOffsets;
-
-    // Hard offset for param base. Unused if ParamBase AOB is set.
-    internal int ParamBaseOffset = 0;
-
-    // AOB for param base offset. If null, ParamBaseOffset will be used instead.
-    internal string ParamBaseAobPattern;
-    internal List<(int, int)> ParamBaseAobRelativeOffsets = new();
-
-    internal int paramCountOffset;
-    internal int paramDataOffset;
-    internal int[] paramInnerPath;
-    internal Dictionary<string, int> paramOffsets;
-    internal int rowHeaderSize;
-    internal int rowPointerOffset;
     internal ProjectType type;
+
+    public List<GameOffsetBaseEntry> Bases = new();
 
     internal GameOffsetsEntry(ProjectEntry project)
     {
         var data = project.ParamMemoryOffsets.list[CFG.Current.SelectedGameOffsetData];
 
+        exeName = project.ParamMemoryOffsets.exeName;
+        Is64Bit = type != ProjectType.DS1;
+        type = project.ProjectType;
+
+        foreach (var entry in data.bases)
+        {
+            var newBase = new GameOffsetBaseEntry();
+            newBase.Fill(entry);
+            Bases.Add(newBase);
+        }
+    }
+
+    internal GameOffsetsEntry() { }
+}
+
+public class GameOffsetBaseEntry
+{
+    // AOB for param base offset. If null, ParamBaseOffset will be used instead.
+    public string ParamBaseAobPattern;
+    public List<(int, int)> ParamBaseAobRelativeOffsets = new();
+
+    // Hard offset for param base. Unused if ParamBase AOB is set.
+    public int ParamBaseOffset = 0;
+
+    public int[] paramInnerPath;
+    public int paramCountOffset;
+    public int paramDataOffset;
+
+    public int rowPointerOffset;
+    public int rowHeaderSize;
+
+    public Dictionary<string, int> paramOffsets;
+    public Dictionary<string, int> itemGibOffsets;
+
+    public GameOffsetBaseEntry() { }
+
+    public void Fill(GameOffsetBase data)
+    {
         paramOffsets = new();
         itemGibOffsets = new();
-
-        exeName = project.ParamMemoryOffsets.exeName;
 
         if (!string.IsNullOrEmpty(data.paramBase))
         {
@@ -105,12 +129,5 @@ public class GameOffsetsEntry
 
             itemGibOffsets.Add(name, Utils.ParseHexFromString(address));
         }
-
-        Is64Bit = type != ProjectType.DS1;
-        type = project.ProjectType;
     }
-
-    internal GameOffsetsEntry()
-    { }
-
 }
