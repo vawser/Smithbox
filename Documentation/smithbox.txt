@@ -33,5 +33,3 @@
 - Fix the text inputs for the OpenGL implementation
 - NR MSB: need to make it byte-perfect on save (load is fine)
 
-- Export to window for CSV is causing CTD
-
