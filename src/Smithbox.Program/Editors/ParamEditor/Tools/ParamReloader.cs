@@ -254,62 +254,67 @@ public class ParamReloader
     private void ReloadMemoryParamsThreads(ParamBank bank, GameOffsetsEntry offsets, string[] paramNames,
         SoulsMemoryHandler handler)
     {
-        nint soloParamRepositoryPtr;
 
-        foreach (var entry in offsets.Bases)
+        List<Task> tasks = new();
+        foreach (string param in paramNames)
         {
-            if (entry.ParamBaseAobPattern != null)
+            // Skip these for now: cause it to CTD due to type issue
+            if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
             {
-                if (!handler.TryFindOffsetFromAOB("ParamBase", entry.ParamBaseAobPattern, entry.ParamBaseAobRelativeOffsets, out var paramBase))
-                {
-                    return;
-                }
-
-                soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), paramBase);
-            }
-            else
-            {
-                soloParamRepositoryPtr = nint.Add(handler.GetBaseAddress(), entry.ParamBaseOffset);
+                TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
+                continue;
             }
 
-            List<Task> tasks = new();
-            foreach (var param in paramNames)
+            bool paramFound = false;
+            foreach (GameOffsetBaseEntry paramRepo in offsets.Bases)
             {
-                // Skip these for now: cause it to CTD due to type issue
-                if (param == "ThrustersLocomotionParam_PC" || param == "ThrustersParam_NPC")
+                if (!paramRepo.paramOffsets.TryGetValue(param, out int paramOffset) || param == null)
                 {
-                    TaskLogs.AddLog($"Cannot reload {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
                     continue;
                 }
 
-                if (!entry.paramOffsets.TryGetValue(param, out var pOffset) || param == null)
-                {
-                    TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
-                    continue;
-                }
+                paramFound = true;
 
-                if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
+                nint paramRepositoryPtr = handler.GetBaseAddress();
+                if (paramRepo.ParamBaseAobPattern != null)
                 {
-                    // DS1 ThrowParam requires an additional offset.
-                    tasks.Add(new Task(() =>
-                        WriteMemoryPARAM(offsets.type, offsets.Is64Bit, entry, bank.Params[param], pOffset, handler, nint.Add(soloParamRepositoryPtr, 0x10))));
+                    if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
+                    {
+                        TaskLogs.AddLog($"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
+                        continue;
+                    }
+
+                    paramRepositoryPtr += paramBase;
                 }
                 else
                 {
-                    tasks.Add(new Task(() =>
-                        WriteMemoryPARAM(offsets.type, offsets.Is64Bit, entry, bank.Params[param], pOffset, handler, soloParamRepositoryPtr)));
+                    paramRepositoryPtr += paramRepo.ParamBaseOffset;
                 }
+                
+                if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
+                {
+                    // DS1 ThrowParam requires an additional offset.
+                    paramRepositoryPtr += 0x10;
+                }
+                
+                tasks.Add(new Task(() =>
+                    WriteMemoryPARAM(offsets.type, offsets.Is64Bit, paramRepo, bank.Params[param], paramOffset, handler, paramRepositoryPtr)));
             }
-
-            foreach (Task task in tasks)
+            
+            if (!paramFound)
             {
-                task.Start();
+                TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
             }
+        }
 
-            foreach (Task task in tasks)
-            {
-                task.Wait();
-            }
+        foreach (Task task in tasks)
+        {
+            task.Start();
+        }
+
+        foreach (Task task in tasks)
+        {
+            task.Wait();
         }
     }
 
