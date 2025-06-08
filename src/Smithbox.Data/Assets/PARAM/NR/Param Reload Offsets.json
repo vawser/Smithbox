@@ -273,9 +273,9 @@
           "rowHeaderSize": "0x18",
           "paramOffsets": [
             "DefaultKeyAssign:0x78",
-			"CameraFadeParam:0x80",
-			"SoundCommonSystemParam:0x88",
-			"ReverbAuxSendBusParam:0x90",
+            "CameraFadeParam:0x80",
+            "SoundCommonSystemParam:0x88",
+            "ReverbAuxSendBusParam:0x90",
             "CommonSystemParam:0x98"
           ],
           "itemGibOffsets": []
