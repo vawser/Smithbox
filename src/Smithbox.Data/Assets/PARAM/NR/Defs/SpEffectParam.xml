@@ -271,11 +271,13 @@
     
     <Field Def="f32 saReceiveDamageRate"/>
     
-    <Field Def="s32 unknown_old_1"/>
-    <Field Def="s32 unknown_old_2"/>
-    <Field Def="s32 unknown_old_3"/>
-    <Field Def="s32 unknown_old_4"/>
-    <Field Def="s32 unknown_old_5"/>
+    <Field Def="s16 unknown_old_1a"/>
+    <Field Def="s16 wepTypeTrigger"/>
+    <Field Def="s16 wepTypeTriggerCount"/>
+    <Field Def="s16 enemyStateInfoTrigger"/>
+    <Field Def="s32 startGoodsId"/>
+    <Field Def="s32 heroStatusId"/>
+    <Field Def="s32 startSwordArtsId"/>
     
     <Field Def="f32 defEnemyDmgCorrectRate_Physics"/>
     <Field Def="f32 defEnemyDmgCorrectRate_Magic"/>

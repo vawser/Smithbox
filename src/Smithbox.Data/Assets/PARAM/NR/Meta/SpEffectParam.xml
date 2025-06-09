@@ -1449,6 +1449,41 @@
     Wiki="Multiplier for SA damage" 
     DefaultValue="1" />
     
+    <wepTypeTrigger
+    AltName="Weapon Type Trigger"
+    Wiki="Trigger this SpEffect when this weapon type is present." 
+    Enum="WEP_TYPE" 
+    DefaultValue="1"/>
+    
+    <wepTypeTriggerCount
+    AltName="Weapon Type Trigger Count"
+    Wiki="The amount of weapons of the above type that need to be present for the effect to trigger." 
+    DefaultValue="0"/>
+    
+    <enemyStateInfoTrigger
+    AltName="Enemy State Info Trigger"
+    Wiki="Trigger this effect when this state info is present on an enemy."
+    ProjectEnum="SP_EFFECT_TYPE" 
+    DefaultValue="0"/>
+    
+    <startGoodsId
+    AltName="Starting Goods ID"
+    Wiki="The goods to award to the player upon expedition start."
+    Refs="EquipParamGoods" 
+    DefaultValu="-1"/>
+    
+    <heroStatusId
+    AltName="Hero Status ID"
+    Wiki=""
+    Refs="HeroStatusParam"
+    DefaultValue="-1" />
+    
+    <startSwordArtsId
+    AltName="Starting Sword Arts ID"
+    Wiki="The sword arts to apply to the player's primary armament upon expedition start."
+    Refs="SwordArtsParam" 
+    DefaultValue="-1" />
+    
     <defPlayerDmgCorrectRate_Physics 
     AltName="PVP Absorption %: Physical" 
     Wiki="Damage correction for the damage value received from the player." 
