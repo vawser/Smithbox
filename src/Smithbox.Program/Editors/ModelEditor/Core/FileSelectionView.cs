@@ -46,6 +46,10 @@ public class FileSelectionView
             Selection.SwitchWindowContext(ModelEditorContext.File);
 
             ImGui.InputText($"Search", ref _searchInput, 255);
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                _assetCacheDirty = true;
+            }
             UIHelper.Tooltip("Separate terms are split via the + character.");
 
             ImGui.BeginChild("AssetBrowserLists");
