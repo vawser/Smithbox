@@ -261,6 +261,24 @@
             "LegacyDistantViewPartsReplaceParam:0x4528"
           ],
           "itemGibOffsets": []
+        },
+        {
+          "paramBaseAob": "0x48,0x8B,0x0D,0x??,0x??,0x??,0x??,0xBA,0x01,0x00,0x00,0x00,0x48,0x83,0xC4,0x28",
+          "paramBaseAobRelativeOffset": "0x03/0x07",
+          "paramBase": "",
+          "paramInnerPath": "0x80/0x80",
+          "paramCountOffset": "0xA",
+          "paramDataOffset": "0x40",
+          "rowPointerOffset": "0x8",
+          "rowHeaderSize": "0x18",
+          "paramOffsets": [
+            "DefaultKeyAssign:0x78",
+            "CameraFadeParam:0x80",
+            "SoundCommonSystemParam:0x88",
+            "ReverbAuxSendBusParam:0x90",
+            "CommonSystemParam:0x98"
+          ],
+          "itemGibOffsets": []
         }
       ]
     }
