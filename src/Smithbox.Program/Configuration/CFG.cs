@@ -48,6 +48,11 @@ public class CFG
     /// </summary>
     public string ModEngineDlls = "";
 
+    /// <summary>
+    /// If enabled, the project type is prefixed to the project name.
+    /// </summary>
+    public bool DisplayProjectPrefix = true;
+
     ///------------------------------------------------------------
     /// Interface
     ///------------------------------------------------------------

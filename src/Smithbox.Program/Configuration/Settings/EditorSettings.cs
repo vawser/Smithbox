@@ -128,6 +128,9 @@ public class SystemTab
 
             ImGui.InputText("DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngineDlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
+
+            ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
+            UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
         }
 
         if (ImGui.CollapsingHeader("Tools"))

@@ -139,8 +139,14 @@ public class ProjectManager
             var project = orderedProjects[i];
             var imGuiID = project.ProjectGUID;
 
+            var projectName = $"{project.ProjectName}";
+            if(CFG.Current.DisplayProjectPrefix)
+            {
+                projectName = $"[{project.ProjectType}] {projectName}";
+            }
+
             // Highlight selectable
-            if (ImGui.Selectable($"{project.ProjectName}##{imGuiID}", SelectedProject == project))
+            if (ImGui.Selectable($"{projectName}##{imGuiID}", SelectedProject == project))
             {
                 if (!IsProjectLoading)
                 {
