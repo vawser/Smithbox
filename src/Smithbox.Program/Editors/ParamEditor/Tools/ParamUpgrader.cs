@@ -181,6 +181,24 @@ public class ParamUpgrader
             ImGui.EndTable();
         }
 
+        // Conflicts
+        if (UpgraderInfoSetup && OldRegulationSetup && !ConflictsChecked)
+        {
+            if (ImGui.Button("Check for Conflicts", buttonSize))
+            {
+                CheckForConflicts();
+            }
+        }
+
+        // Apply Upgrade
+        if (UpgraderInfoSetup && OldRegulationSetup && ConflictsChecked && !UpgradePerformed)
+        {
+            if (ImGui.Button("Apply Upgrade", buttonSize))
+            {
+                UpgradeParams();
+            }
+        }
+
         // Conflict List
         if (ConflictsChecked)
         {
@@ -204,7 +222,10 @@ public class ParamUpgrader
 
                         ImGui.TableSetColumnIndex(1);
 
-                        ImGui.Text($"{entry.Value}");
+                        foreach(var cEntry in entry.Value)
+                        {
+                            ImGui.Text($"{cEntry}");
+                        }
                     }
 
                     ImGui.EndTable();
@@ -224,24 +245,6 @@ public class ParamUpgrader
         {
             SetupOldRegulation();
             OldRegulationSetup = true;
-        }
-
-        // Conflicts
-        if (UpgraderInfoSetup && OldRegulationSetup && !ConflictsChecked)
-        {
-            if (ImGui.Button("Check for Conflicts", buttonSize))
-            {
-                CheckForConflicts();
-            }
-        }
-
-        // Apply Upgrade
-        if (UpgraderInfoSetup && OldRegulationSetup && ConflictsChecked && !UpgradePerformed)
-        {
-            if (ImGui.Button("Apply Upgrade", buttonSize))
-            {
-                UpgradeParams();
-            }
         }
     }
 

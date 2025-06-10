@@ -1832,7 +1832,15 @@ public class ParamBank
             return false;
         }
 
+        var sourceFs = Project.FS;
+        var gameFs = Project.VanillaRealFS;
         var data = fs.GetFile(param).GetData().ToArray();
+
+        // Use the game root version in this case
+        if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        {
+            data = gameFs.GetFile(param).GetData().ToArray();
+        }
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
