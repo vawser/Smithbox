@@ -823,8 +823,8 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Menu_Line_Help = 80,
 
-    [Display(Name = "Context", ShortName = "Common", Description = "")]
-    Menu_Context = 81,
+    [Display(Name = "Item Help (Unused)", ShortName = "Common", Description = "")]
+    Item_Help = 81,
 
     [Display(Name = "Tags", ShortName = "Common", Description = "")]
     Menu_Tags = 90,
@@ -850,11 +850,11 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Dialogue", ShortName = "Menu", Description = "")]
     Modern_Menu_Dialogue = 204,
 
-    [Display(Name = "System Messages: PS4", ShortName = "Common", Description = "")]
-    System_Message_PS4 = 205,
+    [Display(Name = "Loading Menu Text", ShortName = "Common", Description = "")]
+    Loading_Menu_Text = 205,
 
-    [Display(Name = "System Messages: XB1", ShortName = "Common", Description = "")]
-    System_Message_XB1 = 206
+    [Display(Name = "Loading Menu Title", ShortName = "Common", Description = "")]
+    Loading_Menu_Title = 206
 }
 
 public enum SellRegion_MsgBndID_SDT
