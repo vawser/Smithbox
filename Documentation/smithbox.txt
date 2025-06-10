@@ -30,5 +30,3 @@
 - Param Editor: add defaultvalues to ER paramdex + re-format it
 - Param Editor: adjust the difference checker to account for row index
 - Param Editor: add cross-project commutative param duplicate (ER -> NR, NR -> ER)
-
-- Project: add option to create me3 profile as right click option for project

@@ -146,7 +146,7 @@ public class ProjectManager
             }
 
             // Highlight selectable
-            if (ImGui.Selectable($"{projectName}##{imGuiID}", SelectedProject == project))
+            if (ImGui.Selectable($"{projectName}##projectEntry{imGuiID}", SelectedProject == project))
             {
                 if (!IsProjectLoading)
                 {
@@ -292,6 +292,11 @@ public class ProjectManager
 
                     ImGui.EndPopup();
                 }
+            }
+
+            if (project.Initialized)
+            {
+                UIHelper.DisplayColoredAlias($"{Icons.Bolt}", UI.Current.ImGui_Benefit_Text_Color);
             }
         }
 
