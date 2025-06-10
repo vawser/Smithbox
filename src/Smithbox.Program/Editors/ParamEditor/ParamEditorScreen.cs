@@ -583,7 +583,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 DelimiterInputText();
 
-                if (ImGui.MenuItem("All rows"))
+                if (ImGui.BeginMenu("All rows"))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.AllRows);
                     ImGui.EndMenu();

@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext;
+using Hexa.NET.ImGui;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -274,6 +275,11 @@ public class Smithbox
             {
                 isVer = false;
             }
+        }
+
+        if(verstring.EndsWith("."))
+        {
+            verstring = verstring.Substring(0, verstring.Length - 1);
         }
 
         if (Version.Parse(verstring) > Version.Parse(_version))
