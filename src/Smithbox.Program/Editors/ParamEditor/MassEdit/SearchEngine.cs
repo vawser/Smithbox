@@ -385,18 +385,9 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return row => cache.Contains(row.ID);
             }
             )));
-        filterList.Add("auxmodified", newCmd(new string[0],
-            "Selects rows which do not match the aux bank version, or are added. Ignores row name", noArgs(context =>
-            {
-                var paramName = context.Item1.GetKeyForParam(context.Item2);
-                HashSet<int> cache = context.Item1.GetPrimaryDiffRows(paramName);
-                return row => cache.Contains(row.ID);
-            }
-            )));
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
             {
-
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
                 if (!vBank.Params.ContainsKey(paramName))
                 {

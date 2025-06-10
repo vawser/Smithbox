@@ -78,19 +78,6 @@ public class ProjectManager
                         Process.Start("explorer.exe", SelectedProject.ProjectPath);
                     }
                     UIHelper.Tooltip("Open the project folder for this project.");
-
-
-                    if (CFG.Current.ModEngine2Install != "")
-                    {
-                        if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
-                        {
-                            if (ImGui.MenuItem($"Launch Mod##launchMod"))
-                            {
-                                ModEngineHandler.LaunchME2Mod(SelectedProject);
-                            }
-                            UIHelper.Tooltip("Launch this project with ModEngine2.");
-                        }
-                    }
                 }
 
                 ImGui.EndMenu();
@@ -176,18 +163,18 @@ public class ProjectManager
                 ImGui.EndDragDropTarget();
             }
 
-            if (SelectedProject != null)
+            if (SelectedProject != null && project == SelectedProject)
             {
                 if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
                 {
                     // ME2
-                    if (ModEngineHandler.IsME2Project(SelectedProject))
+                    if (ModEngineHandler.IsME2Project(project))
                     {
                         if (CFG.Current.ModEngine2Install != "")
                         {
                             if (ImGui.MenuItem($"Launch Mod##launchME2Mod"))
                             {
-                                ModEngineHandler.LaunchME2Mod(SelectedProject);
+                                ModEngineHandler.LaunchME2Mod(project);
                             }
                             UIHelper.Tooltip("Launch this project with ModEngine2.");
                         }
@@ -215,13 +202,13 @@ public class ProjectManager
                     }
 
                     // ME3
-                    if (ModEngineHandler.IsME3Project(SelectedProject))
+                    if (ModEngineHandler.IsME3Project(project))
                     {
-                        if (ModEngineHandler.ME3ProfileExists(SelectedProject))
+                        if (ModEngineHandler.ME3ProfileExists(project))
                         {
                             if (ImGui.MenuItem($"Launch Mod##launchME3mod"))
                             {
-                                ModEngineHandler.LaunchME3Mod(SelectedProject);
+                                ModEngineHandler.LaunchME3Mod(project);
                             }
                         }
                         else
@@ -230,7 +217,7 @@ public class ProjectManager
                             {
                                 if (ImGui.MenuItem($"Create Mod Profile##createME3profile"))
                                 {
-                                    ModEngineHandler.CreateME3Profile(SelectedProject);
+                                    ModEngineHandler.CreateME3Profile(project);
                                 }
                                 UIHelper.Tooltip("Create a ME3 profile file for this mod.");
                             }
@@ -255,17 +242,17 @@ public class ProjectManager
 
                     if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
                     {
-                        ProjectSettings.Show(BaseEditor, SelectedProject);
+                        ProjectSettings.Show(BaseEditor, project);
                     }
 
                     if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
                     {
-                        ProjectAliasEditor.Show(BaseEditor, SelectedProject);
+                        ProjectAliasEditor.Show(BaseEditor, project);
                     }
 
                     if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
                     {
-                        ProjectEnumEditor.Show(BaseEditor, SelectedProject);
+                        ProjectEnumEditor.Show(BaseEditor, project);
                     }
 
                     ImGui.Separator();
