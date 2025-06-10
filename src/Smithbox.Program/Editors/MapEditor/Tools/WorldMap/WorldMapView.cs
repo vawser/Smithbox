@@ -74,7 +74,7 @@ public class WorldMapView : IResourceEventListener
 
         if (Editor.Project.ProjectType is ProjectType.ER)
         {
-            CurrentMapSource = MapSource.Limveld;
+            CurrentMapSource = MapSource.LandsBetween;
 
             LoadWorldMapTexture();
         }
@@ -488,15 +488,16 @@ public class WorldMapView : IResourceEventListener
     {
         var smallRows = new List<int>() { 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 };
         var smallCols = new List<int>() { 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30 };
+
         var mediumRows = new List<int>() { 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 };
         var mediumCols = new List<int>() { 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15 };
+
         var largeRows = new List<int>() { 8, 9, 10, 11, 12, 13, 14 };
         var largeCols = new List<int>() { 15, 14, 13, 12, 11, 10, 9, 8, 7 };
 
-
         VanillaLayout = new WorldMapLayout(Editor, "60", 480, 55);
-        VanillaLayout.GenerateTiles(smallRows, smallCols, 1, 124, MapTileType.Small);
-        VanillaLayout.GenerateTiles(mediumRows, mediumCols, 0, 248, MapTileType.Medium);
+        VanillaLayout.GenerateTiles(smallRows, smallCols, 0, 124, MapTileType.Small);
+        VanillaLayout.GenerateTiles(mediumRows, mediumCols, 1, 248, MapTileType.Medium);
         VanillaLayout.GenerateTiles(largeRows, largeCols, 2, 496, MapTileType.Large);
     }
 

@@ -115,6 +115,8 @@ public class WorldMapLayout
 
                 if (tileIdVariants == null)
                 {
+                    TaskLogs.AddLog($"{type}: {id}");
+
                     // Only include if the map id is an actual map
                     if (mapList.Contains(id))
                     {
@@ -150,7 +152,7 @@ public class WorldMapLayout
                     }
                 }
 
-                    CurY = CurY + increment;
+                CurY = CurY + increment;
             }
 
             CurX = CurX + increment;
@@ -161,6 +163,10 @@ public class WorldMapLayout
                 {
                     CurY = yLargeOffset;
                 }
+                else
+                {
+                    CurY = YOffset;
+                }
             }
 
             if (type is MapTileType.Medium)
@@ -169,6 +175,10 @@ public class WorldMapLayout
                 {
                     CurY = yMediumOffset;
                 }
+                else
+                {
+                    CurY = YOffset;
+                }
             }
 
             if (type is MapTileType.Small)
@@ -176,6 +186,10 @@ public class WorldMapLayout
                 if (ySmallOffset != -1)
                 {
                     CurY = ySmallOffset;
+                }
+                else
+                {
+                    CurY = YOffset;
                 }
             }
         }
