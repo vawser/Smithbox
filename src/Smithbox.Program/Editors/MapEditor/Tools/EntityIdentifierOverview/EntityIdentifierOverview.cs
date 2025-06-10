@@ -175,6 +175,9 @@ public class EntityIdentifierOverview
     {
         var mapID = Editor.Selection.SelectedMapID;
 
+        if (mapID == null)
+            return;
+
         if (Editor.MapListView.ContentViews == null)
             return;
 
