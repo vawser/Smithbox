@@ -66,6 +66,10 @@ public class SystemTab
         {
             var inputWidth = 400.0f;
 
+            // Project Name Prefix
+            ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
+            UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
+
             // Default Project Directory
             if (ImGui.Button("Select##projectDirSelect"))
             {
@@ -102,17 +106,38 @@ public class SystemTab
             ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
 
-            // Mod Engine
-            if (ImGui.Button("Select##modEnginePathSelect"))
+            ImGui.Separator();
+
+            // ME3 Setup
+            if (ImGui.Button("Select##modEngine3PathSelect"))
+            {
+                var profilePath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+
+                if (result)
+                {
+                    CFG.Current.ModEngine3ProfileDirectory = profilePath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.InputText("ME3 Profile Directory##me3ProfileDir", ref CFG.Current.ModEngine3ProfileDirectory, 255);
+            UIHelper.Tooltip("Select the directory you want the generated ME3 profiles to be placed in.");
+
+            ImGui.Separator();
+
+            // ME2 Setup
+            if (ImGui.Button("Select##modEngine2PathSelect"))
             {
                 var modEnginePath = "";
-                var result = PlatformUtils.Instance.OpenFileDialog("Select Data Directory", ["exe"], out modEnginePath);
+                var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
 
                 if (result)
                 {
                     if (modEnginePath.Contains("modengine2_launcher.exe"))
                     {
-                        CFG.Current.ModEngineInstall = modEnginePath;
+                        CFG.Current.ModEngine2Install = modEnginePath;
                     }
                     else
                     {
@@ -123,14 +148,12 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.InputText("ModEngine 2 Executable Location##modEnginePath", ref CFG.Current.ModEngineInstall, 255);
+            ImGui.InputText("ME2 Executable Location##modEnginePath", ref CFG.Current.ModEngine2Install, 255);
             UIHelper.Tooltip("Select the modengine2_launcher.exe within your ModEngine2 install folder.");
 
-            ImGui.InputText("DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngineDlls, 255);
+            // ME2 Dlls
+            ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
-
-            ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
-            UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
         }
 
         if (ImGui.CollapsingHeader("Tools"))

@@ -29,6 +29,11 @@ public class CFG
     /// Project
     ///------------------------------------------------------------
     /// <summary>
+    /// If enabled, the project type is prefixed to the project name.
+    /// </summary>
+    public bool DisplayProjectPrefix = true;
+
+    /// <summary>
     /// The default directory to use for selecting a project directory during Project Creation.
     /// </summary>
     public string DefaultModDirectory = "";
@@ -39,19 +44,19 @@ public class CFG
     public string DefaultDataDirectory = "";
 
     /// <summary>
+    /// The path to store the ME3 profiles.
+    /// </summary>
+    public string ModEngine3ProfileDirectory = "";
+
+    /// <summary>
     /// The path to the user's Mod Engine 2 exe.
     /// </summary>
-    public string ModEngineInstall = "";
+    public string ModEngine2Install = "";
 
     /// <summary>
     /// The dll arguments to use with the Mod Engine 2 launch.
     /// </summary>
-    public string ModEngineDlls = "";
-
-    /// <summary>
-    /// If enabled, the project type is prefixed to the project name.
-    /// </summary>
-    public bool DisplayProjectPrefix = true;
+    public string ModEngine2Dlls = "";
 
     ///------------------------------------------------------------
     /// Interface

@@ -80,13 +80,13 @@ public class ProjectManager
                     UIHelper.Tooltip("Open the project folder for this project.");
 
 
-                    if (CFG.Current.ModEngineInstall != "")
+                    if (CFG.Current.ModEngine2Install != "")
                     {
                         if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
                         {
                             if (ImGui.MenuItem($"Launch Mod##launchMod"))
                             {
-                                ModEngineUtils.LaunchMod(SelectedProject);
+                                ModEngineHandler.LaunchME2Mod(SelectedProject);
                             }
                             UIHelper.Tooltip("Launch this project with ModEngine2.");
                         }
@@ -176,57 +176,122 @@ public class ProjectManager
                 ImGui.EndDragDropTarget();
             }
 
-            if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
+            if (SelectedProject != null)
             {
-
-                if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
+                if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
                 {
-                    ProjectSettings.Show(BaseEditor, SelectedProject);
-                }
-
-                if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
-                {
-                    ProjectAliasEditor.Show(BaseEditor, SelectedProject);
-                }
-
-                if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
-                {
-                    ProjectEnumEditor.Show(BaseEditor, SelectedProject);
-                }
-
-                if (ImGui.MenuItem($"Unload Project##unloadProject_{imGuiID}"))
-                {
-                    project.Unload();
-                }
-
-                if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
-                {
-                    ProjectCreation.Show();
-                }
-
-                if (ImGui.MenuItem($"Delete Project##deleteProject_{imGuiID}"))
-                {
-                    var dialog = PlatformUtils.Instance.MessageBox("Are you sure you want to delete this project?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if(dialog == DialogResult.Yes)
+                    // ME2
+                    if (ModEngineHandler.IsME2Project(SelectedProject))
                     {
-                        ProjectUtils.DeleteProject(BaseEditor, project);
-                    }
-                }
-
-                if (CFG.Current.ModEngineInstall != "" && SelectedProject != null)
-                {
-                    if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
-                    {
-                        if (ImGui.MenuItem($"Launch Mod##launchMod"))
+                        if (CFG.Current.ModEngine2Install != "")
                         {
-                            ModEngineUtils.LaunchMod(SelectedProject);
+                            if (ImGui.MenuItem($"Launch Mod##launchME2Mod"))
+                            {
+                                ModEngineHandler.LaunchME2Mod(SelectedProject);
+                            }
+                            UIHelper.Tooltip("Launch this project with ModEngine2.");
                         }
-                        UIHelper.Tooltip("Launch this project with ModEngine2.");
-                    }
-                }
+                        else
+                        {
+                            if (ImGui.MenuItem($"Set ME2 Executable Location"))
+                            {
+                                var modEnginePath = "";
+                                var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
 
-                ImGui.EndPopup();
+                                if (result)
+                                {
+                                    if (modEnginePath.Contains("modengine2_launcher.exe"))
+                                    {
+                                        CFG.Current.ModEngine2Install = modEnginePath;
+                                    }
+                                    else
+                                    {
+                                        PlatformUtils.Instance.MessageBox("Error", "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                            UIHelper.Tooltip("Set the ME2 executable location so you can launch this mod via ModEngine2.");
+                        }
+                    }
+
+                    // ME3
+                    if (ModEngineHandler.IsME3Project(SelectedProject))
+                    {
+                        if (ModEngineHandler.ME3ProfileExists(SelectedProject))
+                        {
+                            if (ImGui.MenuItem($"Launch Mod##launchME3mod"))
+                            {
+                                ModEngineHandler.LaunchME3Mod(SelectedProject);
+                            }
+                        }
+                        else
+                        {
+                            if (CFG.Current.ModEngine3ProfileDirectory != "")
+                            {
+                                if (ImGui.MenuItem($"Create Mod Profile##createME3profile"))
+                                {
+                                    ModEngineHandler.CreateME3Profile(SelectedProject);
+                                }
+                                UIHelper.Tooltip("Create a ME3 profile file for this mod.");
+                            }
+                            else
+                            {
+                                if (ImGui.MenuItem($"Set ME3 Profile Directory"))
+                                {
+                                    var profilePath = "";
+                                    var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+
+                                    if (result)
+                                    {
+                                        CFG.Current.ModEngine3ProfileDirectory = profilePath;
+                                    }
+                                }
+                                UIHelper.Tooltip("Set the directory you wish to store ME3 profiles in.");
+                            }
+                        }
+                    }
+
+                    ImGui.Separator();
+
+                    if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
+                    {
+                        ProjectSettings.Show(BaseEditor, SelectedProject);
+                    }
+
+                    if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
+                    {
+                        ProjectAliasEditor.Show(BaseEditor, SelectedProject);
+                    }
+
+                    if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
+                    {
+                        ProjectEnumEditor.Show(BaseEditor, SelectedProject);
+                    }
+
+                    ImGui.Separator();
+
+                    if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
+                    {
+                        ProjectCreation.Show();
+                    }
+
+                    if (ImGui.MenuItem($"Unload Project##unloadProject_{imGuiID}"))
+                    {
+                        project.Unload();
+                    }
+
+                    if (ImGui.MenuItem($"Delete Project##deleteProject_{imGuiID}"))
+                    {
+                        var dialog = PlatformUtils.Instance.MessageBox("Are you sure you want to delete this project?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (dialog == DialogResult.Yes)
+                        {
+                            ProjectUtils.DeleteProject(BaseEditor, project);
+                        }
+                    }
+
+                    ImGui.EndPopup();
+                }
             }
         }
 
