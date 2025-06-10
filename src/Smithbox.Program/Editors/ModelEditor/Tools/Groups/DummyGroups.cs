@@ -92,6 +92,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
+            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Dummy Groups\\";
+
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);
