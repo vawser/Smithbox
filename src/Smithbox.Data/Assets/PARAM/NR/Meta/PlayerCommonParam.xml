@@ -8,6 +8,11 @@
     <toughnessRecoverCorrection AltName="Toughness Recovery Correction" Wiki="A correction value used to calculate the player's toughness recovery time." />
     <baseMagicSlotSize AltName="Base Memory Slot Count" Wiki="Magic memory slot initial value" />
     <baseAccSlotNum AltName="Base Talisman Slot Count" Wiki="Talisman equipment slot initial value" />
+    
+    <defaultNumberOfItemSlots
+    AltName="Base Item Slot Count"
+    Wiki="The default number of item slots a player has." />
+    
     <reserved02 AltName="" Padding=""/>
     <animeID_DropItemPick AltName="Item Pick-up - Animation ID" Wiki="Animation ID when picking up a drop item" />
     <resistRecoverPoint_Sleep_Player AltName="Player Resist Recovery - Sleep" Wiki="Player resistance value recovery amount_sleep point / s" />

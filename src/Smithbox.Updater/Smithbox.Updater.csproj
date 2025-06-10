@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  
+  <Target Name="CopyOutputToMainProject" AfterTargets="Build">
+    <Copy SourceFiles="C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Updater\bin\Debug\net9.0-windows\Smithbox.Updater.exe" 
+          DestinationFolder="..\Smithbox\bin\$(Configuration)\net9.0-windows7.0\win-x64" 
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Updater\bin\Debug\net9.0-windows\Smithbox.Updater.dll"
+          DestinationFolder="..\Smithbox\bin\$(Configuration)\net9.0-windows7.0\win-x64"
+          SkipUnchangedFiles="true" />
+  </Target>
+  
+</Project>

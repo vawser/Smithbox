@@ -11,6 +11,7 @@ using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -45,9 +46,6 @@ public class Smithbox
     public static string _programTitle;
 
     public readonly string _version;
-
-    public static bool _programUpdateAvailable;
-    public static string _releaseUrl = "";
 
     public SoapstoneService _soapstoneService;
 
@@ -96,6 +94,7 @@ public class Smithbox
 
         _context.ImguiRenderer.OnSetupDone();
 
+        ProgramUpdater.CheckForUpdate(_version);
     }
 
     public void SetProgramName(ProjectEntry curProject)
@@ -258,37 +257,6 @@ public class Smithbox
 
         _context.ImguiRenderer.RecreateFontDeviceTexture();
     }
-    private void CheckProgramUpdate()
-    {
-        Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
-        Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
-        var isVer = false;
-        var verstring = "";
-        foreach (var c in release.TagName)
-        {
-            if (char.IsDigit(c) || (isVer && c == '.'))
-            {
-                verstring += c;
-                isVer = true;
-            }
-            else
-            {
-                isVer = false;
-            }
-        }
-
-        if(verstring.EndsWith("."))
-        {
-            verstring = verstring.Substring(0, verstring.Length - 1);
-        }
-
-        if (Version.Parse(verstring) > Version.Parse(_version))
-        {
-            // Update available
-            _programUpdateAvailable = true;
-            _releaseUrl = release.HtmlUrl;
-        }
-    }
 
     public void Run()
     {
@@ -311,22 +279,7 @@ public class Smithbox
 
             TaskManager.RunPassiveTask(task);
         }
-
-        if (CFG.Current.System_Check_Program_Update)
-        {
-            TaskManager.LiveTask task = new(
-                "system_checkProgramUpdate",
-                "[System]",
-                "Program update check has run.",
-                "Program update check has failed to run.",
-                TaskManager.RequeueType.None,
-                true,
-                CheckProgramUpdate
-            );
-
-            TaskManager.Run(task);
-        }
-
+        
         long previousFrameTicks = 0;
         Stopwatch sw = new();
         sw.Start();
@@ -729,20 +682,7 @@ public class Smithbox
             TaskLogs.DisplayWarningLoggerBar();
             TaskLogs.DisplayWarningLoggerWindow();
 
-            // Program Update
-            if (Smithbox._programUpdateAvailable)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
-                if (ImGui.Button("Update Available"))
-                {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = Smithbox._releaseUrl;
-                    myProcess.Start();
-                }
-
-                ImGui.PopStyleColor();
-            }
+            ProgramUpdater.DisplayUpdateHint(this);
 
             ImGui.EndMainMenuBar();
         }

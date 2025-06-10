@@ -46,7 +46,7 @@
       <SortID>500</SortID>
     </Field>
     
-    <Field Def="u8 unknownByte_1" />
+    <Field Def="u8 defaultNumberOfItemSlots" />
     <Field Def="u8 unknownByte_2" />
     
     <Field Def="s32 animeID_DropItemPick">

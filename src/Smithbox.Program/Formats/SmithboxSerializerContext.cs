@@ -88,6 +88,10 @@ namespace StudioCore.Formats.JSON;
 [JsonSerializable(typeof(MaterialDisplayConfiguration))]
 [JsonSerializable(typeof(MaterialFileListConfiguration))]
 
+// Github
+[JsonSerializable(typeof(GithubAsset))]
+[JsonSerializable(typeof(GithubUploader))]
+
 internal partial class SmithboxSerializerContext : JsonSerializerContext
 {
 }
