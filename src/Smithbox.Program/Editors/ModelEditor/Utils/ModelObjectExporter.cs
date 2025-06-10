@@ -22,7 +22,21 @@ public static class ModelObjectExporter
     public static void ExportModel(ModelEditorScreen editor)
     {
         var flver = editor.ResManager.GetCurrentFLVER();
-        var name = editor.ResManager.GetCurrentInternalFile().Name;
+        var internalFile = editor.ResManager.GetCurrentInternalFile();
+
+        if (internalFile == null)
+        {
+            TaskLogs.AddLog("No internal file has been selected.");
+            return;
+        }
+
+        if (flver == null)
+        {
+            TaskLogs.AddLog("No FLVER has been loaded.");
+            return;
+        }
+
+        var name = internalFile.Name;
         var path = $"{editor.Project.ProjectPath}\\{name}.obj";
         var mapId = editor.Selection._selectedAssociatedMapID;
         var modelType = editor.ResManager.LoadedFlverContainer.Type;

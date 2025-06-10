@@ -2,8 +2,10 @@
 using Hexa.NET.ImGui;
 using Octokit;
 using StudioCore.Configuration;
+using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Formats.JSON;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,7 +43,25 @@ public static class ProgramUpdater
 
         if (release.TagName != version)
         {
-            IsUpdateAvaliable = true;
+            var curVersion = version.Replace(".", "");
+            var releaseVersion = release.TagName.Replace(".", "");
+
+            var curVersionInt = -1;
+            var releaseVersionInt = -1;
+
+            var curSucces = int.TryParse(curVersion, out curVersionInt);
+            var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionInt);
+
+            if (curSucces && releaseSuccess)
+            {
+                if (curVersionInt != -1 && releaseVersionInt != -1)
+                {
+                    if (curVersionInt < releaseVersionInt)
+                    {
+                        IsUpdateAvaliable = true;
+                    }
+                }
+            }
         }
     }
 
@@ -58,7 +78,12 @@ public static class ProgramUpdater
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
             if (ImGui.Button("Update Smithbox to Latest Release"))
             {
-                UpdateSmithbox(baseEditor);
+                var dialog = PlatformUtils.Instance.MessageBox("This will delete your current Smithbox install and replace it with the latest release. You must let this process finish without interruption.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (dialog == DialogResult.Yes)
+                {
+                    UpdateSmithbox(baseEditor);
+                }
             }
 
             ImGui.PopStyleColor();
