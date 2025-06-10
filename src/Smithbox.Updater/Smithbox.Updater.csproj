@@ -7,14 +7,21 @@
     <Nullable>enable</Nullable>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-  
-  <Target Name="CopyOutputToMainProject" AfterTargets="Build">
-    <Copy SourceFiles="C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Updater\bin\Debug\net9.0-windows\Smithbox.Updater.exe" 
-          DestinationFolder="..\Smithbox\bin\$(Configuration)\net9.0-windows7.0\win-x64" 
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Updater\bin\Debug\net9.0-windows\Smithbox.Updater.dll"
-          DestinationFolder="..\Smithbox\bin\$(Configuration)\net9.0-windows7.0\win-x64"
+
+  <Target Name="CopyOutputToSmithbox" AfterTargets="Build">
+    <PropertyGroup>
+      <!-- Define the relative output path of Smithbox -->
+      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/net9.0-windows7.0/win-x64/</SmithboxOutputDir>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.exe" />
+      <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.dll" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(UpdaterFiles)"
+          DestinationFolder="$(SmithboxOutputDir)"
           SkipUnchangedFiles="true" />
   </Target>
-  
+
 </Project>
