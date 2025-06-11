@@ -337,29 +337,33 @@
     AltName="Near Death Duration in Boss Arena"
     Wiki="Near-death timer duration in boss arenas. Arenas apply special effect 102120 every frame, which overrides the near-death timer, preventing it from decaying. The death timer is also hidden when this special effect is applied." />
     
+    <nearDeathGracePeriodTimerDefault
+    AltName="Default Duration for Near Death Grace"
+    Wiki="The default duration for the near death grace period, during which the death timer is frozen and damage decay doesn't happen." />
+    
     <RequiredReviveProgress_Level1
     AltName="Required Revive Progress: Death Severity 1"
-    Wiki="The target value PlayerIns->reviveProgress must reach for revival when PlayerIns->nearDeathSeverityLevel is 1." />
+    Wiki="Damage required to revive player when near death severity level is 1." />
     
     <RequiredReviveProgress_Level2
     AltName="Required Revive Progress: Death Severity 2"
-    Wiki="The target value PlayerIns->reviveProgress must reach for revival when PlayerIns->nearDeathSeverityLevel is 2." />
+    Wiki="Damage required to revive player when near death severity level is 2." />
     
     <RequiredReviveProgress_Level3
     AltName="Required Revive Progress: Death Severity 3"
-    Wiki="The target value PlayerIns->reviveProgress must reach for revival when PlayerIns->nearDeathSeverityLevel is 3 or greater." />
+    Wiki="Damage required to revive player when near death severity level is 3 or greater." />
     
     <ReviveRateDecayPercent_Level1
     AltName="Revive Progress Decay: Death Severity 1"
-    Wiki="A percentage used to calculate how much PlayerIns->reviveProgress increases per second when PlayerIns->nearDeathSeverityLevel is 1. (Rate = RequiredReviveProgress_Level1 * ReviveRateDecayPercent_Level1 / 100.0 per frame)." />
+    Wiki="A percentage used to calculate how much reviveProgress increases per second when nearDeathSeverityLevel is 1. (Rate = RequiredReviveProgress_Level1 * ReviveRateDecayPercent_Level1 / 100.0 per frame)." />
     
     <ReviveRateDecayPercent_Level2
     AltName="Revive Progress Decay: Death Severity 2"
-    Wiki="Similar to above, for PlayerIns->nearDeathSeverityLevel 2." />
+    Wiki="Similar to above, for nearDeathSeverityLevel 2." />
     
     <ReviveRateDecayPercent_Level3
     AltName="Revive Progress Decay: Death Severity 3"
-    Wiki="Similar to above, for PlayerIns->nearDeathSeverityLevel greater than 2." />
+    Wiki="Similar to above, for nearDeathSeverityLevel greater than 2." />
     
     
   </Field>

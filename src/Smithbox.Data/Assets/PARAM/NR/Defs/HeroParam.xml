@@ -30,7 +30,10 @@
     <Field Def="s32 unknown_25"/>
     <Field Def="s32 unknown_26"/>
     <Field Def="s32 heroStatusParamId"/>
-    <Field Def="f32 heroUltimateCooldown"/>
+    
+    <Field Def="u16 heroUltimateCooldown"/>
+    <Field Def="u16 unknown_27"/>
+    
     <Field Def="f32 characterAbilityCooldown"/>
     <Field Def="s32 characterAbilityUsageCount"/>
     <Field Def="s32 passiveAbilityTitleId"/>
