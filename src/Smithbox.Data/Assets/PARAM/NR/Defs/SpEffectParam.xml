@@ -256,7 +256,7 @@
     <Field Def="f32 unknown_146"/>
     <Field Def="f32 unknown_147"/>
     <Field Def="f32 unknown_148"/>
-    <Field Def="s32 unknown_149"/>
+    <Field Def="s32 secondaryIconId"/>
     
     <Field Def="u8 madnessDamageRate"/>
     <Field Def="u8 isUseStatusAilmentAtkPowerCorrect:1"/>
@@ -294,9 +294,9 @@
     
     <Field Def="f32 unknown_old_11"/>
     <Field Def="f32 unknown_old_12"/>
-    <Field Def="s32 unknown_old_13"/>
-    <Field Def="s32 unknown_old_14"/>
-    <Field Def="s32 unknown_old_15"/>
+    <Field Def="s32 spEffectTextId_1"/>
+    <Field Def="s32 spEffectTextId_2"/>
+    <Field Def="s32 spEffectTextId_3"/>
     
     <Field Def="f32 registFreezeChangeRate"/>
     <Field Def="u16 invocationConditionsStateChange1"/>
@@ -385,7 +385,8 @@
     <Field Def="f32 characterSkillGauge"/>
     
     <Field Def="u16 unknown_230a"/>
-    <Field Def="u16 unknown_230b"/>
+    <Field Def="u8 auxAttribute"/>
+    <Field Def="u8 playerHandValue"/>
     <Field Def="s32 permanentBuffTextId"/>
     
     <Field Def="f32 guardCounterAttackRate"/>
@@ -394,12 +395,13 @@
     <Field Def="u8 additionalCharacterSkillUse"/>
     <Field Def="s8 triggerEffectOnKnockback_unk"/>
     
-    <Field Def="u16 unknown_234a"/>
-    <Field Def="u16 unknown_234b"/>
+    <Field Def="u16 weakPointValue"/>
+    <Field Def="u8 runeDiscountValue"/>
+    <Field Def="s8 unknown_234c"/>
     
     <Field Def="f32 ultimateArtDuration"/>
     <Field Def="f32 characterSkillAttackRate"/>
-    <Field Def="s32 improvedDodging_unk"/>
+    <Field Def="s32 unknown_240"/>
     <Field Def="s32 revenantFamily_spEffectId_1"/>
     <Field Def="s32 revenantFamily_spEffectId_2"/>
     <Field Def="s32 revenantFamily_spEffectId_3"/>

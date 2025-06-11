@@ -9,7 +9,7 @@
     <iconId 
     AltName="Icon ID" 
     Wiki="Icon ID (When -1, no icon is required)" 
-    TextureRef="Direct/01_common/SB_Status_00/iconId/MENU_StatusIcon_,Direct/01_common/SB_Status_01_dlc/iconId/MENU_StatusIcon_" 
+    TextureRef="Direct/01_common_h/SB_StatusIcon_0/iconId/MENU_StatusIcon_" 
     DefaultValue="-1" />
     
     <conditionHp 
@@ -1391,6 +1391,12 @@
     Wiki="Correction value used only for point damage and% damage of state change type [madness]" 
     DefaultValue="100" />
     
+    <secondaryIconId 
+    AltName="Secondary Icon ID" 
+    Wiki="Icon ID (When -1, no icon is required)" 
+    TextureRef="Direct/01_common_h/SB_StatusIcon_0/secondaryIconId/MENU_StatusIcon_" 
+    DefaultValue="-1" />
+    
     <isUseStatusAilmentAtkPowerCorrect 
     AltName="Use Status Ailment Attack Power Correction" 
     Wiki="If , the abnormal state attack power multiplier correction of the attack para is applied." 
@@ -1539,55 +1545,20 @@
     Wiki="Damage correction for the damage value received from OBJ." 
     DefaultValue="1" />
     
-    <atkPlayerDmgCorrectRate_Physics 
-    AltName="PVP Damage %: Physical" 
-    Wiki="Damage correction for the damage value given to the player." 
-    DefaultValue="1" />
+    <spEffectTextId_1
+    AltName="Slot 1: SpEffect Text ID"
+    Wiki="The SpEffect text ID to use." 
+    FmgRef="SpEffect_Name" />
     
-    <atkPlayerDmgCorrectRate_Magic 
-    AltName="PVP Damage %: Magic" 
-    Wiki="Damage correction for the damage value given to the player." 
-    DefaultValue="1" />
+    <spEffectTextId_2
+    AltName="Slot 2: SpEffect Text ID"
+    Wiki="The SpEffect text ID to use." 
+    FmgRef="SpEffect_Name" />
     
-    <atkPlayerDmgCorrectRate_Fire 
-    AltName="PVP Damage %: Fire" 
-    Wiki="Damage correction for the damage value given to the player." 
-    DefaultValue="1" />
-    
-    <atkPlayerDmgCorrectRate_Thunder 
-    AltName="PVP Damage %: Lightning" 
-    Wiki="Damage correction for the damage value given to the player." 
-    DefaultValue="1" />
-    
-    <atkPlayerDmgCorrectRate_Dark 
-    AltName="PVP Damage %: Holy" 
-    Wiki="Damage correction for the damage value given to the player." 
-    DefaultValue="1" />
-    
-    <atkEnemyDmgCorrectRate_Physics 
-    AltName="Damage %: Physical" 
-    Wiki="Damage correction for the damage value given to the enemy." 
-    DefaultValue="1" />
-    
-    <atkEnemyDmgCorrectRate_Magic 
-    AltName="Damage %: Magic" 
-    Wiki="Damage correction for the damage value given to the enemy." 
-    DefaultValue="1" />
-    
-    <atkEnemyDmgCorrectRate_Fire 
-    AltName="Damage %: Fire" 
-    Wiki="Damage correction for the damage value given to the enemy." 
-    DefaultValue="1" />
-    
-    <atkEnemyDmgCorrectRate_Thunder 
-    AltName="Damage %: Lightning" 
-    Wiki="Damage correction for the damage value given to the enemy." 
-    DefaultValue="1" />
-    
-    <atkEnemyDmgCorrectRate_Dark 
-    AltName="Damage %: Holy" 
-    Wiki="Damage correction for the damage value given to the enemy." 
-    DefaultValue="1" />
+    <spEffectTextId_3
+    AltName="Slot 3: SpEffect Text ID"
+    Wiki="The SpEffect text ID to use." 
+    FmgRef="SpEffect_Name" />
     
     <registFreezeChangeRate 
     AltName="Aux Resist %: Frostbite" 
@@ -2011,6 +1982,16 @@
     Wiki="The amount of duration increase to apply to the character's ultimate art." 
     DefaultValue="0"/>
     
+    <auxAttribute
+    AltName="Status Attribute"
+    Wiki="Related to the inflicted status from the SpEffect." 
+    ProjectEnum="ATKPARAM_SPATTR_TYPE" />
+    
+    <playerHandValue
+    AltName="Player Handiness"
+    Wiki="Related to the player hand: 0 is both?, 1 is right, 2 is left." 
+    Enum="PLAYER_HAND" />
+    
     <permanentBuffTextId
     AltName="Permanent Buff Text ID"
     Wiki="The text to display on the status screen whilst this permanent buff is active." 
@@ -2037,36 +2018,45 @@
     Wiki="Appears related to the effects that trigger a boost on knockback" 
     DefaultValue="-1"/>
     
+    <weakPointValue
+    AltName="Weak Point Duration"
+    Wiki="Determines duration extension to weak point from Ironeye." />
+    
+    <runeDiscountValue
+    AltName="Rune Discount at Merchants"
+    Wiki="Determines the amount of rune discount from merchants." />
+    
     <characterSkillAttackRate
     AltName="Character Skill Attack %"
     Wiki="Increases the character skill attack power." 
     DefaultValue="-1"/>
     
-    <improvedDodging_unk
-    AltName="improvedDodging_unk"
-    Wiki="Related to the improved dodging effect" 
-    DefaultValue="-1"/>
-    
     <revenantFamily_spEffectId_1
-    AltName="revenantFamily_spEffectId_1"
+    AltName="Revenant: Summon 1: SpEffect ID"
     Wiki="Related to the revenant family buff" 
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_2
-    AltName="revenantFamily_spEffectId_2"
+    AltName="Revenant: Summon 2: SpEffect ID"
     Wiki="Related to the revenant family buff" 
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
     <revenantFamily_spEffectId_3
-    AltName="revenantFamily_spEffectId_3"
+    AltName="Revenant: Summon 3: SpEffect ID"
     Wiki="Related to the revenant family buff" 
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
   </Field>
   <Enums>
+    <Enum Name="PLAYER_HAND" type="u8">
+        <Option Value="0" Name="Both" />
+        <Option Value="1" Name="Right" />
+        <Option Value="2" Name="Left" />
+        <Option Value="3" Name="None" />
+    </Enum>
     <Enum Name="WEP_TYPE" type="u16">
         <Option Value="0" Name="None" />
         <Option Value="1" Name="Dagger" />

@@ -46,17 +46,17 @@ public static class ProgramUpdater
             var curVersion = version.Replace(".", "");
             var releaseVersion = release.TagName.Replace(".", "");
 
-            var curVersionInt = -1;
-            var releaseVersionInt = -1;
+            var curVersionNum = -1;
+            var releaseVersionNum = -1;
 
-            var curSucces = int.TryParse(curVersion, out curVersionInt);
-            var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionInt);
+            var curSuccess = int.TryParse(curVersion, out curVersionNum);
+            var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionNum);
 
-            if (curSucces && releaseSuccess)
+            if (curSuccess && releaseSuccess)
             {
-                if (curVersionInt != -1 && releaseVersionInt != -1)
+                if (curVersionNum != -1 && releaseVersionNum != -1)
                 {
-                    if (curVersionInt < releaseVersionInt)
+                    if (curVersionNum < releaseVersionNum)
                     {
                         IsUpdateAvaliable = true;
                     }

@@ -105,6 +105,9 @@
                 { "ID": "24", "Name": "Sleep", "Description": "" },
                 { "ID": "25", "Name": "Madness", "Description": "" },
                 { "ID": "26", "Name": "Blight", "Description": "" },
+                { "ID": "27", "Name": "Dragonwound", "Description": "" },
+                { "ID": "28", "Name": "Unknown", "Description": "" },
+                { "ID": "29", "Name": "Unknown", "Description": "" },
                 { "ID": "254", "Name": "None", "Description": "" }
             ]
         },
