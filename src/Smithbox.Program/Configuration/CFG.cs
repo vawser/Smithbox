@@ -948,6 +948,7 @@ public class CFG
     public bool Prefab_ApplyUniqueEntityID = false;
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;
+    public bool Prefab_PlaceAtPlacementOrb = true;
 
     public bool Prefab_ApplyOverrideName = false;
     public string Prefab_OverrideName = "";

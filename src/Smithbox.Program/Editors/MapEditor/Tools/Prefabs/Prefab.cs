@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
@@ -13,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using static MsbUtils;
 
 namespace StudioCore.Editors.MapEditor.Tools.Prefabs;
@@ -47,6 +49,7 @@ public abstract class Prefab : PrefabAttributes
     {
         return editor.Project.ProjectType switch
         {
+            ProjectType.NR => new Prefab<MSB_NR>(editor),
             ProjectType.ER => new Prefab<MSBE>(editor),
             ProjectType.SDT => new Prefab<MSBS>(editor),
             ProjectType.DS1 or ProjectType.DS1R => new Prefab<MSB1>(editor),
@@ -69,6 +72,36 @@ public abstract class Prefab : PrefabAttributes
         prefixName ??= PrefabName;
         var parent = targetMap.RootObject;
         List<MsbEntity> ents = GenerateMapEntities(targetMap);
+
+        if(CFG.Current.Prefab_PlaceAtPlacementOrb)
+        {
+            var placementOrigin = editor.MapViewportView.GetPlacementPosition();
+
+            // Get average position to determine new centre
+            Vector3 currentCenter = Vector3.Zero;
+            foreach (var entity in ents)
+            {
+                // Ignore Events as they don't have position
+                if (entity.IsPart() || entity.IsRegion())
+                {
+                    var position = entity.GetPropertyValue<Vector3>("Position");
+
+                    currentCenter += position;
+                }
+            }
+
+            currentCenter /= ents.Count;
+
+            Vector3 offset = placementOrigin - currentCenter;
+
+            foreach (var entity in ents)
+            {
+                var position = entity.GetPropertyValue<Vector3>("Position");
+                var newPos = position += offset;
+                entity.SetPropertyValue("Position", newPos);
+            }
+        }
+
         var entries = ents.Select((entity) => entity.WrappedObject as IMsbEntry);
 
         foreach (var entry in entries)
@@ -234,5 +267,28 @@ internal class Prefab<T> : Prefab
         PrefabName = name;
         TagList = tags.Split(",").ToList();
         Write(filepath);
+    }
+}
+
+public class PrefabAttributesConverter : JsonConverter<PrefabAttributes>
+{
+    private readonly MapEditorScreen _editor;
+
+    public PrefabAttributesConverter(MapEditorScreen editor)
+    {
+        _editor = editor;
+    }
+
+    public override PrefabAttributes ReadJson(JsonReader reader, Type objectType, PrefabAttributes existingValue, bool hasExistingValue, JsonSerializer serializer)
+    {
+        var jo = JObject.Load(reader);
+        var prefab = new PrefabAttributes(_editor);
+        serializer.Populate(jo.CreateReader(), prefab);
+        return prefab;
+    }
+
+    public override void WriteJson(JsonWriter writer, PrefabAttributes value, JsonSerializer serializer)
+    {
+        JObject.FromObject(value).WriteTo(writer);
     }
 }

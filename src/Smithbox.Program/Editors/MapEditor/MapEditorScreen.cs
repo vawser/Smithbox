@@ -1055,7 +1055,7 @@ public class MapEditorScreen : EditorScreen
     {
         var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
 
-        if (targetMap.Value.MapContainer != null)
+        if (targetMap.Value != null && targetMap.Value.MapContainer != null)
         {
             return targetMap.Value.MapContainer;
         }

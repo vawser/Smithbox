@@ -22,31 +22,29 @@ public class PrefabView
     private ViewportActionManager EditorActionManager;
     private RenderScene RenderScene;
 
+    public Dictionary<string, PrefabAttributes> Prefabs = new();
+    public Dictionary<string, Prefab> LoadedPrefabs = new();
+    public PrefabAttributes SelectedPrefab;
 
-    Dictionary<string, PrefabAttributes> prefabs = new();
-    Dictionary<string, Prefab> loadedPrefabs = new();
-    PrefabAttributes selectedPrefab;
+    public string Prefab_EditName = "";
+    public string Prefab_EditFlags = "";
 
-    string editName = "";
-    string editFlags = "";
-
-    string prefabDir = "";
-
-
-    (string name, ObjectContainer map) comboMap;
-
+    public (string name, ObjectContainer map) comboMap;
 
     public PrefabView(MapEditorScreen screen) 
     { 
         Editor = screen;
         EditorActionManager = screen.EditorActionManager;
         RenderScene = screen.MapViewportView.RenderScene;
+
+        RefreshPrefabList();
     }
 
-    Prefab GetLoadedPrefab(string name)
+    public Prefab GetLoadedPrefab(string name)
     {
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
         var prefabPath = $@"{prefabDir}\{name}.json";
-        var loadedPrefab = loadedPrefabs.GetValueOrDefault(name);
+        var loadedPrefab = LoadedPrefabs.GetValueOrDefault(name);
 
         if (loadedPrefab is not null)
             return loadedPrefab;
@@ -56,39 +54,52 @@ public class PrefabView
         if (File.Exists(prefabPath))
         {
             loadedPrefab.ImportJson(prefabPath);
-            loadedPrefabs[name] = loadedPrefab;
+            LoadedPrefabs[name] = loadedPrefab;
         }
 
         return loadedPrefab;
     }
 
-    void CreateFromSelection(string name)
+    public void CreateFromSelection(string name)
     {
-        if (prefabs.ContainsKey(name))
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+
+        if (Prefabs.ContainsKey(name))
         {
             TaskLogs.AddLog($"Failed to create prefab {name}: prefab already exists with this name.", LogLevel.Error);
             return;
         }
         var newPrefab = Prefab.New(Editor);
 
-        newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, editFlags, Editor.Universe.Selection);
+        if (newPrefab == null)
+        {
+            TaskLogs.AddLog("Prefabs are not supported for this project type.");
+        }
+        else
+        {
+            newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, Prefab_EditFlags, Editor.Universe.Selection);
 
-        prefabs.Add(name, newPrefab);
-        selectedPrefab = newPrefab;
-        loadedPrefabs.Remove(name);
+            Prefabs.Add(name, newPrefab);
+            SelectedPrefab = newPrefab;
+            LoadedPrefabs.Remove(name);
+
+            RefreshPrefabList();
+        }
     }
 
-    void Delete(string name)
+    public void Delete(string name)
     {
-        prefabs.Remove(name);
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+
+        Prefabs.Remove(name);
         File.Delete($@"{prefabDir}\{name}.json");
     }
 
-    void CreateButton(Vector2 buttonSize)
+    public void CreateButton(Vector2 buttonSize)
     {
         bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
-        var isDisabled = !selectedEntities || selectedPrefab is not null || !editName.Any();
+        var isDisabled = !selectedEntities || !Prefab_EditName.Any();
 
         if (isDisabled)
         {
@@ -96,7 +107,7 @@ public class PrefabView
 
             if (ImGui.Button("Create##createPrefab", buttonSize))
             {
-                CreateFromSelection(editName);
+                CreateFromSelection(Prefab_EditName);
             }
             UIHelper.Tooltip("Create a new prefab from the selected entities.");
 
@@ -106,31 +117,31 @@ public class PrefabView
         {
             if (ImGui.Button("Create##createPrefab", buttonSize))
             {
-                CreateFromSelection(editName);
+                CreateFromSelection(Prefab_EditName);
             }
             UIHelper.Tooltip("Create a new prefab from the selected entities.");
         }
     }
 
-    void DeleteButton(Vector2 buttonSize)
+    public void DeleteButton(Vector2 buttonSize)
     {
-        ImGui.BeginDisabled(selectedPrefab is null);
+        ImGui.BeginDisabled(SelectedPrefab is null);
 
         if (ImGui.Button("Delete##deletePrefab", buttonSize))
         {
-            Delete(selectedPrefab.PrefabName);
-            selectedPrefab = null;
-            editName = "";
-            editFlags = "";
+            Delete(SelectedPrefab.PrefabName);
+            SelectedPrefab = null;
+            Prefab_EditName = "";
+            Prefab_EditFlags = "";
         };
         UIHelper.Tooltip("Delete the selected prefab.");
 
         ImGui.EndDisabled();
     }
 
-    void ImportButton(Vector2 buttonSize)
+    public void ImportButton(Vector2 buttonSize)
     {
-        ImGui.BeginDisabled(selectedPrefab is null || comboMap.map is not MapContainer);
+        ImGui.BeginDisabled(SelectedPrefab is null || comboMap.map is not MapContainer);
 
         if (ImGui.Button("Import##importPrefab", buttonSize))
         {
@@ -138,7 +149,7 @@ public class PrefabView
             if (CFG.Current.Prefab_ApplyOverrideName)
                 prefixName = CFG.Current.Prefab_OverrideName;
 
-            var loadedPrefab = GetLoadedPrefab(selectedPrefab.PrefabName);
+            var loadedPrefab = GetLoadedPrefab(SelectedPrefab.PrefabName);
 
             if (loadedPrefab != null)
                 loadedPrefab.ImportToMap(Editor, comboMap.map as MapContainer, RenderScene, EditorActionManager, prefixName);
@@ -148,24 +159,23 @@ public class PrefabView
         ImGui.EndDisabled();
     }
 
-
-    void ReplaceButton(Vector2 buttonSize)
+    public void ReplaceButton(Vector2 buttonSize)
     {
         bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
-        ImGui.BeginDisabled(selectedPrefab is null || !selectedEntities);
+        ImGui.BeginDisabled(SelectedPrefab is null || !selectedEntities);
 
         if (ImGui.Button("Replace##replacePrefab", buttonSize))
         {
-            Delete(selectedPrefab.PrefabName);
-            CreateFromSelection(editName);
+            Delete(SelectedPrefab.PrefabName);
+            CreateFromSelection(Prefab_EditName);
         }
         UIHelper.Tooltip("Replace the selected prefab with the selected entities.");
 
         ImGui.EndDisabled();
     }
 
-    void ExportConfig()
+    public void ExportConfig()
     {
         ImGui.Checkbox("Retain Entity ID##prefabRetainEntityID", ref CFG.Current.Prefab_IncludeEntityID);
         UIHelper.Tooltip("Saved objects within a prefab will retain their Entity ID. If false, their Entity ID is set to 0.");
@@ -174,7 +184,7 @@ public class PrefabView
         UIHelper.Tooltip("Saved objects within a prefab will retain their Entity Group IDs. If false, their Entity Group IDs will be set to 0.");
     }
 
-    void ImportConfig()
+    public void ImportConfig()
     {
         ImGui.Checkbox("Override import name##prefabOverrideImportName", ref CFG.Current.Prefab_ApplyOverrideName);
         UIHelper.Tooltip("Spawned prefab objects will be prepended with this instead of the prefab name");
@@ -189,16 +199,19 @@ public class PrefabView
         ImGui.PopItemWidth();
         ImGui.EndDisabled();
 
+        ImGui.Checkbox("Import on Placement Orb Origin##prefabPlaceAtPlacementOrb", ref CFG.Current.Prefab_PlaceAtPlacementOrb);
+        UIHelper.Tooltip("Spawned prefab objects will be placed at the placement orb origin rather than their original co-ordinates.");
+
         ImGui.Checkbox("Apply Unique Entity ID##prefabApplyUniqueEntityID", ref CFG.Current.Prefab_ApplyUniqueEntityID);
         UIHelper.Tooltip("Spawned prefab objects will be given unique Entity IDs.");
 
-        if (Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Unique Instance ID##prefabApplyUniqueInstanceID", ref CFG.Current.Prefab_ApplyUniqueInstanceID);
             UIHelper.Tooltip("Spawned prefab objects will be given unique Instance IDs.");
         }
 
-        if (Editor.Project.ProjectType == ProjectType.DS3 || Editor.Project.ProjectType == ProjectType.SDT || Editor.Project.ProjectType == ProjectType.ER || Editor.Project.ProjectType == ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ImGui.Checkbox("Apply Entity Group ID##prefabApplyEntityGroupID", ref CFG.Current.Prefab_ApplySpecificEntityGroupID);
 
@@ -260,11 +273,11 @@ public class PrefabView
 
         ImGui.Text("Name:");
         ImGui.SetNextItemWidth(defaultSize.X);
-        ImGui.InputText("##PrefabName", ref editName, 64);
+        ImGui.InputText("##PrefabName", ref Prefab_EditName, 64);
 
         ImGui.Text("Flags:");
         ImGui.SetNextItemWidth(defaultSize.X);
-        ImGui.InputText("##PrefabFlags", ref editFlags, 64);
+        ImGui.InputText("##PrefabFlags", ref Prefab_EditFlags, 64);
 
         CreateButton(thirdSizeButton);
         ImGui.SameLine();
@@ -282,9 +295,9 @@ public class PrefabView
         ImGui.Text("Prefabs:");
         if (ImGui.BeginChild("PrefabEditorTree"))
         {
-            foreach (var (name, prefab) in prefabs)
+            foreach (var (name, prefab) in Prefabs)
             {
-                bool selected = selectedPrefab == prefab;
+                bool selected = SelectedPrefab == prefab;
                 var flag = ImGuiTreeNodeFlags.OpenOnArrow;
                 if (selected)
                     flag |= ImGuiTreeNodeFlags.Selected;
@@ -293,12 +306,12 @@ public class PrefabView
 
                 if (ImGui.IsItemClicked())
                 {
-                    selectedPrefab = prefab;
-                    editName = name;
-                    editFlags = "";
+                    SelectedPrefab = prefab;
+                    Prefab_EditName = name;
+                    Prefab_EditFlags = "";
                     if (prefab.TagList != null)
                     {
-                        editFlags = string.Join(',', prefab.TagList);
+                        Prefab_EditFlags = string.Join(',', prefab.TagList);
                     }
                 }
 
@@ -318,41 +331,33 @@ public class PrefabView
                 }
                 else
                 {
-                    if (loadedPrefabs.ContainsKey(name))
-                        loadedPrefabs.Remove(name);
+                    if (LoadedPrefabs.ContainsKey(name))
+                        LoadedPrefabs.Remove(name);
                 }
 
             }
         }
 
         ImGui.EndChild();
-        if (ImGui.IsItemClicked() && selectedPrefab is not null)
+        if (ImGui.IsItemClicked() && SelectedPrefab is not null)
         {
-            selectedPrefab = null;
-            editName = "";
-            editFlags = "";
+            SelectedPrefab = null;
+            Prefab_EditName = "";
+            Prefab_EditFlags = "";
         }
-    }
-
-    public void OnProjectChanged()
-    {
-        if (Editor.Project.ProjectType == ProjectType.Undefined)
-            return;
-
-        RefreshPrefabList();
-        selectedPrefab = null;
-        editName = "";
-        editFlags = "";
-        comboMap = (null, null);
     }
 
     public void RefreshPrefabList()
     {
-        prefabs = new();
-        prefabDir = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\prefabs\\";
+        var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
+        Prefabs = new();
+
         if (!Directory.Exists(prefabDir))
         {
-            try { Directory.CreateDirectory(prefabDir); } catch { }
+            try { 
+                Directory.CreateDirectory(prefabDir); 
+            } 
+            catch { }
         }
 
         if(Directory.Exists(prefabDir))
@@ -360,8 +365,14 @@ public class PrefabView
             string[] files = Directory.GetFiles(prefabDir, "*.json", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                var prefab = JsonConvert.DeserializeObject<PrefabAttributes>(File.ReadAllText(file));
-                prefabs.Add(prefab.PrefabName, prefab);
+                var settings = new JsonSerializerSettings
+                {
+                    Converters = { new PrefabAttributesConverter(Editor) }
+                };
+
+                var prefab = JsonConvert.DeserializeObject<PrefabAttributes>(File.ReadAllText(file), settings);
+
+                Prefabs.Add(prefab.PrefabName, prefab);
             }
         }
     }
