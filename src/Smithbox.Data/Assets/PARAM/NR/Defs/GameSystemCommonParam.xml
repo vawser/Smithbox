@@ -2108,14 +2108,10 @@
       <Increment>0.1</Increment>
       <SortID>60100</SortID>
     </Field>
-    <Field Def="s32 rideJumpoff_SpEffectId = -1">
-      <DisplayName>降りる大ジャンプ領域内_PC馬にかかる特殊効果ID</DisplayName>
-      <Description>降りる大ジャンプ領域内_PC馬にかかる特殊効果ID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>60200</SortID>
-    </Field>
+    
+    <Field Def="u16 unknown_short1" />
+    <Field Def="u16 NearDeathLevelDecayTime" />
+    
     <Field Def="s32 rideJumpoff_SpEffectIdPc = -1">
       <DisplayName>降りる大ジャンプ領域内_PCにかかる特殊効果ID</DisplayName>
       <Description>降りる大ジャンプ領域内_PCにかかる特殊効果ID</Description>
@@ -2199,7 +2195,7 @@
     </Field>
     
     <Field Def="s32 unknown_1" />
-    <Field Def="f32 unknown_2" />
+    <Field Def="f32 BossArenaNearDeathDuration" />
     <Field Def="f32 unknown_3" />
     <Field Def="f32 unknown_4" />
     <Field Def="f32 unknown_5" />
@@ -2237,13 +2233,13 @@
     <Field Def="f32 unknown_34" />
     <Field Def="f32 unknown_35" />
     <Field Def="f32 unknown_36" />
-    <Field Def="s32 unknown_37" />
-    <Field Def="s32 unknown_38" />
-    <Field Def="s32 unknown_39" />
-    <Field Def="f32 unknown_40" />
+    <Field Def="s32 RequiredReviveProgress_Level1" />
+    <Field Def="s32 RequiredReviveProgress_Level2" />
+    <Field Def="s32 RequiredReviveProgress_Level3" />
+    <Field Def="f32 ReviveRateDecayPercent_Level1" />
     
-    <Field Def="f32 unknown_41" />
-    <Field Def="f32 unknown_42" />
+    <Field Def="f32 ReviveRateDecayPercent_Level2" />
+    <Field Def="f32 ReviveRateDecayPercent_Level3" />
     <Field Def="s32 unknown_43" />
     <Field Def="f32 unknown_44" />
     <Field Def="f32 unknown_45" />
