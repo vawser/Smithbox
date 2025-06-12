@@ -1031,16 +1031,19 @@ public class Universe
 
             Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
 
-            foreach (Entity obj in entry.Value.MapContainer.Objects)
+            if (entry.Value != null && entry.Value.MapContainer != null)
             {
-                if (obj != null)
+                foreach (Entity obj in entry.Value.MapContainer.Objects)
                 {
-                    obj.Dispose();
+                    if (obj != null)
+                    {
+                        obj.Dispose();
+                    }
                 }
-            }
 
-            entry.Value.MapContainer.Clear();
-            entry.Value.MapContainer = null;
+                entry.Value.MapContainer.Clear();
+                entry.Value.MapContainer = null;
+            }
         }
     }
 
