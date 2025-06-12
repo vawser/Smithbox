@@ -24,7 +24,7 @@ internal class Program
         }
 
         string updateDir = $"{rootDir}/_update";
-        string smithboxExe = $"{rootDir}/Smithbox.exe";
+        string smithboxExe = $"{rootDir}/Smithbox";
 
         // Wait for main app to exit
         Thread.Sleep(1000);

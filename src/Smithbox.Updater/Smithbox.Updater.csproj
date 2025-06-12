@@ -1,21 +1,21 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
 
   <Target Name="CopyOutputToSmithbox" AfterTargets="Build">
     <PropertyGroup>
       <!-- Define the relative output path of Smithbox -->
-      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/net9.0-windows7.0/win-x64/</SmithboxOutputDir>
+      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/net9.0/osx-arm64/</SmithboxOutputDir>
     </PropertyGroup>
 
     <ItemGroup>
-      <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.exe" />
+      <UpdaterFiles Include="$(TargetDir)Smithbox.Updater" />
       <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.dll" />
     </ItemGroup>
 
