@@ -260,7 +260,7 @@ public static class ParamCategories
 
     public static void RestoreDefault(ParamEditorScreen editor)
     {
-        var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(editor.Project.ProjectType)}";
+        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(editor.Project.ProjectType)}";
         var sourceFile = Path.Combine(sourceFolder, "Categories.json");
 
         if (File.Exists(sourceFile))
@@ -291,7 +291,7 @@ public static class ParamCategories
         if (editor.Project.ProjectType == ProjectType.Undefined)
             return;
 
-        var modResourceDir = $"{editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(editor.Project)}\\";
+        var modResourceDir = $"{editor.Project.ProjectPath}/.smithbox/Assets/PARAM/{ProjectUtils.GetGameDirectory(editor.Project)}/";
         var modResourcePath = Path.Combine(modResourceDir, "Categories.json");
 
         if (!Directory.Exists(modResourceDir))

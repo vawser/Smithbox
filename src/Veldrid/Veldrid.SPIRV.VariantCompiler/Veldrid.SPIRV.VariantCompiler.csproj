@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Veldrid.SPIRV</RootNamespace>
     <!-- NOTE: Version is overridden in full build. -->
     <VeldridSPIRVVersion Condition="'$(VeldridSPIRVVersion)' == ''">1.0.12</VeldridSPIRVVersion>

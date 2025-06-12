@@ -21,7 +21,7 @@ public class Oodle
         {
             return true;
         }
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_6_win64.dll"))
+        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.6.dylib"))
         {
             Oodle6Exists = true;
             return true;
@@ -35,7 +35,7 @@ public class Oodle
         {
             return true;
         }
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_8_win64.dll"))
+        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.8.dylib"))
         {
             Oodle8Exists = true;
             return true;
@@ -49,7 +49,7 @@ public class Oodle
         {
             return true;
         }
-        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_9_win64.dll"))
+        if (Path.Exists($@"{Directory.GetCurrentDirectory()}/liboo2coremac64.2.9.dylib"))
         {
             Oodle9Exists = true;
             return true;
@@ -102,7 +102,7 @@ public class Oodle
         }
 
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory");
+            + $"Please copy liboo2coremac64.2.6.dylib, liboo2coremac64.2.8.dylib or liboo2coremac64.2.9.dylib into the Smithbox program directory");
     }
 
     [StructLayout(LayoutKind.Sequential)]

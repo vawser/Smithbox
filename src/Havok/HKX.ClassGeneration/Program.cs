@@ -1033,7 +1033,7 @@ namespace HKXClassGen
             foreach (var c in Classes)
             {
                 Directory.CreateDirectory("out");
-                using (CurrentFile = new StreamWriter($@"out\{c.Key}.cs"))
+                using (CurrentFile = new StreamWriter($@"out/{c.Key}.cs"))
                 {
                     WriteLine("using SoulsFormats;");
                     WriteLine("using System.Collections.Generic;");

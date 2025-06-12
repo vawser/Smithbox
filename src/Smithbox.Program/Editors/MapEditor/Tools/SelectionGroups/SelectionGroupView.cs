@@ -60,8 +60,8 @@ public class SelectionGroupView
         if (Editor.Project.ProjectPath == "")
             return;
 
-        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+        var SelectionDirectory = $"{Editor.Project.ProjectPath}/.smithbox/{ProjectUtils.GetGameDirectory(Editor.Project)}/selections";
+        var SelectionPath = $"{SelectionDirectory}/selection_groups.json";
 
         if (!Directory.Exists(SelectionDirectory))
         {
@@ -161,8 +161,8 @@ public class SelectionGroupView
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return false;
 
-        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+        var SelectionDirectory = $"{Editor.Project.ProjectPath}/.smithbox/{ProjectUtils.GetGameDirectory(Editor.Project)}/selections";
+        var SelectionPath = $"{SelectionDirectory}/selection_groups.json";
 
         string jsonString = JsonSerializer.Serialize(Editor.Project.MapEntitySelections, SmithboxSerializerContext.Default.EntitySelectionGroupList);
 

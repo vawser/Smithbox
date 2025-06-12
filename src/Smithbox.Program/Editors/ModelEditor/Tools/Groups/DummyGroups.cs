@@ -32,7 +32,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplaySubMenu(ModelEditorScreen editor)
         {
-            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Dummy Groups\\";
+            ExportBasePath = $"{editor.Project.ProjectPath}/.smithbox/Workflow/Dummy Groups/";
 
             UpdateDummyGroupList();
 
@@ -92,7 +92,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
-            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Dummy Groups\\";
+            ExportBasePath = $"{screen.Project.ProjectPath}/.smithbox/Workflow/Dummy Groups/";
 
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
@@ -242,7 +242,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
         public static DummyList ReadDummyGroup(string entry)
         {
             var newDummyList = new DummyList();
-            var readPath = $"{ExportBasePath}\\{entry}.json";
+            var readPath = $"{ExportBasePath}/{entry}.json";
 
             try
             {

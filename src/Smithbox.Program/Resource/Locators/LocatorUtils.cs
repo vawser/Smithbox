@@ -129,53 +129,53 @@ public static class LocatorUtils
     {
         if (project.ProjectPath != null)
         {
-            var modpath = $@"{project.ProjectPath}\{relpath}";
+            var modpath = $@"{project.ProjectPath}/{relpath}";
             if (File.Exists(modpath))
                 return modpath;
         }
 
-        return $@"{project.DataPath}\{relpath}";
+        return $@"{project.DataPath}/{relpath}";
     }
     public static string GetAssetPath_CollisionHack(string relpath)
     {
-        return $@"{CFG.Current.PTDE_Collision_Root}\{relpath}";
+        return $@"{CFG.Current.PTDE_Collision_Root}/{relpath}";
     }
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
     {
         if (game is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
-            if (!Directory.Exists($@"{gamepath}\map"))
+            if (!Directory.Exists($@"{gamepath}/map"))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}\asset"))
+            if (!Directory.Exists($@"{gamepath}/asset"))
                 return false;
         }
 
         if (game is ProjectType.DS1 or ProjectType.DS3 or ProjectType.SDT)
         {
-            if (!Directory.Exists($@"{gamepath}\map"))
+            if (!Directory.Exists($@"{gamepath}/map"))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}\obj"))
+            if (!Directory.Exists($@"{gamepath}/obj"))
                 return false;
         }
 
         if (game is ProjectType.DS2S or ProjectType.DS2)
         {
-            if (!Directory.Exists($@"{gamepath}\map"))
+            if (!Directory.Exists($@"{gamepath}/map"))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}\model\obj"))
+            if (!Directory.Exists($@"{gamepath}/model/obj"))
                 return false;
         }
 
         if (game is ProjectType.ACV or ProjectType.ACVD)
         {
-            if (!Directory.Exists($@"{gamepath}\model\map"))
+            if (!Directory.Exists($@"{gamepath}/model/map"))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}\model\obj"))
+            if (!Directory.Exists($@"{gamepath}/model/obj"))
                 return false;
         }
 
@@ -184,10 +184,10 @@ public static class LocatorUtils
 
     public static bool FileExists(ProjectEntry project, string relpath)
     {
-        if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{relpath}"))
+        if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}/{relpath}"))
             return true;
 
-        if (File.Exists($@"{project.DataPath}\{relpath}"))
+        if (File.Exists($@"{project.DataPath}/{relpath}"))
             return true;
 
         return false;
@@ -195,8 +195,8 @@ public static class LocatorUtils
 
     public static string GetOverridenFilePath(ProjectEntry project, string relpath)
     {
-        var rootPath = $@"{project.DataPath}\{relpath}";
-        var modPath = $@"{project.ProjectPath}\{relpath}";
+        var rootPath = $@"{project.DataPath}/{relpath}";
+        var modPath = $@"{project.ProjectPath}/{relpath}";
 
         if (project.ProjectPath != null && File.Exists(modPath))
             return modPath;

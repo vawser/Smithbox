@@ -18,7 +18,7 @@ public static class ParamDefHelper
             // TEMP: used to create all def files for new game
             var xmlTemplate = $"<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<PARAMDEF XmlVersion=\"1\">\r\n  <ParamType>{paramType}</ParamType>\r\n  <DataVersion>1</DataVersion>\r\n  <BigEndian>False</BigEndian>\r\n  <Unicode>True</Unicode>\r\n  <FormatVersion>203</FormatVersion>\r\n  <Fields>\r\n    <Field Def=\"u8 XXXXX\" />\r\n  </Fields>\r\n</PARAMDEF>";
 
-            var writePath = $@"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox.Data\Assets\PARAM\NR\Defs\{fileName}.xml";
+            var writePath = $@"/Users/benja/Programming/C#/Smithbox/src/Smithbox.Data/Assets/PARAM/NR/Defs/{fileName}.xml";
 
             File.WriteAllText(writePath, xmlTemplate);
 

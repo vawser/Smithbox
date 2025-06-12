@@ -145,7 +145,7 @@ public static class ParamValidator
         var dir = curProject.DataPath;
         var mod = curProject.ProjectPath;
 
-        var param = $@"{mod}\regulation.bin";
+        var param = $@"{mod}/regulation.bin";
 
         // DES, DS1, DS1R
         if (curProject.ProjectType == ProjectType.DES || curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DS1R)
@@ -178,7 +178,7 @@ public static class ParamValidator
         // DS3
         if (curProject.ProjectType == ProjectType.DS3)
         {
-            param = $@"{mod}\Data0.bdt";
+            param = $@"{mod}/Data0.bdt";
 
             try
             {

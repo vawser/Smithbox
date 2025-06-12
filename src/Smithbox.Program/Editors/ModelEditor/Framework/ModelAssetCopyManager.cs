@@ -584,7 +584,7 @@ public class ModelAssetCopyManager
         var dir = $"{mapId}";
 
         if(Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
-            dir = $@"{topMapId}\{mapId}";
+            dir = $@"{topMapId}/{mapId}";
 
         ResourceDescriptor partBnd = AssetLocator.GetMapPiece(Editor.Project, dir, copyMapPiece);
         if (partBnd.AssetPath != null)

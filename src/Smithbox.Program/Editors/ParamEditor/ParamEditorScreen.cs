@@ -641,7 +641,7 @@ public class ParamEditorScreen : EditorScreen
                             {
                                 IReadOnlyList<Param.Row> rows = param.Value.Rows;
                                 TryWriteFile(
-                                    $@"{path}\{param.Key}.csv",
+                                    $@"{path}/{param.Key}.csv",
                                     ParamIO.GenerateCSV(Project, rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                             }
                         }
@@ -659,7 +659,7 @@ public class ParamEditorScreen : EditorScreen
                             {
                                     IReadOnlyList<Param.Row> rows = param.Value.Rows;
                                     TryWriteFile(
-                                        $@"{path}\{param.Key}.csv",
+                                        $@"{path}/{param.Key}.csv",
                                         ParamIO.GenerateCSV(Project, rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                                 }
                             }

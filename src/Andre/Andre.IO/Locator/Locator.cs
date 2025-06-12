@@ -377,22 +377,22 @@ namespace Andre.IO
                     {
                         if (t == null || t.Path == "") continue;
                         var p = t.Path.ToLower();
-                        if (p.Contains($@"obj\{obj}\tex"))
+                        if (p.Contains($@"obj/{obj}/tex"))
                         {
                             var fname = Path.GetFileNameWithoutExtension(p);
                             ans.Add(new(objtpf, $"obj/{obj}/tex/{fname}", fname));
                         }
-                        else if (Regex.IsMatch(p, @".*obj\\o\d+\\tex"))
+                        else if (Regex.IsMatch(p, @".*obj/o\d+/tex"))
                         {
                             var fname = Path.GetFileNameWithoutExtension(p);
-                            var objn = Regex.Match(p, @".*obj\\(o\d+)\\tex").Groups[1].Value;
+                            var objn = Regex.Match(p, @".*obj/(o\d+)/tex").Groups[1].Value;
                             var bnd = GetObjectBndLocation(objn, fs, game);
                             var tpf = new TpfLocation(bnd, $"obj/{objn}/{objn}.tpf", objn, "tex");
                             ans.Add(new(tpf, $"obj/{objn}/tex/{fname}", fname));
                         }
-                        else if (p.Contains("model\\map"))
+                        else if (p.Contains("model/map"))
                         {
-                            var mapid = Regex.Match(p, @".*model\\map\\(m\d\d).*").Groups[1].Value;
+                            var mapid = Regex.Match(p, @".*model/map/(m\d\d).*").Groups[1].Value;
                             var fname = Path.GetFileNameWithoutExtension(p);
                             TpfLocation tpf;
                             if (fs.DirectoryExists("map/tx"))

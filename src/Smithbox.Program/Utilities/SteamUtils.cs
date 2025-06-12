@@ -12,13 +12,9 @@ public static class SteamGameLocator
 {
     public static string GetSteamInstallPath()
     {
-        using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\\WOW6432Node\\Valve\\Steam"))
-        {
-            if (key != null)
-            {
-                return key.GetValue("InstallPath") as string;
-            }
-        }
+        string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Steam";
+        if (Directory.Exists(path))
+            return path;
         return null;
     }
 

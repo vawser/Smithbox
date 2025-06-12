@@ -321,8 +321,8 @@ public static class Utils
     public static void WriteWithBackup<T>(Smithbox baseEditor, string gamedir, string moddir, string assetpath, T item,
         ProjectType gameType = ProjectType.Undefined, params object[] writeparms) where T : SoulsFile<T>, new()
     {
-        var assetgamepath = $@"{gamedir}\{assetpath}";
-        var assetmodpath = $@"{moddir}\{assetpath}";
+        var assetgamepath = $@"{gamedir}/{assetpath}";
+        var assetmodpath = $@"{moddir}/{assetpath}";
 
         try
         {
@@ -386,7 +386,7 @@ public static class Utils
             }
             else if (item is BXF3 or BXF4)
             {
-                var bhdPath = $@"{moddir}\{(string)writeparms[0]}";
+                var bhdPath = $@"{moddir}/{(string)writeparms[0]}";
                 if (item is BXF3 bxf3)
                 {
                     bxf3.Write(bhdPath + ".temp", writepath + ".temp");
@@ -446,8 +446,8 @@ public static class Utils
 
     public static void WriteStringWithBackup(string gamedir, string moddir, string assetpath, string item)
     {
-        var assetgamepath = $@"{gamedir}\{assetpath}";
-        var assetmodpath = $@"{moddir}\{assetpath}";
+        var assetgamepath = $@"{gamedir}/{assetpath}";
+        var assetmodpath = $@"{moddir}/{assetpath}";
 
         if (moddir != null)
         {
@@ -880,6 +880,7 @@ public static class Utils
 
     public static void setRegistry(string name, string value)
     {
+        return;
         RegistryKey rkey = Registry.CurrentUser.CreateSubKey(@"Software\Smithbox");
         rkey.SetValue(name, value);
     }

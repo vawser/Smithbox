@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplaySubMenu(ModelEditorScreen editor)
         {
-            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Mesh Groups\\";
+            ExportBasePath = $"{editor.Project.ProjectPath}/.smithbox/Workflow/Mesh Groups/";
 
             UpdateMeshGroupList();
 
@@ -94,7 +94,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
-            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Mesh Groups\\";
+            ExportBasePath = $"{screen.Project.ProjectPath}/.smithbox/Workflow/Mesh Groups/";
 
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
@@ -244,7 +244,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
         public static MeshList ReadMeshGroup(string entry)
         {
             var newMeshList = new MeshList();
-            var readPath = $"{ExportBasePath}\\{entry}.json";
+            var readPath = $"{ExportBasePath}/{entry}.json";
 
             try
             {

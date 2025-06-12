@@ -267,7 +267,7 @@ public class ParamData
         }
 
         // Param Type Info
-        var paramTypeInfoPath = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Type Info.json";
+        var paramTypeInfoPath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}/Param Type Info.json";
 
         if (File.Exists(paramTypeInfoPath))
         {
@@ -322,9 +322,9 @@ public class ParamData
     {
         await Task.Yield();
 
-        var rootMetaDir = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
+        var rootMetaDir = @$"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}/Meta";
 
-        var projectMetaDir = @$"{Project.ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
+        var projectMetaDir = @$"{Project.ProjectPath}/.smithbox/Assets/PARAM/{ProjectUtils.GetGameDirectory(Project)}/Meta";
 
         if (CFG.Current.UseProjectMeta)
         {
@@ -361,11 +361,11 @@ public class ParamData
             {
                 if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
                 {
-                    meta.XmlDeserialize($@"{projectMetaDir}\{fName}", pdef);
+                    meta.XmlDeserialize($@"{projectMetaDir}/{fName}", pdef);
                 }
                 else
                 {
-                    meta.XmlDeserialize($@"{rootMetaDir}\{fName}", pdef);
+                    meta.XmlDeserialize($@"{rootMetaDir}/{fName}", pdef);
                 }
 
                 ParamMeta.Add(pdef, meta);
@@ -415,7 +415,7 @@ public class ParamData
     {
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
-        var projectDir = $"{Project.ProjectPath}\\.smithbox\\{metaDir}";
+        var projectDir = $"{Project.ProjectPath}/.smithbox/{metaDir}";
 
         if (!Directory.Exists(projectDir))
         {

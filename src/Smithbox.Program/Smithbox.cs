@@ -158,9 +158,9 @@ public class Smithbox
 
     private unsafe void SetupFonts()
     {
-        string EnglishFontRelPath = @"Assets\Fonts\RobotoMono-Light.ttf";
-        string NonEnglishFontRelPath = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
-        string IconFontRelPath = @"Assets\Fonts\forkawesome-webfont.ttf";
+        string EnglishFontRelPath = @"Assets/Fonts/RobotoMono-Light.ttf";
+        string NonEnglishFontRelPath = @"Assets/Fonts/NotoSansCJKtc-Light.otf";
+        string IconFontRelPath = @"Assets/Fonts/forkawesome-webfont.ttf";
 
         if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
             File.Exists(CFG.Current.System_English_Font))
@@ -270,7 +270,7 @@ public class Smithbox
                 "Soapstone server is running.",
                 "Soapstone server is not running.",
                 TaskManager.RequeueType.None,
-                false,
+                true,
                 () =>
                 {
                     SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait();
@@ -367,7 +367,7 @@ public class Smithbox
             catch (Exception e)
             {
                 PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n" +
+                                                  $"If you continue to crash on startup, delete config in Application Support/Smithbox\n\n" +
                                                   $"{e.Message} {e.StackTrace}",
                     "Error",
                     MessageBoxButtons.OK,

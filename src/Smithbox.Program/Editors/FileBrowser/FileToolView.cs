@@ -279,7 +279,7 @@ public class FileToolView
 
         if (ImGui.Button("Unpack File", new Vector2(width, 24)))
         {
-            var filePath = $@"{IndividualFolder}\{IndividualFilename}";
+            var filePath = $@"{IndividualFolder}/{IndividualFilename}";
 
             try
             {
@@ -433,7 +433,7 @@ public class FileToolView
     public void UpdateBaseFileDictionary()
     {
         // Get the unmerged base file dictionary
-        var folder = @$"{AppContext.BaseDirectory}\Assets\File Dictionaries\";
+        var folder = @$"{AppContext.BaseDirectory}/Assets/File Dictionaries/";
         var file = "";
 
         switch (Project.ProjectType)

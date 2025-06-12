@@ -124,7 +124,7 @@ public static class WorldMapLayoutGenerator
     };
 
     public static string _folderPath = "";
-    public static string exportPath = $"F:\\SteamLibrary\\steamapps\\common\\ELDEN RING\\Game\\layout_export.txt";
+    public static string exportPath = $"~/SteamLibrary/steamapps/common/ELDEN RING/Game/layout_export.txt";
 
     public static bool GenerateDLC = false;
 

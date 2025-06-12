@@ -74,8 +74,8 @@ public static class UIHelper
 
     public static void RestoreImguiIfMissing()
     {
-        var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
-        var defaultImgui = $@"{AppContext.BaseDirectory}\imgui.default";
+        var curImgui = $@"{AppContext.BaseDirectory}/imgui.ini";
+        var defaultImgui = $@"{AppContext.BaseDirectory}/imgui.default";
 
         if (!File.Exists(curImgui) && File.Exists(defaultImgui))
         {
