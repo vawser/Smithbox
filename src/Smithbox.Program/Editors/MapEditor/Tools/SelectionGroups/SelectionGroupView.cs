@@ -32,8 +32,6 @@ public class SelectionGroupView
 
         _selection = editor.ViewportSelection;
         _viewport = editor.MapViewportView.Viewport;
-
-        CreateSelectionGroups();
     }
 
     private string selectedResourceName = "";
@@ -51,45 +49,6 @@ public class SelectionGroupView
     private string editPromptOldGroupName = "";
 
     private string _searchInput = "";
-
-    public void CreateSelectionGroups()
-    {
-        if (Editor.Project.ProjectType == ProjectType.Undefined)
-            return;
-
-        if (Editor.Project.ProjectPath == "")
-            return;
-
-        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
-
-        if (!Directory.Exists(SelectionDirectory))
-        {
-            try
-            {
-                Directory.CreateDirectory(SelectionDirectory);
-            }
-            catch
-            {
-                TaskLogs.AddLog($"Failed to create selection groups directory: {SelectionDirectory}", LogLevel.Error);
-                return;
-            }
-
-            string template = "{ \"Resources\": [ ] }";
-            try
-            {
-                var fs = new FileStream(SelectionPath, FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(template);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to write selection group resource file: {SelectionPath}\n{ex}");
-            }
-        }
-    }
 
     public bool DeleteSelectionGroup(string currentResourceName)
     {
@@ -192,55 +151,58 @@ public class SelectionGroupView
 
     public void SelectionGroupShortcuts()
     {
-        // Selection Groups
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
+        if (CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts)
         {
-            CreateSelectionGroup("External");
-        }
+            // Selection Groups
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_CreateSelectionGroup))
+            {
+                CreateSelectionGroup("External");
+            }
 
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
-        {
-            ShortcutSelectGroup(0);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
-        {
-            ShortcutSelectGroup(1);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
-        {
-            ShortcutSelectGroup(2);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
-        {
-            ShortcutSelectGroup(3);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
-        {
-            ShortcutSelectGroup(4);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
-        {
-            ShortcutSelectGroup(5);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
-        {
-            ShortcutSelectGroup(6);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
-        {
-            ShortcutSelectGroup(7);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
-        {
-            ShortcutSelectGroup(8);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
-        {
-            ShortcutSelectGroup(9);
-        }
-        if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
-        {
-            ShortcutSelectGroup(10);
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_0))
+            {
+                ShortcutSelectGroup(0);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_1))
+            {
+                ShortcutSelectGroup(1);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_2))
+            {
+                ShortcutSelectGroup(2);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup_3))
+            {
+                ShortcutSelectGroup(3);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup4))
+            {
+                ShortcutSelectGroup(4);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup5))
+            {
+                ShortcutSelectGroup(5);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup6))
+            {
+                ShortcutSelectGroup(6);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup7))
+            {
+                ShortcutSelectGroup(7);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup8))
+            {
+                ShortcutSelectGroup(8);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup9))
+            {
+                ShortcutSelectGroup(9);
+            }
+            if (InputTracker.GetKeyDown(KeyBindings.Current.MAP_SelectionGroup10))
+            {
+                ShortcutSelectGroup(10);
+            }
         }
     }
 
@@ -603,6 +565,9 @@ public class SelectionGroupView
 
     public void ShortcutSelectGroup(int index)
     {
+        if (Editor.Project.MapEntitySelections.Resources == null)
+            return;
+
         foreach (var entry in Editor.Project.MapEntitySelections.Resources)
         {
             if (entry.SelectionGroupKeybind == index)

@@ -22,6 +22,7 @@
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
+- Map Editor: check the map transform adjustment is working for ER + add for NR
 
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Model Editor: implement VFS + data bank overhaul

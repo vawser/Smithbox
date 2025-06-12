@@ -374,6 +374,9 @@ public class MapEditorTab
         // Selection Groups
         if (ImGui.CollapsingHeader("Selection Groups", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Enable shortcuts", ref CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts);
+            UIHelper.Tooltip("If enabled, selection group shortcuts will be detected.");
+
             ImGui.Checkbox("Frame selection group on select", ref CFG.Current.MapEditor_SelectionGroup_FrameSelection);
             UIHelper.Tooltip("Frame the selection group entities automatically in the viewport when selecting a group.");
 
