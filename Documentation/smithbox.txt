@@ -3,8 +3,6 @@
 # TODO
 - Project: auto-Data directory throws exception if Steam directory cannot be found
 
-- File Browser: add unpacker export directory option for user
-
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 - Texture Editor: need to fix icon preview to allow for multiple icon sources

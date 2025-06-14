@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -95,6 +96,9 @@ public class FileToolView
         }
     }
 
+    public bool IgnoreUnpackingState = false;
+    public string UnpackDirectory = "";
+
     public void DisplayUnpacker()
     {
         var width = ImGui.GetWindowWidth() * 0.95f;
@@ -102,7 +106,7 @@ public class FileToolView
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
         UIHelper.WrappedText("");
 
-        if(!HasUnpackedGame())
+        if(!HasUnpackedGame() || IgnoreUnpackingState)
         {
             UIHelper.SimpleHeader("selectiveUnpack", "Selective Unpack", "Select which folders to include in the unpack.", UI.Current.ImGui_AliasName_Text);
 
@@ -126,42 +130,64 @@ public class FileToolView
         }
         else
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project has already been unpacked.");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project is most likely already been unpacked.");
             UIHelper.WrappedText("");
+
+            if (ImGui.Button("Ignore Unpacked State", new Vector2(width, 24)))
+            {
+                IgnoreUnpackingState = true;
+            }
+            UIHelper.Tooltip("Ignore the unpacked state detection, allowing you to unpack freely.");
         }
 
-        if (!IsUnpacking && !HasUnpackedGame())
+        if (!IsUnpacking && ( !HasUnpackedGame() | IgnoreUnpackingState))
         {
-            if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
+            if (UnpackDirectory == "")
             {
-                IsUnpacking = true;
-
-                FailedUnpackEntries.Clear();
-
-                bool IsFolderSelected(string folder)
+                if (ImGui.Button("Set Unpack Directory", new Vector2(width, 24)))
                 {
-                    foreach(var entry in SelectiveFolderDict)
-                    {
-                        if (!entry.Value)
-                            continue;
+                    var unpackDirectory = "";
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Unpack Directory", out unpackDirectory);
 
-                        if (folder.StartsWith(entry.Key))
+                    if (result)
+                    {
+                        UnpackDirectory = unpackDirectory;
+                    }
+                }
+                UIHelper.Tooltip("Set the unpack directory, where all the unpacked files will be placed.");
+            }
+            else
+            {
+                if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
+                {
+                    IsUnpacking = true;
+
+                    FailedUnpackEntries.Clear();
+
+                    bool IsFolderSelected(string folder)
+                    {
+                        foreach (var entry in SelectiveFolderDict)
                         {
-                            return true;
+                            if (!entry.Value)
+                                continue;
+
+                            if (folder.StartsWith(entry.Key))
+                            {
+                                return true;
+                            }
                         }
+
+                        return false;
                     }
 
-                    return false;
+                    var newFileDictionary = new FileDictionary();
+                    newFileDictionary.Entries = BaseFileDictionary.Entries
+                        .Where(e => IsFolderSelected(e.Folder)).ToList();
+
+                    _ = UnpackGameAsync(newFileDictionary);
                 }
-
-                var newFileDictionary = new FileDictionary();
-                newFileDictionary.Entries = BaseFileDictionary.Entries
-                    .Where(e => IsFolderSelected(e.Folder)).ToList();
-
-                _ = UnpackGameAsync(newFileDictionary);
+                UIHelper.Tooltip("This will unpack the data data based on your selective filters.");
             }
-            UIHelper.Tooltip("This will unpack the data data based on your selective filters.");
-
         }
         else if (IsUnpacking)
         {
