@@ -114,7 +114,7 @@ m48_20_00_00:Encounter: Dragon
 m48_30_00_00:Encounter: Dancer of the Boreal Valley
 m48_40_00_00:Encounter: Morgott and Entourage
 m48_50_00_00:Encounter: Draconic Sentinel and Cavalry
-m48_60_00_00:Encounter: Tree Sentine and Cavalry
+m48_60_00_00:Encounter: Tree Sentinel and Cavalry
 m48_70_00_00:Encounter: Godskin Apostle and Entourage
 m48_80_00_00:Encounter: Godskin Apostle and Noble, plsu Entourage
 m48_90_00_00:Encounter: Wormface, Crabs and Putrid Corpses
