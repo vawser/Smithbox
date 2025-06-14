@@ -71,7 +71,9 @@ public static class SteamGameLocator
     {
         string steamPath = GetSteamInstallPath();
         if (steamPath == null)
-            throw new Exception("Steam install path not found in registry.");
+        {
+            return null;
+        }
 
         var libraries = GetSteamLibraryFolders(steamPath);
         foreach (var library in libraries)
