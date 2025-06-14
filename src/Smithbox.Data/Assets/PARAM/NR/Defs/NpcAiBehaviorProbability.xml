@@ -4,7 +4,7 @@
   <DataVersion>2</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="s16 param000">
       <DisplayName>右手近接_R1コンボ</DisplayName>

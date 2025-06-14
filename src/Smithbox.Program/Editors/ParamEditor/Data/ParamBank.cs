@@ -231,6 +231,8 @@ public class ParamBank
             {
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
 
+                //TaskLogs.AddLog($"{paramName}: {curParam.ParamdefDataVersion} - {curParam.ParamdefFormatVersion}");
+
                 if (!Project.ParamData.ParamDefs.ContainsKey(curParam.ParamType ?? ""))
                 {
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".", LogLevel.Error, Tasks.LogPriority.High);

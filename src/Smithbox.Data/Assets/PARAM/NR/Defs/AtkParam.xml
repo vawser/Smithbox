@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>ATK_PARAM_ST</ParamType>
-  <DataVersion>4</DataVersion>
+  <DataVersion>5</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 hit0_Radius">
       <DisplayName>あたり0 半径</DisplayName>

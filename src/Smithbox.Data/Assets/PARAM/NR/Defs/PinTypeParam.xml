@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="1">
   <ParamType>PIN_TYPE_PARAM_ST</ParamType>
-  <DataVersion>1</DataVersion>
+  <DataVersion>3</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     
     <Field Def="u8 unknown_0a"/>

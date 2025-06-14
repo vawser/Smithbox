@@ -4,7 +4,7 @@
   <DataVersion>2</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 isStrengthCorrect_byPhysics:1">
       <DisplayName>筋力補正するか（物理）</DisplayName>

@@ -4,7 +4,7 @@
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 limitationTime_0">
       <DisplayName>制限時間（協力霊数0）</DisplayName>
