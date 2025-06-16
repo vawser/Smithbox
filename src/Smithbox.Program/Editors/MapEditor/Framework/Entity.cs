@@ -1754,69 +1754,130 @@ public class MsbEntity : Entity
         if (paramEditor == null)
             return null;
 
-        switch (curProjectType)
+        if (paramEditor.Project.ParamData.PrimaryBank.Params.ContainsKey("NpcParam"))
         {
-            case ProjectType.DS3:
-                if (WrappedObject is MSB3.Part.EnemyBase ds3e)
-                {
-                    var npcParamId = ds3e.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.BB:
-                if (WrappedObject is MSBB.Part.EnemyBase bbe)
-                {
-                    var npcParamId = bbe.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.SDT:
-                if (WrappedObject is MSB3.Part.EnemyBase sdte)
-                {
-                    var npcParamId = sdte.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.ER:
-                if (WrappedObject is MSBE.Part.EnemyBase ere)
-                {
-                    var npcParamId = ere.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.NR:
-                if (WrappedObject is MSB_NR.Part.EnemyBase nre)
-                {
-                    var npcParamId = nre.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.DES:
-                if (WrappedObject is MSBD.Part.EnemyBase dese)
-                {
-                    var npcParamId = dese.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (WrappedObject is MSB1.Part.EnemyBase ds1e)
-                {
-                    var npcParamId = ds1e.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
-                }
+            var npcParam = paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"];
 
-                break;
-            case ProjectType.DS2S:
-            case ProjectType.AC6:
-            case ProjectType.DS2:
-            case ProjectType.AC4:
-            case ProjectType.ACFA:
-            case ProjectType.ACV:
-            case ProjectType.ACVD:
-            case ProjectType.Undefined:
-            default:
-                return null;
+            switch (curProjectType)
+            {
+                case ProjectType.DS3:
+                    if (WrappedObject is MSB3.Part.EnemyBase ds3e)
+                    {
+                        var npcParamId = ds3e.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.BB:
+                    if (WrappedObject is MSBB.Part.EnemyBase bbe)
+                    {
+                        var npcParamId = bbe.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.SDT:
+                    if (WrappedObject is MSB3.Part.EnemyBase sdte)
+                    {
+                        var npcParamId = sdte.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.ER:
+                    if (WrappedObject is MSBE.Part.EnemyBase ere)
+                    {
+                        var npcParamId = ere.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.NR:
+                    if (WrappedObject is MSB_NR.Part.EnemyBase nre)
+                    {
+                        var npcParamId = nre.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.DES:
+                    if (WrappedObject is MSBD.Part.EnemyBase dese)
+                    {
+                        var npcParamId = dese.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    if (WrappedObject is MSB1.Part.EnemyBase ds1e)
+                    {
+                        var npcParamId = ds1e.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+
+                    break;
+                case ProjectType.DS2S:
+                case ProjectType.AC6:
+                case ProjectType.DS2:
+                case ProjectType.AC4:
+                case ProjectType.ACFA:
+                case ProjectType.ACV:
+                case ProjectType.ACVD:
+                case ProjectType.Undefined:
+                default:
+                    return null;
+            }
         }
 
         return null;

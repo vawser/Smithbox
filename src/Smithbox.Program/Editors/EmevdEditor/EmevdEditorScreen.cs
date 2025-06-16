@@ -244,6 +244,9 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void Save()
     {
+        if (Project.EmevdData.PrimaryBank == null)
+            return;
+
         var targetScript = Project.EmevdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
         if (targetScript.Key != null)
@@ -270,6 +273,9 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void SaveAll()
     {
+        if (Project.EmevdData.PrimaryBank == null)
+            return;
+
         await Project.EmevdData.PrimaryBank.SaveAllScripts();
         await Project.EmevdData.PrimaryBank.SaveAllEMELD();
 
