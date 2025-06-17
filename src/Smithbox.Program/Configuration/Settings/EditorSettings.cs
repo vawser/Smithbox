@@ -680,7 +680,7 @@ public class ParamEditorTab
                 }
                 UIHelper.Tooltip("Use project-specific PARAM meta instead of Smithbox's base version.");
 
-                ImGui.Checkbox("Use loose params", ref CFG.Current.Param_UseLooseParams);
+                ImGui.Checkbox("Use loose params", ref CFG.Current.UseLooseParams);
                 UIHelper.Tooltip("If true, then loose params will be loaded over the packed versions.");
 
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);

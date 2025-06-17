@@ -555,9 +555,14 @@
     <lockScoreOffset AltName="Lock Score Offset" Wiki="Lock score correction value" />
     <pad12 AltName="" Padding=""/>
     
-    <newItemLotEnemyId
-    AltName="Enemy Itemlot ID"
-    Wiki=""
+    <rewardItemLot_1
+    AltName="Reward Itemlot ID: 1"
+    Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
+    Refs="ItemLotParam_enemy" />
+    
+    <rewardItemLot_2
+    AltName="Reward Itemlot ID: 2"
+    Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
     Refs="ItemLotParam_enemy" />
     
   </Field>
@@ -566,7 +571,7 @@
 nameId,faceIconId,,-,
 hp,mp,stamina,staminaRecoverBaseVel,getSoul,-,
 
-itemLotId_enemy,itemLotId_map,dropType,-,
+rewardItemLot_1,rewardItemLot_2,itemLotId_enemy,itemLotId_map,dropType,-,
 
 neutralDamageCutRate,slashDamageCutRate,blowDamageCutRate,thrustDamageCutRate,magicDamageCutRate,fireDamageCutRate,thunderDamageCutRate,darkDamageCutRate,-,
 
