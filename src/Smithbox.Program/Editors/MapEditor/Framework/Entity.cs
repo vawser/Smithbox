@@ -1842,7 +1842,7 @@ public class MsbEntity : Entity
 
                         if (npcParam.ContainsRow(npcParamId))
                         {
-                            return callback(npcParam[npcParamId]);
+                            return callback(npcParam[npcParamId], 16);
                         }
                         else
                         {
@@ -1858,7 +1858,7 @@ public class MsbEntity : Entity
 
                         if (npcParam.ContainsRow(npcParamId))
                         {
-                            return callback(npcParam[npcParamId]);
+                            return callback(npcParam[npcParamId], 16);
                         }
                         else
                         {
