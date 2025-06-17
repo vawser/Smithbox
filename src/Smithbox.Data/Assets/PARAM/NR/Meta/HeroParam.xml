@@ -73,6 +73,10 @@
     Wiki=""
     Refs="HeroStatusParam" />
     
+    <heroUltimateCooldown
+    AltName="Ultimate Art Cooldown"
+    Wiki="In seconds." />
+    
     <characterAbilityCooldown
     AltName="Character Ability Cooldown"
     Wiki="In seconds." />

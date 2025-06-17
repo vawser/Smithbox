@@ -570,9 +570,18 @@
     <midPadding
     Padding="" />
     
+    <criticalMultiplier
+    AltName="Critical Hit Multiplier"
+    Wiki="The damage multiplier to apply to critical hit damage (backstabs and ripostes)." />
+    
     <attachEffectId
     AltName="Attach Effect ID"
-    Wiki=""
+    Wiki="The attach effect to attach to this weapon."
     Refs="AttachEffectParam" />
+    
+    <reviveDamage
+    AltName="Damage: Revive"
+    Wiki="The amount of 'damage' to apply to the revive progress for an ally when hit by this weapon." />
+    
   </Field>
 </PARAMMETA>

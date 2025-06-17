@@ -1886,9 +1886,9 @@
     
     <Field Def="s32 unknown_7"/>
     <Field Def="s32 unknown_8"/>
-    <Field Def="f32 unknown_9"/>
+    <Field Def="f32 criticalMultiplier"/>
     <Field Def="s32 attachEffectId"/>
-    <Field Def="f32 unknown_10"/>
+    <Field Def="f32 reviveDamage"/>
     <Field Def="s32 unknown_11"/>
   </Fields>
 </PARAMDEF>

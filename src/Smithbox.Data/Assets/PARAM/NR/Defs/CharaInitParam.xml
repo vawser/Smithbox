@@ -13,42 +13,42 @@
       <Maximum>10000000</Maximum>
       <SortID>1500</SortID>
     </Field>
-    <Field Def="s32 equip_Wep_Right = -1">
+    <Field Def="s32 equip_Wep_Right_1 = -1">
       <DisplayName>右手武器スロット1</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(右手スロット１)</Description>
       <Minimum>-1</Minimum>
       <Maximum>999999999</Maximum>
       <SortID>1610</SortID>
     </Field>
-    <Field Def="s32 equip_Subwep_Right = -1">
+    <Field Def="s32 equip_Wep_Right_2 = -1">
       <DisplayName>右手武器スロット2</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(右手スロット２)</Description>
       <Minimum>-1</Minimum>
       <Maximum>999999999</Maximum>
       <SortID>1630</SortID>
     </Field>
-    <Field Def="s32 equip_Subwep_Right3 = -1">
+    <Field Def="s32 equip_Wep_Left_1 = -1">
       <DisplayName>右手武器スロット3</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(右手スロット３)</Description>
       <Minimum>-1</Minimum>
       <Maximum>999999999</Maximum>
       <SortID>1650</SortID>
     </Field>
-    <Field Def="s32 equip_Wep_Left = -1">
+    <Field Def="s32 equip_Wep_Left_2 = -1">
       <DisplayName>左手武器スロット1</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(左手スロット１)</Description>
       <Minimum>-1</Minimum>
       <Maximum>999999999</Maximum>
       <SortID>1710</SortID>
     </Field>
-    <Field Def="s32 equip_Subwep_Left = -1">
+    <Field Def="s32 equip_Wep_Right_3 = -1">
       <DisplayName>左手武器スロット2</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(左手スロット２)</Description>
       <Minimum>-1</Minimum>
       <Maximum>999999999</Maximum>
       <SortID>1730</SortID>
     </Field>
-    <Field Def="s32 equip_Subwep_Left3 = -1">
+    <Field Def="s32 equip_Wep_Left_3 = -1">
       <DisplayName>左手武器スロット3</DisplayName>
       <Description>装備品パラメータの武器ＩＤ(左手スロット３)</Description>
       <Minimum>-1</Minimum>
@@ -140,9 +140,9 @@
       <SortID>3100</SortID>
     </Field>
     
-    <Field Def="s32 unknown_18" />
-    <Field Def="s32 unknown_19" />
-    <Field Def="s32 unknown_1" />
+    <Field Def="s32 characterSkillWeapon" />
+    <Field Def="s32 ultimateArtWeapon" />
+    <Field Def="s32 passiveAbilityWeapon" />
     <Field Def="s32 unknown_2" />
     <Field Def="s32 unknown_3" />
     <Field Def="s32 unknown_4" />
@@ -439,7 +439,7 @@
     
     <Field Def="s32 unknown_24a" />
     
-    <Field Def="s32 unknown_25a" />
+    <Field Def="s32 heroSelectionBackgroundId" />
     
     <Field Def="dummy8 reserve[24]">
       <DisplayName>予約領域</DisplayName>
