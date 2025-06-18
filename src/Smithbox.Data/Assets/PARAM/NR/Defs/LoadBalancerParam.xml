@@ -4,7 +4,7 @@
   <DataVersion>0</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 lowerFpsThreshold = 23">
       <Description>このFPSを下回ったら、ロードバランスレベルを1上げる</Description>

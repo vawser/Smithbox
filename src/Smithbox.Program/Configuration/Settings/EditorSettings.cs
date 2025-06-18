@@ -374,6 +374,9 @@ public class MapEditorTab
         // Selection Groups
         if (ImGui.CollapsingHeader("Selection Groups", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Enable shortcuts", ref CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts);
+            UIHelper.Tooltip("If enabled, selection group shortcuts will be detected.");
+
             ImGui.Checkbox("Frame selection group on select", ref CFG.Current.MapEditor_SelectionGroup_FrameSelection);
             UIHelper.Tooltip("Frame the selection group entities automatically in the viewport when selecting a group.");
 
@@ -677,7 +680,7 @@ public class ParamEditorTab
                 }
                 UIHelper.Tooltip("Use project-specific PARAM meta instead of Smithbox's base version.");
 
-                ImGui.Checkbox("Use loose params", ref CFG.Current.Param_UseLooseParams);
+                ImGui.Checkbox("Use loose params", ref CFG.Current.UseLooseParams);
                 UIHelper.Tooltip("If true, then loose params will be loaded over the packed versions.");
 
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);

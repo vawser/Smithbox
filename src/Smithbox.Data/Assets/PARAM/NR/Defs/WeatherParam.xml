@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>WEATHER_PARAM_ST</ParamType>
-  <DataVersion>3</DataVersion>
+  <DataVersion>4</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="s32 SfxId = -1">
       <DisplayName>天候SfxId(共通)</DisplayName>

@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -1864,8 +1865,8 @@ public class ProjectEntry
         MapEntitySelections = new();
 
         // Information
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/{ProjectUtils.GetGameDirectory(ProjectType)}/selections";
-        var projectFile = Path.Combine(projectFolder, "selection_groups.json");
+        var projectFolder = $"{ProjectPath}/.smithbox/MSB/Entity Selections";
+        var projectFile = $"{projectFolder}/Selection Groups.json";
 
         if (File.Exists(projectFile))
         {
@@ -1887,6 +1888,32 @@ public class ProjectEntry
             {
                 TaskLogs.AddLog($"[Smithbox] Failed to read the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
+        }
+        else
+        {
+            if(!Directory.Exists(projectFolder))
+            {
+                Directory.CreateDirectory(projectFolder);
+            }
+
+            string template = "{ \"Resources\": [ ] }";
+            try
+            {
+                var fs = new FileStream(projectFile, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
+            }
+        }
+
+        if(MapEntitySelections.Resources == null)
+        {
+            MapEntitySelections.Resources = new();
         }
 
         return true;

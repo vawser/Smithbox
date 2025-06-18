@@ -559,7 +559,7 @@ public class Param : SoulsFile<Param>
     /// <summary>
     /// Fix up function to extend Param rows when they are expanded in regulation patches. Ignored if the Param row is already fixed.
     /// </summary>
-    public bool FixupERField(int originalSize, int newSize)
+    public bool ExpandParamSize(int originalSize, int newSize)
     {
         if (RowSize != originalSize)
             return false;

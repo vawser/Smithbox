@@ -4,7 +4,7 @@
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 moveDir">
       <DisplayName>移動方向入力</DisplayName>

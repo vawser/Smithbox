@@ -4,7 +4,7 @@
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 disableParam_NT:1" />
     <Field Def="dummy8 disableParamReserve1:7" />
@@ -31,8 +31,7 @@
     <Field Def="s32 unknown_26"/>
     <Field Def="s32 heroStatusParamId"/>
     
-    <Field Def="u16 heroUltimateCooldown"/>
-    <Field Def="u16 unknown_27"/>
+    <Field Def="s32 unknown_27"/>
     
     <Field Def="f32 characterAbilityCooldown"/>
     <Field Def="s32 characterAbilityUsageCount"/>

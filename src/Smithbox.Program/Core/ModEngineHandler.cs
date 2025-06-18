@@ -63,6 +63,9 @@ public static class ModEngineHandler
         if (CFG.Current.ModEngine3ProfileDirectory == "")
             return;
 
+        if (!Directory.Exists(CFG.Current.ModEngine3ProfileDirectory))
+            return;
+
         var projectName = $"{curProject.ProjectName}-{curProject.ProjectGUID}";
 
         var readPath = $"{CFG.Current.ModEngine3ProfileDirectory}/{projectName}.me3";

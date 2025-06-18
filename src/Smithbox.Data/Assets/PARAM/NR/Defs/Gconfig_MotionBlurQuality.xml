@@ -4,7 +4,7 @@
   <DataVersion>2</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 enabled = 1">
       <DisplayName>モーションブラー有効</DisplayName>

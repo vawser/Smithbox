@@ -4,6 +4,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -95,6 +96,8 @@ public class FileToolView
         }
     }
 
+    public string UnpackDirectory = "";
+
     public void DisplayUnpacker()
     {
         var width = ImGui.GetWindowWidth() * 0.95f;
@@ -102,7 +105,22 @@ public class FileToolView
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
         UIHelper.WrappedText("");
 
-        if(!HasUnpackedGame())
+        if (UnpackDirectory == "")
+        {
+            if (ImGui.Button("Set Unpack Directory", new Vector2(width, 24)))
+            {
+                var unpackDirectory = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select Unpack Directory", out unpackDirectory);
+
+                if (result)
+                {
+                    UnpackDirectory = unpackDirectory;
+                }
+            }
+            UIHelper.Tooltip("Set the unpack directory to a different path other than the game data path. This is where all the unpacked files will be placed.");
+        }
+
+        if (!HasUnpackedGame())
         {
             UIHelper.SimpleHeader("selectiveUnpack", "Selective Unpack", "Select which folders to include in the unpack.", UI.Current.ImGui_AliasName_Text);
 
@@ -126,11 +144,11 @@ public class FileToolView
         }
         else
         {
-            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project has already been unpacked.");
+            UIHelper.WrappedTextColored(UI.Current.ImGui_Benefit_Text_Color, "The base game for this project is most likely already been unpacked.");
             UIHelper.WrappedText("");
         }
 
-        if (!IsUnpacking && !HasUnpackedGame())
+        if (!IsUnpacking && ( !HasUnpackedGame()))
         {
             if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
             {
@@ -140,7 +158,7 @@ public class FileToolView
 
                 bool IsFolderSelected(string folder)
                 {
-                    foreach(var entry in SelectiveFolderDict)
+                    foreach (var entry in SelectiveFolderDict)
                     {
                         if (!entry.Value)
                             continue;
@@ -161,7 +179,6 @@ public class FileToolView
                 _ = UnpackGameAsync(newFileDictionary);
             }
             UIHelper.Tooltip("This will unpack the data data based on your selective filters.");
-
         }
         else if (IsUnpacking)
         {
@@ -243,9 +260,13 @@ public class FileToolView
     {
         bool anyExist = false;
 
+        var unpackPath = Project.DataPath;
+        if (UnpackDirectory != "")
+            unpackPath = UnpackDirectory;
+
         foreach (var folderName in TopFolderList)
         {
-            string fullPath = $@"{Project.DataPath}/{folderName}";
+            string fullPath = $@"{unpackPath}/{folderName}";
 
             if (Directory.Exists(fullPath))
             {
@@ -285,8 +306,13 @@ public class FileToolView
             {
                 var data = Project.VanillaFS.ReadFile(filePath);
                 var rawData = (Memory<byte>)data;
-                var absFolder = $@"{Project.DataPath}/{IndividualFolder}";
-                var absPath = $@"{Project.DataPath}/{IndividualFolder}/{IndividualFilename}";
+
+                var unpackPath = Project.DataPath;
+                if (UnpackDirectory != "")
+                    unpackPath = UnpackDirectory;
+
+                var absFolder = $@"{unpackPath}/{IndividualFolder}";
+                var absPath = $@"{unpackPath}/{IndividualFolder}/{IndividualFilename}";
 
                 if (!Directory.Exists(absFolder))
                 {
@@ -336,9 +362,13 @@ public class FileToolView
                 var data = Project.VanillaFS.ReadFile(entry.Path);
                 if (data != null)
                 {
+                    var unpackPath = Project.DataPath;
+                    if (UnpackDirectory != "")
+                        unpackPath = UnpackDirectory;
+
                     var rawData = (Memory<byte>)data;
-                    var absFolder = $@"{Project.DataPath}/{entry.Folder}";
-                    var absPath = $@"{Project.DataPath}/{entry.Path}";
+                    var absFolder = $@"{unpackPath}/{entry.Folder}";
+                    var absPath = $@"{unpackPath}/{entry.Path}";
 
                     if (!Directory.Exists(absFolder))
                     {
@@ -404,7 +434,11 @@ public class FileToolView
                 if (token.IsCancellationRequested)
                     return;
 
-                var absPath = $@"{Project.DataPath}/{entry.Path}";
+                var unpackPath = Project.DataPath;
+                if (UnpackDirectory != "")
+                    unpackPath = UnpackDirectory;
+
+                var absPath = $@"{unpackPath}/{entry.Path}";
 
                 if (File.Exists(absPath))
                 {

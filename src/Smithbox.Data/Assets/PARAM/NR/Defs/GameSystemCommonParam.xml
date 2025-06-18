@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMDEF XmlVersion="2">
   <ParamType>GAME_SYSTEM_COMMON_PARAM_ST</ParamType>
-  <DataVersion>3</DataVersion>
+  <DataVersion>6</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 baseToughnessRecoverTime">
       <DisplayName>基本強靭度耐久値回復時間</DisplayName>

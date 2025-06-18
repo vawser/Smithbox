@@ -357,32 +357,61 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var project = BaseEditor.ProjectManager.SelectedProject;
+        var sourcePath = @"F:\SteamLibrary\steamapps\common\ELDEN RING\Game\parts";
+        var outputPath = @"G:\Modding\Nightreign\NR-Armor-Ports\parts\output";
 
-        var aliasStore = new AliasStore();
-        aliasStore.EventFlags = new();
+        var mappingCsv = @"G:\Modding\Nightreign\NR-Armor-Ports\parts\mappings.csv";
 
-        foreach (var param in project.ParamData.PrimaryBank.Params)
+        Dictionary<string, string> mappingDict = new();
+
+        var csv = File.ReadAllText(mappingCsv);
+        var mappings = csv.Split("\n");
+        foreach(var entry in mappings)
         {
-            if(param.Key.Contains("EFID_") && param.Key != "EFID_Common")
-            {
-                foreach(var row in param.Value.Rows)
-                {
-                    if(!aliasStore.EventFlags.Any(e => e.ID == $"{row.ID}"))
-                    {
-                        var newAlias = new AliasEntry();
-                        newAlias.ID = $"{row.ID}";
-                        newAlias.Name = row.Name;
-                        newAlias.Tags = new();
+            var parts = entry.Split(";");
 
-                        aliasStore.EventFlags.Add(newAlias);
+            if (parts.Length > 2)
+            {
+                mappingDict.Add(parts[0], parts[1]);
+            }
+        }
+
+        List<string> partList = new List<string>()
+        {
+            "hd",
+            "bd",
+            "am",
+            "lg"
+        };
+
+        List<string> qualityList = new List<string>()
+        {
+            "",
+            "_l"
+        };
+
+        // Port each part from ER, rename to the new NR suitable ID
+        foreach (var entry in mappingDict)
+        {
+            var sourceId = entry.Key;
+            var targetId = entry.Value;
+
+            foreach(var part in partList)
+            {
+                foreach (var qual in qualityList)
+                {
+                    var sourceName = $"{part}_m_{sourceId}{qual}";
+                    var targetName = $"{part}_m_{targetId}{qual}";
+
+                    var readPath = @$"{sourcePath}\{sourceName}.partsbnd.dcx";
+                    var writePath = @$"{outputPath}\{targetName}.partsbnd.dcx";
+
+                    if (File.Exists(readPath))
+                    {
+                        File.Copy(readPath, writePath, true);
                     }
                 }
             }
         }
-
-        var json = JsonSerializer.Serialize(aliasStore, SmithboxSerializerContext.Default.AliasStore);
-
-        PlatformUtils.Instance.SetClipboardText(json);
     }
 }

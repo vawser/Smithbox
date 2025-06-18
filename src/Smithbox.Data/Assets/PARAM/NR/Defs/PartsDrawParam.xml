@@ -4,7 +4,7 @@
   <DataVersion>5</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 lv01_BorderDist = 5">
       <DisplayName>LODレベル0-1境界距離[m]</DisplayName>

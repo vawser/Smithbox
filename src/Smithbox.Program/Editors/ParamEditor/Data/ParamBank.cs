@@ -187,7 +187,7 @@ public class ParamBank
             Param curParam;
 
             // AC6/SDT - Tentative ParamTypes
-            if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT)
+            if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT or ProjectType.DS3)
             {
                 _usedTentativeParamTypes = new Dictionary<string, string>();
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
@@ -230,6 +230,8 @@ public class ParamBank
             else
             {
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
+
+                //TaskLogs.AddLog($"{paramName}: {curParam.ParamdefDataVersion} - {curParam.ParamdefFormatVersion}");
 
                 if (!Project.ParamData.ParamDefs.ContainsKey(curParam.ParamType ?? ""))
                 {
@@ -281,7 +283,7 @@ public class ParamBank
         {
             if (p.ParamType == "CHR_MODEL_PARAM_ST")
             {
-                if (p.FixupERField(12, 16))
+                if (p.ExpandParamSize(12, 16))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] CHR_MODEL_PARAM_ST fixed up.");
             }
         }
@@ -291,17 +293,17 @@ public class ParamBank
         {
             if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
             {
-                if (p.FixupERField(880, 1024))
+                if (p.ExpandParamSize(880, 1024))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
             }
             if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
             {
-                if (p.FixupERField(112, 144))
+                if (p.ExpandParamSize(112, 144))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
             }
             if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
             {
-                if (p.FixupERField(32, 48))
+                if (p.ExpandParamSize(32, 48))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] SIGN_PUDDLE_PARAM_ST fixed up.");
             }
         }

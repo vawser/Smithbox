@@ -274,6 +274,11 @@ public class CFG
     /// </summary>
     public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
 
+    /// <summary>
+    /// If true, the shortcuts for the Selection Groups will be detected.
+    /// </summary>
+    public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
+
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------

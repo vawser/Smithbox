@@ -4,7 +4,7 @@
   <DataVersion>1</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="f32 MaxHpRate = 1">
       <DisplayName>《最大HP倍率[%]》</DisplayName>

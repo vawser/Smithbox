@@ -135,9 +135,17 @@ public class ProjectManager
             // Highlight selectable
             if (ImGui.Selectable($"{projectName}##projectEntry{imGuiID}", SelectedProject == project))
             {
-                if (!IsProjectLoading)
+                SelectedProject = project;
+            }
+
+            if (SelectedProject == project)
+            {
+                if (ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                 {
-                    StartupProject(project);
+                    if (!IsProjectLoading)
+                    {
+                        StartupProject(project);
+                    }
                 }
             }
 

@@ -4,7 +4,7 @@
   <DataVersion>9</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 disableParam_NT:1">
       <DisplayName>NT版出力から外すか</DisplayName>
@@ -218,13 +218,9 @@
       <Maximum>999999</Maximum>
       <SortID>50030</SortID>
     </Field>
-    <Field Def="s32 GameClearSpEffectID = -1">
-      <DisplayName>周回ボーナス用特殊効果ＩＤ</DisplayName>
-      <Description>周回ボーナス用特殊効果ＩＤ</Description>
-      <Minimum>-1</Minimum>
-      <Maximum>999999</Maximum>
-      <SortID>51000</SortID>
-    </Field>
+    
+    <Field Def="s32 rewardItemLot_1 = -1" />
+    
     <Field Def="f32 physGuardCutRate">
       <DisplayName>物理攻撃カット率[％]</DisplayName>
       <Description>ガード時のダメージカット率を各攻撃ごとに設定</Description>
@@ -2193,7 +2189,7 @@
       <SortID>461000</SortID>
     </Field>
     
-    <Field Def="s32 newItemLotEnemyId" />
+    <Field Def="s32 rewardItemLot_2" />
     <Field Def="s32 unknown_2" />
     <Field Def="f32 unknown_3" />
     <Field Def="f32 unknown_4" />

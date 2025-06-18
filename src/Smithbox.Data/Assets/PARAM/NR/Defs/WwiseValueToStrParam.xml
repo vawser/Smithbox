@@ -4,7 +4,7 @@
   <DataVersion>2</DataVersion>
   <BigEndian>False</BigEndian>
   <Unicode>True</Unicode>
-  <FormatVersion>203</FormatVersion>
+  <FormatVersion>0</FormatVersion>
   <Fields>
     <Field Def="u8 disableParam_NT:1">
       <DisplayName>NT版出力から外すか</DisplayName>
