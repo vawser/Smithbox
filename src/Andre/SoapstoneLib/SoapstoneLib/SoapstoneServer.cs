@@ -35,9 +35,9 @@ namespace SoapstoneLib
         /// </summary>
         public static async Task RunAsync(KnownServer server, SoapstoneServiceV1 newService, string[] args = null)
         {
-            if (OperatingSystem.IsMacOS())
+            if (!OperatingSystem.IsWindows())
             {
-                throw new NotImplementedException("SoapstoneService is not yet available on macOS.");
+                throw new NotImplementedException("SoapstoneService is not yet available on this platform.");
             }    
             if (newService == null)
             {
