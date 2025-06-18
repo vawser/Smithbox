@@ -1,10 +1,14 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+
+#if WINDOWS
+using Microsoft.Win32;
+#endif
 
 namespace StudioCore.Utilities;
 
@@ -12,13 +16,37 @@ public static class SteamGameLocator
 {
     public static string GetSteamInstallPath()
     {
-        using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\\WOW6432Node\\Valve\\Steam"))
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            if (key != null)
+#if WINDOWS
+            using (var key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Valve\Steam"))
             {
-                return key.GetValue("InstallPath") as string;
+                if (key != null)
+                {
+                    return key.GetValue("InstallPath") as string;
+                }
+            }
+#endif
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            string home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var candidates = new[]
+            {
+                Path.Combine(home, ".steam", "steam"),
+                Path.Combine(home, ".local", "share", "Steam"),
+                Path.Combine(home, ".steam", "root")
+            };
+
+            foreach (var path in candidates)
+            {
+                if (Directory.Exists(path))
+                {
+                    return path;
+                }
             }
         }
+
         return null;
     }
 
