@@ -431,6 +431,11 @@
     <defSfxMaterialVariationValue AltName="Defence SFX Material Variation Offset" Wiki="A value to have variations of damage SFX and SE in combination with defense material 1 or 2 used when guarding. (SEQ16473)" />
     <finalDamageRateId AltName="Final Damage % ID" Refs="FinalDamageRateParam" />
     <pad4 AltName="" Padding=""/>
+    
+    <reviveDamageCorrection 
+    AltName="Attack Correction: Revive" 
+    Wiki="The correction for revive damage." />
+    
   </Field>
   <Self Wiki="Governs hitboxes and damage of attacks" AlternativeOrder="
 hit0_Radius,hit1_Radius,hit2_Radius,hit3_Radius,
@@ -445,7 +450,7 @@ hit0_DmyPoly2,hit1_DmyPoly2,hit2_DmyPoly2,hit3_DmyPoly2,
 hit4_DmyPoly2,hit5_DmyPoly2,hit6_DmyPoly2,hit7_DmyPoly2,hit8_DmyPoly2,hit9_DmyPoly2,hit10_DmyPoly2,hit11_DmyPoly2,hit12_DmyPoly2,hit13_DmyPoly2,hit14_DmyPoly2,hit15_DmyPoly2,-,
 knockbackDist,hitStopTime,blowingCorrection,-,
 spEffectId0,spEffectId1,spEffectId2,spEffectId3,spEffectId4,-,
-atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,
+atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,reviveDamageCorrection,
 atkThrowEscapeCorrection,guardAtkRateCorrection,guardBreakCorrection,-,
 atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,
 atkThrowEscape,guardAtkRate,guardBreakRate,-,

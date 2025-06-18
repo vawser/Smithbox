@@ -1403,7 +1403,7 @@
     <Field Def="s32 finalDamageRateId">
     </Field>
     
-    <Field Def="s32 unknown_2" />
+    <Field Def="s32 reviveDamageCorrection" />
     <Field Def="f32 unknown_3" />
     <Field Def="f32 unknown_4" />
     <Field Def="u8 unknown_5a" />
