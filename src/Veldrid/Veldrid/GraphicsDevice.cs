@@ -1817,7 +1817,10 @@ namespace Veldrid
                 if (deviceVulkan11Features.storageBuffer16BitAccess != VkBool32.True ||
                     deviceVulkan11Features.uniformAndStorageBuffer16BitAccess != VkBool32.True)
                     continue;
-                if (//deviceVulkan12Features.drawIndirectCount != VkBool32.True || //! not supported by metal
+                if (
+#if !OSX
+                    deviceVulkan12Features.drawIndirectCount != VkBool32.True || //! not supported by metal
+#endif
                     deviceVulkan12Features.descriptorIndexing != VkBool32.True ||
                     deviceVulkan12Features.descriptorBindingVariableDescriptorCount != VkBool32.True ||
                     deviceVulkan12Features.runtimeDescriptorArray != VkBool32.True ||
@@ -1963,7 +1966,11 @@ namespace Veldrid
 
             var deviceFeatures12 = new VkPhysicalDeviceVulkan12Features
             {
+#if OSX
                 drawIndirectCount = VkBool32.False, //! not supported by metal
+#else
+                drawIndirectCount = VkBool32.True,
+#endif
                 descriptorIndexing = VkBool32.True,
                 descriptorBindingVariableDescriptorCount = VkBool32.True,
                 descriptorBindingSampledImageUpdateAfterBind = VkBool32.True,

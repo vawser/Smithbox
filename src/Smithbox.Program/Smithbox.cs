@@ -367,7 +367,7 @@ public class Smithbox
             catch (Exception e)
             {
                 PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in Application Support/Smithbox\n\n" +
+                                                  $"If you continue to crash on startup, delete config in {Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}/Smithbox\n\n" +
                                                   $"{e.Message} {e.StackTrace}",
                     "Error",
                     MessageBoxButtons.OK,

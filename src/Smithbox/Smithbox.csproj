@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
     <Version>2.0.6</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
@@ -12,13 +12,13 @@
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
-    <Configurations>Release;Debug</Configurations>
+    <Configurations>Release;Debug;Release-linux;Debug-linux</Configurations>
   </PropertyGroup>
-
+  
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>arm64</PlatformTarget>
+    <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
@@ -26,6 +26,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>arm64</PlatformTarget>
+    <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-linux|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-linux|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,7 +60,7 @@
  
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">
   <ItemGroup>
-    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\net9.0-windows7.0\**\*" />
+    <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\$(TargetFramework)\**\*" />
   </ItemGroup>
 
   <Copy SourceFiles="@(DataProjectFiles)" DestinationFolder="$(OutputPath)%(RecursiveDir)" SkipUnchangedFiles="true" />

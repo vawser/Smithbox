@@ -9,7 +9,23 @@
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>12</LangVersion>
   </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>OSX</DefineConstants>
+  </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>OSX</DefineConstants>
+    <DebugType>embedded</DebugType>
+    <DocumentationFile />
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-linux' ">
+    <DefineConstants>LINUX</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-linux' ">
+    <DefineConstants>LINUX</DefineConstants>
     <DebugType>embedded</DebugType>
     <DocumentationFile />
   </PropertyGroup>

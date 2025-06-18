@@ -272,7 +272,7 @@ public class ProjectEntry
 
         if (!dllGrabResult && !silent)
         {
-            TaskLogs.AddLog($"[{ProjectName}] Failed to grab oo2core.dll");
+            TaskLogs.AddLog($"[{ProjectName}] Failed to grab oo2core.");
         }
 
         // VFS
@@ -1075,8 +1075,16 @@ public class ProjectEntry
 
         if (ProjectType is ProjectType.SDT or ProjectType.ER)
         {
+#if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_6_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_6_win64.dll");
+#elif OSX
+            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.6.dylib");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.6.dylib");
+#elif LINUX
+            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.6");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.6");
+#endif
 
             if (!File.Exists(rootDllPath))
             {
@@ -1093,8 +1101,16 @@ public class ProjectEntry
 
         if (ProjectType is ProjectType.AC6)
         {
+#if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_8_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_8_win64.dll");
+#elif OSX
+            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.8.dylib");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.8.dylib");
+#elif LINUX
+            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.8");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.8");
+#endif
 
             if (!File.Exists(rootDllPath))
             {
@@ -1112,8 +1128,16 @@ public class ProjectEntry
 
         if (ProjectType is ProjectType.NR)
         {
+#if WINDOWS
             var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
             var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
+#elif OSX
+            var rootDllPath = Path.Join(DataPath, "liboo2coremac64.2.9.dylib");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2coremac64.2.9.dylib");
+#elif LINUX
+            var rootDllPath = Path.Join(DataPath, "liboo2corelinux64.so.9");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "liboo2corelinux64.so.9");
+#endif
 
             if (!File.Exists(rootDllPath))
             {
@@ -1130,7 +1154,7 @@ public class ProjectEntry
 
         return true;
     }
-    #endregion
+#endregion
 
     #region Setup VFS
     public async Task<bool> SetupVFS()

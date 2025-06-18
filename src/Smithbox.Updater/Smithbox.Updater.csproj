@@ -2,16 +2,36 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Debug-linux;Release-linux</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTarget>arm64</PlatformTarget>
+    <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>arm64</PlatformTarget>
+    <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-linux|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-linux|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <Target Name="CopyOutputToSmithbox" AfterTargets="Build">
     <PropertyGroup>
       <!-- Define the relative output path of Smithbox -->
-      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/net9.0/osx-arm64/</SmithboxOutputDir>
+      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/$(TargetFramework)/$(RuntimeIdentifier)/</SmithboxOutputDir>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,9 +39,7 @@
       <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.dll" />
     </ItemGroup>
 
-    <Copy SourceFiles="@(UpdaterFiles)"
-          DestinationFolder="$(SmithboxOutputDir)"
-          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(UpdaterFiles)" DestinationFolder="$(SmithboxOutputDir)" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>

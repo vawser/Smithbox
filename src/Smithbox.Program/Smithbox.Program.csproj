@@ -4,21 +4,38 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>12</LangVersion>
+    <Configurations>Debug;Release;Debug-linux;Release-linux</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>OSX</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>arm64</PlatformTarget>
-    <!--<UseWindowsForms>true</UseWindowsForms>-->
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>OSX</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>arm64</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <!--<UseWindowsForms>true</UseWindowsForms>-->
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-linux|AnyCPU'">
+    <DefineConstants>LINUX</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-linux|AnyCPU'">
+    <DefineConstants>LINUX</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 

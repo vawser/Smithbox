@@ -18,6 +18,18 @@ namespace Veldrid
 
             switch (swapchainSource)
             {
+                case XlibSwapchainSource xlibSource:
+                    if (doCheck && !gd.HasSurfaceExtension(CommonStrings.VK_KHR_XLIB_SURFACE_EXTENSION_NAME))
+                    {
+                        throw new VeldridException($"The required instance extension was not available: {CommonStrings.VK_KHR_XLIB_SURFACE_EXTENSION_NAME}");
+                    }
+                    return CreateXlib(instance, xlibSource);
+                case WaylandSwapchainSource waylandSource:
+                    if (doCheck && !gd.HasSurfaceExtension(CommonStrings.VK_KHR_WAYLAND_SURFACE_EXTENSION_NAME))
+                    {
+                        throw new VeldridException($"The required instance extension was not available: {CommonStrings.VK_KHR_WAYLAND_SURFACE_EXTENSION_NAME}");
+                    }
+                    return CreateWayland(instance, waylandSource);
                 case Win32SwapchainSource win32Source:
                     if (doCheck && !gd.HasSurfaceExtension(CommonStrings.VK_KHR_WIN32_SURFACE_EXTENSION_NAME))
                     {
@@ -56,6 +68,22 @@ namespace Veldrid
                     }
 
                     return CreateNSViewSurface(gd, instance, nsViewSource, false);
+                case UIViewSwapchainSource uiViewSource:
+                    if (doCheck)
+                    {
+                        bool hasMetalExtension = gd.HasSurfaceExtension(CommonStrings.VK_EXT_METAL_SURFACE_EXTENSION_NAME);
+                        if (hasMetalExtension || gd.HasSurfaceExtension(CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME))
+                        {
+                            return CreateUIViewSurface(gd, instance, uiViewSource, hasMetalExtension);
+                        }
+                        else
+                        {
+                            throw new VeldridException($"Neither macOS surface extension was available: " +
+                                $"{CommonStrings.VK_MVK_MACOS_SURFACE_EXTENSION_NAME}, {CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME}");
+                        }
+                    }
+
+                    return CreateUIViewSurface(gd, instance, uiViewSource, false);
                 default:
                     throw new VeldridException($"The provided SwapchainSource cannot be used to create a Vulkan surface.");
             }
@@ -71,6 +99,28 @@ namespace Veldrid
             };
             VkSurfaceKHR surface = new VkSurfaceKHR();
             VkResult result = vkCreateWin32SurfaceKHR(instance, &surfaceCI, null, &surface);
+            CheckResult(result);
+            return surface;
+        }
+
+        private static VkSurfaceKHR CreateXlib(VkInstance instance, XlibSwapchainSource xlibSource)
+        {
+            VkXlibSurfaceCreateInfoKHR xsci = new VkXlibSurfaceCreateInfoKHR();
+            xsci.display = xlibSource.Display;
+            xsci.window = (ulong)xlibSource.Window;
+            VkSurfaceKHR surface = new VkSurfaceKHR();
+            VkResult result = vkCreateXlibSurfaceKHR(instance, &xsci, null, &surface);
+            CheckResult(result);
+            return surface;
+        }
+
+        private static VkSurfaceKHR CreateWayland(VkInstance instance, WaylandSwapchainSource waylandSource)
+        {
+            VkWaylandSurfaceCreateInfoKHR wsci = new VkWaylandSurfaceCreateInfoKHR();
+            wsci.display = waylandSource.Display;
+            wsci.surface = waylandSource.Surface;
+            VkSurfaceKHR surface = new VkSurfaceKHR();
+            VkResult result = vkCreateWaylandSurfaceKHR(instance, &wsci, null, &surface);
             CheckResult(result);
             return surface;
         }
@@ -97,7 +147,7 @@ namespace Veldrid
                 VkMetalSurfaceCreateInfoEXT surfaceCI = new VkMetalSurfaceCreateInfoEXT();
                 //surfaceCI.sType = VkMetalSurfaceCreateInfoEXT.VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT; //! handled by constructor
                 surfaceCI.pLayer = metalLayer.NativePtr.ToPointer();
-                VkSurfaceKHR surface;
+                VkSurfaceKHR surface = new VkSurfaceKHR();
                 VkResult result = gd.CreateMetalSurfaceEXT(instance, &surfaceCI, null, &surface);
                 CheckResult(result);
                 return surface;
@@ -107,6 +157,38 @@ namespace Veldrid
                 VkMacOSSurfaceCreateInfoMVK surfaceCI = new VkMacOSSurfaceCreateInfoMVK();
                 surfaceCI.pView = contentView.NativePtr.ToPointer();
                 VkResult result = vkCreateMacOSSurfaceMVK(instance, &surfaceCI, null, out VkSurfaceKHR surface);
+                CheckResult(result);
+                return surface;
+            }
+        }
+
+        private static VkSurfaceKHR CreateUIViewSurface(GraphicsDevice gd, VkInstance instance, UIViewSwapchainSource uiViewSource, bool hasExtMetalSurface)
+        {
+            UIView uiView = new UIView(uiViewSource.UIView);
+
+            if (!CAMetalLayer.TryCast(uiView.layer, out var metalLayer))
+            {
+                metalLayer = CAMetalLayer.New();
+                metalLayer.frame = uiView.frame;
+                metalLayer.opaque = true;
+                uiView.layer.addSublayer(metalLayer.NativePtr);
+            }
+
+            if (hasExtMetalSurface)
+            {
+                VkMetalSurfaceCreateInfoEXT surfaceCI = new VkMetalSurfaceCreateInfoEXT();
+                surfaceCI.sType = VkMetalSurfaceCreateInfoEXT.VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT;
+                surfaceCI.pLayer = metalLayer.NativePtr.ToPointer();
+                VkSurfaceKHR surface;
+                VkResult result = gd.CreateMetalSurfaceEXT(instance, &surfaceCI, null, &surface);
+                CheckResult(result);
+                return surface;
+            }
+            else
+            {
+                VkIOSSurfaceCreateInfoMVK surfaceCI = new VkIOSSurfaceCreateInfoMVK();
+                surfaceCI.pView = uiView.NativePtr.ToPointer();
+                VkResult result = vkCreateIOSSurfaceMVK(instance, &surfaceCI, null, out VkSurfaceKHR surface);
                 CheckResult(result);
                 return surface;
             }
