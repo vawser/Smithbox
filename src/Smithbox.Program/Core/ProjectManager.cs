@@ -175,6 +175,20 @@ public class ProjectManager
             {
                 if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
                 {
+                    // Load Project
+                    if (!project.Initialized)
+                    {
+                        if (!IsProjectLoading)
+                        {
+                            if (ImGui.MenuItem($"Load Project##loadProject"))
+                            {
+                                StartupProject(project);
+                            }
+
+                            ImGui.Separator();
+                        }
+                    }
+
                     // ME2
                     if (ModEngineHandler.IsME2Project(project))
                     {
