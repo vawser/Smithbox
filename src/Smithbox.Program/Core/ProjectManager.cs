@@ -137,16 +137,18 @@ public class ProjectManager
             ProjectSettings.Show(BaseEditor, curProject);
         }
 
-        if (ImGui.MenuItem($"Open Project Aliases##projectAliases"))
+        if (curProject.Initialized)
         {
-            ProjectAliasEditor.Show(BaseEditor, curProject);
-        }
+            if (ImGui.MenuItem($"Open Project Aliases##projectAliases"))
+            {
+                ProjectAliasEditor.Show(BaseEditor, curProject);
+            }
 
-        if (ImGui.MenuItem($"Open Project Enums##projectEnums"))
-        {
-            ProjectEnumEditor.Show(BaseEditor, curProject);
+            if (ImGui.MenuItem($"Open Project Enums##projectEnums"))
+            {
+                ProjectEnumEditor.Show(BaseEditor, curProject);
+            }
         }
-
 
         // ME2
         if (ModEngineHandler.IsME2Project(curProject))
