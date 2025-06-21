@@ -5,7 +5,7 @@
   
   <Field>
     <expeditionNameId
-    AltName="Expedition Name ID"
+    AltName="Name ID"
     Wiki="The expedition name for this night boss."
     FmgRef="Modern_Menu_Text" />
     
@@ -30,22 +30,26 @@
     FmgRef="Modern_Menu_Text" />
     
     <bossIconId
-    AltName="Expedition Boss Icon ID"
+    AltName="Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu."
     TextureRef="Direct/01_common_h/SB_MenuIcon_1/bossIconId/MENU_MenuIcon_"/>
     
     <defeatedBossIconId
-    AltName="Expedition Defeated Boss Icon ID"
+    AltName="Defeated Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu when defeated."
     TextureRef="Direct/01_common_h/SB_MenuIcon_1/defeatedBossIconId/MENU_MenuIcon_"/>
     
+    <sortId
+    AltName="Sort ID"
+    Wiki="The ordering in the Expedition Menu." />
+    
     <expeditionBackgroundId
-    AltName="Expedition Background ID"
+    AltName="Background ID"
     Wiki="The background to display for this night boss in the Expedition menu."
     TextureRef="Direct/01_common_h/SB_MenuIcon_1/expeditionBackgroundId/MENU_MenuIcon_"/>
     
     <largeBossIconId
-    AltName="Expedition Large Boss Icon ID"
+    AltName="Large Boss Icon ID"
     Wiki="The icon to display for this night boss in the Expedition menu."
     TextureRef="Direct/01_common_h/SB_MenuIcon_1/largeBossIconId/MENU_MenuIcon_"/>
   </Field>

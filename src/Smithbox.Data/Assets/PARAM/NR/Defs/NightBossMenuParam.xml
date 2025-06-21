@@ -15,7 +15,7 @@
     <Field Def="s32 unknown_5"/>
     <Field Def="s32 bossNameId"/>
     <Field Def="s32 defeatedBossIconId"/>
-    <Field Def="s32 unknown_8"/>
+    <Field Def="s32 sortId"/>
     <Field Def="s32 descriptionId"/>
     <Field Def="s32 expeditionBackgroundId"/>
     <Field Def="s32 unknown_11"/>
