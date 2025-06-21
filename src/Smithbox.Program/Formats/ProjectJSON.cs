@@ -41,14 +41,6 @@ public class FileDictionaryEntry
 }
 #endregion
 
-// -------------- Project Display Order --------------
-#region Project Display Order
-public class ProjectDisplayOrder
-{
-    public Dictionary<int, Guid> DisplayOrder { get; set; }
-}
-#endregion
-
 // -------------- Aliases --------------
 #region Aliases
 public class AliasStore

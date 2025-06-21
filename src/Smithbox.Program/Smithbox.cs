@@ -461,6 +461,9 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
+            // Projects
+            ProjectManager.Menubar();
+
             // Settings
             if (ImGui.BeginMenu("Settings"))
             {
@@ -661,18 +664,6 @@ public class Smithbox
 
             // Debugging
             DebugTools.DisplayMenu();
-
-            // View
-            if (ImGui.BeginMenu("View"))
-            {
-                if (ImGui.MenuItem("Project List"))
-                {
-                    CFG.Current.Interface_Editor_ProjectList = !CFG.Current.Interface_Editor_ProjectList;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_ProjectList);
-
-                ImGui.EndMenu();
-            }
 
             // Action Logger
             TaskLogs.DisplayActionLoggerBar();
