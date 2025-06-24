@@ -31,34 +31,56 @@ public static class ProgramUpdater
 
     public static string OutputDir = "";
 
-    public static void CheckForUpdate(string version)
+    public static bool IsConnectedToInternet = false;
+
+    public static async Task<bool> HasInternetConnectionAsync()
+    {
+        try
+        {
+            using var client = new HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(5);
+            using var response = await client.GetAsync("https://www.google.com");
+            return response.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public static async void CheckForUpdate(string version)
     {
         if (!CFG.Current.System_Check_Program_Update)
             return;
 
-        Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
-        Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+        IsConnectedToInternet = await HasInternetConnectionAsync();
 
-        LatestRelease = release;
-
-        if (release.TagName != version)
+        if (IsConnectedToInternet)
         {
-            var curVersion = version.Replace(".", "");
-            var releaseVersion = release.TagName.Replace(".", "");
+            Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
+            Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
 
-            var curVersionNum = -1;
-            var releaseVersionNum = -1;
+            LatestRelease = release;
 
-            var curSuccess = int.TryParse(curVersion, out curVersionNum);
-            var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionNum);
-
-            if (curSuccess && releaseSuccess)
+            if (release.TagName != version)
             {
-                if (curVersionNum != -1 && releaseVersionNum != -1)
+                var curVersion = version.Replace(".", "");
+                var releaseVersion = release.TagName.Replace(".", "");
+
+                var curVersionNum = -1;
+                var releaseVersionNum = -1;
+
+                var curSuccess = int.TryParse(curVersion, out curVersionNum);
+                var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionNum);
+
+                if (curSuccess && releaseSuccess)
                 {
-                    if (curVersionNum < releaseVersionNum)
+                    if (curVersionNum != -1 && releaseVersionNum != -1)
                     {
-                        IsUpdateAvaliable = true;
+                        if (curVersionNum < releaseVersionNum)
+                        {
+                            IsUpdateAvaliable = true;
+                        }
                     }
                 }
             }
@@ -71,6 +93,9 @@ public static class ProgramUpdater
             return;
 
         if (LatestRelease == null)
+            return;
+
+        if (!IsConnectedToInternet)
             return;
 
         if (IsUpdateAvaliable && !UpdateProcessActive)
@@ -101,6 +126,9 @@ public static class ProgramUpdater
             return;
 
         if (LatestRelease == null)
+            return;
+
+        if (!IsConnectedToInternet)
             return;
 
         if (UpdateProcessActive)
