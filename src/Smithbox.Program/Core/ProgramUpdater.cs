@@ -55,34 +55,53 @@ public static class ProgramUpdater
 
         IsConnectedToInternet = await HasInternetConnectionAsync();
 
-        if (IsConnectedToInternet)
+        if (!IsConnectedToInternet)
         {
-            Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
-            Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
+            TaskLogs.AddLog($"[Smithbox] Not connected to the internet, program update check cancelled.");
+            return;
+        }
 
+        Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
+
+        try
+        {
+            var rateLimits = await gitHubClient.RateLimit.GetRateLimits();
+            var coreLimits = rateLimits.Resources.Core;
+
+            if (coreLimits.Remaining == 0)
+            {
+                TaskLogs.AddLog($"[Smithbox] GitHub API rate limit exceeded. Resets at {coreLimits.Reset.UtcDateTime:u}");
+                return;
+            }
+
+            var release = await gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox");
             LatestRelease = release;
 
-            if (release.TagName != version)
+            CompareVersions(version, release.TagName);
+        }
+        catch (Octokit.RateLimitExceededException ex)
+        {
+            TaskLogs.AddLog($"[Smithbox] GitHub API rate limit exceeded. Try again at {ex.Reset.UtcDateTime:u}.");
+        }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog("[Smithbox] Failed to check latest release.",
+                            Microsoft.Extensions.Logging.LogLevel.Error,
+                            Tasks.LogPriority.High,
+                            ex);
+        }
+    }
+    private static void CompareVersions(string currentVersion, string releaseTag)
+    {
+        var curVersion = currentVersion.Replace(".", "");
+        var releaseVersion = releaseTag.Replace(".", "");
+
+        if (int.TryParse(curVersion, out int curVersionNum) &&
+            int.TryParse(releaseVersion, out int releaseVersionNum))
+        {
+            if (curVersionNum < releaseVersionNum)
             {
-                var curVersion = version.Replace(".", "");
-                var releaseVersion = release.TagName.Replace(".", "");
-
-                var curVersionNum = -1;
-                var releaseVersionNum = -1;
-
-                var curSuccess = int.TryParse(curVersion, out curVersionNum);
-                var releaseSuccess = int.TryParse(releaseVersion, out releaseVersionNum);
-
-                if (curSuccess && releaseSuccess)
-                {
-                    if (curVersionNum != -1 && releaseVersionNum != -1)
-                    {
-                        if (curVersionNum < releaseVersionNum)
-                        {
-                            IsUpdateAvaliable = true;
-                        }
-                    }
-                }
+                IsUpdateAvaliable = true;
             }
         }
     }
@@ -171,60 +190,45 @@ public static class ProgramUpdater
         Environment.Exit(0);
     }
 
-    public async static Task<bool> ExtractLatestRelease()
-    {
-        await Task.Yield();
-
-        var extractDir = $"{OutputDir}/_update";
-        if (!Directory.Exists(extractDir))
-        {
-            Directory.CreateDirectory(extractDir);
-        }
-
-        string sourcePath = Path.Combine(OutputDir, $"{Asset.name}");
-
-        ZipFile.ExtractToDirectory(sourcePath, extractDir, true);
-
-        return true;
-    }
-
     public async static Task<bool> GetReleaseZIP()
     {
-        if (Asset != null)
+        if (Asset == null)
+            return false;
+
+        try
         {
-            try
-            {
-                using var httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; gael@ringedcity.com)");
+            using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; gael@ringedcity.com)");
 
-                using var assetResponse = await httpClient.GetAsync(Asset.browser_download_url);
-                assetResponse.EnsureSuccessStatusCode();
+            using var response = await httpClient.GetAsync(Asset.browser_download_url);
+            response.EnsureSuccessStatusCode();
 
-                string filePath = Path.Combine(OutputDir, $"{Asset.name}");
+            string filePath = Path.Combine(OutputDir, $"{Asset.name}");
 
-                await using var fs = new FileStream(filePath, System.IO.FileMode.Create);
-                await assetResponse.Content.CopyToAsync(fs);
+            await using var fs = new FileStream(filePath, System.IO.FileMode.Create);
+            await response.Content.CopyToAsync(fs);
 
-                TaskLogs.AddLog("[Smithbox] Downloaded latest release ZIP.");
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog("[Smithbox] Failed to download latest release ZIP.", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
-            }
+            TaskLogs.AddLog("[Smithbox] Downloaded latest release ZIP.");
         }
-
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog("[Smithbox] Failed to download latest release ZIP.", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
+        }
 
         return true;
     }
 
     public async static Task<bool> GetReleaseAsset()
     {
-        await Task.Yield();
-
-        var mainAsset = LatestRelease.Assets[0];
-
         try
         {
+            var mainAsset = LatestRelease.Assets[0];
+            if (mainAsset == null)
+            {
+                TaskLogs.AddLog("[Smithbox] No release asset found.");
+                return false;
+            }
+
             using var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; gael@ringedcity.com)");
 
@@ -247,6 +251,22 @@ public static class ProgramUpdater
         {
             TaskLogs.AddLog("[Smithbox] Failed to download latest github asset information.", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, ex);
         }
+
+        return true;
+    }
+    public async static Task<bool> ExtractLatestRelease()
+    {
+        await Task.Yield();
+
+        var extractDir = $"{OutputDir}/_update";
+        if (!Directory.Exists(extractDir))
+        {
+            Directory.CreateDirectory(extractDir);
+        }
+
+        string sourcePath = Path.Combine(OutputDir, $"{Asset.name}");
+
+        ZipFile.ExtractToDirectory(sourcePath, extractDir, true);
 
         return true;
     }
