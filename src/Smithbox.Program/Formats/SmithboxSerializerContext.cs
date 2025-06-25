@@ -19,6 +19,7 @@ namespace StudioCore.Formats.JSON;
 
 // Project
 [JsonSerializable(typeof(ProjectEntry))]
+[JsonSerializable(typeof(LegacyProjectJSON))]
 
 [JsonSerializable(typeof(FileDictionary))]
 [JsonSerializable(typeof(FileDictionaryEntry))]

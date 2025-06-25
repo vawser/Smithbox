@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudioCore.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -208,4 +209,48 @@ public class MaskSection
     public string mask { get; set; }
     public string name { get; set; }
 }
+#endregion
+
+// -------------- Legacy Project JSON --------------
+#region Legacy Project JSON
+public class LegacyProjectJSON
+{
+    public string ProjectName { get; set; }
+    public string GameRoot { get; set; }
+    public ProjectType GameType { get; set; }
+
+    public List<string> PinnedParams { get; set; }
+    public List<string> PinnedRows { get; set; }
+    public List<string> PinnedFields { get; set; }
+    public bool UseLooseParams { get; set; }
+    public bool PartialParams { get; set; }
+    public string LastFmgLanguageUsed { get; set; }
+
+    public LegacyProjectJSON() { }
+
+    public LegacyProjectJSON(ProjectEntry curProject)
+    {
+        ProjectName = curProject.ProjectName;
+        GameRoot = curProject.ProjectPath;
+        GameType = curProject.ProjectType;
+
+        PinnedParams = new();
+        PinnedRows = new();
+        PinnedFields = new();
+
+        UseLooseParams = false;
+
+        // Account for this for DS3 projects
+        if (curProject.ProjectType is ProjectType.DS3)
+        {
+            UseLooseParams = CFG.Current.UseLooseParams;
+        }
+
+        PartialParams = false;
+
+        LastFmgLanguageUsed = "engus";
+    }
+}
+
+
 #endregion

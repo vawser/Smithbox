@@ -57,6 +57,11 @@ public class ProjectManager
             }
             UIHelper.Tooltip($"Add a new project to the project list.");
 
+            UIHelper.SimpleHeader("selectedProjectHeader", "Selected Project", "The project that is currently selected.", UI.Current.ImGui_AliasName_Text);
+
+            DisplaySelectedProjectEntry();
+
+            UIHelper.SimpleHeader("possibleProjectsHeader", "Available Projects", "The projects that are avaliable.", UI.Current.ImGui_AliasName_Text);
             // Project List
             DisplayProjectListOfType(ProjectType.DES);
             DisplayProjectListOfType(ProjectType.DS1);
@@ -74,6 +79,32 @@ public class ProjectManager
         }
     }
 
+    private void DisplaySelectedProjectEntry()
+    {
+        if (Projects.Count > 0)
+        {
+            foreach (var project in Projects)
+            {
+                if (project != SelectedProject)
+                    continue;
+
+                var imGuiID = project.ProjectGUID;
+                var projectName = $"{project.ProjectName}";
+
+                if (CFG.Current.DisplayProjectPrefix)
+                {
+                    projectName = $"[{project.ProjectType}] {projectName}";
+                }
+
+                if (ImGui.BeginMenu($"{projectName}##projectEntry_{imGuiID}"))
+                {
+                    DisplayProjectActions(project);
+
+                    ImGui.EndMenu();
+                }
+            }
+        }
+    }
 
     private void DisplayProjectListOfType(ProjectType projectType)
     {
@@ -81,10 +112,11 @@ public class ProjectManager
 
         if(projectList.Count > 0)
         {
-            ImGui.Separator();
-
             foreach(var project in projectList)
             {
+                if (project == SelectedProject)
+                    continue;
+
                 var imGuiID = project.ProjectGUID;
                 var projectName = $"{project.ProjectName}";
 
@@ -127,6 +159,15 @@ public class ProjectManager
             if (ImGui.MenuItem($"Unload##unloadProject"))
             {
                 curProject.Unload();
+            }
+
+            if (ImGui.MenuItem($"Reload##reloadProject"))
+            {
+                SelectedProject = curProject;
+                if (!IsProjectLoading)
+                {
+                    ReloadProject(curProject);
+                }
             }
         }
 
@@ -297,6 +338,9 @@ public class ProjectManager
             var json = JsonSerializer.Serialize(curProject, SmithboxSerializerContext.Default.ProjectEntry);
 
             File.WriteAllText(file, json);
+
+            // Update the legacy project.json
+            CreateLegacyProjectJSON(curProject);
         }
     }
 
@@ -409,6 +453,7 @@ public class ProjectManager
         ProjectEntry oldProject = SelectedProject;
 
         BaseEditor.SetProgramName(curProject);
+        CreateLegacyProjectJSON(curProject);
 
         // Signal shutdown to existing project if it is loaded
         if (oldProject != null)
@@ -438,6 +483,57 @@ public class ProjectManager
 
         if (oldProject != null)
             oldProject.Reset();
+    }
+
+    public async void ReloadProject(ProjectEntry curProject)
+    {
+        ProjectEntry oldProject = SelectedProject;
+
+        BaseEditor.SetProgramName(curProject);
+        CreateLegacyProjectJSON(curProject);
+
+        // Signal shutdown to existing project if it is loaded
+        if (oldProject != null)
+            SelectedProject.Suspend();
+
+        IsProjectLoading = true;
+
+        Task<bool> projectSetupTask = curProject.Init();
+        bool projectSetupTaskResult = await projectSetupTask;
+
+        foreach (var tEntry in Projects)
+        {
+            tEntry.IsSelected = false;
+        }
+        curProject.IsSelected = true;
+
+        SelectedProject = curProject;
+
+        // Used for the DCX heuristic
+        BinaryReaderEx.CurrentProjectType = $"{curProject.ProjectType}";
+
+        IsProjectLoading = false;
+
+        if (oldProject != null)
+            oldProject.Reset();
+    }
+
+    /// <summary>
+    /// Creates a legacy project.json file for other tools to use.
+    /// </summary>
+    /// <param name="curProject"></param>
+    public void CreateLegacyProjectJSON(ProjectEntry curProject)
+    {
+        var jsonPath = $"{curProject.ProjectPath}/project.json";
+
+        if(Directory.Exists(curProject.ProjectPath))
+        {
+            var legacyProjectJson = new LegacyProjectJSON(curProject);
+
+            var json = JsonSerializer.Serialize(legacyProjectJson, SmithboxSerializerContext.Default.LegacyProjectJSON);
+
+            File.WriteAllText(jsonPath, json);
+        }
     }
 }
 
