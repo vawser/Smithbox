@@ -31,7 +31,7 @@ public static class ProgramUpdater
 
     public static string OutputDir = "";
 
-    public static bool IsConnectedToInternet = false;
+    public static bool CanAccessGithub = false;
 
     public static async Task<bool> HasInternetConnectionAsync()
     {
@@ -39,7 +39,7 @@ public static class ProgramUpdater
         {
             using var client = new HttpClient();
             client.Timeout = TimeSpan.FromSeconds(5);
-            using var response = await client.GetAsync("https://www.google.com");
+            using var response = await client.GetAsync("https://github.com/vawser/Smithbox");
             return response.IsSuccessStatusCode;
         }
         catch
@@ -53,11 +53,11 @@ public static class ProgramUpdater
         if (!CFG.Current.System_Check_Program_Update)
             return;
 
-        IsConnectedToInternet = await HasInternetConnectionAsync();
+        CanAccessGithub = await HasInternetConnectionAsync();
 
-        if (!IsConnectedToInternet)
+        if (!CanAccessGithub)
         {
-            TaskLogs.AddLog($"[Smithbox] Not connected to the internet, program update check cancelled.");
+            TaskLogs.AddLog($"[Smithbox] Cannot access GitHub, program update check cancelled.");
             return;
         }
 
@@ -114,7 +114,7 @@ public static class ProgramUpdater
         if (LatestRelease == null)
             return;
 
-        if (!IsConnectedToInternet)
+        if (!CanAccessGithub)
             return;
 
         if (IsUpdateAvaliable && !UpdateProcessActive)
@@ -147,7 +147,7 @@ public static class ProgramUpdater
         if (LatestRelease == null)
             return;
 
-        if (!IsConnectedToInternet)
+        if (!CanAccessGithub)
             return;
 
         if (UpdateProcessActive)
