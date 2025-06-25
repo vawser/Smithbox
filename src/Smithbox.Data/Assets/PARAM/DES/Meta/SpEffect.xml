@@ -111,8 +111,7 @@
     
     <maxMpRate 
     AltName="Maximum MP %"
-    Wiki="Multiplies maximum MP." 
-    Obsolete="" />
+    Wiki="Multiplies maximum MP." />
     
     <maxStaminaRate 
     AltName="Maximum Stamina %"
