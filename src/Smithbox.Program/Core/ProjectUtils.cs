@@ -63,27 +63,6 @@ public class ProjectUtils
             File.Delete(filename);
         }
 
-        // Remove the project from the ordering file and retain sequential ids
-        var curOrderEntry = editor.ProjectManager.ProjectDisplayOrder.DisplayOrder.Where(e => e.Value == curProject.ProjectGUID).FirstOrDefault();
-
-        var existingOrder = editor.ProjectManager.ProjectDisplayOrder.DisplayOrder;
-        var newOrder = new Dictionary<int, Guid>();
-
-        var count = 0;
-        for (int i = 0; i < existingOrder.Count; i++)
-        {
-            var curGuid = existingOrder[i];
-            if (curGuid != curProject.ProjectGUID)
-            {
-                newOrder.Add(count, curGuid);
-                count++;
-            }
-        }
-
-        editor.ProjectManager.ProjectDisplayOrder.DisplayOrder = newOrder;
-
-        editor.ProjectManager.SaveProjectDisplayOrder();
-
         // Unload the project editor stuff
         editor.ProjectManager.SelectedProject = null;
         editor.ProjectManager.Projects.Remove(curProject);

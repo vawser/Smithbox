@@ -257,10 +257,10 @@ public class MapActionHandler
             {
                 foreach (Entity btl in targetMap.BTLParents)
                 {
-                    var ad = (ResourceDescriptor)btl.WrappedObject;
-                    if (ImGui.Selectable(ad.AssetName))
+                    var adName = (string)btl.WrappedObject;
+                    if (ImGui.Selectable(adName))
                     {
-                        _dupeSelectionTargetedParent = (ad.AssetName, btl);
+                        _dupeSelectionTargetedParent = (adName, btl);
                         break;
                     }
                 }

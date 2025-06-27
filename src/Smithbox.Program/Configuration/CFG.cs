@@ -141,11 +141,6 @@ public class CFG
     /// </summary>
     public bool Viewport_Profiling = true;
 
-    /// <summary>
-    /// If true, the project list window is visible.
-    /// </summary>
-    public bool Interface_Editor_ProjectList = true;
-
     ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------

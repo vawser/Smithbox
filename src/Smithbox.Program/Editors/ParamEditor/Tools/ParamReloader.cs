@@ -275,30 +275,37 @@ public class ParamReloader
 
                 paramFound = true;
 
-                nint paramRepositoryPtr = handler.GetBaseAddress();
-                if (paramRepo.ParamBaseAobPattern != null)
+                try
                 {
-                    if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
+                    nint paramRepositoryPtr = handler.GetBaseAddress();
+                    if (paramRepo.ParamBaseAobPattern != null)
                     {
-                        TaskLogs.AddLog($"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
-                        continue;
+                        if (!handler.TryFindOffsetFromAOB("ParamBase", paramRepo.ParamBaseAobPattern, paramRepo.ParamBaseAobRelativeOffsets, out int paramBase))
+                        {
+                            TaskLogs.AddLog($"Param Reloader cannot reload {param} because the given AOB was not found.", LogLevel.Warning, LogPriority.Normal);
+                            continue;
+                        }
+
+                        paramRepositoryPtr += paramBase;
+                    }
+                    else
+                    {
+                        paramRepositoryPtr += paramRepo.ParamBaseOffset;
                     }
 
-                    paramRepositoryPtr += paramBase;
+                    if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
+                    {
+                        // DS1 ThrowParam requires an additional offset.
+                        paramRepositoryPtr += 0x10;
+                    }
+
+                    tasks.Add(new Task(() =>
+                        WriteMemoryPARAM(offsets.type, offsets.Is64Bit, paramRepo, bank.Params[param], paramOffset, handler, paramRepositoryPtr)));
                 }
-                else
+                catch (Exception ex)
                 {
-                    paramRepositoryPtr += paramRepo.ParamBaseOffset;
+                    TaskLogs.AddLog($"Failed to find base address.", LogLevel.Error, LogPriority.High, ex);
                 }
-                
-                if (offsets.type is ProjectType.DS1 or ProjectType.DS1R && param == "ThrowParam")
-                {
-                    // DS1 ThrowParam requires an additional offset.
-                    paramRepositoryPtr += 0x10;
-                }
-                
-                tasks.Add(new Task(() =>
-                    WriteMemoryPARAM(offsets.type, offsets.Is64Bit, paramRepo, bank.Params[param], paramOffset, handler, paramRepositoryPtr)));
             }
             
             if (!paramFound)

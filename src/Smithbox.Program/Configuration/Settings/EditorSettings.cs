@@ -995,7 +995,7 @@ public class ParamEditorTab
             }
 
             // Ignore if no game offsets exist for the project type
-            if (curProject.ParamMemoryOffsets != null)
+            if (curProject.ParamMemoryOffsets != null && curProject.ParamMemoryOffsets.list != null)
             {
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
                 {

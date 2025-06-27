@@ -429,8 +429,12 @@
     <parryForwardOffset AltName="Parry Forward Offset" Wiki="Front angle offset of [collapsed side] of parry establishment condition" />
     <atkSuperArmorCorrection AltName="Attack Correction: Poise" Wiki="PC only. Correction value to be applied to the [basic value] set for the weapon" />
     <defSfxMaterialVariationValue AltName="Defence SFX Material Variation Offset" Wiki="A value to have variations of damage SFX and SE in combination with defense material 1 or 2 used when guarding. (SEQ16473)" />
-    <finalDamageRateId AltName="Final Damage % ID" Refs="FinalDamageRateParam" />
+    
     <pad4 AltName="" Padding=""/>
+    
+    <ultimateArtGainCorrection
+    AltName="Attack Correction: Ultimate Art" 
+    Wiki="The correction for ultimate art gauge restoration." />
     
     <reviveDamageCorrection 
     AltName="Attack Correction: Revive" 
