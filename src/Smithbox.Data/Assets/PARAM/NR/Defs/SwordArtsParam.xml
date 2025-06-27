@@ -12,8 +12,7 @@
     <Field Def="s16 unknown_3" />
     
     <Field Def="s16 swordArtsType" />
-    <Field Def="s16 sortId" />
-    <!--I don't know why other sortId are s32 and this one is s16 - but it seems correct.-->
+    <Field Def="s16 unknown_4" />
     
     <Field Def="s32 textId">
       <DisplayName>テキストID</DisplayName>

@@ -18,16 +18,6 @@
     AltName="Hide Map Icon Flag"
     Wiki="The event flag that hides the display of the map icon." 
     FlagAlias="" />
-
-    <iconId
-    AltName="Icon ID"
-    Wiki="Icon ID"
-    TextureRef="Direct/01_common_h/SB_MapCursor_02_0/iconId/MENU_MAP_" />
-
-    <iconId_2
-    AltName="Icon ID 2"
-    Wiki="Icon ID 2"
-    TextureRef="Direct/01_common_h/SB_MapCursor_02_0/iconId_2/MENU_MAP_" />
   </Field>
   
   <Enums>

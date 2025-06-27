@@ -45,9 +45,8 @@
     
     <expeditionBackgroundId
     AltName="Background ID"
-    Wiki="The background to display for this night boss in the Expedition menu." />
-    <!-- TextureRef="Direct/01_common_h/SB_MenuIcon_0/expeditionBackgroundId/MENU_MenuIcon_"/>
-     The icons are actually in the 0 folder, but seems program doesn't work with multiple sources in this case-->
+    Wiki="The background to display for this night boss in the Expedition menu."
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/expeditionBackgroundId/MENU_MenuIcon_"/>
     
     <largeBossIconId
     AltName="Large Boss Icon ID"

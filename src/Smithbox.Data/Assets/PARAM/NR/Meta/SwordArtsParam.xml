@@ -11,10 +11,6 @@
     AltName="Text ID" 
     Wiki="Text ID for arts description" 
     FmgRef="Title_Skill" />
-
-    <sortId
-    AltName="Sort ID"
-    Wiki=" " />
     
     <useMagicPoint_L1 
     AltName="FP Consumption - L1" 
@@ -35,7 +31,7 @@
     <iconId
     AltName="Icon ID"
     Wiki="The icon for this sword art." 
-    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_1/iconId/MENU_ItemIcon_"/>
+    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_"/>
     
     <usabilityTextId
     AltName="Usability Text ID"
