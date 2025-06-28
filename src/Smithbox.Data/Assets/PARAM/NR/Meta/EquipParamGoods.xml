@@ -20,9 +20,16 @@
       <Option Value="13" Name="None" />
       <Option Value="14" Name="Reinforcement Material" />
       <Option Value="15" Name="Great Rune" />
-      <Option Value="16" Name="Incantation" />
-      <Option Value="17" Name="Self Buff - Sorcery" />
-      <Option Value="18" Name="Self Buff - Incantation" />
+      <Option Value="16" Name="Wylder - Garb" />
+      <Option Value="17" Name="Guardian - Garb" />
+      <Option Value="18" Name="Ironeye - Garb" />
+      <Option Value="19" Name="Duchess - Garb" />
+      <Option Value="20" Name="Raider - Garb" />
+      <Option Value="21" Name="Revenant - Garb" />
+      <Option Value="22" Name="Recluse - Garb" />
+      <Option Value="23" Name="Executor - Garb" />
+      <Option Value="24" Name="Gestures" />
+      <Option Value="25" Name="Urns" />
     </Enum>
     <Enum Name="BEHAVIOR_REF_TYPE" type="u8">
       <Option Value="0" Name="None" />
@@ -109,10 +116,11 @@
       <Option Value="2" Name="Type 2" />
     </Enum>
     <Enum Name="RARITY" type="u8">
-      <Option Value="0" Name="Default" />
-      <Option Value="1" Name="Common" />
+      <Option Value="0" Name="Default / Common" />
+      <Option Value="1" Name="Uncommon" />
       <Option Value="2" Name="Rare" />
       <Option Value="3" Name="Legendary" />
+      <Option Value="9" Name="Unique" />
     </Enum>
     <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
       <Option Value="10" Name="Group 10" />
@@ -147,8 +155,10 @@
     <useEnableSpEffectType AltName="Use Enable SpEffect Type" Wiki="Allow to use only when the special effect of the set state change type is applied" ProjectEnum="SP_EFFECT_TYPE" />
     <potGroupId AltName="Pot Group ID" Wiki="Consumable items for which 0 or more is set for the pot group ID can be possessed by the number of pots with the same pot group ID." />
     <pad AltName="" Padding=""/>
-
-    <iconId AltName="Icon ID" Wiki="Menu icon ID" TextureRef="Direct/01_common_h/SB_Icon_00/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_01/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_02/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_02_A/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_02_B/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_03/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_03_A/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_04/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_05/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_06/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_07_dlc/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_07_dlc_A/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_Icon_08_dlc/iconId/MENU_ItemIcon_" /> />
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID"
+    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_1/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_StatusIcon_0/iconId/MENU_StatusIcon_"/>
     <modelId AltName="Model ID" Wiki="Model ID" />
     <shopLv AltName="Shop Level" Wiki="Level that can be sold at the store" />
     <compTrophySedId AltName="Achivement ID" Wiki="SEQ number of complete trophy" />

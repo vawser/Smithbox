@@ -6,13 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    
-    <Field Def="s32 unknown_1" />
-    <Field Def="s16 unknown_2" />
-    <Field Def="s16 unknown_3" />
+    <Field Def="s32 unknown_1"/>
+    <Field Def="u8 sortGroupId"/>
+    <Field Def="u8 unknown_6"/>
+    <Field Def="u8 unknown_7"/>
+    <Field Def="u8 unknown_8"/>
     
     <Field Def="s16 swordArtsType" />
-    <Field Def="s16 unknown_4" />
+    <Field Def="s16 sortId" />
+    <!--I don't know why other sortId are s32 and this one is s16 - but it seems correct.-->
     
     <Field Def="s32 textId">
       <DisplayName>テキストID</DisplayName>
@@ -50,13 +52,11 @@
       <SortID>840</SortID>
     </Field>
     
-    <Field Def="s16 unknown_5" />
+    <Field Def="u8 unknown_9"/>
     
+    <Field Def="u8 defaultWepAttr"/>
     <Field Def="u16 iconId" />
-    
-    <!-- aiUsageId? -->?
-    <Field Def="s32 unknown_7" />
-    
+    <Field Def="s32 aiUsageId" />
     <Field Def="s32 usabilityTextId" />
     <Field Def="s32 atkParamId" />
     <Field Def="s32 weaponId" />

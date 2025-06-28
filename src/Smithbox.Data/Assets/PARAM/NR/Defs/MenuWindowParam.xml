@@ -15,7 +15,8 @@
     <Field Def="u8 unknown_4b"/>
     <Field Def="u8 unknown_4c"/>
     <Field Def="u8 unknown_4d"/>
-    <Field Def="s32 unknown_5"/>
+    <Field Def="u16 iconId"/>
+    <Field Def="u16 unknown_5b"/>
     <Field Def="s32 textId"/>
     <Field Def="s32 unknown_7"/>
     <Field Def="s32 unknown_8"/>
