@@ -283,10 +283,11 @@
       <Option Value="255" Name="None" />
     </Enum>
     <Enum Name="RARITY" type="u8">
-      <Option Value="0" Name="Default" />
-      <Option Value="1" Name="Common" />
+      <Option Value="0" Name="Default / Common" />
+      <Option Value="1" Name="Uncommon" />
       <Option Value="2" Name="Rare" />
       <Option Value="3" Name="Legendary" />
+      <Option Value="9" Name="Unique" />
     </Enum>
   </Enums>
   <Field>

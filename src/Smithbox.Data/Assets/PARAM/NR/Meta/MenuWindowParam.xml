@@ -4,8 +4,13 @@
   Wiki="" />
   
   <Field>
-    <textId
+    <textId 
     FmgRef="Modern_Menu_Text" />
+
+  <iconId
+  AltName="Icon ID"
+  Wiki="Icon ID"
+  TextureRef="Direct/01_common_h/SB_MenuIcon_0/iconId/MENU_MenuIcon_,Direct/01_common_h/SB_MenuIcon_1/iconId/MENU_MenuIcon_" />
   </Field>
   
   <Enums>
