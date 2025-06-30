@@ -192,13 +192,17 @@ public class ParamEditorShortcuts
         }
 
         // Import CSV
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
+        if (!ImGui.IsAnyItemActive() &&
+            Editor._activeView.Selection.ActiveParamExists() &&
+            InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ImportCSV))
         {
             EditorCommandQueue.AddCommand(@"param/menu/massEditCSVImport");
         }
 
         // Export CSV
-        if (InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
+        if (!ImGui.IsAnyItemActive() &&
+            Editor._activeView.Selection.ActiveParamExists() &&
+            InputTracker.GetKeyDown(KeyBindings.Current.PARAM_ExportCSV))
         {
             EditorCommandQueue.AddCommand($@"param/menu/massEditCSVExport/{ParamBank.RowGetType.AllRows}");
         }
