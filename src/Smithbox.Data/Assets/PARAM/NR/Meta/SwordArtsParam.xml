@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
   <Self Wiki="Defines Ashes of War, including unique AoW. Determines AoW animation.\nBehaviour data remains in BehaviourParam. Unique AoW data is with the weapon and not with other AoW data."  />
+    <Enums>
+    <Enum Name="GEM_WEP_ATTR" type="u8">
+      <Option Value="0" Name="Standard" />
+      <Option Value="5" Name="Fire" />
+      <Option Value="6" Name="Lightning" />
+      <Option Value="7" Name="Sacred" />
+      <Option Value="8" Name="Magic" />
+      <Option Value="9" Name="Cold" />
+      <Option Value="10" Name="Poison" />
+      <Option Value="11" Name="Blood" />
+    </Enum>
+    <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
+      <Option Value="10" Name="Heavy" />
+      <Option Value="20" Name="Keen" />
+      <Option Value="30" Name="Quality" />
+      <Option Value="40" Name="Magic" />
+      <Option Value="50" Name="Fire / Lightning" />
+      <Option Value="80" Name="Sacred" />
+      <Option Value="90" Name="Aux" />
+      <Option Value="120" Name="Occult" />
+      <Option Value="130" Name="Bow" />
+      <Option Value="140" Name="Shield" />
+      <Option Value="200" Name="Unique" />
+      <Option Value="255" Name="None" />
+    </Enum>
+  </Enums>
   <Field>
+    <sortGroupId
+    AltName="Sort Group ID"
+    Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    Enum="DISPLAY_CATEGORY_ID" />
   
     <swordArtsType 
     AltName="Sword Arts Type" 
@@ -11,6 +41,10 @@
     AltName="Text ID" 
     Wiki="Text ID for arts description" 
     FmgRef="Title_Skill" />
+
+    <sortId
+    AltName="Sort ID"
+    Wiki="The menu ordering for Weapon Skills" />
     
     <useMagicPoint_L1 
     AltName="FP Consumption - L1" 
@@ -27,11 +61,20 @@
     <useMagicPoint_R2 
     AltName="FP Consumption - R2" 
     Wiki="MP consumed when issuing arts by R2" />
+
+    <defaultWepAttr
+    AltName="Default Weapon Affinity"
+    Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes"
+    Enum="GEM_WEP_ATTR" />
     
     <iconId
     AltName="Icon ID"
     Wiki="The icon for this sword art." 
-    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_"/>
+    TextureRef="Direct/01_common_h/SB_ItemIcon_0/iconId/MENU_ItemIcon_,Direct/01_common_h/SB_ItemIcon_1/iconId/MENU_ItemIcon_"/>
+
+    <aiUsageId
+    AltName="AI Usage Judgment ID"
+    Wiki="AI usage judgment ID" />
     
     <usabilityTextId
     AltName="Usability Text ID"
