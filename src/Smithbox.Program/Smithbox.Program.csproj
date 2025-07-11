@@ -4,36 +4,52 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>12</LangVersion>
-    <Configurations>Debug;Release;Debug-linux;Release-linux</Configurations>
+    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>OSX</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-win'">
+    <DefineConstants>WINDOWS;DEBUG</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>arm64</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>OSX</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)'=='Release-win'">
+    <DefineConstants>WINDOWS;RELEASE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>arm64</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-linux|AnyCPU'">
-    <DefineConstants>LINUX</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-linux'">
+    <DefineConstants>LINUX;DEBUG</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
     <NoWarn>1701;1702;0169</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-linux|AnyCPU'">
-    <DefineConstants>LINUX</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)'=='Release-linux'">
+    <DefineConstants>LINUX;RELEASE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug-osx'">
+    <DefineConstants>OSX;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTargets>arm64;x64</PlatformTargets>
+    <NoWarn>1701;1702;0169</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release-osx'">
+    <DefineConstants>OSX;RELEASE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTargets>arm64;x64</PlatformTargets>
     <DebugType>embedded</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <NoWarn>1701;1702;0169</NoWarn>

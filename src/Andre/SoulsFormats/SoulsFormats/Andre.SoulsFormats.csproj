@@ -8,24 +8,37 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <TargetFramework>net9.0</TargetFramework>
     <LangVersion>12</LangVersion>
+    <Configurations>Debug;Release;Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DefineConstants>OSX</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-win' ">
+    <DefineConstants>WINDOWS;DEBUG</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>OSX</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-win' ">
+    <DefineConstants>WINDOWS;RELEASE</DefineConstants>
     <DebugType>embedded</DebugType>
     <DocumentationFile />
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug-linux' ">
-    <DefineConstants>LINUX</DefineConstants>
+    <DefineConstants>LINUX;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release-linux' ">
-    <DefineConstants>LINUX</DefineConstants>
+    <DefineConstants>LINUX;RELEASE</DefineConstants>
+    <DebugType>embedded</DebugType>
+    <DocumentationFile />
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-osx' ">
+    <TargetFramework>$(TargetFramework)-osx</TargetFramework>
+    <DefineConstants>OSX;DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release-osx' ">
+    <TargetFramework>$(TargetFramework)-osx</TargetFramework>
+    <DefineConstants>OSX;RELEASE</DefineConstants>
     <DebugType>embedded</DebugType>
     <DocumentationFile />
   </PropertyGroup>

@@ -172,7 +172,7 @@ public class ParamBank
         // Load every param in the regulation
         foreach (BinderFile f in parambnd.Files)
         {
-            var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\','/'));
+            var paramName = Path.GetFileNameWithoutExtension(f.Name.Replace('\\', Path.DirectorySeparatorChar));
 
             if (!f.Name.ToUpper().EndsWith(".PARAM"))
             {
@@ -398,30 +398,30 @@ public class ParamBank
         // Write all gameparam variations since we don't know which one the the game will use.
         // Compressed
         paramBnd.Compression = DCX.Type.DCX_EDGE;
-        var naParamPath = @"param/gameparam/gameparamna.parambnd.dcx";
+        var naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd.dcx");
 
         if (fs.FileExists(naParamPath))
         {
             ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/gameparam/gameparam.parambnd.dcx", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
 
         // Decompressed
         paramBnd.Compression = DCX.Type.None;
-        naParamPath = @"param/gameparam/gameparamna.parambnd";
+        naParamPath = Path.Join("param", "gameparam", "gameparamna.parambnd");
         if (fs.FileExists(naParamPath))
         {
             ProjectUtils.WriteWithBackup(Project, fs, toFs, naParamPath, paramBnd);
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/gameparam/gameparam.parambnd", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd"), paramBnd);
 
         // Drawparam
         List<string> drawParambndPaths = new();
-        if (fs.DirectoryExists(@"param/drawparam"))
+        if (fs.DirectoryExists(Path.Join("param", "drawparam")))
         {
-            foreach (var bnd in fs.GetFileNamesWithExtensions($@"param/drawparam", ".parambnd", ".parambnd.dcx"))
+            foreach (var bnd in fs.GetFileNamesWithExtensions(Path.Join("param", "drawparam"), ".parambnd", ".parambnd.dcx"))
             {
                 drawParambndPaths.Add(bnd);
             }
@@ -438,7 +438,7 @@ public class ParamBank
                     }
                 }
 
-                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param/drawparam/{Path.GetFileName(bnd)}", drawParamBnd);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "drawparam", Path.GetFileName(bnd)), drawParamBnd);
             }
         }
 
@@ -455,26 +455,26 @@ public class ParamBank
     /// </summary>
     private string GetGameParam_DES(VirtualFileSystem fs)
     {
-        var name = $@"param/gameparam/gameparamna.parambnd.dcx";
+        var name = Path.Join("param", "gameparam", "gameparamna.parambnd.dcx");
 
         if (fs.FileExists($@"{name}"))
         {
             return name;
         }
 
-        name = $@"param/gameparam/gameparamna.parambnd";
+        name = Path.Join("param", "gameparam", "gameparamna.parambnd");
         if (fs.FileExists($@"{name}"))
         {
             return name;
         }
 
-        name = $@"param/gameparam/gameparam.parambnd.dcx";
+        name = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
         if (fs.FileExists($@"{name}"))
         {
             return name;
         }
 
-        name = $@"param/gameparam/gameparam.parambnd";
+        name = Path.Join("param", "gameparam", "gameparam.parambnd");
         if (fs.FileExists($@"{name}"))
         {
             return name;
@@ -543,7 +543,7 @@ public class ParamBank
         var fs = Project.FS;
         var toFs = ProjectUtils.GetFilesystemForWrite(Project);
 
-        string param = @"param/GameParam/GameParam.parambnd";
+        string param = Path.Join("param", "GameParam", "GameParam.parambnd");
         if (!fs.FileExists(param))
         {
             param += ".dcx";
@@ -569,11 +569,11 @@ public class ParamBank
             }
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/GameParam/GameParam.parambnd", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd"), paramBnd);
 
-        if (fs.DirectoryExists($@"param/DrawParam"))
+        if (fs.DirectoryExists(Path.Join("param", "DrawParam")))
         {
-            foreach (var bnd in fs.GetFileNamesWithExtensions(@"param/DrawParam", ".parambnd"))
+            foreach (var bnd in fs.GetFileNamesWithExtensions(Path.Join("param", "DrawParam"), ".parambnd"))
             {
                 using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
                 foreach (BinderFile p in drawParamBnd.Files)
@@ -584,7 +584,7 @@ public class ParamBank
                     }
                 }
 
-                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param/DrawParam/{Path.GetFileName(bnd)}", drawParamBnd);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "DrawParam", Path.GetFileName(bnd)), drawParamBnd);
             }
         }
 
@@ -598,13 +598,13 @@ public class ParamBank
 
     public string GetGameParam_DS1(VirtualFileSystem fs)
     {
-        var name = $@"param/GameParam/GameParam.parambnd";
+        var name = Path.Join("param", "GameParam", "GameParam.parambnd");
         if (fs.FileExists($@"{name}"))
         {
             return name;
         }
 
-        name = $@"param/GameParam/GameParam.parambnd.dcx";
+        name = Path.Join("param", "GameParam", "GameParam.parambnd.dcx");
         if (fs.FileExists($@"{name}"))
         {
             return name;
@@ -618,7 +618,7 @@ public class ParamBank
     {
         var successfulLoad = true;
 
-        var paramPath = $@"param/GameParam/GameParam.parambnd.dcx";
+        var paramPath = Path.Join("param", "GameParam", "GameParam.parambnd.dcx");
 
         if (!TargetFS.FileExists(paramPath))
         {
@@ -670,7 +670,7 @@ public class ParamBank
 
         var fs = Project.FS;
         var toFs = ProjectUtils.GetFilesystemForWrite(Project); ;
-        string param = @"param/GameParam/GameParam.parambnd.dcx";
+        string param = Path.Join("param", "GameParam", "GameParam.parambnd.dcx");
 
         if (!fs.FileExists(param))
         {
@@ -693,12 +693,12 @@ public class ParamBank
                 p.Bytes = Params[Path.GetFileNameWithoutExtension(p.Name)].Write();
             }
         }
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/GameParam/GameParam.parambnd.dcx", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "GameParam", "GameParam.parambnd.dcx"), paramBnd);
 
         //DrawParam
-        if (fs.DirectoryExists($@"param/DrawParam"))
+        if (fs.DirectoryExists(Path.Join("param", "DrawParam")))
         {
-            foreach (var bnd in fs.GetFileNamesWithExtensions($@"param/DrawParam", ".parambnd.dcx"))
+            foreach (var bnd in fs.GetFileNamesWithExtensions(Path.Join("param", "DrawParam"), ".parambnd.dcx"))
             {
                 using var drawParamBnd = BND3.Read(fs.GetFile(bnd).GetData());
                 foreach (BinderFile p in drawParamBnd.Files)
@@ -709,7 +709,7 @@ public class ParamBank
                     }
                 }
 
-                ProjectUtils.WriteWithBackup(Project, fs, toFs, @$"param/DrawParam/{Path.GetFileName(bnd)}", drawParamBnd);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "DrawParam", Path.GetFileName(bnd)), drawParamBnd);
             }
         }
 
@@ -1045,7 +1045,7 @@ public class ParamBank
                     else
                     {
                         // Regulation does not contain this param, write param loosely.
-                        ProjectUtils.WriteWithBackup(Project, fs, toFs, $@"Param/{p.Key}.param", p.Value);
+                        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
                     }
                 }
             }
@@ -1081,7 +1081,7 @@ public class ParamBank
                 // Write params to loose files.
                 foreach (KeyValuePair<string, Param> p in Params)
                 {
-                    ProjectUtils.WriteWithBackup(Project, fs, toFs, $@"Param/{p.Key}.param", p.Value);
+                    ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("Param", $"{p.Key}.param"), p.Value);
                 }
             }
             catch
@@ -1204,7 +1204,7 @@ public class ParamBank
                 Files = paramBnd.Files.Where(f => f.Name.EndsWith(".param")).ToList()
             };
 
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/gameparam/gameparam_dlc2.parambnd.dcx", paramBND);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam_dlc2.parambnd.dcx"), paramBND);
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_DS3)
@@ -1221,7 +1221,7 @@ public class ParamBank
     {
         var successfulLoad = true;
 
-        var paramPath = $@"param/gameparam/gameparam.parambnd.dcx";
+        var paramPath = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
 
         if (!TargetFS.FileExists(paramPath))
         {
@@ -1252,7 +1252,7 @@ public class ParamBank
 
         var fs = Project.FS;
         var toFs = ProjectUtils.GetFilesystemForWrite(Project);
-        string param = @"param/gameparam/gameparam.parambnd.dcx";
+        string param = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
 
         if (!fs.FileExists(param))
         {
@@ -1279,7 +1279,7 @@ public class ParamBank
             }
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/gameparam/gameparam.parambnd.dcx", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_BB)
         {
@@ -1295,7 +1295,7 @@ public class ParamBank
     {
         var successfulLoad = true;
 
-        var paramPath = $@"param/gameparam/gameparam.parambnd.dcx";
+        var paramPath = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
 
         if (!TargetFS.FileExists(paramPath))
         {
@@ -1326,7 +1326,7 @@ public class ParamBank
 
         var fs = Project.FS;
         var toFs = ProjectUtils.GetFilesystemForWrite(Project);
-        string param = @"param/gameparam/gameparam.parambnd.dcx";
+        string param = Path.Join("param", "gameparam", "gameparam.parambnd.dcx");
 
         if (!fs.FileExists(param))
         {
@@ -1370,7 +1370,7 @@ public class ParamBank
             }
         }
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/gameparam/gameparam.parambnd.dcx", paramBnd);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "gameparam", "gameparam.parambnd.dcx"), paramBnd);
 
         if (CFG.Current.Param_StripRowNamesOnSave_SDT)
         {
@@ -1387,7 +1387,7 @@ public class ParamBank
         var successfulLoad = true;
 
         var gameParamPath = $@"regulation.bin";
-        var systemParamPath = $@"param/systemparam/systemparam.parambnd.dcx";
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
         if (!TargetFS.FileExists(gameParamPath))
         {
@@ -1484,7 +1484,7 @@ public class ParamBank
 
         ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.ER);
 
-        var sysParam = @"param/systemparam/systemparam.parambnd.dcx";
+        var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
         if (!sourceFs.FileExists(sysParam))
         {
@@ -1497,7 +1497,7 @@ public class ParamBank
         {
             using var sysParams = BND4.Read(sysParamF.GetData());
             OverwriteParamsER(sysParams);
-            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"param/systemparam/systemparam.parambnd.dcx", sysParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_ER)
@@ -1518,9 +1518,9 @@ public class ParamBank
         var projectPath = Project.ProjectPath;
 
         var gameParamPath = $@"regulation.bin";
-        var systemParamPath = $@"param/systemparam/systemparam.parambnd.dcx";
-        var graphicsParamPath = $@"param/graphicsconfig/graphicsconfig.parambnd.dcx";
-        var eventParamPath = $@"param/eventparam/eventparam.parambnd.dcx";
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+        var graphicsParamPath = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
+        var eventParamPath = Path.Join("param", "eventparam", "eventparam.parambnd.dcx");
 
         // Game Param
         if (!TargetFS.FileExists(gameParamPath))
@@ -1672,7 +1672,7 @@ public class ParamBank
         OverwriteParamsAC6(regParams);
         ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"regulation.bin", regParams, ProjectType.AC6);
 
-        var sysParam = @"param/systemparam/systemparam.parambnd.dcx";
+        var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
         if (!sourceFs.FileExists(sysParam))
         {
@@ -1688,7 +1688,7 @@ public class ParamBank
             ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
         }
 
-        var graphicsParam = @"param/graphicsconfig/graphicsconfig.parambnd.dcx";
+        var graphicsParam = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
 
         if (!sourceFs.FileExists(sysParam))
         {
@@ -1704,7 +1704,7 @@ public class ParamBank
             ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
         }
 
-        var eventParam = @"param/eventparam/eventparam.parambnd.dcx";
+        var eventParam = Path.Join("param", "eventparam", "eventparam.parambnd.dcx");
 
         if (!sourceFs.FileExists(eventParam))
         {
@@ -1735,8 +1735,8 @@ public class ParamBank
         var successfulLoad = true;
 
         var gameParamPath = $@"regulation.bin";
-        var systemParamPath = $@"param/systemparam/systemparam.parambnd.dcx";
-        var eventParamPath = $@"param/eventparam/eventparam.parambnd.dcx";
+        var systemParamPath = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
+        var eventParamPath = Path.Join("param", "eventparam", "eventparam.parambnd.dcx");
 
         if (!TargetFS.FileExists(gameParamPath))
         {
@@ -1856,7 +1856,7 @@ public class ParamBank
         ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
 
         // System Param
-        var sysParam = @"param/systemparam/systemparam.parambnd.dcx";
+        var sysParam = Path.Join("param", "systemparam", "systemparam.parambnd.dcx");
 
         if (!fs.FileExists(sysParam))
         {
@@ -1869,11 +1869,11 @@ public class ParamBank
         {
             using var sysParams = BND4.Read(sysParamF.GetData());
             OverwriteParamsNR(sysParams);
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param/systemparam/systemparam.parambnd.dcx", sysParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
         }
 
         // Event Param
-        var eventParam = @"param/eventparam/eventparam.parambnd.dcx";
+        var eventParam = Path.Join("param", "eventparam", "eventparam.parambnd.dcx");
 
         if (!Project.FS.FileExists(eventParam))
         {

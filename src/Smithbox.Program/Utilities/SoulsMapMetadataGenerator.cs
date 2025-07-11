@@ -59,7 +59,7 @@ public static class SoulsMapMetadataGenerator
             //Get the MSB to see what navmeshes are being used
             var name = Path.GetFileName(dir);
             mcCombos.Add(name, new MCCombo());
-            var msbPath = Path.GetDirectoryName(dir) + $"/mapstudio/{name}.msb";
+            var msbPath = Path.Join(Path.GetDirectoryName(dir), "mapstudio", $"{name}.msb");
 
             List<string> msbNavmeshNames = new List<string>();
             if (File.Exists(msbPath))
@@ -337,7 +337,7 @@ public static class SoulsMapMetadataGenerator
                 roomCount += triDicts[pair.Key].Count;
             }
             usedNodeList.Sort();
-            var mcgOut = (dir + $"/{Path.GetFileName(dir)}.mcg").Replace(baseDirectory, modDirectory);
+            var mcgOut = Path.Join(dir, $"{Path.GetFileName(dir)}.mcg").Replace(baseDirectory, modDirectory);
             Directory.CreateDirectory(Path.GetDirectoryName(mcgOut));
             mcCombos[name].mcg.BigEndian = toBigEndian;
             mcCombos[name].mcg.Write(mcgOut);
@@ -387,7 +387,7 @@ public static class SoulsMapMetadataGenerator
                 mcpRoom.ConnectedRoomIndices.Sort();
                 mcCombos[name].mcp.Rooms.Add(mcpRoom);
             }
-            var mcpOut = (dir + $"/{Path.GetFileName(dir)}.mcp").Replace(baseDirectory, modDirectory);
+            var mcpOut = Path.Join(dir, $"{Path.GetFileName(dir)}.mcp").Replace(baseDirectory, modDirectory);
             Directory.CreateDirectory(Path.GetDirectoryName(mcpOut));
             mcCombos[name].mcp.BigEndian = toBigEndian;
             mcCombos[name].mcp.Write(mcpOut);

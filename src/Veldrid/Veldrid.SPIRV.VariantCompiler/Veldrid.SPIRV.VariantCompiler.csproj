@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" DefaultTargets="Publish">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Veldrid.SPIRV</RootNamespace>
     <!-- NOTE: Version is overridden in full build. -->

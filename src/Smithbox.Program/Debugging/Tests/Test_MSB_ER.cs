@@ -34,13 +34,13 @@ public static class Test_MSB_ER
             if (!decompressed.Span.SequenceEqual(written))
             {
                 var basepath = Path.GetDirectoryName(path.AssetPath);
-                if (!Directory.Exists($@"{basepath}/mismatches"))
+                if (!Directory.Exists(Path.Join(basepath, "mismatches")))
                 {
-                    Directory.CreateDirectory($@"{basepath}/mismatches");
+                    Directory.CreateDirectory(Path.Join(basepath, "mismatches"));
                 }
 
                 Console.WriteLine($@"Mismatch: {msb}");
-                File.WriteAllBytes($@"{basepath}/mismatches/{Path.GetFileNameWithoutExtension(path.AssetPath)}",
+                File.WriteAllBytes(Path.Join(basepath, "mismatches", Path.GetFileNameWithoutExtension(path.AssetPath)),
                     written);
             }
         }

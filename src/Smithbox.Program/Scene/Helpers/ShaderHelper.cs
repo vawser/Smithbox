@@ -69,7 +69,7 @@ public static class ShaderHelper
     public static byte[] LoadBytecode(string setName, VkShaderStageFlags stage)
     {
         var stageExt = stage == VkShaderStageFlags.Vertex ? "vert" : "frag";
-        var name = setName.Replace('\\','/') + "." + stageExt;
+        var name = setName.Replace('\\', Path.DirectorySeparatorChar) + "." + stageExt;
 
         var bytecodeExtension = GetBytecodeExtension();
         var bytecodePath = GetPath(Path.Combine("Shaders", name + bytecodeExtension));

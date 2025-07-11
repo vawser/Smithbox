@@ -163,7 +163,12 @@ namespace Andre.Formats
 #if DEBUG
                 Console.WriteLine($"Decrypting {Path.GetFileName(bhdPath)}");
 #endif
-                var decrypted = Decrypt(bhdPath, game);
+                byte[] decrypted;
+#if WINDOWS
+                decrypted = Decrypt(accessor.Memory, bhdPath, game);
+#else
+                decrypted = Decrypt(bhdPath, game);
+#endif
                 bhd = BHD5.Read(decrypted, game.AsBhdGame()!.Value);
                 BhdWasEncrypted = true;
             }

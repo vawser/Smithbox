@@ -422,7 +422,7 @@ public class MassEditHandler
             ImGui.SameLine();
             if (ImGui.Button("Open Script Folder", halfButtonSize))
             {
-                var projectScriptDir = $"{Editor.Project.ProjectPath}/.smithbox/Assets/Scripts/";
+                var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
 
                 Process.Start("explorer.exe", projectScriptDir);
             }
@@ -454,7 +454,7 @@ public class MassEditHandler
             return;
         }
 
-        var projectScriptDir = $"{Editor.Project.ProjectPath}/.smithbox/Assets/Scripts/";
+        var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
         var scriptPath = $"{projectScriptDir}{NewScriptName}.txt";
 
         // Check both so the name is unique everywhere

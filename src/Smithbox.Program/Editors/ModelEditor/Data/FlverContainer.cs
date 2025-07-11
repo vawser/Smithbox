@@ -141,8 +141,8 @@ public class FlverContainer
             Directory.CreateDirectory(ModBinderDirectory);
         }
 
-        var rootPath = $"{Editor.Project.DataPath}/{BinderDirectory}/{name}";
-        var modPath = $"{Editor.Project.ProjectPath}/{BinderDirectory}/{name}";
+        var rootPath = Path.Join(Editor.Project.DataPath, BinderDirectory, name);
+        var modPath = Path.Join(Editor.Project.ProjectPath, BinderDirectory, name);
 
         if (File.Exists(rootPath))
         {
@@ -182,41 +182,41 @@ public class FlverContainer
         switch (Type)
         {
             case FlverContainerType.Character:
-                string chrDir = @"/chr/";
+                string chrDir = Path.Join("chr");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    chrDir = @"/model/chr/";
+                    chrDir = Path.Join("model", "chr");
                 }
 
                 return chrDir;
             case FlverContainerType.Enemy:
-                string eneDir = @"/model/ene/";
+                string eneDir = Path.Join("model", "ene");
                 return eneDir;
             case FlverContainerType.Object:
-                string objDir = @"/obj/";
+                string objDir = Path.Join("obj");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    objDir = @"/model/obj/";
+                    objDir = Path.Join("model", "obj");
                 }
                 else if (Editor.Project.ProjectType is ProjectType.ER)
                 {
                     var category = ContainerName.Split("_")[0];
-                    objDir = $@"/asset/aeg/{category}/";
+                    objDir = Path.Join("asset", "aeg", category);
                 }
                 else if (Editor.Project.ProjectType is ProjectType.AC6)
                 {
-                    objDir = @"/asset/environment/geometry/";
+                    objDir = Path.Join("asset", "environment", "geometry");
                 }
 
                 return objDir;
             case FlverContainerType.Parts:
-                string partDir = @"/parts/";
+                string partDir = Path.Join("parts");
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
                 {
-                    partDir = @"/model/parts/";
+                    partDir = Path.Join("model", "parts");
 
                     var partType = "";
                     switch (ContainerName[..2])
@@ -249,11 +249,11 @@ public class FlverContainer
                             break;
                     }
 
-                    partDir = $"{partDir}/{partType}/";
+                    partDir = Path.Join(partDir, partType);
                 }
                 else if (Editor.Project.ProjectType is ProjectType.AC4 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    partDir = @"/model/ac";
+                    partDir = Path.Join("model", "ac");
 
                     string partCat = @"parts";
                     string partType = string.Empty;
@@ -349,22 +349,22 @@ public class FlverContainer
                             break;
                     }
 
-                    partDir = $@"{partDir}/{partCat}/{partType}/";
+                    partDir = Path.Join(partDir, partCat, partType);
                 }
 
                 return partDir;
             case FlverContainerType.MapPiece:
-                string mapPieceDir = $@"/map/{MapID}/";
+                string mapPieceDir = Path.Join("map", MapID);
 
                 if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
                 {
                     string shortMapId = MapID.Split("_")[0];
-                    mapPieceDir = $@"/map/{shortMapId}/{MapID}/";
+                    mapPieceDir = Path.Join("map", shortMapId, MapID);
                 }
 
                 if (Editor.Project.ProjectType is ProjectType.DS2S or ProjectType.DS2 or ProjectType.ACFA or ProjectType.ACV or ProjectType.ACVD)
                 {
-                    mapPieceDir = $@"/model/map/";
+                    mapPieceDir = Path.Join("model", "map");
                 }
 
                 return mapPieceDir;

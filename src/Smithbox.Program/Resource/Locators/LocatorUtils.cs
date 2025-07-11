@@ -87,7 +87,7 @@ public static class LocatorUtils
             List<string> ret = new();
 
             // ROOT
-            var paramFiles = Directory.GetFileSystemEntries(project.DataPath + paramDir, $@"*{paramExt}")
+            var paramFiles = Directory.GetFileSystemEntries(Path.Join(project.DataPath, paramDir), $@"*{paramExt}")
                 .ToList();
             foreach (var f in paramFiles)
             {
@@ -99,9 +99,9 @@ public static class LocatorUtils
             // PROJECT
             if (!ignoreProject)
             {
-                if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + paramDir))
+                if (project.ProjectPath != null && Directory.Exists(Path.Join(project.ProjectPath, paramDir)))
                 {
-                    paramFiles = Directory.GetFileSystemEntries(project.ProjectPath + paramDir, $@"*{paramExt}").ToList();
+                    paramFiles = Directory.GetFileSystemEntries(Path.Join(project.ProjectPath, paramDir), $@"*{paramExt}").ToList();
                     foreach (var f in paramFiles)
                     {
                         var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -129,53 +129,53 @@ public static class LocatorUtils
     {
         if (project.ProjectPath != null)
         {
-            var modpath = $@"{project.ProjectPath}/{relpath}";
+            var modpath = Path.Join(project.ProjectPath, relpath);
             if (File.Exists(modpath))
                 return modpath;
         }
 
-        return $@"{project.DataPath}/{relpath}";
+        return Path.Join(project.DataPath, relpath);
     }
     public static string GetAssetPath_CollisionHack(string relpath)
     {
-        return $@"{CFG.Current.PTDE_Collision_Root}/{relpath}";
+        return Path.Join(CFG.Current.PTDE_Collision_Root, relpath);
     }
 
     public static bool CheckFilesExpanded(string gamepath, ProjectType game)
     {
         if (game is ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
-            if (!Directory.Exists($@"{gamepath}/map"))
+            if (!Directory.Exists(Path.Join(gamepath, "map")))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}/asset"))
+            if (!Directory.Exists(Path.Join(gamepath, "asset")))
                 return false;
         }
 
         if (game is ProjectType.DS1 or ProjectType.DS3 or ProjectType.SDT)
         {
-            if (!Directory.Exists($@"{gamepath}/map"))
+            if (!Directory.Exists(Path.Join(gamepath, "map")))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}/obj"))
+            if (!Directory.Exists(Path.Join(gamepath, "obj")))
                 return false;
         }
 
         if (game is ProjectType.DS2S or ProjectType.DS2)
         {
-            if (!Directory.Exists($@"{gamepath}/map"))
+            if (!Directory.Exists(Path.Join(gamepath, "map")))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}/model/obj"))
+            if (!Directory.Exists(Path.Join(gamepath, "model", "obj")))
                 return false;
         }
 
         if (game is ProjectType.ACV or ProjectType.ACVD)
         {
-            if (!Directory.Exists($@"{gamepath}/model/map"))
+            if (!Directory.Exists(Path.Join(gamepath, "model", "map")))
                 return false;
 
-            if (!Directory.Exists($@"{gamepath}/model/obj"))
+            if (!Directory.Exists(Path.Join(gamepath, "model", "obj")))
                 return false;
         }
 
@@ -184,10 +184,10 @@ public static class LocatorUtils
 
     public static bool FileExists(ProjectEntry project, string relpath)
     {
-        if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}/{relpath}"))
+        if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, relpath)))
             return true;
 
-        if (File.Exists($@"{project.DataPath}/{relpath}"))
+        if (File.Exists(Path.Join(project.DataPath, relpath)))
             return true;
 
         return false;
@@ -195,8 +195,8 @@ public static class LocatorUtils
 
     public static string GetOverridenFilePath(ProjectEntry project, string relpath)
     {
-        var rootPath = $@"{project.DataPath}/{relpath}";
-        var modPath = $@"{project.ProjectPath}/{relpath}";
+        var rootPath = Path.Join(project.DataPath, relpath);
+        var modPath = Path.Join(project.ProjectPath, relpath);
 
         if (project.ProjectPath != null && File.Exists(modPath))
             return modPath;

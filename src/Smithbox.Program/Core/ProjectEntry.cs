@@ -1154,7 +1154,7 @@ public class ProjectEntry
 
         return true;
     }
-#endregion
+    #endregion
 
     #region Setup VFS
     public async Task<bool> SetupVFS()
@@ -1219,7 +1219,7 @@ public class ProjectEntry
         else
             FS = new CompundVirtualFileSystem(fileSystems);
 
-        var folder = @$"{AppContext.BaseDirectory}/Assets/File Dictionaries/";
+        var folder = Path.Join(AppContext.BaseDirectory,"Assets","File Dictionaries");
         var file = "";
 
         // Build the file dictionary JSON objects here
@@ -1250,7 +1250,7 @@ public class ProjectEntry
             default: break;
         }
 
-        var filepath = $"{folder}{file}";
+        var filepath = Path.Join(folder, file);
 
         FileDictionary = new();
         FileDictionary.Entries = new();
@@ -1297,10 +1297,10 @@ public class ProjectEntry
 
         Aliases = new();
 
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/Aliases/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Aliases.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/Aliases/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","Aliases",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Aliases.json");
 
         var targetFile = sourceFile;
@@ -1350,10 +1350,10 @@ public class ProjectEntry
         MsbMasks = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/MSB/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/MSB/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Core.json");
 
         var targetFile = sourceFile;
@@ -1470,10 +1470,10 @@ public class ProjectEntry
         FlverEnums = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/FLVER/";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","FLVER");
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/FLVER/";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","FLVER");
         var projectFile = Path.Combine(projectFolder, "Core.json");
 
         var targetFile = sourceFile;
@@ -1556,10 +1556,10 @@ public class ProjectEntry
         GparamEnums = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/GPARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Core.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/GPARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","GPARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Core.json");
 
         var targetFile = sourceFile;
@@ -1641,7 +1641,7 @@ public class ProjectEntry
         ParamMemoryOffsets = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Reload Offsets.json");
 
         var targetFile = sourceFile;
@@ -1684,10 +1684,10 @@ public class ProjectEntry
         ProjectEnums = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Shared Param Enums.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Project/";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Project");
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var targetFile = sourceFile;
@@ -1735,10 +1735,10 @@ public class ProjectEntry
         ParamCategories = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Param Categories.json");
 
         var targetFile = sourceFile;
@@ -1787,10 +1787,10 @@ public class ProjectEntry
         CommutativeParamGroups = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Commutative Params.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/PARAM/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","PARAM",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Commutative Params.json");
 
         var targetFile = sourceFile;
@@ -1838,10 +1838,10 @@ public class ProjectEntry
         MapSpawnStates = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/MSB/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "SpawnStates.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/MSB/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MSB",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "SpawnStates.json");
 
         var targetFile = sourceFile;
@@ -1889,8 +1889,8 @@ public class ProjectEntry
         MapEntitySelections = new();
 
         // Information
-        var projectFolder = $"{ProjectPath}/.smithbox/MSB/Entity Selections";
-        var projectFile = $"{projectFolder}/Selection Groups.json";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","MSB","Entity Selections");
+        var projectFile = Path.Join(projectFolder,"Selection Groups.json");
 
         if (File.Exists(projectFile))
         {
@@ -1956,10 +1956,10 @@ public class ProjectEntry
         MaterialDisplayConfiguration = new();
 
         // Information
-        var sourceFolder = $@"{AppContext.BaseDirectory}/Assets/MATERIAL/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var sourceFolder = Path.Join(AppContext.BaseDirectory,"Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
         var sourceFile = Path.Combine(sourceFolder, "Display Configuration.json");
 
-        var projectFolder = $@"{ProjectPath}/.smithbox/Assets/MATERIAL/{ProjectUtils.GetGameDirectory(ProjectType)}";
+        var projectFolder = Path.Join(ProjectPath,".smithbox","Assets","MATERIAL",ProjectUtils.GetGameDirectory(ProjectType));
         var projectFile = Path.Combine(projectFolder, "Display Configuration.json");
 
         var targetFile = sourceFile;

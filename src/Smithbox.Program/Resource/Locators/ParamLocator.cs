@@ -14,15 +14,15 @@ public static class ParamLocator
     internal static ResourceDescriptor GetDS2Param(ProjectEntry project, string paramStr, string appendStr, string mapid, bool writemode = false)
     {
         ResourceDescriptor ad = new();
-        var path = $@"Param/{paramStr}_{mapid}";
+        var path = Path.Join("Param", $"{paramStr}_{mapid}");
 
-        if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}/{path}.param") || writemode && project.ProjectPath != null)
+        if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, $"{path}.param")) || writemode && project.ProjectPath != null)
         {
-            ad.AssetPath = $@"{project.ProjectPath}/{path}.param";
+            ad.AssetPath = Path.Join(project.ProjectPath, $"{path}.param");
         }
-        else if (File.Exists($@"{project.DataPath}/{path}.param"))
+        else if (File.Exists(Path.Join(project.DataPath, $"{path}.param")))
         {
-            ad.AssetPath = $@"{project.DataPath}/{path}.param";
+            ad.AssetPath = Path.Join(project.DataPath, $"{path}.param");
         }
 
         ad.AssetName = mapid + $"_{appendStr}";
@@ -62,41 +62,41 @@ public static class ParamLocator
 
     public static PARAMDEF GetParamdefForParam(ProjectEntry project, string paramType)
     {
-        var pd = PARAMDEF.XmlDeserialize($@"{GetParamdefDir(project)}/{paramType}.xml");
+        var pd = PARAMDEF.XmlDeserialize(Path.Join(GetParamdefDir(project), $"{paramType}.xml"));
 
         return pd;
     }
 
     public static string GetUpgraderAssetsDir(ProjectEntry project)
     {
-        return $@"{GetParamAssetsDir(project)}/Upgrader";
+        return Path.Join(GetParamAssetsDir(project), "Upgrader");
     }
 
     public static string GetGameOffsetsAssetsDir(ProjectEntry project)
     {
-        return $@"Assets/PARAM/{ProjectUtils.GetGameDirectory(project)}";
+        return Path.Join("Assets", "PARAM", ProjectUtils.GetGameDirectory(project));
     }
 
     public static string GetParamAssetsDir(ProjectEntry project)
     {
-        return $@"Assets/PARAM/{ProjectUtils.GetGameDirectory(project)}";
+        return Path.Join("Assets", "PARAM", ProjectUtils.GetGameDirectory(project));
     }
 
     public static string GetParamdefDir(ProjectEntry project)
     {
-        return $@"{GetParamAssetsDir(project)}/Defs";
+        return Path.Join(GetParamAssetsDir(project), "Defs");
     }
 
     public static string GetTentativeParamTypePath(ProjectEntry project)
     {
-        return $@"{GetParamAssetsDir(project)}/Defs/TentativeParamType.csv";
+        return Path.Join(GetParamAssetsDir(project), "Defs", "TentativeParamType.csv");
     }
 
     public static ulong[] GetParamdefPatches(ProjectEntry project)
     {
-        if (Directory.Exists($@"{GetParamAssetsDir(project)}/DefsPatch"))
+        if (Directory.Exists(Path.Join(GetParamAssetsDir(project), "DefsPatch")))
         {
-            var entries = Directory.GetFileSystemEntries($@"{GetParamAssetsDir(project)}/DefsPatch");
+            var entries = Directory.GetFileSystemEntries(Path.Join(GetParamAssetsDir(project), "DefsPatch"));
             return entries.Select(e => ulong.Parse(Path.GetFileNameWithoutExtension(e))).ToArray();
         }
 
@@ -105,33 +105,33 @@ public static class ParamLocator
 
     public static string GetParamdefPatchDir(ProjectEntry project, ulong patch)
     {
-        return $@"{GetParamAssetsDir(project)}/DefsPatch/{patch}";
+        return Path.Join(GetParamAssetsDir(project), "DefsPatch", patch.ToString());
     }
 
     public static string GetParammetaDir(ProjectEntry project)
     {
-        return $@"{GetParamAssetsDir(project)}/Meta";
+        return Path.Join(GetParamAssetsDir(project), "Meta");
     }
 
     public static string GetParamNamesDir(ProjectEntry project)
     {
-        return $@"{GetParamAssetsDir(project)}/Names";
+        return Path.Join(GetParamAssetsDir(project), "Names");
     }
 
     public static string GetStrippedRowNamesPath(ProjectEntry project, string paramName)
     {
-        var dir = $"{project.ProjectPath}/.smithbox/Workflow/Stripped Row Names";
+        var dir = Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Stripped Row Names");
 
-        return $@"{dir}/{paramName}.txt";
+        return Path.Join(dir, $"{paramName}.txt");
     }
 
     public static string GetMassEditScriptCommonDir()
     {
-        return @"Assets/Scripts/Common";
+        return Path.Join("Assets", "Scripts", "Common");
     }
 
     public static string GetMassEditScriptGameDir(ProjectEntry project)
     {
-        return $@"Assets/Scripts/{ProjectUtils.GetGameDirectory(project)}";
+        return Path.Join("Assets", "Scripts", ProjectUtils.GetGameDirectory(project));
     }
 }

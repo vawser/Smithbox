@@ -56,7 +56,7 @@ public static class Test_FLVER2
         Output.Add($"Old Bytes: {oldBytes.Length}");
         Output.Add($"New Bytes: {newBytes.Length}");
 
-        var outputDir = $"{curProject.ProjectPath}/_flverTest/";
+        var outputDir = Path.Join(curProject.ProjectPath, "_flverTest");
 
         // Cleanup old files
         if(Directory.Exists(outputDir))
@@ -66,7 +66,7 @@ public static class Test_FLVER2
 
         Directory.CreateDirectory(outputDir);
 
-        File.WriteAllBytes($"{outputDir}/Original_{name}.flver", oldBytes);
-        File.WriteAllBytes($"{outputDir}/Saved_{name}.flver", newBytes);
+        File.WriteAllBytes(Path.Join(outputDir, $"Original_{name}.flver"), oldBytes);
+        File.WriteAllBytes(Path.Join(outputDir, $"Saved_{name}.flver"), newBytes);
     }
 }

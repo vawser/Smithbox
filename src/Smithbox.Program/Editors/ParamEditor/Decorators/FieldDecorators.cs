@@ -1632,7 +1632,7 @@ public class FieldDecorators
                         try
                         {
                             string fileName = $"graph_export_{row.ID}.csv";
-                            ExportGraphDataToCsv(@$"{exportPath}/{fileName}", xValues, values);
+                            ExportGraphDataToCsv(Path.Join(exportPath, fileName), xValues, values);
                             TaskLogs.AddLog($"[{editor.Project.ProjectName}:Param Editor] Exported graph data for row {row.ID}.");
                         }
                         catch (Exception ex)

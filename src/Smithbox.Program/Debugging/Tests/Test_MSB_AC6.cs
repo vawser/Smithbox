@@ -66,11 +66,11 @@ public static class Test_MSB_AC6
             Memory<byte> decompressed = DCX.Decompress(bytes);
 
             // Write vanilla version
-            if (!Directory.Exists($@"{basepath}/decompressed"))
+            if (!Directory.Exists(Path.Join(basepath, "decompressed")))
             {
-                Directory.CreateDirectory($@"{basepath}/decompressed");
+                Directory.CreateDirectory(Path.Join(basepath, "decompressed"));
             }
-            File.WriteAllBytes($@"{basepath}/decompressed/{Path.GetFileNameWithoutExtension(path.AssetPath)}",
+            File.WriteAllBytes(Path.Join(basepath, "decompressed", Path.GetFileNameWithoutExtension(path.AssetPath)),
                 decompressed.ToArray());
 
             MSB_AC6 m = MSB_AC6.Read(decompressed);
@@ -78,7 +78,7 @@ public static class Test_MSB_AC6
             // Write test version
             var written = m.Write(DCX.Type.None);
 
-            File.WriteAllBytes($@"{basepath}/mismatches/{Path.GetFileNameWithoutExtension(path.AssetPath)}",
+            File.WriteAllBytes(Path.Join(basepath, "mismatches", Path.GetFileNameWithoutExtension(path.AssetPath)),
                 written);
 
             var isMismatch = false;
@@ -90,9 +90,9 @@ public static class Test_MSB_AC6
 
             if (isMismatch)
             {
-                if (!Directory.Exists($@"{basepath}/mismatches"))
+                if (!Directory.Exists(Path.Join(basepath, "mismatches")))
                 {
-                    Directory.CreateDirectory($@"{basepath}/mismatches");
+                    Directory.CreateDirectory(Path.Join(basepath, "mismatches"));
                 }
 
                 var mismatch = new MismatchData(msb, decompressed.Length, written.Length);
