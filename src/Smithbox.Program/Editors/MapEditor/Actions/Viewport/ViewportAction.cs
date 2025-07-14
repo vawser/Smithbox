@@ -763,7 +763,6 @@ public class MoveMapObjectsAction : ViewportAction
                 // Update MapID if moving to a different map
                 if (TargetMap != null && sourceMap != targetMap)
                 {
-                    // Moveables[i].MapID = targetMap.Name;
                     Moveables[i].ContainingMap = targetMap;
                 }
 
@@ -857,7 +856,6 @@ public class MoveMapObjectsAction : ViewportAction
             // Restore MapID if it was changed
             if (sourceMap != targetMap)
             {
-                // Moveables[i].MapID = sourceMap.Name;
                 Moveables[i].ContainingMap = sourceMap;
             }
 
