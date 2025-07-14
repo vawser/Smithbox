@@ -417,6 +417,17 @@ public class MapEditorScreen : EditorScreen
             UIHelper.Tooltip($"Duplicate the selected map objects into another map.");
 
             ///--------------------
+            // Move to Map
+            ///--------------------
+            if (ImGui.BeginMenu("Move Selected to Map"))
+            {
+                ActionHandler.DisplayMoveToMapMenu(MapDuplicateToMapType.Menubar);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip($"Move the selected map objects into another map.");
+
+            ///--------------------
             // Create
             ///--------------------
             if (ImGui.BeginMenu("Create New Object"))

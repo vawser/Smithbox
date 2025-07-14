@@ -1635,7 +1635,11 @@ public class MsbEntity : Entity
     /// <summary>
     /// The map container this entity belongs to.
     /// </summary>
-    public MapContainer ContainingMap => (MapContainer)Container;
+    public MapContainer ContainingMap
+    {
+        get => (MapContainer)Container;
+        set => Container = value;
+    }
 
     /// <summary>
     /// The Map Editor name for this entity.
