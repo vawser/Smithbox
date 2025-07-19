@@ -690,7 +690,6 @@ public class MoveMapObjectsAction : ViewportAction
     private readonly List<MapContainer> TargetMaps = new();
     private readonly List<Entity> OriginalParents = new();
     private readonly List<int> OriginalIndices = new();
-    private readonly List<Vector3> OriginalPositions = new(); // Store original positions for coordinate adjustment
     private readonly bool SetSelection;
     private readonly Entity TargetBTL;
     private readonly MapContainer TargetMap;
@@ -703,90 +702,6 @@ public class MoveMapObjectsAction : ViewportAction
         SetSelection = setSelection;
         TargetMap = targetMap;
         TargetBTL = targetBTL;
-    }
-
-    /// <summary>
-    /// Extracts map coordinates from map name (e.g., "38_43" -> Y=38, X=43)
-    /// </summary>
-    private (int y, int x) ParseMapCoordinates(string mapName)
-    {
-        if (string.IsNullOrEmpty(mapName))
-            return (0, 0);
-
-        var parts = mapName.Split('_');
-        if (parts.Length >= 2 && int.TryParse(parts[0], out int y) && int.TryParse(parts[1], out int x))
-        {
-            return (y, x);
-        }
-
-        return (0, 0);
-    }
-
-    /// <summary>
-    /// Gets the scale factor based on the layer number
-    /// </summary>
-    private float GetLayerScale(int layer)
-    {
-        if (layer >= 8 && layer <= 19)
-            return 1024f; // Big layer
-        else if (layer >= 20 && layer <= 39)
-            return 512f;  // Medium layer
-        else if (layer >= 40 && layer <= 59)
-            return 256f;  // Detail layer
-
-        return 1024f; // Default to big layer scale
-    }
-
-    /// <summary>
-    /// Calculates position offset when moving between maps
-    /// </summary>
-    private Vector3 CalculatePositionOffset(string sourceMapName, string targetMapName)
-    {
-        var (sourceY, sourceX) = ParseMapCoordinates(sourceMapName);
-        var (targetY, targetX) = ParseMapCoordinates(targetMapName);
-
-        // Extract layer from map name (assuming it's the first part before underscore)
-        var sourceLayer = sourceY; // The conversation indicates first number represents layer info
-        var targetLayer = targetY;
-
-        // Calculate coordinate differences
-        int deltaX = targetX - sourceX;
-        int deltaY = targetY - sourceY;
-
-        // Determine if movement is diagonal by checking if coordinates change in opposite directions
-        // Example: 38_43 -> 39_42 (Y increases +1, X decreases -1 = diagonal)
-        bool isDiagonal = (deltaX > 0 && deltaY < 0) || (deltaX < 0 && deltaY > 0);
-
-        // Get scale for the layer
-        float scale = GetLayerScale(sourceLayer);
-
-        // Calculate offset based on coordinate differences and scale
-        float offsetX = deltaX * scale;
-        float offsetY = deltaY * scale;
-
-        // Handle diagonal movement reflection
-        if (isDiagonal)
-        {
-            // Determine reflection direction based on the pattern of coordinate changes
-            if (deltaX > 0 && deltaY < 0)
-            {
-                // X increases, Y decreases (e.g., 38_43 -> 39_42)
-                // Apply one type of reflection
-                float tempX = offsetX;
-                offsetX = -offsetY;
-                offsetY = -tempX;
-            }
-            else if (deltaX < 0 && deltaY > 0)
-            {
-                // X decreases, Y increases (e.g., 39_42 -> 38_43)
-                // Apply opposite reflection
-                float tempX = offsetX;
-                offsetX = offsetY;
-                offsetY = tempX;
-            }
-        }
-
-        return new Vector3(offsetX, 0, offsetY); // Assuming Y is up axis, X and Z are horizontal
     }
 
     public override ActionEvent Execute(bool isRedo = false)
@@ -806,7 +721,7 @@ public class MoveMapObjectsAction : ViewportAction
 
             MapContainer sourceMap = Editor.GetMapContainerFromMapID(Moveables[i].MapID);
             MapContainer targetMap;
-
+            
             if (TargetMap != null)
             {
                 targetMap = Editor.GetMapContainerFromMapID(TargetMap.Name);
@@ -824,8 +739,7 @@ public class MoveMapObjectsAction : ViewportAction
                     SourceMaps.Add(sourceMap);
                     TargetMaps.Add(targetMap);
                     OriginalParents.Add(Moveables[i].Parent);
-                    OriginalPositions.Add((Vector3)Moveables[i].WrappedObject.GetType().GetProperty("Position").GetValue(Moveables[i].WrappedObject)); // Cache original position
-
+                    
                     if (Moveables[i].Parent != null)
                     {
                         OriginalIndices.Add(Moveables[i].Parent.ChildIndex(Moveables[i]));
@@ -834,13 +748,6 @@ public class MoveMapObjectsAction : ViewportAction
                     {
                         OriginalIndices.Add(sourceMap.Objects.IndexOf(Moveables[i]));
                     }
-                }
-
-                // Calculate position offset if moving between different maps
-                Vector3 positionOffset = Vector3.Zero;
-                if (TargetMap != null && sourceMap != targetMap)
-                {
-                    positionOffset = CalculatePositionOffset(sourceMap.Name, targetMap.Name);
                 }
 
                 // Remove from source map and parent
@@ -857,11 +764,6 @@ public class MoveMapObjectsAction : ViewportAction
                 if (TargetMap != null && sourceMap != targetMap)
                 {
                     Moveables[i].ContainingMap = targetMap;
-
-                    // Adjust position based on map coordinate system
-                    PropertiesChangedAction act = new(Moveables[i].WrappedObject);
-                    PropertyInfo prop = Moveables[i].WrappedObject.GetType().GetProperty("Position");
-                    act.AddPropertyChange(prop, (Vector3)prop.GetValue(Moveables[i].WrappedObject) + positionOffset);
                 }
 
                 // Set new parent
@@ -955,14 +857,6 @@ public class MoveMapObjectsAction : ViewportAction
             if (sourceMap != targetMap)
             {
                 Moveables[i].ContainingMap = sourceMap;
-
-                // Restore original position
-                if (i < OriginalPositions.Count)
-                {
-                    PropertiesChangedAction act = new(Moveables[i].WrappedObject);
-                    PropertyInfo prop = Moveables[i].WrappedObject.GetType().GetProperty("Position");
-                    act.AddPropertyChange(prop, OriginalPositions[i]);
-                }
             }
 
             // Restore original parent
