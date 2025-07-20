@@ -215,31 +215,6 @@ public static class UIHelper
 
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(textColor, $"{title}");
-
-            UIHelper.Tooltip(tooltip);
-
-            ImGui.EndTable();
-        }
-    }
-    public static void ConditionalHeader(string id, string title, string tooltip, Vector4 textColor, ref bool visibilityToggle)
-    {
-        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
-
-        if (ImGui.BeginTable($"{id}", 1, tblFlags))
-        {
-            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
-
-            ImGui.TableNextRow();
-            ImGui.TableSetColumnIndex(0);
-
-            ImGui.AlignTextToFramePadding();
-            ImGui.TextColored(textColor, $"{title}");
-            ImGui.SameLine();
-            if (ImGui.Button($"{Icons.Eye}"))
-            {
-                visibilityToggle = !visibilityToggle;
-            }
-
             UIHelper.Tooltip(tooltip);
 
             ImGui.EndTable();

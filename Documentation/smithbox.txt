@@ -1,6 +1,21 @@
-# TODO LIST
+# FIX
+
+# TODO
 - Gparam Editor: update GPARAM format for the NR changes
 - Gparam Editor: check Quick Edit works (CTD report)
+
+- Time Act Editor: DS2 TAE entries not being presented
+
+- Behavior Editor: implement the command parsing for load and view
+- Behavior Editor: add quick link pins (save specific havok objects)
+- Behavior Editor: implement ClipGenerator add tool
+- Behavior Editor: implement Variable edit/add tool
+- Behavior Editor: add field meta
+- Behavior Editor: add data entry aliases (namely clip generator)
+- Behavior Editor: add add/remove for array/list elements
+- Behavior Editor: add duplicate/remove havok object
+
+- Material Editor: add basic editing for MTD/MATBIN
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
@@ -21,11 +36,5 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 - Texture Editor: need to fix icon preview to allow for multiple icon sources
-
-# TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
-- UI: fix DPI scaling
 
-# MAIN BUGS
-1. Map loading is not applying visual map offset correctly
-2. Icon Preview texture load is causing runaway RAM consumption

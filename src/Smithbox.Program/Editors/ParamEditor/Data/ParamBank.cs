@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
-using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Formats.JSON;
 using System;
@@ -1494,15 +1493,13 @@ public class ParamBank
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
-            {
-                using var sysParams = BND4.Read(sysParamF.GetData());
-                OverwriteParamsER(sysParams);
-                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
-            }
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsER(sysParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
         }
+
         if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             RowNameRestore();
@@ -1684,14 +1681,11 @@ public class ParamBank
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
-            {
-                using var sysParams = BND4.Read(sysParamF.GetData());
-                OverwriteParamsAC6(sysParams);
-                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
-            }
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsAC6(sysParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
         }
 
         var graphicsParam = Path.Join("param", "graphicsconfig", "graphicsconfig.parambnd.dcx");
@@ -1703,14 +1697,11 @@ public class ParamBank
             return false;
         }
 
-        if (IsGraphicsParamTouched())
+        if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
         {
-            if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
-            {
-                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
-                OverwriteParamsAC6(graphicsParams);
-                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
-            }
+            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+            OverwriteParamsAC6(graphicsParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
         }
 
         var eventParam = Path.Join("param", "eventparam", "eventparam.parambnd.dcx");
@@ -1722,14 +1713,11 @@ public class ParamBank
             return false;
         }
 
-        if (IsEventParamTouched())
+        if (sourceFs.TryGetFile(eventParam, out var eventParamF))
         {
-            if (sourceFs.TryGetFile(eventParam, out var eventParamF))
-            {
-                using var eventParams = BND4.Read(eventParamF.GetData());
-                OverwriteParamsAC6(eventParams);
-                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
-            }
+            using var eventParams = BND4.Read(eventParamF.GetData());
+            OverwriteParamsAC6(eventParams);
+            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_AC6)
@@ -1877,14 +1865,11 @@ public class ParamBank
             return false;
         }
 
-        if (IsSystemParamTouched())
+        if (fs.TryGetFile(sysParam, out var sysParamF))
         {
-            if (fs.TryGetFile(sysParam, out var sysParamF))
-            {
-                using var sysParams = BND4.Read(sysParamF.GetData());
-                OverwriteParamsNR(sysParams);
-                ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
-            }
+            using var sysParams = BND4.Read(sysParamF.GetData());
+            OverwriteParamsNR(sysParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, Path.Join("param", "systemparam", "systemparam.parambnd.dcx"), sysParams);
         }
 
         // Event Param
@@ -1897,14 +1882,11 @@ public class ParamBank
             return false;
         }
 
-        if (IsEventParamTouched())
+        if (fs.TryGetFile(eventParam, out var eventParamF))
         {
-            if (fs.TryGetFile(eventParam, out var eventParamF))
-            {
-                using var eventParams = BND4.Read(eventParamF.GetData());
-                OverwriteParamsNR(eventParams);
-                ProjectUtils.WriteWithBackup(Project, fs, toFs, eventParam, eventParams);
-            }
+            using var eventParams = BND4.Read(eventParamF.GetData());
+            OverwriteParamsNR(eventParams);
+            ProjectUtils.WriteWithBackup(Project, fs, toFs, eventParam, eventParams);
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_NR)
@@ -2759,156 +2741,5 @@ public class ParamBank
         }
 
         return true;
-    }
-
-    public List<string> SystemParamPrefixes_ER = new List<string>()
-    {
-        "CameraFadeParam",
-        "CommonSystemParam",
-        "DefaultKeyAssign",
-        "Gconfig",
-        "ReverbAuxSendBusParam",
-        "SoundCommonSystemParam"
-    };
-
-    public List<string> SystemParamPrefixes_AC6 = new List<string>()
-    {
-        "CameraFadeParam"
-    };
-
-    public List<string> GraphicsParamPrefixes_AC6 = new List<string>()
-    {
-        "GraphicsConfig"
-    };
-
-    public List<string> EventParamPrefixes_AC6 = new List<string>()
-    {
-        "EFID"
-    };
-
-    public List<string> SystemParamPrefixes_NR = new List<string>()
-    {
-        "CameraFadeParam",
-        "CommonSystemParam",
-        "DefaultKeyAssign",
-        "Gconfig",
-        "ReverbAuxSendBusParam",
-        "SoundCommonSystemParam"
-    };
-
-    public List<string> EventParamPrefixes_NR = new List<string>()
-    {
-        "EFID"
-    };
-
-    public bool IsSystemParamTouched()
-    {
-        foreach(var param in Params)
-        {
-            var key = param.Key;
-
-            if(Project.ProjectType is ProjectType.ER)
-            {
-                foreach(var entry in SystemParamPrefixes_ER)
-                {
-                    if(key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in SystemParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.ProjectType is ProjectType.NR)
-            {
-                foreach (var entry in SystemParamPrefixes_NR)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsGraphicsParamTouched()
-    {
-        foreach (var param in Params)
-        {
-            var key = param.Key;
-
-            if (Project.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in GraphicsParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if(primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public bool IsEventParamTouched()
-    {
-        foreach (var param in Params)
-        {
-            var key = param.Key;
-
-            if (Project.ProjectType is ProjectType.AC6)
-            {
-                foreach (var entry in EventParamPrefixes_AC6)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-            if (Project.ProjectType is ProjectType.NR)
-            {
-                foreach (var entry in EventParamPrefixes_NR)
-                {
-                    if (key.Contains(entry))
-                    {
-                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
-
-                        if (primary.Any())
-                            return true;
-                    }
-                }
-            }
-        }
-
-        return false;
     }
 }

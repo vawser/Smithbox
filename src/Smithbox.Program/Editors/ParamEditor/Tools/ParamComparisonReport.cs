@@ -192,7 +192,7 @@ public class ParamComparisonReport
     }
 
     public ProjectEntry TargetProject;
-    public string TargetProjectName = "";
+    public string TargetProjectName;
     public bool AllowGenerate = true;
     public bool LoadAuxBank = false;
 
