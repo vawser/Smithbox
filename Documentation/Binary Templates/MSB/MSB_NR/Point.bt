@@ -1,0 +1,503 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB/NR/Point.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+#include "../Form.bt"
+
+enum <int> PointType {
+    //PointType = 0, // Unused
+    PointTypeEntryPoint = 1, // 侵入ポイント
+    PointTypeEnvMapPoint = 2, // 環境マップポイント
+    PointTypeRespawnPoint = 3, // リスポンポイント
+    PointTypeSound = 4, // サウンド
+    PointTypeSfx = 5, // SFX
+    PointTypeWindSfx = 6, // 風SFX
+    //PointType = 7, // Unused
+    PointTypeReturnPoint = 8, // 復帰ポイント
+    PointTypeMessage = 9, // ヒント血文字
+    //PointType = 10, // Unused
+    //PointType = 11, // Unused
+    //PointType = 12, // Unused
+    //PointType = 13, // Unused
+    //PointType = 14, // Unused
+    //PointType = 15, // Unused
+    //PointType = 16, // Unused
+    PointTypeEnvMapEffectBox = 17, // 環境マップ効果BOX
+    PointTypeWindPlacement = 18, // 風配置範囲
+    //PointType = 19, // Unused
+    //PointType = 20, // Unused
+    PointTypeMapConnection = 21, // マップ接続参照点
+    PointTypeSourceWaypoint = 22, // Sourceウェイポイント
+    PointTypeStaticWaypoint = 23, // Staticウェイポイント
+    PointTypeMapGridLayerConnection = 24, // マップグリッドレイヤー接続情報
+    PointTypeEnemySpawnPoint = 25, // 未使用スポーンポイント
+    PointTypeBuddySummonPoint = 26, // バディ召喚ポイント
+    PointTypeRollingObjectOverride = 27, // 転がるOBJ上書き
+    PointTypeMufflingBox = 28, // ポイントタイプ_遮蔽ボックス
+    PointTypeMufflingPortal = 29, // ポイントタイプ_遮蔽ポータル
+    PointTypeSoundOverride = 30, // サウンド領域
+    PointTypeMufflingPlane = 31, // ポイントタイプ_遮蔽板
+    PointTypePatrolPoint = 32, // 巡回ポイント
+    PointTypeMapPoint = 33, // 地図ポイント
+    PointTypeSoundState = 34, // サウンドステート制御
+    PointTypeMapInfoOverride = 35, // マップ情報上書き領域
+    PointTypeAutoDrawGroupSample = 36, // 自動描画グループ撮影ポイント
+    PointTypeMassPlacement = 37, // 集団配置ポイント
+    PointTypeMapPointDiscoveryOverride = 38, // 地図ポイント_発見領域上書き
+    PointTypeMapPointParticipationOverride = 39, // 地図ポイント_出場領域上書き
+    PointTypeHitSetting = 40, // エリア内ヒットパーツ設定エリア
+    PointTypeFastTravelOverride = 41, // ファストトラベル許可フラグ上書き
+    PointTypeWeatherAssetGeneration = 42, // 天候アセット生成ポイント
+    PointTypePlayArea = 43, // プレイ領域
+    PointTypeMidRangeEnvMapOutput = 44, // 中景環境マップ出力目印ポイント
+    PointTypeMapVisibilityOverride = 45, // マップ視界タイプ上書き領域
+    PointTypeBigJump = 46, // 騎乗大ジャンプポイント
+    PointTypeOpenCharacterActivateLimit = 47, // オープンキャラアクティベート制限_評価値閾値上書き
+    PointTypeSoundDummy = 48, // サウンド用環境音制御用ダミーポイント
+    PointTypeFallPreventionOverride = 49, // 落下防止壁削除
+    PointTypeNavmeshCutting = 50, // ナビメッシュ隣接カッティング結合制限領域
+    PointTypeMapNameOverride = 51, // マップ名ID上書き
+    PointTypeBigJumpExit = 52, // 降りる大ジャンプポイント
+    PointTypeMountOverride = 53, // 馬禁止/許可上書き
+    PointTypeSmallBaseAttach = 54, // 小拠点アタッチポイント
+    PointTypeBirdRoute = 55, // 鳥移動ポイント
+    PointTypeClearInfo = 56, // クリア者情報ポイント
+    PointTypeRespawnOverride = 57, // リスポンポイント無効領域
+    PointTypeUserEdgeRemovalInner = 58, // ユーザーエッジ削除(内側)
+    PointTypeUserEdgeRemovalOuter = 59, // ユーザーエッジ削除(外側)
+    PointTypeOther = -1,
+};
+
+struct PointCommon;
+struct PointIndexList;
+struct PointStruct98;
+
+struct PointEnvMapPoint;
+struct PointRespawnPoint;
+struct PointSound;
+struct PointSfx;
+struct PointWindSfx;
+struct PointReturnPoint;
+struct PointEnvMapEffectBox;
+struct PointMapConnection;
+struct PointMufflingBox;
+struct PointMufflingPortal;
+struct PointSoundOverride;
+struct PointPatrolPoint;
+struct PointMapPoint;
+struct PointMapInfoOverride;
+struct PointMassPlacement;
+struct PointHitSetting;
+struct PointWeatherAssetGeneration;
+struct PointBigJump;
+struct PointSoundDummy;
+struct PointFallPreventionOverride;
+struct PointSmallBaseAttach;
+struct PointBirdRoute;
+struct PointRespawnOverride;
+struct PointUserEdgeRemovalInner;
+struct PointUserEdgeRemovalOuter;
+
+//------------------------------------------------
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>; Assert(nameOffset);
+    PointType type;
+    int typeIndex;
+    FormType formType;
+    Vector3 position; // 0
+    Vector3 angle; // 0
+    int pointNo; // -1
+    quad parentListOffset <format=hex>; Assert(parentListOffset);
+    quad childListOffset <format=hex>; Assert(childListOffset);
+    int unk78 <hidden=true>; Assert(!unk78);
+    int unk7c <hidden=true>; Assert(unk7c == -1);
+    quad formOffset <format=hex>;
+    quad commonOffset <format=hex>; Assert(commonOffset);
+    quad typeOffset <format=hex>;
+    quad offset98 <format=hex>; Assert(offset98);
+    
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    // Align: 4
+    FSeek(start + parentListOffset);
+    PointIndexList parentPoints;
+    
+    // Align: 4
+    FSeek(start + childListOffset);
+    PointIndexList childPoints;
+    
+    // Align: 8
+    if (formOffset) {
+        FSeek(start + formOffset);
+        ReadForm(formType);
+    }
+    
+    FSeek(start + commonOffset);
+    PointCommon common;
+    
+    switch (type) {
+        case PointTypeEnvMapPoint:
+        case PointTypeRespawnPoint:
+        case PointTypeSound:
+        case PointTypeSfx:
+        case PointTypeWindSfx:
+        case PointTypeReturnPoint:
+        case PointTypeEnvMapEffectBox:
+        case PointTypeMapConnection:
+        case PointTypeMufflingBox:
+        case PointTypeMufflingPortal:
+        case PointTypeSoundOverride:
+        case PointTypePatrolPoint:
+        case PointTypeMapPoint:
+        case PointTypeMapInfoOverride:
+        case PointTypeMassPlacement:
+        case PointTypeHitSetting:
+        case PointTypeWeatherAssetGeneration:
+        case PointTypeBigJump:
+        case PointTypeSoundDummy:
+        case PointTypeFallPreventionOverride:
+        case PointTypeSmallBaseAttach:
+        case PointTypeBirdRoute:
+        case PointTypeRespawnOverride:
+        case PointTypeUserEdgeRemovalInner:
+        case PointTypeUserEdgeRemovalOuter: Assert(typeOffset); break;
+        
+        case PointTypeMidRangeEnvMapOutput:
+        case PointTypeClearInfo:
+        case PointTypeOther: Assert(!typeOffset); break;
+        
+        default: Assert(false, Str("Unknown point type: %d", type));
+    }
+    
+    if (typeOffset) {
+        // Align: 8 if type >= MufflingBox || type == Other
+        FSeek(start + typeOffset);
+        switch (type) {
+            case PointTypeEnvMapPoint: PointEnvMapPoint envMapPoint; break;
+            case PointTypeRespawnPoint: PointRespawnPoint respawnPoint; break;
+            case PointTypeSound: PointSound sound; break;
+            case PointTypeSfx: PointSfx sfx; break;
+            case PointTypeWindSfx: PointWindSfx windSfx; break;
+            case PointTypeReturnPoint: PointReturnPoint returnPoint; break;
+            case PointTypeEnvMapEffectBox: PointEnvMapEffectBox envMapEffectBox; break;
+            case PointTypeMapConnection: PointMapConnection mapConnection; break;
+            case PointTypeMufflingBox: PointMufflingBox mufflingBox; break;
+            case PointTypeMufflingPortal: PointMufflingPortal mufflingPortal; break;
+            case PointTypeSoundOverride: PointSoundOverride soundOverride; break;
+            case PointTypePatrolPoint: PointPatrolPoint patrolPoint; break;
+            case PointTypeMapPoint: PointMapPoint mapPoint; break;
+            case PointTypeMapInfoOverride: PointMapInfoOverride mapInfoOverride; break;
+            case PointTypeMassPlacement: PointMassPlacement massPlacement; break;
+            case PointTypeHitSetting: PointHitSetting hitSetting; break;
+            case PointTypeWeatherAssetGeneration: PointWeatherAssetGeneration weatherAssetGeneration; break;
+            case PointTypeBigJump: PointBigJump bigJump; break;
+            case PointTypeSoundDummy: PointSoundDummy soundDummy; break;
+            case PointTypeFallPreventionOverride: PointFallPreventionOverride fallPreventionOverride; break;
+            case PointTypeSmallBaseAttach: PointSmallBaseAttach smallBaseAttach; break;
+            case PointTypeBirdRoute: PointBirdRoute birdRoute; break;
+            case PointTypeRespawnOverride: PointRespawnOverride respawnOverride; break;
+            case PointTypeUserEdgeRemovalInner: PointUserEdgeRemovalInner userEdgeRemovalInner; break;
+            case PointTypeUserEdgeRemovalOuter: PointUserEdgeRemovalOuter userEdgeRemovalOuter; break;
+            default: Assert(false);
+        }
+    }
+    
+    // Align: 8 if type < MufflingBox && type != Other
+    FSeek(start + offset98);
+    PointStruct98 struct98;
+} Point <read=ReadPoint, bgcolor=cAqua>;
+
+wstring ReadPoint(Point &p) {
+    return Str("[%4d] <%s, %s> ",
+        p.typeIndex, EnumToString(p.type), EnumToString(p.formType)) + p.name;
+}
+
+//------------------------------------------------
+
+typedef struct {
+    int partIndex; // -1
+    uint entityId; // 0
+    byte unk08; // -1
+    byte unk09 <hidden=true>; Assert(!unk09);
+    short unk0a <hidden=true>; Assert(!unk0a);
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int variation; // -1
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+} PointCommon;
+
+typedef struct {
+    short indexCount;
+    if (indexCount) {
+        short indices[indexCount];
+    }
+} PointIndexList <read=Str("[%d]", indexCount)>;
+
+typedef struct {
+    MapInt unk00; // -1
+    int unk04; // 0
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c; // -1
+    int unk10; // -1
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+} PointStruct98;
+
+//------------------------------------------------
+
+typedef struct {
+	float unk00; // 1
+    int unk04; // 4
+    int unk08 <hidden=true>; Assert(unk08 == -1);
+    byte unk0c <hidden=true>; Assert(!unk0c);
+    byte unk0d; Assert(IsBool(unk0d)); // 1
+    byte unk0e; Assert(IsBool(unk0e)); // 1
+    byte unk0f; Assert(IsBool(unk0f)); // 1
+    float unk10 <hidden=true>; Assert(unk10 == 1.0);
+    float unk14 <hidden=true>; Assert(unk14 == 1.0);
+    int unk18;
+    int unk1c <hidden=true>; Assert(!unk1c);
+    int unk20;
+    int unk24;
+    int unk28;
+    byte unk2c; // 0
+    byte unk2d;
+    short unk2e <hidden=true>; Assert(!unk2e);
+} PointEnvMapPoint;
+
+typedef struct {
+	int unk00; // 0
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointRespawnPoint;
+
+typedef struct {
+	int soundType <hidden=true>; Assert(!soundType);
+    int soundId;
+    int childPointIndices[16]; // -1
+    byte unk48 <hidden=true>; Assert(!unk48);
+    byte unk49; Assert(IsBool(unk49)); // 0
+    short unk4a <hidden=true>; Assert(!unk4a);
+} PointSound;
+
+typedef struct {
+	int effectId;
+    byte unk04; Assert(IsBool(unk04)); // 0
+    byte unk05; Assert(IsBool(unk05)); // 0
+    short unk06 <hidden=true>; Assert(!unk06);
+} PointSfx;
+
+typedef struct {
+	int effectId; // 808006
+    int windAreaIndex; // -1
+    float unk08 <hidden=true>; Assert(unk08 == -1.0);
+} PointWindSfx;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(unk00 == -1);
+    int unk04 <hidden=true>; Assert(!unk04);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+} PointReturnPoint;
+
+typedef struct {
+	float unk00 <hidden=true>; Assert(unk00 == 0.0);
+    float unk04; // 0
+    byte unk08; Assert(IsBool(unk08)); // 0
+    byte unk09 <hidden=true>; Assert(unk09 == 10);
+    short unk0a; // -1
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int unk10 <hidden=true>; Assert(!unk10);
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+    int unk20 <hidden=true>; Assert(!unk20);
+    float unk24; // 1
+    float unk28; // 1
+    short unk2c <hidden=true>; Assert(!unk2c);
+    byte unk2e <hidden=true>; Assert(unk2e == 1);
+    byte unk2f <hidden=true>; Assert(unk2f == 1);
+    short unk30; // -1
+    byte unk32 <hidden=true>; Assert(!unk32);
+    byte unk33; Assert(IsBool(unk33)); // 1
+    short unk34; // 0
+    short unk36; Assert(IsBool(unk36)); // 1
+    int unk38 <hidden=true>; Assert(!unk38);
+} PointEnvMapEffectBox;
+
+typedef struct {
+	MapId mapId;
+    int unk04 <hidden=true>; Assert(!unk04);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+} PointMapConnection;
+
+typedef struct {
+	int unk00; // 0
+    int unk04 <hidden=true>; Assert(!unk04);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int unk10 <hidden=true>; Assert(!unk10);
+    int unk14 <hidden=true>; Assert(!unk14);
+    quad offset18 <hidden=true>; Assert(offset18 == 0x20);
+    
+    int unk20 <hidden=true>; Assert(!unk20);
+    float unk24 <hidden=true>; Assert(unk24 == 100.0);
+    int unk28 <hidden=true>; Assert(!unk28);
+    int unk2c <hidden=true>; Assert(!unk2c);
+    int unk30 <hidden=true>; Assert(!unk30);
+    float unk34 <hidden=true>; Assert(unk34 == 100.0);
+    int unk38 <hidden=true>; Assert(!unk38);
+    float unk3c <hidden=true>; Assert(unk3c == -1.0);
+    float unk40 <hidden=true>; Assert(unk40 == -1.0);
+    float unk44 <hidden=true>; Assert(unk44 == -1.0);
+} PointMufflingBox;
+
+typedef struct {
+	int unk00; // 0
+    int unk04 <hidden=true>; Assert(!unk04);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+    int unk10 <hidden=true>; Assert(!unk10);
+    int unk14 <hidden=true>; Assert(!unk14);
+    quad offset18 <hidden=true>; Assert(offset18 == 0x20);
+    
+    int unk20 <hidden=true>; Assert(!unk20);
+    int unk24 <hidden=true>; Assert(!unk24);
+    int unk28 <hidden=true>; Assert(!unk28);
+    int unk2c <hidden=true>; Assert(!unk2c);
+    int unk30 <hidden=true>; Assert(!unk30);
+    int unk34 <hidden=true>; Assert(unk34 == -1);
+} PointMufflingPortal;
+
+typedef struct {
+	byte unk00; // -1
+    byte unk01; // 0
+    byte unk02; // 0
+    byte unk03; // -1
+    int unk04; // -1
+    short unk08; // -1
+    short unk0a; // -1
+    byte unk0c <hidden=true>; Assert(unk0c == -1);
+    byte unk0d <hidden=true>; Assert(!unk0d);
+    short unk0e <hidden=true>; Assert(!unk0e);
+    int unk10 <hidden=true>; Assert(!unk10);
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+} PointSoundOverride;
+
+typedef struct {
+	int unk00; // -1
+} PointPatrolPoint;
+
+typedef struct {
+	int unk00; // -1
+    int unk04 <hidden=true>; Assert(unk04 == -1);
+    float unk08 <hidden=true>; Assert(unk08 == -1.0);
+    float unk0c <hidden=true>; Assert(unk0c == -1.0);
+    int unk10 <hidden=true>; Assert(unk10 == -1);
+    float unk14 <hidden=true>; Assert(unk14 == -1.0);
+    float unk18 <hidden=true>; Assert(unk18 == -1.0);
+    int unk1c <hidden=true>; Assert(!unk1c);
+} PointMapPoint;
+
+typedef struct {
+	int unk00; // 4000
+    int unk04 <hidden=true>; Assert(unk04 == -1);
+    int unk08 <hidden=true>; Assert(!unk08);
+    int unk0c <hidden=true>; Assert(!unk0c);
+	int unk10 <hidden=true>; Assert(!unk10);
+    int unk14 <hidden=true>; Assert(!unk14);
+    int unk18 <hidden=true>; Assert(!unk18);
+    int unk1c <hidden=true>; Assert(!unk1c);
+} PointMapInfoOverride;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(unk04 == -1);
+    int unk08 <hidden=true>; Assert(unk08 == -1);
+    int unk0c <hidden=true>; Assert(unk0c == -1);
+	int unk10 <hidden=true>; Assert(unk10 == -1);
+    int unk14 <hidden=true>; Assert(unk14 == -1);
+    int unk18 <hidden=true>; Assert(unk18 == -1);
+    int unk1c <hidden=true>; Assert(unk1c == -1);
+	int unk20; // -1
+    int unk24 <hidden=true>; Assert(unk24 == -1);
+    int unk28 <hidden=true>; Assert(unk28 == -1);
+    int unk2c <hidden=true>; Assert(unk2c == -1);
+	int unk30 <hidden=true>; Assert(unk30 == -1);
+    int unk34 <hidden=true>; Assert(unk34 == -1);
+    int unk38 <hidden=true>; Assert(unk38 == -1);
+    int unk3c <hidden=true>; Assert(unk3c == -1);
+	int unk40 <hidden=true>; Assert(unk40 == -1);
+    int unk44 <hidden=true>; Assert(unk44 == -1);
+    int unk48 <hidden=true>; Assert(unk48 == -1);
+    int unk4c <hidden=true>; Assert(unk4c == -1);
+	int unk50 <hidden=true>; Assert(unk50 == -1);
+    int unk54 <hidden=true>; Assert(unk54 == -1);
+    int unk58; // -1
+    int unk5c <hidden=true>; Assert(!unk5c);
+} PointMassPlacement;
+
+typedef struct {
+	int unk00; // -1
+} PointHitSetting;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+} PointWeatherAssetGeneration;
+
+typedef struct {
+	float unk00; // 10
+    int unk04; // 807100
+    int unk08; // 200
+} PointBigJump;
+
+typedef struct {
+	int unk00; // 0
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointSoundDummy;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointFallPreventionOverride;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointSmallBaseAttach;
+
+typedef struct {
+	int unk00; // 0
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointBirdRoute;
+
+typedef struct {
+	int unk00;
+} PointRespawnOverride;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointUserEdgeRemovalInner;
+
+typedef struct {
+	int unk00 <hidden=true>; Assert(!unk00);
+    int unk04 <hidden=true>; Assert(!unk04);
+} PointUserEdgeRemovalOuter;
