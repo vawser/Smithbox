@@ -34,6 +34,9 @@ public class TexImagePreview : IResourceEventListener
     /// </summary>
     public bool DisplayImagePreview(Param.Row context, TexRef textureRef, bool displayImage = true)
     {
+        // DISABLE UNTIL FIXED
+        return false;
+
         if(textureRef == null) 
             return false;
 
