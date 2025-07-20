@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Formats.JSON;
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using System;
@@ -114,15 +115,19 @@ public class ParamData
 
         if(!Project.ImportedParamRowNames)
         {
-            // These two rely on row index significantly, so we should always import the default names via that for them.
-            if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
+            var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dialog is DialogResult.OK)
             {
-                PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
-            }
-            // Where other games either never or very rarely use it, so use the more flexible ID import
-            else
-            {
-                PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                // These two rely on row index significantly, so we should always import the default names via that for them.
+                if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
+                {
+                    PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                }
+                // Where other games either never or very rarely use it, so use the more flexible ID import
+                else
+                {
+                    PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                }
             }
 
             Project.ImportedParamRowNames = true;
