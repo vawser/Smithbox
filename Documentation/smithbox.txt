@@ -27,5 +27,5 @@
 - UI: fix DPI scaling
 
 # MAIN BUGS
-Map loading is not applying visual map offset correctly
-Icon Preview texture load is causing runaway RAM consumption
+1. Map loading is not applying visual map offset correctly
+2. Icon Preview texture load is causing runaway RAM consumption
