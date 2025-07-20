@@ -1,6 +1,3 @@
-> [!IMPORTANT]
-> Active development on Smithbox is discontinued.
-
 # Smithbox
 Smithbox is a modding tool for Elden Ring, Armored Core VI, Sekiro, Dark Souls 3, Dark Souls 2, Dark Souls 1, Bloodborne and Demon's Souls.
 

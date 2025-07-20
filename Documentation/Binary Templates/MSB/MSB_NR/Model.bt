@@ -1,0 +1,61 @@
+//------------------------------------------------
+//--- 010 Editor v14.0 Binary Template
+//
+//      File: MSB/NR/Model.bt
+//   Authors: TKGP
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+enum <int> ModelType {
+    M_MAP = 0,
+    M_OBJ = 1,
+    M_ENE = 2,
+    M_ITEM = 3,
+    M_PLAYER = 4,
+    M_HIT = 5,
+    M_NAVIMESH = 6,
+    M_DUMMY_OBJ = 7,
+    M_DUMMY_ENE = 8,
+    M_INVALID = 9,
+    M_GEOM = 10,
+};
+
+typedef struct {
+    local quad start <hidden=true> = FTell();
+    
+    quad nameOffset <format=hex>; Assert(nameOffset);
+    ModelType type;
+    int typeIndex;
+    quad fileOffset <format=hex>; Assert(fileOffset);
+    int instanceCount; // Number of parts using this model
+    int unk1c <hidden=true>; Assert(!unk1c);
+    int unk20 <hidden=true>; Assert(!unk20);
+    int unk24 <hidden=true>; Assert(!unk24);
+    
+    FSeek(start + nameOffset);
+    wstring name;
+    
+    FSeek(start + fileOffset);
+    wstring file; // Path to a .sib or .hkt file
+    
+    switch (type) {
+        case M_MAP:
+        case M_ENE:
+        case M_PLAYER:
+        case M_HIT:
+        case M_DUMMY_ENE:
+        case M_INVALID:
+        case M_GEOM: break;
+        
+        default: Assert(false, Str("Unknown model type: %d", type));    
+    }
+} Model <read=ReadModel, bgcolor=cLtGreen>;
+
+wstring ReadModel(Model &m) {
+    return Str("[%4d] <%s> ", m.typeIndex, EnumToString(m.type)) + m.name;    
+}
