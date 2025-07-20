@@ -32,12 +32,10 @@
   </PropertyGroup>
   
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug-osx' ">
-    <TargetFramework>$(TargetFramework)-osx</TargetFramework>
     <DefineConstants>OSX;DEBUG</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release-osx' ">
-    <TargetFramework>$(TargetFramework)-osx</TargetFramework>
     <DefineConstants>OSX;RELEASE</DefineConstants>
     <DebugType>embedded</DebugType>
     <DocumentationFile />
