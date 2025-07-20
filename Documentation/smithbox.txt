@@ -1,21 +1,6 @@
-# FIX
-
-# TODO
+# TODO LIST
 - Gparam Editor: update GPARAM format for the NR changes
 - Gparam Editor: check Quick Edit works (CTD report)
-
-- Time Act Editor: DS2 TAE entries not being presented
-
-- Behavior Editor: implement the command parsing for load and view
-- Behavior Editor: add quick link pins (save specific havok objects)
-- Behavior Editor: implement ClipGenerator add tool
-- Behavior Editor: implement Variable edit/add tool
-- Behavior Editor: add field meta
-- Behavior Editor: add data entry aliases (namely clip generator)
-- Behavior Editor: add add/remove for array/list elements
-- Behavior Editor: add duplicate/remove havok object
-
-- Material Editor: add basic editing for MTD/MATBIN
 
 - Map Editor: implement orthographic view
 - Map Editor: add JSON export for MSB
@@ -36,5 +21,37 @@
 - Texture Editor: add automated mass export
 - Texture Editor: add individual icon export based on subtexture
 - Texture Editor: need to fix icon preview to allow for multiple icon sources
-- Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
 
+# TODO NOW
+- Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
+- UI: fix DPI scaling
+
+// 0
+// 1
+// 2
+// 3
+Treasure = 4,
+Generator = 5,
+// 6
+ObjAct = 7,
+// 8
+MapOffset = 9,
+// 10
+// 11
+PseudoMultiplayer = 12,
+// 13
+PatrolInfo = 14,
+PlatoonInfo = 15,
+// 16
+// 17
+// 18
+// 19
+PatrolRoute = 20,
+Riding = 21,
+AutoDrawGroup = 22,
+SignPuddle = 23,
+RetryPoint = 24,
+BirdRoute = 25,
+TalkInfo = 26,
+TeamFight = 27,
+Other = 0xFFFFFFFF,
