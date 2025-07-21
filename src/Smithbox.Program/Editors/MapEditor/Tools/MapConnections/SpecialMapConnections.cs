@@ -58,6 +58,11 @@ internal class SpecialMapConnections
             var mapID = entry.Key.Filename;
             var container = entry.Value.MapContainer;
 
+            // Added since the old load flow meant the MapContainer for the target map was always added after this,
+            // whereas now the MapContainers are always present, so we need to skip self matches.
+            if (mapid == mapID)
+                continue;
+
             if (container == null)
                 continue;
 
