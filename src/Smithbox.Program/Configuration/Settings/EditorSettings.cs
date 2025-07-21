@@ -1535,6 +1535,7 @@ public class InterfaceTab
                 CFG.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
                 _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
@@ -1565,6 +1566,7 @@ public class InterfaceTab
             {
                 CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the size of the font in Smithbox.");
 

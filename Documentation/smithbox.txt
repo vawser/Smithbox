@@ -24,7 +24,6 @@
 
 # TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
-- UI: fix DPI scaling
 
 # MAIN BUGS
 2. Icon Preview texture load is causing runaway RAM consumption
