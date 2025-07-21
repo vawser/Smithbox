@@ -23,8 +23,8 @@
     <Field Def="u8 secondCircleEndMinute"/>
     <Field Def="s32 unknown_8"/>
     <Field Def="s32 unknown_9"/>
-    <Field Def="s32 SpEffect_FirstDay"/>
-    <Field Def="s32 SpEffect_SecondDay"/>
+    <Field Def="s32 day1RainSpEffect"/>
+    <Field Def="s32 day2RainSpEffect"/>
     <Field Def="s32 unknown_12"/>
     <Field Def="s32 unknown_13"/>
     <Field Def="f32 initialCircleRadius"/>

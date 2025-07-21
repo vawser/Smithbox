@@ -8,10 +8,12 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 lotResultPlayArea"/>
-    <Field Def="s32 tileAttachPoint"/>
-    <Field Def="s32 tileTargetMsb"/>
-    <Field Def="s32 unknown_4"/>
-    <Field Def="s32 unknown_5"/>
+    <Field Def="s32 patternId"/>
+    <Field Def="s32 attachId"/>
+    <Field Def="s32 smallBaseMapId"/>
+    <Field Def="u8 mapIndex"/>
+    <Field Def="u8 variationId"/>
+    <Field Def="u16 unknown_0x12"/>
+    <Field Def="s32 modifier"/>
   </Fields>
 </PARAMDEF>
