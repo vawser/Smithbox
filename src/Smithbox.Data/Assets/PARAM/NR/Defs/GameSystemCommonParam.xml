@@ -354,51 +354,11 @@
       <Maximum>999999999</Maximum>
       <SortID>35000</SortID>
     </Field>
-    <Field Def="f32 signCreatableDistFromSafePos">
-      <DisplayName>安全位置から離れてサインを作成できる距離[m]</DisplayName>
-      <Description>PCの最後の安全位置から離れてサインを作成できる距離[m]</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>9999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>4910</SortID>
-    </Field>
-    <Field Def="f32 guestResummonDist">
-      <DisplayName>再召喚が発生するホストとゲストの距離[m]</DisplayName>
-      <Description>再召喚が発生するホストとゲストの距離[m]</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>3700</SortID>
-    </Field>
-    <Field Def="f32 guestLeavingMessageDistMax">
-      <DisplayName>ゲストがホストから離れそうになってることを通知する距離[m]</DisplayName>
-      <Description>ゲストがホストから離れそうになってることを通知する距離[m]。この距離より離れたら通知する。</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>3710</SortID>
-    </Field>
-    <Field Def="f32 guestLeavingMessageDistMin">
-      <DisplayName>ゲストがホストから離れそうになってることを再通知可能にする距離[m]</DisplayName>
-      <Description>ゲストがホストから離れそうになってることを再通知可能にする距離[m]。この距離より近づくまで再通知しない。</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>3720</SortID>
-    </Field>
-    <Field Def="f32 guestLeaveSessionDist">
-      <DisplayName>ゲストがホストから離れられる最大距離[m] </DisplayName>
-      <Description>ゲストがホストから離れられる最大距離[m]。この距離より離れた状態で一定時間経過するとセッション脱退する。</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>3730</SortID>
-    </Field>
+    <Field Def="s32 unknown_74" />
+    <Field Def="s32 unknown_78" />
+    <Field Def="s32 unknown_7C" />
+    <Field Def="s32 unknown_80" />
+    <Field Def="s32 unknown_84" />
     <Field Def="f32 retryPointAreaRadius = -1">
       <DisplayName>リトライエリア半径_デフォルト値(m)</DisplayName>
       <Description>リトライエリア半径_デフォルト値(m)。MapStudioのイベントタイプ「リトライポイント」で半径も領域も未設定の場合のデフォルト値として使われる。</Description>
@@ -466,46 +426,10 @@
       <Increment>0.001</Increment>
       <SortID>4050</SortID>
     </Field>
-    <Field Def="f32 defeatMultiModeEnemyOfSoulCorrectRate_byHost">
-      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_ホスト</DisplayName>
-      <Description>マルチプレイで通常敵を撃破した時のホストの取得ソウル量の補正値</Description>
-      <DisplayFormat>%.3f</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>4400</SortID>
-    </Field>
-    <Field Def="f32 defeatMultiModeEnemyOfSoulCorrectRate_byTeamGhost">
-      <DisplayName>マルチ時エネミー撃破時取得ソウル補正値_協力霊</DisplayName>
-      <Description>マルチプレイで通常敵を撃破した時の協力霊の取得ソウル量の補正値</Description>
-      <DisplayFormat>%.3f</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>4500</SortID>
-    </Field>
-    <Field Def="f32 defeatMultiModeBossOfSoulCorrectRate_byHost">
-      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_ホスト</DisplayName>
-      <Description>マルチプレイでボスを撃破した時のホストの取得ソウル量の補正値</Description>
-      <DisplayFormat>%.3f</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>4600</SortID>
-    </Field>
-    <Field Def="f32 defeatMultiModeBossOfSoulCorrectRate_byTeamGhost">
-      <DisplayName>マルチ時ボス撃破時取得ソウル補正値_協力霊</DisplayName>
-      <Description>マルチプレイでボスを撃破した時の協力霊の取得ソウル量の補正値</Description>
-      <DisplayFormat>%.3f</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>4700</SortID>
-    </Field>
+    <Field Def="s32 unknown_A8" />
+    <Field Def="s32 unknown_AC" />
+    <Field Def="f32 defeatMultiModeBossOfSoulCorrectRate_byHost" />
+    <Field Def="s32 unknown_B4" />
     <Field Def="u16 enemyHpGaugeScreenOffset_byUp">
       <DisplayName>敵キャラのHPゲージが画面上に見切れないようにするためのオフセット</DisplayName>
       <Description>敵のHPゲージが画面上に見切れた時に画面内に収めるオフセット値[pixel]（FullHD基準）</Description>
@@ -550,23 +474,8 @@
       <Maximum>999999999</Maximum>
       <SortID>5300</SortID>
     </Field>
-    <Field Def="f32 saAttackRate_forVsRideAtk = 1">
-      <DisplayName>共通_騎乗特攻倍率</DisplayName>
-      <Description>騎乗特攻時に補正する倍率</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>950</SortID>
-    </Field>
-    <Field Def="s32 enemySpEffectIdAfterSleepCollectorItemLot = -1">
-      <DisplayName>ネムリアイテム抽選時に敵側にかかる特殊効果</DisplayName>
-      <Description>ネムリアイテム抽選時に敵側にかかる特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>1121</SortID>
-    </Field>
+    <Field Def="s32 shopVariationStartFlag" />
+    <Field Def="s32 shopVariationEndFlag" />
     <Field Def="s32 afterEndingMapUid">
       <DisplayName>周回保留時マップUID</DisplayName>
       <Description>周回保留時マップUID、8桁で入力（例…m60_42_36_00 -&gt; 60423600）</Description>
@@ -599,14 +508,7 @@
       <Maximum>999999999</Maximum>
       <SortID>5900</SortID>
     </Field>
-    <Field Def="u32 tutorialFlagOnAccessDistView">
-      <DisplayName>チュートリアル判定用：遠見台にアクセスした時にONにするイベントフラグ</DisplayName>
-      <Description>チュートリアル判定用：遠見台にアクセスした時にONにするイベントフラグ</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Maximum>-294967297</Maximum>
-      <SortID>6000</SortID>
-    </Field>
+    <Field Def="f32 unknown_E0" />
     <Field Def="u32 tutorialFlagOnAccessRetryPoint">
       <DisplayName>チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ</DisplayName>
       <Description>チュートリアル判定用：リトライポイントにアクセスした時にONにするイベントフラグ</Description>
@@ -631,32 +533,9 @@
       <Maximum>-294967297</Maximum>
       <SortID>6300</SortID>
     </Field>
-    <Field Def="f32 tutorialCheckRideJumpRegionExpandRange">
-      <DisplayName>チュートリアル判定用：騎乗大ジャンプポイントを○[m]拡張して内外判定</DisplayName>
-      <Description>チュートリアル判定用：騎乗大ジャンプポイントを○[m]拡張して内外判定。○[m]の値をここに設定する。</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-9999</Minimum>
-      <Maximum>9999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>6400</SortID>
-    </Field>
-    <Field Def="s32 retryPointActivatedPcAnimId = -1">
-      <DisplayName>リトライポイント起動時のPCアニメID</DisplayName>
-      <Description>リトライポイント起動時のPCアニメID。-1の場合は再生しない。</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>6500</SortID>
-    </Field>
-    <Field Def="f32 retryPointActivatedDialogDelayTime">
-      <DisplayName>リトライポイント起動時のダイアログ表示の遅延時間[秒]</DisplayName>
-      <Description>リトライポイント起動時のダイアログ表示の遅延時間[秒]</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>6600</SortID>
-    </Field>
+    <Field Def="s32 unknown_F0" />
+    <Field Def="f32 unknown_F4" />
+    <Field Def="s32 unknown_F8" />
     <Field Def="s32 retryPointActivatedDialogTextId = -1">
       <DisplayName>リトライポイント起動時のダイアログのテキストID</DisplayName>
       <Description>リトライポイント起動時のダイアログのテキストID。EventText_ForMap.xlsm のテキストを設定する。-1の場合はダイアログを出さない。</Description>
@@ -706,66 +585,11 @@
       <Maximum>100</Maximum>
       <SortID>7200</SortID>
     </Field>
-    <Field Def="f32 ignorNetStateSyncTime_ForThrow">
-      <DisplayName>投げ開始時のネットワーク情報による遷移を無視する時間</DisplayName>
-      <Description>投げ開始時のネットワーク情報による遷移を無視する時間</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>10</Maximum>
-      <Increment>0.001</Increment>
-      <SortID>7300</SortID>
-    </Field>
-    <Field Def="u16 netPenaltyPointLanDisconnect">
-      <DisplayName>マルチプレペナルティ：LAN切断</DisplayName>
-      <Description>マルチプレペナルティ：LAN切断</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>10000</Maximum>
-      <SortID>7400</SortID>
-    </Field>
-    <Field Def="u16 netPenaltyPointProfileSignout">
-      <DisplayName>マルチプレペナルティ：プロフィールサインアウト</DisplayName>
-      <Description>マルチプレペナルティ：プロフィールサインアウト</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>10000</Maximum>
-      <SortID>7500</SortID>
-    </Field>
-    <Field Def="u16 netPenaltyPointReboot">
-      <DisplayName>マルチプレペナルティ：電源断</DisplayName>
-      <Description>マルチプレペナルティ：電源断</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>10000</Maximum>
-      <SortID>7600</SortID>
-    </Field>
-    <Field Def="u16 netPnaltyPointSuspend">
-      <DisplayName>マルチプレペナルティ：サスペンド・一時停止</DisplayName>
-      <Description>マルチプレペナルティ：サスペンド・一時停止</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>10000</Maximum>
-      <SortID>7700</SortID>
-    </Field>
-    <Field Def="f32 netPenaltyForgiveItemLimitTime">
-      <DisplayName>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間</DisplayName>
-      <Description>マルチプレペナルティ：理の骨の生成（販売）開始待ち時間(秒)</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1E+09</Maximum>
-      <Increment>1</Increment>
-      <SortID>7800</SortID>
-    </Field>
-    <Field Def="u16 netPenaltyPointThreshold">
-      <DisplayName>マルチプレペナルティ：ペナルティ判定ポイント</DisplayName>
-      <Description>マルチプレペナルティ：ペナルティ判定ポイント</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>10000</Maximum>
-      <SortID>7900</SortID>
-    </Field>
-    <Field Def="u16 uncontrolledMoveThresholdTime">
-      <DisplayName>未操作判定時間</DisplayName>
-      <Description>マルチで一定期間操作ない人を退出させるためのもの。単位は秒。</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>9999</Maximum>
-      <SortID>8000</SortID>
-    </Field>
+    <Field Def="s32 unknown_114" />
+    <Field Def="s32 unknown_118" />
+    <Field Def="s32 unknown_11C" />
+    <Field Def="s32 unknown_120" />
+    <Field Def="f32 unknown_124" />
     <Field Def="s32 enemyDetectionSpEffect_BulletId_byNpcEnemy">
       <DisplayName>「敵探知」時発射弾丸ID_敵対NPC/敵キャラ</DisplayName>
       <Description>敵意の探知に失敗したときに敵対NPC/敵キャラに飛ばす弾丸のID</Description>
@@ -816,31 +640,10 @@
       <Maximum>9999</Maximum>
       <SortID>35300</SortID>
     </Field>
-    <Field Def="u32 soloBreakInMaxPoint">
-      <DisplayName>ソロ侵入最大ポイント</DisplayName>
-      <Description>ソロ侵入ポイントの最大値。この値を越えたときにソロで侵入されるようになる</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>999999999</Maximum>
-      <SortID>8600</SortID>
-    </Field>
-    <Field Def="f32 npcTalkTimeOutThreshold">
-      <DisplayName>NPC会話のボイス再生タイムアウト時間</DisplayName>
-      <Description>NPC会話のボイス再生タイムアウト時間。この時間経過してもボイス再生が終わらない場合は次のメッセージへ進む</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>180</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>8700</SortID>
-    </Field>
-    <Field Def="f32 sendPlayLogIntervalTime">
-      <DisplayName>プレイログの送信間隔</DisplayName>
-      <Description>アイテム使用ログ などをサーバーへ送信する間隔</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>300</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>8800</SortID>
-    </Field>
+    <Field Def="s16 unknown_13C" />
+    <Field Def="s16 unknown_13E" />
+    <Field Def="s32 unknown_140" />
+    <Field Def="s32 unknown_144" />
     <Field Def="u8 item370_MaxSfxNum">
       <DisplayName>七色石の最大設置数</DisplayName>
       <Description>七色石の最大設置数</Description>
@@ -854,46 +657,20 @@
       <Maximum>100</Maximum>
       <SortID>9000</SortID>
     </Field>
-    <Field Def="s16 summonDataCoopMatchingLevelUpperAbs">
-      <DisplayName>マルチ弱体化レベル補正係数１</DisplayName>
-      <Description>マルチ時ステータス弱体化。ホストのレベル加算補正</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <SortID>9100</SortID>
-    </Field>
-    <Field Def="s16 summonDataCoopMatchingLevelUpperRel">
-      <DisplayName>マルチ弱体化レベル補正係数２</DisplayName>
-      <Description>マルチ時ステータス弱体化。ホストのレベル倍率補正</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <SortID>9200</SortID>
-    </Field>
-    <Field Def="s16 summonDataCoopMatchingWepLevelMul">
-      <DisplayName>マルチ弱体化最大武器補正係数</DisplayName>
-      <Description>マルチ時ステータス弱体化。最大武器強化レベル補正</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <SortID>9300</SortID>
-    </Field>
-    <Field Def="s32 pickUpBerserkerSignSpEffectBulletId">
-      <DisplayName>バーサーカーサインを拾った時のまたたび効果用弾丸ID</DisplayName>
-      <Description>サイン位置に特殊効果用の弾丸を発生させる際の弾丸ID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>9400</SortID>
-    </Field>
-    <Field Def="s32 succeedBerserkerSelfKillingEffectId">
-      <DisplayName>バーサーカーがPC自力殺害に成功演出用特殊効果ID</DisplayName>
-      <Description>バーサーカーがPC自力殺害に成功した際に専用の演出を再生する特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>9500</SortID>
-    </Field>
+    <Field Def="u8 unknown_14A" />
+    <Field Def="u8 unknown_14B" />
+    <Field Def="u8 unknown_14C" />
+    <Field Def="u8 unknown_14D" />
+    <Field Def="u8 unknown_14E" />
+    <Field Def="u8 unknown_14F" />
+    <Field Def="u8 unknown_150" />
+    <Field Def="u8 unknown_151" />
+    <Field Def="u8 unknown_152" />
+    <Field Def="u8 unknown_153" />
+    <Field Def="u8 unknown_154" />
+    <Field Def="u8 unknown_155" />
+    <Field Def="u8 unknown_156" />
+    <Field Def="u8 unknown_157" />
     <Field Def="u8 machingLevelWhiteSignUpperRel">
       <DisplayName>レベルシンク適用判定係数１白</DisplayName>
       <Description>レベルシンク適用するかどうかのソウルレベル係数</Description>
@@ -1152,31 +929,9 @@
       <Maximum>10</Maximum>
       <SortID>13000</SortID>
     </Field>
-    <Field Def="s32 ghostFootprintDecalParamId">
-      <DisplayName>徘徊幻影の痕跡のデカールパラメータID</DisplayName>
-      <Description>徘徊幻影が移動中に出す痕跡のデカールパラメータID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>13100</SortID>
-    </Field>
-    <Field Def="f32 leaveAroundHostWarningTime">
-      <DisplayName>マルチプレイ制限距離外の警告メッセージ表示のカウント時間[秒]</DisplayName>
-      <Description>マルチプレイ制限距離外に出たままこのカウント時間経過したらマルチプレイの解散を行う</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>1</Increment>
-      <SortID>13200</SortID>
-    </Field>
-    <Field Def="s32 hostModeCostItemId">
-      <DisplayName>ホスト化コストアイテムID</DisplayName>
-      <Description>ホスト化をONにした際に消費するコストアイテムのID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>13300</SortID>
-    </Field>
+    <Field Def="f32 unknown_188" />
+    <Field Def="f32 unknown_18C" />
+    <Field Def="f32 unknown_190" />
     <Field Def="f32 aIJump_DecelerateParam">
       <DisplayName>AIジャンプ減速パラメータ</DisplayName>
       <Description>AIジャンプ用減速パラメータ(0.0：等速運動、1.0：最大減速、目標地点で速度0)</Description>
@@ -1225,142 +980,23 @@
       <Maximum>1</Maximum>
       <SortID>13900</SortID>
     </Field>
-    <Field Def="f32 stealthSystemSightRate_InStealthRigid_NotSightHide_NotStealthMode = 1">
-      <DisplayName>ステルス視界倍率_ステルスヒット内で立ち</DisplayName>
-      <Description>ステルス視界倍率_ステルスヒット内で立ち</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>14000</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightRate_InStealthRigid_NotSightHide_StealthMode = 1">
-      <DisplayName>ステルス視界倍率_ステルスヒット内でしゃがみ</DisplayName>
-      <Description>ステルス視界倍率_ステルスヒット内でしゃがみ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>14100</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightRate_InStealthRigid_SightHide_NotStealthMode = 1">
-      <DisplayName>ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち</DisplayName>
-      <Description>ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>14200</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightRate_InStealthRigid_SightHide_StealthMode = 1">
-      <DisplayName>ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ</DisplayName>
-      <Description>ステルス視界倍率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>14300</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_actionButtonParamId_corpse">
-      <DisplayName>宝死体のデフォルトアクションボタンパラメータID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝死体」を選択したときのデフォルトアクションボタンパラメータID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14400</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_corpse">
-      <DisplayName>宝死体のデフォルトアイテム取得時アニメID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝死体」を選択したときのデフォルトアイテム取得時アニメID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14500</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_actionButtonParamId_box">
-      <DisplayName>宝箱のデフォルトアクションボタンパラメータID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝箱」を選択したときのデフォルトアクションボタンパラメータID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14600</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_box">
-      <DisplayName>宝箱のデフォルトアイテム取得時アニメID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「宝箱」を選択したときのデフォルトアイテム取得時アニメID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14700</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_actionButtonParamId_shine">
-      <DisplayName>アイテム光のデフォルトアクションボタンパラメータID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「アイテム光」を選択したときのデフォルトアクションボタンパラメータID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14800</SortID>
-    </Field>
-    <Field Def="s32 msbEventGeomTreasureInfo_itemGetAnimId_shine">
-      <DisplayName>アイテム光のデフォルトアイテム取得時アニメID</DisplayName>
-      <Description>MapStudioイベントのOBJ用宝箱情報の宝箱タイプで「アイテム光」を選択したときのデフォルトアイテム取得時アニメID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>14900</SortID>
-    </Field>
-    <Field Def="s32 signPuddleAssetId">
-      <DisplayName>サイン溜まり：アセットID</DisplayName>
-      <Description>サイン溜まりに使うアセット</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999</Maximum>
-      <SortID>15000</SortID>
-    </Field>
-    <Field Def="s32 signPuddleAppearDmypolyId0">
-      <DisplayName>サイン溜まり：サイン出現ダミポリ0</DisplayName>
-      <Description>サイン溜まりのサインの表示位置を決定するのに使うダミポリ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>15100</SortID>
-    </Field>
-    <Field Def="s32 signPuddleAppearDmypolyId1">
-      <DisplayName>サイン溜まり：サイン出現ダミポリ1</DisplayName>
-      <Description>サイン溜まりのサインの表示位置を決定するのに使うダミポリ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>15200</SortID>
-    </Field>
-    <Field Def="s32 signPuddleAppearDmypolyId2">
-      <DisplayName>サイン溜まり：サイン出現ダミポリ2</DisplayName>
-      <Description>サイン溜まりのサインの表示位置を決定するのに使うダミポリ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>15300</SortID>
-    </Field>
-    <Field Def="s32 signPuddleAppearDmypolyId3">
-      <DisplayName>サイン溜まり：サイン出現ダミポリ3</DisplayName>
-      <Description>サイン溜まりのサインの表示位置を決定するのに使うダミポリ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>15400</SortID>
-    </Field>
-    <Field Def="f32 fallDamageRate_forRidePC = 1">
-      <DisplayName>騎乗者の落下ダメージ倍率補正_PC用</DisplayName>
-      <Description>騎乗者の落下ダメージ倍率補正_PC用</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>16000</SortID>
-    </Field>
-    <Field Def="f32 fallDamageRate_forRideNPC = 1">
-      <DisplayName>騎乗者の落下ダメージ倍率補正_NPC用</DisplayName>
-      <Description>騎乗者の落下ダメージ倍率補正_NPC用</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>1</Maximum>
-      <SortID>16100</SortID>
-    </Field>
+    <Field Def="s32 unknown_1AC" />
+    <Field Def="s32 unknown_1B0" />
+    <Field Def="f32 unknown_1B4" />
+    <Field Def="s32 unknown_1B8" />
+    <Field Def="f32 unknown_1BC" />
+    <Field Def="s32 unknown_1C0" />
+    <Field Def="s32 unknown_1C4" />
+    <Field Def="f32 unknown_1C8" />
+    <Field Def="f32 unknown_1CC" />
+    <Field Def="f32 unknown_1D0" />
+    <Field Def="f32 unknown_1D4" />
+    <Field Def="f32 unknown_1D8" />
+    <Field Def="f32 unknown_1DC" />
+    <Field Def="f32 unknown_1E0" />
+    <Field Def="f32 unknown_1E4" />
+    <Field Def="s32 unknown_1E8" />
+    <Field Def="s32 unknown_1EC" />
     <Field Def="s32 OldMonkOfYellow_CreateSignSpEffectId">
       <DisplayName>黄衣の翁サイン作成時特殊効果ID</DisplayName>
       <Description>黄衣の翁サイン作成時特殊効果ID</Description>
@@ -1369,47 +1005,11 @@
       <Maximum>999999999</Maximum>
       <SortID>16200</SortID>
     </Field>
-    <Field Def="f32 StragglerActivateDist">
-      <DisplayName>敗残兵起動距離</DisplayName>
-      <Description>敗残兵起動距離</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>1</Increment>
-      <SortID>16300</SortID>
-    </Field>
-    <Field Def="s32 SpEffectId_EnableUseItem_StragglerActivate = -1">
-      <DisplayName>敗残兵アイテム使用許可_PC用特殊効果</DisplayName>
-      <Description>敗残兵アイテム使用許可_PC用特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>16400</SortID>
-    </Field>
-    <Field Def="s32 SpEffectId_StragglerWakeUp = -1">
-      <DisplayName>敗残兵起動_敗残兵キャラ用特殊効果</DisplayName>
-      <Description>敗残兵起動_敗残兵キャラ用特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>16500</SortID>
-    </Field>
-    <Field Def="s32 SpEffectId_StragglerTarget = -1">
-      <DisplayName>敗残兵_討伐対象用特殊効果</DisplayName>
-      <Description>敗残兵_討伐対象用特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>16600</SortID>
-    </Field>
-    <Field Def="s32 SpEffectId_StragglerOppose = -1">
-      <DisplayName>敗残兵_敵対後特殊効果</DisplayName>
-      <Description>敗残兵_敵対後特殊効果</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>16700</SortID>
-    </Field>
+    <Field Def="s32 unknown_1F4" />
+    <Field Def="f32 unknown_1F8" />
+    <Field Def="f32 unknown_1FC" />
+    <Field Def="f32 unknown_200" />
+    <Field Def="f32 unknown_204" />
     <Field Def="f32 buddyWarp_TriggerTimeRayBlocked = 10">
       <DisplayName>レイ遮断でバディがプレイヤーにワープする時間[s]</DisplayName>
       <Description>レイ遮断でバディがプレイヤーにワープする時間[s]</Description>
@@ -1499,16 +1099,7 @@
       <Maximum>1</Maximum>
       <SortID>20500</SortID>
     </Field>
-    
-     <Field Def="dummy8 reserve4_2[4]" RemovedVersion="11210015">
-      <DisplayName>リザーブ</DisplayName>
-      <Description>(dummy8)</Description>
-      <DisplayFormat>%f</DisplayFormat>
-      <SortID>70001</SortID>
-    </Field>
-    
-    <Field Def="s32 unknown_0x230" FirstVersion="11210015" />
-    
+    <Field Def="f32 unknown_230" />
     <Field Def="f32 aiSightRate_sunloss_light = 1">
       <DisplayName>AI視界倍率_太陽が見えない場所(明るい)</DisplayName>
       <Description>AI視界倍率_太陽が見えない場所(明るい)</Description>
@@ -1560,177 +1151,33 @@
       <Increment>0.1</Increment>
       <SortID>14330</SortID>
     </Field>
-    <Field Def="f32 stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_NotStealthMode">
-      <DisplayName>ステルス視界角度減衰率_ステルスヒット内で立ち</DisplayName>
-      <Description>ステルス視界角度減衰率_ステルスヒット内で立ち</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>14340</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightAngleReduceRate_InStealthRigid_NotSightHide_StealthMode">
-      <DisplayName>ステルス視界角度減衰率_ステルスヒット内でしゃがみ</DisplayName>
-      <Description>ステルス視界角度減衰率_ステルスヒット内でしゃがみ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>14350</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_NotStealthMode">
-      <DisplayName>ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち</DisplayName>
-      <Description>ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内で立ち</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>14360</SortID>
-    </Field>
-    <Field Def="f32 stealthSystemSightAngleReduceRate_InStealthRigid_SightHide_StealthMode">
-      <DisplayName>ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ</DisplayName>
-      <Description>ステルス視界角度減衰率_ステルスレイ遮蔽地帯＋ステルスヒット内でしゃがみ</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>100</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>14370</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Morning_Hour = 7">
-      <DisplayName>天候抽選条件_朝_開始時刻_時</DisplayName>
-      <Description>天候抽選条件_朝_開始時刻_時(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30000</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Morning_Minute">
-      <DisplayName>天候抽選条件_朝_開始時刻_分</DisplayName>
-      <Description>天候抽選条件_朝_開始時刻_分(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30001</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Day_Hour = 12">
-      <DisplayName>天候抽選条件_昼_開始時刻_時</DisplayName>
-      <Description>天候抽選条件_昼_開始時刻_時(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30002</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Day_Minute">
-      <DisplayName>天候抽選条件_昼_開始時刻_分</DisplayName>
-      <Description>天候抽選条件_昼_開始時刻_分(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30003</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Evening_Hour = 17">
-      <DisplayName>天候抽選条件_夕_開始時刻_時</DisplayName>
-      <Description>天候抽選条件_夕_開始時刻_時(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30004</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Evening_Minute">
-      <DisplayName>天候抽選条件_夕_開始時刻_分</DisplayName>
-      <Description>天候抽選条件_夕_開始時刻_分(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30005</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Night_Hour = 19">
-      <DisplayName>天候抽選条件_夜_開始時刻_時</DisplayName>
-      <Description>天候抽選条件_夜_開始時刻_時(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30006</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_Night_Minute">
-      <DisplayName>天候抽選条件_夜_開始時刻_分</DisplayName>
-      <Description>天候抽選条件_夜_開始時刻_分(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30007</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_DayBreak_Hour = 5">
-      <DisplayName>天候抽選条件_夜明け_開始時刻_時</DisplayName>
-      <Description>天候抽選条件_夜明け_開始時刻_時(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30008</SortID>
-    </Field>
-    <Field Def="u8 weatherLotConditionStart_DayBreak_Minute">
-      <DisplayName>天候抽選条件_夜明け_開始時刻_分</DisplayName>
-      <Description>天候抽選条件_夜明け_開始時刻_分(SEQ09371)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30009</SortID>
-    </Field>
-    <Field Def="dummy8 weatherLotCondition_reserved[2]">
-      <DisplayName>天候抽選条件_予約</DisplayName>
-      <Description>(dummy8)</Description>
-      <SortID>70002</SortID>
-    </Field>
-    <Field Def="u8 pclightScaleChangeStart_Hour = 18">
-      <DisplayName>Playerライト強度スケール変更時間帯_開始時刻_時</DisplayName>
-      <Description>Playerライト強度スケール変更時間帯_開始時刻_時(SEQ16562)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30101</SortID>
-    </Field>
-    <Field Def="u8 pclightScaleChangeStart_Minute">
-      <DisplayName>Playerライト強度スケール変更時間帯_開始時刻_分</DisplayName>
-      <Description>Playerライト強度スケール変更時間帯_開始時刻_分(SEQ16562)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30102</SortID>
-    </Field>
-    <Field Def="u8 pclightScaleChangeEnd_Hour = 5">
-      <DisplayName>Playerライト強度スケール変更時間帯_終了時刻_時</DisplayName>
-      <Description>Playerライト強度スケール変更時間帯_終了時刻_時(SEQ16562)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30103</SortID>
-    </Field>
-    <Field Def="u8 pclightScaleChangeEnd_Minute">
-      <DisplayName>Playerライト強度スケール変更時間帯_終了時刻_分</DisplayName>
-      <Description>Playerライト強度スケール変更時間帯_終了時刻_分(SEQ16562)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30104</SortID>
-    </Field>
-    <Field Def="f32 pclightScaleByTimezone = 1">
-      <DisplayName>時間帯Playerライト強度スケール変更値</DisplayName>
-      <Description>時間帯Playerライト強度スケール変更値(SEQ16562)</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0.1</Minimum>
-      <Maximum>10</Maximum>
-      <SortID>30120</SortID>
-    </Field>
-    <Field Def="s32 bigRuneGreaterDemon_SummonBuddySpecialEffectId_Buddy = -1">
-      <DisplayName>大ルーン：グレーターデーモンバディ召喚時バディ付与特殊効果ID</DisplayName>
-      <Description>大ルーン：グレーターデーモンバディ召喚時バディ付与特殊効果ID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>30200</SortID>
-    </Field>
-    <Field Def="s32 bigRuneGreaterDemon_SummonBuddySpecialEffectId_Pc = -1">
-      <DisplayName>大ルーン：グレーターデーモンバディ召喚時PC付与特殊効果ID</DisplayName>
-      <Description>大ルーン：グレーターデーモンバディ召喚時PC付与特殊効果ID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>30201</SortID>
-    </Field>
-    <Field Def="s32 homeBonfireParamId">
-      <DisplayName>拠点篝火ワープID</DisplayName>
-      <Description>拠点篝火の篝火ワープパラメータID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>40000</SortID>
-    </Field>
+    <Field Def="s16 unknown_24C" />
+    <Field Def="s16 unknown_24E" />
+    <Field Def="s16 unknown_250" />
+    <Field Def="s16 unknown_252" />
+    <Field Def="s32 unknown_254" />
+    <Field Def="s16 unknown_258" />
+    <Field Def="s16 unknown_25A" />
+    <Field Def="f32 unknown_25C" />
+    <Field Def="f32 unknown_260" />
+    <Field Def="f32 unknown_264" />
+    <Field Def="s32 unknown_268" />
+    <Field Def="u8 unknown_26C" />
+    <Field Def="u8 unknown_26D" />
+    <Field Def="u8 unknown_26E" />
+    <Field Def="u8 unknown_26F" />
+    <Field Def="u8 unknown_270" />
+    <Field Def="u8 unknown_271" />
+    <Field Def="u8 unknown_272" />
+    <Field Def="u8 unknown_273" />
+    <Field Def="u8 unknown_274" />
+    <Field Def="u8 unknown_275" />
+    <Field Def="u8 unknown_276" />
+    <Field Def="u8 unknown_277" />
+    <Field Def="u8 unknown_278" />
+    <Field Def="u8 unknown_279" />
+    <Field Def="u8 unknown_27A" />
+    <Field Def="u8 unknown_27B" />
     <Field Def="u8 machingWeaponLevelUpperWhiteSign_11">
       <DisplayName>レベルシンク適用判定最大武器強化レベル係数１１白</DisplayName>
       <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
@@ -1927,34 +1374,7 @@
       <Maximum>25</Maximum>
       <SortID>11230</SortID>
     </Field>
-    <Field Def="u8 machingWeaponLevelUpperRedSign_24">
-      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２４赤</DisplayName>
-      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>25</Maximum>
-      <SortID>11240</SortID>
-    </Field>
-    <Field Def="u8 machingWeaponLevelUpperRedSign_25">
-      <DisplayName>レベルシンク適用判定最大武器強化レベル係数２５赤</DisplayName>
-      <Description>レベルシンク適用するかどうかの最大武器強化レベル係数</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>25</Maximum>
-      <SortID>11250</SortID>
-    </Field>
-    <Field Def="u8 menuTimezoneStart_Morning_Hour = 7">
-      <DisplayName>メニュー用時間帯表示_朝_開始時刻_時</DisplayName>
-      <Description>メニュー用時間帯表示_朝_開始時刻_時(SEQ22108)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30150</SortID>
-    </Field>
-    <Field Def="u8 menuTimezoneStart_Morning_Minute">
-      <DisplayName>メニュー用時間帯表示_朝_開始時刻_分</DisplayName>
-      <Description>メニュー用時間帯表示_朝_開始時刻_分(SEQ22108)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30151</SortID>
-    </Field>
+    <Field Def="f32 unknown_298" />
     <Field Def="u8 menuTimezoneStart_Day1_Hour = 12">
       <DisplayName>メニュー用時間帯表示_昼1_開始時刻_時</DisplayName>
       <Description>メニュー用時間帯表示_昼1_開始時刻_時(SEQ22108)</Description>
@@ -2011,55 +1431,11 @@
       <Maximum>59</Maximum>
       <SortID>30159</SortID>
     </Field>
-    <Field Def="u8 menuTimezoneStart_Midnight_Hour = 5">
-      <DisplayName>メニュー用時間帯表示_深夜_開始時刻_時</DisplayName>
-      <Description>メニュー用時間帯表示_深夜_開始時刻_時(SEQ22108)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>23</Maximum>
-      <SortID>30160</SortID>
-    </Field>
-    <Field Def="u8 menuTimezoneStart_Midnight_Minute">
-      <DisplayName>メニュー用時間帯表示_深夜_開始時刻_分</DisplayName>
-      <Description>メニュー用時間帯表示_深夜_開始時刻_分(SEQ22108)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>59</Maximum>
-      <SortID>30161</SortID>
-    </Field>
-    <Field Def="u16 remotePlayerThreatLvNotify_ThreatLv">
-      <DisplayName>ネットワークPC脅威度通知_脅威度</DisplayName>
-      <Description>ネットワークPC脅威度通知_脅威度(SEQ21950)</Description>
-      <EditFlags>None</EditFlags>
-      <Maximum>31</Maximum>
-      <SortID>50020</SortID>
-    </Field>
-    <Field Def="f32 remotePlayerThreatLvNotify_NotifyDist">
-      <DisplayName>ネットワークPC脅威度通知_通知距離[m]</DisplayName>
-      <Description>ネットワークPC脅威度通知_通知距離[m](SEQ21950)</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999.9</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>50000</SortID>
-    </Field>
-    <Field Def="f32 remotePlayerThreatLvNotify_EndNotifyDist">
-      <DisplayName>ネットワークPC脅威度通知_通知終了距離[m]</DisplayName>
-      <Description>ネットワークPC脅威度通知_通知終了距離[m](SEQ21950)</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999.9</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>50010</SortID>
-    </Field>
-    <Field Def="f32 worldMapPointDiscoveryExpandRange">
-      <DisplayName>地図ポイント発見領域のデフォルト拡張距離[m]</DisplayName>
-      <Description>地図ポイントの発見領域のデフォルトの拡張距離。地図ポイントの"発見領域 上書き領域"が無効(-1)のときに、自身の領域から拡張して発見領域が生成される。その拡張距離</Description>
-      <DisplayFormat>%.1f</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999.9</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>41000</SortID>
-    </Field>
+    <Field Def="f32 unknown_2A4" />
+    <Field Def="s16 unknown_2A8" />
+    <Field Def="s16 unknown_2AA" />
+    <Field Def="s32 unknown_2AC" />
+    <Field Def="s32 unknown_2B0" />
     <Field Def="f32 worldMapPointReentryExpandRange">
       <DisplayName>地図ポイント出場領域のデフォルト拡張距離[m]</DisplayName>
       <Description>地図ポイントの出場領域のデフォルトの拡張距離。地図ポイントの"出場領域 上書き領域"が無効(-1)のときに、自身の領域から拡張して出場領域が生成される。その拡張距離</Description>
@@ -2099,43 +1475,18 @@
       <Maximum>999999999</Maximum>
       <SortID>60000</SortID>
     </Field>
-    <Field Def="f32 rideJumpoff_SfxHeightOffset">
-      <DisplayName>降りる大ジャンプ_上空SFX基点オフセット</DisplayName>
-      <Description>降りる大ジャンプ_上空SFX基点オフセット</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>60100</SortID>
-    </Field>
-    
-    <Field Def="u16 unknown_short1" />
-    <Field Def="u16 NearDeathLevelDecayTime" />
-    
-    <Field Def="s32 rideJumpoff_SpEffectIdPc = -1">
-      <DisplayName>降りる大ジャンプ領域内_PCにかかる特殊効果ID</DisplayName>
-      <Description>降りる大ジャンプ領域内_PCにかかる特殊効果ID</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>60300</SortID>
-    </Field>
-    <Field Def="u32 unlockExchangeMenuEventFlagId">
-      <DisplayName>メインメニュー_アイテム作成_開放イベントフラグ</DisplayName>
-      <Description>メインメニュー→アイテム作成メニューをアンロックするイベントフラグ</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Maximum>-294967297</Maximum>
-      <SortID>42000</SortID>
-    </Field>
-    <Field Def="u32 unlockMessageMenuEventFlagId">
-      <DisplayName>メインメニュー_メッセージ_開放イベントフラグ</DisplayName>
-      <Description>メインメニュー→メッセージメニューをアンロックするイベントフラグ</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <EditFlags>None</EditFlags>
-      <Maximum>-294967297</Maximum>
-      <SortID>42010</SortID>
-    </Field>
+    <Field Def="s32 unknown_2C4" />
+    <Field Def="s16 unknown_2C8" />
+    <Field Def="s16 unknown_2CA" />
+    <Field Def="s32 unknown_2CC" />
+    <Field Def="u8 unknown_2D0" />
+    <Field Def="u8 unknown_2D1" />
+    <Field Def="u8 unknown_2D2" />
+    <Field Def="u8 unknown_2D3" />
+    <Field Def="u8 unknown_2D4" />
+    <Field Def="u8 unknown_2D5" />
+    <Field Def="u8 unknown_2D6" />
+    <Field Def="u8 unknown_2D7" />
     <Field Def="u16 breakInOnce_A_rebreakInGoodsNum">
       <DisplayName>侵入時に付与する"再侵入アイテム"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）</DisplayName>
       <Description>侵入時に付与する"再侵入アイテム"の付与個数：侵入アイテム_グレーター系使い捨て（ID111）</Description>
@@ -2150,171 +1501,138 @@
       <Maximum>9999</Maximum>
       <SortID>5250</SortID>
     </Field>
-    <Field Def="s32 breakInOnce_A_rebreakInGoodsId = -1">
-      <DisplayName>侵入時に付与する"再侵入アイテム"の道具アイテムID：侵入アイテム_グレーター系使い捨て（ID111）</DisplayName>
-      <Description>侵入時に付与する"再侵入アイテム"の道具アイテムID：侵入アイテム_グレーター系使い捨て（ID111）</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>5220</SortID>
-    </Field>
-    <Field Def="s32 breakIn_B_rebreakInGoodsId = -1">
-      <DisplayName>侵入時に付与する"再侵入アイテム"の道具アイテムID：侵入アイテム_火山館系（ID112）</DisplayName>
-      <Description>侵入時に付与する"再侵入アイテム"の道具アイテムID：侵入アイテム_火山館系（ID112）</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999999999</Maximum>
-      <SortID>5240</SortID>
-    </Field>
-    <Field Def="f32 actionButtonInputCancelTime = -1">
-      <DisplayName>アクションボタン押しっぱなしでアクションボタン操作を無効化する時間</DisplayName>
-      <Description>アクションボタン押しっぱなしでアクションボタン操作を無効化する時間</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>14390</SortID>
-    </Field>
-    <Field Def="f32 blockClearBonusDelayTime = 7">
-      <DisplayName>ボス撃破処理後クリアボーナス取得遅延時間</DisplayName>
-      <Description>ボス撃破処理後クリアボーナス取得遅延時間</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>0</Minimum>
-      <Maximum>99.9</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>70000</SortID>
-    </Field>
-    <Field Def="f32 bonfireCheckEnemyRange = -1">
-      <DisplayName>【未使用】(SEQ25048参照）敵による篝火無効化を判定するPCから篝火までの距離[m]</DisplayName>
-      <Description>【未使用】(SEQ25048参照）敵による篝火無効化を判定するPCから篝火までの距離[m](0以下：PC距離チェックしない。全距離でチェック)</Description>
-      <EditFlags>None</EditFlags>
-      <Minimum>-1</Minimum>
-      <Maximum>99999</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>40001</SortID>
-    </Field>
-    
-    <Field Def="s32 unknown_1" />
+    <Field Def="f32 unknown_2DC" />
+    <Field Def="f32 unknown_2E0" />
+    <Field Def="s32 unknown_2E4" />
+    <Field Def="s32 unknown_2E8" />
+    <Field Def="s32 unknown_2EC" />
+
+    <!-- Past Elden Ring range -->
+    <Field Def="s32 unknown_2F0" />
     <Field Def="f32 BossArenaNearDeathDuration" />
     <Field Def="f32 nearDeathGracePeriodTimerDefault" />
-    <Field Def="f32 unknown_4" />
-    <Field Def="f32 unknown_5" />
-    <Field Def="f32 unknown_6" />
-    <Field Def="s32 unknown_7" />
-    <Field Def="f32 unknown_8" />
-    <Field Def="f32 unknown_9" />
-    <Field Def="s32 unknown_10" />
-    
-    <Field Def="s32 unknown_11" />
-    <Field Def="f32 unknown_12" />
-    <Field Def="f32 unknown_13" />
-    <Field Def="s32 unknown_14" />
-    <Field Def="s32 unknown_15" />
-    <Field Def="s32 unknown_16" />
-    <Field Def="s32 unknown_17" />
-    <Field Def="f32 unknown_18" />
-    <Field Def="s32 unknown_19" />
-    <Field Def="s32 unknown_20" />
-    
-    <Field Def="f32 unknown_21" />
-    <Field Def="f32 unknown_22" />
-    <Field Def="f32 unknown_23" />
-    <Field Def="f32 unknown_24" />
-    <Field Def="s32 unknown_25" />
-    <Field Def="s32 unknown_26" />
-    <Field Def="s32 unknown_27" />
-    <Field Def="s32 unknown_28" />
-    <Field Def="s32 unknown_29" />
-    <Field Def="s32 unknown_30" />
-    
-    <Field Def="s32 unknown_31" />
-    <Field Def="s32 unknown_32" />
-    <Field Def="f32 unknown_33" />
-    <Field Def="f32 unknown_34" />
-    <Field Def="f32 unknown_35" />
-    <Field Def="f32 unknown_36" />
+    <Field Def="f32 unknown_2FC" />
+    <Field Def="f32 unknown_300" />
+    <Field Def="f32 unknown_304" />
+    <Field Def="s32 unknown_308" />
+    <Field Def="f32 unknown_30C" />
+    <Field Def="f32 unknown_310" />
+    <Field Def="s32 unknown_314" />
+
+    <Field Def="s32 unknown_318" />
+    <Field Def="f32 unknown_31C" />
+    <Field Def="f32 unknown_320" />
+    <Field Def="s32 unknown_324" />
+    <Field Def="s32 unknown_328" />
+    <Field Def="s32 unknown_32C" />
+    <Field Def="s32 unknown_330" />
+    <Field Def="f32 unknown_334" />
+    <Field Def="s32 unknown_338" />
+    <Field Def="s32 unknown_33C" />
+
+    <Field Def="f32 unknown_340" />
+    <Field Def="f32 unknown_344" />
+    <Field Def="f32 unknown_348" />
+    <Field Def="f32 unknown_34C" />
+    <Field Def="s32 unknown_350" />
+    <Field Def="s32 unknown_354" />
+    <Field Def="s32 unknown_358" />
+    <Field Def="s32 unknown_35C" />
+    <Field Def="s32 unknown_360" />
+    <Field Def="s32 unknown_364" />
+
+    <Field Def="s32 unknown_368" />
+    <Field Def="s32 unknown_36C" />
+    <Field Def="f32 unknown_370" />
+    <Field Def="f32 unknown_374" />
+    <Field Def="f32 unknown_378" />
+    <Field Def="f32 unknown_37C" />
     <Field Def="s32 RequiredReviveProgress_Level1" />
     <Field Def="s32 RequiredReviveProgress_Level2" />
     <Field Def="s32 RequiredReviveProgress_Level3" />
     <Field Def="f32 ReviveRateDecayPercent_Level1" />
-    
+
     <Field Def="f32 ReviveRateDecayPercent_Level2" />
     <Field Def="f32 ReviveRateDecayPercent_Level3" />
-    <Field Def="s32 unknown_43" />
-    <Field Def="f32 unknown_44" />
-    <Field Def="f32 unknown_45" />
-    <Field Def="f32 unknown_46" />
-    <Field Def="f32 unknown_47" />
-    <Field Def="f32 unknown_48" />
-    <Field Def="s32 unknown_49" />
-    <Field Def="s32 unknown_50" />
-    
-    <Field Def="s32 unknown_51" />
-    <Field Def="s32 unknown_52" />
-    <Field Def="s32 unknown_53" />
-    <Field Def="s32 unknown_54" />
-    <Field Def="s32 unknown_55" />
-    <Field Def="s32 unknown_56" />
-    <Field Def="s32 unknown_57" />
-    <Field Def="f32 unknown_58" />
-    <Field Def="f32 unknown_59" />
-    <Field Def="f32 unknown_60" />
-    
-    <Field Def="f32 unknown_61" />
-    <Field Def="f32 unknown_62" />
-    <Field Def="s32 unknown_63" />
-    <Field Def="f32 unknown_64" />
-    <Field Def="f32 unknown_65" />
-    <Field Def="f32 unknown_66" />
-    <Field Def="f32 unknown_67" />
-    <Field Def="f32 unknown_68" />
-    <Field Def="f32 unknown_69" />
-    <Field Def="f32 unknown_70" />
-    
-    <Field Def="f32 unknown_71" />
-    <Field Def="s32 unknown_72" />
-    <Field Def="s32 unknown_73" />
-    <Field Def="s32 unknown_74" />
-    <Field Def="s32 unknown_75" />
-    <Field Def="f32 unknown_76" />
-    <Field Def="f32 unknown_77" />
-    <Field Def="f32 unknown_78" />
-    <Field Def="f32 unknown_79" />
-    <Field Def="f32 unknown_80" />
-    
-    <Field Def="f32 unknown_81" />
-    <Field Def="f32 unknown_82" />
-    <Field Def="f32 unknown_83" />
-    <Field Def="f32 unknown_84" />
-    <Field Def="f32 unknown_85" />
-    <Field Def="f32 unknown_86" />
-    <Field Def="f32 unknown_87" />
-    <Field Def="s32 unknown_88" />
-    <Field Def="f32 unknown_89" />
-    <Field Def="f32 unknown_90" />
-    
-    <Field Def="f32 unknown_91" />
+    <Field Def="s32 unknown_398" />
+    <Field Def="f32 unknown_39C" />
+    <Field Def="f32 unknown_3A0" />
+    <Field Def="s16 unknown_3A4" />
+    <Field Def="s16 unknown_3A6" />
+    <Field Def="s16 unknown_3A8" />
+    <Field Def="s16 unknown_3AA" />
+    <Field Def="s16 unknown_3AC" />
+    <Field Def="s16 unknown_3AE" />
+    <Field Def="s32 unknown_3B0" />
+    <Field Def="s32 unknown_3B4" />
+
+    <Field Def="s32 unknown_3B8" />
+    <Field Def="s32 unknown_3BC" />
+    <Field Def="s32 unknown_3C0" />
+    <Field Def="s32 unknown_3C4" />
+    <Field Def="s32 unknown_3C8" />
+    <Field Def="s32 unknown_3CC" />
+    <Field Def="s32 unknown_3D0" />
+    <Field Def="f32 unknown_3D4" />
+    <Field Def="f32 unknown_3D8" />
+    <Field Def="f32 unknown_3DC" />
+
+    <Field Def="f32 unknown_3E0" />
+    <Field Def="f32 unknown_3E4" />
+    <Field Def="s32 unknown_3E8" />
+    <Field Def="f32 unknown_3EC" />
+    <Field Def="f32 unknown_3F0" />
+    <Field Def="f32 unknown_3F4" />
+    <Field Def="f32 unknown_3F8" />
+    <Field Def="f32 unknown_3FC" />
+    <Field Def="f32 unknown_400" />
+    <Field Def="f32 unknown_404" />
+
+    <Field Def="f32 unknown_408" />
+    <Field Def="s32 rewardBaseAmount1" />
+    <Field Def="s32 rewardBaseAmount2" />
+    <Field Def="s32 rewardBaseAmount3" />
+    <Field Def="s32 rewardBaseAmount4" />
+    <Field Def="f32 rewardMultiplierUnknown41C" />
+    <Field Def="f32 rewardMultiplierUnknown420" />
+    <Field Def="f32 rewardMultiplierUnknown424" />
+    <Field Def="f32 rewardMultiplierTargetBoss0" />
+    <Field Def="f32 rewardMultiplierTargetBoss1" />
+
+    <Field Def="f32 rewardMultiplierTargetBoss2" />
+    <Field Def="f32 rewardMultiplierTargetBoss3" />
+    <Field Def="f32 rewardMultiplierTargetBoss4" />
+    <Field Def="f32 rewardMultiplierTargetBoss5" />
+    <Field Def="f32 rewardMultiplierTargetBoss6" />
+    <Field Def="f32 rewardMultiplierTargetBoss7" />
+    <Field Def="f32 rewardMultiplierUnknown448" />
+    <Field Def="s32 unknown_44C" />
+    <Field Def="f32 unknown_450" />
+    <Field Def="f32 unknown_454" />
+
+    <Field Def="f32 unknown_458" />
     <Field Def="s32 newArrivalMarkFlag" />
-    <Field Def="f32 unknown_93" />
-    <Field Def="f32 unknown_94" />
+    <Field Def="f32 unknown_460" />
+    <Field Def="f32 unknown_464" />
     <Field Def="s32 nightTimeFlag" />
-    <Field Def="s32 unknown_96" />
-    <Field Def="f32 unknown_97" />
-    <Field Def="f32 unknown_98" />
-    <Field Def="f32 unknown_99" />
-    <Field Def="f32 unknown_100" />
-    
-    <Field Def="f32 unknown_101" />
-    <Field Def="f32 unknown_102" />
-    <Field Def="f32 unknown_103" />
-    <Field Def="f32 unknown_104" />
-    <Field Def="f32 unknown_105" />
-    <Field Def="f32 unknown_106" />
-    <Field Def="s32 unknown_107" />
+    <Field Def="s32 unknown_46C" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss0" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss1" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss2" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss3" />
+
+    <Field Def="f32 rewardMultiplierSuperTargetBoss4" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss5" />
+    <Field Def="f32 rewardMultiplierSuperTargetBoss6" />
+    <Field Def="f32 unknown_48C" />
+    <Field Def="f32 unknown_490" />
+    <Field Def="f32 unknown_494" />
+    <Field Def="s32 specialRewardFirstTime" />
     <Field Def="s32 trainingCampTutorialFlag" />
-    <Field Def="f32 unknown_109" />
-    <Field Def="f32 unknown_110" />
-    <Field Def="s32 unknown_111" />
-    <Field Def="s32 unknown_112" />
+    <Field Def="f32 specialRewardExtraChance1" />
+    <Field Def="f32 specialRewardExtraChance2" />
+    <Field Def="s32 specialRewardExtraAmount1" />
+    <Field Def="s32 specialRewardExtraAmount2" />
+
   </Fields>
 </PARAMDEF>

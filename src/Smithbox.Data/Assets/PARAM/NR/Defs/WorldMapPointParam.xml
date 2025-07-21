@@ -25,14 +25,14 @@
       <DisplayFormat>%d</DisplayFormat>
       <SortID>2902</SortID>
     </Field>
-    <Field Def="u32 eventFlagId">
+    <Field Def="u32 eventFlagId0">
       <DisplayName>開放イベントフラグID</DisplayName>
       <Description>開放条件のイベントフラグID</Description>
       <DisplayFormat>%u</DisplayFormat>
       <Maximum>-294967297</Maximum>
       <SortID>100</SortID>
     </Field>
-    <Field Def="u32 distViewEventFlagId">
+    <Field Def="u32 eventFlagId1">
       <DisplayName>遠見台発見イベントフラグID</DisplayName>
       <Description>遠見台で発見した際に立てるイベントフラグID</Description>
       <DisplayFormat>%u</DisplayFormat>
@@ -40,20 +40,7 @@
       <SortID>2100</SortID>
       <UnkC8>遠見台</UnkC8>
     </Field>
-    <Field Def="u16 iconId">
-      <DisplayName>アイコンID</DisplayName>
-      <Description>アイコンID</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <SortID>300</SortID>
-    </Field>
-    <Field Def="s16 bgmPlaceType">
-      <DisplayName>BGM用場所情報（入場領域内）</DisplayName>
-      <Enum>SOUND_BGM_MAP_PLACE_TYPE</Enum>
-      <Description>Bgm場所タイプ</Description>
-      <Minimum>0</Minimum>
-      <Maximum>99999999</Maximum>
-      <SortID>1000</SortID>
-    </Field>
+    <Field Def="u32 eventFlagId5" />
     <Field Def="u8 isAreaIcon:1">
       <DisplayName>範囲アイコンか</DisplayName>
       <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
@@ -76,10 +63,11 @@
       <Maximum>1</Maximum>
       <SortID>710</SortID>
     </Field>
-    <Field Def="dummy8 pad3:5">
-      <DisplayName>パッド3</DisplayName>
-      <SortID>2903</SortID>
-    </Field>
+    <Field Def="u8 unknown_10_3:1" />
+    <Field Def="u8 unknown_10_4:1" />
+    <Field Def="u8 unknown_10_5:1" />
+    <Field Def="u8 unknown_10_6:1" />
+    <Field Def="u8 unknown_10_7:1" />
     <Field Def="u8 areaNo_forDistViewMark">
       <DisplayName>遠見台目印上書き_エリア番号</DisplayName>
       <Description>mAA_BB_CC_DD の AA 部分</Description>
@@ -104,13 +92,7 @@
       <SortID>2600</SortID>
       <UnkC8>遠見台</UnkC8>
     </Field>
-    <Field Def="u32 clearedEventFlagId">
-      <DisplayName>クリア済イベントフラグID</DisplayName>
-      <Description>クリア済みイベントフラグID(0:常にクリア済み扱い)</Description>
-      <DisplayFormat>%u</DisplayFormat>
-      <Maximum>-294967297</Maximum>
-      <SortID>110</SortID>
-    </Field>
+    <Field Def="s32 worldMapPointIconId" />
     <Field Def="u8 dispMask00:1">
       <DisplayName>表示設定M00</DisplayName>
       <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
@@ -137,15 +119,6 @@
       <DisplayFormat>%u</DisplayFormat>
       <SortID>2200</SortID>
       <UnkC8>遠見台</UnkC8>
-    </Field>
-    <Field Def="f32 angle">
-      <DisplayName>アイコン角度[deg]</DisplayName>
-      <Description>表示アイコンの回転角度[deg]</Description>
-      <DisplayFormat>%.1f</DisplayFormat>
-      <Minimum>-360</Minimum>
-      <Maximum>360</Maximum>
-      <Increment>0.1</Increment>
-      <SortID>1700</SortID>
     </Field>
     <Field Def="u8 areaNo">
       <DisplayName>エリア番号</DisplayName>
@@ -194,19 +167,26 @@
       <Maximum>20000</Maximum>
       <SortID>1600</SortID>
     </Field>
-    <Field Def="s32 unknown_12"/>
-    <Field Def="s32 unknown_13"/>
-    <Field Def="s32 unknown_14"/>
-    <Field Def="s32 unknown_15"/>
-    <Field Def="s32 unknown_16"/>
-    <Field Def="s32 unknown_17"/>
-    <Field Def="s32 unknown_18"/>
-    <Field Def="s32 unknown_19"/>
-    <Field Def="s32 unknown_20"/>
-    <Field Def="s32 unknown_21"/>
-    <Field Def="s32 unknown_22"/>
-    <Field Def="s32 unknown_23"/>
-    <Field Def="s32 unknown_24"/>
-    <Field Def="s32 unknown_25"/>
+    <Field Def="u16 detailIcon1"/>
+    <Field Def="u16 detailIcon2"/>
+    <Field Def="s32 unknown_30"/>
+    <Field Def="s32 unknown_34"/>
+    <Field Def="s32 unknown_38"/>
+    <Field Def="s16 unknown_3C"/>
+    <Field Def="s16 unknown_3E"/>
+    <Field Def="s16 unknown_40"/>
+    <Field Def="s16 unknown_42"/>
+    <Field Def="u32 eventFlagId2"/>
+    <Field Def="u32 eventFlagId3"/>
+    <Field Def="u32 eventFlagId4"/>
+    <Field Def="s32 unknown_50"/>
+    <Field Def="u16 variationIconId"/>
+    <Field Def="s16 unknown_56"/>
+    <Field Def="s16 unknown_58"/>
+    <Field Def="s16 unknown_5A"/>
+    <Field Def="s16 unknown_5C"/>
+    <Field Def="s16 unknown_5E"/>
+    <Field Def="u32 eventFlagId6"/>
+    <Field Def="u32 eventFlagId7"/>
   </Fields>
 </PARAMDEF>
