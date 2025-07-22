@@ -8,20 +8,23 @@
   <Fields>
     
     <Field Def="s32 unknown_0"/>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="f32 unknown_2"/>
-    <Field Def="f32 unknown_3"/>
-    <Field Def="s32 unknown_EventFlag1"/>
-    <Field Def="s32 unknown_EventFlag2"/>
-    <Field Def="s32 unknown_6"/>
-    <Field Def="s32 unknown_7"/>
-    <Field Def="s32 unknown_8"/>
-    <Field Def="s32 worldMapPointId_1"/>
-    <Field Def="f32 unknown_10"/>
-    <Field Def="s32 unknown_11"/>
+    <Field Def="u8 areaNo"/>
+    <Field Def="u8 gridXNo"/>
+    <Field Def="u8 gridZNo"/>
+    <Field Def="u8 unknown_1d"/>
+    <Field Def="f32 posX"/>
+    <Field Def="f32 posZ"/>
+    <Field Def="s32 day1Flag"/>
+    <Field Def="s32 day2Flag"/>
+    <Field Def="s32 requireModifier1"/>
+    <Field Def="s32 excludeModifier1"/>
+    <Field Def="s32 excludeModifier2"/>
+    <Field Def="s32 bossAttachPoint"/>
+    <Field Def="u32 connectColEntityId"/>
+    <Field Def="s32 requireModifier2"/>
     <Field Def="s32 unknown_12"/>
     <Field Def="s32 unknown_13"/>
     <Field Def="s32 unknown_14"/>
-    <Field Def="s32 worldMapPointId_2"/>
+    <Field Def="s32 extraBossAttachPoint"/>
   </Fields>
 </PARAMDEF>

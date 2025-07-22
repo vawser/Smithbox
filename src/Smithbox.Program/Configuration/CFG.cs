@@ -955,7 +955,7 @@ public class CFG
 
     public float WorldMapHeight = 1200f;
     public float WorldMapWidth = 1200f;
-    public bool WorldMapDisplayTiles = true;
+    public bool WorldMapDisplayTiles = false;
     public bool WorldMapDisplaySmallTiles = true;
     public bool WorldMapDisplayMediumTiles = false;
     public bool WorldMapDisplayLargeTiles = false;

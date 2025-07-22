@@ -6,7 +6,7 @@
 - Map Editor: add JSON export for MSB
 - Map Editor: NR MSB: need to make it byte-perfect on save (load is fine)
 - Map Editor: visibility icon cannot be clicked
-- Map Editor: fix the map transform adjustment for ER + add for NR
+- Map Editor: add for special map connections for NR
 
 - Map / Model Editor: implement VFS for model / texture loading (requires resource manager workflow rework)
 - Model Editor: implement VFS + data bank overhaul
@@ -24,8 +24,6 @@
 
 # TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
-- UI: fix DPI scaling
 
 # MAIN BUGS
-1. Map loading is not applying visual map offset correctly
 2. Icon Preview texture load is causing runaway RAM consumption

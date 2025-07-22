@@ -420,12 +420,12 @@ public partial class ParamTools
     #region Adjust Row Name
     public void AdjustRowName(string adjustment, RowNameAdjustType type)
     {
-        if (adjustment == null)
+        if (string.IsNullOrEmpty(adjustment))
             return;
 
-        var curParamKey = Editor._activeView.Selection.GetActiveParam();
+        string curParamKey = Editor._activeView.Selection.GetActiveParam();
 
-        if (curParamKey == null)
+        if (string.IsNullOrEmpty(curParamKey))
             return;
 
         Param baseParam = Editor.Project.ParamData.PrimaryBank.Params[curParamKey];
@@ -441,7 +441,7 @@ public partial class ParamTools
 
         foreach (Param.Row row in rows)
         {
-            if(type is RowNameAdjustType.Prepend)
+            if (type is RowNameAdjustType.Prepend)
             {
                 row.Name = $"{adjustment}{row.Name}";
             }

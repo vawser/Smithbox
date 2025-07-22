@@ -8,7 +8,10 @@
   <Fields>
     <Field Def="s32 unknown_0"/>
     <Field Def="f32 unknown_1"/>
-    <Field Def="s32 unknown_2"/>
+    <Field Def="u8 unknown_2a"/>
+    <Field Def="u8 unknown_2b"/>
+    <Field Def="u8 unknown_2c"/>
+    <Field Def="u8 unknown_2d"/>
     <Field Def="f32 unknown_3"/>
     <Field Def="f32 unknown_4"/>
     <Field Def="s32 unknown_5"/>

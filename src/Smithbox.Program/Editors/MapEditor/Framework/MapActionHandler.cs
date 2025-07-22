@@ -284,6 +284,84 @@ public class MapActionHandler
     }
 
     /// <summary>
+    /// Move to Map
+    /// </summary>
+    public void DisplayMoveToMapMenu(MapDuplicateToMapType displayType)
+    {
+        if (!Editor.ViewportSelection.IsSelection())
+            return;
+
+        if (!Editor.IsAnyMapLoaded())
+            return;
+
+        if (displayType is MapDuplicateToMapType.ToolWindow)
+        {
+            UIHelper.WrappedText("Move selection to specific loaded map.");
+            UIHelper.WrappedText("");
+        }
+        else
+        {
+            ImGui.TextColored(new Vector4(1.0f, 1.0f, 1.0f, 1.0f), "Move selection to specific map");
+        }
+
+        foreach (var entry in Project.MapData.PrimaryBank.Maps)
+        {
+            var mapID = entry.Key.Filename;
+            var map = entry.Value.MapContainer;
+
+            if (map != null)
+            {
+                if (ImGui.Selectable(mapID, SelectedMap == mapID))
+                {
+                    _comboTargetMap = (mapID, map);
+                    ApplyImmediately = true;
+                }
+
+                var mapName = AliasUtils.GetMapNameAlias(Editor.Project, mapID);
+                UIHelper.DisplayAlias(mapName);
+            }
+        }
+
+        if (_comboTargetMap.Item2 == null)
+            return;
+
+        MapContainer targetMap = (MapContainer)_comboTargetMap.Item2;
+
+        var sel = Editor.ViewportSelection.GetFilteredSelection<MsbEntity>().ToList();
+
+        if (sel.Any(e => e.WrappedObject is BTL.Light))
+        {
+            if (ImGui.BeginCombo("Targeted BTL", _dupeSelectionTargetedParent.Item1))
+            {
+                foreach (Entity btl in targetMap.BTLParents)
+                {
+                    var adName = (string)btl.WrappedObject;
+                    if (ImGui.Selectable(adName))
+                    {
+                        _dupeSelectionTargetedParent = (adName, btl);
+                        break;
+                    }
+                }
+                ImGui.EndCombo();
+            }
+            if (_dupeSelectionTargetedParent.Item2 == null)
+                return;
+        }
+
+        if (ApplyImmediately)
+        {
+            ApplyImmediately = false;
+
+            Entity targetParent = _dupeSelectionTargetedParent.Item2;
+
+            var action = new MoveMapObjectsAction(Editor, sel, true, targetMap, targetParent);
+            Editor.EditorActionManager.ExecuteAction(action);
+            _comboTargetMap = ("None", null);
+            _dupeSelectionTargetedParent = ("None", null);
+        }
+    }
+
+    /// <summary>
     /// Delete
     /// </summary>
     public void ApplyDelete()

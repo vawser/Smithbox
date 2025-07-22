@@ -214,6 +214,9 @@ public class Smithbox
 
         ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
         glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
+
+        glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
+
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
         if (CFG.Current.System_Font_Chinese)
