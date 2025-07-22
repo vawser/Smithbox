@@ -58,6 +58,7 @@ public class DisplayGroupView
             case ProjectType.SDT:
             case ProjectType.ER:
             case ProjectType.AC6:
+            case ProjectType.NR:
                 _dispGroupCount = 8; //?
                 break;
             default:

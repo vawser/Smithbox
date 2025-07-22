@@ -7,6 +7,7 @@ using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.TextEditor.Utils;
 using StudioCore.Editors.TextureViewer.Enums;
+using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,12 @@ namespace StudioCore.Utilities;
 /// </summary>
 public static class AliasUtils
 {
+    public static string GetAliasName(List<AliasEntry> aliases, string id)
+    {
+        var alias = aliases.FirstOrDefault(e => e.ID == id);
+        return alias?.Name ?? string.Empty;
+    }
+
     public static void AliasTooltip(List<string> aliases, string title)
     {
         var lines = string.Join("\n- ", aliases);
@@ -504,7 +511,7 @@ public static class AliasUtils
         {
             var paramName = "ItemLotParam";
 
-            if (project.ProjectType == ProjectType.ER)
+            if (project.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 paramName = "ItemLotParam_map";
             }

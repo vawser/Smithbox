@@ -49,7 +49,7 @@ public class TexBinderView
         DisplayFileCategories_SDT();
         DisplayFileCategories_ER();
         DisplayFileCategories_AC6();
-        DisplayFileCategories_ERN();
+        DisplayFileCategories_NR();
 
         ImGui.EndChild();
 
@@ -770,11 +770,65 @@ public class TexBinderView
         }
     }
 
-    public void DisplayFileCategories_ERN()
+    public void DisplayFileCategories_NR()
     {
-        if (Project.ProjectType is ProjectType.ERN)
+        if (Project.ProjectType is ProjectType.NR)
         {
+            // Chr
+            DisplayFileSection(
+                "Characters",
+                TextureViewCategory.Characters,
+                new List<string>() { "/chr" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
 
+            // Assets
+            DisplayFileSection(
+                "Asset",
+                TextureViewCategory.Assets,
+                new List<string>() { "/asset" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // Parts
+            DisplayFileSection(
+                "Parts",
+                TextureViewCategory.Parts,
+                new List<string>() { "/parts" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // Map
+            DisplayFileSection(
+                "Map",
+                TextureViewCategory.Map,
+                new List<string>() { "/map" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // Menu
+            DisplayFileSection(
+                "Menu",
+                TextureViewCategory.Menu,
+                new List<string>() { "/menu" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // Other
+            DisplayFileSection(
+                "Other",
+                TextureViewCategory.Other,
+                new List<string>() { "/other" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // SFX
+            DisplayFileSection(
+                "Particles",
+                TextureViewCategory.Particles,
+                new List<string>() { "/sfx" },
+                Editor.Project.TextureData.PrimaryBank.Entries);
+
+            // High Definition Icons
+            DisplayFileSection(
+                "HD Icons",
+                TextureViewCategory.HighDefinitionIcons,
+                new List<string>() { "solo" },
+                Editor.Project.TextureData.PrimaryBank.PackedEntries);
         }
     }
 }

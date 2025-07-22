@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -868,6 +869,44 @@ public class ProjectEntry
     }
 
     /// <summary>
+    /// Unload the project editors and data banks
+    /// </summary>
+    public void Unload()
+    {
+        Initialized = false;
+
+        VisualData = null;
+
+        MapEditor = null;
+        ModelEditor = null;
+        TextEditor = null;
+        ParamEditor = null;
+        TimeActEditor = null;
+        GparamEditor = null;
+        MaterialEditor = null;
+        EmevdEditor = null;
+        EsdEditor = null;
+        TextureViewer = null;
+        MapEditor = null;
+        FileBrowser = null;
+        BehaviorEditor = null;
+
+        MapData = null;
+        ParamData = null;
+        MaterialData = null;
+        EmevdData = null;
+        EsdData = null;
+        GparamData = null;
+        TextData = null;
+        TextureData = null;
+        TimeActData = null;
+        FileData = null;
+        BehaviorData = null;
+
+        GC.Collect();
+    }
+
+    /// <summary>
     /// Called when a new project is being selected.
     /// </summary>
     private bool SuspendUpdate = false;
@@ -1070,6 +1109,25 @@ public class ProjectEntry
             }
         }
 
+
+        if (ProjectType is ProjectType.NR)
+        {
+            var rootDllPath = Path.Join(DataPath, "oo2core_9_win64.dll");
+            var projectDllPath = Path.Join(AppContext.BaseDirectory, "oo2core_9_win64.dll");
+
+            if (!File.Exists(rootDllPath))
+            {
+                return false;
+            }
+            else
+            {
+                if (!File.Exists(projectDllPath))
+                {
+                    File.Copy(rootDllPath, projectDllPath);
+                }
+            }
+        }
+
         return true;
     }
     #endregion
@@ -1163,8 +1221,8 @@ public class ProjectEntry
                 file = "ER-File-Dictionary.json"; break;
             case ProjectType.AC6:
                 file = "AC6-File-Dictionary.json"; break;
-            case ProjectType.ERN:
-                file = "ERN-File-Dictionary.json"; break;
+            case ProjectType.NR:
+                file = "NR-File-Dictionary.json"; break;
             default: break;
         }
 
@@ -1807,8 +1865,8 @@ public class ProjectEntry
         MapEntitySelections = new();
 
         // Information
-        var projectFolder = $@"{ProjectPath}\.smithbox\Assets\{ProjectUtils.GetGameDirectory(ProjectType)}\selections";
-        var projectFile = Path.Combine(projectFolder, "selection_groups.json");
+        var projectFolder = $"{ProjectPath}\\.smithbox\\MSB\\Entity Selections";
+        var projectFile = $"{projectFolder}\\Selection Groups.json";
 
         if (File.Exists(projectFile))
         {
@@ -1830,6 +1888,32 @@ public class ProjectEntry
             {
                 TaskLogs.AddLog($"[Smithbox] Failed to read the Map Entity Selections: {projectFile}", LogLevel.Error, Tasks.LogPriority.High, e);
             }
+        }
+        else
+        {
+            if(!Directory.Exists(projectFolder))
+            {
+                Directory.CreateDirectory(projectFolder);
+            }
+
+            string template = "{ \"Resources\": [ ] }";
+            try
+            {
+                var fs = new FileStream(projectFile, FileMode.Create);
+                var data = Encoding.ASCII.GetBytes(template);
+                fs.Write(data, 0, data.Length);
+                fs.Flush();
+                fs.Dispose();
+            }
+            catch (Exception ex)
+            {
+                TaskLogs.AddLog($"Failed to write Map Entity Selection Groups: {projectFile}\n{ex}");
+            }
+        }
+
+        if(MapEntitySelections.Resources == null)
+        {
+            MapEntitySelections.Resources = new();
         }
 
         return true;

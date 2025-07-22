@@ -5,12 +5,14 @@ using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
+using StudioCore.Platform;
 using StudioCore.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Veldrid;
@@ -28,7 +30,7 @@ public class ProjectManager
     public List<ProjectEntry> Projects = new();
     public ProjectEntry SelectedProject;
 
-    public ProjectDisplayOrder ProjectDisplayOrder;
+    public bool IsProjectLoading = false;
 
     public ProjectManager(Smithbox baseEditor)
     {
@@ -37,19 +39,6 @@ public class ProjectManager
 
     public void Update(float dt)
     {
-        var flags = ImGuiWindowFlags.MenuBar | ImGuiWindowFlags.NoMove;
-
-        // Project List
-        if (CFG.Current.Interface_Editor_ProjectList)
-        {
-            ImGui.Begin("Projects##projectList", flags);
-
-            Menubar();
-            DisplayProjectList();
-
-            ImGui.End();
-        }
-
         // Project Dock
         if (SelectedProject != null)
         {
@@ -57,159 +46,224 @@ public class ProjectManager
         }
     }
 
-    private void Menubar()
+    public void Menubar()
     {
-        if (ImGui.BeginMenuBar())
+        if (ImGui.BeginMenu($"Project"))
         {
-            if (ImGui.BeginMenu($"File"))
+            // General Actions
+            if (ImGui.MenuItem("New Project"))
             {
-                if (ImGui.MenuItem("New Project"))
-                {
-                    ProjectCreation.Show();
-                }
-                UIHelper.Tooltip($"Add a new project to the project list.");
-
-                if (SelectedProject != null)
-                {
-                    if (ImGui.MenuItem("Open Project Folder"))
-                    {
-                        Process.Start("explorer.exe", SelectedProject.ProjectPath);
-                    }
-                    UIHelper.Tooltip("Open the project folder for this project.");
-
-
-                    if (CFG.Current.ModEngineInstall != "")
-                    {
-                        if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
-                        {
-                            if (ImGui.MenuItem($"Launch Mod##launchMod"))
-                            {
-                                ModEngineUtils.LaunchMod(SelectedProject);
-                            }
-                            UIHelper.Tooltip("Launch this project with ModEngine2.");
-                        }
-                    }
-                }
-
-                ImGui.EndMenu();
+                ProjectCreation.Show();
             }
+            UIHelper.Tooltip($"Add a new project to the project list.");
 
-            ImGui.EndMenuBar();
+            UIHelper.SimpleHeader("selectedProjectHeader", "Selected Project", "The project that is currently selected.", UI.Current.ImGui_AliasName_Text);
+
+            DisplaySelectedProjectEntry();
+
+            UIHelper.SimpleHeader("possibleProjectsHeader", "Available Projects", "The projects that are avaliable.", UI.Current.ImGui_AliasName_Text);
+            // Project List
+            DisplayProjectListOfType(ProjectType.DES);
+            DisplayProjectListOfType(ProjectType.DS1);
+            DisplayProjectListOfType(ProjectType.DS1R);
+            DisplayProjectListOfType(ProjectType.DS2);
+            DisplayProjectListOfType(ProjectType.DS2S);
+            DisplayProjectListOfType(ProjectType.DS3);
+            DisplayProjectListOfType(ProjectType.BB);
+            DisplayProjectListOfType(ProjectType.SDT);
+            DisplayProjectListOfType(ProjectType.ER);
+            DisplayProjectListOfType(ProjectType.AC6);
+            DisplayProjectListOfType(ProjectType.NR);
+
+            ImGui.EndMenu();
         }
     }
 
-    /// <summary>
-    /// Display the project list -- contains all stored project entries.
-    /// </summary>
-    private unsafe void DisplayProjectList()
+    private void DisplaySelectedProjectEntry()
     {
-        UIHelper.SimpleHeader("projectListHeader", "Available Projects", "The projects currently available to select from.", UI.Current.ImGui_AliasName_Text);
-
-        var orderedProjects = Projects
-        .OrderBy(p =>
+        if (Projects.Count > 0)
         {
-            foreach (var kvp in ProjectDisplayOrder.DisplayOrder)
+            foreach (var project in Projects)
             {
-                if (kvp.Value == p.ProjectGUID)
+                if (project != SelectedProject)
+                    continue;
+
+                var imGuiID = project.ProjectGUID;
+                var projectName = $"{project.ProjectName}";
+
+                if (CFG.Current.DisplayProjectPrefix)
                 {
-                    return kvp.Key;
+                    projectName = $"[{project.ProjectType}] {projectName}";
+                }
+
+                if (ImGui.BeginMenu($"{projectName}##projectEntry_{imGuiID}"))
+                {
+                    DisplayProjectActions(project);
+
+                    ImGui.EndMenu();
                 }
             }
-            return int.MaxValue; // Put untracked projects at the end
-        })
-        .ToList();
+        }
+    }
 
-        int dragSourceIndex = -1;
-        int dragTargetIndex = -1;
+    private void DisplayProjectListOfType(ProjectType projectType)
+    {
+        var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
 
-        for (int i = 0; i < orderedProjects.Count; i++)
+        if(projectList.Count > 0)
         {
-            var project = orderedProjects[i];
-            var imGuiID = project.ProjectGUID;
-
-            // Highlight selectable
-            if (ImGui.Selectable($"{project.ProjectName}##{imGuiID}", SelectedProject == project))
+            foreach(var project in projectList)
             {
+                if (project == SelectedProject)
+                    continue;
+
+                var imGuiID = project.ProjectGUID;
+                var projectName = $"{project.ProjectName}";
+
+                if (CFG.Current.DisplayProjectPrefix)
+                {
+                    projectName = $"[{project.ProjectType}] {projectName}";
+                }
+
+                if (ImGui.BeginMenu($"{projectName}##projectEntry_{imGuiID}"))
+                {
+                    DisplayProjectActions(project);
+
+                    ImGui.EndMenu();
+                }
+            }
+        }
+    }
+
+    private void DisplayProjectActions(ProjectEntry curProject)
+    {
+        if (!curProject.Initialized)
+        {
+            if (ImGui.MenuItem("Load"))
+            {
+                SelectedProject = curProject;
                 if (!IsProjectLoading)
                 {
-                    StartupProject(project);
+                    StartupProject(curProject);
                 }
             }
-
-            // Begin drag
-            if (ImGui.BeginDragDropSource())
+        }
+        else
+        {
+            if (ImGui.MenuItem("Select"))
             {
-                int payloadIndex = i;
-                ImGui.SetDragDropPayload("PROJECT_DRAG", &payloadIndex, sizeof(int));
-                ImGui.Text(project.ProjectName);
-                ImGui.EndDragDropSource();
+                SelectedProject = curProject;
+                BaseEditor.SetProgramName(curProject);
             }
 
-            // Accept drop
-            if (ImGui.BeginDragDropTarget())
+            if (ImGui.MenuItem($"Unload##unloadProject"))
             {
-                var payload = ImGui.AcceptDragDropPayload("PROJECT_DRAG");
-                if (payload.Handle != null)
-                {
-                    int* droppedIndex = (int*)payload.Data;
-                    dragSourceIndex = *droppedIndex;
-                    dragTargetIndex = i;
-                }
-                ImGui.EndDragDropTarget();
+                curProject.Unload();
             }
 
-            if (ImGui.BeginPopupContextItem($"ProjectListContextMenu{imGuiID}"))
+            if (ImGui.MenuItem($"Reload##reloadProject"))
             {
-                if (ImGui.MenuItem($"New Project##newProject_{imGuiID}"))
+                SelectedProject = curProject;
+                if (!IsProjectLoading)
                 {
-                    ProjectCreation.Show();
+                    ReloadProject(curProject);
                 }
-
-                if (ImGui.MenuItem($"Open Project Settings##projectSettings_{imGuiID}"))
-                {
-                    ProjectSettings.Show(BaseEditor, SelectedProject);
-                }
-
-                if (ImGui.MenuItem($"Open Project Aliases##projectAliases_{imGuiID}"))
-                {
-                    ProjectAliasEditor.Show(BaseEditor, SelectedProject);
-                }
-
-                if (ImGui.MenuItem($"Open Project Enums##projectEnums_{imGuiID}"))
-                {
-                    ProjectEnumEditor.Show(BaseEditor, SelectedProject);
-                }
-
-                if (CFG.Current.ModEngineInstall != "")
-                {
-                    if (SelectedProject.ProjectType is ProjectType.DS3 or ProjectType.ER or ProjectType.AC6)
-                    {
-                        if (ImGui.MenuItem($"Launch Mod##launchMod"))
-                        {
-                            ModEngineUtils.LaunchMod(SelectedProject);
-                        }
-                        UIHelper.Tooltip("Launch this project with ModEngine2.");
-                    }
-                }
-
-                ImGui.EndPopup();
             }
         }
 
-        if (dragSourceIndex >= 0 && dragTargetIndex >= 0 && dragSourceIndex != dragTargetIndex)
-        {
-            var movedProject = orderedProjects[dragSourceIndex];
-            orderedProjects.RemoveAt(dragSourceIndex);
-            orderedProjects.Insert(dragTargetIndex, movedProject);
+        ImGui.Separator();
 
-            // Rebuild order dictionary
-            ProjectDisplayOrder.DisplayOrder.Clear();
-            for (int i = 0; i < orderedProjects.Count; i++)
+        if (ImGui.MenuItem($"Open Project Settings##projectSettings"))
+        {
+            ProjectSettings.Show(BaseEditor, curProject);
+        }
+
+        if (curProject.Initialized)
+        {
+            if (ImGui.MenuItem($"Open Project Aliases##projectAliases"))
             {
-                ProjectDisplayOrder.DisplayOrder[i] = orderedProjects[i].ProjectGUID;
+                ProjectAliasEditor.Show(BaseEditor, curProject);
             }
 
-            SaveProjectDisplayOrder();
+            if (ImGui.MenuItem($"Open Project Enums##projectEnums"))
+            {
+                ProjectEnumEditor.Show(BaseEditor, curProject);
+            }
+        }
+
+        // ME2
+        if (ModEngineHandler.IsME2Project(curProject))
+        {
+            ImGui.Separator();
+
+            if (CFG.Current.ModEngine2Install != "")
+            {
+                if (ImGui.MenuItem($"Launch Mod##launchME2Mod"))
+                {
+                    ModEngineHandler.LaunchME2Mod(curProject);
+                }
+                UIHelper.Tooltip("Launch this project with ModEngine2.");
+            }
+            else
+            {
+                if (ImGui.MenuItem($"Set ME2 Executable Location"))
+                {
+                    var modEnginePath = "";
+                    var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
+
+                    if (result)
+                    {
+                        if (modEnginePath.Contains("modengine2_launcher.exe"))
+                        {
+                            CFG.Current.ModEngine2Install = modEnginePath;
+                        }
+                        else
+                        {
+                            PlatformUtils.Instance.MessageBox("Error", "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                UIHelper.Tooltip("Set the ME2 executable location so you can launch this mod via ModEngine2.");
+            }
+        }
+
+        // ME3
+        if (ModEngineHandler.IsME3Project(curProject))
+        {
+            ImGui.Separator();
+
+            if (ModEngineHandler.ME3ProfileExists(curProject))
+            {
+                if (ImGui.MenuItem($"Launch Mod##launchME3mod"))
+                {
+                    ModEngineHandler.LaunchME3Mod(curProject);
+                }
+            }
+            else
+            {
+                if (CFG.Current.ModEngine3ProfileDirectory != "")
+                {
+                    if (ImGui.MenuItem($"Create Mod Profile##createME3profile"))
+                    {
+                        ModEngineHandler.CreateME3Profile(curProject);
+                    }
+                    UIHelper.Tooltip("Create a ME3 profile file for this mod.");
+                }
+                else
+                {
+                    if (ImGui.MenuItem($"Set ME3 Profile Directory"))
+                    {
+                        var profilePath = "";
+                        var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+
+                        if (result)
+                        {
+                            CFG.Current.ModEngine3ProfileDirectory = profilePath;
+                        }
+                    }
+                    UIHelper.Tooltip("Set the directory you wish to store ME3 profiles in.");
+                }
+            }
         }
     }
 
@@ -250,7 +304,6 @@ public class ProjectManager
     public void Setup()
     {
         SetupFolders();
-        LoadProjectDisplayOrder();
         LoadExistingProjects();
     }
 
@@ -285,6 +338,9 @@ public class ProjectManager
             var json = JsonSerializer.Serialize(curProject, SmithboxSerializerContext.Default.ProjectEntry);
 
             File.WriteAllText(file, json);
+
+            // Update the legacy project.json
+            CreateLegacyProjectJSON(curProject);
         }
     }
 
@@ -306,15 +362,6 @@ public class ProjectManager
     {
         // Read all the stored project jsons and create an existing Project dict
         var projectJsonList = GetStoredProjectJsonList();
-
-        var buildProjectOrder = false;
-
-        // If it is not set, create initial order
-        if (ProjectDisplayOrder.DisplayOrder == null)
-        {
-            ProjectDisplayOrder.DisplayOrder = new();
-            buildProjectOrder = true;
-        }
 
         for (int i = 0; i < projectJsonList.Count; i++)
         {
@@ -338,11 +385,6 @@ public class ProjectManager
                         curProject.BaseEditor = BaseEditor;
 
                         Projects.Add(curProject);
-
-                        if (buildProjectOrder)
-                        {
-                            ProjectDisplayOrder.DisplayOrder.Add(i, curProject.ProjectGUID);
-                        }
                     }
                 }
                 catch (Exception e)
@@ -350,11 +392,6 @@ public class ProjectManager
                     TaskLogs.AddLog($"[Smithbox] Failed to load project: {entry}", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
-        }
-
-        if (buildProjectOrder)
-        {
-            SaveProjectDisplayOrder();
         }
 
         if (Projects.Count > 0)
@@ -374,50 +411,6 @@ public class ProjectManager
         }
     }
 
-    private void LoadProjectDisplayOrder()
-    {
-        var folder = ProjectUtils.GetConfigurationFolder();
-        var file = Path.Combine(folder, "Project Display Order.json");
-
-        if (!File.Exists(file))
-        {
-            ProjectDisplayOrder = new ProjectDisplayOrder();
-        }
-        else
-        {
-            try
-            {
-                var filestring = File.ReadAllText(file);
-
-                try
-                {
-                    var options = new JsonSerializerOptions();
-                    ProjectDisplayOrder = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectDisplayOrder);
-                }
-                catch (Exception e)
-                {
-                    TaskLogs.AddLog("[Smithbox] Failed to deserialize Project Display Order", LogLevel.Error, Tasks.LogPriority.High, e);
-                    ProjectDisplayOrder = new ProjectDisplayOrder();
-                }
-            }
-            catch (Exception e)
-            {
-                TaskLogs.AddLog("[Smithbox] Failed to read Project Display Order", LogLevel.Error, Tasks.LogPriority.High, e);
-                ProjectDisplayOrder = new ProjectDisplayOrder();
-            }
-        }
-    }
-
-    public void SaveProjectDisplayOrder()
-    {
-        var folder = ProjectUtils.GetConfigurationFolder();
-        var file = Path.Combine(folder, "Project Display Order.json");
-
-        var json = JsonSerializer.Serialize(ProjectDisplayOrder, SmithboxSerializerContext.Default.ProjectDisplayOrder);
-
-        File.WriteAllText(file, json);
-    }
-
     public void CreateProject()
     {
         var guid = Guid.NewGuid();
@@ -429,6 +422,7 @@ public class ProjectManager
         var newProject = new ProjectEntry(BaseEditor, guid, projectName, projectPath, dataPath, projectType);
 
         newProject.AutoSelect = ProjectCreation.AutoSelect;
+        newProject.ImportedParamRowNames = !ProjectCreation.RowNameImport;
 
         newProject.EnableMapEditor = ProjectCreation.EnableMapEditor;
         newProject.EnableModelEditor = ProjectCreation.EnableModelEditor;
@@ -454,13 +448,12 @@ public class ProjectManager
             StartupProject(newProject);
     }
 
-    public bool IsProjectLoading = false;
-
     public async void StartupProject(ProjectEntry curProject)
     {
         ProjectEntry oldProject = SelectedProject;
 
         BaseEditor.SetProgramName(curProject);
+        CreateLegacyProjectJSON(curProject);
 
         // Signal shutdown to existing project if it is loaded
         if (oldProject != null)
@@ -490,6 +483,57 @@ public class ProjectManager
 
         if (oldProject != null)
             oldProject.Reset();
+    }
+
+    public async void ReloadProject(ProjectEntry curProject)
+    {
+        ProjectEntry oldProject = SelectedProject;
+
+        BaseEditor.SetProgramName(curProject);
+        CreateLegacyProjectJSON(curProject);
+
+        // Signal shutdown to existing project if it is loaded
+        if (oldProject != null)
+            SelectedProject.Suspend();
+
+        IsProjectLoading = true;
+
+        Task<bool> projectSetupTask = curProject.Init();
+        bool projectSetupTaskResult = await projectSetupTask;
+
+        foreach (var tEntry in Projects)
+        {
+            tEntry.IsSelected = false;
+        }
+        curProject.IsSelected = true;
+
+        SelectedProject = curProject;
+
+        // Used for the DCX heuristic
+        BinaryReaderEx.CurrentProjectType = $"{curProject.ProjectType}";
+
+        IsProjectLoading = false;
+
+        if (oldProject != null)
+            oldProject.Reset();
+    }
+
+    /// <summary>
+    /// Creates a legacy project.json file for other tools to use.
+    /// </summary>
+    /// <param name="curProject"></param>
+    public void CreateLegacyProjectJSON(ProjectEntry curProject)
+    {
+        var jsonPath = $"{curProject.ProjectPath}/project.json";
+
+        if(Directory.Exists(curProject.ProjectPath))
+        {
+            var legacyProjectJson = new LegacyProjectJSON(curProject);
+
+            var json = JsonSerializer.Serialize(legacyProjectJson, SmithboxSerializerContext.Default.LegacyProjectJSON);
+
+            File.WriteAllText(jsonPath, json);
+        }
     }
 }
 

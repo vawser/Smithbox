@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>SCENARIO_PLACEMENT_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 unknown_1a"/>
+    <Field Def="u8 unknown_1b"/>
+    <Field Def="u8 unknown_1c"/>
+    <Field Def="u8 unknown_1d"/>
+    <Field Def="u8 unknown_2a"/>
+    <Field Def="u8 unknown_2b"/>
+    <Field Def="u8 unknown_2c"/>
+    <Field Def="u8 unknown_2e"/>
+    <Field Def="s32 eventFlag_unk1"/>
+    <Field Def="s32 eventFlag_unk2"/>
+    <Field Def="s32 charaInitParamId"/>
+  </Fields>
+</PARAMDEF>

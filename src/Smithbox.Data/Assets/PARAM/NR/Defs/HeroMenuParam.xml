@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>HERO_MENU_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s32 charaInitParamId"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 heroMenuCameraId"/>
+    <Field Def="s32 unknown_5"/>
+    <Field Def="f32 unknown_6"/>
+    <Field Def="f32 unknown_7"/>
+  </Fields>
+</PARAMDEF>

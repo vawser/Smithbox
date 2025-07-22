@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>POSTURE_CONTROL_PARAM_WEP_RIGHT_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s16 a000_rightArmFB" />
+    <Field Def="s16 a000_rightWristFB" />
+    <Field Def="s16 a000_rightWristIO" />
+    <Field Def="s16 a000_rightWeaponRotation" />
+
+    <Field Def="s16 a000_leftArmFB" />
+    <Field Def="s16 a000_leftWristFB" />
+    <Field Def="s16 a000_leftWristIO" />
+    <Field Def="s16 a000_lefttWeaponRotation" />
+
+    <Field Def="s16 a002_rightArmFB" />
+    <Field Def="s16 a002_rightWristFB" />
+    <Field Def="s16 a002_rightWristIO" />
+    <Field Def="s16 a002_rightWeaponRotation" />
+
+    <Field Def="s16 a002_leftArmFB" />
+    <Field Def="s16 a002_leftWristFB" />
+    <Field Def="s16 a002_leftWristIO" />
+    <Field Def="s16 a002_lefttWeaponRotation" />
+
+    <Field Def="s16 a003_rightArmFB" />
+    <Field Def="s16 a003_rightWristFB" />
+    <Field Def="s16 a003_rightWristIO" />
+    <Field Def="s16 a003_rightWeaponRotation" />
+
+    <Field Def="s16 a003_leftArmFB" />
+    <Field Def="s16 a003_leftWristFB" />
+    <Field Def="s16 a003_leftWristIO" />
+    <Field Def="s16 a003_lefttWeaponRotation" />
+
+    <Field Def="s16 a010_rightArmFB" />
+    <Field Def="s16 a010_rightWristFB" />
+    <Field Def="s16 a010_rightWristIO" />
+    <Field Def="s16 a010_rightWeaponRotation" />
+
+    <Field Def="s16 a010_leftArmFB" />
+    <Field Def="s16 a010_leftWristFB" />
+    <Field Def="s16 a010_leftWristIO" />
+    <Field Def="s16 a010_lefttWeaponRotation" />
+
+    <Field Def="s16 a012_rightArmFB" />
+    <Field Def="s16 a012_rightWristFB" />
+    <Field Def="s16 a012_rightWristIO" />
+    <Field Def="s16 a012_rightWeaponRotation" />
+
+    <Field Def="s16 a012_leftArmFB" />
+    <Field Def="s16 a012_leftWristFB" />
+    <Field Def="s16 a012_leftWristIO" />
+    <Field Def="s16 a012_lefttWeaponRotation" />
+
+    <Field Def="s16 a013_rightArmFB" />
+    <Field Def="s16 a013_rightWristFB" />
+    <Field Def="s16 a013_rightWristIO" />
+    <Field Def="s16 a013_rightWeaponRotation" />
+
+    <Field Def="s16 a013_leftArmFB" />
+    <Field Def="s16 a013_leftWristFB" />
+    <Field Def="s16 a013_leftWristIO" />
+    <Field Def="s16 a013_lefttWeaponRotation" />
+
+    <Field Def="s16 a014_rightArmFB" />
+    <Field Def="s16 a014_rightWristFB" />
+    <Field Def="s16 a014_rightWristIO" />
+    <Field Def="s16 a014_rightWeaponRotation" />
+
+    <Field Def="s16 a014_leftArmFB" />
+    <Field Def="s16 a014_leftWristFB" />
+    <Field Def="s16 a014_leftWristIO" />
+    <Field Def="s16 a014_lefttWeaponRotation" />
+    
+    <Field Def="dummy8 pad[80]" />
+  </Fields>
+</PARAMDEF>

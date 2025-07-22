@@ -1,9 +1,12 @@
 ﻿using Hexa.NET.ImGui;
+using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
+using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace StudioCore.EventScriptEditorNS;
 
@@ -40,6 +43,22 @@ public class EmevdEventView
             {
                 var evt = Editor.Selection.SelectedScript.Events[i];
 
+                // By default the name is null, as we need to apply it from EMELD
+                if(evt.Name == null)
+                {
+                    var emeldEntry = Project.EmevdData.PrimaryBank.EventNames
+                        .FirstOrDefault(e => e.Key.Filename == Editor.Selection.SelectedFileEntry.Filename);
+
+                    if(emeldEntry.Value != null)
+                    {
+                        var match = emeldEntry.Value.Events.FirstOrDefault(e => e.ID == evt.ID);
+                        if(match != null)
+                        {
+                            evt.Name = match.Name;
+                        }
+                    }
+                }
+
                 var eventName = evt.Name;
                 if (Editor.Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
                 {
@@ -70,11 +89,17 @@ public class EmevdEventView
                     {
                         if (Editor.Selection.SelectedEventIndex == i)
                         {
-                            Editor.ContextMenu.EventContextMenu(evt);
+                            EventContextMenu(evt);
                         }
                     }
 
                     UIHelper.DisplayColoredAlias(eventName, UI.Current.ImGui_AliasName_Text);
+                }
+
+                if (Editor.Selection.FocusEventSelection)
+                {
+                    Editor.Selection.FocusEventSelection = false;
+                    ImGui.SetScrollHereY();
                 }
             }
         }
@@ -82,5 +107,44 @@ public class EmevdEventView
         ImGui.EndChild();
 
         ImGui.End();
+    }
+    public void EventContextMenu(EMEVD.Event evt)
+    {
+        if (ImGui.BeginPopupContextItem($"EventContext##EventContext{evt.ID}"))
+        {
+            // Event Name
+            var curName = Editor.Selection.SelectedEvent.Name;
+            var name = "";
+            if (curName != "")
+                name = curName;
+
+            var input = new InputTextHandler(name);
+            input.Draw("##nameInput", out string newValue);
+
+            if (ImGui.IsItemDeactivatedAfterEdit())
+            {
+                evt.Name = newValue;
+
+                var curEmeldSelection = Project.EmevdData.PrimaryBank.EventNames
+                    .FirstOrDefault(e => e.Key.Filename == Editor.Selection.SelectedFileEntry.Filename);
+
+                if(curEmeldSelection.Value != null)
+                {
+                    var emeld = curEmeldSelection.Value;
+
+                    var eventEntry = emeld.Events.FirstOrDefault(e => e.ID == evt.ID);
+                    if(eventEntry != null)
+                    {
+                        eventEntry.Name = newValue;
+                    }
+                    else
+                    {
+                        emeld.Events.Add(new EMELD.Event(evt.ID, evt.Name));
+                    }
+                }
+            }
+
+            ImGui.EndPopup();
+        }
     }
 }

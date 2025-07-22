@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <characterId
+    AltName="Character ID"
+    Wiki="The character this applies to."
+    CharacterAlias="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

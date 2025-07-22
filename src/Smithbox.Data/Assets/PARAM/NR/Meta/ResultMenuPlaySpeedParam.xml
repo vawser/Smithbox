@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <playbackSpeed
+    AltName="Playback Speed"
+    Wiki="The playback speed of the result menu." />
+  
+    <optionTextId
+    AltName="Option Text ID"
+    Wiki="The text to use for this option."
+    FmgRef="Modern_Menu_Text" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

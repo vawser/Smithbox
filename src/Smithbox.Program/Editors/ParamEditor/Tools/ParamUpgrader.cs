@@ -38,7 +38,7 @@ public class ParamUpgrader
 
     public bool SupportsParamUpgrading(ProjectEntry curProject)
     {
-        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             return true;
 
         return false;
@@ -181,6 +181,24 @@ public class ParamUpgrader
             ImGui.EndTable();
         }
 
+        // Conflicts
+        if (UpgraderInfoSetup && OldRegulationSetup && !ConflictsChecked)
+        {
+            if (ImGui.Button("Check for Conflicts", buttonSize))
+            {
+                CheckForConflicts();
+            }
+        }
+
+        // Apply Upgrade
+        if (UpgraderInfoSetup && OldRegulationSetup && ConflictsChecked && !UpgradePerformed)
+        {
+            if (ImGui.Button("Apply Upgrade", buttonSize))
+            {
+                UpgradeParams();
+            }
+        }
+
         // Conflict List
         if (ConflictsChecked)
         {
@@ -204,7 +222,10 @@ public class ParamUpgrader
 
                         ImGui.TableSetColumnIndex(1);
 
-                        ImGui.Text($"{entry.Value}");
+                        foreach(var cEntry in entry.Value)
+                        {
+                            ImGui.Text($"{cEntry}");
+                        }
                     }
 
                     ImGui.EndTable();
@@ -224,24 +245,6 @@ public class ParamUpgrader
         {
             SetupOldRegulation();
             OldRegulationSetup = true;
-        }
-
-        // Conflicts
-        if (UpgraderInfoSetup && OldRegulationSetup && !ConflictsChecked)
-        {
-            if (ImGui.Button("Check for Conflicts", buttonSize))
-            {
-                CheckForConflicts();
-            }
-        }
-
-        // Apply Upgrade
-        if (UpgraderInfoSetup && OldRegulationSetup && ConflictsChecked && !UpgradePerformed)
-        {
-            if (ImGui.Button("Apply Upgrade", buttonSize))
-            {
-                UpgradeParams();
-            }
         }
     }
 
@@ -422,6 +425,10 @@ public class ParamUpgrader
         {
             OldRegulationBinder = SFUtil.DecryptAC6Regulation(oldRegPath);
         }
+        else if (TargetProject.ProjectType == ProjectType.NR)
+        {
+            OldRegulationBinder = SFUtil.DecryptNightreignRegulation(oldRegPath);
+        }
 
         OldRegulationParams = new();
         ulong version;
@@ -544,7 +551,7 @@ public class ParamUpgrader
             {
                 if (p.ParamType == "CHR_MODEL_PARAM_ST")
                 {
-                    if (p.FixupERField(12, 16))
+                    if (p.ExpandParamSize(12, 16))
                         TaskLogs.AddLog($"CHR_MODEL_PARAM_ST fixed up.");
                 }
             }
@@ -554,17 +561,17 @@ public class ParamUpgrader
             {
                 if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
                 {
-                    if (p.FixupERField(880, 1024))
+                    if (p.ExpandParamSize(880, 1024))
                         TaskLogs.AddLog($"GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
                 }
                 if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
                 {
-                    if (p.FixupERField(112, 144))
+                    if (p.ExpandParamSize(112, 144))
                         TaskLogs.AddLog($"POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
                 }
                 if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
                 {
-                    if (p.FixupERField(32, 48))
+                    if (p.ExpandParamSize(32, 48))
                         TaskLogs.AddLog($"SIGN_PUDDLE_PARAM_ST fixed up.");
                 }
             }

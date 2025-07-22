@@ -55,27 +55,30 @@ public class TimeActEventPropertyView
         ImGui.AlignTextToFramePadding();
         ImGui.Selectable($@"End Time##taeEventProperty_StartTime", false);
 
-        for (int i = 0; i < Editor.Selection.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
+        if (Editor.Selection.CurrentTimeActEvent.Parameters != null)
         {
-            var property = Editor.Selection.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
-
-            if (Editor.Filters.TimeActEventPropertyFilter(property))
+            for (int i = 0; i < Editor.Selection.CurrentTimeActEvent.Parameters.ParameterValues.Count; i++)
             {
-                var isSelected = false;
-                if (i == Editor.Selection.CurrentTimeActEventPropertyIndex)
+                var property = Editor.Selection.CurrentTimeActEvent.Parameters.ParameterValues.ElementAt(i).Key;
+
+                if (Editor.Filters.TimeActEventPropertyFilter(property))
                 {
-                    isSelected = true;
+                    var isSelected = false;
+                    if (i == Editor.Selection.CurrentTimeActEventPropertyIndex)
+                    {
+                        isSelected = true;
+                    }
+
+                    ImGui.AlignTextToFramePadding();
+                    if (ImGui.Selectable($@"{property}##taeEventProperty{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
+                    {
+                        Editor.Selection.TimeActEventPropertyChange(property, i);
+                    }
+
+                    Editor.ContextMenu.TimeActEventPropertiesMenu(isSelected, i.ToString());
+
+                    Editor.Decorator.HandleNameColumn(property);
                 }
-
-                ImGui.AlignTextToFramePadding();
-                if (ImGui.Selectable($@"{property}##taeEventProperty{i}", isSelected, ImGuiSelectableFlags.AllowDoubleClick))
-                {
-                    Editor.Selection.TimeActEventPropertyChange(property, i);
-                }
-
-                Editor.ContextMenu.TimeActEventPropertiesMenu(isSelected, i.ToString());
-
-                Editor.Decorator.HandleNameColumn(property);
             }
         }
 

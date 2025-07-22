@@ -80,13 +80,11 @@ namespace Andre.Formats
 
         public static readonly string[] NightreignArchiveNames =
         [
-            "Data0",
-            "Data1",
-            "Data2",
-            "Data3",
-            "DLC",
+            "data0",
+            "data1",
+            "data2",
+            "data3",
             @"sd\sd",
-            @"sd\sd_dlc02",
         ];
 
         public static string[] GetArchiveNames(Game game)
@@ -102,7 +100,7 @@ namespace Andre.Formats
                 Game.ER => EldenRingArchiveNames,
                 Game.AC6 => ArmoredCore6ArchiveNames,
                 Game.DS2 => DarkSouls2ArchiveNames,
-                Game.ERN => NightreignArchiveNames,
+                Game.NR => NightreignArchiveNames,
                 _ => throw new ArgumentOutOfRangeException(nameof(game), game, null)
             };
 

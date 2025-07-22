@@ -5,6 +5,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.META;
 using StudioCore.Formats.JSON;
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using StudioCore.Tasks;
 using System;
@@ -114,7 +115,20 @@ public class ParamData
 
         if(!Project.ImportedParamRowNames)
         {
-            PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+            var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (dialog is DialogResult.OK)
+            {
+                // These two rely on row index significantly, so we should always import the default names via that for them.
+                if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
+                {
+                    PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
+                }
+                // Where other games either never or very rarely use it, so use the more flexible ID import
+                else
+                {
+                    PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                }
+            }
 
             Project.ImportedParamRowNames = true;
             BaseEditor.ProjectManager.SaveProject(Project);
@@ -173,8 +187,8 @@ public class ParamData
                 }
                 break;
 
-            case ProjectType.ERN:
-                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ERN)
+            case ProjectType.NR:
+                if (CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR)
                 {
                     PrimaryBank.RowNameRestore();
                 }
@@ -471,7 +485,7 @@ public class ParamData
 
     public ParamFieldMeta GetParamFieldMeta(ParamMeta curMeta, PARAMDEF.Field def)
     {
-        if (curMeta.Fields.ContainsKey(def))
+        if (curMeta != null && curMeta.Fields != null && curMeta.Fields.ContainsKey(def))
         {
             return curMeta.Fields[def];
         }

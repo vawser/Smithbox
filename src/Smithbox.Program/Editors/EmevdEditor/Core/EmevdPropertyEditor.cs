@@ -26,7 +26,7 @@ public class EmevdPropertyEditor
     /// <summary>
     /// Handles the display and processing of instruction argument edits
     /// </summary>
-    public (bool, bool) InstructionArgumentPropertyRow(ArgDoc argDoc, object arg, out object newValue)
+    public (bool, bool) InstructionArgumentPropertyRow(int index, ArgDoc argDoc, object arg, out object newValue)
     {
         ImGui.SetNextItemWidth(-1);
 
@@ -41,7 +41,7 @@ public class EmevdPropertyEditor
             var strval = $@"{val}";
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 99))
+            if (ImGui.InputText($"##value{index}", ref strval, 99))
             {
                 var res = long.TryParse(strval, out val);
                 if (res)
@@ -63,7 +63,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -77,7 +77,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{index}", ref val))
                 {
                     newValue = val;
                     isChanged = true;
@@ -97,7 +97,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -111,7 +111,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 16))
+                if (ImGui.InputText($"##value{index}", ref strval, 16))
                 {
                     var res = uint.TryParse(strval, out val);
                     if (res)
@@ -134,7 +134,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -148,7 +148,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{index}", ref val))
                 {
                     newValue = (short)val;
                     isChanged = true;
@@ -168,7 +168,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -182,7 +182,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 5))
+                if (ImGui.InputText($"##value{index}", ref strval, 5))
                 {
                     var res = ushort.TryParse(strval, out val);
                     if (res)
@@ -205,7 +205,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -219,7 +219,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputInt($"##value{argDoc.Name}", ref val))
+                if (ImGui.InputInt($"##value{index}", ref val))
                 {
                     newValue = (sbyte)val;
                     isChanged = true;
@@ -239,7 +239,7 @@ public class EmevdPropertyEditor
                     bVar = true;
 
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.Checkbox($"##value{argDoc.Name}", ref bVar))
+                if (ImGui.Checkbox($"##value{index}", ref bVar))
                 {
                     if (bVar == true)
                         val = 1;
@@ -253,7 +253,7 @@ public class EmevdPropertyEditor
             else
             {
                 ImGui.AlignTextToFramePadding();
-                if (ImGui.InputText($"##value{argDoc.Name}", ref strval, 3))
+                if (ImGui.InputText($"##value{index}", ref strval, 3))
                 {
                     var res = byte.TryParse(strval, out val);
                     if (res)
@@ -269,7 +269,7 @@ public class EmevdPropertyEditor
             var val = (bool)arg;
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Checkbox($"##value{argDoc.Name}", ref val))
+            if (ImGui.Checkbox($"##value{index}", ref val))
             {
                 newValue = val;
                 isChanged = true;
@@ -280,7 +280,7 @@ public class EmevdPropertyEditor
             var val = (float)arg;
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputFloat($"##value{argDoc.Name}", ref val))
+            if (ImGui.InputFloat($"##value{index}", ref val))
             {
                 newValue = val;
                 isChanged = true;
@@ -295,7 +295,7 @@ public class EmevdPropertyEditor
             }
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.InputText($"##value{argDoc.Name}", ref val, 99))
+            if (ImGui.InputText($"##value{index}", ref val, 99))
             {
                 newValue = val;
                 isChanged = true;

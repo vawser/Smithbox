@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andre.SoapstoneLib", "src\A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Tests", "src\Smithbox.Tests\Smithbox.Tests.csproj", "{C438DB12-F15F-4D20-8A69-BBF09A663AD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smithbox.Updater", "src\Smithbox.Updater\Smithbox.Updater.csproj", "{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -290,6 +292,14 @@ Global
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|x64.ActiveCfg = Release|Any CPU
 		{C438DB12-F15F-4D20-8A69-BBF09A663AD4}.Release|x64.Build.0 = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{953BDAB7-9CC1-BDEA-33B7-81D4A8975FF5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

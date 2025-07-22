@@ -1270,7 +1270,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part ||
             WrappedObject is MSBE.Part ||
             WrappedObject is MSBS.Part ||
-            WrappedObject is MSB_AC6.Part ? true : false;
+            WrappedObject is MSB_AC6.Part ||
+            WrappedObject is MSB_NR.Part ? true : false;
     }
 
     /// <summary>
@@ -1285,7 +1286,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Region ||
             WrappedObject is MSBE.Region ||
             WrappedObject is MSBS.Region ||
-            WrappedObject is MSB_AC6.Region ? true : false;
+            WrappedObject is MSB_AC6.Region ||
+            WrappedObject is MSB_NR.Region ? true : false;
     }
 
     /// <summary>
@@ -1300,7 +1302,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Event ||
             WrappedObject is MSBE.Event ||
             WrappedObject is MSBS.Event ||
-            WrappedObject is MSB_AC6.Event ? true : false;
+            WrappedObject is MSB_AC6.Event ||
+            WrappedObject is MSB_NR.Event ? true : false;
     }
 
     /// <summary>
@@ -1322,7 +1325,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.Enemy ||
             WrappedObject is MSBE.Part.Enemy ||
             WrappedObject is MSBS.Part.Enemy ||
-            WrappedObject is MSB_AC6.Part.Enemy ? true : false;
+            WrappedObject is MSB_AC6.Part.Enemy ||
+            WrappedObject is MSB_NR.Part.Enemy ? true : false;
     }
 
     /// <summary>
@@ -1336,7 +1340,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.DummyEnemy ||
             WrappedObject is MSBE.Part.DummyEnemy ||
             WrappedObject is MSBS.Part.DummyEnemy ||
-            WrappedObject is MSB_AC6.Part.DummyEnemy ? true : false;
+            WrappedObject is MSB_AC6.Part.DummyEnemy ||
+            WrappedObject is MSB_NR.Part.DummyEnemy ? true : false;
     }
 
     /// <summary>
@@ -1350,7 +1355,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.Object ||
             WrappedObject is MSBE.Part.Asset ||
             WrappedObject is MSBS.Part.Object ||
-            WrappedObject is MSB_AC6.Part.Asset ? true : false;
+            WrappedObject is MSB_AC6.Part.Asset ||
+            WrappedObject is MSB_NR.Part.Asset ? true : false;
     }
 
     /// <summary>
@@ -1359,7 +1365,8 @@ public class Entity : ISelectable, IDisposable
     public bool IsPartPureAsset()
     {
         return WrappedObject is MSBE.Part.Asset ||
-            WrappedObject is MSB_AC6.Part.Asset ? true : false;
+            WrappedObject is MSB_AC6.Part.Asset ||
+            WrappedObject is MSB_NR.Part.Asset ? true : false;
     }
 
     /// <summary>
@@ -1373,7 +1380,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.DummyObject ||
             WrappedObject is MSBE.Part.DummyAsset ||
             WrappedObject is MSBS.Part.DummyObject ||
-            WrappedObject is MSB_AC6.Part.DummyAsset ? true : false;
+            WrappedObject is MSB_AC6.Part.DummyAsset ||
+            WrappedObject is MSB_NR.Part.DummyAsset ? true : false;
     }
 
     /// <summary>
@@ -1387,7 +1395,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.MapPiece ||
             WrappedObject is MSBE.Part.MapPiece ||
             WrappedObject is MSBS.Part.MapPiece ||
-            WrappedObject is MSB_AC6.Part.MapPiece ? true : false;
+            WrappedObject is MSB_AC6.Part.MapPiece ||
+            WrappedObject is MSB_NR.Part.MapPiece ? true : false;
     }
 
     /// <summary>
@@ -1401,7 +1410,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.Collision ||
             WrappedObject is MSBE.Part.Collision ||
             WrappedObject is MSBS.Part.Collision ||
-            WrappedObject is MSB_AC6.Part.Collision ? true : false;
+            WrappedObject is MSB_AC6.Part.Collision ||
+            WrappedObject is MSB_NR.Part.Collision ? true : false;
     }
 
     /// <summary>
@@ -1415,7 +1425,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Part.ConnectCollision ||
             WrappedObject is MSBE.Part.ConnectCollision ||
             WrappedObject is MSBS.Part.ConnectCollision ||
-            WrappedObject is MSB_AC6.Part.ConnectCollision ? true : false;
+            WrappedObject is MSB_AC6.Part.ConnectCollision ||
+            WrappedObject is MSB_NR.Part.ConnectCollision ? true : false;
     }
 
     /// <summary>
@@ -1429,7 +1440,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSBD.Event.Treasure ||
             WrappedObject is MSBE.Event.Treasure ||
             WrappedObject is MSBS.Event.Treasure ||
-            WrappedObject is MSB_AC6.Event.Treasure ? true : false;
+            WrappedObject is MSB_AC6.Event.Treasure ||
+            WrappedObject is MSB_NR.Event.Treasure ? true : false;
     }
 
     /// <summary>
@@ -1441,7 +1453,8 @@ public class Entity : ISelectable, IDisposable
             WrappedObject is MSB3.Event.ObjAct ||
             WrappedObject is MSBB.Event.ObjAct ||
             WrappedObject is MSBE.Event.ObjAct ||
-            WrappedObject is MSBS.Event.ObjAct ? true : false;
+            WrappedObject is MSBS.Event.ObjAct ||
+            WrappedObject is MSB_NR.Event.ObjAct ? true : false;
     }
 
     /// <summary>
@@ -1452,7 +1465,8 @@ public class Entity : ISelectable, IDisposable
         return WrappedObject is MSB3.Event.PatrolInfo ||
             WrappedObject is MSBB.Event.PatrolInfo ||
             WrappedObject is MSBE.Event.PatrolInfo ||
-            WrappedObject is MSBS.Event.PatrolInfo ? true : false;
+            WrappedObject is MSBS.Event.PatrolInfo ||
+            WrappedObject is MSB_NR.Event.PatrolInfo ? true : false;
     }
 
     /// <summary>
@@ -1460,7 +1474,8 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool IsEventMount()
     {
-        return WrappedObject is MSBE.Event.Mount ? true : false;
+        return WrappedObject is MSBE.Event.Mount ||
+            WrappedObject is MSB_NR.Event.Mount ? true : false;
     }
 
     /// <summary>
@@ -1468,7 +1483,8 @@ public class Entity : ISelectable, IDisposable
     /// </summary>
     public bool IsRegionConnection()
     {
-        return WrappedObject is MSBE.Region.Connection ? true : false;
+        return WrappedObject is MSBE.Region.Connection ||
+            WrappedObject is MSB_NR.Region.Connection ? true : false;
     }
 
     /// <summary>
@@ -1619,7 +1635,11 @@ public class MsbEntity : Entity
     /// <summary>
     /// The map container this entity belongs to.
     /// </summary>
-    public MapContainer ContainingMap => (MapContainer)Container;
+    public MapContainer ContainingMap
+    {
+        get => (MapContainer)Container;
+        set => Container = value;
+    }
 
     /// <summary>
     /// The Map Editor name for this entity.
@@ -1738,62 +1758,130 @@ public class MsbEntity : Entity
         if (paramEditor == null)
             return null;
 
-        switch (curProjectType)
+        if (paramEditor.Project.ParamData.PrimaryBank.Params.ContainsKey("NpcParam"))
         {
-            case ProjectType.DS3:
-                if (WrappedObject is MSB3.Part.EnemyBase ds3e)
-                {
-                    var npcParamId = ds3e.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.BB:
-                if (WrappedObject is MSBB.Part.EnemyBase bbe)
-                {
-                    var npcParamId = bbe.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.SDT:
-                if (WrappedObject is MSB3.Part.EnemyBase sdte)
-                {
-                    var npcParamId = sdte.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.ER:
-                if (WrappedObject is MSBE.Part.EnemyBase ere)
-                {
-                    var npcParamId = ere.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId]);
-                }
-                break;
-            case ProjectType.DES:
-                if (WrappedObject is MSBD.Part.EnemyBase dese)
-                {
-                    var npcParamId = dese.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
-                }
-                break;
-            case ProjectType.DS1:
-            case ProjectType.DS1R:
-                if (WrappedObject is MSB1.Part.EnemyBase ds1e)
-                {
-                    var npcParamId = ds1e.NPCParamID;
-                    return callback(paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"][npcParamId], 16);
-                }
+            var npcParam = paramEditor.Project.ParamData.PrimaryBank.Params?["NpcParam"];
 
-                break;
-            case ProjectType.DS2S:
-            case ProjectType.AC6:
-            case ProjectType.DS2:
-            case ProjectType.AC4:
-            case ProjectType.ACFA:
-            case ProjectType.ACV:
-            case ProjectType.ACVD:
-            case ProjectType.Undefined:
-            default:
-                return null;
+            switch (curProjectType)
+            {
+                case ProjectType.DS3:
+                    if (WrappedObject is MSB3.Part.EnemyBase ds3e)
+                    {
+                        var npcParamId = ds3e.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.BB:
+                    if (WrappedObject is MSBB.Part.EnemyBase bbe)
+                    {
+                        var npcParamId = bbe.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.SDT:
+                    if (WrappedObject is MSB3.Part.EnemyBase sdte)
+                    {
+                        var npcParamId = sdte.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.ER:
+                    if (WrappedObject is MSBE.Part.EnemyBase ere)
+                    {
+                        var npcParamId = ere.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.NR:
+                    if (WrappedObject is MSB_NR.Part.EnemyBase nre)
+                    {
+                        var npcParamId = nre.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId]);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.DES:
+                    if (WrappedObject is MSBD.Part.EnemyBase dese)
+                    {
+                        var npcParamId = dese.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId], 16);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    break;
+                case ProjectType.DS1:
+                case ProjectType.DS1R:
+                    if (WrappedObject is MSB1.Part.EnemyBase ds1e)
+                    {
+                        var npcParamId = ds1e.NPCParamID;
+
+                        if (npcParam.ContainsRow(npcParamId))
+                        {
+                            return callback(npcParam[npcParamId], 16);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+
+                    break;
+                case ProjectType.DS2S:
+                case ProjectType.AC6:
+                case ProjectType.DS2:
+                case ProjectType.AC4:
+                case ProjectType.ACFA:
+                case ProjectType.ACV:
+                case ProjectType.ACVD:
+                case ProjectType.Undefined:
+                default:
+                    return null;
+            }
         }
 
         return null;

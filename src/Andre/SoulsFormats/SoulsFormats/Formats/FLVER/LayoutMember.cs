@@ -53,6 +53,7 @@ namespace SoulsFormats
                         case LayoutType.UV:
                         case LayoutType.Byte4E:
                         case LayoutType.Short2ToFloat2B:
+                        case LayoutType.UShort2:
                             return 4;
 
                         case LayoutType.Float2:
@@ -176,6 +177,11 @@ namespace SoulsFormats
             /// Two shorts and two shorts.
             /// </summary>
             UVPair = 0x16,
+
+            /// <summary>
+            /// Two unsigned shorts.
+            /// </summary>
+            UShort2 = 0x17,
 
             /// <summary>
             /// Four shorts, maybe unsigned?

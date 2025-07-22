@@ -1,16 +1,9 @@
 ﻿using Hexa.NET.ImGui;
-using Org.BouncyCastle.Utilities;
 using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.Editors.MapEditor;
 using StudioCore.Interface;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudioCore.Editors.ModelEditor.Core.Properties;
 
@@ -32,26 +25,37 @@ public class MatbinPropertyView
     /// </summary>
     public void Display(string mtdPath)
     {
+        if (Editor.Project.MaterialData == null)
+            return;
+
         var matname = Path.GetFileNameWithoutExtension(mtdPath);
 
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
-            // TODO: restore once MATBIN bank is added
             CurrentMatbin = null;
 
-            //if (Smithbox.BankHandler.MaterialBank.Matbins.ContainsKey(matname))
-            //{
-            //    CurrentMatbin = Smithbox.BankHandler.MaterialBank.Matbins[matname].Matbin;
-            //}
+            foreach(var entry in Editor.Project.MaterialData.PrimaryBank.MATBINs)
+            {
+                foreach(var tEntry in entry.Value.Entries)
+                {
+                    var tName = Path.GetFileNameWithoutExtension(tEntry.Key);
 
-            //if (CurrentMatbin != null)
-            //{
-            //    if (ImGui.CollapsingHeader("MATBIN", ImGuiTreeNodeFlags.DefaultOpen))
-            //    {
-            //        DisplayMatbin();
-            //    }
-            //    UIHelper.ShowHoverTooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
-            //}
+                    if (tName == matname)
+                    {
+                        CurrentMatbin = tEntry.Value;
+                        break;
+                    }
+                }
+            }
+
+            if (CurrentMatbin != null)
+            {
+                if (ImGui.CollapsingHeader("MATBIN", ImGuiTreeNodeFlags.DefaultOpen))
+                {
+                    DisplayMatbin();
+                }
+                UIHelper.Tooltip("Read-only. Displays MATBIN information for the MATBIN this material references.");
+            }
         }
     }
 

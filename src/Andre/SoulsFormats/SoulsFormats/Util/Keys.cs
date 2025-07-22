@@ -17,6 +17,8 @@ public class Keys
 
     public static readonly byte[] DS3_SAVE_KEY = ParseHexString("FD 46 4D 69 5E 69 A3 9A 10 E3 19 A7 AC E8 B7 FA");
 
+    public static readonly byte[] NR_SAVE_KEY = ParseHexString("18 F6 32 66 05 BD 17 8A 55 24 52 3A C0 A0 C6 09");
+
     /// <summary>
     /// Regulation Keys
     /// </summary>
@@ -28,7 +30,7 @@ public class Keys
 
     public static readonly byte[] AC6_REGULATION_KEY = ParseHexString("10 CE ED 47 7B 7C D9 D7 E6 93 8E 11 47 13 E7 87 D5 39 13 B1 D 31 8E C1 35 E4 BE 50 50 4E E 10");
 
-    public static readonly byte[] ERN_REGULATION_KEY = ParseHexString("00");
+    public static readonly byte[] NR_REGULATION_KEY = ParseHexString("9a 8e e9 0c 4c 01 a4 31 68 a1 7d 9d 75 e4 a7 d0 21 07 eb cf 43 d5 ac b0 55 4f 94 16 01 b5 79 18");
 
     /// <summary>
     /// Converts a hex string in format "AA BB CC DD" to a byte array.

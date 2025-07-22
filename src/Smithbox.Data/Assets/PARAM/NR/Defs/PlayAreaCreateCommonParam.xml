@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>PLAY_AREA_CREATE_COMMON_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="f32 secondCircleRadius"/>
+    <Field Def="f32 unknown_2"/>
+    <Field Def="f32 unknown_3"/>
+    <Field Def="f32 unknown_4"/>
+    <Field Def="s32 unknown_5"/>
+    <Field Def="u8 firstCircleStartHour"/>
+    <Field Def="u8 firstCircleStartMinute"/>
+    <Field Def="u8 firstCircleEndHour"/>
+    <Field Def="u8 firstCircleEndMinute"/>
+    <Field Def="u8 secondCircleStartHour"/>
+    <Field Def="u8 secondCircleStartMinute"/>
+    <Field Def="u8 secondCircleEndHour"/>
+    <Field Def="u8 secondCircleEndMinute"/>
+    <Field Def="s32 unknown_8"/>
+    <Field Def="s32 unknown_9"/>
+    <Field Def="s32 day1RainSpEffect"/>
+    <Field Def="s32 day2RainSpEffect"/>
+    <Field Def="s32 unknown_12"/>
+    <Field Def="s32 unknown_13"/>
+    <Field Def="f32 initialCircleRadius"/>
+    <Field Def="u8 initialCircleAreaNo"/>
+    <Field Def="u8 initialCircleGridXNo"/>
+    <Field Def="u8 initialCircleGridZNo"/>
+    <Field Def="dummy8 pad1[1]"/>
+    <Field Def="f32 initialCirclePosX"/>
+    <Field Def="f32 initialCirclePosZ"/>
+    <Field Def="s32 unknown_18"/>
+    <Field Def="f32 unknown_19"/>
+    <Field Def="f32 unknown_20"/>
+    <Field Def="f32 unknown_21"/>
+    <Field Def="s32 unknown_22"/>
+    <Field Def="s32 unknown_23"/>
+    <Field Def="s32 unknown_24"/>
+    <Field Def="s32 unknown_25"/>
+    
+    <Field Def="dummy8 endPadding[32]"/>
+  </Fields>
+</PARAMDEF>

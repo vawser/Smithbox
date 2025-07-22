@@ -129,7 +129,7 @@ public class MapEditorScreen : EditorScreen
         // Framework
         ActionHandler = new MapActionHandler(this, Project);
         MapQueryView = new MapQueryView(this);
-        WorldMapView = new WorldMapView(this);
+        WorldMapView = new WorldMapView(this, Project);
         CommandQueue = new MapCommandQueue(this);
         Shortcuts = new MapShortcuts(this);
 
@@ -230,7 +230,6 @@ public class MapEditorScreen : EditorScreen
             ImGui.EndMenuBar();
         }
 
-        WorldMapView.InitializeWorldMap();
         WorldMapView.DisplayWorldMap();
 
         MapViewportView.OnGui();
@@ -416,6 +415,17 @@ public class MapEditorScreen : EditorScreen
                 ImGui.EndMenu();
             }
             UIHelper.Tooltip($"Duplicate the selected map objects into another map.");
+
+            ///--------------------
+            // Move to Map
+            ///--------------------
+            if (ImGui.BeginMenu("Move Selected to Map"))
+            {
+                ActionHandler.DisplayMoveToMapMenu(MapDuplicateToMapType.Menubar);
+
+                ImGui.EndMenu();
+            }
+            UIHelper.Tooltip($"Move the selected map objects into another map.");
 
             ///--------------------
             // Create
@@ -1056,7 +1066,7 @@ public class MapEditorScreen : EditorScreen
     {
         var targetMap = Project.MapData.PrimaryBank.Maps.FirstOrDefault(e => e.Key.Filename == mapID);
 
-        if (targetMap.Value.MapContainer != null)
+        if (targetMap.Value != null && targetMap.Value.MapContainer != null)
         {
             return targetMap.Value.MapContainer;
         }

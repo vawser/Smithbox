@@ -41,13 +41,13 @@ public static class MapValidator
             ImGui.Text("");
         }
 
+        ImGui.Checkbox("Check project files", ref TargetProjectFiles);
+        UIHelper.Tooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
+
         if (ImGui.Button("Validate MSB", buttonSize))
         {
             ValidateMSB(baseEditor, project);
         }
-
-        ImGui.Checkbox("Check project files", ref TargetProjectFiles);
-        UIHelper.Tooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
     }
 
     public static void ValidateMSB(Smithbox baseEditor, ProjectEntry curProject)
@@ -80,56 +80,127 @@ public static class MapValidator
         {
             foreach (var res in resMaps)
             {
-                var msb = MSBD.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSBD.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.DS1 || curProject.ProjectType == ProjectType.DS1R)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSB1.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSB1.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.DS2 || curProject.ProjectType == ProjectType.DS2S)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSB2.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSB2.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.DS3)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSB3.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSB3.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.BB)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSBB.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSBB.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.SDT)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSBS.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSBS.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.ER)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSBE.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSBE.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
         if (curProject.ProjectType == ProjectType.AC6)
         {
             foreach (var res in resMaps)
             {
-                var msb = MSB_AC6.Read(res.AssetPath);
+                try
+                {
+                    var msb = MSB_AC6.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
+            }
+        }
+        if (curProject.ProjectType == ProjectType.NR)
+        {
+            foreach (var res in resMaps)
+            {
+                try
+                {
+                    var fileData = File.ReadAllBytes(res.AssetPath);
+                    var msb = MSB_NR.Read(res.AssetPath);
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{res.AssetPath}", Microsoft.Extensions.Logging.LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
 

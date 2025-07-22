@@ -29,6 +29,11 @@ public class CFG
     /// Project
     ///------------------------------------------------------------
     /// <summary>
+    /// If enabled, the project type is prefixed to the project name.
+    /// </summary>
+    public bool DisplayProjectPrefix = true;
+
+    /// <summary>
     /// The default directory to use for selecting a project directory during Project Creation.
     /// </summary>
     public string DefaultModDirectory = "";
@@ -39,14 +44,19 @@ public class CFG
     public string DefaultDataDirectory = "";
 
     /// <summary>
+    /// The path to store the ME3 profiles.
+    /// </summary>
+    public string ModEngine3ProfileDirectory = "";
+
+    /// <summary>
     /// The path to the user's Mod Engine 2 exe.
     /// </summary>
-    public string ModEngineInstall = "";
+    public string ModEngine2Install = "";
 
     /// <summary>
     /// The dll arguments to use with the Mod Engine 2 launch.
     /// </summary>
-    public string ModEngineDlls = "";
+    public string ModEngine2Dlls = "";
 
     ///------------------------------------------------------------
     /// Interface
@@ -131,11 +141,6 @@ public class CFG
     /// </summary>
     public bool Viewport_Profiling = true;
 
-    /// <summary>
-    /// If true, the project list window is visible.
-    /// </summary>
-    public bool Interface_Editor_ProjectList = true;
-
     ///------------------------------------------------------------
     /// Map Editor
     ///------------------------------------------------------------
@@ -184,6 +189,91 @@ public class CFG
     /// </summary>
     public bool Interface_MapEditor_EntityIdentifierOverview = false;
 
+    /// <summary>
+    /// If true, the Create tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Create = true;
+
+    /// <summary>
+    /// If true, the Duplicate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Duplicate = true;
+
+    /// <summary>
+    /// If true, the Duplicate to Map tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_DuplicateToMap = true;
+
+    /// <summary>
+    /// If true, the Move to Camera tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_MoveToCamera = true;
+
+    /// <summary>
+    /// If true, the Rotate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Rotate = true;
+
+    /// <summary>
+    /// If true, the Scramble tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Scramble = true;
+
+    /// <summary>
+    /// If true, the Replicate tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Replicate = true;
+
+    /// <summary>
+    /// If true, the Import/Export Prefab tool collapsibles are visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_Prefab = true;
+
+    /// <summary>
+    /// If true, the Selection Groups tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_SelectionGroups = true;
+
+    /// <summary>
+    /// If true, the Movement Increments tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_MovementIncrements = true;
+
+    /// <summary>
+    /// If true, the Rotation Increments tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_RotationIncrements = true;
+
+    /// <summary>
+    /// If true, the Local Property Search tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_LocalPropertySearch = true;
+
+    /// <summary>
+    /// If true, the Global Property Search tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_GlobalPropertySearch = true;
+
+    /// <summary>
+    /// If true, the Property Mass Edit tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_PropertyMassEdit = true;
+
+    /// <summary>
+    /// If true, the Treasure Maker tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_TreasureMaker = false;
+
+    /// <summary>
+    /// If true, the World Map Layout Generator tool collapsible is visible in the Map Editor Tool window.
+    /// </summary>
+    public bool Interface_MapEditor_Tool_WorldMapLayoutGenerator = false;
+
+    /// <summary>
+    /// If true, the shortcuts for the Selection Groups will be detected.
+    /// </summary>
+    public bool Shortcuts_MapEditor_EnableSelectionGroupShortcuts = false;
+
     ///------------------------------------------------------------
     /// Model Editor
     ///------------------------------------------------------------
@@ -217,6 +307,31 @@ public class CFG
     /// </summary>
     public bool Interface_ModelEditor_ResourceList = true;
 
+    /// <summary>
+    /// If true, the Export Model tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
+    public bool Interface_ModelEditor_Tool_ExportModel = true;
+
+    /// <summary>
+    /// If true, the FLVER tool collapsibles are visible in the Model Editor Tool window.
+    /// </summary>
+    public bool Interface_ModelEditor_Tool_FlverTools = true;
+
+    /// <summary>
+    /// If true, the FLVER Group tool collapsibles are visible in the Model Editor Tool window.
+    /// </summary>
+    public bool Interface_ModelEditor_Tool_FlverGroups = true;
+
+    /// <summary>
+    /// If true, the Global Model Search tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
+    public bool Interface_ModelEditor_Tool_GlobalModelSearch = true;
+
+    /// <summary>
+    /// If true, the Model Mask Toggler tool collapsible is visible in the Model Editor Tool window.
+    /// </summary>
+    public bool Interface_ModelEditor_Tool_ModelMaskToggler = true;
+
     ///------------------------------------------------------------
     /// Text Editor
     ///------------------------------------------------------------
@@ -244,6 +359,21 @@ public class CFG
     /// If true, the tool window is visible in the Text Editor.
     /// </summary>
     public bool Interface_TextEditor_ToolWindow = true;
+
+    /// <summary>
+    /// If true, the Text Search tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
+    public bool Interface_TextEditor_Tool_TextSearch = true;
+
+    /// <summary>
+    /// If true, the Text Replacement tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
+    public bool Interface_TextEditor_Tool_TextReplacement = true;
+
+    /// <summary>
+    /// If true, the Text Merge tool collapsible is visible in the Text Editor Tool window.
+    /// </summary>
+    public bool Interface_TextEditor_Tool_TextMerge = true;
 
     ///------------------------------------------------------------
     /// Behavior Editor
@@ -288,6 +418,20 @@ public class CFG
     /// </summary>
     public int Behavior_GraphDepthLimit = 1;
 
+    /// <summary>
+    /// If true, the Power Edit tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
+    public bool Interface_BehaviorEditor_Tool_PowerEdit = true;
+
+    /// <summary>
+    /// If true, the Variable Assist tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
+    public bool Interface_BehaviorEditor_Tool_VariableAssist = true;
+
+    /// <summary>
+    /// If true, the Clip Assist tool collapsible is visible in the Behavior Editor Tool window.
+    /// </summary>
+    public bool Interface_BehaviorEditor_Tool_ClipAssist = true;
 
     ///------------------------------------------------------------
     /// Param Editor
@@ -346,6 +490,71 @@ public class CFG
     /// </summary>
     public bool Interface_ParamEditor_ToolWindow = true;
 
+    /// <summary>
+    /// If true, the Pin Groups tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_PinGroups = true;
+
+    /// <summary>
+    /// If true, the Param Categories tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_ParamCategories = true;
+
+    /// <summary>
+    /// If true, the Param Merge tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_ParamMerge = true;
+
+    /// <summary>
+    /// If true, the Param Reloader tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_ParamReloader = true;
+
+    /// <summary>
+    /// If true, the Item Gib tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_ItemGib = true;
+
+    /// <summary>
+    /// If true, the Mass Edit tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_MassEdit = true;
+
+    /// <summary>
+    /// If true, the Mass Edit Script tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_MassEditScript = true;
+
+    /// <summary>
+    /// If true, the Duplicate tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_Duplicate = true;
+
+    /// <summary>
+    /// If true, the Commutative Duplicate tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_CommutativeDuplicate = true;
+
+    /// <summary>
+    /// If true, the Row Name Trimmer tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_RowNameTrimmer = true;
+
+    /// <summary>
+    /// If true, the Row Name Sorter tool collapsible is visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_RowNameSorter = true;
+
+    /// <summary>
+    /// If true, the Field Instance tool collapsibles are visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_FieldInstanceFinder = true;
+
+    /// <summary>
+    /// If true, the Row Instance tool collapsibles are visible in the Param Editor Tool window.
+    /// </summary>
+    public bool Interface_ParamEditor_Tool_RowInstanceFinder = true;
+
     ///------------------------------------------------------------
     /// Graphics Param Editor
     ///------------------------------------------------------------
@@ -374,6 +583,10 @@ public class CFG
     /// </summary>
     public bool Interface_GparamEditor_ToolWindow = true;
 
+    /// <summary>
+    /// If true, the Quick Edit tool collapsible is visible in the Graphics Param Editor Tool window.
+    /// </summary>
+    public bool Interface_GparamEditor_Tool_QuickEdit = true;
 
     ///------------------------------------------------------------
     /// Texture Viewer
@@ -407,6 +620,8 @@ public class CFG
     /// If true, the resource list window is visible in the Texture Viewer.
     /// </summary>
     public bool Interface_TextureViewer_ResourceList = true;
+
+    public bool Interface_TextureViewer_Tool_ExportTexture = true;
 
     ///------------------------------------------------------------
     /// Time Act Editor
@@ -446,6 +661,8 @@ public class CFG
     /// </summary>
     public bool Interface_TimeActEditor_ToolWindow = true;
 
+    public bool Interface_TimeActEditor_Tool_TimeActSearch = true;
+
     ///------------------------------------------------------------
     /// Material Editor
     ///------------------------------------------------------------
@@ -459,6 +676,12 @@ public class CFG
     public bool Interface_EmevdEditor_EventProperties = true;
     public bool Interface_EmevdEditor_InstructionProperties = true;
     public bool Interface_EmevdEditor_ToolConfigurationWindow = true;
+
+    public bool Interface_EmevdEditor_Tool_EventInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_InstructionInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_ValueInstanceFinder = true;
+    public bool Interface_EmevdEditor_Tool_UnknownInstructionFinder = true;
+    public bool Interface_EmevdEditor_Tool_TemplateReloader = true;
 
     ///------------------------------------------------------------
     /// EzState Script Editor
@@ -476,6 +699,9 @@ public class CFG
     public bool Interface_FileBrowser_FileList = true;
     public bool Interface_FileBrowser_ItemViewer = true;
     public bool Interface_FileBrowser_ToolView = true;
+
+    public bool Interface_FileBrowser_Tool_GameUnpacker = true;
+    public bool Interface_FileBrowser_Tool_IndividualUnpacker = true;
 
     //**************
     // Actions
@@ -638,6 +864,8 @@ public class CFG
     public bool Viewport_Enable_BoxSelection = true;
     public float Viewport_BS_DistThresFactor = 1.2f;
 
+    public Vector3 Viewport_Background_Color = new(1.0f, 0.5f, 0.0f);
+
     //****************************
     // Settings: Map Editor
     //****************************
@@ -720,13 +948,14 @@ public class CFG
     public bool Prefab_ApplyUniqueEntityID = false;
     public bool Prefab_ApplySpecificEntityGroupID = false;
     public int Prefab_SpecificEntityGroupID = 0;
+    public bool Prefab_PlaceAtPlacementOrb = true;
 
     public bool Prefab_ApplyOverrideName = false;
     public string Prefab_OverrideName = "";
 
     public float WorldMapHeight = 1200f;
     public float WorldMapWidth = 1200f;
-    public bool WorldMapDisplayTiles = true;
+    public bool WorldMapDisplayTiles = false;
     public bool WorldMapDisplaySmallTiles = true;
     public bool WorldMapDisplayMediumTiles = false;
     public bool WorldMapDisplayLargeTiles = false;
@@ -780,7 +1009,7 @@ public class CFG
     public bool Param_StripRowNamesOnSave_SDT = false;
     public bool Param_StripRowNamesOnSave_ER = true;
     public bool Param_StripRowNamesOnSave_AC6 = false;
-    public bool Param_StripRowNamesOnSave_ERN = false;
+    public bool Param_StripRowNamesOnSave_NR = false;
 
     public bool Param_RestoreStrippedRowNamesOnLoad_DES = false;
     public bool Param_RestoreStrippedRowNamesOnLoad_DS1 = false;
@@ -790,7 +1019,7 @@ public class CFG
     public bool Param_RestoreStrippedRowNamesOnLoad_SDT = false;
     public bool Param_RestoreStrippedRowNamesOnLoad_ER = true;
     public bool Param_RestoreStrippedRowNamesOnLoad_AC6 = false;
-    public bool Param_RestoreStrippedRowNamesOnLoad_ERN = false;
+    public bool Param_RestoreStrippedRowNamesOnLoad_NR = false;
 
     public bool Param_SaveERAsDFLT = false;
 
@@ -818,6 +1047,7 @@ public class CFG
     public bool Param_ShowFieldParamLabels = true;
     public bool Param_ShowFieldFmgLabels = true;
     public bool Param_ShowFieldTextureLabels = true;
+    public bool Param_ShowFmgDecorator = true;
 
     public bool Param_ShowVanillaColumn = true;
     public bool Param_ShowAuxColumn = true;
@@ -847,7 +1077,9 @@ public class CFG
     public bool Param_RowContextMenu_PinOptions = true;
     public bool Param_RowContextMenu_CompareOptions = true;
     public bool Param_RowContextMenu_ReverseLoopup = true;
-    public bool Param_RowContextMenu_CopyID = true;
+    public bool Param_RowContextMenu_ProliferateName = true;
+    public bool Param_RowContextMenu_InheritName = true;
+    public bool Param_RowContextMenu_RowNameAdjustments = true;
 
     public float Param_FieldContextMenu_Width = 300f;
     public bool Param_FieldContextMenu_Split = false;

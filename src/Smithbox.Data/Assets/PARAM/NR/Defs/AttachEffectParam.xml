@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>ATTACHEFFECT_PARAM_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 onHitSpEffect"/>
+    
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 unknown_2"/>
+    
+    <Field Def="s32 passiveSpEffectId_1"/>
+    <Field Def="s32 passiveSpEffectId_2"/>
+    <Field Def="s32 passiveSpEffectId_3"/>
+    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 attachTextId"/>
+    <Field Def="u8 isPersistentEffect:1"/>
+    <Field Def="u8 isNumericEffect:1"/>
+    <Field Def="u8 isStrongestEffect:1"/>
+    <Field Def="dummy8 unknown_8a4:5"/>
+    <Field Def="u8 isDebuff"/>
+    <Field Def="u8 unknown_8c"/>
+    <Field Def="dummy8 unknown_8d[1]"/>
+    <Field Def="u8 displayPercentageSymbol"/>
+    <Field Def="u8 allowWylder:1"/>
+    <Field Def="u8 allowGuardian:1"/>
+    <Field Def="u8 allowIroneye:1"/>
+    <Field Def="u8 allowDuchess:1"/>
+    <Field Def="u8 allowRaider:1"/>
+    <Field Def="u8 allowRevenant:1"/>
+    <Field Def="u8 allowRecluse:1"/>
+    <Field Def="u8 allowExecutor:1"/>
+    <Field Def="u8 unknown_9c1:1"/>
+    <Field Def="u8 unknown_9c2:1"/>
+    <Field Def="dummy8 unknown_9c3:6"/>
+    <Field Def="dummy8 unknown_9d[1]"/>
+    <Field Def="s32 statusIconId"/>
+    <Field Def="s32 overrideBaseEffectId"/>
+    <Field Def="s32 displayedModifierValue"/>
+    <Field Def="s32 overrideEffectId"/>
+    <Field Def="s32 attachFilterParamId"/>
+    <Field Def="s32 exclusivityId"/>
+    <Field Def="s32 permanentSpEffectId"/>
+  </Fields>
+</PARAMDEF>

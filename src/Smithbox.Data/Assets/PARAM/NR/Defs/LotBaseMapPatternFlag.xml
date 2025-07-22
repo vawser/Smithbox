@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>LOT_BASE_MAP_PATTERN_FLAG_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 modifierSet"/>
+    <Field Def="s32 requireModifier1"/>
+    <Field Def="s32 requireModifier2"/>
+    <Field Def="s32 excludeModifier1"/>
+    <Field Def="s32 excludeModifier2"/>
+    <Field Def="s32 modifier"/>
+    <Field Def="u32 eventFlag"/>
+    <Field Def="s32 weight"/>
+  </Fields>
+</PARAMDEF>

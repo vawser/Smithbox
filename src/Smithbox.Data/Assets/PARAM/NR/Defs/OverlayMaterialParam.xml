@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>OVERLAY_MATERIAL_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="fixstrW paramName[32]" />
+    
+    <Field Def="s32 materialId"/>
+    <Field Def="f32 materialParamValue0"/>
+    <Field Def="f32 materialParamValue1"/>
+    <Field Def="dummy8 endPadding[4]"/>
+  </Fields>
+</PARAMDEF>

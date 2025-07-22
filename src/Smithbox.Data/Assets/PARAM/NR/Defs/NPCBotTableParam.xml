@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>NPCBOT_TABLE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 npcParamId"/>
+    <Field Def="s32 npcThinkId"/>
+    <Field Def="s32 charaInitParamId"/>
+    <Field Def="s32 unknown_3"/>
+  </Fields>
+</PARAMDEF>

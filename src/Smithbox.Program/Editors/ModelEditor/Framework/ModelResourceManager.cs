@@ -228,7 +228,7 @@ public class ModelResourceManager : IResourceEventListener
 
         LoadedFlverContainer = new FlverContainer(Editor, name, FlverContainerType.Object, "");
 
-        if (Editor.Project.ProjectType is ProjectType.ER)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if(Editor.CollisionManager.HavokContainers.ContainsKey($"{name}_h".ToLower()))
             {

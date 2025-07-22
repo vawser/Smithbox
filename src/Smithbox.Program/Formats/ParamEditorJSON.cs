@@ -24,6 +24,12 @@ public class GameOffsetResource
 public class GameOffsetReference
 {
     public string exeVersion { get; set; }
+
+    public List<GameOffsetBase> bases { get; set; }
+}
+
+public class GameOffsetBase
+{
     public string paramBaseAob { get; set; }
     public string paramBaseAobRelativeOffset { get; set; }
     public string paramBase { get; set; }

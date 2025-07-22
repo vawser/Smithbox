@@ -13,6 +13,7 @@ public class Oodle
 
     static bool Oodle6Exists = false;
     static bool Oodle8Exists = false;
+    static bool Oodle9Exists = false;
 
     private static bool CanUseOodle6()
     {
@@ -42,6 +43,20 @@ public class Oodle
         return false;
     }
 
+    private static bool CanUseOodle9()
+    {
+        if (Oodle9Exists)
+        {
+            return true;
+        }
+        if (Path.Exists($@"{Directory.GetCurrentDirectory()}\oo2core_9_win64.dll"))
+        {
+            Oodle9Exists = true;
+            return true;
+        }
+        return false;
+    }
+
     /// <summary>
     /// Returns oodle class to use for compression and decompression.
     /// </summary>
@@ -53,29 +68,41 @@ public class Oodle
             // Try to get preferred oodle using compressionLevel.
             if (compressionLevel == 9)
             {
-                if (CanUseOodle8())
-                    return new Oodle28();
                 if (CanUseOodle6())
                     return new Oodle26();
+
+                if (CanUseOodle8())
+                    return new Oodle28();
+
+                if (CanUseOodle9())
+                    return new Oodle29();
             }
             else if (compressionLevel == 6)
             {
                 if (CanUseOodle6())
                     return new Oodle26();
+
                 if (CanUseOodle8())
                     return new Oodle28();
+
+                if (CanUseOodle9())
+                    return new Oodle29();
             }
         }
         else
         {
             if (CanUseOodle6())
                 return new Oodle26();
+
             if (CanUseOodle8())
                 return new Oodle28();
+
+            if (CanUseOodle9())
+                return new Oodle29();
         }
 
         throw new NoOodleFoundException($"Could not find a supported version of oo2core. "
-            + $"Please copy oo2core_6_win64.dll or oo2core_8_win64.dll into the program directory");
+            + $"Please copy oo2core_6_win64.dll, oo2core_8_win64.dll or oo2core_9_win64.dll into the Smithbox program directory");
     }
 
     [StructLayout(LayoutKind.Sequential)]

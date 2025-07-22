@@ -20,6 +20,7 @@ public class ParamFieldMeta
         ShowCutsceneEnumList = false;
         ShowMovieEnumList = false;
         ShowProjectEnumList = false;
+        ShowCharacterEnumList = false;
 
         FlagAliasEnum_ConditionalField = "";
         FlagAliasEnum_ConditionalValue = "";
@@ -35,6 +36,12 @@ public class ParamFieldMeta
         if (tDefaultValue != null)
         {
             DefaultValue = tDefaultValue.InnerText;
+        }
+
+        XmlAttribute tTileRef = fieldMeta.Attributes["TileRef"];
+        if (tTileRef != null)
+        {
+            TileRef = tTileRef.InnerText;
         }
 
         XmlAttribute Ref = fieldMeta.Attributes["Refs"];
@@ -219,7 +226,18 @@ public class ParamFieldMeta
                 DeepCopyTargetType.Add(DeepCopyTarget.InnerText);
             }
         }
+
+        XmlAttribute CharacterAlias = fieldMeta.Attributes["CharacterAlias"];
+        if (CharacterAlias != null)
+        {
+            ShowCharacterEnumList = true;
+        }
     }
+
+    /// <summary>
+    /// Determines whether this field points to a NR tile MSB
+    /// </summary>
+    public string TileRef { get; set; }
 
     /// <summary>
     /// The default value for this field.
@@ -332,5 +350,6 @@ public class ParamFieldMeta
     ///     Path (and subpath) filters for files linked by this field.
     /// </summary>
     public List<ExtRef> ExtRefs { get; set; }
+    public bool ShowCharacterEnumList { get; set; }
 
 }

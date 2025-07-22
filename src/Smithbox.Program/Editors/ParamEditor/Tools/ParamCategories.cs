@@ -261,7 +261,7 @@ public static class ParamCategories
     public static void RestoreDefault(ParamEditorScreen editor)
     {
         var sourceFolder = $@"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(editor.Project.ProjectType)}";
-        var sourceFile = Path.Combine(sourceFolder, "Categories.json");
+        var sourceFile = Path.Combine(sourceFolder, "Param Categories.json");
 
         if (File.Exists(sourceFile))
         {
@@ -284,6 +284,10 @@ public static class ParamCategories
                 TaskLogs.AddLog("[Smithbox] Failed to read param categories", LogLevel.Error, Tasks.LogPriority.High, e);
             }
         }
+        else
+        {
+            TaskLogs.AddLog("[Smithbox] Failed to find default param categories for game", LogLevel.Error, Tasks.LogPriority.High);
+        }
     }
 
     public static void Write(ParamEditorScreen editor)
@@ -292,29 +296,26 @@ public static class ParamCategories
             return;
 
         var modResourceDir = $"{editor.Project.ProjectPath}\\.smithbox\\Assets\\PARAM\\{ProjectUtils.GetGameDirectory(editor.Project)}\\";
-        var modResourcePath = Path.Combine(modResourceDir, "Categories.json");
+        var modResourcePath = Path.Combine(modResourceDir, "Param Categories.json");
 
         if (!Directory.Exists(modResourceDir))
         {
             Directory.CreateDirectory(modResourceDir);
         }
 
-        if (Directory.Exists(modResourceDir))
+        try
         {
             string jsonString = JsonSerializer.Serialize(editor.Project.ParamCategories, typeof(ParamCategoryResource), SmithboxSerializerContext.Default);
-
-            try
-            {
-                var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
-                var data = Encoding.ASCII.GetBytes(jsonString);
-                fs.Write(data, 0, data.Length);
-                fs.Flush();
-                fs.Dispose();
-            }
-            catch (Exception ex)
-            {
-                TaskLogs.AddLog($"Failed to write project param categories:\n{ex}", LogLevel.Error);
-            }
+            var fs = new FileStream(modResourcePath, System.IO.FileMode.Create);
+            var data = Encoding.ASCII.GetBytes(jsonString);
+            fs.Write(data, 0, data.Length);
+            fs.Flush();
+            fs.Dispose();
         }
+        catch (Exception ex)
+        {
+            TaskLogs.AddLog("[Smithbox] Failed to write project param categories", LogLevel.Error, Tasks.LogPriority.High, ex);
+        }
+
     }
 }

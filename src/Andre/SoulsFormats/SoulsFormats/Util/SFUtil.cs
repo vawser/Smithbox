@@ -612,7 +612,7 @@ namespace SoulsFormats
             byte[] bytes = File.ReadAllBytes(path);
             if (BND4.IsRead(bytes, out BND4 bnd4))
                 return bnd4;
-            bytes = DecryptByteArray(Keys.ERN_REGULATION_KEY, bytes);
+            bytes = DecryptByteArray(Keys.NR_REGULATION_KEY, bytes);
             return BND4.Read(bytes);
         }
 
@@ -623,7 +623,7 @@ namespace SoulsFormats
         {
             if (BND4.IsRead(bytes, out BND4 bnd4))
                 return bnd4;
-            bytes = DecryptByteArray(Keys.ERN_REGULATION_KEY, bytes);
+            bytes = DecryptByteArray(Keys.NR_REGULATION_KEY, bytes);
             return BND4.Read(bytes);
         }
 
@@ -642,7 +642,7 @@ namespace SoulsFormats
                 bytes = bnd.Write();
             }
 
-            bytes = EncryptByteArray(Keys.ERN_REGULATION_KEY, bytes);
+            bytes = EncryptByteArray(Keys.NR_REGULATION_KEY, bytes);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllBytes(path, bytes);
         }
@@ -659,7 +659,7 @@ namespace SoulsFormats
                 bytes = bnd.Write();
             }
 
-            bytes = EncryptByteArray(Keys.ER_REGULATION_KEY, bytes);
+            bytes = EncryptByteArray(Keys.NR_REGULATION_KEY, bytes);
             return bytes;
         }
 

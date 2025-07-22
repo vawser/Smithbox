@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>HERO_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 properPortraitId"/>
+    <Field Def="s32 simplePortraitId"/>
+    <Field Def="s32 characterUnlockFlag"/>
+    <Field Def="s32 characterNameId"/>
+    <Field Def="s32 characterSkillTitleId"/>
+    <Field Def="s32 characterSkillSummaryId"/>
+    <Field Def="s32 characterSkillIconId"/>
+    <Field Def="s32 ultimateArtTitleId"/>
+    <Field Def="s32 ultimateArtSummaryId"/>
+    <Field Def="s32 ultimateArtIconId"/>
+    <Field Def="s32 backgroundDescriptionId"/>
+    
+    <Field Def="dummy8 midPadding[40]"/>
+    
+    <Field Def="s32 unknown_24"/>
+    <Field Def="s32 unknown_25"/>
+    <Field Def="s32 unknown_26"/>
+    <Field Def="s32 heroStatusParamId"/>
+    
+    <Field Def="s32 unknown_27"/>
+    
+    <Field Def="f32 characterAbilityCooldown"/>
+    <Field Def="s32 characterAbilityUsageCount"/>
+    <Field Def="s32 passiveAbilityTitleId"/>
+    <Field Def="s32 passiveAbilitySummaryId"/>
+    <Field Def="s32 passiveAbilityIconId"/>
+    <Field Def="s32 smallHudIconId"/>
+    <Field Def="s32 characterSkillDescriptionId"/>
+    <Field Def="s32 ultimateArtDescriptionId"/>
+    <Field Def="s32 passiveAbilityDescriptionId"/>
+    <Field Def="s32 unknown_38"/>
+    <Field Def="s32 unknown_39"/>
+  </Fields>
+</PARAMDEF>

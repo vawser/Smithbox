@@ -388,7 +388,6 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
             {
-
                 var paramName = context.Item1.GetKeyForParam(context.Item2);
                 if (!vBank.Params.ContainsKey(paramName))
                 {

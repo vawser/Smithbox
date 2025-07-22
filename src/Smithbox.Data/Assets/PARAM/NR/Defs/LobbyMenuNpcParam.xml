@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>LOBBY_MENU_NPC_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="u16 iconId"/>
+    <Field Def="u16 iconId_2"/>
+    <Field Def="s32 arrivalEventFlag"/>
+    <Field Def="s32 showMapIconEventFlag"/>
+    <Field Def="s32 hideMapIconEventFlag"/>
+  </Fields>
+</PARAMDEF>

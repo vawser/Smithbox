@@ -47,7 +47,7 @@ public static class ModelLocator
             ret.AssetPath = LocatorUtils.GetAssetPath(project, $@"map\{mapid}\{modelId}.flver.dcx");
         else if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
             ret.AssetPath = LocatorUtils.GetAssetPath(project, $@"model\map\{mapid}.mapbhd");
-        else if (project.ProjectType is ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
             ret.AssetPath = LocatorUtils.GetAssetPath(project, $@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
         else if (project.ProjectType is ProjectType.AC6)
             ret.AssetPath = LocatorUtils.GetAssetPath(project, $@"map\{mapid[..3]}\{mapid}\{modelId}.mapbnd.dcx");
@@ -147,7 +147,7 @@ public static class ModelLocator
                 ret.AssetArchiveVirtualPath = $@"map/{mapid}/hit/lo";
             }
         }
-        else if (project.ProjectType == ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             if (hi)
             {
@@ -253,7 +253,7 @@ public static class ModelLocator
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId}.flv";
         }
-        else if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             ret.AssetVirtualPath = $@"obj/{objContainerId}/model/{objId.ToUpper()}.flver";
         }
@@ -275,7 +275,7 @@ public static class ModelLocator
         {
             ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"model\obj\{objId}\{objId}_m.bnd");
         }
-        else if (project.ProjectType is ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             // Derive subfolder path from model name (all vanilla AEG are within subfolders)
             if (objContainerId.Length >= 6)

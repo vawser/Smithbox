@@ -42,6 +42,8 @@ public class TextEditorScreen : EditorScreen
     public FmgImporter FmgImporter;
     public LanguageSync LanguageSync;
 
+    public FmgDumper FmgDumper;
+
     public TextEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -72,6 +74,8 @@ public class TextEditorScreen : EditorScreen
         FmgExporter = new FmgExporter(this, project);
         FmgImporter = new FmgImporter(this, project);
         LanguageSync = new LanguageSync(this, project);
+
+        FmgDumper = new FmgDumper(this, project);
     }
 
     public string EditorName => "Text Editor";
@@ -267,6 +271,10 @@ public class TextEditorScreen : EditorScreen
             ImGui.Separator();
 
             FmgExporter.MenubarOptions();
+
+            ImGui.Separator();
+
+            FmgDumper.MenubarOptions();
 
             ImGui.EndMenu();
         }

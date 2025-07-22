@@ -4,10 +4,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Authors>Katalash, Vawser</Authors>
-    <Version>2.0.0</Version>
+    <Version>2.0.6</Version>
     <ApplicationIcon>icon.ico</ApplicationIcon>
-    <PackageVersion>1.0.27</PackageVersion>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <PackageVersion>2.0.6</PackageVersion>
+    <AssemblyVersion>2.0.6</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <LangVersion>12</LangVersion>
     <IsPackable>false</IsPackable>
@@ -41,15 +41,24 @@
     <ProjectReference Include="..\Smithbox.Data\Smithbox.Data.csproj" />
     <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\itemgib\config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="tools\itemgib\eldenring_all-in-one_Hexinton-v4.25_ce7.5.ct">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="tools\itemgib\itemgib.EXE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
  
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">
   <ItemGroup>
     <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\net9.0-windows7.0\**\*" />
   </ItemGroup>
 
-  <Copy
-    SourceFiles="@(DataProjectFiles)"
-    DestinationFolder="$(OutputPath)%(RecursiveDir)"
-    SkipUnchangedFiles="true" />
+  <Copy SourceFiles="@(DataProjectFiles)" DestinationFolder="$(OutputPath)%(RecursiveDir)" SkipUnchangedFiles="true" />
 </Target>
 </Project>

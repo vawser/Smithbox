@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>NIGHT_BOSS_MENU_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 expeditionNameId"/>
+    <Field Def="s32 bossIconId"/>
+    <Field Def="s32 unlockEventFlag"/>
+    <Field Def="s32 defeatEventFlag"/>
+    <Field Def="s32 unknown_5"/>
+    <Field Def="s32 bossNameId"/>
+    <Field Def="s32 defeatedBossIconId"/>
+    <Field Def="s32 sortId"/>
+    <Field Def="s32 descriptionId"/>
+    <Field Def="s32 expeditionBackgroundId"/>
+    <Field Def="s32 unknown_11"/>
+    <Field Def="s32 unknown_12"/>
+    <Field Def="s32 unknown_13"/>
+    <Field Def="s32 unknown_14"/>
+    <Field Def="s32 largeBossIconId"/>
+  </Fields>
+</PARAMDEF>

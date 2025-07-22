@@ -31,7 +31,7 @@ public class TexToolView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_TextureViewer", ImGuiWindowFlags.MenuBar))
         {
             Editor.Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
 
@@ -39,58 +39,82 @@ public class TexToolView
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
             var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
 
-            // Export Texture
-            if (ImGui.CollapsingHeader("Export Texture"))
+            if (ImGui.BeginMenuBar())
             {
-                UIHelper.WrappedText("Export the viewed texture.");
-                UIHelper.WrappedText("");
+                ViewMenu();
 
-                var index = CFG.Current.TextureViewerToolbar_ExportTextureType;
+                ImGui.EndMenuBar();
+            }
 
-                UIHelper.WrappedText("Export File Type:");
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
-                if (ImGui.Combo("##ExportType", ref index, Editor.Tools.exportTypes, Editor.Tools.exportTypes.Length))
+            // Export Texture
+            if (CFG.Current.Interface_TextureViewer_Tool_ExportTexture)
+            {
+                if (ImGui.CollapsingHeader("Export Texture"))
                 {
-                    CFG.Current.TextureViewerToolbar_ExportTextureType = index;
-                }
-                UIHelper.Tooltip("The file type the exported texture will be saved as.");
-                UIHelper.WrappedText("");
+                    UIHelper.WrappedText("Export the viewed texture.");
+                    UIHelper.WrappedText("");
 
-                UIHelper.WrappedText("Export Destination:");
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
-                ImGui.InputText("##exportDestination", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation, 255);
-                if (ImGui.Button("Select", halfButtonSize))
-                {
-                    string path;
-                    var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
-                    if (result)
+                    var index = CFG.Current.TextureViewerToolbar_ExportTextureType;
+
+                    UIHelper.WrappedText("Export File Type:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    if (ImGui.Combo("##ExportType", ref index, Editor.Tools.exportTypes, Editor.Tools.exportTypes.Length))
                     {
-                        CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
+                        CFG.Current.TextureViewerToolbar_ExportTextureType = index;
                     }
-                }
-                ImGui.SameLine();
-                if (ImGui.Button("View Folder", halfButtonSize))
-                {
-                    Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
-                }
-                UIHelper.Tooltip("The folder destination to export the texture to.");
-                UIHelper.WrappedText("");
+                    UIHelper.Tooltip("The file type the exported texture will be saved as.");
+                    UIHelper.WrappedText("");
 
-                ImGui.Checkbox("Include Container Folder", ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
-                UIHelper.Tooltip("Place the exported texture in a folder with the title of the texture container.");
+                    UIHelper.WrappedText("Export Destination:");
+                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    ImGui.InputText("##exportDestination", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation, 255);
+                    if (ImGui.Button("Select", halfButtonSize))
+                    {
+                        string path;
+                        var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
+                        if (result)
+                        {
+                            CFG.Current.TextureViewerToolbar_ExportTextureLocation = path;
+                        }
+                    }
+                    ImGui.SameLine();
+                    if (ImGui.Button("View Folder", halfButtonSize))
+                    {
+                        Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
+                    }
+                    UIHelper.Tooltip("The folder destination to export the texture to.");
+                    UIHelper.WrappedText("");
 
-                ImGui.Checkbox("Display Export Confirmation", ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
-                UIHelper.Tooltip("Display the confirmation message box after each export.");
-                UIHelper.WrappedText("");
+                    ImGui.Checkbox("Include Container Folder", ref CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder);
+                    UIHelper.Tooltip("Place the exported texture in a folder with the title of the texture container.");
 
-                if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))
-                {
-                    Editor.Tools.ExportTextureHandler();
+                    ImGui.Checkbox("Display Export Confirmation", ref CFG.Current.TextureViewerToolbar_ExportTexture_DisplayConfirm);
+                    UIHelper.Tooltip("Display the confirmation message box after each export.");
+                    UIHelper.WrappedText("");
+
+                    if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))
+                    {
+                        Editor.Tools.ExportTextureHandler();
+                    }
                 }
             }
         }
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Export Texture"))
+            {
+                CFG.Current.Interface_TextureViewer_Tool_ExportTexture = !CFG.Current.Interface_TextureViewer_Tool_ExportTexture;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_TextureViewer_Tool_ExportTexture);
+
+            ImGui.EndMenu();
+        }
     }
 }

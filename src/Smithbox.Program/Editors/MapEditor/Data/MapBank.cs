@@ -232,17 +232,18 @@ public class MapWrapper
                         return false;
                     }
                     break;
-                case ProjectType.ERN:
-                    //try
-                    //{
-                    //    MSB = MSBE.Read(mapData);
-                    //    successfulLoad = true;
-                    //}
-                    //catch (Exception e)
-                    //{
-                    //    TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
-                    //    return false;
-                    //}
+                case ProjectType.NR:
+                    try
+                    {
+                        MSB = MSB_NR.Read(mapData);
+                        successfulLoad = true;
+                    }
+                    catch (Exception e)
+                    {
+                        TaskLogs.AddLog($"[{Project.ProjectName}:Map Editor] Failed to read {Path} as MSB", LogLevel.Error, Tasks.LogPriority.High, e);
+
+                        return false;
+                    }
                     break;
                 default: break;
             }

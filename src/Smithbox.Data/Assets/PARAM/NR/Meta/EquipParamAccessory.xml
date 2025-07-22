@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  <Enums>
+    <Enum Name="RARITY" type="u8">
+      <Option Value="0" Name="Default / Common" />
+      <Option Value="1" Name="Uncommon" />
+      <Option Value="2" Name="Rare" />
+      <Option Value="3" Name="Legendary" />
+      <Option Value="9" Name="Unique" />
+    </Enum>
+    <Enum Name="DISPLAY_CATEGORY_ID" type="u8">
+      <Option Value="10" Name="Group 10 - Core Stats" />
+      <Option Value="20" Name="Group 20 - Resistances" />
+      <Option Value="30" Name="Group 30 - Weapon" />
+      <Option Value="40" Name="Group 40 - Spell" />
+      <Option Value="50" Name="Group 50 - Circumstantial" />
+      <Option Value="60" Name="Group 60 - Armor" />
+      <Option Value="70" Name="Group 70 - Restore/Gain" />
+      <Option Value="80" Name="Group 80 - Unique" />
+      <Option Value="255" Name="None" />
+    </Enum>
+  </Enums>
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <weight 
+    AltName="Weight" 
+    Wiki="Weight [kg]" />
+
+    <sellValue
+    AltName="Sell Value"
+    Wiki="Selling price" />
+    
+    <sortId 
+    AltName="Sort ID" 
+    Wiki="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID"
+    TextureRef="Direct/01_common_h/SB_ItemIcon_2/iconId/MENU_ItemIcon_" />
+
+    <accessoryGroup
+    AltName="Accessory Group"
+    Wiki="Items of the same group cannot be equipped at the same time" />
+
+    <rarity
+    AltName="Rarity"
+    Wiki="Rarity used in item acquisition logs"
+    Enum="RARITY" />
+
+    <sortGroupId
+    AltName="Sort Group ID"
+    Wiki="Sort item type ID. In the sort Item type order, the same ID is displayed together as the same group."
+    Enum="DISPLAY_CATEGORY_ID" />
+    
+    <spEffectId_1 
+    AltName="Attached Effect: 1" 
+    Wiki="The attached effect to apply when this talisman is equipped." 
+    Refs="AttachEffectParam"  />
+    
+    <spEffectId_2 
+    AltName="Attached Effect: 2" 
+    Wiki="The attached effect to apply when this talisman is equipped." 
+    Refs="AttachEffectParam" />
+    
+    <spEffectId_3 
+    AltName="Attached Effect: 3" 
+    Wiki="The attached effect to apply when this talisman is equipped." 
+    Refs="AttachEffectParam" />
+    
+    <endPadding
+    Padding="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

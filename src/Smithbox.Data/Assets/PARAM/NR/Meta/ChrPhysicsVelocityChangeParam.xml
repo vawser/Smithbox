@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <horizontalVelocityScale
+    AltName="Horizontal Velocity Scale"
+    Wiki="The percentage of the current horizontal velocity that should be retained. 1.0 means current velocity remains as is." />
+    
+    <verticalVelocityScale
+    AltName="Vertical Velocity Scale"
+    Wiki="The percentage of the current vertical velocity that should be retained. 1.0 means current velocity remains as is." />
+    
+    <horizontalVelocityChange
+    AltName="Horizontal Velocity Change"
+    Wiki="The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Horizontal Velocity Scale. In metres per second." />
+    
+    <verticalVelocityChange
+    AltName="Vertical Velocity Change"
+    Wiki="The velocity given to the character in the current frame. The final velocity is determined by adding this to the current velocity modified by the Vertical Velocity Scale. In metres per second." />
+    
+    <horizontalVelocityAngle
+    AltName="Horizontal Velocity Change Direction"
+    Wiki="The velocity change direction for Horizontal Velocity Change when the front of the character is 0 degrees." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

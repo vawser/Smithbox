@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using Google.Protobuf.Reflection;
+using Hexa.NET.ImGui;
 using Microsoft.AspNetCore.Components.Forms;
 using SoulsFormats;
 using StudioCore.Editors.ModelEditor.Actions;
@@ -93,6 +94,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
+            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Material Groups\\";
+
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
             var defaultButtonSize = new Vector2(sectionWidth, 32);

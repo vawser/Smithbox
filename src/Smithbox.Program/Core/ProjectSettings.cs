@@ -164,37 +164,7 @@ public static class ProjectSettings
         {
             Display = false;
 
-            // Delete the project file
-            var filename = @$"{AppContext.BaseDirectory}\.smithbox\Projects\{TargetProject.ProjectGUID}.json";
-            if (File.Exists(filename))
-            {
-                File.Delete(filename);
-            }
-
-            // Remove the project from the ordering file and retain sequential ids
-            var curOrderEntry = BaseEditor.ProjectManager.ProjectDisplayOrder.DisplayOrder.Where(e => e.Value == TargetProject.ProjectGUID).FirstOrDefault();
-
-            var existingOrder = BaseEditor.ProjectManager.ProjectDisplayOrder.DisplayOrder;
-            var newOrder = new Dictionary<int, Guid>();
-
-            var count = 0;
-            for (int i = 0; i < existingOrder.Count; i++)
-            {
-                var curGuid = existingOrder[i];
-                if (curGuid != TargetProject.ProjectGUID)
-                {
-                    newOrder.Add(count, curGuid);
-                    count++;
-                }
-            }
-
-            BaseEditor.ProjectManager.ProjectDisplayOrder.DisplayOrder = newOrder;
-
-            BaseEditor.ProjectManager.SaveProjectDisplayOrder();
-
-            // Unload the project editor stuff
-            BaseEditor.ProjectManager.SelectedProject = null;
-            BaseEditor.ProjectManager.Projects.Remove(TargetProject);
+            ProjectUtils.DeleteProject(BaseEditor, TargetProject);
         }
         UIHelper.Tooltip("Deletes this project entry (not the mod data) and unloads the current project editors.");
 
@@ -541,7 +511,7 @@ public static class ProjectSettings
                 ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
-                    if (TargetProject.EnableFileBrowser != EnableFileBrowser)
+                    if (TargetProject.EnableBehaviorEditor != EnableBehaviorEditor)
                     {
                         EditorStateChanged = true;
                     }

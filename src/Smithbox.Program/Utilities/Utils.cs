@@ -380,6 +380,10 @@ public static class Utils
             {
                 SFUtil.EncryptAC6Regulation(writepath + ".temp", bndAC6);
             }
+            else if (gameType is ProjectType.NR && item is BND4 bndNR)
+            {
+                SFUtil.EncryptNightreignRegulation(writepath + ".temp", bndNR);
+            }
             else if (item is BXF3 or BXF4)
             {
                 var bhdPath = $@"{moddir}\{(string)writeparms[0]}";

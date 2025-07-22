@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <iconId
+    AltName="Icon ID"
+    Wiki=""
+    TextureRef="Direct/01_common_h/SB_MenuIcon_1/iconId/MENU_MenuIcon_"/>
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

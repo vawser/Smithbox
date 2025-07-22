@@ -86,9 +86,19 @@ public class FieldDecorators
                 result |= AliasEnum_ContextMenuItems(editor.Project.Aliases.Movies, oldval, ref newval);
             }
 
-            if (cellMeta.ShowProjectEnumList && cellMeta.EnumType != null)
+            if (cellMeta.ShowCharacterEnumList)
             {
-                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.EnumType.Name).FirstOrDefault();
+                result |= CharacterAliasEnum_ContextMenuItems(editor.Project.Aliases.Characters, oldval, ref newval);
+            }
+
+            if (cellMeta.TileRef != null)
+            {
+                result |= TileRef_ContextMenuItems(editor.Project.Aliases.MapNames, oldval, ref newval);
+            }
+
+            if (cellMeta.ShowProjectEnumList && cellMeta.ProjectEnumType != null)
+            {
+                var optionList = editor.Project.ProjectEnums.List.Where(e => e.Name == cellMeta.ProjectEnumType).FirstOrDefault();
 
                 if (optionList != null)
                 {
@@ -297,7 +307,7 @@ public class FieldDecorators
     /// </summary>
     /// <param name="entries"></param>
     /// <param name="value"></param>
-    public static void AliasEnum_Value(List<AliasEntry> entries, string value)
+    public static void AliasEnum_Value(List<AliasEntry> entries, string value, bool isCharacterAlias = false)
     {
         var inactiveEnum = false;
 
@@ -309,6 +319,12 @@ public class FieldDecorators
                 if (value == "0" || value == "-1")
                 {
                     var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                    if(isCharacterAlias)
+                    {
+                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                    }
+
                     if (entry != null)
                     {
                         ImGui.TextUnformatted(entry.Name);
@@ -321,6 +337,12 @@ public class FieldDecorators
                 else
                 {
                     var entry = entries.FirstOrDefault(e => e.ID == value);
+
+                    if (isCharacterAlias)
+                    {
+                        entry = entries.FirstOrDefault(e => e.ID.Replace("c", "") == value);
+                    }
+
                     if (entry != null)
                     {
                         ImGui.TextUnformatted(entry.Name);
@@ -333,6 +355,40 @@ public class FieldDecorators
                 ImGui.PopStyleColor();
             }
         }
+    }
+
+    public static bool CharacterAliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
+    {
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+
+        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count))))
+        {
+            try
+            {
+                foreach (var entry in entries)
+                {
+                    var id = entry.ID.Replace("c", "");
+
+                    if (SearchFilters.IsEditorSearchMatch(enumSearchStr, id, " ")
+                        || SearchFilters.IsEditorSearchMatch(enumSearchStr, entry.Name, " ")
+                        || enumSearchStr == "")
+                    {
+                        if (ImGui.Selectable($"{id}: {entry.Name}"))
+                        {
+                            newval = Convert.ChangeType(id, oldval.GetType());
+                            ImGui.EndChild();
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        ImGui.EndChild();
+        return false;
     }
 
     public static bool AliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
@@ -813,14 +869,17 @@ public class FieldDecorators
                 {
                     var curFieldMeta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
 
-                    if (curFieldMeta.VirtualRef != null &&
-                        curFieldMeta.VirtualRef.Equals(virtualRefName))
+                    if (curFieldMeta != null)
                     {
-                        if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                        if (curFieldMeta.VirtualRef != null &&
+                            curFieldMeta.VirtualRef.Equals(virtualRefName))
                         {
-                            EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
-                            EditorCommandQueue.AddCommand(
-                                $@"param/search/prop {f.InternalName} ^{searchValue.ToParamEditorString()}$");
+                            if (ImGui.Selectable($@"Search in {param.Key} ({f.InternalName})"))
+                            {
+                                EditorCommandQueue.AddCommand($@"param/select/-1/{param.Key}");
+                                EditorCommandQueue.AddCommand(
+                                    $@"param/search/prop {f.InternalName} ^{searchValue.ToParamEditorString()}$");
+                            }
                         }
                     }
                 }
@@ -1441,7 +1500,7 @@ public class FieldDecorators
             foreach (PARAMDEF.Field f in param.Value.AppliedParamdef.Fields)
             {
                 var meta = editor.Project.ParamData.GetParamFieldMeta(curMeta, f);
-                if (meta.RefTypes == null)
+                if (meta == null || meta.RefTypes == null)
                 {
                     continue;
                 }
@@ -1489,7 +1548,7 @@ public class FieldDecorators
             var xAxisTitle = "";
             var yAxisTitle = "";
 
-            if (editor.Project.ParamData.GraphLegends != null)
+            if (editor.Project.ParamData.GraphLegends != null && editor.Project.ParamData.GraphLegends.Entries != null)
             {
                 var entry = editor.Project.ParamData.GraphLegends.Entries
                     .FirstOrDefault(e => e.RowID == $"{row.ID}");
@@ -1620,6 +1679,73 @@ public class FieldDecorators
             editor.FieldValueFinder.Results.Sort();
         }
         UIHelper.Tooltip("Quick use action for searching in 'Find Field Value Instances' tool with this row ID.");
+    }
+    #endregion
+
+    #region Tile Ref
+    /// <summary>
+    /// The title column decoration for the Tile Ref decorator
+    /// </summary>
+    /// <param name="editor"></param>
+    /// <param name="enumType"></param>
+    public static void TileRef_Title(ParamEditorScreen editor, string enumType)
+    {
+        if (!CFG.Current.Param_ShowFieldEnumLabels)
+        {
+            return;
+        }
+
+        ImGui.TextUnformatted($@"   <Tile>");
+    }
+
+    /// <summary>
+    /// The value column decoration for the Tile Ref  decorator
+    /// </summary>
+    /// <param name="editor"></param>
+    /// <param name="enumType"></param>
+    /// <param name="value"></param>
+    public static void TileRef_Value(ParamEditorScreen editor, string enumType, string value)
+    {
+        if (CFG.Current.Param_HideEnums == false)
+        {
+            var resultID = "";
+            var resultName = "";
+
+            foreach (var entry in editor.Project.Aliases.MapNames)
+            {
+                var mapName = entry.ID;
+                if (mapName.Length > 5)
+                {
+                    var adjustedMapName = mapName.Replace("m", "").Replace("_", "");
+
+                    if(adjustedMapName.Substring(0, 4) == value)
+                    {
+                        resultID = entry.ID;
+                        resultName = entry.Name;
+                    }
+                }
+            }
+
+            if (resultID != "")
+            {
+                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_EnumValue_Text);
+                ImGui.TextUnformatted(resultName);
+                ImGui.PopStyleColor();
+            }
+        }
+    }
+
+    /// <summary>
+    /// The context menu items for the Tile Ref  decorator
+    /// </summary>
+    /// <param name="en"></param>
+    /// <param name="oldval"></param>
+    /// <param name="newval"></param>
+    /// <returns></returns>
+    public static bool TileRef_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
+    {
+        
+        return false;
     }
     #endregion
 }

@@ -203,7 +203,7 @@ public static class MiscLocator
         var paramExt = @".remobnd.dcx";
 
         // Sekiro + ER + AC6
-        if (project.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.SDT or ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             paramDir = @"\cutscene";
             paramExt = @".cutscenebnd.dcx";
@@ -237,7 +237,7 @@ public static class MiscLocator
 
     public static List<string> GetMaterialBinBinders(ProjectEntry project)
     {
-        if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             var paramDir = @"\material";
             var paramExt = @".matbinbnd.dcx";

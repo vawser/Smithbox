@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>SMALLBASE_AND_SPOT_ATTACH_POINT_ST</ParamType>
+  <DataVersion>3</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 areaNo"/>
+    <Field Def="u8 gridXNo"/>
+    <Field Def="u8 gridZNo"/>
+    <Field Def="dummy8 pad[1]"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 unknown_4"/>
+    <Field Def="u32 attachPointEntityId"/>
+    <Field Def="s32 defaultSmallBase"/>
+    <Field Def="u8 unknown_7a"/>
+    <Field Def="u8 unknown_7b"/>
+    <Field Def="u8 unknown_7c"/>
+    <Field Def="u8 unknown_7d"/>
+    <Field Def="u8 unknown_8a"/>
+    <Field Def="u8 unknown_8b"/>
+    <Field Def="u8 unknown_8c"/>
+    <Field Def="u8 unknown_8d"/>
+    <Field Def="u8 unknown_9a"/>
+    <Field Def="u8 unknown_9b"/>
+    <Field Def="u8 unknown_9c"/>
+    <Field Def="u8 unknown_9d"/>
+    <Field Def="u8 unknown_10a"/>
+    <Field Def="u8 unknown_10b"/>
+    <Field Def="u8 unknown_10c"/>
+    <Field Def="u8 unknown_10d"/>
+    <Field Def="u8 unknown_11a"/>
+    <Field Def="u8 unknown_11b"/>
+    <Field Def="u8 unknown_11c"/>
+    <Field Def="u8 unknown_11d"/>
+    <Field Def="u8 unknown_12a"/>
+    <Field Def="u8 unknown_12b"/>
+    <Field Def="u8 unknown_12c"/>
+    <Field Def="u8 unknown_12d"/>
+    <Field Def="s32 unknown_13"/>
+    <Field Def="f32 posX"/>
+    <Field Def="f32 posY"/>
+    <Field Def="f32 posZ"/>
+    <Field Def="f32 unknown_17"/>
+    <Field Def="s32 unknown_18"/>
+    <Field Def="u8 unknown_19a"/>
+    <Field Def="u8 unknown_19b"/>
+    <Field Def="u8 unknown_19c"/>
+    <Field Def="u8 unknown_19d"/>
+    <Field Def="s32 unknown_20"/>
+    <Field Def="s32 unknown_21"/>
+    <Field Def="u8 unknown_22a"/>
+    <Field Def="u8 unknown_22b"/>
+    <Field Def="u8 unknown_22c"/>
+    <Field Def="u8 unknown_22d"/>
+    <Field Def="u8 unknown_23a"/>
+    <Field Def="u8 unknown_23b"/>
+    <Field Def="u8 unknown_23c"/>
+    <Field Def="u8 unknown_23d"/>
+    <Field Def="s32 unknown_24"/>
+  </Fields>
+</PARAMDEF>

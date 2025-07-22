@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>SORTIE_STARTING_POINT_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="u8 areaId"/>
+    <Field Def="u8 gridXNo"/>
+    <Field Def="u8 gridZNo"/>
+    <Field Def="u8 unknown_1d"/>
+    <Field Def="u32 birdRouteEntityId"/>
+    <Field Def="s32 requireModifier"/>
+    <Field Def="s32 excludeModifier1"/>
+    <Field Def="s32 excludeModifier2"/>
+    <Field Def="u8 unknown_6a"/>
+    <Field Def="u8 spawnGridXNo"/>
+    <Field Def="u8 spawnGridZNo"/>
+    <Field Def="u8 unknown_6d"/>
+    <Field Def="u32 spawnPointEntityId"/>
+  </Fields>
+</PARAMDEF>

@@ -108,6 +108,7 @@ public unsafe class OpenGLCompatGraphicsContext : IGraphicsContext
         GL.ClearColor(0.176f, 0.176f, 0.188f, 1.0f);
         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit |
                  ClearBufferMask.StencilBufferBit);
+
         _imGuiRenderer.Render();
         _context.SwapBuffers();
     }

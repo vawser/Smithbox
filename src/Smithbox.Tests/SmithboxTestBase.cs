@@ -25,8 +25,6 @@ public abstract class SmithboxTestBase
         SmithboxInstance = new Smithbox(new VulkanGraphicsContext(), "Test", false);
         //SmithboxInstance = new Smithbox(new OpenGLCompatGraphicsContext(), "Test", true);
 
-        SmithboxInstance.ProjectManager.ProjectDisplayOrder = new();
-
         Smithbox.FirstFrame = false;
         Smithbox.FontRebuildRequest = false;
 

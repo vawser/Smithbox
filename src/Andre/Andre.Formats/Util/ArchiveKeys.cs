@@ -19,7 +19,7 @@ namespace Andre.Formats.Util
                 Game.SDT => SekiroKeys[name],
                 Game.ER => EldenRingKeys[name],
                 Game.AC6 => ArmoredCore6Keys[name],
-                Game.ERN => NightreignKeys[name],
+                Game.NR => NightreignKeys[name],
                 _ => throw new ArgumentException($"No keys for {game}")
             };
         }
@@ -27,7 +27,7 @@ namespace Andre.Formats.Util
         public static Dictionary<string, string> DarkSouls3Keys = new Dictionary<string, string>
         {
             ["Data1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEA05hqyboW/qZaJ3GBIABFVt1X1aa0/sKINklvpkTRC+5Ytbxvp18L
 M1gN6gjTgSJiPUgdlaMbptVa66MzvilEk60aHyVVEhtFWy+HzUZ3xRQm6r/2qsK3
 8wXndgEU5JIT2jrBXZcZfYDCkUkjsGVkYqjBNKfp+c5jlnNwbieUihWTSEO+DA8n
@@ -37,7 +37,7 @@ AUbbV+1Su9uq2+wQxgnsAp+xzhn9og9hmwIEC35bSQ==
 -----END RSA PUBLIC KEY-----",
 
             ["Data2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAvCZAK9UfPdk5JaTlG7n1r0LSVzIan3h0BSLaMXQHOwO7tTGpvtdX
 m2ZLY9y8SVmOxWTQqRq14aVGLTKDyH87hPuKd47Y0E5K5erTqBbXW6AD4El1eir2
 VJz/pwHt73FVziOlAnao1A5MsAylZ9B5QJyzHJQG+LxzMzmWScyeXlQLOKudfiIG
@@ -47,7 +47,7 @@ TxuGDQQALed4S4KvM+fadx27pQz8pP9VLwIEL67iCQ==
 -----END RSA PUBLIC KEY-----",
 
             ["Data3"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAqLytWD20TSXPeAA1RGDwPW18nJwe2rBX+0HPtdzFmQc/KmQlWrP+
 94k6KClK5f7m0xUHwT8+yFGLxPdRvUPyOhBEnRA6tkObVDSxij5y0Jh4h4ilAO73
 I8VMcmscS71UKkck4444+eR4vVd+SPlzIu8VgqLefvEn/sX/pAevDp7w+gD0NgvO
@@ -57,7 +57,7 @@ FFGM7qRMc0yvHqJnniEWDsSz8Bvg+GxpgQIEC8XNVw==
 -----END RSA PUBLIC KEY-----",
 
             ["Data4"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEArfUaZWjYAUaZ0q+5znpX55GeyepawCZ5NnsMjIW9CA3vrOgUGRkh
 6aAU9frlafQ81LQMRgAznOnQGE7K3ChfySDpq6b47SKm4bWPqd7Ulh2DTxIgi6QP
 qm4UUJL2dkLaCnuoya/pGMOOvhT1LD/0CKo/iKwfBcYf/OAnwSnxMRC3SNRugyvF
@@ -67,7 +67,7 @@ gYZkS9D3k9m+tkNe0VVrd4mBEmqVxg+V9wIEL6Y6tw==
 -----END RSA PUBLIC KEY-----",
 
             ["Data5"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAvKTlU3nka4nQesRnYg1NWovCCTLhEBAnjmXwI69lFYfc4lvZsTrQ
 E0Y25PtoP0ZddA3nzflJNz1rBwAkqfBRGTeeTCAyoNp/iel3EAkid/pKOt3JEkHx
 rojRuWYSQ0EQawcBbzCfdLEjizmREepRKHIUSDWgu0HTmwSFHHeCFbpBA1h99L2X
@@ -77,7 +77,7 @@ aH3kbUxKlDGaEENNNyZQcQrgz8Q76jIE0QIEFUsz9w==
 -----END RSA PUBLIC KEY-----",
 
             ["DLC1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAsCGM9dFwzaIOUIin3DXy7xrmI2otKGLZJQyKi5X3znKhSTywpcFc
 KoW6hgjeh4fJW24jhzwBosG6eAzDINm+K02pHCG8qZ/D/hIbu+ui0ENDKqrVyFhn
 QtX5/QJkVQtj8M4a0FIfdtE3wkxaKtP6IXWIy4DesSdGWONVWLfi2eq62A5ts5MF
@@ -87,7 +87,7 @@ jnIFl1T17R8DpTU/93ojx+/q1p+b1o5is5KcoP7QwjOqzjHJH8bTytzRbgmRcDMW
 -----END RSA PUBLIC KEY-----",
 
             ["DLC2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAtCXU9a/GBMVoqtpQox9p0/5sWPaIvDp8avLFnIBhN7vkgTwulZHi
 u64vZAiUAdVeFX4F+Qtk+5ivK488Mu2CzAMJcz5RvyMQJtOQXuDDqzIv21Tr5zuu
 sswoErHxxP8TZNxkHm7Ram7Oqtn7LQnMTYxsBgZZ34yJkRtAmZnGoCu5YaUR5euk
@@ -100,7 +100,7 @@ WVUjhLm+/uj8r8PNgolerDeS+8FM5Bpe9QIEHwCZLw==
         public static Dictionary<string, string> SekiroKeys = new Dictionary<string, string>
         {
             ["Data1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEA92l+AWx1aV7mzt+6r00bm/qnc4b6NH3VVr/v4UxMcfzushL8jsn9
 ZSP1ss95ot/quk8dOJsp0+/bvxH+C9DEezzNLSqqAGd2jq2PYosj/6FhYAKjjMlK
 jNxcVPsKQug0Zby+KYsENirmEXcmA1fzltrISf6d6LKB1UFHHN9NRkLCm3idE4Pu
@@ -110,7 +110,7 @@ Nu8vZt++lhJ01SjTc2A4hVPz7g1EEO5/TQIEKkj5Jw==
 -----END RSA PUBLIC KEY-----",
 
             ["Data2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEAqhjoThWX8VwsTKTI1kjp0JBloCXhV8i99P1KPTCTDBnmhVQPdu+7
 UQ5g4//eh0oqKaOUjet+0SP94QscjIIrhV91OzfIouIWgJJK/ROOP/A3sb5AlzPa
 6YPcN8ODxR+esyrWhc6rHCt4qGvXVXrgh6zpZM5h5VCTSaup4qqIWm44EF3+FeYS
@@ -120,7 +120,7 @@ maJXSE7ztTp0qTa05YZUsiU3g9HplkeTUwIFAP/xKZE=
 -----END RSA PUBLIC KEY-----",
 
             ["Data3"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEAx5jlgIvoHQLwSFsAwKFZbNo3fgZ89C7tj4hwiZsQVg8QnNZohXl5
 S5Ep9pS2biOFsSkuZMXKmfYErh2CsdFbr7QR7kvPPianXNrkCI4xlfQwJvMmkLm9
 6/JmRIUzTWp0kKJUJZJH/UIrXNn7fmk8Vmx1bQIi8bumGSl3gxeMhutv/lC9khsY
@@ -130,7 +130,7 @@ AvvEXtcpKfyFQWcUheQZ8LngAh/UTJHtQwIFAOpVoU8=
 -----END RSA PUBLIC KEY-----",
 
             ["Data4"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAq8RyArk+eqMAcxLAHUDRYV7yScNKZpKSxGmgJZQ7y6Y8f5wdrNCt
 byXfmsdQECStIGlkwWjtfm8t/bRZuxxPciAYaFsWo0Ze2BB6uY6ZteNpLJn82qbL
 TXATf+af3kSrvICfvJwRzbfA/PRJRkHj2gJ6Tc7g6HK7S/4TiCZirq+c/zLY3gb8
@@ -140,7 +140,7 @@ sJrTmSs/48BeDsQwXuaqOg+6noETBx3pgQIEGM2Ohw==
 -----END RSA PUBLIC KEY-----",
 
             ["Data5"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEAu75/UbXwHdvu/p49TwnY7Ou6DAuZYFAtLUkw/R4nvm0HWVlRsZiB
 LG3MOG6sPmK2Zc3JLBU2QK4uKazZ9VrmotM4OpYr03q2tiFnv3NfCvB1UeIJIKe3
 kVhHNZIbvrwEP9a5UCnrSHD+u+Fj5MQBr4yrEitwrNVvIC4J0Ez1Ppn3+D8ff8Xg
@@ -153,7 +153,7 @@ TCJKeE/wgu6hY++lBi5T3ArHZZcsbXzV6wIFAPlRTMc=
         public static Dictionary<string, string> SekiroBonusKeys = new Dictionary<string, string>
         {
             ["Data"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEAxFOPK7c3E2Tu8HSS3NUlWUHdlJZIJiHf/0DhyLZUP68iEhJ8SLQ0
 sDAgFBxIAEZQcVZBKLhTZiTyqaqIolgCDH6ZcMlWOGOWj3G6PuhPeb/7ZeQSo7Xv
 plGCovqnioRoaFf4gVZDsbpVXIGNXwWsL5kArQiQo3ZrMs17/t77yZ6avC/1hnFp
@@ -166,7 +166,7 @@ ChgwGmsLdVr7W6hZL3aNvsf/BWFQ+e7+tQIFANZbM50=
         public static Dictionary<string, string> EldenRingKeys = new Dictionary<string, string>
         {
             ["Data0"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEA9Rju2whruXDVQZpfylVEPeNxm7XgMHcDyaaRUIpXQE0qEo+6Y36L
 P0xpFvL0H0kKxHwpuISsdgrnMHJ/yj4S61MWzhO8y4BQbw/zJehhDSRCecFJmFBz
 3I2JC5FCjoK+82xd9xM5XXdfsdBzRiSghuIHL4qk2WZ/0f/nK5VygeWXn/oLeYBL
@@ -176,7 +176,7 @@ sutLq3uRjLMM0IeTkQO6Pv8/R7UNFtdCWwIERzH8IQ==
 -----END RSA PUBLIC KEY-----",
 
             ["Data1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAxaBCHQJrtLJiJNdG9nq3deA9sY4YCZ4dbTOHO+v+YgWRMcE6iK6o
 ZIJq+nBMUNBbGPmbRrEjkkH9M7LAypAFOPKC6wMHzqIMBsUMuYffulBuOqtEBD11
 CAwfx37rjwJ+/1tnEqtJjYkrK9yyrIN6Y+jy4ftymQtjk83+L89pvMMmkNeZaPON
@@ -186,7 +186,7 @@ CAwfx37rjwJ+/1tnEqtJjYkrK9yyrIN6Y+jy4ftymQtjk83+L89pvMMmkNeZaPON
 -----END RSA PUBLIC KEY-----",
 
             ["Data2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEA0iDVVQ230RgrkIHJNDgxE7I/2AaH6Li1Eu9mtpfrrfhfoK2e7y4O
 WU+lj7AGI4GIgkWpPw8JHaV970Cr6+sTG4Tr5eMQPxrCIH7BJAPCloypxcs2BNfT
 GXzm6veUfrGzLIDp7wy24lIA8r9ZwUvpKlN28kxBDGeCbGCkYeSVNuF+R9rN4OAM
@@ -196,7 +196,7 @@ qqhYkZNXMdy0NXopf1rEHKy9poaHEmJldwIFAP////8=
 -----END RSA PUBLIC KEY-----",
 
             ["Data3"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAvRRNBnVq3WknCNHrJRelcEA2v/OzKlQkxZw1yKll0Y2Kn6G9ts94
 SfgZYbdFCnIXy5NEuyHRKrxXz5vurjhrcuoYAI2ZUhXPXZJdgHywac/i3S/IY0V/
 eDbqepyJWHpP6I565ySqlol1p/BScVjbEsVyvZGtWIXLPDbx4EYFKA5B52uK6Gdz
@@ -206,7 +206,7 @@ etKPi6h5uprVmMAS5wR/jQIVTMpTj/zJdwIEXszeQw==
 -----END RSA PUBLIC KEY-----",
 
             ["DLC"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAmYJ/5GJU4boJSvZ81BFOHYTGdBWPHnWYly3yWo01BYjGRnz8NTkz
 DHUxsbjIgtG5XqsQfZstZILQ97hgSI5AaAoCGrT8sn0PeXg2i0mKwL21gRjRUdvP
 Dp1Y+7hgrGwuTkjycqqsQ/qILm4NvJHvGRd7xLOJ9rs2zwYhceRVrq9XU2AXbdY4
@@ -216,7 +216,7 @@ O1FnLm8i4zOxVdPHQBKICkKcGS1o3C2dfwIEXw/f3w==
 -----END RSA PUBLIC KEY-----",
 
             ["sd\\sd"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAmYJ/5GJU4boJSvZ81BFOHYTGdBWPHnWYly3yWo01BYjGRnz8NTkz
 DHUxsbjIgtG5XqsQfZstZILQ97hgSI5AaAoCGrT8sn0PeXg2i0mKwL21gRjRUdvP
 Dp1Y+7hgrGwuTkjycqqsQ/qILm4NvJHvGRd7xLOJ9rs2zwYhceRVrq9XU2AXbdY4
@@ -226,7 +226,7 @@ O1FnLm8i4zOxVdPHQBKICkKcGS1o3C2dfwIEXw/f3w==
 -----END RSA PUBLIC KEY-----",
 
             ["sd\\sd_dlc02"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAmYJ/5GJU4boJSvZ81BFOHYTGdBWPHnWYly3yWo01BYjGRnz8NTkz
 DHUxsbjIgtG5XqsQfZstZILQ97hgSI5AaAoCGrT8sn0PeXg2i0mKwL21gRjRUdvP
 Dp1Y+7hgrGwuTkjycqqsQ/qILm4NvJHvGRd7xLOJ9rs2zwYhceRVrq9XU2AXbdY4
@@ -240,7 +240,7 @@ O1FnLm8i4zOxVdPHQBKICkKcGS1o3C2dfwIEXw/f3w==
         public static Dictionary<string, string> ArmoredCore6Keys = new Dictionary<string, string>
         {
             ["Data0"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEA7F43Ss9kroawBSUW6GBhSUo6GtxYtUV8zCPkcHhSJLGPASHhwsaX
 zMRrd+Ul9qB3oYchb4xYtdMWKFe0/ZDi9vgYXvF3rlWaZKAu1k/F6RwVAd//I3Kj
 JsYlhayskInKqB3BvB/KL2Ga8QBsZ/G9cLlUYsqIj3as9oqbfEXVmGVeuhg0I+NQ
@@ -250,7 +250,7 @@ YmR86B680OyL9oiEonEFhh4cor/84PSmNQIFAOHX27k=
 -----END RSA PUBLIC KEY-----",
 
             ["Data1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAsM5QTi6Fo1li23fkvP7jXqFlanR61VS1znElmsZH0Ez4LtuM7WUC
 QnZyi9u15T89WmIKCGpfgHZBgJEVFqW9FMhBxrA5/gXcqnGESjc+NNF71rfug/qg
 Ue7B9tXlq18/bdD7qPEjYY02H5fh4Z/g0+oClSNyZR46G/MXZSw8KMV4QHikCAxJ
@@ -260,7 +260,7 @@ JEQRDwb2VT3fpQ2oHgOc5zDYMOdObdX/tQIEZYdnGQ==
 -----END RSA PUBLIC KEY-----",
 
             ["Data2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEApvNV8cCaxTBtW6kB94Gd5/+NuQnVLxRo6b0QUSSXh8KGWCRNPjpq
 LEyu0kuHCTG5xfomzB5vlq9INu0odZAWZu+NWvz+YydnIQO+UPDF9J/wE92SMzBj
 n7d4uEglevPswQLiJVQThCtrl1B8dCz7vFvlSknx23jdUQ/0hfxVnLvP2GpNW/v5
@@ -270,7 +270,7 @@ dm77dL2KwxXDiYxNAecEFVuG/PRV7J8hHQIFAP3yuSk=
 -----END RSA PUBLIC KEY-----",
 
             ["Data3"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBDAKCAQEAvS4XXheufoQvvfTksJhO7JrH1ykMa2ogHtqHhAOZXorLLXvsWfVO
 Q+enFY7kBjKyVbUOlqj3M6Ho2S8QgJTO/Xz3DhD3YlHva59RnIXI2gmSyvrTB0Z/
 GopmJzVfc9o7763CMy/27tS4/dBM9qKs+csvjE6fG470Z025yECgtTtXzltg4pht
@@ -280,7 +280,7 @@ nRPreV08oQchzQ5miTezWUAk7mIcZoFHwwIFAP////8=
 -----END RSA PUBLIC KEY-----",
 
             ["sd\\sd"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
 MIIBCwKCAQEAvbz2HnG3JaP3imwnZJMWCyzW9ZjrgzgxZ/EtzFrzpeYPFdYGmBim
 XFfBarWpREW7M4y6Z7iy4UAbNmF9SLDp6RLiKauI9AxQK3ICYf+2UuDaXO6QeeXM
 JgwQhIugkQFobZOnJLpGT4ynWvH0iR2LO/aFivAPry+bkKXCX9y5zfod2at6j0Ri
@@ -294,34 +294,55 @@ viCKV6AQNxb8J1CHev0OJv9r+bMSy+1kxwIEILt78w==
 
         public static Dictionary<string, string> NightreignKeys = new Dictionary<string, string>
         {
-            ["Data0"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            ["data0"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBDAKCAQEAz8F9U1V9hgKs40gdzl1ZOf3IBirf6xUEzXtDd6oSEBE6XiYocvAB
+ykiK+WMdAaJL7HJ58Gt2xSRxA3t9toCGKMI/3gNAfcR0BV83gsQo0O0dVP0fqyxX
+lA2pGN5B4IE8aLWPX2cNNFSFKAdjYnzsYSevzef/pgnpV1ZgPf2j2SQwNGSufYeN
+3Owji8l0K2C0fKIx6gSO0cK9kvTIm8AdpvzZbBkTylT1jF3m8DsSA1OFzFJTdFyZ
+bTRi85M6bmv6rHtvZc5OW21dye7Q6fmLlxOyMetLTu4dpOXjHAAf/LFTbfQpXFr9
+aXO4O6I7nWDJn7FRzNlLkb8RwSyZ1/KWyQIFALEDsAc=
 -----END RSA PUBLIC KEY-----",
 
-            ["Data1"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            ["data1"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBDAKCAQEA0E6dtnDmT6d2+VaNkPzomUNv+T6896H//RAaTR2guPACMDNZpAsF
+vV3MfNcR2BS6Cbxl55MmMWsmsZs1s293MuOdS+c99vmZbNYcXWjx0uJGO+VrRXe4
+3TRzmQFh1uD+Xcq6+wYfTrGyLOdAtmwdDXNvW8jYoFDM7nsuoPKOXKtKd0uz7/MK
+ZYLk1J7pAoBQqw9VD5qi2Ih86zn0VWm5lLMTI0qnutOzpZVDvZWBg/jr4Nbnr/Ox
+PLeJO1tFuRuHUPuBAWtYM/J23MPqqKkQrG5z2r7PexUI744UPdmo3Sn+Mqynuxxv
+V9SEhska6pStzn8R9i94wOKPTQ32HEFuUQIFAP////8=
 -----END RSA PUBLIC KEY-----",
 
-            ["Data2"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            ["data2"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBDAKCAQEAqpkf9yHnx8k84+WXITLFUW/STypXjZMPuw842pzNHa5L7v9gU4M5
+hBHwTQs0YIcfnf+mbjqoJYnmYPBblxLjFXgwT4ICJdpnPMY75BwD0Nv28/CvvIsA
+0QQWOhUeOXnm5BT26dGYi3CHHPvD14F76tJt3TO/CC3fyhdxne9Cra5G87aGTJGv
+0ImsU0KPCizYX/RHQ2jdJdlB5BHzkMgLhIaEdhC3nhIqMJDNQNGKMo7rRV1tAEGf
+0zIZ23PGEsPsbVg31nnnRoq338WfD9ArZZG6bM11vlfVcYmrJs7v4vBjKXnYVwVX
+0rQGIfSNDnaZcEj4tsl04AqnupTdvSrHXwIFANOg6RU=
 -----END RSA PUBLIC KEY-----",
 
-            ["Data3"] =
-@"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
-
-            ["DLC"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            ["data3"] =
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBCwKCAQEAwm2Rcw4eoP8FgWijxw1X8b9rEVFsVqy7rXWcH2yVm61yYBlzPlTq
+Kqnc2VeqZSh/TLXeFY3+Om2X78RQxZNS3L3OokvD7l/0wqPIpXSSumeeL8UAZm5k
+7nFA2m2HJfc+F07kNwwCEqhmFs5YQIMnWyIrqnEax/qSncFErLjIYMBMArVnVLE8
+WqgsD7N8lW937dlUcT2TaPh1HfjavKOSUy/OHM9zaneyDL4NRmDdU8GmNXTSm5kP
+YoSRCDIvFVj0g5iaXr60eRh0d+40TctoBUdtaoJCPOyRlmkE7qU6Q9FyyvMNbhtf
+D95d+6IJejNd7kvyV/ISlB37kb2Uh9TavwIEOqKLtw==
 -----END RSA PUBLIC KEY-----",
 
             ["sd\\sd"] =
-@"-----BEGIN RSA PUBLIC KEY-----
+            @"-----BEGIN RSA PUBLIC KEY-----
+MIIBCwKCAQEA19Y/R69SXASLOgInwfAXjAXuWSTQ6GP7XNoMDY0ThefISGG2p7G5
+oQDpvK9oMGISCqHTr4ijs31GoC0dBG5Vnl1dRO+teXORoy+vlM3dRc1XyBXWkLM8
+8O8PkhWeisf2EGyAa1jGjAAPNblKIAWbUFsxW2Ve7PKRF3FQAIiSPiOIbc24C3zE
+TpbKDCVoDlm80DTv+Fg2ZdgD985ZDGtwBvg+RRe19iLg7imcrHeZdvqI/CzaY+r3
+l5hFle31jjWopOm8sORZUMAWPFxuGm+lnB7v0iCCTboq+YC24sOXNabjsgnKkQF1
+1G7uQz1qjnmQxnp3FgbnHRe1I3mCwELuvwIEOC192w==
 -----END RSA PUBLIC KEY-----",
-
-            ["sd\\sd_dlc02"] =
-@"-----BEGIN RSA PUBLIC KEY-----
------END RSA PUBLIC KEY-----",
-
         };
     }
 }

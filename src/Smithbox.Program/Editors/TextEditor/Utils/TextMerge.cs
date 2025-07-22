@@ -154,6 +154,9 @@ public static class TextMerge
                     {
                         if (curWrapper.ID == tarWrapper.ID)
                         {
+                            // Set this so Save All will save everything
+                            targetContainer.IsModified = true;
+
                             await ProcessFmg(curWrapper, tarWrapper);
                         }
                     }

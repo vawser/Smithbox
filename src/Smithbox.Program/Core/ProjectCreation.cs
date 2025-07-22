@@ -28,8 +28,10 @@ public static class ProjectCreation
     private static string SteamExecutable_SDT = "";
     private static string SteamExecutable_ER = "";
     private static string SteamExecutable_AC6 = "";
+    private static string SteamExecutable_NR = "";
 
     public static bool AutoSelect = false;
+    public static bool RowNameImport = false;
 
     public static bool EnableMapEditor = true;
     public static bool EnableModelEditor = true;
@@ -58,7 +60,7 @@ public static class ProjectCreation
         ProjectType.DS3,
         ProjectType.SDT,
         ProjectType.ER,
-        ProjectType.ERN,
+        ProjectType.NR,
         ProjectType.AC6,
     };
 
@@ -80,6 +82,7 @@ public static class ProjectCreation
         SteamExecutable_SDT = SteamGameLocator.FindGameExecutable(814380, "sekiro.exe");
         SteamExecutable_ER = SteamGameLocator.FindGameExecutable(1245620, "Game\\eldenring.exe");
         SteamExecutable_AC6 = SteamGameLocator.FindGameExecutable(1888160, "Game\\armoredcore6.exe");
+        SteamExecutable_NR = SteamGameLocator.FindGameExecutable(2622380, "Game\\nightreign.exe");
 
         Display = true;
     }
@@ -178,6 +181,10 @@ public static class ProjectCreation
                                 if (ProjectType is ProjectType.AC6 && SteamExecutable_AC6 != "" && SteamExecutable_AC6 != null)
                                 {
                                     DataPath = SteamExecutable_AC6;
+                                }
+                                if (ProjectType is ProjectType.NR && SteamExecutable_NR != "" && SteamExecutable_NR != null)
+                                {
+                                    DataPath = SteamExecutable_NR;
                                 }
                             }
                         }
@@ -291,6 +298,22 @@ public static class ProjectCreation
                     ImGui.SetNextItemWidth(inputWidth);
 
                     ImGui.Checkbox("##projectAutoLoad", ref AutoSelect);
+
+                    ImGui.TableSetColumnIndex(2);
+
+                    // Automatic Load
+                    ImGui.TableNextRow();
+                    ImGui.TableSetColumnIndex(0);
+
+                    ImGui.AlignTextToFramePadding();
+                    ImGui.Text("Row Name Import");
+                    UIHelper.Tooltip("If enabled, row names will be automatically imported in the Param Editor.");
+
+                    ImGui.TableSetColumnIndex(1);
+
+                    ImGui.SetNextItemWidth(inputWidth);
+
+                    ImGui.Checkbox("##projectParamRowNameImport", ref RowNameImport);
 
                     ImGui.TableSetColumnIndex(2);
 

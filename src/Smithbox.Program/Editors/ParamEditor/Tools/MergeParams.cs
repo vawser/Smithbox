@@ -17,14 +17,18 @@ public partial class ParamTools
 {
     public ProjectEntry ParamMerge_TargetProject;
 
-    public bool ParamMerge_TargetUniqueOnly = true;
+    public bool ParamMerge_TargetUniqueOnly = false;
 
     public bool ParamMerge_InProgress = false;
 
-    public async void DisplayParamMerge()
+    public bool DisplayParamToggles = true;
+    public string TargetParamFilter = "";
+    public Dictionary<string, bool> TargetParams = new();
+
+    public void DisplayParamMerge()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
+        var defaultButtonSize = new Vector2(windowWidth * 0.475f, 32);
         var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
         var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
@@ -37,11 +41,60 @@ public partial class ParamTools
             UIHelper.WrappedText("");
             UIHelper.WrappedText("You will need to create a project for the external mod first, it will then appear below.");
             UIHelper.WrappedText("");
-            UIHelper.WrappedText("This process is 'simple', and thus may produce a broken mod if you attempt to merge complex mods.");
-            UIHelper.WrappedText("");
+
+            if (ParamMerge_TargetProject != null)
+            {
+                // Load
+                if (!Project.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.ProjectName))
+                {
+                    if (ImGui.Button("Load##action_Load", defaultButtonSize))
+                    {
+                        Task<bool> loadTask = Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
+                        Task.WaitAll(loadTask);
+                        Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
+                        TargetParams = new();
+                    }
+
+                    ImGui.SameLine();
+                    ImGui.BeginDisabled();
+                    if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                    {
+                    }
+                    ImGui.EndDisabled();
+                }
+                else
+                {
+                    ImGui.BeginDisabled();
+                    if (ImGui.Button("Load##action_Load", defaultButtonSize))
+                    {
+                    }
+                    ImGui.EndDisabled();
+
+                    ImGui.SameLine();
+                    // Merge
+                    if (ParamMerge_InProgress)
+                    {
+                        ImGui.BeginDisabled();
+                        if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                        {
+                        }
+                        ImGui.EndDisabled();
+                    }
+                    else if (!ParamMerge_InProgress)
+                    {
+                        if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                        {
+                            MergeParamHandler();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ImGui.Text("Select a project from below.");
+            }
 
             UIHelper.SimpleHeader("availableProjects", "Compatible Projects:", "List of projects you can merge into your current project", UI.Current.ImGui_AliasName_Text);
-            UIHelper.WrappedText("");
 
             foreach (var proj in Editor.Project.BaseEditor.ProjectManager.Projects)
             {
@@ -61,49 +114,108 @@ public partial class ParamTools
                     isSelected = ParamMerge_TargetProject.ProjectName == proj.ProjectName;
                 }
 
-                    
                 if (ImGui.Selectable($"{proj.ProjectName}", isSelected))
                 {
                     ParamMerge_TargetProject = proj;
                 }
             }
 
-            if(ParamMerge_TargetProject == null || ParamMerge_InProgress)
+            UIHelper.WrappedText("");
+
+            // Options
+            UIHelper.SimpleHeader("mergeOptions", "Options", "Options to apply when merging.", UI.Current.ImGui_AliasName_Text);
+            ImGui.Checkbox("Merge Unique Row IDs only", ref ParamMerge_TargetUniqueOnly);
+            UIHelper.Tooltip("If enabled, rows where the ID is unique will be merged.");
+
+            UIHelper.WrappedText("");
+
+            // Target Params
+            UIHelper.ConditionalHeader("targetParamOptions", "Target Params", "The params to merge.", UI.Current.ImGui_AliasName_Text, ref DisplayParamToggles);
+
+            // Generate bool dict once
+            if (TargetParams.Count == 0)
             {
-                ImGui.BeginDisabled();
-                if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                foreach (var entry in Project.ParamData.PrimaryBank.Params)
                 {
+                    TargetParams.Add(entry.Key, true);
                 }
-                ImGui.EndDisabled();
             }
-            else if(!ParamMerge_InProgress)
+
+            if (DisplayParamToggles)
             {
-                if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                ImGui.InputText("##paramToggleFilter", ref TargetParamFilter, 255);
+
+                ImGui.SameLine();
+                if (ImGui.Button("Toggle All", new Vector2(windowWidth * 0.25f, 20)))
                 {
-                    ParamMerge_InProgress = true;
+                    foreach (var param in TargetParams)
+                    {
+                        TargetParams[param.Key] = !TargetParams[param.Key];
+                    }
+                }
 
-                    await Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
+                foreach (var param in TargetParams)
+                {
+                    var curTruth = param.Value;
+                    var display = true;
 
-                    MergeParamHandler();
+                    if(TargetParamFilter != "")
+                    {
+                        var paramKey = param.Key.ToLower();
+                        var filter = TargetParamFilter.ToLower();
 
-                    ParamMerge_InProgress = false;
+                        display = false;
+
+                        if (paramKey.Contains(filter))
+                        {
+                            display = true;
+                        }
+                    }
+
+                    if (display)
+                    {
+                        ImGui.Checkbox($"{param.Key}##param_{param.Key}", ref curTruth);
+                        if (ImGui.IsItemDeactivatedAfterEdit())
+                        {
+                            TargetParams[param.Key] = curTruth;
+                        }
+                    }
                 }
             }
+            else
+            {
+                ImGui.Text("...");
+            }
+
+            UIHelper.WrappedText("");
         }
     }
 
     public void MergeParamHandler()
     {
+        ParamMerge_InProgress = true;
+
         var auxBank = Editor.Project.ParamData.AuxBanks[ParamMerge_TargetProject.ProjectName];
 
-        // Apply the merge massedit script here
-        var command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified && unique ID: paste;";
+        // ParamSearchEngine: auxparam {ParamMerge_TargetProject.ProjectName}
+        // RowSearchEngine: modified && unique ID:
+        // MERowOperation: paste
 
-        if (!ParamMerge_TargetUniqueOnly)
+        foreach(var entry in TargetParams)
         {
-            command = $"auxparam {ParamMerge_TargetProject.ProjectName} .*: modified ID: paste;";
+            if (entry.Value)
+            {
+                var command = $"auxparam {ParamMerge_TargetProject.ProjectName} {entry.Key}: modified ID: paste;";
+
+                if (ParamMerge_TargetUniqueOnly)
+                {
+                    command = $"auxparam {ParamMerge_TargetProject.ProjectName} {entry.Key}: modified && unique ID: paste;";
+                }
+
+                Editor.MassEditHandler.ApplyMassEdit(command);
+            }
         }
 
-        Editor.MassEditHandler.ApplyMassEdit(command);
+        ParamMerge_InProgress = false;
     }
 }

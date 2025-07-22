@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents a composite shape." />
+  
+  <Field>
+    <Children
+    AltName="Children"
+    Wiki="Other regions referenced by this shape." />
+  
+    <RegionName
+    AltName="Region Name"
+    Wiki="The name of the region to target." />
+    
+    <RegionIndex
+    IndexProperty="" />
+    
+    <unkShapeSubtractType
+    AltName="Subtraction Type"
+    Wiki="Whether this region 'subtracts' its area from the composite shape, or adds it normally." 
+    Enum="COMPOSITION_TYPE" />
+  </Field>
+  
+  <Enums>
+    <Enum Name="COMPOSITION_TYPE" >
+        <Option Value="0" Name="Addition" />
+        <Option Value="2" Name="Subtraction" />
+    </Enum>
+  </Enums>
+</MSBMETA>

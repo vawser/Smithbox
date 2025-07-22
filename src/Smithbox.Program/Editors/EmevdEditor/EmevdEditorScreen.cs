@@ -37,6 +37,11 @@ public class EmevdEditorScreen : EditorScreen
     public EmevdEventCreationModal EventCreationModal;
     public EmevdInstructionCreationModal InstructionCreationModal;
 
+    public EventInstanceFinder EventInstanceFinder;
+    public InstructionInstanceFinder InstructionInstanceFinder;
+    public UnknownInstructionFinder UnknownInstructionFinder;
+    public ValueInstanceFinder ValueInstanceFinder;
+
     public EmevdEditorScreen(Smithbox baseEditor, ProjectEntry project)
     {
         BaseEditor = baseEditor;
@@ -61,6 +66,11 @@ public class EmevdEditorScreen : EditorScreen
 
         EventCreationModal = new EmevdEventCreationModal(this, Project);
         InstructionCreationModal = new EmevdInstructionCreationModal(this, Project);
+
+        EventInstanceFinder = new EventInstanceFinder(this, Project);
+        InstructionInstanceFinder = new InstructionInstanceFinder(this, Project);
+        UnknownInstructionFinder = new UnknownInstructionFinder(this, Project);
+        ValueInstanceFinder = new ValueInstanceFinder(this, Project);
     }
 
     public string EditorName => "EMEVD Editor##EventScriptEditor";
@@ -234,11 +244,15 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void Save()
     {
+        if (Project.EmevdData.PrimaryBank == null)
+            return;
+
         var targetScript = Project.EmevdData.PrimaryBank.Scripts.FirstOrDefault(e => e.Key.Filename == Selection.SelectedFileEntry.Filename);
 
         if (targetScript.Key != null)
         {
             await Project.EmevdData.PrimaryBank.SaveScript(targetScript.Key, targetScript.Value);
+            await Project.EmevdData.PrimaryBank.SaveEMELD(targetScript.Key);
 
             if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
             {
@@ -259,7 +273,11 @@ public class EmevdEditorScreen : EditorScreen
     /// </summary>
     public async void SaveAll()
     {
+        if (Project.EmevdData.PrimaryBank == null)
+            return;
+
         await Project.EmevdData.PrimaryBank.SaveAllScripts();
+        await Project.EmevdData.PrimaryBank.SaveAllEMELD();
 
         // Save the configuration JSONs
         BaseEditor.SaveConfiguration();

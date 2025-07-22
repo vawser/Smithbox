@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="This map object represents an retry point event." />
+  
+  <Field>
+    <RetryPartName
+    AltName="Retry Part Name"
+    Wiki="The part that is associated with the retry point." 
+    MapRef="Part-Part" />
+    
+    <RetryPartIndex
+    IndexProperty="" />
+    
+    <TriggerEventFlagID
+    AltName="Event Flag ID"
+    Wiki="The event flag that must be ON for the retry point to be active." 
+    FlagAlias="" />
+    
+    <RetryDistance
+    AltName="Retry Distance"
+    Wiki="The distance at which the retry point is active (only used if no retry region is set)." />
+
+    <RetryRegionName
+    AltName="Retry Region Name"
+    Wiki="The name of the region that defines the retry area." 
+    MapRef="Region-Region" />
+    
+    <RetryRegionIndex
+    IndexProperty="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

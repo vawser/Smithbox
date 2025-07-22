@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test"
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <targetWeaponId 
+    AltName="Target Weapon" 
+    Wiki="" 
+    Refs="EquipParamWeapon" />
+    
+    <swordArtsTableId 
+    AltName="Target Skill Table" 
+    Wiki="" 
+    Refs="SwordArtsTableParam" />
+    
+    <attachEffectTableId_1 
+    AltName="Attached Effect Table: 1" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_2
+    AltName="Attached Effect Table: 2" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <attachEffectTableId_3 
+    AltName="Attached Effect Table: 3" 
+    Wiki="The attached effect table to use." 
+    Refs="AttachEffectTableParam" />
+    
+    <magicTableId_1 
+    AltName="Magic Table: 1" 
+    Wiki="" 
+    Refs="MagicTableParam" />
+    
+    <magicTableId_2 
+    AltName="Magic Table: 2" 
+    Wiki="" 
+    Refs="MagicTableParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

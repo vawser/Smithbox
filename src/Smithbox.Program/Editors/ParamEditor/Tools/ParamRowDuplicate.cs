@@ -51,7 +51,7 @@ public partial class ParamTools
 
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
-                UIHelper.Tooltip("The ID offset to apply when duplicating.");
+                UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText("Deep Copy:");
@@ -101,6 +101,7 @@ public partial class ParamTools
         }
 
         List<Param.Row> rowsToInsert = new();
+        int insertIndex = -1;
 
         foreach (Param.Row r in rows)
         {
@@ -108,11 +109,29 @@ public partial class ParamTools
             rowsToInsert.Add(newrow);
         }
 
+        if(CFG.Current.Param_Toolbar_Duplicate_Offset == 0)
+        {
+            var lastRow = rows.Last();
+
+            for (int i = 0; i < param.Rows.Count; i++)
+            {
+                var curRow = param.Rows[i];
+
+                if(lastRow == curRow)
+                {
+                    insertIndex = i + 1;
+                    break;
+                }
+            }
+
+            rowsToInsert.Reverse();
+        }
+
         List<EditorAction> actions = new List<EditorAction>();
 
         for (int i = 0; i < CFG.Current.Param_Toolbar_Duplicate_Amount; i++)
         {
-            actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, -1, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
+            actions.Add(new AddParamsAction(Editor, param, "legacystring", rowsToInsert, true, false, insertIndex, CFG.Current.Param_Toolbar_Duplicate_Offset, true));
         }
 
         var compoundAction = new CompoundAction(actions);
@@ -151,7 +170,7 @@ public partial class ParamTools
 
                 ImGui.SetNextItemWidth(defaultButtonSize.X);
                 ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset);
-                UIHelper.Tooltip("The ID offset to apply when duplicating.");
+                UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
                 UIHelper.WrappedText("");
 
                 ImGui.Checkbox("Replace Rows in Target Param", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows);
@@ -301,9 +320,29 @@ public partial class ParamTools
             rowsToInsert.Add(newrow);
         }
 
+        int insertIndex = -1;
+
+        if (CFG.Current.Param_Toolbar_Duplicate_Offset == 0)
+        {
+            var lastRow = selectedRows.Last();
+
+            for (int i = 0; i < currentParam.Rows.Count; i++)
+            {
+                var curRow = currentParam.Rows[i];
+
+                if (lastRow == curRow)
+                {
+                    insertIndex = i + 1;
+                    break;
+                }
+            }
+
+            rowsToInsert.Reverse();
+        }
+
         List<EditorAction> actions = new List<EditorAction>();
 
-        actions.Add(new AddParamsAction(Editor, targetParam, "legacystring", rowsToInsert, false, CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows, -1, CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset, false));
+        actions.Add(new AddParamsAction(Editor, targetParam, "legacystring", rowsToInsert, false, CFG.Current.Param_Toolbar_CommutativeDuplicate_ReplaceExistingRows, insertIndex, CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset, false));
 
         var compoundAction = new CompoundAction(actions);
 

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="2">
+  <ParamType>TALK_PARAM_ST</ParamType>
+  <DataVersion>4</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1">
+      <DisplayName>NT版出力から外すか</DisplayName>
+      <Enum>BOOL_CIRCLECROSS_TYPE</Enum>
+      <Description>○をつけたパラメータをNT版パッケージでは除外します</Description>
+      <EditFlags>None</EditFlags>
+      <Maximum>1</Maximum>
+    </Field>
+    <Field Def="dummy8 disableParamReserve1:7">
+      <DisplayName>パッケージ出力用リザーブ1</DisplayName>
+      <Description>パッケージ出力用リザーブ1</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1501</SortID>
+    </Field>
+    <Field Def="dummy8 disableParamReserve2[3]">
+      <DisplayName>パッケージ出力用リザーブ2</DisplayName>
+      <Description>パッケージ出力用リザーブ2</Description>
+      <DisplayFormat>%d</DisplayFormat>
+      <SortID>1502</SortID>
+    </Field>
+    <Field Def="s32 msgId = -1">
+      <DisplayName>PC性別が男：メッセージID</DisplayName>
+      <Description>PC性別が男：メッセージを指定-&gt;メニュー</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>100</SortID>
+    </Field>
+    <Field Def="s32 voiceId = -1">
+      <DisplayName>PC性別が男：ボイスID</DisplayName>
+      <Description>PC性別が男：ボイスを指定-&gt;サウンド</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>200</SortID>
+    </Field>
+    <Field Def="s32 spEffectId0 = -1">
+      <DisplayName>特殊効果ID0</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>300</SortID>
+    </Field>
+    <Field Def="s32 motionId0 = -1">
+      <DisplayName>モーションID0</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>400</SortID>
+    </Field>
+    <Field Def="s32 spEffectId1 = -1">
+      <DisplayName>特殊効果ID1</DisplayName>
+      <Description>特殊効果を指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>500</SortID>
+    </Field>
+    <Field Def="s32 motionId1 = -1">
+      <DisplayName>モーションID1</DisplayName>
+      <Description>モーションを指定-&gt;キャラ</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>600</SortID>
+    </Field>
+    <Field Def="s32 returnPos = -1">
+      <DisplayName>復帰位置</DisplayName>
+      <Description>復帰する会話の相対位置-&gt;会話</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>700</SortID>
+    </Field>
+    <Field Def="s32 reactionId = -1">
+      <DisplayName>リアクションID</DisplayName>
+      <Description>復帰時の会話指定-&gt;会話</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>800</SortID>
+    </Field>
+    <Field Def="s32 eventId = -1">
+      <DisplayName>イベントID</DisplayName>
+      <Description>イベントID-&gt;イベント</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>900</SortID>
+    </Field>
+    <Field Def="s32 msgId_female = -1">
+      <DisplayName>PC性別が女：メッセージ</DisplayName>
+      <Description>PC性別が女：メッセージを指定-&gt;メニュー</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>110</SortID>
+    </Field>
+    <Field Def="s32 voiceId_female = -1">
+      <DisplayName>PC性別が女：ボイスID</DisplayName>
+      <Description>PC性別が女：ボイスを指定-&gt;サウンド</Description>
+      <Minimum>-1</Minimum>
+      <Maximum>2000000000</Maximum>
+      <SortID>210</SortID>
+    </Field>
+    
+    <Field Def="s32 unknown_1" />
+    <Field Def="s32 unknown_2" />
+    <Field Def="s32 unknown_3" />
+    <Field Def="s32 unknown_4" />
+    <Field Def="s32 unknown_5" />
+    <Field Def="s32 unknown_6" />
+    <Field Def="s32 unknown_7" />
+    <Field Def="s32 unknown_8" />
+    <Field Def="s32 unknown_9" />
+    <Field Def="s32 unknown_10" />
+    <Field Def="s32 unknown_11" />
+    <Field Def="s32 unknown_12" />
+    <Field Def="s32 unknown_13" />
+    <Field Def="s32 unknown_14" />
+    <Field Def="s32 unknown_15" />
+    <Field Def="s32 unknown_16" />
+    <Field Def="s32 unknown_17" />
+    <Field Def="s32 unknown_18" />
+    <Field Def="s32 unknown_19" />
+    <Field Def="s32 unknown_20" />
+    <Field Def="s32 unknown_21" />
+    <Field Def="s32 unknown_22" />
+    <Field Def="s32 unknown_23" />
+    <Field Def="s32 unknown_24" />
+    <Field Def="s32 unknown_25" />
+    <Field Def="s32 unknown_26" />
+    <Field Def="f32 unknown_27" />
+    <Field Def="s32 unknown_28" />
+    <Field Def="s32 unknown_29" />
+    <Field Def="s32 unknown_30" />
+    <Field Def="s32 unknown_31" />
+    <Field Def="s32 unknown_32" />
+    <Field Def="f32 unknown_33" />
+    <Field Def="f32 unknown_34" />
+    <Field Def="f32 unknown_35" />
+    <Field Def="f32 unknown_36" />
+    <Field Def="f32 unknown_37" />
+    <Field Def="f32 unknown_38" />
+    <Field Def="f32 unknown_39" />
+    <Field Def="f32 unknown_40" />
+  </Fields>
+</PARAMDEF>

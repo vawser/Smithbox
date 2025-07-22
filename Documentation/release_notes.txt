@@ -1,0 +1,128 @@
+
+This is a major release, as such there have been significant changes to Smithbox:
+
+# General
+- Changed license to GPL v3 due to derivative usage of SoulsFormats.
+- Added license notices in the Data project for SoulsFormats and coremats-templates.
+
+# Projects
+The internal handling of projects has been overhauled. This means:
+- You can have multiple projects loaded simultaneously.
+- You will need to re-create any existing projects as the project.json file is no longer used.
+- A project list is now present, this is how you switch between which project is considered your 'active' project.
+- Each project can be configured to use any combination of editors. 
+
+# Virtual File System
+GoogleBen's work on a virtual file system (VFS) has been implemented. This means you no longer need to unpack your game (mostly).
+However, if you are using the Map or Model Editor, they have not been fully converted to use the VFS system yet (the models and textures).
+
+# Changelog
+## Behavior Editor (WIP)
+Implemented a new editor: the Behavior Editor.
+- Supports ER projects only currently.
+- Allows you to edit all havok objects in the Behavior, Information and Character HKXs.
+- Supports multi-selection in the Data Entries list: this means you can select multiple clip generators and edit the playbackSpeed, and the playbackSpeed for all of the selected will be changed to the new value.
+
+## File Browser
+Implemented a new editor: the File Browser. 
+- This editor lets you view the various virtual file systems that Smithbox is using to handle your project's data.
+- Added Unpack Game Data tool: this functions similarly to UXM, allowing you to unpack the base game data (based on your project's data path). Includes selective options, and the ability to clear unpacked files away.
+
+## Material Editor (WIP)
+ Implemented a new editor: the Material Editor.
+- This editor lets you view the MTD and MATBIN file data.
+
+## Map Editor
+- Added read-only support for Nightreign.
+- Fixed map load issue that was causing desync between map contents and the viewport.
+- Implemented box selection (credit to Pear).
+- Implemented render group multi-select (credit to Pear).
+- Made the MSB Mass Edit asynchronous so it doesn't hang the UI.
+- Improved the World Map feature: 
+    - You can now move around the map with left click.
+    - Right click is now applies the hovered map tiles to the map list filter.
+    - Zoom can be done with scrollbar directly (no longer need to hold LCtrl).
+    - Added tooltip that shows hovered map IDs and aliases at cursor position.
+    - Added the ability to see the tile shapes overlaid on the map: you can toggle small, medium and large tile visibility.
+- Added Quick View feature:
+    - Displays a tooltip in the Map Editor viewport that shows property values (user-defined) as a tooltip next to the cursor. 
+    - Useful for quickly viewing the name, entity ID, etc of the current selection.
+    - User can define which properties appear in the quick view via the Settings menu on the Viewport menubar.
+- Added Placement Orb feature:
+    - Added support for a placement orb: potentially to be used by tools to spawn map objects at. It is an orb X metres in front of camera.
+- Added setting to configure framing distance for the frame map object action.
+- Fixed issue with the param refs not displaying the param name in the map editor properties view.
+
+## Param Editor
+- Added support for Nightreign.
+- Added support for latest AC6 patch to the Param Upgrader.
+- Added individual settings for each project type for the strip row names toggle.
+- Implemented a new format for storing row names: maintains the row index as well as ID and Name so they can be properly imported even if multiple rows share the same ID.
+- Changed the row data graphs to use ImPlot. Added axis labels for the graphs of some row entries.
+- Moved the row data graph to be under the header rather than within a column.
+- Added the ability to export the points from a row data graph as CSV.
+- Redesigned Param Merge tool to select from project rather than path.
+- Added automatic row namer action for ER projects in the ItemLotParam.
+- Fixed View in Map for the open world tile item lot entries.
+- Added ability to target specific params for comparison in the Param Comparison report.
+- Added the ability to filter by specific params in the Param search tools, makes it quicker if the user knows they are only searching in a set of specific params.
+- Added quick action for searching a row ID in the Field Value Instances tool to the row context menu.
+- Added defaultvalue search command for fields: this return true if the field value matches the default value assigned in the field meta, or true if there is no definition
+    - Added DefaultValues to ER SpEffectParam meta.
+    - This allows for !defaultvalue to show the user all fields with non-default values, useful for seeing what a SpEffect does
+- Added setting for toggling whether the row name stripping uses index or row ID.
+- Added warning for Sort Rows action in AC6 projects as it can wipe rows since it doesn't respect row index.
+
+# Text Editor
+- Fixed an issue with the FMG Difference Manager where it would throw if a vanilla entry with the same key had already been added within the TrackFmgDifferences function.
+- Redesigned Text Merge tool to select from project rather than path, and it is now asynchronous and much faster.
+
+## EMEVD Editor
+- Added support for Nightreign.
+- Added support for EMELD to store event names.
+
+## ESD Editor
+- Added support for reading and writing loose ESD files.
+
+## Texture Viewer
+- No longer lags when viewing large lists.
+- Now supports tpfbhd.
+
+## Viewport
+- Moved viewport related settings form elsewhere into the Viewport menubar.
+- Added options to toggle the display of Movement and Rotation Increments.
+- Added option to toggle the display of the viewport controls.
+- Added option to toggle the display of profiling information.
+
+## Project
+- Added automatic detection of Steam installations of supported games: during Project Creation, the Data directory will be automatically set based on the project type selected (assuming there is a valid installation, otherwise the user can manually select it as before).
+- Added a button to quickly launch a mod via ModEngine2.
+- Redesigned the project alias editor interface.
+- Added tooltip hints for the Data Directory so the user knows which folder to select for DES and BB projects.
+
+## Data
+- Updated AC6 meta.
+- Updated AC6 paramdef to expose 4 new floats in TentativePlayerParam.
+- Updated ER SpEffectParam row names (credit to Lord Exelot).
+- Updated ER Bullet enums (credit to Lord Exelot).
+- Updated FLVER2 implementation to SoulsFormatsNEXT (credit to ivi)
+- Made the loading of Text data much quicker.
+- Changed data flow design for Time Act Editor: each anibnd is only loaded when requested.
+- Updated ER paramdef and TAE findings (credit to Axi!)
+- Added ER FaceParam row names (credit to Zullie).
+- Added a DCX type heuristic and setting if the type is returned as Unknown during DCX read. This should be enabled for mods that try and 'encrypt' themselves by mangling the DCX header.
+
+## Internal
+- Changed the ImGui implementation to Hexa.NET: this adds support for ImPlot and ImNodes as well as updating the ImGui version.
+- Changed the Theme JSON to only include ImGui relevant elements. Anybody with custom themes will need to re-make them (sorry).
+- To use LowRequirements mode, you now need to add "-low-requirements" as a command-line argument. Basically, make a shortcut from the Smithbox.exe, and then in the Target input, add "-low-requirements" after the rest.
+
+## Fixes
+- Fixed an CTD where the Commutative groups.Groups was null (for DS2 projects).
+- Allowed all param row names to be imported even if a param and row has not been selected
+- Fixed issue with ConditionField in ParamRef.
+- Fixed issue with ParamRefText uint change if the value was -1
+- Fixed issue with with ParamRefText "Go to" action.
+- Removed eventparam warning in logger.
+- Restored the Name and Instance ID toggles in the Asset Browser panel.
+- Fixed a CTD if no param categories were loaded

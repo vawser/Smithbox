@@ -575,8 +575,12 @@ public class FieldValueFinder
                     PARAMDEF.DefType type = field.Def.DisplayType;
 
                     var fieldMeta = Editor.Project.ParamData.GetParamFieldMeta(meta, field.Def);
+
                     fieldName = field.Def.InternalName;
-                    fieldDisplayName = fieldMeta.AltName;
+                    if (fieldMeta != null)
+                    {
+                        fieldDisplayName = fieldMeta.AltName;
+                    }
 
                     var isMatch = false;
                     var fieldValue = "";
@@ -987,7 +991,7 @@ public class RowNameFinder
 
                 foreach (var element in searchElements)
                 {
-                    if (r.Name != "" || r.Name != null)
+                    if (r.Name != "" && r.Name != null)
                     {
                         var nameElements = r.Name.Split(" ");
 

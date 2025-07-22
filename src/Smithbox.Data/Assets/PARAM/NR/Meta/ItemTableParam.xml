@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test"
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <itemCategory 
+    AltName="Item Category"
+    Wiki="The category of item this table references."
+    Enum="ITEM_CATEGORY" />
+    
+    <itemId
+    AltName="Item ID"
+    Wiki="The item this table references." 
+    Refs="EquipParamAccessory(itemCategory=4),EquipParamCustomWeapon(itemCategory=6),EquipParamAntique(itemCategory=5),EquipParamGoods(itemCategory=1),EquipParamProtector(itemCategory=3),EquipParamWeapon(itemCategory=2),ItemTableParam(itemCategory=7)"/>
+    
+    <chanceWeight
+    AltName="Roll Weight"
+    Wiki="The weighting to apply during the roll." />
+
+    <onlyForClass
+    AltName="Only For Class"
+    Wiki="Only roll this entry if the player's class matches."
+    Enum="CHARACTER_CLASS" />
+    
+    <eventFlagId
+    AltName="Acquisition Flag"
+    Wiki="Sets this event flag ON when the lot is selected."
+    FlagAlias="" />
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="ITEM_CATEGORY" type="s32">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Good" />
+      <Option Value="2" Name="Weapon" />
+      <Option Value="3" Name="Armor" />
+      <Option Value="4" Name="Accessory" />
+      <Option Value="5" Name="Relic" />
+      <Option Value="6" Name="Custom Weapon" />
+      <Option Value="7" Name="Item Table" />
+    </Enum>
+    
+    <Enum Name="CHARACTER_CLASS" type="u8">
+      <Option Value="0" Name="Any Class" />
+      <Option Value="1" Name="Wylder" />
+      <Option Value="2" Name="Defender" />
+      <Option Value="3" Name="Ironeye" />
+      <Option Value="4" Name="Duchess" />
+      <Option Value="5" Name="Raider" />
+      <Option Value="6" Name="Revenant" />
+      <Option Value="7" Name="Recluse" />
+      <Option Value="8" Name="Executor" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

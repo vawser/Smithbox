@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Defines trades available in shops.\nAvailable trades in a given shop are determined by a range defined in ESD and by game flags.\nItems sold for less than their sell price will not appear in shops.\nMaterial costs may not be shown in shop variants." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    Padding=""/>
+    
+    <equipId 
+    AltName="Reference ID" 
+    Wiki="ID of the equipment for sale" 
+    Refs="EquipParamAccessory(equipType=2),EquipParamAntique(equipType=4),EquipParamGoods(equipType=3),EquipParamProtector(equipType=1),EquipParamWeapon(equipType=0),ItemTableParam(equipType=5),EquipParamCustomWeapon(equipType=6)" />
+    
+    <value 
+    AltName="Price" 
+    Wiki="Selling price to overwrite (-1: Do not overwrite)" />
+    
+    <mtrlId 
+    AltName="Required Material ID" 
+    Wiki="Material ID required for purchase (-1: None)" 
+    Refs="EquipMtrlSetParam" />
+    
+    <eventFlag_forStock 
+    AltName="Quantity Flag" 
+    Wiki="Event flag value that holds the number" 
+    FlagAlias="" />
+    
+    <eventFlag_forRelease 
+    AltName="Visibility Flag" 
+    Wiki="Sales ban event flag" 
+    FlagAlias="" />
+    
+    <sellQuantity 
+    AltName="Amount to Sell" 
+    Wiki="Number of units sold" />
+    
+    <unknown_1
+    AltName="unknown_1"
+    Wiki="Related to Item Table Usage" />
+    
+    <equipType 
+    AltName="Equipment Type" 
+    Wiki="Types of equipment for sale" 
+    Enum="SHOP_LINEUP_EQUIPTYPE" />
+    
+    <costType 
+    AltName="Currency Type" 
+    Wiki="Price type. Applies only when overwriting the selling price" 
+    Enum="SHOP_LINEUP_COSTTYPE" />
+    
+    <pad1 
+    Padding=""/>
+    
+    <setNum 
+    AltName="Amount on Purchase" 
+    Wiki="Number of sets sold. Number of pieces you can get with one purchase (default: 1)" />
+    
+    <value_Add 
+    AltName="Price Addition" 
+    Wiki="Correction (addition) to the selling price of equipment. Equipment para selling price x magnification + addition" />
+    
+    <value_Magnification 
+    AltName="Price Multiplier" 
+    Wiki="Correction (magnification) to the selling price of equipment. Equipment para selling price x magnification + addition" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Menu icon ID" />
+    
+    <nameMsgId 
+    AltName="Name - Text ID" 
+    Wiki="Menu display_text ID (-1: do not overwrite)" 
+    FmgRef="Title_Goods" />
+    
+    <menuTitleMsgId 
+    AltName="Menu Title - Text ID" 
+    Wiki="Text ID of the shop menu title (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced" 
+    FmgRef="Modern_Menu_Text" />
+    
+    <menuIconId 
+    AltName="Menu Icon ID" 
+    Wiki="Shop menu icon ID (-1: Do not overwrite). This value of the first para found in the para ID range passed when launching the shop is referenced" />
+    
+    <pad2 
+    Padding=""/>
+    
+  </Field>
+  
+  <Enums>
+    <Enum Name="SHOP_LINEUP_EQUIPTYPE" type="u8">
+        <Option Value="0" Name="Weapon" />
+        <Option Value="1" Name="Protector" />
+        <Option Value="2" Name="Accessory" />
+        <Option Value="3" Name="Good" />
+        <Option Value="4" Name="Relic" />
+        <Option Value="5" Name="Item Table" />
+        <Option Value="6" Name="Custom Weapon" />
+    </Enum>
+    <Enum Name="SHOP_LINEUP_COSTTYPE" type="u8">
+        <Option Value="0" Name="Runes" />
+        <Option Value="1" Name="Dragon Heart" />
+        <Option Value="2" Name="Starlight Shard" />
+        <Option Value="3" Name="Unknown" />
+        <Option Value="4" Name="Murk" />
+        <Option Value="5" Name="Sovereign Sigil" />
+    </Enum>
+  </Enums>
+</PARAMMETA>

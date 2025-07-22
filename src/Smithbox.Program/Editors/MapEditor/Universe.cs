@@ -133,82 +133,85 @@ public class Universe
             // Read the MSB
             await resourceHandler.ReadMap(mapid);
 
-            // Load the map into the MapContainer
-            map.LoadMSB(resourceHandler.Msb);
-
-            if (CFG.Current.Viewport_Enable_Rendering)
+            if (resourceHandler.Msb != null)
             {
-                if (Editor.Project.ProjectType != ProjectType.AC4 &&
-                    Editor.Project.ProjectType != ProjectType.ACFA &&
-                    Editor.Project.ProjectType != ProjectType.ACV &&
-                    Editor.Project.ProjectType != ProjectType.ACVD)
-                    resourceHandler.SetupHumanEnemySubstitute();
+                // Load the map into the MapContainer
+                map.LoadMSB(resourceHandler.Msb);
 
-                resourceHandler.SetupModelLoadLists();
-                resourceHandler.SetupTexturelLoadLists();
-                resourceHandler.SetupModelMasks(map);
-            }
-
-            LoadLights(map);
-
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
+                if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid) is Transform
-                        loadTransform)
+                    if (Editor.Project.ProjectType != ProjectType.AC4 &&
+                        Editor.Project.ProjectType != ProjectType.ACFA &&
+                        Editor.Project.ProjectType != ProjectType.ACV &&
+                        Editor.Project.ProjectType != ProjectType.ACVD)
+                        resourceHandler.SetupHumanEnemySubstitute();
+
+                    resourceHandler.SetupModelLoadLists();
+                    resourceHandler.SetupTexturelLoadLists();
+                    resourceHandler.SetupModelMasks(map);
+                }
+
+                LoadLights(map);
+
+                if (CFG.Current.Viewport_Enable_Rendering)
+                {
+                    if (Editor.Project.ProjectType == ProjectType.ER && CFG.Current.Viewport_Enable_ER_Auto_Map_Offset)
                     {
-                        map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                        if (SpecialMapConnections.GetEldenMapTransform(Editor, mapid) is Transform
+                            loadTransform)
+                        {
+                            map.RootObject.GetUpdateTransformAction(loadTransform).Execute();
+                        }
                     }
                 }
-            }
 
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                // Intervene in the UI to change selection if requested.
-                // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
-                if (selectOnLoad)
+                if (CFG.Current.Viewport_Enable_Rendering)
                 {
-                    Selection.ClearSelection(Editor);
-                    Selection.AddSelection(Editor, map.RootObject);
+                    // Intervene in the UI to change selection if requested.
+                    // We want to do this as soon as the RootObject is available, rather than at the end of all jobs.
+                    if (selectOnLoad)
+                    {
+                        Selection.ClearSelection(Editor);
+                        Selection.AddSelection(Editor, map.RootObject);
+                    }
                 }
-            }
 
-            if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
-            {
-                LoadDS2Generators(resourceHandler.AdjustedMapID, map);
-            }
-
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                Tasks = resourceHandler.LoadTextures(Tasks, map);
-                await Task.WhenAll(Tasks);
-                Tasks = resourceHandler.LoadModels(Tasks, map);
-                await Task.WhenAll(Tasks);
-
-                resourceHandler.SetupNavmesh(map);
-
-                ScheduleTextureRefresh();
-            }
-
-            // After everything loads, do some additional checks:
-            await Task.WhenAll(Tasks);
-            HasProcessedMapLoad = true;
-
-            if (CFG.Current.Viewport_Enable_Rendering)
-            {
-                // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
-                foreach (Entity obj in map.Objects)
+                if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
                 {
-                    obj.UpdateRenderModel(Editor);
+                    LoadDS2Generators(resourceHandler.AdjustedMapID, map);
                 }
+
+                if (CFG.Current.Viewport_Enable_Rendering)
+                {
+                    Tasks = resourceHandler.LoadTextures(Tasks, map);
+                    await Task.WhenAll(Tasks);
+                    Tasks = resourceHandler.LoadModels(Tasks, map);
+                    await Task.WhenAll(Tasks);
+
+                    resourceHandler.SetupNavmesh(map);
+
+                    ScheduleTextureRefresh();
+                }
+
+                // After everything loads, do some additional checks:
+                await Task.WhenAll(Tasks);
+                HasProcessedMapLoad = true;
+
+                if (CFG.Current.Viewport_Enable_Rendering)
+                {
+                    // Update models (For checking meshes for Model Markers. & updates `CollisionName` field reference info)
+                    foreach (Entity obj in map.Objects)
+                    {
+                        obj.UpdateRenderModel(Editor);
+                    }
+                }
+
+                // Check for duplicate EntityIDs
+                CheckDupeEntityIDs(map);
+
+                // Set the map transform to the saved position, rotation and scale.
+                //map.LoadMapTransform();
             }
-
-            // Check for duplicate EntityIDs
-            CheckDupeEntityIDs(map);
-
-            // Set the map transform to the saved position, rotation and scale.
-            //map.LoadMapTransform();
         }
         catch (Exception e)
         {
@@ -297,6 +300,15 @@ public class Universe
 
     public void SaveMap(MapContainer map)
     {
+        // Prevent saving on release builds until byte-perfect NR MSB is achieved, we don't want to spread corrupted maps about.
+#if !DEBUG
+        if(Project.ProjectType is ProjectType.NR)
+        {
+            TaskLogs.AddLog("Saving is currently not supported for NR projects.");
+            return;
+        }
+#endif
+
         SaveBTL(Editor, map);
 
         try
@@ -319,6 +331,14 @@ public class Universe
             {
                 var prev = MSBE.Read(mapData);
                 MSBE n = new();
+                n.Layers = prev.Layers;
+                n.Routes = prev.Routes;
+                msb = n;
+            }
+            else if (Editor.Project.ProjectType == ProjectType.NR)
+            {
+                var prev = MSB_NR.Read(mapData);
+                MSB_NR n = new();
                 n.Layers = prev.Layers;
                 n.Routes = prev.Routes;
                 msb = n;
@@ -409,7 +429,7 @@ public class Universe
 
             try
             {
-                var newMapData = msb.Write();
+                var newMapData = msb.Write(compressionType);
                 Project.ProjectFS.WriteFile(curEntry.Path, newMapData);
 
                 if (Editor.Project.ProjectType == ProjectType.DS2S || Editor.Project.ProjectType == ProjectType.DS2)
@@ -883,6 +903,11 @@ public class Universe
             return DCX.Type.DCX_DFLT_10000_44_9;
         }
 
+        if (Editor.Project.ProjectType == ProjectType.NR)
+        {
+            return DCX.Type.DCX_DFLT_11000_44_9_15;
+        }
+
         if (Editor.Project.ProjectType == ProjectType.AC6)
         {
             return DCX.Type.DCX_KRAK_MAX;
@@ -1006,16 +1031,19 @@ public class Universe
 
             Editor.CollisionManager.OnUnloadMap(entry.Key.Filename);
 
-            foreach (Entity obj in entry.Value.MapContainer.Objects)
+            if (entry.Value != null && entry.Value.MapContainer != null)
             {
-                if (obj != null)
+                foreach (Entity obj in entry.Value.MapContainer.Objects)
                 {
-                    obj.Dispose();
+                    if (obj != null)
+                    {
+                        obj.Dispose();
+                    }
                 }
-            }
 
-            entry.Value.MapContainer.Clear();
-            entry.Value.MapContainer = null;
+                entry.Value.MapContainer.Clear();
+                entry.Value.MapContainer = null;
+            }
         }
     }
 

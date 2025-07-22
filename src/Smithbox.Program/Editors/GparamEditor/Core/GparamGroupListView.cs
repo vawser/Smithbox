@@ -120,6 +120,9 @@ public class GparamGroupListView
 
         List<FormatReference> missingGroups = new List<FormatReference>();
 
+        if (Screen.Project.GparamInformation.list == null)
+            return;
+
         // Get source Format Reference
         foreach (var entry in Screen.Project.GparamInformation.list)
         {

@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using static StudioCore.Editors.ParamEditor.Tools.ParamTools;
 using ActionManager = StudioCore.Editor.ActionManager;
 using AddParamsAction = StudioCore.Editor.AddParamsAction;
 using CompoundAction = StudioCore.Editor.CompoundAction;
@@ -103,6 +104,8 @@ public class ParamEditorScreen : EditorScreen
         ParamUpgrader = new(this, Project);
 
         MassEditHandler = new(this, Project);
+
+        Project.ParamData.RefreshParamDifferenceCacheTask();
     }
 
     public void OnGUI(string[] initcmd)
@@ -580,7 +583,7 @@ public class ParamEditorScreen : EditorScreen
             {
                 DelimiterInputText();
 
-                if (ImGui.MenuItem("All rows"))
+                if (ImGui.BeginMenu("All rows"))
                 {
                     CsvExportDisplay(ParamBank.RowGetType.AllRows);
                     ImGui.EndMenu();
@@ -933,12 +936,24 @@ public class ParamEditorScreen : EditorScreen
                 ColorPicker.ShowColorPicker = !ColorPicker.ShowColorPicker;
             }
 
-            if (ImGui.MenuItem("Trim Row Names"))
+            if (ImGui.BeginMenu("Trim Row Names"))
             {
-                if (_activeView.Selection.ActiveParamExists())
+                if (ImGui.MenuItem("Trim Whitespace"))
                 {
-                    ParamTools.TrimRowNames();
+                    if (_activeView.Selection.ActiveParamExists())
+                    {
+                        ParamTools.TrimRowNames();
+                    }
                 }
+                if (ImGui.MenuItem("Trim New Lines"))
+                {
+                    if (_activeView.Selection.ActiveParamExists())
+                    {
+                        ParamTools.TrimRowNames(RowTrimType.NewLines);
+                    }
+                }
+
+                ImGui.EndMenu();
             }
             UIHelper.Tooltip("This will trim the whitespace from the front and end of row names.");
 

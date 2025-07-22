@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="Determines the level break points from which the stat curves are calculated." />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <totalLevel
+    AltName="Total Level"
+    Wiki="" />
+    
+    <statVigor
+    AltName="Vigor"
+    Wiki="" />
+    
+    <statMind
+    AltName="Mind"
+    Wiki="" />
+    
+    <statEndurance
+    AltName="Endurance"
+    Wiki="" />
+    
+    <statStrength
+    AltName="Strength"
+    Wiki="" />
+    
+    <statDexterity
+    AltName="Dexterity"
+    Wiki="" />
+    
+    <statIntelligence
+    AltName="Intelligence"
+    Wiki="" />
+    
+    <statFaith
+    AltName="Faith"
+    Wiki="" />
+    
+    <statArcane
+    AltName="Arcane"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

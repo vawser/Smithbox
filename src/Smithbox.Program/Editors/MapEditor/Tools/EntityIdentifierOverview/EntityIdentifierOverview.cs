@@ -175,6 +175,12 @@ public class EntityIdentifierOverview
     {
         var mapID = Editor.Selection.SelectedMapID;
 
+        if (mapID == null)
+            return;
+
+        if (Editor.MapListView.ContentViews == null)
+            return;
+
         if (Editor.MapListView.ContentViews.ContainsKey(mapID))
         {
             var curView = Editor.MapListView.ContentViews[mapID];

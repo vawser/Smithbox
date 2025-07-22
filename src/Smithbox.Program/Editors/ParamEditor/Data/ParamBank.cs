@@ -1,9 +1,12 @@
 ﻿using Andre.Formats;
 using Andre.IO.VFS;
+using DotNext.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editor;
+using StudioCore.Editors.ParamEditor.META;
+using StudioCore.Editors.ParamEditor.Tools;
 using StudioCore.Formats.JSON;
 using System;
 using System.Collections.Generic;
@@ -104,7 +107,7 @@ public class ParamBank
             case ProjectType.SDT: successfulLoad = LoadParameters_SDT(); break;
             case ProjectType.ER: successfulLoad = LoadParameters_ER(); break;
             case ProjectType.AC6: successfulLoad = LoadParameters_AC6(); break;
-            case ProjectType.ERN: successfulLoad = LoadParameters_ERN(); break;
+            case ProjectType.NR: successfulLoad = LoadParameters_NR(); break;
         }
 
         ClearParamDiffCaches();
@@ -148,8 +151,8 @@ public class ParamBank
                 successfulSave = SaveParameters_ER(); break;
             case ProjectType.AC6:
                 successfulSave = SaveParameters_AC6(); break;
-            case ProjectType.ERN:
-                successfulSave = SaveParameters_ERN(); break;
+            case ProjectType.NR:
+                successfulSave = SaveParameters_NR(); break;
             default: break;
         }
 
@@ -185,7 +188,7 @@ public class ParamBank
             Param curParam;
 
             // AC6/SDT - Tentative ParamTypes
-            if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT)
+            if (Project.ProjectType is ProjectType.AC6 or ProjectType.SDT or ProjectType.DS3)
             {
                 _usedTentativeParamTypes = new Dictionary<string, string>();
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
@@ -229,9 +232,13 @@ public class ParamBank
             {
                 curParam = Param.ReadIgnoreCompression(f.Bytes);
 
+                //TaskLogs.AddLog($"{paramName}: {curParam.ParamdefDataVersion} - {curParam.ParamdefFormatVersion}");
+
                 if (!Project.ParamData.ParamDefs.ContainsKey(curParam.ParamType ?? ""))
                 {
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Couldn't find ParamDef for param {paramName} with ParamType \"{curParam.ParamType}\".", LogLevel.Error, Tasks.LogPriority.High);
+
+                    //ParamDefHelper.GenerateBaseParamDefFile(paramName, $"{curParam.ParamType}");
 
                     continue;
                 }
@@ -258,7 +265,7 @@ public class ParamBank
 
             try
             {
-                curParam.ApplyParamdef(def, version);
+                curParam.ApplyParamdef(def, version, paramName);
                 paramBank.Add(paramName, curParam);
             }
             catch (Exception e)
@@ -277,7 +284,7 @@ public class ParamBank
         {
             if (p.ParamType == "CHR_MODEL_PARAM_ST")
             {
-                if (p.FixupERField(12, 16))
+                if (p.ExpandParamSize(12, 16))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] CHR_MODEL_PARAM_ST fixed up.");
             }
         }
@@ -287,17 +294,17 @@ public class ParamBank
         {
             if (p.ParamType == "GAME_SYSTEM_COMMON_PARAM_ST")
             {
-                if (p.FixupERField(880, 1024))
+                if (p.ExpandParamSize(880, 1024))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] GAME_SYSTEM_COMMON_PARAM_ST fixed up.");
             }
             if (p.ParamType == "POSTURE_CONTROL_PARAM_WEP_RIGHT_ST")
             {
-                if (p.FixupERField(112, 144))
+                if (p.ExpandParamSize(112, 144))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] POSTURE_CONTROL_PARAM_WEP_RIGHT_ST fixed up.");
             }
             if (p.ParamType == "SIGN_PUDDLE_PARAM_ST")
             {
-                if (p.FixupERField(32, 48))
+                if (p.ExpandParamSize(32, 48))
                     TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor] SIGN_PUDDLE_PARAM_ST fixed up.");
             }
         }
@@ -1487,13 +1494,15 @@ public class ParamBank
             return false;
         }
 
-        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+        if (IsSystemParamTouched())
         {
-            using var sysParams = BND4.Read(sysParamF.GetData());
-            OverwriteParamsER(sysParams);
-            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+            {
+                using var sysParams = BND4.Read(sysParamF.GetData());
+                OverwriteParamsER(sysParams);
+                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            }
         }
-
         if (CFG.Current.Param_StripRowNamesOnSave_ER)
         {
             RowNameRestore();
@@ -1675,11 +1684,14 @@ public class ParamBank
             return false;
         }
 
-        if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+        if (IsSystemParamTouched())
         {
-            using var sysParams = BND4.Read(sysParamF.GetData());
-            OverwriteParamsAC6(sysParams);
-            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
+            if (sourceFs.TryGetFile(sysParam, out var sysParamF))
+            {
+                using var sysParams = BND4.Read(sysParamF.GetData());
+                OverwriteParamsAC6(sysParams);
+                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, sysParam, sysParams);
+            }
         }
 
         var graphicsParam = @"param\graphicsconfig\graphicsconfig.parambnd.dcx";
@@ -1691,11 +1703,14 @@ public class ParamBank
             return false;
         }
 
-        if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
+        if (IsGraphicsParamTouched())
         {
-            using var graphicsParams = BND4.Read(graphicsParamF.GetData());
-            OverwriteParamsAC6(graphicsParams);
-            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
+            if (sourceFs.TryGetFile(graphicsParam, out var graphicsParamF))
+            {
+                using var graphicsParams = BND4.Read(graphicsParamF.GetData());
+                OverwriteParamsAC6(graphicsParams);
+                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, graphicsParam, graphicsParams);
+            }
         }
 
         var eventParam = @"param\eventparam\eventparam.parambnd.dcx";
@@ -1707,11 +1722,14 @@ public class ParamBank
             return false;
         }
 
-        if (sourceFs.TryGetFile(eventParam, out var eventParamF))
+        if (IsEventParamTouched())
         {
-            using var eventParams = BND4.Read(eventParamF.GetData());
-            OverwriteParamsAC6(eventParams);
-            ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
+            if (sourceFs.TryGetFile(eventParam, out var eventParamF))
+            {
+                using var eventParams = BND4.Read(eventParamF.GetData());
+                OverwriteParamsAC6(eventParams);
+                ProjectUtils.WriteWithBackup(Project, sourceFs, writeFs, eventParam, eventParams);
+            }
         }
 
         if (CFG.Current.Param_StripRowNamesOnSave_AC6)
@@ -1724,12 +1742,13 @@ public class ParamBank
     #endregion
 
     #region Elden Ring: Nightreign
-    private bool LoadParameters_ERN()
+    private bool LoadParameters_NR()
     {
         var successfulLoad = true;
 
         var gameParamPath = $@"regulation.bin";
         var systemParamPath = $@"param\systemparam\systemparam.parambnd.dcx";
+        var eventParamPath = $@"param\eventparam\eventparam.parambnd.dcx";
 
         if (!TargetFS.FileExists(gameParamPath))
         {
@@ -1741,7 +1760,7 @@ public class ParamBank
             try
             {
                 var data = TargetFS.GetFile(gameParamPath).GetData().ToArray();
-                using BND4 bnd = SFUtil.DecryptERRegulation(data);
+                using BND4 bnd = SFUtil.DecryptNightreignRegulation(data);
                 LoadParamFromBinder(bnd, ref _params, out _paramVersion);
             }
             catch (Exception e)
@@ -1751,6 +1770,7 @@ public class ParamBank
             }
         }
 
+        // System Param
         if (!TargetFS.FileExists(systemParamPath))
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {systemParamPath}", LogLevel.Error, Tasks.LogPriority.High);
@@ -1771,14 +1791,35 @@ public class ParamBank
             }
         }
 
+        // Event Param
+        if (!TargetFS.FileExists(eventParamPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High);
+            successfulLoad = false;
+        }
+        else
+        {
+            try
+            {
+                var data = TargetFS.GetFile(eventParamPath).GetData();
+                using var bnd = BND4.Read(data);
+                LoadParamFromBinder(bnd, ref _params, out _);
+            }
+            catch (Exception e)
+            {
+                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load game param: {eventParamPath}", LogLevel.Error, Tasks.LogPriority.High, e);
+                successfulLoad = false;
+            }
+        }
+
         return successfulLoad;
     }
 
-    private bool SaveParameters_ERN()
+    private bool SaveParameters_NR()
     {
         var successfulSave = true;
 
-        void OverwriteParamsERN(BND4 paramBnd)
+        void OverwriteParamsNR(BND4 paramBnd)
         {
             // Replace params with edited ones
             foreach (BinderFile p in paramBnd.Files)
@@ -1805,19 +1846,28 @@ public class ParamBank
             return false;
         }
 
+        var sourceFs = Project.FS;
+        var gameFs = Project.VanillaRealFS;
         var data = fs.GetFile(param).GetData().ToArray();
+
+        // Use the game root version in this case
+        if (!sourceFs.FileExists(param) || _pendingUpgrade)
+        {
+            data = gameFs.GetFile(param).GetData().ToArray();
+        }
 
         BND4 regParams = SFUtil.DecryptNightreignRegulation(data);
 
-        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        if (CFG.Current.Param_StripRowNamesOnSave_NR)
         {
             RowNameStrip();
         }
 
-        OverwriteParamsERN(regParams);
+        OverwriteParamsNR(regParams);
 
-        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.ERN);
+        ProjectUtils.WriteWithBackup(Project, fs, toFs, @"regulation.bin", regParams, ProjectType.NR);
 
+        // System Param
         var sysParam = @"param\systemparam\systemparam.parambnd.dcx";
 
         if (!fs.FileExists(sysParam))
@@ -1827,14 +1877,37 @@ public class ParamBank
             return false;
         }
 
-        if (fs.TryGetFile(sysParam, out var sysParamF))
+        if (IsSystemParamTouched())
         {
-            using var sysParams = BND4.Read(sysParamF.GetData());
-            OverwriteParamsERN(sysParams);
-            ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            if (fs.TryGetFile(sysParam, out var sysParamF))
+            {
+                using var sysParams = BND4.Read(sysParamF.GetData());
+                OverwriteParamsNR(sysParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, @"param\systemparam\systemparam.parambnd.dcx", sysParams);
+            }
         }
 
-        if (CFG.Current.Param_StripRowNamesOnSave_ERN)
+        // Event Param
+        var eventParam = @"param\eventparam\eventparam.parambnd.dcx";
+
+        if (!Project.FS.FileExists(eventParam))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Cannot locate event param files. Save failed.", LogLevel.Error, Tasks.LogPriority.High);
+
+            return false;
+        }
+
+        if (IsEventParamTouched())
+        {
+            if (fs.TryGetFile(eventParam, out var eventParamF))
+            {
+                using var eventParams = BND4.Read(eventParamF.GetData());
+                OverwriteParamsNR(eventParams);
+                ProjectUtils.WriteWithBackup(Project, fs, toFs, eventParam, eventParams);
+            }
+        }
+
+        if (CFG.Current.Param_StripRowNamesOnSave_NR)
         {
             RowNameRestore();
         }
@@ -2183,7 +2256,10 @@ public class ParamBank
                 {
                     if (CFG.Current.UseIndexMatchForRowNameRestore)
                     {
-                        p.Value.Rows[i].Name = rowNameDict[i].Name;
+                        if (rowNameDict.ContainsKey(i))
+                        {
+                            p.Value.Rows[i].Name = rowNameDict[i].Name;
+                        }
                     }
                     else
                     {
@@ -2608,5 +2684,231 @@ public class ParamBank
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Import all legacy stripped names from folder
+    /// </summary>
+    /// <param name="folderPath"></param>
+    /// <param name="targetParam"></param>
+    public async void ImportRowNamesForParam_Legacy(string folderPath = "", string targetParam = "")
+    {
+        Task<bool> importRowNameTask = ImportRowNamesTask_Legacy(folderPath, targetParam);
+        bool rowNamesImported = await importRowNameTask;
+
+        if (rowNamesImported)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Imported row names from legacy row name storage.");
+        }
+        else
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to import row names from legacy row name storage.");
+        }
+    }
+
+    public async Task<bool> ImportRowNamesTask_Legacy(string folderPath = "", string targetParam = "")
+    {
+        await Task.Yield();
+
+        var sourceFolderPath = folderPath;
+
+        if (!Directory.Exists(sourceFolderPath))
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceFolderPath}");
+            return false;
+        }
+
+        try
+        {
+            foreach(var file in Directory.EnumerateFiles(sourceFolderPath))
+            {
+                var filename = Path.GetFileNameWithoutExtension(file);
+
+                if(targetParam != "")
+                {
+                    if (targetParam != filename)
+                        continue;
+                }
+
+                if(Project.ParamData.PrimaryBank.Params.ContainsKey(filename))
+                {
+                    var param = Project.ParamData.PrimaryBank.Params[filename];
+
+                    var lines = File.ReadLines(file);
+                    Dictionary<int, string> nameDict = lines
+                        .Select((value, index) => new { index, value })
+                        .ToDictionary(x => x.index, x => x.value);
+
+                    for(int i = 0; i < param.Rows.Count; i++)
+                    {
+                        var curRow = param.Rows[i];
+
+                        if(nameDict.ContainsKey(i))
+                        {
+                            var name = nameDict[i];
+
+                            curRow.Name = name;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFolderPath} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+        }
+
+        return true;
+    }
+
+    public List<string> SystemParamPrefixes_ER = new List<string>()
+    {
+        "CameraFadeParam",
+        "CommonSystemParam",
+        "DefaultKeyAssign",
+        "Gconfig",
+        "ReverbAuxSendBusParam",
+        "SoundCommonSystemParam"
+    };
+
+    public List<string> SystemParamPrefixes_AC6 = new List<string>()
+    {
+        "CameraFadeParam"
+    };
+
+    public List<string> GraphicsParamPrefixes_AC6 = new List<string>()
+    {
+        "GraphicsConfig"
+    };
+
+    public List<string> EventParamPrefixes_AC6 = new List<string>()
+    {
+        "EFID"
+    };
+
+    public List<string> SystemParamPrefixes_NR = new List<string>()
+    {
+        "CameraFadeParam",
+        "CommonSystemParam",
+        "DefaultKeyAssign",
+        "Gconfig",
+        "ReverbAuxSendBusParam",
+        "SoundCommonSystemParam"
+    };
+
+    public List<string> EventParamPrefixes_NR = new List<string>()
+    {
+        "EFID"
+    };
+
+    public bool IsSystemParamTouched()
+    {
+        foreach(var param in Params)
+        {
+            var key = param.Key;
+
+            if(Project.ProjectType is ProjectType.ER)
+            {
+                foreach(var entry in SystemParamPrefixes_ER)
+                {
+                    if(key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (Project.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in SystemParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (Project.ProjectType is ProjectType.NR)
+            {
+                foreach (var entry in SystemParamPrefixes_NR)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsGraphicsParamTouched()
+    {
+        foreach (var param in Params)
+        {
+            var key = param.Key;
+
+            if (Project.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in GraphicsParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if(primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool IsEventParamTouched()
+    {
+        foreach (var param in Params)
+        {
+            var key = param.Key;
+
+            if (Project.ProjectType is ProjectType.AC6)
+            {
+                foreach (var entry in EventParamPrefixes_AC6)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+            if (Project.ProjectType is ProjectType.NR)
+            {
+                foreach (var entry in EventParamPrefixes_NR)
+                {
+                    if (key.Contains(entry))
+                    {
+                        HashSet<int> primary = VanillaDiffCache.GetValueOrDefault(key, null);
+
+                        if (primary.Any())
+                            return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }

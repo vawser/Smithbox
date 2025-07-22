@@ -208,8 +208,8 @@
     Padding="" />
     
     <roundDashAccelMPSS
-    AltName="Dash: "
-    Wiki="" />
+    AltName="Dash: Turn Acceleration"
+    Wiki="The turn acceleration during a dash. In metres per second ^ 2." />
     
     <roundDashBrakeMPSS
     AltName="Dash: "

@@ -9,6 +9,7 @@ using StudioCore.Resource.Locators;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 
 namespace StudioCore.Editors.ModelEditor;
@@ -45,6 +46,10 @@ public class FileSelectionView
             Selection.SwitchWindowContext(ModelEditorContext.File);
 
             ImGui.InputText($"Search", ref _searchInput, 255);
+            if(ImGui.IsItemDeactivatedAfterEdit())
+            {
+                _assetCacheDirty = true;
+            }
             UIHelper.Tooltip("Separate terms are split via the + character.");
 
             ImGui.BeginChild("AssetBrowserLists");
@@ -70,19 +75,18 @@ public class FileSelectionView
     }
 
 
-    private bool FilterSelectionList(AliasEntry entry)
+    private bool FilterSelectionList(string id, string name)
     {
-        var lowerName = entry.ID.ToLower();
+        var lowerName = id.ToLower();
 
         var refName = "";
         var refTagList = new List<string>();
 
-        refName = entry.Name;
-        refTagList = entry.Tags;
+        refName = name;
 
         if (!CFG.Current.ModelEditor_AssetBrowser_ShowLowDetailParts)
         {
-            if (entry.ID.Substring(entry.ID.Length - 2) == "_l")
+            if (id.Substring(id.Length - 2) == "_l")
             {
                 return false;
             }
@@ -96,22 +100,13 @@ public class FileSelectionView
         return true;
     }
 
-    private void DisplaySelectableAlias(AliasEntry entry)
+    private void DisplaySelectableAlias(string id, string name)
     {
-        var lowerName = entry.ID.ToLower();
+        var lowerName = id.ToLower();
 
         if (CFG.Current.ModelEditor_AssetBrowser_ShowAliases)
         {
-            var aliasName = entry.Name;
-
-            UIHelper.DisplayAlias(aliasName);
-        }
-
-        // Tags
-        if (CFG.Current.ModelEditor_AssetBrowser_ShowTags)
-        {
-            var tagString = string.Join(" ", entry.Tags);
-            AliasUtils.DisplayTagAlias(tagString);
+            UIHelper.DisplayAlias(name);
         }
     }
 
@@ -168,13 +163,31 @@ public class FileSelectionView
     {
         if (ImGui.CollapsingHeader("Characters"))
         {
-            foreach (var entry in Editor.Project.Aliases.Characters)
+            var filteredEntries = new List<(string Id, string AliasName)>();
+            foreach (var entry in Editor.Project.VisualData.CharacterModels.Entries)
             {
-                if (FilterSelectionList(entry))
+                var id = entry.Filename;
+
+                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Characters, id);
+
+                if (FilterSelectionList(id, aliasName))
                 {
-                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    filteredEntries.Add((id, aliasName));
+                }
+            }
+
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(filteredEntries.Count);
+
+            while (clipper.Step())
+            {
+                for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+                {
+                    var (id, aliasName) = filteredEntries[i];
+
+                    if (ImGui.Selectable($"{id}##characterFileEntry{id}", id == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry.ID;
+                        Selection._selectedFileName = id;
                         Selection._selectedFileModelType = FileSelectionType.Character;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseClicked(ImGuiMouseButton.Left))
@@ -185,16 +198,16 @@ public class FileSelectionView
 
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry);
+                        DisplaySelectableAlias(id, aliasName);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{entry.ID}"))
+                    if (ImGui.BeginPopupContextItem($"CharacterModel_Context_{id}"))
                     {
-                        if (AssetCopyManager.IsSupportedProjectType() && entry.ID != "c0000")
+                        if (AssetCopyManager.IsSupportedProjectType() && id != "c0000")
                         {
                             if (ImGui.Selectable("Copy as New Character"))
                             {
-                                AssetCopyManager.OpenCharacterCopyMenu(entry.ID);
+                                AssetCopyManager.OpenCharacterCopyMenu(id);
                             }
                         }
 
@@ -202,27 +215,59 @@ public class FileSelectionView
                     }
                 }
             }
+
+            clipper.End();
         }
+    }
+
+
+    private List<(string Id, string AliasName)> _cachedFilteredAssets = new();
+    private bool _assetCacheDirty = true;
+
+    private void RebuildAssetCache()
+    {
+        _cachedFilteredAssets.Clear();
+
+        foreach (var entry in Editor.Project.VisualData.AssetModels.Entries)
+        {
+            var id = entry.Filename;
+
+            var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Assets, id);
+
+            if (FilterSelectionList(id, aliasName))
+            {
+                _cachedFilteredAssets.Add((id, aliasName));
+            }
+        }
+
+        _assetCacheDirty = false;
     }
 
     private void DisplayAssetList()
     {
         var assetLabel = "Objects";
-
-        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6)
+        if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
         {
             assetLabel = "Assets";
         }
 
         if (ImGui.CollapsingHeader(assetLabel))
         {
-            foreach (var entry in Editor.Project.Aliases.Assets)
+            if (_assetCacheDirty)
+                RebuildAssetCache();
+
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(_cachedFilteredAssets.Count);
+
+            while (clipper.Step())
             {
-                if (FilterSelectionList(entry))
+                for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                 {
-                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    var (id, aliasName) = _cachedFilteredAssets[i];
+
+                    if (ImGui.Selectable($"{id}##assetFileEntry{id}", id == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry.ID;
+                        Selection._selectedFileName = id;
                         Selection._selectedFileModelType = FileSelectionType.Asset;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -230,18 +275,19 @@ public class FileSelectionView
                             ResManager.LoadAsset(Selection._selectedFileName);
                         }
                     }
+
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry);
+                        DisplaySelectableAlias(id, aliasName);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"AssetModel_Context_{entry.ID}"))
+                    if (ImGui.BeginPopupContextItem($"AssetModel_Context_{id}"))
                     {
                         if (AssetCopyManager.IsSupportedProjectType())
                         {
                             if (ImGui.Selectable("Copy as New Asset"))
                             {
-                                AssetCopyManager.OpenAssetCopyMenu(entry.ID);
+                                AssetCopyManager.OpenAssetCopyMenu(id);
                             }
                         }
 
@@ -249,6 +295,8 @@ public class FileSelectionView
                     }
                 }
             }
+
+            clipper.End();
         }
     }
 
@@ -256,13 +304,31 @@ public class FileSelectionView
     {
         if (ImGui.CollapsingHeader("Parts"))
         {
-            foreach (var entry in Editor.Project.Aliases.Parts)
+            var filteredEntries = new List<(string Id, string AliasName)>();
+            foreach (var entry in Editor.Project.VisualData.PartModels.Entries)
             {
-                if (FilterSelectionList(entry))
+                var id = entry.Filename;
+
+                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.Parts, id);
+
+                if (FilterSelectionList(id, aliasName))
                 {
-                    if (ImGui.Selectable(entry.ID, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                    filteredEntries.Add((id, aliasName));
+                }
+            }
+
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(filteredEntries.Count);
+
+            while (clipper.Step())
+            {
+                for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
+                {
+                    var (id, aliasName) = filteredEntries[i];
+
+                    if (ImGui.Selectable($"{id}##assetFileEntry{id}", id == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedFileName = entry.ID;
+                        Selection._selectedFileName = id;
                         Selection._selectedFileModelType = FileSelectionType.Part;
 
                         if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
@@ -270,18 +336,19 @@ public class FileSelectionView
                             ResManager.LoadPart(Selection._selectedFileName);
                         }
                     }
+
                     if (ImGui.IsItemVisible())
                     {
-                        DisplaySelectableAlias(entry);
+                        DisplaySelectableAlias(id, aliasName);
                     }
 
-                    if (ImGui.BeginPopupContextItem($"PartModel_Context_{entry.ID}"))
+                    if (ImGui.BeginPopupContextItem($"PartModel_Context_{id}"))
                     {
                         if (AssetCopyManager.IsSupportedProjectType())
                         {
                             if (ImGui.Selectable("Copy as New Part"))
                             {
-                                AssetCopyManager.OpenPartCopyMenu(entry.ID);
+                                AssetCopyManager.OpenPartCopyMenu(id);
                             }
                         }
 
@@ -289,6 +356,8 @@ public class FileSelectionView
                     }
                 }
             }
+
+            clipper.End();
         }
     }
 
@@ -311,50 +380,71 @@ public class FileSelectionView
 
         if (ImGui.CollapsingHeader($"{displayedMapName}"))
         {
-            var displayedName = $"{map}";
-            var modelName = map.Replace($"{map}_", "m");
-            displayedName = $"{modelName}";
+            var displayedName = map.Replace($"{map}_", "m");
 
             if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
             {
                 displayedName = displayedName.Replace($"A{map.Substring(1, 2)}", "");
             }
 
-            foreach (var entry in Editor.Project.Aliases.MapPieces)
+            var filteredEntries = new List<(string Id, string AliasName, string DisplayName)>();
+            foreach (var entry in Editor.Project.VisualData.MapPieceModels.Entries)
             {
-                var mapPieceName = $"{entry.ID.Replace(map, "m")}";
+                var id = entry.Filename;
 
-                if (ImGui.Selectable(mapPieceName, entry.ID == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
+                if (!id.StartsWith(map))
+                    continue;
+
+                var aliasName = AliasUtils.GetAliasName(Editor.Project.Aliases.MapPieces, id);
+
+                var mapPieceName = id.Replace(map, "m");
+
+                filteredEntries.Add((id, aliasName, mapPieceName));
+            }
+
+            var clipper = new ImGuiListClipper();
+            clipper.Begin(filteredEntries.Count);
+
+            while (clipper.Step())
+            {
+                for (int i = clipper.DisplayStart; i < clipper.DisplayEnd; i++)
                 {
-                    Selection._selectedFileName = entry.ID;
-                    Selection._selectedFileModelType = FileSelectionType.MapPiece;
+                    var (id, aliasName, mapPieceName) = filteredEntries[i];
 
-                    if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
+                    if (ImGui.Selectable(mapPieceName, id == Selection._selectedFileName, ImGuiSelectableFlags.AllowDoubleClick))
                     {
-                        Selection._selectedAssociatedMapID = map;
-                        ResManager.LoadMapPiece(Selection._selectedFileName, map);
-                    }
-                }
-                if (ImGui.IsItemVisible())
-                {
-                    DisplaySelectableAlias(entry);
-                }
+                        Selection._selectedFileName = id;
+                        Selection._selectedFileModelType = FileSelectionType.MapPiece;
 
-                if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{entry.ID}"))
-                {
-                    /*
-                    if (AssetCopyManager.IsSupportedProjectType())
-                    {
-                        if (ImGui.Selectable("Copy as New Map Piece"))
+                        if (ImGui.IsItemHovered() && ImGui.IsMouseDoubleClicked(ImGuiMouseButton.Left))
                         {
-                            AssetCopyManager.OpenMapPieceCopyMenu(entry);
+                            Selection._selectedAssociatedMapID = map;
+                            ResManager.LoadMapPiece(Selection._selectedFileName, map);
                         }
                     }
-                    */
 
-                    ImGui.EndPopup();
+                    if (ImGui.IsItemVisible())
+                    {
+                        DisplaySelectableAlias(id, aliasName);
+                    }
+
+                    if (ImGui.BeginPopupContextItem($"MapPieceModel_Context_{id}"))
+                    {
+                        /*
+                        if (AssetCopyManager.IsSupportedProjectType())
+                        {
+                            if (ImGui.Selectable("Copy as New Map Piece"))
+                            {
+                                AssetCopyManager.OpenMapPieceCopyMenu(entry);
+                            }
+                        }
+                        */
+                        ImGui.EndPopup();
+                    }
                 }
             }
+
+            clipper.End();
         }
     }
 }

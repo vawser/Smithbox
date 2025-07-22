@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <objectiveFlagId
+    AltName="Objective Flag"
+    Wiki="The event flag for this objective."
+    FlagAlias="" />
+
+    <personalScenarioObjectiveId
+    AltName="Scenario Objective ID"
+    Wiki="The personal scenario objective to use." 
+    FmgRef="Personal_Scenario_Objective" />
+    
+    <personalScenarioTitleId
+    AltName="Scenario Title ID"
+    Wiki="The personal scenario title to use." 
+    FmgRef="Personal_Scenario_Title" />
+
+    <personalScenarioBodyId
+    AltName="Scenario Body ID"
+    Wiki="The personal scenario body text to use." 
+    FmgRef="Personal_Scenario_Body" />
+
+    <personalScenarioImageId
+    AltName="Scenario Image ID"
+    Wiki="The personal scenario image to use." 
+    ExtRefs="hi,menu\00_solo_h.tpfbhd,MENU_ScenarioIllust_#####.tpf.dcx,MENU_ScenarioIllust_#####.dds;low,menu\00_solo_l.tpfbhd,MENU_ScenarioIllust_#####.tpf.dcx,MENU_ScenarioIllust_#####.dds" />
+    
+    <heroId
+    AltName="Character ID"
+    Wiki=""
+    Refs="HeroParam" />
+
+    <flashbackFlagId
+    AltName="Flashback Flag"
+    Wiki="The event flag for flashback."
+    FlagAlias="" />
+    
+    <spawnpointEntityId
+    AltName="Spawn Point Entity ID"
+    Wiki="The entity ID of the region to spawn at." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

@@ -2,7 +2,9 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Core;
+using StudioCore.Editors.EmevdEditor;
 using StudioCore.Interface;
+using static SoulsFormats.EMEVD;
 
 namespace StudioCore.EventScriptEditorNS;
 
@@ -69,8 +71,13 @@ public class EmevdInstructionView
 
                     DisplayInstructionAlias(ins);
                 }
-            }
 
+                if (Editor.Selection.FocusInstructionSelection)
+                {
+                    Editor.Selection.FocusInstructionSelection = false;
+                    ImGui.SetScrollHereY();
+                }
+            }
         }
 
         ImGui.EndChild();
@@ -102,18 +109,20 @@ public class EmevdInstructionView
                         for (int i = 0; i < insEntry.Arguments.Length; i++)
                         {
                             var argEntry = insEntry.Arguments[i];
-                            string separator = ", ";
-
-                            if (i == insEntry.Arguments.Length - 1)
+                            if (argEntry != null)
                             {
-                                separator = "";
-                            }
+                                string separator = ", ";
 
-                            argsStr = $"{argsStr}{argEntry.Name}{separator}";
+                                if (i == insEntry.Arguments.Length - 1)
+                                {
+                                    separator = "";
+                                }
+
+                                argsStr = $"{argsStr}{argEntry.Name}{separator}";
+                            }
                         }
                     }
                 }
-
             }
         }
 

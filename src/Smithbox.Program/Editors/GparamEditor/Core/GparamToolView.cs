@@ -21,14 +21,6 @@ public class GparamToolView
     }
 
     /// <summary>
-    /// Reset view state on project change
-    /// </summary>
-    public void OnProjectChanged()
-    {
-
-    }
-
-    /// <summary>
     /// The main UI for this view
     /// </summary>
     public void Display()
@@ -39,7 +31,7 @@ public class GparamToolView
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
 
-        if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor"))
+        if (ImGui.Begin("Tool Window##ToolConfigureWindow_GparamEditor", ImGuiWindowFlags.MenuBar))
         {
             Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
 
@@ -47,13 +39,24 @@ public class GparamToolView
             var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
             var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
 
-            if (ImGui.CollapsingHeader("Quick Edit"))
+            if (ImGui.BeginMenuBar())
             {
-                Screen.QuickEditHandler.DisplayInputWindow();
+                ViewMenu();
+
+                ImGui.EndMenuBar();
             }
-            if (ImGui.CollapsingHeader("Quick Edit Commands"))
+
+            if (CFG.Current.Interface_GparamEditor_Tool_QuickEdit)
             {
-                Screen.QuickEditHandler.DisplayCheatSheet();
+                if (ImGui.CollapsingHeader("Quick Edit"))
+                {
+                    Screen.QuickEditHandler.DisplayInputWindow();
+                }
+
+                if (ImGui.CollapsingHeader("Quick Edit Commands"))
+                {
+                    Screen.QuickEditHandler.DisplayCheatSheet();
+                }
             }
 
             // Gparam Reloader
@@ -76,5 +79,18 @@ public class GparamToolView
 
         ImGui.End();
         ImGui.PopStyleColor(1);
+    }
+    public void ViewMenu()
+    {
+        if (ImGui.BeginMenu("View"))
+        {
+            if (ImGui.MenuItem("Quick Edit"))
+            {
+                CFG.Current.Interface_GparamEditor_Tool_QuickEdit = !CFG.Current.Interface_GparamEditor_Tool_QuickEdit;
+            }
+            UIHelper.ShowActiveStatus(CFG.Current.Interface_GparamEditor_Tool_QuickEdit);
+
+            ImGui.EndMenu();
+        }
     }
 }

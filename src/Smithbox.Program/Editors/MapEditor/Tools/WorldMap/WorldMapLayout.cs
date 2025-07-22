@@ -1,6 +1,7 @@
 ﻿using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -34,15 +35,54 @@ public class WorldMapLayout
             return $"0{num}";
         }
 
-        return num.ToString(); ;
+        return num.ToString();
     }
 
-    public void GenerateTiles(List<int> rows, List<int> cols, string tileID, float increment, MapTileType type)
+    public void GenerateTiles(List<int> rows, List<int> cols, int tileOffset, float increment, MapTileType type, List<int> tileIdVariants = null,
+        int xLargeOffset = -1, int yLargeOffset = -1, 
+        int xMediumOffset = -1, int yMediumOffset = -1, 
+        int xSmallOffset = -1, int ySmallOffset = -1)
     {
         var mapList = MapLocator.GetFullMapList(Editor.Project);
 
         float CurX = XOffset;
         float CurY = YOffset;
+
+        if(type is MapTileType.Large)
+        {
+            if(xLargeOffset != -1)
+            {
+                CurX = xLargeOffset;
+            }
+            if (yLargeOffset != -1)
+            {
+                CurY = yLargeOffset;
+            }
+        }
+
+        if (type is MapTileType.Medium)
+        {
+            if (xMediumOffset != -1)
+            {
+                CurX = xMediumOffset;
+            }
+            if (yMediumOffset != -1)
+            {
+                CurY = yMediumOffset;
+            }
+        }
+
+        if (type is MapTileType.Small)
+        {
+            if (xSmallOffset != -1)
+            {
+                CurX = xSmallOffset;
+            }
+            if (ySmallOffset != -1)
+            {
+                CurY = ySmallOffset;
+            }
+        }
 
         foreach (var row in rows)
         {
@@ -58,20 +98,100 @@ public class WorldMapLayout
                 if (col < 10)
                     padCol = PadNumber(col);
 
-                var id = $"m{Prefix}_{padRow}_{padCol}_{tileID}";
+                var baseTileID = 0;
+                baseTileID += tileOffset;
 
-                // Only include if the map id is an actual map
-                if (mapList.Contains(id))
+                var strTileID = "00";
+                if(baseTileID < 10)
                 {
-                    var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
-                    Tiles.Add(newTile);
+                    strTileID = $"0{baseTileID}";
+                }
+                else
+                {
+                    strTileID = $"{baseTileID}";
+                }
+
+                var id = $"m{Prefix}_{padRow}_{padCol}_{strTileID}";
+
+                if (tileIdVariants == null)
+                {
+                    TaskLogs.AddLog($"{type}: {id}");
+
+                    // Only include if the map id is an actual map
+                    if (mapList.Contains(id))
+                    {
+                        var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
+                        Tiles.Add(newTile);
+                    }
+                }
+                else
+                {
+                    foreach(var variant in tileIdVariants)
+                    {
+                        baseTileID = variant;
+                        baseTileID += tileOffset;
+
+                        strTileID = "00";
+                        if (baseTileID < 10)
+                        {
+                            strTileID = $"0{baseTileID}";
+                        }
+                        else
+                        {
+                            strTileID = $"{baseTileID}";
+                        }
+
+                        id = $"m{Prefix}_{padRow}_{padCol}_{strTileID}";
+
+                        // Only include if the map id is an actual map
+                        if (mapList.Contains(id))
+                        {
+                            var newTile = new WorldMapTile(id, CurX, CurY, increment, increment, type);
+                            Tiles.Add(newTile);
+                        }
+                    }
                 }
 
                 CurY = CurY + increment;
             }
 
             CurX = CurX + increment;
-            CurY = YOffset;
+
+            if (type is MapTileType.Large)
+            {
+                if (yLargeOffset != -1)
+                {
+                    CurY = yLargeOffset;
+                }
+                else
+                {
+                    CurY = YOffset;
+                }
+            }
+
+            if (type is MapTileType.Medium)
+            {
+                if (yMediumOffset != -1)
+                {
+                    CurY = yMediumOffset;
+                }
+                else
+                {
+                    CurY = YOffset;
+                }
+            }
+
+            if (type is MapTileType.Small)
+            {
+                if (ySmallOffset != -1)
+                {
+                    CurY = ySmallOffset;
+                }
+                else
+                {
+                    CurY = YOffset;
+                }
+            }
         }
     }
 }

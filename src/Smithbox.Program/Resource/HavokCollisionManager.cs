@@ -12,6 +12,7 @@ using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Numerics;
 using static StudioCore.Resource.Types.HavokCollisionResource;
 
@@ -43,7 +44,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             LoadMapCollision(mapId, "h");
             LoadMapCollision(mapId, "l");
@@ -55,7 +56,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             // HACK: clear all viewport collisions on load
             foreach (KeyValuePair<string, IResourceHandle> item in ResourceManager.GetResourceDatabase())
@@ -145,7 +146,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             LoadModelCollision(modelName, "h", modelType);
             LoadModelCollision(modelName, "l", modelType);
@@ -157,7 +158,7 @@ public class HavokCollisionManager
         if (!CFG.Current.MapEditor_LoadCollisions_ER)
             return;
 
-        if (Project.ProjectType == ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             //UnloadModelCollision(mapId, "h");
             //UnloadModelCollision(mapId, "l");
@@ -168,18 +169,20 @@ public class HavokCollisionManager
     {
         var checkedName = $"{modelName}_{colType}".ToLower();
 
+        var fileEntry = Project.FileDictionary.Entries.FirstOrDefault(e => e.Filename == modelName);
+
+        if (fileEntry == null)
+            return;
+
         if (HavokContainers.ContainsKey(checkedName))
         {
             return;
         }
 
-        var bndPath = $"\\asset\\aeg\\{modelName.Substring(0, 6)}\\{modelName}_{colType}.geomhkxbnd.dcx";
-
         try
         {
-            var bndData = Project.FS.ReadFile(bndPath);
-
-            var binder = BND4.Read(bndPath);
+            var bndData = Project.FS.ReadFile(fileEntry.Path);
+            var binder = BND4.Read((Memory<byte>)bndData);
 
             // Read collisions
             foreach (var file in binder.Files)
@@ -214,7 +217,7 @@ public class HavokCollisionManager
         }
         catch (Exception e)
         {
-            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load model collision: {bndPath}", LogLevel.Error, LogPriority.High, e);
+            TaskLogs.AddLog($"[{Project}:Map Editor] Failed to load model collision: {fileEntry.Path}", LogLevel.Error, LogPriority.High, e);
         }
     }
 

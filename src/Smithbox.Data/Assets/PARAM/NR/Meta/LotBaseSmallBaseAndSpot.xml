@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <lotResult1
+    AltName="Lot Result 1"
+    Wiki=""
+    Refs="LotResultSmallBaseAndSpot" />
+    
+    <lotResult2
+    AltName="Lot Result 2"
+    Wiki=""
+    Refs="LotResultSmallBaseAndSpot" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

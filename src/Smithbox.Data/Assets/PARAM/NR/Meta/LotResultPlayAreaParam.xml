@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <playAreaCreateId
+    AltName="Play Area Create ID"
+    Wiki=""
+    Refs="PlayAreaCreateParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

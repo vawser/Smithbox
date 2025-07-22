@@ -96,6 +96,27 @@ public static class TextParamUtils
         {
             return "Archive_Name";
         }
+        if (paramName == "EquipParamAntique")
+        {
+            return "Title_Antique";
+        }
+        if (paramName == "AttachEffectParam")
+        {
+            return "Title_AttachEffect";
+        }
+
+        if (paramName == "MessageBoxParamSystem")
+        {
+            return "Modern_Menu_System_Message";
+        }
+        if (paramName == "MessageBoxParamDialog")
+        {
+            return "Modern_Menu_Dialogue";
+        }
+        if (paramName == "PermanentBuffParam")
+        {
+            return "Title_PermanentBuff";
+        }
 
         return "";
     }

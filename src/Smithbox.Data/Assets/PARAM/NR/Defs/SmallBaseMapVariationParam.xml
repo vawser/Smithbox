@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>SMALLBASE_MAP_VARIATION_PARAM_ST</ParamType>
+  <DataVersion>5</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+
+    <Field Def="s32 NT"/>
+    <Field Def="s16 unknown_1a"/>
+    <Field Def="s16 unknown_1b"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s16 variation0Value"/>
+    <Field Def="s16 variation1Value"/>
+    <Field Def="s16 variation2Value"/>
+    <Field Def="s16 variation3Value"/>
+    <Field Def="s16 variation4Value"/>
+    <Field Def="s16 variation5Value"/>
+    <Field Def="s16 variation6Value"/>
+    <Field Def="s16 variation7Value"/>
+    <Field Def="s16 variation8Value"/>
+    <Field Def="s16 variation9Value"/>
+    <Field Def="s32 modifier1"/>
+    <Field Def="s32 modifier2"/>
+    <Field Def="s32 modifier3"/>
+    <Field Def="u16 variation0IconId"/>
+    <Field Def="u16 variation1IconId"/>
+    <Field Def="u16 variation2IconId"/>
+    <Field Def="u16 variation3IconId"/>
+    <Field Def="u16 variation4IconId"/>
+    <Field Def="u16 variation5IconId"/>
+    <Field Def="u16 variation6IconId"/>
+    <Field Def="u16 variation7IconId"/>
+    <Field Def="u16 variation8IconId"/>
+    <Field Def="u16 variation9IconId"/>
+  </Fields>
+</PARAMDEF>

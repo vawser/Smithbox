@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>MAP_PATTERN_SET_PARAM_ST</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 weight"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s16 unknown_2a"/>
+    <Field Def="s16 unknown_2b"/>
+    <Field Def="s32 unknown_3"/>
+    <Field Def="s32 unknown_4"/>
+    <Field Def="s32 modifier1"/>
+    <Field Def="s32 modifier2"/>
+    <Field Def="s32 modifier3"/>
+    <Field Def="s32 modifier4"/>
+    <Field Def="s32 modifier5"/>
+    <Field Def="s32 unknown_10"/>
+    <Field Def="s32 unknown_11"/>
+    <Field Def="s32 unknown_12"/>
+    <Field Def="s32 unknown_13"/>
+    <Field Def="s32 unknown_14"/>
+    <Field Def="s32 unknown_15"/>
+    <Field Def="s32 unknown_16"/>
+    <Field Def="s32 unknown_17"/>
+    <Field Def="s32 modifier6"/>
+    <Field Def="s32 modifier7"/>
+    <Field Def="s32 modifier8"/>
+    <Field Def="s32 modifier9"/>
+    <Field Def="s32 modifier10"/>
+    <Field Def="s32 modifier11"/>
+    <Field Def="s32 modifier12"/>
+    <Field Def="s32 modifier13"/>
+    <Field Def="s32 modifier14"/>
+    <Field Def="s32 modifier15"/>
+    <Field Def="s32 modifier16"/>
+    <Field Def="s32 modifier17"/>
+    <Field Def="s32 modifier18"/>
+    <Field Def="s32 modifier19"/>
+    <Field Def="s32 unknown_32"/>
+    <Field Def="s32 unknown_33"/>
+    <Field Def="s32 unknown_34"/>
+    <Field Def="s32 unknown_35"/>
+    <Field Def="s32 unknown_36"/>
+    <Field Def="s32 unknown_37"/>
+    <Field Def="s32 unknown_38"/>
+    <Field Def="s32 unknown_39"/>
+    <Field Def="s32 unknown_40"/>
+    <Field Def="s32 unknown_41"/>
+    <Field Def="s32 unknown_42"/>
+    <Field Def="s32 unknown_43"/>
+    <Field Def="s32 unknown_44"/>
+    <Field Def="s32 unknown_45"/>
+    <Field Def="s32 unknown_46"/>
+    <Field Def="s32 unknown_47"/>
+    <Field Def="s32 unknown_48"/>
+    <Field Def="s32 unknown_49"/>
+    <Field Def="s32 modifier20"/>
+    <Field Def="s32 modifier21"/>
+    <Field Def="s32 modifier22"/>
+    <Field Def="s32 modifier23"/>
+    <Field Def="s32 modifier24"/>
+    <Field Def="s32 modifier25"/>
+    <Field Def="s32 modifier26"/>
+    <Field Def="s32 modifier27"/>
+    <Field Def="s32 modifier28"/>
+    <Field Def="s32 modifier29"/>
+    <Field Def="s32 modifier30"/>
+    <Field Def="s32 modifier31"/>
+    <Field Def="s32 modifier32"/>
+    <Field Def="s32 unknown_63"/>
+    <Field Def="s32 unknown_64"/>
+    <Field Def="s32 unknown_65"/>
+    <Field Def="s32 unknown_66"/>
+    <Field Def="s32 unknown_67"/>
+    <Field Def="s32 unknown_68"/>
+    <Field Def="s32 unknown_69"/>
+    <Field Def="s32 unknown_70"/>
+    <Field Def="s32 unknown_71"/>
+    <Field Def="s32 unknown_72"/>
+    <Field Def="s32 unknown_73"/>
+    <Field Def="s32 unknown_74"/>
+    <Field Def="s32 unknown_75"/>
+    <Field Def="s32 unknown_76"/>
+    <Field Def="s32 unknown_77"/>
+    <Field Def="s32 unknown_78"/>
+    <Field Def="s32 unknown_79"/>
+    <Field Def="s32 unknown_80"/>
+    <Field Def="s32 unknown_81"/>
+  </Fields>
+</PARAMDEF>

@@ -215,6 +215,31 @@ public static class UIHelper
 
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(textColor, $"{title}");
+
+            UIHelper.Tooltip(tooltip);
+
+            ImGui.EndTable();
+        }
+    }
+    public static void ConditionalHeader(string id, string title, string tooltip, Vector4 textColor, ref bool visibilityToggle)
+    {
+        var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
+
+        if (ImGui.BeginTable($"{id}", 1, tblFlags))
+        {
+            ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableNextRow();
+            ImGui.TableSetColumnIndex(0);
+
+            ImGui.AlignTextToFramePadding();
+            ImGui.TextColored(textColor, $"{title}");
+            ImGui.SameLine();
+            if (ImGui.Button($"{Icons.Eye}"))
+            {
+                visibilityToggle = !visibilityToggle;
+            }
+
             UIHelper.Tooltip(tooltip);
 
             ImGui.EndTable();
@@ -225,5 +250,44 @@ public static class UIHelper
     {
         int byteCount = Encoding.UTF8.GetByteCount(contents) + 1;
         return (nuint)byteCount;
+    }
+}
+
+public class InputTextHandler
+{
+    private byte[] _buffer;
+
+    public InputTextHandler(string initialValue, int size = 512)
+    {
+        _buffer = new byte[size];
+        Update(initialValue);
+    }
+
+    public void Update(string value)
+    {
+        Array.Clear(_buffer, 0, _buffer.Length);
+        Encoding.UTF8.GetBytes(value ?? "", 0, value?.Length ?? 0, _buffer, 0);
+    }
+
+    public bool Draw(string label, out string result)
+    {
+        bool changed = false;
+        unsafe
+        {
+            fixed (byte* bufPtr = _buffer)
+            {
+                if (ImGui.InputText(label, bufPtr, (uint)_buffer.Length))
+                {
+                    int len = Array.IndexOf(_buffer, (byte)0);
+                    result = Encoding.UTF8.GetString(_buffer, 0, len >= 0 ? len : _buffer.Length);
+                    changed = true;
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+        }
+        return changed;
     }
 }

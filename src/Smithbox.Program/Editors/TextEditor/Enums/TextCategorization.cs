@@ -2,9 +2,6 @@
 
 namespace StudioCore.Editors.TextEditor;
 
-// TODO: really these should now be objects but I don't want to re-work everything again so they'll remain enums for now
-// TODO: ACFA, ACV, ACVD
-
 /// ----------------------------------
 /// Keep the enum names consistent between each game as the ParamMETA 
 /// uses them to link the FmgRef to the actual FMG.
@@ -826,8 +823,8 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Line Help", ShortName = "Common", Description = "")]
     Menu_Line_Help = 80,
 
-    [Display(Name = "Context", ShortName = "Common", Description = "")]
-    Menu_Context = 81,
+    [Display(Name = "Item Help (Unused)", ShortName = "Common", Description = "")]
+    Item_Help = 81,
 
     [Display(Name = "Tags", ShortName = "Common", Description = "")]
     Menu_Tags = 90,
@@ -853,11 +850,11 @@ public enum Menu_MsgBndID_SDT
     [Display(Name = "Dialogue", ShortName = "Menu", Description = "")]
     Modern_Menu_Dialogue = 204,
 
-    [Display(Name = "System Messages: PS4", ShortName = "Common", Description = "")]
-    System_Message_PS4 = 205,
+    [Display(Name = "Loading Menu Text", ShortName = "Common", Description = "")]
+    Loading_Menu_Text = 205,
 
-    [Display(Name = "System Messages: XB1", ShortName = "Common", Description = "")]
-    System_Message_XB1 = 206
+    [Display(Name = "Loading Menu Title", ShortName = "Common", Description = "")]
+    Loading_Menu_Title = 206
 }
 
 public enum SellRegion_MsgBndID_SDT
@@ -1627,3 +1624,184 @@ public enum ContainerSubCategory
     [Display(Name = "Blood Message")] bloodmes,
     [Display(Name = "Talk")] talk,
 }
+
+/// <summary>
+/// FMG IDs for NR
+/// </summary>
+public enum Item_MsgBndID_NR
+{
+    [Display(Name = "Goods", ShortName = "Title", Description = "")]
+    Title_Goods = 10,
+
+    [Display(Name = "Weapons", ShortName = "Title", Description = "")]
+    Title_Weapons = 11,
+
+    [Display(Name = "Armor", ShortName = "Title", Description = "")]
+    Title_Armor = 12,
+
+    [Display(Name = "Accessories", ShortName = "Title", Description = "")]
+    Title_Accessories = 13,
+
+    [Display(Name = "Magic", ShortName = "Title", Description = "")]
+    Title_Magic = 14,
+
+    [Display(Name = "Characters", ShortName = "Common", Description = "")]
+    Title_Characters = 18,
+
+    [Display(Name = "Locations", ShortName = "Common", Description = "")]
+    Title_Locations = 19,
+
+    [Display(Name = "Goods", ShortName = "Summary", Description = "")]
+    Summary_Goods = 20,
+
+    [Display(Name = "Weapons", ShortName = "Summary", Description = "")]
+    Summary_Weapons = 21,
+
+    [Display(Name = "Armor", ShortName = "Summary", Description = "")]
+    Summary_Armor = 22,
+
+    [Display(Name = "Accessories", ShortName = "Summary", Description = "")]
+    Summary_Accessories = 23,
+
+    [Display(Name = "Magic", ShortName = "Summary", Description = "")]
+    Summary_Magic = 28,
+
+    [Display(Name = "Goods", ShortName = "Description", Description = "")]
+    Description_Goods = 24,
+
+    [Display(Name = "Weapons", ShortName = "Description", Description = "")]
+    Description_Weapons = 25,
+
+    [Display(Name = "Armor", ShortName = "Description", Description = "")]
+    Description_Armor = 26,
+
+    [Display(Name = "Accessories", ShortName = "Description", Description = "")]
+    Description_Accessories = 27,
+
+    [Display(Name = "Magic", ShortName = "Description", Description = "")]
+    Description_Magic = 29,
+
+    [Display(Name = "Goods Dialog", ShortName = "Common", Description = "")]
+    Dialog_Goods = 41,
+
+    [Display(Name = "Skills", ShortName = "Title", Description = "")]
+    Title_Skill = 42,
+
+    [Display(Name = "Skills", ShortName = "Description", Description = "")]
+    Description_Skill = 43,
+
+    [Display(Name = "Attach Effects", ShortName = "Title", Description = "")]
+    Title_AttachEffect = 44,
+
+    [Display(Name = "Skills", ShortName = "Effect", Description = "")]
+    Effect_Skill = 45,
+
+    [Display(Name = "Goods", ShortName = "Effect", Description = "")]
+    Effect_Goods = 46,
+
+    [Display(Name = "Antique", ShortName = "Title", Description = "")]
+    Title_Antique = 47,
+
+    [Display(Name = "Antique", ShortName = "Summary", Description = "")]
+    Summary_Antique = 48,
+
+    [Display(Name = "Antique", ShortName = "Description", Description = "")]
+    Description_Antique = 49,
+
+    [Display(Name = "Attach Effects", ShortName = "Summary", Description = "")]
+    Summary_AttachEffect = 50,
+
+    [Display(Name = "Permanent Buff", ShortName = "Title", Description = "")]
+    Title_PermanentBuff = 51,
+
+    [Display(Name = "Permanent Buff", ShortName = "Summary", Description = "")]
+    Summary_PermanentBuff = 52,
+
+    [Display(Name = "Permanent Buff", ShortName = "Descriptio", Description = "")]
+    Description_PermanentBuff = 53,
+}
+
+public enum Menu_MsgBndID_NR
+{
+    [Display(Name = "Talk Messages", ShortName = "Common", Description = "")]
+    Talk_Messages = 1,
+
+    [Display(Name = "Blood Messages", ShortName = "Common", Description = "")]
+    Blood_Messages = 2,
+
+    [Display(Name = "Movie Subtitles", ShortName = "Common", Description = "")]
+    Movie_Subtitles = 3,
+
+    [Display(Name = "Talk Messages FemalePC", ShortName = "Common", Description = "")]
+    Talk_Messages_FemalePC = 4,
+
+    [Display(Name = "Network Messages", ShortName = "Common", Description = "")]
+    Network_Messages = 31,
+
+    [Display(Name = "Action Button Text", ShortName = "Common", Description = "")]
+    Action_Button_Text = 32,
+
+    [Display(Name = "Event Text for Talk", ShortName = "Common", Description = "")]
+    Event_Text_for_Talk = 33,
+
+    [Display(Name = "Event Text for Map", ShortName = "Common", Description = "")]
+    Event_Text_for_Map = 34,
+
+    [Display(Name = "Menu Text", ShortName = "Common", Description = "")]
+    Modern_Menu_Text = 200,
+
+    [Display(Name = "Line Help", ShortName = "Common", Description = "")]
+    Modern_Menu_Line_Help = 201,
+
+    [Display(Name = "Key Guide", ShortName = "Common", Description = "")]
+    Modern_Menu_Key_Guide = 202,
+
+    [Display(Name = "System Messages: PC", ShortName = "Common", Description = "")]
+    Modern_Menu_System_Message = 203,
+
+    [Display(Name = "Dialogue", ShortName = "Common", Description = "")]
+    Modern_Menu_Dialogue = 204,
+
+    [Display(Name = "Loading Screen", ShortName = "Title", Description = "")]
+    Loading_Title = 205,
+
+    [Display(Name = "Loading Screen", ShortName = "Description", Description = "")]
+    Loading_Text = 206,
+
+    [Display(Name = "Tutorial", ShortName = "Title", Description = "")]
+    Tutorial_Title = 207,
+
+    [Display(Name = "Tutorial", ShortName = "Description", Description = "")]
+    Tutorial_Text = 208,
+
+    [Display(Name = "Text Embed Image Name", ShortName = "Common", Description = "")]
+    Text_Embed_Image_Name_PC = 209,
+
+    [Display(Name = "Terms of Service", ShortName = "Common", Description = "")]
+    Terms_of_Service = 210,
+
+    [Display(Name = "Personal Scenario Objective", ShortName = "Summary", Description = "")]
+    Personal_Scenario_Objective = 211,
+
+    [Display(Name = "Personal Scenario Title", ShortName = "Title", Description = "")]
+    Personal_Scenario_Title = 212,
+
+    [Display(Name = "Personal Scenario Body", ShortName = "Description", Description = "")]
+    Personal_Scenario_Body = 213,
+
+    [Display(Name = "SpEffect Name", ShortName = "Title", Description = "")]
+    SpEffect_Name = 214,
+
+    [Display(Name = "SpEffect Info", ShortName = "Summary", Description = "")]
+    SpEffect_Info = 215,
+
+    [Display(Name = "SpEffect Caption", ShortName = "Description", Description = "")]
+    SpEffect_Caption = 216
+}
+
+public enum NgWord_MsgBndID_NR
+{
+    [Display(Name = "Blocked Words", ShortName = "Common", Description = "")]
+    NgWord = 1
+}
+

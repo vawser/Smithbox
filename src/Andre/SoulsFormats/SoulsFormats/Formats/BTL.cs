@@ -48,7 +48,7 @@ namespace SoulsFormats
             br.BigEndian = false;
 
             br.AssertInt32(2);
-            Version = br.AssertInt32([1, 2, 5, 6, 15, 16, 18]);
+            Version = br.AssertInt32([1, 2, 5, 6, 15, 16, 18, 19]);
             int lightCount = br.ReadInt32();
             int namesLength = br.ReadInt32();
             br.AssertInt32(0);

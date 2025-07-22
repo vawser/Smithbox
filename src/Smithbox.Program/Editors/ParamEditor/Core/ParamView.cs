@@ -6,6 +6,7 @@ using StudioCore.Core;
 using StudioCore.Debug.Generators;
 using StudioCore.Editor;
 using StudioCore.Editors.ParamEditor.Data;
+using StudioCore.FileBrowserNS;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using System;
@@ -13,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static StudioCore.Editors.ParamEditor.Data.ParamBank;
 
 namespace StudioCore.Editors.ParamEditor;
 
@@ -355,6 +357,8 @@ public class ParamView
             {
                 //_selection.setActiveParam(param.Key);
                 EditorCommandQueue.AddCommand($@"param/view/{View.ViewIndex}/{paramKey}");
+
+                Editor.Project.ParamData.RefreshParamDifferenceCacheTask(true);
             }
 
             ImGui.PopStyleColor();
@@ -389,6 +393,11 @@ public class ParamView
             var width = CFG.Current.Param_ParamContextMenu_Width;
 
             ImGui.SetNextItemWidth(width);
+
+            //if (ImGui.Selectable("Export Row Names as Text"))
+            //{
+            //    Project.ParamData.PrimaryBank.ExportRowNames(ExportRowNameType.Text, @"G:\Modding\Nightreign\NR-Test", Editor._activeView.Selection.GetActiveParam());
+            //}
 
             if (ImGui.Selectable("Copy Name"))
             {

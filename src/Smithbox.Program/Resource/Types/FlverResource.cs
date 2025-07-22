@@ -112,8 +112,13 @@ public class FlverResource : IResource, IDisposable
                 {
                     BinaryReaderEx br = new(false, bytes);
                     DCX.Type ctype;
-                    br = SFUtil.GetDecompressedBR(br, out ctype);
-                    ret = LoadInternalFast(br);
+
+
+                    Flver = FLVER2.Read(bytes);
+                    ret = LoadInternal(al);
+
+                    //br = SFUtil.GetDecompressedBR(br, out ctype);
+                    //ret = LoadInternalFast(br);
                 }
                 else
                 {
@@ -239,7 +244,7 @@ public class FlverResource : IResource, IDisposable
                 //TaskLogs.AddLog($"MTD: {path}");
             }
 
-            if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (curProject.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 var matbin = bank.GetMatbin(mtdstring);
 
@@ -2110,9 +2115,12 @@ public class FlverResource : IResource, IDisposable
             0x20014,
             0x20016,
             0x2001A,
-            0x2001B]);
+            0x2001B,
+            0x20021]);
+
         var dataOffset = br.ReadUInt32();
         br.ReadInt32(); // Data length
+
         var dummyCount = br.ReadInt32();
         var materialCount = br.ReadInt32();
         var boneCount = br.ReadInt32();

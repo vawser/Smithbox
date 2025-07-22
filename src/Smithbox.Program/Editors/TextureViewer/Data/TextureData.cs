@@ -15,6 +15,7 @@ public class TextureData
     public ProjectEntry Project;
 
     public TextureBank PrimaryBank;
+    public TextureBank PreviewBank;
 
     public FileDictionary TextureFiles = new();
 
@@ -44,6 +45,16 @@ public class TextureData
         if (!primaryChrBankTaskResult)
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Primary Texture bank.");
+        }
+
+        PreviewBank = new("Preview", BaseEditor, Project, Project.FS);
+
+        Task<bool> previewBankTask = PreviewBank.Setup();
+        bool previewBankTaskResult = await previewBankTask;
+
+        if (!previewBankTaskResult)
+        {
+            TaskLogs.AddLog($"[{Project.ProjectName}:Texture Viewer] Failed to setup Preview Texture bank.");
         }
 
         return true;

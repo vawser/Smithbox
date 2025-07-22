@@ -69,6 +69,36 @@
       <Option Value="2" Name="Play animation xxx" />
       <Option Value="11" Name="No Reaction" />
     </Enum>
+    <Enum Name="TRACK_TYPE" type="u8">
+      <Option Value="0" Name="Player" />
+      <Option Value="1" Name="Sweep" />
+      <Option Value="2" Name="Standard" />
+      <Option Value="6" Name="Thrust" />
+      <Option Value="7" Name="Throw" />
+    </Enum>
+    <Enum Name="DEFLECT_ACTION_TYPE" type="u8">
+      <Option Value="0" Name="None" />
+      <Option Value="1" Name="Attacker's Right" />
+      <Option Value="2" Name="Attacker's Left" />
+    </Enum>
+    <Enum Name="DEFLECTED_ACTION_TYPE" type="u8">
+      <Option Value="0" Name="Bound-None" />
+      <Option Value="1" Name="Bound-Right-8700/8702/8704" />
+      <Option Value="2" Name="Bound-Left-8701/8703/8705" />
+      <Option Value="11" Name="Bound_Add01-9700" />
+      <Option Value="12" Name="Bound_Add02" />
+      <Option Value="13" Name="Bound_Add03" />
+      <Option Value="14" Name="Bound_Add04" />
+    </Enum>
+    <Enum Name="JUST_DEFLECTED_ACTION_TYPE" type="u8">
+      <Option Value="0" Name="Bound-None" />
+      <Option Value="1" Name="Bound-Right-8600/8602/8604" />
+      <Option Value="2" Name="Bound-Left-8601/8603/8605" />
+      <Option Value="11" Name="Bound_Add01-9700" />
+      <Option Value="12" Name="Bound_Add02" />
+      <Option Value="13" Name="Bound_Add03" />
+      <Option Value="14" Name="Bound_Add04" />
+    </Enum>
   </Enums>
   <Field>
     <hit0_Radius Wiki="Radius of the hitbox" />
@@ -255,11 +285,11 @@
     <isDisableParry IsBool="" />
     <isDisableBothHandsAtkBonus IsBool="" />
     <isObjExtHitSfx IsBool="" />
-    <trackType Wiki="Defines the Invincibility frame category" />
+    <trackType Wiki="Defines the Invincibility frame category" Enum="TRACK_TYPE" />
     <directAtkStamCorrection />
     <excessDmgKeepHp />
-    <deflectedAction Wiki="Animation that will play when this attack is blocked" />
-    <justDeflectedAction Wiki="Animation that will play when this attack is deflected" />
+    <deflectedAction Wiki="Animation that will play when this attack is blocked" Enum="DEFLECTED_ACTION_TYPE" />
+    <justDeflectedAction Wiki="Animation that will play when this attack is deflected" Enum="JUST_DEFLECTED_ACTION_TYPE" />
     <statusAilmentAtkPowerCorrectRate Wiki="Alters the amount of status build-up dealt by a percent" />
     <spEffectAtkPowerCorrectRate_byPoint />
     <spEffectAtkPowerCorrectRate_byRate />
@@ -277,7 +307,7 @@
     <decalBaseId1 />
     <decalBaseId2 />
     <atkMaterial_forSe />
-    <deflectAction />
+    <deflectAction Enum="DEFLECT_ACTION_TYPE" />
     <staminaDamageAttackHitParry Wiki="Flat posture damage dealt to attacker if this attack is countered with Mikiri Counter" />
     <hitObjAnimeId />
     <counterSpEffectCondition Wiki="Will activate the counterSpEffectConditon on speffects, which triggers speffects on the attacker" VRef="contnterSpEffectCondition" />
@@ -290,7 +320,7 @@
     <disableJustGuard_vsGuardAttribute1 Wiki="Attack cannot be deflected with Umbrella" IsBool="" />
     <mapHitType_Middle />
     <mapHitType_Root />
-    <justDeflectAction />
+    <justDeflectAction Enum="DEFLECT_ACTION_TYPE" />
     <hitStopTime_Defencer />
   </Field>
   <Self Wiki="Defines hitboxes" AlternativeOrder="atkPhys,atkMag,atkFire,atkThun,atkDark,atkStam,atkSuperArmor,atkPhysCorrection,atkMagCorrection,atkFireCorrection,atkThunCorrection,atkDarkCorrection,atkStamCorrection,atkSuperArmorCorrection,directAtkStamCorrection,directAtkStamDamage,repelLostStamDamage,directAtkStamDamage_Attacker,repelVictoryStamDamage_Attacker,repelLostStamDamage_Attacker,staminaDamageAttackHitParry,disableStaminaAttack,-,

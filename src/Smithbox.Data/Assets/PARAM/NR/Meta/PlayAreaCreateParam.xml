@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <unknown_EventFlag1
+    FlagAlias="" />
+    
+    <unknown_EventFlag2
+    FlagAlias="" />
+    
+    <worldMapPointId_1
+    Refs="WorldMapPointParam" />
+    
+    <worldMapPointId_2
+    Refs="WorldMapPointParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

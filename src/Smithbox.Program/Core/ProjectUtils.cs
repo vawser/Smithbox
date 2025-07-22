@@ -45,32 +45,54 @@ public class ProjectUtils
                 return "ER";
             case ProjectType.AC6:
                 return "AC6";
-            case ProjectType.ERN:
-                return "ERN";
+            case ProjectType.NR:
+                return "NR";
             default:
                 throw new Exception("Game type not set");
         }
     }
 
+    public static void DeleteProject(Smithbox editor, ProjectEntry curProject)
+    {
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        // Delete the project file
+        var filename = @$"{localAppDataPath}\Smithbox\Projects\{curProject.ProjectGUID}.json";
+        if (File.Exists(filename))
+        {
+            File.Delete(filename);
+        }
+
+        // Unload the project editor stuff
+        editor.ProjectManager.SelectedProject = null;
+        editor.ProjectManager.Projects.Remove(curProject);
+    }
+
     public static string GetBaseFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox";
     }
 
     public static string GetConfigurationFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox\Configuration";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox\Configuration";
     }
     public static string GetThemeFolder()
     {
         return @$"{AppContext.BaseDirectory}\Assets\Themes";
     }
 
-
     public static string GetProjectsFolder()
     {
-        return @$"{AppContext.BaseDirectory}\.smithbox\Projects";
+        string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
+        return @$"{localAppDataPath}\Smithbox\Projects";
     }
+
     public static string GetLocalProjectFolder(ProjectEntry project)
     {
         return @$"{project.ProjectPath}\.smithbox\Project";
@@ -259,9 +281,9 @@ public class ProjectUtils
             {
                 toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptERRegulation(bndER));
             }
-            else if (gameType == ProjectType.ERN && item is BND4 bndERN)
+            else if (gameType == ProjectType.NR && item is BND4 bndNR)
             {
-                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndERN));
+                toFs.WriteFile(assetPath + ".temp", SFUtil.EncryptNightreignRegulation(bndNR));
             }
             else if (gameType == ProjectType.AC6 && item is BND4 bndAC6)
             {
@@ -356,7 +378,8 @@ public class ProjectUtils
             or ProjectType.DS1 
             or ProjectType.DS1R 
             or ProjectType.DS2 
-            or ProjectType.DS2S)
+            or ProjectType.DS2S
+            or ProjectType.NR) // Until GPARAM format is updated for NR
         {
             return false;
         }
@@ -397,7 +420,7 @@ public class ProjectUtils
 
     public static bool SupportsBehaviorEditor(ProjectType curType)
     {
-        if (curType is ProjectType.ER)
+        if (curType is ProjectType.ER or ProjectType.NR)
         {
             return true;
         }

@@ -165,14 +165,14 @@ public class MassEditHandler
         }
         else if (ImGui.BeginPopup("massEditMenuCSVExport"))
         {
-            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, UIHelper.GetTextInputBuffer(ME_CSV_Output),
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
             ImGui.EndPopup();
         }
         else if (ImGui.BeginPopup("massEditMenuSingleCSVExport"))
         {
             ImGui.Text(ME_Single_CSV_Field);
-            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, 65536,
+            ImGui.InputTextMultiline("##MEditOutput", ref ME_CSV_Output, UIHelper.GetTextInputBuffer(ME_CSV_Output),
                 new Vector2(1024, ImGui.GetTextLineHeightWithSpacing() * 4) * scale, ImGuiInputTextFlags.ReadOnly);
             ImGui.EndPopup();
         }
@@ -341,6 +341,9 @@ public class MassEditHandler
     #endregion
 
     #region Mass Edit Script Window
+
+    public bool InitialScriptLoad = false;
+
     public void DisplayMassEditScriptMenu()
     {
         var windowWidth = ImGui.GetWindowWidth();
@@ -357,47 +360,45 @@ public class MassEditHandler
             UIHelper.WrappedText("Load and edit mass edit scripts here.");
             UIHelper.WrappedText("");
 
-            // Ignore the combo box if no files exist
-            if (MassEditScript.scriptList.Count > 0)
+            UIHelper.SimpleHeader("existingScripts", "Existing Scripts", "", UI.Current.ImGui_AliasName_Text);
+
+            // Scripts
+            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            if (ImGui.BeginCombo("##massEditScripts", Current_ME_Script.name))
             {
-                UIHelper.WrappedText("Existing Scripts:");
-
-                // Scripts
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
-                if (ImGui.BeginCombo("##massEditScripts", Current_ME_Script.name))
+                foreach (var script in MassEditScript.scriptList)
                 {
-                    foreach (var script in MassEditScript.scriptList)
+                    if (ImGui.Selectable(script.name, Current_ME_Script.name == script.name))
                     {
-                        if (ImGui.Selectable(script.name, Current_ME_Script.name == script.name))
-                        {
-                            Current_ME_Script = script;
-                        }
+                        Current_ME_Script = script;
                     }
-
-                    ImGui.EndCombo();
-                }
-                if (Current_ME_Script != null)
-                {
-                    if (ImGui.Button("Load", thirdButtonSize))
-                    {
-                        CurrentInput = Current_ME_Script.GenerateMassedit();
-                    }
-                    ImGui.SameLine();
-                    if (ImGui.Button("Edit", thirdButtonSize))
-                    {
-                        NewScriptName = Current_ME_Script.name;
-                        NewScriptContents = Current_ME_Script.GenerateMassedit();
-                    }
-                    ImGui.SameLine();
                 }
 
-                if (ImGui.Button("Reload", thirdButtonSize))
+                ImGui.EndCombo();
+            }
+            if (Current_ME_Script != null)
+            {
+                if (ImGui.Button("Load", thirdButtonSize))
                 {
-                    MassEditScript.ReloadScripts(Editor);
+                    CurrentInput = Current_ME_Script.GenerateMassedit();
                 }
+                ImGui.SameLine();
+                if (ImGui.Button("Edit", thirdButtonSize))
+                {
+                    NewScriptName = Current_ME_Script.name;
+                    NewScriptContents = Current_ME_Script.GenerateMassedit();
+                }
+                ImGui.SameLine();
+            }
+
+            if (ImGui.Button("Reload", thirdButtonSize))
+            {
+                MassEditScript.ReloadScripts(Editor);
             }
 
             UIHelper.WrappedText("");
+
+            UIHelper.SimpleHeader("newScript", "New Script", "", UI.Current.ImGui_AliasName_Text);
 
             ImGui.SetNextItemWidth(defaultButtonSize.X);
             UIHelper.WrappedText("New Script:");
@@ -430,6 +431,12 @@ public class MassEditHandler
 
     public void MassEditScriptSetup()
     {
+        if (!InitialScriptLoad)
+        {
+            MassEditScript.ReloadScripts(Editor);
+            InitialScriptLoad = true;
+        }
+
         if (MassEditScript.scriptList.Count > 0)
         {
             if (Current_ME_Script == null)

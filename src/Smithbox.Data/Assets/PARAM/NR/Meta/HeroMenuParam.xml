@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <charaInitParamId
+    AltName="Character ID"
+    Wiki="Doesn't seem to actually change the character data"
+    Refs="CharaInitParam" />
+    
+    <heroMenuCameraId
+    AltName="Hero Menu Camera ID"
+    Wiki="The menu camera to use for this character."
+    Refs="HeroMenuCameraParam" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

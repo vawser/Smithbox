@@ -66,6 +66,10 @@ public class SystemTab
         {
             var inputWidth = 400.0f;
 
+            // Project Name Prefix
+            ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
+            UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
+
             // Default Project Directory
             if (ImGui.Button("Select##projectDirSelect"))
             {
@@ -102,17 +106,38 @@ public class SystemTab
             ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
 
-            // Mod Engine
-            if (ImGui.Button("Select##modEnginePathSelect"))
+            ImGui.Separator();
+
+            // ME3 Setup
+            if (ImGui.Button("Select##modEngine3PathSelect"))
+            {
+                var profilePath = "";
+                var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+
+                if (result)
+                {
+                    CFG.Current.ModEngine3ProfileDirectory = profilePath;
+                }
+            }
+
+            ImGui.SameLine();
+
+            ImGui.InputText("ME3 Profile Directory##me3ProfileDir", ref CFG.Current.ModEngine3ProfileDirectory, 255);
+            UIHelper.Tooltip("Select the directory you want the generated ME3 profiles to be placed in.");
+
+            ImGui.Separator();
+
+            // ME2 Setup
+            if (ImGui.Button("Select##modEngine2PathSelect"))
             {
                 var modEnginePath = "";
-                var result = PlatformUtils.Instance.OpenFileDialog("Select Data Directory", ["exe"], out modEnginePath);
+                var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
 
                 if (result)
                 {
                     if (modEnginePath.Contains("modengine2_launcher.exe"))
                     {
-                        CFG.Current.ModEngineInstall = modEnginePath;
+                        CFG.Current.ModEngine2Install = modEnginePath;
                     }
                     else
                     {
@@ -123,10 +148,11 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.InputText("ModEngine 2 Executable Location##modEnginePath", ref CFG.Current.ModEngineInstall, 255);
+            ImGui.InputText("ME2 Executable Location##modEnginePath", ref CFG.Current.ModEngine2Install, 255);
             UIHelper.Tooltip("Select the modengine2_launcher.exe within your ModEngine2 install folder.");
 
-            ImGui.InputText("DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngineDlls, 255);
+            // ME2 Dlls
+            ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
         }
 
@@ -348,6 +374,9 @@ public class MapEditorTab
         // Selection Groups
         if (ImGui.CollapsingHeader("Selection Groups", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.Checkbox("Enable shortcuts", ref CFG.Current.Shortcuts_MapEditor_EnableSelectionGroupShortcuts);
+            UIHelper.Tooltip("If enabled, selection group shortcuts will be detected.");
+
             ImGui.Checkbox("Frame selection group on select", ref CFG.Current.MapEditor_SelectionGroup_FrameSelection);
             UIHelper.Tooltip("Frame the selection group entities automatically in the viewport when selecting a group.");
 
@@ -651,7 +680,7 @@ public class ParamEditorTab
                 }
                 UIHelper.Tooltip("Use project-specific PARAM meta instead of Smithbox's base version.");
 
-                ImGui.Checkbox("Use loose params", ref CFG.Current.Param_UseLooseParams);
+                ImGui.Checkbox("Use loose params", ref CFG.Current.UseLooseParams);
                 UIHelper.Tooltip("If true, then loose params will be loaded over the packed versions.");
 
                 ImGui.Checkbox("Use compact param editor", ref CFG.Current.UI_CompactParams);
@@ -705,8 +734,8 @@ public class ParamEditorTab
                         ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_AC6);
                         break;
 
-                    case ProjectType.ERN:
-                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_ERN);
+                    case ProjectType.NR:
+                        ImGui.Checkbox("Strip row names on save", ref CFG.Current.Param_StripRowNamesOnSave_NR);
                         break;
                 }
                 UIHelper.Tooltip("If enabled, row names are stripped upon save, meaning no row names will be stored in the regulation.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
@@ -748,8 +777,8 @@ public class ParamEditorTab
                         ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_AC6);
                         break;
 
-                    case ProjectType.ERN:
-                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_ERN);
+                    case ProjectType.NR:
+                        ImGui.Checkbox("Restore stripped row names on load", ref CFG.Current.Param_RestoreStrippedRowNamesOnLoad_NR);
                         break;
                 }
                 UIHelper.Tooltip("If enabled, stripped row names that have been stored will be applied to the row names during param loading.\n\nThe row names are saved in the /.smithbox/Workflow/Stripped Row Names/ folder within your project folder.");
@@ -896,6 +925,15 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display row reverse lookup option", ref CFG.Current.Param_RowContextMenu_ReverseLoopup);
                 UIHelper.Tooltip("Show the reverse lookup option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display proliferate name option", ref CFG.Current.Param_RowContextMenu_ProliferateName);
+                UIHelper.Tooltip("Show the proliferate name option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display inherit name option", ref CFG.Current.Param_RowContextMenu_InheritName);
+                UIHelper.Tooltip("Show the inherit name option in the right-click row context menu.");
+
+                ImGui.Checkbox("Display row name adjustment options", ref CFG.Current.Param_RowContextMenu_RowNameAdjustments);
+                UIHelper.Tooltip("Show the row name adjustment options in the right-click row context menu.");
             }
 
             // Field Context Menu
@@ -957,7 +995,7 @@ public class ParamEditorTab
             }
 
             // Ignore if no game offsets exist for the project type
-            if (curProject.ParamMemoryOffsets != null)
+            if (curProject.ParamMemoryOffsets != null && curProject.ParamMemoryOffsets.list != null)
             {
                 if (ImGui.CollapsingHeader("Param Reloader", ImGuiTreeNodeFlags.DefaultOpen))
                 {
@@ -1497,6 +1535,7 @@ public class InterfaceTab
                 CFG.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
                 _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
@@ -1527,6 +1566,7 @@ public class InterfaceTab
             {
                 CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the size of the font in Smithbox.");
 
@@ -1673,6 +1713,7 @@ public class InterfaceTab
             ImGui.Text("Current Theme");
 
             var folder = ProjectUtils.GetThemeFolder();
+
             var files = Directory.EnumerateFiles(folder);
 
             var themeFiles = new List<string>();
@@ -1904,11 +1945,14 @@ public class ViewportTab
             }
             UIHelper.Tooltip("Resets all of the values within this section to their default values.");
         }
+
         //---------------------------------------
         // Visualization
         //---------------------------------------
         if (ImGui.CollapsingHeader("Visualization", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.ColorEdit3("Viewport Background Color", ref CFG.Current.Viewport_Background_Color);
+
             ImGui.ColorEdit3("Selection Color", ref CFG.Current.Viewport_DefaultRender_SelectColor);
 
             ImGui.Checkbox("Enable selection outline", ref CFG.Current.Viewport_Enable_Selection_Outline);

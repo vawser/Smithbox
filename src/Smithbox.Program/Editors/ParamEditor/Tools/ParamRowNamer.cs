@@ -33,62 +33,230 @@ public class ParamRowNamer
         if (!Editor._activeView.Selection.ActiveParamExists())
             return;
 
-        if (Editor.Project.ProjectType is not ProjectType.ER)
-            return;
-
         if (ImGui.BeginMenu("Row Namer"))
         {
             var selectedParam = Editor._activeView.Selection;
             var activeParam = selectedParam.GetActiveParam();
 
-            if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
+            if (Editor.Project.ProjectType is ProjectType.ER or ProjectType.NR)
             {
-                if (ImGui.MenuItem("Behavior"))
+                if (activeParam == "BehaviorParam" || activeParam == "BehaviorParam_PC")
+                {
+                    if (ImGui.MenuItem("Behavior"))
+                    {
+                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        {
+                            var rows = selectedParam.GetSelectedRows();
+
+                            HandleBehaviorParam(activeParam, rows);
+                            HandleBulletParam(activeParam, rows);
+                        }
+                    }
+                }
+
+                if (activeParam == "ItemLotParam_map")
+                {
+                    if (ImGui.MenuItem("Item Lots: Map"))
+                    {
+                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        {
+                            var rows = selectedParam.GetSelectedRows();
+
+                            HandleItemLotParamMap(activeParam, rows);
+                        }
+                    }
+
+                    ImGui.Checkbox("Affect Item Name Only", ref AffectItemNameOnly);
+                }
+
+                if (activeParam == "ItemLotParam_enemy")
+                {
+                    if (ImGui.MenuItem("Item Lots: Enemy"))
+                    {
+                        if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                        {
+                            var rows = selectedParam.GetSelectedRows();
+
+                            HandleItemLotParamEnemy(activeParam, rows);
+                        }
+                    }
+
+                    ImGui.Checkbox("Affect Item Name Only", ref AffectItemNameOnly);
+                }
+            }
+
+            if (activeParam == "EquipParamWeapon")
+            {
+                if (ImGui.MenuItem("Weapons"))
                 {
                     if (Editor.Project.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
-                        HandleBehaviorParam(activeParam, rows);
-                        HandleBulletParam(activeParam, rows);
+                        HandleEquipParam(activeParam, "EquipParamWeapon", 2, rows);
                     }
                 }
             }
-            else if(activeParam == "ItemLotParam_map")
+
+            if (activeParam == "EquipParamGoods")
             {
-                if (ImGui.MenuItem("Item Lots: Map"))
+                if (ImGui.MenuItem("Goods"))
                 {
                     if (Editor.Project.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
-                        HandleItemLotParamMap(activeParam, rows);
+                        HandleEquipParam(activeParam, "EquipParamGoods", 1, rows);
                     }
                 }
             }
-            else if (activeParam == "ItemLotParam_enemy")
+
+            if (activeParam == "EquipParamProtector")
             {
-                if (ImGui.MenuItem("Item Lots: Enemy"))
+                if (ImGui.MenuItem("Armor"))
                 {
                     if (Editor.Project.ParamData.PrimaryBank.Params != null)
                     {
                         var rows = selectedParam.GetSelectedRows();
 
-                        HandleItemLotParamEnemy(activeParam, rows);
+                        HandleEquipParam(activeParam, "EquipParamProtector", 3, rows);
                     }
                 }
             }
-            else
+
+            if (activeParam == "EquipParamAccessories")
             {
-                ImGui.Text("Current param is not supported in the row namer.");
+                if (ImGui.MenuItem("Accessories"))
+                {
+                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    {
+                        var rows = selectedParam.GetSelectedRows();
+
+                        HandleEquipParam(activeParam, "EquipParamAccessories", 4, rows);
+                    }
+                }
+            }
+
+            if (activeParam == "AttachEffectParam")
+            {
+                if (ImGui.MenuItem("Attach Effects"))
+                {
+                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    {
+                        var rows = selectedParam.GetSelectedRows();
+
+                        HandleGenericParam(activeParam, "AttachEffectParam", "Title_AttachEffect", rows);
+                    }
+                }
+            }
+
+            if (activeParam == "NpcParam")
+            {
+                if (ImGui.MenuItem("Non-Player Characters"))
+                {
+                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    {
+                        var rows = selectedParam.GetSelectedRows();
+
+                        HandleNpcParam(activeParam, "NpcParam", rows);
+                    }
+                }
+            }
+
+            if (activeParam == "NpcThinkParam")
+            {
+                if (ImGui.MenuItem("Non-Player Character Thinks"))
+                {
+                    if (Editor.Project.ParamData.PrimaryBank.Params != null)
+                    {
+                        var rows = selectedParam.GetSelectedRows();
+
+                        HandleNpcParam(activeParam, "NpcThinkParam", rows);
+                    }
+                }
             }
 
             ImGui.Separator();
 
-            ImGui.Checkbox("Affect Item Name Only", ref AffectItemNameOnly);
-
             ImGui.EndMenu();
         }
+    }
+    public void HandleGenericParam(string activeParam, string targetParam, string fmgName, List<Param.Row> rows)
+    {
+        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+
+        if (activeParam == targetParam)
+        {
+            var selectedRows = Editor._activeView.Selection.GetSelectedRows();
+
+            foreach (var row in selectedRows)
+            {
+                var newName = GetNameFromFMG(row.ID, fmgName);
+
+                if (newName != "")
+                {
+                    row.Name = newName;
+                }
+            }
+        }
+    }
+
+    public void HandleNpcParam(string activeParam, string targetParam, List<Param.Row> rows)
+    {
+        var characters = Editor.Project.Aliases.Characters;
+
+        if (activeParam == targetParam)
+        {
+            var selectedRows = Editor._activeView.Selection.GetSelectedRows();
+
+            foreach (var row in selectedRows)
+            {
+                if ($"{row.ID}".Length != 8)
+                    continue;
+
+                var chrID = $"c{row.ID}".Substring(0, 5);
+
+                if(characters.Any(e => e.ID == chrID))
+                {
+                    var newName = characters.FirstOrDefault(e => e.ID == chrID);
+                    if(newName != null)
+                    {
+                        row.Name = $"{newName.Name}";
+                    }
+                }
+            }
+        }
+    }
+
+    public void HandleEquipParam(string activeParam, string targetParam, int itemCategory, List<Param.Row> rows)
+    {
+        var fmgs = Editor.Project.TextData.PrimaryBank.Entries;
+
+        if (activeParam == targetParam)
+        {
+            var selectedRows = Editor._activeView.Selection.GetSelectedRows();
+
+            foreach (var row in selectedRows)
+            {
+                var newName = GetName_EquipParam(row, itemCategory);
+
+                if (newName != "")
+                {
+                    row.Name = newName;
+                }
+            }
+        }
+    }
+
+    public string GetName_EquipParam(Param.Row row, int itemCateogry)
+    {
+        var newName = "";
+        var prefix = "";
+
+        var rowID = int.Parse($"{row.ID}");
+        var name = GetItemName(rowID, itemCateogry);
+
+        return name;
     }
 
     public void AddNameToReferencedRow(Param param, Param.Row baseRow, string rowIDstr, string postfix)
@@ -660,6 +828,39 @@ public class ParamRowNamer
                 if (itemCategory == 5 && (internalName == "Title_Ash_of_War" || internalName == "Title_Ash_of_War_DLC1" || internalName == "Title_Ash_of_War_DLC2"))
                 {
                     var match = fmgWrapper.File.Entries.FirstOrDefault(e => e.ID == itemID);
+                    if (match != null)
+                    {
+                        newName = match.Text;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return newName;
+    }
+
+    public string GetNameFromFMG(int rowId, string targetFmg)
+    {
+        var newName = "";
+
+        foreach (var (fileEntry, wrapper) in Editor.Project.TextData.PrimaryBank.Entries)
+        {
+            if (wrapper.ContainerDisplayCategory is not TextContainerCategory.English)
+                continue;
+
+            if (wrapper.FmgWrappers.Count == 0)
+                continue;
+
+            foreach (var fmgWrapper in wrapper.FmgWrappers)
+            {
+                var id = fmgWrapper.ID;
+                var fmgName = fmgWrapper.Name;
+                var internalName = TextUtils.GetFmgInternalName(Editor.Project, wrapper, id, fmgName);
+
+                if (internalName == targetFmg)
+                {
+                    var match = fmgWrapper.File.Entries.FirstOrDefault(e => e.ID == rowId);
                     if (match != null)
                     {
                         newName = match.Text;

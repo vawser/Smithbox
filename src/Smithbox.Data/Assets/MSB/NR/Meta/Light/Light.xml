@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MSBMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <Name
+    AltName="Name"
+    Wiki="The name of the light." />
+  
+    <Type
+    AltName="Emitter Type"
+    Wiki="The emitter type for this light." />
+  
+    <Position
+    AltName="Position"
+    Wiki="Location of the light."
+    PositionProperty="" />
+    
+    <Rotation
+    AltName="Rotation"
+    Wiki="Rotation of the light, in degrees."
+    RotationProperty="" />
+    
+    <Radius
+    AltName="Radius"
+    Wiki="The radius of this light." />
+    
+    <Sharpness
+    AltName="Sharpness"
+    Wiki="The sharpness of the light." />
+    
+    <LightStartCutoff
+    AltName="Minimum Light Distance"
+    Wiki="Distance from start before light appears." />
+    
+    <ShadowModelCullFlip
+    AltName="Shadow Model Cull Flip"
+    Wiki="" 
+    IsBool="" />
+    
+    <EnableDist
+    AltName="Enable Distance"
+    Wiki="Distance required for a light to transition into view. 0 = always enabled." />
+    
+    <EnableState_UnkC0
+    AltName="Enable State"
+    Wiki="The enable state for this light."
+    ArrayProperty="" />
+    
+    <DiffuseColor
+    AltName="Diffuse Color"
+    Wiki="The diffuse color for this light." />
+    
+    <DiffusePower
+    AltName="Diffuse Intensity"
+    Wiki="The intensity of the diffuse lighting" />
+    
+    <SpecularColor
+    AltName="Specular Color"
+    Wiki="The specular color for this light." />
+    
+    <CastShadows
+    AltName="Cast Shadows"
+    Wiki="If ON, this light will cast shadows" 
+    IsBool="" />
+    
+    <ShadowColor
+    AltName="Shadow Color"
+    Wiki="The color of the shadows for this light." />
+    
+    <FlickerIntervalMin
+    AltName="Flicker: Minimal Interval"
+    Wiki="For a flicking light, this is the minimal interval between each flicker." />
+    
+    <FlickerIntervalMax
+    AltName="Flicker: Maximum Interval"
+    Wiki="For a flicking light, this is the minimal interval between each flicker." />
+    
+    <FlickerBrightnessMult
+    AltName="Flicker: Brightness Multiplier"
+    Wiki="For a flickering light, the brightness multiplier to apply." />
+    
+    <Width
+    AltName="Spot Light: Width"
+    Wiki="The width of the spot light." />
+    
+    <NearClip
+    AltName="Spot Light: Start Distance"
+    Wiki="Distance at which spot light beam starts." />
+    
+    <ConeAngle
+    AltName="Spot Light: Tightness"
+    Wiki="" />
+    
+    <EventID
+    AltName="Event ID"
+    Wiki="Referenced by map events. Only used in DS2." />
+    
+    <VolumeDensity
+    AltName="Volume Density"
+    Wiki="" />
+    
+    <Unk1C
+    AltName="Unknown: 0x1C"
+    Wiki="" />
+    
+    <Unk30
+    AltName="Unknown: 0x30"
+    Wiki="" />
+    
+    <Unk34
+    AltName="Unknown: 0x34"
+    Wiki="" />
+    
+    <Unk50
+    AltName="Unknown: 0x50"
+    Wiki="" />
+    
+    <Unk54
+    AltName="Unknown: 0x54"
+    Wiki="" />
+    
+    <Unk5C
+    AltName="Unknown: 0x5C"
+    Wiki="" />
+    
+    <Unk64
+    AltName="Unknown: 0x64"
+    Wiki="" />
+    
+    <Unk68
+    AltName="Unknown: 0x68"
+    Wiki="" />
+    
+    <Unk70
+    AltName="Unknown: 0x70"
+    Wiki="" />
+    
+    <Unk84
+    AltName="Unknown: 0x84"
+    Wiki="" />
+    
+    <Unk88
+    AltName="Unknown: 0x88"
+    Wiki="" />
+    
+    <Unk90
+    AltName="Unknown: 0x90"
+    Wiki="" />
+    
+    <Unk98
+    AltName="Unknown: 0x98"
+    Wiki="" />
+    
+    <UnkA0
+    AltName="Unknown: 0xA0"
+    Wiki="" />
+    
+    <UnkA1
+    AltName="Unknown: 0xA1"
+    Wiki="" />
+    
+    <UnkA2
+    AltName="Unknown: 0xA2"
+    Wiki="" />
+    
+    <UnkAC
+    AltName="Unknown: 0xAC"
+    Wiki="" />
+    
+    <UnkC8
+    AltName="Unknown: 0xC8"
+    Wiki="" />
+    
+    <UnkCC
+    AltName="Unknown: 0xCC"
+    Wiki="" />
+    
+    <UnkD4
+    AltName="Unknown: 0xD4"
+    Wiki="" />
+    
+    <UnkD8
+    AltName="Unknown: 0xD8"
+    Wiki="" />
+    
+    <UnkDC
+    AltName="Unknown: 0xDC"
+    Wiki="" />
+    
+    <UnkE0
+    AltName="Unknown: 0xE0"
+    Wiki="" />
+    
+    <UnkE4
+    AltName="Unknown: 0xE4"
+    Wiki="" />
+    
+    <UnkE8
+    AltName="Unknown: 0xE8"
+    Wiki="" />
+    
+    <UnkEB
+    AltName="Unknown: 0xEB"
+    Wiki="" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</MSBMETA>

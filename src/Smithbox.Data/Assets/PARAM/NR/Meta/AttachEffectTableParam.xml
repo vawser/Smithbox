@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <attachEffectId 
+    AltName="Attached Effect" 
+    Wiki="The attached effect to use." 
+    Refs="AttachEffectParam" />
+    
+    <chanceWeight
+    AltName="Roll Weight"
+    Wiki="The weighting to apply during the roll." />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

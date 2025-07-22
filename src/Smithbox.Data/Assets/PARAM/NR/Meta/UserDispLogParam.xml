@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <textId_1
+    AltName="Text ID: 1"
+    Wiki=""
+    FmgRef="Modern_Menu_Text" />
+    
+    <textId_2
+    AltName="Text ID: 2"
+    Wiki=""
+    FmgRef="Modern_Menu_Text" />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

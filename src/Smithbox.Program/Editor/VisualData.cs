@@ -105,8 +105,9 @@ public class VisualData
                 break;
 
             case ProjectType.ER:
+            case ProjectType.NR:
                 AssetModels.Entries = Project.FileDictionary.Entries
-                .Where(e => e.Folder == "/asset/aeg")
+                .Where(e => e.Folder.Contains("/asset/aeg"))
                 .Where(e => e.Extension == "geombnd")
                 .ToList();
                 break;
@@ -168,6 +169,7 @@ public class VisualData
             case ProjectType.DS3:
             case ProjectType.SDT:
             case ProjectType.ER:
+            case ProjectType.NR:
             case ProjectType.AC6:
                 MapPieceModels.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder == "/map")
@@ -211,6 +213,7 @@ public class VisualData
             case ProjectType.DS3:
             case ProjectType.SDT:
             case ProjectType.ER:
+            case ProjectType.NR:
             case ProjectType.AC6:
                 Collisions.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder == "/map")
@@ -260,6 +263,7 @@ public class VisualData
             case ProjectType.DS3:
             case ProjectType.SDT:
             case ProjectType.ER:
+            case ProjectType.NR:
             case ProjectType.AC6:
                 CharacterTextures.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder == "/chr")
@@ -295,6 +299,7 @@ public class VisualData
                 break;
 
             case ProjectType.ER:
+            case ProjectType.NR:
                 AssetTextures.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Folder == "/asset/aet")
                 .Where(e => e.Extension == "tpf")

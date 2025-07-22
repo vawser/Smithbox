@@ -1,4 +1,5 @@
-﻿using Hexa.NET.ImGui;
+﻿using DotNext;
+using Hexa.NET.ImGui;
 using SoapstoneLib;
 using SoulsFormats;
 using StudioCore.Configuration;
@@ -10,6 +11,7 @@ using StudioCore.Graphics;
 using StudioCore.Interface;
 using StudioCore.Platform;
 using StudioCore.Resource;
+using StudioCore.Utilities;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -45,12 +47,7 @@ public class Smithbox
 
     public readonly string _version;
 
-    public static bool _programUpdateAvailable;
-    public static string _releaseUrl = "";
-
     public SoapstoneService _soapstoneService;
-
-    public static ImGuiTextureLoader TextureLoader;
 
     public ProjectManager ProjectManager;
 
@@ -65,8 +62,6 @@ public class Smithbox
 
         _version = version;
         _programTitle = $"Smithbox - {_version}";
-
-        TextureLoader = new ImGuiTextureLoader(context.Device, context.ImguiRenderer);
 
         UIHelper.RestoreImguiIfMissing();
         // Hack to make sure dialogs work before the main window is created
@@ -99,6 +94,7 @@ public class Smithbox
 
         _context.ImguiRenderer.OnSetupDone();
 
+        ProgramUpdater.CheckForUpdate(_version);
     }
 
     public void SetProgramName(ProjectEntry curProject)
@@ -218,6 +214,9 @@ public class Smithbox
 
         ImFontGlyphRangesBuilderPtr glyphRanges = ImGui.ImFontGlyphRangesBuilder();
         glyphRanges.AddRanges(fonts.GetGlyphRangesJapanese());
+
+        glyphRanges.AddRanges(fonts.GetGlyphRangesChineseFull());
+
         Array.ForEach(InterfaceUtils.SpecialCharsJP, c => glyphRanges.AddChar(c));
 
         if (CFG.Current.System_Font_Chinese)
@@ -261,32 +260,6 @@ public class Smithbox
 
         _context.ImguiRenderer.RecreateFontDeviceTexture();
     }
-    private void CheckProgramUpdate()
-    {
-        Octokit.GitHubClient gitHubClient = new(new Octokit.ProductHeaderValue("Smithbox"));
-        Octokit.Release release = gitHubClient.Repository.Release.GetLatest("vawser", "Smithbox").Result;
-        var isVer = false;
-        var verstring = "";
-        foreach (var c in release.TagName)
-        {
-            if (char.IsDigit(c) || (isVer && c == '.'))
-            {
-                verstring += c;
-                isVer = true;
-            }
-            else
-            {
-                isVer = false;
-            }
-        }
-
-        if (Version.Parse(verstring) > Version.Parse(_version))
-        {
-            // Update available
-            _programUpdateAvailable = true;
-            _releaseUrl = release.HtmlUrl;
-        }
-    }
 
     public void Run()
     {
@@ -309,22 +282,7 @@ public class Smithbox
 
             TaskManager.RunPassiveTask(task);
         }
-
-        if (CFG.Current.System_Check_Program_Update)
-        {
-            TaskManager.LiveTask task = new(
-                "system_checkProgramUpdate",
-                "[System]",
-                "Program update check has run.",
-                "Program update check has failed to run.",
-                TaskManager.RequeueType.None,
-                true,
-                CheckProgramUpdate
-            );
-
-            TaskManager.Run(task);
-        }
-
+        
         long previousFrameTicks = 0;
         Stopwatch sw = new();
         sw.Start();
@@ -360,10 +318,8 @@ public class Smithbox
             snapshot = _context.Window.PumpEvents();
 
             InputTracker.UpdateFrameInput(snapshot, _context.Window);
-
+            
             Update((float)deltaSeconds);
-
-            _context.Draw(ProjectManager);
 
             if (!_context.Window.Exists)
             {
@@ -372,6 +328,8 @@ public class Smithbox
 
                 break;
             }
+
+            _context.Draw(ProjectManager);
         }
 
         ProjectManager.Exit();
@@ -468,13 +426,23 @@ public class Smithbox
             ImGuiWindowFlags.NoNavFocus |
             ImGuiWindowFlags.MenuBar;
 
-        ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
+        var dockFlags = ImGuiDockNodeFlags.PassthruCentralNode;
+
+        if (_context is OpenGLCompatGraphicsContext glContext)
+        {
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.1f, 0.1f, 0.1f, 0.1f));
+            dockFlags = ImGuiDockNodeFlags.None;
+        }
+        else
+        {
+            ImGui.PushStyleColor(ImGuiCol.WindowBg, new Vector4(0.0f, 0.0f, 0.0f, 0.0f));
+        }
 
         ImGui.Begin("MainDockspace_W", windowFlags);
 
         uint dockspaceID = ImGui.GetID("MainDockspace");
 
-        ImGui.DockSpace(dockspaceID, Vector2.Zero, ImGuiDockNodeFlags.PassthruCentralNode);
+        ImGui.DockSpace(dockspaceID, Vector2.Zero, dockFlags);
 
         ImGui.PopStyleVar(1);
         ImGui.End();
@@ -496,6 +464,9 @@ public class Smithbox
 
         if (ImGui.BeginMainMenuBar())
         {
+            // Projects
+            ProjectManager.Menubar();
+
             // Settings
             if (ImGui.BeginMenu("Settings"))
             {
@@ -697,18 +668,6 @@ public class Smithbox
             // Debugging
             DebugTools.DisplayMenu();
 
-            // View
-            if (ImGui.BeginMenu("View"))
-            {
-                if (ImGui.MenuItem("Project List"))
-                {
-                    CFG.Current.Interface_Editor_ProjectList = !CFG.Current.Interface_Editor_ProjectList;
-                }
-                UIHelper.ShowActiveStatus(CFG.Current.Interface_Editor_ProjectList);
-
-                ImGui.EndMenu();
-            }
-
             // Action Logger
             TaskLogs.DisplayActionLoggerBar();
             TaskLogs.DisplayActionLoggerWindow();
@@ -717,20 +676,7 @@ public class Smithbox
             TaskLogs.DisplayWarningLoggerBar();
             TaskLogs.DisplayWarningLoggerWindow();
 
-            // Program Update
-            if (Smithbox._programUpdateAvailable)
-            {
-                ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Benefit_Text_Color);
-                if (ImGui.Button("Update Available"))
-                {
-                    Process myProcess = new();
-                    myProcess.StartInfo.UseShellExecute = true;
-                    myProcess.StartInfo.FileName = Smithbox._releaseUrl;
-                    myProcess.Start();
-                }
-
-                ImGui.PopStyleColor();
-            }
+            ProgramUpdater.DisplayUpdateHint(this);
 
             ImGui.EndMainMenuBar();
         }

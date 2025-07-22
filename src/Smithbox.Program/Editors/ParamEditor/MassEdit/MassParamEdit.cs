@@ -129,7 +129,7 @@ public class MassParamEditRegex
         int currentLine = 0;
         try
         {
-            var commands = commandsString.Split('\n');
+            var commands = commandsString.Split(';');
             var changeCount = 0;
             ActionManager childManager = new();
             foreach (var cmd in commands)

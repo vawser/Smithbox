@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>HERO_STATUS_PARAM</ParamType>
+  <DataVersion>2</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="u8 disableParam_NT:1" />
+    <Field Def="dummy8 disableParamReserve1:7" />
+    <Field Def="dummy8 disableParamReserve2[3]" />
+    
+    <Field Def="u16 totalLevel"/>
+    <Field Def="u8 statVigor"/>
+    <Field Def="u8 statMind"/>
+    <Field Def="u8 statEndurance"/>
+    <Field Def="u8 statStrength"/>
+    <Field Def="u8 statDexterity"/>
+    <Field Def="u8 statIntelligence"/>
+    <Field Def="u8 statFaith"/>
+    <Field Def="u8 statArcane"/>
+    <Field Def="u8 unknown_3c"/>
+    <Field Def="u8 unknown_3d"/>
+    <Field Def="f32 unknown_4"/>
+    <Field Def="f32 unknown_5"/>
+    <Field Def="s32 unknown_6"/>
+  </Fields>
+</PARAMDEF>

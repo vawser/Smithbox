@@ -192,11 +192,11 @@ public class ParamComparisonReport
     }
 
     public ProjectEntry TargetProject;
-    public string TargetProjectName;
+    public string TargetProjectName = "";
     public bool AllowGenerate = true;
     public bool LoadAuxBank = false;
 
-    public async void Display()
+    public  void Display()
     {
         var textPaneSize = new Vector2(800, 600);
 
@@ -260,19 +260,11 @@ public class ParamComparisonReport
                 {
                     TargetProject = proj;
                     TargetProjectName = proj.ProjectName;
-                    LoadAuxBank = true;
+                    LoadParamBank = true;
                 }
             }
 
             ImGui.EndCombo();
-        }
-
-        if (LoadAuxBank)
-        {
-            AllowGenerate = false;
-            LoadAuxBank = false;
-            await Editor.Project.ParamData.SetupAuxBank(TargetProject, true);
-            AllowGenerate = true;
         }
 
         ImGui.Separator();
@@ -419,6 +411,23 @@ public class ParamComparisonReport
             Display();
 
             ImGui.EndPopup();
+        }
+
+        Update();
+    }
+
+    public bool LoadParamBank = false;
+
+    public async void Update()
+    {
+        if(LoadParamBank)
+        {
+            LoadParamBank = false;
+
+            AllowGenerate = false;
+
+            await Editor.Project.ParamData.SetupAuxBank(TargetProject, true);
+            AllowGenerate = true;
         }
     }
 }

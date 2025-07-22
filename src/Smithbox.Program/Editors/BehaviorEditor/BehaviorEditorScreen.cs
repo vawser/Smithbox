@@ -165,7 +165,7 @@ public class BehaviorEditorScreen : EditorScreen
 
         if (CFG.Current.Interface_BehaviorEditor_ToolView)
         {
-            ImGui.Begin($"Tools##BehaviorToolView", ImGuiWindowFlags.None);
+            ImGui.Begin($"Tools##BehaviorToolView", ImGuiWindowFlags.MenuBar);
 
             ToolView.OnGui();
 
@@ -187,7 +187,7 @@ public class BehaviorEditorScreen : EditorScreen
         if (IsSaving)
             return;
 
-        if (Project.ProjectType is ProjectType.ER)
+        if (Project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             IsSaving = true;
 

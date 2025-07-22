@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>USER_DISP_LOG_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 textId_1"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 textId_2"/>
+    <Field Def="s32 unknown_3"/>
+    <Field Def="u16 unknown_4a"/>
+    <Field Def="u16 unknown_4b"/>
+    <Field Def="s32 unknown_5"/>
+    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 unknown_7"/>
+  </Fields>
+</PARAMDEF>

@@ -78,7 +78,7 @@ public static class ResourceListLocator
                 ret.Add(ad);
             }
         }
-        else if (project.ProjectType == ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             var mapPath = project.DataPath + $@"\map\{mapid[..3]}\{mapid}";
             if (!Directory.Exists(mapPath))
@@ -223,7 +223,7 @@ public static class ResourceListLocator
             modelDir = @"\model\obj";
             modelExt = ".bnd";
         }
-        else if (project.ProjectType == ProjectType.ER)
+        else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             // AEGs are objs in my heart :(
             modelDir = @"\asset\aeg";
@@ -251,7 +251,7 @@ public static class ResourceListLocator
             objs.Add(name);
         }
 
-        if (project.ProjectType == ProjectType.ER)
+        if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             foreach (var folder in Directory.GetDirectories(rootDir).ToList())
             {
@@ -287,7 +287,7 @@ public static class ResourceListLocator
                 }
             }
 
-            if (project.ProjectType == ProjectType.ER)
+            if (project.ProjectType is ProjectType.ER or ProjectType.NR)
             {
                 foreach (var folder in Directory.GetDirectories(modDir).ToList())
                 {

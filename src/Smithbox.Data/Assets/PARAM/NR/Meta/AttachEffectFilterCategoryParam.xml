@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <textId
+    AltName="Category Name ID"
+    Wiki="The text ID to use for the name of the category."
+    FmgRef="Modern_Menu_Text" />
+    
+    <category
+    AltName="Category ID"
+    Wiki="The ID of this category." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

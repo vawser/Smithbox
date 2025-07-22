@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <swordArtsId
+    AltName="Sword Arts ID"
+    Wiki="The Sword Arts to target"
+    Refs="SwordArtsParam" />
+    
+    <chanceWeight
+    AltName="Roll Weight"
+    Wiki="The weighting to apply during the roll." />
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

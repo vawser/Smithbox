@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>MENU_WINDOW_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    
+    <Field Def="s32 unknown_0"/>
+    <Field Def="s32 unknown_1"/>
+    <Field Def="s32 unknown_2"/>
+    <Field Def="s32 unknown_3"/>
+    <Field Def="u8 unknown_4a"/>
+    <Field Def="u8 unknown_4b"/>
+    <Field Def="u8 unknown_4c"/>
+    <Field Def="u8 unknown_4d"/>
+    <Field Def="u16 iconId"/>
+    <Field Def="u16 unknown_5b"/>
+    <Field Def="s32 textId"/>
+    <Field Def="s32 unknown_7"/>
+    <Field Def="s32 unknown_8"/>
+    <Field Def="s32 unknown_9"/>
+    <Field Def="s32 unknown_10"/>
+  </Fields>
+</PARAMDEF>

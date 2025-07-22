@@ -51,7 +51,7 @@ public static class MapLocator
             backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
         }
         // BB, DS3, ER, SDT, AC6
-        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6)
+        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6 or ProjectType.NR)
         {
             preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
             backupPath = $@"\map\MapStudio\{mapid}.msb";
@@ -233,10 +233,10 @@ public static class MapLocator
                 adList.Add(ad2);
             }
         }
-        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.AC6)
+        else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.SDT or ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
             string path;
-            if (project.ProjectType is ProjectType.ER or ProjectType.AC6)
+            if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
                 path = $@"map\{mapid[..3]}\{mapid}";
             }
@@ -366,7 +366,7 @@ public static class MapLocator
     /// <returns>The map ID for the purpose of asset storage</returns>
     public static string GetAssetMapID(ProjectEntry project, string mapid)
     {
-        if (project.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.AC6)
+        if (project.ProjectType is ProjectType.DES or ProjectType.ER or ProjectType.NR or ProjectType.AC6)
         {
             return mapid;
         }
