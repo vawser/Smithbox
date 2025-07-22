@@ -50,7 +50,9 @@ public static class ProgramUpdater
 
     public static async void CheckForUpdate(string version)
     {
+#if WINDOWS
         if (!CFG.Current.System_Check_Program_Update)
+#endif
             return;
 
         CanAccessGithub = await HasInternetConnectionAsync();
