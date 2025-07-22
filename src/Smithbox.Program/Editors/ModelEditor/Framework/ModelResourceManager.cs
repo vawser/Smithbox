@@ -358,7 +358,7 @@ public class ModelResourceManager : IResourceEventListener
                         {
                             var internalFlver = new InternalFlver();
 
-                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                             internalFlver.ModelID = modelid;
                             internalFlver.CurrentFLVER = FLVER2.Read(bxfReader.ReadFile(file));
                             internalFlver.InitialFlverBytes = bxfReader.ReadFile(file).ToArray();
@@ -391,7 +391,7 @@ public class ModelResourceManager : IResourceEventListener
                     if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                     {
                         var internalFlver = new InternalFlver();
-                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                         internalFlver.ModelID = modelid;
                         internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
                         internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
@@ -444,7 +444,7 @@ public class ModelResourceManager : IResourceEventListener
                         {
                             var internalFlver = new InternalFlver();
 
-                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                             internalFlver.ModelID = modelid;
                             internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
                             internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
