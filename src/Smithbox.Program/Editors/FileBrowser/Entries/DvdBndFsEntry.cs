@@ -59,7 +59,7 @@ public class DvdBndFsEntry : SoulsFileFsEntry
 
             if (ownerProject.ProjectType.AsBhdGame() >= BHD5.Game.EldenRing && name.Contains("sd"))
             {
-                path = Path.Join("sd", name);
+                path = $"sd\\{name}";
             }
 
             if (andreGame != null)

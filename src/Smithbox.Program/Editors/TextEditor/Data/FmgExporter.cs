@@ -434,7 +434,7 @@ public class FmgExporter
     public void WriteWrapper(StoredFmgContainer wrapper)
     {
         var writeDir = TextLocator.GetStoredTextDirectory(Editor.Project);
-        var writePath = Path.Join(writeDir, $"{wrapper.Name}.json");
+        var writePath = $"{writeDir}\\{wrapper.Name}.json";
 
         if(!Directory.Exists(writeDir))
         {

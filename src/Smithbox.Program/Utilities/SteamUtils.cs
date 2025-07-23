@@ -28,12 +28,6 @@ public static class SteamGameLocator
             }
 #endif
         }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-        {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/Steam";
-            if (Directory.Exists(path))
-                return path;
-        }
         else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
             string home = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

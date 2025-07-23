@@ -39,7 +39,7 @@ public class TexTools
 
             if (exportPath != "")
             {
-                var exportFilePath = Path.Join(exportPath, filename);
+                var exportFilePath = $@"{exportPath}\{filename}";
                 var write = true;
 
                 if (File.Exists(exportFilePath))
@@ -62,14 +62,14 @@ public class TexTools
                     if (CFG.Current.TextureViewerToolbar_ExportTexture_IncludeFolder)
                     {
                         var folder = currentTextureName;
-                        var newFolderPath = Path.Join(exportPath, folder);
+                        var newFolderPath = $@"{exportPath}\{folder}";
 
                         if (!Directory.Exists(newFolderPath))
                         {
                             Directory.CreateDirectory(newFolderPath);
                         }
 
-                        exportFilePath = Path.Join(exportPath, folder, filename);
+                        exportFilePath = $@"{exportPath}\{folder}\{filename}";
                     }
 
                     ExportTextureFile(currentTexture, exportFilePath);

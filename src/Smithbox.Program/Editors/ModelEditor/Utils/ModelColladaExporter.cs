@@ -4,7 +4,6 @@ using SoulsFormats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +21,7 @@ public static class ModelColladaExporter
         var path = "";
         var success = false;
 
-        path = Path.Join(ExportPath, $"{editor.ResManager.GetCurrentInternalFile().Name}.dae");
+        path = $"{ExportPath}\\{editor.ResManager.GetCurrentInternalFile().Name}.dae";
         success = AssimpExport(editor.ResManager.GetCurrentFLVER(), path, "collada");
 
         if (success)

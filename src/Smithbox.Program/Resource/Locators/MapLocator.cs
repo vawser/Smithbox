@@ -35,26 +35,26 @@ public static class MapLocator
         // SOFTS
         if (project.ProjectType is ProjectType.DS2S or ProjectType.DS2)
         {
-            preferredPath = Path.Join("map", mapid, $"{mapid}.msb");
-            backupPath = Path.Join("map", mapid, $"{mapid}.msb");
+            preferredPath = $@"map\{mapid}\{mapid}.msb";
+            backupPath = $@"map\{mapid}\{mapid}.msb";
         }
         // BB chalice maps
         else if (project.ProjectType is ProjectType.BB && mapid.StartsWith("m29"))
         {
-            preferredPath = Path.Join("map", "MapStudio", $"{mapid.Substring(0, 9)}_00", $"{mapid}.msb.dcx");
-            backupPath = Path.Join("map", "MapStudio", $"{mapid.Substring(0, 9)}_00", $"{mapid}.msb");
+            preferredPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb.dcx";
+            backupPath = $@"\map\MapStudio\{mapid.Substring(0, 9)}_00\{mapid}.msb";
         }
         // DeS, DS1, DS1R
         else if (project.ProjectType is ProjectType.DS1 or ProjectType.DS1R or ProjectType.DES)
         {
-            preferredPath = Path.Join("map", "MapStudio", $"{mapid}.msb");
-            backupPath = Path.Join("map", "MapStudio", $"{mapid}.msb.dcx");
+            preferredPath = $@"\map\MapStudio\{mapid}.msb";
+            backupPath = $@"\map\MapStudio\{mapid}.msb.dcx";
         }
         // BB, DS3, ER, SDT, AC6
         else if (project.ProjectType is ProjectType.BB or ProjectType.DS3 or ProjectType.ER or ProjectType.SDT or ProjectType.AC6 or ProjectType.NR)
         {
-            preferredPath = Path.Join("map", "MapStudio", $"{mapid}.msb.dcx");
-            backupPath = Path.Join("map", "MapStudio", $"{mapid}.msb");
+            preferredPath = $@"\map\MapStudio\{mapid}.msb.dcx";
+            backupPath = $@"\map\MapStudio\{mapid}.msb";
         }
         // ACFA
         else if (project.ProjectType is ProjectType.ACFA)
@@ -62,8 +62,8 @@ public static class MapLocator
             if (mapid.StartsWith("model") || mapid.StartsWith("system"))
             {
                 // system maps
-                preferredPath = Path.Join("model", "system", $"{mapid}.msb");
-                backupPath = Path.Join("model", "system", $"{mapid}.msb");
+                preferredPath = $@"model\system\{mapid}.msb";
+                backupPath = $@"model\system\{mapid}.msb";
             }
             else if (!mapid.StartsWith('m'))
             {
@@ -71,8 +71,8 @@ public static class MapLocator
                 if (mapid.Length < 3)
                     throw new IndexOutOfRangeException($"Map ID is too short: {mapid}");
 
-                preferredPath = Path.Join("model", "map", $"m{mapid[..3]}", $"{mapid}.msb");
-                backupPath = Path.Join("bind", "event", $"m{mapid[..3]}_event.bnd");
+                preferredPath = $@"model\map\m{mapid[..3]}\{mapid}.msb";
+                backupPath = $@"bind\event\m{mapid[..3]}_event.bnd";
             }
             else
             {
@@ -80,8 +80,8 @@ public static class MapLocator
                 if (mapid.Length < 4)
                     throw new IndexOutOfRangeException($"Map ID is too short: {mapid}");
 
-                preferredPath = Path.Join("model", "map", mapid[..4], $"{mapid}.msb");
-                backupPath = Path.Join("bind", "event", $"{mapid[..4]}_event.bnd");
+                preferredPath = $@"model\map\{mapid[..4]}\{mapid}.msb";
+                backupPath = $@"bind\event\{mapid[..4]}_event.bnd";
             }
         }
         // ACV
@@ -90,32 +90,32 @@ public static class MapLocator
             if (mapid.StartsWith("ingamegarage"))
             {
                 // garage maps
-                preferredPath = Path.Join("model", "map", "ingamegarage", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "ingamegarage", $"{mapid}.msb");
+                preferredPath = $@"\model\map\ingamegarage\{mapid}.msb";
+                backupPath = $@"\model\map\ingamegarage\{mapid}.msb";
             }
             else if (mapid.StartsWith("worldtop"))
             {
                 // main menu map
-                preferredPath = Path.Join("model", "map", "worldtop", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "worldtop", $"{mapid}.msb");
+                preferredPath = $@"\model\map\worldtop\{mapid}.msb";
+                backupPath = $@"\model\map\worldtop\{mapid}.msb";
             }
             else if (mapid.EndsWith("_env"))
             {
                 // env maps
-                preferredPath = Path.Join("model", "map", "ch_env", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "ch_env", $"{mapid}.msb");
+                preferredPath = $@"\model\map\ch_env\{mapid}.msb";
+                backupPath = $@"\model\map\ch_env\{mapid}.msb";
             }
             else if (mapid.Length > 5)
             {
                 // maps with longer names
-                preferredPath = Path.Join("model", "map", mapid[..5], $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", mapid[..5], $"{mapid}.msb");
+                preferredPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
             }
             else
             {
                 // normal maps
-                preferredPath = Path.Join("model", "map", mapid, $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", mapid, $"{mapid}.msb");
+                preferredPath = $@"\model\map\{mapid}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid}\{mapid}.msb";
             }
         }
         // ACVD
@@ -124,56 +124,56 @@ public static class MapLocator
             if (mapid.StartsWith("ch"))
             {
                 // mission maps
-                preferredPath = Path.Join("model", "map", "ch_mission", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "ch_mission", $"{mapid}.msb");
+                preferredPath = $@"\model\map\ch_mission\{mapid}.msb";
+                backupPath = $@"\model\map\ch_mission\{mapid}.msb";
             }
             else if (mapid.StartsWith("ingamegarage"))
             {
                 // garage maps
-                preferredPath = Path.Join("model", "map", "ingamegarage", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "ingamegarage", $"{mapid}.msb");
+                preferredPath = $@"\model\map\ingamegarage\{mapid}.msb";
+                backupPath = $@"\model\map\ingamegarage\{mapid}.msb";
             }
             else if (mapid.StartsWith("worldtop"))
             {
                 // main menu map
-                preferredPath = Path.Join("model", "map", "worldtop", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "worldtop", $"{mapid}.msb");
+                preferredPath = $@"\model\map\worldtop\{mapid}.msb";
+                backupPath = $@"\model\map\worldtop\{mapid}.msb";
             }
             else if (mapid.EndsWith("_env"))
             {
                 // env maps
-                preferredPath = Path.Join("model", "map", "ch_env", $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", "ch_env", $"{mapid}.msb");
+                preferredPath = $@"\model\map\ch_env\{mapid}.msb";
+                backupPath = $@"\model\map\ch_env\{mapid}.msb";
             }
             else if (mapid.Length > 5)
             {
                 // maps with longer names
-                preferredPath = Path.Join("model", "map", mapid[..5], $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", mapid[..5], $"{mapid}.msb");
+                preferredPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid[..5]}\{mapid}.msb";
             }
             else
             {
                 // normal maps
-                preferredPath = Path.Join("model", "map", mapid, $"{mapid}.msb");
-                backupPath = Path.Join("model", "map", mapid, $"{mapid}.msb");
+                preferredPath = $@"\model\map\{mapid}\{mapid}.msb";
+                backupPath = $@"\model\map\{mapid}\{mapid}.msb";
             }
         }
 
-        if (!gameRootOnly && project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, preferredPath)) || writemode && project.ProjectPath != null)
+        if (!gameRootOnly && project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{preferredPath}") || writemode && project.ProjectPath != null)
         {
-            ad.AssetPath = Path.Join(project.ProjectPath, preferredPath);
+            ad.AssetPath = $@"{project.ProjectPath}\{preferredPath}";
         }
-        else if (!gameRootOnly && project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, backupPath)) || writemode && project.ProjectPath != null)
+        else if (!gameRootOnly && project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{backupPath}") || writemode && project.ProjectPath != null)
         {
-            ad.AssetPath = Path.Join(project.ProjectPath, backupPath);
+            ad.AssetPath = $@"{project.ProjectPath}\{backupPath}";
         }
-        else if (File.Exists(Path.Join(project.DataPath, preferredPath)))
+        else if (File.Exists($@"{project.DataPath}\{preferredPath}"))
         {
-            ad.AssetPath = Path.Join(project.DataPath, preferredPath);
+            ad.AssetPath = $@"{project.DataPath}\{preferredPath}";
         }
-        else if (File.Exists(Path.Join(project.DataPath, backupPath)))
+        else if (File.Exists($@"{project.DataPath}\{backupPath}"))
         {
-            ad.AssetPath = Path.Join(project.DataPath, backupPath);
+            ad.AssetPath = $@"{project.DataPath}\{backupPath}";
         }
 
         ad.AssetName = mapid;
@@ -196,40 +196,40 @@ public static class MapLocator
         {
             // DS2 BTL is located inside map's .gibdt file
             ResourceDescriptor ad = new();
-            var path = Path.Join("model", "map", $"g{mapid[1..]}.gibhd");
+            var path = $@"model\map\g{mapid[1..]}.gibhd";
 
-            if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, path)) || writemode && project.ProjectPath != null)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}") || writemode && project.ProjectPath != null)
             {
-                ad.AssetPath = Path.Join(project.ProjectPath, path);
+                ad.AssetPath = $@"{project.ProjectPath}\{path}";
             }
-            else if (File.Exists(Path.Join(project.DataPath, path)))
+            else if (File.Exists($@"{project.DataPath}\{path}"))
             {
-                ad.AssetPath = Path.Join(project.DataPath, path);
+                ad.AssetPath = $@"{project.DataPath}\{path}";
             }
 
             if (ad.AssetPath != null)
             {
                 ad.AssetName = $@"g{mapid[1..]}";
-                ad.AssetVirtualPath = Path.Join(mapid, "light.btl.dcx");
+                ad.AssetVirtualPath = $@"{mapid}\light.btl.dcx";
                 adList.Add(ad);
             }
 
             ResourceDescriptor ad2 = new();
-            path = Path.Join("model_lq", "map", $"g{mapid[1..]}.gibhd");
+            path = $@"model_lq\map\g{mapid[1..]}.gibhd";
 
-            if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, path)) || writemode && project.ProjectPath != null)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}") || writemode && project.ProjectPath != null)
             {
-                ad2.AssetPath = Path.Join(project.ProjectPath, path);
+                ad2.AssetPath = $@"{project.ProjectPath}\{path}";
             }
-            else if (File.Exists(Path.Join(project.DataPath, path)))
+            else if (File.Exists($@"{project.DataPath}\{path}"))
             {
-                ad2.AssetPath = Path.Join(project.DataPath, path);
+                ad2.AssetPath = $@"{project.DataPath}\{path}";
             }
 
             if (ad2.AssetPath != null)
             {
                 ad2.AssetName = $@"g{mapid[1..]}_lq";
-                ad2.AssetVirtualPath = Path.Join(mapid, "light.btl.dcx");
+                ad2.AssetVirtualPath = $@"{mapid}\light.btl.dcx";
                 adList.Add(ad2);
             }
         }
@@ -238,26 +238,26 @@ public static class MapLocator
             string path;
             if (project.ProjectType is ProjectType.ER or ProjectType.AC6 or ProjectType.NR)
             {
-                path = Path.Join("map", mapid[..3], mapid);
+                path = $@"map\{mapid[..3]}\{mapid}";
             }
             else
             {
-                path = Path.Join("map", mapid);
+                path = $@"map\{mapid}";
             }
 
             List<string> files = new();
 
-            if (Directory.Exists(Path.Join(project.DataPath, path)))
+            if (Directory.Exists($@"{project.DataPath}\{path}"))
             {
-                files.AddRange(Directory.GetFiles(Path.Join(project.DataPath, path), "*.btl").ToList());
-                files.AddRange(Directory.GetFiles(Path.Join(project.DataPath, path), "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.DataPath}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.DataPath}\{path}", "*.btl.dcx").ToList());
             }
 
-            if (Directory.Exists(Path.Join(project.ProjectPath, path)))
+            if (Directory.Exists($@"{project.ProjectPath}\{path}"))
             {
                 // Check for additional BTLs the user has created.
-                files.AddRange(Directory.GetFiles(Path.Join(project.ProjectPath, path), "*.btl").ToList());
-                files.AddRange(Directory.GetFiles(Path.Join(project.ProjectPath, path), "*.btl.dcx").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.ProjectPath}\{path}", "*.btl").ToList());
+                files.AddRange(Directory.GetFiles($@"{project.ProjectPath}\{path}", "*.btl.dcx").ToList());
                 files = files.DistinctBy(f => f.Split("\\").Last()).ToList();
             }
 
@@ -266,13 +266,13 @@ public static class MapLocator
                 ResourceDescriptor ad = new();
                 var fileName = file.Split("\\").Last();
 
-                if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, path, fileName)) || writemode && project.ProjectPath != null)
+                if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}\{fileName}") || writemode && project.ProjectPath != null)
                 {
-                    ad.AssetPath = Path.Join(project.ProjectPath, path, fileName);
+                    ad.AssetPath = $@"{project.ProjectPath}\{path}\{fileName}";
                 }
-                else if (File.Exists(Path.Join(project.DataPath, path, fileName)))
+                else if (File.Exists($@"{project.DataPath}\{path}\{fileName}"))
                 {
-                    ad.AssetPath = Path.Join(project.DataPath, path, fileName);
+                    ad.AssetPath = $@"{project.DataPath}\{path}\{fileName}";
                 }
 
                 if (ad.AssetPath != null)
@@ -302,36 +302,36 @@ public static class MapLocator
 
         if (project.ProjectType == ProjectType.BB && mapid.StartsWith("m29"))
         {
-            var path = Path.Join("map", $"{mapid.Substring(0, 9)}_00", mapid);
+            var path = $@"\map\{mapid.Substring(0, 9)}_00\{mapid}";
 
-            if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, $"{path}.nva.dcx")) || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva.dcx") || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = Path.Join(project.ProjectPath, $"{path}.nva.dcx");
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva.dcx";
             }
-            else if (File.Exists(Path.Join(project.DataPath, $"{path}.nva.dcx")))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva.dcx"))
             {
-                ad.AssetPath = Path.Join(project.DataPath, $"{path}.nva.dcx");
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva.dcx";
             }
         }
         else
         {
-            var path = Path.Join("map", mapid, mapid);
+            var path = $@"\map\{mapid}\{mapid}";
 
-            if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, $"{path}.nva.dcx")) || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
+            if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva.dcx") || writemode && project.ProjectPath != null && project.ProjectType != ProjectType.DS1)
             {
-                ad.AssetPath = Path.Join(project.ProjectPath, $"{path}.nva.dcx");
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva.dcx";
             }
-            else if (File.Exists(Path.Join(project.DataPath, $"{path}.nva.dcx")))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva.dcx"))
             {
-                ad.AssetPath = Path.Join(project.DataPath, $"{path}.nva.dcx");
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva.dcx";
             }
-            else if (project.ProjectPath != null && File.Exists(Path.Join(project.ProjectPath, $"{path}.nva")) || writemode && project.ProjectPath != null)
+            else if (project.ProjectPath != null && File.Exists($@"{project.ProjectPath}\{path}.nva") || writemode && project.ProjectPath != null)
             {
-                ad.AssetPath = Path.Join(project.ProjectPath, $"{path}.nva");
+                ad.AssetPath = $@"{project.ProjectPath}\{path}.nva";
             }
-            else if (File.Exists(Path.Join(project.DataPath, $"{path}.nva")))
+            else if (File.Exists($@"{project.DataPath}\{path}.nva"))
             {
-                ad.AssetPath = Path.Join(project.DataPath, $"{path}.nva");
+                ad.AssetPath = $@"{project.DataPath}\{path}.nva";
             }
         }
 
@@ -415,8 +415,8 @@ public static class MapLocator
     {
         List<ResourceDescriptor> resourceDescriptors = new();
 
-        var rootDirectory = Path.Join(project.DataPath, "map", mapid);
-        var projectDirectory = Path.Join(project.ProjectPath, "map", mapid);
+        var rootDirectory = $"{project.DataPath}\\map\\{mapid}";
+        var projectDirectory = $"{project.ProjectPath}\\map\\{mapid}";
 
         // Get the names
         var names = new List<string>();
@@ -450,7 +450,7 @@ public static class MapLocator
         // Get the resource descriptors
         foreach (var name in names)
         {
-            var path = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"{name}.btab.dcx"));
+            var path = LocatorUtils.GetAssetPath(project, $"\\map\\{mapid}\\{name}.btab.dcx");
             paths.Add(path);
         }
 
@@ -473,8 +473,8 @@ public static class MapLocator
     {
         List<ResourceDescriptor> resourceDescriptors = new();
 
-        var rootDirectory = Path.Join(project.DataPath, "map", mapid.Substring(0, 3), mapid);
-        var projectDirectory = Path.Join(project.ProjectPath, "map", mapid.Substring(0, 3), mapid);
+        var rootDirectory = $"{project.DataPath}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
+        var projectDirectory = $"{project.ProjectPath}\\map\\{mapid.Substring(0, 3)}\\{mapid}";
 
         // Get the names
         var names = new List<string>();
@@ -508,7 +508,7 @@ public static class MapLocator
         // Get the resource descriptors
         foreach (var name in names)
         {
-            var path = LocatorUtils.GetAssetPath(project, Path.Join("map", mapid, $"{name}.hkxbhd"));
+            var path = LocatorUtils.GetAssetPath(project, $"\\map\\{mapid}\\{name}.hkxbhd");
             paths.Add(path);
         }
 

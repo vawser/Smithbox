@@ -57,7 +57,7 @@ public class ProjectUtils
         string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         // Delete the project file
-        var filename = Path.Join(localAppDataPath, "Smithbox", "Projects", $"{curProject.ProjectGUID}.json");
+        var filename = @$"{localAppDataPath}\Smithbox\Projects\{curProject.ProjectGUID}.json";
         if (File.Exists(filename))
         {
             File.Delete(filename);
@@ -72,30 +72,30 @@ public class ProjectUtils
     {
         string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-        return Path.Join(localAppDataPath, "Smithbox");
+        return @$"{localAppDataPath}\Smithbox";
     }
 
     public static string GetConfigurationFolder()
     {
         string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-        return Path.Join(localAppDataPath, "Smithbox", "Configuration");
+        return @$"{localAppDataPath}\Smithbox\Configuration";
     }
     public static string GetThemeFolder()
     {
-        return Path.Join(AppContext.BaseDirectory, "Assets", "Themes");
+        return @$"{AppContext.BaseDirectory}\Assets\Themes";
     }
 
     public static string GetProjectsFolder()
     {
         string localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-        return Path.Join(localAppDataPath, "Smithbox", "Projects");
+        return @$"{localAppDataPath}\Smithbox\Projects";
     }
 
     public static string GetLocalProjectFolder(ProjectEntry project)
     {
-        return Path.Join(project.ProjectPath, ".smithbox", "Project");
+        return @$"{project.ProjectPath}\.smithbox\Project";
     }
 
     public static List<string> GetLooseParamsInDir(VirtualFileSystem fs, string dir)
@@ -143,8 +143,8 @@ public class ProjectUtils
                 continue;
 
             string folder = Path.GetDirectoryName(relativePath)?.Replace('\\', '/') ?? "";
-            string fileName = Path.GetFileNameWithoutExtension(filePath.Replace('\\', Path.DirectorySeparatorChar));
-            string extension = Path.GetExtension(filePath.Replace('\\', Path.DirectorySeparatorChar))?.TrimStart('.').ToLower();
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            string extension = Path.GetExtension(filePath)?.TrimStart('.').ToLower();
 
             // Special handling: if file ends with .dcx, strip both extensions (e.g., .bnd.dcx → .bnd)
             if (extension == "dcx")

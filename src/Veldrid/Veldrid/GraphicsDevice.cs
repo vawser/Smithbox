@@ -59,7 +59,6 @@ namespace Veldrid
         private bool _standardClipYDirection;
         private vkGetBufferMemoryRequirements2_t _getBufferMemoryRequirements2;
         private vkGetImageMemoryRequirements2_t _getImageMemoryRequirements2;
-        private vkCreateMetalSurfaceEXT_t _createMetalSurfaceEXT;
 
         // Staging Resources
         private const uint MinStagingBufferSize = 64;
@@ -85,7 +84,6 @@ namespace Veldrid
         internal VmaAllocator Allocator => _vmaAllocator;
         internal VkDescriptorPoolManager DescriptorPoolManager => _descriptorPoolManager;
         internal bool DebugLabelsEnabled => _debugLabelEnabled;
-        public vkCreateMetalSurfaceEXT_t CreateMetalSurfaceEXT => _createMetalSurfaceEXT;
 
         private readonly object _submittedFencesLock = new();
         private readonly ConcurrentQueue<VkFence> _availableSubmissionFences = new();
@@ -1621,21 +1619,13 @@ namespace Veldrid
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                if (availableInstanceExtensions.Contains(CommonStrings.VK_EXT_METAL_SURFACE_EXTENSION_NAME))
+                if (availableInstanceExtensions.Contains(CommonStrings.VK_MVK_MACOS_SURFACE_EXTENSION_NAME))
                 {
-                    _surfaceExtensions.Add(CommonStrings.VK_EXT_METAL_SURFACE_EXTENSION_NAME);
+                    _surfaceExtensions.Add(CommonStrings.VK_MVK_MACOS_SURFACE_EXTENSION_NAME);
                 }
-                else //! Legacy MoltenVK extensions
+                if (availableInstanceExtensions.Contains(CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME))
                 {
                     _surfaceExtensions.Add(CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME);
-                    if (availableInstanceExtensions.Contains(CommonStrings.VK_MVK_MACOS_SURFACE_EXTENSION_NAME))
-                    {
-                        _surfaceExtensions.Add(CommonStrings.VK_MVK_MACOS_SURFACE_EXTENSION_NAME);
-                    }
-                    if (availableInstanceExtensions.Contains(CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME))
-                    {
-                        _surfaceExtensions.Add(CommonStrings.VK_MVK_IOS_SURFACE_EXTENSION_NAME);
-                    }
                 }
             }
 
@@ -1700,12 +1690,6 @@ namespace Veldrid
             {
                 throw new VeldridException("Failed to create Vulkan instance.");
             }
-
-            if (HasSurfaceExtension(CommonStrings.VK_EXT_METAL_SURFACE_EXTENSION_NAME))
-            {
-                _createMetalSurfaceEXT = GetInstanceProcAddr<vkCreateMetalSurfaceEXT_t>("vkCreateMetalSurfaceEXT");
-            }
-
             vkLoadInstanceOnly(_instance);
 
             if (debug && debugUtilsExtensionAvailable)
@@ -1817,10 +1801,7 @@ namespace Veldrid
                 if (deviceVulkan11Features.storageBuffer16BitAccess != VkBool32.True ||
                     deviceVulkan11Features.uniformAndStorageBuffer16BitAccess != VkBool32.True)
                     continue;
-                if (
-#if !OSX
-                    deviceVulkan12Features.drawIndirectCount != VkBool32.True || //! not supported by metal
-#endif
+                if (deviceVulkan12Features.drawIndirectCount != VkBool32.True ||
                     deviceVulkan12Features.descriptorIndexing != VkBool32.True ||
                     deviceVulkan12Features.descriptorBindingVariableDescriptorCount != VkBool32.True ||
                     deviceVulkan12Features.runtimeDescriptorArray != VkBool32.True ||
@@ -1966,11 +1947,7 @@ namespace Veldrid
 
             var deviceFeatures12 = new VkPhysicalDeviceVulkan12Features
             {
-#if OSX
-                drawIndirectCount = VkBool32.False, //! not supported by metal
-#else
                 drawIndirectCount = VkBool32.True,
-#endif
                 descriptorIndexing = VkBool32.True,
                 descriptorBindingVariableDescriptorCount = VkBool32.True,
                 descriptorBindingSampledImageUpdateAfterBind = VkBool32.True,
@@ -2100,16 +2077,6 @@ namespace Veldrid
             utf8Ptr[byteCount] = 0;
 
             return (IntPtr)vkGetInstanceProcAddr(_instance, new ReadOnlySpan<sbyte>(utf8Ptr, byteCount + 1));
-        }
-
-        private T GetInstanceProcAddr<T>(string name)
-        {
-            IntPtr funcPtr = GetInstanceProcAddr(name);
-            if (funcPtr != IntPtr.Zero)
-            {
-                return Marshal.GetDelegateForFunctionPointer<T>(funcPtr);
-            }
-            return default;
         }
 
         private IntPtr GetDeviceProcAddr(string name)
@@ -2473,23 +2440,4 @@ namespace Veldrid
 
     internal unsafe delegate void vkGetBufferMemoryRequirements2_t(VkDevice device, VkBufferMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements);
     internal unsafe delegate void vkGetImageMemoryRequirements2_t(VkDevice device, VkImageMemoryRequirementsInfo2* pInfo, VkMemoryRequirements2* pMemoryRequirements);
-
-    // VK_EXT_metal_surface
-    //! made public
-
-    public unsafe delegate VkResult vkCreateMetalSurfaceEXT_t(
-        VkInstance instance,
-        VkMetalSurfaceCreateInfoEXT* pCreateInfo,
-        VkAllocationCallbacks* pAllocator,
-        VkSurfaceKHR* pSurface);
-
-    public unsafe struct VkMetalSurfaceCreateInfoEXT
-    {
-        public const VkStructureType VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT = (VkStructureType)1000217000;
-
-        public VkStructureType sType;
-        public void* pNext;
-        public uint flags;
-        public void* pLayer;
-    }
 }

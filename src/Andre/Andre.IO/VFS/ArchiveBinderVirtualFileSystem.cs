@@ -85,16 +85,16 @@ namespace Andre.IO.VFS
             => game switch
             {
                 Game.DES => throw new NotImplementedException(),
-                Game.DS1 => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","DarkSoulsDictionary.txt")), BHD5.Game.DarkSouls1),
-                Game.DS1R => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","DarkSoulsDictionary.txt")), BHD5.Game.DarkSouls1),
-                Game.DS2S => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","DarkSouls2Dictionary.txt")), BHD5.Game.DarkSouls2),
-                Game.DS3 => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","DarkSouls3Dictionary.txt")), BHD5.Game.DarkSouls3),
+                Game.DS1 => new(File.ReadAllText(@"Assets\UXM Dictionaries\DarkSoulsDictionary.txt"), BHD5.Game.DarkSouls1),
+                Game.DS1R => new(File.ReadAllText(@"Assets\UXM Dictionaries\DarkSoulsDictionary.txt"), BHD5.Game.DarkSouls1),
+                Game.DS2S => new(File.ReadAllText(@"Assets\UXM Dictionaries\DarkSouls2Dictionary.txt"), BHD5.Game.DarkSouls2),
+                Game.DS3 => new(File.ReadAllText(@"Assets\UXM Dictionaries\DarkSouls3Dictionary.txt"), BHD5.Game.DarkSouls3),
                 Game.BB => throw new NotImplementedException(),
-                Game.SDT => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","SekiroDictionary.txt")), BHD5.Game.DarkSouls3),
-                Game.ER => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","EldenRingDictionary.txt")), BHD5.Game.EldenRing),
-                Game.NR => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","EldenRingNightreignDictionary.txt")), BHD5.Game.EldenRing),
-                Game.AC6 => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","ArmoredCore6Dictionary.txt")), BHD5.Game.EldenRing),
-                Game.DS2 => new(File.ReadAllText(Path.Join("Assets","UXM Dictionaries","ScholarDictionary.txt")), BHD5.Game.DarkSouls2),
+                Game.SDT => new(File.ReadAllText(@"Assets\UXM Dictionaries\SekiroDictionary.txt"), BHD5.Game.DarkSouls3),
+                Game.ER => new(File.ReadAllText(@"Assets\UXM Dictionaries\EldenRingDictionary.txt"), BHD5.Game.EldenRing),
+                Game.NR => new(File.ReadAllText(@"Assets\UXM Dictionaries\EldenRingNightreignDictionary.txt"), BHD5.Game.EldenRing),
+                Game.AC6 => new(File.ReadAllText(@"Assets\UXM Dictionaries\ArmoredCore6Dictionary.txt"), BHD5.Game.EldenRing),
+                Game.DS2 => new(File.ReadAllText(@"Assets\UXM Dictionaries\ScholarDictionary.txt"), BHD5.Game.DarkSouls2),
                 _ => throw new ArgumentOutOfRangeException(nameof(game), game, null)
             };
 

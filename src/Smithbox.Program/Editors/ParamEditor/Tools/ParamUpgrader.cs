@@ -250,7 +250,7 @@ public class ParamUpgrader
 
     public void SetupUpgraderInformation()
     {
-        var oldRegInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Upgrader Information.json");
+        var oldRegInfoPath = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(TargetProject)}\Upgrader Information.json";
 
         try
         {
@@ -311,7 +311,7 @@ public class ParamUpgrader
 
         // Backup original
         var data = TargetProject.ProjectFS.GetFile(@"regulation.bin")?.GetData().ToArray();
-        File.WriteAllBytes(Path.Join(TargetProject.ProjectPath, "regulation.bin.prev"), data);
+        File.WriteAllBytes(@$"{TargetProject.ProjectPath}\regulation.bin.prev", data);
 
         NewParams = new();
 
@@ -448,13 +448,13 @@ public class ParamUpgrader
 
         var oldRegulationPath = "";
 
-        var oldRegDirectory = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(TargetProject), "Regulations");
+        var oldRegDirectory = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(TargetProject)}\Regulations\";
 
         var targetRegInfo = UpgraderInfo.RegulationEntries.Where(e => e.Version == oldVersionString).FirstOrDefault();
 
         if (targetRegInfo != null)
         {
-            oldRegulationPath = Path.Join(oldRegDirectory, targetRegInfo.Folder, "regulation.bin");
+            oldRegulationPath = $"{oldRegDirectory}\\{targetRegInfo.Folder}\\regulation.bin";
         }
 
         return oldRegulationPath;
