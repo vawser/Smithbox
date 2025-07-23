@@ -65,8 +65,8 @@ namespace Andre.Formats
             "Data2",
             "Data3",
             "DLC",
-            @"sd/sd",
-            @"sd/sd_dlc02",
+            Path.Join("sd", "sd"),
+            Path.Join("sd", "sd_dlc02"),
         ];
 
         public static readonly string[] ArmoredCore6ArchiveNames =
@@ -75,7 +75,7 @@ namespace Andre.Formats
             "Data1",
             "Data2",
             "Data3",
-            @"sd/sd",
+            Path.Join("sd", "sd"),
         ];
 
         public static readonly string[] NightreignArchiveNames =
@@ -84,7 +84,7 @@ namespace Andre.Formats
             "data1",
             "data2",
             "data3",
-            @"sd/sd",
+            Path.Join("sd", "sd"),
         ];
 
         public static string[] GetArchiveNames(Game game)
