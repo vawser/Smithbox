@@ -42,18 +42,6 @@
     <ProjectReference Include="..\Veldrid\Veldrid.SDL2\Veldrid.SDL2.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="tools\itemgib\config.ini">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tools\itemgib\eldenring_all-in-one_Hexinton-v4.25_ce7.5.ct">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="tools\itemgib\itemgib.EXE">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
- 
   <Target Name="CopyDataProjectOutput" AfterTargets="Build">
   <ItemGroup>
     <DataProjectFiles Include="..\Smithbox.Data\bin\$(Configuration)\net9.0-windows7.0\**\*" />
