@@ -86,7 +86,7 @@ public class TimeActData
     {
         await Task.Yield();
 
-        string templateDir = $"{AppContext.BaseDirectory}Assets\\TAE\\";
+        string templateDir = Path.Join($"{AppContext.BaseDirectory}Assets", "TAE");
         foreach (string file in Directory.EnumerateFiles(templateDir, "*.xml"))
         {
             string name = Path.GetFileNameWithoutExtension(file);

@@ -618,7 +618,7 @@ public static class ResourceManager
 
                 // Append internal filename to the BinderVirtualPath
                 var curFileBinderPath = BinderVirtualPath;
-                var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Value.Name}.blah");
+                var curBinderFilename = Path.GetFileNameWithoutExtension($@"{f.Value.Name.Replace('\\', Path.DirectorySeparatorChar)}.blah");
 
                 if (curBinderFilename.Length > 0)
                     curFileBinderPath = $@"{BinderVirtualPath}/{curBinderFilename}";
@@ -1013,14 +1013,14 @@ public static class ResourceManager
 
                         if (curProject != null)
                         {
-                            path = $@"{curProject.DataPath}\map\tx\{Path.GetFileName(texpath)}.tpf";
+                            path = Path.Join(curProject.DataPath, "map", "tx", $"{Path.GetFileName(texpath)}.tpf");
                         }
                     }
 
                     if (path != null && File.Exists(path))
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                            Path.GetDirectoryName(r.Key).Replace('\\', '/'),
+                            Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
                             path, AccessLevel.AccessGPUOptimizedOnly));
                     }
                 }
@@ -1107,7 +1107,7 @@ public static class ResourceManager
                         if (path != null && File.Exists(path))
                         {
                             _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                                Path.GetDirectoryName(texpath).Replace('\\', '/'), path,
+                                Path.GetDirectoryName(texpath.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'), path,
                                 AccessLevel.AccessGPUOptimizedOnly));
                         }
                     }
