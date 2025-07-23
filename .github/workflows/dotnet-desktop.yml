@@ -16,7 +16,7 @@ jobs:
           dotnet-version: '8.0.x' # SDK Version to use;
         
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore /p:Configuration=Release-win
         
       - name: Build
         run: dotnet build --configuration Release-win --no-restore

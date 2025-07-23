@@ -16,4 +16,12 @@
     <ProjectReference Include="..\HKX2.Serialization\Havok.HKX2.Serialization.csproj" />
   </ItemGroup>
 
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <DefineConstants>RELEASE</DefineConstants>
+  </PropertyGroup>
+
 </Project>

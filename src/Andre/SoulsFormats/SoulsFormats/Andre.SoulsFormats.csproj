@@ -11,34 +11,26 @@
     <Configurations>Debug;Release;Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-win' ">
-    <DefineConstants>WINDOWS;DEBUG</DefineConstants>
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+    <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release-win' ">
-    <DefineConstants>WINDOWS;RELEASE</DefineConstants>
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <DefineConstants>RELEASE</DefineConstants>
     <DebugType>embedded</DebugType>
     <DocumentationFile />
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-linux' ">
-    <DefineConstants>LINUX;DEBUG</DefineConstants>
+  <PropertyGroup Condition="$(Configuration.EndsWith('-win')) Or !$(Configuration.Contains('-'))">
+    <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release-linux' ">
-    <DefineConstants>LINUX;RELEASE</DefineConstants>
-    <DebugType>embedded</DebugType>
-    <DocumentationFile />
-  </PropertyGroup>
-  
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-osx' ">
-    <DefineConstants>OSX;DEBUG</DefineConstants>
+  <PropertyGroup Condition="$(Configuration.EndsWith('-linux'))">
+    <DefineConstants>$(DefineConstants);LINUX</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release-osx' ">
-    <DefineConstants>OSX;RELEASE</DefineConstants>
-    <DebugType>embedded</DebugType>
-    <DocumentationFile />
+  <PropertyGroup Condition="$(Configuration.EndsWith('-osx'))">
+    <DefineConstants>$(DefineConstants);OSX</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard'))">
