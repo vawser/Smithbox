@@ -47,18 +47,6 @@ public class DebugTools
     public bool ShowTest_MSB_ER;
     public bool ShowTest_MSB_NR;
 
-    public bool ShowItemGib;
-
-    // ItemGib panel fields
-    private uint itemId = 0;
-    private string itemType = "";
-    private uint itemQuantity = 1;
-
-    // Cache the found addresses to avoid repeated scanning
-    private static IntPtr cachedInventoryAccessorAddress = IntPtr.Zero;
-    private static IntPtr cachedAddItemFunctionAddress = IntPtr.Zero;
-    private static IntPtr eldenRingProcessHandle = IntPtr.Zero;
-
     public DebugTools(Smithbox baseEditor)
     {
         BaseEditor = baseEditor;
@@ -124,14 +112,6 @@ public class DebugTools
                         ShowFlverMaterialLayoutDumper = !ShowFlverMaterialLayoutDumper;
                     }
                     ImGui.EndMenu();
-                }
-                ImGui.EndMenu();
-            }
-            if (ImGui.BeginMenu("ItemGib"))
-            {
-                if (ImGui.MenuItem("Gib Item"))
-                {
-                    ShowItemGib = !ShowItemGib;
                 }
                 ImGui.EndMenu();
             }
@@ -254,14 +234,6 @@ public class DebugTools
                 ImGui.End();
             }
         }
-        if (ShowItemGib)
-        {
-            if (ImGui.Begin("Item Gib", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                DisplayItemGibPanel();
-                ImGui.End();
-            }
-        }
         if (ShowTest_UniqueParamInsertion)
         {
             if (ImGui.Begin("Unique Param Insertion", ImGuiWindowFlags.AlwaysAutoResize))
@@ -341,180 +313,6 @@ public class DebugTools
                 Test_MSB_NR.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
                 ImGui.End();
             }
-        }
-    }
-
-    private byte[] itemTypeBuffer = new byte[256];
-
-    private void DisplayItemGibPanel()
-    {
-        unsafe
-        {
-            ImGui.Text("ID:");
-            ImGui.SameLine();
-            fixed (uint* itemIdPtr = &itemId)
-            {
-                ImGui.InputScalar("##ItemID", ImGuiDataType.U32, itemIdPtr);
-            }
-            ImGui.Text("Type:");
-            ImGui.SameLine();
-            fixed (byte* ptr = itemTypeBuffer)
-            {
-                ImGui.InputText("##ItemType", ptr, (uint)itemTypeBuffer.Length);
-            }
-            ImGui.Text("Quantity:");
-            ImGui.SameLine();
-            fixed (uint* itemQuantityPtr = &itemQuantity)
-            {
-                ImGui.InputScalar("##ItemQuantity", ImGuiDataType.U32, itemQuantityPtr);
-            }
-        }
-        ImGui.Spacing();
-        if (ImGui.Button("Gib!"))
-        {
-            GibItem();
-        }
-    }
-
-    private void GibItem()
-    {
-        UpdateConfigFile();
-        string itemGibExePath = Path.Combine(Directory.GetCurrentDirectory(), "tools", "itemgib", "itemgib.EXE");
-        ProcessStartInfo startInfo = new()
-        {
-            FileName = itemGibExePath,
-            UseShellExecute = true,
-            Verb = "runas"
-        };
-        Process.Start(startInfo);
-    }
-
-    private void UpdateConfigFile()
-    {
-        try
-        {
-            string configPath = Path.Combine(Directory.GetCurrentDirectory(), "tools", "itemgib", "config.ini");
-
-            // Convert itemTypeBuffer to string
-            string itemTypeString;
-            unsafe
-            {
-                fixed (byte* ptr = itemTypeBuffer)
-                {
-                    itemTypeString = System.Text.Encoding.UTF8.GetString(ptr, Array.IndexOf(itemTypeBuffer, (byte)0));
-                }
-            }
-
-            // Parse ItemIndex from the type string (assuming it's a numeric value)
-            // If itemTypeString is not numeric, you may need to adjust this logic
-            if (!uint.TryParse(itemTypeString, out uint itemIndex))
-            {
-                itemIndex = 0; // Default value if parsing fails
-            }
-
-            // Read existing config or create new content
-            string[] configLines;
-            if (File.Exists(configPath))
-            {
-                configLines = File.ReadAllLines(configPath);
-            }
-            else
-            {
-                configLines = new string[0];
-            }
-
-            // Update or add the [ItemGib] section
-            List<string> updatedLines = new List<string>();
-            bool inItemGibSection = false;
-            bool itemGibSectionFound = false;
-            bool idUpdated = false;
-            bool itemIndexUpdated = false;
-            bool quantityUpdated = false;
-
-            foreach (string line in configLines)
-            {
-                string trimmedLine = line.Trim();
-
-                if (trimmedLine == "[ItemGib]")
-                {
-                    inItemGibSection = true;
-                    itemGibSectionFound = true;
-                    updatedLines.Add(line);
-                }
-                else if (trimmedLine.StartsWith("[") && trimmedLine.EndsWith("]"))
-                {
-                    // Entering a different section
-                    if (inItemGibSection)
-                    {
-                        // Add any missing keys before leaving ItemGib section
-                        if (!idUpdated)
-                            updatedLines.Add($"ID={itemId}");
-                        if (!itemIndexUpdated)
-                            updatedLines.Add($"ItemIndex={itemIndex}");
-                        if (!quantityUpdated)
-                            updatedLines.Add($"Quantity={itemQuantity}");
-                    }
-                    inItemGibSection = false;
-                    updatedLines.Add(line);
-                }
-                else if (inItemGibSection)
-                {
-                    if (trimmedLine.StartsWith("ID="))
-                    {
-                        updatedLines.Add($"ID={itemId}");
-                        idUpdated = true;
-                    }
-                    else if (trimmedLine.StartsWith("ItemIndex="))
-                    {
-                        updatedLines.Add($"ItemIndex={itemIndex}");
-                        itemIndexUpdated = true;
-                    }
-                    else if (trimmedLine.StartsWith("Quantity="))
-                    {
-                        updatedLines.Add($"Quantity={itemQuantity}");
-                        quantityUpdated = true;
-                    }
-                    else
-                    {
-                        updatedLines.Add(line);
-                    }
-                }
-                else
-                {
-                    updatedLines.Add(line);
-                }
-            }
-
-            // If ItemGib section wasn't found, add it
-            if (!itemGibSectionFound)
-            {
-                updatedLines.Add("[ItemGib]");
-                updatedLines.Add($"ID={itemId}");
-                updatedLines.Add($"ItemIndex={itemIndex}");
-                updatedLines.Add($"Quantity={itemQuantity}");
-            }
-            else if (inItemGibSection)
-            {
-                // We were still in ItemGib section at end of file
-                if (!idUpdated)
-                    updatedLines.Add($"ID={itemId}");
-                if (!itemIndexUpdated)
-                    updatedLines.Add($"ItemIndex={itemIndex}");
-                if (!quantityUpdated)
-                    updatedLines.Add($"Quantity={itemQuantity}");
-            }
-
-            // Create directory if it doesn't exist
-            Directory.CreateDirectory(Path.GetDirectoryName(configPath));
-
-            // Write updated config
-            File.WriteAllLines(configPath, updatedLines);
-
-            Console.WriteLine($"Config updated: ID={itemId}, ItemIndex={itemIndex}, Quantity={itemQuantity}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error updating config file: {ex.Message}");
         }
     }
 
