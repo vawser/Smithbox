@@ -1020,7 +1020,7 @@ public static class ResourceManager
                     if (path != null && File.Exists(path))
                     {
                         _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                            Path.GetDirectoryName(r.Key.Replace('\\', '/')),
+                            Path.GetDirectoryName(r.Key.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'),
                             path, AccessLevel.AccessGPUOptimizedOnly));
                     }
                 }
@@ -1107,7 +1107,7 @@ public static class ResourceManager
                         if (path != null && File.Exists(path))
                         {
                             _job.AddLoadTPFResources(new LoadTPFResourcesAction(_job,
-                                Path.GetDirectoryName(texpath.Replace('\\', '/')), path,
+                                Path.GetDirectoryName(texpath.Replace('\\', Path.DirectorySeparatorChar)).Replace(Path.DirectorySeparatorChar, '/'), path,
                                 AccessLevel.AccessGPUOptimizedOnly));
                         }
                     }
