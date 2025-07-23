@@ -65,8 +65,8 @@ namespace Andre.Formats
             "Data2",
             "Data3",
             "DLC",
-            Path.Join("sd", "sd"),
-            Path.Join("sd", "sd_dlc02"),
+            @"sd\sd",
+            @"sd\sd_dlc02",
         ];
 
         public static readonly string[] ArmoredCore6ArchiveNames =
@@ -75,7 +75,7 @@ namespace Andre.Formats
             "Data1",
             "Data2",
             "Data3",
-            Path.Join("sd", "sd"),
+            @"sd\sd",
         ];
 
         public static readonly string[] NightreignArchiveNames =
@@ -84,7 +84,7 @@ namespace Andre.Formats
             "data1",
             "data2",
             "data3",
-            Path.Join("sd", "sd"),
+            @"sd\sd",
         ];
 
         public static string[] GetArchiveNames(Game game)
@@ -147,11 +147,6 @@ namespace Andre.Formats
             return NativeRsa.Decrypt(encryptedBhd, ArchiveKeys.GetKey(bhdPath, game), ThreadsForDecryption);
         }
 
-        public static byte[] Decrypt(string bhdPath, Game game)
-        {
-            return SoulsFormats.Util.CryptographyUtility.DecryptRsa(bhdPath, ArchiveKeys.GetKey(bhdPath, game)).ToArray();
-        }
-
         public BinderArchive(string bhdPath, string bdtPath, Game game)
         {
             using var file = MemoryMappedFile.CreateFromFile(bhdPath, FileMode.Open, null, 0, MemoryMappedFileAccess.Read);
@@ -160,15 +155,7 @@ namespace Andre.Formats
             if (IsBhdEncrypted(accessor.Memory))
             {
                 //encrypted
-#if DEBUG
-                Console.WriteLine($"Decrypting {Path.GetFileName(bhdPath)}");
-#endif
-                byte[] decrypted;
-#if WINDOWS
-                decrypted = Decrypt(accessor.Memory, bhdPath, game);
-#else
-                decrypted = Decrypt(bhdPath, game);
-#endif
+                var decrypted = Decrypt(accessor.Memory, bhdPath, game);
                 bhd = BHD5.Read(decrypted, game.AsBhdGame()!.Value);
                 BhdWasEncrypted = true;
             }

@@ -35,10 +35,6 @@ namespace SoapstoneLib
         /// </summary>
         public static async Task RunAsync(KnownServer server, SoapstoneServiceV1 newService, string[] args = null)
         {
-            if (!OperatingSystem.IsWindows())
-            {
-                throw new NotImplementedException("SoapstoneService is not yet available on this platform.");
-            }    
             if (newService == null)
             {
                 throw new ArgumentNullException(nameof(newService));

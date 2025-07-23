@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplaySubMenu(ModelEditorScreen editor)
         {
-            ExportBasePath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Material Groups");
+            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Material Groups\\";
 
             UpdateMaterialGroupList();
 
@@ -94,7 +94,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
-            ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Material Groups");
+            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Material Groups\\";
 
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
@@ -244,7 +244,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
         public static MaterialList ReadMaterialGroup(string entry)
         {
             var newMaterialList = new MaterialList();
-            var readPath = Path.Join(ExportBasePath, $"{entry}.json");
+            var readPath = $"{ExportBasePath}\\{entry}.json";
 
             try
             {

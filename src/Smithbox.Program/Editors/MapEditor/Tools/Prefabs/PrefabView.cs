@@ -43,7 +43,7 @@ public class PrefabView
     public Prefab GetLoadedPrefab(string name)
     {
         var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
-        var prefabPath = Path.Join(prefabDir, $"{name}.json");
+        var prefabPath = $@"{prefabDir}\{name}.json";
         var loadedPrefab = LoadedPrefabs.GetValueOrDefault(name);
 
         if (loadedPrefab is not null)
@@ -77,7 +77,7 @@ public class PrefabView
         }
         else
         {
-            newPrefab.ExportSelection(Path.Join(prefabDir, $"{name}.json"), name, Prefab_EditFlags, Editor.Universe.Selection);
+            newPrefab.ExportSelection($@"{prefabDir}\{name}.json", name, Prefab_EditFlags, Editor.Universe.Selection);
 
             Prefabs.Add(name, newPrefab);
             SelectedPrefab = newPrefab;
@@ -92,7 +92,7 @@ public class PrefabView
         var prefabDir = PrefabUtils.GetPrefabStorageDirectory(Editor.Project);
 
         Prefabs.Remove(name);
-        File.Delete(Path.Join(prefabDir, $"{name}.json"));
+        File.Delete($@"{prefabDir}\{name}.json");
     }
 
     public void CreateButton(Vector2 buttonSize)

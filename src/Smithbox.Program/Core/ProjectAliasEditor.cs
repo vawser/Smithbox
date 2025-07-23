@@ -427,7 +427,7 @@ public static class ProjectAliasEditor
     /// </summary>
     public static void Save()
     {
-        var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Assets", "Aliases", ProjectUtils.GetGameDirectory(TargetProject.ProjectType));
+        var projectFolder = $@"{TargetProject.ProjectPath}\.smithbox\Assets\Aliases\{ProjectUtils.GetGameDirectory(TargetProject.ProjectType)}";
         var projectFile = Path.Combine(projectFolder, "Aliases.json");
 
         var json = JsonSerializer.Serialize(TargetProject.Aliases, SmithboxSerializerContext.Default.AliasStore);

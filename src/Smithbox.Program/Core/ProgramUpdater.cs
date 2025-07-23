@@ -50,9 +50,7 @@ public static class ProgramUpdater
 
     public static async void CheckForUpdate(string version)
     {
-#if WINDOWS
         if (!CFG.Current.System_Check_Program_Update)
-#endif
             return;
 
         CanAccessGithub = await HasInternetConnectionAsync();
@@ -110,9 +108,7 @@ public static class ProgramUpdater
 
     public static void DisplayUpdateHint(Smithbox baseEditor)
     {
-#if WINDOWS
         if (!CFG.Current.System_Check_Program_Update)
-#endif
             return;
 
         if (LatestRelease == null)
@@ -145,9 +141,7 @@ public static class ProgramUpdater
 
     public async static void UpdateSmithbox(Smithbox baseEditor)
     {
-#if WINDOWS
         if (!CFG.Current.System_Check_Program_Update)
-#endif
             return;
 
         if (LatestRelease == null)

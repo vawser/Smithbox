@@ -300,7 +300,7 @@ public class FileToolView
 
         if (ImGui.Button("Unpack File", new Vector2(width, 24)))
         {
-            var filePath = Path.Join(IndividualFolder, IndividualFilename);
+            var filePath = $@"{IndividualFolder}\{IndividualFilename}";
 
             try
             {
@@ -467,7 +467,7 @@ public class FileToolView
     public void UpdateBaseFileDictionary()
     {
         // Get the unmerged base file dictionary
-        var folder = Path.Join(AppContext.BaseDirectory, "Assets", "File Dictionaries");
+        var folder = @$"{AppContext.BaseDirectory}\Assets\File Dictionaries\";
         var file = "";
 
         switch (Project.ProjectType)
@@ -497,7 +497,7 @@ public class FileToolView
             default: break;
         }
 
-        var filepath = Path.Join(folder, file);
+        var filepath = $"{folder}{file}";
 
         var baseFileDictionary = new FileDictionary();
         baseFileDictionary.Entries = new();

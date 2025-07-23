@@ -1,61 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Configurations>Debug-win;Release-win;Debug-linux;Release-linux;Debug-osx;Release-osx;Debug;Release</Configurations>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-win'">
-    <DefineConstants>DEBUG</DefineConstants>
     <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-win'">
-    <DefineConstants>RELEASE</DefineConstants>
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-linux'">
-    <DefineConstants>DEBUG</DefineConstants>
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-linux'">
-    <DefineConstants>RELEASE</DefineConstants>
-    <PlatformTarget>x64</PlatformTarget>
-    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-osx'">
-    <DefineConstants>DEBUG</DefineConstants>
-    <PlatformTargets>arm64;x64</PlatformTargets>
-    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-osx'">
-    <DefineConstants>RELEASE</DefineConstants>
-    <PlatformTargets>arm64;x64</PlatformTargets>
-    <RuntimeIdentifiers>osx-arm64;osx-x64</RuntimeIdentifiers>
   </PropertyGroup>
 
   <Target Name="CopyOutputToSmithbox" AfterTargets="Build">
     <PropertyGroup>
       <!-- Define the relative output path of Smithbox -->
-      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/$(TargetFramework)/$(RuntimeIdentifier)/</SmithboxOutputDir>
+      <SmithboxOutputDir>$(SolutionDir)src/Smithbox/bin/$(Configuration)/net9.0-windows7.0/win-x64/</SmithboxOutputDir>
     </PropertyGroup>
 
     <ItemGroup>
-      <UpdaterFiles Include="$(TargetPath)" />
+      <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.exe" />
       <UpdaterFiles Include="$(TargetDir)Smithbox.Updater.dll" />
     </ItemGroup>
 
-    <Copy SourceFiles="@(UpdaterFiles)" DestinationFolder="$(SmithboxOutputDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(UpdaterFiles)"
+          DestinationFolder="$(SmithboxOutputDir)"
+          SkipUnchangedFiles="true" />
   </Target>
 
 </Project>

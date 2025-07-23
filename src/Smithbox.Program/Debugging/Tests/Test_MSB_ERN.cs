@@ -81,11 +81,11 @@ public static class Test_MSB_NR
             Memory<byte> decompressed = DCX.Decompress(bytes);
 
             // Write vanilla version
-            if (!Directory.Exists(Path.Join(basepath, "decompressed")))
+            if (!Directory.Exists($@"{basepath}\decompressed"))
             {
-                Directory.CreateDirectory(Path.Join(basepath, "decompressed"));
+                Directory.CreateDirectory($@"{basepath}\decompressed");
             }
-            File.WriteAllBytes(Path.Join(basepath, "decompressed", Path.GetFileNameWithoutExtension(res.AssetPath)),
+            File.WriteAllBytes($@"{basepath}\decompressed\{Path.GetFileNameWithoutExtension(res.AssetPath)}",
                 decompressed.ToArray());
 
             MSB_NR m = MSB_NR.Read(decompressed);
@@ -93,12 +93,12 @@ public static class Test_MSB_NR
             // Write test version
             var written = m.Write(DCX.Type.None);
 
-            if (!Directory.Exists(Path.Join(basepath, "mismatches")))
+            if (!Directory.Exists($@"{basepath}\mismatches"))
             {
-                Directory.CreateDirectory(Path.Join(basepath, "mismatches"));
+                Directory.CreateDirectory($@"{basepath}\mismatches");
             }
 
-            File.WriteAllBytes(Path.Join(basepath, "mismatches", Path.GetFileNameWithoutExtension(res.AssetPath)),
+            File.WriteAllBytes($@"{basepath}\mismatches\{Path.GetFileNameWithoutExtension(res.AssetPath)}",
                 written);
 
             var isMismatch = false;

@@ -46,7 +46,7 @@ public class MaterialBank
                 MTDs[entry] = wrapper;
                 foreach (var kv in wrapper.Entries)
                 {
-                    var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
+                    var shortName = Path.GetFileNameWithoutExtension(kv.Key);
                     MTDLookup[shortName] = kv.Value;
                 }
             }
@@ -60,7 +60,7 @@ public class MaterialBank
                 MATBINs[entry] = wrapper;
                 foreach (var kv in wrapper.Entries)
                 {
-                    var shortName = Path.GetFileNameWithoutExtension(kv.Key.Replace('\\', Path.DirectorySeparatorChar));
+                    var shortName = Path.GetFileNameWithoutExtension(kv.Key);
                     MATBINLookup[shortName] = kv.Value;
                 }
             }

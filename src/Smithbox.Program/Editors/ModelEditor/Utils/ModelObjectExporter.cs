@@ -37,7 +37,7 @@ public static class ModelObjectExporter
         }
 
         var name = internalFile.Name;
-        var path = Path.Join(editor.Project.ProjectPath, $"{name}.obj");
+        var path = $"{editor.Project.ProjectPath}\\{name}.obj";
         var mapId = editor.Selection._selectedAssociatedMapID;
         var modelType = editor.ResManager.LoadedFlverContainer.Type;
 
@@ -80,7 +80,7 @@ public static class ModelObjectExporter
         int currentFaceIndex = 0;
 
         string outputObjFolderPath = Path.GetDirectoryName(ExportPath) ?? "";
-        string outputTexFolderPath = Path.Join(outputObjFolderPath, "textures");
+        string outputTexFolderPath = $"{outputObjFolderPath}\\textures";
 
         // Meshes
         foreach (FLVER2.Mesh flverMesh in flver.Meshes)
@@ -199,7 +199,7 @@ public static class ModelObjectExporter
     {
         MATBIN.Sampler? diffuseTexSampler = null;
 
-        string matbinBndFilePath = Path.Join(editor.Project.DataPath, "material", $"{file}.matbinbnd.dcx");
+        string matbinBndFilePath = $"{editor.Project.DataPath}\\material\\{file}.matbinbnd.dcx";
 
         BND4 matbinBnd = BND4.Read(matbinBndFilePath);
         BinderFile? matbinFile = matbinBnd.Files.FirstOrDefault(i => i.Name.Contains(material.Name));
@@ -245,7 +245,7 @@ public static class ModelObjectExporter
 
     private static void ExportImageFromTexture(TPF.Texture texture, string outputDir)
     {
-        string exportPath = Path.Join(outputDir, $"{texture.Name}.png");
+        string exportPath = $"{outputDir}\\{texture.Name}.png";
 
         if (!Directory.Exists(outputDir))
         {
@@ -314,7 +314,7 @@ public class OBJ
 
         StringBuilder mtlSb = new();
         mtlSb.AppendLine(MTL);
-        File.WriteAllText(Path.Join(Path.GetDirectoryName(path), mtlFileName), MTL);
+        File.WriteAllText($"{Path.GetDirectoryName(path)}\\{mtlFileName}", MTL);
     }
 
     public class Mesh

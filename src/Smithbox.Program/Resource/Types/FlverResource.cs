@@ -227,7 +227,7 @@ public class FlverResource : IResource, IDisposable
         var path = mpath;
         if (mpath == "")
         {
-            var mtdstring = Path.GetFileNameWithoutExtension(mtd.Replace('\\', Path.DirectorySeparatorChar));
+            var mtdstring = Path.GetFileNameWithoutExtension(mtd);
 
             var material = bank.GetMaterial(mtdstring);
 
