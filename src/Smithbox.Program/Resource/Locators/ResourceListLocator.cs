@@ -62,11 +62,11 @@ public static class ResourceListLocator
         List<ResourceDescriptor> ret = new();
         if (project.ProjectType == ProjectType.DS3 || project.ProjectType == ProjectType.SDT)
         {
-            if (!Directory.Exists(project.DataPath + $@"\map\{mapid}\"))
+            if (!Directory.Exists(Path.Join(project.DataPath, "map", mapid)))
                 return ret;
 
             var mapfiles = Directory
-                .GetFileSystemEntries(project.DataPath + $@"\map\{mapid}\", @"*.mapbnd.dcx").ToList();
+                .GetFileSystemEntries(Path.Join(project.DataPath, "map", mapid), @"*.mapbnd.dcx").ToList();
             foreach (var f in mapfiles)
             {
                 ResourceDescriptor ad = new();
@@ -80,7 +80,7 @@ public static class ResourceListLocator
         }
         else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
-            var mapPath = project.DataPath + $@"\map\{mapid[..3]}\{mapid}";
+            var mapPath = Path.Join(project.DataPath, "map", mapid[..3], mapid);
             if (!Directory.Exists(mapPath))
                 return ret;
 
@@ -98,7 +98,7 @@ public static class ResourceListLocator
         }
         else if (project.ProjectType == ProjectType.AC6)
         {
-            var mapPath = project.DataPath + $@"\map\{mapid[..3]}\{mapid}";
+            var mapPath = Path.Join(project.DataPath, "map", mapid[..3], mapid);
             if (!Directory.Exists(mapPath))
                 return ret;
 
@@ -116,11 +116,11 @@ public static class ResourceListLocator
         }
         else
         {
-            if (!Directory.Exists(project.DataPath + $@"\map\{mapid}\"))
+            if (!Directory.Exists(Path.Join(project.DataPath, "map", mapid)))
                 return ret;
 
             var ext = project.ProjectType == ProjectType.DS1 ? @"*.flver" : @"*.flver.dcx";
-            var mapfiles = Directory.GetFileSystemEntries(project.DataPath + $@"\map\{mapid}\", ext)
+            var mapfiles = Directory.GetFileSystemEntries(Path.Join(project.DataPath, "map", mapid), ext)
                 .ToList();
             foreach (var f in mapfiles)
             {
@@ -146,20 +146,20 @@ public static class ResourceListLocator
             HashSet<string> chrs = new();
             List<string> ret = new();
 
-            var modelDir = @"\chr";
+            var modelDir = @"chr";
             var modelExt = @".chrbnd.dcx";
 
             if (project.ProjectType == ProjectType.DS1)
                 modelExt = ".chrbnd";
             else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
             {
-                modelDir = @"\model\chr";
+                modelDir = Path.Join("model", "chr");
                 modelExt = ".bnd";
             }
 
             if (project.ProjectType == ProjectType.DES)
             {
-                var chrdirs = Directory.GetDirectories(project.DataPath + modelDir);
+                var chrdirs = Directory.GetDirectories(Path.Join(project.DataPath, modelDir));
                 foreach (var f in chrdirs)
                 {
                     var name = Path.GetFileNameWithoutExtension(f + ".dummy");
@@ -170,7 +170,7 @@ public static class ResourceListLocator
                 return ret;
             }
 
-            var chrfiles = Directory.GetFileSystemEntries(project.DataPath + modelDir, $@"*{modelExt}")
+            var chrfiles = Directory.GetFileSystemEntries(Path.Join(project.DataPath, modelDir), $@"*{modelExt}")
                 .ToList();
             foreach (var f in chrfiles)
             {
@@ -179,9 +179,9 @@ public static class ResourceListLocator
                 chrs.Add(name);
             }
 
-            if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + modelDir))
+            if (project.ProjectPath != null && Directory.Exists(Path.Join(project.ProjectPath, modelDir)))
             {
-                chrfiles = Directory.GetFileSystemEntries(project.ProjectPath + modelDir, $@"*{modelExt}").ToList();
+                chrfiles = Directory.GetFileSystemEntries(Path.Join(project.ProjectPath, modelDir), $@"*{modelExt}").ToList();
                 foreach (var f in chrfiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));
@@ -211,7 +211,7 @@ public static class ResourceListLocator
         HashSet<string> objs = new();
         List<string> ret = new();
 
-        var modelDir = @"\obj";
+        var modelDir = @"obj";
         var modelExt = @".objbnd.dcx";
 
         if (project.ProjectType == ProjectType.DS1)
@@ -220,24 +220,24 @@ public static class ResourceListLocator
         }
         else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
         {
-            modelDir = @"\model\obj";
+            modelDir = Path.Join("model", "obj");
             modelExt = ".bnd";
         }
         else if (project.ProjectType is ProjectType.ER or ProjectType.NR)
         {
             // AEGs are objs in my heart :(
-            modelDir = @"\asset\aeg";
+            modelDir = Path.Join("asset", "aeg");
             modelExt = ".geombnd.dcx";
         }
         else if (project.ProjectType == ProjectType.AC6)
         {
             // AEGs are objs in my heart :(
-            modelDir = @"\asset\environment\geometry";
+            modelDir = Path.Join("asset", "environment", "geometry");
             modelExt = ".geombnd.dcx";
         }
 
-        var rootDir = project.DataPath + modelDir;
-        var modDir = project.ProjectPath + modelDir;
+        var rootDir = Path.Join(project.DataPath, modelDir);
+        var modDir = Path.Join(project.ProjectPath, modelDir);
 
         if (!Directory.Exists(rootDir))
         {
@@ -257,7 +257,7 @@ public static class ResourceListLocator
             {
                 if (Directory.Exists(folder))
                 {
-                    var tempRootDir = $@"{rootDir}\{folder.Substring(folder.Length - 6)}";
+                    var tempRootDir = Path.Join(rootDir, folder.Substring(folder.Length - 6));
 
                     if (Directory.Exists(tempRootDir))
                     {
@@ -293,7 +293,7 @@ public static class ResourceListLocator
                 {
                     if (Directory.Exists(folder))
                     {
-                        var tempModDir = $@"{modDir}\{folder.Substring(folder.Length - 6)}";
+                        var tempModDir = Path.Join(modDir, folder.Substring(folder.Length - 6));
 
                         if (Directory.Exists(tempModDir))
                         {
@@ -324,7 +324,7 @@ public static class ResourceListLocator
             HashSet<string> parts = new();
             List<string> ret = new();
 
-            var modelDir = @"\parts";
+            var modelDir = @"parts";
             var modelExt = @".partsbnd.dcx";
 
             if (project.ProjectType == ProjectType.DS1)
@@ -333,9 +333,9 @@ public static class ResourceListLocator
             }
             else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
             {
-                modelDir = @"\model\parts";
+                modelDir = Path.Join("model", "parts");
                 modelExt = ".bnd";
-                var partsGatheredFiles = Directory.GetFiles(project.DataPath + modelDir, "*", SearchOption.AllDirectories);
+                var partsGatheredFiles = Directory.GetFiles(Path.Join(project.DataPath, modelDir), "*", SearchOption.AllDirectories);
 
                 foreach (var f in partsGatheredFiles)
                 {
@@ -347,7 +347,7 @@ public static class ResourceListLocator
                 return ret;
             }
 
-            var partsFiles = Directory.GetFileSystemEntries(project.DataPath + modelDir, $@"*{modelExt}")
+            var partsFiles = Directory.GetFileSystemEntries(Path.Join(project.DataPath, modelDir), $@"*{modelExt}")
                 .ToList();
 
             foreach (var f in partsFiles)
@@ -357,9 +357,9 @@ public static class ResourceListLocator
                 parts.Add(name);
             }
 
-            if (project.ProjectPath != null && Directory.Exists(project.ProjectPath + modelDir))
+            if (project.ProjectPath != null && Directory.Exists(Path.Join(project.ProjectPath, modelDir)))
             {
-                partsFiles = Directory.GetFileSystemEntries(project.ProjectPath + modelDir, $@"*{modelExt}").ToList();
+                partsFiles = Directory.GetFileSystemEntries(Path.Join(project.ProjectPath, modelDir), $@"*{modelExt}").ToList();
                 foreach (var f in partsFiles)
                 {
                     var name = Path.GetFileNameWithoutExtension(Path.GetFileNameWithoutExtension(f));

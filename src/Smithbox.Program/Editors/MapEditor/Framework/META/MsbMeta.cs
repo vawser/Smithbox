@@ -33,7 +33,7 @@ public class MsbMeta
 
         _MsbMetas = new();
 
-        var metaPath = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{ProjectUtils.GetGameDirectory(Project)}\\Meta";
+        var metaPath = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Project), "Meta");
 
         if (Path.Exists(metaPath))
         {
@@ -41,7 +41,7 @@ public class MsbMeta
             {
                 var rootType = new DirectoryInfo(folder).Name;
 
-                var typeMetaPath = $"{metaPath}\\{rootType}";
+                var typeMetaPath = Path.Join(metaPath, rootType);
 
                 if (Path.Exists(typeMetaPath))
                 {

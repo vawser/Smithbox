@@ -34,7 +34,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplaySubMenu(ModelEditorScreen editor)
         {
-            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Node Groups\\";
+            ExportBasePath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Node Groups");
 
             UpdateNodeGroupList();
 
@@ -94,7 +94,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
-            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Node Groups\\";
+            ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Node Groups");
 
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
@@ -244,7 +244,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
         public static NodeList ReadNodeGroup(string entry)
         {
             var newNodeList = new NodeList();
-            var readPath = $"{ExportBasePath}\\{entry}.json";
+            var readPath = Path.Join(ExportBasePath, $"{entry}.json");
 
             try
             {

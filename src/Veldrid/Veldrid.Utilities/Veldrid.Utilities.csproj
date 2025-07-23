@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageVersion>$(AssemblyVersion)</PackageVersion>
-	<TargetFramework>net8.0-windows</TargetFramework>
+	<TargetFramework>net8.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>12</LangVersion>
   </PropertyGroup>

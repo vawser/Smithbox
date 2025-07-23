@@ -365,5 +365,6 @@ CMakeSettings.json
 
 Dump
 Media
+.DS_Store
 
 Documentation/BB

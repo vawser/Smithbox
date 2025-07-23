@@ -17,13 +17,13 @@ public static class AssetLocator
         ResourceDescriptor ret = new();
 
         if (project.ProjectType == ProjectType.DS1)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.chrbnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.chrbnd"));
         else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"model\chr\{chrId}{postfix}.bnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "chr", $"{chrId}{postfix}.bnd"));
         else if (project.ProjectType == ProjectType.DES)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}\{chrId}{postfix}.chrbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", chrId, $"{chrId}{postfix}.chrbnd.dcx"));
         else
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.chrbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.chrbnd.dcx"));
 
         return ret;
     }
@@ -33,13 +33,13 @@ public static class AssetLocator
         ResourceDescriptor ret = new();
 
         if (project.ProjectType == ProjectType.DS1)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.anibnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.anibnd"));
         else if (project.ProjectType == ProjectType.DS2S || project.ProjectType == ProjectType.DS2)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"model\chr\{chrId}{postfix}.bnd");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("model", "chr", $"{chrId}{postfix}.bnd"));
         else if (project.ProjectType == ProjectType.DES)
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}\{chrId}{postfix}.anibnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", chrId, $"{chrId}{postfix}.anibnd.dcx"));
         else
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.anibnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.anibnd.dcx"));
 
         return ret;
     }
@@ -55,7 +55,7 @@ public static class AssetLocator
         else if (project.ProjectType == ProjectType.DES)
             ret.AssetPath = null;
         else
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.behbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.behbnd.dcx"));
 
         return ret;
     }
@@ -71,7 +71,7 @@ public static class AssetLocator
         else if (project.ProjectType == ProjectType.DES)
             ret.AssetPath = null;
         else
-            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"chr\{chrId}{postfix}.texbnd.dcx");
+            ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("chr", $"{chrId}{postfix}.texbnd.dcx"));
 
         return ret;
     }
@@ -84,13 +84,13 @@ public static class AssetLocator
         {
             if (asset.Length >= 6)
             {
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"asset\aeg\{asset.Substring(0, 6)}\{asset}.geombnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "aeg", asset.Substring(0, 6), $"{asset}.geombnd.dcx"));
             }
         }
         else if (project.ProjectType == ProjectType.AC6)
         {
             if (asset.Length >= 6)
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"asset\environment\geometry\{asset}.geombnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "environment", "geometry", $"{asset}.geombnd.dcx"));
         }
 
         return ret;
@@ -106,13 +106,13 @@ public static class AssetLocator
         {
             if (asset.Length >= 6)
             {
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"asset\aeg\{asset.Substring(0, 6)}\{asset}_{postfix}.geomhkxbnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "aeg", asset.Substring(0, 6), $"{asset}_{postfix}.geomhkxbnd.dcx"));
             }
         }
         else if (project.ProjectType == ProjectType.AC6)
         {
             if (asset.Length >= 6)
-                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"asset\environment\geometry\{asset}_{postfix}.geomhkxbnd.dcx");
+                ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("asset", "environment", "geometry", $"{asset}_{postfix}.geomhkxbnd.dcx"));
         }
 
         return ret;
@@ -122,7 +122,7 @@ public static class AssetLocator
     {
         ResourceDescriptor ret = new();
 
-        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"parts\{part}{postfix}.partsbnd.dcx");
+        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{part}{postfix}.partsbnd.dcx"));
 
         return ret;
     }
@@ -131,7 +131,7 @@ public static class AssetLocator
     {
         ResourceDescriptor ret = new();
 
-        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"parts\{part}{postfix}.tpf.dcx");
+        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("parts", $"{part}{postfix}.tpf.dcx"));
 
         return ret;
     }
@@ -140,7 +140,7 @@ public static class AssetLocator
     {
         ResourceDescriptor ret = new();
 
-        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, $@"map\{dir}\{name}.partsbnd.dcx");
+        ret.AssetPath = LocatorUtils.GetOverridenFilePath(project, Path.Join("map", dir, $"{name}.partsbnd.dcx"));
 
         return ret;
     }

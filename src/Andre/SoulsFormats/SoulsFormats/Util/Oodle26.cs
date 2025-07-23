@@ -56,7 +56,13 @@ namespace SoulsFormats
         /// <param name="lrm">= NULL</param>
         /// <param name="scratchMem">= NULL</param>
         /// <param name="scratchSize">= 0</param>
+#if WINDOWS
         [DllImport("oo2core_6_win64.dll", CallingConvention = CallingConvention.StdCall)]
+#elif OSX
+        [DllImport("liboo2coremac64.2.6.dylib", CallingConvention = CallingConvention.StdCall)]
+#elif LINUX
+        [DllImport("liboo2corelinux64.so.6", CallingConvention = CallingConvention.StdCall)]
+#endif
         private static extern unsafe long OodleLZ_Compress(
             Oodle.OodleLZ_Compressor compressor,
             byte* rawBuf,
@@ -77,7 +83,13 @@ namespace SoulsFormats
 
         /// <param name="compressor">= OodleLZ_Compressor_Invalid</param>
         /// <param name="lzLevel">= OodleLZ_CompressionLevel_Normal</param>
+#if WINDOWS
         [DllImport("oo2core_6_win64.dll", CallingConvention = CallingConvention.StdCall)]
+#elif OSX
+        [DllImport("liboo2coremac64.2.6.dylib", CallingConvention = CallingConvention.StdCall)]
+#elif LINUX
+        [DllImport("liboo2corelinux64.so.6", CallingConvention = CallingConvention.StdCall)]
+#endif
         private static extern IntPtr OodleLZ_CompressOptions_GetDefault(
             Oodle.OodleLZ_Compressor compressor,
             Oodle.OodleLZ_CompressionLevel lzLevel);
@@ -100,7 +112,13 @@ namespace SoulsFormats
         /// <param name="decoderMemory">= NULL</param>
         /// <param name="decoderMemorySize">= 0</param>
         /// <param name="threadPhase">= OodleLZ_Decode_Unthreaded</param>
+#if WINDOWS
         [DllImport("oo2core_6_win64.dll", CallingConvention = CallingConvention.StdCall)]
+#elif OSX
+        [DllImport("liboo2coremac64.2.6.dylib", CallingConvention = CallingConvention.StdCall)]
+#elif LINUX
+        [DllImport("liboo2corelinux64.so.6", CallingConvention = CallingConvention.StdCall)]
+#endif
         private static extern unsafe long OodleLZ_Decompress(
             byte* compBuf,
             long compBufSize,
@@ -124,12 +142,24 @@ namespace SoulsFormats
                 IntPtr.Zero, 0, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, 0, Oodle.OodleLZ_Decode_ThreadPhase.OodleLZ_Decode_Unthreaded);
 
 
+#if WINDOWS
         [DllImport("oo2core_6_win64.dll", CallingConvention = CallingConvention.StdCall)]
+#elif OSX
+        [DllImport("liboo2coremac64.2.6.dylib", CallingConvention = CallingConvention.StdCall)]
+#elif LINUX
+        [DllImport("liboo2corelinux64.so.6", CallingConvention = CallingConvention.StdCall)]
+#endif
         private static extern long OodleLZ_GetCompressedBufferSizeNeeded(
                long rawSize);
 
 
+#if WINDOWS
         [DllImport("oo2core_6_win64.dll", CallingConvention = CallingConvention.StdCall)]
+#elif OSX
+        [DllImport("liboo2coremac64.2.6.dylib", CallingConvention = CallingConvention.StdCall)]
+#elif LINUX
+        [DllImport("liboo2corelinux64.so.6", CallingConvention = CallingConvention.StdCall)]
+#endif
         private static extern long OodleLZ_GetDecodeBufferSize(
             long rawSize,
             [MarshalAs(UnmanagedType.Bool)]

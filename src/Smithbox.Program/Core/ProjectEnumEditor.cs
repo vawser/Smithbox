@@ -324,7 +324,7 @@ public class ProjectEnumEditor
     /// </summary>
     public static void Save()
     {
-        var projectFolder = $@"{TargetProject.ProjectPath}\.smithbox\Project\";
+        var projectFolder = Path.Join(TargetProject.ProjectPath, ".smithbox", "Project");
         var projectFile = Path.Combine(projectFolder, "Shared Param Enums.json");
 
         var json = JsonSerializer.Serialize(TargetProject.ProjectEnums, SmithboxSerializerContext.Default.ProjectEnumResource);

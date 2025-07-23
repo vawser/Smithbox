@@ -153,7 +153,9 @@ public sealed class QueuedTaskScheduler : TaskScheduler, IDisposable
             if (threadName != null)
                 _threads[i].Name = threadName + " (" + i + ")";
 
+#if WINDOWS
             _threads[i].SetApartmentState(threadApartmentState);
+#endif //! else all MTA 
         }
 
         // Start all of the threads
