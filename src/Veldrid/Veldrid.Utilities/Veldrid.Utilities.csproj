@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageVersion>$(AssemblyVersion)</PackageVersion>
-	<TargetFramework>net8.0-windows</TargetFramework>
+	<TargetFramework>net8.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>12</LangVersion>
   </PropertyGroup>
@@ -20,7 +20,12 @@
     <PackageTags>Core Standard Game Graphics</PackageTags>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+  <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+    <DefineConstants>RELEASE</DefineConstants>
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 

@@ -1353,7 +1353,7 @@ public class MapActionHandler
 
     public void ApplyEntityGroupIdChange(string mapid)
     {
-        var filepath = $"{Editor.Project.ProjectPath}\\map\\MapStudio\\{mapid}.msb.dcx";
+        var filepath = Path.Join(Editor.Project.ProjectPath, "map", "MapStudio", $"{mapid}.msb.dcx");
 
         // Armored Core
         if (Editor.Project.ProjectType == ProjectType.AC6)
@@ -1698,7 +1698,7 @@ public class MapActionHandler
     {
         var list = new List<MapObjectNameInfo>();
 
-        var dir = $"{AppContext.BaseDirectory}\\Assets\\MSB\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\namelist.csv";
+        var dir = Path.Join(AppContext.BaseDirectory, "Assets", "MSB", ProjectUtils.GetGameDirectory(Editor.Project), "namelist.csv");
 
         if (File.Exists(dir))
         {

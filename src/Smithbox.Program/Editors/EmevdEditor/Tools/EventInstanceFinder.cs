@@ -101,7 +101,11 @@ public class EventInstanceFinder
             tasks.Add(newTask);
         }
 
+#if NET9_0_OR_GREATER
         Task.WaitAll(tasks);
+#else
+        Task.WaitAll(tasks.ToArray());
+#endif
 
         foreach (var entry in Project.EmevdData.PrimaryBank.Scripts)
         {

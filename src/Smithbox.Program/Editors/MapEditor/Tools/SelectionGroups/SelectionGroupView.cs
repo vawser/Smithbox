@@ -120,8 +120,8 @@ public class SelectionGroupView
         if (Editor.Project.ProjectType == ProjectType.Undefined)
             return false;
 
-        var SelectionDirectory = $"{Editor.Project.ProjectPath}\\.smithbox\\{ProjectUtils.GetGameDirectory(Editor.Project)}\\selections";
-        var SelectionPath = $"{SelectionDirectory}\\selection_groups.json";
+        var SelectionDirectory = Path.Join(Editor.Project.ProjectPath, ".smithbox", ProjectUtils.GetGameDirectory(Editor.Project), "selections");
+        var SelectionPath = Path.Join(SelectionDirectory, "selection_groups.json");
 
         string jsonString = JsonSerializer.Serialize(Editor.Project.MapEntitySelections, SmithboxSerializerContext.Default.EntitySelectionGroupList);
 
