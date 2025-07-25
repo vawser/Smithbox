@@ -318,40 +318,21 @@ public class DebugTools
 
     public void QuickTest()
     {
-        var sourcePath = @"F:\SteamLibrary\steamapps\common\ELDEN RING\Game\parts";
-        var outputPath = @"G:\Modding\Nightreign\NR-Armor-Ports\parts\output";
-        var mappingCsv = @"G:\Modding\Nightreign\NR-Armor-Ports\parts\mappings.csv";
-        Dictionary<string, string> mappingDict = new();
-        var csv = File.ReadAllText(mappingCsv);
-        var mappings = csv.Split("\n");
-        foreach (var entry in mappings)
+        var project = BaseEditor.ProjectManager.SelectedProject;
+        foreach(var entry in project.ParamData.PrimaryBank.Params)
         {
-            var parts = entry.Split(";");
-            if (parts.Length > 2)
-            {
-                mappingDict.Add(parts[0], parts[1]);
-            }
-        }
-        List<string> partList = new List<string>() { "hd", "bd", "am", "lg" };
-        List<string> qualityList = new List<string>() { "", "_l" };
+            var paramRowIdList = new List<int>();
 
-        // Port each part from ER, rename to the new NR suitable ID
-        foreach (var entry in mappingDict)
-        {
-            var sourceId = entry.Key;
-            var targetId = entry.Value;
-            foreach (var part in partList)
+            foreach(var row in entry.Value.Rows)
             {
-                foreach (var qual in qualityList)
+                if(paramRowIdList.Contains(row.ID))
                 {
-                    var sourceName = $"{part}_m_{sourceId}{qual}";
-                    var targetName = $"{part}_m_{targetId}{qual}";
-                    var readPath = @$"{sourcePath}\{sourceName}.partsbnd.dcx";
-                    var writePath = @$"{outputPath}\{targetName}.partsbnd.dcx";
-                    if (File.Exists(readPath))
-                    {
-                        File.Copy(readPath, writePath, true);
-                    }
+                    TaskLogs.AddLog($"Indexed Param: {entry.Key}");
+                    break;
+                }
+                else
+                {
+                    paramRowIdList.Add(row.ID);
                 }
             }
         }

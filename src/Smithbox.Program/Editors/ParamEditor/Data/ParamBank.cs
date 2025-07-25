@@ -2155,6 +2155,46 @@ public class ParamBank
     }
     #endregion
 
+    /// <summary>
+    /// These are params that use indexes for implied behavior.
+    /// Used to determine which param name lists are imported by index.
+    /// </summary>
+
+    public List<string> IndexedParams_ER = new List<string>()
+    {
+        "RandomAppearParam"
+    };
+
+    public List<string> IndexedParams_AC6 = new List<string>()
+    {
+        "MenuColorTableParam",
+        "MenuValueTableParam",
+        "NpcMaterialParam",
+        "RuntimeSoundExpressionParam_Npc",
+        "RuntimeSoundExpressionParam_Pc",
+        "RuntimeSoundParam_Npc",
+        "RuntimeSoundParam_Pc",
+        "TankArmourParam",
+        "TankWheelModelParam",
+        "TankWheelParam",
+        "ThrustersLocomotionParam_PC",
+        "ThrustersParam_NPC",
+        "ThrustersParam_PC"
+    };
+
+    public List<string> IndexedParams_NR = new List<string>()
+    {
+        "AttachEffectTableParam",
+        "ItemTableParam",
+        "MagicTableParam",
+        "MenuColorTableParam",
+        "MenuValueTableParam",
+        "NPCBotTableParam",
+        "RandomAppearParam",
+        "SwordArtsTableParam"
+    };
+
+
     #region Row Name Strip / Restore
     /// <summary>
     /// Strip and store the row names for this param bank
@@ -2401,6 +2441,52 @@ public class ParamBank
                         }
                     }
                 }
+                // Used during the automatic name import
+                // Imports row names by ID by default, but for specific params imports them by Index
+                else if(importType is ImportRowNameType.AutoImport)
+                {
+                    var indexImport = false;
+
+                    if(Project.ProjectType is ProjectType.ER)
+                    {
+                        if(IndexedParams_ER.Contains(p.Key))
+                        {
+                            indexImport = true;
+                        }
+                    }
+                    if (Project.ProjectType is ProjectType.AC6)
+                    {
+                        if (IndexedParams_AC6.Contains(p.Key))
+                        {
+                            indexImport = true;
+                        }
+                    }
+                    if (Project.ProjectType is ProjectType.NR)
+                    {
+                        if (IndexedParams_NR.Contains(p.Key))
+                        {
+                            indexImport = true;
+                        }
+                    }
+
+                    if(indexImport)
+                    {
+                        if (rowNameDict.ContainsKey(i))
+                        {
+                            p.Value.Rows[i].Name = rowNameDict[i].Name;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var entry in rowNames.Entries)
+                        {
+                            if (entry.ID == p.Value.Rows[i].ID)
+                            {
+                                p.Value.Rows[i].Name = entry.Name;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -2567,7 +2653,8 @@ public class ParamBank
     public enum ImportRowNameType
     {
         Index,
-        ID
+        ID,
+        AutoImport
     }
 
     public enum ImportRowNameSourceType

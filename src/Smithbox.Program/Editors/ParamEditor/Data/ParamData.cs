@@ -118,16 +118,7 @@ public class ParamData
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                // These two rely on row index significantly, so we should always import the default names via that for them.
-                if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
-                {
-                    PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
-                }
-                // Where other games either never or very rarely use it, so use the more flexible ID import
-                else
-                {
-                    PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
-                }
+                PrimaryBank.ImportRowNames(ImportRowNameType.AutoImport, ImportRowNameSourceType.Community);
             }
 
             Project.ImportedParamRowNames = true;
