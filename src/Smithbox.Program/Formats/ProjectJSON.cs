@@ -220,8 +220,9 @@ public class LegacyProjectJSON
     public ProjectType GameType { get; set; }
 
     public List<string> PinnedParams { get; set; }
-    public List<string> PinnedRows { get; set; }
-    public List<string> PinnedFields { get; set; }
+    public Dictionary<string, List<int>> PinnedRows { get; set; }
+    public Dictionary<string, List<string>> PinnedFields { get; set; }
+
     public bool UseLooseParams { get; set; }
     public bool PartialParams { get; set; }
     public string LastFmgLanguageUsed { get; set; }
