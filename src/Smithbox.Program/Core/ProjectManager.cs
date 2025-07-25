@@ -526,13 +526,17 @@ public class ProjectManager
     {
         var jsonPath = $"{curProject.ProjectPath}/project.json";
 
-        if(Directory.Exists(curProject.ProjectPath))
+        // Only create this if it doesn't already exist
+        if (!File.Exists(jsonPath))
         {
-            var legacyProjectJson = new LegacyProjectJSON(curProject);
+            if (Directory.Exists(curProject.ProjectPath))
+            {
+                var legacyProjectJson = new LegacyProjectJSON(curProject);
 
-            var json = JsonSerializer.Serialize(legacyProjectJson, SmithboxSerializerContext.Default.LegacyProjectJSON);
+                var json = JsonSerializer.Serialize(legacyProjectJson, SmithboxSerializerContext.Default.LegacyProjectJSON);
 
-            File.WriteAllText(jsonPath, json);
+                File.WriteAllText(jsonPath, json);
+            }
         }
     }
 }
