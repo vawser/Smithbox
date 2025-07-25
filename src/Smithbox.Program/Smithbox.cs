@@ -89,6 +89,7 @@ public class Smithbox
 
         _soapstoneService = new(this, version);
 
+        DPI.UpdateDpi(_context);
         SetupImGui();
         SetupFonts();
 
