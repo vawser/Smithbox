@@ -352,7 +352,6 @@ public class ProjectManager
             var json = JsonSerializer.Serialize(curProject, SmithboxSerializerContext.Default.ProjectEntry);
 
             File.WriteAllText(file, json);
-
         }
     }
 
@@ -555,6 +554,7 @@ public class ProjectManager
                     curProject.PinnedRows = project.PinnedRows;
                     curProject.PinnedFields = project.PinnedFields;
                     curProject.PinnedParams = project.PinnedParams;
+                    return;
                 }
                 catch (Exception e)
                 {
@@ -563,17 +563,15 @@ public class ProjectManager
                 }
             }
         }
-        else
+
+        if (!File.Exists(jsonPath) && Directory.Exists(curProject.ProjectPath))
         {
-            if (!File.Exists(jsonPath) && Directory.Exists(curProject.ProjectPath))
-            {
-                var legacyProjectJson = new LegacyProjectJSON(curProject);
+            var legacyProjectJson = new LegacyProjectJSON(curProject);
 
-                var json = JsonSerializer.Serialize(legacyProjectJson,
-                    SmithboxSerializerContext.Default.LegacyProjectJSON);
+            var json = JsonSerializer.Serialize(legacyProjectJson,
+                SmithboxSerializerContext.Default.LegacyProjectJSON);
 
-                File.WriteAllText(jsonPath, json);
-            }
+            File.WriteAllText(jsonPath, json);
         }
     }
 }
