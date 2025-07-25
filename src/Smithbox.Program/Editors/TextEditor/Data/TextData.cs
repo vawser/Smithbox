@@ -37,6 +37,7 @@ public class TextData
         var msgbndDictionary = new FileDictionary();
         msgbndDictionary.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/msg"))
             .Where(e => e.Extension == "msgbnd")
             .ToList();
 
@@ -47,6 +48,7 @@ public class TextData
         {
             fmgDictionary.Entries = Project.FileDictionary.Entries
                 .Where(e => e.Archive != "sd")
+                .Where(e => e.Folder.StartsWith("/menu/text"))
                 .Where(e => e.Extension == "fmg").ToList();
         }
 

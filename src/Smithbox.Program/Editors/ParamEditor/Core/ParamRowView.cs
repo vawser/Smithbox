@@ -509,7 +509,7 @@ public class ParamRowView
         List<(HashSet<int>, HashSet<int>)> auxDiffCaches, FmgRowDecorator fmgDecorator, ref float scrollTo,
         bool doFocus, bool isPinned, Param.Column compareCol, PropertyInfo compareColProp, ParamMeta meta)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (CFG.Current.UI_CompactParams)
         {

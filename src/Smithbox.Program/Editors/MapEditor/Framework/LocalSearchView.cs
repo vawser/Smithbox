@@ -123,7 +123,7 @@ public class LocalSearchView
 
         }
 
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.GetUIScale());
+        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.UIScale());
 
         if (ImGui.Button("Search", buttonSize))
         {

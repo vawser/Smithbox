@@ -125,7 +125,7 @@ public class MassEditHandler
 
     public void DisplayMassEditPopupWindow()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         // Popup size relies on magic numbers. Multiline maxlength is also arbitrary.
         if (ImGui.BeginPopup("massEditMenuRegex"))
@@ -297,7 +297,7 @@ public class MassEditHandler
             UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Input:");
 
             ImGui.InputTextMultiline("##MEditRegexInput", ref CurrentInput, 65536,
-            new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+            new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
 
             if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
             {
@@ -412,7 +412,7 @@ public class MassEditHandler
 
             UIHelper.WrappedText("Script:");
             UIHelper.Tooltip("The mass edit script.");
-            ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+            ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
             UIHelper.WrappedText("");
 
             if (ImGui.Button("Save", halfButtonSize))

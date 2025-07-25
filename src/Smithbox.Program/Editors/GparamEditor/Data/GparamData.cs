@@ -30,6 +30,7 @@ public class GparamData
 
         GparamFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/param/drawparam"))
             .Where(e => e.Extension == "gparam")
             .ToList();
 

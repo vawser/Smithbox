@@ -35,16 +35,36 @@ public class TimeActData
         await Task.Yield();
 
         var chrBndDictionary = new FileDictionary();
-        chrBndDictionary.Entries = Project.FileDictionary.Entries
-            .Where(e => e.Archive != "sd")
-            .Where(e => e.Extension == "anibnd")
-            .ToList();
+        chrBndDictionary.Entries = new List<FileDictionaryEntry>();
+
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            chrBndDictionary.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Folder.StartsWith("/morpheme4/chr"))
+                .Where(e => e.Extension == "anibnd")
+                .ToList();
+        }
+        else
+        {
+            chrBndDictionary.Entries = Project.FileDictionary.Entries
+                .Where(e => e.Archive != "sd")
+                .Where(e => e.Folder.StartsWith("/chr"))
+                .Where(e => e.Extension == "anibnd")
+                .ToList();
+        }
 
         var looseDictionary = new FileDictionary();
-        looseDictionary.Entries = Project.FileDictionary.Entries
+        looseDictionary.Entries = new List<FileDictionaryEntry>();
+
+        if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
+        {
+            looseDictionary.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+                .Where(e => e.Folder.StartsWith("/timeact/chr"))
             .Where(e => e.Extension == "tae")
             .ToList();
+        }
 
         TimeActFiles = ProjectUtils.MergeFileDictionaries(chrBndDictionary, looseDictionary);
 

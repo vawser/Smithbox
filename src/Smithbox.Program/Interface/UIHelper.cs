@@ -12,9 +12,10 @@ using System.Threading.Tasks;
 namespace StudioCore.Interface;
 public static class UIHelper
 {
+
     public static void ApplyBaseStyle()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         ImGuiStylePtr style = ImGui.GetStyle();
 
         // Colors

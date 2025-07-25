@@ -177,7 +177,7 @@ public class FieldNameFinder
             UIHelper.WrappedText($"Param: Row Name");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
 
             foreach (var result in Results)
             {
@@ -495,7 +495,7 @@ public class FieldValueFinder
             UIHelper.WrappedText($"Param: Row ID: Field Name: Field Value");
 
             ImGui.BeginChild($"##resultSection_{imguiID}", 
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
             
             foreach (var result in Results)
             {
@@ -749,7 +749,7 @@ public class RowIDFinder
             UIHelper.WrappedText($"Param:");
 
             ImGui.BeginChild($"##resultSection_{imguiID}", 
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
 
             foreach (var result in Results)
             {
@@ -942,7 +942,7 @@ public class RowNameFinder
             UIHelper.WrappedText($"Param: Row Name");
 
             ImGui.BeginChild($"##resultSection_{imguiID}",
-                new Vector2(EditX * DPI.GetUIScale(), EditY * DPI.GetUIScale()));
+                new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
 
             foreach (var result in Results)
             {

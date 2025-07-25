@@ -392,7 +392,7 @@ public class WorldMapView : IResourceEventListener
                 tileBottomRight *= MapZoomFactor;
 
                 // Apply scroll and window offsets (convert to screen space)
-                Vector2 imageTopLeftScreen = TextureViewWindowPosition - TextureViewScrollPosition + new Vector2(3 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+                Vector2 imageTopLeftScreen = TextureViewWindowPosition - TextureViewScrollPosition + new Vector2(3 * DPI.UIScale(), 24 * DPI.UIScale());
 
                 Vector2 drawStart = imageTopLeftScreen + tileTopLeft;
                 Vector2 drawEnd = imageTopLeftScreen + tileBottomRight;
@@ -605,7 +605,7 @@ public class WorldMapView : IResourceEventListener
 
     private Vector2 GetRelativePositionWindowOnly(Vector2 windowPos)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         Vector2 relativePos = new Vector2(0, 0);
 
@@ -724,13 +724,13 @@ public class WorldMapView : IResourceEventListener
     }
     private Vector2 GetDefaultZoomLevel()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         return new Vector2(float.Round(0.2f * scale, 1), float.Round(0.2f * scale, 1));
     }
 
     private Vector2 GetRelativePosition(Vector2 windowPos, Vector2 scrollPos)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         Vector2 relativePos = new Vector2(0, 0);
 

@@ -192,8 +192,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.GetUIScale());
-        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.GetUIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.UIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.UIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -383,7 +383,7 @@ public class Smithbox
     {
         DPI.UpdateDpi(_context);
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (FontRebuildRequest)
         {

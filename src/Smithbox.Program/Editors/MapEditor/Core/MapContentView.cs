@@ -192,7 +192,7 @@ public class MapContentView
 
         if (nodeopen)
         {
-            var scale = DPI.GetUIScale();
+            var scale = DPI.UIScale();
             ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(8.0f, 3.0f) * scale);
 
             if (ContentViewType is MapContentViewType.ObjectType)
@@ -493,7 +493,7 @@ public class MapContentView
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
-                                                            18.0f * DPI.GetUIScale());
+                                                            18.0f * DPI.UIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -525,7 +525,7 @@ public class MapContentView
                                         var visible = parent.EditorVisible;
                                         ImGui.SameLine();
                                         ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X -
-                                                            18.0f * DPI.GetUIScale());
+                                                            18.0f * DPI.UIScale());
                                         ImGui.PushStyleColor(ImGuiCol.Text, visible
                                             ? new Vector4(1.0f, 1.0f, 1.0f, 1.0f)
                                             : new Vector4(0.6f, 0.6f, 0.6f, 1.0f));
@@ -575,7 +575,7 @@ public class MapContentView
     /// </summary>
     private unsafe void MapObjectSelectable(Entity e, bool visicon, bool hierarchial = false)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         // Main selectable
         if (e is MsbEntity me)
@@ -662,7 +662,7 @@ public class MapContentView
             ImGui.SameLine();
 
             float iconWidth = ImGui.CalcTextSize(Icons.Eye).X;
-            float iconPadding = 2.0f * DPI.GetUIScale(); // optional small gap
+            float iconPadding = 2.0f * DPI.UIScale(); // optional small gap
             float rightAlignPos = ImGui.GetCursorPosX() + ImGui.GetContentRegionAvail().X - iconWidth - iconPadding;
 
             ImGui.SetCursorPosX(rightAlignPos);

@@ -39,7 +39,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     public void OnGui()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (CFG.Current.Interface_MapEditor_MapList)
         {

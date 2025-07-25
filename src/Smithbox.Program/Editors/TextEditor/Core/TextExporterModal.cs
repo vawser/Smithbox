@@ -40,8 +40,8 @@ public class TextExporterModal
     {
         if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            var width = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-            var buttonSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+            var width = new Vector2(520 * DPI.UIScale(), 24 * DPI.UIScale());
+            var buttonSize = new Vector2(260 * DPI.UIScale(), 24 * DPI.UIScale());
 
             ImGui.Text("Name");
             ImGui.SetNextItemWidth(width.X);

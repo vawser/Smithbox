@@ -31,7 +31,7 @@ public static class GlobalTextSearch
         var windowWidth = ImGui.GetWindowWidth();
         var defaultButtonSize = new Vector2(windowWidth, 32);
 
-        var buttonSize = new Vector2(windowWidth / 2, 32 * DPI.GetUIScale());
+        var buttonSize = new Vector2(windowWidth / 2, 32 * DPI.UIScale());
 
         if (ImGui.BeginTable($"globalSearchTable", 2, ImGuiTableFlags.SizingFixedFit))
         {

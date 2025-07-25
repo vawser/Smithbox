@@ -123,7 +123,7 @@ public class ModelEditorScreen : EditorScreen
         if (Project.IsInitializing)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         // Docking setup
         Vector2 wins = ImGui.GetWindowSize();

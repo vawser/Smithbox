@@ -58,8 +58,8 @@ public class TextNewEntryCreationModal
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
 
-            var buttonSize = new Vector2(520 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
-            var halfButtonSize = new Vector2(260 * DPI.GetUIScale(), 24 * DPI.GetUIScale());
+            var buttonSize = new Vector2(520 * DPI.UIScale(), 24 * DPI.UIScale());
+            var halfButtonSize = new Vector2(260 * DPI.UIScale(), 24 * DPI.UIScale());
 
             if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -522,7 +522,7 @@ public class TextNewEntryCreationModal
         int tableWidth = 520;
 
         var textboxHeight = 100;
-        var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.GetUIScale();
+        var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.UIScale();
 
         if (ImGui.BeginTable($"fmgNewTable{index}", 2, ImGuiTableFlags.SizingFixedFit))
         {

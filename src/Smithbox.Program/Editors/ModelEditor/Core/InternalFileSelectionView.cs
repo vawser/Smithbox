@@ -32,7 +32,7 @@ public class InternalFileSelectionView
 
     public void Display()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (!CFG.Current.Interface_ModelEditor_AssetBrowser)
             return;

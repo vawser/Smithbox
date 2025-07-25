@@ -112,7 +112,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         EditorShortcuts.Shortcuts();
 
