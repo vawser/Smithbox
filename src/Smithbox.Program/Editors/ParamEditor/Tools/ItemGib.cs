@@ -216,6 +216,8 @@ public class ItemGib
                     props.ReinforceLvl = Convert.ToInt32(activeRow["reinforceLv"].Value.Value);
                     props.GemId = activeRow["gemId"].Value.Value as int? ?? -1;
                     break;
+                default:
+                    return; // Unsupported param type for Item Gib
             }
 
 
