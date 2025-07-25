@@ -105,7 +105,7 @@
             "WetAspectParam:0x1420",
             "Wind:0xA48"
           ],
-          "itemGibOffsets": [
+          "itemIDCategories": [
             "EquipParamWeapon:0x0",
             "EquipParamProtector:0x10000000",
             "EquipParamAccessory:0x20000000",

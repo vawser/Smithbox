@@ -1,4 +1,4 @@
-﻿using Andre.Formats;
+using Andre.Formats;
 using Microsoft.Extensions.Logging;
 using ProcessMemoryUtilities.Managed;
 using ProcessMemoryUtilities.Native;
@@ -232,18 +232,17 @@ public class SoulsMemoryHandler
     }
 
 
-    public void ExecuteFunction(byte[] array)
+    public void ExecuteCode(byte[] code)
     {
-        nint buffer = 0x100;
-
-        var address = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, buffer,
+        var codeSize = code.Length;
+        var codeAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, codeSize,
             AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
 
-        if (address != nint.Zero)
+        if (codeAddress != nint.Zero)
         {
-            if (WriteProcessMemoryArray(address, array))
+            if (WriteProcessMemoryArray(codeAddress, code))
             {
-                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
+                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, codeAddress,
                     nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
                 if (threadHandle != nint.Zero)
                 {
@@ -251,54 +250,22 @@ public class SoulsMemoryHandler
                 }
             }
 
-            NativeWrapper.VirtualFreeEx(memoryHandle, address, buffer, FreeType.PreservePlaceholder);
-        }
-    }
-
-    public void ExecuteBufferFunction(byte[] array, byte[] argument)
-    {
-        var Size1 = 0x100;
-        var Size2 = 0x100;
-
-        var address = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, Size1,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
-        var bufferAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, Size2,
-            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ExecuteReadWrite);
-
-        var bytjmp = 0x2;
-        var bytjmpAr = new byte[7];
-
-        WriteProcessMemoryArray(bufferAddress, argument);
-
-        bytjmpAr = BitConverter.GetBytes(bufferAddress);
-        Array.Copy(bytjmpAr, 0, array, bytjmp, bytjmpAr.Length);
-
-        if (address != nint.Zero)
-        {
-            if (WriteProcessMemoryArray(address, array))
-            {
-                var threadHandle = NativeWrapper.CreateRemoteThread(memoryHandle, nint.Zero, 0, address,
-                    nint.Zero, ThreadCreationFlags.Immediately, out var threadId);
-
-                if (threadHandle != nint.Zero)
-                {
-                    Kernel32.WaitForSingleObject(threadHandle, 30000);
-                }
-            }
-
-            NativeWrapper.VirtualFreeEx(memoryHandle, address, Size1, FreeType.PreservePlaceholder);
-            NativeWrapper.VirtualFreeEx(memoryHandle, address, Size2, FreeType.PreservePlaceholder);
+            NativeWrapper.VirtualFreeEx(memoryHandle, codeAddress, 0, FreeType.Release);
         }
     }
 
     public void RequestReloadChr(string chrName)
     {
         var chrNameBytes = Encoding.Unicode.GetBytes(chrName);
+        var argSize = chrNameBytes.Length;
+        var argAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, argSize,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
 
-        var memoryWriteBuffer = true;
-        WriteProcessMemory(gameProcess.MainModule.BaseAddress + 0x4768F7F, ref memoryWriteBuffer);
+        if (argAddress == nint.Zero) return;
 
-        byte[] buffer =
+        WriteProcessMemoryArray(argAddress, chrNameBytes);
+
+        byte[] code =
         {
             0x48, 0xBA, 0, 0, 0, 0, 0, 0, 0, 0, //mov rdx,Alloc
             0x48, 0xA1, 0x78, 0x8E, 0x76, 0x44, 0x01, 0x00, 0x00, 0x00, //mov rax,[144768E78]
@@ -310,86 +277,139 @@ public class SoulsMemoryHandler
             0xC3 //ret
         };
 
-        ExecuteBufferFunction(buffer, chrNameBytes);
+        var addrBytes = BitConverter.GetBytes((long)argAddress);
+        Buffer.BlockCopy(addrBytes, 0, code, 2, addrBytes.Length);
+
+        var memoryWriteBuffer = true;
+        WriteProcessMemory(gameProcess.MainModule.BaseAddress + 0x4768F7F, ref memoryWriteBuffer);
+
+        ExecuteCode(code);
+
+        NativeWrapper.VirtualFreeEx(memoryHandle, argAddress, 0, FreeType.Release);
     }
 
-    internal void PlayerItemGive(GameOffsetBaseEntry entry, List<Param.Row> rows, string paramDefParamType,
-        int itemQuantityReceived = 1, int itemDurabilityReceived = -1, int upgradeLevelItemToGive = 0)
+    internal void PlayerItemGive_DS3(List<int> itemIds, int itemQuantity = 1, int itemDurability = -1)
     {
-        // ItemGib - DS3
-        if (Editor.Project.ProjectType is ProjectType.DS3)
+        if (Editor.Project.ProjectType is not ProjectType.DS3 || !itemIds.Any())
+            return;
+
+        var intListProcessing = new List<int> { 0, 0, 0, 0, itemIds.Count };
+        foreach (var itemId in itemIds)
         {
-            //Thanks Church Guard for providing the foundation of this.
-            //Only supports ds3 as of now
-            if (entry.itemGibOffsets.ContainsKey(paramDefParamType) && rows.Any())
-            {
-                var paramOffset = entry.itemGibOffsets[paramDefParamType];
-
-                List<int> intListProcessing = new();
-
-                //Padding? Supposedly?
-                intListProcessing.Add(0);
-                intListProcessing.Add(0);
-                intListProcessing.Add(0);
-                intListProcessing.Add(0);
-                //Items to give amount
-                intListProcessing.Add(rows.Count());
-
-                foreach (Param.Row row in rows)
-                {
-                    intListProcessing.Add(row.ID + paramOffset + upgradeLevelItemToGive);
-                    intListProcessing.Add(itemQuantityReceived);
-                    intListProcessing.Add(itemDurabilityReceived);
-                }
-
-                //ItemGib ASM in byte format
-                byte[] itemGibByteFunctionDS3 =
-                {
-                0x48, 0x83, 0xEC, 0x48, 0x4C, 0x8D, 0x01, 0x48, 0x8D, 0x51, 0x10, 0x48, 0xA1, 0x00, 0x23, 0x75,
-                0x44, 0x01, 0x00, 0x00, 0x00, 0x48, 0x8B, 0xC8, 0xFF, 0x15, 0x02, 0x00, 0x00, 0x00, 0xEB, 0x08,
-                0x70, 0xBA, 0x7B, 0x40, 0x01, 0x00, 0x00, 0x00, 0x48, 0x83, 0xC4, 0x48, 0xC3
-            };
-
-                //ItemGib Arguments Int Array
-                var itemGibArgumentsIntArray = new int[intListProcessing.Count()];
-                intListProcessing.CopyTo(itemGibArgumentsIntArray);
-
-                //Copy itemGibArgumentsIntArray's Bytes into a byte array
-                var itemGibArgumentsByteArray = new byte[Buffer.ByteLength(itemGibArgumentsIntArray)];
-                Buffer.BlockCopy(itemGibArgumentsIntArray, 0, itemGibArgumentsByteArray, 0,
-                    itemGibArgumentsByteArray.Length);
-
-                //Allocate Memory for ItemGib and Arguments
-                var itemGibByteFunctionPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
-                    Buffer.ByteLength(itemGibByteFunctionDS3), AllocationType.Commit | AllocationType.Reserve,
-                    MemoryProtectionFlags.ExecuteReadWrite);
-                var itemGibArgumentsPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0,
-                    Buffer.ByteLength(itemGibArgumentsIntArray), AllocationType.Commit | AllocationType.Reserve,
-                    MemoryProtectionFlags.ExecuteReadWrite);
-
-                //Write ItemGib Function and Arguments into the previously allocated memory
-                NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibByteFunctionPtr, itemGibByteFunctionDS3);
-                NativeWrapper.WriteProcessMemoryArray(memoryHandle, itemGibArgumentsPtr, itemGibArgumentsByteArray);
-
-                //Create a new thread at the copied ItemGib function in memory
-
-                NativeWrapper.WaitForSingleObject(
-                    NativeWrapper.CreateRemoteThread(memoryHandle, itemGibByteFunctionPtr, itemGibArgumentsPtr), 30000);
-
-
-                //Frees memory used by the ItemGib function and it's arguments
-                NativeWrapper.VirtualFreeEx(memoryHandle, itemGibByteFunctionPtr,
-                    Buffer.ByteLength(itemGibByteFunctionDS3), FreeType.PreservePlaceholder);
-                NativeWrapper.VirtualFreeEx(memoryHandle, itemGibArgumentsPtr,
-                    Buffer.ByteLength(itemGibArgumentsIntArray), FreeType.PreservePlaceholder);
-            }
+            intListProcessing.Add(itemId);
+            intListProcessing.Add(itemQuantity);
+            intListProcessing.Add(itemDurability);
         }
 
-        // ItemGib - ER
-        if (Editor.Project.ProjectType is ProjectType.ER)
+        var itemGibArgumentsByteArray = new byte[Buffer.ByteLength(intListProcessing.ToArray())];
+        Buffer.BlockCopy(intListProcessing.ToArray(), 0, itemGibArgumentsByteArray, 0, itemGibArgumentsByteArray.Length);
+
+        var argAddress = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, itemGibArgumentsByteArray.Length,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
+
+        if (argAddress == nint.Zero) return;
+
+        WriteProcessMemoryArray(argAddress, itemGibArgumentsByteArray);
+
+        byte[] code =
         {
-            //var MapItemMan = "48 8B 0D ?? ?? ?? ?? C7 44 24 50 FF FF FF FF";
-            //var addr = "41 0F B6 F9 41 8B E8"; // Find offset, then minus 0x31
+            0x48, 0x83, 0xEC, 0x48, // sub rsp, 48h
+            0x48, 0xB9, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // mov rcx, p_arg_struct
+            0x48, 0x8B, 0x09, // mov rcx, [rcx]
+            0x48, 0x8D, 0x51, 0x10, // lea rdx, [rcx+10h]
+            0x48, 0xB8, 0x78, 0x55, 0x9A, 0x42, 0x01, 0x00, 0x00, 0x00, // mov rax, [GAME.EXE+29A5578]
+            0x48, 0x8B, 0x00, // mov rax, [rax]
+            0xFF, 0x15, 0x02, 0x00, 0x00, 0x00, 0xEB, 0x08, 0x90, 0x36, // call qword ptr [rip+8] | jmp over address
+            0x85, 0x40, 0x01, 0x00, 0x00, 0x00, // address of ItemGibFunc
+            0x48, 0x83, 0xC4, 0x48, // add rsp, 48h
+            0xC3 // ret
+        };
+
+        var addrBytes = BitConverter.GetBytes((long)argAddress);
+        Buffer.BlockCopy(addrBytes, 0, code, 6, addrBytes.Length);
+
+        ExecuteCode(code);
+
+        NativeWrapper.VirtualFreeEx(memoryHandle, argAddress, 0, FreeType.Release);
+    }
+
+    internal void PlayerItemGive_ER(GameOffsetBaseEntry entry, List<int> itemIds, int itemQuantity = 1, int gemId = -1)
+    {
+        if (Editor.Project.ProjectType is not ProjectType.ER || !itemIds.Any())
+            return;
+
+        const int maxItems = 10;
+        var itemCount = Math.Min(itemIds.Count, maxItems);
+
+        var itemTable = new byte[4 + maxItems * 16];
+        BitConverter.GetBytes(itemCount).CopyTo(itemTable, 0);
+        for (var i = 0; i < itemCount; i++)
+        {
+            var itemId = itemIds[i];
+            BitConverter.GetBytes(itemId).CopyTo(itemTable, 4 + i * 16 + 0);
+            BitConverter.GetBytes(itemQuantity).CopyTo(itemTable, 4 + i * 16 + 4);
+            BitConverter.GetBytes(-1).CopyTo(itemTable, 4 + i * 16 + 8);
+            BitConverter.GetBytes(gemId).CopyTo(itemTable, 4 + i * 16 + 12);
         }
+
+        var itemTablePtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0, itemTable.Length,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
+        if (itemTablePtr == nint.Zero) return;
+        WriteProcessMemoryArray(itemTablePtr, itemTable);
+
+        var statusStruct = new int[3] { -1, 0, 0 };
+        var statusStructBytes = new byte[12];
+        Buffer.BlockCopy(statusStruct, 0, statusStructBytes, 0, 12);
+        var statusStructPtr = NativeWrapper.VirtualAllocEx(memoryHandle, 0, 12,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
+        if (statusStructPtr == nint.Zero)
+        {
+            NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
+            return;
+        }
+        WriteProcessMemoryArray(statusStructPtr, statusStructBytes);
+
+        var itemGiveFuncPtr = GetBaseAddress() + entry.ERItemGiveFuncOffset ?? throw new InvalidOperationException("ERItemGiveFuncOffset is not set in GameOffsetBaseEntry.");
+        var mapItemManPtr = GetBaseAddress() + entry.ERMapItemManOffset ?? throw new InvalidOperationException("ERMapItemManOffset is not set in GameOffsetBaseEntry.");
+
+        var argBuffer = new byte[32];
+        BitConverter.GetBytes((long)mapItemManPtr).CopyTo(argBuffer, 0);
+        BitConverter.GetBytes((long)itemTablePtr).CopyTo(argBuffer, 8);
+        BitConverter.GetBytes((long)statusStructPtr).CopyTo(argBuffer, 16);
+        BitConverter.GetBytes((long)itemGiveFuncPtr).CopyTo(argBuffer, 24);
+
+        var argBufferPtr = NativeWrapper.VirtualAllocEx(memoryHandle, nint.Zero, argBuffer.Length,
+            AllocationType.Commit | AllocationType.Reserve, MemoryProtectionFlags.ReadWrite);
+        if (argBufferPtr == nint.Zero)
+        {
+            NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
+            NativeWrapper.VirtualFreeEx(memoryHandle, statusStructPtr, 0, FreeType.Release);
+            return;
+        }
+        WriteProcessMemoryArray(argBufferPtr, argBuffer);
+
+        byte[] code =
+        {
+            0x48, 0x83, 0xEC, 0x28,                                     // sub rsp, 28h
+            0x48, 0xB8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // mov rax, p_arg_struct
+            0x48, 0x8B, 0x48, 0x00,                                     // mov rcx, [rax+0]
+            0x48, 0x8B, 0x09,                                           // mov rcx, [rcx]
+            0x48, 0x8B, 0x50, 0x08,                                     // mov rdx, [rax+8]
+            0x4C, 0x8B, 0x40, 0x10,                                     // mov r8, [rax+16]
+            0x4D, 0x31, 0xC9,                                           // xor r9, r9
+            0x48, 0x8B, 0x40, 0x18,                                     // mov rax, [rax+24]
+            0xFF, 0xD0,                                                 // call rax
+            0x48, 0x83, 0xC4, 0x28,                                     // add rsp, 28h
+            0xC3                                                        // ret
+        };
+
+        var addrBytes = BitConverter.GetBytes((long)argBufferPtr);
+        Buffer.BlockCopy(addrBytes, 0, code, 6, addrBytes.Length);
+
+        ExecuteCode(code);
+
+        NativeWrapper.VirtualFreeEx(memoryHandle, itemTablePtr, 0, FreeType.Release);
+        NativeWrapper.VirtualFreeEx(memoryHandle, statusStructPtr, 0, FreeType.Release);
+        NativeWrapper.VirtualFreeEx(memoryHandle, argBufferPtr, 0, FreeType.Release);
     }
 }

@@ -29,9 +29,6 @@ public class ParamReloader
         Project = project;
     }
 
-    public uint numberOfItemsToGive = 1;
-    public uint upgradeLevelItemToGive;
-
     private readonly List<ProjectType> _reloaderSupportedGames = new()
     {
         ProjectType.DS1,
@@ -43,18 +40,9 @@ public class ParamReloader
         ProjectType.AC6
     };
 
-    private readonly List<ProjectType> _itemGibSupportedGames = new()
-    {
-        ProjectType.DS3
-    };
-
     public bool ParamReloadSupported(ProjectType gameType)
     {
         return _reloaderSupportedGames.Contains(gameType);
-    }
-    public bool ItemGibSupported(ProjectType gameType)
-    {
-        return _itemGibSupportedGames.Contains(gameType);
     }
 
     public bool CanReloadMemoryParams(ParamBank bank)
@@ -63,7 +51,6 @@ public class ParamReloader
         {
             return true;
         }
-
         return false;
     }
 
@@ -130,85 +117,6 @@ public class ParamReloader
         }
     }
 
-    public void DisplayItemGib()
-    {
-        var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
-        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
-
-        if (ItemGibSupported(Editor.Project.ProjectType))
-        {
-            if (ImGui.CollapsingHeader("Item Gib"))
-            {
-                UIHelper.WrappedText("Use this tool to spawn an item in-game. First, select an EquipParam row within the Param Editor.");
-                UIHelper.WrappedText("");
-
-                var activeParam = Editor._activeView.Selection.GetActiveParam();
-
-                if (activeParam == "EquipParamGoods")
-                {
-                    UIHelper.WrappedText("Number of Spawned Items");
-                    ImGui.InputInt("##spawnItemCount", ref SpawnedItemAmount);
-                }
-                if (activeParam == "EquipParamWeapon")
-                {
-                    UIHelper.WrappedText("Reinforcement of Spawned Weapon");
-                    ImGui.InputInt("##spawnWeaponLevel", ref SpawnWeaponLevel);
-
-                    if (Editor.Project.ProjectType is ProjectType.DS3)
-                    {
-                        if (SpawnWeaponLevel > 10)
-                        {
-                            SpawnWeaponLevel = 10;
-                        }
-                    }
-                }
-
-                UIHelper.WrappedText("");
-                if (ImGui.Button("Give Item", defaultButtonSize))
-                {
-                    GiveItem(Editor);
-                }
-
-            }
-        }
-    }
-
-    public void DisplayItemGibMenu()
-    {
-        if (ItemGibSupported(Editor.Project.ProjectType))
-        {
-            if (ImGui.BeginMenu("Item Gib"))
-            {
-                var activeParam = Editor._activeView.Selection.GetActiveParam();
-
-                if (activeParam == "EquipParamGoods")
-                {
-                    ImGui.InputInt("Number of Spawned Items##spawnItemCount", ref SpawnedItemAmount);
-                }
-                if (activeParam == "EquipParamWeapon")
-                {
-                    ImGui.InputInt("Reinforcement of Spawned Weapon##spawnWeaponLevel", ref SpawnWeaponLevel);
-
-                    if (SpawnWeaponLevel > 10)
-                    {
-                        SpawnWeaponLevel = 10;
-                    }
-                }
-
-                if (ImGui.MenuItem("Give Selected Item"))
-                {
-                    GiveItem(Editor);
-                }
-                UIHelper.Tooltip("Spawns selected item in-game.");
-
-                ImGui.EndMenu();
-            }
-        }
-    }
 
     public void ReloadMemoryParams(ParamBank bank, string[] paramNames)
     {
@@ -307,7 +215,7 @@ public class ParamReloader
                     TaskLogs.AddLog($"Failed to find base address.", LogLevel.Error, LogPriority.High, ex);
                 }
             }
-            
+
             if (!paramFound)
             {
                 TaskLogs.AddLog($"Cannot find param offset for {param} in Param Reloader.", LogLevel.Warning, LogPriority.Normal);
@@ -322,29 +230,6 @@ public class ParamReloader
         foreach (Task task in tasks)
         {
             task.Wait();
-        }
-    }
-
-    public void GiveItem(GameOffsetsEntry offsets, List<Param.Row> rowsToGib, string studioParamType,
-        int itemQuantityReceived, int upgradeLevelItemToGive = 0)
-    {
-        if (rowsToGib.Any())
-        {
-            var name = offsets.exeName.Replace(".exe", "");
-
-            Process[] processArray = Process.GetProcessesByName(name);
-            if (processArray.Any())
-            {
-                SoulsMemoryHandler memoryHandler = new(Editor, processArray.First());
-
-                foreach (var entry in offsets.Bases)
-                {
-                    memoryHandler.PlayerItemGive(entry, rowsToGib, studioParamType, itemQuantityReceived, -1,
-                        upgradeLevelItemToGive);
-                }
-
-                memoryHandler.Terminate();
-            }
         }
     }
 
@@ -686,10 +571,10 @@ public class ParamReloader
 
         List<string> reloadableParams = new();
 
-        foreach(var entry in offs.Bases)
+        foreach (var entry in offs.Bases)
         {
             var curParamList = entry.paramOffsets.Keys.ToList();
-            foreach(var t in curParamList)
+            foreach (var t in curParamList)
             {
                 reloadableParams.Add(t);
             }
@@ -717,7 +602,6 @@ public class ParamReloader
     public void ReloadCurrentParam(ParamEditorScreen editor)
     {
         var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
-
         if (canHotReload)
         {
             if (editor._activeView.Selection.GetActiveParam() != null)
@@ -734,11 +618,9 @@ public class ParamReloader
             TaskLogs.AddLog("Param Reloader cannot reload for this project.");
         }
     }
-
     public void ReloadAllParams(ParamEditorScreen editor)
     {
         var canHotReload = CanReloadMemoryParams(editor.Project.ParamData.PrimaryBank);
-
         if (canHotReload)
         {
             ReloadMemoryParams(editor.Project.ParamData.PrimaryBank, editor.Project.ParamData.PrimaryBank.Params.Keys.ToArray());
@@ -746,34 +628,6 @@ public class ParamReloader
         else
         {
             TaskLogs.AddLog("Param Reloader cannot reload for this project.");
-        }
-    }
-
-    public int SpawnedItemAmount = 1;
-    public int SpawnWeaponLevel = 0;
-
-    public void GiveItem(ParamEditorScreen editor)
-    {
-        var activeParam = editor._activeView.Selection.GetActiveParam();
-        if (activeParam != null)
-        {
-            GameOffsetsEntry offsets = GetGameOffsets();
-
-            var rowsToGib = editor._activeView.Selection.GetSelectedRows();
-            var param = editor._activeView.Selection.GetActiveParam();
-
-            if (activeParam is "EquipParamGoods" or "EquipParamProtector" or "EquipParamAccessory")
-            {
-                GiveItem(offsets, rowsToGib, param, SpawnedItemAmount);
-            }
-            if (activeParam == "EquipParamWeapon")
-            {
-                GiveItem(offsets, rowsToGib, param, SpawnedItemAmount, SpawnWeaponLevel);
-            }
-        }
-        else
-        {
-            TaskLogs.AddLog("No param selected yet for Item Gib.");
         }
     }
 }

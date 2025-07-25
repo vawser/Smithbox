@@ -2,7 +2,7 @@
   "exeName": "eldenring.exe",
   "list": [
     {
-      "exeVersion": "2.2.3.0",
+      "exeVersion": "2.0.1.0",
       "bases": [
         {
           "paramBaseAob": "0x48,0x8B,0x0D,0x??,0x??,0x??,0x??,0x48,0x85,0xC9,0x0F,0x84,0x??,0x??,0x??,0x??,0x45,0x33,0xC0,0xBA,0x90",
@@ -201,7 +201,15 @@
             "FinalDamageRateParam:0x3448",
             "HitEffectSeParam:0x3490"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": [
+            "EquipParamWeapon:0x0",
+            "EquipParamCustomWeapon:0x0",
+            "EquipParamProtector:0x10000000",
+            "EquipParamAccessory:0x20000000",
+            "EquipParamGoods:0x40000000",
+            "Magic:0x40000000",
+            "EquipParamGem:0x80000000"
+          ]
         }
       ]
     },
@@ -405,12 +413,20 @@
             "FinalDamageRateParam:0x3448",
             "HitEffectSeParam:0x3490"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": [
+            "EquipParamWeapon:0x0",
+            "EquipParamCustomWeapon:0x0",
+            "EquipParamProtector:0x10000000",
+            "EquipParamAccessory:0x20000000",
+            "EquipParamGoods:0x40000000",
+            "Magic:0x40000000",
+            "EquipParamGem:0x80000000"
+          ]
         }
       ]
     },
     {
-      "exeVersion": "2.0.1.0",
+      "exeVersion": "2.2.3.0",
       "bases": [
         {
           "paramBaseAob": "0x48,0x8B,0x0D,0x??,0x??,0x??,0x??,0x48,0x85,0xC9,0x0F,0x84,0x??,0x??,0x??,0x??,0x45,0x33,0xC0,0xBA,0x90",
@@ -609,7 +625,17 @@
             "FinalDamageRateParam:0x3448",
             "HitEffectSeParam:0x3490"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": [
+            "EquipParamWeapon:0x0",
+            "EquipParamCustomWeapon:0x0",
+            "EquipParamProtector:0x10000000",
+            "EquipParamAccessory:0x20000000",
+            "EquipParamGoods:0x40000000",
+            "Magic:0x40000000",
+            "EquipParamGem:0x80000000"
+          ],
+          "ERItemGiveFuncOffset": "0x560670",
+          "ERMapItemManOffset": "0x3d67a50"
         }
       ]
     }
