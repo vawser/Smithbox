@@ -1554,6 +1554,7 @@ public class InterfaceTab
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Multiplies the user interface scale by your monitor's DPI setting.");
         }
