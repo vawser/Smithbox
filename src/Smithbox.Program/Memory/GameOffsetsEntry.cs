@@ -53,16 +53,18 @@ public class GameOffsetBaseEntry
 
     public int rowPointerOffset;
     public int rowHeaderSize;
+    public int? ERItemGiveFuncOffset = null;
+    public int? ERMapItemManOffset = null;
 
     public Dictionary<string, int> paramOffsets;
-    public Dictionary<string, int> itemGibOffsets;
+    public Dictionary<string, int> itemIDCategories;
 
     public GameOffsetBaseEntry() { }
 
     public void Fill(GameOffsetBase data)
     {
         paramOffsets = new();
-        itemGibOffsets = new();
+        itemIDCategories = new();
 
         if (!string.IsNullOrEmpty(data.paramBase))
         {
@@ -122,12 +124,21 @@ public class GameOffsetBaseEntry
             paramOffsets.Add(name, Utils.ParseHexFromString(address));
         }
 
-        foreach (var entry in data.itemGibOffsets)
+        foreach (var entry in data.itemIDCategories)
         {
             var name = entry.Split(':')[0];
             var address = entry.Split(':')[1];
 
-            itemGibOffsets.Add(name, Utils.ParseHexFromString(address));
+            itemIDCategories.Add(name, Utils.ParseHexFromString(address));
+        }
+
+        if (!string.IsNullOrEmpty(data.ERItemGiveFuncOffset))
+        {
+            ERItemGiveFuncOffset = Utils.ParseHexFromString(data.ERItemGiveFuncOffset);
+        }
+        if (!string.IsNullOrEmpty(data.ERMapItemManOffset))
+        {
+            ERMapItemManOffset = Utils.ParseHexFromString(data.ERMapItemManOffset);
         }
     }
 }

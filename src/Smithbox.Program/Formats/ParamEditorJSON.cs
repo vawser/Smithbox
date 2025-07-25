@@ -39,8 +39,11 @@ public class GameOffsetBase
     public string rowPointerOffset { get; set; }
     public string rowHeaderSize { get; set; }
 
+    public string ERItemGiveFuncOffset { get; set; }
+    public string ERMapItemManOffset { get; set; }
+
     public List<string> paramOffsets { get; set; }
-    public List<string> itemGibOffsets { get; set; }
+    public List<string> itemIDCategories { get; set; }
 }
 
 // -------------- Param Categories --------------

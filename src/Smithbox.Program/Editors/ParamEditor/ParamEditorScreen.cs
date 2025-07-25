@@ -75,6 +75,7 @@ public class ParamEditorScreen : EditorScreen
     public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
+    public ItemGib ItemGib;
     public ParamUpgrader ParamUpgrader;
 
     private ParamEditorShortcuts EditorShortcuts;
@@ -101,6 +102,7 @@ public class ParamEditorScreen : EditorScreen
         PinGroupHandler = new(this);
         ComparisonReport = new ParamComparisonReport(this, project);
         ParamReloader = new(this, Project);
+        ItemGib = new(this, Project);
         ParamUpgrader = new(this, Project);
 
         MassEditHandler = new(this, Project);
@@ -921,7 +923,7 @@ public class ParamEditorScreen : EditorScreen
             ParamReloader.DisplayParamReloaderMenu();
 
             // Item Gib
-            ParamReloader.DisplayItemGibMenu();
+            ItemGib.DisplayItemGibMenu();
 
             ImGui.EndMenu();
         }

@@ -74,7 +74,7 @@ public partial class ParamTools
 
             if (CFG.Current.Interface_ParamEditor_Tool_ItemGib)
             {
-                Editor.ParamReloader.DisplayItemGib();
+                Editor.ItemGib.DisplayItemGib();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_MassEdit)
