@@ -41,6 +41,7 @@ public class TextData
             .ToList();
 
         var fmgDictionary = new FileDictionary();
+        fmgDictionary.Entries = new List<FileDictionaryEntry>();
 
         if (Project.ProjectType is ProjectType.DS2 or ProjectType.DS2S)
         {
