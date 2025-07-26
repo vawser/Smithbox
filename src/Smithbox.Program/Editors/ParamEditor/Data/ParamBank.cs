@@ -2155,46 +2155,6 @@ public class ParamBank
     }
     #endregion
 
-    /// <summary>
-    /// These are params that use indexes for implied behavior.
-    /// Used to determine which param name lists are imported by index.
-    /// </summary>
-
-    public List<string> IndexedParams_ER = new List<string>()
-    {
-        "RandomAppearParam"
-    };
-
-    public List<string> IndexedParams_AC6 = new List<string>()
-    {
-        "MenuColorTableParam",
-        "MenuValueTableParam",
-        "NpcMaterialParam",
-        "RuntimeSoundExpressionParam_Npc",
-        "RuntimeSoundExpressionParam_Pc",
-        "RuntimeSoundParam_Npc",
-        "RuntimeSoundParam_Pc",
-        "TankArmourParam",
-        "TankWheelModelParam",
-        "TankWheelParam",
-        "ThrustersLocomotionParam_PC",
-        "ThrustersParam_NPC",
-        "ThrustersParam_PC"
-    };
-
-    public List<string> IndexedParams_NR = new List<string>()
-    {
-        "AttachEffectTableParam",
-        "ItemTableParam",
-        "MagicTableParam",
-        "MenuColorTableParam",
-        "MenuValueTableParam",
-        "NPCBotTableParam",
-        "RandomAppearParam",
-        "SwordArtsTableParam"
-    };
-
-
     #region Row Name Strip / Restore
     /// <summary>
     /// Strip and store the row names for this param bank
@@ -2289,30 +2249,13 @@ public class ParamBank
                 if (!storeDict.ContainsKey(p.Key))
                     continue;
 
-                var rowNames = storeDict[p.Key];
-                var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
-
-                for (var i = 0; i < p.Value.Rows.Count; i++)
-                {
-                    if (CFG.Current.UseIndexMatchForRowNameRestore)
-                    {
-                        if (rowNameDict.ContainsKey(i))
-                        {
-                            p.Value.Rows[i].Name = rowNameDict[i].Name;
-                        }
-                    }
-                    else
-                    {
-                        // ID may not be unique, so we will manually loop here
-                        foreach (var entry in rowNames.Entries)
-                        {
-                            if (entry.ID == p.Value.Rows[i].ID)
-                            {
-                                p.Value.Rows[i].Name = entry.Name;
-                            }
-                        }
-                    }
-                }
+                SetParamNames(
+                    p.Value,
+                    storeDict[p.Key],
+                    CFG.Current.UseIndexMatchForRowNameRestore
+                        ? ImportRowNameType.Index
+                        : ImportRowNameType.ID
+                );
             }
         }
 
@@ -2418,79 +2361,46 @@ public class ParamBank
                     continue;
             }
 
-            var rowNames = storeDict[p.Key];
-            var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
-
-            for (var i = 0; i < p.Value.Rows.Count; i++)
-            {
-                if (importType is ImportRowNameType.Index)
-                {
-                    if (rowNameDict.ContainsKey(i))
-                    {
-                        p.Value.Rows[i].Name = rowNameDict[i].Name;
-                    }
-                }
-                else if (importType is ImportRowNameType.ID)
-                {
-                    // ID may not be unique, so we will manually loop here
-                    foreach (var entry in rowNames.Entries)
-                    {
-                        if (entry.ID == p.Value.Rows[i].ID)
-                        {
-                            p.Value.Rows[i].Name = entry.Name;
-                        }
-                    }
-                }
-                // Used during the automatic name import
-                // Imports row names by ID by default, but for specific params imports them by Index
-                else if(importType is ImportRowNameType.AutoImport)
-                {
-                    var indexImport = false;
-
-                    if(Project.ProjectType is ProjectType.ER)
-                    {
-                        if(IndexedParams_ER.Contains(p.Key))
-                        {
-                            indexImport = true;
-                        }
-                    }
-                    if (Project.ProjectType is ProjectType.AC6)
-                    {
-                        if (IndexedParams_AC6.Contains(p.Key))
-                        {
-                            indexImport = true;
-                        }
-                    }
-                    if (Project.ProjectType is ProjectType.NR)
-                    {
-                        if (IndexedParams_NR.Contains(p.Key))
-                        {
-                            indexImport = true;
-                        }
-                    }
-
-                    if(indexImport)
-                    {
-                        if (rowNameDict.ContainsKey(i))
-                        {
-                            p.Value.Rows[i].Name = rowNameDict[i].Name;
-                        }
-                    }
-                    else
-                    {
-                        foreach (var entry in rowNames.Entries)
-                        {
-                            if (entry.ID == p.Value.Rows[i].ID)
-                            {
-                                p.Value.Rows[i].Name = entry.Name;
-                            }
-                        }
-                    }
-                }
-            }
+            SetParamNames(p.Value, storeDict[p.Key], importType);
         }
 
         return true;
+    }
+
+    private static void SetParamNames(Param param, RowNameParam rowNames, ImportRowNameType importType)
+    {
+        if (importType is ImportRowNameType.Index)
+        {
+            var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+
+            for (var i = 0; i < param.Rows.Count; i++)
+            {
+                if (rowNameDict.TryGetValue(i, out var entry))
+                {
+                    param.Rows[i].Name = entry.Name;
+                }
+            }
+        }
+        else if (importType is ImportRowNameType.ID)
+        {
+            // The ID may not be unique, so we use the names from the store in order of appearance.
+            Dictionary<int, Queue<RowNameEntry>> rowsByID = rowNames
+                .Entries
+                .GroupBy(row => row.ID)
+                .Select(grouping => (grouping.Key, new Queue<RowNameEntry>(grouping)))
+                .ToDictionary();
+
+            foreach (var row in param.Rows)
+            {
+                if (
+                    rowsByID.TryGetValue(row.ID, out var entries) &&
+                    entries.TryDequeue(out var entry)
+                )
+                {
+                    row.Name = entry.Name;
+                }
+            }
+        }
     }
 
     #endregion
@@ -2653,8 +2563,7 @@ public class ParamBank
     public enum ImportRowNameType
     {
         Index,
-        ID,
-        AutoImport
+        ID
     }
 
     public enum ImportRowNameSourceType
