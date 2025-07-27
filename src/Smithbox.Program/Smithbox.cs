@@ -90,6 +90,10 @@ public class Smithbox
         _soapstoneService = new(this, version);
 
         DPI.UpdateDpi(_context);
+        DPI.UIScaleChanged += (_, _) =>
+        {
+            FontRebuildRequest = true;
+        };
         SetupImGui();
         SetupFonts();
 
