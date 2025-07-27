@@ -17,7 +17,7 @@ public static class PropInfo_ReferencesTo
         if (firstEnt.References.Count == 0)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         ImGui.Separator();
         ImGui.Text("References:");

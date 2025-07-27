@@ -36,11 +36,13 @@ public class EmevdData
 
         EmevdFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/event"))
             .Where(e => e.Extension == "emevd")
             .ToList();
 
         EmeldFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/event"))
             .Where(e => e.Extension == "emeld")
             .ToList();
 

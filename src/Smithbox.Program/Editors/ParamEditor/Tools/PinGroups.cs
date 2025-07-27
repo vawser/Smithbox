@@ -48,9 +48,9 @@ public class PinGroups
 
     public void OnProjectChanged()
     {
-        ParamGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Params\\";
-        RowGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Rows\\";
-        FieldGroupPath = $"{Editor.Project.ProjectPath}\\.smithbox\\Workflow\\Pin Groups\\Fields\\";
+        ParamGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Params");
+        RowGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Rows");
+        FieldGroupPath = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Workflow", "Pin Groups", "Fields");
     }
 
     public void Display()
@@ -456,7 +456,7 @@ public class PinGroups
 
     public void LoadParamPinGroup(string groupName)
     {
-        var readPath = $"{ParamGroupPath}\\{groupName}.json";
+        var readPath = Path.Join(ParamGroupPath, $"{groupName}.json");
 
         try
         {
@@ -473,7 +473,7 @@ public class PinGroups
     }
     public void LoadRowPinGroup(string groupName)
     {
-        var readPath = $"{RowGroupPath}\\{groupName}.json";
+        var readPath = Path.Join(RowGroupPath, $"{groupName}.json");
 
         try
         {
@@ -490,7 +490,7 @@ public class PinGroups
     }
     public void LoadFieldPinGroup(string groupName)
     {
-        var readPath = $"{FieldGroupPath}\\{groupName}.json";
+        var readPath = Path.Join(FieldGroupPath, $"{groupName}.json");
 
         try
         {

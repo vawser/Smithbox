@@ -13,7 +13,7 @@ public static class PropInfo_ParamJumps
 {
     public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         var width = ImGui.GetWindowWidth() / 100;
 
         if (firstEnt.References.Count == 0)

@@ -49,7 +49,7 @@ public class ParamEditorView
     /// <param name="isActiveView"></param>
     public void Display(bool doFocus, bool isActiveView)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (EditorDecorations.ImGuiTableStdColumns("paramsT", 3, true))
         {

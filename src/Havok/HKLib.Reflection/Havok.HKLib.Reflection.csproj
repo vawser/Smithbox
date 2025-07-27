@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net9.0-windows</TargetFramework>
+        <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>11</LangVersion>
@@ -21,4 +21,12 @@
     <ItemGroup>
       <ProjectReference Include="..\HKLib\Havok.HKLib.csproj" />
     </ItemGroup>
+
+    <PropertyGroup Condition="$(Configuration.StartsWith('Debug'))">
+      <DefineConstants>DEBUG</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Configuration.StartsWith('Release'))">
+      <DefineConstants>RELEASE</DefineConstants>
+    </PropertyGroup>
 </Project>

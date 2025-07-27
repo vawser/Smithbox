@@ -14,7 +14,7 @@ public static class PropInfo_ReferencedBy
         if (firstEnt.GetReferencingObjects().Count == 0)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         ImGui.Separator();
         ImGui.Text("Referenced By:");

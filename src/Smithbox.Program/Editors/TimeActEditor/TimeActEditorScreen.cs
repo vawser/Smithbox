@@ -80,7 +80,7 @@ public class TimeActEditorScreen : EditorScreen
     /// </summary>
     public void OnGUI(string[] initcmd)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         // Docking setup
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);

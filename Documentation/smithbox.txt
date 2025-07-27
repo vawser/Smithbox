@@ -24,6 +24,4 @@
 
 # TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
-
-# MAIN BUGS
-2. Icon Preview texture load is causing runaway RAM consumption
+- Adjust the Row Name Import (auto) so it only applies by index for specific params, and by ID for the rest

@@ -35,6 +35,7 @@ public class BehaviorData
 
         BehaviorFiles.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/chr"))
             .Where(e => e.Extension == "behbnd")
             .ToList();
 

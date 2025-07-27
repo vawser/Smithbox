@@ -48,7 +48,7 @@ public class EntityIdentifierOverview
             return;
         }
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
         ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);

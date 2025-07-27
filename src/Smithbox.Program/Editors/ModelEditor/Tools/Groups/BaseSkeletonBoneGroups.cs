@@ -35,7 +35,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplaySubMenu(ModelEditorScreen editor)
         {
-            ExportBasePath = $"{editor.Project.ProjectPath}\\.smithbox\\Workflow\\Base Skeleton Groups\\";
+            ExportBasePath = Path.Join(editor.Project.ProjectPath, ".smithbox", "Workflow", "Base Skeleton Groups");
 
             UpdateBaseSkeletonGroupList();
 
@@ -95,7 +95,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         public static void DisplayConfiguration(ModelEditorScreen screen)
         {
-            ExportBasePath = $"{screen.Project.ProjectPath}\\.smithbox\\Workflow\\Base Skeleton Groups\\";
+            ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Base Skeleton Groups");
 
             var sectionWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
@@ -254,7 +254,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
         public static BaseSkeletonList ReadBaseSkeletonGroup(string entry)
         {
             var newBaseSkeletonList = new BaseSkeletonList();
-            var readPath = $"{ExportBasePath}\\{entry}.json";
+            var readPath = Path.Join(ExportBasePath, $"{entry}.json");
 
             try
             {

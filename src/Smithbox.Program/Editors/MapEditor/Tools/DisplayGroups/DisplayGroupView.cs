@@ -69,7 +69,7 @@ public class DisplayGroupView
 
     public void OnGui()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (!CFG.Current.Interface_MapEditor_RenderGroups)
             return;

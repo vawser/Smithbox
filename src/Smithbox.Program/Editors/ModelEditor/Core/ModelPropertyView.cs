@@ -64,7 +64,7 @@ public class ModelPropertyView
 
     public void Display()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (!CFG.Current.Interface_ModelEditor_Properties)
             return;

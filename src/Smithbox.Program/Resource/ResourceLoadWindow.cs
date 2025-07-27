@@ -16,7 +16,7 @@ public static class ResourceLoadWindow
 
     public static void DisplayWindow(float w, float h)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (GetActiveJobProgress().Count() > 0)
         {

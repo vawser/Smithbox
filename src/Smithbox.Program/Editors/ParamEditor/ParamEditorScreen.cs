@@ -75,6 +75,7 @@ public class ParamEditorScreen : EditorScreen
     public ParamRowNamer RowNamer;
     public ParamComparisonReport ComparisonReport;
     public ParamReloader ParamReloader;
+    public ItemGib ItemGib;
     public ParamUpgrader ParamUpgrader;
 
     private ParamEditorShortcuts EditorShortcuts;
@@ -101,6 +102,7 @@ public class ParamEditorScreen : EditorScreen
         PinGroupHandler = new(this);
         ComparisonReport = new ParamComparisonReport(this, project);
         ParamReloader = new(this, Project);
+        ItemGib = new(this, Project);
         ParamUpgrader = new(this, Project);
 
         MassEditHandler = new(this, Project);
@@ -110,7 +112,7 @@ public class ParamEditorScreen : EditorScreen
 
     public void OnGUI(string[] initcmd)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         EditorShortcuts.Shortcuts();
 
@@ -641,7 +643,7 @@ public class ParamEditorScreen : EditorScreen
                             {
                                 IReadOnlyList<Param.Row> rows = param.Value.Rows;
                                 TryWriteFile(
-                                    $@"{path}\{param.Key}.csv",
+                                    Path.Join(path, $"{param.Key}.csv"),
                                     ParamIO.GenerateCSV(Project, rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                             }
                         }
@@ -659,7 +661,7 @@ public class ParamEditorScreen : EditorScreen
                             {
                                     IReadOnlyList<Param.Row> rows = param.Value.Rows;
                                     TryWriteFile(
-                                        $@"{path}\{param.Key}.csv",
+                                        Path.Join(path, $"{param.Key}.csv"),
                                         ParamIO.GenerateCSV(Project, rows, param.Value, CFG.Current.Param_Export_Delimiter[0]));
                                 }
                             }
@@ -921,7 +923,7 @@ public class ParamEditorScreen : EditorScreen
             ParamReloader.DisplayParamReloaderMenu();
 
             // Item Gib
-            ParamReloader.DisplayItemGibMenu();
+            ItemGib.DisplayItemGibMenu();
 
             ImGui.EndMenu();
         }

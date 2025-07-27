@@ -64,14 +64,12 @@ public class SystemTab
 
         if (ImGui.CollapsingHeader("Project"))
         {
-            var inputWidth = 400.0f;
-
             // Project Name Prefix
             ImGui.Checkbox("Display Project Type Prefix in Project List", ref CFG.Current.DisplayProjectPrefix);
             UIHelper.Tooltip("If enabled, the prefix for the project type will be displayed in the project list for each project.");
 
             // Default Project Directory
-            if (ImGui.Button("Select##projectDirSelect"))
+            if (ImGui.Button("Select##projectDirSelect", DPI.StandardButtonSize))
             {
                 var newProjectPath = "";
                 var result = PlatformUtils.Instance.OpenFolderDialog("Select Project Directory", out newProjectPath);
@@ -84,12 +82,12 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.InputText("Default Project Directory", ref CFG.Current.DefaultModDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the project directory selection when creating a new project.");
 
             // Default Data Directory
-            if (ImGui.Button("Select##ProjectDataDirSelect"))
+            if (ImGui.Button("Select##ProjectDataDirSelect", DPI.StandardButtonSize))
             {
                 var newDataPath = "";
                 var result = PlatformUtils.Instance.OpenFolderDialog("Select Data Directory", out newDataPath);
@@ -102,14 +100,14 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(inputWidth);
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
 
             ImGui.Separator();
 
             // ME3 Setup
-            if (ImGui.Button("Select##modEngine3PathSelect"))
+            if (ImGui.Button("Select##modEngine3PathSelect", DPI.StandardButtonSize))
             {
                 var profilePath = "";
                 var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
@@ -128,7 +126,7 @@ public class SystemTab
             ImGui.Separator();
 
             // ME2 Setup
-            if (ImGui.Button("Select##modEngine2PathSelect"))
+            if (ImGui.Button("Select##modEngine2PathSelect", DPI.StandardButtonSize))
             {
                 var modEnginePath = "";
                 var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
@@ -148,10 +146,12 @@ public class SystemTab
 
             ImGui.SameLine();
 
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.InputText("ME2 Executable Location##modEnginePath", ref CFG.Current.ModEngine2Install, 255);
             UIHelper.Tooltip("Select the modengine2_launcher.exe within your ModEngine2 install folder.");
 
             // ME2 Dlls
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
         }
@@ -1520,14 +1520,12 @@ public class InterfaceTab
 
     public void Display()
     {
-        var buttonSize = new Vector2(200, 24);
-
         if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
         {
             ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
             UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off.");
 
-            ImGui.AlignTextToFramePadding();
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -1541,8 +1539,7 @@ public class InterfaceTab
 
             ImGui.SameLine();
 
-            ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("Reset", buttonSize))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                 _tempScale = CFG.Current.System_UI_Scale;
@@ -1554,6 +1551,7 @@ public class InterfaceTab
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
+                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Multiplies the user interface scale by your monitor's DPI setting.");
         }
@@ -1561,6 +1559,7 @@ public class InterfaceTab
         // Fonts
         if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.SliderFloat("Font size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -1574,7 +1573,7 @@ public class InterfaceTab
             ImGui.SameLine();
             ImGui.Text(Path.GetFileName(CFG.Current.System_English_Font));
 
-            if (ImGui.Button("Set English font", buttonSize))
+            if (ImGui.Button("Set English font", DPI.StandardButtonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
@@ -1589,7 +1588,7 @@ public class InterfaceTab
             ImGui.SameLine();
             ImGui.Text(Path.GetFileName(CFG.Current.System_Other_Font));
 
-            if (ImGui.Button("Set Non-English font", buttonSize))
+            if (ImGui.Button("Set Non-English font", DPI.StandardButtonSize))
             {
                 PlatformUtils.Instance.OpenFileDialog("Select Font", ["*"], out string path);
                 if (File.Exists(path))
@@ -1600,10 +1599,10 @@ public class InterfaceTab
             }
             UIHelper.Tooltip("Use the following font for Non-English characters. .ttf and .otf expected.");
 
-            if (ImGui.Button("Restore Default Fonts", buttonSize))
+            if (ImGui.Button("Restore Default Fonts", DPI.StandardButtonSize))
             {
-                CFG.Current.System_English_Font = "Assets\\Fonts\\RobotoMono-Light.ttf";
-                CFG.Current.System_Other_Font = "Assets\\Fonts\\NotoSansCJKtc-Light.otf";
+                CFG.Current.System_English_Font = Path.Join("Assets","Fonts","RobotoMono-Light.ttf");
+                CFG.Current.System_Other_Font = Path.Join("Assets","Fonts","NotoSansCJKtc-Light.otf");
                 Smithbox.FontRebuildRequest = true;
             }
         }
@@ -1635,16 +1634,16 @@ public class InterfaceTab
         // ImGui
         if (ImGui.CollapsingHeader("Interface Layout", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            var storedDir = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Smithbox\";
-            var storedPath = $@"{storedDir}\imgui.ini";
+            var storedDir = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Smithbox");
+            var storedPath = Path.Join(storedDir,"imgui.ini");
 
             ImGui.AlignTextToFramePadding();
             ImGui.Text("Store the current imgui.ini in the AppData folder for future usage.");
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("Store##storeImguiIni", buttonSize))
+            if (ImGui.Button("Store##storeImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+                var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
 
                 if (Directory.Exists(storedDir))
                 {
@@ -1661,7 +1660,7 @@ public class InterfaceTab
                 PlatformUtils.Instance.MessageBox($"Stored at {storedPath}.", "Information", MessageBoxButtons.OK);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Open Folder##openImguiIniFolder", buttonSize))
+            if (ImGui.Button("Open Folder##openImguiIniFolder", DPI.StandardButtonSize))
             {
                 Process.Start("explorer.exe", storedDir);
             }
@@ -1675,9 +1674,9 @@ public class InterfaceTab
 
                 ImGui.AlignTextToFramePadding();
 
-                if (ImGui.Button("Set##setImguiIni", buttonSize))
+                if (ImGui.Button("Set##setImguiIni", DPI.StandardButtonSize))
                 {
-                    var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
+                    var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
 
                     if (File.Exists(storedPath))
                     {
@@ -1694,10 +1693,10 @@ public class InterfaceTab
             ImGui.Text("Reset the imgui.ini to the default version.");
 
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button("Reset##resetImguiIni", buttonSize))
+            if (ImGui.Button("Reset##resetImguiIni", DPI.StandardButtonSize))
             {
-                var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
-                var defaultImgui = $@"{AppContext.BaseDirectory}\imgui.default";
+                var curImgui = Path.Join(AppContext.BaseDirectory,"imgui.ini");
+                var defaultImgui = Path.Join(AppContext.BaseDirectory,"imgui.default");
 
                 if (Directory.Exists(storedDir))
                 {
@@ -1738,22 +1737,24 @@ public class InterfaceTab
                 ImGui.EndCombo();
             }
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 UI.LoadDefault();
             }
             ImGui.SameLine();
-            if (ImGui.Button("Open Theme Folder"))
+            if (ImGui.Button("Open Theme Folder", DPI.StandardButtonSize))
             {
-                Process.Start("explorer.exe", $"{AppContext.BaseDirectory}\\Assets\\Themes\\");
+                Process.Start("explorer.exe", Path.Join(AppContext.BaseDirectory,"Assets","Themes")); //! FIXME explorer does not exist
             }
             ImGui.SameLine();
 
-            if (ImGui.Button("Export Theme"))
+            if (ImGui.Button("Export Theme", DPI.StandardButtonSize))
             {
                 UI.ExportTheme(newThemeName);
             }
             ImGui.SameLine();
+
+            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
             ImGui.InputText("##themeName", ref newThemeName, 255);
 
             if (ImGui.CollapsingHeader("Editor Window", ImGuiTreeNodeFlags.DefaultOpen))

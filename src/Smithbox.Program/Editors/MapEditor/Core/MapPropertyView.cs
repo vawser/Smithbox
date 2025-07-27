@@ -60,7 +60,7 @@ public class MapPropertyView
 
     public void OnGui(ViewportSelection selection, string id, float w, float h)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         HashSet<Entity> entSelection = selection.GetFilteredSelection<Entity>();
 
         if (!CFG.Current.Interface_MapEditor_Properties)
@@ -779,7 +779,7 @@ public class MapPropertyView
         int classIndex = -1
     )
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         Entity firstEnt = entSelection.First();
         Type type = obj.GetType();
 

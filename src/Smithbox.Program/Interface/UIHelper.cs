@@ -12,9 +12,10 @@ using System.Threading.Tasks;
 namespace StudioCore.Interface;
 public static class UIHelper
 {
+
     public static void ApplyBaseStyle()
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         ImGuiStylePtr style = ImGui.GetStyle();
 
         // Colors
@@ -74,8 +75,8 @@ public static class UIHelper
 
     public static void RestoreImguiIfMissing()
     {
-        var curImgui = $@"{AppContext.BaseDirectory}\imgui.ini";
-        var defaultImgui = $@"{AppContext.BaseDirectory}\imgui.default";
+        var curImgui = Path.Join(AppContext.BaseDirectory, "imgui.ini");
+        var defaultImgui = Path.Join(AppContext.BaseDirectory, "imgui.default");
 
         if (!File.Exists(curImgui) && File.Exists(defaultImgui))
         {

@@ -358,7 +358,7 @@ public class ModelResourceManager : IResourceEventListener
                         {
                             var internalFlver = new InternalFlver();
 
-                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                             internalFlver.ModelID = modelid;
                             internalFlver.CurrentFLVER = FLVER2.Read(bxfReader.ReadFile(file));
                             internalFlver.InitialFlverBytes = bxfReader.ReadFile(file).ToArray();
@@ -391,7 +391,7 @@ public class ModelResourceManager : IResourceEventListener
                     if (fileName.Contains(modelName) && (fileName.EndsWith(".flver") || fileName.EndsWith(".flv")))
                     {
                         var internalFlver = new InternalFlver();
-                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                        internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                         internalFlver.ModelID = modelid;
                         internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
                         internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
@@ -444,7 +444,7 @@ public class ModelResourceManager : IResourceEventListener
                         {
                             var internalFlver = new InternalFlver();
 
-                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName);
+                            internalFlver.Name = Path.GetFileNameWithoutExtension(fileName.Replace('\\', Path.DirectorySeparatorChar));
                             internalFlver.ModelID = modelid;
                             internalFlver.CurrentFLVER = FLVER2.Read(bndReader.ReadFile(file));
                             internalFlver.InitialFlverBytes = bndReader.ReadFile(file).ToArray();
@@ -718,11 +718,11 @@ public class ModelResourceManager : IResourceEventListener
                 // DS1 / DS1R Map Pieces
                 if(binderType is FlverBinderType.None)
                 {
-                    var directory = $"map\\{container.MapID}\\";
-                    var path = $"map\\{container.MapID}\\{container.ContainerName}.flver";
+                    var directory = Path.Join("map", container.MapID);
+                    var path = Path.Join("map", container.MapID, $"{container.ContainerName}.flver");
 
-                    var projectDirectory = $"{Editor.Project.ProjectPath}\\{directory}";
-                    var savePath = $"{Editor.Project.ProjectPath}\\{path}";
+                    var projectDirectory = Path.Join(Editor.Project.ProjectPath, directory);
+                    var savePath = Path.Join(Editor.Project.ProjectPath, path);
 
                     if (!Directory.Exists(projectDirectory))
                     {

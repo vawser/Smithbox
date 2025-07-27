@@ -33,6 +33,7 @@ public class MaterialData
 
         MTD_Files.Entries =  Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/mtd"))
             .Where(e => e.Extension == "mtdbnd")
             .ToList();
 
@@ -41,12 +42,14 @@ public class MaterialData
         {
             MTD_Files.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/material"))
             .Where(e => e.Filename == "allmaterialbnd")
             .ToList();
         }
 
         MATBIN_Files.Entries = Project.FileDictionary.Entries
             .Where(e => e.Archive != "sd")
+            .Where(e => e.Folder.StartsWith("/material"))
             .Where(e => e.Extension == "matbinbnd")
             .ToList();
 

@@ -1379,7 +1379,7 @@ public class ParamFieldView
         ParamMeta meta, string activeParam, bool showPinOptions, bool isPinned, Param.Column col,
         ParamSelection selection, Type propType, string Wiki, dynamic oldval, bool isNameMenu)
     {
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
         var altName = cellMeta?.AltName;
 
         ImGui.PushStyleVar(ImGuiStyleVar.ItemSpacing, new Vector2(0f, 10f) * scale);

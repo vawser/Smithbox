@@ -183,7 +183,7 @@ public class MapEditorScreen : EditorScreen
         if (Project.IsInitializing)
             return;
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         // Docking setup
         //var vp = ImGui.GetMainViewport();

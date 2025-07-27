@@ -54,7 +54,7 @@
             "WhiteCoolTimeParam:0xA80",
             "ThrowParam:0x8"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": []
         }
       ]
     }

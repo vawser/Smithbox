@@ -89,6 +89,7 @@ public class Smithbox
 
         _soapstoneService = new(this, version);
 
+        DPI.UpdateDpi(_context);
         SetupImGui();
         SetupFonts();
 
@@ -158,9 +159,9 @@ public class Smithbox
 
     private unsafe void SetupFonts()
     {
-        string EnglishFontRelPath = @"Assets\Fonts\RobotoMono-Light.ttf";
-        string NonEnglishFontRelPath = @"Assets\Fonts\NotoSansCJKtc-Light.otf";
-        string IconFontRelPath = @"Assets\Fonts\forkawesome-webfont.ttf";
+        string EnglishFontRelPath = Path.Join("Assets", "Fonts", "RobotoMono-Light.ttf");
+        string NonEnglishFontRelPath = Path.Join("Assets", "Fonts", "NotoSansCJKtc-Light.otf");
+        string IconFontRelPath = Path.Join("Assets", "Fonts", "forkawesome-webfont.ttf");
 
         if (!string.IsNullOrWhiteSpace(CFG.Current.System_English_Font) &&
             File.Exists(CFG.Current.System_English_Font))
@@ -192,8 +193,8 @@ public class Smithbox
         ImFontAtlasPtr fonts = ImGui.GetIO().Fonts;
         fonts.Clear();
 
-        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.GetUIScale());
-        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.GetUIScale());
+        var scaleFine = (float)Math.Round(CFG.Current.Interface_FontSize * DPI.UIScale());
+        var scaleLarge = (float)Math.Round((CFG.Current.Interface_FontSize + 2) * DPI.UIScale());
 
         ImFontConfigPtr cfg = ImGui.ImFontConfig();
 
@@ -273,7 +274,7 @@ public class Smithbox
                 "Soapstone server is running.",
                 "Soapstone server is not running.",
                 TaskManager.RequeueType.None,
-                false,
+                true,
                 () =>
                 {
                     SoapstoneServer.RunAsync(KnownServer.DSMapStudio, _soapstoneService).Wait();
@@ -370,7 +371,7 @@ public class Smithbox
             catch (Exception e)
             {
                 PlatformUtils.Instance.MessageBox($"Unable to save config during crash recovery.\n" +
-                                                  $"If you continue to crash on startup, delete config in AppData\\Local\\Smithbox\n\n" +
+                                                  $"If you continue to crash on startup, delete config in {Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Smithbox")}\n\n" +
                                                   $"{e.Message} {e.StackTrace}",
                     "Error",
                     MessageBoxButtons.OK,
@@ -383,7 +384,7 @@ public class Smithbox
     {
         DPI.UpdateDpi(_context);
 
-        var scale = DPI.GetUIScale();
+        var scale = DPI.UIScale();
 
         if (FontRebuildRequest)
         {

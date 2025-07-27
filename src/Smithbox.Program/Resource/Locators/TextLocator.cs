@@ -20,7 +20,7 @@ public static class TextLocator
             targetDir = project.DataPath;
         }
 
-        var rootPath = $"{targetDir}\\msg\\";
+        var rootPath = Path.Join(targetDir, "msg");
         var filePattern = $".msgbnd";
 
         if (Directory.Exists(rootPath))
@@ -43,7 +43,7 @@ public static class TextLocator
             targetDir = project.DataPath;
         }
 
-        var rootPath = $"{targetDir}\\{dir}";
+        var rootPath = Path.Join(targetDir, dir);
         var filePattern = $".fmg";
 
         if (Directory.Exists(rootPath))
@@ -94,7 +94,7 @@ public static class TextLocator
 
     public static string GetStoredTextDirectory(ProjectEntry project)
     {
-        return $"{project.ProjectPath}\\.smithbox\\Workflow\\Exported Text";
+        return Path.Join(project.ProjectPath, ".smithbox", "Workflow", "Exported Text");
     }
 
     public static List<string> GetStoredContainerWrappers(ProjectEntry project)

@@ -118,16 +118,7 @@ public class ParamData
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                // These two rely on row index significantly, so we should always import the default names via that for them.
-                if (Project.ProjectType is ProjectType.AC6 or ProjectType.NR)
-                {
-                    PrimaryBank.ImportRowNames(ImportRowNameType.Index, ImportRowNameSourceType.Community);
-                }
-                // Where other games either never or very rarely use it, so use the more flexible ID import
-                else
-                {
-                    PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
-                }
+                PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
             }
 
             Project.ImportedParamRowNames = true;
@@ -272,7 +263,7 @@ public class ParamData
         }
 
         // Param Type Info
-        var paramTypeInfoPath = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Param Type Info.json";
+        var paramTypeInfoPath = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Param Type Info.json");
 
         if (File.Exists(paramTypeInfoPath))
         {
@@ -327,9 +318,9 @@ public class ParamData
     {
         await Task.Yield();
 
-        var rootMetaDir = @$"{AppContext.BaseDirectory}\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
+        var rootMetaDir = Path.Join(AppContext.BaseDirectory, "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
-        var projectMetaDir = @$"{Project.ProjectPath}\.smithbox\Assets\PARAM\{ProjectUtils.GetGameDirectory(Project)}\Meta";
+        var projectMetaDir = Path.Join(Project.ProjectPath, ".smithbox", "Assets", "PARAM", ProjectUtils.GetGameDirectory(Project), "Meta");
 
         if (CFG.Current.UseProjectMeta)
         {
@@ -366,11 +357,11 @@ public class ParamData
             {
                 if (CFG.Current.UseProjectMeta && Project.ProjectType != ProjectType.Undefined)
                 {
-                    meta.XmlDeserialize($@"{projectMetaDir}\{fName}", pdef);
+                    meta.XmlDeserialize(Path.Join(projectMetaDir, fName), pdef);
                 }
                 else
                 {
-                    meta.XmlDeserialize($@"{rootMetaDir}\{fName}", pdef);
+                    meta.XmlDeserialize(Path.Join(rootMetaDir, fName), pdef);
                 }
 
                 ParamMeta.Add(pdef, meta);
@@ -420,7 +411,7 @@ public class ParamData
     {
         var metaDir = ParamLocator.GetParammetaDir(Project);
         var rootDir = Path.Combine(AppContext.BaseDirectory, metaDir);
-        var projectDir = $"{Project.ProjectPath}\\.smithbox\\{metaDir}";
+        var projectDir = Path.Join(Project.ProjectPath, ".smithbox", metaDir);
 
         if (!Directory.Exists(projectDir))
         {

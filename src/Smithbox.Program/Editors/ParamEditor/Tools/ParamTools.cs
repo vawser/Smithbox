@@ -28,7 +28,7 @@ public partial class ParamTools
             return;
 
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.GetUIScale(), ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin("Tool Window##ToolConfigureWindow_ParamEditor", ImGuiWindowFlags.MenuBar))
         {
@@ -74,7 +74,7 @@ public partial class ParamTools
 
             if (CFG.Current.Interface_ParamEditor_Tool_ItemGib)
             {
-                Editor.ParamReloader.DisplayItemGib();
+                Editor.ItemGib.DisplayItemGib();
             }
 
             if (CFG.Current.Interface_ParamEditor_Tool_MassEdit)

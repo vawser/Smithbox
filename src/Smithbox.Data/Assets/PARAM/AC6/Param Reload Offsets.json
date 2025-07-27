@@ -271,7 +271,7 @@
             "LoadBalancerDrawDistScaleParam_xb1x:0x4A68",
             "LoadBalancerDrawDistScaleParam_xss:0x4A70"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": []
         }
       ]
     },
@@ -545,7 +545,7 @@
             "LoadBalancerDrawDistScaleParam_xb1x:0x4A68",
             "LoadBalancerDrawDistScaleParam_xss:0x4A70"
           ],
-          "itemGibOffsets": []
+          "itemIDCategories": []
         }
       ]
     }

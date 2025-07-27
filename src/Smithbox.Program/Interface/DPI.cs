@@ -4,6 +4,7 @@ using StudioCore.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,11 @@ namespace StudioCore.Interface;
 
 public static class DPI
 {
+    public static float StandardInputWidth => 400f * DPI.UIScale();
+
+    public static Vector2 StandardButtonSize => new Vector2(200 * DPI.UIScale(), 24 * DPI.UIScale());
+    public static Vector2 ThickButtonSize => new Vector2(200 * DPI.UIScale(), 32 * DPI.UIScale());
+
     private const float DefaultDpi = 96f;
     private static float _dpi = DefaultDpi;
 
@@ -43,7 +49,7 @@ public static class DPI
         }
     }
 
-    public static float GetUIScale()
+    public static float UIScale()
     {
         var scale = CFG.Current.System_UI_Scale;
         if (CFG.Current.System_ScaleByDPI)

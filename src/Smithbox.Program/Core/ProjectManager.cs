@@ -55,13 +55,16 @@ public class ProjectManager
             {
                 ProjectCreation.Show();
             }
+
             UIHelper.Tooltip($"Add a new project to the project list.");
 
-            UIHelper.SimpleHeader("selectedProjectHeader", "Selected Project", "The project that is currently selected.", UI.Current.ImGui_AliasName_Text);
+            UIHelper.SimpleHeader("selectedProjectHeader", "Selected Project",
+                "The project that is currently selected.", UI.Current.ImGui_AliasName_Text);
 
             DisplaySelectedProjectEntry();
 
-            UIHelper.SimpleHeader("possibleProjectsHeader", "Available Projects", "The projects that are avaliable.", UI.Current.ImGui_AliasName_Text);
+            UIHelper.SimpleHeader("possibleProjectsHeader", "Available Projects", "The projects that are avaliable.",
+                UI.Current.ImGui_AliasName_Text);
             // Project List
             DisplayProjectListOfType(ProjectType.DES);
             DisplayProjectListOfType(ProjectType.DS1);
@@ -110,9 +113,9 @@ public class ProjectManager
     {
         var projectList = Projects.Where(e => e.ProjectType == projectType).ToList();
 
-        if(projectList.Count > 0)
+        if (projectList.Count > 0)
         {
-            foreach(var project in projectList)
+            foreach (var project in projectList)
             {
                 if (project == SelectedProject)
                     continue;
@@ -202,6 +205,7 @@ public class ProjectManager
                 {
                     ModEngineHandler.LaunchME2Mod(curProject);
                 }
+
                 UIHelper.Tooltip("Launch this project with ModEngine2.");
             }
             else
@@ -209,7 +213,8 @@ public class ProjectManager
                 if (ImGui.MenuItem($"Set ME2 Executable Location"))
                 {
                     var modEnginePath = "";
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
+                    var result =
+                        PlatformUtils.Instance.OpenFileDialog("Select ME2 Executable", ["exe"], out modEnginePath);
 
                     if (result)
                     {
@@ -219,10 +224,13 @@ public class ProjectManager
                         }
                         else
                         {
-                            PlatformUtils.Instance.MessageBox("Error", "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            PlatformUtils.Instance.MessageBox("Error",
+                                "The file you selected was not modengine2_launcher.exe", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                         }
                     }
                 }
+
                 UIHelper.Tooltip("Set the ME2 executable location so you can launch this mod via ModEngine2.");
             }
         }
@@ -247,6 +255,7 @@ public class ProjectManager
                     {
                         ModEngineHandler.CreateME3Profile(curProject);
                     }
+
                     UIHelper.Tooltip("Create a ME3 profile file for this mod.");
                 }
                 else
@@ -254,13 +263,15 @@ public class ProjectManager
                     if (ImGui.MenuItem($"Set ME3 Profile Directory"))
                     {
                         var profilePath = "";
-                        var result = PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
+                        var result =
+                            PlatformUtils.Instance.OpenFolderDialog("Select ME3 Profile Directory", out profilePath);
 
                         if (result)
                         {
                             CFG.Current.ModEngine3ProfileDirectory = profilePath;
                         }
                     }
+
                     UIHelper.Tooltip("Set the directory you wish to store ME3 profiles in.");
                 }
             }
@@ -328,19 +339,19 @@ public class ProjectManager
         }
     }
 
-    public void SaveProject(ProjectEntry curProject)
+    public void SaveProject(ProjectEntry curProject, bool firstCreated = false)
     {
         if (curProject != null)
         {
             var folder = ProjectUtils.GetProjectsFolder();
             var file = Path.Combine(folder, $"{curProject.ProjectGUID}.json");
 
+            // Update the legacy project.json
+            CreateLegacyProjectJSON(curProject, firstCreated);
+
             var json = JsonSerializer.Serialize(curProject, SmithboxSerializerContext.Default.ProjectEntry);
 
             File.WriteAllText(file, json);
-
-            // Update the legacy project.json
-            CreateLegacyProjectJSON(curProject);
         }
     }
 
@@ -374,7 +385,8 @@ public class ProjectManager
                     var filestring = File.ReadAllText(entry);
                     var options = new JsonSerializerOptions();
 
-                    var curProject = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEntry);
+                    var curProject =
+                        JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.ProjectEntry);
 
                     if (curProject == null)
                     {
@@ -389,7 +401,8 @@ public class ProjectManager
                 }
                 catch (Exception e)
                 {
-                    TaskLogs.AddLog($"[Smithbox] Failed to load project: {entry}", LogLevel.Error, Tasks.LogPriority.High, e);
+                    TaskLogs.AddLog($"[Smithbox] Failed to load project: {entry}", LogLevel.Error,
+                        Tasks.LogPriority.High, e);
                 }
             }
         }
@@ -442,9 +455,9 @@ public class ProjectManager
 
         Projects.Add(newProject);
 
-        SaveProject(newProject);
+        SaveProject(newProject, true);
 
-        if(!IsProjectLoading)
+        if (!IsProjectLoading)
             StartupProject(newProject);
     }
 
@@ -472,6 +485,7 @@ public class ProjectManager
         {
             tEntry.IsSelected = false;
         }
+
         curProject.IsSelected = true;
 
         SelectedProject = curProject;
@@ -505,6 +519,7 @@ public class ProjectManager
         {
             tEntry.IsSelected = false;
         }
+
         curProject.IsSelected = true;
 
         SelectedProject = curProject;
@@ -522,18 +537,41 @@ public class ProjectManager
     /// Creates a legacy project.json file for other tools to use.
     /// </summary>
     /// <param name="curProject"></param>
-    public void CreateLegacyProjectJSON(ProjectEntry curProject)
+    public void CreateLegacyProjectJSON(ProjectEntry curProject, bool firstTime = false)
     {
         var jsonPath = $"{curProject.ProjectPath}/project.json";
 
-        if(Directory.Exists(curProject.ProjectPath))
+        // Only create this if it doesn't already exist
+        if (firstTime)
+        {
+            if (File.Exists(jsonPath))
+            {
+                string json = File.ReadAllText(jsonPath);
+                try
+                {
+                    LegacyProjectJSON project =
+                        JsonSerializer.Deserialize(json, SmithboxSerializerContext.Default.LegacyProjectJSON);
+                    curProject.PinnedRows = project.PinnedRows;
+                    curProject.PinnedFields = project.PinnedFields;
+                    curProject.PinnedParams = project.PinnedParams;
+                    return;
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[Smithbox] Failed to parse existing project.json: {e}", LogLevel.Error,
+                        Tasks.LogPriority.High, e);
+                }
+            }
+        }
+
+        if (!File.Exists(jsonPath) && Directory.Exists(curProject.ProjectPath))
         {
             var legacyProjectJson = new LegacyProjectJSON(curProject);
 
-            var json = JsonSerializer.Serialize(legacyProjectJson, SmithboxSerializerContext.Default.LegacyProjectJSON);
+            var json = JsonSerializer.Serialize(legacyProjectJson,
+                SmithboxSerializerContext.Default.LegacyProjectJSON);
 
             File.WriteAllText(jsonPath, json);
         }
     }
 }
-
