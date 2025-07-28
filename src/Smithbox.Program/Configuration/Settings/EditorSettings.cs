@@ -1533,7 +1533,6 @@ public class InterfaceTab
                 CFG.Current.System_UI_Scale = (float)Math.Round(_tempScale * 20) / 20;
                 _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the scale of the user interface throughout all of Smithbox.");
 
@@ -1544,14 +1543,12 @@ public class InterfaceTab
                 CFG.Current.System_UI_Scale = CFG.Default.System_UI_Scale;
                 _tempScale = CFG.Current.System_UI_Scale;
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-                Smithbox.FontRebuildRequest = true;
             }
 
             ImGui.Checkbox($"Multiply UI scale by DPI ({(DPI.Dpi / 96).ToString("P0", new NumberFormatInfo { PercentPositivePattern = 1, PercentNegativePattern = 1 })})", ref CFG.Current.System_ScaleByDPI);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Multiplies the user interface scale by your monitor's DPI setting.");
         }
@@ -1565,7 +1562,6 @@ public class InterfaceTab
             {
                 CFG.Current.Interface_FontSize = (float)Math.Round(CFG.Current.Interface_FontSize);
                 DPI.UIScaleChanged?.Invoke(null, EventArgs.Empty);
-                Smithbox.FontRebuildRequest = true;
             }
             UIHelper.Tooltip("Adjusts the size of the font in Smithbox.");
 
