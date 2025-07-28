@@ -62,9 +62,10 @@
     Wiki="The ID in ChrActivateConditionParam that affects enemy appearance conditions."
     ParamRef="ChrActivateConditionParam" />
     
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
+    <CondemnedSpEffectSetParamID
+    AltName="Condemned SpEffect Set ID"
+    Wiki="A set of SpEffects applied when the region is condemned."
+    ParamRef="SpEffectSetParam" />
     
     <BackupEventAnimID
     AltName="Idle Animation ID"
