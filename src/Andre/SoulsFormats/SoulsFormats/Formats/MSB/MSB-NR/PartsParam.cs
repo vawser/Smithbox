@@ -1584,7 +1584,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public int UnkT34 { get; set; }
+                public int CondemnedSpEffectSetParamID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -1658,7 +1658,7 @@ namespace SoulsFormats
                     UnkT28 = br.ReadInt32();
                     ChrActivateCondParamID = br.ReadInt32();
                     UnkT30 = br.ReadInt32();
-                    UnkT34 = br.ReadInt32();
+                    CondemnedSpEffectSetParamID = br.ReadInt32();
                     BackupEventAnimID = br.ReadInt32();
                     UnkT3C = br.ReadInt32();
                     SpEffectSetParamID = br.ReadInt32s(4);
@@ -1701,7 +1701,7 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(ChrActivateCondParamID);
                     bw.WriteInt32(UnkT30);
-                    bw.WriteInt32(UnkT34);
+                    bw.WriteInt32(CondemnedSpEffectSetParamID);
                     bw.WriteInt32(BackupEventAnimID);
                     bw.WriteInt32(UnkT3C);
                     bw.WriteInt32s(SpEffectSetParamID);

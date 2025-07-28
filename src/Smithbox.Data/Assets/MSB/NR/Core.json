@@ -339,6 +339,12 @@
                     "attributes": ""
                 },
                 {
+                    "id": "CondemnedSpEffectSetParamID",
+                    "name": "Condemned SpEffect Set ID",
+                    "description": "A set of SpEffects applied when the region is condemned.",
+                    "attributes": ""
+                },
+                {
                     "id": "BackupEventAnimID",
                     "name": "Backup Event Anim ID",
                     "description": "Default event animation to apply to the enemy whilst it is idle.",
