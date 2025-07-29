@@ -106856,327 +106856,327 @@
         {
           "Index": 0,
           "ID": 0,
-          "Name": "Lightweight -- \u8EFD\u91CF"
+          "Name": "Lightweight"
         },
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Lightweight \u002B -- \u8EFD\u91CF\uFF0B"
+          "Name": "Lightweight\u002B"
         },
         {
           "Index": 2,
           "ID": 5,
-          "Name": "Medium Amount -- \u4E2D\u91CF"
+          "Name": "Medium Weight"
         },
         {
           "Index": 3,
           "ID": 6,
-          "Name": "Medium Amount \u002B -- \u4E2D\u91CF\uFF0B"
+          "Name": "Medium Weight\u002B"
         },
         {
           "Index": 4,
           "ID": 10,
-          "Name": "Weight -- \u91CD\u91CF"
+          "Name": "Heavyweight"
         },
         {
           "Index": 5,
           "ID": 15,
-          "Name": "Over weight -- \u91CD\u91CF\u30AA\u30FC\u30D0\u30FC"
+          "Name": "Encumbered"
         },
         {
           "Index": 6,
           "ID": 16,
-          "Name": "Super light -- \u8D85\u8EFD\u91CF"
+          "Name": "Super Lightweight (Dark Wood Grain Ring)"
         },
         {
           "Index": 7,
           "ID": 20,
-          "Name": "Mimicry _ Light Weight -- \u64EC\u614B_\u8EFD\u91CF"
+          "Name": "Mimicry - Lightweight"
         },
         {
           "Index": 8,
           "ID": 21,
-          "Name": "Mimicry _ lightweight \u002B -- \u64EC\u614B_\u8EFD\u91CF\uFF0B"
+          "Name": "Mimicry - Lightweight\u002B"
         },
         {
           "Index": 9,
           "ID": 25,
-          "Name": "Mimicry _ Medium Volume -- \u64EC\u614B_\u4E2D\u91CF"
+          "Name": "Mimicry - Medium Weight"
         },
         {
           "Index": 10,
           "ID": 26,
-          "Name": "Mimicry _ Medium Amount \u002B -- \u64EC\u614B_\u4E2D\u91CF\uFF0B"
+          "Name": "Mimicry - Medium Weight\u002B"
         },
         {
           "Index": 11,
           "ID": 30,
-          "Name": "Mimicry weight -- \u64EC\u614B_\u91CD\u91CF"
+          "Name": "Mimicry - Heavyweight"
         },
         {
           "Index": 12,
           "ID": 35,
-          "Name": "Mimicry _ over Weight -- \u64EC\u614B_\u91CD\u91CF\u30AA\u30FC\u30D0\u30FC"
+          "Name": "Mimicry - Encumbered"
         },
         {
           "Index": 13,
           "ID": 36,
-          "Name": "Mimicry _ ultra-light -- \u64EC\u614B_\u8D85\u8EFD\u91CF"
+          "Name": "Mimicry - Super Lightweight (Dark Wood Grain Ring)"
         },
         {
           "Index": 14,
           "ID": 40,
-          "Name": "Underwater (deep) _ Lightweight -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u8EFD\u91CF"
+          "Name": "Water (deep) - Lightweight"
         },
         {
           "Index": 15,
           "ID": 41,
-          "Name": "Underwater (deep) _ Lightweight \u002B -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u8EFD\u91CF\uFF0B"
+          "Name": "Water (deep) - Lightweight\u002B"
         },
         {
           "Index": 16,
           "ID": 45,
-          "Name": "Underwater (deep) _ Medium volume -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u4E2D\u91CF"
+          "Name": "Water (deep) - Medium Weight"
         },
         {
           "Index": 17,
           "ID": 46,
-          "Name": "Underwater (deep) _ Medium Volume \u002B -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u4E2D\u91CF\uFF0B"
+          "Name": "Water (deep) - Medium Weight\u002B"
         },
         {
           "Index": 18,
           "ID": 50,
-          "Name": "Underwater (deep) _ Weight -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u91CD\u91CF"
+          "Name": "Water (deep) - Heavyweight"
         },
         {
           "Index": 19,
           "ID": 55,
-          "Name": "Underwater (deep) _ Over weight -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u91CD\u91CF\u30AA\u30FC\u30D0\u30FC"
+          "Name": "Water (deep) - Encumbered"
         },
         {
           "Index": 20,
           "ID": 56,
-          "Name": "Underwater (deep) _ Ultra-Light -- \u6C34\u4E2D\uFF08\u6DF1\uFF09_\u8D85\u8EFD\u91CF"
+          "Name": "Water (deep) - Super Lightweight (Dark Wood Grain Ring)"
         },
         {
           "Index": 21,
           "ID": 60,
-          "Name": "\u3010 SP \u3011 Guard Vigilance _ Lightweight -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u8EFD\u91CF"
+          "Name": "Iron Flesh - Lightweight"
         },
         {
           "Index": 22,
           "ID": 61,
-          "Name": "\u3010 SP \u3011 Guard Vigilance _ lightweight \u002B -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u8EFD\u91CF\uFF0B"
+          "Name": "Iron Flesh - Lightweight\u002B"
         },
         {
           "Index": 23,
           "ID": 65,
-          "Name": "\u3010 SP \u3011 Guard Vigilance _ medium volume -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u4E2D\u91CF"
+          "Name": "Iron Flesh - Medium Weight"
         },
         {
           "Index": 24,
           "ID": 66,
-          "Name": "\u3010 SP \u3011 Guard Vigilance _ Medium Amount \u002B -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u4E2D\u91CF\uFF0B"
+          "Name": "Iron Flesh - Medium Weight\u002B"
         },
         {
           "Index": 25,
           "ID": 70,
-          "Name": "\u3010 SP \u3011 Guard Vigilance _ Weight -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u91CD\u91CF"
+          "Name": "Iron Flesh - Heavyweight"
         },
         {
           "Index": 26,
           "ID": 75,
-          "Name": "[SP] Guard vigilance _ over weight -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u91CD\u91CF\u30AA\u30FC\u30D0\u30FC"
+          "Name": "Iron Flesh - Encumbered"
         },
         {
           "Index": 27,
           "ID": 76,
-          "Name": "[SP] Guard Vigilance _ ultra-light -- \u3010SP\u3011\u30AC\u30FC\u30C9\u8B66\u6212_\u8D85\u8EFD\u91CF"
+          "Name": "Iron Flesh - Super Lightweight (Dark Wood Grain Ring)"
         },
         {
           "Index": 28,
-          "ID": 1001,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF"
+          "ID": 100,
+          "Name": "DeS Base Enemy Combat"
         },
         {
           "Index": 29,
-          "ID": 1002,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF\u904E\u591A"
+          "ID": 101,
+          "Name": "DeS Bird Standard"
         },
         {
           "Index": 30,
-          "ID": 1003,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u7015\u6B7B"
+          "ID": 102,
+          "Name": "DeS Guard"
         },
         {
           "Index": 31,
-          "ID": 1004,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u8840\u6CBC\uFF08\u91CD\u91CF\u904E\u591A\uFF09"
+          "ID": 103,
+          "Name": "DeS Dog"
         },
         {
           "Index": 32,
-          "ID": 1005,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u6BD2\u6CBC\uFF08\u79FB\u52D5\u901F\u5EA6\u4F4E\u4E0B\uFF09"
+          "ID": 104,
+          "Name": "DeS Dragon God"
         },
         {
           "Index": 33,
-          "ID": 1006,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u8D85\u91CD\u91CF\u79FB\u52D5"
+          "ID": 105,
+          "Name": "DeS Base Enemy Non-combat Time"
         },
         {
           "Index": 34,
-          "ID": 1010,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u901A\u5E38_\u64EC\u614B"
+          "ID": 106,
+          "Name": "DeS Scale Miner Combat"
         },
         {
           "Index": 35,
-          "ID": 1011,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF_\u64EC\u614B"
+          "ID": 107,
+          "Name": "DeS Scale Miner Non-combat (Bag)"
         },
         {
           "Index": 36,
-          "ID": 1012,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF\u904E\u591A_\u64EC\u614B"
+          "ID": 108,
+          "Name": "DeS Scale Miner Non-combat (Pickaxe)"
         },
         {
           "Index": 37,
-          "ID": 1013,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u8D85\u91CD\u91CF\u79FB\u52D5_\u64EC\u614B"
+          "ID": 109,
+          "Name": "DeS Armor Spider Peeking (??)"
         },
         {
           "Index": 38,
-          "ID": 1020,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u901A\u5E38_\u6C34\u4E2D\uFF08\u6DF1\uFF09"
+          "ID": 110,
+          "Name": "DeS Gargoyle Test"
         },
         {
           "Index": 39,
-          "ID": 1021,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF_\u6C34\u4E2D\uFF08\u6DF1\uFF09"
+          "ID": 111,
+          "Name": "DeS Dragon God (Stonefang Tunnel)"
         },
         {
           "Index": 40,
-          "ID": 1022,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u91CD\u91CF\u904E\u591A_\u6C34\u4E2D\uFF08\u6DF1\uFF09"
+          "ID": 112,
+          "Name": "DeS Storm King"
         },
         {
           "Index": 41,
-          "ID": 1023,
-          "Name": "\u30D7\u30EC\u30A4\u30E4\u30FC\u8D85\u91CD\u91CF\u79FB\u52D5_\u6C34\u4E2D\uFF08\u6DF1\uFF09"
+          "ID": 113,
+          "Name": "DeS Storm King (Child) Bichibichi Wait"
         },
         {
           "Index": 42,
-          "ID": 100,
-          "Name": "Enemy Base Combat -- \u6575\u57FA\u672C\u3000\u6226\u95D8\u6642"
+          "ID": 114,
+          "Name": "DeS Scale Miner Non-combat (Bare Hand)"
         },
         {
           "Index": 43,
-          "ID": 101,
-          "Name": "Bird Standard -- \u9CE5\u6A19\u6E96"
+          "ID": 115,
+          "Name": "DeS Mind Flayer Combat"
         },
         {
           "Index": 44,
-          "ID": 102,
-          "Name": "Guard -- \u30AC\u30FC\u30C9"
+          "ID": 116,
+          "Name": "DeS Gargoyle Air (for 3050)"
         },
         {
           "Index": 45,
-          "ID": 103,
-          "Name": "Dog -- \u72AC"
+          "ID": 117,
+          "Name": "DeS Gargoyle Ground (for 3050)"
         },
         {
           "Index": 46,
-          "ID": 104,
-          "Name": "Dragon Demon -- \u30C9\u30E9\u30B4\u30F3\u30C7\u30FC\u30E2\u30F3"
+          "ID": 118,
+          "Name": "DeS Shadowlurker (Female)? (For Disappearing)"
         },
         {
           "Index": 47,
-          "ID": 105,
-          "Name": "Enemy base non-combat time -- \u6575\u57FA\u672C\u3000\u975E\u6226\u95D8\u6642"
+          "ID": 119,
+          "Name": "DeS For Blood Mites (Giant Tick?)"
         },
         {
           "Index": 48,
-          "ID": 106,
-          "Name": "Scale miners during combat -- \u30A6\u30ED\u30B3\u9271\u592B\u3000\u6226\u95D8\u6642"
+          "ID": 120,
+          "Name": "Paris (Pharis?) Aim"
         },
         {
           "Index": 49,
-          "ID": 107,
-          "Name": "Scales Miners Non-combat (bag) -- \u30A6\u30ED\u30B3\u9271\u592B\u3000\u975E\u6226\u95D8\u6642\uFF08\u888B\uFF09"
+          "ID": 121,
+          "Name": "[DLC] Base Enemy Combat (No Running/Turning Animation)"
         },
         {
           "Index": 50,
-          "ID": 108,
-          "Name": "Scales Miners Non-combat (pick) -- \u30A6\u30ED\u30B3\u9271\u592B\u3000\u975E\u6226\u95D8\u6642\uFF08\u30D4\u30C3\u30AF\u30EB\uFF09"
+          "ID": 900,
+          "Name": "PG 4-Legged Type"
         },
         {
           "Index": 51,
-          "ID": 109,
-          "Name": "Big Spider Peeping -- \u5927\u8718\u86DB\u3000\u306E\u305E\u304D\u8FBC\u307F"
+          "ID": 1001,
+          "Name": "[Unused] DeS Player - Heavyweight"
         },
         {
           "Index": 52,
-          "ID": 110,
-          "Name": "Gargoyletest -- \u30AC\u30FC\u30B4\u30A4\u30EB\u30C6\u30B9\u30C8"
+          "ID": 1002,
+          "Name": "[Unused] DeS Player - Encumbered"
         },
         {
           "Index": 53,
-          "ID": 111,
-          "Name": "Dragon Demon (mine) -- \u30C9\u30E9\u30B4\u30F3\u30C7\u30FC\u30E2\u30F3\uFF08\u5751\u9053\uFF09"
+          "ID": 1003,
+          "Name": "[Unused] DeS Player - Near Death? (Soul form?)"
         },
         {
           "Index": 54,
-          "ID": 112,
-          "Name": "For the beast of the Storm -- \u5D50\u306E\u7363\u7528"
+          "ID": 1004,
+          "Name": "[Unused] DeS Player - Blood Swamp (Valley of Defilement?), Encumbered"
         },
         {
           "Index": 55,
-          "ID": 113,
-          "Name": "Storm Beast (CUB) Bichibichi wait -- \u5D50\u306E\u7363\uFF08\u5B50\u30A8\u30A4\uFF09\u30D3\u30C1\u30D3\u30C1\u5F85\u6A5F"
+          "ID": 1005,
+          "Name": "[Unused] DeS Player - Poison Swamp, Movespeed decrease?"
         },
         {
           "Index": 56,
-          "ID": 114,
-          "Name": "Scales Miners Non-combat (bare hands) -- \u30A6\u30ED\u30B3\u9271\u592B\u3000\u975E\u6226\u95D8\u6642\uFF08\u7D20\u624B\uFF09"
+          "ID": 1006,
+          "Name": "[Unused] Player - Super Lightweight"
         },
         {
           "Index": 57,
-          "ID": 115,
-          "Name": "Octopus head when fighting -- \u30BF\u30B3\u982D \u3000\u6226\u95D8\u6642"
+          "ID": 1010,
+          "Name": "[Unused] Player - Standard (Mimicry)"
         },
         {
           "Index": 58,
-          "ID": 116,
-          "Name": "Gargoyle aerial (for 3050) -- \u30AC\u30FC\u30B4\u30A4\u30EB\u7A7A\u4E2D\uFF083050\u7528\uFF09"
+          "ID": 1011,
+          "Name": "[Unused] Player - Heavyweight (Mimicry)"
         },
         {
           "Index": 59,
-          "ID": 117,
-          "Name": "Gargoyle Ground (for 3050) -- \u30AC\u30FC\u30B4\u30A4\u30EB\u5730\u4E0A\uFF083050\u7528\uFF09"
+          "ID": 1012,
+          "Name": "[Unused] Player - Encumbered (Mimicry)"
         },
         {
           "Index": 60,
-          "ID": 118,
-          "Name": "Shadow woman _ for disappearing -- \u5F71\u5973\uFF3F\u6D88\u3048\u308B\u7528"
+          "ID": 1013,
+          "Name": "[Unused] Player - Super Lightweight (Mimicry)"
         },
         {
           "Index": 61,
-          "ID": 119,
-          "Name": "Blood mites only -- \u8840\u30C0\u30CB\u5C02\u7528"
+          "ID": 1020,
+          "Name": "[Unused] Player - Standard (Deep Water)"
         },
         {
           "Index": 62,
-          "ID": 120,
-          "Name": "Paris AIM -- \u30D1\u30EA\u30A3\u72D9\u3044"
+          "ID": 1021,
+          "Name": "[Unused] Player - Heavyweight (Deep Water)"
         },
         {
           "Index": 63,
-          "ID": 121,
-          "Name": "[DLC] Enemy Basic combat (running/swirling anime without version) -- \u3010DLC\u3011\u6575\u57FA\u672C\u3000\u6226\u95D8\u6642\uFF08\u8D70\u884C\uFF0F\u65CB\u56DE\u30A2\u30CB\u30E1\u306A\u3057\u30D0\u30FC\u30B8\u30E7\u30F3\uFF09"
+          "ID": 1022,
+          "Name": "[Unused] Player - Encumbered (Deep Water)"
         },
         {
           "Index": 64,
-          "ID": 900,
-          "Name": "Four-legged type for PG -- PG\u75284\u8DB3\u30BF\u30A4\u30D7"
+          "ID": 1023,
+          "Name": "[Unused] Player - Super Lightweight (Deep Water)"
         }
       ]
     },
