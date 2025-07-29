@@ -98746,97 +98746,97 @@
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Normal text_brown"
+          "Name": "Normal Text - Brown"
         },
         {
           "Index": 2,
           "ID": 2,
-          "Name": "Icon color selected in inventory"
+          "Name": "Inventory Selected Icon Color"
         },
         {
           "Index": 3,
           "ID": 3,
-          "Name": "Parameter text (normal)"
+          "Name": "Parameter Text (Normal)"
         },
         {
           "Index": 4,
           "ID": 4,
-          "Name": "Parameter text (good)"
+          "Name": "Parameter Text (Good)"
         },
         {
           "Index": 5,
           "ID": 5,
-          "Name": "Parameter text (bad)"
+          "Name": "Parameter text (Bad)"
         },
         {
           "Index": 6,
           "ID": 6,
-          "Name": "Information title"
+          "Name": "Information Title"
         },
         {
           "Index": 7,
           "ID": 7,
-          "Name": "Normal text_white"
+          "Name": "Normal Text - White"
         },
         {
           "Index": 8,
           "ID": 8,
-          "Name": "Sucrose bar background color"
+          "Name": "Scroll Bar Background Color"
         },
         {
           "Index": 9,
           "ID": 9,
-          "Name": "Background plate (concentration adjustment)"
+          "Name": "Background Plate (Concentration (brightness?) Adjustment)"
         },
         {
           "Index": 10,
           "ID": 10,
-          "Name": "Background plate (color adjustment)"
+          "Name": "Background Plate (Color Adjustment)"
         },
         {
           "Index": 11,
           "ID": 11,
-          "Name": "One-line help"
+          "Name": "One-line Help"
         },
         {
           "Index": 12,
           "ID": 12,
-          "Name": "Key guide"
+          "Name": "Key Guide"
         },
         {
           "Index": 13,
           "ID": 13,
-          "Name": "Menu plate"
+          "Name": "Menu Plate"
         },
         {
           "Index": 14,
           "ID": 14,
-          "Name": "translucent plate"
+          "Name": "Translucent Plate"
         },
         {
           "Index": 15,
           "ID": 15,
-          "Name": "Translucent gradation plate"
+          "Name": "Translucent Gradation Plate"
         },
         {
           "Index": 16,
           "ID": 16,
-          "Name": "scroll bar"
+          "Name": "Scroll Bar"
         },
         {
           "Index": 17,
           "ID": 17,
-          "Name": "blood letter plate"
+          "Name": "Bloodstain Plate"
         },
         {
           "Index": 18,
           "ID": 18,
-          "Name": "SOS plate"
+          "Name": "White Sign Soapstone Plate"
         },
         {
           "Index": 19,
           "ID": 19,
-          "Name": "item help blackout"
+          "Name": "Item Help Blackout"
         },
         {
           "Index": 20,
@@ -98851,27 +98851,27 @@
         {
           "Index": 22,
           "ID": 22,
-          "Name": "lines"
+          "Name": "Line"
         },
         {
           "Index": 23,
           "ID": 23,
-          "Name": "Menu tab (in-game)"
+          "Name": "Menu Tab (In-game)"
         },
         {
           "Index": 24,
           "ID": 24,
-          "Name": "Menu tab (camp)"
+          "Name": "Menu Tab (Camp) (Bonfire?)"
         },
         {
           "Index": 25,
           "ID": 25,
-          "Name": "Menu tab (blood character input)"
+          "Name": "Menu Tab (Bloodstain Input)"
         },
         {
           "Index": 26,
           "ID": 26,
-          "Name": "Menu tab (SOS input)"
+          "Name": "Menu Tab (White Sign Soapstone Input)"
         },
         {
           "Index": 27,
@@ -98881,7 +98881,7 @@
         {
           "Index": 28,
           "ID": 28,
-          "Name": "Menu tab (title menu)"
+          "Name": "Menu Tab (Title Menu)"
         },
         {
           "Index": 29,
@@ -98891,27 +98891,27 @@
         {
           "Index": 30,
           "ID": 30,
-          "Name": "HP bar"
+          "Name": "HP Bar"
         },
         {
           "Index": 31,
           "ID": 31,
-          "Name": "MP bar"
+          "Name": "MP Bar"
         },
         {
           "Index": 32,
           "ID": 32,
-          "Name": "SP bar"
+          "Name": "SP Bar"
         },
         {
           "Index": 33,
           "ID": 33,
-          "Name": "Variable bar"
+          "Name": "Variable Bar"
         },
         {
           "Index": 34,
           "ID": 34,
-          "Name": "bar plate"
+          "Name": "Bar Plate"
         },
         {
           "Index": 35,
@@ -98921,7 +98921,7 @@
         {
           "Index": 36,
           "ID": 36,
-          "Name": "Attack / Defense bar (additional effect)"
+          "Name": "Attack / Defense Bar (Additional Effect)"
         },
         {
           "Index": 37,
@@ -98931,27 +98931,27 @@
         {
           "Index": 38,
           "ID": 38,
-          "Name": "Option bar"
+          "Name": "Option Bar"
         },
         {
           "Index": 39,
           "ID": 39,
-          "Name": "Target sites"
+          "Name": "Target Site"
         },
         {
           "Index": 40,
           "ID": 40,
-          "Name": "translucent character plate (bright)"
+          "Name": "Translucent Character Plate (Light)"
         },
         {
           "Index": 41,
           "ID": 41,
-          "Name": "Translucent character plate (dark)"
+          "Name": "Translucent Character Plate (Dark)"
         },
         {
           "Index": 42,
           "ID": 42,
-          "Name": "button plate"
+          "Name": "Button Plate"
         },
         {
           "Index": 43,
@@ -98961,27 +98961,27 @@
         {
           "Index": 44,
           "ID": 44,
-          "Name": "Selection item plate (Akira)"
+          "Name": "Selection Plate (Light)"
         },
         {
           "Index": 45,
           "ID": 45,
-          "Name": "Selection plate (dark)"
+          "Name": "Selection Plate (Dark)"
         },
         {
           "Index": 46,
           "ID": 46,
-          "Name": "Selection item plate (OK button)"
+          "Name": "Selection Plate (OK button)"
         },
         {
           "Index": 47,
           "ID": 47,
-          "Name": "Translucent gradation plate (button)"
+          "Name": "Translucent Gradation Plate (Button)"
         },
         {
           "Index": 48,
           "ID": 48,
-          "Name": "large plate (dark)"
+          "Name": "Large Plate (Dark)"
         },
         {
           "Index": 49,
@@ -98991,157 +98991,157 @@
         {
           "Index": 50,
           "ID": 50,
-          "Name": "skills slot"
+          "Name": "Skill Slot"
         },
         {
           "Index": 51,
           "ID": 51,
-          "Name": "spell slot"
+          "Name": "Spell Slot"
         },
         {
           "Index": 52,
           "ID": 52,
-          "Name": "white"
+          "Name": "White"
         },
         {
           "Index": 53,
           "ID": 53,
-          "Name": "Normal text_black"
+          "Name": "Normal Text - Black"
         },
         {
           "Index": 54,
-          "ID": 36908,
-          "Name": "Title-Face Color 08"
+          "ID": 60,
+          "Name": "FE Humanity Number (Grey While Hollow)"
         },
         {
           "Index": 55,
-          "ID": 36909,
-          "Name": "Title-Hair color for face creation 09"
+          "ID": 61,
+          "Name": "Test Color 11"
         },
         {
           "Index": 56,
-          "ID": 36910,
-          "Name": "Title-Hair Color for Face Creation 10"
+          "ID": 62,
+          "Name": "Test Color 12"
         },
         {
           "Index": 57,
-          "ID": 37908,
-          "Name": "Eye color 08"
+          "ID": 63,
+          "Name": "Test Color 13"
         },
         {
           "Index": 58,
-          "ID": 37909,
-          "Name": "Eye color 09 for title face creation"
+          "ID": 64,
+          "Name": "Test Color 14"
         },
         {
           "Index": 59,
-          "ID": 37910,
-          "Name": "Eye color for title face creation 10"
+          "ID": 65,
+          "Name": "Text Color - Blue"
         },
         {
           "Index": 60,
-          "ID": 60,
-          "Name": "FE human nature numerical value"
+          "ID": 66,
+          "Name": "Text Color - Red"
         },
         {
           "Index": 61,
-          "ID": 61,
-          "Name": "Test color 11"
+          "ID": 36901,
+          "Name": "Title - Hair Color 01"
         },
         {
           "Index": 62,
-          "ID": 62,
-          "Name": "test color 12"
+          "ID": 36902,
+          "Name": "Title - Hair Color 02"
         },
         {
           "Index": 63,
-          "ID": 63,
-          "Name": "test color 13"
+          "ID": 36903,
+          "Name": "Title - Hair Color 03"
         },
         {
           "Index": 64,
-          "ID": 64,
-          "Name": "test color 14"
+          "ID": 36904,
+          "Name": "Title - Hair Color 04"
         },
         {
           "Index": 65,
-          "ID": 65,
-          "Name": "text color blue"
+          "ID": 36905,
+          "Name": "Title - Hair Color 05"
         },
         {
           "Index": 66,
-          "ID": 66,
-          "Name": "text color red"
+          "ID": 36906,
+          "Name": "Title - Hair Color 06"
         },
         {
           "Index": 67,
-          "ID": 36901,
-          "Name": "Title-Face Color 01"
+          "ID": 36907,
+          "Name": "Title - Hair Color 07"
         },
         {
           "Index": 68,
-          "ID": 36902,
-          "Name": "Title-Face Color 02"
+          "ID": 36908,
+          "Name": "Title - Hair Color 08"
         },
         {
           "Index": 69,
-          "ID": 36903,
-          "Name": "Title-Hair Color for Face Creation 03"
+          "ID": 36909,
+          "Name": "Title - Hair Color 09"
         },
         {
           "Index": 70,
-          "ID": 36904,
-          "Name": "Title-Face Color 04"
+          "ID": 36910,
+          "Name": "Title - Hair Color 10"
         },
         {
           "Index": 71,
-          "ID": 36905,
-          "Name": "Title-Face Color 05"
+          "ID": 37901,
+          "Name": "Title - Eye Color 01"
         },
         {
           "Index": 72,
-          "ID": 36906,
-          "Name": "Title-Hair Color for Face Creation 06"
+          "ID": 37902,
+          "Name": "Title - Eye Color 02"
         },
         {
           "Index": 73,
-          "ID": 36907,
-          "Name": "Title-Face Color 07"
+          "ID": 37903,
+          "Name": "Title - Eye Color 03"
         },
         {
           "Index": 74,
-          "ID": 37901,
-          "Name": "Eye color for creating title face 01"
+          "ID": 37904,
+          "Name": "Title - Eye Color 04"
         },
         {
           "Index": 75,
-          "ID": 37902,
-          "Name": "Eye color for creating title face 02"
+          "ID": 37905,
+          "Name": "Title - Eye Color 05"
         },
         {
           "Index": 76,
-          "ID": 37903,
-          "Name": "Eye color for creating title face 03"
+          "ID": 37906,
+          "Name": "Title - Eye Color 06"
         },
         {
           "Index": 77,
-          "ID": 37904,
-          "Name": "Eye color for creating face 04"
+          "ID": 37907,
+          "Name": "Title - Eye Color 07"
         },
         {
           "Index": 78,
-          "ID": 37905,
-          "Name": "Eyes 05 for creating a title face"
+          "ID": 37908,
+          "Name": "Title - Eye Color 08"
         },
         {
           "Index": 79,
-          "ID": 37906,
-          "Name": "Eye color for creating title face 06"
+          "ID": 37909,
+          "Name": "Title - Eye Color 09"
         },
         {
           "Index": 80,
-          "ID": 37907,
-          "Name": "Eye color for creating title face 07"
+          "ID": 37910,
+          "Name": "Title - Eye Color 10"
         }
       ]
     },
