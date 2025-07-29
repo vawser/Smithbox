@@ -42381,12 +42381,12 @@
         {
           "Index": 0,
           "ID": 0,
-          "Name": "Do not erase-can\u0027t erase"
+          "Name": "Do not erase"
         },
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Atarisawari data (copy and paste recommended)-Unobtrusive data (copy and paste recommended)"
+          "Name": "Atarisawari (Unobtrusive?) Data (Recommended Source For Copy \u0026 Paste)"
         },
         {
           "Index": 2,
@@ -42406,147 +42406,147 @@
         {
           "Index": 5,
           "ID": 21,
-          "Name": "For fire damage test"
+          "Name": "For Fire Damage Test"
         },
         {
           "Index": 6,
           "ID": 200,
-          "Name": "DS2 for easy logic test"
+          "Name": "DeS2 - Easy Logic Test"
         },
         {
           "Index": 7,
           "ID": 500,
-          "Name": "DS2 Proto @ Knight who loves ladder"
+          "Name": "DeS2 Proto - Knight Who Loves Ladder"
         },
         {
           "Index": 8,
           "ID": 501,
-          "Name": "DS2 Proto: A Big Prisoner Helping a Friend"
+          "Name": "DeS2 Proto - Big Jailor Who Helps His Friends"
         },
         {
           "Index": 9,
           "ID": 502,
-          "Name": "Skeleton test to talk"
+          "Name": "Skeleton Talk Test"
         },
         {
           "Index": 10,
           "ID": 503,
-          "Name": "Skeleton for coffin throwing (large)"
+          "Name": "For Coffin Throwing - Skeleton (Large)"
         },
         {
           "Index": 11,
           "ID": 510,
-          "Name": "DS2 Test @ Knight Assumed"
+          "Name": "DeS2 Test - Knight Assumed(?)"
         },
         {
           "Index": 12,
           "ID": 511,
-          "Name": "Skeleton_Sword Parry"
+          "Name": "Skeleton - Sword Parry"
         },
         {
           "Index": 13,
           "ID": 514,
-          "Name": "Wyvern Bird Control"
+          "Name": "Wyvern - Bird Control"
         },
         {
           "Index": 14,
           "ID": 520,
-          "Name": "DS2Test for upstream"
+          "Name": "DeS2Test - Upstream"
         },
         {
           "Index": 15,
           "ID": 521,
-          "Name": "DS2Test Friend for Kawakami"
+          "Name": "DeS2Test - Upstream Friend"
         },
         {
           "Index": 16,
           "ID": 522,
-          "Name": "DS2Test Kawakami 2"
+          "Name": "DeS2Test - Upstream 2"
         },
         {
           "Index": 17,
           "ID": 540,
-          "Name": "For automatic patrol (running)-For automatic patrol (running)"
+          "Name": "DeS2 Test - For Watanabe(?)"
         },
         {
           "Index": 18,
           "ID": 541,
-          "Name": "Automatic patrol (walking)-For automatic patrol (walking)"
+          "Name": "DeS2 Test - For Watanabe spare(??)"
         },
         {
           "Index": 19,
           "ID": 550,
-          "Name": "DS2 test wandering for automatic test (Watanabe management)"
+          "Name": "DeS2 Test - Wandering For Automatic Test (Managed by Watanabe?)"
         },
         {
           "Index": 20,
           "ID": 551,
-          "Name": "DS2 test wandering reserve for automatic test (Watanabe management)"
+          "Name": "DeS2 Test - Wandering For Automatic Test (Managed by Watanabe spare?)"
         },
         {
           "Index": 21,
           "ID": 1000,
-          "Name": "DS2 Return Test Knight_Sword"
+          "Name": "DeS2 - Return Home Test: Knight (Sword)"
         },
         {
           "Index": 22,
           "ID": 1003,
-          "Name": "DS2 {4 end} NPC closing the gate"
+          "Name": "DeS2 (End of April?) - Gate Closing NPC"
         },
         {
           "Index": 23,
           "ID": 6000,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora - Undead Burg"
         },
         {
           "Index": 24,
           "ID": 6001,
-          "Name": "Knight Solaire"
+          "Name": "[Unused] Solaire of Astora - Undead Parish"
         },
         {
           "Index": 25,
           "ID": 6002,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora - Anor Londo"
         },
         {
           "Index": 26,
           "ID": 6003,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora - Demon Ruins"
         },
         {
           "Index": 27,
           "ID": 6004,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Hostile) - Demon Ruins"
         },
         {
           "Index": 28,
           "ID": 6010,
-          "Name": "Lady of the Darkling"
+          "Name": "Darkmoon Knightess"
         },
         {
           "Index": 29,
           "ID": 6020,
-          "Name": "Oscar, Knight of Astora"
+          "Name": "Oscar of Astora"
         },
         {
           "Index": 30,
           "ID": 6021,
-          "Name": "Oscar, Knight of Astora"
+          "Name": "Oscar of Astora (Hostile)"
         },
         {
           "Index": 31,
           "ID": 6030,
-          "Name": "Big Hat Logan"
+          "Name": "Big Hat Logan - Sen\u0027s Fortress/Firelink Shrine"
         },
         {
           "Index": 32,
           "ID": 6031,
-          "Name": "Big Hat Logan"
+          "Name": "Big Hat Logan - Duke\u0027s Archives"
         },
         {
           "Index": 33,
           "ID": 6032,
-          "Name": "Big Hat Logan"
+          "Name": "Big Hat Logan (Hollow) - Duke\u0027s Archives"
         },
         {
           "Index": 34,
@@ -42556,12 +42556,12 @@
         {
           "Index": 35,
           "ID": 6041,
-          "Name": "Griggs of Vinheim"
+          "Name": "Griggs of Vinheim (Hollow)"
         },
         {
           "Index": 36,
           "ID": 6050,
-          "Name": "Dusk of Oolacile"
+          "Name": "Dusk of Oolacile - Darkroot Basin"
         },
         {
           "Index": 37,
@@ -42601,12 +42601,12 @@
         {
           "Index": 44,
           "ID": 6130,
-          "Name": "Griggs of Vinheim - Undead Burg"
+          "Name": "Laurentius of the Great Swamp"
         },
         {
           "Index": 45,
           "ID": 6131,
-          "Name": "Griggs of Vinheim (Hollow) - Blighttown"
+          "Name": "Laurentius of the Great Swamp (Hollow)"
         },
         {
           "Index": 46,
@@ -42616,12 +42616,12 @@
         {
           "Index": 47,
           "ID": 6180,
-          "Name": "Ingward"
+          "Name": "Ingward, Guardian of the Seal"
         },
         {
           "Index": 48,
           "ID": 6220,
-          "Name": "Blacksmith Rickert"
+          "Name": "Rickert of Vinheim"
         },
         {
           "Index": 49,
@@ -42641,52 +42641,52 @@
         {
           "Index": 52,
           "ID": 6271,
-          "Name": "Crestfallen Warrior (Hollow) - The Depths"
+          "Name": "Crestfallen Warrior (Hollow)"
         },
         {
           "Index": 53,
           "ID": 6280,
-          "Name": "Siegmeyer of Catarina"
+          "Name": "Siegmeyer of Catarina - Sen\u0027s Fortress/Ash Lake"
         },
         {
           "Index": 54,
           "ID": 6281,
-          "Name": "Siegmeyer of Catarina"
+          "Name": "Siegmeyer of Catarina - Anor Londo"
         },
         {
           "Index": 55,
           "ID": 6282,
-          "Name": "Siegmeyer of Catarina"
+          "Name": "Siegmeyer of Catarina - Firelink Shrine"
         },
         {
           "Index": 56,
           "ID": 6283,
-          "Name": "Siegmeyer of Catarina"
+          "Name": "Siegmeyer of Catarina - Blighttown"
         },
         {
           "Index": 57,
           "ID": 6284,
-          "Name": "Siegmeyer of Catarina"
+          "Name": "Siegmeyer of Catarina - Lost Izalith"
         },
         {
           "Index": 58,
           "ID": 6290,
-          "Name": "Sieglinde of Catarina"
+          "Name": "Sieglinde of Catarina - Duke\u0027s Archives/Firelink Shrine"
         },
         {
           "Index": 59,
           "ID": 6291,
-          "Name": "Sieglinde of Catarina - Great Hollow"
+          "Name": "Sieglinde of Catarina - Ash Lake"
         },
         {
           "Index": 60,
           "ID": 6300,
-          "Name": "Knight Lautrec"
+          "Name": "Knight Lautrec of Carim"
         },
         {
           "Index": 61,
           "ID": 6301,
-          "Name": "Knight Lautrec"
+          "Name": "Knight Lautrec of Carim (Invaded)"
         },
         {
           "Index": 62,
@@ -42696,22 +42696,22 @@
         {
           "Index": 63,
           "ID": 6311,
-          "Name": "Shiva of the East (Invaded)"
+          "Name": "[Unused] Shiva of the East (Invaded)"
         },
         {
           "Index": 64,
           "ID": 6320,
-          "Name": "Patches"
+          "Name": "Trusty Patches - The Catacombs"
         },
         {
           "Index": 65,
           "ID": 6321,
-          "Name": "Patches"
+          "Name": "Trusty Patches - Tomb of the Giants/Firelink Shrine"
         },
         {
           "Index": 66,
           "ID": 6350,
-          "Name": "\u7D75\u5E2B\u30A8\u30EC\u30FC\u30A2\u30DF\u30B9"
+          "Name": "[Unused] Painter Ariamis"
         },
         {
           "Index": 67,
@@ -42721,17 +42721,17 @@
         {
           "Index": 68,
           "ID": 6390,
-          "Name": "Black Knight Tarkus"
+          "Name": "[Unused] Black Iron Tarkus"
         },
         {
           "Index": 69,
           "ID": 6400,
-          "Name": "\u30D9\u30EB\u30AB\u9A0E\u58EB"
+          "Name": "[Unused] Velka Knight"
         },
         {
           "Index": 70,
           "ID": 6410,
-          "Name": "\u9B54\u5973\u30DE\u30ED\u30FC\u30B9"
+          "Name": "[Unused] Witch Mallows"
         },
         {
           "Index": 71,
@@ -42741,102 +42741,102 @@
         {
           "Index": 72,
           "ID": 6421,
-          "Name": "Shiva\u0027s Bodyguard (Invaded)"
+          "Name": "[Unused] Shiva\u0027s Bodyguard (Invaded)"
         },
         {
           "Index": 73,
           "ID": 6490,
-          "Name": "Lautrec Bodyguard 1"
+          "Name": "Lautrec\u0027s Companion 1"
         },
         {
           "Index": 74,
           "ID": 6500,
-          "Name": "Lautrec Bodyguard 2"
+          "Name": "Lautrec\u0027s Companion 2"
         },
         {
           "Index": 75,
           "ID": 6510,
-          "Name": "Iron Tarkus"
+          "Name": "Black Iron Tarkus (Summon) - Sen\u0027s Fortress"
         },
         {
           "Index": 76,
           "ID": 6511,
-          "Name": "Iron Tarkus"
+          "Name": "[Unused] Black Iron Tarkus (Hostile) - Lost Izalith"
         },
         {
           "Index": 77,
           "ID": 6520,
-          "Name": "Witch Beatrice"
+          "Name": "Witch Beatrice (Summon) - Darkroot Garden"
         },
         {
           "Index": 78,
           "ID": 6521,
-          "Name": "Witch Beatrice"
+          "Name": "Witch Beatrice (Summon) - New Londo Ruins"
         },
         {
           "Index": 79,
           "ID": 6530,
-          "Name": "Maneater Mildred"
+          "Name": "Maneater Mildred (Summon)"
         },
         {
           "Index": 80,
           "ID": 6531,
-          "Name": "Maneater Mildred"
+          "Name": "Maneater Mildred (Invader)"
         },
         {
           "Index": 81,
           "ID": 6540,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Summon) - Undead Parish"
         },
         {
           "Index": 82,
           "ID": 6541,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Summon) - The Depths"
         },
         {
           "Index": 83,
           "ID": 6542,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Summon) - Anor Londo"
         },
         {
           "Index": 84,
           "ID": 6543,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Summon) - Demon Ruins"
         },
         {
           "Index": 85,
           "ID": 6544,
-          "Name": "Knight Solaire"
+          "Name": "Solaire of Astora (Summon) - Kiln of the First Flame"
         },
         {
           "Index": 86,
           "ID": 6550,
-          "Name": "Paladin Leeroy"
+          "Name": "Paladin Leeroy (Summon)"
         },
         {
           "Index": 87,
           "ID": 6551,
-          "Name": "Paladin Leeroy"
+          "Name": "Paladin Leeroy (Invader)"
         },
         {
           "Index": 88,
           "ID": 6560,
-          "Name": "Knight Kirk"
+          "Name": "Kirk, Knight of Thorns (Invader) - The Depths"
         },
         {
           "Index": 89,
           "ID": 6561,
-          "Name": "Knight Kirk"
+          "Name": "Kirk, Knight of Thorns (Invader) - Demon Ruins"
         },
         {
           "Index": 90,
           "ID": 6562,
-          "Name": "Knight Kirk"
+          "Name": "Kirk, Knight of Thorns (Invader) - Lost Izalith"
         },
         {
           "Index": 91,
           "ID": 6570,
-          "Name": "King Jeremiah"
+          "Name": "Xanthous King Jeremiah (Invader)"
         },
         {
           "Index": 92,
@@ -42846,22 +42846,22 @@
         {
           "Index": 93,
           "ID": 6590,
-          "Name": "Knight Lautrec"
+          "Name": "Knight Lautrec of Carim - Undead Parish (Summon)"
         },
         {
           "Index": 94,
           "ID": 6591,
-          "Name": "Knight Lautrec"
+          "Name": "Knight Lautrec of Carim - The Depths (Summon)"
         },
         {
           "Index": 95,
           "ID": 6600,
-          "Name": "Prince Ricard"
+          "Name": "Undead Prince Ricard"
         },
         {
           "Index": 96,
           "ID": 6610,
-          "Name": "Crystal Knight"
+          "Name": "Hollow Crystal Knight"
         },
         {
           "Index": 97,
@@ -42871,17 +42871,17 @@
         {
           "Index": 98,
           "ID": 6640,
-          "Name": "Dark Moon Sword (Heavy Knight)"
+          "Name": "Darkmoon Soldier (Sword)"
         },
         {
           "Index": 99,
           "ID": 6650,
-          "Name": "Dark Moon Sword (Light Knight)"
+          "Name": "Darkmoon Soldier (Greatsword)"
         },
         {
           "Index": 100,
           "ID": 6700,
-          "Name": "Dusk of Oolacile"
+          "Name": "Dusk of Oolacile - Chasm of the Abyss"
         },
         {
           "Index": 101,
@@ -42891,132 +42891,132 @@
         {
           "Index": 102,
           "ID": 6801,
-          "Name": "Forest Hunter - Bandit"
+          "Name": "Forest Hunter A - Bandit"
         },
         {
           "Index": 103,
           "ID": 6802,
-          "Name": "Forest Hunter - Knight"
+          "Name": "Forest Hunter B - Warrior"
         },
         {
           "Index": 104,
           "ID": 6803,
-          "Name": "Forest Hunter - Hunter"
+          "Name": "Forest Hunter C - Hunter"
         },
         {
           "Index": 105,
           "ID": 6804,
-          "Name": "Forest Hunter - Cleric"
+          "Name": "Forest Hunter D - Sorcerer"
         },
         {
           "Index": 106,
           "ID": 6805,
-          "Name": "Forest Hunter - Sorcerer"
+          "Name": "Forest Hunter E - Cleric"
         },
         {
           "Index": 107,
           "ID": 6806,
-          "Name": "Forest Hunter - Thief"
+          "Name": "Forest Hunter F - Thief"
         },
         {
           "Index": 108,
           "ID": 6810,
-          "Name": "Tutorial Prisoner 1"
+          "Name": "[Unused] Tutorial Prisoner 1"
         },
         {
           "Index": 109,
           "ID": 6811,
-          "Name": "Tutorial Prisoner 2"
+          "Name": "[Unused] Tutorial Prisoner 2"
         },
         {
           "Index": 110,
           "ID": 7100,
-          "Name": "Castle 2_Vagrant NPC_Warrior"
+          "Name": "[Unused] Vagrant NPC - The Depths - Warrior"
         },
         {
           "Index": 111,
           "ID": 7110,
-          "Name": "Castle 1 \u30FB First half_Vagrant NPC_Voyeur"
+          "Name": "[Unused] Vagrant NPC - Undead Burg - Thief"
         },
         {
           "Index": 112,
           "ID": 7111,
-          "Name": "Castle 1st \u0026 2nd half_Vagrant NPC_Voyeur"
+          "Name": "[Unused] Vagrant NPC - Undead Parish - Thief"
         },
         {
           "Index": 113,
           "ID": 7120,
-          "Name": "Painting world_Vagrant NPC_Wanderer"
+          "Name": "[Unused] Vagrant NPC - Painted World - Wanderer"
         },
         {
           "Index": 114,
           "ID": 7130,
-          "Name": "Moriwaba, first half_Vagrant NPC_Hunter"
+          "Name": "[Unused] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
         },
         {
           "Index": 115,
           "ID": 7131,
-          "Name": "Moriwaba, latter half_Vagrant NPC_Hunter"
+          "Name": "[Unused] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
         },
         {
           "Index": 116,
           "ID": 7140,
-          "Name": "Cemetery 1_Vagrant NPC_Cleric"
+          "Name": "[Unused] Vagrant NPC - The Catacombs - Cleric"
         },
         {
           "Index": 117,
           "ID": 7150,
-          "Name": "Cemetery 2_Vagrant NPC_Cleric"
+          "Name": "[Unused] Vagrant NPC - Tomb of the Giants - Cleric"
         },
         {
           "Index": 118,
           "ID": 7160,
-          "Name": "Underground Lake_Vagrant NPC_Dragon Newt"
+          "Name": "[Unused] Vagrant NPC - Ash Lake - Dragon Newt"
         },
         {
           "Index": 119,
           "ID": 7170,
-          "Name": "Kagemachi_Vagrant NPC_Wanderer"
+          "Name": "[Unused] Vagrant NPC - Blighttown - Wanderer"
         },
         {
           "Index": 120,
           "ID": 7180,
-          "Name": "Closed city, first half_Vagrant NPC_Sorcerer"
+          "Name": "[Unused] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
         },
         {
           "Index": 121,
           "ID": 7190,
-          "Name": "Royal Castle 1_Vagrant NPC_Warrior"
+          "Name": "[Unused] Vagrant NPC - Sen\u0027s Fortress - Warrior"
         },
         {
           "Index": 122,
           "ID": 7200,
-          "Name": "Royal Castle 2_Vagrant NPC_Knight"
+          "Name": "[Unused] Vagrant NPC - Anor Londo - Knight"
         },
         {
           "Index": 123,
           "ID": 7210,
-          "Name": "Abyss_Vagrant NPC_Bandit"
+          "Name": "[Unused] Vagrant NPC - New Londo Ruins - Bandit"
         },
         {
           "Index": 124,
           "ID": 7220,
-          "Name": "Crystal Tower_Vagrant NPC_Sorcerer"
+          "Name": "[Unused] Vagrant NPC - Duke\u0027s Archives/Crystal Cave - Sorcerer"
         },
         {
           "Index": 125,
           "ID": 7230,
-          "Name": "Great tomb_Vagrant NPC_Not possessed"
+          "Name": "[Unused] Vagrant NPC - Kiln of the First Flame - Deprived"
         },
         {
           "Index": 126,
           "ID": 7240,
-          "Name": "Tutorial_Vagrant NPC_What You Don\u0027t Have"
+          "Name": "[Unused] Vagrant NPC - Undead Asylum - Deprived"
         },
         {
           "Index": 127,
           "ID": 10100,
-          "Name": "NPC Conversation Test 1 (garbled NPC in pot)"
+          "Name": "NPC Conversation Test 1 (NPC Disguised as Jar)"
         },
         {
           "Index": 128,
@@ -43031,72 +43031,72 @@
         {
           "Index": 130,
           "ID": 120000,
-          "Name": "Rat"
+          "Name": "Large Undead Rat"
         },
         {
           "Index": 131,
           "ID": 120100,
-          "Name": "Small Rat"
+          "Name": "Small Undead Rat - Firelink Shrine"
         },
         {
           "Index": 132,
           "ID": 120101,
-          "Name": "Small Rat"
+          "Name": "Small Undead Rat - Undead Burg"
         },
         {
           "Index": 133,
           "ID": 120102,
-          "Name": "Small Rat"
+          "Name": "Small Undead Rat - The Depths"
         },
         {
           "Index": 134,
           "ID": 120103,
-          "Name": "Small Rat"
+          "Name": "Small Undead Rat - Painted World"
         },
         {
           "Index": 135,
           "ID": 120104,
-          "Name": "Small Rat"
+          "Name": "Small Undead Rat (Black Phantom) - The Depths"
         },
         {
           "Index": 136,
           "ID": 120200,
-          "Name": "Giant Rat"
+          "Name": "Giant Undead Rat"
         },
         {
           "Index": 137,
           "ID": 120300,
-          "Name": "Plague Rat"
+          "Name": "Undead Snow Rat"
         },
         {
           "Index": 138,
           "ID": 206000,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Sword)"
         },
         {
           "Index": 139,
           "ID": 206001,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Spear)"
         },
         {
           "Index": 140,
           "ID": 206002,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Corpse)"
         },
         {
           "Index": 141,
           "ID": 206003,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Sword - Black Phantom)"
         },
         {
           "Index": 142,
           "ID": 206004,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Spear - Black Phantom)"
         },
         {
           "Index": 143,
           "ID": 206005,
-          "Name": "Infested Ghoul"
+          "Name": "Infested Ghoul (Corpse - Black Phantom)"
         },
         {
           "Index": 144,
@@ -43106,7 +43106,7 @@
         {
           "Index": 145,
           "ID": 223100,
-          "Name": "Firesage Demon"
+          "Name": "Demon Firesage"
         },
         {
           "Index": 146,
@@ -43121,12 +43121,12 @@
         {
           "Index": 148,
           "ID": 224001,
-          "Name": "Capra Demon"
+          "Name": "Lesser Capra Demon"
         },
         {
           "Index": 149,
           "ID": 224002,
-          "Name": "Capra Demon"
+          "Name": "Lesser Capra Demon (Black Phantom)"
         },
         {
           "Index": 150,
@@ -43136,12 +43136,12 @@
         {
           "Index": 151,
           "ID": 225002,
-          "Name": "Taurus Demon"
+          "Name": "Lesser Taurus Demon"
         },
         {
           "Index": 152,
           "ID": 225003,
-          "Name": "Taurus Demon"
+          "Name": "Lesser Taurus Demon (7 Heroes??)"
         },
         {
           "Index": 153,
@@ -43151,67 +43151,67 @@
         {
           "Index": 154,
           "ID": 226001,
-          "Name": "Batwing Demon"
+          "Name": "[Unused] Batwing Demon - Darkroot Garden"
         },
         {
           "Index": 155,
           "ID": 227000,
-          "Name": "Mushroom Parent"
+          "Name": "Mushroom-Man Parent - Darkroot Garden"
         },
         {
           "Index": 156,
           "ID": 227001,
-          "Name": "Mushroom Parent"
+          "Name": "Mushroom-Man Parent - Great Hollow"
         },
         {
           "Index": 157,
           "ID": 227002,
-          "Name": "Mushroom Parent"
+          "Name": "Mushroom-Man Parent (Black Phantom) - Darkroot Garden"
         },
         {
           "Index": 158,
           "ID": 228000,
-          "Name": "Mushroom Child"
+          "Name": "Mushroom-Man Child - Darkroot Garden"
         },
         {
           "Index": 159,
           "ID": 228001,
-          "Name": "Mushroom Child"
+          "Name": "Mushroom-Man Child - Great Hollow"
         },
         {
           "Index": 160,
           "ID": 228002,
-          "Name": "Mushroom Child"
+          "Name": "Mushroom-Man Child - Darkroot Garden"
         },
         {
           "Index": 161,
           "ID": 230000,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - The Catacombs"
         },
         {
           "Index": 162,
           "ID": 230001,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - Undead Parish"
         },
         {
           "Index": 163,
           "ID": 230002,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - Sen\u0027s Fortress"
         },
         {
           "Index": 164,
           "ID": 230003,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - Sen\u0027s Fortress 2"
         },
         {
           "Index": 165,
           "ID": 230004,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - Anor Londo"
         },
         {
           "Index": 166,
           "ID": 230005,
-          "Name": "Prowling Demon"
+          "Name": "Titanite Demon - Demon Ruins"
         },
         {
           "Index": 167,
@@ -43231,37 +43231,37 @@
         {
           "Index": 170,
           "ID": 233001,
-          "Name": "Demonic Foliage"
+          "Name": "Demonic Foliage (Darkroot Garden 2nd half)"
         },
         {
           "Index": 171,
           "ID": 236000,
-          "Name": "Smough"
+          "Name": "Executioner Smough"
         },
         {
           "Index": 172,
           "ID": 236001,
-          "Name": "Smough"
+          "Name": "Executioner Smough (Lightning)"
         },
         {
           "Index": 173,
           "ID": 237000,
-          "Name": "Channeler"
+          "Name": "Channeler - Undead Parish"
         },
         {
           "Index": 174,
           "ID": 237001,
-          "Name": "Channeler"
+          "Name": "Channeler - Duke\u0027s Archives"
         },
         {
           "Index": 175,
           "ID": 237002,
-          "Name": "Channeler"
+          "Name": "Channeler - The Depths"
         },
         {
           "Index": 176,
           "ID": 237003,
-          "Name": "Channeler"
+          "Name": "Channeler (Black Phantom) - Duke\u0027s Archives"
         },
         {
           "Index": 177,
@@ -43271,12 +43271,12 @@
         {
           "Index": 178,
           "ID": 238001,
-          "Name": "Stone Knight"
+          "Name": "[Unused] Stone Knight - Royal Garden"
         },
         {
           "Index": 179,
           "ID": 238002,
-          "Name": "Stone Knight"
+          "Name": "Stone Knight (Black Phantom)"
         },
         {
           "Index": 180,
@@ -43286,7 +43286,7 @@
         {
           "Index": 181,
           "ID": 239003,
-          "Name": "Darkwraith"
+          "Name": "Darkwraith (Black Phantom)"
         },
         {
           "Index": 182,
@@ -43296,357 +43296,357 @@
         {
           "Index": 183,
           "ID": 241000,
-          "Name": "Silver Knight"
+          "Name": "Silver Knight (Sword)"
         },
         {
           "Index": 184,
           "ID": 241003,
-          "Name": "Silver Knight"
+          "Name": "Silver Knight (Spear)"
         },
         {
           "Index": 185,
           "ID": 241004,
-          "Name": "Silver Knight"
+          "Name": "Silver Knight (Greatbow)"
         },
         {
           "Index": 186,
           "ID": 241005,
-          "Name": "Silver Knight"
+          "Name": "Silver Knight (Sword - Black Phantom)"
         },
         {
           "Index": 187,
           "ID": 241006,
-          "Name": "Silver Knight"
+          "Name": "Silver Knight (Spear - Black Phantom)"
         },
         {
           "Index": 188,
           "ID": 243000,
-          "Name": "Demonic Statue"
+          "Name": "Demonic Statue - Demon Ruins"
         },
         {
           "Index": 189,
           "ID": 243001,
-          "Name": "Demonic Statue"
+          "Name": "Demonic Statue - Lost Izalith"
         },
         {
           "Index": 190,
           "ID": 250000,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - Undead Burg"
         },
         {
           "Index": 191,
           "ID": 250001,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch) - Undead Burg"
         },
         {
           "Index": 192,
           "ID": 250010,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - Painted World"
         },
         {
           "Index": 193,
           "ID": 250011,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch) - Painted World"
         },
         {
           "Index": 194,
           "ID": 250012,
-          "Name": "Hollow"
+          "Name": "Hollow (Bow) - Painted World"
         },
         {
           "Index": 195,
           "ID": 250020,
-          "Name": "Hollow"
+          "Name": "Hollow (Unarmed) - Undead Asylum"
         },
         {
           "Index": 196,
           "ID": 250021,
-          "Name": "Hollow"
+          "Name": "Hollow (Bow) - Undead Asylum"
         },
         {
           "Index": 197,
           "ID": 250022,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - Undead Asylum"
         },
         {
           "Index": 198,
           "ID": 250023,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch) - Undead Asylum (Revisit)"
         },
         {
           "Index": 199,
           "ID": 250024,
-          "Name": "Hollow"
+          "Name": "Hollow (Bow) - Undead Asylum (Revisit)"
         },
         {
           "Index": 200,
           "ID": 250025,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - Undead Asylum (Revisit)"
         },
         {
           "Index": 201,
           "ID": 250030,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - The Depths"
         },
         {
           "Index": 202,
           "ID": 250031,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch) - The Depths"
         },
         {
           "Index": 203,
           "ID": 250032,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword - Black Phantom) - The Depths"
         },
         {
           "Index": 204,
           "ID": 250033,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch - Black Phantom) - The Depths"
         },
         {
           "Index": 205,
           "ID": 250040,
-          "Name": "Hollow"
+          "Name": "Hollow (Unarmed) - New Londo Ruins"
         },
         {
           "Index": 206,
           "ID": 250050,
-          "Name": "Hollow"
+          "Name": "Hollow (Sword) - Undead Parish"
         },
         {
           "Index": 207,
           "ID": 250051,
-          "Name": "Hollow"
+          "Name": "Hollow (Torch) - Undead Parish"
         },
         {
           "Index": 208,
           "ID": 250052,
-          "Name": "Hollow"
+          "Name": "Hollow (Bow) - Undead Parish"
         },
         {
           "Index": 209,
           "ID": 250053,
-          "Name": "Hollow"
+          "Name": "Hollow (Black Phantom) - Undead Parish"
         },
         {
           "Index": 210,
           "ID": 251000,
-          "Name": "Undead Merchant"
+          "Name": "Undead Merchant (Female)"
         },
         {
           "Index": 211,
           "ID": 251001,
-          "Name": "Undead Merchant"
+          "Name": "Undead Merchant (Male)"
         },
         {
           "Index": 212,
           "ID": 252000,
-          "Name": "Undead Assassin"
+          "Name": "Hollow Thief"
         },
         {
           "Index": 213,
           "ID": 252001,
-          "Name": "Undead Assassin"
+          "Name": "Hollow Thief (Black Phantom)"
         },
         {
           "Index": 214,
           "ID": 253002,
-          "Name": "Blowdart Hollow"
+          "Name": "Hollow Blowdart Sniper"
         },
         {
           "Index": 215,
           "ID": 254000,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Sword) - Firelink Shrine"
         },
         {
           "Index": 216,
           "ID": 254001,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Axe) - Firelink Shrine"
         },
         {
           "Index": 217,
           "ID": 254002,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Firebomb) - Firelink Shrine"
         },
         {
           "Index": 218,
           "ID": 254010,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Sword) - Undead Burg"
         },
         {
           "Index": 219,
           "ID": 254011,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Axe) - Undead Burg"
         },
         {
           "Index": 220,
           "ID": 254012,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Firebomb) - Undead Burg"
         },
         {
           "Index": 221,
           "ID": 254013,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Sword - Black Phantom) - Undead Burg"
         },
         {
           "Index": 222,
           "ID": 254014,
-          "Name": "Hollow Warrior"
+          "Name": "Hollow Warrior (Axe - Black Phantom) - Undead Burg"
         },
         {
           "Index": 223,
           "ID": 255000,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Spear) - Undead Burg"
         },
         {
           "Index": 224,
           "ID": 255001,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword) - Undead Burg"
         },
         {
           "Index": 225,
           "ID": 255002,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Crossbow) - Undead Burg"
         },
         {
           "Index": 226,
           "ID": 255010,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword) - Firelink Shrine"
         },
         {
           "Index": 227,
           "ID": 255030,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword) - Undead Asylum"
         },
         {
           "Index": 228,
           "ID": 255031,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword) - Undead Asylum (Revisit)"
         },
         {
           "Index": 229,
           "ID": 255032,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Spear) - Undead Asylum (Revisit)"
         },
         {
           "Index": 230,
           "ID": 255040,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Spear) - Undead Parish"
         },
         {
           "Index": 231,
           "ID": 255041,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword) - Undead Parish"
         },
         {
           "Index": 232,
           "ID": 255042,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Crossbow) - Undead Parish"
         },
         {
           "Index": 233,
           "ID": 255043,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Spear - Black Phantom) - Undead Parish"
         },
         {
           "Index": 234,
           "ID": 255044,
-          "Name": "Hollow Soldier"
+          "Name": "Hollow Soldier (Sword - Black Phantom) - Undead Parish"
         },
         {
           "Index": 235,
           "ID": 256000,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Sword) - Undead Parish"
         },
         {
           "Index": 236,
           "ID": 256001,
-          "Name": "Balder Knight"
+          "Name": "[Unused] Balder Knight (Crossbow) - Undead Parish"
         },
         {
           "Index": 237,
           "ID": 256002,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Rapier) - Undead Parish"
         },
         {
           "Index": 238,
           "ID": 256003,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Sword - Black Phantom) - Undead Parish"
         },
         {
           "Index": 239,
           "ID": 256004,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Rapier - Black Phantom) - Undead Parish"
         },
         {
           "Index": 240,
           "ID": 256010,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Sword) - Sen\u0027s Fortress"
         },
         {
           "Index": 241,
           "ID": 256011,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Crossbow) - Sen\u0027s Fortress"
         },
         {
           "Index": 242,
           "ID": 256012,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Rapier) - Sen\u0027s Fortress"
         },
         {
           "Index": 243,
           "ID": 256013,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Sword - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 244,
           "ID": 256014,
-          "Name": "Balder Knight"
+          "Name": "Balder Knight (Rapier - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 245,
           "ID": 257000,
-          "Name": "Heavy Knight"
+          "Name": "[Unused] Berenike Knight (Greatsword) - Undead Parish"
         },
         {
           "Index": 246,
           "ID": 257001,
-          "Name": "Heavy Knight"
+          "Name": "Berenike Knight (Mace) - Undead Parish"
         },
         {
           "Index": 247,
           "ID": 257002,
-          "Name": "Heavy Knight"
+          "Name": "Berenike Knight (Greatsword - Black Phantom) - Undead Parish"
         },
         {
           "Index": 248,
           "ID": 257010,
-          "Name": "Heavy Knight"
+          "Name": "[Unused] Berenike Knight (Greatsword) - Sen\u0027s Fortress"
         },
         {
           "Index": 249,
           "ID": 257011,
-          "Name": "Heavy Knight"
+          "Name": "Berenike Knight (Mace) - Sen\u0027s Fortress"
         },
         {
           "Index": 250,
           "ID": 257012,
-          "Name": "Heavy Knight"
+          "Name": "[Unused] Berenike Knight (Greatsword - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 251,
           "ID": 257020,
-          "Name": "Heavy Knight"
+          "Name": "Berenike Knight (Greatsword) - Painted World"
         },
         {
           "Index": 252,
           "ID": 257021,
-          "Name": "Heavy Knight"
+          "Name": "[Unused] Berenike Knight (Mace) - Painted World"
         },
         {
           "Index": 253,
           "ID": 257022,
-          "Name": "Heavy Knight"
+          "Name": "[Unused] Berenike Knight (Greatsword - Black Phantom) - Painted World"
         },
         {
           "Index": 254,
@@ -43656,102 +43656,102 @@
         {
           "Index": 255,
           "ID": 265000,
-          "Name": "Necromancer"
+          "Name": "Hollow Necromancer"
         },
         {
           "Index": 256,
           "ID": 266000,
-          "Name": "Butcher"
+          "Name": "Hollow Maneater Butcher"
         },
         {
           "Index": 257,
           "ID": 266001,
-          "Name": "Butcher"
+          "Name": "Hollow Maneater Butcher (Black Phantom)"
         },
         {
           "Index": 258,
           "ID": 267000,
-          "Name": "Ghost (Male)"
+          "Name": "Cursed Ghost (Male)"
         },
         {
           "Index": 259,
           "ID": 268000,
-          "Name": "Ghost (Female)"
+          "Name": "Cursed Ghost (Female)"
         },
         {
           "Index": 260,
           "ID": 269000,
-          "Name": "Serpent Soldier"
+          "Name": "Man-Serpent Soldier - Sen\u0027s Fortress"
         },
         {
           "Index": 261,
           "ID": 269001,
-          "Name": "Serpent Soldier"
+          "Name": "Man-Serpent Soldier (Jailer) - Duke\u0027s Archives"
         },
         {
           "Index": 262,
           "ID": 269002,
-          "Name": "Serpent Soldier"
+          "Name": "Man-Serpent Soldier - Duke\u0027s Archives"
         },
         {
           "Index": 263,
           "ID": 269003,
-          "Name": "Serpent Soldier"
+          "Name": "Man-Serpent Soldier (Strong) - Sen\u0027s Fortress"
         },
         {
           "Index": 264,
           "ID": 269004,
-          "Name": "Serpent Soldier"
+          "Name": "Man-Serpent Soldier (Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 265,
           "ID": 270000,
-          "Name": "Serpent Mage"
+          "Name": "Man-Serpent Sorcerer - Sen\u0027s Fortress"
         },
         {
           "Index": 266,
           "ID": 270001,
-          "Name": "Serpent Mage"
+          "Name": "Man-Serpent Sorcerer - Duke\u0027s Archives"
         },
         {
           "Index": 267,
           "ID": 270002,
-          "Name": "Serpent Mage"
+          "Name": "Man-Serpent Sorcerer (Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 268,
           "ID": 271000,
-          "Name": "Crystal Golem"
+          "Name": "Crystal Golem - Duke\u0027s Archives"
         },
         {
           "Index": 269,
           "ID": 271001,
-          "Name": "Crystal Golem"
+          "Name": "Crystal Golem - Darkroot Basin"
         },
         {
           "Index": 270,
           "ID": 271002,
-          "Name": "Crystal Golem"
+          "Name": "Crystal Golem (Black Phantom) - Duke\u0027s Archives"
         },
         {
           "Index": 271,
           "ID": 271100,
-          "Name": "Crystal Golem (Gold)"
+          "Name": "Crystal Golem (Gold) - Darkroot Basin"
         },
         {
           "Index": 272,
           "ID": 271101,
-          "Name": "Crystal Golem (Gold)"
+          "Name": "Crystal Golem (Gold) - Duke\u0027s Archives"
         },
         {
           "Index": 273,
           "ID": 273000,
-          "Name": "Priscilla"
+          "Name": "Crossbreed Priscilla"
         },
         {
           "Index": 274,
           "ID": 273100,
-          "Name": "Priscilla\u0027s Tail"
+          "Name": "Crossbreed Priscilla\u0027s Tail"
         },
         {
           "Index": 275,
@@ -43761,117 +43761,117 @@
         {
           "Index": 276,
           "ID": 278000,
-          "Name": "Mimic"
+          "Name": "Mimic - Sen\u0027s Fortress"
         },
         {
           "Index": 277,
           "ID": 278010,
-          "Name": "Mimic"
+          "Name": "Mimic - Anor Londo 1"
         },
         {
           "Index": 278,
           "ID": 278011,
-          "Name": "Mimic"
+          "Name": "Mimic - Anor Londo 2"
         },
         {
           "Index": 279,
           "ID": 278012,
-          "Name": "Mimic"
+          "Name": "Mimic - Anor Londo 3"
         },
         {
           "Index": 280,
           "ID": 278013,
-          "Name": "Mimic"
+          "Name": "Mimic - Anor Londo 4"
         },
         {
           "Index": 281,
           "ID": 278020,
-          "Name": "Mimic"
+          "Name": "Mimic - Duke\u0027s Archives 1"
         },
         {
           "Index": 282,
           "ID": 278021,
-          "Name": "Mimic"
+          "Name": "Mimic - Duke\u0027s Archives 2"
         },
         {
           "Index": 283,
           "ID": 278030,
-          "Name": "Mimic"
+          "Name": "Mimic - Royal Garden 1"
         },
         {
           "Index": 284,
           "ID": 278031,
-          "Name": "Mimic"
+          "Name": "Mimic - Royal Garden 2"
         },
         {
           "Index": 285,
           "ID": 279000,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Sword) - Undead Burg"
         },
         {
           "Index": 286,
           "ID": 279001,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greatsword) - Undead Parish"
         },
         {
           "Index": 287,
           "ID": 279010,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Halberd) - Darkroot Basin"
         },
         {
           "Index": 288,
           "ID": 279020,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greataxe) - The Catacombs"
         },
         {
           "Index": 289,
           "ID": 279030,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Halberd) - Tomb of the Giants"
         },
         {
           "Index": 290,
           "ID": 279050,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Sword) - Kiln of the First Flame"
         },
         {
           "Index": 291,
           "ID": 279051,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greatsword) - Kiln of the First Flame"
         },
         {
           "Index": 292,
           "ID": 279052,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greataxe) - Kiln of the First Flame"
         },
         {
           "Index": 293,
           "ID": 279053,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Halberd) - Kiln of the First Flame"
         },
         {
           "Index": 294,
           "ID": 279060,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Sword - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 295,
           "ID": 279061,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greatsword - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 296,
           "ID": 279062,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Greataxe - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 297,
           "ID": 279063,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Halberd - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 298,
           "ID": 279070,
-          "Name": "Black Knight"
+          "Name": "Black Knight (Sword) - Undead Asylum"
         },
         {
           "Index": 299,
@@ -43881,77 +43881,77 @@
         {
           "Index": 300,
           "ID": 280000,
-          "Name": "Crystal Hollow"
+          "Name": "Hollow Crystallized Soldier (Sword)"
         },
         {
           "Index": 301,
           "ID": 280001,
-          "Name": "Crystal Hollow"
+          "Name": "Hollow Crystallized Soldier (Bow)"
         },
         {
           "Index": 302,
           "ID": 281000,
-          "Name": "Infested Barbarian (Club)"
+          "Name": "Hollow Infested Barbarian (Club)"
         },
         {
           "Index": 303,
           "ID": 281001,
-          "Name": "Infested Barbarian (Club)"
+          "Name": "Hollow Infested Barbarian (Club - Black Phantom)"
         },
         {
           "Index": 304,
           "ID": 281100,
-          "Name": "Infested Barbarian (Boulder)"
+          "Name": "Hollow Infested Barbarian (Boulder)"
         },
         {
           "Index": 305,
           "ID": 281101,
-          "Name": "Infested Barbarian (Boulder)"
+          "Name": "Hollow Infested Barbarian (Boulder - Black Phantom)"
         },
         {
           "Index": 306,
           "ID": 283010,
-          "Name": "Hollow Phalanx"
+          "Name": "Phalanx"
         },
         {
           "Index": 307,
           "ID": 284000,
-          "Name": "Engorged Hollow"
+          "Name": "Engorged Hollow (Torch)"
         },
         {
           "Index": 308,
           "ID": 284001,
-          "Name": "Engorged Hollow"
+          "Name": "Engorged Hollow (Unarmed)"
         },
         {
           "Index": 309,
           "ID": 284002,
-          "Name": "Engorged Hollow"
+          "Name": "Engorged Hollow (Unarmed - Special Drop)"
         },
         {
           "Index": 310,
           "ID": 284003,
-          "Name": "Engorged Hollow"
+          "Name": "Engorged Hollow (Torch - Black Phantom)"
         },
         {
           "Index": 311,
           "ID": 284004,
-          "Name": "Engorged Hollow"
+          "Name": "Engorged Hollow (Unarmed - Black Phantom)"
         },
         {
           "Index": 312,
           "ID": 286000,
-          "Name": "Giant"
+          "Name": "Slave Giant"
         },
         {
           "Index": 313,
           "ID": 286001,
-          "Name": "Giant"
+          "Name": "Giant Blacksmith"
         },
         {
           "Index": 314,
           "ID": 286002,
-          "Name": "Giant"
+          "Name": "Slave Giant (Black Phantom)"
         },
         {
           "Index": 315,
@@ -43961,162 +43961,162 @@
         {
           "Index": 316,
           "ID": 287001,
-          "Name": "Royal Sentinel"
+          "Name": "Royal Sentinel (Black Phantom)"
         },
         {
           "Index": 317,
           "ID": 287010,
-          "Name": "Royal Sentinel"
+          "Name": "Giant Sentinel"
         },
         {
           "Index": 318,
           "ID": 287011,
-          "Name": "Royal Sentinel"
+          "Name": "Giant Sentinel (Black Phantom)"
         },
         {
           "Index": 319,
           "ID": 290000,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Sword) - Firelink Shrine"
         },
         {
           "Index": 320,
           "ID": 290001,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Bow) - Firelink Shrine"
         },
         {
           "Index": 321,
           "ID": 290002,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Falchion) - Firelink Shrine"
         },
         {
           "Index": 322,
           "ID": 290010,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Sword) - The Catacombs"
         },
         {
           "Index": 323,
           "ID": 290011,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Bow) - The Catacombs"
         },
         {
           "Index": 324,
           "ID": 290012,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Falchion) - The Catacombs"
         },
         {
           "Index": 325,
           "ID": 290013,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Sword - Black Phantom) - The Catacombs"
         },
         {
           "Index": 326,
           "ID": 290014,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Falchion - Black Phantom) - The Catacombs"
         },
         {
           "Index": 327,
           "ID": 290020,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Sword - Immortal) - The Catacombs"
         },
         {
           "Index": 328,
           "ID": 290021,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Bow - Immortal) - The Catacombs"
         },
         {
           "Index": 329,
           "ID": 290022,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Falchion - Immortal) - The Catacombs"
         },
         {
           "Index": 330,
           "ID": 290030,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Sword - Immortal) - Tomb of the Giants"
         },
         {
           "Index": 331,
           "ID": 290031,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Bow - Immortal) - Tomb of the Giants"
         },
         {
           "Index": 332,
           "ID": 290032,
-          "Name": "Skeleton"
+          "Name": "Skeleton (Falchion - Immortal) - Tomb of the Giants"
         },
         {
           "Index": 333,
           "ID": 291000,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword) - Firelink Shrine"
         },
         {
           "Index": 334,
           "ID": 291001,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatbow) - The Catacombs"
         },
         {
           "Index": 335,
           "ID": 291002,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword) - The Catacombs"
         },
         {
           "Index": 336,
           "ID": 291010,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatbow) - Tomb of the Giants"
         },
         {
           "Index": 337,
           "ID": 291011,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword) - Tomb of the Giants"
         },
         {
           "Index": 338,
           "ID": 291012,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword - Immortal) - Tomb of the Giants"
         },
         {
           "Index": 339,
           "ID": 291013,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatbow - Strong) - Tomb of the Giants"
         },
         {
           "Index": 340,
           "ID": 291014,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword - Strong) - Tomb of the Giants"
         },
         {
           "Index": 341,
           "ID": 291015,
-          "Name": "Giant Skeleton"
+          "Name": "Giant Skeleton (Greatsword - Black Phantom) - Tomb of the Giants"
         },
         {
           "Index": 342,
           "ID": 292000,
-          "Name": "Vamos"
+          "Name": "Vamos the Blacksmith"
         },
         {
           "Index": 343,
           "ID": 292002,
-          "Name": "Vamos"
+          "Name": "Vamos the Blacksmith (Cutscene)"
         },
         {
           "Index": 344,
           "ID": 293000,
-          "Name": "Bonewheel Skeleton"
+          "Name": "Bonewheel Skeleton - The Catacombs"
         },
         {
           "Index": 345,
           "ID": 293001,
-          "Name": "Bonewheel Skeleton"
+          "Name": "Bonewheel Skeleton - Painted World"
         },
         {
           "Index": 346,
           "ID": 293002,
-          "Name": "Bonewheel Skeleton"
+          "Name": "Bonewheel Skeleton (Black Phantom) - Painted World"
         },
         {
           "Index": 347,
           "ID": 293003,
-          "Name": "Bonewheel Skeleton"
+          "Name": "Bonewheel Skeleton (Black Phantom) - The Catacombs"
         },
         {
           "Index": 348,
@@ -44126,12 +44126,12 @@
         {
           "Index": 349,
           "ID": 295000,
-          "Name": "Skeleton Beast"
+          "Name": "Skeletal Beast"
         },
         {
           "Index": 350,
           "ID": 295001,
-          "Name": "Skeleton Beast"
+          "Name": "Skeletal Beast (Black Phantom)"
         },
         {
           "Index": 351,
@@ -44141,7 +44141,7 @@
         {
           "Index": 352,
           "ID": 309000,
-          "Name": "Mosquito"
+          "Name": "Giant Mosquito"
         },
         {
           "Index": 353,
@@ -44156,12 +44156,12 @@
         {
           "Index": 355,
           "ID": 321001,
-          "Name": "Egg Carrier"
+          "Name": "Eingyi"
         },
         {
           "Index": 356,
           "ID": 322000,
-          "Name": "Chaos Bug"
+          "Name": "Vile Maggot"
         },
         {
           "Index": 357,
@@ -44171,7 +44171,7 @@
         {
           "Index": 358,
           "ID": 323001,
-          "Name": "Moonlight Butterfly"
+          "Name": "Crystal Butterfly"
         },
         {
           "Index": 359,
@@ -44181,67 +44181,67 @@
         {
           "Index": 360,
           "ID": 324001,
-          "Name": "Chaos Eater"
+          "Name": "Chaos Eater (Black Phantom)"
         },
         {
           "Index": 361,
           "ID": 325000,
-          "Name": "Maneater Clam"
+          "Name": "Man-Eater Shell - Duke\u0027s Archives"
         },
         {
           "Index": 362,
           "ID": 325001,
-          "Name": "Maneater Clam"
+          "Name": "Man-Eater Shell - Ash Lake"
         },
         {
           "Index": 363,
           "ID": 327000,
-          "Name": "Basilisk"
+          "Name": "Basilisk - The Depths"
         },
         {
           "Index": 364,
           "ID": 327001,
-          "Name": "Basilisk"
+          "Name": "Basilisk - Great Hollow/Ash Lake"
         },
         {
           "Index": 365,
           "ID": 330000,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Great Hollow"
         },
         {
           "Index": 366,
           "ID": 330010,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Duke\u0027s Archives/Crystal Cave"
         },
         {
           "Index": 367,
           "ID": 330020,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Lost Izalith"
         },
         {
           "Index": 368,
           "ID": 330030,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - The Catacombs"
         },
         {
           "Index": 369,
           "ID": 330040,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Darkroot Garden"
         },
         {
           "Index": 370,
           "ID": 330050,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Tomb of the Giants"
         },
         {
           "Index": 371,
           "ID": 330060,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Undead Burg"
         },
         {
           "Index": 372,
           "ID": 330070,
-          "Name": "Crystal Lizard"
+          "Name": "Crystal Lizard - Royal Wood"
         },
         {
           "Index": 373,
@@ -44251,12 +44251,12 @@
         {
           "Index": 374,
           "ID": 332001,
-          "Name": "Pinwheel"
+          "Name": "Pinwheel (Fake)"
         },
         {
           "Index": 375,
           "ID": 332002,
-          "Name": "Pinwheel"
+          "Name": "Pinwheel Servant"
         },
         {
           "Index": 376,
@@ -44266,47 +44266,47 @@
         {
           "Index": 377,
           "ID": 333001,
-          "Name": "Pisaca"
+          "Name": "Pisaca (Passive - Soothing Sunlight)"
         },
         {
           "Index": 378,
           "ID": 333002,
-          "Name": "Pisaca"
+          "Name": "Pisaca (Passive - Bountiful Sunlight)"
         },
         {
           "Index": 379,
           "ID": 333003,
-          "Name": "Pisaca"
+          "Name": "Pisaca (Black Phantom)"
         },
         {
           "Index": 380,
           "ID": 334000,
-          "Name": "Undead Attack Dog"
+          "Name": "Undead Attack Dog - Lower Undead Burg"
         },
         {
           "Index": 381,
           "ID": 334001,
-          "Name": "Undead Attack Dog"
+          "Name": "Undead Attack Dog - The Depths"
         },
         {
           "Index": 382,
           "ID": 334002,
-          "Name": "Undead Attack Dog"
+          "Name": "Undead Attack Dog (Treasure Guardian - Strong) - The Depths"
         },
         {
           "Index": 383,
           "ID": 334003,
-          "Name": "Undead Attack Dog"
+          "Name": "Undead Attack Dog (Capra Demon) - Lower Undead Burg"
         },
         {
           "Index": 384,
           "ID": 334100,
-          "Name": "Flaming Attack Dog"
+          "Name": "Chaos Attack Dog"
         },
         {
           "Index": 385,
           "ID": 335000,
-          "Name": "Walking Tree"
+          "Name": "Possessed Tree"
         },
         {
           "Index": 386,
@@ -44316,72 +44316,72 @@
         {
           "Index": 387,
           "ID": 338000,
-          "Name": "Leech"
+          "Name": "Giant Leech"
         },
         {
           "Index": 388,
           "ID": 339000,
-          "Name": "Burrower"
+          "Name": "[Unused] Burrowing Rockworm (Lost Izalith Shortcut)"
         },
         {
           "Index": 389,
           "ID": 339001,
-          "Name": "Burrower"
+          "Name": "Burrowing Rockworm (Ground)"
         },
         {
           "Index": 390,
           "ID": 339002,
-          "Name": "Burrower"
+          "Name": "Burrowing Rockworm (Wall)"
         },
         {
           "Index": 391,
           "ID": 339003,
-          "Name": "Burrower"
+          "Name": "Burrowing Rockworm (Ceiling)"
         },
         {
           "Index": 392,
           "ID": 340000,
-          "Name": "Cragspider"
+          "Name": "Chaos Crag-Spider"
         },
         {
           "Index": 393,
           "ID": 341000,
-          "Name": "Frog-Ray"
+          "Name": "Frog-Ray - Darkroot Garden (1st half)"
         },
         {
           "Index": 394,
           "ID": 341001,
-          "Name": "Frog-Ray"
+          "Name": "Frog-Ray - Darkroot Garden (2nd half)"
         },
         {
           "Index": 395,
           "ID": 342000,
-          "Name": "Undead Dragon"
+          "Name": "Undead Dragon - Painted World"
         },
         {
           "Index": 396,
           "ID": 342001,
-          "Name": "Undead Dragon"
+          "Name": "[Unused] Undead Dragon"
         },
         {
           "Index": 397,
           "ID": 342002,
-          "Name": "Undead Dragon"
+          "Name": "Undead Dragon - Valley of Drakes"
         },
         {
           "Index": 398,
           "ID": 342100,
-          "Name": "Undead Dragon - Legs"
+          "Name": "Undead Dragon (Lower Half) - Painted World"
         },
         {
           "Index": 399,
           "ID": 342101,
-          "Name": "Undead Dragon - Legs"
+          "Name": "Undead Dragon (Lower Half) - Lost Izalith"
         },
         {
           "Index": 400,
           "ID": 342200,
-          "Name": "Undead Dragon - Wings"
+          "Name": "Undead Dragon (Upper Half)"
         },
         {
           "Index": 401,
@@ -44406,12 +44406,12 @@
         {
           "Index": 405,
           "ID": 346000,
-          "Name": "Armored Tusk"
+          "Name": "Fang Boar"
         },
         {
           "Index": 406,
           "ID": 346100,
-          "Name": "Armored Tusk - Reinforced"
+          "Name": "Fang Boar (Fully-Armored)"
         },
         {
           "Index": 407,
@@ -44426,7 +44426,7 @@
         {
           "Index": 409,
           "ID": 347101,
-          "Name": "Sanctuary Guardian"
+          "Name": "Lesser Sanctuary Guardian"
         },
         {
           "Index": 410,
@@ -44436,312 +44436,312 @@
         {
           "Index": 411,
           "ID": 348000,
-          "Name": "Chaos Bug"
+          "Name": "Sunlight Maggot"
         },
         {
           "Index": 412,
           "ID": 348001,
-          "Name": "Chaos Bug"
+          "Name": "Sunlight Maggot (Special)"
         },
         {
           "Index": 413,
           "ID": 349000,
-          "Name": "Vagrant (Passive)"
+          "Name": "[Unused] Vagrant (Good) - Undead Asylum"
         },
         {
           "Index": 414,
           "ID": 349001,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Undead Burg"
         },
         {
           "Index": 415,
           "ID": 349002,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Lower Undead Burg/Parish"
         },
         {
           "Index": 416,
           "ID": 349003,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - The Depths"
         },
         {
           "Index": 417,
           "ID": 349004,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Darkroot Garden/Basin"
         },
         {
           "Index": 418,
           "ID": 349005,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - The Catacombs"
         },
         {
           "Index": 419,
           "ID": 349006,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Undead Asylum/New Londo Ruins"
         },
         {
           "Index": 420,
           "ID": 349007,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Blighttown"
         },
         {
           "Index": 421,
           "ID": 349008,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Sen\u0027s Fortress"
         },
         {
           "Index": 422,
           "ID": 349009,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Anor Londo"
         },
         {
           "Index": 423,
           "ID": 349010,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Darkroot Garden (2nd half)"
         },
         {
           "Index": 424,
           "ID": 349011,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Tomb of the Giants"
         },
         {
           "Index": 425,
           "ID": 349012,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Demon Ruins/Lost Izalith"
         },
         {
           "Index": 426,
           "ID": 349013,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Painted World/Duke\u0027s Archives/DLC"
         },
         {
           "Index": 427,
           "ID": 349014,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good) - Kiln of the First Flame"
         },
         {
           "Index": 428,
           "ID": 349050,
-          "Name": "Vagrant (Passive)"
+          "Name": "[Unused] Vagrant (Good - Black Phantom) - Undead Asylum"
         },
         {
           "Index": 429,
           "ID": 349051,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Undead Burg"
         },
         {
           "Index": 430,
           "ID": 349052,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Lower Undead Burg/Parish"
         },
         {
           "Index": 431,
           "ID": 349053,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - The Depths"
         },
         {
           "Index": 432,
           "ID": 349054,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Darkroot Garden/Basin"
         },
         {
           "Index": 433,
           "ID": 349055,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - The Catacombs"
         },
         {
           "Index": 434,
           "ID": 349056,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Undead Asylum/New Londo Ruins"
         },
         {
           "Index": 435,
           "ID": 349057,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Blighttown"
         },
         {
           "Index": 436,
           "ID": 349058,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 437,
           "ID": 349059,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Anor Londo"
         },
         {
           "Index": 438,
           "ID": 349060,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Darkroot Garden (2nd half)"
         },
         {
           "Index": 439,
           "ID": 349061,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Tomb of the Giants"
         },
         {
           "Index": 440,
           "ID": 349062,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Demon Ruins/Lost Izalith"
         },
         {
           "Index": 441,
           "ID": 349063,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Painted World/Duke\u0027s Archives/DLC"
         },
         {
           "Index": 442,
           "ID": 349064,
-          "Name": "Vagrant (Passive)"
+          "Name": "Vagrant (Good - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 443,
           "ID": 349100,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "[Unused] Vagrant (Evil) - Undead Asylum"
         },
         {
           "Index": 444,
           "ID": 349101,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Undead Burg"
         },
         {
           "Index": 445,
           "ID": 349102,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Lower Undead Burg/Parish"
         },
         {
           "Index": 446,
           "ID": 349103,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - The Depths"
         },
         {
           "Index": 447,
           "ID": 349104,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Darkroot Garden/Basin"
         },
         {
           "Index": 448,
           "ID": 349105,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - The Catacombs"
         },
         {
           "Index": 449,
           "ID": 349106,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Undead Asylum/New Londo Ruins"
         },
         {
           "Index": 450,
           "ID": 349107,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Blighttown"
         },
         {
           "Index": 451,
           "ID": 349108,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Sen\u0027s Fortress"
         },
         {
           "Index": 452,
           "ID": 349109,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Anor Londo"
         },
         {
           "Index": 453,
           "ID": 349110,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Darkroot Garden (2nd half)"
         },
         {
           "Index": 454,
           "ID": 349111,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Tomb of the Giants"
         },
         {
           "Index": 455,
           "ID": 349112,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Demon Ruins/Lost Izalith"
         },
         {
           "Index": 456,
           "ID": 349113,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Painted World/Duke\u0027s Archives/DLC"
         },
         {
           "Index": 457,
           "ID": 349114,
-          "Name": "Vagrant (Aggressive) - 1"
+          "Name": "Vagrant (Evil) - Kiln of the First Flame"
         },
         {
           "Index": 458,
           "ID": 349200,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "[Unused] Vagrant (Evil - Black Phantom) - Undead Asylum"
         },
         {
           "Index": 459,
           "ID": 349201,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Undead Burg"
         },
         {
           "Index": 460,
           "ID": 349202,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Lower Undead Burg/Parish"
         },
         {
           "Index": 461,
           "ID": 349203,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - The Depths"
         },
         {
           "Index": 462,
           "ID": 349204,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Darkroot Garden/Basin"
         },
         {
           "Index": 463,
           "ID": 349205,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - The Catacombs"
         },
         {
           "Index": 464,
           "ID": 349206,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Undead Asylum/New Londo Ruins"
         },
         {
           "Index": 465,
           "ID": 349207,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Blighttown"
         },
         {
           "Index": 466,
           "ID": 349208,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 467,
           "ID": 349209,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Anor Londo"
         },
         {
           "Index": 468,
           "ID": 349210,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Darkroot Garden (2nd half)"
         },
         {
           "Index": 469,
           "ID": 349211,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Tomb of the Giants"
         },
         {
           "Index": 470,
           "ID": 349212,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Demon Ruins/Lost Izalith"
         },
         {
           "Index": 471,
           "ID": 349213,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Painted World/Duke\u0027s Archives/DLC"
         },
         {
           "Index": 472,
           "ID": 349214,
-          "Name": "Vagrant (Aggressive) - 2"
+          "Name": "Vagrant (Evil - Black Phantom) - Kiln of the First Flame"
         },
         {
           "Index": 473,
@@ -44751,12 +44751,12 @@
         {
           "Index": 474,
           "ID": 350100,
-          "Name": "Wisp"
+          "Name": "Wisp - New Londo Ruins"
         },
         {
           "Index": 475,
           "ID": 350101,
-          "Name": "Wisp"
+          "Name": "Wisp - The Catacombs"
         },
         {
           "Index": 476,
@@ -44766,37 +44766,37 @@
         {
           "Index": 477,
           "ID": 352000,
-          "Name": "Drake"
+          "Name": "[Unused] Drake (Flying)"
         },
         {
           "Index": 478,
           "ID": 352002,
-          "Name": "Drake"
+          "Name": "Drake (Ground)"
         },
         {
           "Index": 479,
           "ID": 352005,
-          "Name": "Drake"
+          "Name": "[Unused] Drake (Flying)"
         },
         {
           "Index": 480,
           "ID": 353000,
-          "Name": "Hydra"
+          "Name": "Hydra - Ash Lake"
         },
         {
           "Index": 481,
           "ID": 353001,
-          "Name": "Hydra"
+          "Name": "Hydra - Darkroot Basin"
         },
         {
           "Index": 482,
           "ID": 353100,
-          "Name": "Hydra\u0027s Head"
+          "Name": "Hydra\u0027s Head - Ash Lake"
         },
         {
           "Index": 483,
           "ID": 353101,
-          "Name": "Hydra\u0027s Head"
+          "Name": "Hydra\u0027s Head - Darkroot Basin"
         },
         {
           "Index": 484,
@@ -44806,7 +44806,7 @@
         {
           "Index": 485,
           "ID": 409010,
-          "Name": "Marvellous Chester"
+          "Name": "Marvellous Chester (Invader)"
         },
         {
           "Index": 486,
@@ -44826,112 +44826,112 @@
         {
           "Index": 489,
           "ID": 412001,
-          "Name": "Stone Guardian"
+          "Name": "Stone Guardian (Black Phantom)"
         },
         {
           "Index": 490,
           "ID": 413000,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Pitchfork)"
         },
         {
           "Index": 491,
           "ID": 413001,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Pitchfork - Cast Off?)"
         },
         {
           "Index": 492,
           "ID": 413002,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Pitchfork - Shirtless)"
         },
         {
           "Index": 493,
           "ID": 413003,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Pitchfork - Pant-less)"
         },
         {
           "Index": 494,
           "ID": 413004,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Pitchfork - Black Phantom)"
         },
         {
           "Index": 495,
           "ID": 413010,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Shears)"
         },
         {
           "Index": 496,
           "ID": 413011,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Shears - Cast Off?)"
         },
         {
           "Index": 497,
           "ID": 413012,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Shears - Shirtless)"
         },
         {
           "Index": 498,
           "ID": 413013,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Shears - Pant-less)"
         },
         {
           "Index": 499,
           "ID": 413014,
-          "Name": "Scarecrow"
+          "Name": "Scarecrow Gardener (Shears - Black Phantom)"
         },
         {
           "Index": 500,
           "ID": 414000,
-          "Name": "Elizabeth"
+          "Name": "Elizabeth, Keeper of the Sanctuary"
         },
         {
           "Index": 501,
           "ID": 415000,
-          "Name": "Bloathead"
+          "Name": "Oolacile Resident (Melee)"
         },
         {
           "Index": 502,
           "ID": 415001,
-          "Name": "Bloathead"
+          "Name": "Oolacile Resident (Melee - Black Phantom)"
         },
         {
           "Index": 503,
           "ID": 415020,
-          "Name": "Bloathead"
+          "Name": "Oolacile Resident (Melee - Lit Eyes)"
         },
         {
           "Index": 504,
           "ID": 416000,
-          "Name": "Bloathead Sorcerer"
+          "Name": "Oolacile Resident (Sorceress)"
         },
         {
           "Index": 505,
           "ID": 416001,
-          "Name": "Bloathead Sorcerer"
+          "Name": "Oolacile Resident (Sorceress - Black Phantom)"
         },
         {
           "Index": 506,
           "ID": 416010,
-          "Name": "Bloathead Sorcerer"
+          "Name": "Oolacile Resident (Sorceress - Ultra-Defensive - For Event)"
         },
         {
           "Index": 507,
           "ID": 416020,
-          "Name": "Bloathead Sorcerer"
+          "Name": "Oolacile Resident (Sorceress - Lit Eyes)"
         },
         {
           "Index": 508,
           "ID": 417000,
-          "Name": "Humanity Phantom (Large)"
+          "Name": "Humanity (Large)"
         },
         {
           "Index": 509,
           "ID": 417100,
-          "Name": "Humanity Phantom (Medium)"
+          "Name": "Humanity (Medium)"
         },
         {
           "Index": 510,
           "ID": 417200,
-          "Name": "Humanity Phantom (Small)"
+          "Name": "Humanity (Small)"
         },
         {
           "Index": 511,
@@ -44941,12 +44941,12 @@
         {
           "Index": 512,
           "ID": 418001,
-          "Name": "Chained Prisoner"
+          "Name": "Chained Prisoner (Black Phantom)"
         },
         {
           "Index": 513,
           "ID": 419000,
-          "Name": "Undead Attack Dog (DLC)"
+          "Name": "Scaled Attack Dog"
         },
         {
           "Index": 514,
@@ -44956,17 +44956,17 @@
         {
           "Index": 515,
           "ID": 451000,
-          "Name": "Kalameet"
+          "Name": "Black Dragon Kalameet"
         },
         {
           "Index": 516,
           "ID": 451001,
-          "Name": "Kalameet"
+          "Name": "Black Dragon Kalameet (Grounded)"
         },
         {
           "Index": 517,
           "ID": 451100,
-          "Name": "Kalameet\u0027s Tail"
+          "Name": "Black Dragon Kalameet\u0027s Tail"
         },
         {
           "Index": 518,
@@ -44976,12 +44976,12 @@
         {
           "Index": 519,
           "ID": 452010,
-          "Name": "Great Grey Wolf Sif (DLC)"
+          "Name": "Great Grey Wolf Sif (DLC - Summon)"
         },
         {
           "Index": 520,
           "ID": 453100,
-          "Name": "Alvina (DLC)"
+          "Name": "Alvina of the Darkroot Wood (DLC)"
         },
         {
           "Index": 521,
@@ -45016,7 +45016,7 @@
         {
           "Index": 527,
           "ID": 523100,
-          "Name": "Bed Of Chaos (Moving)"
+          "Name": "[Unused] Bed Of Chaos (Moving)"
         },
         {
           "Index": 528,
@@ -45041,12 +45041,12 @@
         {
           "Index": 532,
           "ID": 527000,
-          "Name": "Dragonslayer Ornstein"
+          "Name": "Dragon Slayer Ornstein"
         },
         {
           "Index": 533,
           "ID": 527100,
-          "Name": "Dragonslayer Ornstein (Giant)"
+          "Name": "Dragon Slayer Ornstein (Giant)"
         },
         {
           "Index": 534,
@@ -45056,27 +45056,27 @@
         {
           "Index": 535,
           "ID": 529000,
-          "Name": "Seath the Scaleless"
+          "Name": "Seath the Scaleless - Crystal Cave"
         },
         {
           "Index": 536,
           "ID": 529001,
-          "Name": "Seath the Scaleless"
+          "Name": "Seath the Scaleless - Duke\u0027s Archives"
         },
         {
           "Index": 537,
           "ID": 529100,
-          "Name": "Seath\u0027s Tail"
+          "Name": "Seath the Scaleless\u0027s Tail"
         },
         {
           "Index": 538,
           "ID": 531000,
-          "Name": "Gwynevere"
+          "Name": "Gwynevere, Princess of Sunlight"
         },
         {
           "Index": 539,
           "ID": 532000,
-          "Name": "Gwyndolin"
+          "Name": "Dark Sun Gwyndolin"
         },
         {
           "Index": 540,
@@ -45096,27 +45096,27 @@
         {
           "Index": 543,
           "ID": 535000,
-          "Name": "Gargoyle"
+          "Name": "Bell Gargoyle"
         },
         {
           "Index": 544,
           "ID": 535001,
-          "Name": "Gargoyle"
+          "Name": "Bell Gargoyle (2nd)"
         },
         {
           "Index": 545,
           "ID": 535100,
-          "Name": "Gargoyle [Anor Londo]"
+          "Name": "Lightning Gargoyle"
         },
         {
           "Index": 546,
           "ID": 535200,
-          "Name": "Gargoyle\u0027s Tail"
+          "Name": "Bell Gargoyle\u0027s Tail"
         },
         {
           "Index": 547,
           "ID": 535300,
-          "Name": "Gargoyle\u0027s Tail [Anor Londo]"
+          "Name": "Lightning Gargoyle\u0027s Tail"
         },
         {
           "Index": 548,
@@ -45131,7 +45131,7 @@
         {
           "Index": 550,
           "ID": 536100,
-          "Name": "Alvina"
+          "Name": "Alvina of the Darkroot Wood"
         },
         {
           "Index": 551,
@@ -45141,22 +45141,22 @@
         {
           "Index": 552,
           "ID": 539000,
-          "Name": "Four Kings"
+          "Name": "Four Kings (Total HP)"
         },
         {
           "Index": 553,
           "ID": 539001,
-          "Name": "Four Kings"
+          "Name": "Four Kings (Individual)"
         },
         {
           "Index": 554,
           "ID": 540000,
-          "Name": "Bed of Chaos Arm"
+          "Name": "Bed of Chaos (Arm)"
         },
         {
           "Index": 555,
           "ID": 540100,
-          "Name": "Bed of Chaos Worm"
+          "Name": "Bed of Chaos (Worm)"
         }
       ]
     },
