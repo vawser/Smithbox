@@ -13531,7 +13531,7 @@
         {
           "Index": 6,
           "ID": 12280,
-          "Name": "Backstab - PC -\u003E Mushroom Child"
+          "Name": "Backstab - PC -\u003E Mushroom-Man Child"
         },
         {
           "Index": 7,
@@ -13561,12 +13561,12 @@
         {
           "Index": 12,
           "ID": 12520,
-          "Name": "Backstab - PC -\u003E Undead Assassin"
+          "Name": "Backstab - PC -\u003E Hollow Thief"
         },
         {
           "Index": 13,
           "ID": 12530,
-          "Name": "Backstab - PC -\u003E Blowdart Hollow"
+          "Name": "Backstab - PC -\u003E Hollow Blowdart Sniper"
         },
         {
           "Index": 14,
@@ -13591,22 +13591,22 @@
         {
           "Index": 18,
           "ID": 12650,
-          "Name": "Backstab - PC -\u003E Necromancer"
+          "Name": "Backstab - PC -\u003E Hollow Necromancer"
         },
         {
           "Index": 19,
           "ID": 12660,
-          "Name": "Backstab - PC -\u003E Butcher"
+          "Name": "Backstab - PC -\u003E Hollow Maneater Butcher"
         },
         {
           "Index": 20,
           "ID": 12690,
-          "Name": "Backstab - PC -\u003E Serpent Soldier"
+          "Name": "Backstab - PC -\u003E Man-Serpent Soldier"
         },
         {
           "Index": 21,
           "ID": 12700,
-          "Name": "Backstab - PC -\u003E Serpent Mage"
+          "Name": "Backstab - PC -\u003E Man-Serpent Sorcerer"
         },
         {
           "Index": 22,
@@ -13616,42 +13616,42 @@
         {
           "Index": 23,
           "ID": 12792,
-          "Name": "Backstab - PC -\u003E"
+          "Name": "Backstab - PC -\u003E Black Knight (Sword)"
         },
         {
           "Index": 24,
           "ID": 12793,
-          "Name": "Backstab - PC -\u003E"
+          "Name": "Backstab - PC -\u003E Black Knight (Greatsword)"
         },
         {
           "Index": 25,
           "ID": 12794,
-          "Name": "Backstab - PC -\u003E"
+          "Name": "Backstab - PC -\u003E Black Knight (Axe)"
         },
         {
           "Index": 26,
           "ID": 12795,
-          "Name": "Backstab - PC -\u003E"
+          "Name": "Backstab - PC -\u003E Black Knight (Halberd)"
         },
         {
           "Index": 27,
           "ID": 12800,
-          "Name": "Backstab - PC -\u003E Crystal Hollow"
+          "Name": "Backstab - PC -\u003E Hollow Crystal Soldier"
         },
         {
           "Index": 28,
           "ID": 12810,
-          "Name": "Backstab - PC -\u003E Infested Barbarian (Club)"
+          "Name": "Backstab - PC -\u003E Hollow Infested Barbarian (Club)"
         },
         {
           "Index": 29,
           "ID": 12811,
-          "Name": "Backstab - PC -\u003E Infested Barbarian (Boulder)"
+          "Name": "Backstab - PC -\u003E Hollow Infested Barbarian (Boulder)"
         },
         {
           "Index": 30,
           "ID": 12820,
-          "Name": "Backstab - PC -\u003E"
+          "Name": "[Unused] Backstab - PC -\u003E Hollow (Crag Worshipper)"
         },
         {
           "Index": 31,
@@ -13666,7 +13666,7 @@
         {
           "Index": 33,
           "ID": 12920,
-          "Name": "Backstab - PC -\u003E Vamos"
+          "Name": "Backstab - PC -\u003E Vamos the Blacksmith"
         },
         {
           "Index": 34,
@@ -13676,7 +13676,7 @@
         {
           "Index": 35,
           "ID": 13460,
-          "Name": "Backstab - PC -\u003E Armored Tusk"
+          "Name": "Backstab - PC -\u003E Fang Boar"
         },
         {
           "Index": 36,
@@ -13686,17 +13686,17 @@
         {
           "Index": 37,
           "ID": 14130,
-          "Name": "Backstab - PC -\u003E Scarecrow"
+          "Name": "Backstab - PC -\u003E Scarecrow Gardener"
         },
         {
           "Index": 38,
           "ID": 14150,
-          "Name": "Backstab - PC -\u003E Bloathead"
+          "Name": "Backstab - PC -\u003E Oolacile Resident (Melee)"
         },
         {
           "Index": 39,
           "ID": 14160,
-          "Name": "Backstab - PC -\u003E Bloathead Sorcerer"
+          "Name": "Backstab - PC -\u003E Oolacile Resident (Sorceress)"
         },
         {
           "Index": 40,
@@ -13731,12 +13731,12 @@
         {
           "Index": 46,
           "ID": 22520,
-          "Name": "Parry - PC -\u003E Undead Assassin"
+          "Name": "Parry - PC -\u003E Hollow Thief"
         },
         {
           "Index": 47,
           "ID": 22530,
-          "Name": "Parry - PC -\u003E Blowdart Hollow"
+          "Name": "Parry - PC -\u003E Hollow Blowdart Sniper"
         },
         {
           "Index": 48,
@@ -13761,17 +13761,17 @@
         {
           "Index": 52,
           "ID": 22660,
-          "Name": "Parry - PC -\u003E Butcher"
+          "Name": "Parry - PC -\u003E Hollow Maneater Butcher"
         },
         {
           "Index": 53,
           "ID": 22690,
-          "Name": "Parry - PC -\u003E Serpent Soldier"
+          "Name": "Parry - PC -\u003E Man-Serpent Soldier"
         },
         {
           "Index": 54,
           "ID": 22700,
-          "Name": "Parry - PC -\u003E Serpent Mage"
+          "Name": "Parry - PC -\u003E Man-Serpent Sorcerer"
         },
         {
           "Index": 55,
@@ -13781,37 +13781,37 @@
         {
           "Index": 56,
           "ID": 22792,
-          "Name": "Parry - PC -\u003E"
+          "Name": "Parry - PC -\u003E Black Knight (Sword)"
         },
         {
           "Index": 57,
           "ID": 22793,
-          "Name": "Parry - PC -\u003E"
+          "Name": "Parry - PC -\u003E Black Knight (Greatsword)"
         },
         {
           "Index": 58,
           "ID": 22794,
-          "Name": "Parry - PC -\u003E"
+          "Name": "Parry - PC -\u003E Black Knight (Axe)"
         },
         {
           "Index": 59,
           "ID": 22795,
-          "Name": "Parry - PC -\u003E"
+          "Name": "Parry - PC -\u003E Black Knight (Halberd)"
         },
         {
           "Index": 60,
           "ID": 22800,
-          "Name": "Parry - PC -\u003E Crystal Hollow"
+          "Name": "Parry - PC -\u003E Hollow Crystal Soldier"
         },
         {
           "Index": 61,
           "ID": 22810,
-          "Name": "Parry - PC -\u003E Infested Barbarian (Club)"
+          "Name": "Parry - PC -\u003E Hollow Infested Barbarian (Club)"
         },
         {
           "Index": 62,
           "ID": 22820,
-          "Name": "Parry - PC -\u003E Infested Barbarian (Boulder)"
+          "Name": "Parry - PC -\u003E Hollow Infested Barbarian (Boulder)"
         },
         {
           "Index": 63,
@@ -13826,22 +13826,22 @@
         {
           "Index": 65,
           "ID": 22920,
-          "Name": "Parry - PC -\u003E Vamos"
+          "Name": "Parry - PC -\u003E Vamos the Blacksmith"
         },
         {
           "Index": 66,
           "ID": 24130,
-          "Name": "Parry - PC -\u003E Scarecrow"
+          "Name": "Parry - PC -\u003E Scarecrow Gardener"
         },
         {
           "Index": 67,
           "ID": 24150,
-          "Name": "Parry - PC -\u003E Bloathead"
+          "Name": "Parry - PC -\u003E Oolacile Resident (Melee)"
         },
         {
           "Index": 68,
           "ID": 24160,
-          "Name": "Parry - PC -\u003E Bloathead Sorcerer"
+          "Name": "Parry - PC -\u003E Oolacile Resident (Sorceress)"
         },
         {
           "Index": 69,
@@ -13851,12 +13851,12 @@
         {
           "Index": 70,
           "ID": 31202,
-          "Name": "Fall - PC -\u003E Giant Rat"
+          "Name": "Fall - PC -\u003E Giant Undead Rat"
         },
         {
           "Index": 71,
           "ID": 32231,
-          "Name": "Fall - PC -\u003E Firesage Demon"
+          "Name": "Fall - PC -\u003E Demon Firesage"
         },
         {
           "Index": 72,
@@ -13871,12 +13871,12 @@
         {
           "Index": 74,
           "ID": 33460,
-          "Name": "Fall - PC -\u003E Armored Tusk"
+          "Name": "Fall - PC -\u003E Fang Boar"
         },
         {
           "Index": 75,
           "ID": 33461,
-          "Name": "Fall - PC -\u003E Armored Tusk - Reinforced"
+          "Name": "Fall - PC -\u003E Fang Boar (Fully-Armored)"
         },
         {
           "Index": 76,
@@ -13901,357 +13901,357 @@
         {
           "Index": 80,
           "ID": 112060,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Infested Ghoul [Hornet Ring]"
         },
         {
           "Index": 81,
           "ID": 112280,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Mushroom-Man Child [Hornet Ring]"
         },
         {
           "Index": 82,
           "ID": 112390,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Darkwraith [Hornet Ring]"
         },
         {
           "Index": 83,
           "ID": 112400,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Painting Guardian [Hornet Ring]"
         },
         {
           "Index": 84,
           "ID": 112410,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Silver Knight [Hornet Ring]"
         },
         {
           "Index": 85,
           "ID": 112500,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow [Hornet Ring]"
         },
         {
           "Index": 86,
           "ID": 112510,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Undead Merchant [Hornet Ring]"
         },
         {
           "Index": 87,
           "ID": 112520,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Thief [Hornet Ring]"
         },
         {
           "Index": 88,
           "ID": 112530,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Blowdart Sniper [Hornet Ring]"
         },
         {
           "Index": 89,
           "ID": 112540,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Warrior [Hornet Ring]"
         },
         {
           "Index": 90,
           "ID": 112550,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Soldier [Hornet Ring]"
         },
         {
           "Index": 91,
           "ID": 112560,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Balder Knight [Hornet Ring]"
         },
         {
           "Index": 92,
           "ID": 112640,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Andre of Astora [Hornet Ring]"
         },
         {
           "Index": 93,
           "ID": 112650,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Necromancer [Hornet Ring]"
         },
         {
           "Index": 94,
           "ID": 112660,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Maneater Butcher [Hornet Ring]"
         },
         {
           "Index": 95,
           "ID": 112690,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Man-Serpent Soldier [Hornet Ring]"
         },
         {
           "Index": 96,
           "ID": 112700,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Man-Serpent Sorcerer [Hornet Ring]"
         },
         {
           "Index": 97,
           "ID": 112790,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Black Knight [Hornet Ring]"
         },
         {
           "Index": 98,
           "ID": 112792,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Black Knight (Sword) [Hornet Ring]"
         },
         {
           "Index": 99,
           "ID": 112793,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Black Knight (Greatsword) [Hornet Ring]"
         },
         {
           "Index": 100,
           "ID": 112794,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Black Knight (Axe) [Hornet Ring]"
         },
         {
           "Index": 101,
           "ID": 112795,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Black Knight (Halberd) [Hornet Ring]"
         },
         {
           "Index": 102,
           "ID": 112800,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Crystal Soldier [Hornet Ring]"
         },
         {
           "Index": 103,
           "ID": 112810,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Infested Barbarian (Club) [Hornet Ring]"
         },
         {
           "Index": 104,
           "ID": 112811,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Hollow Infested Barbarian (Boulder) [Hornet Ring]"
         },
         {
           "Index": 105,
           "ID": 112820,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "[Unused] Backstab - PC -\u003E Hollow (Crag Worshipper) [Hornet Ring]"
         },
         {
           "Index": 106,
           "ID": 112840,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Engorged Hollow [Hornet Ring]"
         },
         {
           "Index": 107,
           "ID": 112900,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Skeleton [Hornet Ring]"
         },
         {
           "Index": 108,
           "ID": 112920,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Vamos the Blacksmith [Hornet Ring]"
         },
         {
           "Index": 109,
           "ID": 113300,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Pisaca [Hornet Ring]"
         },
         {
           "Index": 110,
           "ID": 113460,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Fang Boar [Hornet Ring]"
         },
         {
           "Index": 111,
           "ID": 114090,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Marvellous Chester [Hornet Ring]"
         },
         {
           "Index": 112,
           "ID": 114130,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Scarecrow Gardener [Hornet Ring]"
         },
         {
           "Index": 113,
           "ID": 114150,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Oolacile Resident (Melee) [Hornet Ring]"
         },
         {
           "Index": 114,
           "ID": 114160,
-          "Name": "Backstab - PC -\u003E  [Hornet Ring]"
+          "Name": "Backstab - PC -\u003E Oolacile Resident (Sorceress) [Hornet Ring]"
         },
         {
           "Index": 115,
           "ID": 122060,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Infested Ghoul [Hornet Ring]"
         },
         {
           "Index": 116,
           "ID": 122390,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Darkwraith [Hornet Ring]"
         },
         {
           "Index": 117,
           "ID": 122400,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Painting Guardian [Hornet Ring]"
         },
         {
           "Index": 118,
           "ID": 122410,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Silver Knight [Hornet Ring]"
         },
         {
           "Index": 119,
           "ID": 122500,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow [Hornet Ring]"
         },
         {
           "Index": 120,
           "ID": 122510,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Undead Merchant [Hornet Ring]"
         },
         {
           "Index": 121,
           "ID": 122520,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Thief [Hornet Ring]"
         },
         {
           "Index": 122,
           "ID": 122530,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Blowdart Sniper [Hornet Ring]"
         },
         {
           "Index": 123,
           "ID": 122540,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Warrior [Hornet Ring]"
         },
         {
           "Index": 124,
           "ID": 122550,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Soldier [Hornet Ring]"
         },
         {
           "Index": 125,
           "ID": 122560,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Balder Knight [Hornet Ring]"
         },
         {
           "Index": 126,
           "ID": 122640,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Andre of Astora [Hornet Ring]"
         },
         {
           "Index": 127,
           "ID": 122660,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Maneater Butcher [Hornet Ring]"
         },
         {
           "Index": 128,
           "ID": 122690,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Man-Serpent Soldier [Hornet Ring]"
         },
         {
           "Index": 129,
           "ID": 122700,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Man-Serpent Sorcerer [Hornet Ring]"
         },
         {
           "Index": 130,
           "ID": 122790,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Black Knight [Hornet Ring]"
         },
         {
           "Index": 131,
           "ID": 122792,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Black Knight (Sword) [Hornet Ring]"
         },
         {
           "Index": 132,
           "ID": 122793,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Black Knight (Greatsword) [Hornet Ring]"
         },
         {
           "Index": 133,
           "ID": 122794,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Black Knight (Axe) [Hornet Ring]"
         },
         {
           "Index": 134,
           "ID": 122795,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Black Knight (Halberd) [Hornet Ring]"
         },
         {
           "Index": 135,
           "ID": 122800,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Crystal Soldier [Hornet Ring]"
         },
         {
           "Index": 136,
           "ID": 122810,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Infested Barbarian (Club) [Hornet Ring]"
         },
         {
           "Index": 137,
           "ID": 122820,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Hollow Infested Barbarian (Boulder) [Hornet Ring]"
         },
         {
           "Index": 138,
           "ID": 122840,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Engorged Hollow [Hornet Ring]"
         },
         {
           "Index": 139,
           "ID": 122900,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Skeleton [Hornet Ring]"
         },
         {
           "Index": 140,
           "ID": 122920,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Vamos the Blacksmith [Hornet Ring]"
         },
         {
           "Index": 141,
           "ID": 124130,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Scarecrow Gardener [Hornet Ring]"
         },
         {
           "Index": 142,
           "ID": 124150,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Oolacile Resident (Melee) [Hornet Ring]"
         },
         {
           "Index": 143,
           "ID": 124160,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Oolacile Resident (Sorceress) [Hornet Ring]"
         },
         {
           "Index": 144,
           "ID": 125370,
-          "Name": "Parry - PC -\u003E  [Hornet Ring]"
+          "Name": "Parry - PC -\u003E Gwyn, Lord of Cinder [Hornet Ring]"
         },
         {
           "Index": 145,
           "ID": 131202,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Giant Undead Rat [Hornet Ring]"
         },
         {
           "Index": 146,
           "ID": 132231,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Demon Firesage [Hornet Ring]"
         },
         {
           "Index": 147,
           "ID": 132232,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Asylum Demon [Hornet Ring]"
         },
         {
           "Index": 148,
           "ID": 132250,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Taurus Demon [Hornet Ring]"
         },
         {
           "Index": 149,
           "ID": 133460,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Fang Boar [Hornet Ring]"
         },
         {
           "Index": 150,
           "ID": 133461,
-          "Name": "Fall - PC -\u003E  [Hornet Ring]"
+          "Name": "Fall - PC -\u003E Fang Boar (Fully-Armored) [Hornet Ring]"
         },
         {
           "Index": 151,
@@ -14261,12 +14261,12 @@
         {
           "Index": 152,
           "ID": 229000,
-          "Name": "Throw - X -\u003E PC"
+          "Name": "Throw - Chained Prisoner (Proto) -\u003E PC"
         },
         {
           "Index": 153,
           "ID": 230000,
-          "Name": "Throw - Prowling Demon -\u003E PC"
+          "Name": "Throw - Titanite Demon -\u003E PC"
         },
         {
           "Index": 154,
@@ -14316,12 +14316,12 @@
         {
           "Index": 163,
           "ID": 252000,
-          "Name": "Backstab - Undead Assassin -\u003E PC"
+          "Name": "Backstab - Hollow Thief -\u003E PC"
         },
         {
           "Index": 164,
           "ID": 252001,
-          "Name": "Parry - Undead Assassin -\u003E PC"
+          "Name": "Parry - Hollow Thief -\u003E PC"
         },
         {
           "Index": 165,
@@ -14336,22 +14336,22 @@
         {
           "Index": 167,
           "ID": 266000,
-          "Name": "Throw - Butcher -\u003E PC"
+          "Name": "Throw - Hollow Maneater Butcher -\u003E PC"
         },
         {
           "Index": 168,
           "ID": 267000,
-          "Name": "Throw - Ghost (Male)   -\u003E PC"
+          "Name": "Throw - Cursed Ghost (Male)   -\u003E PC"
         },
         {
           "Index": 169,
           "ID": 268000,
-          "Name": "Throw - Ghost (Female) -\u003E PC"
+          "Name": "Throw - Cursed Ghost (Female) -\u003E PC"
         },
         {
           "Index": 170,
           "ID": 270000,
-          "Name": "Throw - Serpent Mage -\u003E PC"
+          "Name": "Throw - Man-Serpent Sorcerer -\u003E PC"
         },
         {
           "Index": 171,
@@ -14371,7 +14371,7 @@
         {
           "Index": 174,
           "ID": 320000,
-          "Name": "Throw - Slime -\u003E PC [1]"
+          "Name": "Throw - Slime -\u003E PC"
         },
         {
           "Index": 175,
@@ -14391,7 +14391,7 @@
         {
           "Index": 178,
           "ID": 325000,
-          "Name": "Throw - Maneater Clam -\u003E PC"
+          "Name": "Throw - Man-Eater Shell -\u003E PC"
         },
         {
           "Index": 179,
@@ -14406,22 +14406,22 @@
         {
           "Index": 181,
           "ID": 339000,
-          "Name": "Throw - Burrower -\u003E PC"
+          "Name": "Throw - Burrowing Rockworm -\u003E PC"
         },
         {
           "Index": 182,
           "ID": 339001,
-          "Name": "Throw - Burrower -\u003E PC"
+          "Name": "Throw - Burrowing Rockworm -\u003E PC"
         },
         {
           "Index": 183,
           "ID": 339002,
-          "Name": "Throw - Burrower -\u003E PC"
+          "Name": "Throw - Burrowing Rockworm -\u003E PC"
         },
         {
           "Index": 184,
           "ID": 451000,
-          "Name": "Throw - Kalameet -\u003E PC"
+          "Name": "Throw - Black Dragon Kalameet -\u003E PC"
         },
         {
           "Index": 185,
@@ -14446,12 +14446,12 @@
         {
           "Index": 189,
           "ID": 527000,
-          "Name": "Throw - Dragonslayer Ornstein -\u003E PC"
+          "Name": "Throw - Dragon Slayer Ornstein -\u003E PC"
         },
         {
           "Index": 190,
           "ID": 527100,
-          "Name": "Throw - Dragonslayer Ornstein (Giant) -\u003E PC"
+          "Name": "Throw - Dragon Slayer Ornstein (Giant) -\u003E PC"
         },
         {
           "Index": 191,
