@@ -112506,47 +112506,47 @@
         {
           "Index": 2,
           "ID": 2,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Sharp Stone)"
         },
         {
           "Index": 3,
           "ID": 3,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Clearstone)"
         },
         {
           "Index": 4,
           "ID": 4,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Greystone)"
         },
         {
           "Index": 5,
           "ID": 5,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Bladestone)"
         },
         {
           "Index": 6,
           "ID": 6,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Spiderstone)"
         },
         {
           "Index": 7,
           "ID": 7,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Mercurystone)"
         },
         {
           "Index": 8,
           "ID": 8,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Dragonstone)"
         },
         {
           "Index": 9,
           "ID": 9,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Suckerstone)"
         },
         {
           "Index": 10,
           "ID": 10,
-          "Name": "Unused"
+          "Name": "Unused - Weapons (DeS Marrowstone)"
         },
         {
           "Index": 11,
@@ -112586,7 +112586,7 @@
         {
           "Index": 18,
           "ID": 101,
-          "Name": "Unused"
+          "Name": "Unused - Max MP"
         },
         {
           "Index": 19,
@@ -112622,6 +112622,71 @@
           "Index": 25,
           "ID": 200,
           "Name": "Level up cost"
+        },
+        {
+          "Index": 26,
+          "ID": 300,
+          "Name": "Level Sync: HP"
+        },
+        {
+          "Index": 27,
+          "ID": 302,
+          "Name": "Level Sync: Stamina"
+        },
+        {
+          "Index": 28,
+          "ID": 303,
+          "Name": "Level Sync: Natural Defense"
+        },
+        {
+          "Index": 29,
+          "ID": 304,
+          "Name": "Level Sync: Resistance"
+        },
+        {
+          "Index": 30,
+          "ID": 310,
+          "Name": "Level Sync: Sword"
+        },
+        {
+          "Index": 31,
+          "ID": 320,
+          "Name": "Level Sync: Dagger"
+        },
+        {
+          "Index": 32,
+          "ID": 330,
+          "Name": "Level Sync: Greatsword"
+        },
+        {
+          "Index": 33,
+          "ID": 340,
+          "Name": "Level Sync: Bow"
+        },
+        {
+          "Index": 34,
+          "ID": 341,
+          "Name": "Level Sync: Greatbow"
+        },
+        {
+          "Index": 35,
+          "ID": 342,
+          "Name": "Level Sync: Crossbow"
+        },
+        {
+          "Index": 36,
+          "ID": 350,
+          "Name": "Level Sync: Catalyst"
+        },
+        {
+          "Index": 37,
+          "ID": 351,
+          "Name": "Level Sync: Talisman"
+        },
+        {
+          "Index": 38,
+          "ID": 352,
+          "Name": "Level Sync: Pyromancy Flame"
         }
       ]
     },
