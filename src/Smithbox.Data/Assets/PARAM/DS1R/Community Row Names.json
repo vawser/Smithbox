@@ -8126,12 +8126,12 @@
         {
           "Index": 11,
           "ID": 115,
-          "Name": "Black Eye Orb -"
+          "Name": "Black Eye Orb - Lautrec Invasion"
         },
         {
           "Index": 12,
           "ID": 116,
-          "Name": "Black Eye Orb -"
+          "Name": "[Unused] Black Eye Orb - Shiva Invasion"
         },
         {
           "Index": 13,
@@ -8145,1206 +8145,1286 @@
         },
         {
           "Index": 15,
-          "ID": 200,
-          "Name": "Estus Flask"
+          "ID": 130,
+          "Name": "None"
         },
         {
           "Index": 16,
-          "ID": 201,
-          "Name": "Estus Flask - Drained"
+          "ID": 131,
+          "Name": "Way of White"
         },
         {
           "Index": 17,
-          "ID": 202,
-          "Name": "Estus Flask \u002B1"
+          "ID": 132,
+          "Name": "Princess\u0027s Guard"
         },
         {
           "Index": 18,
-          "ID": 203,
-          "Name": "Estus Flask \u002B1 - Drained"
+          "ID": 133,
+          "Name": "Warrior of Sunlight"
         },
         {
           "Index": 19,
-          "ID": 204,
-          "Name": "Estus Flask \u002B2"
+          "ID": 134,
+          "Name": "Darkwraith"
         },
         {
           "Index": 20,
-          "ID": 205,
-          "Name": "Estus Flask \u002B2 - Drained"
+          "ID": 135,
+          "Name": "Path of the Dragon"
         },
         {
           "Index": 21,
-          "ID": 206,
-          "Name": "Estus Flask \u002B3"
+          "ID": 136,
+          "Name": "Gravelord Servant"
         },
         {
           "Index": 22,
-          "ID": 207,
-          "Name": "Estus Flask \u002B3 - Drained"
+          "ID": 137,
+          "Name": "Forest Hunter"
         },
         {
           "Index": 23,
-          "ID": 208,
-          "Name": "Estus Flask \u002B4"
+          "ID": 138,
+          "Name": "Darkmoon Blade"
         },
         {
           "Index": 24,
-          "ID": 209,
-          "Name": "Estus Flask \u002B4 - Drained"
+          "ID": 139,
+          "Name": "Chaos Servant"
         },
         {
           "Index": 25,
-          "ID": 210,
-          "Name": "Estus Flask \u002B5"
+          "ID": 140,
+          "Name": "dummy10"
         },
         {
           "Index": 26,
-          "ID": 211,
-          "Name": "Estus Flask \u002B5 - Drained"
+          "ID": 141,
+          "Name": "dummy11"
         },
         {
           "Index": 27,
-          "ID": 212,
-          "Name": "Estus Flask \u002B6"
+          "ID": 142,
+          "Name": "dummy12"
         },
         {
           "Index": 28,
-          "ID": 213,
-          "Name": "Estus Flask \u002B6 - Drained"
+          "ID": 143,
+          "Name": "dummy13"
         },
         {
           "Index": 29,
-          "ID": 214,
-          "Name": "Estus Flask \u002B7"
+          "ID": 144,
+          "Name": "dummy14"
         },
         {
           "Index": 30,
-          "ID": 215,
-          "Name": "Estus Flask \u002B7 - Drained"
+          "ID": 145,
+          "Name": "dummy15"
         },
         {
           "Index": 31,
+          "ID": 200,
+          "Name": "Estus Flask - Drained"
+        },
+        {
+          "Index": 32,
+          "ID": 201,
+          "Name": "Estus Flask"
+        },
+        {
+          "Index": 33,
+          "ID": 202,
+          "Name": "Estus Flask \u002B1 - Drained"
+        },
+        {
+          "Index": 34,
+          "ID": 203,
+          "Name": "Estus Flask \u002B1"
+        },
+        {
+          "Index": 35,
+          "ID": 204,
+          "Name": "Estus Flask \u002B2 - Drained"
+        },
+        {
+          "Index": 36,
+          "ID": 205,
+          "Name": "Estus Flask \u002B2"
+        },
+        {
+          "Index": 37,
+          "ID": 206,
+          "Name": "Estus Flask \u002B3 - Drained"
+        },
+        {
+          "Index": 38,
+          "ID": 207,
+          "Name": "Estus Flask \u002B3"
+        },
+        {
+          "Index": 39,
+          "ID": 208,
+          "Name": "Estus Flask \u002B4 - Drained"
+        },
+        {
+          "Index": 40,
+          "ID": 209,
+          "Name": "Estus Flask \u002B4"
+        },
+        {
+          "Index": 41,
+          "ID": 210,
+          "Name": "Estus Flask \u002B5 - Drained"
+        },
+        {
+          "Index": 42,
+          "ID": 211,
+          "Name": "Estus Flask \u002B5"
+        },
+        {
+          "Index": 43,
+          "ID": 212,
+          "Name": "Estus Flask \u002B6 - Drained"
+        },
+        {
+          "Index": 44,
+          "ID": 213,
+          "Name": "Estus Flask \u002B6"
+        },
+        {
+          "Index": 45,
+          "ID": 214,
+          "Name": "Estus Flask \u002B7 - Drained"
+        },
+        {
+          "Index": 46,
+          "ID": 215,
+          "Name": "Estus Flask \u002B7"
+        },
+        {
+          "Index": 47,
           "ID": 220,
           "Name": "Silver Pendant"
         },
         {
-          "Index": 32,
+          "Index": 48,
           "ID": 230,
           "Name": "Elizabeth\u0027s Mushroom"
         },
         {
-          "Index": 33,
+          "Index": 49,
           "ID": 240,
           "Name": "Divine Blessing"
         },
         {
-          "Index": 34,
+          "Index": 50,
           "ID": 260,
           "Name": "Green Blossom"
         },
         {
-          "Index": 35,
+          "Index": 51,
           "ID": 270,
           "Name": "Bloodred Moss Clump"
         },
         {
-          "Index": 36,
+          "Index": 52,
           "ID": 271,
           "Name": "Purple Moss Clump"
         },
         {
-          "Index": 37,
+          "Index": 53,
           "ID": 272,
           "Name": "Blooming Purple Moss Clump"
         },
         {
-          "Index": 38,
+          "Index": 54,
           "ID": 274,
           "Name": "Purging Stone"
         },
         {
-          "Index": 39,
+          "Index": 55,
           "ID": 275,
           "Name": "Egg Vermifuge"
         },
         {
-          "Index": 40,
+          "Index": 56,
           "ID": 280,
           "Name": "Repair Powder"
         },
         {
-          "Index": 41,
+          "Index": 57,
           "ID": 290,
           "Name": "Throwing Knife"
         },
         {
-          "Index": 42,
+          "Index": 58,
           "ID": 291,
           "Name": "Poison Throwing Knife"
         },
         {
-          "Index": 43,
+          "Index": 59,
           "ID": 292,
           "Name": "Firebomb"
         },
         {
-          "Index": 44,
+          "Index": 60,
           "ID": 293,
           "Name": "Dung Pie"
         },
         {
-          "Index": 45,
+          "Index": 61,
           "ID": 294,
           "Name": "Alluring Skull"
         },
         {
-          "Index": 46,
+          "Index": 62,
           "ID": 296,
           "Name": "Lloyd\u0027s Talisman"
         },
         {
-          "Index": 47,
+          "Index": 63,
           "ID": 297,
           "Name": "Black Firebomb"
         },
         {
-          "Index": 48,
+          "Index": 64,
           "ID": 310,
           "Name": "Charcoal Pine Resin"
         },
         {
-          "Index": 49,
+          "Index": 65,
           "ID": 311,
           "Name": "Gold Pine Resin"
         },
         {
-          "Index": 50,
+          "Index": 66,
           "ID": 312,
           "Name": "Transient Curse"
         },
         {
-          "Index": 51,
+          "Index": 67,
           "ID": 313,
           "Name": "Rotten Pine Resin"
         },
         {
-          "Index": 52,
+          "Index": 68,
           "ID": 330,
           "Name": "Homeward Bone"
         },
         {
-          "Index": 53,
+          "Index": 69,
           "ID": 350,
           "Name": "Humanity"
         },
         {
-          "Index": 54,
+          "Index": 70,
           "ID": 370,
           "Name": "Prism Stone"
         },
         {
-          "Index": 55,
+          "Index": 71,
           "ID": 371,
           "Name": "Binoculars"
         },
         {
-          "Index": 56,
+          "Index": 72,
           "ID": 373,
           "Name": "Indictment"
         },
         {
-          "Index": 57,
+          "Index": 73,
           "ID": 374,
           "Name": "Souvenir of Reprisal"
         },
         {
-          "Index": 58,
+          "Index": 74,
           "ID": 375,
           "Name": "Sunlight Medal"
         },
         {
-          "Index": 59,
+          "Index": 75,
           "ID": 376,
           "Name": "Pendant"
         },
         {
-          "Index": 60,
+          "Index": 76,
           "ID": 377,
           "Name": "Dragon Head Stone"
         },
         {
-          "Index": 61,
+          "Index": 77,
           "ID": 378,
           "Name": "Dragon Torso Stone"
         },
         {
-          "Index": 62,
+          "Index": 78,
           "ID": 380,
           "Name": "Rubbish"
         },
         {
-          "Index": 63,
+          "Index": 79,
           "ID": 381,
           "Name": "Copper Coin"
         },
         {
-          "Index": 64,
+          "Index": 80,
           "ID": 382,
           "Name": "Silver Coin"
         },
         {
-          "Index": 65,
+          "Index": 81,
           "ID": 383,
           "Name": "Gold Coin"
         },
         {
-          "Index": 66,
+          "Index": 82,
           "ID": 384,
           "Name": "Peculiar Doll"
         },
         {
-          "Index": 67,
+          "Index": 83,
           "ID": 385,
           "Name": "Dried Finger"
         },
         {
-          "Index": 68,
+          "Index": 84,
           "ID": 390,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Anastacia of Astora)"
         },
         {
-          "Index": 69,
+          "Index": 85,
           "ID": 391,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Darkmoon Knightess)"
         },
         {
-          "Index": 70,
+          "Index": 86,
           "ID": 392,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (The Fair Lady)"
         },
         {
-          "Index": 71,
+          "Index": 87,
           "ID": 393,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (New Londo Ruins)"
         },
         {
-          "Index": 72,
+          "Index": 88,
           "ID": 394,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Blighttown)"
         },
         {
-          "Index": 73,
+          "Index": 89,
           "ID": 395,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Duke\u0027s Archives)"
         },
         {
-          "Index": 74,
+          "Index": 90,
           "ID": 396,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Undead Parish)"
         },
         {
-          "Index": 75,
+          "Index": 91,
           "ID": 400,
           "Name": "Soul of a Lost Undead"
         },
         {
-          "Index": 76,
+          "Index": 92,
           "ID": 401,
           "Name": "Large Soul of a Lost Undead"
         },
         {
-          "Index": 77,
+          "Index": 93,
           "ID": 402,
           "Name": "Soul of a Nameless Soldier"
         },
         {
-          "Index": 78,
+          "Index": 94,
           "ID": 403,
           "Name": "Large Soul of a Nameless Soldier"
         },
         {
-          "Index": 79,
+          "Index": 95,
           "ID": 404,
           "Name": "Soul of a Proud Knight"
         },
         {
-          "Index": 80,
+          "Index": 96,
           "ID": 405,
           "Name": "Large Soul of a Proud Knight"
         },
         {
-          "Index": 81,
+          "Index": 97,
           "ID": 406,
           "Name": "Soul of a Brave Warrior"
         },
         {
-          "Index": 82,
+          "Index": 98,
           "ID": 407,
           "Name": "Large Soul of a Brave Warrior"
         },
         {
-          "Index": 83,
+          "Index": 99,
           "ID": 408,
           "Name": "Soul of a Hero"
         },
         {
-          "Index": 84,
+          "Index": 100,
           "ID": 409,
           "Name": "Soul of a Great Hero"
         },
         {
-          "Index": 85,
+          "Index": 101,
           "ID": 500,
           "Name": "Humanity"
         },
         {
-          "Index": 86,
+          "Index": 102,
           "ID": 501,
           "Name": "Twin Humanities"
         },
         {
-          "Index": 87,
+          "Index": 103,
           "ID": 510,
           "Name": "Hello Carving"
         },
         {
-          "Index": 88,
+          "Index": 104,
           "ID": 511,
           "Name": "Thank you Carving"
         },
         {
-          "Index": 89,
+          "Index": 105,
           "ID": 512,
           "Name": "Very good! Carving"
         },
         {
-          "Index": 90,
+          "Index": 106,
           "ID": 513,
           "Name": "I\u0027m sorry Carving"
         },
         {
-          "Index": 91,
+          "Index": 107,
           "ID": 514,
           "Name": "Help me! Carving"
         },
         {
-          "Index": 92,
+          "Index": 108,
           "ID": 700,
           "Name": "Soul of Quelaag"
         },
         {
-          "Index": 93,
+          "Index": 109,
           "ID": 701,
           "Name": "Soul of Sif"
         },
         {
-          "Index": 94,
+          "Index": 110,
           "ID": 702,
           "Name": "Soul of Gwyn, Lord of Cinder"
         },
         {
-          "Index": 95,
+          "Index": 111,
           "ID": 703,
           "Name": "Core of an Iron Golem"
         },
         {
-          "Index": 96,
+          "Index": 112,
           "ID": 704,
           "Name": "Soul of Ornstein"
         },
         {
-          "Index": 97,
+          "Index": 113,
           "ID": 705,
           "Name": "Soul of the Moonlight Butterfly"
         },
         {
-          "Index": 98,
+          "Index": 114,
           "ID": 706,
           "Name": "Soul of Smough"
         },
         {
-          "Index": 99,
+          "Index": 115,
           "ID": 707,
           "Name": "Soul of Priscilla"
         },
         {
-          "Index": 100,
+          "Index": 116,
           "ID": 708,
           "Name": "Soul of Gwyndolin"
         },
         {
-          "Index": 101,
+          "Index": 117,
           "ID": 709,
           "Name": "Guardian Soul"
         },
         {
-          "Index": 102,
+          "Index": 118,
           "ID": 710,
           "Name": "Soul of Artorias"
         },
         {
-          "Index": 103,
+          "Index": 119,
           "ID": 711,
           "Name": "Soul of Manus"
         },
         {
-          "Index": 104,
+          "Index": 120,
           "ID": 800,
           "Name": "Large Ember"
         },
         {
-          "Index": 105,
+          "Index": 121,
           "ID": 801,
           "Name": "Very Large Ember"
         },
         {
-          "Index": 106,
+          "Index": 122,
           "ID": 802,
           "Name": "Crystal Ember"
         },
         {
-          "Index": 107,
+          "Index": 123,
           "ID": 806,
           "Name": "Large Magic Ember"
         },
         {
-          "Index": 108,
+          "Index": 124,
           "ID": 807,
           "Name": "Enchanted Ember"
         },
         {
-          "Index": 109,
+          "Index": 125,
           "ID": 808,
           "Name": "Divine Ember"
         },
         {
-          "Index": 110,
+          "Index": 126,
           "ID": 809,
           "Name": "Large Divine Ember"
         },
         {
-          "Index": 111,
+          "Index": 127,
           "ID": 810,
           "Name": "Dark Ember"
         },
         {
-          "Index": 112,
+          "Index": 128,
           "ID": 812,
           "Name": "Large Flame Ember"
         },
         {
-          "Index": 113,
+          "Index": 129,
           "ID": 813,
           "Name": "Chaos Flame Ember"
         },
         {
-          "Index": 114,
+          "Index": 130,
           "ID": 1000,
           "Name": "Titanite Shard"
         },
         {
-          "Index": 115,
+          "Index": 131,
           "ID": 1010,
           "Name": "Large Titanite Shard"
         },
         {
-          "Index": 116,
+          "Index": 132,
           "ID": 1020,
           "Name": "Green Titanite Shard"
         },
         {
-          "Index": 117,
+          "Index": 133,
           "ID": 1030,
           "Name": "Titanite Chunk"
         },
         {
-          "Index": 118,
+          "Index": 134,
           "ID": 1040,
           "Name": "Blue Titanite Chunk"
         },
         {
-          "Index": 119,
+          "Index": 135,
           "ID": 1050,
           "Name": "White Titanite Chunk"
         },
         {
-          "Index": 120,
+          "Index": 136,
           "ID": 1060,
           "Name": "Red Titanite Chunk"
         },
         {
-          "Index": 121,
+          "Index": 137,
           "ID": 1070,
           "Name": "Titanite Slab"
         },
         {
-          "Index": 122,
+          "Index": 138,
           "ID": 1080,
           "Name": "Blue Titanite Slab"
         },
         {
-          "Index": 123,
+          "Index": 139,
           "ID": 1090,
           "Name": "White Titanite Slab"
         },
         {
-          "Index": 124,
+          "Index": 140,
           "ID": 1100,
           "Name": "Red Titanite Slab"
         },
         {
-          "Index": 125,
+          "Index": 141,
           "ID": 1110,
           "Name": "Dragon Scale"
         },
         {
-          "Index": 126,
+          "Index": 142,
           "ID": 1120,
           "Name": "Demon Titanite"
         },
         {
-          "Index": 127,
+          "Index": 143,
           "ID": 1130,
           "Name": "Twinkling Titanite"
         },
         {
-          "Index": 128,
+          "Index": 144,
           "ID": 2001,
           "Name": "Basement Key"
         },
         {
-          "Index": 129,
+          "Index": 145,
           "ID": 2002,
           "Name": "Crest of Artorias"
         },
         {
-          "Index": 130,
+          "Index": 146,
           "ID": 2003,
           "Name": "Cage Key"
         },
         {
-          "Index": 131,
+          "Index": 147,
           "ID": 2004,
           "Name": "Archive Tower Cell Key"
         },
         {
-          "Index": 132,
+          "Index": 148,
           "ID": 2005,
           "Name": "Archive Tower Giant Door Key"
         },
         {
-          "Index": 133,
+          "Index": 149,
           "ID": 2006,
           "Name": "Archive Tower Giant Cell Key"
         },
         {
-          "Index": 134,
+          "Index": 150,
           "ID": 2007,
           "Name": "Blighttown Key"
         },
         {
-          "Index": 135,
+          "Index": 151,
           "ID": 2008,
           "Name": "Key to New Londo Ruins"
         },
         {
-          "Index": 136,
+          "Index": 152,
           "ID": 2009,
           "Name": "Annex Key"
         },
         {
-          "Index": 137,
+          "Index": 153,
           "ID": 2010,
           "Name": "Dungeon Cell Key"
         },
         {
-          "Index": 138,
+          "Index": 154,
           "ID": 2011,
           "Name": "Big Pilgrim\u0027s Key"
         },
         {
-          "Index": 139,
+          "Index": 155,
           "ID": 2012,
           "Name": "Undead Asylum F2 East Key"
         },
         {
-          "Index": 140,
+          "Index": 156,
           "ID": 2013,
           "Name": "Key to the Seal"
         },
         {
-          "Index": 141,
+          "Index": 157,
           "ID": 2014,
           "Name": "Key to Depths"
         },
         {
-          "Index": 142,
+          "Index": 158,
           "ID": 2015,
           "Name": "Lift Chamber Key"
         },
         {
-          "Index": 143,
+          "Index": 159,
           "ID": 2016,
           "Name": "Undead Asylum F2 West Key"
         },
         {
-          "Index": 144,
+          "Index": 160,
           "ID": 2017,
           "Name": "Mystery Key"
         },
         {
-          "Index": 145,
+          "Index": 161,
           "ID": 2018,
           "Name": "Sewer Chamber Key"
         },
         {
-          "Index": 146,
+          "Index": 162,
           "ID": 2019,
           "Name": "Watchtower Basement Key"
         },
         {
-          "Index": 147,
+          "Index": 163,
           "ID": 2020,
           "Name": "Archive Prison Extra Key"
         },
         {
-          "Index": 148,
+          "Index": 164,
           "ID": 2021,
           "Name": "Residence Key"
         },
         {
-          "Index": 149,
+          "Index": 165,
           "ID": 2022,
           "Name": "Crest Key"
         },
         {
-          "Index": 150,
+          "Index": 166,
           "ID": 2100,
           "Name": "Master Key"
         },
         {
-          "Index": 151,
+          "Index": 167,
           "ID": 2200,
           "Name": "[Unused] Blacksmith\u0027s favorite"
         },
         {
-          "Index": 152,
+          "Index": 168,
           "ID": 2500,
-          "Name": "Lord Soul"
+          "Name": "Lord Soul (Gravelord Nito)"
         },
         {
-          "Index": 153,
+          "Index": 169,
           "ID": 2501,
-          "Name": "Lord Soul"
+          "Name": "Lord Soul (Bed of Chaos)"
         },
         {
-          "Index": 154,
+          "Index": 170,
           "ID": 2502,
-          "Name": "Bequeathed Lord Soul Shard"
+          "Name": "Bequeathed Lord Soul Shard (Four Kings)"
         },
         {
-          "Index": 155,
+          "Index": 171,
           "ID": 2503,
-          "Name": "Bequeathed Lord Soul Shard"
+          "Name": "Bequeathed Lord Soul Shard (Seath the Scaleless)"
         },
         {
-          "Index": 156,
+          "Index": 172,
           "ID": 2504,
-          "Name": "[Unused] Demon Fire 5"
+          "Name": "[Unused] Lord Soul 5"
         },
         {
-          "Index": 157,
+          "Index": 173,
           "ID": 2510,
           "Name": "Lordvessel"
         },
         {
-          "Index": 158,
+          "Index": 174,
           "ID": 2520,
           "Name": "Broken Pendant"
         },
         {
-          "Index": 159,
+          "Index": 175,
           "ID": 2600,
           "Name": "Weapon Smithbox"
         },
         {
-          "Index": 160,
+          "Index": 176,
           "ID": 2601,
           "Name": "Armor Smithbox"
         },
         {
-          "Index": 161,
+          "Index": 177,
           "ID": 2602,
           "Name": "Repairbox"
         },
         {
-          "Index": 162,
+          "Index": 178,
           "ID": 2603,
           "Name": "[Unused] Magic Equipment Menu Unlock"
         },
         {
-          "Index": 163,
+          "Index": 179,
           "ID": 2604,
           "Name": "[Unused] Item sale menu unlock"
         },
         {
-          "Index": 164,
+          "Index": 180,
           "ID": 2605,
           "Name": "[Unused] Warp menu unlock"
         },
         {
-          "Index": 165,
+          "Index": 181,
           "ID": 2606,
           "Name": "[Unused] Level up menu unlock"
         },
         {
-          "Index": 166,
+          "Index": 182,
           "ID": 2607,
           "Name": "Rite of Kindling"
         },
         {
-          "Index": 167,
+          "Index": 183,
           "ID": 2608,
           "Name": "Bottomless Box"
         },
         {
-          "Index": 168,
+          "Index": 184,
           "ID": 2609,
           "Name": "[Unused] Extra menu unlock"
         },
         {
-          "Index": 169,
+          "Index": 185,
           "ID": 3000,
           "Name": "Soul Arrow"
         },
         {
-          "Index": 170,
+          "Index": 186,
           "ID": 3010,
           "Name": "Great Soul Arrow"
         },
         {
-          "Index": 171,
+          "Index": 187,
           "ID": 3020,
           "Name": "Heavy Soul Arrow"
         },
         {
-          "Index": 172,
+          "Index": 188,
           "ID": 3030,
           "Name": "Great Heavy Soul Arrow"
         },
         {
-          "Index": 173,
+          "Index": 189,
           "ID": 3040,
           "Name": "Homing Soulmass"
         },
         {
-          "Index": 174,
+          "Index": 190,
           "ID": 3050,
           "Name": "Homing Crystal Soulmass"
         },
         {
-          "Index": 175,
+          "Index": 191,
           "ID": 3060,
           "Name": "Soul Spear"
         },
         {
-          "Index": 176,
+          "Index": 192,
           "ID": 3070,
           "Name": "Crystal Soul Spear"
         },
         {
-          "Index": 177,
+          "Index": 193,
           "ID": 3100,
           "Name": "Magic Weapon"
         },
         {
-          "Index": 178,
+          "Index": 194,
           "ID": 3110,
           "Name": "Great Magic Weapon"
         },
         {
-          "Index": 179,
+          "Index": 195,
           "ID": 3120,
           "Name": "Crystal Magic Weapon"
         },
         {
-          "Index": 180,
+          "Index": 196,
           "ID": 3300,
           "Name": "Magic Shield"
         },
         {
-          "Index": 181,
+          "Index": 197,
           "ID": 3310,
           "Name": "Strong Magic Shield"
         },
         {
-          "Index": 182,
+          "Index": 198,
           "ID": 3400,
           "Name": "Hidden Weapon"
         },
         {
-          "Index": 183,
+          "Index": 199,
           "ID": 3410,
           "Name": "Hidden Body"
         },
         {
-          "Index": 184,
+          "Index": 200,
           "ID": 3500,
           "Name": "Cast Light"
         },
         {
-          "Index": 185,
+          "Index": 201,
           "ID": 3510,
           "Name": "Hush"
         },
         {
-          "Index": 186,
+          "Index": 202,
           "ID": 3520,
           "Name": "Aural Decoy"
         },
         {
-          "Index": 187,
+          "Index": 203,
           "ID": 3530,
           "Name": "Repair"
         },
         {
-          "Index": 188,
+          "Index": 204,
           "ID": 3540,
           "Name": "Fall Control"
         },
         {
-          "Index": 189,
+          "Index": 205,
           "ID": 3550,
           "Name": "Chameleon"
         },
         {
-          "Index": 190,
+          "Index": 206,
           "ID": 3600,
           "Name": "Resist Curse"
         },
         {
-          "Index": 191,
+          "Index": 207,
           "ID": 3610,
           "Name": "Remedy"
         },
         {
-          "Index": 192,
+          "Index": 208,
           "ID": 3700,
           "Name": "White Dragon Breath"
         },
         {
-          "Index": 193,
+          "Index": 209,
           "ID": 3710,
           "Name": "Dark Orb"
         },
         {
-          "Index": 194,
+          "Index": 210,
           "ID": 3720,
           "Name": "Dark Bead"
         },
         {
-          "Index": 195,
+          "Index": 211,
           "ID": 3730,
           "Name": "Dark Fog"
         },
         {
-          "Index": 196,
+          "Index": 212,
           "ID": 3740,
           "Name": "Pursuers"
         },
         {
-          "Index": 197,
+          "Index": 213,
           "ID": 4000,
           "Name": "Fireball"
         },
         {
-          "Index": 198,
+          "Index": 214,
           "ID": 4010,
           "Name": "Fire Orb"
         },
         {
-          "Index": 199,
+          "Index": 215,
           "ID": 4020,
           "Name": "Great Fireball"
         },
         {
-          "Index": 200,
+          "Index": 216,
           "ID": 4030,
           "Name": "Firestorm"
         },
         {
-          "Index": 201,
+          "Index": 217,
           "ID": 4040,
           "Name": "Fire Tempest"
         },
         {
-          "Index": 202,
+          "Index": 218,
           "ID": 4050,
           "Name": "Fire Surge"
         },
         {
-          "Index": 203,
+          "Index": 219,
           "ID": 4060,
           "Name": "Fire Whip"
         },
         {
-          "Index": 204,
+          "Index": 220,
           "ID": 4100,
           "Name": "Combustion"
         },
         {
-          "Index": 205,
+          "Index": 221,
           "ID": 4110,
           "Name": "Great Combustion"
         },
         {
-          "Index": 206,
+          "Index": 222,
           "ID": 4200,
           "Name": "Poison Mist"
         },
         {
-          "Index": 207,
+          "Index": 223,
           "ID": 4210,
           "Name": "Toxic Mist"
         },
         {
-          "Index": 208,
+          "Index": 224,
           "ID": 4220,
           "Name": "Acid Surge"
         },
         {
-          "Index": 209,
+          "Index": 225,
           "ID": 4300,
           "Name": "Iron Flesh"
         },
         {
-          "Index": 210,
+          "Index": 226,
           "ID": 4310,
           "Name": "Flash Sweat"
         },
         {
-          "Index": 211,
+          "Index": 227,
           "ID": 4360,
           "Name": "Undead Rapport"
         },
         {
-          "Index": 212,
+          "Index": 228,
           "ID": 4400,
           "Name": "Power Within"
         },
         {
-          "Index": 213,
+          "Index": 229,
           "ID": 4500,
           "Name": "Great Chaos Fireball"
         },
         {
-          "Index": 214,
+          "Index": 230,
           "ID": 4510,
           "Name": "Chaos Storm"
         },
         {
-          "Index": 215,
+          "Index": 231,
           "ID": 4520,
           "Name": "Chaos Fire Whip"
         },
         {
-          "Index": 216,
+          "Index": 232,
           "ID": 4530,
           "Name": "Black Flame"
         },
         {
-          "Index": 217,
+          "Index": 233,
           "ID": 5000,
           "Name": "Heal"
         },
         {
-          "Index": 218,
+          "Index": 234,
           "ID": 5010,
           "Name": "Great Heal"
         },
         {
-          "Index": 219,
+          "Index": 235,
           "ID": 5020,
           "Name": "Great Heal Excerpt"
         },
         {
-          "Index": 220,
+          "Index": 236,
           "ID": 5030,
           "Name": "Soothing Sunlight"
         },
         {
-          "Index": 221,
+          "Index": 237,
           "ID": 5040,
           "Name": "Replenishment"
         },
         {
-          "Index": 222,
+          "Index": 238,
           "ID": 5050,
           "Name": "Bountiful Sunlight"
         },
         {
-          "Index": 223,
+          "Index": 239,
           "ID": 5100,
           "Name": "Gravelord Sword Dance"
         },
         {
-          "Index": 224,
+          "Index": 240,
           "ID": 5110,
           "Name": "Gravelord Greatsword Dance"
         },
         {
-          "Index": 225,
+          "Index": 241,
           "ID": 5200,
           "Name": "Escape Death"
         },
         {
-          "Index": 226,
+          "Index": 242,
           "ID": 5210,
           "Name": "Homeward"
         },
         {
-          "Index": 227,
+          "Index": 243,
           "ID": 5300,
           "Name": "Force"
         },
         {
-          "Index": 228,
+          "Index": 244,
           "ID": 5310,
           "Name": "Wrath of the Gods"
         },
         {
-          "Index": 229,
+          "Index": 245,
           "ID": 5320,
           "Name": "Emit Force"
         },
         {
-          "Index": 230,
+          "Index": 246,
           "ID": 5400,
           "Name": "Seek Guidance"
         },
         {
-          "Index": 231,
+          "Index": 247,
           "ID": 5500,
           "Name": "Lightning Spear"
         },
         {
-          "Index": 232,
+          "Index": 248,
           "ID": 5510,
           "Name": "Great Lightning Spear"
         },
         {
-          "Index": 233,
+          "Index": 249,
           "ID": 5520,
           "Name": "Sunlight Spear"
         },
         {
-          "Index": 234,
+          "Index": 250,
           "ID": 5600,
           "Name": "Magic Barrier"
         },
         {
-          "Index": 235,
+          "Index": 251,
           "ID": 5610,
           "Name": "Great Magic Barrier"
         },
         {
-          "Index": 236,
+          "Index": 252,
           "ID": 5700,
           "Name": "Karmic Justice"
         },
         {
-          "Index": 237,
+          "Index": 253,
           "ID": 5800,
           "Name": "Tranquil Walk of Peace"
         },
         {
-          "Index": 238,
+          "Index": 254,
           "ID": 5810,
           "Name": "Vow of Silence"
         },
         {
-          "Index": 239,
+          "Index": 255,
           "ID": 5900,
           "Name": "Sunlight Blade"
         },
         {
-          "Index": 240,
+          "Index": 256,
           "ID": 5910,
           "Name": "Darkmoon Blade"
         },
         {
-          "Index": 241,
+          "Index": 257,
           "ID": 9000,
           "Name": "Beckon"
         },
         {
-          "Index": 242,
+          "Index": 258,
           "ID": 9001,
           "Name": "Point forward"
         },
         {
-          "Index": 243,
+          "Index": 259,
           "ID": 9002,
           "Name": "Hurrah!"
         },
         {
-          "Index": 244,
+          "Index": 260,
           "ID": 9003,
           "Name": "Bow"
         },
         {
-          "Index": 245,
+          "Index": 261,
           "ID": 9004,
           "Name": "Joy"
         },
         {
-          "Index": 246,
+          "Index": 262,
           "ID": 9005,
           "Name": "Shrug"
         },
         {
-          "Index": 247,
+          "Index": 263,
           "ID": 9006,
           "Name": "Wave"
         },
         {
-          "Index": 248,
+          "Index": 264,
           "ID": 9007,
           "Name": "Praise the Sun"
         },
         {
-          "Index": 249,
+          "Index": 265,
           "ID": 9008,
           "Name": "Point up"
         },
         {
-          "Index": 250,
+          "Index": 266,
           "ID": 9009,
           "Name": "Point down"
         },
         {
-          "Index": 251,
+          "Index": 267,
           "ID": 9010,
           "Name": "Look skyward"
         },
         {
-          "Index": 252,
+          "Index": 268,
           "ID": 9011,
           "Name": "Well! What is it!"
         },
         {
-          "Index": 253,
+          "Index": 269,
           "ID": 9012,
           "Name": "Prostration"
         },
         {
-          "Index": 254,
+          "Index": 270,
           "ID": 9013,
           "Name": "Proper bow"
         },
         {
-          "Index": 255,
+          "Index": 271,
           "ID": 9014,
           "Name": "Prayer"
         }

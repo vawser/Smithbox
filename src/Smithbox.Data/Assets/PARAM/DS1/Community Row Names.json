@@ -8126,12 +8126,12 @@
         {
           "Index": 11,
           "ID": 115,
-          "Name": "Black Eye Orb -"
+          "Name": "Black Eye Orb - Lautrec Invasion"
         },
         {
           "Index": 12,
           "ID": 116,
-          "Name": "Black Eye Orb -"
+          "Name": "[Unused] Black Eye Orb - Shiva Invasion"
         },
         {
           "Index": 13,
@@ -8146,82 +8146,82 @@
         {
           "Index": 15,
           "ID": 200,
-          "Name": "Estus Flask"
+          "Name": "Estus Flask - Drained"
         },
         {
           "Index": 16,
           "ID": 201,
-          "Name": "Estus Flask - Drained"
+          "Name": "Estus Flask"
         },
         {
           "Index": 17,
           "ID": 202,
-          "Name": "Estus Flask \u002B1"
+          "Name": "Estus Flask \u002B1 - Drained"
         },
         {
           "Index": 18,
           "ID": 203,
-          "Name": "Estus Flask \u002B1 - Drained"
+          "Name": "Estus Flask \u002B1"
         },
         {
           "Index": 19,
           "ID": 204,
-          "Name": "Estus Flask \u002B2"
+          "Name": "Estus Flask \u002B2 - Drained"
         },
         {
           "Index": 20,
           "ID": 205,
-          "Name": "Estus Flask \u002B2 - Drained"
+          "Name": "Estus Flask \u002B2"
         },
         {
           "Index": 21,
           "ID": 206,
-          "Name": "Estus Flask \u002B3"
+          "Name": "Estus Flask \u002B3 - Drained"
         },
         {
           "Index": 22,
           "ID": 207,
-          "Name": "Estus Flask \u002B3 - Drained"
+          "Name": "Estus Flask \u002B3"
         },
         {
           "Index": 23,
           "ID": 208,
-          "Name": "Estus Flask \u002B4"
+          "Name": "Estus Flask \u002B4 - Drained"
         },
         {
           "Index": 24,
           "ID": 209,
-          "Name": "Estus Flask \u002B4 - Drained"
+          "Name": "Estus Flask \u002B4"
         },
         {
           "Index": 25,
           "ID": 210,
-          "Name": "Estus Flask \u002B5"
+          "Name": "Estus Flask \u002B5 - Drained"
         },
         {
           "Index": 26,
           "ID": 211,
-          "Name": "Estus Flask \u002B5 - Drained"
+          "Name": "Estus Flask \u002B5"
         },
         {
           "Index": 27,
           "ID": 212,
-          "Name": "Estus Flask \u002B6"
+          "Name": "Estus Flask \u002B6 - Drained"
         },
         {
           "Index": 28,
           "ID": 213,
-          "Name": "Estus Flask \u002B6 - Drained"
+          "Name": "Estus Flask \u002B6"
         },
         {
           "Index": 29,
           "ID": 214,
-          "Name": "Estus Flask \u002B7"
+          "Name": "Estus Flask \u002B7 - Drained"
         },
         {
           "Index": 30,
           "ID": 215,
-          "Name": "Estus Flask \u002B7 - Drained"
+          "Name": "Estus Flask \u002B7"
         },
         {
           "Index": 31,
@@ -8411,37 +8411,37 @@
         {
           "Index": 68,
           "ID": 390,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Anastacia of Astora)"
         },
         {
           "Index": 69,
           "ID": 391,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Darkmoon Knightess)"
         },
         {
           "Index": 70,
           "ID": 392,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (The Fair Lady)"
         },
         {
           "Index": 71,
           "ID": 393,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (New Londo Ruins)"
         },
         {
           "Index": 72,
           "ID": 394,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Blighttown)"
         },
         {
           "Index": 73,
           "ID": 395,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Duke's Archives)"
         },
         {
           "Index": 74,
           "ID": 396,
-          "Name": "Fire Keeper Soul"
+          "Name": "Fire Keeper Soul (Undead Parish)"
         },
         {
           "Index": 75,
@@ -8831,27 +8831,27 @@
         {
           "Index": 152,
           "ID": 2500,
-          "Name": "Lord Soul"
+          "Name": "Lord Soul (Gravelord Nito)"
         },
         {
           "Index": 153,
           "ID": 2501,
-          "Name": "Lord Soul"
+          "Name": "Lord Soul (Bed of Chaos)"
         },
         {
           "Index": 154,
           "ID": 2502,
-          "Name": "Bequeathed Lord Soul Shard"
+          "Name": "Bequeathed Lord Soul Shard (Four Kings)"
         },
         {
           "Index": 155,
           "ID": 2503,
-          "Name": "Bequeathed Lord Soul Shard"
+          "Name": "Bequeathed Lord Soul Shard (Seath the Scaleless)"
         },
         {
           "Index": 156,
           "ID": 2504,
-          "Name": "[Unused] Demon Fire 5"
+          "Name": "[Unused] Lord Soul 5"
         },
         {
           "Index": 157,
