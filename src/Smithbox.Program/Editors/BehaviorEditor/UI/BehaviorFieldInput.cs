@@ -27,8 +27,6 @@ public class BehaviorFieldInput
 
     public unsafe void DisplayFieldInput(object data, int index, FieldInfo field)
     {
-        var inputWidth = 400f;
-
         var imguiID = $"field{index}";
         var inputFlags = ImGuiInputTextFlags.None;
 
@@ -39,8 +37,7 @@ public class BehaviorFieldInput
         var commitChange = false;
         var newValue = curValue;
 
-        ImGui.SetNextItemWidth(inputWidth);
-
+        DPI.ApplyInputWidth();
         // Long
         //if (field.FieldType == typeof(ulong))
         //{
@@ -267,7 +264,7 @@ public class BehaviorFieldInput
         {
             if (curValue != null)
             {
-                if(ImGui.Button($"Go to {field.FieldType.Name}"))
+                if(ImGui.Button($"Go to {field.FieldType.Name}", DPI.StandardButtonSize))
                 {
                     if(Editor.Selection.DisplayCategories.ContainsKey($"{field.FieldType.Name}"))
                     {

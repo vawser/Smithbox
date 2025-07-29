@@ -38,18 +38,16 @@ public class TimeActSearch
 
     public void Display()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         if (Editor.Selection.SelectedBinder == null)
         {
             UIHelper.WrappedText("You must select a File first.");
             return;
         }
 
-        var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-
-        ImGui.PushItemWidth(windowWidth);
-
         UIHelper.WrappedText("Search Type:");
+        DPI.ApplyInputWidth(windowWidth);
         if (ImGui.BeginCombo("##Search Type", CurrentSearchType.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(TimeActSearchType)))
@@ -78,7 +76,7 @@ public class TimeActSearch
         ImGui.Checkbox("Allow Partial Matches", ref AllowPartialMatch);
         UIHelper.WrappedText("");
 
-        if (ImGui.Button("Search##searchButton", defaultButtonSize))
+        if (ImGui.Button("Search##searchButton", DPI.WholeWidthButton(windowWidth, 24)))
         {
             if (Editor.Selection.CurrentTimeAct != null)
             {

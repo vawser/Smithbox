@@ -75,51 +75,6 @@ public class TextFmgEntryPropertyEditor
         else
         {
             DisplayGroupedTextInput(Selection._selectedFmgEntry, fmgEntryGroup);
-
-            DisplayGroupedAddSection(fmgEntryGroup);
-        }
-    }
-
-    private void DisplayGroupedAddSection(FmgEntryGroup fmgEntryGroup)
-    {
-        ImGui.Separator();
-
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.UIScale());
-
-        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
-        var selectedEntry = Selection._selectedFmgEntry;
-
-        // Add Summary entry if missing but supported
-        if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
-        {
-            if (ImGui.Button("Add Title Entry", buttonSize))
-            {
-                Editor.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
-            }
-        }
-        // Add Summary entry if missing but supported
-        if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
-        {
-            if (ImGui.Button("Add Summary Entry", buttonSize))
-            {
-                Editor.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
-            }
-        }
-        // Add Description entry if missing but supported
-        if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
-        {
-            if (ImGui.Button("Add Description Entry", buttonSize))
-            {
-                Editor.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
-            }
-        }
-        // Add Effect entry if missing but supported
-        if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
-        {
-            if (ImGui.Button("Add Effect Entry", buttonSize))
-            {
-                Editor.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
-            }
         }
     }
 
@@ -128,9 +83,14 @@ public class TextFmgEntryPropertyEditor
 
     public void DisplayGroupedTextInput(FMG.Entry entry, FmgEntryGroup fmgEntryGroup)
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         var textboxHeight = 32f;
-        var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
+        var textboxWidth = ImGui.GetWindowWidth() * 0.92f;
         var height = textboxHeight;
+
+        var selectedFmgWrapper = Selection.SelectedFmgWrapper;
+        var selectedEntry = Selection._selectedFmgEntry;
 
         // We assume Title always exists
         if (fmgEntryGroup.Title == null)
@@ -156,7 +116,7 @@ public class TextFmgEntryPropertyEditor
 
                 ImGui.TableSetColumnIndex(1);
 
-                ImGui.SetNextItemWidth(textboxWidth);
+                DPI.ApplyInputWidth(textboxWidth);
                 if (ImGui.InputInt($"##fmgEntryIdInputGrouped", ref curId))
                 {
                     _idCache = curId;
@@ -243,6 +203,21 @@ public class TextFmgEntryPropertyEditor
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
+            else if (fmgEntryGroup.Title == null && fmgEntryGroup.SupportsTitle)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.Text("Title");
+
+                ImGui.TableSetColumnIndex(1);
+
+                if (ImGui.Button("Add Title Entry", DPI.HalfWidthButton(windowWidth, 24)))
+                {
+                    Editor.ActionHandler.AddTitleEntry(selectedFmgWrapper, selectedEntry);
+                }
+            }
+
             // Summary
             if (fmgEntryGroup.Summary != null)
             {
@@ -275,6 +250,21 @@ public class TextFmgEntryPropertyEditor
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
+            else if (fmgEntryGroup.Summary == null && fmgEntryGroup.SupportsSummary)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.Text("Summary");
+
+                ImGui.TableSetColumnIndex(1);
+
+                if (ImGui.Button("Add Summary Entry", DPI.HalfWidthButton(windowWidth, 24)))
+                {
+                    Editor.ActionHandler.AddSummaryEntry(selectedFmgWrapper, selectedEntry);
+                }
+            }
+
             // Description
             if (fmgEntryGroup.Description != null)
             {
@@ -307,6 +297,21 @@ public class TextFmgEntryPropertyEditor
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
+            else if (fmgEntryGroup.Description == null && fmgEntryGroup.SupportsDescription)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.Text("Description");
+
+                ImGui.TableSetColumnIndex(1);
+
+                if (ImGui.Button("Add Description Entry", DPI.HalfWidthButton(windowWidth, 24)))
+                {
+                    Editor.ActionHandler.AddDescriptionEntry(selectedFmgWrapper, selectedEntry);
+                }
+            }
+
             // Effect
             if (fmgEntryGroup.Effect != null)
             {
@@ -339,6 +344,20 @@ public class TextFmgEntryPropertyEditor
                     Editor.EditorActionManager.ExecuteAction(action);
                 }
             }
+            else if (fmgEntryGroup.Effect == null && fmgEntryGroup.SupportsEffect)
+            {
+                ImGui.TableNextRow();
+                ImGui.TableSetColumnIndex(0);
+
+                ImGui.Text("Effect");
+
+                ImGui.TableSetColumnIndex(1);
+
+                if (ImGui.Button("Add Effect Entry", DPI.HalfWidthButton(windowWidth, 24)))
+                {
+                    Editor.ActionHandler.AddEffectEntry(selectedFmgWrapper, selectedEntry);
+                }
+            }
 
             ImGui.EndTable();
         }
@@ -350,7 +369,7 @@ public class TextFmgEntryPropertyEditor
     public void DisplayBasicTextInput(FMG.Entry entry)
     {
         var textboxHeight = 100;
-        var textboxWidth = ImGui.GetWindowWidth() * 0.9f;
+        var textboxWidth = ImGui.GetWindowWidth() * 0.92f;
 
         if (ImGui.BeginTable($"fmgEditTableBasic", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -368,8 +387,8 @@ public class TextFmgEntryPropertyEditor
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(textboxWidth);
-            if(ImGui.InputInt($"##fmgEntryIdInputBasic", ref curId))
+            DPI.ApplyInputWidth(textboxWidth);
+            if (ImGui.InputInt($"##fmgEntryIdInputBasic", ref curId))
             {
                 _idCache = curId;
                 Selection.CurrentWindowContext = TextEditorContext.FmgEntryContents;

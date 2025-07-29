@@ -134,8 +134,6 @@ public static class WorldMapLayoutGenerator
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        var inputWidth = 400.0f;
-
         if (ImGui.BeginTable($"worldMapGenTable", 3, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -152,12 +150,12 @@ public static class WorldMapLayoutGenerator
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("##exportFolderPath", ref _folderPath, 255);
 
             ImGui.TableSetColumnIndex(2);
 
-            if (ImGui.Button("Select##exportFolderPathSelect"))
+            if (ImGui.Button("Select##exportFolderPathSelect", DPI.StandardButtonSize))
             {
                 var newFolderPath = "";
                 var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Folder", out newFolderPath);
@@ -176,7 +174,7 @@ public static class WorldMapLayoutGenerator
         {
             ImGui.Checkbox("Generate DLC Map", ref GenerateDLC);
 
-            if (ImGui.Button("Generate World Map"))
+            if (ImGui.Button("Generate World Map", DPI.StandardButtonSize))
             {
                 if(GenerateDLC)
                 {

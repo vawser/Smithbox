@@ -884,9 +884,9 @@ public static class MapEditorDecorations
 
         ImGui.BeginGroup();
 
-        var width = ImGui.GetColumnWidth() * 0.95f;
+        var windowWidth = ImGui.GetColumnWidth() * 0.95f;
 
-        if (ImGui.Button("Go to Model", new Vector2(width, 24)))
+        if (ImGui.Button("Go to Model", DPI.WholeWidthButton(windowWidth, 24)))
         {
             if (loadType == "MapPiece")
             {

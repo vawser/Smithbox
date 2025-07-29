@@ -30,8 +30,6 @@ public static class TimeActValidator
         if (project.TimeActEditor == null)
             return;
 
-        var buttonSize = new Vector2(400, 32);
-
         ImGui.Text("This tool will validate the Time Act files for the current project by loading all TAE files.");
         ImGui.Text("");
 
@@ -41,7 +39,7 @@ public static class TimeActValidator
             ImGui.Text("");
         }
 
-        if (ImGui.Button("Validate TAE", buttonSize))
+        if (ImGui.Button("Validate TAE", DPI.StandardButtonSize))
         {
             ValidateTAE(baseEditor,  project);
         }

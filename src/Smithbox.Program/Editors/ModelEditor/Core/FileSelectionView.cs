@@ -138,11 +138,10 @@ public class FileSelectionView
     private void DisplayLooseSection()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
 
         if (ImGui.CollapsingHeader("Loose"))
         {
-            if (ImGui.Button("Load Loose FLVER", defaultButtonSize))
+            if (ImGui.Button("Load Loose FLVER", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 var result = PlatformUtils.Instance.OpenFileDialog("Select loose FLVER...", new string[] { "png", "flver", "flv" }, out var loosePath);
 

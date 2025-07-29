@@ -268,16 +268,12 @@ public class MassEditHandler
     public void DisplayMassEditMenu()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
         var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
-        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
 
         if (ImGui.CollapsingHeader("Mass Edit - Window"))
         {
             var Size = ImGui.GetWindowSize();
-            float EditX = Size.X * 0.975f;
+            float EditX = Size.X * 0.92f;
             float EditY = Size.Y * 0.1f;
 
             UIHelper.WrappedText("Write and execute mass edit commands here.");
@@ -299,14 +295,14 @@ public class MassEditHandler
             ImGui.InputTextMultiline("##MEditRegexInput", ref CurrentInput, 65536,
             new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
 
-            if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", halfButtonSize))
+            if (ImGui.Button("Apply##action_Selection_MassEdit_Execute", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ExecuteMassEdit(CurrentInput, Project.ParamData.PrimaryBank, Editor._activeView.Selection);
             }
             UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ExecuteMassEdit.HintText}");
 
             ImGui.SameLine();
-            if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", halfButtonSize))
+            if (ImGui.Button("Clear##action_Selection_MassEdit_Clear", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 CurrentInput = "";
             }
@@ -347,11 +343,7 @@ public class MassEditHandler
     public void DisplayMassEditScriptMenu()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
         var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
-        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
 
         if (ImGui.CollapsingHeader("Mass Edit - Scripts"))
         {
@@ -363,7 +355,7 @@ public class MassEditHandler
             UIHelper.SimpleHeader("existingScripts", "Existing Scripts", "", UI.Current.ImGui_AliasName_Text);
 
             // Scripts
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            DPI.ApplyInputWidth(windowWidth);
             if (ImGui.BeginCombo("##massEditScripts", Current_ME_Script.name))
             {
                 foreach (var script in MassEditScript.scriptList)
@@ -378,12 +370,12 @@ public class MassEditHandler
             }
             if (Current_ME_Script != null)
             {
-                if (ImGui.Button("Load", thirdButtonSize))
+                if (ImGui.Button("Load", DPI.ThirdWidthButton(windowWidth, 24)))
                 {
                     CurrentInput = Current_ME_Script.GenerateMassedit();
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Edit", thirdButtonSize))
+                if (ImGui.Button("Edit", DPI.ThirdWidthButton(windowWidth, 24)))
                 {
                     NewScriptName = Current_ME_Script.name;
                     NewScriptContents = Current_ME_Script.GenerateMassedit();
@@ -391,7 +383,7 @@ public class MassEditHandler
                 ImGui.SameLine();
             }
 
-            if (ImGui.Button("Reload", thirdButtonSize))
+            if (ImGui.Button("Reload", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 MassEditScript.ReloadScripts(Editor);
             }
@@ -400,7 +392,7 @@ public class MassEditHandler
 
             UIHelper.SimpleHeader("newScript", "New Script", "", UI.Current.ImGui_AliasName_Text);
 
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            DPI.ApplyInputWidth(windowWidth);
             UIHelper.WrappedText("New Script:");
             ImGui.InputText("##scriptName", ref NewScriptName, 255);
             UIHelper.Tooltip("The file name used for this script.");
@@ -415,12 +407,12 @@ public class MassEditHandler
             ImGui.InputTextMultiline("##newMassEditScript", ref NewScriptContents, 65536, new Vector2(EditX * DPI.UIScale(), EditY * DPI.UIScale()));
             UIHelper.WrappedText("");
 
-            if (ImGui.Button("Save", halfButtonSize))
+            if (ImGui.Button("Save", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 SaveMassEditScript();
             }
             ImGui.SameLine();
-            if (ImGui.Button("Open Script Folder", halfButtonSize))
+            if (ImGui.Button("Open Script Folder", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 var projectScriptDir = Path.Join(Editor.Project.ProjectPath, ".smithbox", "Assets", "Scripts");
 

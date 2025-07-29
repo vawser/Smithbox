@@ -40,18 +40,17 @@ public class TextExporterModal
     {
         if (ImGui.BeginPopupModal("Export Text", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            var width = new Vector2(520 * DPI.UIScale(), 24 * DPI.UIScale());
-            var buttonSize = new Vector2(260 * DPI.UIScale(), 24 * DPI.UIScale());
+            var windowWidth = 520f;
 
             ImGui.Text("Name");
-            ImGui.SetNextItemWidth(width.X);
+            DPI.ApplyInputWidth(windowWidth);
             ImGui.InputText("##wrapperName", ref WrapperName, 255);
 
             if(WrapperName == "")
             {
                 ImGui.BeginDisabled();
             }
-            if (ImGui.Button("Export", buttonSize))
+            if (ImGui.Button("Export", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ShowModal = false;
                 Editor.FmgExporter.ProcessExport(WrapperName);
@@ -62,7 +61,7 @@ public class TextExporterModal
             }
 
             ImGui.SameLine();
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ShowModal = false;
             }

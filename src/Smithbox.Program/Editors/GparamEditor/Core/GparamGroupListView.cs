@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 
@@ -144,7 +145,7 @@ public class GparamGroupListView
 
         foreach (var missing in missingGroups)
         {
-            if (ImGui.Button($"Add##{missing.id}"))
+            if (ImGui.Button($"Add##{missing.id}", DPI.StandardButtonSize))
             {
                 AddMissingGroup(missing);
             }

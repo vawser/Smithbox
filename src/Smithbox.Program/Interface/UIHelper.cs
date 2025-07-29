@@ -236,7 +236,7 @@ public static class UIHelper
             ImGui.AlignTextToFramePadding();
             ImGui.TextColored(textColor, $"{title}");
             ImGui.SameLine();
-            if (ImGui.Button($"{Icons.Eye}"))
+            if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
             {
                 visibilityToggle = !visibilityToggle;
             }

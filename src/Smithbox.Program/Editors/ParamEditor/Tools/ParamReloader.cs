@@ -65,11 +65,6 @@ public class ParamReloader
     public void DisplayParamReloader()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-        var inputBoxSize = new Vector2(windowWidth * 0.725f, 32);
-        var inputButtonSize = new Vector2(windowWidth * 0.225f, 32);
 
         // Param Reloader
         if (ParamReloadSupported(Editor.Project.ProjectType))
@@ -79,13 +74,13 @@ public class ParamReloader
                 UIHelper.WrappedText("WARNING: Param Reloader only works for existing row entries.\nGame must be restarted for new rows and modified row IDs.");
                 UIHelper.WrappedText("");
 
-                if (ImGui.Button("Reload Current Param", defaultButtonSize))
+                if (ImGui.Button("Reload Current Param", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     ReloadCurrentParam(Editor);
                 }
                 UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ReloadParam.HintText}");
 
-                if (ImGui.Button("Reload All Params", defaultButtonSize))
+                if (ImGui.Button("Reload All Params", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     ReloadAllParams(Editor);
                 }

@@ -96,9 +96,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Buffer Layout Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored Buffer Layout Group from your current selection with the Buffer Layout list.");
             UIHelper.WrappedText("A stored group can then be used to replace the existing Buffer Layout list, or appended to the end.");
@@ -106,7 +105,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateBufferLayoutGroupList();
 
-            if (ImGui.Button("Create Buffer Layout Group", defaultButtonSize))
+            if (ImGui.Button("Create Buffer Layout Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedBufferLayout != -1 ||
                     screen.Selection.BufferLayoutMultiselect.StoredIndices.Count > 0)
@@ -169,14 +168,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing Buffer Layouts with the Buffer Layouts within this Buffer Layout group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendBufferLayoutList(screen, SelectedBufferLayoutList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -193,13 +192,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##BufferLayoutGroupName", ref _createBufferLayoutGroupName, 255);
             UIHelper.Tooltip("The name of the Buffer Layout group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateBufferLayoutGroup(screen, _createBufferLayoutGroupName);
                 ImGui.CloseCurrentPopup();

@@ -10,6 +10,7 @@ using StudioCore.Editors;
 using StudioCore.Editors.MapEditor;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -940,7 +941,7 @@ public static class Utils
 
     public static void ImGuiGenericHelpPopup(string buttonText, string imguiID, string displayText)
     {
-        if (ImGui.Button(buttonText + "##" + imguiID))
+        if (ImGui.Button(buttonText + "##" + imguiID, DPI.StandardButtonSize))
         {
             ImGui.OpenPopup(imguiID);
         }

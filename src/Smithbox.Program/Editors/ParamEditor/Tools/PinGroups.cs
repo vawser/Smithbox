@@ -55,10 +55,7 @@ public class PinGroups
 
     public void Display()
     {
-        var sectionWidth = ImGui.GetWindowWidth();
-        var sectionHeight = ImGui.GetWindowHeight();
-        var defaultButtonSize = new Vector2(sectionWidth * 0.975f, 32);
-        var thirdButtonSize = new Vector2((sectionWidth * 0.975f / 3), 32);
+        var windowWidth = ImGui.GetWindowWidth();
 
         UpdateGroupList();
 
@@ -78,21 +75,21 @@ public class PinGroups
         ImGui.Checkbox("Show only pinned fields exclusively", ref CFG.Current.Param_PinGroups_ShowOnlyPinnedFields);
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_OnlyShowPinnedFields.HintText}\nWhen enabled, only pinned fields will appear in the param list.");
 
-        if (ImGui.Button("Clear Param Pins", thirdButtonSize))
+        if (ImGui.Button("Clear Param Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.PinnedParams = new();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedParams.HintText}\nClear current pinned params.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Clear Row Pins", thirdButtonSize))
+        if (ImGui.Button("Clear Row Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.PinnedRows = new();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_ClearCurrentPinnedRows.HintText}\nClear current pinned rows.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Clear Field Pins", thirdButtonSize))
+        if (ImGui.Button("Clear Field Pins", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Editor.Project.PinnedFields = new();
         }
@@ -104,24 +101,24 @@ public class PinGroups
         ImGui.Separator();
 
         UIHelper.WrappedText("Name");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText("##newGroupName", ref _newGroupName, 255);
 
-        if (ImGui.Button("Create Param Group", thirdButtonSize))
+        if (ImGui.Button("Create Param Group", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CreateParamGroup();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateParamPinGroup.HintText}\nCreate a new pin group from the current pinned params.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Create Row Group", thirdButtonSize))
+        if (ImGui.Button("Create Row Group", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CreateRowGroup();
         }
         UIHelper.Tooltip($"{KeyBindings.Current.PARAM_CreateRowPinGroup.HintText}\nCreate a new pin group from the current pinned rows.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Create Field Group", thirdButtonSize))
+        if (ImGui.Button("Create Field Group", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CreateFieldGroup();
         }
@@ -131,17 +128,17 @@ public class PinGroups
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, $"Group Lists");
         ImGui.Separator();
 
-        if (ImGui.Button("View Param Groups", thirdButtonSize))
+        if (ImGui.Button("View Param Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CurrentDisplayState = PinGroupDisplayState.Param;
         }
         ImGui.SameLine();
-        if (ImGui.Button("View Row Groups", thirdButtonSize))
+        if (ImGui.Button("View Row Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CurrentDisplayState = PinGroupDisplayState.Row;
         }
         ImGui.SameLine();
-        if (ImGui.Button("View Field Groups", thirdButtonSize))
+        if (ImGui.Button("View Field Groups", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             CurrentDisplayState = PinGroupDisplayState.Field;
         }

@@ -39,7 +39,7 @@ public class InternalFilePropertyView
         foreach (var entry in container.InternalFlvers)
         {
             ImGui.AlignTextToFramePadding();
-            if (ImGui.Button($"{Icons.Bars}", buttonSize))
+            if (ImGui.Button($"{Icons.Bars}", DPI.IconButtonSize))
             {
                 UIHelper.CopyToClipboard(entry.Name);
             }

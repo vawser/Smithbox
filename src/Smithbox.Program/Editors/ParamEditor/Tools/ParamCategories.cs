@@ -41,17 +41,15 @@ public static class ParamCategories
             return;
         }
 
-        var sectionWidth = ImGui.GetWindowWidth();
+        var windowWidth = ImGui.GetWindowWidth();
         var sectionHeight = ImGui.GetWindowHeight();
-        var defaultButtonSize = new Vector2(sectionWidth * 0.975f, 32);
-        var thirdButtonSize = new Vector2((sectionWidth * 0.975f / 3), 32);
 
         UIHelper.WrappedText("Create or modify project-specific param categories.");
         UIHelper.WrappedText("");
 
         ImGui.Separator();
 
-        if (ImGui.Button("New Entry", new Vector2(sectionWidth * 0.5f, 24)))
+        if (ImGui.Button("New Entry", DPI.HalfWidthButton(windowWidth, 24)))
         {
             isNewEntryMode = true;
             isEditEntryMode = false;
@@ -63,7 +61,7 @@ public static class ParamCategories
         UIHelper.Tooltip("Create a new param category.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Save Changes", new Vector2(sectionWidth * 0.5f, 24)))
+        if (ImGui.Button("Save Changes", DPI.HalfWidthButton(windowWidth, 24)))
         {
             Write(editor);
             isNewEntryMode = false;
@@ -71,7 +69,7 @@ public static class ParamCategories
         }
         UIHelper.Tooltip("Permanently save the current param categories to your project's .smithbox folder, so they persist across sessions.");
 
-        if (ImGui.Button("Edit Selected Entry", new Vector2(sectionWidth * 0.5f, 24)))
+        if (ImGui.Button("Edit Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
         {
             isNewEntryMode = false;
             isEditEntryMode = true;
@@ -80,7 +78,7 @@ public static class ParamCategories
         UIHelper.Tooltip("Edit the currently selected param category.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Delete Selected Entry", new Vector2(sectionWidth * 0.5f, 24)))
+        if (ImGui.Button("Delete Selected Entry", DPI.HalfWidthButton(windowWidth, 24)))
         {
             editor.Project.ParamCategories.Categories.Remove(_selectedUserCategory);
             _selectedUserCategory = null;
@@ -89,7 +87,7 @@ public static class ParamCategories
         }
         UIHelper.Tooltip("Delete the currently selected param category.");
 
-        if (ImGui.Button("Restore Base Categories", new Vector2(sectionWidth * 1.0f, 24)))
+        if (ImGui.Button("Restore Base Categories", DPI.WholeWidthButton(windowWidth, 24)))
         {
             var result = PlatformUtils.Instance.MessageBox("Are you sure?", "Warning", MessageBoxButtons.YesNo);
 
@@ -149,7 +147,7 @@ public static class ParamCategories
 
                 if (NewEntryParams.Count > 1)
                 {
-                    if (ImGui.Button($"Remove##removeNewParamName{i}"))
+                    if (ImGui.Button($"Remove##removeNewParamName{i}", DPI.StandardButtonSize))
                     {
                         NewEntryParams.RemoveAt(i);
                         NewEntryParamsCount = NewEntryParams.Count;
@@ -159,7 +157,7 @@ public static class ParamCategories
 
             ImGui.Text("");
 
-            if (ImGui.Button("Expand List", new Vector2(sectionWidth * 0.5f, 24)))
+            if (ImGui.Button("Expand List", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 NewEntryParams.Add("");
                 NewEntryParamsCount++;
@@ -168,7 +166,7 @@ public static class ParamCategories
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Finalize Entry", new Vector2(sectionWidth * 0.5f, 24)))
+            if (ImGui.Button("Finalize Entry", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 isNewEntryMode = false;
 
@@ -213,7 +211,7 @@ public static class ParamCategories
                 }
                 UIHelper.Tooltip("If toggled on, this param category will always appear at the bottom (in alphabetically order with any other categories with the same toggle).");
 
-                if (ImGui.Button("Expand List", new Vector2(sectionWidth * 0.5f, 24)))
+                if (ImGui.Button("Expand List", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     NewEntryParams.Add("");
                     NewEntryParamsCount++;
@@ -222,7 +220,7 @@ public static class ParamCategories
 
                 ImGui.SameLine();
 
-                if (ImGui.Button("Finalize Entry", new Vector2(sectionWidth * 0.5f, 24)))
+                if (ImGui.Button("Finalize Entry", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     isEditEntryMode = false;
 
@@ -247,7 +245,7 @@ public static class ParamCategories
 
                     if (NewEntryParams.Count > 1)
                     {
-                        if (ImGui.Button($"Remove##removeNewParamName{i}"))
+                        if (ImGui.Button($"Remove##removeNewParamName{i}", DPI.StandardButtonSize))
                         {
                             NewEntryParams.RemoveAt(i);
                             NewEntryParamsCount = NewEntryParams.Count;

@@ -390,9 +390,7 @@ public class ParamView
     {
         if (ImGui.BeginPopupContextItem($"{paramKey}"))
         {
-            var width = CFG.Current.Param_ParamContextMenu_Width;
-
-            ImGui.SetNextItemWidth(width);
+            DPI.ApplyInputWidth(CFG.Current.Param_ParamContextMenu_Width);
 
             //if (ImGui.Selectable("Export Row Names as Text"))
             //{

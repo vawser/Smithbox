@@ -164,7 +164,7 @@ Some common tools for mapstudio include:
         else
         {
             ImGui.SameLine(0, 20f);
-            if (ImGui.Button("Help"))
+            if (ImGui.Button("Help", DPI.StandardButtonSize))
             {
                 ImGui.OpenPopup("##ParamHelp");
             }

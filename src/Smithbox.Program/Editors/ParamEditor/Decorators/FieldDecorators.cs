@@ -1622,7 +1622,7 @@ public class FieldDecorators
                     }
                 }
 
-                if (ImGui.Button("Export to CSV", new Vector2(graphSize.X, 24)))
+                if (ImGui.Button("Export to CSV", DPI.WholeWidthButton(graphSize.X, 24)))
                 {
                     var exportPath = "";
                     var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Directory", out exportPath);

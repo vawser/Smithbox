@@ -89,7 +89,6 @@ public static class ProjectCreation
 
     public static void Draw()
     {
-        var inputWidth = 400.0f;
         var flags = ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoCollapse;
 
         var viewport = ImGui.GetMainViewport();
@@ -105,6 +104,8 @@ public static class ProjectCreation
 
             if (ImGui.Begin("Project Creation##projectCreationWindow", ref Display, flags))
             {
+                var windowWidth = 600f;
+
                 if (ImGui.BeginTable($"projectCreationTable", 3, ImGuiTableFlags.SizingFixedFit))
                 {
                     ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -121,7 +122,7 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
+                    DPI.ApplyInputWidth();
                     ImGui.InputText("##projectNameInput", ref ProjectName, 255);
 
                     ImGui.TableSetColumnIndex(2);
@@ -136,7 +137,7 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
+                    DPI.ApplyInputWidth();
                     if (ImGui.BeginCombo("##projectTypePicker", ProjectType.GetDisplayName()))
                     {
                         // Make the combo-box dropdown bigger so there is no need to scroll
@@ -203,12 +204,12 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
+                    DPI.ApplyInputWidth();
                     ImGui.InputText("##projectPathInput", ref ProjectPath, 255);
 
                     ImGui.TableSetColumnIndex(2);
 
-                    if (ImGui.Button("Select##projectPathSelect"))
+                    if (ImGui.Button("Select##projectPathSelect", DPI.SelectorButtonSize))
                     {
                         if (CFG.Current.DefaultModDirectory != "")
                         {
@@ -256,12 +257,12 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
+                    DPI.ApplyInputWidth();
                     ImGui.InputText("##dataPathInput", ref DataPath, 255);
 
                     ImGui.TableSetColumnIndex(2);
 
-                    if (ImGui.Button("Select##dataPathSelect"))
+                    if (ImGui.Button("Select##dataPathSelect", DPI.SelectorButtonSize))
                     {
                         if (CFG.Current.DefaultDataDirectory != "")
                         {
@@ -295,8 +296,7 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
-
+                    DPI.ApplyInputWidth();
                     ImGui.Checkbox("##projectAutoLoad", ref AutoSelect);
 
                     ImGui.TableSetColumnIndex(2);
@@ -311,8 +311,7 @@ public static class ProjectCreation
 
                     ImGui.TableSetColumnIndex(1);
 
-                    ImGui.SetNextItemWidth(inputWidth);
-
+                    DPI.ApplyInputWidth();
                     ImGui.Checkbox("##projectParamRowNameImport", ref RowNameImport);
 
                     ImGui.TableSetColumnIndex(2);
@@ -331,12 +330,10 @@ public static class ProjectCreation
                         ImGui.Separator();
                     }
 
-                    var buttonSize = new Vector2(310, 24);
-
                     // Create
                     if (AllowCreation())
                     {
-                        if (ImGui.Button("Create##createProjectCreation", buttonSize))
+                        if (ImGui.Button("Create##createProjectCreation", DPI.ThirdWidthButton(windowWidth, 24)))
                         {
                             Display = false;
                             Create = true;
@@ -345,7 +342,7 @@ public static class ProjectCreation
                     else
                     {
                         ImGui.BeginDisabled();
-                        if (ImGui.Button("Create##createProjectCreation", buttonSize))
+                        if (ImGui.Button("Create##createProjectCreation", DPI.ThirdWidthButton(windowWidth, 24)))
                         {
                         }
                         ImGui.EndDisabled();
@@ -354,7 +351,7 @@ public static class ProjectCreation
                     ImGui.SameLine();
 
                     // Cancel
-                    if (ImGui.Button("Cancel##cancelProjectCreation", buttonSize))
+                    if (ImGui.Button("Cancel##cancelProjectCreation", DPI.ThirdWidthButton(windowWidth, 24)))
                     {
                         Display = false;
                     }
@@ -370,8 +367,6 @@ public static class ProjectCreation
 
     private static void DisplayEditorToggles()
     {
-        var inputWidth = 400.0f;
-
         if (ImGui.CollapsingHeader("Editors", ImGuiTreeNodeFlags.DefaultOpen))
         {
             // Editor Toggles
@@ -388,8 +383,7 @@ public static class ProjectCreation
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableMapEditor", ref EnableMapEditor);
 
                 ImGui.TableSetColumnIndex(1);
@@ -400,8 +394,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(2);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableModelEditor", ref EnableModelEditor);
                 ImGui.TableSetColumnIndex(3);
 
@@ -411,8 +404,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(4);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableTextEditor", ref EnableTextEditor);
 
                 ImGui.TableSetColumnIndex(5);
@@ -426,8 +418,7 @@ public static class ProjectCreation
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableParamEditor", ref EnableParamEditor);
 
                 ImGui.TableSetColumnIndex(1);
@@ -438,8 +429,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(2);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableGparamEditor", ref EnableGparamEditor);
                 ImGui.TableSetColumnIndex(3);
 
@@ -449,8 +439,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(4);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableTimeActEditor", ref EnableTimeActEditor);
 
                 ImGui.TableSetColumnIndex(5);
@@ -463,8 +452,7 @@ public static class ProjectCreation
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableMaterialEditor", ref EnableMaterialEditor);
                 ImGui.TableSetColumnIndex(1);
 
@@ -475,8 +463,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(2);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
                 ImGui.TableSetColumnIndex(3);
 
@@ -486,8 +473,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(4);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
                 ImGui.TableSetColumnIndex(5);
 
@@ -499,8 +485,7 @@ public static class ProjectCreation
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableTextureViewer", ref EnableTextureViewer);
 
                 ImGui.TableSetColumnIndex(1);
@@ -511,8 +496,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(2);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableFileBrowser", ref EnableFileBrowser);
 
                 ImGui.TableSetColumnIndex(3);
@@ -523,8 +507,7 @@ public static class ProjectCreation
 
                 ImGui.TableSetColumnIndex(4);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
 
                 ImGui.TableSetColumnIndex(5);
@@ -541,8 +524,6 @@ public static class ProjectCreation
 
     private static void DisplayDataToggles()
     {
-        var inputWidth = 400.0f;
-
         if (ImGui.CollapsingHeader("Data", ImGuiTreeNodeFlags.DefaultOpen))
         {
             // Editor Toggles
@@ -559,8 +540,7 @@ public static class ProjectCreation
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
-                ImGui.SetNextItemWidth(inputWidth);
-
+                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableExternalMaterialData", ref EnableExternalMaterialData);
 
                 ImGui.TableSetColumnIndex(1);

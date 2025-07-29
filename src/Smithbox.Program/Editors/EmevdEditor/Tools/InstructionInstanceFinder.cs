@@ -27,12 +27,11 @@ public class InstructionInstanceFinder
     public void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
 
         if (ImGui.CollapsingHeader("Instruction Finder"))
         {
             ImGui.Text("Search Term");
-            ImGui.SetNextItemWidth(windowWidth * 0.75f);
+            DPI.ApplyInputWidth(windowWidth * 0.75f);
             ImGui.InputText("##instructionSearch", ref SearchTerm, 255);
 
             ImGui.SameLine();
@@ -40,7 +39,7 @@ public class InstructionInstanceFinder
             ImGui.Checkbox("##instructionMatchExact", ref MatchExact);
             UIHelper.Tooltip("If enabled, the search term must be an exact match.");
 
-            if (ImGui.Button("Search##instructionSearch", defaultButtonSize))
+            if (ImGui.Button("Search##instructionSearch", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 FindInstructionInstances();
             }

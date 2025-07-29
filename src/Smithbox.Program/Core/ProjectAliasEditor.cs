@@ -65,8 +65,10 @@ public static class ProjectAliasEditor
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-            if (ImGui.Begin("Project Aliases##projectAliasWindow", ref Display, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoCollapse))
+            if (ImGui.Begin("Project Aliases##projectAliasWindow", ref Display, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoCollapse))
             {
+                var windowWidth = ImGui.GetWindowWidth();
+
                 Shortcuts();
 
                 var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
@@ -95,10 +97,8 @@ public static class ProjectAliasEditor
                 }
                 ImGui.EndChild();
 
-                var buttonSize = new Vector2(440, 24);
-
                 // Commit
-                if (ImGui.Button("Commit##updateProjectAliases", buttonSize))
+                if (ImGui.Button("Commit##updateProjectAliases", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     Display = false;
                     Save();
@@ -108,7 +108,7 @@ public static class ProjectAliasEditor
                 ImGui.SameLine();
 
                 // Cancel
-                if (ImGui.Button("Close##closeProjectAliases", buttonSize))
+                if (ImGui.Button("Close##closeProjectAliases", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     Display = false;
                 }
@@ -161,6 +161,25 @@ public static class ProjectAliasEditor
                         PlatformUtils.Instance.SetClipboardText(output);
                     }
 
+                    if(CFG.Current.EnableWikiTools)
+                    {
+                        if (ImGui.Selectable($"Copy Entries as Table"))
+                        {
+                            var entries = new List<string>();
+
+                            var source = GetAliasList();
+
+                            foreach (var aliasEntry in source)
+                            {
+                                var line = $"| {aliasEntry.ID} | {aliasEntry.Name} |";
+                                entries.Add(line);
+                            }
+
+                            var output = string.Join("\n", entries.ToArray());
+                            PlatformUtils.Instance.SetClipboardText(output);
+                        }
+                    }
+
                     ImGui.EndPopup();
                 }
             }
@@ -172,19 +191,16 @@ public static class ProjectAliasEditor
     /// </summary>
     private static void DisplayAliasEntryList()
     {
-        var sectionWidth = 360f;
-        var listHeight = 238f;
-
         if (CurrentAliasEditor == AliasType.None)
             return;
 
         var source = GetAliasList();
 
-        ImGui.SetNextItemWidth(sectionWidth);
+        DPI.ApplyInputWidth(360f);
         ImGui.InputText("##aliasEntryFilter", ref AliasEntryFilter, 255);
         UIHelper.Tooltip("Filter the alias entry list by this term.");
 
-        ImGui.BeginChild("aliasEntryList", new Vector2(sectionWidth, listHeight));
+        ImGui.BeginChild("aliasEntryList", DPI.ListSize(360f, 238f));
 
         for(int i = 0; i < source.Count; i++)
         {
@@ -246,9 +262,7 @@ public static class ProjectAliasEditor
 
         if(source.Count == 0)
         {
-            var buttonSize = new Vector2(sectionWidth - 5, 24);
-
-            if (ImGui.Button("Add##addAliasEntry", buttonSize))
+            if (ImGui.Button("Add##addAliasEntry", DPI.StandardButtonSize))
             {
                 var blankEntry = new AliasEntry();
                 blankEntry.ID = "BLANK_ID";
@@ -266,8 +280,6 @@ public static class ProjectAliasEditor
     /// </summary>
     private static void DisplayAliasEditor()
     {
-        var inputWidth = 250f;
-
         if (CurrentAliasEditor == AliasType.None)
             return;
 
@@ -277,7 +289,7 @@ public static class ProjectAliasEditor
         var curID = CurrentAliasEntry.ID;
         var curName = CurrentAliasEntry.Name;
 
-        ImGui.SetNextItemWidth(inputWidth);
+        DPI.ApplyInputWidth(250f);
         ImGui.InputText("Alias ID##curAliasID", ref curID, 255);
         if(ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -287,8 +299,8 @@ public static class ProjectAliasEditor
             TargetProject.ActionManager.ExecuteAction(action);
         }
         UIHelper.Tooltip("The ID of the currently selected alias entry.");
-        
-        ImGui.SetNextItemWidth(inputWidth);
+
+        DPI.ApplyInputWidth(250f);
         ImGui.InputText("Alias Name##curAliasName", ref curName, 255);
         if (ImGui.IsItemDeactivatedAfterEdit())
         {
@@ -316,7 +328,7 @@ public static class ProjectAliasEditor
 
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.Minus}##tagRemove{i}"))
+            if (ImGui.Button($"{Icons.Minus}##tagRemove{i}", DPI.IconButtonSize))
             {
                 var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ChangeAliasTagList.TagListChange.Remove, i);
 
@@ -326,7 +338,7 @@ public static class ProjectAliasEditor
 
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.Plus}##tagAdd{i}"))
+            if (ImGui.Button($"{Icons.Plus}##tagAdd{i}", DPI.IconButtonSize))
             {
                 var action = new ChangeAliasTagList(CurrentAliasEntry.Tags, tag, tag, ChangeAliasTagList.TagListChange.Add, i + 1);
                 TargetProject.ActionManager.ExecuteAction(action);

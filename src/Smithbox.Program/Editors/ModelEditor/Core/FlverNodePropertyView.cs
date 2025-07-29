@@ -123,10 +123,10 @@ public class FlverNodePropertyView
 
         ImGui.NextColumn();
 
-        var colWidth = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText($"##Name", ref name, 255);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {

@@ -38,16 +38,17 @@ public class MapContentFilters
     /// </summary>
     public void DisplaySearch(MapContentView view)
     {
-        var width = ImGui.GetWindowWidth();
+        var windowWidth = ImGui.GetWindowWidth();
+
         var mapId = view.MapID;
         var mapName = AliasUtils.GetMapNameAlias(Editor.Project, view.MapID);
 
-        ImGui.SetNextItemWidth(width * 0.6f);
+        DPI.ApplyInputWidth(windowWidth * 0.75f);
         ImGui.InputText($"##contentFilterSearch_{view.ImguiID}", ref SearchInput, 255);
         UIHelper.Tooltip($"Filter the content tree for {mapId}: {mapName}");
 
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.QuestionCircle}"))
+        if (ImGui.Button($"{Icons.QuestionCircle}", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("searchInputHint");
         }

@@ -17,7 +17,7 @@ public static class DokuWikiGenerator
         if (project.ParamEditor == null)
             return;
 
-        if (ImGui.Button("Output Param Table Information"))
+        if (ImGui.Button("Output Param Table Information", DPI.StandardButtonSize))
         {
             OutputParamTableInformation(baseEditor, project);
         }

@@ -21,12 +21,13 @@ public static class PropInfo_ReferencedBy
         ImGui.Separator();
         UIHelper.Tooltip("The current selection is referenced by these map objects.");
 
-        var width = ImGui.GetWindowWidth() / 100;
+        var windowWidth = ImGui.GetWindowWidth();
 
         foreach (Entity m in firstEnt.GetReferencingObjects())
         {
             // View Reference in Viewport
-            if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, 
+                DPI.IconButtonSize))
             {
                 BoundingBox box = new();
 
@@ -77,7 +78,8 @@ public static class PropInfo_ReferencedBy
             ImGui.SameLine();
             ImGui.SetNextItemWidth(-1);
 
-            if (ImGui.Button(displayName + "##MSBRefBy" + refID, new Vector2(width * 94, 20 * scale)))
+            if (ImGui.Button(displayName + "##MSBRefBy" + refID,
+                DPI.WholeWidthButton(windowWidth, 24)))
             {
                 selection.ClearSelection(editor);
                 selection.AddSelection(editor, m);

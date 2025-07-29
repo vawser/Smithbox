@@ -78,9 +78,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "FLVER Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored FLVER from your current model FLVER.");
             UIHelper.WrappedText("A stored group can then be used to replace an existing model's FLVER entirely.");
@@ -88,7 +87,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateFLVERGroupList();
 
-            if (ImGui.Button("Create Stored FLVER", defaultButtonSize))
+            if (ImGui.Button("Create Stored FLVER", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.ResManager.GetCurrentFLVER() != null)
                 {
@@ -134,12 +133,9 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             ImGui.BeginChild("##FLVERGroupActions");
 
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width;
-
             if (_selectedFLVERGroup != "" && SelectedFLVERList != null)
             {
-                if (ImGui.Button("Import", new Vector2(buttonWidth, 32)))
+                if (ImGui.Button("Import", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceFLVERList(screen, SelectedFLVERList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -156,13 +152,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##FLVERGroupName", ref _createFLVERGroupName, 255);
             UIHelper.Tooltip("The name of the stored FLVER.");
 
-            if (ImGui.Button("Create Stored FLVEr", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Stored FLVER", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateFLVERGroup(screen, _createFLVERGroupName);
                 ImGui.CloseCurrentPopup();

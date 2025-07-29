@@ -55,11 +55,10 @@ public class TextNewEntryCreationModal
     {
         if (ImGui.BeginPopupModal("Create FMG Entry", ref ShowModal, ImGuiWindowFlags.AlwaysAutoResize))
         {
+            var windowWidth = 520f;
+
             var entry = Selection._selectedFmgEntry;
             var fmgEntryGroup = EntryGroupManager.GetEntryGroup(entry);
-
-            var buttonSize = new Vector2(520 * DPI.UIScale(), 24 * DPI.UIScale());
-            var halfButtonSize = new Vector2(260 * DPI.UIScale(), 24 * DPI.UIScale());
 
             if (ImGui.CollapsingHeader("Configuration", ImGuiTreeNodeFlags.DefaultOpen))
             {
@@ -200,7 +199,7 @@ public class TextNewEntryCreationModal
                     ImGui.EndTable();
                 }
 
-                if (ImGui.Button("Inherit Text from Selection", buttonSize))
+                if (ImGui.Button("Inherit Text from Selection", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     _newId = Selection._selectedFmgEntry.ID;
 
@@ -278,7 +277,7 @@ public class TextNewEntryCreationModal
                 DisplayEditTable(0, ref _newId, ref _newBasicText);
             }
 
-            if (ImGui.Button("Create", halfButtonSize))
+            if (ImGui.Button("Create", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 var creationCount = CFG.Current.TextEditor_CreationModal_CreationCount;
                 var incrementCount = CFG.Current.TextEditor_CreationModal_IncrementCount;
@@ -318,7 +317,7 @@ public class TextNewEntryCreationModal
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", halfButtonSize))
+            if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ShowModal = false;
             }
@@ -519,7 +518,7 @@ public class TextNewEntryCreationModal
             newText = "";
         }
 
-        int tableWidth = 520;
+        float tableWidth = 520f;
 
         var textboxHeight = 100;
         var height = (textboxHeight + ImGui.CalcTextSize(newText).Y) * DPI.UIScale();
@@ -537,7 +536,7 @@ public class TextNewEntryCreationModal
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(tableWidth * 0.9f);
+            DPI.ApplyInputWidth(tableWidth);
             if (ImGui.InputInt($"##newEntryIdInput{index}", ref newId))
             {
             }

@@ -96,9 +96,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Node Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UpdateNodeGroupList();
 
@@ -106,7 +105,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
             UIHelper.WrappedText("A stored group can then be used to replace the existing Node list, or appended to the end.");
             UIHelper.WrappedText("");
 
-            if (ImGui.Button("Create Node Group", defaultButtonSize))
+            if (ImGui.Button("Create Node Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedNode != -1 ||
                     screen.Selection.NodeMultiselect.StoredIndices.Count > 0)
@@ -153,9 +152,6 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             ImGui.BeginChild("##NodeGroupActions");
 
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width;
-
             if (_selectedNodeGroup != "" && SelectedNodeList != null)
             {
                 if (ImGui.CollapsingHeader("Nodes in Group"))
@@ -169,14 +165,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing Nodes with the Nodes within this Node group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendNodeList(screen, SelectedNodeList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -193,13 +189,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##NodeGroupName", ref _createNodeGroupName, 255);
             UIHelper.Tooltip("The name of the Node group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateNodeGroup(screen, _createNodeGroupName);
                 ImGui.CloseCurrentPopup();

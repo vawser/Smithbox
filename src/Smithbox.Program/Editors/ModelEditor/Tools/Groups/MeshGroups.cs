@@ -96,9 +96,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Mesh Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored Mesh Group from your current selection with the Meshes list.");
             UIHelper.WrappedText("A stored group can then be used to replace the existing Meshes list, or appended to the end.");
@@ -106,7 +105,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateMeshGroupList();
 
-            if (ImGui.Button("Create Mesh Group", defaultButtonSize))
+            if (ImGui.Button("Create Mesh Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedMesh != -1 ||
                     screen.Selection.MeshMultiselect.StoredIndices.Count > 0)
@@ -153,9 +152,6 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             ImGui.BeginChild("##MeshGroupActions");
 
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width;
-
             if (_selectedMeshGroup != "" && SelectedMeshList != null)
             {
                 if (ImGui.CollapsingHeader("Meshes in Group"))
@@ -169,14 +165,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing Meshes with the Meshes within this Mesh group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendMeshList(screen, SelectedMeshList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -193,13 +189,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##MeshGroupName", ref _createMeshGroupName, 255);
             UIHelper.Tooltip("The name of the Mesh group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateMeshGroup(screen, _createMeshGroupName);
                 ImGui.CloseCurrentPopup();

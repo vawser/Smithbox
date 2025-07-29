@@ -28,11 +28,7 @@ public partial class ParamTools
     public void DisplayParamMerge()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.475f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-        var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
         // Merge Params
         if (ImGui.CollapsingHeader("Merge Params"))
@@ -47,7 +43,7 @@ public partial class ParamTools
                 // Load
                 if (!Project.ParamData.AuxBanks.ContainsKey(ParamMerge_TargetProject.ProjectName))
                 {
-                    if (ImGui.Button("Load##action_Load", defaultButtonSize))
+                    if (ImGui.Button("Load##action_Load", DPI.HalfWidthButton(windowWidth, 24)))
                     {
                         Task<bool> loadTask = Editor.Project.ParamData.SetupAuxBank(ParamMerge_TargetProject, true);
                         Task.WaitAll(loadTask);
@@ -57,7 +53,7 @@ public partial class ParamTools
 
                     ImGui.SameLine();
                     ImGui.BeginDisabled();
-                    if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                    if (ImGui.Button("Merge##action_MergeParam", DPI.HalfWidthButton(windowWidth, 24)))
                     {
                     }
                     ImGui.EndDisabled();
@@ -65,7 +61,7 @@ public partial class ParamTools
                 else
                 {
                     ImGui.BeginDisabled();
-                    if (ImGui.Button("Load##action_Load", defaultButtonSize))
+                    if (ImGui.Button("Load##action_Load", DPI.HalfWidthButton(windowWidth, 24)))
                     {
                     }
                     ImGui.EndDisabled();
@@ -75,14 +71,14 @@ public partial class ParamTools
                     if (ParamMerge_InProgress)
                     {
                         ImGui.BeginDisabled();
-                        if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                        if (ImGui.Button("Merge##action_MergeParam", DPI.HalfWidthButton(windowWidth, 24)))
                         {
                         }
                         ImGui.EndDisabled();
                     }
                     else if (!ParamMerge_InProgress)
                     {
-                        if (ImGui.Button("Merge##action_MergeParam", defaultButtonSize))
+                        if (ImGui.Button("Merge##action_MergeParam", DPI.HalfWidthButton(windowWidth, 24)))
                         {
                             MergeParamHandler();
                         }
@@ -146,7 +142,7 @@ public partial class ParamTools
                 ImGui.InputText("##paramToggleFilter", ref TargetParamFilter, 255);
 
                 ImGui.SameLine();
-                if (ImGui.Button("Toggle All", new Vector2(windowWidth * 0.25f, 20)))
+                if (ImGui.Button("Toggle All", DPI.StandardButtonSize))
                 {
                     foreach (var param in TargetParams)
                     {

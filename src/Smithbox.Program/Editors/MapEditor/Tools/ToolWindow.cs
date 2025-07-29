@@ -43,8 +43,6 @@ public class ToolWindow
 
             var windowHeight = ImGui.GetWindowHeight();
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
-            var thinButtonSize = new Vector2(windowWidth, 24);
 
             if (ImGui.BeginMenuBar())
             {
@@ -71,7 +69,8 @@ public class ToolWindow
                     else
                     {
                         UIHelper.WrappedText("Target Map:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+
+                        DPI.ApplyInputWidth(windowWidth);
                         if (ImGui.BeginCombo("##Targeted Map", Handler._targetMap.Item1))
                         {
                             foreach (var entry in Editor.Project.MapData.PrimaryBank.Maps)
@@ -134,7 +133,7 @@ public class ToolWindow
                             UIHelper.WrappedText("");
 
 
-                            if (ImGui.Button("Create Object", defaultButtonSize))
+                            if (ImGui.Button("Create Object", DPI.WholeWidthButton(windowWidth, 24)))
                             {
                                 Handler.ApplyObjectCreation();
                             }
@@ -258,7 +257,7 @@ public class ToolWindow
 
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Duplicate Selection", defaultButtonSize))
+                    if (ImGui.Button("Duplicate Selection", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyDuplicate();
                     }
@@ -288,7 +287,7 @@ public class ToolWindow
 
                     UIHelper.WrappedText("Camera Offset Distance:");
 
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
                     if (ImGui.SliderFloat("##Offset distance", ref CFG.Current.Toolbar_Move_to_Camera_Offset, 0, 100))
                     {
                         if (CFG.Current.Toolbar_Move_to_Camera_Offset < 0)
@@ -301,7 +300,7 @@ public class ToolWindow
 
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Move Selection to Camera", defaultButtonSize))
+                    if (ImGui.Button("Move Selection to Camera", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyMoveToCamera();
                     }
@@ -359,21 +358,21 @@ public class ToolWindow
                         var z = CFG.Current.Toolbar_Rotate_FixedAngle[2];
 
                         UIHelper.WrappedText("Fixed Rotation");
-                        ImGui.PushItemWidth(100);
+                        DPI.ApplyInputWidth(100f);
                         if (ImGui.InputFloat("X##fixedRotationX", ref x))
                         {
                             x = Math.Clamp(x, -360f, 360f);
                         }
                         UIHelper.Tooltip("Set the X component of the fixed rotation action.");
 
-                        ImGui.PushItemWidth(100);
+                        DPI.ApplyInputWidth(100f);
                         if (ImGui.InputFloat("Y##fixedRotationX", ref y))
                         {
                             y = Math.Clamp(y, -360f, 360f);
                         }
                         UIHelper.Tooltip("Set the Y component of the fixed rotation action.");
 
-                        ImGui.PushItemWidth(100);
+                        DPI.ApplyInputWidth(100f);
                         if (ImGui.InputFloat("Z##fixedRotationZ", ref z))
                         {
                             z = Math.Clamp(z, -360f, 360f);
@@ -384,7 +383,7 @@ public class ToolWindow
                         CFG.Current.Toolbar_Rotate_FixedAngle = new Vector3(x, y, z);
                     }
 
-                    if (ImGui.Button("Rotate Selection", defaultButtonSize))
+                    if (ImGui.Button("Rotate Selection", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyRotation();
                     }
@@ -431,12 +430,13 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the X co-ordinate of the selection's Position in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinPosX", ref randomOffsetMin_Pos_X);
                     UIHelper.Tooltip("Minimum amount to add to the position X co-ordinate.");
 
                     ImGui.SameLine();
 
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxPosX", ref randomOffsetMax_Pos_X);
                     UIHelper.Tooltip("Maximum amount to add to the position X co-ordinate.");
 
@@ -444,12 +444,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Y co-ordinate of the selection's Position in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinPosY", ref randomOffsetMin_Pos_Y);
                     UIHelper.Tooltip("Minimum amount to add to the position Y co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxPosY", ref randomOffsetMax_Pos_Y);
                     UIHelper.Tooltip("Maximum amount to add to the position Y co-ordinate.");
 
@@ -457,12 +457,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Z co-ordinate of the selection's Position in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinPosZ", ref randomOffsetMin_Pos_Z);
                     UIHelper.Tooltip("Minimum amount to add to the position Z co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxPosZ", ref randomOffsetMax_Pos_Z);
                     UIHelper.Tooltip("Maximum amount to add to the position Z co-ordinate.");
                     ImGui.Text("");
@@ -473,12 +473,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the X co-ordinate of the selection's Rotation in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinRotX", ref randomOffsetMin_Rot_X);
                     UIHelper.Tooltip("Minimum amount to add to the rotation X co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxRotX", ref randomOffsetMax_Rot_X);
                     UIHelper.Tooltip("Maximum amount to add to the rotation X co-ordinate.");
 
@@ -486,12 +486,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Y co-ordinate of the selection's Rotation in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinRotY", ref randomOffsetMin_Rot_Y);
                     UIHelper.Tooltip("Minimum amount to add to the rotation Y co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxRotY", ref randomOffsetMax_Rot_Y);
                     UIHelper.Tooltip("Maximum amount to add to the rotation Y co-ordinate.");
 
@@ -499,12 +499,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Z co-ordinate of the selection's Rotation in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinRotZ", ref randomOffsetMin_Rot_Z);
                     UIHelper.Tooltip("Minimum amount to add to the rotation Z co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxRotZ", ref randomOffsetMax_Rot_Z);
                     UIHelper.Tooltip("Maximum amount to add to the rotation Z co-ordinate.");
                     ImGui.Text("");
@@ -515,12 +515,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the X co-ordinate of the selection's Scale in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinScaleX", ref randomOffsetMin_Scale_X);
                     UIHelper.Tooltip("Minimum amount to add to the scale X co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxScaleX", ref randomOffsetMax_Scale_X);
                     UIHelper.Tooltip("Maximum amount to add to the scale X co-ordinate.");
 
@@ -528,12 +528,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Y co-ordinate of the selection's Scale in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinScaleY", ref randomOffsetMin_Scale_Y);
                     UIHelper.Tooltip("Minimum amount to add to the scale Y co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxScaleY", ref randomOffsetMax_Scale_Y);
                     UIHelper.Tooltip("Maximum amount to add to the scale Y co-ordinate.");
 
@@ -541,12 +541,12 @@ public class ToolWindow
                     UIHelper.Tooltip("Include the Z co-ordinate of the selection's Scale in the scramble.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMinScaleZ", ref randomOffsetMin_Scale_Z);
                     UIHelper.Tooltip("Minimum amount to add to the scale Z co-ordinate.");
 
                     ImGui.SameLine();
-                    ImGui.PushItemWidth(100);
+                    DPI.ApplyInputWidth(100f);
                     ImGui.InputFloat("##offsetMaxScaleZ", ref randomOffsetMax_Scale_Y);
                     UIHelper.Tooltip("Maximum amount to add to the scale Z co-ordinate.");
                     UIHelper.WrappedText("");
@@ -604,7 +604,7 @@ public class ToolWindow
                     CFG.Current.Scrambler_OffsetMax_Scale_Y = randomOffsetMax_Scale_Y;
                     CFG.Current.Scrambler_OffsetMax_Scale_Z = randomOffsetMax_Scale_Z;
 
-                    if (ImGui.Button("Scramble Selection", defaultButtonSize))
+                    if (ImGui.Button("Scramble Selection", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyScramble();
                     }
@@ -654,13 +654,13 @@ public class ToolWindow
                     if (CFG.Current.Replicator_Mode_Line)
                     {
                         UIHelper.WrappedText("Amount to Replicate:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputInt("##Amount", ref CFG.Current.Replicator_Line_Clone_Amount);
                         UIHelper.Tooltip("The amount of new entities to create (from the first selection).");
                         UIHelper.WrappedText("");
 
                         UIHelper.WrappedText("Offset per Replicate:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputInt("##Offset", ref CFG.Current.Replicator_Line_Position_Offset);
                         UIHelper.Tooltip("The distance between each newly created entity.");
                         UIHelper.WrappedText("");
@@ -696,13 +696,13 @@ public class ToolWindow
                     if (CFG.Current.Replicator_Mode_Circle)
                     {
                         UIHelper.WrappedText("Amount to Replicate:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputInt("##Size", ref CFG.Current.Replicator_Circle_Size);
                         UIHelper.Tooltip("The number of points within the circle on which the entities are placed.");
                         UIHelper.WrappedText("");
 
                         UIHelper.WrappedText("Circle Radius:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.SliderFloat("##Radius", ref CFG.Current.Replicator_Circle_Radius, 0.1f, 100);
                         UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nThe radius of the circle on which to place the entities.");
 
@@ -717,19 +717,19 @@ public class ToolWindow
                     if (CFG.Current.Replicator_Mode_Square)
                     {
                         UIHelper.WrappedText("Amount to Replicate:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputInt("##Size", ref CFG.Current.Replicator_Square_Size);
                         UIHelper.Tooltip("The number of points on one side of the square on which the entities are placed.");
                         UIHelper.WrappedText("");
 
                         UIHelper.WrappedText("Square Width:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputFloat("##Width", ref CFG.Current.Replicator_Square_Width);
                         UIHelper.Tooltip("The width of the square on which to place the entities.");
                         UIHelper.WrappedText("");
 
                         UIHelper.WrappedText("Square Height:");
-                        ImGui.PushItemWidth(defaultButtonSize.X);
+                        DPI.ApplyInputWidth(windowWidth);
                         ImGui.InputFloat("##Depth", ref CFG.Current.Replicator_Square_Depth);
                         UIHelper.Tooltip("The depth of the square on which to place the entities.");
                         UIHelper.WrappedText("");
@@ -788,7 +788,7 @@ public class ToolWindow
 
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Replicate Selection", defaultButtonSize))
+                    if (ImGui.Button("Replicate Selection", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyReplicate();
                     }
@@ -814,7 +814,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Grid Height");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
                     if (ImGui.SliderFloat("Grid height", ref CFG.Current.MapEditor_Viewport_Grid_Height, -10000, 10000))
                     {
                         if (CFG.Current.MapEditor_Viewport_Grid_Height < -10000)
@@ -827,7 +827,7 @@ public class ToolWindow
 
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Move Selection to Grid", defaultButtonSize))
+                    if (ImGui.Button("Move Selection to Grid", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Handler.ApplyMovetoGrid();
                     }
@@ -883,7 +883,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_KeyboardMove_CycleIncrement.HintText}");
-                    if (ImGui.Button("Cycle Increment", thinButtonSize))
+                    if (ImGui.Button("Cycle Increment", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.KeyboardMovement.CycleIncrementType();
                     }
@@ -892,7 +892,7 @@ public class ToolWindow
 
                     // 0
                     UIHelper.WrappedText("Movement Increment [0]:");
-                    ImGui.PushItemWidth(thinButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var unit0 = CFG.Current.MapEditor_Selection_Movement_Increment_0;
                     if (ImGui.SliderFloat("##movementIncrement0", ref unit0, 0.0f, 999.0f))
@@ -903,7 +903,7 @@ public class ToolWindow
 
                     // 1
                     UIHelper.WrappedText("Movement Increment [1]:");
-                    ImGui.PushItemWidth(thinButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var unit1 = CFG.Current.MapEditor_Selection_Movement_Increment_1;
                     if (ImGui.SliderFloat("##movementIncrement1", ref unit1, 0.0f, 999.0f))
@@ -914,7 +914,7 @@ public class ToolWindow
 
                     // 2
                     UIHelper.WrappedText("Movement Increment [2]:");
-                    ImGui.PushItemWidth(thinButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var unit2 = CFG.Current.MapEditor_Selection_Movement_Increment_2;
                     if (ImGui.SliderFloat("##movementIncrement2", ref unit2, 0.0f, 999.0f))
@@ -925,7 +925,7 @@ public class ToolWindow
 
                     // 3
                     UIHelper.WrappedText("Movement Increment [3]:");
-                    ImGui.PushItemWidth(thinButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var unit3 = CFG.Current.MapEditor_Selection_Movement_Increment_3;
                     if (ImGui.SliderFloat("##movementIncrement3", ref unit3, 0.0f, 999.0f))
@@ -936,7 +936,7 @@ public class ToolWindow
 
                     // 4
                     UIHelper.WrappedText("Movement Increment [4]:");
-                    ImGui.PushItemWidth(thinButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var unit4 = CFG.Current.MapEditor_Selection_Movement_Increment_4;
                     if (ImGui.SliderFloat("##movementIncrement4", ref unit4, 0.0f, 999.0f))
@@ -969,7 +969,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText($"Shortcut: {KeyBindings.Current.MAP_SwitchDegreeIncrementType.HintText}");
-                    if (ImGui.Button("Cycle Increment", thinButtonSize))
+                    if (ImGui.Button("Cycle Increment", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.RotationIncrement.CycleIncrementType();
                     }
@@ -977,7 +977,7 @@ public class ToolWindow
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Degree Increment [0]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var rot0 = CFG.Current.Toolbar_Rotate_Increment_0;
                     if (ImGui.SliderFloat("##degreeIncrement0", ref rot0, -360.0f, 360.0f))
@@ -987,7 +987,7 @@ public class ToolWindow
                     UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
                     UIHelper.WrappedText("Degree Increment [1]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var rot1 = CFG.Current.Toolbar_Rotate_Increment_1;
                     if (ImGui.SliderFloat("##degreeIncrement1", ref rot1, -360.0f, 360.0f))
@@ -997,7 +997,7 @@ public class ToolWindow
                     UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
                     UIHelper.WrappedText("Degree Increment [2]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var rot2 = CFG.Current.Toolbar_Rotate_Increment_2;
                     if (ImGui.SliderFloat("##degreeIncrement2", ref rot2, -360.0f, 360.0f))
@@ -1007,7 +1007,7 @@ public class ToolWindow
                     UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
                     UIHelper.WrappedText("Degree Increment [3]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var rot3 = CFG.Current.Toolbar_Rotate_Increment_3;
                     if (ImGui.SliderFloat("##degreeIncrement3", ref rot3, -360.0f, 360.0f))
@@ -1017,7 +1017,7 @@ public class ToolWindow
                     UIHelper.Tooltip("Press Ctrl+Left Click to input directly.\nSet the angle increment amount used by the rotation.");
 
                     UIHelper.WrappedText("Degree Increment [4]:");
-                    ImGui.PushItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
 
                     var rot4 = CFG.Current.Toolbar_Rotate_Increment_4;
                     if (ImGui.SliderFloat("##degreeIncrement4", ref rot4, -360.0f, 360.0f))
@@ -1058,7 +1058,7 @@ public class ToolWindow
                 {
                     if (!Editor.MapQueryView.Bank.MapBankInitialized && !Editor.MapQueryView.UserLoadedData)
                     {
-                        if (ImGui.Button("Load Map Data", defaultButtonSize))
+                        if (ImGui.Button("Load Map Data", DPI.WholeWidthButton(windowWidth, 24)))
                         {
                             Editor.MapQueryView.Setup();
                         }

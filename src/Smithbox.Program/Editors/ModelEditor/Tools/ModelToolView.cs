@@ -34,7 +34,6 @@ public class ModelToolView
             Selection.SwitchWindowContext(ModelEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth, 32);
 
             if (ImGui.BeginMenuBar())
             {
@@ -87,7 +86,7 @@ public class ModelToolView
                     }
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Set Export Directory##modelExportDirectoryButton", defaultButtonSize))
+                    if (ImGui.Button("Set Export Directory##modelExportDirectoryButton", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         if (PlatformUtils.Instance.OpenFolderDialog("Select export directory...", out var path))
                         {
@@ -101,7 +100,7 @@ public class ModelToolView
                             }
                         }
                     }
-                    if (ImGui.Button("Export##modelExportApplyButton", defaultButtonSize))
+                    if (ImGui.Button("Export##modelExportApplyButton", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         if (CFG.Current.ModelEditor_ExportType is Enums.ModelExportType.DAE)
                         {
@@ -123,7 +122,7 @@ public class ModelToolView
                     UIHelper.WrappedText("Solve all of the bounding boxes for the currently loaded model.");
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Solve", defaultButtonSize))
+                    if (ImGui.Button("Solve", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.ActionHandler.SolveBoundingBoxes();
                     }
@@ -135,7 +134,7 @@ public class ModelToolView
                     UIHelper.WrappedText("Reverse the currently selected face set for our selected mesh.");
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Reverse", defaultButtonSize))
+                    if (ImGui.Button("Reverse", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.ActionHandler.ReverseMeshFaceSet();
                     }
@@ -147,7 +146,7 @@ public class ModelToolView
                     UIHelper.WrappedText("Reverse the normals for the currently selected mesh.");
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Reverse", defaultButtonSize))
+                    if (ImGui.Button("Reverse", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.ActionHandler.ReverseMeshNormals();
                     }
@@ -222,7 +221,7 @@ public class ModelToolView
 
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Search", defaultButtonSize))
+                    if (ImGui.Button("Search", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         ModelUsageSearch.SearchMaps();
                     }

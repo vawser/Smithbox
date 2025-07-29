@@ -234,10 +234,9 @@ public class SelectionGroupView
         if (Editor.Project.MapEntitySelections.Resources == null)
             return;
 
-        var width = ImGui.GetWindowWidth();
-        var buttonWidth = width / 100 * 95;
+        var windowWidth = ImGui.GetWindowWidth();
 
-        if (ImGui.Button("Create Selection Group from Current Selection", new Vector2(buttonWidth, 32)))
+        if (ImGui.Button("Create Selection Group from Current Selection", DPI.WholeWidthButton(windowWidth, 24)))
         {
             CreateSelectionGroup("Internal");
         }
@@ -309,18 +308,15 @@ public class SelectionGroupView
 
         ImGui.BeginChild("##selectionGroupActions");
 
-        width = ImGui.GetWindowWidth();
-        buttonWidth = width / 100 * 95;
-
         if (selectedResourceName != "")
         {
-            if (ImGui.Button("Select Contents", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Select Contents", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 SelectSelectionGroup();
             }
             UIHelper.Tooltip("Select the map objects listed by your currently selected group.");
 
-            if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Edit Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 ImGui.OpenPopup($"##selectionGroupModalEdit");
             }
@@ -333,7 +329,7 @@ public class SelectionGroupView
                 ImGui.EndPopup();
             }
 
-            if (ImGui.Button("Delete Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Delete Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 DeleteSelectionGroup();
             }
@@ -362,8 +358,7 @@ public class SelectionGroupView
 
     private void DisplayCreationModal()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonWidth = width / 100 * 95;
+        var windowWidth = ImGui.GetWindowWidth();
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref createPromptGroupName, 255);
         UIHelper.Tooltip("The name of the selection group.");
@@ -404,7 +399,7 @@ public class SelectionGroupView
         }
         UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
 
-        if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+        if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
         {
             AmendSelectionGroupBank();
             ImGui.CloseCurrentPopup();
@@ -413,8 +408,7 @@ public class SelectionGroupView
 
     private void DisplayEditModal()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonWidth = width / 100 * 95;
+        var windowWidth = ImGui.GetWindowWidth();
 
         ImGui.InputText("Group Name##selectionGroup_GroupName", ref editPromptGroupName, 255);
         UIHelper.Tooltip("The name of the selection group.");
@@ -455,7 +449,7 @@ public class SelectionGroupView
         }
         UIHelper.Tooltip("The keybind to quickly select the contents of this selection group.");
 
-        if (ImGui.Button("Edit Group", new Vector2(buttonWidth, 32)))
+        if (ImGui.Button("Edit Group", DPI.WholeWidthButton(windowWidth, 24)))
         {
             createPromptGroupName = editPromptGroupName;
             createPromptTags = editPromptTags;

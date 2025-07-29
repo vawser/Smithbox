@@ -37,24 +37,22 @@ public static class ParamValidator
             return;
         }
 
-        var buttonSize = new Vector2(400, 32);
-
         ImGui.Text("This tool will validate the PARAMDEF and padding values. Issues will be printed to the Logger.");
         ImGui.Text("");
 
-        if (ImGui.Button("Validate PARAMDEF", buttonSize))
+        if (ImGui.Button("Validate PARAMDEF", DPI.StandardButtonSize))
         {
             ValidateParamdef(baseEditor, project);
         }
         UIHelper.Tooltip("Validate that the current PARAMDEF works with the old-style SF PARAM class.");
 
-        if (ImGui.Button("Validate Padding (for selected param)", buttonSize))
+        if (ImGui.Button("Validate Padding (for selected param)", DPI.StandardButtonSize))
         {
             ValidatePadding(baseEditor, project);
         }
         UIHelper.Tooltip("Validate that there are no non-zero values within padding fields.");
 
-        if (ImGui.Button("Validate Padding (for all params)", buttonSize))
+        if (ImGui.Button("Validate Padding (for all params)", DPI.StandardButtonSize))
         {
             ValidatePadding(baseEditor, project, true);
         }

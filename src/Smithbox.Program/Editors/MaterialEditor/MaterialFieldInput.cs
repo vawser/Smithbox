@@ -37,7 +37,7 @@ public class MaterialFieldInput
 
         var inputFlags = ImGuiInputTextFlags.None;
 
-        ImGui.SetNextItemWidth(inputWidth);
+        DPI.ApplyInputWidth(inputWidth);
 
         // Long
         if (fieldType == typeof(long))
@@ -275,7 +275,7 @@ public class MaterialFieldInput
 
         var inputFlags = ImGuiInputTextFlags.None;
 
-        ImGui.SetNextItemWidth(inputWidth);
+        DPI.ApplyInputWidth(inputWidth);
 
         // Signed Integer
         if (paramType is ParamType.Int)

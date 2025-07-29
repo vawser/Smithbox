@@ -198,7 +198,8 @@ public class ParamComparisonReport
 
     public  void Display()
     {
-        var textPaneSize = new Vector2(800, 600);
+        var windowWidth = 800f;
+        var windowHeight = 600f;
 
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Comparison Report");
         ImGui.Separator();
@@ -275,7 +276,7 @@ public class ParamComparisonReport
         UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd", DPI.IconButtonSize))
         {
             TargetedParams.Add("");
         }
@@ -288,7 +289,7 @@ public class ParamComparisonReport
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
@@ -298,7 +299,7 @@ public class ParamComparisonReport
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
                 UIHelper.Tooltip("Remove last added param target input row.");
@@ -308,7 +309,7 @@ public class ParamComparisonReport
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset"))
+        if (ImGui.Button("Reset##paramTargetReset", DPI.StandardButtonSize))
         {
             TargetedParams = new List<string>();
         }
@@ -319,7 +320,7 @@ public class ParamComparisonReport
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             if (ImGui.InputText($"##paramTargetInput{i}", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -333,11 +334,9 @@ public class ParamComparisonReport
         {
             UIHelper.SimpleHeader("paramReport", "Report", "", UI.Current.ImGui_AliasName_Text);
 
-            var buttonSize = new Vector2(800 / 3, 32);
+            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), new Vector2(windowWidth, windowHeight), ImGuiInputTextFlags.ReadOnly);
 
-            ImGui.InputTextMultiline("##reportText", ref ReportText, UIHelper.GetTextInputBuffer(ReportText), textPaneSize, ImGuiInputTextFlags.ReadOnly);
-
-            if (ImGui.Button("Re-generate", buttonSize))
+            if (ImGui.Button("Re-generate", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
@@ -351,33 +350,29 @@ public class ParamComparisonReport
                 TaskManager.Run(task);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Copy", buttonSize))
+            if (ImGui.Button("Copy", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 UIHelper.CopyToClipboard(ReportText);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 ShowReportModal = false;
             }
         }
         else if(IsGeneratingReport)
         {
-            var buttonSize = new Vector2(800, 32);
-
             ImGui.Text("Report is being generated...");
             ImGui.Text($"Current Param: {CurrentParamProcessing}");
 
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 ShowReportModal = false;
             }
         }
         else
         {
-            var buttonSize = new Vector2(800 / 2, 32);
-
-            if (ImGui.Button("Generate", buttonSize))
+            if (ImGui.Button("Generate", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 TaskManager.LiveTask task = new(
                     "paramEditor_generateComparisonReport",
@@ -392,7 +387,7 @@ public class ParamComparisonReport
                 TaskManager.Run(task);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
             {
                 ShowReportModal = false;
             }

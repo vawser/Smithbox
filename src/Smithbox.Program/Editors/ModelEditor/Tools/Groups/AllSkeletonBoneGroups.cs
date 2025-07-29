@@ -92,9 +92,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "All Skeleton Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored All Skeleton Bone Group from your current selection with the All Skeleton Bone list.");
             UIHelper.WrappedText("A stored group can then be used to replace the existing All Skeleton Bone list, or appended to the end.");
@@ -102,7 +101,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateAllSkeletonGroupList();
 
-            if (ImGui.Button("Create All Skeleton Bone Group", defaultButtonSize))
+            if (ImGui.Button("Create All Skeleton Bone Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedAllSkeletonBone != -1 ||
                     screen.Selection.AllSkeletonMultiselect.StoredIndices.Count > 0)
@@ -149,9 +148,6 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             ImGui.BeginChild("##AllSkeletonGroupActions");
 
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width;
-
             if (_selectedAllSkeletonGroup != "" && SelectedAllSkeletonList != null)
             {
                 if (ImGui.CollapsingHeader("All Skeleton Bones in Group"))
@@ -174,14 +170,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceAllSkeletonList(screen, SelectedAllSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing All Skeleton Bones with the All Skeleton Bones within this All Skeleton group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendAllSkeletonList(screen, SelectedAllSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -198,13 +194,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##AllSkeletonGroupName", ref _createAllSkeletonGroupName, 255);
             UIHelper.Tooltip("The name of the All Skeleton group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateAllSkeletonGroup(screen, _createAllSkeletonGroupName);
                 ImGui.CloseCurrentPopup();

@@ -1,4 +1,5 @@
-﻿using Silk.NET.SDL;
+﻿using Hexa.NET.ImGui;
+using Silk.NET.SDL;
 using StudioCore.Configuration;
 using StudioCore.Graphics;
 using System;
@@ -12,10 +13,66 @@ namespace StudioCore.Interface;
 
 public static class DPI
 {
-    public static float StandardInputWidth => 400f * DPI.UIScale();
+    /// <summary>
+    /// The standard button size for fixed buttons.
+    /// </summary>
+    public static Vector2 StandardButtonSize => new Vector2(200 * UIScale(), 24 * UIScale());
 
-    public static Vector2 StandardButtonSize => new Vector2(200 * DPI.UIScale(), 24 * DPI.UIScale());
-    public static Vector2 ThickButtonSize => new Vector2(200 * DPI.UIScale(), 32 * DPI.UIScale());
+    /// <summary>
+    /// The button size for fixed buttons used for file/directory selection.
+    /// </summary>
+    public static Vector2 SelectorButtonSize => new Vector2(100 * UIScale(), 20 * UIScale());
+
+    /// <summary>
+    /// The button size for fixed buttons used for icons.
+    /// </summary>
+    public static Vector2 IconButtonSize => new Vector2(20 * UIScale(), 20 * UIScale());
+
+    public static void ApplyInputWidth(float width = 400f)
+    {
+        ImGui.SetNextItemWidth((width * 0.93f) * UIScale());
+    }
+
+    public static Vector2 ListSize(float width, float height)
+    {
+        return new Vector2(width * UIScale(), height * UIScale());
+    }
+
+    /// <summary>
+    /// The button size for auto-adjust buttons 
+    /// that take 97.5% of the width of their owner window.
+    /// </summary>
+    /// <param name="width"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public static Vector2 WholeWidthButton(float width, float height)
+    {
+        return new Vector2(width * 0.93f, height * UIScale());
+    }
+
+    /// <summary>
+    /// The button size for auto-adjust buttons 
+    /// that take 47.5% of the width of their owner window.
+    /// </summary>
+    /// <param name="width"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public static Vector2 HalfWidthButton(float width, float height)
+    {
+        return new Vector2(width * 0.46f, height * UIScale());
+    }
+
+    /// <summary>
+    /// The button size for auto-adjust buttons 
+    /// that take 33% of the width of their owner window.
+    /// </summary>
+    /// <param name="width"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public static Vector2 ThirdWidthButton(float width, float height)
+    {
+        return new Vector2(width * 0.3f, height * UIScale());
+    }
 
     private const float DefaultDpi = 96f;
     private static float _dpi = DefaultDpi;

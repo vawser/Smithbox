@@ -40,11 +40,6 @@ public partial class ParamTools
             }
 
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-            var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-            var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-            var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-            var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
             if (CFG.Current.Interface_ParamEditor_Tool_ParamCategories)
             {

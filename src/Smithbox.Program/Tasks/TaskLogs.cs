@@ -233,14 +233,16 @@ public static class TaskLogs
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
             if (ImGui.Begin("Action Logs##actionTaskLogger", ref ActionLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
             {
-                if (ImGui.Button("Clear##actionTaskLogger"))
+                var windowWidth = ImGui.GetWindowWidth();
+
+                if (ImGui.Button("Clear##actionTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     _actionLog.Clear();
                     _lastActionLogEntry = null;
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##actionTaskLogger"))
+                if (ImGui.Button("Copy to Clipboard##actionTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     string contents = "";
                     foreach (var entry in _actionLog)
@@ -329,16 +331,19 @@ public static class TaskLogs
             ImGui.PushStyleColor(ImGuiCol.TitleBgActive, UI.Current.Imgui_Moveable_TitleBg_Active);
             ImGui.PushStyleColor(ImGuiCol.ChildBg, UI.Current.Imgui_Moveable_ChildBg);
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
+
             if (ImGui.Begin("Warning Logs##warningTaskLogger", ref WarningLogger_WindowOpen, ImGuiWindowFlags.NoDocking))
             {
-                if (ImGui.Button("Clear##warningTaskLogger"))
+                var windowWidth = ImGui.GetWindowWidth();
+
+                if (ImGui.Button("Clear##warningTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     _warningLog.Clear();
                     _lastWarningLogEntry = null;
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Copy to Clipboard##warningTaskLogger"))
+                if (ImGui.Button("Copy to Clipboard##warningTaskLogger", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     string contents = "";
                     foreach (var entry in _warningLog)

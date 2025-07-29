@@ -106,9 +106,9 @@ public static class ParamMetaReferences
 
             if (show)
             {
-                var width = ImGui.GetColumnWidth();
+                var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -176,9 +176,9 @@ public static class ParamMetaReferences
 
             if (show)
             {
-                var width = ImGui.GetColumnWidth();
+                var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -279,9 +279,9 @@ public static class ParamMetaReferences
 
             if (show)
             {
-                var width = ImGui.GetColumnWidth();
+                var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -353,9 +353,9 @@ public static class ParamMetaReferences
 
     private static void DisplayViewModelSection(int imguiID, string assetId)
     {
-        var width = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
-        if (ImGui.Button($"View Model##{imguiID}_viewModel{assetId}", new Vector2(width, 20)))
+        if (ImGui.Button($"View Model##{imguiID}_viewModel{assetId}", DPI.WholeWidthButton(columnWidth, 24)))
         {
             EditorCommandQueue.AddCommand($"model/load/{assetId}/Asset");
         }
@@ -383,7 +383,7 @@ public static class ParamMetaReferences
 
             assetID = DeriveAssetID(rowID);
 
-            var width = ImGui.GetColumnWidth();
+            var columnWidth = ImGui.GetColumnWidth();
 
             if(AssetList == null)
                 AssetList = ResourceListLocator.GetObjModels(editor.Project);
@@ -392,7 +392,7 @@ public static class ParamMetaReferences
             {
                 var aliasName = AliasUtils.GetAssetAlias(editor.Project, assetID.ToLower());
 
-                if (ImGui.Button($"View Model: {assetID}", new Vector2(width, 20)))
+                if (ImGui.Button($"View Model: {assetID}", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     EditorCommandQueue.AddCommand($"model/load/{assetID}/Asset");
                 }
@@ -510,9 +510,9 @@ public static class ParamMetaReferences
 
             if (show)
             {
-                var width = ImGui.GetColumnWidth();
+                var columnWidth = ImGui.GetColumnWidth();
 
-                if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+                if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
                 {
                     if (mapId != "")
                     {
@@ -649,11 +649,11 @@ public static class ParamMetaReferences
                     }
                 }
 
-                var width = ImGui.GetColumnWidth();
+                var columnWidth = ImGui.GetColumnWidth();
 
                 if (currentField == "assetNo_Hit" || currentField == "assetCreationAssetId")
                 {
-                    if (ImGui.Button($"View Model", new Vector2(width, 20)))
+                    if (ImGui.Button($"View Model", DPI.WholeWidthButton(columnWidth, 24)))
                     {
                         EditorCommandQueue.AddCommand($"model/load/{modelString}/Asset");
                     }
@@ -702,9 +702,9 @@ public static class ParamMetaReferences
 
     private static void ItemLotParam_Button(string mapId, string AssetName)
     {
-        var width = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
-        if (ImGui.Button($"View in Map", new Vector2(width, 20)))
+        if (ImGui.Button($"View in Map", DPI.WholeWidthButton(columnWidth, 24)))
         {
             if (mapId != "")
             {

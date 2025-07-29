@@ -51,7 +51,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "File Filters:");
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}##fileFilterToggle"))
+        if (ImGui.Button($"{Icons.Bars}##fileFilterToggle", DPI.StandardButtonSize))
         {
             displayFileFilterSection = !displayFileFilterSection;
         }
@@ -74,7 +74,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Group Filters:");
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}##groupFilterToggle"))
+        if (ImGui.Button($"{Icons.Bars}##groupFilterToggle", DPI.StandardButtonSize))
         {
             displayGroupFilterSection = !displayGroupFilterSection;
         }
@@ -97,7 +97,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Field Filters:");
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}##fieldFilterToggle"))
+        if (ImGui.Button($"{Icons.Bars}##fieldFilterToggle", DPI.StandardButtonSize))
         {
             displayFieldFilterSection = !displayFieldFilterSection;
         }
@@ -120,7 +120,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Filters:");
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}##valueFilterToggle"))
+        if (ImGui.Button($"{Icons.Bars}##valueFilterToggle", DPI.StandardButtonSize))
         {
             displayValueFilterSection = !displayValueFilterSection;
         }
@@ -152,7 +152,7 @@ public class GparamQuickEdit
         ImGui.Separator();
         UIHelper.WrappedTextColored(UI.Current.ImGui_AliasName_Text, "Value Commands:");
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Bars}##valueCommandToggle"))
+        if (ImGui.Button($"{Icons.Bars}##valueCommandToggle", DPI.StandardButtonSize))
         {
             displayValueCommandSection = !displayValueCommandSection;
         }
@@ -188,48 +188,46 @@ public class GparamQuickEdit
     public void DisplayInputWindow()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
 
         ImGui.Text("File Filter:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth();
         ImGui.InputText("##targetParamString", ref _targetFileString, 255);
         UIHelper.Tooltip("Enter target file arguments here.");
 
         ImGui.Text("Group Filter:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth();
         ImGui.InputText("##targetGroupString", ref _targetGroupString, 255);
         UIHelper.Tooltip("Enter target group arguments here.");
 
         ImGui.Text("Field Filter:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth();
         ImGui.InputText("##targetFieldString", ref _targetFieldString, 255);
         UIHelper.Tooltip("Enter target field arguments here.");
 
         ImGui.Text("Value Filter:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth();
         ImGui.InputText("##filterString", ref _valueFilterString, 255);
         UIHelper.Tooltip("Enter value filter arguments here.");
 
         ImGui.Text("Value Command:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth();
         ImGui.InputText("##commandString", ref _valueCommandString, 255);
         UIHelper.Tooltip("Enter value command arguments here.");
 
-        if (ImGui.Button("Execute", thirdButtonSize))
+        if (ImGui.Button("Execute", DPI.StandardButtonSize))
         {
             ExecuteQuickEdit();
         }
 
         ImGui.SameLine();
-        if (ImGui.Button("Fill from Selection", thirdButtonSize))
+        if (ImGui.Button("Fill from Selection", DPI.StandardButtonSize))
         {
             GenerateQuickEditCommands();
         }
         UIHelper.Tooltip("Automatically fill the filter input based on current selection.");
 
         ImGui.SameLine();
-        if (ImGui.Button("Clear", thirdButtonSize))
+        if (ImGui.Button("Clear", DPI.StandardButtonSize))
         {
             ClearQuickEditCommands();
         }

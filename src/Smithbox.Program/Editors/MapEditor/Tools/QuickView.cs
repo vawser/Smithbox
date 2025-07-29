@@ -70,7 +70,7 @@ public class QuickView
         }
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##quickViewPropAdd"))
+        if (ImGui.Button($"{Icons.Plus}##quickViewPropAdd", DPI.IconButtonSize))
         {
             curTargetProperties.Add("");
             CFG.Current.QuickView_TargetProperties = curTargetProperties;
@@ -84,7 +84,7 @@ public class QuickView
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove"))
+            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove", DPI.IconButtonSize))
             {
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;
@@ -95,7 +95,7 @@ public class QuickView
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove"))
+            if (ImGui.Button($"{Icons.Minus}##quickViewPropRemove", DPI.IconButtonSize))
             {
                 curTargetProperties.RemoveAt(curTargetProperties.Count - 1);
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;
@@ -106,7 +106,7 @@ public class QuickView
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##quickViewPropReset"))
+        if (ImGui.Button("Reset##quickViewPropReset", DPI.StandardButtonSize))
         {
             curTargetProperties = new List<string>() { "" };
             CFG.Current.QuickView_TargetProperties = curTargetProperties;
@@ -117,7 +117,7 @@ public class QuickView
         {
             var curProperty = curTargetProperties[i];
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             ImGui.InputText($"##propInput{i}", ref curProperty, 255);
             UIHelper.Tooltip("The internal name of the property you want to appear in the Quick View tooltip.");
             if (ImGui.IsItemDeactivatedAfterEdit())
@@ -129,7 +129,7 @@ public class QuickView
 
         if (curTargetProperties.Count == 0)
         {
-            if (ImGui.Button("Add Property"))
+            if (ImGui.Button("Add Property", DPI.StandardButtonSize))
             {
                 curTargetProperties.Add("");
                 CFG.Current.QuickView_TargetProperties = curTargetProperties;

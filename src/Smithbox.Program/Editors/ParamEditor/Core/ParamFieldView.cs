@@ -245,7 +245,7 @@ public class ParamFieldView
             // Toggle Community Field Names
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.Book}"))
+            if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
             {
                 CFG.Current.Param_MakeMetaNamesPrimary = !CFG.Current.Param_MakeMetaNamesPrimary;
             }
@@ -259,7 +259,7 @@ public class ParamFieldView
             // Toggle Vanilla Columns
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.AddressBook}"))
+            if (ImGui.Button($"{Icons.AddressBook}", DPI.IconButtonSize))
             {
                 CFG.Current.Param_ShowVanillaColumn = !CFG.Current.Param_ShowVanillaColumn;
             }
@@ -273,7 +273,7 @@ public class ParamFieldView
             // Toggle Auxiliary Columns
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.AddressBookO}"))
+            if (ImGui.Button($"{Icons.AddressBookO}", DPI.IconButtonSize))
             {
                 CFG.Current.Param_ShowAuxColumn = !CFG.Current.Param_ShowAuxColumn;
             }
@@ -287,7 +287,7 @@ public class ParamFieldView
             // Toggle Field Offset Column
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.MapSigns}"))
+            if (ImGui.Button($"{Icons.MapSigns}", DPI.IconButtonSize))
             {
                 CFG.Current.Param_ShowFieldOffsets = !CFG.Current.Param_ShowFieldOffsets;
             }
@@ -301,7 +301,7 @@ public class ParamFieldView
             // Toggle Field Padding
             ImGui.SameLine();
 
-            if (ImGui.Button($"{Icons.Hubzilla}"))
+            if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
             {
                 CFG.Current.Param_HidePaddingFields = !CFG.Current.Param_HidePaddingFields;
             }

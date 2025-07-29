@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ public static class Test_BTL
 {
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        if (ImGui.Button("Run Test"))
+        if (ImGui.Button("Run Test", DPI.StandardButtonSize))
         {
             Run(baseEditor, project);
         }

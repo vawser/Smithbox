@@ -29,12 +29,11 @@ public class ValueInstanceFinder
     public void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
 
         if (ImGui.CollapsingHeader("Value Finder"))
         {
             ImGui.Text("Search Term");
-            ImGui.SetNextItemWidth(windowWidth * 0.75f);
+            DPI.ApplyInputWidth(windowWidth * 0.75f);
             ImGui.InputText("##valueSearch", ref SearchTerm, 255);
 
             ImGui.SameLine();
@@ -42,7 +41,7 @@ public class ValueInstanceFinder
             ImGui.Checkbox("##valueMatchExact", ref MatchExact);
             UIHelper.Tooltip("If enabled, the search term must be an exact match.");
 
-            if (ImGui.Button("Search##valueSearch", defaultButtonSize))
+            if (ImGui.Button("Search##valueSearch", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 FindValueInstances();
             }

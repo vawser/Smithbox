@@ -28,7 +28,7 @@ public class MassEditTools
 
     public void DisplayButton()
     {
-        if (ImGui.Button($"{Icons.Database}##mapMassEditToolView"))
+        if (ImGui.Button($"{Icons.Database}##mapMassEditToolView", DPI.IconButtonSize))
         {
             Handler.EditLog.ShowMassEditLog = false;
             ShowToolView = true;
@@ -38,8 +38,7 @@ public class MassEditTools
 
     public void Display()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonSize = new Vector2(width, 24);
+        var windowWidth = ImGui.GetWindowWidth();
 
         if(TemplateDir == "")
         {
@@ -58,7 +57,7 @@ public class MassEditTools
             ImGui.SetNextItemWidth(width);
             ImGui.InputText("##newTemplateName", ref NewTemplateName, 255);
 
-            if(ImGui.Button("Save", buttonSize))
+            if(ImGui.Button("Save", DPI.StandardButtonSize))
             {
 
             }
@@ -90,7 +89,7 @@ public class MassEditTools
             UIHelper.WrappedText("Actions");
             ImGui.Separator();
 
-            if (ImGui.Button("Backup Maps", buttonSize))
+            if (ImGui.Button("Backup Maps", DPI.StandardButtonSize))
             {
                 BackupMaps();
             }

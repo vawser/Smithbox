@@ -29,7 +29,6 @@ public static class TextMerge
     public static void Display(TextEditorScreen editor)
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
 
         UIHelper.WrappedText("Use this to merge a target project's text files into your current project.");
         UIHelper.WrappedText("");
@@ -74,14 +73,14 @@ public static class TextMerge
         if (TargetProject == null || MergeInProgress)
         {
             ImGui.BeginDisabled();
-            if (ImGui.Button("Merge##action_MergeText", defaultButtonSize))
+            if (ImGui.Button("Merge##action_MergeText", DPI.WholeWidthButton(windowWidth, 24)))
             {
             }
             ImGui.EndDisabled();
         }
         else if (!MergeInProgress)
         {
-            if (ImGui.Button("Merge##action_MergeText", defaultButtonSize))
+            if (ImGui.Button("Merge##action_MergeText", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 HandleMergeAction(editor);
             }

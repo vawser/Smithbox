@@ -97,9 +97,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Base Skeleton Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored Base Skeleton Bone Group from your current selection with the Base Skeleton Bone list.");
             UIHelper.WrappedText("A stored group can then be used to replace the existing Base Skeleton Bone list, or appended to the end.");
@@ -107,7 +106,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateBaseSkeletonGroupList();
 
-            if (ImGui.Button("Create Base Skeleton Bone Group", defaultButtonSize))
+            if (ImGui.Button("Create Base Skeleton Bone Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedBaseSkeletonBone != -1 ||
                     screen.Selection.BaseSkeletonMultiselect.StoredIndices.Count > 0)
@@ -179,14 +178,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing Base Skeleton Bones with the Base Skeleton Bones within this Base Skeleton group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendBaseSkeletonList(screen, SelectedBaseSkeletonList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -203,13 +202,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##BaseSkeletonGroupName", ref _createBaseSkeletonGroupName, 255);
             UIHelper.Tooltip("The name of the Base Skeleton group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateBaseSkeletonGroup(screen, _createBaseSkeletonGroupName);
                 ImGui.CloseCurrentPopup();

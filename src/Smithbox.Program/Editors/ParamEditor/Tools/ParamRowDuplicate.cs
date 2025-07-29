@@ -21,11 +21,6 @@ public partial class ParamTools
     public void DisplayRowDuplicate()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-        var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-        var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
         // Duplicate Row
         if (ImGui.CollapsingHeader("Duplicate Row"))
@@ -42,14 +37,14 @@ public partial class ParamTools
             {
                 UIHelper.WrappedText("Amount to Duplicate:");
 
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
+                DPI.ApplyInputWidth(windowWidth);
                 ImGui.InputInt("##Amount", ref CFG.Current.Param_Toolbar_Duplicate_Amount);
                 UIHelper.Tooltip("The number of times the current selection will be duplicated.");
                 UIHelper.WrappedText("");
 
                 UIHelper.WrappedText("Duplicate Offset:");
 
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
+                DPI.ApplyInputWidth(windowWidth);
                 ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_Duplicate_Offset);
                 UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
                 UIHelper.WrappedText("");
@@ -74,7 +69,7 @@ public partial class ParamTools
                 UIHelper.Tooltip("Fields tagged as 'Source' will have the offset applied to their value.\n\nExamples: the Source ID references in an EquipParamProtector row.");
 
 
-                if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
+                if (ImGui.Button("Duplicate##duplicateRow", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     DuplicateRow();
                 }
@@ -148,11 +143,6 @@ public partial class ParamTools
     public void DisplayCommutativeRowDuplicate()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-        var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-        var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
         if (ImGui.CollapsingHeader("Duplicate Row to Commutative Param"))
         {
@@ -168,7 +158,7 @@ public partial class ParamTools
             {
                 UIHelper.WrappedText("Offset:");
 
-                ImGui.SetNextItemWidth(defaultButtonSize.X);
+                DPI.ApplyInputWidth(windowWidth);
                 ImGui.InputInt("##Offset", ref CFG.Current.Param_Toolbar_CommutativeDuplicate_Offset);
                 UIHelper.Tooltip("The ID offset to apply when duplicating.\nSet to 0 for row indexed params to duplicate as expected.");
                 UIHelper.WrappedText("");
@@ -208,7 +198,7 @@ public partial class ParamTools
                     ImGui.Text("");
                 }
 
-                if (ImGui.Button("Duplicate##duplicateRow", defaultButtonSize))
+                if (ImGui.Button("Duplicate##duplicateRow", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     DuplicateCommutativeRow();
                 }

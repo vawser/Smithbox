@@ -1213,7 +1213,7 @@ public class ParamEditorScreen : EditorScreen
 
             try
             {
-                if (ImGui.Button("Sort (value)"))
+                if (ImGui.Button("Sort (value)", DPI.StandardButtonSize))
                 {
                     _distributionOutput = _distributionOutput.OrderBy(g => g.Item1);
                     _statisticPopupOutput = string.Join('\n',
@@ -1222,7 +1222,7 @@ public class ParamEditorScreen : EditorScreen
                 }
 
                 ImGui.SameLine();
-                if (ImGui.Button("Sort (count)"))
+                if (ImGui.Button("Sort (count)", DPI.StandardButtonSize))
                 {
                     _distributionOutput = _distributionOutput.OrderByDescending(g => g.Item2);
                     _statisticPopupOutput = string.Join('\n',
@@ -1295,7 +1295,7 @@ public class ParamEditorScreen : EditorScreen
                 {
                     ImGui.TextUnformatted("No selection exists");
                 }
-                else if (ImGui.Button("Submit"))
+                else if (ImGui.Button("Submit", DPI.SelectorButtonSize))
                 {
                     List<Param.Row> rowsToInsert = new();
                     if (!CFG.Current.Param_PasteAfterSelection)

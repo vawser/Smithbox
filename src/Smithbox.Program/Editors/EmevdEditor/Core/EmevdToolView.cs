@@ -65,7 +65,7 @@ public class EmevdToolView
             {
                 if (ImGui.CollapsingHeader("Template Reloader"))
                 {
-                    if (ImGui.Button("Reload"))
+                    if (ImGui.Button("Reload", DPI.StandardButtonSize))
                     {
                         Editor.Project.EmevdData.PrimaryBank.LoadEMEDF();
                     }

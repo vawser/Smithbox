@@ -81,7 +81,7 @@ public class MapPropertyView
         // Toggle Community Field Names
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Book}"))
+        if (ImGui.Button($"{Icons.Book}", DPI.IconButtonSize))
         {
             CFG.Current.MapEditor_Enable_Commmunity_Names = !CFG.Current.MapEditor_Enable_Commmunity_Names;
         }
@@ -95,7 +95,7 @@ public class MapPropertyView
         // Toggle Field Padding
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Hubzilla}"))
+        if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
         {
             CFG.Current.MapEditor_Enable_Padding_Fields = !CFG.Current.MapEditor_Enable_Padding_Fields;
         }
@@ -656,7 +656,7 @@ public class MapPropertyView
         }
 
         ImGui.NextColumn();
-        if (ImGui.Button("Rename"))
+        if (ImGui.Button("Rename", DPI.StandardButtonSize))
         {
             if (single)
             {

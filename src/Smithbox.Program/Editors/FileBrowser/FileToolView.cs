@@ -100,14 +100,14 @@ public class FileToolView
 
     public void DisplayUnpacker()
     {
-        var width = ImGui.GetWindowWidth() * 0.95f;
+        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
         UIHelper.WrappedText("This is a tool to unpack the base game data for the game this project targets, if it has not already been unpacked.");
         UIHelper.WrappedText("");
 
         if (UnpackDirectory == "")
         {
-            if (ImGui.Button("Set Unpack Directory", new Vector2(width, 24)))
+            if (ImGui.Button("Set Unpack Directory", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 var unpackDirectory = "";
                 var result = PlatformUtils.Instance.OpenFolderDialog("Select Unpack Directory", out unpackDirectory);
@@ -124,7 +124,7 @@ public class FileToolView
         {
             UIHelper.SimpleHeader("selectiveUnpack", "Selective Unpack", "Select which folders to include in the unpack.", UI.Current.ImGui_AliasName_Text);
 
-            if(ImGui.Button($"{Icons.Bars} Toggle All"))
+            if(ImGui.Button($"{Icons.Bars} Toggle All", DPI.StandardButtonSize))
             {
                 foreach (var entry in SelectiveFolderDict)
                 {
@@ -150,7 +150,7 @@ public class FileToolView
 
         if (!IsUnpacking && ( !HasUnpackedGame()))
         {
-            if (ImGui.Button("Unpack Game", new Vector2(width, 24)))
+            if (ImGui.Button("Unpack Game", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 IsUnpacking = true;
 
@@ -184,16 +184,16 @@ public class FileToolView
         {
             float progress = TotalToUnpack > 0 ? (float)CurrentUnpacked / TotalToUnpack : 0f;
             string label = $"Unpacking... {CurrentUnpacked} / {TotalToUnpack} files";
-            ImGui.ProgressBar(progress, new Vector2(width, 24), label);
+            ImGui.ProgressBar(progress, DPI.WholeWidthButton(windowWidth, 24), label);
 
-            if (ImGui.Button("Cancel", new Vector2(width, 24)))
+            if (ImGui.Button("Cancel", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 unpackCts?.Cancel();
             }
             UIHelper.Tooltip("This will cancel the game data unpack.");
         }
 
-        if (ImGui.Button("Rebuild File Dictionary##rebuildFileDict_main", new Vector2(width, 24)))
+        if (ImGui.Button("Rebuild File Dictionary##rebuildFileDict_main", DPI.WholeWidthButton(windowWidth, 24)))
         {
             UpdateBaseFileDictionary();
         }
@@ -201,7 +201,7 @@ public class FileToolView
 
         if (!IsDeleting && HasUnpackedGame())
         {
-            if (ImGui.Button("Delete Unpacked Data", new Vector2(width, 24)))
+            if (ImGui.Button("Delete Unpacked Data", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 IsDeleting = true;
 
@@ -231,9 +231,9 @@ public class FileToolView
         {
             float progress = TotalToDelete > 0 ? (float)CurrentDeleted / TotalToDelete : 0f;
             string label = $"Deleting... {CurrentDeleted} / {TotalToDelete} files";
-            ImGui.ProgressBar(progress, new Vector2(width, 24), label);
+            ImGui.ProgressBar(progress, DPI.WholeWidthButton(windowWidth, 24), label);
 
-            if (ImGui.Button("Cancel", new Vector2(width, 24)))
+            if (ImGui.Button("Cancel", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 unpackCts?.Cancel();
             }
@@ -283,22 +283,22 @@ public class FileToolView
 
     public void DisplayIndividualUnpacker()
     {
-        var width = ImGui.GetWindowWidth() * 0.95f;
+        var windowWidth = ImGui.GetWindowWidth() * 0.95f;
 
         UIHelper.WrappedText("This is a tool to unpack the an individual file from the game data.");
         UIHelper.WrappedText("");
 
         UIHelper.WrappedText("Target Folder");
-        ImGui.SetNextItemWidth(width);
+        DPI.ApplyInputWidth(windowWidth * 0.75f);
         ImGui.InputText("##individualFolder", ref IndividualFolder, 255);
         UIHelper.WrappedText("");
 
         UIHelper.WrappedText("Target Filename");
-        ImGui.SetNextItemWidth(width);
+        DPI.ApplyInputWidth(windowWidth * 0.75f);
         ImGui.InputText("##individualFilename", ref IndividualFilename, 255);
         UIHelper.WrappedText("");
 
-        if (ImGui.Button("Unpack File", new Vector2(width, 24)))
+        if (ImGui.Button("Unpack File", DPI.WholeWidthButton(windowWidth, 24)))
         {
             var filePath = Path.Join(IndividualFolder, IndividualFilename);
 

@@ -95,8 +95,10 @@ public class PrefabView
         File.Delete(Path.Join(prefabDir, $"{name}.json"));
     }
 
-    public void CreateButton(Vector2 buttonSize)
+    public void CreateButton()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         var isDisabled = !selectedEntities || !Prefab_EditName.Any();
@@ -105,7 +107,7 @@ public class PrefabView
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button("Create##createPrefab", buttonSize))
+            if (ImGui.Button("Create##createPrefab", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 CreateFromSelection(Prefab_EditName);
             }
@@ -115,7 +117,7 @@ public class PrefabView
         }
         else
         {
-            if (ImGui.Button("Create##createPrefab", buttonSize))
+            if (ImGui.Button("Create##createPrefab", DPI.ThirdWidthButton(windowWidth, 24)))
             {
                 CreateFromSelection(Prefab_EditName);
             }
@@ -123,11 +125,13 @@ public class PrefabView
         }
     }
 
-    public void DeleteButton(Vector2 buttonSize)
+    public void DeleteButton()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         ImGui.BeginDisabled(SelectedPrefab is null);
 
-        if (ImGui.Button("Delete##deletePrefab", buttonSize))
+        if (ImGui.Button("Delete##deletePrefab", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Delete(SelectedPrefab.PrefabName);
             SelectedPrefab = null;
@@ -139,11 +143,13 @@ public class PrefabView
         ImGui.EndDisabled();
     }
 
-    public void ImportButton(Vector2 buttonSize)
+    public void ImportButton()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         ImGui.BeginDisabled(SelectedPrefab is null || comboMap.map is not MapContainer);
 
-        if (ImGui.Button("Import##importPrefab", buttonSize))
+        if (ImGui.Button("Import##importPrefab", DPI.WholeWidthButton(windowWidth, 24)))
         {
             string prefixName = null;
             if (CFG.Current.Prefab_ApplyOverrideName)
@@ -159,13 +165,15 @@ public class PrefabView
         ImGui.EndDisabled();
     }
 
-    public void ReplaceButton(Vector2 buttonSize)
+    public void ReplaceButton()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         bool selectedEntities = Editor.Universe.Selection.GetFilteredSelection<MsbEntity>().Any();
 
         ImGui.BeginDisabled(SelectedPrefab is null || !selectedEntities);
 
-        if (ImGui.Button("Replace##replacePrefab", buttonSize))
+        if (ImGui.Button("Replace##replacePrefab", DPI.ThirdWidthButton(windowWidth, 24)))
         {
             Delete(SelectedPrefab.PrefabName);
             CreateFromSelection(Prefab_EditName);
@@ -232,7 +240,6 @@ public class PrefabView
     public void ImportPrefabMenu()
     {
         var width = ImGui.GetWindowWidth();
-        var defaultSize = new Vector2(width * 0.975f, 32);
 
         ImGui.Text("Map:");
         ImGui.SameLine();
@@ -259,7 +266,7 @@ public class PrefabView
         }
         ImGui.PopItemWidth();
 
-        ImportButton(defaultSize);
+        ImportButton();
 
         ImGui.Text("Import Options:");
         ImportConfig();
@@ -267,23 +274,21 @@ public class PrefabView
 
     public void ExportPrefabMenu()
     {
-        var width = ImGui.GetWindowWidth();
-        var defaultSize = new Vector2(width * 0.975f, 32);
-        var thirdSizeButton = new Vector2(defaultSize.X * 0.33f, 32);
+        var windowWidth = ImGui.GetWindowWidth();
 
         ImGui.Text("Name:");
-        ImGui.SetNextItemWidth(defaultSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText("##PrefabName", ref Prefab_EditName, 64);
 
         ImGui.Text("Flags:");
-        ImGui.SetNextItemWidth(defaultSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText("##PrefabFlags", ref Prefab_EditFlags, 64);
 
-        CreateButton(thirdSizeButton);
+        CreateButton();
         ImGui.SameLine();
-        DeleteButton(thirdSizeButton);
+        DeleteButton();
         ImGui.SameLine();
-        ReplaceButton(thirdSizeButton);
+        ReplaceButton();
 
         ImGui.Text("Export Options:");
         ExportConfig();

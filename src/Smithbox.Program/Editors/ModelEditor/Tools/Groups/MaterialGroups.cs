@@ -96,9 +96,8 @@ namespace StudioCore.Editors.ModelEditor.Tools
         {
             ExportBasePath = Path.Join(screen.Project.ProjectPath, ".smithbox", "Workflow", "Material Groups");
 
-            var sectionWidth = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
             var sectionHeight = ImGui.GetWindowHeight();
-            var defaultButtonSize = new Vector2(sectionWidth, 32);
 
             UIHelper.WrappedText("Create a stored Material Group from your current selection with the Material list.");
             UIHelper.WrappedText("A stored group can then be used to replace the existing Material list, or appended to the end.");
@@ -106,7 +105,7 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             UpdateMaterialGroupList();
 
-            if (ImGui.Button("Create Material Group", defaultButtonSize))
+            if (ImGui.Button("Create Material Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 if (screen.Selection._selectedMaterial != -1 ||
                     screen.Selection.MaterialMultiselect.StoredIndices.Count > 0)
@@ -153,9 +152,6 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
             ImGui.BeginChild("##MaterialGroupActions");
 
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width;
-
             if (_selectedMaterialGroup != "" && SelectedMaterialList != null)
             {
                 if (ImGui.CollapsingHeader("Materials in Group"))
@@ -169,14 +165,14 @@ namespace StudioCore.Editors.ModelEditor.Tools
                     }
                 }
 
-                if (ImGui.Button("Replace", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Replace", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new ReplaceMaterialList(screen, SelectedMaterialList.List);
                     screen.EditorActionManager.ExecuteAction(action);
                 }
                 UIHelper.Tooltip("Replace the existing Materials with the Materials within this Material group.");
                 ImGui.SameLine();
-                if (ImGui.Button("Append", new Vector2(buttonWidth / 2, 32)))
+                if (ImGui.Button("Append", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     var action = new AppendMaterialList(screen, SelectedMaterialList.List);
                     screen.EditorActionManager.ExecuteAction(action);
@@ -193,13 +189,12 @@ namespace StudioCore.Editors.ModelEditor.Tools
 
         private static void DisplayCreationModal(ModelEditorScreen screen)
         {
-            var width = ImGui.GetWindowWidth();
-            var buttonWidth = width / 100 * 95;
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("Name##MaterialGroupName", ref _createMaterialGroupName, 255);
             UIHelper.Tooltip("The name of the Material group.");
 
-            if (ImGui.Button("Create Group", new Vector2(buttonWidth, 32)))
+            if (ImGui.Button("Create Group", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CreateMaterialGroup(screen, _createMaterialGroupName);
                 ImGui.CloseCurrentPopup();

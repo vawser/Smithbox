@@ -36,8 +36,6 @@ public class TexToolView
             Editor.Selection.SwitchWindowContext(TextureViewerContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-            var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
 
             if (ImGui.BeginMenuBar())
             {
@@ -57,7 +55,7 @@ public class TexToolView
                     var index = CFG.Current.TextureViewerToolbar_ExportTextureType;
 
                     UIHelper.WrappedText("Export File Type:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
                     if (ImGui.Combo("##ExportType", ref index, Editor.Tools.exportTypes, Editor.Tools.exportTypes.Length))
                     {
                         CFG.Current.TextureViewerToolbar_ExportTextureType = index;
@@ -66,9 +64,9 @@ public class TexToolView
                     UIHelper.WrappedText("");
 
                     UIHelper.WrappedText("Export Destination:");
-                    ImGui.SetNextItemWidth(defaultButtonSize.X);
+                    DPI.ApplyInputWidth(windowWidth);
                     ImGui.InputText("##exportDestination", ref CFG.Current.TextureViewerToolbar_ExportTextureLocation, 255);
-                    if (ImGui.Button("Select", halfButtonSize))
+                    if (ImGui.Button("Select", DPI.HalfWidthButton(windowWidth, 24)))
                     {
                         string path;
                         var result = PlatformUtils.Instance.OpenFolderDialog("Select Export Destination", out path);
@@ -78,7 +76,7 @@ public class TexToolView
                         }
                     }
                     ImGui.SameLine();
-                    if (ImGui.Button("View Folder", halfButtonSize))
+                    if (ImGui.Button("View Folder", DPI.HalfWidthButton(windowWidth, 24)))
                     {
                         Process.Start("explorer.exe", CFG.Current.TextureViewerToolbar_ExportTextureLocation);
                     }
@@ -92,7 +90,7 @@ public class TexToolView
                     UIHelper.Tooltip("Display the confirmation message box after each export.");
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Export##action_Selection_ExportTexture", defaultButtonSize))
+                    if (ImGui.Button("Export##action_Selection_ExportTexture", DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         Editor.Tools.ExportTextureHandler();
                     }

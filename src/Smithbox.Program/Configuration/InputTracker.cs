@@ -235,7 +235,9 @@ public static class InputTracker
             ImGui.AlignTextToFramePadding();
             if (_currentKeyBind == bindVal)
             {
-                ImGui.Button($"Press Key <Esc - Clear>##resetButton{index}", new Vector2(columnWidth, 20 * scale));
+                ImGui.Button($"Press Key <Esc - Clear>##resetButton{index}", 
+                    DPI.WholeWidthButton(columnWidth, 20f));
+
                 if (InputTracker.GetKeyDown(Key.Escape))
                 {
                     KeyBind newkey = InputTracker.GetEmptyKeyBind(bindVal.PresentationName, bindVal.Description);
@@ -252,7 +254,8 @@ public static class InputTracker
                     }
                 }
             }
-            else if (ImGui.Button($"{keyText}##setButton{index}", new Vector2(columnWidth, 20 * scale)))
+            else if (ImGui.Button($"{keyText}##setButton{index}", 
+                DPI.WholeWidthButton(columnWidth, 20f)))
             {
                 _currentKeyBind = bindVal;
             }
@@ -260,7 +263,7 @@ public static class InputTracker
         else
         {
             ImGui.BeginDisabled();
-            if (ImGui.Button($"{keyText}##disabledbutton{index}", new Vector2(columnWidth, 20 * scale)))
+            if (ImGui.Button($"{keyText}##disabledbutton{index}", DPI.WholeWidthButton(columnWidth, 20f)))
             {
             }
             UIHelper.Tooltip("You cannot change this shortcut.");
@@ -296,7 +299,7 @@ public static class InputTracker
 
         var columnWidth = ImGui.GetColumnWidth();
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"Reset to Default##defaultButton{index}", new Vector2(columnWidth, 20 * scale)))
+        if (ImGui.Button($"Reset to Default##defaultButton{index}", DPI.WholeWidthButton(columnWidth, 20f)))
         {
             currentKeyBind = defaultKeyBind;
         }

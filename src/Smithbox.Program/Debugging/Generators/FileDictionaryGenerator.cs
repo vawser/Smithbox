@@ -22,8 +22,6 @@ public static class FileDictionaryGenerator
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        var inputWidth = 400.0f;
-
         if (ImGui.BeginTable($"generatorTable", 3, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -40,12 +38,12 @@ public static class FileDictionaryGenerator
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("##generatorPath", ref _filePath, 255);
 
             ImGui.TableSetColumnIndex(2);
 
-            if (ImGui.Button("Select##generatorPathSelect"))
+            if (ImGui.Button("Select##generatorPathSelect", DPI.StandardButtonSize))
             {
                 var newFilePath = "";
                 var result = PlatformUtils.Instance.OpenFileDialog("Select File", [""], out newFilePath);
@@ -61,7 +59,7 @@ public static class FileDictionaryGenerator
 
         if (File.Exists(_filePath))
         {
-            if (ImGui.Button("Generate File Dictionary JSON"))
+            if (ImGui.Button("Generate File Dictionary JSON", DPI.StandardButtonSize))
             {
                 GenerateFileDictionaryFromUXM(_filePath);
             }

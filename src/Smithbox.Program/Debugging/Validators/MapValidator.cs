@@ -30,8 +30,6 @@ public static class MapValidator
         if (project.MapEditor == null)
             return;
 
-        var buttonSize = new Vector2(400, 32);
-
         ImGui.Text("This tool will validate the MSB for the current project by loading all MSB files.");
         ImGui.Text("");
 
@@ -44,7 +42,7 @@ public static class MapValidator
         ImGui.Checkbox("Check project files", ref TargetProjectFiles);
         UIHelper.Tooltip("The check will use the game root files by default, if you want to use your project's specific files, tick this.");
 
-        if (ImGui.Button("Validate MSB", buttonSize))
+        if (ImGui.Button("Validate MSB", DPI.StandardButtonSize))
         {
             ValidateMSB(baseEditor, project);
         }

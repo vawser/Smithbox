@@ -1,5 +1,6 @@
 ﻿using Hexa.NET.ImGui;
 using StudioCore.Core;
+using StudioCore.Interface;
 using System.Numerics;
 
 namespace StudioCore.EventScriptEditorNS;
@@ -35,16 +36,13 @@ public class EmevdEventCreationModal
         if (ImGui.BeginPopupModal("Create EMEVD Event", ref ShowModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
             Vector2 listboxSize = new Vector2(520, 400);
-            Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
 
-
-
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", DPI.StandardButtonSize))
             {
                 ShowModal = false;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
             {
                 ShowModal = false;
             }

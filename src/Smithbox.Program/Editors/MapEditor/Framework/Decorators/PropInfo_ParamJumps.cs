@@ -14,7 +14,7 @@ public static class PropInfo_ParamJumps
     public static void Display(MapEditorScreen editor, Entity firstEnt, IViewport _viewport, ref ViewportSelection selection, ref int refID)
     {
         var scale = DPI.UIScale();
-        var width = ImGui.GetWindowWidth() / 100;
+        var windowWidth = ImGui.GetWindowWidth();
 
         if (firstEnt.References.Count == 0)
             return;
@@ -27,7 +27,8 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             UIHelper.Tooltip("The current selection references these rows in params");
 
-            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Asset" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Asset" + refID, 
+                DPI.IconButtonSize))
             {
                 BoundingBox box = new();
 
@@ -73,7 +74,8 @@ public static class PropInfo_ParamJumps
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth(-1);
 
-                if (ImGui.Button(displayName + "##AssetEnvironmentGeometryParam_ParamJump" + refID, new Vector2(width * 94, 20 * scale)))
+                if (ImGui.Button(displayName + "##AssetEnvironmentGeometryParam_ParamJump" + refID, 
+                    DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     EditorCommandQueue.AddCommand($@"param/select/-1/AssetEnvironmentGeometryParam/{assetRowId}");
                 }
@@ -89,7 +91,8 @@ public static class PropInfo_ParamJumps
             ImGui.Separator();
             UIHelper.Tooltip("The current selection references these rows in params");
 
-            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Enemy" + refID, new Vector2(width * 5, 20 * scale)))
+            if (ImGui.Button(Icons.Binoculars + "##ParamJump_ViewRef_Enemy" + refID,
+                DPI.IconButtonSize))
             {
                 BoundingBox box = new();
 
@@ -135,7 +138,8 @@ public static class PropInfo_ParamJumps
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth(-1);
 
-                if (ImGui.Button(displayName + "##ChrModelParam_ParamJump" + refID, new Vector2(width * 94, 20 * scale)))
+                if (ImGui.Button(displayName + "##ChrModelParam_ParamJump" + refID,
+                    DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     EditorCommandQueue.AddCommand($@"param/select/-1/ChrModelParam/{modelRowId}");
                 }

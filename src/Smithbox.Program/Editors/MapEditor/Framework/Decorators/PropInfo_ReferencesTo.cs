@@ -24,7 +24,7 @@ public static class PropInfo_ReferencesTo
         ImGui.Separator();
         UIHelper.Tooltip("The current selection references these map objects.");
 
-        var width = ImGui.GetWindowWidth() / 100;
+        var windowWidth = ImGui.GetWindowWidth();
 
         foreach (KeyValuePair<string, object[]> m in firstEnt.References)
         {
@@ -33,7 +33,8 @@ public static class PropInfo_ReferencesTo
                 if (n is Entity e)
                 {
                     // View Reference in Viewport
-                    if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, new Vector2(width * 5, 20 * scale)))
+                    if (ImGui.Button(Icons.Binoculars + "##MSBRefBy" + refID, 
+                        DPI.IconButtonSize))
                     {
                         BoundingBox box = new();
 
@@ -83,7 +84,8 @@ public static class PropInfo_ReferencesTo
 
                     ImGui.SameLine();
                     ImGui.SetNextItemWidth(-1);
-                    if (ImGui.Button(displayName + "##MSBRefTo" + refID, new Vector2(width * 94, 20 * scale)))
+                    if (ImGui.Button(displayName + "##MSBRefTo" + refID,
+                        DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         selection.ClearSelection(editor);
                         selection.AddSelection(editor, e);
@@ -99,7 +101,8 @@ public static class PropInfo_ReferencesTo
                     prettyName = $"{prettyName} {AliasUtils.GetMapNameAlias(editor.Project, mapid)}";
 
                     ImGui.SetNextItemWidth(-1);
-                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID, new Vector2(width * 94, 20 * scale)))
+                    if (ImGui.Button(prettyName + "##MSBRefTo" + refID,
+                        DPI.WholeWidthButton(windowWidth, 24)))
                     {
                         ISelectable rootTarget = r.GetSelectionTarget(editor);
                         selection.ClearSelection(editor);

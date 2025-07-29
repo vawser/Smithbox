@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Core;
 using StudioCore.Editors.ParamEditor;
+using StudioCore.Interface;
 using StudioCore.Tasks;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ public static class ParamUniqueInserter
 {
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        if (ImGui.Button("Run Test"))
+        if (ImGui.Button("Run Test", DPI.StandardButtonSize))
         {
             Run(baseEditor, project);
         }

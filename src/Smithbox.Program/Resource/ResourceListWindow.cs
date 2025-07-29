@@ -26,11 +26,9 @@ public static class ResourceListWindow
             return;
         }
 
-        var width = ImGui.GetWindowWidth();
-        var height = ImGui.GetWindowHeight();
-        var tableSize = new Vector2(width * 0.98f, height * 0.98f);
+        var windowWidth = ImGui.GetWindowWidth();
 
-        ImGui.SetNextItemWidth(width * 0.98f);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText("##resourceTableFilter", ref ResourceFilter, 255);
 
         // Table
@@ -96,7 +94,7 @@ public static class ResourceListWindow
                 ImGui.TableSetColumnIndex(0);
 
                 // Select
-                if(ImGui.Button($"{Icons.Bars}##{imguiId}_select"))
+                if(ImGui.Button($"{Icons.Bars}##{imguiId}_select", DPI.IconButtonSize))
                 {
                     SelectedResource = resName;
                 }
@@ -138,7 +136,7 @@ public static class ResourceListWindow
                 ImGui.TableSetColumnIndex(5);
 
                 // Unload
-                if (ImGui.Button($"{Icons.Times}##{imguiId}_unload"))
+                if (ImGui.Button($"{Icons.Times}##{imguiId}_unload", DPI.IconButtonSize))
                 {
                     resHandle.Release(true);
                 }

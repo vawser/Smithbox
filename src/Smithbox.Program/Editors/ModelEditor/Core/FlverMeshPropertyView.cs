@@ -174,11 +174,13 @@ public class FlverMeshPropertyView
             ImGui.TableSetupColumn("Button", ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableSetupColumn("Contents", ImGuiTableColumnFlags.WidthStretch);
 
+            var columnWidth = ImGui.GetColumnWidth();
+
             // Row 1
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            if (ImGui.Button("Translate", new Vector2(150, 24)))
+            if (ImGui.Button("Translate", DPI.StandardButtonSize))
             {
                 var action = new TranslateMesh(Editor, curFlver, entry, StoredTranslationInput);
                 Editor.EditorActionManager.ExecuteAction(action);
@@ -187,14 +189,14 @@ public class FlverMeshPropertyView
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth(columnWidth);
             ImGui.InputFloat3("##translateInput", ref StoredTranslationInput);
 
             // Row 2
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            if (ImGui.Button("Scale", new Vector2(150, 24)))
+            if (ImGui.Button("Scale", DPI.StandardButtonSize))
             {
                 var action = new ScaleMesh(Editor, curFlver, entry, StoredScaleInput);
                 Editor.EditorActionManager.ExecuteAction(action);
@@ -203,14 +205,14 @@ public class FlverMeshPropertyView
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth(columnWidth);
             ImGui.InputFloat3("##scaleInput", ref StoredScaleInput);
 
             // Row 3
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            if (ImGui.Button("Rotate X##rotateXbutton", new Vector2(150, 24)))
+            if (ImGui.Button("Rotate X##rotateXbutton", DPI.StandardButtonSize))
             {
                 var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_X, RotationAxis.X);
                 Editor.EditorActionManager.ExecuteAction(action);
@@ -219,14 +221,14 @@ public class FlverMeshPropertyView
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth(columnWidth);
             ImGui.InputFloat("##rotateInputX", ref StoredRotationInput_X);
 
             // Row 4
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            if (ImGui.Button("Rotate Y##rotateYbutton", new Vector2(150, 24)))
+            if (ImGui.Button("Rotate Y##rotateYbutton", DPI.StandardButtonSize))
             {
                 var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_Y, RotationAxis.Y);
                 Editor.EditorActionManager.ExecuteAction(action);
@@ -235,14 +237,14 @@ public class FlverMeshPropertyView
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth(columnWidth);
             ImGui.InputFloat("##rotateInputY", ref StoredRotationInput_Y);
 
             // Row 5
             ImGui.TableNextRow();
             ImGui.TableSetColumnIndex(0);
 
-            if (ImGui.Button("Rotate Z##rotateZbutton", new Vector2(150, 24)))
+            if (ImGui.Button("Rotate Z##rotateZbutton", DPI.StandardButtonSize))
             {
                 var action = new RotateMesh(Editor, curFlver, entry, StoredRotationInput_Z, RotationAxis.Z);
                 Editor.EditorActionManager.ExecuteAction(action);
@@ -251,7 +253,7 @@ public class FlverMeshPropertyView
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth(columnWidth);
             ImGui.InputFloat("##rotateInputZ", ref StoredRotationInput_Z);
 
             ImGui.EndTable();
@@ -423,12 +425,12 @@ public class FlverMeshPropertyView
         // Render UV Actions (Mirror Buttons)
         if (_selectedUvChannel >= 0)
         {
-            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on X"))
+            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on X", DPI.StandardButtonSize))
             {
                 Editor.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, true));
             }
             ImGui.SameLine();
-            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on Y"))
+            if (ImGui.Button($"Mirror {uvChannelNames[_selectedUvChannel]} on Y", DPI.StandardButtonSize))
             {
                 Editor.EditorActionManager.ExecuteAction(new MirrorUVs(vertices, _selectedUvChannel, false));
             }

@@ -101,7 +101,7 @@ public class MapContentView
         var targetContainer = Editor.GetMapContainerFromMapID(MapID);
 
         // Show All
-        if (ImGui.Button($"{Icons.Eye}"))
+        if (ImGui.Button($"{Icons.Eye}", DPI.IconButtonSize))
         {
             foreach (var entry in targetContainer.Objects)
             {
@@ -112,7 +112,7 @@ public class MapContentView
 
         // Hide All
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.EyeSlash}"))
+        if (ImGui.Button($"{Icons.EyeSlash}", DPI.IconButtonSize))
         {
             foreach (var entry in targetContainer.Objects)
             {
@@ -123,7 +123,7 @@ public class MapContentView
 
         // Switch View Type
         ImGui.SameLine();
-        if (ImGui.Button($"{Icons.Sort}"))
+        if (ImGui.Button($"{Icons.Sort}", DPI.IconButtonSize))
         {
             if (ContentViewType is MapContentViewType.ObjectType)
             {

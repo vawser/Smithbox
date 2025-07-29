@@ -91,8 +91,9 @@ public class FlverGxListPropertyView
         ImGui.NextColumn();
 
         var colWidth = ImGui.GetColumnWidth();
+
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(colWidth);
         ImGui.InputText($"##ID_item{index}", ref id, 255);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
@@ -102,7 +103,7 @@ public class FlverGxListPropertyView
         }
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(colWidth);
         ImGui.InputInt($"##Unk04_item{index}", ref unk04);
         if (ImGui.IsItemDeactivatedAfterEdit() || !ImGui.IsAnyItemActive())
         {
@@ -120,7 +121,7 @@ public class FlverGxListPropertyView
             ImGui.Separator();
             ImGui.InputInt("Byte Array Size", ref byteArraySize);
 
-            if (ImGui.Button($"Create Byte Array##createByteArray{index}"))
+            if (ImGui.Button($"Create Byte Array##createByteArray{index}", DPI.StandardButtonSize))
             {
                 item.Data = new byte[byteArraySize];
             }

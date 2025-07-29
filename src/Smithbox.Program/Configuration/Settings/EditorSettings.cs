@@ -82,7 +82,7 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("Default Project Directory", ref CFG.Current.DefaultModDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the project directory selection when creating a new project.");
 
@@ -100,7 +100,7 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("Default Data Directory", ref CFG.Current.DefaultDataDirectory, 255);
             UIHelper.Tooltip("The default directory to use during the data directory selection when creating a new project.");
 
@@ -146,12 +146,12 @@ public class SystemTab
 
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("ME2 Executable Location##modEnginePath", ref CFG.Current.ModEngine2Install, 255);
             UIHelper.Tooltip("Select the modengine2_launcher.exe within your ModEngine2 install folder.");
 
             // ME2 Dlls
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("ME2 DLL Entries##modEngineDllEntries", ref CFG.Current.ModEngine2Dlls, 255);
             UIHelper.Tooltip("The relative paths of the DLLs to include in the 'Launch Mod' action. Separate them by a space if using multiple.");
         }
@@ -361,7 +361,7 @@ public class MapEditorTab
 
             ImGui.ColorEdit3("Grid color", ref CFG.Current.MapEditor_Viewport_Grid_Color);
 
-            if (ImGui.Button("Reset"))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 CFG.Current.MapEditor_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
                 CFG.Current.MapEditor_Viewport_Grid_Size = 1000;
@@ -473,7 +473,7 @@ public class ModelEditorTab
 
             ImGui.ColorEdit3("Grid color", ref CFG.Current.ModelEditor_Viewport_Grid_Color);
 
-            if (ImGui.Button("Reset"))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 CFG.Current.ModelEditor_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
                 CFG.Current.ModelEditor_Viewport_Grid_Size = 1000;
@@ -1094,7 +1094,7 @@ public class GparamEditorTab
             ImGui.InputText("Delimiter", ref CFG.Current.Gparam_QuickEdit_Chain, 255);
             UIHelper.Tooltip("The text string to split filter and commands.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_Chain = "+";
             }
@@ -1105,7 +1105,7 @@ public class GparamEditorTab
             ImGui.InputText("File Filter: Match File", ref CFG.Current.Gparam_QuickEdit_File, 255);
             UIHelper.Tooltip("The text string to detect for the 'File' filter argument.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_File = "file";
             }
@@ -1116,7 +1116,7 @@ public class GparamEditorTab
             ImGui.InputText("Group Filter: Match Group", ref CFG.Current.Gparam_QuickEdit_Group, 255);
             UIHelper.Tooltip("The text string to detect for the 'Group' filter argument.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_Group = "group";
             }
@@ -1127,7 +1127,7 @@ public class GparamEditorTab
             ImGui.InputText("Field Filter: Match Field", ref CFG.Current.Gparam_QuickEdit_Field, 255);
             UIHelper.Tooltip("The text string to detect for the 'Field' filter argument.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_Field = "field";
             }
@@ -1147,7 +1147,7 @@ public class GparamEditorTab
             ImGui.InputText("Value Filter: Match Index", ref CFG.Current.Gparam_QuickEdit_Index, 255);
             UIHelper.Tooltip("The text string to detect for the 'Index' filter argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_ID = "id";
                 CFG.Current.Gparam_QuickEdit_TimeOfDay = "tod";
@@ -1179,7 +1179,7 @@ public class GparamEditorTab
             ImGui.InputText("Value Command: Random", ref CFG.Current.Gparam_QuickEdit_Random, 255);
             UIHelper.Tooltip("The text string to detect for the 'Random' command argument.\nWarning: if multiple arguments have the same string, it will cause issues.");
 
-            if (ImGui.Button("Reset to Default"))
+            if (ImGui.Button("Reset to Default", DPI.StandardButtonSize))
             {
                 CFG.Current.Gparam_QuickEdit_Set = "set";
                 CFG.Current.Gparam_QuickEdit_Add = "add";
@@ -1423,7 +1423,7 @@ public class TimeActEditorTab
             ImGui.ColorEdit4("Alias Text", ref UI.Current.ImGui_TimeAct_InfoText_3_Color);
             ImGui.ColorEdit4("Project Enum Text", ref UI.Current.ImGui_TimeAct_InfoText_4_Color);
 
-            if (ImGui.Button("Reset"))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 UI.Current.ImGui_TimeAct_InfoText_1_Color = UI.Default.ImGui_TimeAct_InfoText_1_Color;
                 UI.Current.ImGui_TimeAct_InfoText_2_Color = UI.Default.ImGui_TimeAct_InfoText_2_Color;
@@ -1462,7 +1462,7 @@ public class TimeActEditorTab
                 CFG.Current.TimeActEditor_Viewport_RegenerateMapGrid = true;
             }
             ImGui.SameLine();
-            if (ImGui.Button("Reset"))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 CFG.Current.TimeActEditor_Viewport_Grid_Color = Utils.GetDecimalColor(Color.Red);
                 CFG.Current.TimeActEditor_Viewport_Grid_Size = 1000;
@@ -1525,7 +1525,7 @@ public class InterfaceTab
             ImGui.Checkbox("Wrap alias text", ref CFG.Current.System_WrapAliasDisplay);
             UIHelper.Tooltip("Makes the alias text display wrap instead of being cut off.");
 
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.SliderFloat("UI scale", ref _tempScale, 0.5f, 4.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -1556,7 +1556,7 @@ public class InterfaceTab
         // Fonts
         if (ImGui.CollapsingHeader("Fonts", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.SliderFloat("Font size", ref CFG.Current.Interface_FontSize, 8.0f, 32.0f);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -1750,7 +1750,7 @@ public class InterfaceTab
             }
             ImGui.SameLine();
 
-            ImGui.SetNextItemWidth(DPI.StandardInputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("##themeName", ref newThemeName, 255);
 
             if (ImGui.CollapsingHeader("Editor Window", ImGuiTreeNodeFlags.DefaultOpen))
@@ -2026,7 +2026,7 @@ public class ViewportTab
 
             ImGui.SliderFloat("Wireframe color variance", ref CFG.Current.GFX_Wireframe_Color_Variance, 0.0f, 1.0f);
 
-            if (ImGui.Button("Reset", defaultButtonSize))
+            if (ImGui.Button("Reset", DPI.StandardButtonSize))
             {
                 ResetVisualisationCFG();
             }

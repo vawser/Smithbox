@@ -37,14 +37,14 @@ public static class ColorPicker
         {
             ImGui.ColorPicker4("##colorPicker", ref currentColor);
 
-            if (ImGui.Button("Copy RGB Color"))
+            if (ImGui.Button("Copy RGB Color", DPI.StandardButtonSize))
             {
                 var rgbColor = $"<{Math.Round(currentColor.X * 255)}, {Math.Round(currentColor.Y * 255)}, {Math.Round(currentColor.Z * 255)}>";
 
                 PlatformUtils.Instance.SetClipboardText(rgbColor);
             }
             ImGui.SameLine();
-            if (ImGui.Button("Copy Decimal Color"))
+            if (ImGui.Button("Copy Decimal Color", DPI.StandardButtonSize))
             {
                 PlatformUtils.Instance.SetClipboardText(currentColor.ToString());
             }

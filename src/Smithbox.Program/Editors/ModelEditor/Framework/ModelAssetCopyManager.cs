@@ -49,8 +49,6 @@ public class ModelAssetCopyManager
 
     public void CharacterCopyMenu()
     {
-        Vector2 buttonSize = new Vector2(200, 24);
-
         if (ShowNewCharacterMenu)
         {
             ImGui.OpenPopup("Copy as New Character");
@@ -69,7 +67,7 @@ public class ModelAssetCopyManager
                 "The new ID the copied asset will have.\n\n" +
                 "Character IDs must be between 0 and 9999 and not already exist.");
 
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", DPI.StandardButtonSize))
             {
                 bool createChr = true;
 
@@ -107,7 +105,7 @@ public class ModelAssetCopyManager
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
             {
                 ShowNewCharacterMenu = false;
             }
@@ -188,8 +186,6 @@ public class ModelAssetCopyManager
 
     public void AssetCopyMenu()
     {
-        Vector2 buttonSize = new Vector2(200, 24);
-
         if (ShowNewAssetMenu)
         {
             ImGui.OpenPopup("Copy as New Asset");
@@ -217,7 +213,7 @@ public class ModelAssetCopyManager
                 "The asset ID the copied asset will have.\n\n" +
                 "Asset IDs must be between 0 and 999.");
 
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", DPI.StandardButtonSize))
             {
                 bool createAsset = true;
 
@@ -301,7 +297,7 @@ public class ModelAssetCopyManager
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
             {
                 ShowNewAssetMenu = false;
             }
@@ -355,8 +351,6 @@ public class ModelAssetCopyManager
 
     public void PartCopyMenu()
     {
-        Vector2 buttonSize = new Vector2(200, 24);
-
         if (ShowNewPartMenu)
         {
             ImGui.OpenPopup("Copy as New Part");
@@ -387,7 +381,7 @@ public class ModelAssetCopyManager
                 "The part ID the copied part will have.\n\n" +
                 "Part IDs must be between 0 and 9999.");
 
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", DPI.StandardButtonSize))
             {
                 bool createPart = true;
 
@@ -425,7 +419,7 @@ public class ModelAssetCopyManager
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
             {
                 ShowNewPartMenu = false;
             }
@@ -494,8 +488,6 @@ public class ModelAssetCopyManager
 
     public void MapPieceCopyMenu()
     {
-        Vector2 buttonSize = new Vector2(200, 24);
-
         if (ShowNewMapPieceMenu)
         {
             ImGui.OpenPopup("Copy as New Map Piece");
@@ -520,7 +512,7 @@ public class ModelAssetCopyManager
                 "The map piece ID the copied map piece will have.\n\n" +
                 "Map Piece IDs must be between 0 and 999999.");
 
-            if (ImGui.Button("Create", buttonSize))
+            if (ImGui.Button("Create", DPI.StandardButtonSize))
             {
                 bool createMapPiece = true;
 
@@ -567,7 +559,7 @@ public class ModelAssetCopyManager
 
             ImGui.SameLine();
 
-            if (ImGui.Button("Close", buttonSize))
+            if (ImGui.Button("Close", DPI.StandardButtonSize))
             {
                 ShowNewMapPieceMenu = false;
             }

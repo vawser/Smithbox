@@ -29,9 +29,6 @@ public static class GlobalTextSearch
     public static void Display(TextEditorScreen editor)
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
-
-        var buttonSize = new Vector2(windowWidth / 2, 32 * DPI.UIScale());
 
         if (ImGui.BeginTable($"globalSearchTable", 2, ImGuiTableFlags.SizingFixedFit))
         {
@@ -47,7 +44,7 @@ public static class GlobalTextSearch
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth();
             ImGui.InputText("##globalSearchInput", ref _globalSearchInput, 255);
 
             // Row 2
@@ -58,7 +55,7 @@ public static class GlobalTextSearch
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth();
             if (ImGui.BeginCombo("##searchFilterType", FilterType.GetDisplayName()))
             {
                 foreach (var entry in Enum.GetValues(typeof(SearchFilterType)))
@@ -83,7 +80,7 @@ public static class GlobalTextSearch
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(ImGui.GetColumnWidth());
+            DPI.ApplyInputWidth();
             if (ImGui.BeginCombo("##searchMatchType", MatchType.GetDisplayName()))
             {
                 foreach (var entry in Enum.GetValues(typeof(SearchMatchType)))
@@ -114,13 +111,13 @@ public static class GlobalTextSearch
             ImGui.EndTable();
         }
 
-        if (ImGui.Button("Search##executeSearch", buttonSize))
+        if (ImGui.Button("Search##executeSearch", DPI.HalfWidthButton(windowWidth, 24)))
         {
             HasSearched = true;
             SearchResults = TextFinder.GetGlobalTextResult(editor, _globalSearchInput, FilterType, MatchType, IgnoreCase);
         }
         ImGui.SameLine();
-        if (ImGui.Button("Clear##clearSearchResults", buttonSize))
+        if (ImGui.Button("Clear##clearSearchResults", DPI.HalfWidthButton(windowWidth, 24)))
         {
             HasSearched = false;
             SearchResults.Clear();

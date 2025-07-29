@@ -82,14 +82,14 @@ public class MatbinPropertyView
 
         ImGui.NextColumn();
 
-        var colWidth = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText("##ShaderPath", ref shaderPath, 255, ImGuiInputTextFlags.ReadOnly);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText("##SourcePath", ref sourcePath, 255, ImGuiInputTextFlags.ReadOnly);
 
         ImGui.AlignTextToFramePadding();
@@ -235,10 +235,10 @@ public class MatbinPropertyView
 
         ImGui.NextColumn();
 
-        var colWidth = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText("##Name", ref name, 255, ImGuiInputTextFlags.ReadOnly);
 
         //ImGui.AlignTextToFramePadding();
@@ -399,14 +399,14 @@ public class MatbinPropertyView
 
         ImGui.NextColumn();
 
-        var colWidth = ImGui.GetColumnWidth();
+        var columnWidth = ImGui.GetColumnWidth();
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText($"##Name_{index}", ref path, 255, ImGuiInputTextFlags.ReadOnly);
 
         ImGui.AlignTextToFramePadding();
-        ImGui.SetNextItemWidth(colWidth);
+        DPI.ApplyInputWidth(columnWidth);
         ImGui.InputText($"##Type_{index}", ref type, 255, ImGuiInputTextFlags.ReadOnly);
 
         //ImGui.AlignTextToFramePadding();

@@ -84,7 +84,7 @@ public class SimpleTreasureMaker
         UIHelper.WrappedText("");
 
         UIHelper.WrappedText("Creation Type:");
-        ImGui.SetNextItemWidth(400f);
+        DPI.ApplyInputWidth();
         if (ImGui.BeginCombo("##TreasureCreationType", CurCreationType))
         {
             // Treasure Type
@@ -105,8 +105,7 @@ public class SimpleTreasureMaker
         // Corpse
         if (CreationType is TreasureCreationType.Corpse)
         {
-            ImGui.SetNextItemWidth(400f);
-            if (ImGui.Button("Create##createCorpseEntry"))
+            if (ImGui.Button("Create##createCorpseEntry", DPI.StandardButtonSize))
             {
                 var objContainer = TargetMap.Item2;
 
@@ -138,8 +137,7 @@ public class SimpleTreasureMaker
         // Chest
         if (CreationType is TreasureCreationType.Chest)
         {
-            ImGui.SetNextItemWidth(400f);
-            if (ImGui.Button("Create##createChestEntry"))
+            if (ImGui.Button("Create##createChestEntry", DPI.StandardButtonSize))
             {
 
             }

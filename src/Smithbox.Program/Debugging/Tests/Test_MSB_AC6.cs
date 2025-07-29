@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,7 @@ public static class Test_MSB_AC6
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        var buttonSize = new Vector2(400, 32);
-
-        if (ImGui.Button("Check all Maps for Byte-Perfect Match", buttonSize))
+        if (ImGui.Button("Check all Maps for Byte-Perfect Match", DPI.StandardButtonSize))
         {
             Run(baseEditor);
         }

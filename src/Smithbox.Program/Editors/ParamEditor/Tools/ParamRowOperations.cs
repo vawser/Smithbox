@@ -25,11 +25,7 @@ public partial class ParamTools
     public void DisplayRowNameTrimmer()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
         var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-        var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
         if (ImGui.CollapsingHeader("Trim Row Names"))
         {
@@ -43,9 +39,9 @@ public partial class ParamTools
             }
             else
             {
-                ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name trimming.", defaultButtonSize);
+                ParamTargetElement(ref CurrentTargetCategory, "The target for the Row Name trimming.", DPI.WholeWidthButton(windowWidth, 24));
 
-                if (ImGui.Button("Trim##action_TrimRowNames", defaultButtonSize))
+                if (ImGui.Button("Trim##action_TrimRowNames", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     TrimRowNames();
                 }
@@ -129,8 +125,10 @@ public partial class ParamTools
 
     public void ParamTargetElement(ref TargetType currentTarget, string tooltip, Vector2 size)
     {
+        var inputWidth = size.X;
+
         UIHelper.WrappedText("Target Category:");
-        ImGui.SetNextItemWidth(size.X);
+        DPI.ApplyInputWidth(inputWidth);
         if (ImGui.BeginCombo("##Target", currentTarget.GetDisplayName()))
         {
             foreach (TargetType e in Enum.GetValues<TargetType>())
@@ -153,18 +151,13 @@ public partial class ParamTools
     public void DisplayRowSorter()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-        var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
-        var thirdButtonSize = new Vector2(windowWidth * 0.975f / 3, 32);
-        var inputBoxSize = new Vector2((windowWidth * 0.725f), 32);
-        var inputButtonSize = new Vector2((windowWidth * 0.225f), 32);
 
         if (ImGui.CollapsingHeader("Sort Rows"))
         {
             UIHelper.WrappedText("Sort the rows for the currently selected param by their ID.");
             UIHelper.WrappedText("");
 
-            if (ImGui.Button("Sort##action_SortRows", defaultButtonSize))
+            if (ImGui.Button("Sort##action_SortRows", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 SortRows();
             }

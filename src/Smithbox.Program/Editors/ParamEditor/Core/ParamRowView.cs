@@ -269,7 +269,7 @@ public class ParamRowView
 
         // Go to selected
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{Icons.LocationArrow}") ||
+        if (ImGui.Button($"{Icons.LocationArrow}", DPI.IconButtonSize) ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             Editor.GotoSelectedRow = true;
@@ -280,7 +280,7 @@ public class ParamRowView
 
         // Go to ID
         ImGui.AlignTextToFramePadding();
-        if (ImGui.Button($"{Icons.InfoCircle}") ||
+        if (ImGui.Button($"{Icons.InfoCircle}", DPI.IconButtonSize) ||
             isActiveView && InputTracker.GetKeyDown(KeyBindings.Current.PARAM_GoToRowID))
         {
             ImGui.OpenPopup("gotoParamRow");
@@ -307,7 +307,7 @@ public class ParamRowView
         // Mass Edit Hint
         ImGui.AlignTextToFramePadding();
 
-        if (ImGui.Button($"{Icons.QuestionCircle}"))
+        if (ImGui.Button($"{Icons.QuestionCircle}", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("massEditHint");
         }
@@ -323,7 +323,7 @@ public class ParamRowView
         // Toggle FMG Decorator
         ImGui.SameLine();
 
-        if (ImGui.Button($"{Icons.Hubzilla}"))
+        if (ImGui.Button($"{Icons.Hubzilla}", DPI.IconButtonSize))
         {
             CFG.Current.Param_ShowFmgDecorator = !CFG.Current.Param_ShowFmgDecorator;
         }
@@ -573,9 +573,7 @@ public class ParamRowView
     {
         if (ImGui.BeginPopupContextItem($"{r.ID}_{selectionCacheIndex}"))
         {
-            var width = CFG.Current.Param_RowContextMenu_Width;
-
-            ImGui.SetNextItemWidth(width);
+            DPI.ApplyInputWidth(CFG.Current.Param_ParamContextMenu_Width);
 
             // Name Input
             if (CFG.Current.Param_RowContextMenu_NameInput)

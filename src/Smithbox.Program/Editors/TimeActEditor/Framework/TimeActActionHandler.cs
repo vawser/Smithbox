@@ -6,6 +6,7 @@ using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Bank;
 using StudioCore.Editors.TimeActEditor.Enums;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Linq;
@@ -124,8 +125,8 @@ public class TimeActActionHandler
         // Create Event Popup
         if (ImGui.BeginPopupModal("Create Event", ref ShowCreateEventModal, ImGuiWindowFlags.NoTitleBar | ImGuiWindowFlags.AlwaysAutoResize))
         {
-            Vector2 listboxSize = new Vector2(520, 400);
-            Vector2 buttonSize = new Vector2(520 * 0.5f, 24);
+            var windowWidth = 520f;
+            var windowHeight = 420;
 
             TAE.Event curEvent = Editor.Selection.CurrentTimeActEvent;
             TAE.Template curTemplate = TimeActUtils.GetRelevantTemplate(Editor, TimeActTemplateType.Character);
@@ -134,10 +135,10 @@ public class TimeActActionHandler
             {
                 ImGui.Text("Event Types:");
 
-                ImGui.SetNextItemWidth(listboxSize.X);
+                DPI.ApplyInputWidth(windowWidth);
                 ImGui.InputText("##eventTypeSearch", ref _eventTypeCreateSearchStr, 255);
 
-                if (ImGui.BeginListBox("##eventTypes", listboxSize))
+                if (ImGui.BeginListBox("##eventTypes", new Vector2(windowWidth, windowHeight)))
                 {
                     foreach (var entry in curTemplate.Events)
                     {
@@ -156,7 +157,7 @@ public class TimeActActionHandler
                     ImGui.EndListBox();
                 }
 
-                if (ImGui.Button("Create", buttonSize))
+                if (ImGui.Button("Create", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     TAE.Event newEvent = new TAE.Event(curEvent.StartTime, curEvent.EndTime, CurrentEvent.ID, curEvent.Unk04, false, CurrentEvent);
                     newEvent.Group = curEvent.Group;
@@ -169,7 +170,7 @@ public class TimeActActionHandler
                     ShowCreateEventModal = false;
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Close", buttonSize))
+                if (ImGui.Button("Close", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     ShowCreateEventModal = false;
                 }

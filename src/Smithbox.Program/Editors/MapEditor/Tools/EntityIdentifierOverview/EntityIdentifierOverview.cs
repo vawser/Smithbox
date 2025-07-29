@@ -48,21 +48,19 @@ public class EntityIdentifierOverview
             return;
         }
 
-        var scale = DPI.UIScale();
-
         ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Default_Text_Color);
-        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * scale, ImGuiCond.FirstUseEver);
+        ImGui.SetNextWindowSize(new Vector2(300.0f, 200.0f) * DPI.UIScale(), ImGuiCond.FirstUseEver);
 
         if (ImGui.Begin($@"Identifiers##MapEditor_EIO"))
         {
-            var width = ImGui.GetWindowWidth();
+            var windowWidth = ImGui.GetWindowWidth();
 
             ImGui.InputText("##EIO_filter", ref SearchText, 255);
             UIHelper.Tooltip("Filter the list.");
 
             ImGui.SameLine();
 
-            if(ImGui.Button($"{Icons.Eye}##hideUnassigned"))
+            if(ImGui.Button($"{Icons.Eye}##hideUnassigned", DPI.IconButtonSize))
             {
                 HideUnassigned = !HideUnassigned;
             }
@@ -70,7 +68,7 @@ public class EntityIdentifierOverview
 
             ImGui.SameLine();
 
-            if(ImGui.Button($"{Icons.Bars}##toggleBlockSeperators"))
+            if(ImGui.Button($"{Icons.Bars}##toggleBlockSeperators", DPI.IconButtonSize))
             {
                 if(BlockSeperatorType is BlockSeperatorType.None)
                 {
@@ -87,7 +85,7 @@ public class EntityIdentifierOverview
             }
             UIHelper.Tooltip("Toggle the block separator display within the list (none, every 1000, every 100).");
 
-            if (ImGui.Button("Refresh", new Vector2(width, 32)))
+            if (ImGui.Button("Refresh", DPI.StandardButtonSize))
             {
                 SetupEntityCache();
             }

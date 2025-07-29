@@ -60,8 +60,6 @@ public class MapQueryView : IMapQueryEngine
     public void DisplayInput()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
-        var halfButtonSize = new Vector2(windowWidth / 2, 32);
 
         if (Bank.MapBankInitialized)
         {
@@ -140,25 +138,25 @@ public class MapQueryView : IMapQueryEngine
             if (!MayRunQuery)
             {
                 ImGui.BeginDisabled();
-                if (ImGui.Button("Search", halfButtonSize))
+                if (ImGui.Button("Search", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                 }
                 ImGui.EndDisabled();
                 ImGui.SameLine();
                 ImGui.BeginDisabled();
-                if (ImGui.Button("Clear", halfButtonSize))
+                if (ImGui.Button("Clear", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                 }
                 ImGui.EndDisabled();
             }
             else
             {
-                if (ImGui.Button("Search", halfButtonSize))
+                if (ImGui.Button("Search", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     RunQuery();
                 }
                 ImGui.SameLine();
-                if (ImGui.Button("Clear", halfButtonSize))
+                if (ImGui.Button("Clear", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     _searchInputMap = "";
                     _searchInputProperty = "";

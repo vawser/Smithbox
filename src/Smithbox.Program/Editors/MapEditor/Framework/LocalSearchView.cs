@@ -70,6 +70,8 @@ public class LocalSearchView
 
     public void Display()
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         UIHelper.WrappedText("Search loaded map for specific property values.");
         UIHelper.WrappedText("");
 
@@ -102,7 +104,7 @@ public class LocalSearchView
             }
         }
 
-        if (ImGui.Button("Help##PropSearchHelpMenu"))
+        if (ImGui.Button("Help##PropSearchHelpMenu", DPI.StandardButtonSize))
         {
             ImGui.OpenPopup("##PropSearchHelpPopup");
         }
@@ -123,9 +125,7 @@ public class LocalSearchView
 
         }
 
-        var buttonSize = new Vector2(ImGui.GetWindowWidth(), 24 * DPI.UIScale());
-
-        if (ImGui.Button("Search", buttonSize))
+        if (ImGui.Button("Search", DPI.WholeWidthButton(windowWidth, 24)))
         {
             Property = null;
             PropertyType = null;

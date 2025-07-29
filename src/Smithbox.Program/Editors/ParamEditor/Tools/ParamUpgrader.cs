@@ -89,11 +89,13 @@ public class ParamUpgrader
 
         if (ImGui.BeginPopupModal("Param Upgrader", ref Open, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove))
         {
+            var windowWidth = 640f;
+
             UpgraderMenu();
 
             if (UpgraderFinished)
             {
-                if (ImGui.Button("Close", new Vector2(640, 24)))
+                if (ImGui.Button("Close", DPI.WholeWidthButton(windowWidth, 24)))
                 {
                     Open = false;
                 }
@@ -140,7 +142,7 @@ public class ParamUpgrader
 
     public void UpgraderMenu()
     {
-        var buttonSize = new Vector2(620, 24);
+        var windowWidth = 620;
 
         // Ignore the menu if the DataParent isn't setup correctly
         if (TargetProject.ParamData == null)
@@ -184,7 +186,7 @@ public class ParamUpgrader
         // Conflicts
         if (UpgraderInfoSetup && OldRegulationSetup && !ConflictsChecked)
         {
-            if (ImGui.Button("Check for Conflicts", buttonSize))
+            if (ImGui.Button("Check for Conflicts", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 CheckForConflicts();
             }
@@ -193,7 +195,7 @@ public class ParamUpgrader
         // Apply Upgrade
         if (UpgraderInfoSetup && OldRegulationSetup && ConflictsChecked && !UpgradePerformed)
         {
-            if (ImGui.Button("Apply Upgrade", buttonSize))
+            if (ImGui.Button("Apply Upgrade", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 UpgradeParams();
             }

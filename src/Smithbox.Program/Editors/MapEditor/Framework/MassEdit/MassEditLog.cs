@@ -29,7 +29,7 @@ public class MassEditLog
     {
         if (MassEditActions != null)
         {
-            if (ImGui.Button($"{Icons.Eye}##previousEditLog"))
+            if (ImGui.Button($"{Icons.Eye}##previousEditLog", DPI.IconButtonSize))
             {
                 Handler.Tools.ShowToolView = false;
                 ShowMassEditLog = true;

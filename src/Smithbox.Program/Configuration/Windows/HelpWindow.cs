@@ -443,7 +443,7 @@ public class HelpWindow
                 string linkName = match.Groups[2].Value;
 
                 var width = ImGui.GetWindowWidth();
-                if (ImGui.Button($"{linkName}", new Vector2(width, 32)))
+                if (ImGui.Button($"{linkName}", DPI.StandardButtonSize))
                 {
                     Process.Start(new ProcessStartInfo { FileName = $"{url}", UseShellExecute = true });
                 }

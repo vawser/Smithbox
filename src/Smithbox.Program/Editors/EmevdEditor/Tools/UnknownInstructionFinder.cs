@@ -24,15 +24,13 @@ public class UnknownInstructionFinder
         Project = project;
     }
 
-
     public void Display()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth, 32);
 
         if (ImGui.CollapsingHeader("Unknown Instruction Finder"))
         {
-            if (ImGui.Button("Search##unkSearch", defaultButtonSize))
+            if (ImGui.Button("Search##unkSearch", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 LogUnknownInstructions();
             }

@@ -53,8 +53,7 @@ public class MassEditHandler
     /// </summary>
     public void Display()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonSize = new Vector2(width, 24);
+        var windowWidth = ImGui.GetWindowWidth();
 
         UIHelper.WrappedText("Map Target");
         UIHelper.Tooltip("Determine which maps will be affected by the mass edit.");
@@ -78,7 +77,7 @@ public class MassEditHandler
 
         if (MayRunEdit)
         {
-            if (ImGui.Button("Apply", buttonSize))
+            if (ImGui.Button("Apply", DPI.StandardButtonSize))
             {
                 StartMassEdit();
             }
@@ -86,7 +85,7 @@ public class MassEditHandler
         else
         {
             ImGui.BeginDisabled();
-            if (ImGui.Button("Apply", buttonSize))
+            if (ImGui.Button("Apply", DPI.StandardButtonSize))
             {
             }
             ImGui.EndDisabled();
@@ -110,13 +109,13 @@ public class MassEditHandler
     /// </summary>
     private void ConfigureMapTarget()
     {
-        var width = ImGui.GetWindowWidth();
+        var windowWidth = ImGui.GetWindowWidth();
 
         //--------------
         // Actions
         //--------------
         // Documentation
-        if (ImGui.Button($"{Icons.QuestionCircle}##mapTargetHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##mapTargetHintButton", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("mapTargetHint");
         }
@@ -125,7 +124,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##mapSelectionAdd"))
+        if (ImGui.Button($"{Icons.Plus}##mapSelectionAdd", DPI.IconButtonSize))
         {
             MapInputs.Add("");
         }
@@ -138,7 +137,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemoveDisabled", DPI.IconButtonSize))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
             }
@@ -148,7 +147,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemove"))
+            if (ImGui.Button($"{Icons.Minus}##mapSelectionRemove", DPI.IconButtonSize))
             {
                 MapInputs.RemoveAt(MapInputs.Count - 1);
                 UIHelper.Tooltip("Remove last added map selection input row.");
@@ -158,7 +157,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##resetMapSelectionInput"))
+        if (ImGui.Button("Reset##resetMapSelectionInput", DPI.StandardButtonSize))
         {
             MapInputs = new List<string>() { "" };
         }
@@ -167,7 +166,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Conditional Logic
-        ImGui.SetNextItemWidth(width * 0.3f);
+        DPI.ApplyInputWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo($"##mapSelectionCommandLogic", MapSelectionLogic.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
@@ -189,7 +188,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Map List Type
-        ImGui.SetNextItemWidth(width * 0.3f);
+        DPI.ApplyInputWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo("##mapTargetCombo", MapTarget.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(MapListType)))
@@ -216,7 +215,7 @@ public class MassEditHandler
             var curCommand = MapInputs[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(width);
+            DPI.ApplyInputWidth(windowWidth);
             if (ImGui.InputText($"##mapSelectionInput{i}", ref curText, 255))
             {
                 MapInputs[i] = curText;
@@ -230,14 +229,13 @@ public class MassEditHandler
     /// </summary>
     private void ConfigureSelection()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonSize = new Vector2(width * 0.32f, 24);
+        var windowWidth = ImGui.GetWindowWidth();
 
         //--------------
         // Actions
         //--------------
         // Documentation
-        if (ImGui.Button($"{Icons.QuestionCircle}##selectionHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##selectionHintButton", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("selectionInputHint");
         }
@@ -246,7 +244,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##selectionAdd"))
+        if (ImGui.Button($"{Icons.Plus}##selectionAdd", DPI.IconButtonSize))
         {
             SelectionInputs.Add("");
         }
@@ -259,7 +257,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##selectionRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##selectionRemoveDisabled", DPI.IconButtonSize))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
             }
@@ -269,7 +267,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##selectionRemove"))
+            if (ImGui.Button($"{Icons.Minus}##selectionRemove", DPI.IconButtonSize))
             {
                 SelectionInputs.RemoveAt(SelectionInputs.Count - 1);
                 UIHelper.Tooltip("Remove last added selection input row.");
@@ -279,7 +277,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##resetSelectionInput"))
+        if (ImGui.Button("Reset##resetSelectionInput", DPI.StandardButtonSize))
         {
             SelectionInputs = new List<string>() { "" };
         }
@@ -288,7 +286,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Conditional Logic
-        ImGui.SetNextItemWidth(width * 0.3f);
+        ImGui.SetNextItemWidth(windowWidth * 0.3f);
         if (ImGui.BeginCombo($"##selectionCommandLogic", MapObjectSelectionLogic.GetDisplayName()))
         {
             foreach (var entry in Enum.GetValues(typeof(SelectionConditionLogic)))
@@ -315,7 +313,7 @@ public class MassEditHandler
             var curCommand = SelectionInputs[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(width);
+            ImGui.SetNextItemWidth(windowWidth);
             if (ImGui.InputText($"##selectionInput{i}", ref curText, 255))
             {
                 SelectionInputs[i] = curText;
@@ -330,14 +328,13 @@ public class MassEditHandler
     /// </summary>
     private void ConfigureEdit()
     {
-        var width = ImGui.GetWindowWidth();
-        var buttonSize = new Vector2(width * 0.32f, 24);
+        var windowWidth = ImGui.GetWindowWidth();
 
         //--------------
         // Actions Inputs
         //--------------
         // Documentation
-        if (ImGui.Button($"{Icons.QuestionCircle}##editHintButton"))
+        if (ImGui.Button($"{Icons.QuestionCircle}##editHintButton", DPI.IconButtonSize))
         {
             ImGui.OpenPopup("editInputHint");
         }
@@ -346,7 +343,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##editAdd"))
+        if (ImGui.Button($"{Icons.Plus}##editAdd", DPI.IconButtonSize))
         {
             EditInputs.Add("");
         }
@@ -359,7 +356,7 @@ public class MassEditHandler
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##editRemoveDisabled"))
+            if (ImGui.Button($"{Icons.Minus}##editRemoveDisabled", DPI.IconButtonSize))
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
@@ -369,7 +366,7 @@ public class MassEditHandler
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##editRemove"))
+            if (ImGui.Button($"{Icons.Minus}##editRemove", DPI.IconButtonSize))
             {
                 EditInputs.RemoveAt(EditInputs.Count - 1);
             }
@@ -379,7 +376,7 @@ public class MassEditHandler
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##resetEditInputs"))
+        if (ImGui.Button("Reset##resetEditInputs", DPI.StandardButtonSize))
         {
             EditInputs = new List<string>() { "" };
         }
@@ -393,7 +390,7 @@ public class MassEditHandler
             var curCommand = EditInputs[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(width);
+            ImGui.SetNextItemWidth(windowWidth);
             if (ImGui.InputText($"##editInput{i}", ref curText, 255))
             {
                 EditInputs[i] = curText;

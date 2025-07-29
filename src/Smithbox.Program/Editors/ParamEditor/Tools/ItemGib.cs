@@ -114,7 +114,6 @@ public class ItemGib
     public void DisplayItemGib()
     {
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
 
         if (!ItemGibSupported(Editor.Project.ProjectType))
         {
@@ -222,7 +221,7 @@ public class ItemGib
 
 
             UIHelper.WrappedText("");
-            if (ImGui.Button("Give Item", defaultButtonSize))
+            if (ImGui.Button("Give Item", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 GiveItem();
             }

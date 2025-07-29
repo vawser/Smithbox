@@ -67,8 +67,10 @@ public class ProjectEnumEditor
         {
             ImGui.PushStyleColor(ImGuiCol.WindowBg, UI.Current.ImGui_ChildBg);
 
-            if (ImGui.Begin("Project Enums##projectEnumsWindow", ref Display, ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove | ImGuiWindowFlags.NoCollapse))
+            if (ImGui.Begin("Project Enums##projectEnumsWindow", ref Display, ImGuiWindowFlags.NoResize  | ImGuiWindowFlags.NoCollapse))
             {
+                var windowWidth = ImGui.GetWindowWidth();
+
                 Shortcuts();
 
                 var tblFlags = ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Borders;
@@ -97,10 +99,8 @@ public class ProjectEnumEditor
                 }
                 ImGui.EndChild();
 
-                var buttonSize = new Vector2(440, 24);
-
                 // Commit
-                if (ImGui.Button("Commit##updateProjectEnums", buttonSize))
+                if (ImGui.Button("Commit##updateProjectEnums", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     Display = false;
                     Save();
@@ -110,7 +110,7 @@ public class ProjectEnumEditor
                 ImGui.SameLine();
 
                 // Cancel
-                if (ImGui.Button("Close##closeProjectEnums", buttonSize))
+                if (ImGui.Button("Close##closeProjectEnums", DPI.HalfWidthButton(windowWidth, 24)))
                 {
                     Display = false;
                 }
@@ -142,14 +142,11 @@ public class ProjectEnumEditor
 
     private static void DisplayOptionEntries()
     {
-        var sectionWidth = 260f;
-        var listHeight = 238f;
-
-        ImGui.SetNextItemWidth(sectionWidth);
+        DPI.ApplyInputWidth(260f);
         ImGui.InputText("##optionEntryFilter", ref OptionEntryFilter, 255);
         UIHelper.Tooltip("Filter the option entry list by this term.");
 
-        ImGui.BeginChild("optionEntryList", new Vector2(sectionWidth, listHeight));
+        ImGui.BeginChild("optionEntryList", DPI.ListSize(260f, 238f));
 
         if (CurrentEnum != null)
         {
@@ -196,9 +193,7 @@ public class ProjectEnumEditor
 
             if(CurrentEnum.Options.Count == 0)
             {
-                var buttonSize = new Vector2(sectionWidth - 5, 24);
-
-                if (ImGui.Button("Add##addOptionEntry", buttonSize))
+                if (ImGui.Button("Add##addOptionEntry", DPI.StandardButtonSize))
                 {
                     var blankEntry = new ProjectEnumOption();
                     blankEntry.ID = "BLANK_ID";
@@ -221,8 +216,6 @@ public class ProjectEnumEditor
 
     private static void DisplayEditor()
     {
-        var inputWidth = 250f;
-
         // Enum
         if (CurrentEnum != null)
         {
@@ -230,7 +223,7 @@ public class ProjectEnumEditor
             var curDescription = CurrentEnum.Description;
 
             // Display Name
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth(250f);
             ImGui.InputText("Enum Display Name##enumDisplayName", ref curDisplayName, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -242,7 +235,7 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The display name of the currently selected enum entry.");
 
             // Description
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth(250f);
             ImGui.InputText("Enum Description##curDescription", ref curDescription, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -264,7 +257,7 @@ public class ProjectEnumEditor
             var curDescription = CurrentOption.Description;
 
             // ID
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth(250f);
             ImGui.InputText("Option ID##enumOptionID", ref curID, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -276,7 +269,7 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The ID of the currently selected enum option entry.");
 
             // Name
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth(250f);
             ImGui.InputText("Option Name##enumOptionName", ref curName, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -288,7 +281,7 @@ public class ProjectEnumEditor
             UIHelper.Tooltip("The name of the currently selected enum option entry.");
 
             // Description
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth(250f);
             ImGui.InputText("Option Description##enumOptionDescription", ref curDescription, 255);
             if (ImGui.IsItemDeactivatedAfterEdit())
             {

@@ -240,7 +240,7 @@ public class AutoFill
 
     public string ParamSearchBarAutoFill()
     {
-        ImGui.Button($@"{Icons.CaretDown}##paramAutofill");
+        ImGui.Button($@"{Icons.CaretDown}##paramAutofill", DPI.IconButtonSize);
         if (ImGui.BeginPopupContextItem("##psbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select params...");
@@ -254,7 +254,7 @@ public class AutoFill
 
     public string RowSearchBarAutoFill()
     {
-        ImGui.Button($@"{Icons.CaretDown}##rowAutofill");
+        ImGui.Button($@"{Icons.CaretDown}##rowAutofill", DPI.IconButtonSize);
         if (ImGui.BeginPopupContextItem("##rsbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select rows...");
@@ -268,7 +268,7 @@ public class AutoFill
 
     public string ColumnSearchBarAutoFill()
     {
-        ImGui.Button($@"{Icons.CaretDown}##fieldAutofill");
+        ImGui.Button($@"{Icons.CaretDown}##fieldAutofill", DPI.IconButtonSize);
         if (ImGui.BeginPopupContextItem("##csbautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextColored(HINTCOLOUR, "Select fields...");
@@ -284,7 +284,7 @@ public class AutoFill
     {
         ImGui.TextUnformatted("Add command...");
         ImGui.SameLine();
-        ImGui.Button($@"{Icons.CaretDown}##massEditAutofill");
+        ImGui.Button($@"{Icons.CaretDown}##massEditAutofill", DPI.IconButtonSize);
         if (ImGui.BeginPopupContextItem("##meautoinputoapopup", ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.PushID("paramrow");
@@ -469,7 +469,7 @@ public class AutoFill
                 ImGui.InputTextWithHint("##meautoinputop" + argIndices[i], cmd.Item2[i],
                     ref staticArgs[argIndices[i]], 256);
                 ImGui.SameLine();
-                ImGui.Button($@"{Icons.CaretDown}");
+                ImGui.Button($@"{Icons.CaretDown}##cmdAction{i}", DPI.IconButtonSize);
                 if (ImGui.BeginPopupContextItem("##meautoinputoapopup" + argIndices[i],
                         ImGuiPopupFlags.MouseButtonLeft))
                 {
@@ -585,7 +585,7 @@ public class AutoFill
         }
 
         ImGui.SameLine();
-        ImGui.Button("$");
+        ImGui.Button("$", DPI.IconButtonSize);
         if (ImGui.BeginPopupContextItem("##meautoinputvarpopup" + id, ImGuiPopupFlags.MouseButtonLeft))
         {
             ImGui.TextUnformatted("Defined variables...");

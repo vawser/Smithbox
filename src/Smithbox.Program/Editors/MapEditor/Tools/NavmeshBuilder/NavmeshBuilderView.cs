@@ -11,6 +11,7 @@ using StudioCore.Resource.Types;
 using StudioCore.Editors.MapEditor.Framework;
 using StudioCore.Scene.Framework;
 using StudioCore.Core;
+using StudioCore.Interface;
 
 namespace StudioCore.Editors.MapEditor.Tools.NavmeshEdit;
 
@@ -69,7 +70,7 @@ public class NavmeshBuilderView
                 ImGui.DragFloat("Agent Radius", ref AgentRadius, 0.005f, 0.0f);
                 ImGui.DragInt("Min Region Area", ref MinRegionArea, 1, 0);
 
-                if (ImGui.Button("Build Navmesh"))
+                if (ImGui.Button("Build Navmesh", DPI.StandardButtonSize))
                 {
                     var buildverts = new List<Vector3>();
                     var buildindices = new List<int>();

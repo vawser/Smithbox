@@ -17,7 +17,7 @@ public static class FlverMaterialLayoutDumper
 {
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        if (ImGui.Button("Dump Material Layouts"))
+        if (ImGui.Button("Dump Material Layouts", DPI.StandardButtonSize))
         {
             if (PlatformUtils.Instance.SaveFileDialog("Save Flver layout dump", new[] { FilterStrings.TxtFilter },
                      out var path))

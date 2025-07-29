@@ -2,6 +2,7 @@
 using SoulsFormats;
 using StudioCore.Configuration;
 using StudioCore.Formats.JSON;
+using StudioCore.Interface;
 using StudioCore.Utilities;
 using System.Collections.Generic;
 using System.Numerics;
@@ -132,7 +133,7 @@ public class GparamFieldListView
             // Unknown should be skipped
             if (missing.id != "Unknown")
             {
-                if (ImGui.Button($"Add##{missing.id}"))
+                if (ImGui.Button($"Add##{missing.id}", DPI.StandardButtonSize))
                 {
                     AddMissingField(Selection._selectedParamGroup, missing);
                 }

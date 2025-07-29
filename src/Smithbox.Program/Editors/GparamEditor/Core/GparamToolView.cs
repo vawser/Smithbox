@@ -36,8 +36,6 @@ public class GparamToolView
             Selection.SwitchWindowContext(GparamEditorContext.ToolWindow);
 
             var windowWidth = ImGui.GetWindowWidth();
-            var defaultButtonSize = new Vector2(windowWidth * 0.975f, 32);
-            var halfButtonSize = new Vector2(windowWidth * 0.975f / 2, 32);
 
             if (ImGui.BeginMenuBar())
             {
@@ -67,7 +65,7 @@ public class GparamToolView
                 {
                     UIHelper.WrappedText("");
 
-                    if (ImGui.Button("Reload Current Gparam", defaultButtonSize))
+                    if (ImGui.Button("Reload Current Gparam", DPI.StandardButtonSize))
                     {
                         GparamMemoryTools.ReloadCurrentGparam(Screen.Selection._selectedGparamInfo);
                     }

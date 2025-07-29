@@ -1,6 +1,7 @@
 ﻿using Hexa.NET.ImGui;
 using SoulsFormats;
 using StudioCore.Core;
+using StudioCore.Interface;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,7 @@ public static class Test_FLVER2
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        var buttonSize = new Vector2(400, 32);
-
-        if (ImGui.Button("Check Loaded Model for Byte Perfectness", buttonSize))
+        if (ImGui.Button("Check Loaded Model for Byte Perfectness", DPI.StandardButtonSize))
         {
             Run(baseEditor);
         }

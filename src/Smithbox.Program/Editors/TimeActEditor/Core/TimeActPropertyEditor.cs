@@ -4,6 +4,7 @@ using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Editors.TimeActEditor.Actions;
 using StudioCore.Editors.TimeActEditor.Utils;
+using StudioCore.Interface;
 using System;
 using System.Linq;
 using System.Numerics;
@@ -28,14 +29,14 @@ public class TimeActPropertyEditor
 
     public void AnimationHeaderSection(TimeActSelection handler)
     {
+        var windowWidth = ImGui.GetWindowWidth();
+
         var anim = handler.CurrentTimeActAnimation;
-        var width = ImGui.GetWindowWidth();
-        var buttonSize = new Vector2(width * 0.975f, 32);
         var tempHeader = handler.CurrentTemporaryAnimHeader;
 
         if (anim.MiniHeader.Type == MiniHeaderType.Standard)
         {
-            if (ImGui.Button("Switch to Import", buttonSize))
+            if (ImGui.Button("Switch to Import", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 var tempHeaderOld = tempHeader.Clone();
                 var newHeader = new AnimMiniHeader();
@@ -49,7 +50,7 @@ public class TimeActPropertyEditor
         }
         if (anim.MiniHeader.Type == MiniHeaderType.ImportOtherAnim)
         {
-            if (ImGui.Button("Switch to Standard", buttonSize))
+            if (ImGui.Button("Switch to Standard", DPI.WholeWidthButton(windowWidth, 24)))
             {
                 var tempHeaderOld = tempHeader.Clone();
                 var newHeader = new AnimMiniHeader();

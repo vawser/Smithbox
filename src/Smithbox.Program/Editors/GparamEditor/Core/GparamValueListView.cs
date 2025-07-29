@@ -70,7 +70,7 @@ public class GparamValueListView
             // Display "Add" button if field has no value rows.
             if (field.Values.Count <= 0)
             {
-                if (ImGui.Button("Add"))
+                if (ImGui.Button("Add", DPI.StandardButtonSize))
                 {
                     Screen.PropertyEditor.AddValueField(field);
                     ResetDisplayTruth(field);

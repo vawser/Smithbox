@@ -136,11 +136,11 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     public void DisplaySearchbar()
     {
-        var width = ImGui.GetWindowWidth();
+        var windowWidth = ImGui.GetWindowWidth();
 
         if (CFG.Current.MapEditor_MapObjectList_ShowMapIdSearch)
         {
-            ImGui.SetNextItemWidth(width * 0.75f);
+            DPI.ApplyInputWidth(windowWidth * 0.75f);
             ImGui.InputText($"##mapListSearch_{ImguiID}", ref SearchBarText, 255);
             if(ImGui.IsItemDeactivatedAfterEdit())
             {
@@ -186,7 +186,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     private void DisplayUnloadAllButton()
     {
-        if (ImGui.Button($"{Icons.MinusSquareO}"))
+        if (ImGui.Button($"{Icons.MinusSquareO}", DPI.IconButtonSize))
         {
             DialogResult result = PlatformUtils.Instance.MessageBox("Unload all maps?", "Confirm",
                         MessageBoxButtons.YesNo);
@@ -213,7 +213,7 @@ public class MapListView : Actions.Viewport.IActionEventHandler
     /// </summary>
     private void DisplayChaliceToggleButton()
     {
-        if (ImGui.Button($"{Icons.Adjust}"))
+        if (ImGui.Button($"{Icons.Adjust}", DPI.IconButtonSize))
         {
             DisplayChaliceDungeons = !DisplayChaliceDungeons;
         }

@@ -19,8 +19,6 @@ public static class Test_BHV
 
     public static void Display(Smithbox baseEditor, ProjectEntry project)
     {
-        var inputWidth = 400.0f;
-
         if (ImGui.BeginTable($"generatorTable", 3, ImGuiTableFlags.SizingFixedFit))
         {
             ImGui.TableSetupColumn("Title", ImGuiTableColumnFlags.WidthFixed);
@@ -37,12 +35,12 @@ public static class Test_BHV
 
             ImGui.TableSetColumnIndex(1);
 
-            ImGui.SetNextItemWidth(inputWidth);
+            DPI.ApplyInputWidth();
             ImGui.InputText("##testPath", ref _filePath, 255);
 
             ImGui.TableSetColumnIndex(2);
 
-            if (ImGui.Button("Select##testPathSelect"))
+            if (ImGui.Button("Select##testPathSelect", DPI.StandardButtonSize))
             {
                 var newFilePath = "";
                 var result = PlatformUtils.Instance.OpenFileDialog("Select File", [""], out newFilePath);
@@ -58,7 +56,7 @@ public static class Test_BHV
 
         if (File.Exists(_filePath))
         {
-            if (ImGui.Button("Run Test"))
+            if (ImGui.Button("Run Test", DPI.StandardButtonSize))
             {
                 Run();
             }

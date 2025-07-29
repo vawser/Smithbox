@@ -47,7 +47,7 @@ public class FieldNameFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
+
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -59,7 +59,7 @@ public class FieldNameFinder
         UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldIdFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldIdFinder", DPI.IconButtonSize))
         {
             TargetedParams.Add("");
         }
@@ -72,7 +72,7 @@ public class FieldNameFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
@@ -82,7 +82,7 @@ public class FieldNameFinder
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldIdFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
                 UIHelper.Tooltip("Remove last added param target input row.");
@@ -92,7 +92,7 @@ public class FieldNameFinder
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_fieldIdFinder"))
+        if (ImGui.Button("Reset##paramTargetReset_fieldIdFinder", DPI.HalfWidthButton(windowWidth, 24)))
         {
             TargetedParams = new List<string>();
         }
@@ -103,7 +103,7 @@ public class FieldNameFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             if (ImGui.InputText($"##paramTargetInput{i}_fieldIdFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -144,12 +144,12 @@ public class FieldNameFinder
 
         // Search Text
         UIHelper.WrappedText("Search Text:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText("##searchString", ref SearchText, 255);
         UIHelper.Tooltip("The text to search for. Matches loosely by default.");
 
         // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
         {
             if (Editor.Project.ParamData.PrimaryBank.Params != null)
             {
@@ -358,7 +358,7 @@ public class FieldValueFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
+
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -370,7 +370,7 @@ public class FieldValueFinder
         UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldValueFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_fieldValueFinder", DPI.IconButtonSize))
         {
             TargetedParams.Add("");
         }
@@ -383,7 +383,7 @@ public class FieldValueFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
@@ -393,7 +393,7 @@ public class FieldValueFinder
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_fieldValueFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
                 UIHelper.Tooltip("Remove last added param target input row.");
@@ -403,7 +403,7 @@ public class FieldValueFinder
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_fieldValueFinder"))
+        if (ImGui.Button("Reset##paramTargetReset_fieldValueFinder", DPI.HalfWidthButton(windowWidth, 24)))
         {
             TargetedParams = new List<string>();
         }
@@ -414,7 +414,7 @@ public class FieldValueFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             if (ImGui.InputText($"##paramTargetInput{i}_fieldValueFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -448,13 +448,13 @@ public class FieldValueFinder
         {
             // Start Value
             UIHelper.WrappedText("Start Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            DPI.ApplyInputWidth(windowWidth);
             ImGui.InputText($"##startSearchValue_{imguiID}", ref RangeSearchText_Start, 255);
             UIHelper.Tooltip("The start value in the search range.");
 
             // End Value
             UIHelper.WrappedText("End Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            DPI.ApplyInputWidth(windowWidth);
             ImGui.InputText($"##endSearchValue_{imguiID}", ref RangeSearchText_End, 255);
             UIHelper.Tooltip("The end value in the search range.");
         }
@@ -462,12 +462,12 @@ public class FieldValueFinder
         if (!UseRangeMatchMode)
         {
             UIHelper.WrappedText("Search Value:");
-            ImGui.SetNextItemWidth(defaultButtonSize.X);
+            DPI.ApplyInputWidth(windowWidth);
             ImGui.InputText($"##searchValue_{imguiID}", ref SearchText, 255);
             UIHelper.Tooltip("The value to search for.");
         }
 
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
         {
             CachedSearchText = SearchText;
 
@@ -641,7 +641,7 @@ public class RowIDFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
+
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -653,7 +653,7 @@ public class RowIDFinder
         UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowIdFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowIdFinder", DPI.IconButtonSize))
         {
             TargetedParams.Add("");
         }
@@ -666,7 +666,7 @@ public class RowIDFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
@@ -676,7 +676,7 @@ public class RowIDFinder
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowIdFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
                 UIHelper.Tooltip("Remove last added param target input row.");
@@ -686,7 +686,7 @@ public class RowIDFinder
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_rowIdFinder"))
+        if (ImGui.Button("Reset##paramTargetReset_rowIdFinder", DPI.HalfWidthButton(windowWidth, 24)))
         {
             TargetedParams = new List<string>();
         }
@@ -697,7 +697,7 @@ public class RowIDFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             if (ImGui.InputText($"##paramTargetInput{i}_rowIdFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -712,19 +712,19 @@ public class RowIDFinder
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputInt($"##searchIndex_{imguiID}", ref SearchIndex);
 
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
         // Row ID
         UIHelper.WrappedText("Row ID:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputInt($"##searchId_{imguiID}", ref SearchID);
         UIHelper.Tooltip("The row ID to search for.");
 
         // Search Button
-        if (ImGui.Button($"Search##searchButton_{imguiID}", defaultButtonSize))
+        if (ImGui.Button($"Search##searchButton_{imguiID}", DPI.WholeWidthButton(windowWidth, 24)))
         {
             CachedSearchID = SearchID;
 
@@ -834,7 +834,7 @@ public class RowNameFinder
         }
 
         var windowWidth = ImGui.GetWindowWidth();
-        var defaultButtonSize = new Vector2(windowWidth * 0.975f, 24);
+
         var Size = ImGui.GetWindowSize();
         float EditX = (Size.X / 100) * 95;
         float EditY = (Size.Y / 100) * 25;
@@ -846,7 +846,7 @@ public class RowNameFinder
         UIHelper.SimpleHeader("paramTargets", "Targeted Params", "Leave blank to target all params.", UI.Current.ImGui_AliasName_Text);
 
         // Add
-        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowNameFinder"))
+        if (ImGui.Button($"{Icons.Plus}##paramTargetAdd_rowNameFinder", DPI.IconButtonSize))
         {
             TargetedParams.Add("");
         }
@@ -859,7 +859,7 @@ public class RowNameFinder
         {
             ImGui.BeginDisabled();
 
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
             }
@@ -869,7 +869,7 @@ public class RowNameFinder
         }
         else
         {
-            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder"))
+            if (ImGui.Button($"{Icons.Minus}##paramTargetRemove_rowNameFinder", DPI.IconButtonSize))
             {
                 TargetedParams.RemoveAt(TargetedParams.Count - 1);
                 UIHelper.Tooltip("Remove last added param target input row.");
@@ -879,7 +879,7 @@ public class RowNameFinder
         ImGui.SameLine();
 
         // Reset
-        if (ImGui.Button("Reset##paramTargetReset_rowNameFinder"))
+        if (ImGui.Button("Reset##paramTargetReset_rowNameFinder", DPI.HalfWidthButton(windowWidth, 24)))
         {
             TargetedParams = new List<string>();
         }
@@ -890,7 +890,7 @@ public class RowNameFinder
             var curCommand = TargetedParams[i];
             var curText = curCommand;
 
-            ImGui.SetNextItemWidth(400f);
+            DPI.ApplyInputWidth();
             if (ImGui.InputText($"##paramTargetInput{i}_rowNameFinder", ref curText, 255))
             {
                 TargetedParams[i] = curText;
@@ -905,19 +905,19 @@ public class RowNameFinder
 
         // Row Index
         UIHelper.WrappedText("Row Index:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputInt($"##rowIndex_{imguiID}", ref SearchIndex);
 
         UIHelper.Tooltip("The row index to search for. -1 for any");
 
         // Search Text
         UIHelper.WrappedText("Search Text:");
-        ImGui.SetNextItemWidth(defaultButtonSize.X);
+        DPI.ApplyInputWidth(windowWidth);
         ImGui.InputText($"##searchText_{imguiID}", ref SearchText, 255);
         UIHelper.Tooltip("The row name to search for. Matches loosely.");
 
         // Search Button
-        if (ImGui.Button("Search##action_SearchForRowNames", defaultButtonSize))
+        if (ImGui.Button("Search##action_SearchForRowNames", DPI.WholeWidthButton(windowWidth, 24)))
         {
             CachedSearchText = SearchText;
 

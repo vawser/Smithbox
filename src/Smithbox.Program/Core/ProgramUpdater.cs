@@ -5,6 +5,7 @@ using StudioCore.Configuration;
 using StudioCore.Core;
 using StudioCore.Editor;
 using StudioCore.Formats.JSON;
+using StudioCore.Interface;
 using StudioCore.Platform;
 using System;
 using System.Collections.Generic;
@@ -124,7 +125,7 @@ public static class ProgramUpdater
         if (IsUpdateAvaliable && !UpdateProcessActive)
         {
             ImGui.PushStyleColor(ImGuiCol.Text, UI.Current.ImGui_Warning_Text_Color);
-            if (ImGui.Button("Update Smithbox to Latest Release"))
+            if (ImGui.Button("Update Smithbox to Latest Release", DPI.StandardButtonSize))
             {
                 var dialog = PlatformUtils.Instance.MessageBox("This will delete your current Smithbox install and replace it with the latest release. You must let this process finish without interruption.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 

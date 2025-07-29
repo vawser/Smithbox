@@ -4,6 +4,7 @@ using Hexa.NET.ImNodes;
 using HKLib.hk2018;
 using StudioCore;
 using StudioCore.Core;
+using StudioCore.Interface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -78,7 +79,7 @@ public class BehaviorGraphNodeView
         }
 
         // Back button
-        if (_rootHistory.Count > 0 && ImGui.Button("Back"))
+        if (_rootHistory.Count > 0 && ImGui.Button("Back", DPI.StandardButtonSize))
         {
             Editor.Selection.SelectedGraphRoot = _rootHistory.Pop();
             _needsRebuild = true;
