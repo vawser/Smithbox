@@ -221,8 +221,8 @@ public class WorldMapView : IResourceEventListener
             float width = viewport.Size.X;
             float height = viewport.Size.Y;
 
-            ImGui.DragFloat("Window Width", ref CFG.Current.WorldMapWidth, 1.0f, 100.0f, width);
-            ImGui.DragFloat("Window Height", ref CFG.Current.WorldMapHeight, 1.0f, 100.0f, height);
+            ImGui.DragFloat("Window Width", ref CFG.Current.WorldMapWindowWidth, 1.0f, 100.0f, width);
+            ImGui.DragFloat("Window Height", ref CFG.Current.WorldMapWindowHeight, 1.0f, 100.0f, height);
 
             ImGui.EndMenu();
         }
@@ -235,7 +235,24 @@ public class WorldMapView : IResourceEventListener
         var viewport = ImGui.GetMainViewport();
         Vector2 center = viewport.Pos + viewport.Size / 2;
 
-        ImGui.SetNextWindowSize(new Vector2(CFG.Current.WorldMapWidth, CFG.Current.WorldMapHeight));
+        // Sanity check so the window isn't partiall occluded for user's with small displays
+        var viewportSize = viewport.Size;
+        if(CFG.Current.WorldMapWindowWidth > viewportSize.X)
+        {
+            CFG.Current.WorldMapWindowWidth = viewportSize.X;
+        }
+        if (CFG.Current.WorldMapWindowHeight > viewportSize.Y)
+        {
+            var newHeight = viewportSize.Y - 100f;
+            if(newHeight < 0)
+            {
+                newHeight = 100f;
+            }
+
+            CFG.Current.WorldMapWindowHeight = newHeight;
+        }
+
+        ImGui.SetNextWindowSize(new Vector2(CFG.Current.WorldMapWindowWidth, CFG.Current.WorldMapWindowHeight));
         ImGui.SetNextWindowPos(center, ImGuiCond.Appearing, new Vector2(0.5f, 0.5f));
 
         ImGui.Begin("World Map##WorldMapImage", flags);

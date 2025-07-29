@@ -953,8 +953,8 @@ public class CFG
     public bool Prefab_ApplyOverrideName = false;
     public string Prefab_OverrideName = "";
 
-    public float WorldMapHeight = 1200f;
-    public float WorldMapWidth = 1200f;
+    public float WorldMapWindowHeight = 640f;
+    public float WorldMapWindowWidth = 480f;
     public bool WorldMapDisplayTiles = false;
     public bool WorldMapDisplaySmallTiles = true;
     public bool WorldMapDisplayMediumTiles = false;
