@@ -111986,102 +111986,102 @@
         {
           "Index": 0,
           "ID": 0,
-          "Name": "\u30C6\u30B9\u30C8"
+          "Name": "Test"
         },
         {
           "Index": 1,
           "ID": 1,
-          "Name": "\u30C6\u30B9\u30C81"
+          "Name": "Test1"
         },
         {
           "Index": 2,
           "ID": 100,
-          "Name": "\u77F3\u67F1_\u306A\u308A\u305D\u3053\u306A\u3044"
+          "Name": "Unused - DeS The Nexus (King Allant?)"
         },
         {
           "Index": 3,
           "ID": 200,
-          "Name": "\u738B\u57CE1_\u30D5\u30A1\u30E9\u30F3\u30AF\u30B9\uFF08\u672C\u4F53\uFF09"
+          "Name": "Unused - DeS 1-1 Phalanx"
         },
         {
           "Index": 4,
           "ID": 201,
-          "Name": "\u738B\u57CE2_\u738B\u306E\u76FE"
+          "Name": "Unused - DeS 1-2 Tower Knight"
         },
         {
           "Index": 5,
           "ID": 202,
-          "Name": "\u738B\u57CE3_\u738B\u306E\u5263"
+          "Name": "Unused - DeS 1-3 Penetrator"
         },
         {
           "Index": 6,
           "ID": 203,
-          "Name": "\u738B\u57CE4_\u30EC\u30F3\u30C9\u30EB\u738B"
+          "Name": "Unused - DeS 1-4 Old King Allant"
         },
         {
           "Index": 7,
           "ID": 301,
-          "Name": "\u53E4\u78261_\u5BE9\u5224\u8005"
+          "Name": "Unused - DeS 4-1 Adjudicator"
         },
         {
           "Index": 8,
           "ID": 302,
-          "Name": "\u53E4\u78262_\u5D50\u306E\u6226\u58EB"
+          "Name": "Unused - DeS 4-2 Old Hero"
         },
         {
           "Index": 9,
           "ID": 303,
-          "Name": "\u53E4\u78263_\u5D50\u306E\u7363"
+          "Name": "Unused - DeS 4-3 Storm King"
         },
         {
           "Index": 10,
           "ID": 400,
-          "Name": "\u7262\u57CE1_\u30AB\u30DF\u30B5\u30DE"
+          "Name": "Unused - DeS 3-1 Fool\u0027s Idol"
         },
         {
           "Index": 11,
           "ID": 401,
-          "Name": "\u7262\u57CE2_\u30AD\u30E1\u30E9"
+          "Name": "Unused - DeS 3-2 Maneater"
         },
         {
           "Index": 12,
           "ID": 402,
-          "Name": "\u7262\u57CE3_\u53EC\u559A\uFF2E\uFF30\uFF23"
+          "Name": "Unused - DeS 3-3 Old Monk"
         },
         {
           "Index": 13,
           "ID": 500,
-          "Name": "\u4E0D\u6D441_\u86ED\u30C7\u30FC\u30E2\u30F3"
+          "Name": "Unused - DeS 5-1 Leechmonger"
         },
         {
           "Index": 14,
           "ID": 501,
-          "Name": "\u4E0D\u6D442_\u8805\u305F\u304B\u308A"
+          "Name": "Unused - DeS 5-2 Dirty Colossus"
         },
         {
           "Index": 15,
           "ID": 502,
-          "Name": "\u4E0D\u6D443_\u8056\u5973\u30EA\u30FC\u30D6\u30E9"
+          "Name": "Unused - DeS 5-3 Maiden Astraea"
         },
         {
           "Index": 16,
           "ID": 600,
-          "Name": "\u5751\u90531_\u5927\u8718\u86DB"
+          "Name": "Unused - DeS 2-1 Armor Spider"
         },
         {
           "Index": 17,
           "ID": 601,
-          "Name": "\u5751\u90532_\u708E\u602A\u4EBA"
+          "Name": "Unused - DeS 2-2 Flamelurker"
         },
         {
           "Index": 18,
           "ID": 602,
-          "Name": "\u5751\u90533_\u30C9\u30E9\u30B4\u30F3\u30C7\u30FC\u30E2\u30F3(\u5751\u9053)"
+          "Name": "Unused - DeS 2-3 Dragon God"
         },
         {
           "Index": 19,
           "ID": 801,
-          "Name": "\u30C1\u30E5\u30FC\u30C8\u30EA\u30A2\u30EB_\u30C7\u30D6\u30C7\u30FC\u30E2\u30F3"
+          "Name": "Unused - DeS Tutorial Vanguard"
         },
         {
           "Index": 20,
