@@ -109406,182 +109406,182 @@
         {
           "Index": 0,
           "ID": 0,
-          "Name": "Move -- \u52D5\u304B\u306A\u3044"
+          "Name": "Not Moving"
         },
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Havok Default Value -- Havok\u306E\u30C7\u30D5\u30A9\u30EB\u30C8\u5024"
+          "Name": "Havok Default Value"
         },
         {
           "Index": 2,
           "ID": 100,
-          "Name": "\u30E0\u30AB\u30C7\u306E\u982D\u90E8"
+          "Name": "DeS Centipede\u0027s Head"
         },
         {
           "Index": 3,
           "ID": 101,
-          "Name": "\u30E0\u30AB\u30C7\u306E\u5C3B\u5C3E"
+          "Name": "DeS Centipede\u0027s Tail"
         },
         {
           "Index": 4,
           "ID": 200,
-          "Name": "\u8840\u30C0\u30CB\u306E\u672C\u4F53"
+          "Name": "DeS Giant Tick\u0027s Body"
         },
         {
           "Index": 5,
           "ID": 201,
-          "Name": "\u8840\u30C0\u30CB\u306E\u3075\u304F\u308D"
+          "Name": "DeS Giant Tick\u0027s Sack"
         },
         {
           "Index": 6,
           "ID": 1000,
-          "Name": "Segunda: The Evil Spirits -- \u30B0\u30F3\u30C0\uFF1A\u90AA\u970A"
+          "Name": "Gunda: Evil Spirit (?)"
         },
         {
           "Index": 7,
           "ID": 1010,
-          "Name": "\u30C6\u30B9\u30C8\u98DB\u7ADC\u306E\u5C3B\u5C3E"
+          "Name": "Test Dragon\u0027s Tail"
         },
         {
           "Index": 8,
           "ID": 1020,
-          "Name": "\u30C6\u30B9\u30C8\u98DB\u7ADC\u306E\u53F3\u7FFC"
+          "Name": "Test Dragon\u0027s Right Wing"
         },
         {
           "Index": 9,
           "ID": 1050,
-          "Name": "\u9A0E\u58EB\u306E\u982D\u90E8"
+          "Name": "Knight\u0027s Head"
         },
         {
           "Index": 10,
           "ID": 1100,
-          "Name": "Snake Spirit: Right arm -- \u86C7\u970A\uFF1A\u53F3\u8155"
+          "Name": "Snake Spirit: Right arm"
         },
         {
           "Index": 11,
           "ID": 1110,
-          "Name": "\u30E0\u30AB\u30C7\u30DC\u30B9\u306E\u5C3B\u5C3E"
+          "Name": "Centipede Demon\u0027s Tail"
         },
         {
           "Index": 12,
           "ID": 1120,
-          "Name": "\u30E0\u30AB\u30C7\u30DC\u30B9\u306E\u53F3\u8155"
+          "Name": "Centipede Demon\u0027s Right Arm"
         },
         {
           "Index": 13,
           "ID": 1200,
-          "Name": "\u5893\u738B\u306E\u672C\u4F53"
+          "Name": "Gravelord Nito\u0027s Body"
         },
         {
           "Index": 14,
           "ID": 1201,
-          "Name": "King of the Dead: Crown -- \u6B7B\u970A\u306E\u738B\uFF1A\u738B\u51A0"
+          "Name": "Gravelord Nito\u0027s Crown"
         },
         {
           "Index": 15,
           "ID": 1202,
-          "Name": "King of the Dead: torso -- \u6B7B\u970A\u306E\u738B\uFF1A\u80F4\u4F53"
+          "Name": "Gravelord Nito\u0027s Torso"
         },
         {
           "Index": 16,
           "ID": 1203,
-          "Name": "King of the dead: right arm -- \u6B7B\u970A\u306E\u738B\uFF1A\u53F3\u8155"
+          "Name": "Gravelord Nito\u0027s Right Arm"
         },
         {
           "Index": 17,
           "ID": 1210,
-          "Name": "\u5893\u738B\u306E\u30DE\u30F3\u30C8"
+          "Name": "Gravelord Nito\u0027s Mantle"
         },
         {
           "Index": 18,
           "ID": 1301,
-          "Name": "Mad Warrior Hallec: Head -- \u72C2\u6226\u58EB\u30CF\u30EC\u30C3\u30AF\uFF1A\u982D"
+          "Name": "Gaping Dragon\u0027s Tail"
         },
         {
           "Index": 19,
           "ID": 1400,
-          "Name": "\u6E56\u7363\u306E\u9996\u2460"
+          "Name": "Hydra\u0027s Head 1"
         },
         {
           "Index": 20,
           "ID": 1401,
-          "Name": "Dead Slug (dumpling): Dead dumpling -- \u8755\u306E\u30CA\u30E1\u30AF\u30B8\uFF08\u4EA1\u8005\u56E3\u5B50\uFF09\uFF1A\u4EA1\u8005\u56E3\u5B50"
+          "Name": "Hydra\u0027s Head 2"
         },
         {
           "Index": 21,
           "ID": 1402,
-          "Name": "\u6E56\u7363\u306E\u9996\u2462"
+          "Name": "Hydra\u0027s Head 3"
         },
         {
           "Index": 22,
           "ID": 1403,
-          "Name": "\u6E56\u7363\u306E\u9996\u2463"
+          "Name": "Hydra\u0027s Head 4"
         },
         {
           "Index": 23,
           "ID": 1404,
-          "Name": "\u6E56\u7363\u306E\u9996\u2464"
+          "Name": "Hydra\u0027s Head 5"
         },
         {
           "Index": 24,
           "ID": 1405,
-          "Name": "\u6E56\u7363\u306E\u9996\u2465"
+          "Name": "Hydra\u0027s Head 6"
         },
         {
           "Index": 25,
           "ID": 1406,
-          "Name": "\u6E56\u7363\u306E\u9996\u2466"
+          "Name": "Hydra\u0027s Head 7"
         },
         {
           "Index": 26,
           "ID": 1501,
-          "Name": "Hell Kite: Before your left ankle -- \u30D8\u30EB\u30AB\u30A4\u30C8\uFF1A\u5DE6\u8DB3\u306E\u8DB3\u9996\u3088\u308A\u5148"
+          "Name": "Seath the Scaleless\u0027s Crystal Armor"
         },
         {
           "Index": 27,
           "ID": 1601,
-          "Name": "\u30D2\u30ED\u30A4\u30F3\u306E\u5C3B\u5C3E"
+          "Name": "Crossbreed Priscilla\u0027s Tail"
         },
         {
           "Index": 28,
           "ID": 1701,
-          "Name": "\u30D8\u30EB\u30AB\u30A4\u30C8\u306E\u5C3B\u5C3E"
+          "Name": "Hellkite Drake\u0027s Tail"
         },
         {
           "Index": 29,
           "ID": 1801,
-          "Name": "\u5EA7\u7985\u30C9\u30E9\u30B4\u30F3\u306E\u5C3B\u5C3E"
+          "Name": "Stone Dragon(?)\u0027s Tail"
         },
         {
           "Index": 30,
           "ID": 1901,
-          "Name": "\u30AC\u30FC\u30B4\u30A4\u30EB\u306E\u5C3B\u5C3E"
+          "Name": "Bell Gargoyle\u0027s Tail"
         },
         {
           "Index": 31,
           "ID": 1902,
-          "Name": "\u30AC\u30FC\u30B4\u30A4\u30EB2\u4F53\u76EE\u7834\u640D\u90E8\u4F4D"
+          "Name": "2nd Bell Gargoyle\u0027s Damaged Part"
         },
         {
           "Index": 32,
           "ID": 2001,
-          "Name": "\u30AC\u30FC\u30B4\u30A4\u30EB\uFF08\u8272\u9055\u3044\uFF09\u306E\u5C3B\u5C3E"
+          "Name": "Lightning Gargoyle\u0027s Tail"
         },
         {
           "Index": 33,
           "ID": 2101,
-          "Name": "\u767D\u7ADC\u30B7\u30FC\u30B9\u306E\u5C3B\u5C3E"
+          "Name": "Seath the Scaleless\u0027s Tail"
         },
         {
           "Index": 34,
           "ID": 2201,
-          "Name": "\u91D1\u30AD\u30E1\u30E9\u306E\u5C3B\u5C3E"
+          "Name": "Sanctuary Guardian\u0027s Tail"
         },
         {
           "Index": 35,
           "ID": 2301,
-          "Name": "\u9ED2\u7ADC\u306E\u5C3B\u5C3E"
+          "Name": "Black Dragon Kalameet\u0027s Tail"
         }
       ]
     },
