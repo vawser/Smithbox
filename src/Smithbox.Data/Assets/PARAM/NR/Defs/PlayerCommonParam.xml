@@ -513,5 +513,14 @@
     <Field Def="s32 unknown_50" />
     <Field Def="f32 unknown_51" />
     
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 unk_01" FirstVersion="10200000"/>
+    <Field Def="s32 unk_02" FirstVersion="10200000"/>
+    <Field Def="s32 unk_03" FirstVersion="10200000"/>
+    <Field Def="s32 unk_04" FirstVersion="10200000"/>
+    <Field Def="s32 unk_05" FirstVersion="10200000"/>
+    <Field Def="s32 unk_06" FirstVersion="10200000"/>
+    <Field Def="s32 unk_07" FirstVersion="10200000"/>
+    <Field Def="s32 unk_08" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

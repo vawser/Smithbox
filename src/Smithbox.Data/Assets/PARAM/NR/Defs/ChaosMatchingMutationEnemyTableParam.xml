@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CHAOS_MATCHING_MUTATION_ENEMY_TABLE_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <!-- FirstVersion="10200000" -->
+  <Fields>
+    <Field Def="s32 unk_00"/>
+    <Field Def="u16 unk_01a"/>
+    <Field Def="u16 unk_01b"/>
+    <Field Def="s32 unk_02"/>
+    <Field Def="u16 unk_03a"/>
+    <Field Def="u16 unk_03b"/>
+    <Field Def="s32 unk_04"/>
+    <Field Def="s32 unk_05"/>
+    <Field Def="s32 unk_06"/>
+    <Field Def="s32 unk_07"/>
+    <Field Def="s32 unk_08"/>
+    <Field Def="s32 unk_09"/>
+    <Field Def="s32 unk_10"/>
+    <Field Def="s32 unk_11"/>
+  </Fields>
+</PARAMDEF>

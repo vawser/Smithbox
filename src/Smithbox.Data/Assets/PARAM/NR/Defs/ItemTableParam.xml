@@ -20,6 +20,8 @@
     <Field Def="s32 unknown_6"/>
     <Field Def="s32 unknown_7"/>
     
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    
     <Field Def="dummy8 endPadding[4]"/>
   </Fields>
 </PARAMDEF>

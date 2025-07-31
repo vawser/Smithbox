@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <spEffect00 
+    AltName="SpEffect: 0" 
+    Wiki="" 
+    Refs="SpEffectParam" />
+    
+    <spEffect01
+    AltName="SpEffect: 0" 
+    Wiki="" 
+    Refs="SpEffectParam" />
+    
+    <spEffect02
+    AltName="SpEffect: 0" 
+    Wiki="" 
+    Refs="SpEffectParam" />
+    
+    <spEffect03
+    AltName="SpEffect: 0" 
+    Wiki="" 
+    Refs="SpEffectParam" />
+    
+    <spEffect04
+    AltName="SpEffect: 0" 
+    Wiki="" 
+    Refs="SpEffectParam" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

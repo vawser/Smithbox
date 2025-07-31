@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>ATTACHEFFECT_FILTER_SUB_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <Fields>
+    <Field Def="s32 textId"/>
+    <Field Def="s32 filterCategory"/>
+    <Field Def="s32 conditionalValue"/>
+    <Field Def="s32 displayEventFlag"/>
+    
+    <Field Def="dummy8 endPadding[16]"/>
+  </Fields>
+</PARAMDEF>

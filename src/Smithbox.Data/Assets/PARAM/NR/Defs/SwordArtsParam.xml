@@ -61,6 +61,10 @@
     <Field Def="s32 atkParamId" />
     <Field Def="s32 weaponId" />
     
-    
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 unk_01" FirstVersion="10200000"/>
+    <Field Def="s32 unk_02" FirstVersion="10200000"/>
+    <Field Def="s32 unk_03" FirstVersion="10200000"/>
+   
   </Fields>
 </PARAMDEF>

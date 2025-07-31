@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CHAOS_MATCHING_MUTATION_CATEGORY_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <!-- FirstVersion="10200000" -->
+  <Fields>
+    <Field Def="u16 unk_00a"/>
+    <Field Def="u16 unk_00b"/>
+    <Field Def="u16 unk_01a"/>
+    <Field Def="u16 unk_01b"/>
+    <Field Def="u16 unk_02a"/>
+    <Field Def="u8 unk_02c"/>
+    <Field Def="u8 unk_02d"/>
+    <Field Def="s32 unk_03"/>
+    
+    <Field Def="dummy8 endPadding[4]"/>
+  </Fields>
+</PARAMDEF>

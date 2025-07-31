@@ -19,6 +19,8 @@
     
     <Field Def="s32 unlockFlag"/>
     <Field Def="s32 goodsId"/>
+    
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
   </Fields>
   
 </PARAMDEF>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMDEF XmlVersion="1">
+  <ParamType>CHAOS_MATCHING_CORRECT_PARAM_ST</ParamType>
+  <DataVersion>1</DataVersion>
+  <BigEndian>False</BigEndian>
+  <Unicode>True</Unicode>
+  <FormatVersion>0</FormatVersion>
+  <!-- FirstVersion="10200000" -->
+  <Fields>
+    <Field Def="s32 spEffect00"/>
+    <Field Def="s32 spEffect01"/>
+    <Field Def="s32 spEffect02"/>
+    <Field Def="s32 spEffect03"/>
+    <Field Def="s32 spEffect04"/>
+  </Fields>
+</PARAMDEF>

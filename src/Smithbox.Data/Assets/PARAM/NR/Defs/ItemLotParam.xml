@@ -511,6 +511,9 @@
       <SortID>9999</SortID>
     </Field>
     
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 unk_01" FirstVersion="10200000"/>
+    
     <Field Def="dummy8 endPadding[66]" />
     
   </Fields>

@@ -48,5 +48,6 @@
     <Field Def="s16 worldMapPointIconId2"/>
     <Field Def="s16 worldMapPointIconId3"/>
     <Field Def="s16 unknown_23b"/>
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

@@ -24,3 +24,26 @@
 
 # TODO NOW
 - Texture Editor: FIX the icon preview, in ER project icons seem to constantly load the texture, bloating RAM consumption
+
+FirstVersion="10200000"
+
+AntiqueStandParam: 20 -> 24
+AttachEffectFilterSubCategoryParam: 0 -> 32
+ChaosMatchingCorrectParam: 0 -> 20
+ChaosMatchingMutationCategoryParam: 0 -> 20
+ChaosMatchingMutationEnemyTableParam: 0 -> 48
+ChaosMatchingRankControlParam: 0 -> 12
+ChaosMatchingReplaceTreasureCommon: 0 -> 4
+ChaosMatchingReplaceTreasureTable: 0 -> 36
+ItemLotParam_enemy: 216 -> 224
+ItemLotParam_map: 216 -> 224
+ItemTableParam: 32 -> 36
+NightBossMenuParam: 64 -> 68
+NpcParam: 816 -> 848
+PlayerCommonParam: 392 -> 428
+SessionRewardByModeRankParam: 0 -> 64
+SessionRewardCommonParam: 0 -> 64
+SmallBaseAndSpotDefine: 96 -> 100
+SpEffectParam: 976 -> 1008
+SwordArtsParam: 44 -> 60
+WorldMapPointParam: 104 -> 112

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PARAMMETA XmlVersion="0">
+  <Self 
+  Wiki="" />
+  
+  <Field>
+    <textId
+    AltName="Filter Name ID"
+    Wiki="The text ID to use for the name of the sub-filter."
+    FmgRef="Modern_Menu_Text" />
+    
+    <filterCategory
+    AltName="Filter Category"
+    Wiki="The overall category this sub-filter belongs to." 
+    Refs="AttachEffectFilterCategoryParam" />
+    
+    <conditionalValue
+    AltName="Conditional Value"
+    Wiki="The conditional value this sub-filter uses." />
+    
+    <displayEventFlag
+    AltName="Display Flag"
+    Wiki="The event flag that must be ON for this sub-filter to be present." 
+    FlagAlias="" />
+    
+  </Field>
+  
+  <Enums>
+  </Enums>
+</PARAMMETA>

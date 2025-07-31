@@ -188,5 +188,8 @@
     <Field Def="s16 unknown_5E"/>
     <Field Def="u32 eventFlagId6"/>
     <Field Def="u32 eventFlagId7"/>
+    
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 unk_01" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

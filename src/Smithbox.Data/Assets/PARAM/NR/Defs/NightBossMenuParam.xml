@@ -23,5 +23,6 @@
     <Field Def="s32 unknown_13"/>
     <Field Def="s32 unknown_14"/>
     <Field Def="s32 largeBossIconId"/>
+    <Field Def="s32 unk_00" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>
