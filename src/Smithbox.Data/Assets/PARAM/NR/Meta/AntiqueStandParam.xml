@@ -49,6 +49,24 @@
     AltName="Linked Goods ID"
     Wiki="The linked goods item for this relic vessel." 
     Refs="EquipParamGoods" />
+    
+    <unkColor_01
+    AltName="Unknown - Color: 1"
+    Wiki=""
+    Enum="SLOT_COLOR" />
+    
+    <unkColor_02
+    AltName="Unknown - Color: 3"
+    Wiki=""
+    Enum="SLOT_COLOR" />
+    
+    <unkColor_03
+    AltName="Unknown - Color: 4"
+    Wiki=""
+    Enum="SLOT_COLOR" />
+    
+    <endPadding
+    Padding="" />
   </Field>
   
   <Enums>

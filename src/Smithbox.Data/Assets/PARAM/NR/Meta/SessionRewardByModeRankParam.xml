@@ -4,6 +4,29 @@
   Wiki="" />
   
   <Field>
+    <rank
+    AltName="Rank"
+    Wiki="" />
+  
+    <itemLotId_1
+    AltName="Reward Item Lot ID: 1" 
+    Wiki=""
+    Refs="ItemLotParam_map" />
+    
+    <itemLotId_2
+    AltName="Reward Item Lot ID: 2" 
+    Wiki=""
+    Refs="ItemLotParam_map" />
+    
+    <itemLotId_3
+    AltName="Reward Item Lot ID: 3" 
+    Wiki=""
+    Refs="ItemLotParam_map" />
+    
+    <itemLotId_4
+    AltName="Reward Item Lot ID: 4" 
+    Wiki=""
+    Refs="ItemLotParam_map" />
     
   </Field>
   

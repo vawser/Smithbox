@@ -115,6 +115,9 @@
     <unknown_48
     Refs="SpEffectParam" />
     
+    <unk_00
+    Refs="SpEffectParam" />
+    
   </Field>
   <Self Wiki="" />
 </PARAMMETA>

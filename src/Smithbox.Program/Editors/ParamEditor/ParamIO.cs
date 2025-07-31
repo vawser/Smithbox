@@ -106,7 +106,7 @@ public class ParamIO
                 var csvs = csvLine.Trim().Split(separator);
                 if (csvs.Length != csvLength && !(csvs.Length == csvLength + 1 && csvs[csvLength].Trim().Equals("")))
                 {
-                    return ("CSV has wrong number of values", null);
+                    return ("CSV has wrong number of values.\n\nYour CSV input was likely generated from an older paramdef configuration. You should re-generate it by loading the target regulation.bin and then re-exporting the CSV values.", null);
                 }
 
                 var id = int.Parse(csvs[0]);
@@ -241,7 +241,7 @@ public class ParamIO
 
                 if (csvs.Length != 2 && !(csvs.Length == 3 && csvs[2].Trim().Equals("")))
                 {
-                    return ("CSV has wrong number of values", null);
+                    return ("CSV has wrong number of values.\n\nYour CSV input was likely generated from an older paramdef configuration. You should re-generate it by loading the target regulation.bin and then re-exporting the CSV values.", null);
                 }
 
                 var id = int.Parse(csvs[0]);

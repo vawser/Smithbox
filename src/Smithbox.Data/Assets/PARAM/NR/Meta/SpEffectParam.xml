@@ -2049,6 +2049,11 @@
     Refs="SpEffectParam" 
     DefaultValue="-1"/>
     
+    <unkSpEffectId
+    AltName="Unknown SpEffect ID"
+    Wiki=""
+    Refs="SpEffectParam" />
+    
   </Field>
   <Enums>
     <Enum Name="PLAYER_HAND" type="u8">

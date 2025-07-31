@@ -86,6 +86,87 @@
     <canExecByHostileGhost AltName="Can Hostile Phantom Acquire" Wiki="Do you draw lots even when you are a hostile spirit?" IsBool="" />
     <PAD1 Padding="" />
     <PAD2 Padding="" />
+    
+    <lotActionButtonTypeA_01
+    AltName="1 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_02
+    AltName="2 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_03
+    AltName="3 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_04
+    AltName="4 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_05
+    AltName="5 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_06
+    AltName="6 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_07
+    AltName="7 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeA_08
+    AltName="8 - Type A: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_01
+    AltName="1 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_02
+    AltName="2 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_03
+    AltName="3 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_04
+    AltName="4 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_05
+    AltName="5 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_06
+    AltName="6 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_07
+    AltName="7 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
+    <lotActionButtonTypeB_08
+    AltName="8 - Type B: Action Button ID"
+    Wiki="The action button configuration to apply for this item lot entry." 
+    Refs="ActionButtonParam" />
+    
   </Field>
   <Self Wiki="Defines item lots that can be rolled upon item pickup, enemy death or granted via script.\nWhen doing this, consecutive IDs are also rolled.\nA single result is produced by each row.\nA row will not be rolled if the flag is already set." ConsecutiveIDs="" AlternativeOrder="
 GameClearOffset,canExecByFriendlyGhost,canExecByHostileGhost,-,

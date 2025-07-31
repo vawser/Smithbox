@@ -1,5 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PARAMMETA XmlVersion="0">
+  <Self Wiki="" />
+  <Field>
+    <disableParam_NT 
+    AltName="Disable Param - Network Test" 
+    Wiki="Parameters marked with  are excluded in the NT version package." 
+    IsBool="" />
+    
+    <disableParamReserve1 
+    AltName="" 
+    Padding=""/>
+    
+    <disableParamReserve2 
+    AltName="" 
+    Padding=""/>
+    
+    <eventFlagId0 
+    AltName="Event Flag ID: 0"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId1 
+    AltName="Event Flag ID: 0"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId2
+    AltName="Event Flag ID: 2"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId3
+    AltName="Event Flag ID: 3"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId4
+    AltName="Event Flag ID: 4"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId5 
+    AltName="Event Flag ID: 5"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <distViewEventFlagId 
+    AltName="Distant View - Event Flag ID" 
+    Wiki="Event flag ID to be set when found on the distant view" 
+    FlagAlias="" />
+    
+    <iconId 
+    AltName="Icon ID" 
+    Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" 
+    TextureRef="Direct/01_common_h/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
+    
+    <bgmPlaceType 
+    AltName="BGM Location Type" 
+    Wiki="Bgm location type" 
+    Enum="SOUND_BGM_MAP_PLACE_TYPE" />
+    
+    <isAreaIcon
+    AltName="Is Area Icon" 
+    Wiki="Is it an icon that represents a range? Same size as the map" 
+    IsBool="" />
+    
+    <isOverrideDistViewMarkPos 
+    AltName="Overwrite Coordinates when Distant View Marker" 
+    Wiki="Whether to overwrite the coordinates when using it as a distant view marker" 
+    IsBool="" />
+    
+    <isEnableNoText 
+    AltName="Enable with No Text" 
+    Wiki="Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled" 
+    IsBool="" />
+    
+    <pad3 
+    Padding=""/>
+    
+    <areaNo_forDistViewMark 
+    AltName="Distant View Marker - Map Area" 
+    Wiki="AA part of mAA_BB_CC_DD" />
+    
+    <gridXNo_forDistViewMark 
+    AltName="Distant View Marker - Map Block" 
+    Wiki="BB part of mAA_BB_CC_DD" />
+    
+    <gridZNo_forDistViewMark 
+    AltName="Distant View Marker - Map Region" 
+    Wiki="CC part of mAA_BB_CC_DD" />
+    
+    <clearedEventFlagId 
+    AltName="Cleared - Event Flag ID" 
+    Wiki="Cleared event flag ID (0: always treated as cleared)" 
+    FlagAlias="" />
+    
+    <worldMapPointIconId
+    AltName="World Map Point Icon ID"
+    Wiki="" />
+    
+    <dispMask00 
+    AltName="Display Mask M00" 
+    Wiki="Whether to display with M00" 
+    IsBool="" />
+    
+    <dispMask01 
+    AltName="Display Mask M01" 
+    Wiki="Whether to display with M01" 
+    IsBool="" />
+    
+    <dispMask02 
+    AltName="Display Mask M02"
+    Wiki="Whether to display with M02" 
+    IsBool="" />
+    
+    <pad2_0 
+    Padding=""/>
+    
+    <pad2 
+    Padding=""/>
+    
+    <distViewIconId 
+    AltName="Distant View - Icon ID" 
+    Wiki="Icon ID when distant view is found" />
+    
+    <angle 
+    AltName="Display Icon Angle" 
+    Wiki="Display icon rotation angle [deg]" />
+    
+    <areaNo 
+    AltName="Map Area" 
+    Wiki="AA part of mAA_BB_CC_DD" />
+    
+    <gridXNo 
+    AltName="Map Block" 
+    Wiki="BB part of mAA_BB_CC_DD" />
+    
+    <gridZNo 
+    AltName="Map Region" 
+    Wiki="CC part of mAA_BB_CC_DD" />
+    
+    <pad 
+    Padding=""/>
+    
+    <posX 
+    AltName="Map Coordinate: X" 
+    Wiki="X coordinate" />
+    
+    <posY 
+    AltName="Map Coordinate: Y" 
+    Wiki="Y coordinate (not used)" />
+    
+    <posZ 
+    AltName="Map Coordinate: Z" 
+    Wiki="Z coordinate" />
+    
+    <detailIcon1
+    AltName="Detail Icon ID: 1"
+    Wiki="" />
+    
+    <detailIcon2
+    AltName="Detail Icon ID: 2"
+    Wiki="" />
+    
+    <variationIconId
+    AltName="Variation Icon ID"
+    Wiki="" />
+    
+    <eventFlagId6
+    AltName="Event Flag ID: 6"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId7 
+    AltName="Event Flag ID: 7"
+    Wiki="" 
+    FlagAlias="" />
+    
+    <eventFlagId8 
+    AltName="Event Flag ID: 8"
+    Wiki="" 
+    FlagAlias="" />
+    
+  </Field>
   <Enums>
     <Enum Name="SOUND_BGM_MAP_PLACE_TYPE" type="s16">
         <Option Value="0" Name="Type 0" />
@@ -105,36 +288,4 @@
       <Option Value="90" Name="Catacomb" />
     </Enum>
   </Enums>
-  <Field>
-    <disableParam_NT AltName="Disable Param - Network Test" Wiki="Parameters marked with  are excluded in the NT version package." IsBool="" />
-    <disableParamReserve1 AltName="" Padding=""/>
-    <disableParamReserve2 AltName="" Padding=""/>
-    <eventFlagId AltName="Open - Event Flag ID" Wiki="Event flag ID of open condition" FlagAlias="" />
-    <distViewEventFlagId AltName="Distant View - Event Flag ID" Wiki="Event flag ID to be set when found on the distant view" FlagAlias="" />
-    <iconId AltName="Icon ID" Wiki="Icon ID" Enum="WORLD_MAP_ICON_ID" TextureRef="Direct/01_common_h/SB_MapCursor/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_02/iconId/MENU_MAP_,Direct/01_common_h/SB_MapCursor_03_dlc/iconId/MENU_MAP_" />
-    <bgmPlaceType AltName="BGM Location Type" Wiki="Bgm location type" Enum="SOUND_BGM_MAP_PLACE_TYPE" />
-    <isAreaIcon AltName="Is Area Icon" Wiki="Is it an icon that represents a range? Same size as the map" IsBool="" />
-    <isOverrideDistViewMarkPos AltName="Overwrite Coordinates when Distant View Marker" Wiki="Whether to overwrite the coordinates when using it as a distant view marker" IsBool="" />
-    <isEnableNoText AltName="Enable with No Text" Wiki="Do you want to display it even when there is no text? Basically, points are not displayed without text. Display without text when this flag is enabled" IsBool="" />
-    <pad3 AltName="" Padding=""/>
-    <areaNo_forDistViewMark AltName="Distant View Marker - Map Area" Wiki="AA part of mAA_BB_CC_DD" />
-    <gridXNo_forDistViewMark AltName="Distant View Marker - Map Block" Wiki="BB part of mAA_BB_CC_DD" />
-    <gridZNo_forDistViewMark AltName="Distant View Marker - Map Region" Wiki="CC part of mAA_BB_CC_DD" />
-    <clearedEventFlagId AltName="Cleared - Event Flag ID" Wiki="Cleared event flag ID (0: always treated as cleared)" FlagAlias="" />
-    <dispMask00 AltName="Display Mask M00" Wiki="Whether to display with M00" IsBool="" />
-    <dispMask01 AltName="Display Mask M01" Wiki="Whether to display with M01" IsBool="" />
-    <dispMask02 AltName="Display Mask M02" Wiki="Whether to display with M02" IsBool="" />
-    <pad2_0 AltName="" Padding=""/>
-    <pad2 AltName="" Padding=""/>
-    <distViewIconId AltName="Distant View - Icon ID" Wiki="Icon ID when distant view is found" />
-    <angle AltName="Display Icon Angle" Wiki="Display icon rotation angle [deg]" />
-    <areaNo AltName="Map Area" Wiki="AA part of mAA_BB_CC_DD" />
-    <gridXNo AltName="Map Block" Wiki="BB part of mAA_BB_CC_DD" />
-    <gridZNo AltName="Map Region" Wiki="CC part of mAA_BB_CC_DD" />
-    <pad AltName="" Padding=""/>
-    <posX AltName="Map Coordinate: X" Wiki="X coordinate" />
-    <posY AltName="Map Coordinate: Y" Wiki="Y coordinate (not used)" />
-    <posZ AltName="Map Coordinate: Z" Wiki="Z coordinate" />
-  </Field>
-  <Self Wiki="" />
 </PARAMMETA>

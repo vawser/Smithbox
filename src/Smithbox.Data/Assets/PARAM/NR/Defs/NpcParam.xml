@@ -2190,38 +2190,35 @@
     </Field>
     
     <Field Def="s32 rewardItemLot_2" />
-    <Field Def="s32 unknown_2" />
-    <Field Def="f32 unknown_3" />
-    <Field Def="f32 unknown_4" />
-    <Field Def="f32 unknown_5" />
-    <Field Def="f32 unknown_6" />
-    <Field Def="f32 unknown_7" />
-    <Field Def="f32 unknown_8" />
-    <Field Def="f32 unknown_9" />
-    <Field Def="f32 unknown_10" />
-    <Field Def="f32 unknown_11" />
-    <Field Def="f32 unknown_12" />
-    <Field Def="f32 unknown_13" />
-    <Field Def="f32 unknown_14" />
-    <Field Def="f32 unknown_15" />
-    <Field Def="f32 unknown_16" />
-    <Field Def="f32 unknown_17" />
-    <Field Def="f32 unknown_18" />
-    <Field Def="f32 unknown_19" />
-    <Field Def="f32 unknown_20" />
-    <Field Def="s8 unknown_21a" />
-    <Field Def="s8 unknown_21b" />
-    <Field Def="u8 unknown_21c" />
-    <Field Def="u8 unknown_21d" />
+    <Field Def="s32 unknown_21" />
+    
+    <Field Def="f32 poiseBonusRate_Magic" />
+    <Field Def="f32 poiseBonusRate_Fire" />
+    <Field Def="f32 poiseBonusRate_Lightning" />
+    <Field Def="f32 poiseBonusRate_Holy" />
+    <Field Def="f32 poiseBonusRate_Poison" />
+    <Field Def="f32 poiseBonusRate_ScarletRot" />
+    <Field Def="f32 poiseBonusRate_Bleed" />
+    <Field Def="f32 poiseBonusRate_Blight" />
+    <Field Def="f32 poiseBonusRate_Frostbite" />
+    <Field Def="f32 poiseBonusRate_Sleep" />
+    <Field Def="f32 poiseBonusRate_Madness" />
+    <Field Def="f32 poiseBonusRate_WeakA" />
+    <Field Def="f32 poiseBonusRate_WeakB" />
+    <Field Def="f32 poiseBonusRate_WeakC" />
+    <Field Def="f32 poiseBonusRate_WeakD" />
+    <Field Def="f32 poiseBonusRate_WeakE" />
+    <Field Def="f32 poiseBonusRate_WeakF" />
+    <Field Def="f32 poiseBonusRate_Unk" />
+    <Field Def="s32 poiseBonusMax" />
     <Field Def="f32 unknown_22" />
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
-    <Field Def="s32 unk_01" FirstVersion="10200000"/>
-    <Field Def="s32 unk_02" FirstVersion="10200000"/>
-    <Field Def="s32 unk_03" FirstVersion="10200000"/>
-    <Field Def="s32 unk_04" FirstVersion="10200000"/>
-    <Field Def="s32 unk_05" FirstVersion="10200000"/>
-    <Field Def="s32 unk_06" FirstVersion="10200000"/>
-    <Field Def="s32 unk_07" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingCorrectParamId" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingSpEffectSetParamId" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingItemLotId" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingMutationTableId" FirstVersion="10200000"/>
+    <Field Def="s32 chaosMatchingUnk" FirstVersion="10200000"/>
+    
+    <Field Def="dummy8 endPadding[12]" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

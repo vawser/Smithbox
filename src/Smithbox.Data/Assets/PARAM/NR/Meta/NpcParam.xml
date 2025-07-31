@@ -565,6 +565,102 @@
     Wiki="The item lot that determines the rewards upon this enemies defeat. Includes the Dormant Power roll."
     Refs="ItemLotParam_enemy" />
     
+    <poiseBonusRate_Magic
+    AltName="Poise Bonus %: Magic"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Fire
+    AltName="Poise Bonus %: Fire"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Lightning
+    AltName="Poise Bonus %: Lightning"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Holy
+    AltName="Poise Bonus %: Holy"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Poison
+    AltName="Poise Bonus %: Poison"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_ScarletRot
+    AltName="Poise Bonus %: Scarlet Rot"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Bleed
+    AltName="Poise Bonus %: Bleed"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Blight
+    AltName="Poise Bonus %: Deathblight"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Frostbite
+    AltName="Poise Bonus %: Frostbite"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Sleep
+    AltName="Poise Bonus %: Sleep"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Madness
+    AltName="Poise Bonus %: Madness"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakA
+    AltName="Poise Bonus %: Weak A"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakB
+    AltName="Poise Bonus %: Weak B"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakC
+    AltName="Poise Bonus %: Weak C"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakD
+    AltName="Poise Bonus %: Weak D"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakE
+    AltName="Poise Bonus %: Weak E"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_WeakF
+    AltName="Poise Bonus %: Weak D"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusRate_Unk
+    AltName="Poise Bonus %: Unknown"
+    Wiki="The amount of extra poise damage an attack deals if it is of this type against this enemy." />
+    
+    <poiseBonusMax
+    AltName="Max Poise Bonus"
+    Wiki="The maximum amount of extra poise damage this enemy receives from the poise bonus rate adjustments." />
+    
+    <chaosMatchingCorrectParamId
+    AltName="Chaos Matching: Correction ID"
+    Wiki=""
+    Refs="ChaosMatchingCorrectParam" />
+    
+    <chaosMatchingSpEffectSetParamId
+    AltName="Chaos Matching: SpEffect Set ID"
+    Wiki=""
+    Refs="SpEffectSetParam" />
+    
+    <chaosMatchingItemLotId
+    AltName="Chaos Matching: Item Lot ID"
+    Wiki=""
+    Refs="ItemLotParam_enemy" />
+    
+    <chaosMatchingMutationTableId
+    AltName="Chaos Matching: Mutation Table ID"
+    Wiki=""
+    Refs="ChaosMatchingMutationEnemyTableParam" />
+    
   </Field>
   <Self Wiki="Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects." AlternativeOrder="behaviorVariationId,AiThinkId,-,
   

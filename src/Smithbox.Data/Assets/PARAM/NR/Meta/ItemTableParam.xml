@@ -39,6 +39,8 @@
     Wiki="Sets this event flag ON when the lot is selected."
     FlagAlias="" />
     
+    <midstPadding
+    Padding="" />
   </Field>
   
   <Enums>

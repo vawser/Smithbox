@@ -20,7 +20,11 @@
     <Field Def="s32 unlockFlag"/>
     <Field Def="s32 goodsId"/>
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="u8 unkColor_01" FirstVersion="10200000"/>
+    <Field Def="u8 unkColor_02" FirstVersion="10200000"/>
+    <Field Def="u8 unkColor_03" FirstVersion="10200000"/>
+    
+    <Field Def="dummy8 endPadding[1]" FirstVersion="10200000"/>
   </Fields>
   
 </PARAMDEF>
