@@ -2,6 +2,16 @@
 <PARAMMETA XmlVersion="0">
   <Self 
   Wiki="" />
+
+  <Enums>
+    <Enum Name="WEAPON_LEVEL" type="u8">
+      <Option Value="0" Name="No Change" />
+      <Option Value="1" Name="+1" />
+      <Option Value="2" Name="+2" />
+      <Option Value="3" Name="+3" />
+      <Option Value="256" Name="Cursed" />
+    </Enum>
+  </Enums>
   
   <Field>
     <disableParam_NT 
@@ -39,6 +49,11 @@
     AltName="Attached Effect Table: 3" 
     Wiki="The attached effect table to use." 
     Refs="AttachEffectTableParam" />
+
+    <weaponLevel
+    AltName="Weapon Level" 
+    Wiki="The adjusted power level of the weapon"
+    Enum="WEAPON_LEVEL" />
     
     <magicTableId_1 
     AltName="Magic Table: 1" 

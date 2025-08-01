@@ -1124,6 +1124,18 @@
                 { "ID": "22", "Name": "Unused", "Description": ""},
                 { "ID": "23", "Name": "Unused", "Description": ""}
             ]
+        },
+        {
+            "DisplayName": "Weapon Level",
+            "Name": "WEAPON_LEVEL",
+            "Description": "Level adjustment for custom weapons.",
+            "Options": [
+                { "ID": "0", "Name": "No Change", "Description": "The weapon is at its normal level"},
+                { "ID": "1", "Name": "+1", "Description": ""},
+                { "ID": "2", "Name": "+2", "Description": ""},
+                { "ID": "3", "Name": "+3", "Description": ""},
+                { "ID": "256", "Name": "Cursed", "Description": ""}
+            ]
         }
     ]
 }
