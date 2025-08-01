@@ -423,6 +423,12 @@
                     "attributes": ""
                 },
                 {
+                    "id":  "ItemLotParamMapID",
+                    "name": "Item Lot Param (map) ID",
+                    "description": "The item lot generated when interacting with this asset.",
+                    "attributes": ""
+                },
+                {
                     "id": "UnkModelMaskAndAnimID",
                     "name": "Model Mask and Anim ID",
                     "description": "",

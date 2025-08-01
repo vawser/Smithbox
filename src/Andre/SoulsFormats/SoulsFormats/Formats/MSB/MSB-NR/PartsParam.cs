@@ -2475,9 +2475,9 @@ namespace SoulsFormats
                 public int UnkT30 { get; set; }
 
                 /// <summary>
-                /// Unknown.
+                /// The <c>ItemLotParam_map</c> row ID that this asset spawns upon interaction.
                 /// </summary>
-                public int UnkT34 { get; set; }
+                public int ItemLotParamMapID { get; set; }
 
                 /// <summary>
                 /// Unknown.
@@ -3062,7 +3062,7 @@ namespace SoulsFormats
                     UnkT28 = br.ReadInt32();
                     br.AssertInt32(0);
                     UnkT30 = br.ReadInt32();
-                    UnkT34 = br.ReadInt32();
+                    ItemLotParamMapID = br.ReadInt32();
                     PartIndices = br.ReadInt32s(6);
                     UnkT50 = br.ReadBoolean();
                     UnkT51 = br.ReadByte();
@@ -3115,7 +3115,7 @@ namespace SoulsFormats
                     bw.WriteInt32(UnkT28);
                     bw.WriteInt32(0);
                     bw.WriteInt32(UnkT30);
-                    bw.WriteInt32(UnkT34);
+                    bw.WriteInt32(ItemLotParamMapID);
                     bw.WriteInt32s(PartIndices);
                     bw.WriteBoolean(UnkT50);
                     bw.WriteByte(UnkT51);
