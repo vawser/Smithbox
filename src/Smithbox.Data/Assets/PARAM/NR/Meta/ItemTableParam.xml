@@ -29,6 +29,10 @@
     AltName="Roll Weight"
     Wiki="The weighting to apply during the roll." />
 
+	<quantity
+	AltName="Quantity"
+	Wiki="The number of stacks the player picks up." />
+
     <onlyForClass
     AltName="Only For Class"
     Wiki="Only roll this entry if the player's class matches."

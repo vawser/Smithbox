@@ -13,7 +13,7 @@
     <Field Def="s32 itemCategory"/>
     <Field Def="s32 itemId"/>
     <Field Def="u16 chanceWeight"/>
-    <Field Def="u8 unknown_4"/>
+    <Field Def="u8 quantity"/>
     <Field Def="u8 onlyForClass"/>
     <Field Def="s32 eventFlagId"/>
     
