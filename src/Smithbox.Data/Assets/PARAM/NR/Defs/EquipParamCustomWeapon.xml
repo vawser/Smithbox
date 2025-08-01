@@ -15,7 +15,7 @@
     <Field Def="s32 attachEffectTableId_1"/>
     <Field Def="s32 attachEffectTableId_2"/>
     <Field Def="s32 attachEffectTableId_3"/>
-    <Field Def="s32 unknown_6"/>
+    <Field Def="s32 weaponLevel"/>
     <Field Def="s32 magicTableId_1"/>
     <Field Def="s32 magicTableId_2"/>
     
