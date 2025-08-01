@@ -305,6 +305,20 @@ public class ParamUpgrader
         TargetProject.ParamData.RefreshAllParamDiffCaches(false);
 
         await TargetProject.ParamData.PrimaryBank.Save();
+
+        var newVersion = TargetProject.ParamData.VanillaBank.ParamVersion;
+
+        // Update fields
+        var massEditCmds = UpgraderInfo.UpgradeCommands.Where(e => e.Version == $"{newVersion}").ToList();
+
+        var commandString = "";
+        foreach(var cmd in massEditCmds)
+        {
+            commandString = $"{commandString}{cmd.Command};\n";
+        }
+
+        TargetProject.ParamEditor.MassEditHandler.ApplyMassEdit(commandString);
+        TaskLogs.AddLog($"[{TargetProject.ProjectName}:Param Editor] Applied upgrader mass edit commands", LogLevel.Information, Tasks.LogPriority.Normal);
     }
 
     public async Task<bool> UpgradeParamsTask()

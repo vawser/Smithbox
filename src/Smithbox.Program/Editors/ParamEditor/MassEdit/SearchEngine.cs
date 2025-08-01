@@ -376,6 +376,14 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
         var auxBanks = Project.ParamData.AuxBanks;
 
         unpacker = param => new List<Param.Row>(param.Item2.Rows);
+
+        filterList.Add("all", newCmd(new string[0],
+            "Selects all rows", noArgs(context =>
+            {
+                return row => true;
+            }
+            )));
+
         filterList.Add("modified", newCmd(new string[0],
             "Selects rows which do not match the vanilla version, or are added. Ignores row name", noArgs(context =>
             {
@@ -384,6 +392,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 return row => cache.Contains(row.ID);
             }
             )));
+
         filterList.Add("added", newCmd(new string[0], "Selects rows where the ID is not found in the vanilla param",
             noArgs(context =>
             {
@@ -796,6 +805,7 @@ public class RowSearchEngine : SearchEngine<(ParamBank, Param), Param.Row>
                 };
             };
         }, () => CFG.Current.Param_AdvancedMassedit));
+
         defaultFilter = newCmd(new[] { "row ID or Name (regex)" },
             "Selects rows where either the ID or Name matches the given regex, except in strict/massedit mode",
             (args, lenient) =>

@@ -199,20 +199,12 @@
       <SortID>2501</SortID>
     </Field>
     
-    <Field Def="dummy8 Reserve_2:1" RemovedVersion="11210015">
+    <Field Def="dummy8 Reserve_2:1" >
       <DisplayName>リザーブ2</DisplayName>
       <DisplayFormat>%d</DisplayFormat>
       <EditFlags>Wrap</EditFlags>
       <SortID>99999</SortID>
     </Field>
-    
-    <Field Def="u8 unknown_0x3b_7:1" FirstVersion="11210015">
-      <DisplayName>リザーブ2</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99999</SortID>
-    </Field>
-    
     <Field Def="u8 isLadder:1">
       <DisplayName>ハシゴか</DisplayName>
       <Description>ハシゴか(0:ちがう, 1:そう)</Description>

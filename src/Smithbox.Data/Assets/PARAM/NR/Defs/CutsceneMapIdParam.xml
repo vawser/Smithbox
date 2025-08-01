@@ -70,13 +70,7 @@
       <SortID>102</SortID>
     </Field>
     
-    <Field Def="dummy8 reserved_2_old[12]" RemovedVersion="11210015" />
-    
-    <Field Def="s32 unknown_0x18" FirstVersion="11210015" />
-    <Field Def="dummy8 reserved_2[8]" FirstVersion="11210015" >
-      <DisplayName>予備</DisplayName>
-      <SortID>10000</SortID>
-    </Field>
+    <Field Def="dummy8 reserved_2_old[12]" />
     
     <Field Def="u16 ClientDisableViewTimeForProgress">
       <DisplayName>表示不可能時待機時間[秒]</DisplayName>

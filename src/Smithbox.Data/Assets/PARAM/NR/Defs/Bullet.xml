@@ -382,14 +382,7 @@
       <SortID>19100</SortID>
     </Field>
     
-    <Field Def="dummy8 pad_old:6" RemovedVersion="11210015" />
-    
-    <Field Def="u8 mayRemoteDetonate:1" FirstVersion="11210015" />
-    <Field Def="dummy8 pad:5" FirstVersion="11210015" >
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99202</SortID>
-    </Field>
+    <Field Def="dummy8 pad_old:6" />
     
     <Field Def="u8 launchConditionType">
       <DisplayName>発生条件</DisplayName>
@@ -656,14 +649,7 @@
       <SortID>20100</SortID>
     </Field>
     
-    <Field Def="dummy8 pad1:1" RemovedVersion="11210015" />
-    
-    <Field Def="u8 isDisableAiProjectileDodge:1" FirstVersion="11210015" >
-      <DisplayName>pad</DisplayName>
-      <DisplayFormat>%d</DisplayFormat>
-      <EditFlags>Wrap</EditFlags>
-      <SortID>99204</SortID>
-    </Field>
+    <Field Def="dummy8 pad1:1"/>
     
     <Field Def="u8 isNonDependenceMagicForFunnleNum:1">
       <DisplayName>PCのファンネル数が理力で変動しない</DisplayName>
