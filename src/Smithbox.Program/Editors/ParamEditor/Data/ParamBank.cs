@@ -1,6 +1,7 @@
 ﻿using Andre.Formats;
 using Andre.IO.VFS;
 using DotNext.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
 using SoulsFormats;
 using StudioCore.Core;
@@ -2170,24 +2171,23 @@ public class ParamBank
             paramEntry.Name = p.Key;
             paramEntry.Entries = new();
 
+            var groupedRows = p.Value.Rows
+                .GroupBy(r => r.ID)
+                .ToDictionary(g => g.Key, g => g.Select(r => r.Name ?? "").ToList());
+
+            paramEntry.Entries = groupedRows.Select(kvp => new RowNameEntry
+            {
+                ID = kvp.Key,
+                Entries = kvp.Value
+            }).ToList();
+
+            store.Params.Add(paramEntry);
+
             for (int i = 0; i < p.Value.Rows.Count; i++)
             {
-                var row = p.Value.Rows[i];
-
-                // Store
-                var rowEntry = new RowNameEntry();
-
-                rowEntry.Index = i;
-                rowEntry.ID = row.ID;
-                rowEntry.Name = row.Name;
-
-                paramEntry.Entries.Add(rowEntry);
-
                 // Strip
                 p.Value.Rows[i].Name = "";
             }
-
-            store.Params.Add(paramEntry);
         }
 
         var folder = ProjectUtils.GetLocalProjectFolder(Project);
@@ -2251,10 +2251,7 @@ public class ParamBank
 
                 SetParamNames(
                     p.Value,
-                    storeDict[p.Key],
-                    CFG.Current.UseIndexMatchForRowNameRestore
-                        ? ImportRowNameType.Index
-                        : ImportRowNameType.ID
+                    storeDict[p.Key]
                 );
             }
         }
@@ -2271,9 +2268,9 @@ public class ParamBank
     /// <param name="importType"></param>
     /// <param name="sourceType"></param>
     /// <param name="filepath"></param>
-    public async void ImportRowNames(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "")
+    public async void ImportRowNames(ImportRowNameSourceType sourceType, string filepath = "")
     {
-        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath, "");
+        Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, "");
         bool rowNamesImported = await importRowNameTask;
 
         if (rowNamesImported)
@@ -2286,9 +2283,9 @@ public class ParamBank
         }
     }
 
-    public async void ImportRowNamesForParam(ImportRowNameType importType, ImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
+    public async void ImportRowNamesForParam(ImportRowNameSourceType sourceType, string targetParam = "", string filepath = "")
     {
-        Task<bool> importRowNameTask = ImportRowNamesTask(importType, sourceType, filepath, targetParam);
+        Task<bool> importRowNameTask = ImportRowNamesTask(sourceType, filepath, targetParam);
         bool rowNamesImported = await importRowNameTask;
 
         if (rowNamesImported)
@@ -2301,7 +2298,7 @@ public class ParamBank
         }
     }
 
-    public async Task<bool> ImportRowNamesTask(ImportRowNameType importType, ImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
+    public async Task<bool> ImportRowNamesTask(ImportRowNameSourceType sourceType, string filepath = "", string targetParam = "")
     {
         await Task.Yield();
 
@@ -2361,43 +2358,32 @@ public class ParamBank
                     continue;
             }
 
-            SetParamNames(p.Value, storeDict[p.Key], importType);
+            SetParamNames(p.Value, storeDict[p.Key]);
         }
 
         return true;
     }
 
-    private static void SetParamNames(Param param, RowNameParam rowNames, ImportRowNameType importType)
+    private static void SetParamNames(Param param, RowNameParam rowNames)
     {
-        if (importType is ImportRowNameType.Index)
-        {
-            var rowNameDict = rowNames.Entries.ToDictionary(e => e.Index);
+        if (rowNames == null)
+            return;
 
-            for (var i = 0; i < param.Rows.Count; i++)
-            {
-                if (rowNameDict.TryGetValue(i, out var entry))
-                {
-                    param.Rows[i].Name = entry.Name;
-                }
-            }
-        }
-        else if (importType is ImportRowNameType.ID)
-        {
-            // The ID may not be unique, so we use the names from the store in order of appearance.
-            Dictionary<int, Queue<RowNameEntry>> rowsByID = rowNames
-                .Entries
-                .GroupBy(row => row.ID)
-                .Select(grouping => (grouping.Key, new Queue<RowNameEntry>(grouping)))
-                .ToDictionary();
+        var nameEntriesByID = rowNames.Entries.ToDictionary(e => e.ID, e => e);
+        var idCounts = new Dictionary<int, int>();
 
-            foreach (var row in param.Rows)
+        foreach (var row in param.Rows)
+        {
+            if (!idCounts.TryGetValue(row.ID, out int index))
+                index = 0;
+
+            idCounts[row.ID] = index + 1;
+
+            if (nameEntriesByID.TryGetValue(row.ID, out var nameEntry))
             {
-                if (
-                    rowsByID.TryGetValue(row.ID, out var entries) &&
-                    entries.TryDequeue(out var entry)
-                )
+                if (index < nameEntry.Entries.Count)
                 {
-                    row.Name = entry.Name;
+                    row.Name = nameEntry.Entries[index];
                 }
             }
         }
@@ -2470,19 +2456,15 @@ public class ParamBank
             paramEntry.Name = p.Key;
             paramEntry.Entries = new();
 
-            for (int i = 0; i < p.Value.Rows.Count; i++)
+            var groupedRows = p.Value.Rows
+                .GroupBy(r => r.ID)
+                .ToDictionary(g => g.Key, g => g.Select(r => r.Name ?? "").ToList());
+
+            paramEntry.Entries = groupedRows.Select(kvp => new RowNameEntry
             {
-                var row = p.Value.Rows[i];
-
-                // Store
-                var rowEntry = new RowNameEntry();
-
-                rowEntry.Index = i;
-                rowEntry.ID = row.ID;
-                rowEntry.Name = row.Name;
-
-                paramEntry.Entries.Add(rowEntry);
-            }
+                ID = kvp.Key,
+                Entries = kvp.Value
+            }).ToList();
 
             store.Params.Add(paramEntry);
         }
@@ -2531,7 +2513,12 @@ public class ParamBank
 
                 foreach (var row in entry.Entries)
                 {
-                    textOuput = $"{textOuput}\n{row.ID};{row.Name}";
+                    textOuput = $"{textOuput}\n{row.ID};";
+
+                    foreach(var indexRow in row.Entries)
+                    {
+                        textOuput = $"{textOuput};{indexRow}";
+                    }
                 }
             }
 
@@ -2558,12 +2545,6 @@ public class ParamBank
         [Display(Name = "All Rows")] AllRows = 0,
         [Display(Name = "Modified Rows")] ModifiedRows = 1,
         [Display(Name = "Selected Rows")] SelectedRows = 2
-    }
-
-    public enum ImportRowNameType
-    {
-        Index,
-        ID
     }
 
     public enum ImportRowNameSourceType

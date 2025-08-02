@@ -118,7 +118,7 @@ public class ParamData
             var dialog = PlatformUtils.Instance.MessageBox("Do you wish to import row names?", "Automatic Row Naming", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog is DialogResult.OK)
             {
-                PrimaryBank.ImportRowNames(ImportRowNameType.ID, ImportRowNameSourceType.Community);
+                PrimaryBank.ImportRowNames(ImportRowNameSourceType.Community);
             }
 
             Project.ImportedParamRowNames = true;

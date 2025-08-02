@@ -1,21 +1,25 @@
-﻿using Hexa.NET.ImGui;
+﻿using Andre.Formats;
+using Hexa.NET.ImGui;
+using Microsoft.Extensions.Logging;
 using Octokit;
 using ProcessMemoryUtilities.Native;
 using SoulsFormats;
+using StudioCore.Core;
 using StudioCore.Debug.Dumpers;
 using StudioCore.Debug.Generators;
+using StudioCore.Editors.TextEditor.Enums;
 using StudioCore.Formats.JSON;
 using StudioCore.Interface;
 using StudioCore.Platform;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Threading.Tasks;
-using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace StudioCore.DebugNS;
 
@@ -319,22 +323,86 @@ public class DebugTools
     public void QuickTest()
     {
         var project = BaseEditor.ProjectManager.SelectedProject;
-        foreach(var entry in project.ParamData.PrimaryBank.Params)
-        {
-            var paramRowIdList = new List<int>();
 
-            foreach(var row in entry.Value.Rows)
-            {
-                if(paramRowIdList.Contains(row.ID))
-                {
-                    TaskLogs.AddLog($"Indexed Param: {entry.Key}");
-                    break;
-                }
-                else
-                {
-                    paramRowIdList.Add(row.ID);
-                }
-            }
-        }
+        //ConvertRowNames("AC6", "Community Row Names.json");
+        //ConvertRowNames("AC6", "Developer Row Names.json");
+
+        //ConvertRowNames("BB", "Community Row Names.json");
+        //ConvertRowNames("BB", "Developer Row Names.json");
+
+        //ConvertRowNames("DES", "Community Row Names.json");
+        //ConvertRowNames("DS1", "Community Row Names.json");
+        //ConvertRowNames("DS1R", "Community Row Names.json");
+        //ConvertRowNames("DS2", "Community Row Names.json");
+        //ConvertRowNames("DS2S", "Community Row Names.json");
+        //ConvertRowNames("DS3", "Community Row Names.json");
+        //ConvertRowNames("SDT", "Community Row Names.json");
+        //ConvertRowNames("ER", "Community Row Names.json");
+        //ConvertRowNames("NR", "Community Row Names.json");
     }
+
+    //public static void ConvertRowNames(string type, string group)
+    //{
+    //    var outputDir = @"C:\Users\benja\Programming\C#\Smithbox\src\Smithbox\bin\Debug";
+
+    //    var sourceFilepath = @$"{AppContext.BaseDirectory}/Assets/PARAM/{type}";
+    //    sourceFilepath = Path.Combine(sourceFilepath, group);
+
+    //    RowNameStore store = null;
+
+    //    try
+    //    {
+    //        var filestring = File.ReadAllText(sourceFilepath);
+    //        var options = new JsonSerializerOptions();
+    //        store = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameStore);
+
+    //        if (store == null)
+    //        {
+    //            throw new Exception($"JsonConvert returned null.");
+    //        }
+    //    }
+    //    catch (Exception e)
+    //    {
+    //    }
+
+    //    if (store == null)
+    //        return;
+
+    //    if (store.Params == null)
+    //        return;
+
+    //    var newRowStore = ConvertToNewFormat(store);
+
+    //    var writeFolder = Path.Combine(outputDir, type);
+    //    var writePath = Path.Combine(outputDir, type, group);
+
+    //    if (!Directory.Exists(writeFolder))
+    //    {
+    //        Directory.CreateDirectory(writeFolder);
+    //    }
+
+    //    var json = JsonSerializer.Serialize(newRowStore, SmithboxSerializerContext.Default.TempRowNameStore);
+
+    //    File.WriteAllText(writePath, json);
+    //}
+
+    //public static TempRowNameStore ConvertToNewFormat(RowNameStore original)
+    //{
+    //    var tempParams = original.Params.Select(param => new TempRowNameParamEntry
+    //    {
+    //        Name = param.Name,
+    //        Entries = param.Entries
+    //            .GroupBy(entry => entry.ID)
+    //            .Select(group => new TempRowNameIdEntry
+    //            {
+    //                ID = group.Key,
+    //                Entries = group.Select(e => e.Name).ToList()
+    //            }).ToList()
+    //    }).ToList();
+
+    //    return new TempRowNameStore
+    //    {
+    //        Params = tempParams
+    //    };
+    //}
 }
