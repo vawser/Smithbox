@@ -1,5 +1,7 @@
 ﻿using SoulsFormats;
+using SoulsFormats.KF4;
 using StudioCore.Core;
+using StudioCore.Platform;
 using StudioCore.Resource.Locators;
 using System;
 using System.Collections.Generic;
@@ -64,6 +66,7 @@ public class MapQueryBank
     {
         await Task.Yield();
 
+        List<Formats.JSON.FileDictionaryEntry> failedLoads = [];
         foreach (var map in Editor.Project.MapData.MapFiles.Entries)
         {
             IMsb msb = null;
@@ -73,47 +76,63 @@ public class MapQueryBank
             if (msbData == null)
                 continue;
 
-            if (Editor.Project.ProjectType == ProjectType.DES)
+            try
             {
-                msb = MSBD.Read((Memory<byte>)msbData);
+                if (Editor.Project.ProjectType == ProjectType.DES)
+                {
+                    msb = MSBD.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
+                {
+                    msb = MSB1.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.DS2 || Editor.Project.ProjectType == ProjectType.DS2S)
+                {
+                    msb = MSB2.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.DS3)
+                {
+                    msb = MSB3.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.BB)
+                {
+                    msb = MSBB.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.SDT)
+                {
+                    msb = MSBS.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.ER)
+                {
+                    msb = MSBE.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.AC6)
+                {
+                    msb = MSB_AC6.Read((Memory<byte>)msbData);
+                }
+                if (Editor.Project.ProjectType == ProjectType.NR)
+                {
+                    msb = MSB_NR.Read((Memory<byte>)msbData);
+                }
             }
-            if (Editor.Project.ProjectType == ProjectType.DS1 || Editor.Project.ProjectType == ProjectType.DS1R)
+            catch
             {
-                msb = MSB1.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.DS2 || Editor.Project.ProjectType == ProjectType.DS2S)
-            {
-                msb = MSB2.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.DS3)
-            {
-                msb = MSB3.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.BB)
-            {
-                msb = MSBB.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.SDT)
-            {
-                msb = MSBS.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.ER)
-            {
-                msb = MSBE.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.AC6)
-            {
-                msb = MSB_AC6.Read((Memory<byte>)msbData);
-            }
-            if (Editor.Project.ProjectType == ProjectType.NR)
-            {
-                msb = MSB_NR.Read((Memory<byte>)msbData);
+                failedLoads.Add(map);
             }
 
             if (msb != null && !MapList.ContainsKey(map.Filename))
             {
                 MapList.Add(map.Filename, msb);
             }
+        }
+
+        if (failedLoads.Count > 0)
+        {
+            PlatformUtils.Instance.MessageBox(
+                $"Failed to load {failedLoads.Count} maps, skipping.",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
         }
 
         return true;
