@@ -44,9 +44,10 @@
     AltName="Unknown: 0x30"
     Wiki="" />
     
-    <UnkT34
-    AltName="Unknown: 0x34"
-    Wiki="" />
+    <ItemLotParamMapID
+    AltName="Item Lot Param (map) ID"
+    Wiki="The item lot generated when interacting with this asset."
+    ParamRef="ItemLotParam_map" />
     
     <PartNames
     AltName="Part Name"
