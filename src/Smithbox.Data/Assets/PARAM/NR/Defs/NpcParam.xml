@@ -2190,7 +2190,10 @@
     </Field>
     
     <Field Def="s32 rewardItemLot_2" />
-    <Field Def="s32 unknown_21" />
+    <Field Def="s32 day2SpEffectID">
+      <DisplayName>Day 2 SpEffectID</DisplayName>
+      <DisplayName>An SpEffectID applied only on Day 2</DisplayName>
+    </Field>
     
     <Field Def="f32 poiseBonusRate_Magic" />
     <Field Def="f32 poiseBonusRate_Fire" />

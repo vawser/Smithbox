@@ -640,6 +640,11 @@
     <poiseBonusMax
     AltName="Max Poise Bonus"
     Wiki="The maximum amount of extra poise damage this enemy receives from the poise bonus rate adjustments." />
+	  
+    <day2SpEffectID
+    AltName="Day 2 SpEffectID"
+    Wiki="An SpEffectID applied only on Day 2"
+    Refs="SpEffectParam" />
     
     <chaosMatchingCorrectParamId
     AltName="Chaos Matching: Correction ID"
