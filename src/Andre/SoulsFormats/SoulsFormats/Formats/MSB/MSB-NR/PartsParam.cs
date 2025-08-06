@@ -1026,7 +1026,7 @@ namespace SoulsFormats
                     Unk1C = -1;
                     Unk1D = -1;
                     Unk20 = -1;
-                    Unk21 = -1;
+                    Day2SpEffectParamID = -1;
                 }
 
                 /// <summary>
@@ -1052,7 +1052,7 @@ namespace SoulsFormats
                     br.AssertSByte(0);
                     br.AssertSByte(0);
                     Unk20 = br.ReadSByte();
-                    Unk21 = br.ReadSByte();
+                    Day2SpEffectParamID = br.ReadSByte();
                     br.AssertSByte(0);
                     br.AssertSByte(0);
                     br.AssertPattern(44, 0x00);
@@ -1072,7 +1072,7 @@ namespace SoulsFormats
                     bw.WriteSByte(0);
                     bw.WriteSByte(0);
                     bw.WriteSByte(Unk20);
-                    bw.WriteSByte(Unk21);
+                    bw.WriteSByte(Day2SpEffectParamID);
                     bw.WriteSByte(0);
                     bw.WriteSByte(0);
                     bw.WritePattern(44, 0x00);
