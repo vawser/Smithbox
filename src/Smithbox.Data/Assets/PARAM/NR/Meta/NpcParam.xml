@@ -665,6 +665,11 @@
     AltName="Chaos Matching: Mutation Table ID"
     Wiki=""
     Refs="ChaosMatchingMutationEnemyTableParam" />
+
+    <Day2SpEffectParamID
+    AltName="Day 2 SpEffect ID"
+    Wiki=""
+    Refs="SpEffectParam" />
     
   </Field>
   <Self Wiki="Defines the stats for a given enemy or group of enemies. Does not determine model or location.\nStats are often affected greatly by attached SpEffects." AlternativeOrder="behaviorVariationId,AiThinkId,-,
