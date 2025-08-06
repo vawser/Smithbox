@@ -52,7 +52,14 @@
       <SortID>840</SortID>
     </Field>
     
-    <Field Def="u8 unknown_9"/>
+    <Field Def="u8 applyForHero1:1"/>
+    <Field Def="u8 applyForHero2:1"/>
+    <Field Def="u8 applyForHero3:1"/>
+    <Field Def="u8 applyForHero4:1"/>
+    <Field Def="u8 applyForHero5:1"/>
+    <Field Def="u8 applyForHero6:1"/>
+    <Field Def="u8 applyForHero7:1"/>
+    <Field Def="u8 applyForHero8:1"/>
     
     <Field Def="u8 defaultWepAttr"/>
     <Field Def="u16 iconId" />

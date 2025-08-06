@@ -61,7 +61,47 @@
     <useMagicPoint_R2 
     AltName="FP Consumption - R2" 
     Wiki="MP consumed when issuing arts by R2" />
-
+    
+    <applyForHero1
+    AltName="Relic Application: Wylder"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero2
+    AltName="Relic Application: Guardian"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero3
+    AltName="Relic Application: Ironeye"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero4
+    AltName="Relic Application: Duchess"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero5
+    AltName="Relic Application: Raider"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero6
+    AltName="Relic Application: Revenant"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero7
+    AltName="Relic Application: Recluse"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
+    <applyForHero8
+    AltName="Relic Application: Executor"
+    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
+    IsBool="" />
+    
     <defaultWepAttr
     AltName="Default Weapon Affinity"
     Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes"
