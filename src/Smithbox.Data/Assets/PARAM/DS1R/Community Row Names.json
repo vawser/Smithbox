@@ -42731,7 +42731,7 @@
         {
           "Index": 70,
           "ID": 6410,
-          "Name": "[Unused] Witch Mallows"
+          "Name": "[Unused] Witch Beatrice"
         },
         {
           "Index": 71,
@@ -64041,7 +64041,7 @@
         {
           "Index": 71,
           "ID": 6410,
-          "Name": "[Unused] Witch Mallows"
+          "Name": "[Unused] Witch Beatrice"
         },
         {
           "Index": 72,
@@ -64051,12 +64051,12 @@
         {
           "Index": 73,
           "ID": 6490,
-          "Name": "Lautrec\u0027s Companion 1 (Black Iron TarKus)"
+          "Name": "Lautrec\u0027s Companion 1"
         },
         {
           "Index": 74,
           "ID": 6500,
-          "Name": "Lautrec\u0027s Companion (Ninja)"
+          "Name": "Lautrec\u0027s Companion 2"
         },
         {
           "Index": 75,
@@ -109406,12 +109406,12 @@
         {
           "Index": 131,
           "ID": 6490,
-          "Name": "Lautrec\u0027s Bodyguard 1"
+          "Name": "Lautrec\u0027s Companion 1"
         },
         {
           "Index": 132,
           "ID": 6500,
-          "Name": "Lautrec\u0027s Bodyguard 2"
+          "Name": "Lautrec\u0027s Companion 2"
         },
         {
           "Index": 133,
