@@ -19,13 +19,19 @@
       <Option Value="40" Name="Magic" />
       <Option Value="50" Name="Fire / Lightning" />
       <Option Value="80" Name="Sacred" />
-      <Option Value="90" Name="Aux" />
+      <Option Value="90" Name="Status" />
       <Option Value="120" Name="Occult" />
       <Option Value="130" Name="Bow" />
       <Option Value="140" Name="Shield" />
       <Option Value="200" Name="Unique" />
+	  <Option Value="210" Name="Legendary" />
       <Option Value="255" Name="None" />
     </Enum>
+	<Enum Name="ARTS_SPEED_TYPE" type="u8">
+	  <Option Value="0" Name="Left Hand (Flag 16)" />
+	  <Option Value="1" Name="Quick (Flag 103)" />
+      <Option Value="2" Name="Standard (Flag 104)" />
+	</Enum>
   </Enums>
   <Field>
     <sortGroupId
@@ -34,8 +40,13 @@
     Enum="DISPLAY_CATEGORY_ID" />
   
     <swordArtsType 
-    AltName="Sword Arts Type" 
+    AltName="Skill Animation ID" 
     Wiki="Offset for TAE animation. 0 is a600. To pass to the behavior script to determine which swashbuckler" />  
+	
+	<artsSpeedType
+	AltName="Speed Type"
+	Wiki="Determines which cancel table skill will use"
+	Enum="ARTS_SPEED_TYPE" />
     
     <textId 
     AltName="Text ID" 
@@ -61,47 +72,7 @@
     <useMagicPoint_R2 
     AltName="FP Consumption - R2" 
     Wiki="MP consumed when issuing arts by R2" />
-    
-    <applyForHero1
-    AltName="Relic Application: Wylder"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero2
-    AltName="Relic Application: Guardian"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero3
-    AltName="Relic Application: Ironeye"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero4
-    AltName="Relic Application: Duchess"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero5
-    AltName="Relic Application: Raider"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero6
-    AltName="Relic Application: Revenant"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero7
-    AltName="Relic Application: Recluse"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
-    <applyForHero8
-    AltName="Relic Application: Executor"
-    Wiki="If ON, this skill is avaliable for this hero when applied via a relic." 
-    IsBool="" />
-    
+
     <defaultWepAttr
     AltName="Default Weapon Affinity"
     Wiki="Default weapon attribute ID. Can be installed even with unopened weapon attributes"
@@ -123,13 +94,82 @@
     
     <atkParamId
     AltName="Attack ID"
-    Wiki=""
+    Wiki="Used for unused menu power display"
     Refs="AtkParam_Pc" />
     
-    <weaponId
-    AltName="Weapon ID"
-    Wiki=""
+    <sparringGroundsWeaponId
+    AltName="Sparring Grounds Weapon"
+    Wiki="Base weapon used for Sparring Grounds"
     Refs="EquipParamWeapon" />
+	
+	<sparringGroundsEventFlagId
+	AltName="Appearance Event Flag ID"
+	Wiki="Event flag that determines if skill will appear in Sparring Grounds/Visual Codex" />
+	
+	<isRefRightArts
+	AltName="Use Right Skill"
+	Wiki="Use right hand weapon's Skill if this skill is in the left hand"
+	IsBool="" />
+	
+	<isGrayOutLeftHand
+	AltName="Hide in Left Hand"
+	Wiki="Hide name/icon when left-handed"
+	IsBool="" />
+	
+	<isGrayOutRightHand
+	AltName="Hide in Right Hand"
+	Wiki="Hide name/icon when right-handed"
+	IsBool="" />
+	
+	<isGrayOutBothHand
+	AltName="Hide in Both Hand"
+	Wiki="Hide name/icon when two-handed"
+	IsBool="" />
+	
+	<enableSparringGrounds
+	AltName="Enable Sparring Grounds/Visual Codex"
+	Wiki="Allows skill to appear in Sparring Grounds/Visual Codex"
+	IsBool="" />
+	
+	<isStartSkill_Duchess
+	AltName="Starting Skill - Duchess"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Wylder
+	AltName="Starting Skill - Wylder"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Executor
+	AltName="Starting Skill - Executor"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Guardian
+	AltName="Starting Skill - Guardian"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Raider
+	AltName="Starting Skill - Raider"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Revenant
+	AltName="Starting Skill - Revenant"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Ironeye
+	AltName="Starting Skill - Ironeye"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
+	
+	<isStartSkill_Recluse
+	AltName="Starting Skill - Recluse"
+	Wiki="Allows skill from relic to apply to starting weapon for this hero"
+	IsBool="" />
     
   </Field>
   <Enums>
