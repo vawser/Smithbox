@@ -113001,12 +113001,12 @@
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Cobblestone"
+          "Name": "Stone (Outdoor)"
         },
         {
           "Index": 2,
           "ID": 2,
-          "Name": "Stone"
+          "Name": "Stone (Indoor)"
         },
         {
           "Index": 3,
@@ -113021,7 +113021,7 @@
         {
           "Index": 5,
           "ID": 5,
-          "Name": "Grassland"
+          "Name": "Grass"
         },
         {
           "Index": 6,
@@ -113031,52 +113031,52 @@
         {
           "Index": 7,
           "ID": 7,
-          "Name": "Gaps"
+          "Name": "Snow"
         },
         {
           "Index": 8,
           "ID": 8,
-          "Name": "Trees"
+          "Name": "Ice/Crystal"
         },
         {
           "Index": 9,
           "ID": 9,
-          "Name": "Swamp"
+          "Name": "Metal"
         },
         {
           "Index": 10,
           "ID": 10,
-          "Name": "Nest"
+          "Name": "Sand"
         },
         {
           "Index": 11,
           "ID": 11,
-          "Name": "Iron"
+          "Name": "Bone"
         },
         {
           "Index": 12,
           "ID": 12,
-          "Name": "Flesh"
+          "Name": "Ash"
         },
         {
           "Index": 13,
           "ID": 14,
-          "Name": "Bone"
+          "Name": "Rotten Wood"
         },
         {
           "Index": 14,
           "ID": 15,
-          "Name": "Ash"
+          "Name": "Big Tree"
         },
         {
           "Index": 15,
           "ID": 17,
-          "Name": "Roof Tiles"
+          "Name": "Snow (no footprints)"
         },
         {
           "Index": 16,
           "ID": 19,
-          "Name": "Bell"
+          "Name": "Water (Slide)"
         },
         {
           "Index": 17,
@@ -113086,32 +113086,32 @@
         {
           "Index": 18,
           "ID": 21,
-          "Name": "Water (ankle level)"
+          "Name": "Water (Ankle Level)"
         },
         {
           "Index": 19,
           "ID": 22,
-          "Name": "Water (knee)"
+          "Name": "Mucus"
         },
         {
           "Index": 20,
           "ID": 23,
-          "Name": "Poison Swamp (Blighttown) (shallow)"
+          "Name": "Poison Swamp"
         },
         {
           "Index": 21,
           "ID": 24,
-          "Name": "Poison Swamp (deep)"
+          "Name": "Mud"
         },
         {
           "Index": 22,
           "ID": 25,
-          "Name": "Poison Swamp (knee)"
+          "Name": "Coal Tar"
         },
         {
           "Index": 23,
           "ID": 26,
-          "Name": "Poison Swamp (about puddle)"
+          "Name": "Chimera Swamp"
         },
         {
           "Index": 24,
@@ -113126,17 +113126,17 @@
         {
           "Index": 26,
           "ID": 29,
-          "Name": "Without -- \u306A\u3057"
+          "Name": "Empty (No visuals)"
         },
         {
           "Index": 27,
           "ID": 34,
-          "Name": "\u6728\u6750"
+          "Name": "Wood2"
         },
         {
           "Index": 28,
           "ID": 40,
-          "Name": "\u30C9\u30DC\u30F3SFX\u7528"
+          "Name": "For Splash SFX"
         }
       ]
     },
