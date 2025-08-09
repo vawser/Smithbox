@@ -8131,7 +8131,7 @@
         {
           "Index": 12,
           "ID": 116,
-          "Name": "[Unused] Black Eye Orb - Shiva Invasion"
+          "Name": "[UNUSED] Black Eye Orb - Shiva Invasion"
         },
         {
           "Index": 13,
@@ -8436,7 +8436,7 @@
         {
           "Index": 73,
           "ID": 395,
-          "Name": "Fire Keeper Soul (Duke's Archives)"
+          "Name": "Fire Keeper Soul (Duke\u0027s Archives)"
         },
         {
           "Index": 74,
@@ -8826,7 +8826,7 @@
         {
           "Index": 151,
           "ID": 2200,
-          "Name": "[Unused] Blacksmith\u0027s favorite"
+          "Name": "[UNUSED] Blacksmith\u0027s favorite"
         },
         {
           "Index": 152,
@@ -8851,7 +8851,7 @@
         {
           "Index": 156,
           "ID": 2504,
-          "Name": "[Unused] Lord Soul 5"
+          "Name": "[UNUSED] Lord Soul 5"
         },
         {
           "Index": 157,
@@ -8881,22 +8881,22 @@
         {
           "Index": 162,
           "ID": 2603,
-          "Name": "[Unused] Magic Equipment Menu Unlock"
+          "Name": "[UNUSED] Magic Equipment Menu Unlock"
         },
         {
           "Index": 163,
           "ID": 2604,
-          "Name": "[Unused] Item sale menu unlock"
+          "Name": "[UNUSED] Item sale menu unlock"
         },
         {
           "Index": 164,
           "ID": 2605,
-          "Name": "[Unused] Warp menu unlock"
+          "Name": "[UNUSED] Warp menu unlock"
         },
         {
           "Index": 165,
           "ID": 2606,
-          "Name": "[Unused] Level up menu unlock"
+          "Name": "[UNUSED] Level up menu unlock"
         },
         {
           "Index": 166,
@@ -8911,7 +8911,7 @@
         {
           "Index": 168,
           "ID": 2609,
-          "Name": "[Unused] Extra menu unlock"
+          "Name": "[UNUSED] Extra menu unlock"
         },
         {
           "Index": 169,
@@ -12586,32 +12586,32 @@
         {
           "Index": 158,
           "ID": 2300,
-          "Name": "Demon Titanite \u002B0 [Unused]"
+          "Name": "Demon Titanite \u002B0 [UNUSED]"
         },
         {
           "Index": 159,
           "ID": 2301,
-          "Name": "Demon Titanite \u002B1 [Unused]"
+          "Name": "Demon Titanite \u002B1 [UNUSED]"
         },
         {
           "Index": 160,
           "ID": 2302,
-          "Name": "Demon Titanite \u002B2 [Unused]"
+          "Name": "Demon Titanite \u002B2 [UNUSED]"
         },
         {
           "Index": 161,
           "ID": 2303,
-          "Name": "Demon Titanite \u002B3 [Unused]"
+          "Name": "Demon Titanite \u002B3 [UNUSED]"
         },
         {
           "Index": 162,
           "ID": 2304,
-          "Name": "Demon Titanite \u002B4 [Unused]"
+          "Name": "Demon Titanite \u002B4 [UNUSED]"
         },
         {
           "Index": 163,
           "ID": 2305,
-          "Name": "Demon Titanite \u002B5 [Unused]"
+          "Name": "Demon Titanite \u002B5 [UNUSED]"
         },
         {
           "Index": 164,
@@ -13651,7 +13651,7 @@
         {
           "Index": 30,
           "ID": 12820,
-          "Name": "[Unused] Backstab - PC -\u003E Hollow (Crag Worshipper)"
+          "Name": "[UNUSED] Backstab - PC -\u003E Hollow (Crag Worshipper)"
         },
         {
           "Index": 31,
@@ -14026,7 +14026,7 @@
         {
           "Index": 105,
           "ID": 112820,
-          "Name": "[Unused] Backstab - PC -\u003E Hollow (Crag Worshipper) [Hornet Ring]"
+          "Name": "[UNUSED] Backstab - PC -\u003E Hollow (Crag Worshipper) [Hornet Ring]"
         },
         {
           "Index": 106,
@@ -42421,7 +42421,7 @@
         {
           "Index": 24,
           "ID": 6001,
-          "Name": "[Unused] Solaire of Astora - Undead Parish"
+          "Name": "[UNUSED] Solaire of Astora - Undead Parish"
         },
         {
           "Index": 25,
@@ -42616,7 +42616,7 @@
         {
           "Index": 63,
           "ID": 6311,
-          "Name": "[Unused] Shiva of the East (Invaded)"
+          "Name": "[UNUSED] Shiva of the East (Invaded)"
         },
         {
           "Index": 64,
@@ -42631,7 +42631,7 @@
         {
           "Index": 66,
           "ID": 6350,
-          "Name": "[Unused] Painter Ariamis"
+          "Name": "[UNUSED] Painter Ariamis"
         },
         {
           "Index": 67,
@@ -42641,17 +42641,17 @@
         {
           "Index": 68,
           "ID": 6390,
-          "Name": "[Unused] Black Iron Tarkus"
+          "Name": "[UNUSED] Black Iron Tarkus"
         },
         {
           "Index": 69,
           "ID": 6400,
-          "Name": "[Unused] Velka Knight"
+          "Name": "[UNUSED] Velka Knight"
         },
         {
           "Index": 70,
           "ID": 6410,
-          "Name": "[Unused] Witch Beatrice"
+          "Name": "[UNUSED] Witch Beatrice"
         },
         {
           "Index": 71,
@@ -42661,7 +42661,7 @@
         {
           "Index": 72,
           "ID": 6421,
-          "Name": "[Unused] Shiva\u0027s Bodyguard (Invaded)"
+          "Name": "[UNUSED] Shiva\u0027s Bodyguard (Invaded)"
         },
         {
           "Index": 73,
@@ -42681,7 +42681,7 @@
         {
           "Index": 76,
           "ID": 6511,
-          "Name": "[Unused] Black Iron Tarkus (Hostile) - Lost Izalith"
+          "Name": "[UNUSED] Black Iron Tarkus (Hostile) - Lost Izalith"
         },
         {
           "Index": 77,
@@ -42841,97 +42841,97 @@
         {
           "Index": 108,
           "ID": 6810,
-          "Name": "[Unused] Tutorial Prisoner 1"
+          "Name": "[UNUSED] Tutorial Prisoner 1"
         },
         {
           "Index": 109,
           "ID": 6811,
-          "Name": "[Unused] Tutorial Prisoner 2"
+          "Name": "[UNUSED] Tutorial Prisoner 2"
         },
         {
           "Index": 110,
           "ID": 7100,
-          "Name": "[Unused] Vagrant NPC - The Depths - Warrior"
+          "Name": "[UNUSED] Vagrant NPC - The Depths - Warrior"
         },
         {
           "Index": 111,
           "ID": 7110,
-          "Name": "[Unused] Vagrant NPC - Undead Burg - Thief"
+          "Name": "[UNUSED] Vagrant NPC - Undead Burg - Thief"
         },
         {
           "Index": 112,
           "ID": 7111,
-          "Name": "[Unused] Vagrant NPC - Undead Parish - Thief"
+          "Name": "[UNUSED] Vagrant NPC - Undead Parish - Thief"
         },
         {
           "Index": 113,
           "ID": 7120,
-          "Name": "[Unused] Vagrant NPC - Painted World - Wanderer"
+          "Name": "[UNUSED] Vagrant NPC - Painted World - Wanderer"
         },
         {
           "Index": 114,
           "ID": 7130,
-          "Name": "[Unused] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
+          "Name": "[UNUSED] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
         },
         {
           "Index": 115,
           "ID": 7131,
-          "Name": "[Unused] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
+          "Name": "[UNUSED] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
         },
         {
           "Index": 116,
           "ID": 7140,
-          "Name": "[Unused] Vagrant NPC - The Catacombs - Cleric"
+          "Name": "[UNUSED] Vagrant NPC - The Catacombs - Cleric"
         },
         {
           "Index": 117,
           "ID": 7150,
-          "Name": "[Unused] Vagrant NPC - Tomb of the Giants - Cleric"
+          "Name": "[UNUSED] Vagrant NPC - Tomb of the Giants - Cleric"
         },
         {
           "Index": 118,
           "ID": 7160,
-          "Name": "[Unused] Vagrant NPC - Ash Lake - Dragon Newt"
+          "Name": "[UNUSED] Vagrant NPC - Ash Lake - Dragon Newt"
         },
         {
           "Index": 119,
           "ID": 7170,
-          "Name": "[Unused] Vagrant NPC - Blighttown - Wanderer"
+          "Name": "[UNUSED] Vagrant NPC - Blighttown - Wanderer"
         },
         {
           "Index": 120,
           "ID": 7180,
-          "Name": "[Unused] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
+          "Name": "[UNUSED] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
         },
         {
           "Index": 121,
           "ID": 7190,
-          "Name": "[Unused] Vagrant NPC - Sen\u0027s Fortress - Warrior"
+          "Name": "[UNUSED] Vagrant NPC - Sen\u0027s Fortress - Warrior"
         },
         {
           "Index": 122,
           "ID": 7200,
-          "Name": "[Unused] Vagrant NPC - Anor Londo - Knight"
+          "Name": "[UNUSED] Vagrant NPC - Anor Londo - Knight"
         },
         {
           "Index": 123,
           "ID": 7210,
-          "Name": "[Unused] Vagrant NPC - New Londo Ruins - Bandit"
+          "Name": "[UNUSED] Vagrant NPC - New Londo Ruins - Bandit"
         },
         {
           "Index": 124,
           "ID": 7220,
-          "Name": "[Unused] Vagrant NPC - Duke\u0027s Archives/Crystal Cave - Sorcerer"
+          "Name": "[UNUSED] Vagrant NPC - Duke\u0027s Archives/Crystal Cave - Sorcerer"
         },
         {
           "Index": 125,
           "ID": 7230,
-          "Name": "[Unused] Vagrant NPC - Kiln of the First Flame - Deprived"
+          "Name": "[UNUSED] Vagrant NPC - Kiln of the First Flame - Deprived"
         },
         {
           "Index": 126,
           "ID": 7240,
-          "Name": "[Unused] Vagrant NPC - Undead Asylum - Deprived"
+          "Name": "[UNUSED] Vagrant NPC - Undead Asylum - Deprived"
         },
         {
           "Index": 127,
@@ -43061,7 +43061,7 @@
         {
           "Index": 152,
           "ID": 225003,
-          "Name": "Lesser Taurus Demon (7 Heroes??)"
+          "Name": "[UNUSED] Lesser Taurus Demon (7 Heroes??)"
         },
         {
           "Index": 153,
@@ -43071,7 +43071,7 @@
         {
           "Index": 154,
           "ID": 226001,
-          "Name": "[Unused] Batwing Demon - Darkroot Garden"
+          "Name": "[UNUSED] Batwing Demon - Darkroot Garden"
         },
         {
           "Index": 155,
@@ -43191,7 +43191,7 @@
         {
           "Index": 178,
           "ID": 238001,
-          "Name": "[Unused] Stone Knight - Royal Garden"
+          "Name": "[UNUSED] Stone Knight - Royal Garden"
         },
         {
           "Index": 179,
@@ -43481,7 +43481,7 @@
         {
           "Index": 236,
           "ID": 256001,
-          "Name": "[Unused] Balder Knight (Crossbow) - Undead Parish"
+          "Name": "[UNUSED] Balder Knight (Crossbow) - Undead Parish"
         },
         {
           "Index": 237,
@@ -43526,7 +43526,7 @@
         {
           "Index": 245,
           "ID": 257000,
-          "Name": "[Unused] Berenike Knight (Greatsword) - Undead Parish"
+          "Name": "[UNUSED] Berenike Knight (Greatsword) - Undead Parish"
         },
         {
           "Index": 246,
@@ -43541,7 +43541,7 @@
         {
           "Index": 248,
           "ID": 257010,
-          "Name": "[Unused] Berenike Knight (Greatsword) - Sen\u0027s Fortress"
+          "Name": "[UNUSED] Berenike Knight (Greatsword) - Sen\u0027s Fortress"
         },
         {
           "Index": 249,
@@ -43551,7 +43551,7 @@
         {
           "Index": 250,
           "ID": 257012,
-          "Name": "[Unused] Berenike Knight (Greatsword - Black Phantom) - Sen\u0027s Fortress"
+          "Name": "[UNUSED] Berenike Knight (Greatsword - Black Phantom) - Sen\u0027s Fortress"
         },
         {
           "Index": 251,
@@ -43561,12 +43561,12 @@
         {
           "Index": 252,
           "ID": 257021,
-          "Name": "[Unused] Berenike Knight (Mace) - Painted World"
+          "Name": "[UNUSED] Berenike Knight (Mace) - Painted World"
         },
         {
           "Index": 253,
           "ID": 257022,
-          "Name": "[Unused] Berenike Knight (Greatsword - Black Phantom) - Painted World"
+          "Name": "[UNUSED] Berenike Knight (Greatsword - Black Phantom) - Painted World"
         },
         {
           "Index": 254,
@@ -44241,7 +44241,7 @@
         {
           "Index": 388,
           "ID": 339000,
-          "Name": "[Unused] Burrowing Rockworm (Lost Izalith Shortcut)"
+          "Name": "[UNUSED] Burrowing Rockworm (Lost Izalith Shortcut)"
         },
         {
           "Index": 389,
@@ -44281,7 +44281,7 @@
         {
           "Index": 396,
           "ID": 342001,
-          "Name": "[Unused] Undead Dragon"
+          "Name": "[UNUSED] Undead Dragon"
         },
         {
           "Index": 397,
@@ -44366,7 +44366,7 @@
         {
           "Index": 413,
           "ID": 349000,
-          "Name": "[Unused] Vagrant (Good) - Undead Asylum"
+          "Name": "[UNUSED] Vagrant (Good) - Undead Asylum"
         },
         {
           "Index": 414,
@@ -44441,7 +44441,7 @@
         {
           "Index": 428,
           "ID": 349050,
-          "Name": "[Unused] Vagrant (Good - Black Phantom) - Undead Asylum"
+          "Name": "[UNUSED] Vagrant (Good - Black Phantom) - Undead Asylum"
         },
         {
           "Index": 429,
@@ -44516,7 +44516,7 @@
         {
           "Index": 443,
           "ID": 349100,
-          "Name": "[Unused] Vagrant (Evil) - Undead Asylum"
+          "Name": "[UNUSED] Vagrant (Evil) - Undead Asylum"
         },
         {
           "Index": 444,
@@ -44591,7 +44591,7 @@
         {
           "Index": 458,
           "ID": 349200,
-          "Name": "[Unused] Vagrant (Evil - Black Phantom) - Undead Asylum"
+          "Name": "[UNUSED] Vagrant (Evil - Black Phantom) - Undead Asylum"
         },
         {
           "Index": 459,
@@ -44686,7 +44686,7 @@
         {
           "Index": 477,
           "ID": 352000,
-          "Name": "[Unused] Drake (Flying)"
+          "Name": "[UNUSED] Drake (Flying)"
         },
         {
           "Index": 478,
@@ -44696,7 +44696,7 @@
         {
           "Index": 479,
           "ID": 352005,
-          "Name": "[Unused] Drake (Flying)"
+          "Name": "[UNUSED] Drake (Flying)"
         },
         {
           "Index": 480,
@@ -44936,7 +44936,7 @@
         {
           "Index": 527,
           "ID": 523100,
-          "Name": "[Unused] Bed Of Chaos (Moving)"
+          "Name": "[UNUSED] Bed Of Chaos (Moving)"
         },
         {
           "Index": 528,
@@ -63941,7 +63941,7 @@
         {
           "Index": 67,
           "ID": 6350,
-          "Name": "[Unused] Painter Ariamis"
+          "Name": "[UNUSED] Painter Ariamis"
         },
         {
           "Index": 68,
@@ -63951,17 +63951,17 @@
         {
           "Index": 69,
           "ID": 6390,
-          "Name": "[Unused] Black Iron Tarkus"
+          "Name": "[UNUSED] Black Iron Tarkus"
         },
         {
           "Index": 70,
           "ID": 6400,
-          "Name": "[Unused] Velka Knight"
+          "Name": "[UNUSED] Velka Knight"
         },
         {
           "Index": 71,
           "ID": 6410,
-          "Name": "[Unused] Witch Beatrice"
+          "Name": "[UNUSED] Witch Beatrice"
         },
         {
           "Index": 72,
@@ -63986,7 +63986,7 @@
         {
           "Index": 76,
           "ID": 6511,
-          "Name": "[Unused] Black Iron Tarkus (Enemy) - Lost Izalith"
+          "Name": "[UNUSED] Black Iron Tarkus (Enemy) - Lost Izalith"
         },
         {
           "Index": 77,
@@ -64056,7 +64056,7 @@
         {
           "Index": 90,
           "ID": 6562,
-          "Name": "[Unused] Kirk, Knight of Thorns (Invader) - The Depths"
+          "Name": "[UNUSED] Kirk, Knight of Thorns (Invader) - The Depths"
         },
         {
           "Index": 91,
@@ -64146,107 +64146,107 @@
         {
           "Index": 108,
           "ID": 6810,
-          "Name": "[Unused] Tutorial Prisoner 1"
+          "Name": "[UNUSED] Tutorial Prisoner 1"
         },
         {
           "Index": 109,
           "ID": 6811,
-          "Name": "[Unused] Tutorial Prisoner 2"
+          "Name": "[UNUSED] Tutorial Prisoner 2"
         },
         {
           "Index": 110,
           "ID": 7100,
-          "Name": "[Unused] Vagrant NPC - The Depths - Warrior"
+          "Name": "[UNUSED] Vagrant NPC - The Depths - Warrior"
         },
         {
           "Index": 111,
           "ID": 7110,
-          "Name": "[Unused] Vagrant NPC - Undead Burg - Thief"
+          "Name": "[UNUSED] Vagrant NPC - Undead Burg - Thief"
         },
         {
           "Index": 112,
           "ID": 7111,
-          "Name": "[Unused] Vagrant NPC - Undead Parish - Thief"
+          "Name": "[UNUSED] Vagrant NPC - Undead Parish - Thief"
         },
         {
           "Index": 113,
           "ID": 7120,
-          "Name": "[Unused] Vagrant NPC - Painted World - Wanderer"
+          "Name": "[UNUSED] Vagrant NPC - Painted World - Wanderer"
         },
         {
           "Index": 114,
           "ID": 7130,
-          "Name": "[Unused] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
+          "Name": "[UNUSED] Vagrant NPC - Darkroot Garden (1st half) - Hunter"
         },
         {
           "Index": 115,
           "ID": 7131,
-          "Name": "[Unused] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
+          "Name": "[UNUSED] Vagrant NPC - Darkroot Garden (2nd half) - Hunter"
         },
         {
           "Index": 116,
           "ID": 7140,
-          "Name": "[Unused] Vagrant NPC - The Catacombs - Cleric"
+          "Name": "[UNUSED] Vagrant NPC - The Catacombs - Cleric"
         },
         {
           "Index": 117,
           "ID": 7150,
-          "Name": "[Unused] Vagrant NPC - Tomb of the Giants - Cleric"
+          "Name": "[UNUSED] Vagrant NPC - Tomb of the Giants - Cleric"
         },
         {
           "Index": 118,
           "ID": 7160,
-          "Name": "[Unused] Vagrant NPC - Ash Lake - Dragon Newt"
+          "Name": "[UNUSED] Vagrant NPC - Ash Lake - Dragon Newt"
         },
         {
           "Index": 119,
           "ID": 7170,
-          "Name": "[Unused] Vagrant NPC - Blighttown - Wanderer"
+          "Name": "[UNUSED] Vagrant NPC - Blighttown - Wanderer"
         },
         {
           "Index": 120,
           "ID": 7180,
-          "Name": "[Unused] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
+          "Name": "[UNUSED] Vagrant NPC - Demon Ruins/Lost Izalith - Pyromancer"
         },
         {
           "Index": 121,
           "ID": 7190,
-          "Name": "[Unused] Vagrant NPC - Sen\u0027s Fortress - Warrior"
+          "Name": "[UNUSED] Vagrant NPC - Sen\u0027s Fortress - Warrior"
         },
         {
           "Index": 122,
           "ID": 7200,
-          "Name": "[Unused] Vagrant NPC - Anor Londo - Knight"
+          "Name": "[UNUSED] Vagrant NPC - Anor Londo - Knight"
         },
         {
           "Index": 123,
           "ID": 7210,
-          "Name": "[Unused] Vagrant NPC - New Londo Ruins - Bandit"
+          "Name": "[UNUSED] Vagrant NPC - New Londo Ruins - Bandit"
         },
         {
           "Index": 124,
           "ID": 7220,
-          "Name": "[Unused] Vagrant NPC - Duke\u0027s Archives/Crystal Cave - Sorcerer"
+          "Name": "[UNUSED] Vagrant NPC - Duke\u0027s Archives/Crystal Cave - Sorcerer"
         },
         {
           "Index": 125,
           "ID": 7230,
-          "Name": "[Unused] Vagrant NPC - Kiln of the First Flame - Deprived"
+          "Name": "[UNUSED] Vagrant NPC - Kiln of the First Flame - Deprived"
         },
         {
           "Index": 126,
           "ID": 7240,
-          "Name": "[Unused] Vagrant NPC - Undead Asylum - Deprived"
+          "Name": "[UNUSED] Vagrant NPC - Undead Asylum - Deprived"
         },
         {
           "Index": 127,
           "ID": 10000,
-          "Name": "For Funnel(?)"
+          "Name": "Homing (Crystal) Soulmass"
         },
         {
           "Index": 128,
           "ID": 10001,
-          "Name": "[DLC] For Pursuers"
+          "Name": "[DLC] Pursuers"
         },
         {
           "Index": 129,
@@ -64256,7 +64256,7 @@
         {
           "Index": 130,
           "ID": 120001,
-          "Name": "[Unused] Large Undead Rat (Crown)"
+          "Name": "[UNUSED] Large Undead Rat (Crown)"
         },
         {
           "Index": 131,
@@ -64276,12 +64276,12 @@
         {
           "Index": 134,
           "ID": 120102,
-          "Name": "Small Undead Rat (Reaction-less?)"
+          "Name": "Small Undead Rat (Reactionless)"
         },
         {
           "Index": 135,
           "ID": 120103,
-          "Name": "[Unused] Small Undead Rat (Return Home Immediately)"
+          "Name": "[UNUSED] Small Undead Rat (Return Home Immediately)"
         },
         {
           "Index": 136,
@@ -64316,7 +64316,7 @@
         {
           "Index": 142,
           "ID": 223000,
-          "Name": "[Unused] Stray Demon"
+          "Name": "[UNUSED] Stray Demon"
         },
         {
           "Index": 143,
@@ -64346,7 +64346,7 @@
         {
           "Index": 148,
           "ID": 224002,
-          "Name": "[Unused] Capra Demon (Somehwat Defensive)"
+          "Name": "[UNUSED] Capra Demon (Somehwat Defensive)"
         },
         {
           "Index": 149,
@@ -64366,7 +64366,7 @@
         {
           "Index": 152,
           "ID": 225001,
-          "Name": "[Unused] Taurus Demon - Undead Asylum"
+          "Name": "[UNUSED] Taurus Demon - Undead Asylum"
         },
         {
           "Index": 153,
@@ -64411,7 +64411,7 @@
         {
           "Index": 161,
           "ID": 229000,
-          "Name": "[Unused] Chained Prisoner (Proto)"
+          "Name": "[UNUSED] Chained Prisoner (Proto)"
         },
         {
           "Index": 162,
@@ -64531,7 +64531,7 @@
         {
           "Index": 185,
           "ID": 241013,
-          "Name": "[Unused] Silver Knight (Spear - Defensive)"
+          "Name": "[UNUSED] Silver Knight (Spear - Defensive)"
         },
         {
           "Index": 186,
@@ -64646,7 +64646,7 @@
         {
           "Index": 208,
           "ID": 252001,
-          "Name": "[Unused] Hollow Thief (Run Home On Request)"
+          "Name": "[UNUSED] Hollow Thief (Run Home On Request)"
         },
         {
           "Index": 209,
@@ -64656,12 +64656,12 @@
         {
           "Index": 210,
           "ID": 253000,
-          "Name": "[Unused] \u0022Bagworm\u0022 Hollow (Club)"
+          "Name": "[UNUSED] \u0022Bagworm\u0022 Hollow (Club)"
         },
         {
           "Index": 211,
           "ID": 253001,
-          "Name": "[Unused] \u0022Bagworm\u0022 Hollow (Poison Stick)"
+          "Name": "[UNUSED] \u0022Bagworm\u0022 Hollow (Poison Stick)"
         },
         {
           "Index": 212,
@@ -64671,7 +64671,7 @@
         {
           "Index": 213,
           "ID": 253100,
-          "Name": "[Unused] \u0022Bagworm\u0022 Hollow (RocK)"
+          "Name": "[UNUSED] \u0022Bagworm\u0022 Hollow (RocK)"
         },
         {
           "Index": 214,
@@ -64701,22 +64701,22 @@
         {
           "Index": 219,
           "ID": 254008,
-          "Name": "Hollow Warrior (Sword - For Base Use?)"
+          "Name": "Hollow Warrior (Sword - Firelink Shrine)"
         },
         {
           "Index": 220,
           "ID": 254009,
-          "Name": "Hollow Warrior (Axe - For Base Use?)"
+          "Name": "Hollow Warrior (Axe - Firelink Shrine)"
         },
         {
           "Index": 221,
           "ID": 254010,
-          "Name": "Hollow Warrior (Firebomb - For Base Use?)"
+          "Name": "[UNUSED] Hollow Warrior (Firebomb - Firelink Shrine)"
         },
         {
           "Index": 222,
           "ID": 254011,
-          "Name": "Hollow Warrior (Sword - Defensive - For Base Use?)"
+          "Name": "Hollow Warrior (Sword - Defensive - Firelink Shrine)"
         },
         {
           "Index": 223,
@@ -64726,7 +64726,7 @@
         {
           "Index": 224,
           "ID": 254030,
-          "Name": "Hollow Warrior (Sword - Exclusively for Undead Burg??)"
+          "Name": "Hollow Warrior (Sword - Undead Burg)"
         },
         {
           "Index": 225,
@@ -64871,12 +64871,12 @@
         {
           "Index": 253,
           "ID": 259000,
-          "Name": "[Unused] Marvellous Chester (Prototype)"
+          "Name": "[UNUSED] Marvellous Chester (Prototype)"
         },
         {
           "Index": 254,
           "ID": 259100,
-          "Name": "[Unused] Marvellous Chester (Prototype - Angry)"
+          "Name": "[UNUSED] Marvellous Chester (Prototype - Angry)"
         },
         {
           "Index": 255,
@@ -65066,7 +65066,7 @@
         {
           "Index": 292,
           "ID": 279003,
-          "Name": "Black Knight (Halberd - Sweeping Attack Version?)"
+          "Name": "Black Knight (Halberd - No Sweeping Attacks)"
         },
         {
           "Index": 293,
@@ -65116,7 +65116,7 @@
         {
           "Index": 302,
           "ID": 282000,
-          "Name": "[Unused] Hollow Crag Worshipper"
+          "Name": "[UNUSED] Hollow Crag Worshipper"
         },
         {
           "Index": 303,
@@ -65341,7 +65341,7 @@
         {
           "Index": 347,
           "ID": 329000,
-          "Name": "[Unused] King Bug and Mosquitoes"
+          "Name": "[UNUSED] King Bug and Mosquitoes"
         },
         {
           "Index": 348,
@@ -65351,7 +65351,7 @@
         {
           "Index": 349,
           "ID": 330001,
-          "Name": "Crystal Lizard (Logic Difference?)"
+          "Name": "Crystal Lizard (Undead Burg Barrel)"
         },
         {
           "Index": 350,
@@ -65401,7 +65401,7 @@
         {
           "Index": 359,
           "ID": 333005,
-          "Name": "Pisaca Sisters (? Sunlight Miracle Loot enemies?)"
+          "Name": "Pisaca (Sunlight Miracle Loot)"
         },
         {
           "Index": 360,
@@ -65506,7 +65506,7 @@
         {
           "Index": 380,
           "ID": 343001,
-          "Name": "[Unused] Hellkite Drake - Firelink Shrine"
+          "Name": "[UNUSED] Hellkite Drake - Firelink Shrine"
         },
         {
           "Index": 381,
@@ -65561,12 +65561,12 @@
         {
           "Index": 391,
           "ID": 350100,
-          "Name": "Wisp"
+          "Name": "Wisp - New Londo Ruins"
         },
         {
           "Index": 392,
           "ID": 350101,
-          "Name": "Wisp (Map Placed?)"
+          "Name": "Wisp - The Catacombs"
         },
         {
           "Index": 393,
@@ -65576,7 +65576,7 @@
         {
           "Index": 394,
           "ID": 352000,
-          "Name": "[Unused] Drake"
+          "Name": "[UNUSED] Drake"
         },
         {
           "Index": 395,
@@ -65596,12 +65596,12 @@
         {
           "Index": 398,
           "ID": 352005,
-          "Name": "[Unused] Drake (Flying)"
+          "Name": "[UNUSED] Drake (Flying)"
         },
         {
           "Index": 399,
           "ID": 352006,
-          "Name": "[Unused] Drake (Flying - 2nd one)"
+          "Name": "[UNUSED] Drake (Flying - 2nd one)"
         },
         {
           "Index": 400,
@@ -65676,7 +65676,7 @@
         {
           "Index": 414,
           "ID": 413011,
-          "Name": "Scarecrow (Shears - Defensive)"
+          "Name": "Scarecrow Gardener (Shears - Defensive)"
         },
         {
           "Index": 415,
@@ -65706,17 +65706,17 @@
         {
           "Index": 420,
           "ID": 415010,
-          "Name": "Oolacile Resident (Melee - Don\u0027t Point?)"
+          "Name": "Oolacile Resident (Melee - Pointing Rarer)"
         },
         {
           "Index": 421,
           "ID": 415011,
-          "Name": "Oolacile Resident (Melee - Don\u0027t Point? - Defensive)"
+          "Name": "Oolacile Resident (Melee - Pointing Rarer - Defensive)"
         },
         {
           "Index": 422,
           "ID": 415012,
-          "Name": "Oolacile Resident (Melee - Don\u0027t Point? - Defensive - Restricted Vision)"
+          "Name": "Oolacile Resident (Melee - Pointing Rarer - Defensive - Restricted Vision)"
         },
         {
           "Index": 423,
@@ -65766,7 +65766,7 @@
         {
           "Index": 432,
           "ID": 416022,
-          "Name": "Oolacile Resident (Sorceress) - Chasm of the Abyss?"
+          "Name": "Oolacile Resident (Sorceress) - Chasm of the Abyss Sniper"
         },
         {
           "Index": 433,
@@ -65821,7 +65821,7 @@
         {
           "Index": 443,
           "ID": 452000,
-          "Name": "Great Grey Wolf Sif (DLC)"
+          "Name": "(DLC) Great Grey Wolf Sif"
         },
         {
           "Index": 444,
@@ -65856,7 +65856,7 @@
         {
           "Index": 450,
           "ID": 523100,
-          "Name": "[Unused] Bed Of Chaos (Moving)"
+          "Name": "[UNUSED] Bed Of Chaos (Moving)"
         },
         {
           "Index": 451,
@@ -65926,7 +65926,7 @@
         {
           "Index": 464,
           "ID": 533002,
-          "Name": "[Unused?] Kingseeker"
+          "Name": "[UNUSED] Kingseeker"
         },
         {
           "Index": 465,
@@ -107026,77 +107026,77 @@
         {
           "Index": 50,
           "ID": 900,
-          "Name": "PG 4-Legged Type"
+          "Name": "Quadruped for PG"
         },
         {
           "Index": 51,
           "ID": 1001,
-          "Name": "[Unused] DeS Player - Heavyweight"
+          "Name": "[UNUSED] DeS Player - Heavyweight"
         },
         {
           "Index": 52,
           "ID": 1002,
-          "Name": "[Unused] DeS Player - Encumbered"
+          "Name": "[UNUSED] DeS Player - Encumbered"
         },
         {
           "Index": 53,
           "ID": 1003,
-          "Name": "[Unused] DeS Player - Near Death? (Soul form?)"
+          "Name": "[UNUSED] DeS Player - Dying?"
         },
         {
           "Index": 54,
           "ID": 1004,
-          "Name": "[Unused] DeS Player - Blood Swamp (Valley of Defilement?), Encumbered"
+          "Name": "[UNUSED] DeS Player - Blood Swamp, Encumbered"
         },
         {
           "Index": 55,
           "ID": 1005,
-          "Name": "[Unused] DeS Player - Poison Swamp, Movespeed decrease?"
+          "Name": "[UNUSED] DeS Player - Poison Swamp, Movespeed decrease"
         },
         {
           "Index": 56,
           "ID": 1006,
-          "Name": "[Unused] Player - Super Lightweight"
+          "Name": "[UNUSED] Player - Super Lightweight"
         },
         {
           "Index": 57,
           "ID": 1010,
-          "Name": "[Unused] Player - Standard (Mimicry)"
+          "Name": "[UNUSED] Player - Standard (Mimicry)"
         },
         {
           "Index": 58,
           "ID": 1011,
-          "Name": "[Unused] Player - Heavyweight (Mimicry)"
+          "Name": "[UNUSED] Player - Heavyweight (Mimicry)"
         },
         {
           "Index": 59,
           "ID": 1012,
-          "Name": "[Unused] Player - Encumbered (Mimicry)"
+          "Name": "[UNUSED] Player - Encumbered (Mimicry)"
         },
         {
           "Index": 60,
           "ID": 1013,
-          "Name": "[Unused] Player - Super Lightweight (Mimicry)"
+          "Name": "[UNUSED] Player - Super Lightweight (Mimicry)"
         },
         {
           "Index": 61,
           "ID": 1020,
-          "Name": "[Unused] Player - Standard (Deep Water)"
+          "Name": "[UNUSED] Player - Standard (Deep Water)"
         },
         {
           "Index": 62,
           "ID": 1021,
-          "Name": "[Unused] Player - Heavyweight (Deep Water)"
+          "Name": "[UNUSED] Player - Heavyweight (Deep Water)"
         },
         {
           "Index": 63,
           "ID": 1022,
-          "Name": "[Unused] Player - Encumbered (Deep Water)"
+          "Name": "[UNUSED] Player - Encumbered (Deep Water)"
         },
         {
           "Index": 64,
           "ID": 1023,
-          "Name": "[Unused] Player - Super Lightweight (Deep Water)"
+          "Name": "[UNUSED] Player - Super Lightweight (Deep Water)"
         }
       ]
     },
@@ -107866,7 +107866,7 @@
         {
           "Index": 152,
           "ID": 6390,
-          "Name": "[Unused] Black Iron Tarkus"
+          "Name": "[UNUSED] Black Iron Tarkus"
         },
         {
           "Index": 153,
@@ -107891,7 +107891,7 @@
         {
           "Index": 157,
           "ID": 6511,
-          "Name": "[Unused] Black Iron Tarkus (Summon)"
+          "Name": "[UNUSED] Black Iron Tarkus (Summon)"
         },
         {
           "Index": 158,
@@ -109146,7 +109146,7 @@
         {
           "Index": 95,
           "ID": 6002,
-          "Name": "[Unused] Solaire of Astora (Hollow)"
+          "Name": "[UNUSED] Solaire of Astora (Hollow)"
         },
         {
           "Index": 96,
@@ -109171,7 +109171,7 @@
         {
           "Index": 100,
           "ID": 6031,
-          "Name": "[Unused] Big Hat Logan (Hollow)"
+          "Name": "[UNUSED] Big Hat Logan (Hollow)"
         },
         {
           "Index": 101,
@@ -109191,7 +109191,7 @@
         {
           "Index": 104,
           "ID": 6060,
-          "Name": "[Unused] Gray Saint"
+          "Name": "[UNUSED] Gray Saint"
         },
         {
           "Index": 105,
@@ -109311,7 +109311,7 @@
         {
           "Index": 128,
           "ID": 6400,
-          "Name": "[Unused] Velka Knight"
+          "Name": "[UNUSED] Velka Knight"
         },
         {
           "Index": 129,
@@ -109436,7 +109436,7 @@
         {
           "Index": 6,
           "ID": 1000,
-          "Name": "Gunda: Evil Spirit (?)"
+          "Name": "Test Dragon\u0027s Body"
         },
         {
           "Index": 7,
@@ -111996,92 +111996,92 @@
         {
           "Index": 2,
           "ID": 100,
-          "Name": "Unused - DeS The Nexus (King Allant?)"
+          "Name": "[UNUSED] DeS Beneath the Nexus (King Allant?)"
         },
         {
           "Index": 3,
           "ID": 200,
-          "Name": "Unused - DeS 1-1 Phalanx"
+          "Name": "[UNUSED] DeS 1-1 Phalanx"
         },
         {
           "Index": 4,
           "ID": 201,
-          "Name": "Unused - DeS 1-2 Tower Knight"
+          "Name": "[UNUSED] DeS 1-2 Tower Knight"
         },
         {
           "Index": 5,
           "ID": 202,
-          "Name": "Unused - DeS 1-3 Penetrator"
+          "Name": "[UNUSED] DeS 1-3 Penetrator"
         },
         {
           "Index": 6,
           "ID": 203,
-          "Name": "Unused - DeS 1-4 Old King Allant"
+          "Name": "[UNUSED] DeS 1-4 Old King Allant"
         },
         {
           "Index": 7,
           "ID": 301,
-          "Name": "Unused - DeS 4-1 Adjudicator"
+          "Name": "[UNUSED] DeS 4-1 Adjudicator"
         },
         {
           "Index": 8,
           "ID": 302,
-          "Name": "Unused - DeS 4-2 Old Hero"
+          "Name": "[UNUSED] DeS 4-2 Old Hero"
         },
         {
           "Index": 9,
           "ID": 303,
-          "Name": "Unused - DeS 4-3 Storm King"
+          "Name": "[UNUSED] DeS 4-3 Storm King"
         },
         {
           "Index": 10,
           "ID": 400,
-          "Name": "Unused - DeS 3-1 Fool\u0027s Idol"
+          "Name": "[UNUSED] DeS 3-1 Fool\u0027s Idol"
         },
         {
           "Index": 11,
           "ID": 401,
-          "Name": "Unused - DeS 3-2 Maneater"
+          "Name": "[UNUSED] DeS 3-2 Maneater"
         },
         {
           "Index": 12,
           "ID": 402,
-          "Name": "Unused - DeS 3-3 Old Monk"
+          "Name": "[UNUSED] DeS 3-3 Old Monk"
         },
         {
           "Index": 13,
           "ID": 500,
-          "Name": "Unused - DeS 5-1 Leechmonger"
+          "Name": "[UNUSED] DeS 5-1 Leechmonger"
         },
         {
           "Index": 14,
           "ID": 501,
-          "Name": "Unused - DeS 5-2 Dirty Colossus"
+          "Name": "[UNUSED] DeS 5-2 Dirty Colossus"
         },
         {
           "Index": 15,
           "ID": 502,
-          "Name": "Unused - DeS 5-3 Maiden Astraea"
+          "Name": "[UNUSED] DeS 5-3 Maiden Astraea"
         },
         {
           "Index": 16,
           "ID": 600,
-          "Name": "Unused - DeS 2-1 Armor Spider"
+          "Name": "[UNUSED] DeS 2-1 Armor Spider"
         },
         {
           "Index": 17,
           "ID": 601,
-          "Name": "Unused - DeS 2-2 Flamelurker"
+          "Name": "[UNUSED] DeS 2-2 Flamelurker"
         },
         {
           "Index": 18,
           "ID": 602,
-          "Name": "Unused - DeS 2-3 Dragon God"
+          "Name": "[UNUSED] DeS 2-3 Dragon God"
         },
         {
           "Index": 19,
           "ID": 801,
-          "Name": "Unused - DeS Tutorial Vanguard"
+          "Name": "[UNUSED] DeS Tutorial Vanguard"
         },
         {
           "Index": 20,
@@ -112426,47 +112426,47 @@
         {
           "Index": 2,
           "ID": 2,
-          "Name": "Unused - Weapons (DeS Sharp Stone)"
+          "Name": "[UNUSED] Weapons (DeS Sharp Stone)"
         },
         {
           "Index": 3,
           "ID": 3,
-          "Name": "Unused - Weapons (DeS Clearstone)"
+          "Name": "[UNUSED] Weapons (DeS Clearstone)"
         },
         {
           "Index": 4,
           "ID": 4,
-          "Name": "Unused - Weapons (DeS Greystone)"
+          "Name": "[UNUSED] Weapons (DeS Greystone)"
         },
         {
           "Index": 5,
           "ID": 5,
-          "Name": "Unused - Weapons (DeS Bladestone)"
+          "Name": "[UNUSED] Weapons (DeS Bladestone)"
         },
         {
           "Index": 6,
           "ID": 6,
-          "Name": "Unused - Weapons (DeS Spiderstone)"
+          "Name": "[UNUSED] Weapons (DeS Spiderstone)"
         },
         {
           "Index": 7,
           "ID": 7,
-          "Name": "Unused - Weapons (DeS Mercurystone)"
+          "Name": "[UNUSED] Weapons (DeS Mercurystone)"
         },
         {
           "Index": 8,
           "ID": 8,
-          "Name": "Unused - Weapons (DeS Dragonstone)"
+          "Name": "[UNUSED] Weapons (DeS Dragonstone)"
         },
         {
           "Index": 9,
           "ID": 9,
-          "Name": "Unused - Weapons (DeS Suckerstone)"
+          "Name": "[UNUSED] Weapons (DeS Suckerstone)"
         },
         {
           "Index": 10,
           "ID": 10,
-          "Name": "Unused - Weapons (DeS Marrowstone)"
+          "Name": "[UNUSED] Weapons (DeS Marrowstone)"
         },
         {
           "Index": 11,
