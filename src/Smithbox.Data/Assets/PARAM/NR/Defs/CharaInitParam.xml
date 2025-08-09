@@ -142,7 +142,7 @@
     
     <Field Def="s32 characterSkillWeapon" />
     <Field Def="s32 ultimateArtWeapon" />
-    <Field Def="s32 passiveAbilityWeapon" />
+    <Field Def="s32 extraHelperWeapon" />
     <Field Def="s32 unknown_2" />
     <Field Def="s32 unknown_3" />
     <Field Def="s32 unknown_4" />
@@ -437,11 +437,26 @@
     <Field Def="u8 unknown_23c" />
     <Field Def="u8 unknown_23d" />
     
-    <Field Def="s32 unknown_24a" />
+    <Field Def="s32 spectralHawkWeaponId" />
     
     <Field Def="s32 heroSelectionBackgroundId" />
     
-    <Field Def="dummy8 reserve[24]">
+    <Field Def="s8 unknown_24a" />
+	<Field Def="s8 unknown_24b" />
+	<Field Def="s8 unknown_24c" />
+	<Field Def="s8 unknown_24d" />
+	
+	<Field Def="s8 unknown_25a" />
+	<Field Def="s8 unknown_25b" />
+	<Field Def="s8 unknown_25c" />
+	<Field Def="s8 unknown_25d" />
+	
+	<Field Def="s8 unknown_26a" />
+	<Field Def="s8 unknown_26b" />
+	<Field Def="s8 unknown_26c" />
+	<Field Def="s8 unknown_26d" />
+    
+    <Field Def="dummy8 reserve[12]">
       <DisplayName>予約領域</DisplayName>
       <Description>予約領域</Description>
       <SortID>10009</SortID>
