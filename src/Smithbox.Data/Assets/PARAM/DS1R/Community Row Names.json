@@ -112701,12 +112701,12 @@
         {
           "Index": 1,
           "ID": 1,
-          "Name": "Summon Magic for range designation"
+          "Name": "Summoning Magic Range (summon as in player summon or as in cast magic?)"
         },
         {
           "Index": 2,
           "ID": 101,
-          "Name": "Short"
+          "Name": "Close"
         },
         {
           "Index": 3,
@@ -112716,172 +112716,167 @@
         {
           "Index": 4,
           "ID": 103,
-          "Name": "Distant"
+          "Name": "Far"
         },
         {
           "Index": 5,
           "ID": 104,
-          "Name": "Centipede Demon"
+          "Name": "[UNUSED] Centipede Demon"
         },
         {
           "Index": 6,
           "ID": 105,
-          "Name": "Undead Dragon"
+          "Name": "Painted World - Undead Dragon"
         },
         {
           "Index": 7,
           "ID": 110,
-          "Name": "Dark"
+          "Name": "Dark (Common)"
         },
         {
           "Index": 8,
           "ID": 111,
-          "Name": "Dark - Close"
+          "Name": "Dark (Close)"
         },
         {
           "Index": 9,
           "ID": 112,
-          "Name": "Dark - Medium"
+          "Name": "Dark (Medium)"
         },
         {
           "Index": 10,
           "ID": 113,
-          "Name": "Dark - Distant"
+          "Name": "Dark (Far)"
         },
         {
           "Index": 11,
           "ID": 200,
-          "Name": "Dark"
+          "Name": "Dark (Prototype Map)"
         },
         {
           "Index": 12,
-          "ID": 200,
-          "Name": "Dark"
+          "ID": 210,
+          "Name": "[DLC] Manus, Father of the Abyss"
         },
         {
           "Index": 13,
-          "ID": 210,
-          "Name": "Manus"
+          "ID": 211,
+          "Name": "[DLC] Knight Artorias"
         },
         {
           "Index": 14,
-          "ID": 211,
-          "Name": "[DLC] Camera for al-Tri-race"
+          "ID": 212,
+          "Name": "[DLC] Black Dragon Kalameet"
         },
         {
           "Index": 15,
-          "ID": 212,
-          "Name": "Kalameet"
+          "ID": 213,
+          "Name": "[UNUSED, DLC] Chained Prisoner"
         },
         {
           "Index": 16,
-          "ID": 213,
-          "Name": "Chained Prisonmer"
+          "ID": 214,
+          "Name": "[DLC] Hawkeye Gough"
         },
         {
           "Index": 17,
-          "ID": 214,
-          "Name": "[DLC] Camera for Go warfare"
+          "ID": 220,
+          "Name": "[DLC] Battle of Stoicism Arena"
         },
         {
           "Index": 18,
-          "ID": 220,
-          "Name": "Arena"
-        },
-        {
-          "Index": 19,
           "ID": 1000,
           "Name": "Gaping Dragon"
         },
         {
-          "Index": 20,
+          "Index": 19,
           "ID": 1010,
-          "Name": "Gargoyle"
+          "Name": "Bell Gargoyle"
+        },
+        {
+          "Index": 20,
+          "ID": 1100,
+          "Name": "[UNUSED] 1st Map - Suspension Bridge"
         },
         {
           "Index": 21,
-          "ID": 1100,
-          "Name": "Suspension Bridge"
+          "ID": 1101,
+          "Name": "[UNUSED] 1st Map - Distant"
         },
         {
           "Index": 22,
-          "ID": 1101,
-          "Name": "1st Map - Distant"
+          "ID": 1102,
+          "Name": "[UNUSED] 1st Map - Boss Room"
         },
         {
           "Index": 23,
-          "ID": 1102,
-          "Name": "1st Map - Boss Room"
+          "ID": 1103,
+          "Name": "[UNUSED] 1st Map - Boss Room (old)"
         },
         {
           "Index": 24,
-          "ID": 1103,
-          "Name": "1st Map - Boss Room (old)"
+          "ID": 1210,
+          "Name": "[DLC] Sanctuary Guardian"
         },
         {
           "Index": 25,
-          "ID": 1210,
-          "Name": "Sanctuary Guardian"
+          "ID": 1300,
+          "Name": "[UNUSED] The Catacombs/Tomb of the Giants(?) (Close)"
         },
         {
           "Index": 26,
-          "ID": 1300,
-          "Name": "Grave - Close"
+          "ID": 1301,
+          "Name": "[UNUSED] The Catacombs/Tomb of the Giants(?) (Far)"
         },
         {
           "Index": 27,
-          "ID": 1301,
-          "Name": "Grave - Distant"
+          "ID": 1410,
+          "Name": "Bed of Chaos"
         },
         {
           "Index": 28,
-          "ID": 1410,
-          "Name": "[Dedicated to the abolition of the visor]"
+          "ID": 1510,
+          "Name": "Lightning Gargoyle"
         },
         {
           "Index": 29,
-          "ID": 1510,
-          "Name": "Gargoyle"
+          "ID": 1511,
+          "Name": "Lightning Gargoyle (Dark Anor Londo)"
         },
         {
           "Index": 30,
-          "ID": 1511,
-          "Name": "Gargoyle - Dark"
+          "ID": 1700,
+          "Name": "Seath the Scaleless"
         },
         {
           "Index": 31,
-          "ID": 1700,
-          "Name": "[Sheath Combat Camera]"
+          "ID": 10000,
+          "Name": "Camera (Close)"
         },
         {
           "Index": 32,
-          "ID": 10000,
-          "Name": "Camera - Short"
+          "ID": 10001,
+          "Name": "Camera (Medium)"
         },
         {
           "Index": 33,
-          "ID": 10001,
-          "Name": "Camera - Medium"
+          "ID": 10002,
+          "Name": "Camera (Far)"
         },
         {
           "Index": 34,
-          "ID": 10002,
-          "Name": "Camera - Distant"
+          "ID": 10003,
+          "Name": "Camera (Dark)"
         },
         {
           "Index": 35,
-          "ID": 10003,
-          "Name": "Camera - Dark"
+          "ID": 10004,
+          "Name": "Camera (Dark - Prototype Map)"
         },
         {
           "Index": 36,
-          "ID": 10004,
-          "Name": "Camera - Dark"
-        },
-        {
-          "Index": 37,
           "ID": 10005,
-          "Name": "Camera - Wide"
+          "Name": "Camera (A bit Wider(?) - Prototype Map)"
         }
       ]
     },
