@@ -441,11 +441,8 @@ public class ProjectManager
         newProject.EnableModelEditor = ProjectCreation.EnableModelEditor;
         newProject.EnableTextEditor = ProjectCreation.EnableTextEditor;
         newProject.EnableParamEditor = ProjectCreation.EnableParamEditor;
-        newProject.EnableTimeActEditor = ProjectCreation.EnableTimeActEditor;
         newProject.EnableGparamEditor = ProjectCreation.EnableGparamEditor;
         newProject.EnableMaterialEditor = ProjectCreation.EnableMaterialEditor;
-        newProject.EnableEmevdEditor = ProjectCreation.EnableEmevdEditor;
-        newProject.EnableEsdEditor = ProjectCreation.EnableEsdEditor;
         newProject.EnableTextureViewer = ProjectCreation.EnableTextureViewer;
         newProject.EnableFileBrowser = ProjectCreation.EnableFileBrowser;
 

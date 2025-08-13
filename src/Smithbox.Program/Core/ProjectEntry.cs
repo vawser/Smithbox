@@ -1,5 +1,4 @@
 ﻿using Andre.IO.VFS;
-using BehaviorEditorNS;
 using Hexa.NET.ImGui;
 using Microsoft.Extensions.Logging;
 using StudioCore.Editor;
@@ -10,9 +9,6 @@ using StudioCore.Editors.ParamEditor;
 using StudioCore.Editors.ParamEditor.Data;
 using StudioCore.Editors.TextEditor.Data;
 using StudioCore.Editors.TextureViewer.Data;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.EventScriptEditorNS;
-using StudioCore.EzStateEditorNS;
 using StudioCore.FileBrowserNS;
 using StudioCore.Formats;
 using StudioCore.Formats.JSON;
@@ -53,14 +49,10 @@ public class ProjectEntry
     public bool EnableModelEditor;
     public bool EnableTextEditor;
     public bool EnableParamEditor;
-    public bool EnableTimeActEditor;
     public bool EnableGparamEditor;
     public bool EnableMaterialEditor;
-    public bool EnableEmevdEditor;
-    public bool EnableEsdEditor;
     public bool EnableTextureViewer;
     public bool EnableFileBrowser;
-    public bool EnableBehaviorEditor;
 
     public bool EnableExternalMaterialData;
 
@@ -97,21 +89,13 @@ public class ProjectEntry
     [JsonIgnore]
     public ParamEditorScreen ParamEditor;
     [JsonIgnore]
-    public TimeActEditorScreen TimeActEditor;
-    [JsonIgnore]
     public GparamEditorScreen GparamEditor;
     [JsonIgnore]
     public MaterialEditorScreen MaterialEditor;
     [JsonIgnore]
-    public EmevdEditorScreen EmevdEditor;
-    [JsonIgnore]
-    public EsdEditorScreen EsdEditor;
-    [JsonIgnore]
     public TextureViewerScreen TextureViewer;
     [JsonIgnore]
     public FileBrowserScreen FileBrowser;
-    [JsonIgnore]
-    public BehaviorEditorScreen BehaviorEditor;
 
     // Data Banks
     [JsonIgnore]
@@ -123,19 +107,11 @@ public class ProjectEntry
     [JsonIgnore]
     public MaterialData MaterialData;
     [JsonIgnore]
-    public EmevdData EmevdData;
-    [JsonIgnore]
-    public EsdData EsdData;
-    [JsonIgnore]
     public GparamData GparamData; 
     [JsonIgnore]
     public TextData TextData;
     [JsonIgnore]
-    public TimeActData TimeActData;
-    [JsonIgnore]
     public TextureData TextureData;
-    [JsonIgnore]
-    public BehaviorData BehaviorData;
     [JsonIgnore]
     public VisualData VisualData;
 
@@ -214,12 +190,8 @@ public class ProjectEntry
         EnableGparamEditor = true;
         EnableTextureViewer = true;
 
-        EnableTimeActEditor = false;
         EnableMaterialEditor = false;
-        EnableEmevdEditor = false;
-        EnableEsdEditor = false;
         EnableFileBrowser = false;
-        EnableBehaviorEditor = false;
 
         ActionManager = new ActionManager();
     }
@@ -356,27 +328,19 @@ public class ProjectEntry
         ModelEditor = null;
         TextEditor = null;
         ParamEditor = null;
-        TimeActEditor = null;
         GparamEditor = null;
         MaterialEditor = null;
-        EmevdEditor = null;
-        EsdEditor = null;
         TextureViewer = null;
         MapEditor = null;
         FileBrowser = null;
-        BehaviorEditor = null;
 
         MapData = null;
         ParamData = null;
         MaterialData = null;
-        EmevdData = null;
-        EsdData = null;
         GparamData = null;
         TextData = null;
         TextureData = null;
-        TimeActData = null;
         FileData = null;
-        BehaviorData = null;
 
         // ---- Map Editor ----
         if (EnableMapEditor 
@@ -624,32 +588,6 @@ public class ProjectEntry
             }
         }
 
-        // ---- Time Act Editor ----
-        if (EnableTimeActEditor 
-            && initType is InitType.ProjectDefined
-            && ProjectUtils.SupportsTimeActEditor(ProjectType))
-        {
-            TimeActData = new(BaseEditor, this);
-
-            // Time Act Banks
-            Task<bool> timeActTask = TimeActData.Setup();
-            bool timeActTaskResult = await timeActTask;
-
-            if (!silent)
-            {
-                if (timeActTaskResult)
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Setup Time Act bank.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Time Act Editor] Failed to setup Time Act bank.");
-                }
-            }
-
-            TimeActEditor = new TimeActEditorScreen(BaseEditor, this);
-        }
-
         // ---- Graphics Param Editor ----
         if (EnableGparamEditor 
             && initType is InitType.ProjectDefined 
@@ -737,58 +675,6 @@ public class ProjectEntry
             MaterialEditor = new MaterialEditorScreen(BaseEditor, this);
         }
 
-        // ---- Event Script Editor ----
-        if (EnableEmevdEditor 
-            && initType is InitType.ProjectDefined
-            && ProjectUtils.SupportsEventScriptEditor(ProjectType))
-        {
-            EmevdData = new(BaseEditor, this);
-
-            // EMEVD Banks
-            Task<bool> emevdBankTask = EmevdData.Setup();
-            bool emevdBankResult = await emevdBankTask;
-
-            if (!silent)
-            {
-                if (emevdBankResult)
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Setup EMEVD Banks.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Event Script Editor] Failed to setup EMEVD Banks.");
-                }
-            }
-
-            EmevdEditor = new EmevdEditorScreen(BaseEditor, this);
-        }
-
-        // ---- EzState Script Editor ----
-        if (EnableEsdEditor 
-            && initType is InitType.ProjectDefined
-            && ProjectUtils.SupportsEzStateScriptEditor(ProjectType))
-        {
-            EsdData = new(BaseEditor, this);
-
-            // ESD Banks
-            Task<bool> esdBankTask = EsdData.Setup();
-            bool esdBankResult = await esdBankTask;
-
-            if (!silent)
-            {
-                if (esdBankResult)
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Setup ESD Banks.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:EzState Script Editor] Failed to setup ESD Banks.");
-                }
-            }
-
-            EsdEditor = new EsdEditorScreen(BaseEditor, this);
-        }
-
         // ---- Texture Viewer ----
         if (EnableTextureViewer 
             && initType is InitType.ProjectDefined
@@ -840,32 +726,6 @@ public class ProjectEntry
 
             FileBrowser = new FileBrowserScreen(BaseEditor, this);
         }
-
-        // ---- Behavior Editor ----
-        if (EnableBehaviorEditor
-            && initType is InitType.ProjectDefined
-            && ProjectUtils.SupportsBehaviorEditor(ProjectType))
-        {
-            BehaviorData = new(BaseEditor, this);
-
-            // Text Banks
-            Task<bool> behaviorDataTask = BehaviorData.Setup();
-            bool behaviorDataTaskResult = await behaviorDataTask;
-
-            if (!silent)
-            {
-                if (behaviorDataTaskResult)
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Behavior Editor] Setup behavior banks.");
-                }
-                else
-                {
-                    TaskLogs.AddLog($"[{ProjectName}:Behavior Editor] Setup behavior banks.");
-                }
-            }
-
-            BehaviorEditor = new BehaviorEditorScreen(BaseEditor, this);
-        }
     }
 
     /// <summary>
@@ -881,27 +741,19 @@ public class ProjectEntry
         ModelEditor = null;
         TextEditor = null;
         ParamEditor = null;
-        TimeActEditor = null;
         GparamEditor = null;
         MaterialEditor = null;
-        EmevdEditor = null;
-        EsdEditor = null;
         TextureViewer = null;
         MapEditor = null;
         FileBrowser = null;
-        BehaviorEditor = null;
 
         MapData = null;
         ParamData = null;
         MaterialData = null;
-        EmevdData = null;
-        EsdData = null;
         GparamData = null;
         TextData = null;
         TextureData = null;
-        TimeActData = null;
         FileData = null;
-        BehaviorData = null;
 
         GC.Collect();
     }
@@ -947,10 +799,6 @@ public class ProjectEntry
         {
             HandleEditor(commands, ParamEditor, dt);
         }
-        if (EnableTimeActEditor && TimeActEditor != null)
-        {
-            HandleEditor(commands, TimeActEditor, dt);
-        }
         if (EnableGparamEditor && GparamEditor != null)
         {
             HandleEditor(commands, GparamEditor, dt);
@@ -959,14 +807,6 @@ public class ProjectEntry
         {
             HandleEditor(commands, MaterialEditor, dt);
         }
-        if (EnableEmevdEditor && EmevdEditor != null)
-        {
-            HandleEditor(commands, EmevdEditor, dt);
-        }
-        if (EnableEsdEditor && EsdEditor != null)
-        {
-            HandleEditor(commands, EsdEditor, dt);
-        }
         if (EnableTextureViewer && TextureViewer != null)
         {
             HandleEditor(commands, TextureViewer, dt);
@@ -974,10 +814,6 @@ public class ProjectEntry
         if (EnableFileBrowser && FileBrowser != null)
         {
             HandleEditor(commands, FileBrowser, dt);
-        }
-        if (EnableBehaviorEditor && BehaviorEditor != null)
-        {
-            HandleEditor(commands, BehaviorEditor, dt);
         }
     }
 

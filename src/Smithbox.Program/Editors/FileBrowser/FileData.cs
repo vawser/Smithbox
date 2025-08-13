@@ -1,12 +1,6 @@
 ﻿using Andre.IO.VFS;
-using Octokit;
 using StudioCore.Core;
-using StudioCore.EzStateEditorNS;
-using StudioCore.Formats.JSON;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudioCore.FileBrowserNS;

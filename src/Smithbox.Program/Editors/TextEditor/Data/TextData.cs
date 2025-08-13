@@ -1,15 +1,9 @@
-﻿using Google.Protobuf.Collections;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using StudioCore.Core;
-using StudioCore.Editors.ParamEditor;
-using StudioCore.EzStateEditorNS;
 using StudioCore.Formats.JSON;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using static StudioCore.Core.ProjectEntry;
 
 namespace StudioCore.Editors.TextEditor.Data;
 

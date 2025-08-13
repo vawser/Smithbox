@@ -127,11 +127,8 @@ public abstract class SmithboxTestBase
         newProject.EnableModelEditor = true;
         newProject.EnableTextEditor = true;
         newProject.EnableParamEditor = true;
-        newProject.EnableTimeActEditor = true;
         newProject.EnableGparamEditor = true;
         newProject.EnableMaterialEditor = true;
-        newProject.EnableEmevdEditor = true;
-        newProject.EnableEsdEditor = true;
         newProject.EnableTextureViewer = true;
         newProject.EnableFileBrowser = true;
         newProject.EnableExternalMaterialData = true;

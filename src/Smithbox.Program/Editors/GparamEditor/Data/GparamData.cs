@@ -1,9 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using SoulsFormats;
 using StudioCore.Core;
-using StudioCore.EventScriptEditorNS;
 using StudioCore.Formats.JSON;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 

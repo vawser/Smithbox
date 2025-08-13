@@ -22,10 +22,6 @@ public class SettingsWindow
     private GparamEditorTab GparamEditorSettings;
     private TextureViewerTab TextureViewerSettings;
     private InterfaceTab InterfaceSettings;
-    private TimeActEditorTab TimeActEditorSettings;
-    private BehaviorEditorTab BehaviorEditorSettings;
-    private EmevdEditorTab EmevdEditorSettings;
-    private EsdEditorTab EsdEditorSettings;
 
     public bool TabInitialized = false;
 
@@ -43,10 +39,6 @@ public class SettingsWindow
         TextEditorSettings = new TextEditorTab(BaseEditor);
         GparamEditorSettings = new GparamEditorTab(BaseEditor);
         TextureViewerSettings = new TextureViewerTab(BaseEditor);
-        TimeActEditorSettings = new TimeActEditorTab(BaseEditor);
-        BehaviorEditorSettings = new BehaviorEditorTab(BaseEditor);
-        EmevdEditorSettings = new EmevdEditorTab(BaseEditor);
-        EsdEditorSettings = new EsdEditorTab(BaseEditor);
         InterfaceSettings = new InterfaceTab(BaseEditor);
     }
 
@@ -115,18 +107,6 @@ public class SettingsWindow
                 case SelectedSettingTab.GparamEditor:
                     GparamEditorSettings.Display();
                     break;
-                case SelectedSettingTab.TimeActEditor:
-                    TimeActEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.BehaviorEditor:
-                    BehaviorEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.EmevdEditor:
-                    EmevdEditorSettings.Display();
-                    break;
-                case SelectedSettingTab.EsdEditor:
-                    EsdEditorSettings.Display();
-                    break;
                 case SelectedSettingTab.TextureViewer:
                     TextureViewerSettings.Display();
                     break;
@@ -159,10 +139,6 @@ public class SettingsWindow
         [Display(Name = "Param Editor")] ParamEditor,
         [Display(Name = "Text Editor")] TextEditor,
         [Display(Name = "GPARAM Editor")] GparamEditor,
-        [Display(Name = "Time Act Editor")] TimeActEditor,
-        [Display(Name = "Event Script Editor")] EmevdEditor,
-        [Display(Name = "EzState Script Editor")] EsdEditor,
-        [Display(Name = "Behavior Editor")] BehaviorEditor,
         [Display(Name = "Texture Viewer")] TextureViewer,
         [Display(Name = "Interface")] Interface,
 

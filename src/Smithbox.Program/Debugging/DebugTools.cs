@@ -200,14 +200,6 @@ public class DebugTools
                 ImGui.End();
             }
         }
-        if (ShowTimeActValidator)
-        {
-            if (ImGui.Begin("Time Act Validation", ImGuiWindowFlags.AlwaysAutoResize))
-            {
-                TimeActValidator.Display(BaseEditor, BaseEditor.ProjectManager.SelectedProject);
-                ImGui.End();
-            }
-        }
         if (ShowFlverMaterialLayoutDumper)
         {
             if (ImGui.Begin("FLVER Material Layout Dumper", ImGuiWindowFlags.AlwaysAutoResize))

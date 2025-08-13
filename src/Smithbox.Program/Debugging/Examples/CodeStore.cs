@@ -1,12 +1,4 @@
-﻿using Hexa.NET.ImGui;
-using SoulsFormats;
-using StudioCore.Editors.TextureViewer;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.Platform;
-using System.Collections.Generic;
-using System.IO;
-
-namespace StudioCore.DebugNS;
+﻿namespace StudioCore.DebugNS;
 
 /// <summary>
 /// Just a store location for useful snippets of code.

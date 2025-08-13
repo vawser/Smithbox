@@ -11,7 +11,6 @@ using System.IO;
 using System.Numerics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using static StudioCore.Configuration.Settings.TimeActEditorTab;
 
 namespace StudioCore;
 
@@ -1217,55 +1216,6 @@ public class CFG
     // Settings: Particle Editor
     //****************************
     public bool Interface_Display_Alias_for_Particles = true;
-
-    //****************************
-    // Settings: Time Act Editor
-    //****************************
-    public TimeactCompressionType CurrentTimeActCompressionType = TimeactCompressionType.Default;
-
-    public bool TimeActEditor_Load_CharacterTimeActs = true;
-    public bool TimeActEditor_Load_ObjectTimeActs = false;
-    public bool TimeActEditor_Load_VanillaCharacterTimeActs = true;
-    public bool TimeActEditor_Load_VanillaObjectTimeActs = false;
-
-    public bool TimeActEditor_DisplayTimeActRow_AliasInfo = true;
-
-    public bool TimeActEditor_DisplayAnimFileName = true;
-    public bool TimeActEditor_DisplayAnimRow_GeneratorInfo = true;
-
-    public bool TimeActEditor_DisplayAllGenerators = false;
-
-    public bool TimeActEditor_DisplayEventBank = true;
-    public bool TimeActEditor_DisplayEventID = true;
-    public bool TimeActEditor_DisplayEventRow_EnumInfo = true;
-    public bool TimeActEditor_DisplayEventRow_ParamRefInfo = true;
-    public bool TimeActEditor_DisplayEventRow_DataAliasInfo = true;
-    public bool TimeActEditor_DisplayEventRow_DataAliasInfo_IncludeAliasName = true;
-    public bool TimeActEditor_DisplayEventRow_ProjectEnumInfo = true;
-
-    public bool TimeActEditor_DisplayPropertyType = false;
-
-    public bool TimeActEditor_Viewport_Grid = true;
-
-    public bool TimeActEditor_Viewport_RegenerateMapGrid = false;
-    public int TimeActEditor_Viewport_GridType = 0;
-    public int TimeActEditor_Viewport_Grid_Size = 100;
-    public int TimeActEditor_Viewport_Grid_Square_Size = 10;
-    public float TimeActEditor_Viewport_Grid_Height = 0;
-    public Vector3 TimeActEditor_Viewport_Grid_Color = new Vector3(0.5f, 0.5f, 0.5f);
-
-    //****************************
-    // Settings: EMEVD Editor
-    //****************************
-    public bool EmevdEditor_PropagateFilterCommands = true;
-
-    public bool EmevdEditor_DisplayInstructionCategory = false;
-    public bool EmevdEditor_DisplayInstructionParameterNames = false;
-
-    //****************************
-    // Settings: ESD Editor
-    //****************************
-    public bool EsdEditor_PropagateFilterCommands = true;
 
     //****************************
     // Settings: Texture Viewer

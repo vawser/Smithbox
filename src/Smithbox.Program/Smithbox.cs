@@ -523,35 +523,11 @@ public class Smithbox
                 }
                 UIHelper.Tooltip("Open the settings related to Gparam Editor in Smithbox.");
 
-                if (ImGui.MenuItem("Time Act Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.TimeActEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Time Act Editor in Smithbox.");
-
-                if (ImGui.MenuItem("Event Script Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.EmevdEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Emevd Editor in Smithbox.");
-
-                if (ImGui.MenuItem("EzState Script Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.EsdEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Esd Editor in Smithbox.");
-
                 if (ImGui.MenuItem("Texture Viewer"))
                 {
                     Settings.ToggleWindow(SelectedSettingTab.TextureViewer);
                 }
                 UIHelper.Tooltip("Open the settings related to Texture Viewer in Smithbox.");
-
-                if (ImGui.MenuItem("Behavior Editor"))
-                {
-                    Settings.ToggleWindow(SelectedSettingTab.BehaviorEditor);
-                }
-                UIHelper.Tooltip("Open the settings related to Behavior Editor in Smithbox.");
 
                 ImGui.EndMenu();
             }

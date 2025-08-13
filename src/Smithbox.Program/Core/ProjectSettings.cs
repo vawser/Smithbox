@@ -28,14 +28,10 @@ public static class ProjectSettings
     public static bool EnableModelEditor = true;
     public static bool EnableTextEditor = true;
     public static bool EnableParamEditor = true;
-    public static bool EnableTimeActEditor = true;
     public static bool EnableGparamEditor = true;
     public static bool EnableMaterialEditor = true;
-    public static bool EnableEmevdEditor = true;
-    public static bool EnableEsdEditor = true;
     public static bool EnableTextureViewer = true;
     public static bool EnableFileBrowser = true;
-    public static bool EnableBehaviorEditor = true;
 
     public static bool EnableExternalMaterialData = true;
 
@@ -56,14 +52,10 @@ public static class ProjectSettings
         EnableModelEditor = curProject.EnableModelEditor;
         EnableTextEditor = curProject.EnableTextEditor;
         EnableParamEditor = curProject.EnableParamEditor;
-        EnableTimeActEditor = curProject.EnableTimeActEditor;
         EnableGparamEditor = curProject.EnableGparamEditor;
         EnableMaterialEditor = curProject.EnableMaterialEditor;
-        EnableEmevdEditor = curProject.EnableEmevdEditor;
-        EnableEsdEditor = curProject.EnableEsdEditor;
         EnableTextureViewer = curProject.EnableTextureViewer;
         EnableFileBrowser = curProject.EnableFileBrowser;
-        EnableBehaviorEditor = curProject.EnableBehaviorEditor;
 
         EditorStateChanged = false;
         Display = true;
@@ -128,14 +120,10 @@ public static class ProjectSettings
                 TargetProject.EnableModelEditor = EnableModelEditor;
                 TargetProject.EnableTextEditor = EnableTextEditor;
                 TargetProject.EnableParamEditor = EnableParamEditor;
-                TargetProject.EnableTimeActEditor = EnableTimeActEditor;
                 TargetProject.EnableGparamEditor = EnableGparamEditor;
                 TargetProject.EnableMaterialEditor = EnableMaterialEditor;
-                TargetProject.EnableEmevdEditor = EnableEmevdEditor;
-                TargetProject.EnableEsdEditor = EnableEsdEditor;
                 TargetProject.EnableTextureViewer = EnableTextureViewer;
                 TargetProject.EnableFileBrowser = EnableFileBrowser;
-                TargetProject.EnableBehaviorEditor = EnableBehaviorEditor;
 
                 TargetProject.EnableExternalMaterialData = EnableExternalMaterialData;
 
@@ -381,26 +369,6 @@ public static class ProjectSettings
                 ImGui.TableSetColumnIndex(4);
 
                 DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableTimeActEditor", ref EnableTimeActEditor);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (TargetProject.EnableTimeActEditor != EnableTimeActEditor)
-                    {
-                        EditorStateChanged = true;
-                    }
-                }
-
-                ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Time Act Editor");
-                UIHelper.Tooltip("If true, the Time Act Editor and associated data will be initialized for this project.");
-
-                // Section 3
-                ImGui.TableNextRow();
-                ImGui.TableSetColumnIndex(0);
-
-                DPI.ApplyInputWidth();
                 ImGui.Checkbox("##projectEnableMaterialEditor", ref EnableMaterialEditor);
                 if (ImGui.IsItemDeactivatedAfterEdit())
                 {
@@ -410,48 +378,13 @@ public static class ProjectSettings
                     }
                 }
 
-                ImGui.TableSetColumnIndex(1);
+                ImGui.TableSetColumnIndex(5);
 
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Material Editor");
                 UIHelper.Tooltip("If true, the Material Editor and associated data will be initialized for this project.");
 
-
-                ImGui.TableSetColumnIndex(2);
-
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableEmevdEditor", ref EnableEmevdEditor);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (TargetProject.EnableEmevdEditor != EnableEmevdEditor)
-                    {
-                        EditorStateChanged = true;
-                    }
-                }
-                ImGui.TableSetColumnIndex(3);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Event Script Editor");
-                UIHelper.Tooltip("If true, the Event Script Editor and associated data will be initialized for this project.");
-
-                ImGui.TableSetColumnIndex(4);
-
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableEsdEditor", ref EnableEsdEditor);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (TargetProject.EnableEsdEditor != EnableEsdEditor)
-                    {
-                        EditorStateChanged = true;
-                    }
-                }
-                ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("EzState Script Editor");
-                UIHelper.Tooltip("If true, the EzState Script Editor and associated data will be initialized for this project.");
-
-                // Section 4
+                // Section 3
                 ImGui.TableNextRow();
                 ImGui.TableSetColumnIndex(0);
 
@@ -469,6 +402,7 @@ public static class ProjectSettings
                 ImGui.AlignTextToFramePadding();
                 ImGui.Text("Texture Viewer");
                 UIHelper.Tooltip("If true, the Texture Viewer and associated data will be initialized for this project.");
+
 
                 ImGui.TableSetColumnIndex(2);
 
@@ -490,21 +424,7 @@ public static class ProjectSettings
 
                 ImGui.TableSetColumnIndex(4);
 
-                DPI.ApplyInputWidth();
-                ImGui.Checkbox("##projectEnableBehaviorEditor", ref EnableBehaviorEditor);
-                if (ImGui.IsItemDeactivatedAfterEdit())
-                {
-                    if (TargetProject.EnableBehaviorEditor != EnableBehaviorEditor)
-                    {
-                        EditorStateChanged = true;
-                    }
-                }
-
                 ImGui.TableSetColumnIndex(5);
-
-                ImGui.AlignTextToFramePadding();
-                ImGui.Text("Behavior Editor");
-                UIHelper.Tooltip("If true, the Behavior Editor and associated data will be initialized for this project.");
 
                 ImGui.EndTable();
             }

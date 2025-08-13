@@ -1,7 +1,4 @@
-﻿using DotNext.Collections.Generic;
-using StudioCore.Core;
-using StudioCore.Editors.TimeActEditor;
-using StudioCore.Editors.TimeActEditor.Bank;
+﻿using StudioCore.Core;
 using StudioCore.Formats.JSON;
 using System.Collections.Generic;
 using System.Linq;
