@@ -2371,6 +2371,12 @@ public class ParamBank
                 break;
         }
 
+        // For user-explicit imports
+        if (filepath != "")
+        {
+            sourceDirectory = filepath;
+        }
+
         if (!Directory.Exists(sourceDirectory))
         {
             TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to find {sourceDirectory}");
@@ -2380,26 +2386,56 @@ public class ParamBank
         RowNameStore store = new RowNameStore();
         store.Params = new();
 
-        foreach (var file in Directory.EnumerateFiles(sourceDirectory))
+        if (targetParam != "")
         {
-            try
-            {
-                var filestring = File.ReadAllText(file);
-                var options = new JsonSerializerOptions();
-                RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+            var sourceFile = Path.Combine(sourceDirectory, $"{targetParam}.json");
 
-                if (item == null)
+            if (File.Exists(sourceFile))
+            {
+                try
                 {
-                    throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                    var filestring = File.ReadAllText(sourceFile);
+                    var options = new JsonSerializerOptions();
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+
+                    if (item == null)
+                    {
+                        throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                    }
+                    else
+                    {
+                        store.Params.Add(item);
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    store.Params.Add(item);
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {sourceFile} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
                 }
             }
-            catch (Exception e)
+        }
+        else
+        {
+            foreach (var file in Directory.EnumerateFiles(sourceDirectory))
             {
-                TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+                try
+                {
+                    var filestring = File.ReadAllText(file);
+                    var options = new JsonSerializerOptions();
+                    RowNameParam item = JsonSerializer.Deserialize(filestring, SmithboxSerializerContext.Default.RowNameParam);
+
+                    if (item == null)
+                    {
+                        throw new Exception($"[{Project.ProjectName}:Param Editor:{Name}] JsonConvert returned null.");
+                    }
+                    else
+                    {
+                        store.Params.Add(item);
+                    }
+                }
+                catch (Exception e)
+                {
+                    TaskLogs.AddLog($"[{Project.ProjectName}:Param Editor:{Name}] Failed to load {file} for row name import.", LogLevel.Error, Tasks.LogPriority.High, e);
+                }
             }
         }
 
@@ -2500,7 +2536,7 @@ public class ParamBank
     /// <param name="paramName"></param>
     public async void ExportRowNames(ExportRowNameType exportType, string filepath, string paramName = "")
     {
-        var exportDir = Path.Combine(Project.ProjectPath, "Row Name Export");
+        var exportDir = Path.Combine(filepath, "Row Name Export");
 
         if (!Directory.Exists(exportDir))
         {

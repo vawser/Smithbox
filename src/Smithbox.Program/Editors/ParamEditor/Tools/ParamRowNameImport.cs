@@ -53,7 +53,7 @@ public partial class ParamTools
                 if (ImGui.MenuItem($"Selected Param"))
                 {
                     var filePath = "";
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select row name folder", out filePath);
 
                     if (result)
                     {
@@ -64,7 +64,7 @@ public partial class ParamTools
                 if (ImGui.MenuItem($"All"))
                 {
                     var filePath = "";
-                    var result = PlatformUtils.Instance.OpenFileDialog("Select row name json", ["json"], out filePath);
+                    var result = PlatformUtils.Instance.OpenFolderDialog("Select row name folder", out filePath);
 
                     if (result)
                     {
