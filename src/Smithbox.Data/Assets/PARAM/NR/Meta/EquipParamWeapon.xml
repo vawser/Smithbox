@@ -238,6 +238,8 @@
         <Option Value="93" Name="Light Greatsword" />
         <Option Value="94" Name="Great Katana" />
         <Option Value="95" Name="Beast Claw" />
+		<Option Value="256" Name="Weapons" />
+		<Option Value="512" Name="Shields" />
     </Enum>
     <Enum Name="REINFORCE_SHOP_CATEGORY" type="u8">
       <Option Value="0" Name="No Reinforcement" />

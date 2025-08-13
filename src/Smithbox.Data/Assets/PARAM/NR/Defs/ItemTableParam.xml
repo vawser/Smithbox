@@ -22,6 +22,6 @@
     
     <Field Def="dummy8 midstPadding[4]"/>
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
   </Fields>
 </PARAMDEF>

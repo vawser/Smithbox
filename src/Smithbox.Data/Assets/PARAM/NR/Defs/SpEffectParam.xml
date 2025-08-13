@@ -420,7 +420,7 @@
     <Field Def="f32 unk_04" FirstVersion="10200000"/>
     <Field Def="s32 unk_05" FirstVersion="10200000"/>
     <Field Def="f32 unk_06" FirstVersion="10200000"/>
-    <Field Def="s32 unk_07" FirstVersion="10200000"/>
+    <Field Def="s32 weaponTypeDiscovery" FirstVersion="10200000"/>
     <Field Def="s32 unk_08" FirstVersion="10200000"/>
     <Field Def="dummy8 endPadding[4]" FirstVersion="10200000"/>
   </Fields>
