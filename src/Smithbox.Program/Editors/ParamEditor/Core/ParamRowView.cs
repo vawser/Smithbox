@@ -573,7 +573,7 @@ public class ParamRowView
     {
         if (ImGui.BeginPopupContextItem($"{r.ID}_{selectionCacheIndex}"))
         {
-            DPI.ApplyInputWidth(CFG.Current.Param_ParamContextMenu_Width);
+            DPI.ApplyInputWidth(CFG.Current.Param_RowContextMenu_Width);
 
             // Name Input
             if (CFG.Current.Param_RowContextMenu_NameInput)

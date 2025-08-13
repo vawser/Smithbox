@@ -152,9 +152,11 @@ public class FieldDecorators
     /// <returns></returns>
     public static bool Enum_ContextMenuItems(ParamEnum en, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Values.Count))))
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Values.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
         {
             try
             {
@@ -249,9 +251,11 @@ public class FieldDecorators
     /// <returns></returns>
     public static bool ProjectEnum_ContextMenuItems(ProjectEnumEntry en, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Options.Count))))
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, en.Options.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
         {
             try
             {
@@ -359,9 +363,11 @@ public class FieldDecorators
 
     public static bool CharacterAliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count))))
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
         {
             try
             {
@@ -393,9 +399,11 @@ public class FieldDecorators
 
     public static bool AliasEnum_ContextMenuItems(List<AliasEntry> entries, object oldval, ref object newval)
     {
-        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(350, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
+        ImGui.InputTextMultiline("##enumSearch", ref enumSearchStr, 255, new Vector2(CFG.Current.Param_FieldContextMenu_Width, 20), ImGuiInputTextFlags.CtrlEnterForNewLine);
 
-        if (ImGui.BeginChild("EnumList", new Vector2(350, ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count))))
+        var listHeight = ImGui.GetTextLineHeightWithSpacing() * Math.Min(12, entries.Count) * CFG.Current.Param_FieldContextMenu_ListHeightMultiplier;
+
+        if (ImGui.BeginChild("EnumList", new Vector2(CFG.Current.Param_FieldContextMenu_Width, listHeight)))
         {
             try
             {

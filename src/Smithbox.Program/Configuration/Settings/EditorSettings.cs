@@ -906,16 +906,12 @@ public class ParamEditorTab
             // Param Context Menu
             if (ImGui.CollapsingHeader("Param Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Text("Menu Width");
-                ImGui.DragFloat("##paramContextMenuWidth", ref CFG.Current.Param_ParamContextMenu_Width);
+                ImGui.DragFloat("Context Menu Width##paramContextMenuWidth", ref CFG.Current.Param_ParamContextMenu_Width);
             }
 
             // Row Context Menu
             if (ImGui.CollapsingHeader("Row Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Text("Menu Width");
-                ImGui.DragFloat("##rowContextMenuWidth", ref CFG.Current.Param_RowContextMenu_Width);
-
                 ImGui.Checkbox("Display row name input", ref CFG.Current.Param_RowContextMenu_NameInput);
                 UIHelper.Tooltip("Display a row name input within the right-click context menu.");
 
@@ -939,14 +935,13 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display row name adjustment options", ref CFG.Current.Param_RowContextMenu_RowNameAdjustments);
                 UIHelper.Tooltip("Show the row name adjustment options in the right-click row context menu.");
+
+                ImGui.DragFloat("Context Menu Width##rowContextMenuWidth", ref CFG.Current.Param_RowContextMenu_Width);
             }
 
             // Field Context Menu
             if (ImGui.CollapsingHeader("Field Context Menu", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                ImGui.Text("Menu Width");
-                ImGui.DragFloat("##fieldContextMenuWidth", ref CFG.Current.Param_FieldContextMenu_Width);
-
                 ImGui.Checkbox("Split context menu", ref CFG.Current.Param_FieldContextMenu_Split);
                 UIHelper.Tooltip("Split the field context menu into separate menus for separate right-click locations.");
 
@@ -982,6 +977,12 @@ public class ParamEditorTab
 
                 ImGui.Checkbox("Display full mass edit submenu", ref CFG.Current.Param_FieldContextMenu_FullMassEdit);
                 UIHelper.Tooltip("If enabled, the right-click context menu for fields shows a comprehensive editing popup for the massedit feature.\nIf disabled, simply shows a shortcut to the manual massedit entry element.\n(The full menu is still available from the manual popup)");
+
+                ImGui.DragFloat("Context Menu Width##fieldContextMenuWidth", ref CFG.Current.Param_FieldContextMenu_Width);
+                UIHelper.Tooltip("Controls the width of the field context menu when enum or aliases lists are present.");
+
+                ImGui.DragFloat("List Height Multiplier##fieldContextListHeightMultiplier", ref CFG.Current.Param_FieldContextMenu_ListHeightMultiplier);
+                UIHelper.Tooltip("Controls the height of the field context menu when enum or aliases lists are present.");
             }
 
             // Image Preview
