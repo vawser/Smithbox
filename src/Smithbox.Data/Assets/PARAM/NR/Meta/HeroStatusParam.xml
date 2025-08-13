@@ -19,39 +19,55 @@
     
     <totalLevel
     AltName="Total Level"
-    Wiki="" />
+    Wiki="Determines stat amounts at specified level" />
     
     <statVigor
     AltName="Vigor"
-    Wiki="" />
+    Wiki="Vigor at given level" />
     
     <statMind
     AltName="Mind"
-    Wiki="" />
+    Wiki="Mind at given level" />
     
     <statEndurance
     AltName="Endurance"
-    Wiki="" />
+    Wiki="Endurance at given level" />
     
     <statStrength
     AltName="Strength"
-    Wiki="" />
+    Wiki="Strength at given level" />
     
     <statDexterity
     AltName="Dexterity"
-    Wiki="" />
+    Wiki="Dexterity at given level" />
     
     <statIntelligence
     AltName="Intelligence"
-    Wiki="" />
+    Wiki="Intelligence at given level" />
     
     <statFaith
     AltName="Faith"
-    Wiki="" />
+    Wiki="Faith at given level" />
     
     <statArcane
     AltName="Arcane"
-    Wiki="" />
+    Wiki="Arcane at given level" />
+	
+	<abilityReinforce
+	AltName="Ability Level"
+	Wiki="Reinforcement applied to ability weapons (Skill/Ult/Extra)" />
+	
+	<revenantSpiritReinforce
+	AltName="Revenant Spirit Level"
+	Wiki="Offset applied to Revenant summon SpEffect (290000)" />
+	
+	<attackRate
+	AltName="Attack Correction"
+	Wiki="Multiplier applied to all damage" />
+	
+	<executorBeastReinforce
+	AltName="Executor Beast Level"
+	Wiki="Offset applied to Executor Beast SpEffect (707201)" />
   </Field>
   
   <Enums>

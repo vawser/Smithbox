@@ -6,11 +6,15 @@
   <Unicode>True</Unicode>
   <FormatVersion>0</FormatVersion>
   <Fields>
-    <Field Def="s32 unknown_1"/>
-    <Field Def="u8 sortGroupId"/>
-    <Field Def="u8 unknown_6"/>
-    <Field Def="u8 unknown_7"/>
-    <Field Def="u8 unknown_8"/>
+    <Field Def="s32 unknown_1" />
+    <Field Def="u8 sortGroupId" />
+    <Field Def="s8 artsSpeedType" />
+	<Field Def="s8 unknown_3a" />
+    <Field Def="u8 isRefRightArts:1" />
+	<Field Def="u8 isGrayOutLeftHand:1" />
+	<Field Def="u8 isGrayOutRightHand:1" />
+	<Field Def="u8 isGrayOutBothHand:1" />
+	<Field Def="u8 enableSparringGrounds:4" />
     
     <Field Def="s16 swordArtsType" />
     <Field Def="s16 sortId" />
@@ -52,23 +56,23 @@
       <SortID>840</SortID>
     </Field>
     
-    <Field Def="u8 applyForHero1:1"/>
-    <Field Def="u8 applyForHero2:1"/>
-    <Field Def="u8 applyForHero3:1"/>
-    <Field Def="u8 applyForHero4:1"/>
-    <Field Def="u8 applyForHero5:1"/>
-    <Field Def="u8 applyForHero6:1"/>
-    <Field Def="u8 applyForHero7:1"/>
-    <Field Def="u8 applyForHero8:1"/>
+    <Field Def="u8 isStartSkill_Duchess:1" />
+	<Field Def="u8 isStartSkill_Wylder:1" />
+	<Field Def="u8 isStartSkill_Executor:1" />
+	<Field Def="u8 isStartSkill_Guardian:1" />
+	<Field Def="u8 isStartSkill_Raider:1" />
+	<Field Def="u8 isStartSkill_Revenant:1" />
+	<Field Def="u8 isStartSkill_Ironeye:1" />
+	<Field Def="u8 isStartSkill_Recluse:1" />
     
     <Field Def="u8 defaultWepAttr"/>
     <Field Def="u16 iconId" />
     <Field Def="s32 aiUsageId" />
     <Field Def="s32 usabilityTextId" />
     <Field Def="s32 atkParamId" />
-    <Field Def="s32 weaponId" />
+    <Field Def="s32 sparringGroundsWeaponId" />
     
-    <Field Def="s32 unk_00" FirstVersion="10200000"/>
+    <Field Def="s32 sparringGroundsEventFlagId" FirstVersion="10200000"/>
     <Field Def="dummy8 endPadding[12]" FirstVersion="10200000"/>
    
   </Fields>

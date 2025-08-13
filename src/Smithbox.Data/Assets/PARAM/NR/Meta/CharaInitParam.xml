@@ -28,32 +28,32 @@
     <equip_Wep_Right_1 
     AltName="Right-hand Weapon: Primary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Wep_Right_2
     AltName="Right-hand Weapon: Secondary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Wep_Right_3
     AltName="Right-hand Weapon: Tertiary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Wep_Left_1 
     AltName="Left-hand Weapon: Primary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Wep_Left_2
     AltName="Left-hand Weapon: Secondary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Wep_Left_3
     AltName="Left-hand Weapon: Tertiary" 
     Wiki="The weapon to equip for this slot." 
-    Refs="EquipParamWeapon,EquipParamCustomWeapon" />
+    Refs="EquipParamWeapon" />
     
     <equip_Helm 
     AltName="Equipped Armor: Head" 
@@ -126,8 +126,8 @@
     Refs="EquipParamWeapon" />
     
     <passiveAbilityWeapon
-    AltName="Passive Ability Weapon Data" 
-    Wiki="The weapon data present for the passive ability." 
+    AltName="Extra Helper Weapon Data" 
+    Wiki="The weapon data present for extra needs, such as models or hitboxes." 
     Refs="EquipParamWeapon" />
     
     <equip_Spell_01 AltName="Equipped Spell: Slot 1" Wiki="Initial placement magic / miracle ID01" Refs="Magic"/>
@@ -187,6 +187,11 @@
     AltName="Hero ID"
     Wiki=""
     Refs="HeroParam" />
+	
+	<spectralHawkWeaponId
+	AltName="Spectral Hawk Weapon ID"
+	Wiki="Weapon reference for Spectral Hawk's model"
+	Refs="EquipParamWeapon" />
     
     <heroSelectionBackgroundId
     AltName="Hero Selection Background ID"
