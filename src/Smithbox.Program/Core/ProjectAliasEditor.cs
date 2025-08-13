@@ -450,6 +450,8 @@ public static class ProjectAliasEditor
                 return baseA.Name != a.Name || !baseA.Tags.SequenceEqual(a.Tags);
             }).ToList();
 
+            if (!diffAliases.Any()) continue;
+
             var json = JsonSerializer.Serialize(diffAliases, SmithboxSerializerContext.Default.ListAliasEntry);
 
             File.WriteAllText(path, json);
