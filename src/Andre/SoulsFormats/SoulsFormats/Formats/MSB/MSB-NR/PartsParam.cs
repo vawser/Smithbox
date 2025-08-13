@@ -1011,7 +1011,7 @@ namespace SoulsFormats
                 /// <summary>
                 /// Unknown.
                 /// </summary>
-                public sbyte Unk21 { get; set; }
+                public sbyte Day2SpEffectParamID { get; set; }
 
                 /// <summary>
                 /// Creates a SceneGparamConfig with default values.
